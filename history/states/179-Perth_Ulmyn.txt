@@ -1,0 +1,50 @@
+
+state={
+	id=179
+	name="STATE_179"
+	resources={
+		wood=2.000
+	}
+
+	history={
+		owner = MOR
+		add_core_of = MOR
+		victory_points = {
+			6985 15 
+		}
+		victory_points = {
+			7261 15 
+		}
+		victory_points = {
+			7219 10 
+		}
+		victory_points = {
+			4537 5 
+		}
+		victory_points = {
+			1260 5 
+		}
+		victory_points = {
+			2830 1 
+		}
+		victory_points = {
+			7127 1 
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 3
+
+		}
+		set_state_flag = gorgoroth_state
+
+	}
+
+	provinces={
+		305 390 899 1260 1548 1708 2371 2579 2952 3183 3315 3494 3517 3627 3756 3927 3981 4061 4069 4145 4304 4371 4842 5015 7102 7122 7127 7145 7148 7152 7161 7169 7180 7202 7219 7232 7261 7268 10799 
+	}
+	manpower=3186000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

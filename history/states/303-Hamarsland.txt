@@ -1,0 +1,23 @@
+
+state={
+	id=303
+	name="STATE_303"
+
+	history={
+		owner = DAL
+		add_core_of = DAL
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		712 1417 1941 2062 2125 3222 4256 4714 4922 5245 5837 5849 5859 5875 5903 5904 5932 5957 5973 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

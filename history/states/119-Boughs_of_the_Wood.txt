@@ -1,0 +1,22 @@
+
+state={
+	id=119
+	name="STATE_119"
+	resources={
+		wood=1.000
+	}
+
+	history={
+		owner = DAG
+		add_core_of = DAG
+
+	}
+
+	provinces={
+		121 587 1215 1521 2408 3088 3160 3274 3684 4031 4107 4985 6486 6492 6502 
+	}
+	manpower=2000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}

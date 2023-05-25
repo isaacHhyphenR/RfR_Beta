@@ -1,0 +1,48 @@
+
+state={
+	id=36
+	name="STATE_36"
+	resources={
+		food=8.000
+		wood=3.000
+		mounts=1.000
+	}
+
+	history={
+		3000.1.1 = {
+			36 = {
+				add_extra_state_shared_building_slots = 1
+
+			}
+
+		}
+		owner = CAR
+		add_core_of = CAR
+		victory_points = {
+			5080 1 
+		}
+		victory_points = {
+			6231 1 
+		}
+		victory_points = {
+			430 1 
+		}
+		victory_points = {
+			3070 1 
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+
+		}
+
+	}
+
+	provinces={
+		49 430 745 1025 1283 1469 1800 1895 1903 2015 2686 3070 3176 3666 3903 3925 4058 4217 4284 4595 5080 5258 6140 6173 6178 6228 6230 6231 6304 6332 6360 6374 6389 7865 
+	}
+	manpower=1030000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

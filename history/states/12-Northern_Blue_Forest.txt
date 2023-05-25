@@ -1,0 +1,22 @@
+
+state={
+	id=12
+	name="STATE_12"
+	resources={
+		wood=1.000
+	}
+
+	history={
+		owner = EDL
+		add_core_of = EDL
+
+	}
+
+	provinces={
+		3081 5534 12063 
+	}
+	manpower=39750
+	buildings_max_level_factor=1.000
+	state_category=enclave
+	local_supplies=0.000
+}

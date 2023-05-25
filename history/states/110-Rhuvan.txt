@@ -1,0 +1,47 @@
+
+state={
+	id=110
+	name="STATE_110"
+	resources={
+		food=12.000
+		cloth=8.000
+		mounts=4.000
+	}
+
+	history={
+		add_core_of = MIR
+		owner = MIR
+		victory_points = {
+			6033 5 
+		}
+		victory_points = {
+			6200 2 
+		}
+		victory_points = {
+			6120 2 
+		}
+		victory_points = {
+			3532 1 
+		}
+		victory_points = {
+			1893 1 
+		}
+		victory_points = {
+			5985 1 
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+
+		}
+
+	}
+
+	provinces={
+		32 439 624 755 1281 1350 1796 1993 2636 2759 3232 3318 3762 4281 4338 4765 4803 4816 4821 4840 5871 5944 5985 6018 6042 6063 6105 6119 6123 6131 6138 6152 6157 
+	}
+	manpower=1440000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

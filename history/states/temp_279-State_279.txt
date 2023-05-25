@@ -1,0 +1,23 @@
+
+state={
+	id=279
+	name="STATE_279"
+
+	history={
+		owner = HAR
+		add_core_of = HAR
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		7848 7883 8039 8236 8238 8427 8542 8607 8674 8679 8786 8822 9065 9101 9204 9265 9391 9484 9510 9565 9619 9908 9913 10021 10098 10202 10275 10317 10430 10472 10598 10692 10795 10833 10839 11900 11913 11922 11933 11935 11954 11983 11993 11999 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

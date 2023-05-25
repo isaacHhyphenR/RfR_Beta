@@ -1,0 +1,23 @@
+
+state={
+	id=245
+	name="STATE_245"
+
+	history={
+		owner = RUN
+		add_core_of = RUN
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		7977 8063 8186 8208 8413 8513 8536 8649 8756 9000 9256 9473 9874 9896 10141 10219 10235 10341 10380 10519 10727 10749 10780 10928 11014 11019 11026 11031 11040 11067 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

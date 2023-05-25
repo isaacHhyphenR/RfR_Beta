@@ -1,0 +1,52 @@
+
+state={
+	id=128
+	name="STATE_128"
+	resources={
+		food=2.000
+		cloth=4.000
+		iron=12.000
+	}
+
+	history={
+		owner = RUN
+		add_core_of = RUN
+		set_ring_victory_point = yes
+		set_variable = {
+			historical_capital_for_country = RUN
+
+		}
+		victory_points = {
+			4688 20 
+		}
+		victory_points = {
+			3667 10 
+		}
+		victory_points = {
+			6487 1 
+		}
+		victory_points = {
+			6516 1 
+		}
+		victory_points = {
+			4287 1 
+		}
+		victory_points = {
+			6693 1 
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+
+		}
+
+	}
+
+	provinces={
+		282 338 348 506 876 1700 2130 2251 2322 2342 2494 2791 3064 3261 3667 4179 4330 4395 4483 4814 5219 6539 6552 6553 6655 6693 6717 
+	}
+	manpower=3721000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

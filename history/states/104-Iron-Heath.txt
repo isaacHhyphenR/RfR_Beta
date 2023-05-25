@@ -1,0 +1,25 @@
+
+state={
+	id=104
+	name="STATE_104"
+	resources={
+		iron=6.000
+	}
+
+	history={
+		owner = ERE
+		add_core_of = ERE
+		victory_points = {
+			3034 1 
+		}
+
+	}
+
+	provinces={
+		173 1007 1824 2717 2840 3034 3423 4128 4286 4415 4677 5073 5564 5566 5585 5586 5592 5606 
+	}
+	manpower=205000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}

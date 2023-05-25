@@ -1,0 +1,43 @@
+
+state={
+	id=106
+	name="STATE_106"
+	resources={
+		food=12.000
+		mounts=6.000
+	}
+
+	history={
+		owner = DAL
+		add_core_of = DAL
+		victory_points = {
+			3417 2 
+		}
+		victory_points = {
+			5964 2 
+		}
+		victory_points = {
+			712 2 
+		}
+		victory_points = {
+			5816 1 
+		}
+		victory_points = {
+			3596 1 
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		125 248 389 933 995 1220 2242 2281 2478 2895 3573 3603 3648 4233 4377 4753 5648 5675 5699 5716 5721 5725 5739 5748 5772 5774 
+	}
+	manpower=921000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

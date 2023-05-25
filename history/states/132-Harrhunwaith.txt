@@ -1,0 +1,24 @@
+
+state={
+	id=132
+	name="STATE_132"
+	resources={
+		food=1.000
+		cloth=1.000
+		mounts=3.000
+	}
+
+	history={
+		owner = RUN
+		add_core_of = RUN
+
+	}
+
+	provinces={
+		299 1145 1174 1712 2195 2348 2394 2894 3089 3651 4621 5082 5346 6497 6628 8202 9369 10129 10193 10226 10655 11266 11280 11308 11324 
+	}
+	manpower=1631000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}

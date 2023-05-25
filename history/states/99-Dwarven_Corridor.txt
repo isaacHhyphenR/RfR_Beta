@@ -1,0 +1,37 @@
+
+state={
+	id=99
+	name="STATE_99"
+	resources={
+		food=6.000
+		cloth=1.000
+	}
+
+	history={
+		owner = ERE
+		add_core_of = ERE
+		victory_points = {
+			5073 3 
+		}
+		victory_points = {
+			1688 1 
+		}
+		victory_points = {
+			3130 1 
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		365 566 639 759 1444 1752 1761 1802 2059 2228 2333 2469 2525 2592 2770 3147 3621 4240 4596 4797 5674 5694 5696 5713 5811 
+	}
+	manpower=771000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

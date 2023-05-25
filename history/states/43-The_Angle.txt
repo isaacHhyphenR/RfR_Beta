@@ -1,0 +1,52 @@
+
+state={
+	id=43
+	name="STATE_43"
+	resources={
+		food=3.000
+		cloth=1.000
+		wood=6.000
+		iron=6.000
+		mounts=2.000
+	}
+
+	history={
+		owner = RDR
+		add_core_of = RDR
+		set_ring_victory_point = yes
+		set_variable = {
+			historical_capital_for_country = RDR
+
+		}
+		victory_points = {
+			434 20 
+		}
+		victory_points = {
+			306 1 
+		}
+		victory_points = {
+			1701 1 
+		}
+		victory_points = {
+			4331 10 
+		}
+		victory_points = {
+			1169 1 
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 3
+
+		}
+
+	}
+
+	provinces={
+		67 124 151 218 225 274 306 329 434 619 658 825 935 1169 1209 1214 1500 1701 1829 2243 2285 2409 2900 3220 3428 3542 3682 3736 3738 3827 3911 4177 4245 4291 4331 4525 4578 5308 5655 5707 5726 5734 5761 5781 5799 5800 5807 5824 5833 5864 5874 5891 5900 5920 5935 5938 5954 5963 5982 8017 11766 
+	}
+	manpower=4420000
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

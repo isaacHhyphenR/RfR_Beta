@@ -1,0 +1,43 @@
+
+state={
+	id=22
+	name="STATE_22"
+	resources={
+		food=2.000
+		cloth=3.000
+		iron=5.000
+		mounts=2.000
+	}
+
+	history={
+		owner = ART
+		add_core_of = ART
+		victory_points = {
+			5659 3 
+		}
+		victory_points = {
+			2412 3 
+		}
+		victory_points = {
+			4774 1 
+		}
+		victory_points = {
+			1191 1 
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		33 74 499 560 668 738 856 1038 1191 1369 1388 1420 1488 1598 1870 1959 1992 2312 2331 2412 2480 2483 2771 2803 2968 3026 3200 3286 3334 3367 3476 4006 4132 4223 4513 4654 4774 5239 5462 5466 5487 5494 5502 5508 5524 5527 5535 5543 5544 5546 5560 5569 5572 5577 5591 5602 5604 5614 5619 5620 5625 5652 5659 5685 5708 5768 7821 
+	}
+	manpower=2120000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

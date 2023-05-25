@@ -1,0 +1,48 @@
+
+state={
+	id=183
+	name="STATE_183"
+	resources={
+		food=2.000
+		cloth=1.000
+		mounts=3.000
+	}
+
+	history={
+		owner = MOR
+		add_core_of = MOR
+		victory_points = {
+			3086 10 
+		}
+		victory_points = {
+			4509 6 
+		}
+		victory_points = {
+			7389 4 
+		}
+		victory_points = {
+			2960 2 
+		}
+		victory_points = {
+			3238 2 
+		}
+		victory_points = {
+			7475 2 
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+
+		}
+		set_state_flag = nurn_state
+
+	}
+
+	provinces={
+		17 28 81 204 317 372 437 659 783 790 932 949 1067 1526 1770 1838 2194 2454 2831 2849 2903 2960 3086 3141 3231 3238 3245 3386 3523 3644 3828 4077 4226 4260 4441 4509 4625 5053 7086 7105 7155 7158 7175 7183 7216 7221 7242 7258 7269 7275 7297 7318 7333 7353 7359 7379 7389 7403 7422 7440 7475 
+	}
+	manpower=6830000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

@@ -1,0 +1,44 @@
+
+state={
+	id=185
+	name="STATE_185"
+	resources={
+		food=3.000
+		cloth=4.000
+		wood=4.000
+		iron=8.000
+		mounts=6.000
+	}
+
+	history={
+		owner = HAR
+		add_core_of = HAR
+		victory_points = {
+			1543 10 
+		}
+		victory_points = {
+			1809 6 
+		}
+		victory_points = {
+			1523 2 
+		}
+		victory_points = {
+			3359 1 
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		212 224 275 494 670 922 1083 1306 1448 1475 1523 1543 1820 2014 2250 2351 2406 2460 2638 2908 3204 3268 3346 3359 3588 3631 3943 4062 4612 5305 7508 7520 7529 7533 7538 7542 7543 7549 7554 7557 
+	}
+	manpower=2136
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

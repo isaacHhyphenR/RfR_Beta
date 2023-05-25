@@ -1,0 +1,18 @@
+state = {
+	id = 255
+	name = "STATE_255"
+	state_category = town
+	resources = {
+	}
+	history = {
+		owner = RUN
+		add_core_of = RUN
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	provinces = {
+		7877 8074 8106 8197 8421 8477 8676 9289 9386 9427 9445 9656 9715 9773 10015 10122 10252 10257 10452 10583 10738 11210 11222 11224 11235 11251 11254 11256 
+	}
+	manpower = 100000
+}

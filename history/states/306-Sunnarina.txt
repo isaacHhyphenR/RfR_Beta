@@ -1,0 +1,23 @@
+
+state={
+	id=306
+	name="STATE_306"
+
+	history={
+		owner = MIR
+		add_core_of = MIR
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		747 870 1013 1315 1434 1531 2018 2329 2479 2502 2687 3407 3616 3831 4080 4428 4592 4802 5288 5394 5860 5889 5917 5918 5927 5961 5975 5984 5996 6004 6012 6037 6049 6053 6057 6065 6086 6090 6117 6176 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

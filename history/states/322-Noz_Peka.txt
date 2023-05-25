@@ -1,0 +1,23 @@
+
+state={
+	id=322
+	name="STATE_322"
+
+	history={
+		owner = KND
+		add_core_of = KND
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		288 1355 2169 2829 3059 3634 4219 4535 4773 4824 5194 5271 7532 7547 7548 7553 7571 7644 10791 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

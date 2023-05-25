@@ -1,0 +1,23 @@
+
+state={
+	id=270
+	name="STATE_270"
+
+	history={
+		owner = HAR
+		add_core_of = HAR
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		107 361 702 1090 1686 1904 2185 2216 2600 2736 4187 4246 4656 5136 5293 7783 7790 8066 8455 9788 9994 10105 10263 10672 10744 12005 12023 12028 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

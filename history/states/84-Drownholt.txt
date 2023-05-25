@@ -1,0 +1,56 @@
+
+state={
+	id=84
+	name="STATE_84"
+	resources={
+		food=4.000
+		cloth=6.000
+		wood=3.000
+		mounts=3.000
+	}
+
+	history={
+		3000.1.1 = {
+			84 = {
+				add_extra_state_shared_building_slots = 1
+
+			}
+
+		}
+		owner = BER
+		add_core_of = BER
+		victory_points = {
+			5931 5 
+		}
+		victory_points = {
+			2202 5 
+		}
+		victory_points = {
+			331 1 
+		}
+		victory_points = {
+			4639 1 
+		}
+		victory_points = {
+			4066 1 
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			1746 1 
+		}
+
+	}
+
+	provinces={
+		331 343 463 879 955 1166 1178 1189 1484 1567 1634 1637 1650 1723 1746 1976 2098 2131 2202 2513 2628 2711 2716 2969 3014 3520 3856 3868 3930 3965 4066 4097 4639 4690 4837 4852 5054 5163 5234 5310 5931 6104 6145 6159 6184 6188 6197 6212 6233 6273 6320 6330 6334 6372 6430 6431 6460 6463 6490 6509 
+	}
+	manpower=1833000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

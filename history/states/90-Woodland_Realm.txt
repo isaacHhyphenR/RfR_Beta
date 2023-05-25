@@ -1,0 +1,55 @@
+
+state={
+	id=90
+	name="STATE_90"
+	resources={
+		food=6.000
+		cloth=12.000
+		wood=20.000
+	}
+
+	history={
+		owner = WOD
+		add_core_of = WOD
+		add_core_of = GLD
+		set_ring_victory_point = yes
+		set_variable = {
+			historical_capital_for_country = WOD
+
+		}
+		victory_points = {
+			4150 20 
+		}
+		victory_points = {
+			3810 5 
+		}
+		victory_points = {
+			3446 5 
+		}
+		victory_points = {
+			1856 5 
+		}
+		victory_points = {
+			1310 1 
+		}
+		victory_points = {
+			5689 1 
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 3
+			industrial_complex = 3
+
+		}
+		set_state_flag = mirkwood_state
+
+	}
+
+	provinces={
+		45 104 208 718 1028 1308 1310 1326 1342 1811 1856 2254 2518 2521 2552 2662 2673 2704 2856 2965 3008 3085 3292 3446 3606 3810 3835 3842 4141 4150 4227 4551 4720 4792 4807 4875 5005 5115 5117 5319 5581 5597 5598 5643 5646 5651 5661 5668 5682 5686 5689 5703 5711 5719 5730 5731 5737 5755 5756 5762 
+	}
+	manpower=6704000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

@@ -1,0 +1,23 @@
+
+state={
+	id=311
+	name="STATE_311"
+
+	history={
+		owner = DOR
+		add_core_of = DOR
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		184 385 720 845 1077 1148 1293 1596 1641 2845 3993 4867 4903 5147 6366 6401 6417 6443 6455 6468 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

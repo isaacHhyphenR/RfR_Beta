@@ -1,0 +1,18 @@
+state = {
+	id = 266
+	name = "STATE_266"
+	state_category = town
+	resources = {
+	}
+	history = {
+		owner = RUN
+		add_core_of = RUN
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	provinces = {
+		7860 8400 8503 8549 8687 8704 8835 8879 8956 8992 9030 9425 9477 9601 9604 10006 10008 10414 10443 10608 10638 10696 11396 11418 11429 11432 11442 11452 11471 11480 11481 11482 11488 11492 
+	}
+	manpower = 100000
+}

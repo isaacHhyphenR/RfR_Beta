@@ -1,0 +1,30 @@
+
+state={
+	id=111
+	name="STATE_111"
+	resources={
+		food=2.000
+		wood=2.000
+		mounts=1.000
+	}
+
+	history={
+		add_core_of = MIR
+		owner = MIR
+		victory_points = {
+			6473 1 
+		}
+		victory_points = {
+			6328 1 
+		}
+
+	}
+
+	provinces={
+		179 367 425 1611 1871 1921 1942 2598 2651 3033 3137 4059 4196 4232 4472 4532 4854 6322 6364 6427 6473 6493 6496 6505 6507 6520 6623 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

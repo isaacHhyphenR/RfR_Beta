@@ -1,0 +1,30 @@
+
+state={
+	id=129
+	name="STATE_129"
+	resources={
+		food=8.000
+		cloth=6.000
+		wood=8.000
+		mounts=12.000
+	}
+
+	history={
+		owner = RUN
+		add_core_of = RUN
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+
+		}
+
+	}
+
+	provinces={
+		15 646 663 789 1202 1636 1757 1913 2445 2548 2851 3001 3218 3219 3481 3768 3897 4064 4258 4785 6283 6311 6336 6350 6414 6450 6451 6478 6510 
+	}
+	manpower=4012000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

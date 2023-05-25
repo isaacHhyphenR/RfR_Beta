@@ -1,0 +1,32 @@
+
+state={
+	id=13
+	name="STATE_13"
+	resources={
+		wood=3.000
+	}
+
+	history={
+		owner = EDL
+		add_core_of = EDL
+		victory_points = {
+			4887 1 
+		}
+		victory_points = {
+			4577 1 
+		}
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		296 1097 1344 1421 2360 3388 4577 4887 5684 12062 
+	}
+	manpower=79500
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

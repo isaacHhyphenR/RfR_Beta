@@ -1,0 +1,40 @@
+
+state={
+	id=6
+	name="STATE_6"
+	resources={
+		food=7.000
+		cloth=5.000
+	}
+
+	history={
+		owner = LIN
+		add_core_of = LIN
+		victory_points = {
+			3293 15 
+		}
+		victory_points = {
+			4906 5 
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+			dockyard = 2
+			3293 = {
+				naval_base = 7
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		229 503 1643 2047 3293 3365 3448 3464 3485 3850 4252 4261 4384 4538 4901 4906 5782 5872 5886 5905 5970 6008 9608 
+	}
+	manpower=2865000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

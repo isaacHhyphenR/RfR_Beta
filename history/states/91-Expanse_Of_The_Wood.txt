@@ -1,0 +1,44 @@
+
+state={
+	id=91
+	name="STATE_91"
+	resources={
+		wood=20.000
+	}
+
+	history={
+		owner = WOD
+		add_core_of = WOD
+		add_core_of = GLD
+		victory_points = {
+			4354 5 
+		}
+		victory_points = {
+			5867 2 
+		}
+		victory_points = {
+			2604 1 
+		}
+		victory_points = {
+			4495 1 
+		}
+		victory_points = {
+			5942 1 
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+
+		}
+		set_state_flag = mirkwood_state
+
+	}
+
+	provinces={
+		1019 1107 1210 1313 1349 1387 1537 1691 1821 1905 1953 2105 2124 2129 2190 2221 2387 2500 2562 2590 2597 2604 2914 2983 3098 3099 3371 3518 3641 3698 3797 3891 3904 3972 4168 4264 4353 4354 4382 4383 4482 4495 4615 4700 4759 4856 4895 5042 5174 5325 5804 5828 5830 5840 5841 5844 5862 5863 5865 5867 5869 5879 5883 5884 5885 5888 5897 5906 5922 5942 5943 5947 5955 5956 5978 5979 5993 5995 5998 6007 
+	}
+	manpower=742000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

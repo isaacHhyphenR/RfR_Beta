@@ -1,0 +1,36 @@
+
+state={
+	id=118
+	name="STATE_118"
+	resources={
+		iron=12.000
+	}
+
+	history={
+		owner = DOR
+		add_core_of = DOR
+		victory_points = {
+			4197 10 
+		}
+		victory_points = {
+			1912 5 
+		}
+		victory_points = {
+			3199 1 
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+
+		}
+
+	}
+
+	provinces={
+		63 611 1125 1912 2065 2115 2585 3092 3201 4638 4791 5259 6361 6426 6449 6464 
+	}
+	manpower=2830000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

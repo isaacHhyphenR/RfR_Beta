@@ -1,0 +1,47 @@
+
+state={
+	id=126
+	name="STATE_126"
+	resources={
+		food=2.000
+		cloth=1.000
+		mounts=6.000
+	}
+
+	history={
+		owner = RUN
+		add_core_of = RUN
+		victory_points = {
+			4965 10 
+		}
+		victory_points = {
+			3786 5 
+		}
+		victory_points = {
+			6804 1 
+		}
+		victory_points = {
+			2061 1 
+		}
+		victory_points = {
+			3626 1 
+		}
+		victory_points = {
+			506 1 
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+
+		}
+
+	}
+
+	provinces={
+		909 1589 1795 1875 2038 2134 2296 2299 2300 2317 2437 2503 2733 2820 3030 3285 3392 3410 3466 4905 5324 5326 5366 6674 6680 6688 6724 6775 6813 6820 10777 
+	}
+	manpower=837000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}
