@@ -1,18 +1,23 @@
-state = {
-	id = 243
-	name = "STATE_243"
-	state_category = town
-	resources = {
-	}
-	history = {
+
+state={
+	id=243
+	name="STATE_243"
+
+	history={
 		owner = RUN
 		add_core_of = RUN
 		buildings = {
 			infrastructure = 1
+
 		}
+
 	}
-	provinces = {
-		7938 7945 8075 8204 8245 8420 8547 8568 8601 8631 8633 8714 8740 8772 8888 9475 10228 10602 10618 10994 11007 11009 11016 11017 11032 11036 11039 11051 11062 11069 
+
+	provinces={
+		7938 7945 8075 8204 8245 8420 8547 8568 8601 8631 8633 8714 8740 8772 8888 9475 10228 10602 10618 10994 11007 11009 11016 11017 11032 11036 11039 11051 11062 11069 12424 
 	}
-	manpower = 100000
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
 }

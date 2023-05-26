@@ -12,18 +12,6 @@ state={
 	history={
 		owner = DAL
 		add_core_of = DAL
-		victory_points = {
-			3901 3 
-		}
-		victory_points = {
-			5720 2 
-		}
-		victory_points = {
-			2982 1 
-		}
-		victory_points = {
-			2780 1 
-		}
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1

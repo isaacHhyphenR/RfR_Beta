@@ -11,24 +11,6 @@ state={
 	history={
 		owner = RUN
 		add_core_of = RUN
-		victory_points = {
-			4965 10 
-		}
-		victory_points = {
-			3786 5 
-		}
-		victory_points = {
-			6804 1 
-		}
-		victory_points = {
-			2061 1 
-		}
-		victory_points = {
-			3626 1 
-		}
-		victory_points = {
-			506 1 
-		}
 		buildings = {
 			infrastructure = 1
 			arms_factory = 1

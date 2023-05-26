@@ -10,13 +10,7 @@ state={
 		owner = DOR
 		add_core_of = DOR
 		victory_points = {
-			4197 10 
-		}
-		victory_points = {
 			1912 5 
-		}
-		victory_points = {
-			3199 1 
 		}
 		buildings = {
 			infrastructure = 2

@@ -11,24 +11,6 @@ state={
 	history={
 		add_core_of = MIR
 		owner = MIR
-		victory_points = {
-			6033 5 
-		}
-		victory_points = {
-			6200 2 
-		}
-		victory_points = {
-			6120 2 
-		}
-		victory_points = {
-			3532 1 
-		}
-		victory_points = {
-			1893 1 
-		}
-		victory_points = {
-			5985 1 
-		}
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1

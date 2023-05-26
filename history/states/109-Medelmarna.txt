@@ -13,16 +13,7 @@ state={
 		add_core_of = MIR
 		owner = MIR
 		victory_points = {
-			439 5 
-		}
-		victory_points = {
-			3831 2 
-		}
-		victory_points = {
 			1668 1 
-		}
-		victory_points = {
-			6117 1 
 		}
 		victory_points = {
 			2572 1 
