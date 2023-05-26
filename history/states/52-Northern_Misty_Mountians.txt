@@ -1,0 +1,19 @@
+state = {
+	id = 52
+	name = "STATE_52" #Northern Misty Mountains
+	impassable = yes
+	state_category = wasteland
+	manpower = 497000	local_supplies=0.0
+	resources = {
+		wood = 3
+		mounts = 2
+		monsters = 3
+	}
+	provinces = {
+		356 1702 2022 2857 3075 3761 3933 4206 4580 4819 5329 5547 5600 5691
+	}
+	history = {
+		owner = MST
+		add_core_of = MST
+	}
+}

@@ -1,0 +1,33 @@
+state = {
+	id = 34
+	name = "STATE_34" #Girithlir
+	state_category = town
+	manpower = 3230000	local_supplies=0.0
+	resources = {
+		food = 12
+		iron = 2
+		mounts = 2
+	}
+	provinces = {
+		580 622 807 877 1086 1419 1524 1572 1741 1763 2076 2146 2211 2601 2629 2740 2751 2925 3051 3074 3115 3369 3866 3894 4116 4575 4601 4694 5023 5132 6085 6109 6139 6153 6154 6169 6183 6186 6205 6223 6294 6307 6313 6321 6362 
+	}
+
+	history = {
+		owner = CAR
+		add_core_of = CAR
+		set_variable = { historical_capital_for_country = CAR }
+		victory_points = {
+			1572 10
+		}
+		victory_points = {
+			3866 1
+		}
+		victory_points = {
+			5023 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+		}
+	}
+}

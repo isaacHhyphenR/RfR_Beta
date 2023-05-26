@@ -1,0 +1,51 @@
+state = {
+	id = 93
+	name = "STATE_93" #Shadow of the Wood
+	state_category = large_city
+	manpower = 3808000	local_supplies=0.0
+	resources = {
+		food = 2
+		cloth = 2
+		wood = 20
+		iron = 14
+		mounts = 3
+	}
+	provinces = {
+		65 154 161 292 451 483 600 704 889 901 1266 1314 1341 1514 1571 1590 1938 1964 2201 2319 2410 2515 2661 2726 2830 2927 3102 3122 3345 3383 3427 3612 3639 3747 3808 3813 4065 4117 4143 4457 4514 4519 4534 4572 4589 4635 4652 4754 4902 4919 4951 4977 5286 6227 6254 6270 6271 6274 6278 6279 6297 6298 6300 6308 6315 6326 6327 6339 6344 6346 6354 6356 6369 6378 6379 6386 6391 6396 6397 6400 6403 6411 6413 6433 6434 6442 6445 6448 6453 6461 6466 6471 
+	}
+	history = {
+		owner = GLD
+		add_core_of = GLD
+		add_core_of = WOD
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = GLD }
+		victory_points = { #35
+			6354 25
+		}
+		victory_points = {
+			2201 5
+		}
+		victory_points = {
+			2830 2
+		}
+		victory_points = {
+			6356 1
+		}
+		victory_points = {
+			704 1
+		}
+		victory_points = {
+			6466 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 3
+			industrial_complex = 2
+			radar_station = 2
+			6354 = {
+				bunker = 5
+			}
+		}
+		set_state_flag = mirkwood_state
+	}
+}

@@ -1,0 +1,62 @@
+state = {
+	id = 152
+	name = "STATE_152" #Pelennor Feilds
+	state_category = Metropolis
+	manpower = 2121000
+	resources = {
+		food = 5
+		cloth = 2
+	}
+	provinces = { #7
+		1106 3757 5432 5435 6402 7164 7184 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = GON }
+		victory_points = { #3
+			3757 3 #port
+		}
+		victory_points = { #50
+			7184 50 #Big white tall
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 3
+			7184 = {#Minas tirth
+				bunker = 5
+			}
+			7164 = { #Rammas Echor
+				bunker = 3
+			}
+			1106 = {
+				bunker = 3
+			}
+			3757 = {
+				bunker = 3
+				naval_base = 3
+			}
+			6402 = {
+				bunker = 3
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

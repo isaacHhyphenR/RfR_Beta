@@ -1,0 +1,30 @@
+state = {
+	id = 44
+	name = "STATE_44" #Hidden Valley
+	state_category = city
+	manpower = 2976000	local_supplies=0.0
+	resources = {
+		food = 4
+		cloth = 4
+		wood = 4
+		iron = 2
+	}
+	provinces = {
+		252 813 1554 3401 7754 
+	}
+	history = {
+		owner = RIV
+		add_core_of = RIV
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = RIV }
+		victory_points = {
+			252 40 #Reivendell
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 3
+			radar_station = 1
+		}
+	}
+}

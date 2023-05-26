@@ -1,0 +1,34 @@
+state = {
+	id = 178
+	name = "STATE_178" #Gaer Durlith
+	state_category = metropolis
+	manpower = 4927000
+	provinces = {
+		705 1021 1037 1078 1109 1114 1307 1339 1489 1663 1685 1831 2093 2096 2159 2232 2630 2756 2837 2863 2911 3021 3053 3104 3498 3508 3543 3714 3795 3815 3906 3907 4317 4443 4770 4929 5026 5036 5161 6965 6977 6989 6997 7001 7002 7012 7016 7026 7034 7038 7039 7046 7048 7054 7056 7065 7072 7077 7088 7089 7103 7112 7118 7128 7129 
+	}
+	history = {
+		owner = MOR
+		add_core_of = MOR
+		victory_points = { #37
+			3815 15
+		}
+		victory_points = {
+			2911 10
+		}
+		victory_points = {
+			7054 10
+		}
+		victory_points = {
+			1114 1
+		}
+		victory_points = {
+			2630 1
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 3
+		}
+		set_state_flag = gorgoroth_state
+	}
+}

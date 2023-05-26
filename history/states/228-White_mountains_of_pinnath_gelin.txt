@@ -1,0 +1,27 @@
+state = {
+	id = 228
+	name = "STATE_228"
+	resources = {
+		monsters = 2
+	}
+	impassable = no
+
+	history = {
+		owner = NIF
+		add_core_of = NIF
+		buildings = {
+		}
+		victory_points = {
+			1079 1 #Mellainendë
+		}
+	}
+	provinces = { #9
+		996 1079 2439 3889 4455 6935 6957 6995 7009 
+	}
+	manpower = 78000
+	state_category = Wasteland
+}
+
+
+
+

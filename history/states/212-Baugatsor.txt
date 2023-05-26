@@ -1,0 +1,47 @@
+
+state = {
+	id = 212
+	name = "STATE_212"
+	provinces = {
+		507 592 1204 1669 1852 2576 2930 2978 3453 4050 4537 6985 7023 7101 
+	}
+	manpower = 2307000
+	state_category = metropolis
+	resources = {
+		wood = 2
+	}
+
+	history={
+		owner = MOR
+		add_core_of = MOR
+		victory_points = {
+			6985 15 
+		}
+		victory_points = {
+			7261 15 
+		}
+		victory_points = {
+			7219 10 
+		}
+		victory_points = {
+			4537 5 
+		}
+		victory_points = {
+			1260 5 
+		}
+		victory_points = {
+			2830 1 
+		}
+		victory_points = {
+			7127 1 
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 2
+
+		}
+		set_state_flag = gorgoroth_state
+
+	}
+}

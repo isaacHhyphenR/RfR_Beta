@@ -1,0 +1,59 @@
+state = {
+	id = 65
+	name = "STATE_65"
+	resources = {
+		food = 8
+		iron = 4
+		mounts = 6
+	}
+
+	history = {
+		owner = STK
+		add_core_of = STK
+		set_variable = { historical_capital_for_country = STK }
+		#20
+		victory_points = {
+			6845 12
+		}
+		victory_points = {
+			6847 3 #isen
+		}
+		victory_points = {
+			6801 2 #river
+		}
+		victory_points = {
+			4293 1 #hills
+		}
+		victory_points = {
+			6711 2 #plains
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 2
+		}
+
+	}
+
+	provinces = {#38
+		193 526 606 927 1069 1198 1552 1568 1744 2085 2174 2459 2475 2526 3316 3473 3566 3796 3880 4173 4205 4293 4324 4767 5171 5323 6700 6711 6740 6748 6752 6777 6796 6801 6827 6839 6845 6847 
+	}
+	manpower = 1983000
+	state_category = City
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

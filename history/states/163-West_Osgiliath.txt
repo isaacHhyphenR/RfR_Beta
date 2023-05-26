@@ -1,0 +1,43 @@
+state = {
+	id = 163
+	name = "STATE_163" #West Osgiliath
+	state_category = Pastoral
+	manpower = 37000
+	provinces = {
+		7151 7182
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		victory_points = {
+			7182 10
+		}
+		buildings = {
+			infrastructure = 3
+			7182 = { #
+				naval_base = 2
+				bunker = 3
+				coastal_bunker = 2
+			}
+		}
+		set_variable = { ring_ui_frame = 3 	}
+	}
+	resources = {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

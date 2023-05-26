@@ -1,0 +1,60 @@
+state = {
+	id = 167
+	name = "STATE_167" #South ithilien
+	state_category = Rural
+	manpower = 1036000
+	resources = {
+		wood = 12
+		iron = 16
+	}
+	provinces = { #31
+		654 974 1116 1303 1511 1577 1667 2544 2648 2652 3012 4318 4378 4446 4517 4653 4938 5039 5254 7157 7189 7200 7201 7206 7207 7210 7218 7280 7283 7294 7300 
+	}
+	history = {
+		set_state_flag = ithilien_state
+		owner = ITH
+		add_core_of = ITH
+		add_core_of = GON
+		victory_points = { #10
+			2652 4
+		}
+		victory_points = {
+			5254 2
+		}
+		victory_points = {
+			7201 2
+		}
+		victory_points = {
+			2648 1
+		}
+		victory_points = {
+			4446 1
+		}
+		buildings = {
+			infrastructure = 1
+			2652 = { #3
+				naval_base = 2
+			}
+			7201 = {
+				naval_base = 1
+			}
+		}
+		set_state_flag = lower_anduin_state
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+state = {
+	id = 172
+	name = "STATE_172" #Western Ered Lithui
+	impassable = yes
+	state_category = wasteland
+	manpower = 672000
+	local_supplies=0.0
+	resources = {
+		iron = 10
+		monsters = 1
+	}
+	provinces = {
+		881 1659 1884 2050 2404 3027 3111 3640 3688 5141 6912 6931 6934 6937 6949 6950 6952 6961 6964 
+	}
+	history = {
+		owner = MOR
+		add_core_of = MOR
+	}
+}

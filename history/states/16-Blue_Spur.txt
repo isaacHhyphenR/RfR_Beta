@@ -1,0 +1,23 @@
+state = {
+	id = 16
+	name = "STATE_16"
+	state_category = rural
+	manpower = 93750	local_supplies=0.0
+	resources = {
+		iron = 6
+	}
+	provinces = {
+		630 1716 2234 3503 
+	}
+	history = {
+		owner = EDL
+		add_core_of = EDL
+		victory_points = {
+			630 5
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+		}
+	}
+}

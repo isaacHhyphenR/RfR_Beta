@@ -1,0 +1,35 @@
+state = {
+	id = 219
+	name = "STATE_219"
+	resources = {
+		food = 3
+		cloth = 4
+	}
+
+	history = {
+		victory_points = {
+			4397 7
+		}
+		owner = CAR
+		add_core_of = CAR
+		buildings = {
+			infrastructure = 2
+			dockyard = 1
+			industrial_complex = 1
+			4397 = {
+				naval_base = 2
+			}
+		}
+
+	}
+
+	provinces = {
+		1132 4397 6342 6358 6438 
+	}
+	manpower = 876324
+	state_category = Town
+}
+
+
+
+

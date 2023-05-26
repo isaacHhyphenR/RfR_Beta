@@ -1,0 +1,36 @@
+state = {
+	id = 137
+	name = "STATE_137" #Southern White Spur
+	impassable = yes
+	state_category = Wasteland
+	manpower = 16000
+	local_supplies = 0.0
+	resources = {
+		iron = 9
+	}
+	provinces = { #2
+		2995 3735 
+	}
+	history = {
+		owner = RAF
+		add_core_of = RAF
+		buildings = {
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

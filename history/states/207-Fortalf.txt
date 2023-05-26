@@ -1,0 +1,46 @@
+state = {
+	id = 207
+	name = "STATE_207" #Fortalf
+	state_category = Town
+	manpower = 1099000
+	resources = {
+		wood = 4
+		mounts = 8
+	}
+	provinces = { #18
+		776 926 1126 1146 1508 1969 2206 2719 3416 3501 3778 3887 4732 6735 6754 6760 6763 6800
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #8
+			3416 6 #harwick
+		}
+		victory_points = {
+			6763 2 #feldburg
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+		set_state_flag = wold_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 2 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+state = {
+	id = 28
+	name = "STATE_28"#Northfarthing
+	state_category = pastoral
+	manpower = 479000	local_supplies=0.0
+	resources = {
+		food = 1
+	}
+	provinces = {
+		946 1397 1533 2010 5758 5759 5778 5803 5806 
+	}
+	history = {
+		owner = SHI
+		add_core_of = SHI
+		victory_points = {
+			5778 2
+		}
+		buildings = {
+			infrastructure = 0
+		}
+	}
+}

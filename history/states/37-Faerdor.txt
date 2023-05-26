@@ -1,0 +1,39 @@
+
+state={
+	id=37
+	name="STATE_37"
+	resources={
+		food=6.000
+		wood=2.000
+		mounts=3.000
+	}
+
+	history={
+		owner = CAR
+		add_core_of = CAR
+		victory_points = {
+			4397 10 
+		}
+		victory_points = {
+			3071 5 
+		}
+		victory_points = {
+			575 1 
+		}
+		victory_points = {
+			6204 1 
+		}
+		victory_points = {
+			1337 1 
+		}
+
+	}
+
+	provinces={
+		13 235 539 575 878 1105 1110 1152 1221 1278 1337 1377 1635 1860 1883 2173 2413 2744 2862 3071 3617 3758 3892 3921 3980 4255 4342 4364 4529 4676 4687 4827 5111 6127 6204 6232 6238 6242 6258 6268 6292 6295 6301 6324 6341 6383 6398 6424 6425 
+	}
+	manpower=2760000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

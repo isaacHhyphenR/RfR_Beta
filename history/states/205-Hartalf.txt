@@ -1,0 +1,46 @@
+state = {
+	id = 205
+	name = "STATE_205" #Hartalf
+	state_category = Town
+	manpower = 1128873
+	resources = {
+		mounts = 3
+	}
+	provinces = { #19
+		77 804 2233 2690 2746 3007 3306 3338 4098 4445 4984 5012 5260 6948 6954 6967 6969 6982 6986 
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #6
+			3338 6 #Walstow
+		}
+		victory_points = {
+			4098 1 #garsfeld
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		set_state_flag = eastmark_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 2 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

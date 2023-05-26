@@ -1,0 +1,64 @@
+state = {
+	id = 133
+	name = "STATE_133"
+	resources = {
+		food = 7
+		wood = 9
+	}
+
+	history = {
+		owner = BYR
+		add_core_of = BYR
+		set_variable = { historical_capital_for_country = BYR }
+		#17
+		victory_points = {
+			6906 9
+		}
+		victory_points = {
+			3441 3 #coast
+		}
+		victory_points = {
+			7011 4 #coast river
+		}
+		victory_points = {
+			4947 2 #inland
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			dockyard = 1
+			industrial_complex = 1
+			6906 = {
+				naval_base = 2
+			}
+			3441 = {
+				naval_base = 1
+			}
+			7011 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces = { #16
+		1082 1472 2335 2400 2775 3189 3196 3441 3994 4394 4947 6906 6945 6973 6998 7011 
+	}
+	manpower = 1608000
+	state_category = Large_Town
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

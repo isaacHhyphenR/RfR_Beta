@@ -1,0 +1,50 @@
+state = {
+	id = 224
+	name = "STATE_224"
+	resources = {
+		cloth = 7
+		iron = 8
+	}
+
+	history = {
+		owner = AKN
+		add_core_of = AKN
+		set_variable = { historical_capital_for_country = AKN }
+		#6
+		victory_points = {
+			1550 3 #river
+		}
+		victory_points = {
+			318 2 #pass
+		}
+		victory_points = {
+			4032 1 #south
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+	}
+
+	provinces = { #12
+		168 318 760 1550 3095 4032 5335 6953 6966 6990 7013 7021 
+	}
+	manpower = 701000
+	state_category = Rural
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

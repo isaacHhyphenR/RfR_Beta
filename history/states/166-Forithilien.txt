@@ -1,0 +1,59 @@
+state = {
+	id = 166
+	name = "STATE_166" #North Ithilien
+	state_category = Town
+	manpower = 1531000
+	resources = {
+		food = 2
+		wood = 16
+	}
+	provinces = { #29
+		424 735 884 1618 2724 3230 3455 3969 4023 4086 4100 4633 4750 4757 4899 4962 5257 5317 7004 7017 7042 7081 7094 7096 7107 7115 7126 7144 7168 
+	}
+	history = {
+		set_state_flag = ithilien_state
+		owner = ITH
+		add_core_of = ITH
+		add_core_of = GON
+		victory_points = { #Torngroth #11
+			4633 6
+		}
+		victory_points = {
+			4757 2
+		}
+		victory_points = { #Henneth Annun
+			4086 1
+		}
+		victory_points = { #bar Aroth
+			7168 1
+		}
+		victory_points = {
+			7081 1
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+			4633 = { #2
+				naval_base = 2
+			}
+		}
+		set_state_flag = lower_anduin_state
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

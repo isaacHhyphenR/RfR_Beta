@@ -1,0 +1,40 @@
+state = {
+	id = 85
+	name = "STATE_85" #Carrocklands
+	state_category = rural
+	manpower = 2160000	local_supplies=0.0
+	resources = {
+		food = 4
+		cloth = 6
+		wood = 3
+		iron = 2
+		mounts = 3
+	}
+	provinces = {
+		1930 1987 2007 2434 2735 3019 3138 3229 3308 3449 3528 3664 4502 4540 4777 5552 5568 5580 5590 5632 5677 5745 5823 5855 5908 
+	}
+	history = {
+		3000.1.1 = { ##Extra building slot for balance
+			85 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		owner = BER
+		add_core_of = BER
+		set_variable = { historical_capital_for_country = BER }
+		victory_points = { #20
+			3229 11
+		}
+		victory_points = {
+			5568 8
+		}
+		victory_points = {
+			5908 1
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+}

@@ -1,0 +1,19 @@
+state = {
+	id = 175
+	name = "STATE_175" #Mount Doom
+	impassable = yes
+	state_category = wasteland
+	manpower = 13000
+	local_supplies=0.0
+	provinces = {
+		6999 
+	}
+	history = {
+		owner = MOR
+		add_core_of = MOR
+		set_ring_victory_point = yes
+		victory_points = { #50
+			6999 50
+		}
+	}
+}

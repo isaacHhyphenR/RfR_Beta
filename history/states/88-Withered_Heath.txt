@@ -1,0 +1,14 @@
+state = {
+	id = 88
+	name = "STATE_88" #Withered Heath
+	state_category = wasteland
+	manpower = 33000
+	local_supplies=0.0
+	provinces = {
+		427 1040 1140 1657 2056 5516 5517 5530 
+	}
+	history = {
+		owner = GDB
+		add_core_of = GDB
+	}
+}

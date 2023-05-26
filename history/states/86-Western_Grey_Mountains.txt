@@ -1,0 +1,31 @@
+state = {
+	id = 86
+	name = "STATE_86" #Western Grey Mountains
+	state_category = pastoral
+	manpower = 323000	local_supplies=0.0
+	resources = {
+		food = 2
+		wood = 1
+		iron = 6
+	}
+	provinces = {
+		2415 2942 4283 5501 5506 5515 5522 5626 
+	}
+	history = {
+		owner = GDB
+		add_core_of = GDB
+		add_core_of = ERE
+		victory_points = {
+			5515 1
+		}
+		victory_points = {
+			5626 1
+		}
+		victory_points = {
+			2415 1
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+}

@@ -1,0 +1,54 @@
+state = {
+	id = 39
+	name = "STATE_39" #Minhiriath
+	state_category = town
+	manpower = 2510000
+	resources = {
+		food = 12
+		cloth = 2
+		wood = 5
+		iron = 1
+		mounts = 5
+	}
+	provinces = {
+		8 92 216 422 468 501 517 559 947 1044 1130 1218 1365 1536 1606 1684 1901 1934 2043 2109 2158 2179 2343 2361 2389 2438 2842 2848 2934 3226 3235 3341 3379 3382 3439 3454 3482 3557 3720 3783 3871 3899 3959 4010 4238 4440 4470 4474 4523 4630 4693 4712 4748 4820 4928 4976 5051 5071 5216 6363 6416 6422 6458 6472 6483 6494 6498 6503 6513 6517 6525 6531 6548 6567 6582 6589 6600 6604 6614 6624 6642 6645 6654 6658 6676 6678 6691 6698 6707 6710 6751 
+	}
+
+	history = {
+		owner = CAR
+		add_core_of = CAR
+		add_core_of = SAR
+		victory_points = {
+			92 5
+		}
+		victory_points = {
+			1684 5
+		}
+		victory_points = {
+			3382 1
+		}
+		victory_points = {
+			6600 1
+		}
+		victory_points = {
+			2483 1
+		}
+		victory_points = {
+			6517 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 2
+			dockyard = 1
+			1684= {
+				naval_base = 2
+			}
+			3382 = {
+				naval_base = 1
+			}
+			6600 = {
+				naval_base = 1
+			}
+		}
+	}
+}

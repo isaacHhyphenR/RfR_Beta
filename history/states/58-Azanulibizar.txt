@@ -1,0 +1,30 @@
+
+state={
+	id=58
+	name="STATE_58"
+	resources={
+		cloth=1.000
+		wood=1.000
+	}
+
+	history={
+		owner = MST
+		add_core_of = MST
+		add_core_of = EDL
+		add_core_of = ERE
+		add_core_of = KZD
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		5354 6267 7501 
+	}
+	manpower=12000
+	buildings_max_level_factor=1.000
+	state_category=enclave
+	local_supplies=0.000
+}

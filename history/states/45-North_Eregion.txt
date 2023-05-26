@@ -1,0 +1,38 @@
+
+state={
+	id=45
+	name="STATE_45"
+	resources={
+		food=2.000
+		wood=4.000
+		iron=1.000
+		mounts=3.000
+	}
+
+	history={
+		owner = RIV
+		add_core_of = RIV
+		#6
+		victory_points = {
+			4590 3 #north
+		}
+		victory_points = {
+			4083 2
+		}
+		victory_points = {
+			2955 1 #southeast
+		}
+		buildings = {
+			infrastructure = 1
+		}
+
+	}
+
+	provinces={
+		392 465 608 848 1159 1842 2012 2354 2955 3038 3179 3607 3734 4083 4573 4590 4813 5128 5228 5911 5930 5936 5960 6015 6076 6103 
+	}
+	manpower=328765
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

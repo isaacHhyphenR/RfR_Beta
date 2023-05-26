@@ -1,0 +1,17 @@
+state = {
+	id = 173
+	name = "STATE_173" #Eastern_Ered_Lithui
+	impassable = yes
+	state_category = wasteland
+	manpower = 358000
+	resources = {
+		iron = 8
+	}
+	provinces = {
+		731 975 2750 3136 3618 3806 3909 6919 6943 6944 6959 
+	}
+	history = {
+		owner = MOR
+		add_core_of = MOR
+	}
+}

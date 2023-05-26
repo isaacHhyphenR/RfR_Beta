@@ -1,0 +1,57 @@
+state = {
+	id = 225
+	name = "STATE_225"
+	resources = {
+		cloth = 4
+		wood = 4
+	}
+
+	history = {
+		owner = PRI
+		add_core_of = PRI
+		set_variable = { historical_capital_for_country = PRI }
+		#8
+		victory_points = {
+			5380 2
+		}
+		victory_points = {
+			4309 4 
+		}
+		victory_points = {
+			3209 2 
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+			industrial_complex = 1
+			4309 = {
+				naval_base = 1
+			}
+			3209 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces = { #17
+		466 2045 3050 3090 3209 3533 3800 4266 4309 4964 5284 5380 7069 7106 7130 7177 7190 
+	}
+	manpower = 873000
+	state_category = Town
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+
+state={
+	id=188
+	name="STATE_188"
+	resources={
+		cloth=2.000
+		mounts=4.000
+	}
+
+	history={
+		owner = KND
+		add_core_of = KND
+		set_variable = {
+			historical_capital_for_country = KND
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+
+	provinces={
+		359 376 812 818 900 1000 1175 1454 1600 1818 2000 2152 2352 2528 2602 2773 2893 3263 3375 3633 3704 4076 4094 4113 4176 4241 4366 4598 4645 4817 5068 5170 5173 5311 7147 7153 7159 7217 7226 7229 7243 7276 7284 7304 7334 7357 7367 7378 7404 7408 
+	}
+	manpower=1210000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

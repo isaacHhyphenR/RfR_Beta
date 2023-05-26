@@ -1,0 +1,27 @@
+state = {
+	id = 198
+	name = "STATE_198" #Anagzayan
+	state_category = rural
+	manpower = 306000	local_supplies=0.0
+	resources = {
+		iron = 16
+	}
+	provinces = {
+		2259 2338 2640 4606 4727 4815 
+	}
+	history = {
+		owner = UMB
+		add_core_of = UMB
+		victory_points = { #6
+			4606 6
+		}
+		buildings = {
+			infrastructure = 1
+			radar_station = 1
+			4606 = { #3
+				naval_base = 3
+			}
+		}
+	}
+
+}

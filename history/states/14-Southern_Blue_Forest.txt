@@ -1,0 +1,29 @@
+state = {
+	id = 14
+	name = "STATE_14" #Southern Blue Forest
+	state_category = pastoral
+	manpower = 72750	local_supplies=0.0
+	resources = {
+		wood = 3
+	}
+	provinces = {
+		126 991 1330 1644 1648 2087 3724 4647 5102 5165 6208 6299 6306 6340 6357 6368 
+	}
+	history = {
+		owner = EDL
+		add_core_of = EDL
+
+		victory_points = {
+			6208  1
+		}
+		victory_points = {
+			6306 1
+		}
+		victory_points = {
+			1644 1
+		}
+		buildings = {
+			infrastructure = 0
+		}
+	}
+}

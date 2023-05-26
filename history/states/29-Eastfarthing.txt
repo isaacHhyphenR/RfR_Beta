@@ -1,0 +1,30 @@
+state = {
+	id = 29
+	name = "STATE_29"#Eastfarthing
+	state_category = rural
+	manpower = 865000	local_supplies=0.0
+	resources = {
+		food = 1
+		cloth = 1
+		wood = 2
+	}
+	provinces = {
+		2876 3465 3846 4420 4488 4650 4779 5814 5832 5866 5896 5924 
+	}
+	history = {
+		owner = SHI
+		add_core_of = SHI
+
+		victory_points = {
+			3846 3
+		}
+
+		victory_points = {
+			4650 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+	}
+}

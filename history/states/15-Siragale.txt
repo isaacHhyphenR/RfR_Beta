@@ -1,0 +1,27 @@
+state = {
+	id = 15
+	name = "STATE_15" #Blue Foothills
+	state_category = pastoral
+	manpower = 333000	local_supplies=0.0
+	resources = {
+		food = 1
+		mounts = 1
+	}
+	provinces = {
+		153 410 457 482 2165 2186 2669 3352 4430 4528 4971 6055 6126 6168 6195 
+	}
+	history = {
+		owner = EDL
+		add_core_of = EDL
+
+		victory_points = {
+			2186 1
+		}
+		victory_points = {
+			2669 1
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+}

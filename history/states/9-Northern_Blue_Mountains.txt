@@ -1,0 +1,39 @@
+state = {
+	id = 9
+	name = "STATE_9" #Northern Blue Mountains
+	manpower = 825000
+	state_category = rural
+	local_supplies=0.0
+	resources = {
+		iron = 16
+	}
+	provinces = {
+		693 708 828 1346 2027 2217 2570 3017 3164 3480 3490 4039 4859 4992 5277 5381 5413 5447 5456 
+	}
+	history = {
+		3000.1.1 = { ##Extra building slot for balance
+			9 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		owner = EDL
+		add_core_of = EDL
+		victory_points = {
+			5447 15
+		}
+		victory_points = {
+			693 5
+		}
+		victory_points = {
+			5277 1
+		}
+		victory_points = {
+			2570 1
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 2
+		}
+	}
+}

@@ -1,0 +1,35 @@
+state = {
+	id = 176
+	name = "STATE_176" #Udun
+	state_category = city
+	manpower = 2812000
+	resources = {
+		iron = 6
+		monsters = 2
+	}
+	provinces = {
+		1461 3197 3210 4778 5331 6933 6940 
+	}
+	history = {
+		owner = MOR
+		add_core_of = MOR
+		set_ring_victory_point = yes
+		victory_points = { #40
+			3197 30
+		}
+		victory_points = {
+			4778 10
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			radar_station = 1
+			3197 = {
+				bunker = 8
+			}
+			4778 = {
+				bunker = 2
+			}
+		}
+	}
+}

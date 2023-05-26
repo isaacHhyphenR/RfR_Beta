@@ -1,0 +1,64 @@
+state = {
+	id = 64
+	name = "STATE_64"
+	resources = {
+		food = 7
+		cloth = 6
+		mounts = 7
+	}
+
+	history = {
+		owner = HST
+		add_core_of = HST
+		set_variable = { historical_capital_for_country = HST }
+		#20
+		victory_points = {
+			2671 8
+		}
+		victory_points = {
+			3343 5 #gwathlo
+		}
+		victory_points = {
+			1186 3 #hills 
+		}
+		victory_points = {
+			6612 3 #river
+		}
+		victory_points = {
+			187 1  #south hill
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 3
+			2671 = {
+				naval_base = 2
+			}
+			3343 = {
+				naval_base = 1
+			}
+		}
+
+	}
+
+	provinces = {#31
+		187 283 405 479 809 865 1186 1520 2314 2374 2671 2971 3343 3361 3548 3608 3812 3919 4165 4392 4406 4516 4618 4980 5091 6536 6580 6593 6612 6640 6648 
+	}
+	manpower = 2016000
+	state_category = City
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

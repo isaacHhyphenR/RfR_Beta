@@ -1,0 +1,16 @@
+state = {
+	id = 55
+	name = "STATE_55" #High Pass
+	state_category = pastoral
+	manpower = 27000	local_supplies=0.0
+	provinces = {
+		2492 5836 
+	}
+	history = {
+		owner = MST
+		add_core_of = MST
+		buildings = {
+			infrastructure = 2
+		}
+	}
+}

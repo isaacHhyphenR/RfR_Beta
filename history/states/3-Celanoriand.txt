@@ -1,0 +1,27 @@
+state = {
+	id = 3
+	name = "STATE_3" #Celanoriand
+	state_category = pastoral
+	manpower = 165750
+	local_supplies=0.0
+	resources = {
+		iron = 1
+	}
+	provinces = {
+		249 493 534 817 1012 1182 1432 1743 1794 1994 2645 3192 3312 3324 3538 3982 4063 4503 4561 4613 4936 5208 5443 5444 5477 5478 5492 5510 5528 5529 5545 
+	}
+	history = {
+		owner = LIN
+		add_core_of = LIN
+		victory_points = {
+			534 1
+		}
+
+		buildings = {
+			infrastructure = 0
+			534 = {
+				naval_base = 1
+			}
+		}
+	}
+}

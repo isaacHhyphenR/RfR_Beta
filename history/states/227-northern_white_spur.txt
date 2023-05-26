@@ -1,0 +1,38 @@
+
+state = {
+	id = 227
+	name = "STATE_227"
+
+	impassable = yes
+	history = {
+		owner = TAW
+		add_core_of = TAW
+		buildings = {
+		}
+	}
+
+	provinces = { #3
+		3545 4323 7035 
+	}
+	manpower = 29000
+	state_category = Wasteland
+	resources = {
+		monsters = 2
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

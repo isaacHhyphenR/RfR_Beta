@@ -1,0 +1,35 @@
+state = {
+	id = 53
+	name = "STATE_53" #Mount Gundabad
+	state_category = city
+	manpower = 2763000	local_supplies=0.0
+	resources = {
+		food = 6
+		wood = 1
+		iron = 10
+		mounts = 1
+	}
+	provinces = {
+		739 1834 3068 3821 5497 5521 
+	}
+	history = {
+		owner = GDB
+		add_core_of = GDB
+		add_core_of = EDL
+		add_core_of = ERE
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = GDB }
+		victory_points = {
+			5521 20
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			industrial_complex = 2
+			radar_station = 1
+			5521 = {
+				bunker = 4
+			}
+		}
+	}
+}

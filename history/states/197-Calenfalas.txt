@@ -1,0 +1,38 @@
+state = {
+	id = 197
+	name = "STATE_197" #Annabrith
+	state_category = rural
+	manpower = 723000	local_supplies=0.0
+	resources = {
+		food = 5
+		iron = 3
+	}
+	provinces = {
+		316 423 532 548 572 588 706 736 834 957 1023 1240 1319 1733 1775 1879 1889 1931 2120 2205 2328 2384 2455 2657 2710 2973 2993 3016 3170 3271 3630 3656 3668 3713 3819 3948 4013 4067 4091 4101 4163 4249 4368 4631 4734 4783 5025 5318 7757 7758 7759 7761 7762 7763 7768 7770 7771 7772 7773 7775 7776 7777 7778 7779 7781 7782 7784 7786 7787 7791 7793 7795 7796 7797 7798 7799 7800 7801 
+	}
+	history = {
+		owner = UMB
+		add_core_of = UMB
+		victory_points = { #13
+			2384 8
+		}
+		victory_points = {
+			7768 3
+		}
+		victory_points = {
+			7797 2
+		}
+		buildings = {
+			infrastructure = 1
+			7797 = { #6
+				naval_base = 3
+			}
+			2384 = {
+				naval_base = 2
+			}
+			7768 = {
+				naval_base = 1
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+
+state={
+	id=123
+	name="STATE_123"
+
+	history={
+		owner = DAG
+		add_core_of = DAG
+
+	}
+
+	provinces={
+		351 924 1205 1768 2213 2737 2810 3044 3436 3793 4501 4912 6770 6791 6830 6838 6853 
+	}
+	impassable = yes
+	manpower=1000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}

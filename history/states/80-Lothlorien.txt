@@ -1,0 +1,33 @@
+state = {
+	id = 80
+	name = "STATE_80" #Lothlorien
+	state_category = metropolis
+	manpower = 4485000	local_supplies=0.0
+	resources = {
+		food = 3
+		cloth = 19
+		wood = 30
+	}
+	provinces = {
+		80 1468 2197 2279 2379 2422 4396 4614 5187 6385 6399 6405 6419 
+	}
+	history = {
+		owner = LOR
+		add_core_of = LOR
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = LOR }
+		victory_points = {
+			6399 25
+		}
+		victory_points = {
+			4614 5
+		}
+		victory_points = {
+			2279 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 4
+		}
+	}
+}

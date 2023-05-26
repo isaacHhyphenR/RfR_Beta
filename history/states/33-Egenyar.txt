@@ -1,0 +1,24 @@
+state = {
+	id = 33
+	name = "STATE_33"#Egenyar
+	state_category = pastoral
+	manpower = 195000	local_supplies=0.0
+	resources = {
+		food = 1
+		iron = 1
+	}
+	provinces = {
+		969 1171 1442 2888 3491 3883 4412 4416 4524 6011 6060 6075 6082 6092 6142 6147 
+	}
+
+	history = {
+		owner = CAR
+		add_core_of = CAR
+		victory_points = {
+			1171 1
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+}

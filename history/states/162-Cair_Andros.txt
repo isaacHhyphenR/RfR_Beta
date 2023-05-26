@@ -1,0 +1,42 @@
+state = {
+	id = 162
+	name = "STATE_162" #Cair Andros
+	state_category = Tiny_Island
+	manpower = 2000
+	provinces = {
+		5297
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		victory_points = {
+			5297 10
+		}
+		buildings = {
+			infrastructure = 2
+			5297 = {
+				bunker = 4
+				coastal_bunker = 4
+				naval_base = 2
+			}
+		}
+	}
+	resources = {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

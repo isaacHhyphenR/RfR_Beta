@@ -1,0 +1,38 @@
+
+state={
+	id=24
+	name="STATE_24"
+	resources={
+		food=1.000
+		cloth=4.000
+		iron=3.000
+	}
+
+	history={
+		owner = ART
+		add_core_of = ART
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = ART }
+		victory_points = {
+			209 25 
+		}
+		victory_points = {
+			360 2 
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 2
+
+		}
+
+	}
+
+	provinces={
+		99 209 360 495 1207 1238 1601 1625 1782 2263 3250 3874 4008 5653 5704 5705 5709 5736 5775 
+	}
+	manpower=2700000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

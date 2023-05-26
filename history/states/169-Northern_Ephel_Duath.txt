@@ -1,0 +1,18 @@
+state = {
+	id = 169
+	name = "STATE_169" #Northern Ephel Duath
+	impassable = yes
+	state_category = wasteland
+	manpower = 397000
+	resources = {
+		iron = 10
+		monsters = 1
+	}
+	provinces = {
+		370 2753 4208 4215 4857 6956 6996 7018 7040 
+	}
+	history = {
+		owner = MOR
+		add_core_of = MOR
+	}
+}

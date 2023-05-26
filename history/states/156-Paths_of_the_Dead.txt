@@ -1,0 +1,34 @@
+state = {
+	id = 156
+	name = "STATE_156" #Paths of the Dead
+	impassable = yes
+	state_category = Wasteland
+	manpower = 3000
+	provinces = {
+		2316 4818 4934 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		buildings = {
+		}
+	}
+	resources = {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

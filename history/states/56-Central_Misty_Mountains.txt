@@ -1,0 +1,19 @@
+state = {
+	id = 56
+	name = "STATE_56"
+	impassable = yes
+	state_category = wasteland
+	manpower = 621000
+	resources = {
+		wood = 3
+		mounts = 2
+		monsters = 3
+	}
+	provinces = {
+		330 604 868 1804 2004 2005 2907 3132 3172 3298 3635 3915 4081 4391 4640 4795 5333 5858 5916 5921 5951 6005 6061 6064 6088 6093 6108 
+	}
+	history = {
+		owner = MST
+		add_core_of = MST
+	}
+}

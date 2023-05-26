@@ -1,0 +1,30 @@
+state = {
+	id = 101
+	name = "STATE_101" #Lonely Mountain
+	state_category = large_city
+	manpower = 2806000	local_supplies=0.0
+	resources = {
+		iron = 30
+	}
+	provinces = {
+ 		4452
+	}
+	history = {
+		owner = ERE
+		add_core_of = ERE
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = ERE }
+		victory_points = { #25
+			4452 25
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 3
+			radar_station = 1
+			4452 = {
+				bunker = 5
+			}
+		}
+	}
+}

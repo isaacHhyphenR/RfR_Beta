@@ -1,0 +1,50 @@
+
+state = {
+	id = 46
+	name = "STATE_46"
+	resources = {
+		food = 4
+		cloth = 4
+		wood = 13
+		mounts = 5
+	}
+
+	history = {
+		owner = ERG
+		add_core_of = ERG
+		victory_points = {
+			5225 8 
+		}
+		victory_points = {
+			6202 4 
+		}
+		victory_points = {
+			4423 3 
+		}
+		victory_points = {
+			6141 2 
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+		}
+
+	}
+
+	provinces = {
+		308 339 498 644 827 1466 1725 2114 2210 2383 2499 2599 2618 2644 2976 2998 3015 3073 3174 3457 4152 4327 4423 4627 5201 5213 5225 5969 6141 6171 6202 6239 6309 6314 
+	}
+	manpower = 1480400
+	buildings_max_level_factor = 1.000
+	state_category = Large_Town
+	local_supplies = 0.000
+}
+
+
+
+
+
+
+
+

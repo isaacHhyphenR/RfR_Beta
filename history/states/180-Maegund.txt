@@ -1,0 +1,47 @@
+state = {
+	id = 180
+	name = "STATE_180" #Maegund
+	state_category = town
+	manpower = 9211000
+	resources = {
+		food = 4
+		mounts = 1
+	}
+	provinces = {
+		26 36 171 174 186 366 414 540 640 652 698 761 786 844 1024 1170 1212 1267 1297 1300 1656 1792 1911 1924 2071 2224 2443 2474 2583 2615 2621 2679 2741 2757 2768 2795 2981 3120 3262 3399 3496 3572 3755 3759 3923 4154 4156 4292 4296 4591 4740 4742 4931 4966 5040 5047 5104 5106 5119 5338 7123 7170 7179 7186 7187 7199 7204 7208 7209 7215 7220 7228 7233 7238 7247 7256 7265 7273 7281 7286 7289 7296 7298 7307 7315 7316 7321 7330 7331 7332 7349 7356 7358 7363 7381 7383 7388 7445 
+	}
+	history = {
+		owner = MOR
+		add_core_of = MOR
+		victory_points = { #35
+			7332 11
+		}
+		victory_points = { 
+			844 10
+		}
+		victory_points = {
+			7265 6
+		}
+		victory_points = {
+			7123 3
+		}
+		victory_points = {
+			1924 2
+		}
+		victory_points = {
+			7273 1
+		}
+		victory_points = {
+			652 1
+		}
+		victory_points = {
+			366 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 2
+		}
+		set_state_flag = nurn_state
+	}
+}

@@ -1,0 +1,41 @@
+state = {
+	id = 73
+	name = "STATE_73" #Helm's Deep
+	state_category = Enclave
+	manpower = 10000
+	provinces = { #4
+		3360 4049 5406 6867 
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		set_ring_victory_point = yes
+		victory_points = {
+			4049 20
+		}
+		buildings = {
+			infrastructure = 2
+			4049 = {
+				bunker = 7
+			}
+		}
+	}
+	resources = {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

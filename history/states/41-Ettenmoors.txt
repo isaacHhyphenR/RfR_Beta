@@ -1,0 +1,25 @@
+state = {
+	id = 41
+	name = "STATE_41" #Ettenmoors
+	state_category = pastoral
+	manpower = 376000	local_supplies=0.0
+	resources = {
+		wood = 2
+		iron = 7
+		monsters = 4
+	}
+	provinces = {
+		58 227 435 561 1103 1322 1459 1655 1758 1940 1955 2119 2235 3931 4401 4733 5237 5609 5628 5631 5688 
+	}
+
+	history = {
+		owner = RDR
+		add_core_of = RDR
+		victory_points = {
+			58 1
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+}

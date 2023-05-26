@@ -1,0 +1,27 @@
+state = {
+	id = 79
+	name = "STATE_79" #Limlight
+	state_category = rural
+	manpower = 378000	local_supplies=0.0
+	resources = {
+		food = 8
+		iron = 8
+		mounts = 4
+	}
+	provinces = {
+		432 841 1538 3000 3798 4579 4616 5096 6318 6333 6353 6384 
+	}
+	history = {
+		owner = LOR
+		add_core_of = LOR
+		victory_points = {
+			432 1
+		}
+		victory_points = {
+			841 1
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+}

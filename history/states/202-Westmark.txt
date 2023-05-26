@@ -1,0 +1,52 @@
+state = {
+	id = 202
+	name = "STATE_202" #West Mark
+	state_category = City
+	manpower = 1536000
+	resources = {
+		food = 1
+		cloth = 1
+		wood = 6
+		mounts = 8
+	}
+	provinces = { #24
+		724 867 1348 1812 1841 1878 2453 2749 3395 3426 4521 4553 4968 5033 6745 6757 6769 6778 6786 6787 6802 6812 6833
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #14
+			2453 10
+		}
+		victory_points = {
+			6757 3
+		}
+		victory_points = {
+			3426 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		set_state_flag = westmark_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 2 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

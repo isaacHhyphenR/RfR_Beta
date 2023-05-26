@@ -1,0 +1,41 @@
+state = {
+	id = 209
+	name = "STATE_209" #Harrowdale
+	state_category = Enclave
+	manpower = 12037
+	local_supplies = 0.0
+	provinces = { #1
+		7478
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #10
+			7478 10
+		}
+		buildings = {
+			infrastructure = 1
+			7478 = {
+				bunker = 3
+			}
+		}
+	}
+	resources = {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

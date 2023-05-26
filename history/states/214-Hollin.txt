@@ -1,0 +1,48 @@
+state = {
+	id = 214
+	name = "STATE_214"
+	resources = {
+		wood = 11
+		iron = 9
+	}
+
+	history = {
+		owner = HOL
+		add_core_of = HOL
+		set_variable = { historical_capital_for_country = HOL }
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+		#10
+		victory_points = { #Barnas
+			2589 7
+		}
+		victory_points = {
+			3562 3
+		}
+
+	}
+
+	provinces = { #16
+		344 1586 2042 2418 2589 2755 3463 3558 3562 4522 4794 6156 6180 6206 6256 6266 
+	}
+	manpower = 988756
+	state_category = Rural
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

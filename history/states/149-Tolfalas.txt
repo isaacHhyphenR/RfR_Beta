@@ -1,0 +1,41 @@
+state = {
+	id = 149
+	name = "STATE_149" #Tolfalas
+	state_category = Small_Island
+	manpower = 327000
+	resources = {
+		cloth = 1
+	}
+	provinces = { #9
+		95 2977 3198 3820 7480 7489 7513 7517 7523 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		victory_points = {
+			3820 10
+		}
+		buildings = {
+			infrastructure = 1
+			3820 = {
+				naval_base = 4
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

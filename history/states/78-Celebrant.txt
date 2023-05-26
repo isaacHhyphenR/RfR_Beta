@@ -1,0 +1,41 @@
+state = {
+	id = 78
+	name = "STATE_78" #Parth Celebrant
+	state_category = rural
+	manpower = 1670000	local_supplies=0.0
+	resources = {
+		wood = 4
+		iron = 2
+	}
+	provinces = {
+		2 73 148 192 307 1022 1257 1497 1783 1805 2030 2543 2596 2654 2742 2899 2972 3185 3223 3288 3320 3549 4056 4082 4157 4851 4917 5052 5301 6446 6457 6475 6476 6489 6504 6522 6541 6568 
+	}
+	history = {
+		3000.1.1 = { ##Extra building slot for balance
+			78 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		owner = BER
+		add_core_of = BER
+		victory_points = { #11
+			73 5
+		}
+		victory_points = { #Hisurdan
+			5301 3
+		}
+		victory_points = {
+			6446 1
+		}
+		victory_points = {
+			4056 1
+		}
+		victory_points = { #Byre-tor
+			148 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+	}
+}

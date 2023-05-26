@@ -1,0 +1,36 @@
+state = {
+	id = 35
+	name = "STATE_35" #Weather Hills
+	state_category = pastoral
+	manpower = 337000	local_supplies=0.0
+	resources = {
+		food = 1
+		cloth = 3
+		iron = 4
+	}
+	provinces = {
+		120 180 314 1569 1653 2321 2358 2656 2754 2779 3237 4089 4400 4725 4736 4877 4910 4997 5002 5006 6031 6032 6036 6096 6101 6110 6150 6170
+	}
+
+	history = {
+		owner = CAR
+		add_core_of = CAR
+		victory_points = {
+			4997 5
+		}
+		victory_points = {
+			2656 5
+		}
+		victory_points = {
+			4400 2
+		}
+		victory_points = {
+			1653 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			radar_station = 1
+		}
+	}
+}

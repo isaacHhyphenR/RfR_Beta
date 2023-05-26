@@ -1,0 +1,37 @@
+state = {
+	id = 38
+	name = "STATE_38" #Eryn Vorn
+	state_category = rural
+	manpower = 1260000	local_supplies=0.0
+	resources = {
+		food = 4
+		wood = 13
+	}
+	provinces = {
+		53 196 200 349 421 1193 1379 1665 1862 2853 3553 3662 3695 3886 4403 4520 4710 4755 5139 5152 5322 6351 6406 6407 6421 6465 6518 6521 6599 6620 
+	}
+
+	history = {
+		owner = CAR
+		add_core_of = CAR
+		victory_points = {
+			1193 10
+		}
+		victory_points = {
+			1862 1
+		}
+		victory_points = {
+			1379 1
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 2
+			1193 = {
+				naval_base = 3
+			}
+			1862 = {
+				naval_base = 1
+			}
+		}
+	}
+}

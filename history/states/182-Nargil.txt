@@ -1,0 +1,46 @@
+state = {
+	id = 182
+	name = "STATE_182" #Nargil
+	state_category = town
+	manpower = 7001000
+	resources = {
+		food = 3
+		cloth = 1
+	}
+	provinces = {
+		215 280 287 326 418 467 576 1476 1784 1877 1981 2009 2215 2574 2580 2752 2865 2989 3421 3652 3780 4043 4310 4343 4588 4620 4766 4933 4957 5013 5189 5211 7368 7384 7386 7400 7402 7406 7407 7412 7414 7426 7439 7446 7448 7451 7453 7456 7457 7460 7465 7468 7474 7481 7486 7488 7493 7503 7507 
+	}
+	history = {
+		owner = MOR
+		add_core_of = MOR
+		victory_points = { #27
+			1476 7
+		}
+		victory_points = {
+			7386 7
+		}
+		victory_points = {
+			3780 5
+		}
+		victory_points = {
+			1784 3
+		}
+		victory_points = {
+			4620 2
+		}
+		victory_points = {
+			7474 1
+		}
+		victory_points = {
+			7493 1
+		}
+		victory_points = {
+			7448 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		set_state_flag = nurn_state
+	}
+}

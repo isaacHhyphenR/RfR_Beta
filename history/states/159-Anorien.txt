@@ -1,0 +1,60 @@
+state = {
+	id = 159
+	name = "STATE_159"
+	manpower = 2816000
+	state_category = City
+	resources = {
+		food = 9
+		wood = 5
+		mounts = 6
+	}
+	provinces = {#28
+		247 262 596 607 993 1049 1555 1658 1726 1759 1832 2872 3443 3602 3653 3847 4747 4889 4892 5261 5289 7022 7051 7052 7070 7071 7075 7080 
+	}
+
+	history = {
+		owner = GON
+		add_core_of = GON
+		victory_points = { #22
+			1832 10
+		}
+		victory_points = {
+			3653 5
+		}
+		victory_points = {
+			5261 3
+		}
+		victory_points = {
+			1759 2
+		}
+		victory_points = {
+			1726 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			5261 = {
+				naval_base = 1
+
+			}
+		}
+		set_state_flag = lower_anduin_state
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

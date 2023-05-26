@@ -1,0 +1,55 @@
+state = {
+	id = 195
+	name = "STATE_195" #Black Haven
+	state_category = megalopolis
+	manpower = 4692000	local_supplies=0.0
+	resources = {
+		food = 16
+		cloth = 3
+		mounts = 4
+	}
+	provinces = {
+		105 481 521 571 772 1053 1206 1389 1504 1530 1594 2035 2519 2531 2610 2783 2919 2920 2961 3431 3908 3928 4035 4211 4604 4944 5010 5045 5133 7697 7708 7710 7711 7727 7730 7731 7736 7738 7739 7741 7744 7745 7747 7748 7750 7753 7755 7766 7769
+	}
+	history = {
+		owner = UMB
+		add_core_of = UMB
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = UMB }
+		victory_points = {#52
+			7747 30
+		}
+		victory_points = {
+			7697 10
+		}
+		victory_points = {
+			2519 6
+		}
+		victory_points = {
+			7727 4
+		}
+		victory_points = {
+			2920 2
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 1
+			dockyard = 4
+			7747 = {#18
+				naval_base = 8
+				bunker = 3
+				coastal_bunker = 6
+			}
+			7697 = {
+				naval_base = 5
+			}
+			2519 = {
+				naval_base = 3
+			}
+			7727 = {
+				naval_base = 2
+			}
+		}
+	}
+}

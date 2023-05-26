@@ -1,0 +1,33 @@
+state = {
+	id = 54
+	name = "STATE_54" #Goblin-Town
+	state_category = city
+	manpower = 2773000	local_supplies=0.0
+	resources = {
+		food = 4
+		iron = 12
+	}
+	provinces = {
+		142 773 959 3054 5097 5129 
+	}
+	history = {
+		owner = MST
+		add_core_of = MST
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = MST }
+		victory_points = {
+			5097 20
+		}
+		victory_points = {
+			3054 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			industrial_complex = 2
+			3054 = {
+				bunker = 3
+			}
+		}
+	}
+}

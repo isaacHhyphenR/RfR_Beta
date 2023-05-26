@@ -1,0 +1,35 @@
+state = {
+	id = 75
+	name = "STATE_75" #Norwold
+	state_category = city
+	manpower = 1316000
+	local_supplies=0.0
+	resources = {
+		wood = 3
+		iron = 1
+		mounts = 13
+	}
+	provinces = { #19
+		1032 2103 2411 2924 2943 3187 3302 3354 3546 4492 4546 5116 5166 5417 6573 6626 6638 6664 6677
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #12
+			5417 8
+		}
+		victory_points = {
+			2411 3
+		}
+		victory_points = {
+			3302 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+		}
+		set_state_flag = wold_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 2 }
+	}
+}

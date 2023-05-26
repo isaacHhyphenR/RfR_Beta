@@ -1,0 +1,36 @@
+state = {
+	id = 20
+	name = "STATE_20"
+	state_category = pastoral
+	manpower = 346500	local_supplies=0.0
+	resources = {
+		food = 1
+		wood = 3
+	}
+	provinces = {
+		182 819 898 905 1284 1440 2079 2524 2948 3022 3067 3539 3699 4257 4624 4810 5269 5342 6409 6415 6437 6467 6469 6488 
+	}
+	
+	history = {
+		owner = LIN
+		add_core_of = LIN
+		victory_points = {
+			3067 1
+		}
+		victory_points = {
+			2524 1
+		}
+		victory_points = {
+			6469 1
+		}
+		buildings = {
+			infrastructure = 1
+			2524= {
+				naval_base = 2
+			}
+			3067 = {
+				naval_base = 1
+			}
+		}
+	}
+}

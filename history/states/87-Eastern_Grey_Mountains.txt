@@ -1,0 +1,31 @@
+state = {
+	id = 87
+	name = "STATE_87" #Eastern Grey Mountains
+	state_category = pastoral
+	manpower = 474000	local_supplies=0.0
+	resources = {
+		food = 1
+		iron = 6
+	}
+	provinces = {
+		1383 1806 2533 2997 4729 4862 5131 5212 5287 5290 5339 5493 5505 5548 5549 
+	}
+	history = {
+		owner = GDB
+		add_core_of = GDB
+		add_core_of = ERE
+		victory_points = {
+			4729 5
+		}
+		victory_points = {
+			5131 1
+		}
+		victory_points = {
+			1806 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+	}
+}

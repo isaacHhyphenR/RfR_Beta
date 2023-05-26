@@ -1,0 +1,27 @@
+state = {
+	id = 8
+	name = "STATE_8" #Blue Waste
+	manpower = 32250
+	state_category = wasteland
+	local_supplies=0.0
+	provinces = {
+		941 992 1093 1236 1447 1540 1876 2566 2712 2892 2941 3182 3509 4057 4545 5148 5370 5373 5376 5383 5386 5390 5402 5412 
+	}
+	history = {
+		3000.1.1  = {##Building slot to let EDL get a dockyard if they want
+			8 = {
+				add_extra_state_shared_building_slots = 1.000
+			}
+		}
+		owner = EDL
+		add_core_of = EDL
+		victory_points = {
+			1236 1
+		}
+		buildings = {
+			1236 = {
+				naval_base = 1
+			}
+		}
+	}
+}

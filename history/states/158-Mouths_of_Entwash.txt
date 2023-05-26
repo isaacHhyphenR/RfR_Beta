@@ -1,0 +1,33 @@
+state = {
+	id = 158
+	name = "STATE_158" #Mouths of Entwash
+	state_category = Wasteland
+	manpower = 85000
+	provinces = { #15
+		699 2392 2467 2505 2625 2792 2860 3128 3144 3832 4108 5400 6983 7522 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		buildings = {
+		}
+	}
+	resources = {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

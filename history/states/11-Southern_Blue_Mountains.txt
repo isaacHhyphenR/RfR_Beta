@@ -1,0 +1,29 @@
+state = {
+	id = 11
+	name = "STATE_11" #Southern Blue Mountains
+	state_category = large_town
+	manpower = 4005000	local_supplies=0.0
+	resources = {
+		food = 2
+		iron = 24
+	}
+	provinces = {
+		57 198 350 450 692 695 970 1033 1760 1949 2606 3142 3719 4036 4096 4730 6045 6081 6133 6199 6246 6277 
+	}
+	history = {
+		owner = EDL
+		add_core_of = EDL
+
+		victory_points = {
+			6081 10
+		}
+		victory_points = {
+			6277 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 3
+			industrial_complex = 2
+		}
+	}
+}

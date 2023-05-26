@@ -1,0 +1,60 @@
+state = {
+	id = 216
+	name = "STATE_216"
+	resources = {
+		food = 3
+		cloth = 7
+		iron = 6
+		mounts = 4
+	}
+
+	history = {
+		owner = CGN
+		add_core_of = CGN
+		set_variable = { historical_capital_for_country = CGN }
+		#18
+		victory_points = {
+			3632 9
+		}
+		victory_points = {
+			6722 2 #east
+		}
+		victory_points = {
+			820 1 #west
+		}
+		victory_points = {
+			3987 4 #south
+		}
+		victory_points = {
+			2327 2 #river
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 2
+		}
+
+	}
+
+	provinces = { #28
+		7 475 820 971 1486 1549 2170 2327 2355 3010 3632 3647 3920 3987 4135 4164 4454 4678 4894 5017 5063 5182 6650 6668 6684 6701 6722 6756 
+	}
+	manpower = 1627000
+	state_category = Large_Town
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

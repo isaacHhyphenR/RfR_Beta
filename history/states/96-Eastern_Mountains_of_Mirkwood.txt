@@ -1,0 +1,18 @@
+state = {
+	id = 96
+	name = "STATE_96" #Eastern Mountains of Mirkwood
+	impassable = yes
+	state_category = wasteland
+	manpower = 67000	local_supplies=0.0
+	resources = {
+		iron = 10
+	}
+	provinces = {
+		2359 2575 5784 5808 
+	}
+	history = {
+		owner = WOD
+		add_core_of = WOD
+		add_core_of = GLD
+	}
+}

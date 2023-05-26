@@ -1,0 +1,35 @@
+state = {
+	id = 145
+	name = "STATE_145" #Ered Amroth
+	impassable = yes
+	state_category = Wasteland
+	manpower = 22000
+	resources = {
+		iron = 12
+	}
+	provinces = { #13
+		428 1173 1534 2097 2292 2772 3020 4662 5076 7326 7352 7364 7374 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		buildings = {
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+state = {
+	id = 70
+	name = "STATE_70" #Gap of Rohan
+	state_category = City
+	manpower = 1462060
+	resources = {
+		food = 2
+		cloth = 3
+		mounts = 5
+	}
+	provinces = { #12
+		2063 2559 2727 3297 3924 4016 4321 4560 5014 5041 6809 6828 
+	}
+	history = {
+		# set_demilitarized_zone = yes
+		owner = ROH
+		add_core_of = ROH
+		victory_points = {#14
+			6809 10
+		}
+		victory_points = {
+			5014 2
+		}
+		victory_points = {
+			4321 1
+		}
+		victory_points = {
+			2063 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 2
+			6809 = {
+				bunker = 3
+			}
+		}
+		set_state_flag = adorn_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 2 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

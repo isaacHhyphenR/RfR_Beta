@@ -1,0 +1,49 @@
+state = {
+	id = 206
+	name = "STATE_206" #Eastfold
+	state_category = Large_City
+	manpower = 2309000
+	resources = {
+		food = 2
+		wood = 2
+		iron = 3
+		mounts = 5
+	}
+	provinces = { #13
+		1443 2372 2956 3049 4178 4386 4881 6993 7015 7025 7028 7045 7036
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #7
+			7028 6 #Fenmarch
+		}
+		victory_points = {
+			7036 1 #Beaconwatch
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 2
+		}
+		set_state_flag = folde_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 4 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

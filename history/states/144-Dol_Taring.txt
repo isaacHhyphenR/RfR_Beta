@@ -1,0 +1,34 @@
+state = {
+	id = 144
+	name = "STATE_144" #Dol Taring
+	impassable = yes
+	state_category = Wasteland
+	manpower = 7000
+	provinces = {
+		2812 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		buildings = {
+		}
+	}
+	resources = {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

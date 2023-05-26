@@ -1,0 +1,60 @@
+state = {
+	id = 157
+	name = "STATE_157" #The Folde
+	state_category = Megalopolis
+	manpower = 4353000
+	resources = {
+		food = 4
+		cloth = 5
+		iron = 2
+		mounts = 10
+	}
+	provinces = { #13
+		286 961 1372 3785 3811 3918 4942 6929 6942 6958 6980 6992 7003
+ 	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		set_variable = { historical_capital_for_country = ROH }
+		set_ring_victory_point = yes
+		victory_points = { #52
+			3811 35
+		}
+		victory_points = {
+			6992 15
+		}
+		victory_points = {
+			6958 1
+		}
+		victory_points = {
+			1372 1
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 4
+			3811 = {
+				bunker = 2
+			}
+		}
+		set_state_flag = folde_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 8 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+state = {
+	id = 155
+	name = "STATE_155" #Eastern White Mountains
+	impassable = yes
+	state_category = Wasteland
+	manpower = 15000
+	resources = {
+		monsters = 1
+	}
+	provinces = { #15
+		757 1683 2028 2101 2821 3437 3552 3629 4346 4576 5302 7098 7141 7149 7166 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		buildings = {
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

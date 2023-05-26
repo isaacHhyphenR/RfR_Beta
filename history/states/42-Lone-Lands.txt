@@ -1,0 +1,38 @@
+state = {
+	id = 42
+	name = "STATE_42" #Lone-Lands
+	state_category = town
+	manpower = 2600000	local_supplies=0.0
+	resources = {
+		food = 4
+		cloth = 2
+		mounts = 1
+	}
+	provinces = {
+		90 323 386 449 538 584 799 861 882 953 1251 1288 1482 1578 1620 1721 1778 1863 1868 1922 2156 2399 2553 2605 2689 2699 2844 2944 2954 2957 3011 3043 3228 3259 3643 3731 4131 4244 4280 4362 4380 4424 4478 4504 4812 4846 4855 4886 5019 5083 5100 5135 5220 5718 5754 5780 5790 5793 5802 5805 5894 5915 5926 5934 5945 5958 6006 6017 6025 6111 6128 
+	}
+
+	history = {
+		owner = RDR
+		add_core_of = RDR
+		victory_points = {
+			449 3
+		}
+		victory_points = {
+			5934 2
+		}
+		victory_points = {
+			2957 2
+		}
+		victory_points = {
+			3259 3
+		}
+		victory_points = {
+			4855 1
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+		}
+	}
+}

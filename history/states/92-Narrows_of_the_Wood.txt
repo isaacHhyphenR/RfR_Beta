@@ -1,0 +1,40 @@
+state = {
+	id = 92
+	name = "STATE_92" #Narrows of the Wood
+	state_category = rural
+	manpower = 1011000	local_supplies=0.0
+	resources = {
+		wood = 20
+	}
+	provinces = {
+		254 452 504 550 752 929 1410 1565 1592 1728 1890 1927 2123 2183 2260 2262 2284 2320 2395 2593 2992 3023 3213 3277 3284 3319 3390 3530 3669 3706 3836 3854 4136 4149 4202 4306 4632 4717 4829 4831 4888 4908 4956 4987 5020 5085 5109 5112 5977 6003 6020 6024 6047 6052 6071 6072 6073 6077 6083 6089 6095 6124 6134 6148 6155 6174 6185 6203 6215 6219 6235 6243 6259 
+	}
+	history = {
+		owner = GLD
+		add_core_of = GLD
+		add_core_of = WOD
+		victory_points = { #16
+			2262 5
+		}
+		victory_points = {
+			2183 5
+		}
+		victory_points = {
+			6073 2
+		}
+		victory_points = {
+			3390 1
+		}
+		victory_points = {
+			504 1
+		}
+		victory_points = {
+			929 1
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+		}
+		set_state_flag = mirkwood_state
+	}
+}

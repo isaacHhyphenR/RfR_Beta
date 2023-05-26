@@ -1,0 +1,30 @@
+state = {
+	id = 74
+	name = "STATE_74" #Fangorn
+	state_category = rural
+	manpower = 624000	local_supplies=0.0
+	resources = {
+		wood = 150
+		monsters = 6
+	}
+	provinces = {
+		59 164 176 332 352 447 852 986 1253 1502 1516 1545 1797 1933 1939 2019 2041 2377 2529 2565 2798 2912 3325 3337 3381 3985 4345 4360 4381 4542 5279 6501 6534 6581 6598 6610 6625 6635 6641 6657 6663 6667 6689 6692 6731 
+	}
+	history = {
+		owner = FAN
+		add_core_of = FAN
+		set_variable = { historical_capital_for_country = FAN }
+		victory_points = {
+			1516 10
+		}
+		victory_points = {
+			1545 5
+		}
+		victory_points = {
+			986 1
+		}
+		buildings = {
+			industrial_complex = 2
+		}
+	}
+}

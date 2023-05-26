@@ -1,0 +1,59 @@
+state = {
+	id = 63
+	name = "STATE_63"
+	resources = {
+		food = 2
+		cloth = 7
+		wood = 8
+		iron = 16
+	}
+
+	history = {
+		owner = DUN
+		add_core_of = DUN
+		set_variable = { historical_capital_for_country = DUN }
+		#26
+		victory_points = {
+			1336 14
+		}
+		victory_points = {
+			3072 2 #mountain
+		}
+		victory_points = {
+			1629 5 #river
+		}
+		victory_points = {
+			6582 3 #hills
+		}
+		victory_points = {
+			6584 2 #hills west
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 3
+			industrial_complex = 1
+		}
+	}
+
+	provinces = { #29
+		415 716 919 1070 1311 1336 1580 1629 1652 1715 1896 2208 2664 2700 3072 3077 3225 3483 3862 4242 4447 5282 6500 6519 6545 6563 6583 6584 6605 
+	}
+	manpower = 2506199
+	state_category = City
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

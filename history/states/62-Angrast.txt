@@ -1,0 +1,69 @@
+state = {
+	id = 62
+	name = "STATE_62"
+	resources = {
+		food = 10
+		wood = 4
+		mounts = 3
+	}
+
+	history = {
+		owner = AGR
+		add_core_of = AGR
+		set_variable = { historical_capital_for_country = AGR }
+		#23
+		victory_points = {
+			843 13
+		}
+		victory_points = {
+			6784 4 #north
+		}
+		victory_points = {
+			6832 2 #mid
+		}
+		victory_points = {
+			5195 1 #isen
+		}
+		victory_points = {
+			6835 3 #river
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			dockyard = 1
+			industrial_complex = 2
+			843 = {
+				naval_base = 3
+			}
+			6784 = {
+				naval_base = 1
+			}
+			6832 = {
+				naval_base = 1
+			}
+		}
+
+	}
+
+	provinces = { #24
+		442 843 979 1827 2171 2974 3278 3295 3564 4644 4845 5195 6784 6794 6806 6807 6808 6832 6835 6843 6857 6878 6886 6917 
+	}
+	manpower = 2634000
+	state_category = Large_City
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

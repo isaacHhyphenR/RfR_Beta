@@ -1,0 +1,70 @@
+state = {
+	id = 190
+	name = "STATE_190" #Harfalas
+	state_category = large_city
+	manpower = 4073000	local_supplies=0.0
+	resources = {
+		food = 6
+		cloth = 12
+		wood = 8
+		mounts = 2
+	}
+	provinces = {
+		205 638 1031 1045 1151 1190 1374 1382 1438 1626 1769 2017 2207 2551 2807 2885 2939 2986 3040 3084 3314 3462 3526 3559 3567 3711 3873 3881 4012 4014 4015 4322 4379 4511 4571 4758 4869 4923 4974 5070 5214 5244 5307 7466 7492 7496 7527 7531 7566 7568 7574 7587 7609 7627 7631 7635 7640 
+	}
+	history = {
+		owner = HRN
+		add_core_of = HRN
+		add_core_of = HAR
+		set_variable = { historical_capital_for_country = HRN }
+		victory_points = { #41
+			1374 10
+		}
+		victory_points = {
+			2885 8
+		}
+		victory_points = {
+			4571 6
+		}
+		victory_points = {
+			4974 4
+		}
+		victory_points = {
+			3881 2
+		}
+		victory_points = {
+			3526 2
+		}
+		victory_points = {
+			7466 2
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 2
+			dockyard = 1
+			1374 = {#20
+				naval_base = 6
+				bunker = 4
+			}
+			2885 = {
+				naval_base = 5
+			}
+			4571 = {
+				naval_base = 3
+			}
+			4974 = {
+				naval_base = 2
+			}
+			3881 = {
+				naval_base = 1
+			}
+			3526 = {
+				naval_base = 1
+			}
+			7466 = {
+				naval_base = 1
+			}
+		}
+	}
+}

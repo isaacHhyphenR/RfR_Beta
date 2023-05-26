@@ -1,0 +1,16 @@
+state = {
+	id = 17
+	name = "STATE_17"
+	state_category = pastoral
+	manpower = 71250	local_supplies=0.0
+	provinces = {
+		581 938 1279 2078 3152 3860 4236 5232 6207 
+	}
+	history = {
+		owner = EDL
+		add_core_of = EDL
+		buildings = {
+			infrastructure = 1
+		}
+	}
+}

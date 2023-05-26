@@ -1,0 +1,23 @@
+state = {
+	id = 154
+	name = "STATE_154" #Central White Mountains
+	impassable = yes
+	state_category = Wasteland
+	manpower = 14000
+	resources = {
+		monsters = 1
+	}
+	provinces = { #14
+		578 1216 2555 2890 2904 4259 4484 4762 4926 5007 6976 7063 7093 7110 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		buildings = {
+		}
+	}
+}
+
+
+
+

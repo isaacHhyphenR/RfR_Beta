@@ -1,0 +1,55 @@
+state = {
+	id = 222
+	name = "STATE_222"
+	resources = {
+		food = 4
+		cloth = 2
+	}
+
+	history = {
+		owner = ADB
+		add_core_of = ADB
+		set_variable = { historical_capital_for_country = ADB }
+		#11
+		victory_points = {
+			4822 1 #east 
+		}
+		victory_points = {
+			7361 3
+		}
+		victory_points = {
+			7401 7
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+			industrial_complex = 1
+			7401 = {
+				naval_base = 2
+			}
+			7361 = {
+				naval_base = 1
+			}
+		}
+
+	}
+
+	provinces = { #14
+		623 725 1615 1819 3276 4822 5382 7335 7342 7361 7370 7393 7397 7401 
+	}
+	manpower = 1187000
+	state_category = Town
+
+
+
+
+
+
+
+
+
+
+
+
+
+

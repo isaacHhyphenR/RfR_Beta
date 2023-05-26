@@ -1,0 +1,17 @@
+state = {
+	id = 31
+	name = "STATE_31"#The Old Forest
+	impassable = yes
+	state_category = wasteland
+	manpower = 2	local_supplies=0.0
+	resources = {
+		wood = 3
+	}
+	provinces = {
+		313 2932 3484 4463 5893 
+	}
+	history = {
+		owner = SHI
+		add_core_of = SHI
+	}
+}

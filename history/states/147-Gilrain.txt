@@ -1,0 +1,53 @@
+state = {
+	id = 147
+	name = "STATE_147" #Celosien
+	state_category = City
+	manpower = 2960000
+	resources = {
+		food = 2
+		iron = 4
+	}
+	provinces = { #27
+		237 433 562 1235 1340 1869 1929 2187 2229 2276 2567 2619 4789 4940 5204 7154 7174 7188 7213 7214 7222 7250 7254 7257 7279 7310 7314 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		victory_points = { #24
+			4789 10
+		}
+		victory_points = {
+			7222 5
+		}
+		victory_points = {
+			562 4
+		}
+		victory_points = {
+			7154 3
+		}
+		victory_points = {
+			7254 2
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

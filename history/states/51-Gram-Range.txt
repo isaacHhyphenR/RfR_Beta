@@ -1,0 +1,14 @@
+state = {
+	id = 51
+	name = "STATE_51" #Gram Range
+	impassable = yes
+	state_category = wasteland
+	manpower = 62000	local_supplies=0.0
+	provinces = {
+		4570 5539 5559 5576 
+	}
+	history = {
+		owner = GDB
+		add_core_of = GDB
+	}
+}

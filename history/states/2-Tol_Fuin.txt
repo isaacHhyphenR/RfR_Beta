@@ -1,0 +1,25 @@
+state = {
+	id = 2
+	name = "STATE_2"#Tol fuin
+	state_category = small_island
+	manpower = 260250
+	local_supplies=0.0 
+	resources = {
+		wood = 2
+	}
+	provinces = {
+		1208 2446 2675 3470 3505 3750 5425 5427 5446
+	}
+	history = {
+		owner = LIN
+		add_core_of = LIN
+		victory_points = {
+			2446 5
+		}
+		buildings = {
+			2446 = {
+				naval_base = 3
+			}
+		}
+	}
+}

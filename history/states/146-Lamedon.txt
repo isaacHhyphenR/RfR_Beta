@@ -1,0 +1,57 @@
+state = {
+	id = 146
+	name = "STATE_146" #Lamedon
+	state_category = City
+	manpower = 3376000
+	resources = {
+		food = 4
+		cloth = 4
+		iron = 4
+	}
+	provinces = { #43
+		345 585 851 1265 1405 1528 1542 1579 1597 1843 1881 1988 2090 2107 2324 2391 2659 3534 3570 3767 3922 4055 4078 4247 4983 5281 7041 7067 7078 7087 7113 7121 7125 7137 7140 7165 7171 7172 7173 7178 7193 7194 7230
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		victory_points = { #28
+			1405 10
+		}
+		victory_points = {
+			2090 6
+		}
+		victory_points = {
+			7067 6
+		}
+		victory_points = {
+			585 2
+		}
+		victory_points = {
+			7171 2
+		}
+		victory_points = {
+			345 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+		}
+		set_variable = { ring_ui_frame = 3 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

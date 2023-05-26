@@ -1,0 +1,51 @@
+state = {
+	id = 77
+	name = "STATE_77" #East Emnet
+	state_category = City
+	manpower = 1483000
+	resources = {
+		food = 12
+		cloth = 1
+		mounts = 12
+	}
+	provinces = { #25
+		133 684 829 1179 1200 1855 2057 2113 2556 2975 3418 3638 3770 4300 5169 5209 5218 6795 6803 6817 6829 6851 6932 6938
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #12
+			6795 10
+		}
+		victory_points = {
+			2057 1
+		}
+		victory_points = {
+			684 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 2
+		}
+		set_state_flag = eastmark_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 2 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

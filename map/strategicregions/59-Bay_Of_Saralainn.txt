@@ -1,9 +1,11 @@
+
 strategic_region={
 	id=59
-	name="STRATEGICREGION_59" #Bay of Saralainn
+	name="STRATEGICREGION_59"
 	provinces={
-		8291 8433 8455 8507 8595 8631 
+		12568 12623 12638 12710 12732 12784 12796 12851 12872 12908 
 	}
+	naval_terrain=water_shallow_sea
 	weather={
 		period={
 			between={ 0.0 30.0 }

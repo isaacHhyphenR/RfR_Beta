@@ -1,0 +1,26 @@
+state = {
+	id = 89
+	name = "STATE_89" #Grey Foothills
+	state_category = pastoral
+	manpower = 231000	local_supplies=0.0
+	resources = {
+		wood = 1
+		iron = 2
+	}
+	provinces = {
+		910 1027 1539 2060 2882 4263 4496 4907 5101 5531 5540 5565 5570 
+	}
+	history = {
+		owner = BER
+		add_core_of = BER
+		victory_points = { #2
+			4907 1
+		}
+		victory_points = {
+			2882 1
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+}

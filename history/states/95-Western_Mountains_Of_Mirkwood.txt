@@ -1,0 +1,18 @@
+state = {
+	id = 95
+	name = "STATE_95" #Western Mounains of Mirkwood
+	impassable = yes
+	state_category = wasteland
+	manpower = 102000	local_supplies=0.0
+	resources = {
+		iron = 10
+	}
+	provinces = {
+		1087 3826 5196 5795 
+	}
+	history = {
+		owner = WOD
+		add_core_of = WOD
+		add_core_of = GLD
+	}
+}

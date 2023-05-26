@@ -1,0 +1,49 @@
+state = {
+	id = 232
+	name = "STATE_232"
+	state_category = Pastoral
+	manpower = 438070
+	resources = {
+		food = 4
+		cloth = 4
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		add_core_of = ANF
+		#4
+		victory_points = {
+			5181 3 #serelond
+		}
+		victory_points = {
+			697 1
+		}
+		buildings = {
+			infrastructure = 1
+			697 = {
+				naval_base = 1
+			}
+		}
+	}
+	provinces = {#12
+		697 866 2534 2609 3472 4020 5181 7227 7248 7249 7260 7292 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

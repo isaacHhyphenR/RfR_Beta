@@ -1,0 +1,40 @@
+state = {
+	id = 10
+	name = "STATE_10" #Central Blue Mountains
+	state_category = large_town
+	manpower = 3450000	local_supplies=0.0
+	resources = {
+		food = 2
+		iron = 27
+	}
+	provinces = {
+		210 301 1016 1188 1885 1961 2269 2714 2729 2784 2970 3018 3384 3708 4060 4357 4467 4970 5344 5554 5574 5639 5649 5771 5822 5846 
+	}
+	history = {
+		owner = EDL
+		add_core_of = EDL
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = EDL }
+
+		victory_points = {
+			3018 20
+		}
+		victory_points = {
+			1885 5
+		}
+		victory_points = {
+			2269 1
+		}
+		victory_points = {
+			301 1
+		}
+		victory_points = {
+			5822 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			industrial_complex = 2
+		}
+	}
+}

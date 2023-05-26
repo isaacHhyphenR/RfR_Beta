@@ -1,0 +1,41 @@
+state = {
+	id = 161
+	name = "STATE_161"
+	manpower = 1907000
+	state_category = Town
+	resources = {
+		food = 1
+		mounts = 3
+	}
+	provinces = { #10
+		1268 4825 4853 7100 7104 7111 7114 7132 7133 7150 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		victory_points = {
+			7114 6 
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		set_state_flag = lower_anduin_state
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

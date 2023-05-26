@@ -1,0 +1,25 @@
+state = {
+	id = 48
+	name = "STATE_48" #Mountains of Angmar
+	state_category = town
+	manpower = 1294000	local_supplies=0.0
+	resources = {
+		food = 2
+		iron = 8
+		monsters = 3
+	}
+	provinces = {
+		486 565 1176 2293 2336 2933 3045 3289 3598 4973 5058 5459 5467 5513 
+	}
+	history = {
+		owner = GDB
+		add_core_of = GDB
+		victory_points = {
+			3289 15
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+		}
+	}
+}

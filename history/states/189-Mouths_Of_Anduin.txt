@@ -1,0 +1,41 @@
+state = {
+	id = 189
+	name = "STATE_189" #Mouth of Anduin
+	state_category = Small_Island
+	manpower = 16000
+	resources = {
+		food = 1
+	}
+	provinces = { #6
+		3529 3749 7452 7471 7490 7494 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		victory_points = {
+			7494 1
+		}
+		buildings = {
+			infrastructure = 1
+			7494 = { #1
+				naval_base = 1
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+state = {
+	id = 204
+	name = "STATE_204" #Eastmark
+	state_category = Rural
+	manpower = 910127
+	resources = {
+		food = 2
+		iron = 1
+		mounts = 7
+	}
+	provinces = { #15
+		615 859 2046 2112 2188 2558 3145 3351 5296 6811 6822 6834 6841 6860 6876
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #5
+			6841 1 #Argonath
+		}
+		victory_points = {
+			6876 1 #Elthengels
+		}
+		victory_points = {
+			5296 3 #Cliving
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		set_state_flag = eastmark_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 1 }
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

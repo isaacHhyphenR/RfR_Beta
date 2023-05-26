@@ -1,0 +1,34 @@
+state = {
+	id = 177
+	name = "STATE_177" #Barad Dur
+	state_category = megalopolis
+	manpower = 3602000
+	resources = {
+		iron = 4
+	}
+	provinces = {
+		965 1730 2051 4350 4749 5118 5320 6963 6979 7146 
+	}
+	history = {
+		owner = MOR
+		add_core_of = MOR
+		set_variable = { historical_capital_for_country = MOR }
+		set_ring_victory_point = yes
+		victory_points = { #101
+			2051 100
+		}
+		victory_points = {
+			965 1
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 3
+			industrial_complex = 2
+			radar_station = 3
+			2051 = { #barad dur
+				bunker = 10
+			}
+		}
+		set_state_flag = gorgoroth_state
+	}
+}

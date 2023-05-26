@@ -1,0 +1,51 @@
+state = {
+	id = 69
+	name = "STATE_69" #Adorn Vale
+	state_category = Town
+	manpower = 1133000
+	resources = {
+		food = 2
+		cloth = 4
+		mounts = 5
+	}
+	provinces = {
+		52 69 1227 1232 2847 3488 3613 4801 4949 5273 6836 6848 6863 6866 6872 6894 6895 6898 
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #14
+			6863 7
+		}
+		victory_points = {
+			4949 4
+		}
+		victory_points = {
+			52 3
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		set_state_flag = adorn_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 2 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

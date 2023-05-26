@@ -12,10 +12,6 @@ state={
 		owner = HAR
 		add_core_of = HAR
 		set_ring_victory_point = yes
-		set_variable = {
-			historical_capital_for_country = KND
-
-		}
 		victory_points = {
 			5156 20 
 		}

@@ -1,0 +1,42 @@
+state = {
+	id = 57
+	name = "STATE_57" #Moria
+	state_category = large_city
+	manpower = 3624000	local_supplies=0.0
+	resources = {
+		food = 3
+		iron = 36
+	}
+	provinces = {
+		780 1237 1642 1839 2288 3134 3516 4554 4703 6129 6262 6287 6303 6317 6325
+	}
+	history = {
+		owner = MST
+		add_core_of = MST
+		add_core_of = EDL
+		add_core_of = ERE
+		add_core_of = KZD
+		set_variable = { historical_capital_for_country = KZD }
+		set_ring_victory_point = yes
+		victory_points = {#27
+			6262 25
+		}
+		victory_points = {
+			6287 1
+		}
+		victory_points = {
+			6129 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			industrial_complex = 2
+			6287 = {
+				bunker = 5
+			}
+			6129 = {
+				bunker = 5
+			}
+		}
+	}
+}

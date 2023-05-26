@@ -1,0 +1,37 @@
+state = {
+	id = 194
+	name = "STATE_194" #Haruzan
+	state_category = megalopolis
+	manpower = 5662000	local_supplies=0.0
+	resources = {
+		food = 12
+		cloth = 1
+		mounts = 4
+	}
+	provinces = {
+		96 160 263 303 310 402 407 484 489 609 675 730 826 925 984 1006 1050 1064 1071 1112 1133 1219 1249 1282 1358 1402 1467 1483 1551 1609 1696 1736 1751 1754 1825 1968 1971 1991 2143 2223 2240 2363 2396 2424 2427 2462 2468 2540 2616 2758 2787 2799 2953 2980 3101 3148 3153 3258 3363 3422 3507 3544 3741 3771 3790 3829 3838 3865 4026 4071 4133 4248 4335 4337 4422 4442 4507 4568 4587 4691 4760 4768 4836 4849 4866 5089 5153 5253 5303 7647 7648 7649 7650 7651 7653 7654 7655 7657 7658 7663 7664 7665 7666 7667 7670 7677 7678 7679 7683 7685 7687 7688 7690 7692 7696 7698 7699 7701 7702 7703 7704 7712 7714 7717 7721 7725 7729 7732 7735 7742 7749 
+	}
+	history = {
+		owner = HAR
+		add_core_of = HAR
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = HAR }
+		victory_points = { #27
+			7658 20
+		}
+		victory_points = {
+			263 5
+		}
+		victory_points = {
+			7704 1
+		}
+		victory_points = {
+			7650 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			industrial_complex = 2
+		}
+	}
+}

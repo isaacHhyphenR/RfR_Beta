@@ -1,0 +1,36 @@
+state = {
+	id = 83
+	name = "STATE_83" #Upper Vales
+	state_category = rural
+	manpower = 1305000	local_supplies=0.0
+	resources = {
+		food = 4
+		iron = 2
+	}
+	provinces = {
+		246 917 1553 1851 2287 3301 3378 3467 3585 3679 4041 4213 4935 5172 5533 5553 5596 5642 5667 
+	}
+	history = {
+		3000.1.1 = { ##Extra building slot for balance
+			83 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		owner = BER
+		add_core_of = BER
+		victory_points = { #11
+			3585 5
+		}
+		victory_points = {
+			4935 5
+		}
+		victory_points = {
+			3679 1
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+}

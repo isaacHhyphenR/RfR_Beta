@@ -1,0 +1,25 @@
+state = {
+	id = 164
+	name = "STATE_164" #East Osgiliath
+	state_category = pastoral
+	manpower = 26000
+	provinces = {
+		2918 4174 7160 7176 
+	}
+	history = {
+		#set_state_flag = ithilien_state
+		owner = GON
+		add_core_of = GON
+		victory_points = {
+			7176 10
+		}
+		buildings = {
+			infrastructure = 2
+			7176 = { #2
+				naval_base = 2
+				bunker = 4
+				coastal_bunker = 1
+			}
+		}
+	}
+}

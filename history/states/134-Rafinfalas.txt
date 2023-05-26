@@ -1,0 +1,61 @@
+state = {
+	id = 134
+	name = "STATE_134"
+	resources = {
+		food = 4
+		wood = 9
+	}
+
+	history = {
+		owner = RAF
+		add_core_of = RAF
+		set_variable = { historical_capital_for_country = RAF }
+		#16
+		victory_points = {
+			5018 11
+		}
+		victory_points = {
+			7306 3 #north 
+		}
+		victory_points = {
+			7369 2 #forest 
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 2
+			dockyard = 1
+			5018 = {
+				naval_base = 2
+			}
+			7306 = {
+				naval_base = 1
+			}
+			5018 = {
+				naval_base = 1
+			}
+		}
+
+	}
+
+	provinces = { #13
+		1305 1519 2212 2632 2877 4028 4103 4913 5018 7262 7306 7369 7394 
+	}
+	manpower = 1568000
+	state_category = Large_Town
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+state = {
+	id = 49
+	name = "STATE_49" #Dortholl
+	state_category = pastoral
+	manpower = 507000	local_supplies=0.0
+	resources = {
+		iron = 4
+		monsters = 1
+	}
+	provinces = {
+		110 155 201 266 474 860 902 1437 2011 2083 2708 3309 4074 4407 4626 4844 4850 4864 5438 5445 5458 5474 5475 5480 5482 5488 5503 
+	}
+
+	history = {
+		owner = RDR
+		add_core_of = RDR
+		victory_points = {
+			5445 5
+		}
+		victory_points = {
+			201 1
+		}
+		victory_points = {
+			4626 1
+		}
+		buildings = {
+			infrastructure = 0
+			arms_factory = 1
+		}
+	}
+}

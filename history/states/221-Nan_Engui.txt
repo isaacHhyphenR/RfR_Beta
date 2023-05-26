@@ -1,0 +1,51 @@
+state = {
+	id = 221
+	name = "STATE_221"
+	resources = {
+		wood = 5
+	}
+
+	history = {
+		owner = NEN
+		add_core_of = NEN
+		set_variable = { historical_capital_for_country = NEN }
+		#12
+		victory_points = {
+			4548 3 
+		}
+		victory_points = {
+			7360 9 
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+			industrial_complex = 1
+			4548 = {
+				naval_base = 1
+			}
+			7360 = {
+				naval_base = 2
+			}
+		}
+
+	}
+
+	provinces = { #9
+		214 802 943 2587 4262 4548 5003 7317 7360 
+	}
+	manpower = 1308002
+	state_category = Town
+
+
+
+
+
+
+
+
+
+
+
+
+
+

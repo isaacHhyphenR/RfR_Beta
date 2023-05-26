@@ -1,0 +1,49 @@
+state = {
+	id = 226
+	name = "STATE_226"
+	resources = {
+		food = 5
+		cloth = 7
+		iron = 8
+	}
+
+	history = {
+		owner = TAW
+		add_core_of = TAW
+		set_variable = { historical_capital_for_country = TAW }
+		#12
+		victory_points = {
+			1194 7 #north pass
+		}
+		victory_points = {
+			691 2 #pass
+		}
+		victory_points = {
+			7136 3 #river
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 2
+		}
+
+	}
+
+	provinces = { #12
+		593 691 1068 1194 1403 1485 1682 1840 2049 5356 7136 7156 
+	}
+	manpower = 1284000
+	state_category = Town
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+state = {
+	id = 94
+	name = "STATE_94" #East Bight
+	state_category = pastoral
+	manpower = 480000	local_supplies=0.0
+	resources = {
+		food = 6
+	}
+	provinces = {
+		19 1065 2246 2569 3272 3650 4088 4312 6165 6190 6236 
+	}
+	history = {
+		owner = GLD
+		add_core_of = GLD
+		add_core_of = WOD
+		victory_points = { #3
+			4312 1
+		}
+		victory_points = {
+			3272 1
+		}
+		victory_points = {
+			2569 1
+		}
+		buildings = {
+			infrastructure = 0
+		}
+	}
+}

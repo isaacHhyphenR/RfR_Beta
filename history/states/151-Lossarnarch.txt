@@ -1,0 +1,50 @@
+state = {
+	id = 151
+	name = "STATE_151" #Lossarnarch
+	state_category = city
+	manpower = 3617000
+	resources = {
+		food = 10
+		wood = 20
+		iron = 16
+		mounts = 3
+	}
+	provinces = { #42
+		1165 1479 1566 1833 1887 2147 2337 2472 2550 2731 2994 3004 3186 3356 3506 3560 3574 3776 4209 4326 4355 4634 4664 4839 4843 5252 7191 7240 7245 7251 7266 7288 7303 7311 7319 7320 7329 7338 7354 7365 7376 7377 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		victory_points = { #27
+			4326 10
+		}
+		victory_points = {
+			5252 6
+		}
+		victory_points = {
+			4634 4
+		}
+		victory_points = {
+			3506 4
+		}
+		victory_points = {
+			2550 2
+		}
+		victory_points = {
+			7191 1
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+			dockyard = 1
+			5252 = { #3
+				naval_base = 2
+			}
+			4634 = {
+				naval_base = 1
+			}
+		}
+		set_state_flag = lower_anduin_state
+	}
+}

@@ -1,0 +1,30 @@
+state = {
+	id = 18
+	name = "STATE_18" #Forochel
+	state_category = pastoral
+	manpower = 221000	local_supplies=0.0
+	resources = {
+		cloth = 1
+		wood = 1
+		iron = 1
+		mounts = 1
+	}
+	provinces = {
+		6 178 253 321 610 703 715 1075 1100 1320 1327 1343 1398 1494 1510 2132 2231 2376 2433 2634 2665 2715 2827 2906 3110 3236 3275 3435 3568 3799 3807 4017 4040 4277 4527 4998 5154 5202 5251 5285 5392 5401 5414 5423 5429 5448 5453 5483 5484 5490 5499 5509 
+	}
+
+	history = {
+		owner = ART
+		add_core_of = ART
+		victory_points = {
+			5285 1
+		}
+		victory_points = {
+			178 1
+		}
+		buildings = {
+			infrastructure = 0
+		}
+	}
+
+}

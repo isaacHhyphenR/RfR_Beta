@@ -1,0 +1,65 @@
+state = {
+	id = 142
+	name = "STATE_142" #Anfalas
+	state_category = Large_Town
+	manpower = 1361000
+	resources = {
+		wood = 11
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		add_core_of = ANF
+		set_variable = { historical_capital_for_country = ANF }
+		#14
+		victory_points = { #lond gaeln
+			7264 9
+		}
+		victory_points = {
+			4682 2 #edhellond
+		}
+		victory_points = {
+			7253 2
+		}
+		victory_points = {
+			7277 1
+		}
+		buildings = {
+			infrastructure = 2
+			dockyard = 1
+			industrial_complex = 1
+			#11
+			7264 = { #lond gaelen
+				naval_base = 4
+			}
+			7253 = {
+				naval_base = 2
+			}
+			4682 = { #Edhellond
+				naval_base = 1
+			}
+			7277 = {
+				naval_base = 1
+			}
+		}
+	}
+	provinces = {#28
+		211 728 768 1059 1333 2055 2440 2802 2958 3168 3888 3900 3916 4118 4389 4682 5222 5332 5340 7225 7253 7255 7264 7270 7271 7277 7278 7290 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

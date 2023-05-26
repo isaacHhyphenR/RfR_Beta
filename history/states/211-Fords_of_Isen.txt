@@ -1,0 +1,39 @@
+state = {
+	id = 211
+	name = "STATE_211" #The Fords of Isen
+	state_category = Enclave
+	manpower = 173000
+	resources = {
+		food = 2
+	}
+	provinces = {
+		1478 6782 6766
+	}
+	history = {
+		owner = DTH
+		add_core_of = DTH
+		#2
+		victory_points = {
+			1478 2
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+state = {
+	id = 217
+	name = "STATE_217"
+	resources = {
+		cloth = 5
+		wood = 5
+		iron = 9
+	}
+
+	history = {
+		owner = NIF
+		add_core_of = NIF
+		set_variable = { historical_capital_for_country = NIF }
+		#10
+		victory_points = {
+			3166 7
+		}
+		victory_points = {
+			1780 2 #end
+		}
+		victory_points = {
+			7084 1 #mid
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+
+	}
+
+	provinces = { #14
+		476 1104 1780 2381 2390 2739 3166 3674 3971 4348 5229 7064 7084 7092 
+	}
+	manpower = 992000
+	state_category = Town
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

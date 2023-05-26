@@ -1,0 +1,23 @@
+state = {
+	id = 26
+	name = "STATE_26"
+	state_category = pastoral;
+	manpower = 423000	local_supplies=0.0
+	resources = {
+		cloth = 2
+	}
+	provinces = {
+		217 543 853 1011 1361 1412 1450 1640 1776 2375 2620 3864 3970 4351 4702 5787 5812 5887 5940 5950 5972 5981 
+	}
+
+	history = {
+		owner = ART
+		add_core_of = ART
+		victory_points = {
+			1412 3
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+}

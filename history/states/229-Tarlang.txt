@@ -1,0 +1,34 @@
+state = {
+	id = 229
+	name = "STATE_229"
+	resources = {
+		iron = 2
+		monsters = 1
+	}
+	impassable = yes
+
+	history = {
+		owner = GON
+		add_core_of = GON
+		add_core_of = PNG
+
+		buildings = {
+		}
+	}
+
+	provinces = { #3
+		5358 7062 4114
+	}
+	manpower = 16000
+	state_category = Wasteland
+}
+
+
+
+
+
+
+
+
+
+

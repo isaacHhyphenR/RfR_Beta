@@ -1,0 +1,80 @@
+state = {
+	id = 150
+	name = "STATE_150" #Lebennin
+	state_category = Megalopolis
+	manpower = 7016000
+	resources = {
+		food = 20
+		cloth = 3
+		wood = 16
+	}
+	provinces = { #61
+		166 456 554 1332 1546 1562 1583 1789 1886 2032 2121 2178 2388 2560 2594 2721 2777 2859 2861 3032 3093 3752 3910 3912 3952 4218 4462 4663 4722 4946 4989 5037 5088 5145 7185 7236 7244 7252 7267 7293 7305 7324 7339 7341 7345 7346 7347 7348 7375 7390 7396 7410 7415 7417 7423 7424 7429 7435 7437 7442 7444 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		set_ring_victory_point = yes
+		victory_points = { #45
+			7410 20 #Pelargir
+		}
+		victory_points = {
+			2721 8 #Fanuilond
+		}
+		victory_points = {
+			4946 6 #Minas Brethil
+		}
+		victory_points = {
+			1546 4 #Lorilad
+		}
+		victory_points = {
+			554 3 #Laurost
+		}
+		victory_points = {
+			7435 2 #Barfalas
+		}
+		victory_points = {
+			4462 1 #Lalornen
+		}
+		victory_points = {
+			7185 1 #Lochen
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			dockyard = 3
+			industrial_complex = 3
+			7410 = { #12
+				naval_base = 7
+				coastal_bunker = 3
+				bunker = 3
+			}
+			2721 = {
+				naval_base = 3
+			}
+			1546 = {
+				naval_base = 1
+			}
+			7435 = {
+				naval_base = 1
+			}
+		}
+		set_state_flag = lower_anduin_state
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

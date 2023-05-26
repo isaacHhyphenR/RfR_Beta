@@ -1,0 +1,23 @@
+
+state={
+	id=235
+	name="STATE_235"
+
+	history={
+		owner = ERE
+		add_core_of = ERE
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		261 628 2330 2780 4047 4500 4833 5336 5664 5670 5673 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

@@ -1,0 +1,17 @@
+state = {
+	id = 171
+	name = "STATE_171" #Eastern Ephel Duath
+	impassable = yes
+	state_category = wasteland
+	manpower = 508000
+	resources = {
+		iron = 6
+	}
+	provinces = {
+		289 311 1066 1108 1123 1585 1632 1699 1765 1900 2002 2021 2193 2304 2423 2444 2507 2635 2702 2703 2764 2786 2794 2910 3066 3146 3248 3349 3537 3571 3692 3825 3997 4070 4090 4832 5021 5046 7302 7325 7350 7421 7432 7449 7461 7472 7482 7484 7487 7491 7504 7518 7519 7521 7526 
+	}
+	history = {
+		owner = MOR
+		add_core_of = MOR
+	}
+}

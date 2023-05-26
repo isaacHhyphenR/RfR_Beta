@@ -1,0 +1,37 @@
+state = {
+	id = 68
+	name = "STATE_68" #Nan Curunir
+	state_category = City
+	manpower = 1644000
+	resources = {
+		food = 8
+		wood = 8
+	}
+	provinces = {
+		3430 6742 7498 4782
+	}
+	history = {
+		owner = ISN
+		add_core_of = ISN
+		victory_points = { #Isengard
+			4782 15
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 3
+			industrial_complex = 3
+			4782 = {
+				bunker = 4
+			}
+		}
+		set_variable = { ring_ui_frame = 3 }
+	}
+}
+
+
+
+
+
+
+
+

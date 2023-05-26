@@ -1,0 +1,33 @@
+state = {
+	id = 192
+	name = "STATE_192" #Carmentir
+	state_category = rural
+	manpower = 647000	local_supplies=0.0
+	resources = {
+		food = 8
+		cloth = 4
+		iron = 8
+		mounts = 2
+	}
+	provinces = {
+		245 342 461 626 805 1036 1163 1222 1264 1458 2102 2310 2432 2705 2762 3024 3175 3311 3411 3432 3782 3789 4151 4201 4230 4273 4276 4356 4370 4772 4806 4958 5127 7537 7540 7545 7558 7564 7565 7580 7591 7601 7605 7606 7616 7619 7626 7633 7637 7643 7645 
+	}
+	history = {
+		owner = HAR
+		add_core_of = HAR
+		add_core_of = HRN
+		victory_points = { #8
+			461 5
+		}
+		victory_points = {
+			2310 2
+		}
+		victory_points = {
+			1036 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+	}
+}

@@ -1,0 +1,51 @@
+state = {
+	id = 76
+	name = "STATE_76" #West Emnet
+	state_category = City
+	manpower = 1607000
+	resources = {
+		food = 12
+		cloth = 1
+		wood = 3
+		mounts = 12
+	}
+	provinces = { #33
+		116 411 420 669 951 1141 1773 2108 2151 2578 2891 3340 3521 3685 3725 4160 4172 4234 4611 4681 4780 5266 6737 6746 6771 6773 6785 6810 6837 6855 6899
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #13
+			4234 10
+		}
+		victory_points = {
+			1773 1
+		}
+		victory_points = {
+			4172 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+		}
+		set_state_flag = westmark_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 3 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

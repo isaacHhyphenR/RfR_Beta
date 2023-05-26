@@ -3,9 +3,9 @@ strategic_region={
 	id=62
 	name="STRATEGICREGION_62"
 	provinces={
-		12522 12582 12620 12639 12705 12811 12897 
+		12306 12423 12456 12509 12525 12526 12586 12624 12631 12633 12643 12662 12664 12705 12707 12709 12721 12771 12777 12785 12815 12901 12904 
 	}
-	naval_terrain=water_fjords
+	naval_terrain=water_shallow_sea
 	weather={
 		period={
 			between={ 0.0 30.0 }

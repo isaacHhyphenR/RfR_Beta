@@ -1,0 +1,36 @@
+state = {
+	id = 138
+	name = "STATE_138" #Hairaverkien
+	impassable = yes
+	state_category = Wasteland
+	manpower = 19000
+	local_supplies = 0.0
+	resources = {
+		monsters = 2
+	}
+	provinces = { #3
+		167 3576 4388 
+	}
+	history = {
+		owner = HVK
+		add_core_of = HVK
+		buildings = {
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

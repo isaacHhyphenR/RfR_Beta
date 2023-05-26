@@ -1,0 +1,39 @@
+
+state = {
+	id = 136
+	name = "STATE_136"
+	resources = {
+		monsters = 2
+	}
+
+	history = {
+		owner = ANU
+		add_core_of = ANU
+
+		buildings = {
+		}
+	}
+
+	provinces = { #4
+		4787 4872 7212 7239 
+	}
+	manpower = 22000
+	state_category = Wasteland
+	impassable = yes
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

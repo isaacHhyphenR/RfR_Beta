@@ -1,0 +1,29 @@
+state = {
+	id = 81
+	name = "STATE_81" #Gladden Feilds
+	state_category = rural
+	manpower = 1002000	local_supplies=0.0
+	resources = {
+		food = 4
+		iron = 2
+		mounts = 3
+	}
+	provinces = {
+		753 822 1005 1121 1225 1231 1517 1630 1742 1923 1935 2488 2649 2692 2814 2868 3113 3374 3477 3678 3843 3939 3944 3991 4475 4916 5249 5275 6062 6097 6102 6135 6136 6164 6196 6214 6217 6250 6251 6269 6282 6296 6319 6338 
+	}
+	history = {
+		owner = BER
+		add_core_of = BER
+		victory_points = { #6
+			3477 5
+		}
+		victory_points = {
+			6217 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+	}
+
+}

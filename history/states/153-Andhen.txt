@@ -1,0 +1,37 @@
+state = {
+	id = 153
+	name = "STATE_153" #Andhen
+	#impassable = yes
+	state_category = Wasteland
+	manpower = 14553
+	provinces = {
+		4431 6947 6975 
+	}
+	history = {
+		owner = GON
+		add_core_of = GON
+		buildings = {
+		}
+		victory_points = {
+			6975 1
+		}
+	}
+	resources = {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

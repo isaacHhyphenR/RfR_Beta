@@ -1,0 +1,27 @@
+state = {
+	id = 82
+	name = "STATE_82" #Middle Vales
+	state_category = rural
+	manpower = 873000	local_supplies=0.0
+	resources = {
+		food = 4
+		iron = 2
+	}
+	provinces = {
+		48 285 388 637 1158 1323 1836 1861 2145 2283 2554 3243 3265 3266 3445 3601 3649 3957 4161 4191 4363 4399 4512 5123 5309 5692 5815 5820 5825 5952 5959 5983 6019 6023 6029 
+	}
+	history = {
+		owner = BER
+		add_core_of = BER
+		victory_points = { #6
+			285 5
+		}
+		victory_points = {
+			5959 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+	}
+}

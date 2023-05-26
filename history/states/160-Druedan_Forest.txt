@@ -1,0 +1,27 @@
+state = {
+	id = 160
+	name = "STATE_160" #Druedan Forest
+	state_category = rural
+	manpower = 43000	local_supplies=0.0
+	resources = {
+		food = 1
+		cloth = 1
+		wood = 8
+		iron = 1
+	}
+	provinces = {
+		4186 5359 7117 
+	}
+	history = {
+		owner = DAI
+		add_core_of = DAI
+		set_variable = { historical_capital_for_country = DAI }
+		victory_points = {
+			5359 3
+		}
+		buildings = {
+			infrastructure = 0
+			industrial_complex = 1
+		}
+	}
+}

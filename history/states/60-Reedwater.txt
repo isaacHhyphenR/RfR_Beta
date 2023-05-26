@@ -1,0 +1,57 @@
+state = {
+	id = 60
+	name = "STATE_60"
+	resources = {
+		food = 4
+		wood = 10
+	}
+
+	history = {
+		owner = REE
+		add_core_of = REE
+		set_variable = { historical_capital_for_country = REE }
+		#9
+		victory_points = {
+			5205 3 #gwathlo
+		}
+		victory_points = {
+			2573 1 #plains
+		}
+		victory_points = {
+			3469 3 #river forest
+		}
+		victory_points = {
+			5062 2 #forest
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			5205 = {
+				naval_base = 1
+			}
+		}
+
+	}
+
+	provinces = { #28
+		213 413 1453 1707 2241 2294 2573 2680 2723 2760 3042 3127 3255 3469 4282 4704 4728 5062 5205 6337 6375 6390 6393 6412 6432 6452 6459 6484 
+	}
+	manpower = 867001
+	state_category = Rural
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

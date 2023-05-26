@@ -1,0 +1,55 @@
+state = {
+	id = 213
+	name = "STATE_213"
+	resources = {
+		cloth = 12
+		iron = 16
+	}
+
+	history = {
+		owner = DFN
+		add_core_of = DFN
+		set_variable = { historical_capital_for_country = DFN }
+		#20
+		victory_points = {
+			2148 10
+		}
+		victory_points = {
+			4600 3 #valley
+		}
+		victory_points = {
+			2477 5 #river
+		}
+		victory_points = {
+			3234 2 #mountain
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			industrial_complex = 1
+		}
+
+	}
+
+	provinces = { #29
+		156 478 906 1048 1334 1674 1944 2095 2148 2477 2725 3158 3234 3279 4192 4393 4550 4600 5081 5203 5368 6594 6608 6609 6621 6649 6659 6661 6673 
+	}
+	manpower = 2014000
+	state_category = City
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

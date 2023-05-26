@@ -1,0 +1,35 @@
+state = {
+	id = 100
+	name = "STATE_100" #Dale
+	state_category = large_city
+	manpower = 4620000	local_supplies=0.0
+	resources = {
+		food = 8
+		cloth = 2
+		wood = 3
+		mounts = 2
+	}
+	provinces = {
+		102 1738 2023 3208 5637 5658 5678 5687 5693 5702 5706 5712 
+	}
+	history = {
+		owner = DAL
+		add_core_of = DAL
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = DAL }
+		victory_points = { #22
+			5658 20
+		}
+		victory_points = {
+			5702 2
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 5
+			5658 = {
+				bunker = 3
+			}
+		}
+	}
+}

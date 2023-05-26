@@ -1,0 +1,63 @@
+state = {
+	id = 223
+	name = "STATE_223"
+	resources = {
+		food = 18
+		wood = 7
+		mounts = 6
+	}
+	history = {
+		owner = IRN
+		add_core_of = IRN
+		set_variable = { historical_capital_for_country = IRN }
+	
+		#20
+		victory_points = {
+			4670 13
+		}
+		victory_points = {
+			5377 4 #adorn
+		}
+		victory_points = {
+			2369 2 #forest
+		}
+		victory_points = {
+			3013 5 #east
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+		}
+	}
+
+	provinces = { #29
+		24 170 968 1135 2091 2122 2369 3013 3283 3802 3870 4073 4199 4340 4375 4458 4660 4670 5233 5377 6858 6861 6871 6875 6887 6897 6910 6925 6941 
+	}
+	manpower = 2474000
+	state_category = Large_Town
+	resources = {
+		food = 14
+		wood = 9
+		mounts = 6
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

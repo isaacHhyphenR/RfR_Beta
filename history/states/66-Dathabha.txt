@@ -1,0 +1,53 @@
+state = {
+	id = 66
+	name = "STATE_66"
+	resources = {
+		food = 5
+		cloth = 6
+		iron = 12
+		mounts = 5
+	}
+
+	history = {
+		owner = DTH
+		add_core_of = DTH
+		set_variable = { historical_capital_for_country = DTH }
+		#19
+		victory_points = {
+			3512 11
+		}
+		victory_points = {
+			6821 3 #river
+		}
+		victory_points = {
+			4909 1 #mountain
+		}
+		victory_points = {
+			3438 4 #hills
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			industrial_complex = 1
+		}
+
+	}
+
+	provinces = {#28
+		172 194 234 1441 2517 3162 3241 3438 3512 3597 3833 3964 4079 4126 4214 4274 4909 5348 5362 5365 6749 6762 6768 6772 6776 6780 6815 6821 
+	}
+	manpower = 1659000
+	state_category = Large_Town
+}
+
+
+
+
+
+
+
+
+
+
+
+

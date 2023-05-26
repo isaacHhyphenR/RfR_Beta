@@ -1,0 +1,46 @@
+
+state = {
+	id = 139
+	name = "STATE_139"
+	resources = {
+		iron = 20
+		monsters = 2
+	}
+	#impassable = yes
+
+	history = {
+		owner = GON
+		add_core_of = GON
+		set_variable = { historical_capital_for_country = WHT }
+		buildings = {
+		}
+		victory_points = {
+			1902 2
+		}
+		victory_points = {
+			6991 1
+		}
+	}
+
+	provinces = { #11
+		379 1873 1902 2655 3191 4138 4426 4603 4648 4699 5206 6991 
+	}
+	manpower = 128000
+	state_category = Wasteland
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

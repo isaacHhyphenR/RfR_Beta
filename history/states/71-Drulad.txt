@@ -1,0 +1,52 @@
+state = {
+	id = 71
+	name = "STATE_71"
+	resources = {
+		food = 3
+		cloth = 7
+		iron = 6
+		mounts = 5
+	}
+
+	history = {
+		owner = DRU
+		add_core_of = DRU
+		set_variable = { historical_capital_for_country = DRU }
+		#9
+		victory_points = {
+			6955 5 #center 
+		}
+		victory_points = {
+			6962 1 #vale
+		}
+		victory_points = {
+			4628 3 #north
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+	}
+
+	provinces = { #16
+		85 2144 2364 2447 2653 2728 3163 3514 3524 4019 4289 4628 6939 6946 6955 6962 
+	}
+	manpower = 1056000
+	state_category = Rural
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+state = {
+	id = 50
+	name = "STATE_50" #Nan Angmar
+	state_category = rural
+	manpower = 578000	local_supplies=0.0
+	resources = {
+		iron = 10
+		monsters = 1
+	}
+	provinces = {
+		103 446 1294 1296 1745 1909 2878 3028 3611 4228 4915 4925 5276 5481 5495 5496 5511 5520 5532 5551 5562 
+	}
+
+	history = {
+		owner = RDR
+		add_core_of = RDR
+		victory_points = {
+			1296 7
+		}
+		victory_points = {
+			5481 1
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+		}
+	}
+}

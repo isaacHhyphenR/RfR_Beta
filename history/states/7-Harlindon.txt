@@ -1,0 +1,49 @@
+state = {
+	id = 7
+	name = "STATE_7"#Harlindon
+	state_category = town
+	manpower = 1957500
+	local_supplies=0.0
+	resources = {
+		food = 3
+		cloth = 4
+		wood = 3
+		mounts = 5
+	}
+	provinces = {
+		30 68 191 400 448 511 582 603 726 769 1127 1321 2025 2133 2160 2164 2282 2309 2349 2419 2631 2800 2801 2874 3041 3096 3103 3217 3555 3869 3895 3941 3978 4159 4180 4216 4270 4476 4530 4574 4585 4684 4834 4873 5000 5069 5121 5159 5207 5994 5997 6002 6013 6016 6040 6044 6059 6070 6078 6084 6091 6115 6121 6122 6137 6144 6166 6167 6175 6216 6234 6280 6291 6305 6312 6345 6370 6373 6382 6388 6392 
+	}
+	history = {
+		owner = LIN
+		add_core_of = LIN
+		victory_points = {
+			6044 15
+		}
+		victory_points = {
+			6013 5
+		}
+		victory_points = {
+			769 1
+		}
+		victory_points = {
+			4873 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			dockyard = 1
+			6044 = {
+				naval_base = 5
+			}
+			769 = {
+				naval_base = 2
+			}
+			6013 = {
+				naval_base = 2
+			}
+			4873 = {
+				naval_base = 1
+			}
+		}
+	}
+}

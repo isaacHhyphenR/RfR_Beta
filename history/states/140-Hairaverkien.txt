@@ -1,0 +1,58 @@
+
+state = {
+	id = 140
+	name = "STATE_140"
+	resources = {
+		food = 2
+		cloth = 7
+		iron = 8
+		mounts = 4
+	}
+
+	history = {
+		owner = HVK
+		add_core_of = HVK
+		set_variable = { historical_capital_for_country = HVK }
+		#13
+		victory_points = {
+			1749 8
+		}
+		victory_points = {
+			1628 2
+		}
+		victory_points = {
+			2436 1
+		}
+		victory_points = {
+			1290 2
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+		}
+
+	}
+
+	provinces = { #19
+		40 82 398 994 1224 1290 1628 1749 2436 2937 4619 5227 5327 7024 7032 7059 7060 7091 7109 
+	}
+	manpower = 1438000
+	state_category = Town
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

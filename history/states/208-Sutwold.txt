@@ -1,0 +1,48 @@
+state = {
+	id = 208
+	name = "STATE_208" #Sutwold
+	state_category = Rural
+	manpower = 876000
+	resources = {
+		food = 4
+		cloth = 1
+		wood = 5
+		mounts = 3
+	}
+	provinces = { #14
+		1584 1801 1859 2824 3060 3257 3595 3823 4188 6633 6675 6695 6720 7473
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #6
+			3595 5
+		}
+		victory_points = {
+			6695 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+		set_state_flag = wold_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 1 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+state = {
+	id = 141
+	name = "STATE_141"
+	resources = {
+		cloth = 3
+	}
+
+	history = {
+		owner = GON
+		add_core_of = GON
+		add_core_of = PNG
+		#4
+		victory_points = {
+			7139 3 #east
+		}
+		victory_points = {
+			4130 1 #west
+		}
+		buildings = {
+			infrastructure = 1
+		}
+
+	}
+
+	provinces = { #14
+		767 1149 1753 2053 2266 2465 2611 3282 4130 4409 4658 7138 7139 7205 
+	}
+	manpower = 331000
+	state_category = Pastoral
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

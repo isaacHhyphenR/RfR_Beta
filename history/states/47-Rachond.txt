@@ -1,0 +1,20 @@
+state = {
+	id = 47
+	name = "STATE_47" #Rachond
+	state_category = pastoral
+	manpower = 201000	local_supplies=0.0
+	provinces = {
+		118 132 242 601 672 713 763 815 921 1177 1291 1560 1575 1670 1671 1714 1734 1978 2070 2136 2305 2485 2612 2797 3063 3180 3489 3702 3805 3885 3976 4448 4456 4473 4896 4953 5151 5178 5274 5375 5378 5387 5388 5391 5397 5408 5415 5421 5433 5440 5441 5452 
+	}
+
+	history = {
+		owner = ART
+		add_core_of = ART
+		victory_points = {
+			118 1
+		}
+		buildings = {
+			infrastructure = 0
+		}
+	}
+}

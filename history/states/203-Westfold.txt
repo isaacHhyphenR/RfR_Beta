@@ -1,0 +1,47 @@
+state = {
+	id = 203
+	name = "STATE_203" #Westfold
+	state_category = Town
+	manpower = 1126000
+	resources = {
+		food = 2
+		iron = 3
+		mounts = 10
+	}
+	provinces = { #19
+		934 1491 2031 2347 2627 2697 3456 3474 4182 4408 4486 4870 6850 6869 6882 6889 6905 6908  
+	}
+	history = {
+		owner = ROH
+		add_core_of = ROH
+		victory_points = { #6
+			2697 4 #grimslade
+		}
+		victory_points = {
+			1491 2 #Braedfoath
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		set_state_flag = westmark_state
+		set_variable = { current_state_fyrd = 0 }
+		set_variable = { max_state_fyrd = 1 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

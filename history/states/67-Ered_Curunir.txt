@@ -1,0 +1,33 @@
+
+state = {
+	id = 67
+	name = "STATE_67"
+	resources = {
+		iron = 12
+		monsters = 1
+	}
+	impassable = yes
+	history = {
+		owner = ISN
+		add_core_of = ISN
+
+		buildings = {
+		}
+	}
+
+	provinces = {
+		2450 2836 3350 3729 4087 5124 6656 6699 6712 6734 
+	}
+	
+	manpower = 42000
+	state_category = Wasteland
+	
+}
+
+
+
+
+
+
+
+

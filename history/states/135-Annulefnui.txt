@@ -1,0 +1,49 @@
+state = {
+	id = 135
+	name = "STATE_135"
+	resources = {
+		food = 6
+		cloth = 11
+		iron = 9
+		mounts = 4
+	}
+
+	history = {
+		owner = ANU
+		add_core_of = ANU
+		set_variable = { historical_capital_for_country = ANU }
+		#9
+		victory_points = {
+			3124 2 #mid
+		}
+		victory_points = {
+			3709 3 #north river
+		}
+		victory_points = {
+			2161 4 #mountains
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 2
+		}
+
+	}
+
+	provinces = { #14
+		1298 1673 1823 2161 2913 3124 3709 4374 7197 7224 7263 7291 7295 7309 
+	}
+	manpower = 1061000
+	state_category = Town
+}
+
+
+
+
+
+
+
+
+
+
+
+

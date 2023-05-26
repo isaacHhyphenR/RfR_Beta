@@ -1,0 +1,44 @@
+state = {
+	id = 220
+	name = "STATE_220"
+	resources = {
+		food = 3
+		iron = 2
+		mounts = 1
+	}
+
+	history = {
+		owner = DRU
+		add_core_of = DRU
+		#4
+		victory_points = {
+			277 3
+		}
+		victory_points = {
+			6921 1 #vale
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+		}
+
+	}
+
+	provinces = { #5
+		277 920 2311 5352 6921 
+	}
+	manpower = 428000
+	state_category = Rural
+}
+
+
+
+
+
+
+
+
+
+
+
+

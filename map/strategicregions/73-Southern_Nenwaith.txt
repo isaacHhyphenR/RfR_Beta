@@ -1,10 +1,10 @@
+
 strategic_region={
 	id=73
-	name="STRATEGICREGION_73" #Southern Nenwaith
+	name="STRATEGICREGION_73"
 	provinces={
-		7924 7944 8041 8169 8308 8412 8440 8645 
+		12147 12182 12201 12221 12238 12318 12446 12452 12607 12652 12661 12689 12717 12782 12915 12922 12932 
 	}
-	naval_terrain=water_deep_ocean
 	weather={
 		period={
 			between={ 0.0 30.0 }

@@ -1,0 +1,29 @@
+state = {
+	id = 30
+	name = "STATE_30"#Southfarthing
+	state_category = rural
+	manpower = 687000	local_supplies=0.0
+	resources = {
+		food = 3
+		mounts = 1
+	}
+	provinces = {
+		111 123 717 1603 1687 1693 1967 2385 2393 3181 3290 3376 3787 3974 3988 5971 5992 6000 6034 6041 6046 6056 
+	}
+	history = {
+		owner = SHI
+		add_core_of = SHI
+
+		victory_points = {
+			3376 2
+		}
+
+		victory_points = {
+			6034 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+	}
+}
