@@ -53,7 +53,7 @@ ideas = {
 			}
 		}
 		steppe_heritage_idea = {
-			name = easterling_heritage
+			name = easterling_heritage_idea
 			removal_cost = -1
 			picture = easterling_heritage
 			allowed_civil_war = {

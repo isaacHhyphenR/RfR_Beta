@@ -13,7 +13,8 @@ tags={
 dependencies={
 	"Ride for Ruin: A Lord of the Rings mod"
 }
-supported_version="1.12.*"
 replace_path="history/states"
 replace_path="history/countries"
 replace_path="map/strategicregions"
+supported_version="1.12.*"
+remote_file_id="2982012477"
