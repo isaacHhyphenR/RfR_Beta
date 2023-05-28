@@ -1,0 +1,164 @@
+﻿capital = 177 #Mordath-  Barad-dûr
+	# VPs
+# if = {
+	# limit = { has_dlc = "No Step Back" }
+	# set_oob = "MOR_3015_nsb"
+	# else = {
+		set_oob = "MOR_3015"
+	# }
+# }
+
+set_research_slots = 3
+set_stability = 0.9
+set_war_support = 0.9
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	gw_artillery = 1
+	tech_support = 1
+	motorised_infantry = 1
+	basic_train = 1
+	mass_assault = 1
+	orcish_heritage_tech = 1
+}
+starting_train_buffer = 1.3
+set_fuel_ratio = 0.15
+################### ARMOR TECH
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+		#basic_heavy_tank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+			basic_heavy_tank = 1
+		}
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+				###POLITICS
+set_politics = {
+	ruling_party = melkorite
+	last_election = "1.1.1.1"
+	election_frequency = 10000
+	elections_allowed = no
+}
+
+set_popularities = {
+	melkorite = 100
+}
+add_ideas = {
+	limited_exports
+	limited_conscription
+	partial_economic_mobilisation
+}
+
+				###DIPLOMACY
+create_faction = the_shadow
+add_to_faction = GLD
+if = {
+	limit = { has_dlc = "Death or Dishonor" }
+	set_autonomy = {
+		target = GLD
+		autonomous_state = autonomy_reichskommissariat
+	}
+	else_if = {
+		limit = { OR = { has_dlc = "Together for Victory" has_dlc = "Waking the Tiger" } }
+		set_autonomy = {
+			target = GLD
+			autonomous_state = autonomy_integrated_puppet
+		}
+	}
+	else = {
+		puppet = GLD
+	}
+}
+
+recruit_character = MOR_adunabeth
+recruit_character = MOR_dendra_dwar
+recruit_character = MOR_gothmog
+recruit_character = MOR_hoarmurath
+recruit_character = MOR_ji_indur
+recruit_character = MOR_khamul
+recruit_character = MOR_khorahil
+recruit_character = MOR_mouth_of_sauron
+recruit_character = MOR_ren_iey
+recruit_character = MOR_sauron
+recruit_character = MOR_uvatha_achef
+recruit_character = MOR_witch_king
+recruit_character = MOR_fimbet
+recruit_character = MOR_takra
+recruit_character = MOR_gazmuzged
+recruit_character = MOR_hizbug
+recruit_character = MOR_shagmoghi
+recruit_character = MOR_pugraft
+recruit_character = MOR_ubrutta
+recruit_character = MOR_flug_dush
+recruit_character = MOR_warennia
+recruit_character = MOR_drognot
+recruit_character = MOR_anarchy
+add_ideas = troll_tamers_spirit
+add_ideas = orcish_heritage_idea
+
+			####ARMOR
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "Warg Riders"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+		}
+	}
+	create_equipment_variant = {
+		name = "Trolls"
+		type = heavy_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_medium_cannon
+			turret_type_slot = tank_heavy_fixed_superstructure_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+		}
+	}
+}
+
+set_variable = { nazgul_attack_cost = 0.20 } #WS
+set_variable = { nazgul_attack_cost_increase = 0.05 }
+set_variable = { nazgul_defense_cost = 20 } #PP
+set_variable = { nazgul_defense_cost_increase = 5 }
+set_variable = { nazgul_logistics_cost = 20 } #CP
+set_variable = { nazgul_logistics_cost_increase = 5 }
+set_variable = { nazgul_planning_cost = 20 } #XP
+set_variable = { nazgul_planning_cost_increase = 5 }
+
+set_variable = { focus_modifier_bonus = 0.15 }
+set_variable = { focus_modifier_bonus_negative = -0.15 }
+add_ideas = female_leader_chance_idea
+#!&!&!

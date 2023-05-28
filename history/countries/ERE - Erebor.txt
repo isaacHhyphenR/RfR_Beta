@@ -1,0 +1,70 @@
+﻿capital = 101 #Lonely Mountain-The Lonely Mountain
+	#65 VPs
+OOB = "ERE_3015"
+
+set_research_slots = 3
+set_stability = .98
+set_war_support = 0.4
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_mountaineers = 1
+	support_weapons = 1
+	gw_artillery = 1
+	basic_train = 1
+}
+starting_train_buffer = 1
+set_fuel_ratio = 0.5
+################### ARMOR TECH
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		armored_car1 = 1
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = isolationism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 84
+	freedom = 12
+	opportunism = 4
+}
+
+
+
+recruit_character = ERE_isolation_dain_ironfoot
+recruit_character = ERE_adrik
+recruit_character = ERE_diesa
+recruit_character = ERE_morgran
+recruit_character = ERE_oskar
+recruit_character = ERE_finellen
+recruit_character = ERE_vondal
+recruit_character = ERE_kathra
+add_ideas = dwarven_heritage_idea
+
+give_guarantee = DAL
+add_ideas = female_leader_chance_idea
+#!&!&!

@@ -9,8 +9,8 @@ state={
 	}
 
 	history={
-		owner = RUN
-		add_core_of = RUN
+		owner = MED
+		add_core_of = MED
 
 	}
 

@@ -1,0 +1,54 @@
+﻿capital = 57 #Moria-Khazad Dum
+	# VPs
+
+set_research_slots = 3
+set_stability = .98
+set_war_support = 0.4
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_mountaineers = 1
+	support_weapons = 1
+	gw_artillery = 1
+}
+################## ARMOR TECH
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		armored_car1 = 1
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = freedom
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 49
+	freedom = 51
+}
+
+
+add_ideas = dwarven_heritage_idea
+add_ideas = female_leader_chance_idea
+#!&!&!

@@ -1,0 +1,372 @@
+Mordor_historical = {
+	name = "Mordorian historical plan"
+	desc = "Essentially historical behaviour for Mordor"
+
+	allowed = {
+		original_tag = MOR
+	}
+	enable = {
+		always = yes
+	}
+	abort = {
+	}
+
+	ai_national_focuses = {
+		#3015
+		MOR_the_eye_looks_inward
+		MOR_the_fires_of_industry
+		MOR_the_slums_of_gorgoroth
+		MOR_pump_the_bellows
+		MOR_fires_in_the_deep
+		#3016
+		MOR_unceasing_hammers
+		MOR_the_fires_of_war
+		MOR_raise_the_hordes
+		MOR_bodies_for_the_grinder
+		MOR_desertion_patrols
+		#3017
+		MOR_trample_all_living_things
+		MOR_the_eye_looks_east
+		MOR_the_eye_looks_south
+		MOR_aid_in_mumak_training
+		MOR_the_eye_looks_west
+		#3018
+		MOR_raid_the_herds_and_studs_of_rohan
+		MOR_the_eye_looks_north
+		MOR_rebuild_dol_guldur
+		MOR_connections_to_the_east
+		MOR_strike_the_elves
+		#3019
+		MOR_end_the_age_of_men
+		MOR_cross_the_anduin
+		MOR_send_forth_all_legions
+		MOR_do_not_stop_until_the_city_is_taken
+		MOR_bombard_the_city
+		MOR_form_ranks_you_maggots
+		MOR_pikes_in_front_archers_behind
+	}
+
+	research = {
+		infantry_tech = 4.0
+		cat_siege_artillery = 5.0
+		cat_bureaucracy = 5.0
+		cat_light_armor = 0.5
+		cat_artillery = 0.75
+		cat_medium_armor = 0.5
+		cat_heavy_armor = 2
+		naval_equipment = 0.9
+		tp_tech = 2
+	}
+
+	ideas = {
+	}
+
+	traits = {
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+	######UNITS
+	ai_strategy = {
+		type = force_build_armies
+		value = 100
+	}
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = 500
+	}
+	ai_strategy = {
+		type = build_army
+		id = fodder
+		value = 1000
+	}
+	ai_strategy = {
+		type = role_ratio
+		target = fodder
+		value = 60
+	}
+	ai_strategy = {
+		type = role_ratio
+		target = infantry
+		value = 30
+	}
+	ai_strategy = {
+		type = role_ratio
+		target = armor
+		value = 10
+	}
+	######DIPLOMACY
+	ai_strategy = {
+		type = prepare_for_war
+		id = GON
+		value = 50
+	}
+	ai_strategy = {
+		type = conquer
+		id = GON
+		value = 50
+	}
+	ai_strategy = {
+		type = invade
+		id = GON
+		value = 50
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = ITH
+		value = 50
+	}
+	ai_strategy = {
+		type = conquer
+		id = ITH
+		value = 50
+	}
+	ai_strategy = {
+		type = invade
+		id = ITH
+		value = 50
+	}
+	######MILITARY
+	ai_strategy = {
+		type = front_control
+		tag = GON
+
+		ratio = 0.0 # the strategy is enabled only if ratio of the front covered by this strat's targets greater than this ratio
+
+		priority = 1 # default 0, higher prio strats will override lower
+		ordertype = front # front or invasion. if set this strategy will only apply to that specific order type
+		execution_type = rush # one of careful balanced rush rush_weak. if set will override the execution type of front (only for front orders)
+		execute_order = yes # yes or no. if set will override execute or not decision of front
+		manual_attack = yes # default yes. if no ai will not do manual pokes at enemy (only for front orders)
+	}
+	ai_strategy = {
+		type = front_control
+		tag = GON
+
+		ratio = 0.0 # the strategy is enabled only if ratio of the front covered by this strat's targets greater than this ratio
+
+		priority = 1 # default 0, higher prio strats will override lower
+		ordertype = invasion # front or invasion. if set this strategy will only apply to that specific order type
+		execution_type = rush # one of careful balanced rush rush_weak. if set will override the execution type of front (only for front orders)
+		execute_order = yes # yes or no. if set will override execute or not decision of front
+		manual_attack = yes # default yes. if no ai will not do manual pokes at enemy (only for front orders)
+	}
+	ai_strategy = {
+		type = front_control
+		tag = ITH
+
+		ratio = 0.0 # the strategy is enabled only if ratio of the front covered by this strat's targets greater than this ratio
+
+		priority = 1 # default 0, higher prio strats will override lower
+		ordertype = front # front or invasion. if set this strategy will only apply to that specific order type
+		execution_type = rush # one of careful balanced rush rush_weak. if set will override the execution type of front (only for front orders)
+		execute_order = yes # yes or no. if set will override execute or not decision of front
+		manual_attack = yes # default yes. if no ai will not do manual pokes at enemy (only for front orders)
+	}
+	ai_strategy = {
+		type = front_control
+		tag = ITH
+
+		ratio = 0.0 # the strategy is enabled only if ratio of the front covered by this strat's targets greater than this ratio
+
+		priority = 1 # default 0, higher prio strats will override lower
+		ordertype = invasion # front or invasion. if set this strategy will only apply to that specific order type
+		execution_type = rush # one of careful balanced rush rush_weak. if set will override the execution type of front (only for front orders)
+		execute_order = yes # yes or no. if set will override execute or not decision of front
+		manual_attack = yes # default yes. if no ai will not do manual pokes at enemy (only for front orders)
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 163 #west osgiliath
+		value = 15
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 164 #east osgiliath
+		value = 15
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 151 #lossarnach
+		value = 15
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 152 #pelennor
+		value = 15
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 157 #folde
+		value = 10
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 166 #Forithilien
+		value = 15
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 124 #Dead marshes
+		value = 15
+	}
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.01
+		states = {
+			177 #mordath
+			178 #gaer durlith
+			179 #perth ulmyn
+			180 #maegond
+		}
+	}
+	ai_strategy = {
+		type = area_priority
+		id = lower_anduin
+		value = 1
+	}
+	ai_strategy = {
+		type = theatre_distribution_demand_increase
+		value = 10
+		id = 152 #Pellenor fields
+	}
+	# ai_strategy = {
+		# type = theatre_distribution_demand_increase
+		# value = 10
+		# id = 165 #Morgul vale
+	# }
+	ai_strategy = {
+		type = theatre_distribution_demand_increase
+		value = 10
+		id = 166 #forithilien
+	}
+	# ai_strategy = {
+		# type = theatre_distribution_demand_increase
+		# value = 15
+		# id = 124 #Dead marshes
+	# }
+	ai_strategy = {
+		type = spare_unit_factor
+		value = -50
+	}
+	ai_strategy = {
+		type = front_armor_score
+		id = GON
+		value = 50
+	}
+	focus_factors = {
+	}
+
+}
+
+Mordor_defend_morgul = { #########################################################MORGUL
+	name = "Mordor Defend Morgul"
+	desc = "Force mordor not let Gondor waltz through minas morgul"
+	allowed = {
+		original_tag = MOR
+	}
+	enable = {
+		166 = { is_controlled_by_ROOT_or_ally = no } #forithilien
+	}
+	abort = {
+		166 = { is_controlled_by_ROOT_or_ally = yes } #forithilien
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 165 #Morgul vale
+		value = 50
+	}
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.01
+		states = {
+			165 #morgul vale
+		}
+		subtract_fronts_from_need = no
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 166 #Forithilien
+		value = 15
+	}
+}
+
+Mordor_focus_ithilien = { #########################################################ITHILIEN
+	name = "Mordor focus ithilien"
+	desc = "Force mordor to focus on ithilien & the anduin until sucessfully crossing"
+
+	allowed = {
+		original_tag = MOR
+	}
+	enable = {
+		NOT = {
+			#151 = { is_controlled_by_ROOT_or_ally = yes } #lossarnach
+			#152 = { is_controlled_by_ROOT_or_ally = yes } #pelennor
+			161 = { is_controlled_by_ROOT_or_ally = yes } #doranorien
+			163 = { is_controlled_by_ROOT_or_ally = yes } #west osgiliath
+		}
+	}
+	abort = {
+		#151 = { is_controlled_by_ROOT_or_ally = yes } #lossarnach
+		#152 = { is_controlled_by_ROOT_or_ally = yes } #pelennor
+		161 = { is_controlled_by_ROOT_or_ally = yes } #doranorien
+		163 = { is_controlled_by_ROOT_or_ally = yes } #west osgiliath
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = LOG
+		value = 50
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 165 #Morgul vale
+		value = 50
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 166 #Forithilien
+		value = 15
+	}
+	ai_strategy = {
+		type = front_unit_request
+		state = 124 #Dead marshes
+		value = 15
+	}
+	ai_strategy = {
+		type = theatre_distribution_demand_increase
+		value = 10
+		id = 165 #Morgul vale
+	}
+	ai_strategy = {
+		type = theatre_distribution_demand_increase
+		value = 50
+		id = 166 #forithilien
+	}
+	ai_strategy = {
+		type = area_priority
+		id = lower_anduin
+		value = 10
+	}
+	ai_strategy = {
+		type = area_priority
+		id = rhovanion
+		value = -2
+	}
+	ai_strategy = {
+		type = area_priority
+		id = mirkwood
+		value = -2
+	}
+	ai_strategy = {
+		type = area_priority
+		id = vales_of_anduin
+		value = -2
+	}
+}

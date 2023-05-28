@@ -12,8 +12,8 @@ state = {
 		602 1781 4893 5143 6435 6482 
 	}
 	history = {
-		owner = RUN
-		add_core_of = RUN
+		owner = MED
+		add_core_of = MED
 		victory_points = { #3
 			5143 3
 		}

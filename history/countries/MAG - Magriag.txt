@@ -1,0 +1,78 @@
+﻿capital = 253 #Tauremindon
+	# VPs
+set_oob = "MAG_3015"
+set_research_slots = 2
+set_stability = .95
+set_war_support = 0.8
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	gw_artillery = 1
+	tech_support = 1
+	motorised_infantry = 1
+	mechanised_infantry = 1
+	basic_train = 1
+}
+starting_train_buffer = 1.25
+set_fuel_ratio = 0.5
+################### ARMOR TECH
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		engine_tech_1 = 1
+		armor_tech_1 = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+			basic_light_tank = 1
+			basic_light_art = 1
+			basic_light_td = 1
+		}
+	}
+}
+################### NAVAL TECH
+	#you live on the steppe
+			###POLITICS
+set_politics = {
+	ruling_party = conquest
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 10
+	opportunism = 42
+	conquest = 48
+}
+
+			###DIPLOMACY
+#recruit_character = LOG_Asterel_Ibarad
+add_ideas = steppe_heritage_idea
+
+			####ARMOR
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "Steppe Riders"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+		}
+	}
+}
+add_ideas = female_leader_chance_idea
+#!&!&!

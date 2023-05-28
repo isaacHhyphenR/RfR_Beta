@@ -1,0 +1,160 @@
+﻿capital = 210 #Orthanc-Orthanc
+	#50 VPs
+OOB = "ISN_3015"
+
+set_research_slots = 3
+set_stability = .95
+set_war_support = 0.5
+
+set_technology = {
+	hidden_fort_tech = 1
+	electronic_mechanical_engineering = 1
+	infantry_weapons = 1
+	tech_support = 1
+	basic_train = 1
+	superior_firepower = 1
+}
+starting_train_buffer = 0.75
+set_fuel_ratio = 0.2
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = opportunism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	freedom = 20
+	conquest = 40
+	melkorite = 40
+}
+
+recruit_character = ISN_saruman
+recruit_character = ISN_lurtz
+recruit_character = ISN_mauhur
+recruit_character = ISN_sharku
+recruit_character = ISN_ugluk
+recruit_character = ISN_lugthakki
+recruit_character = ISN_urdan
+recruit_character = ISN_maugashha
+recruit_character = ISN_barkh
+recruit_character = ISN_gazlugnigi
+recruit_character = ISN_arhuan
+recruit_character = ISN_yagbet
+recruit_character = ISN_gaelad_gerensadyn
+recruit_character = ISN_prudren_dogmaeladyn
+recruit_character = ISN_balf_gamon
+recruit_character = ISN_cadryn_adwyn
+recruit_character = ISN_fumbet
+recruit_character = ISN_barbrutta
+recruit_character = ISN_ambal
+recruit_character = ISN_azebed
+recruit_character = ISN_flizhpot
+recruit_character = ISN_gazlaggi
+recruit_character = ISN_gornagga
+recruit_character = ISN_greb
+recruit_character = ISN_grimbosh
+recruit_character = ISN_moranogal
+recruit_character = ISN_talug
+recruit_character = ISN_thrugg
+recruit_character = ISN_yna_trymbold
+if = {
+	limit = { has_dlc = "La Resistance" }
+	add_ideas = basic_palantir_LAR
+	add_country_leader_trait = voice_of_saruman_LAR
+	ISN_saruman = {
+		add_country_leader_trait = {
+			ideology = glorious_monarchy
+			trait = voice_of_saruman_LAR
+		}
+		add_country_leader_trait = {
+			ideology = evil_monarchy
+			trait = voice_of_saruman_LAR
+		}
+		add_country_leader_trait = {
+			ideology = wise_monarchy
+			trait = voice_of_saruman_LAR
+		}
+		add_country_leader_trait = {
+			ideology = rightful_monarchy
+			trait = voice_of_saruman_LAR
+		}
+	}
+	else = {
+		add_ideas = basic_palantir
+		add_country_leader_trait = voice_of_saruman
+		ISN_saruman = {
+			add_country_leader_trait = {
+				ideology = glorious_monarchy
+				trait = voice_of_saruman
+			}
+			add_country_leader_trait = {
+				ideology = evil_monarchy
+				trait = voice_of_saruman
+			}
+			add_country_leader_trait = {
+				ideology = wise_monarchy
+				trait = voice_of_saruman
+			}
+			add_country_leader_trait = {
+				ideology = rightful_monarchy
+				trait = voice_of_saruman
+			}
+		}
+	}
+}
+add_dynamic_modifier = { modifier = isengardian_heritage_modifier }
+if = { limit = { has_dlc = "Together for Victory" }
+	add_to_tech_sharing_group = sarumans_council_tech_sharing
+}
+
+set_variable = { level_1_law_cost = 5 }
+set_variable = { level_2_law_cost = 10 }
+set_variable = { level_3_law_cost = 15 }
+set_variable = { level_4_law_cost = 25 }
+set_variable = { level_5_law_cost = 35 }
+set_variable = { level_6_law_cost = 45 }
+set_variable = { druwaith_investment_PP = 150 }
+set_variable = { network_for_pupil = 20 }
+set_variable = { heritageVariableBonus = 0.15 }
+set_variable = { blackPowderExplosionCost = 100 }
+set_variable = { industrialWoodCost = 4 }
+add_ideas = female_leader_chance_idea
+#!&!&!
+
+################################################# ISD CHARACTERS
+@tribalAdvisorCost = 100
+recruit_character = ISD_Aga_Londing
+recruit_character = ISD_athin_arfarding
+recruit_character = ISD_afralyb_bocaerning
+recruit_character = ISD_ifsa_branting
+recruit_character = ISD_nefyn_fulfing
+recruit_character = ISD_wuldyn_map_inyr
+recruit_character = ISD_yngust_erlaening
+every_character = {
+	limit = {
+		OR = {
+			is_character = ISD_Aga_Londing
+			is_character = ISD_athin_arfarding
+			is_character = ISD_afralyb_bocaerning
+			is_character = ISD_ifsa_branting
+			is_character = ISD_nefyn_fulfing
+			is_character = ISD_wuldyn_map_inyr
+			is_character = ISD_yngust_erlaening
+		}
+	}
+	set_character_flag = ISD_character
+}

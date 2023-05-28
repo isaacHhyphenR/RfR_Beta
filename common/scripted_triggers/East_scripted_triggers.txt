@@ -1,0 +1,9 @@
+is_rhunnic_tag = {
+	OR = {
+		original_tag = LOG
+		original_tag = MED
+		original_tag = SAG
+		original_tag = SRB
+		original_tag = ULG
+	}
+}

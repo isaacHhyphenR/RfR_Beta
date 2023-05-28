@@ -1,0 +1,105 @@
+run_target_dale = {
+	name = "Target Gondor"
+	desc = "Sauron's minions will more actively attack Gondor"
+
+	allowed = {
+		OR = {
+			original_tag = LOG
+			original_tag = MED
+			original_tag = SAG
+			original_tag = SRB
+			original_tag = ULG
+		}
+	}
+	enable = {
+		always = yes
+		# or = {
+			# AND = {
+				# is_historical_focus_on = yes
+				# # OR = {
+					# # not = { has_dlc = "Waking the Tiger" }
+					# # has_game_rule = {
+						# # rule = GER_ai_behavior
+						# # option = DEFAULT
+					# # }
+				# # }	
+			# }
+			# # has_country_flag = GER_AI_RANDOM_FASCIST
+			# # has_game_rule = {
+				# # rule = GER_ai_behavior
+				# # option = FASCIST
+			# # }
+		# }
+	}
+	abort = {
+	}
+
+	ai_national_focuses = {
+	}
+
+	research = {
+	}
+
+	ideas = {
+	}
+
+	traits = {
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+	######DIPLOMACY
+	ai_strategy = {
+		type = prepare_for_war
+		id = DAL
+		value = 50
+	}
+	ai_strategy = {
+		type = conquer
+		id = DAL
+		value = 50
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = GON
+		value = 50
+	}
+	ai_strategy = {
+		type = conquer
+		id = GON
+		value = 50
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = ERE
+		value = 50
+	}
+	ai_strategy = {
+		type = conquer
+		id = ERE
+		value = 50
+	}
+	ai_strategy = {
+		type = area_priority
+		id = rhovanion
+		value = 50
+	}
+	ai_strategy = {
+		type = area_priority
+		id = gondor
+		value = 30
+	}
+	ai_strategy = {
+		type = spare_unit_factor
+		value = 20
+	}
+	focus_factors = {
+	}
+
+}

@@ -1,0 +1,120 @@
+characters = {
+		#######LEADERS
+	LOG_Asterel_Ibarad = {
+		name = "Asterel Ibarad"
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Easterling_Generic_f_5"
+				small = "GFX_Portrait_Easterling_Generic_f_5_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = {  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	MED_Khirun_Zhamian = {
+		name = "Khirun Zhamian"
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Easterling_Generic_m_3"
+				small = "GFX_Portrait_Easterling_Generic_m_3_small"
+			}
+		}
+		country_leader = {
+			ideology = khanship
+			expire = "3050.1.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = {  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	SAG_Amdur_Thoron = {
+		name = "Amdûr Thoron"
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Easterling_Generic_m_2"
+				small = "GFX_Portrait_Easterling_Generic_m_2_small"
+			}
+		}
+		country_leader = {
+			ideology = golden_khanship
+			expire = "3050.1.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = {  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	SRB_Karm_Yarikan = {
+		name = "Karm Yarikan"
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Easterling_Generic_m_4"
+				small = "GFX_Portrait_Easterling_Generic_m_4_small"
+			}
+		}
+		country_leader = {
+			ideology = shadow_khanship
+			expire = "3050.1.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = {  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	ULG_Bascam_Bozorganith = {
+		name = "Bascam Bozorganith"
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Easterling_Generic_m_5"
+				small = "GFX_Portrait_Easterling_Generic_m_5_small"
+			}
+		}
+		country_leader = {
+			ideology = golden_khanship
+			expire = "3050.1.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = {  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+		#######FIELD MARSHALS
+		#######GENERALS
+}

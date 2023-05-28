@@ -1,0 +1,605 @@
+ideas = {
+	@rohirric_heritage_cav_bonus = 0.25
+	@rohirric_heritage_cav_bonus_negative = -0.25
+	@rohirric_heritage_equipment_bonus = 0.25
+	@rohirric_heritage_fortification_malus = -0.5
+	##Terrain bonuses can be hidden techs unlocked in the country history file
+		######################################## SPIRITS
+	country = {
+		corsair_heritage_idea = {
+			removal_cost = -1
+			picture = umbar_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_dockyard = 0.2
+				experience_gain_navy = 0.1
+				naval_invasion_capacity = 10
+				navy_max_range_factor = 0.2
+			}
+		}
+		dwarven_heritage_idea = {
+			removal_cost = -1
+			picture = dwarven_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				max_dig_in = 20
+				production_speed_buildings_factor = 0.1
+				army_defence_factor = 0.1
+				army_speed_factor = -0.1
+				# mountain = {
+					# army_speed_factor = 0.2
+					# army_attack_factor = 0.2
+					# army_defence_factor = 0.2
+				# }
+				# hills = {
+					# army_speed_factor = 0.1
+					# army_attack_factor = 0.1
+					# army_defence_factor = 0.1
+				# }
+			}
+			research_bonus = {
+				armor = -0.25
+			}
+		}
+		easterling_heritage_idea = {
+			removal_cost = -1
+			picture = easterling_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+		}
+		steppe_heritage_idea = {
+			name = easterling_heritage_idea
+			removal_cost = -1
+			picture = easterling_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+		}
+		elven_heritage_idea = {
+			removal_cost = -1
+			picture = elven_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					max_organisation = 0.25
+					soft_attack = 0.25
+					hard_attack = 0.25
+					defense = 0.25
+					instant = yes
+				}
+			}
+		}
+		entish_heritage_idea = {
+			removal_cost = -1
+			picture = entish_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				custom_modifier_tooltip = allows_ents_tooltip
+				fortification_damage = 1
+				# forest = {
+					# army_speed_factor = 0.2
+					# army_attack_factor = 0.2
+					# army_defence_factor = 0.2
+				# }
+			}
+		}
+		hobbit_heritage_idea = {
+			removal_cost = -1
+			picture = hobbit_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+		}
+		northern_heritage_idea = {
+			removal_cost = -1
+			picture = northern_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+		}
+		numenorean_heritage_idea = {
+			removal_cost = -1
+			picture = numenorean_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				drift_defence_factor = 0.1
+				political_power_factor = 0.1
+				recruitable_population_factor = -0.25
+			}
+		}
+		orcish_heritage_idea = {
+			removal_cost = -1
+			picture = orcish_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_org_factor = -0.25
+				breakthrough_factor = -0.25
+				conscription = 0.015
+				custom_modifier_tooltip = orcish_heritage_tooltip
+			}
+			on_add = {
+				set_technology = { orcish_heritage_tech = 1 popup = no }
+			}
+			on_remove = {
+				set_technology = { orcish_heritage_tech = 0 popup = no }
+			}
+		}
+#################################################################ROHIRRIC
+		rohirric_heritage_idea = {
+			removal_cost = -1
+			picture = rohirric_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			on_add = {
+				set_technology = { rohan_cav_boost = 1 popup = no }
+			}
+			on_remove = {
+				set_technology = { rohan_cav_boost = 0 popup = no }
+			}
+			# equipment_bonus = {
+				# light_tank_chassis = {
+					# # build_cost_ic = -0.1
+					# #max_organisation = @rohirric_heritage_equipment_bonus
+					# #reliability = @rohirric_heritage_equipment_bonus
+					# #breakthrough = @rohirric_heritage_equipment_bonus
+					# instant = yes
+				# }
+				# medium_tank_chassis = {
+					# # build_cost_ic = -0.1
+					# #max_organisation = @rohirric_heritage_equipment_bonus
+					# #reliability = @rohirric_heritage_equipment_bonus
+					# #breakthrough = @rohirric_heritage_equipment_bonus
+					# instant = yes
+				# }
+			# }
+			modifier = {
+				production_speed_bunker_factor = @rohirric_heritage_fortification_malus
+				production_speed_coastal_bunker_factor = @rohirric_heritage_fortification_malus
+				custom_modifier_tooltip = rohirric_heritage_cav_boost_tooltip #Hidden tech (rohan_cav_boost/rohan_cav_boost_nsb)
+			}
+		}
+		rohirric_heritage_idea_1 = { #cav research cost
+			removal_cost = -1
+			picture = rohirric_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				# light_tank_chassis = {
+					# # build_cost_ic = -0.1
+					# #max_organisation = @rohirric_heritage_equipment_bonus
+					# #reliability = @rohirric_heritage_equipment_bonus
+					# #breakthrough = @rohirric_heritage_equipment_bonus
+					# instant = yes
+				# }
+				# medium_tank_chassis = {
+					# # build_cost_ic = -0.1
+					# #max_organisation = @rohirric_heritage_equipment_bonus
+					# #reliability = @rohirric_heritage_equipment_bonus
+					# #breakthrough = @rohirric_heritage_equipment_bonus
+					# instant = yes
+				# }
+			}
+			research_bonus ={
+				armor = @rohirric_heritage_cav_bonus
+			}
+			modifier = {
+				production_speed_bunker_factor = @rohirric_heritage_fortification_malus
+				production_speed_coastal_bunker_factor = @rohirric_heritage_fortification_malus
+				custom_modifier_tooltip = rohirric_heritage_cav_boost_tooltip
+			}
+		}
+		rohirric_heritage_idea_2 = { #cavalry build cost
+			removal_cost = -1
+			picture = rohirric_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				light_tank_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					#max_organisation = @rohirric_heritage_equipment_bonus
+					#reliability = @rohirric_heritage_equipment_bonus
+					#breakthrough = @rohirric_heritage_equipment_bonus
+					instant = yes
+				}
+				light_tank_artillery_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				light_tank_destroyer_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				medium_tank_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					#max_organisation = @rohirric_heritage_equipment_bonus
+					#reliability = @rohirric_heritage_equipment_bonus
+					#breakthrough = @rohirric_heritage_equipment_bonus
+					instant = yes
+				}
+				medium_tank_artillery_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				medium_tank_destroyer_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+			}
+			research_bonus ={
+				armor = @rohirric_heritage_cav_bonus
+				#cat_mobile_warfare = @rohirric_heritage_cav_bonus
+			}
+			modifier = {
+				production_speed_bunker_factor = @rohirric_heritage_fortification_malus
+				production_speed_coastal_bunker_factor = @rohirric_heritage_fortification_malus
+				custom_modifier_tooltip = rohirric_heritage_cav_boost_tooltip
+			}
+		}
+		rohirric_heritage_idea_3 = { #mobile warfare research cost
+			removal_cost = -1
+			picture = rohirric_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				light_tank_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					#max_organisation = @rohirric_heritage_equipment_bonus
+					#reliability = @rohirric_heritage_equipment_bonus
+					#breakthrough = @rohirric_heritage_equipment_bonus
+					instant = yes
+				}
+				light_tank_artillery_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				light_tank_destroyer_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				medium_tank_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					#max_organisation = @rohirric_heritage_equipment_bonus
+					#reliability = @rohirric_heritage_equipment_bonus
+					#breakthrough = @rohirric_heritage_equipment_bonus
+					instant = yes
+				}
+				medium_tank_artillery_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				medium_tank_destroyer_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+			}
+			research_bonus ={
+				armor = @rohirric_heritage_cav_bonus
+				#cat_mobile_warfare = @rohirric_heritage_cav_bonus
+			}
+			modifier = {
+				land_doctrine_cost_factor = @rohirric_heritage_cav_bonus_negative
+				production_speed_bunker_factor = @rohirric_heritage_fortification_malus
+				production_speed_coastal_bunker_factor = @rohirric_heritage_fortification_malus
+				custom_modifier_tooltip = rohirric_heritage_cav_boost_tooltip
+			}
+		}
+		rohirric_heritage_idea_4 = { #land equipment design cost
+			removal_cost = -1
+			picture = rohirric_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				light_tank_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					#max_organisation = @rohirric_heritage_equipment_bonus
+					#reliability = @rohirric_heritage_equipment_bonus
+					#breakthrough = @rohirric_heritage_equipment_bonus
+					instant = yes
+				}
+				light_tank_artillery_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				light_tank_destroyer_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				medium_tank_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					#max_organisation = @rohirric_heritage_equipment_bonus
+					#reliability = @rohirric_heritage_equipment_bonus
+					#breakthrough = @rohirric_heritage_equipment_bonus
+					instant = yes
+				}
+				medium_tank_artillery_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				medium_tank_destroyer_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}	
+			}
+			research_bonus ={
+				armor = @rohirric_heritage_cav_bonus
+				#cat_mobile_warfare = @rohirric_heritage_cav_bonus
+			}
+			modifier = {
+				land_doctrine_cost_factor = @rohirric_heritage_cav_bonus_negative
+				production_speed_bunker_factor = @rohirric_heritage_fortification_malus
+				production_speed_coastal_bunker_factor = @rohirric_heritage_fortification_malus
+				land_equipment_upgrade_xp_cost = @rohirric_heritage_cav_bonus_negative
+				custom_modifier_tooltip = rohirric_heritage_cav_boost_tooltip
+			}
+		}
+		rohirric_heritage_idea_5 = { #Daily army XP gain
+			removal_cost = -1
+			picture = rohirric_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				light_tank_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					#max_organisation = @rohirric_heritage_equipment_bonus
+					#reliability = @rohirric_heritage_equipment_bonus
+					#breakthrough = @rohirric_heritage_equipment_bonus
+					instant = yes
+				}
+				light_tank_artillery_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				light_tank_destroyer_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				medium_tank_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					#max_organisation = @rohirric_heritage_equipment_bonus
+					#reliability = @rohirric_heritage_equipment_bonus
+					#breakthrough = @rohirric_heritage_equipment_bonus
+					instant = yes
+				}
+				medium_tank_artillery_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+				medium_tank_destroyer_chassis = {
+					build_cost_ic = @rohirric_heritage_cav_bonus_negative
+					instant = yes
+				}
+			}
+			research_bonus ={
+				armor = @rohirric_heritage_cav_bonus
+				#cat_mobile_warfare = @rohirric_heritage_cav_bonus
+			}
+			modifier = {
+				land_doctrine_cost_factor = @rohirric_heritage_cav_bonus_negative
+				production_speed_bunker_factor = @rohirric_heritage_fortification_malus
+				production_speed_coastal_bunker_factor = @rohirric_heritage_fortification_malus
+				land_equipment_upgrade_xp_cost = @rohirric_heritage_cav_bonus_negative
+				experience_gain_army = 0.1
+				custom_modifier_tooltip = rohirric_heritage_cav_boost_tooltip
+			}
+		}
+		southron_heritage_idea = {
+			removal_cost = -1
+			picture = southron_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+		}
+		wildling_heritage_idea = {
+			removal_cost = -1
+			picture = wildling_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+		}
+#################################################################GREATER_ENEDWAITH
+		andrast_heritage_idea = {
+			removal_cost = -1
+			picture = andrast_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			on_add = {
+				set_technology = { andrast_food_from_dockyards = 1 popup = no }
+			}
+			on_remove = {
+				set_technology = { andrast_food_from_dockyards = 0 popup = no }
+			}
+			modifier = {
+				custom_modifier_tooltip = andrast_heritage_idea_tooltip #Hidden tech-- food from dockyards
+				mines_planting_by_fleets_factor = 0.25
+				mines_sweeping_by_fleets_factor = 0.25
+				production_speed_arms_factory_factor = -0.1 
+			}
+			equipment_bonus = {
+			}
+		}
+		druwaith_iaur_heritage_idea = {
+			removal_cost = -1
+			picture = druwaith_iaur_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				min_export = 0.1
+				local_resources_factor = 0.1
+				supply_factor = 0.2
+			}
+		}
+		dunland_heritage_idea = {
+			removal_cost = -1
+			picture = dunland_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			on_add = {
+				set_technology = { dunland_hills_boost = 1 popup = no }
+			}
+			on_remove = {
+				set_technology = { dunland_hills_boost = 0 popup = no }
+			}
+			modifier = {
+				custom_modifier_tooltip = dunland_heritage_hills_boost_tooltip #Hidden tech
+				improve_relations_maintain_cost_factor = 0.5
+			}
+			equipment_bonus = {
+				anti_tank_equipment = {
+					instant = yes
+					soft_attack = 0.2
+					max_organisation = 0.2
+				}
+			}
+		}
+		enedwaith_heritage_idea = {
+			removal_cost = -1
+			picture = enedwaith_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+			}
+			equipment_bonus = {
+				medium_tank_chassis = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				infantry_equipment = {
+					instant = no
+					build_cost_ic = 0.1
+					breakthrough = 0.1
+				}
+			}
+		}
+		enedwaith_heritage_idea_corsair = {
+			removal_cost = -1
+			picture = enedwaith_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+				industrial_capacity_dockyard = 0.15
+				experience_gain_navy = 0.05
+				naval_invasion_penalty = -0.1
+			}
+			equipment_bonus = {
+				medium_tank_chassis = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				infantry_equipment = {
+					instant = no
+					build_cost_ic = 0.1
+					breakthrough = 0.1
+				}
+			}
+		}
+		eregion_heritage_idea = {
+			removal_cost = -1
+			picture = eregion_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				recon_factor = 0.25
+				monthly_population = -0.25
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					instant = yes
+					hard_attack = 0.2
+					max_organisation = 0.2
+				}
+			}
+		}
+		saralain_heritage_idea = {
+			removal_cost = -1
+			picture = saralain_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				recruitable_population = -0.1
+			}
+			equipment_bonus = {
+				medium_tank_chassis = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		white_mountain_heritage_idea = {
+			removal_cost = -1
+			picture = white_mountains_heritage
+			allowed_civil_war = {
+				always = yes
+			}
+			on_add = {
+				set_technology = { white_mountains_mountain_boost = 1 popup = no }
+			}
+			on_remove = {
+				set_technology = { white_mountains_mountain_boost = 0 popup = no }
+			}
+			modifier = {
+				custom_modifier_tooltip = white_mountains_mountain_boost_tooltip #Hidden tech
+				army_armor_speed_factor = -0.1
+				#mechanized_speed_factor = -0.1
+				#motorized_speed_factor = -0.1
+			}
+			equipment_bonus = {
+				rocket_artillery_equipment = {
+					hard_attack = 0.2
+					max_organisation = 0.2
+				}
+			}
+		}
+#################################################################BEAST TAMER IDEAS
+		troll_tamers_spirit = {
+			removal_cost = -1
+			picture = troll_tamers
+			allowed_civil_war = {
+				always = yes
+			}
+			# modifier = {
+				# custom_modifier_tooltip = allows_trolls_tooltip
+			# }
+			traits = { hidden_troll_tamer_trait }
+		}
+		mumakil_tamers_spirit = {
+			removal_cost = -1
+			picture = mumakil_tamers
+			allowed_civil_war = {
+				always = yes
+			}
+			# modifier = {
+				# custom_modifier_tooltip = allows_mumakil_tooltip
+			# }
+			traits = { hidden_mumakil_tamer_trait }
+		}
+	}
+}

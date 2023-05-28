@@ -1,0 +1,358 @@
+﻿capital = 157 #The Folde- Edoras
+	# VPs
+
+set_research_slots = 3
+set_stability = .37
+set_war_support = 0.45
+
+#set_country_flag = light_tank_2
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	gw_artillery = 1
+	tech_support = 1
+	tech_recon = 1
+	gwtank = 1
+	motorised_infantry = 1
+	basic_train = 1
+	mobile_warfare = 1
+	rohan_cav_boost = 1
+}
+starting_train_buffer = 2
+set_fuel_ratio = 0.5
+################### ARMOR TECH
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		engine_tech_1 = 1
+		armor_tech_1 = 1
+		# rohan_cav_boost_nsb = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+			basic_light_tank = 1
+			basic_light_art = 1
+			basic_light_td = 1
+		}
+		if = { limit = { ROH = { has_country_flag = light_tank_2 } }
+			set_technology = {
+				improved_light_tank = 1
+				improved_light_art = 1
+				improved_light_td = 1
+			}
+		}
+	}
+}
+
+if = { limit = { has_dlc = "No Step Back" ROH = { has_country_flag = light_tank_2 } }
+	set_technology = { improved_light_tank_chassis = 1 }
+}
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+
+			###POLITICS
+set_politics = {
+	ruling_party = isolationism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 87
+	freedom = 13
+}
+
+			###DIPLOMACY
+# 3015.1.1 = {
+	# declare_war_on = {
+		# target = DUN
+		# type = annex_everything
+	# }
+# }
+
+
+recruit_character = ROH_theoden
+recruit_character = ROH_theodred
+recruit_character = ROH_eomer
+recruit_character = ROH_elfhelm
+recruit_character = ROH_gamling
+recruit_character = ROH_grimbold
+recruit_character = ROH_hama
+recruit_character = ROH_erkenbrand
+recruit_character = ROH_grima
+recruit_character = ROH_eowyn
+recruit_character = ROH_wulfwynn_eogaring
+recruit_character = ROH_wigluf_wadelingas
+recruit_character = ROH_beowyrt_rungaring
+recruit_character = ROH_isenmund_wulfing
+recruit_character = ROH_frea_ordgaring
+recruit_character = ROH_eadmaer_stangard
+
+##These characters get unlocked via focus
+recruit_character = ROH_dunhere_herefring
+recruit_character = ROH_heliniel
+recruit_character = ROH_ymhar
+recruit_character = ROH_haleth_halethring
+recruit_character = ROH_eofolda_hunthelming
+recruit_character = ROH_aetta_halethring
+recruit_character = ROH_eorida_hunthelming
+recruit_character = ROH_elfhild_harolding
+recruit_character = ROH_aegela_grimmoding
+recruit_character = ROH_freawine_grimmoding
+recruit_character = ROH_rynelda_maharth
+recruit_character = ROH_osulf_firienfeld
+recruit_character = ROH_ecgfrida_ordlacing
+
+
+add_ideas = ROH_eomer #_advisor
+add_ideas = ROH_grima #_advisor
+add_ideas = ROH_a_hall_divided
+add_ideas = rohirric_heritage_idea
+
+			####ARMOR
+load_starting_rohirrim_armor_variants = yes
+set_oob = "ROH_3015" ##unit creation handled via on startup event so that they can have IDs for the rebellion event
+3015.1.1 = {
+	add_opinion_modifier = {
+		target = GON
+		modifier = oath_of_eorl
+	}
+	reverse_add_opinion_modifier = {
+		target = GON
+		modifier = oath_of_eorl
+	}
+	add_equipment_to_stockpile = {
+		type = motorized_equipment
+		amount = 250
+		producer = ROH
+	}
+	add_equipment_to_stockpile = {
+		type = train_equipment_1
+		amount = 23
+		producer = ROH
+	}
+	if = { limit = { has_dlc = "No Step Back" }
+		add_equipment_to_stockpile = {
+			type = light_tank_chassis_1
+			amount = 400
+			producer = ROH
+			variant_name = "Basic Riddermark Muster"
+		}
+		add_equipment_to_stockpile = {
+			type = light_tank_destroyer_chassis_1
+			amount = 40
+			producer = ROH
+			variant_name = "Basic Lancer Muster"
+		}
+		add_equipment_to_stockpile = {
+			type = light_tank_artillery_chassis_1
+			amount = 40
+			producer = ROH
+			variant_name = "Basic Archer Muster"
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = light_tank_equipment_1
+				amount = 400
+				producer = ROH
+				variant_name = "Basic Riddermark Muster"
+			}
+			add_equipment_to_stockpile = {
+				type = light_tank_destroyer_equipment_1
+				amount = 40
+				producer = ROH
+				variant_name = "Basic Lancer Muster"
+			}
+			add_equipment_to_stockpile = {
+				type = light_tank_artillery_equipment_1
+				amount = 40
+				producer = ROH
+				variant_name = "Basic Archer Muster"
+			}
+		}
+	}
+		
+	##Marks some unlockable characters as Grima's cronys
+	ROH_aegela_grimmoding = { set_character_flag = grimas_crony }
+	ROH_freawine_grimmoding = { set_character_flag = grimas_crony }
+	ROH_rynelda_maharth = { set_character_flag = grimas_crony }
+	ROH_osulf_firienfeld = { set_character_flag = grimas_crony }
+	ROH_ecgfrida_ordlacing = { set_character_flag = grimas_crony }
+}
+
+
+
+# if = {
+	# limit = {
+		# has_dlc = "No Step Back"
+	# }
+	# create_equipment_variant = {
+		# name = "Riddermark Muster"
+		# type = light_tank_chassis_1
+		# parent_version = 0
+		# icon = "GFX_ROH_basic_light_tank_medium"
+		# modules = {
+			# main_armament_slot = tank_heavy_machine_gun
+			# turret_type_slot = tank_light_two_man_tank_turret
+			# suspension_type_slot = tank_christie_suspension
+			# armor_type_slot = tank_welded_armor
+			# engine_type_slot = tank_diesel_engine
+		# }
+		# upgrades = {
+			# tank_nsb_engine_upgrade = 5
+		# }
+	# }
+	# create_equipment_variant = {
+		# name = "Archer Muster"
+		# type = light_tank_artillery_chassis_1
+		# parent_version = 0
+		# icon = "GFX_ROH_basic_light_art_medium"
+		# modules = {
+			# main_armament_slot = tank_close_support_gun
+			# turret_type_slot = tank_light_two_man_tank_turret
+			# suspension_type_slot = tank_christie_suspension
+			# armor_type_slot = tank_welded_armor
+			# engine_type_slot = tank_diesel_engine
+		# }
+		# upgrades = {
+			# tank_nsb_engine_upgrade = 5
+		# }
+	# }
+	# create_equipment_variant = {
+		# name = "Lancer Muster"
+		# type = light_tank_destroyer_chassis_1
+		# parent_version = 0
+		# icon = "GFX_ROH_basic_light_td_medium"
+		# modules = {
+			# main_armament_slot = tank_high_velocity_cannon
+			# turret_type_slot = tank_light_two_man_tank_turret
+			# suspension_type_slot = tank_christie_suspension
+			# armor_type_slot = tank_welded_armor
+			# engine_type_slot = tank_diesel_engine
+		# }
+		# upgrades = {
+			# tank_nsb_engine_upgrade = 5
+		# }
+	# }
+	# else = {
+		# create_equipment_variant = {
+			# name = "Riddermark Muster"
+			# type = light_tank_equipment_1
+			# parent_version = 0
+			# icon = "GFX_ROH_basic_light_tank_medium"
+			# upgrades = {
+				# tank_reliability_upgrade = 1
+			# }
+		# }
+		# create_equipment_variant = {
+			# name = "Archer Muster"
+			# type = light_tank_artillery_equipment_1
+			# parent_version = 0
+			# icon = "GFX_ROH_basic_light_art_medium"
+			# upgrades = {
+				# tank_reliability_upgrade = 1
+			# }
+		# }
+		# create_equipment_variant = {
+			# name = "Lancer Muster"
+			# type = light_tank_destroyer_equipment_1
+			# parent_version = 0
+			# icon = "GFX_ROH_basic_light_td_medium"
+			# upgrades = {
+				# tank_reliability_upgrade = 1
+			# }
+		# }
+	# }
+# }
+set_variable = { ##Gives EOM_tag decreased recruitment time
+	var = eomerPopularity
+	value = 0.0
+}
+set_variable = { ##how many days fyrd take to recruit
+	var = fyrdRecruitmentDays
+	value = 30 #30
+}
+set_variable = { #Makes noble priveleges stronger
+	var = hasCompletedTaxationFocus
+	value = 0.0
+}
+set_variable = { ##How many houses Eomer has swayed-- increases time to complete more sway focuses
+	var = eomersHouses
+	value = 0
+}
+####PROVINCE LOYALTY-- every negative loyalty makes one random state revolt with EOM
+set_variable = {
+	var = woldLoyalty
+	value = 0.0
+}
+set_variable = {
+	var = eastmarkLoyalty
+	value = 0.0
+}
+set_variable = {
+	var = westmarkLoyalty
+	value = 0.0
+}
+set_variable = {
+	var = foldeLoyalty
+	value = 0.0
+}
+set_variable = {
+	var = adornLoyalty
+	value = 0.0
+}
+##REPAIRING DEVASTATION
+set_variable = {
+	var = base_auto_heal_time
+	value = 120
+}
+set_variable = {
+	var = auto_heal_time
+	value = base_auto_heal_time
+}
+set_variable = {
+	var = base_manual_heal_time
+	value = 120
+}
+multiply_variable = { #manual healing is half the time at cost of 1 civ factory
+	var = base_manual_heal_time
+	value = 0.5
+}
+set_variable = {
+	var = manual_heal_time
+	value = base_manual_heal_time
+}
+set_variable = {
+	var = infantry_per_fyrd
+	value = 4
+}
+country_lock_all_division_template = yes
+set_country_flag = conflict_ongoing
+set_country_flag = start_with_trained_fyrd ##if set, rohan will start with 1 trained fyrd in each state
+set_country_flag = recruit_mark_nobles ##if set, all commanders get special trait
+set_country_flag = has_bregdanings
+set_country_flag = has_eogarings
+set_country_flag = has_felandings
+set_country_flag = has_ordgarings
+set_country_flag = has_rungarings
+set_country_flag = has_stangard
+set_country_flag = has_wadelingas
+set_country_flag = has_wulfings
+
+add_ideas = female_leader_chance_idea
+#!&!&!

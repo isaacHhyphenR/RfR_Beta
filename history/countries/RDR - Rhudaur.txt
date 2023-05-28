@@ -1,0 +1,92 @@
+﻿capital = 43 #The Angle- Fennas Drunin
+	#63 VPs
+OOB = "RDR_3015"
+
+set_research_slots = 3
+set_stability = .95
+set_war_support = 0.3
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	tech_special_forces = 1
+	gw_artillery = 1
+	tech_support = 1
+	tech_recon = 1
+	basic_train = 1
+	paratroopers = 1
+}
+starting_train_buffer = 1
+set_fuel_ratio = 0.5
+################### ARMOR TECH
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = opportunism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 26
+	opportunism = 54
+	conquest = 10
+	melkorite = 10
+}
+
+recruit_character = RDR_anraig
+recruit_character = RDR_morlaen
+recruit_character = RDR_ithilwing
+recruit_character = RDR_arbereth
+recruit_character = RDR_mormacil
+recruit_character = RDR_alquatir
+recruit_character = RDR_terendul
+recruit_character = RDR_isilme
+recruit_character = RDR_yavien
+recruit_character = RDR_ivorwen
+add_ideas = wildling_heritage_idea
+			####ARMOR
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "Arnorian Nobles"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+		}
+	}
+}
+add_ideas = female_leader_chance_idea
+#!&!&!

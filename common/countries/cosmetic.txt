@@ -1,0 +1,74 @@
+EOM_cosmetic = {
+	color = rgb { 132 160 17 }
+	color_ui = rgb { 94 115 10 }
+}
+arnor_cosmetic = {
+	color = rgb { 200 200 200 }
+	color_ui = rgb { 180 180 180 }
+}
+reunited_kingdom_cosmetic = {
+	color = rgb { 255 255 255 }
+	color_ui = rgb { 227 227 227 }
+}
+ROH_cosmetic = {
+	color = rgb { 6 124 10 }
+	color_ui = rgb { 9 97 12 }
+}
+############################################################VorV
+Andrast = {
+	color = rgb { 103 155 130 }
+	color_ui = rgb { 68 129 100 }
+}
+Druwaith_Iaur = {
+	color = rgb { 143 103 155 }
+	color_ui = rgb { 116 74 129 }
+}
+Dunland = {
+	color = rgb { 132 44 4 }
+	color_ui = rgb { 105 37 7 }
+}
+Province_of_Dunland = {
+	color = rgb { 132 44 4 }
+	color_ui = rgb { 105 37 7 }
+}
+Enedwaith = {
+	color = rgb { 213 168 62 }
+	color_ui = rgb { 177 135 37 }
+}
+Eregion = {
+	color = rgb { 172 205 24 }
+	color_ui = rgb { 137 163 20 }
+}
+White_Mountains = {
+	color = rgb { 40 146 221 }
+	color_ui = rgb { 30 121 185 }
+}
+Greater_Enedwaith = {
+	color = rgb { 103 155 130 }
+	color_ui = rgb { 70 113 93 }
+}
+############################################################Khaganate
+RUN_khaganate = {
+	color = rgb { 176 105 43 }
+	color_ui = rgb { 213 136 2 }
+}
+LOG_khanate = {
+	color = rgb { 201 129 66 }
+	color_ui = rgb { 180 118 64 }
+}
+MED_khanate = {
+	color = rgb { 176 121 43 }
+	color_ui = rgb { 165 114 43 }
+}
+SAG_khanate = {
+	color = rgb { 161 93 34 }
+	color_ui = rgb { 146 84 30 }
+}
+SRB_khanate = {
+	color = rgb { 176 105 43 }
+	color_ui = rgb { 155 92 37 }
+}
+ULG_khanate = {
+	color = rgb { 180 89 51 }
+	color_ui = rgb { 161 79 44 }
+}

@@ -1,0 +1,65 @@
+﻿capital = 27 #Westfarthing- Michel Delving
+	#21 VPs
+OOB = "SHI_3015"
+
+set_research_slots = 2
+set_stability = .95
+set_war_support = 0.01
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	gw_artillery = 1
+	basic_train = 1
+}
+starting_train_buffer = 0.1
+set_fuel_ratio = 0.8
+################ ARMOR TECH
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		armored_car1 = 1
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+
+			###POLITICS
+set_politics = {
+	ruling_party = isolationism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 99
+	freedom = 1
+}
+
+recruit_character = SHI_will_whitfoot
+recruit_character = SHI_paladin_took_II
+recruit_character = SHI_lotho_sackville_baggins
+#recruit_character = SHI_hob
+#recruit_character = SHI_fosco
+recruit_character = SHI_marmadas
+recruit_character = SHI_tanta
+recruit_character = SHI_saradas
+add_ideas = hobbit_heritage_idea
+
+			###DIPLOMACY
+
+add_ideas = female_leader_chance_idea
+#!&!&!
