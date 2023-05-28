@@ -1,6 +1,6 @@
 characters = {
 		#######LEADERS
-	LOG_Asterel_Ibarad = {
+	LGA_Asterel_Ibarad = {
 		name = "Asterel Ibarad"
 		gender = female
 		portraits = {

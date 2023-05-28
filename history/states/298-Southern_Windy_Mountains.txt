@@ -5,8 +5,8 @@ state = {
 	resources = {
 	}
 	history = {
-		owner = RUN
-		add_core_of = RUN
+		owner = WND
+		add_core_of = WND
 		buildings = {
 			infrastructure = 1
 		}

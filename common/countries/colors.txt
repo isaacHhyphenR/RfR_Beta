@@ -183,6 +183,10 @@ KZD = {
 	color = rgb { 13 47 104 }
 	color_ui = rgb { 11 40 87 }
 }
+LGA = {
+	color = rgb { 153 144 115 }
+	color_ui = rgb { 140 132 104 }
+}
 LGR = {
 	color = rgb { 255 70 63 }
 	color_ui = rgb { 223 66 60 }
@@ -190,10 +194,6 @@ LGR = {
 LIN = {
 	color = rgb { 104  131  172 }
 	color_ui = rgb { 83 106 141 }
-}
-LOG = {
-	color = rgb { 153 144 115 }
-	color_ui = rgb { 140 132 104 }
 }
 LOR = {
 	color = rgb { 119 210 44 }

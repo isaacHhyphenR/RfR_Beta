@@ -1,4 +1,4 @@
-﻿capital = 186 #Chelkar-Korondaj
+﻿capital = 184 #Akharn
 	# VPs
 # if = {
 	# limit = { has_dlc = "No Step Back" }

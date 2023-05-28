@@ -1779,7 +1779,7 @@
 1778;135;131;241;land;false;plains;1
 1779;234;160;164;land;false;plains;1
 1780;224;214;97;land;false;hills;1
-1781;127;208;166;land;true;hills;1
+1781;127;208;166;land;false;hills;1
 1782;188;120;226;land;false;plains;1
 1783;64;246;195;land;false;plains;1
 1784;92;253;225;land;false;desert;1

@@ -1,0 +1,108 @@
+﻿capital = 257 #Ibarad
+	# VPs
+set_oob = "LGA_3015"
+set_research_slots = 2
+set_stability = .95
+set_war_support = 0.2
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	gw_artillery = 1
+	tech_support = 1
+	motorised_infantry = 1
+	mechanised_infantry = 1
+	basic_train = 1
+}
+starting_train_buffer = 1.25
+set_fuel_ratio = 0.5
+################### ARMOR TECH
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		engine_tech_1 = 1
+		armor_tech_1 = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+			basic_light_tank = 1
+			basic_light_art = 1
+			basic_light_td = 1
+		}
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_battery = 1
+		mtg_transport = 1
+	}
+}
+			###DIPLOMACY
+MED = {
+	set_autonomy = {
+		target = ROOT
+		autonomy_state = autonomy_reichsprotectorate
+		end_wars = no
+		end_civil_wars = no
+	}
+}
+set_cosmetic_tag = LGA_khanate
+
+			###POLITICS
+set_politics = {
+	ruling_party = isolationism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	isolationism = 48
+	freedom = 14
+	opportunism = 28
+	melkorite = 10
+}
+
+recruit_character = LGA_Asterel_Ibarad
+add_ideas = easterling_heritage_idea
+
+			####ARMOR
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "Rhûnnic Nobles"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+		}
+	}
+}
+add_ideas = female_leader_chance_idea
+#!&!&!

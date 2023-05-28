@@ -9,8 +9,8 @@ state={
 	}
 
 	history={
-		owner = LOG
-		add_core_of = LOG
+		owner = LGA
+		add_core_of = LGA
 	}
 
 	provinces={
