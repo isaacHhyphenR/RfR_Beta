@@ -1,0 +1,53 @@
+﻿capital = 160 #Druadan Forest
+	#3 VPs
+OOB = "DAI_3015"
+
+set_research_slots = 2
+set_stability = .95
+set_war_support = 0.1
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	gw_artillery = 1
+	interwar_antitank = 1
+}
+set_fuel_ratio = 0.5
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = isolationism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 97
+	freedom = 3
+}
+
+
+recruit_character = DAI_isolation_ghan_buri_ghan
+recruit_character = DAI_ealdhun
+recruit_character = DAI_judith
+recruit_character = DAI_cenred
+recruit_character = DAI_sigeberht
+recruit_character = DAI_ethelthryth
+recruit_character = DAI_wulfgyth
+recruit_character = DAI_balthild
+add_ideas = wildling_heritage_idea
+
+add_ideas = female_leader_chance_idea
+#!&!&!

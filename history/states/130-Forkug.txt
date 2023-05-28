@@ -11,9 +11,8 @@ state={
 	}
 
 	history={
-		owner = RUN
-		add_core_of = RUN
-
+		owner = ULG
+		add_core_of = ULG
 	}
 
 	provinces={

@@ -1,0 +1,44 @@
+﻿capital = 1 #Northern Waste
+#0	# VPs
+
+set_research_slots = 0
+set_stability = 100.0
+set_war_support = 0.0
+
+set_politics = {
+	ruling_party = isolationism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 100
+}
+
+recruit_character = FOR_yrjana
+recruit_character = Bill_Burr
+recruit_character = FEL_aragorn
+recruit_character = WLF_country_leader
+recruit_character = WLF_rwyn_erraigarding
+recruit_character = WLF_gerginauw_nelfaining
+recruit_character = WLF_wuldyn_map_inyr
+recruit_character = WLF_beorhtfrith_fen
+recruit_character = WLF_gytha_fen
+recruit_character = WLF_eadsige_slaighreluath
+recruit_character = WLF_aranel_map_merfyn
+WLF_country_leader = { set_character_flag = WLF_character }
+WLF_aranel_map_merfyn = { set_character_flag = WLF_character }
+WLF_rwyn_erraigarding = { set_character_flag = WLF_character }
+WLF_gerginauw_nelfaining = { set_character_flag = WLF_character }
+WLF_wuldyn_map_inyr = { set_character_flag = WLF_character }
+WLF_beorhtfrith_fen = { set_character_flag = WLF_character }
+WLF_gytha_fen = { set_character_flag = WLF_character }
+WLF_eadsige_slaighreluath = { set_character_flag = WLF_character }
+
+
+set_variable = { points_to_capture_ring = 17 }
+
+add_dynamic_modifier = { modifier = observer_country }
+add_ideas = female_leader_chance_idea
+#!&!&!

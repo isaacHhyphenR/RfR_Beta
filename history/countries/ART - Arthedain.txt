@@ -1,0 +1,113 @@
+﻿capital = 23 #Numeridor- Fornost Erain
+	#77 VPs
+
+# if = {
+	# limit = { has_dlc = "No Step Back" }
+	# set_oob = "ART_3015_nsb"
+	# else = {
+		set_oob = "ART_3015"
+	# }
+# }
+
+set_research_slots = 3
+set_stability = .95
+set_war_support = 0.2
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	tech_special_forces = 1
+	gw_artillery = 1
+	tech_support = 1
+	tech_recon = 1
+	basic_train = 1
+	paratroopers = 1
+}
+starting_train_buffer = 1
+set_fuel_ratio = 0.5
+################### ARMOR TECH
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = isolationism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 84
+	freedom = 12
+	opportunism = 4
+}
+
+
+# 3015.1.1 = {
+	# declare_war_on = {
+		# target = CAR
+		# type = annex_everything
+	# }
+# }
+# 3015.1.1 = {
+	# declare_war_on = {
+		# target = RDR
+		# type = annex_everything
+	# }
+# }
+recruit_character = ART_linreal
+recruit_character = ART_morlaen
+recruit_character = ART_ithilwing
+recruit_character = ART_arbereth
+recruit_character = ART_mormacil
+recruit_character = ART_alquatir
+recruit_character = ART_terendul
+recruit_character = ART_isilme
+recruit_character = ART_yavien
+recruit_character = ART_ivorwen
+
+add_ideas = numenorean_heritage_idea
+
+			####ARMOR
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "Arnorian Nobles"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+		}
+	}
+}
+add_ideas = female_leader_chance_idea
+#!&!&!

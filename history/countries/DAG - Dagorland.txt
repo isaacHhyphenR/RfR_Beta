@@ -1,0 +1,50 @@
+﻿capital = 124 #Dead Marshes-Sarnen Thuringwath
+	#15 VPs
+OOB = "DAG_3015"
+
+set_research_slots = 1
+set_stability = .2
+set_war_support = 0.1
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+}
+set_fuel_ratio = 0.1
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+
+# 3015.1.1 = {
+	# declare_war_on = {
+		# target = GON
+		# type = annex_everything
+	# }
+# }
+set_politics = {
+	ruling_party = opportunism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 23
+	opportunism = 42
+	melkorite = 35
+}
+
+recruit_character = DAG_glurgnarsh
+add_ideas = orcish_heritage_idea
+
+add_ideas = female_leader_chance_idea
+#!&!&!

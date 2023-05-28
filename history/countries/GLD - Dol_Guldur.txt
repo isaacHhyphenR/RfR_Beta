@@ -1,0 +1,102 @@
+﻿capital = 93 #Reaches of the Wood-Dol Guldur
+	#53 VPs
+# if = {
+	# limit = { has_dlc = "No Step Back" }
+	# set_oob = "GLD_3015_nsb"
+	# else = {
+		set_oob = "GLD_3015"
+	# }
+# }
+
+set_research_slots = 3
+set_stability = 0.7
+set_war_support = 0.7
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	gw_artillery = 1
+	tech_support = 1
+	tech_military_police = 1
+	basic_train = 1
+	orcish_heritage_tech = 1
+}
+starting_train_buffer = 0.85
+set_fuel_ratio = 0.2
+################### ARMOR TECH
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+			###POLITICS
+set_politics = {
+	ruling_party = melkorite
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	opportunism = 4
+	conquest = 13
+	melkorite = 83
+}
+
+recruit_character = GLD_melkorite_rugrulia_skuthank
+recruit_character = GLD_gazdush
+recruit_character = GLD_ragash
+recruit_character = GLD_laglu_u_n
+recruit_character = GLD_fimbul
+recruit_character = GLD_zagbed
+recruit_character = GLD_ulthugga
+recruit_character = GLD_gorshag
+add_ideas = troll_tamers_spirit
+add_ideas = orcish_heritage_idea
+			###DIPLOMACY
+# 3015.1.1 = {
+	# declare_war_on = {
+		# target = WOD
+		# type = annex_everything
+	# }
+# }
+			####ARMOR
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "Giant Spiders"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+		}
+	}
+}
+add_ideas = female_leader_chance_idea
+#!&!&!

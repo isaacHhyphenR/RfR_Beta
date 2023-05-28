@@ -1,0 +1,106 @@
+﻿capital = 100 #Dale-Dale
+	#71 VPs
+# if = {
+	# limit = { has_dlc = "No Step Back" }
+	# set_oob = "DAL_3015_nsb"
+	# else = {
+		set_oob = "DAL_3015"
+	# }
+# }
+
+set_research_slots = 3
+set_stability = .95
+set_war_support = 0.2
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	gw_artillery = 1
+	interwar_artillery = 1
+	tech_support = 1
+	basic_train = 1
+}
+starting_train_buffer = 1
+set_fuel_ratio = 0.5
+################### ARMOR TECH
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_battery = 1
+		mtg_transport = 1
+	}
+}
+
+set_politics = {
+	ruling_party = isolationism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 70
+	freedom = 23
+	opportunism = 7
+}
+
+recruit_character = DAL_isolation_brand
+recruit_character = DAL_ealdhun
+recruit_character = DAL_judith
+recruit_character = DAL_cenred
+recruit_character = DAL_sigeberht
+recruit_character = DAL_ethelthryth
+recruit_character = DAL_wulfgyth
+recruit_character = DAL_balthild
+add_ideas = northern_heritage_idea
+
+			####ARMOR
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "Dalian Nobles"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+		}
+	}
+}
+
+give_guarantee = ERE
+add_ideas = female_leader_chance_idea
+#!&!&!

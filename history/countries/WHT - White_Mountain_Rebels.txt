@@ -1,0 +1,199 @@
+﻿capital = 139 #White Mountains of Morthond
+	#4 VPs
+load_VorV_OOB = yes
+
+
+set_research_slots = 2 #greater_enedwaith
+set_stability = .50
+set_war_support = 0.9
+
+set_fuel_ratio = 0.1
+
+white_mountains_tribes_3015_tech = yes
+set_technology = {
+	mass_assault = 1
+}
+
+set_politics = {
+	ruling_party = opportunism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 13
+	freedom = 14
+	opportunism = 47
+	conquest = 13
+	melkorite = 13
+}
+
+recruit_character = WHT_Helvi_Wildebeorh
+recruit_character = WHT_Brorn_Vulfosing
+recruit_character = WHT_Malmadon_Lonozing
+add_ideas = limited_conscription
+add_ideas = partial_economic_mobilisation
+add_ideas = white_mountain_heritage_idea
+add_ideas = white_mountain_rebels
+add_ideas = female_leader_chance_idea
+
+set_variable = { WHT.resistance_increase = 0.1 }
+set_variable = { WHT.resistance_increase_2 = resistance_increase }
+multiply_variable = { WHT.resistance_increase_2 = 2 }
+set_variable = { WHT.resistance_target_var = 0.2 }
+set_variable = { WHT.resistance_growth_var = 0.2 }
+
+#!&!&!
+######################An Intellectual Coalition
+@tribalAdvisorCost = 100
+######CIV CONSTRUCTION
+generate_character = {
+	token_base = ENE_civ_construction
+	#name = funny_name
+	gender = male
+	advisor = {
+		slot = political_advisor
+		cost = @tribalAdvisorCost
+		idea_token = ENE_civ_construction
+		traits = {
+			tribal_architect
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_an_intellectual_coalition
+		}
+	}
+}
+ENE_civ_construction = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_m_1_small" }
+	}
+}
+######STABILITY
+generate_character = {
+	token_base = ENE_stability
+	#name = funny_name
+	gender = female
+	advisor = {
+		slot = political_advisor
+		cost = @tribalAdvisorCost
+		idea_token = ENE_stability
+		traits = {
+			tribal_loremaster
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_an_intellectual_coalition
+		}
+	}
+}
+ENE_stability = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_f_1_small" }
+	}
+}
+######THEORIST
+generate_character = {
+	token_base = ENE_theorist
+	#name = funny_name
+	gender = male
+	advisor = {
+		slot = theorist
+		ledger = army
+		cost = @tribalAdvisorCost
+		idea_token = ENE_theorist
+		traits = {
+			tribal_theorist
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_an_intellectual_coalition
+		}
+	}
+}
+ENE_theorist = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_m_5_small" }
+	}
+}
+######################Hire <Regions> Brightest
+@royalAdvisorCost = 150
+######CONSUMER GOODS
+generate_character = {
+	token_base = ENE_consumer_goods
+	gender = male
+	advisor = {
+		slot = political_advisor
+		cost = @royalAdvisorCost
+		idea_token = ENE_consumer_goods
+		traits = {
+			financial_expert
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_hire_regions_brightest
+		}
+	}
+}
+ENE_consumer_goods = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_m_2_small" }
+	}
+}
+######PRODUCTION EFFICIENCY
+generate_character = {
+	token_base = ENE_production_efficiency
+	gender = male
+	advisor = {
+		slot = political_advisor
+		cost = @royalAdvisorCost
+		idea_token = ENE_production_efficiency
+		traits = {
+			economist
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_hire_regions_brightest
+		}
+	}
+}
+ENE_production_efficiency = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_m_4_small" }
+	}
+}
+######TECH
+generate_character = {
+	token_base = ENE_tech
+	gender = female
+	advisor = {
+		slot = political_advisor
+		cost = @royalAdvisorCost
+		idea_token = ENE_tech
+		traits = {
+			technocrat
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_hire_regions_brightest
+		}
+	}
+}
+ENE_tech = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_f_4_small" }
+	}
+}

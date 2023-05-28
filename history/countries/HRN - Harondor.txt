@@ -1,0 +1,237 @@
+﻿capital = 190 #Harfalas-Gobel Mirlond
+	# VPs
+# if = {
+	# limit = { has_dlc = "No Step Back" }
+	# set_oob = "HRN_3015_nsb"
+	# else = {
+		set_oob = "HRN_3015"
+	# }
+# }
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_naval_oob = "HRN_3015_naval_mtg"
+	else = {
+		set_naval_oob = "HRN_3015_naval_legacy"
+	}
+}
+
+set_research_slots = 3
+set_stability = .86
+set_war_support = 0.32
+
+
+set_technology = {
+	hidden_fort_tech = 1
+	electronic_mechanical_engineering = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_special_forces = 1
+	gw_artillery = 1
+	tech_support = 1
+	tech_recon = 1
+	interwar_antitank = 1
+	motorised_infantry = 1
+	basic_train = 1
+}
+starting_train_buffer = 1
+set_fuel_ratio = 0.5
+################### ARMOR TECH
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+		armor_tech_1 = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		basic_heavy_cruiser = 1
+		early_battleship = 1
+		basic_battleship = 1
+		early_battlecruiser = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		basic_naval_mines = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		basic_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		basic_secondary_battery = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	GON = {
+		set_autonomy = {
+			target = HRN
+			autonomous_state = autonomy_puppet
+		}
+	}
+	else = {
+		GON = { puppet = HRN }
+	}
+}
+set_politics = {
+	ruling_party = freedom
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 27
+	freedom = 51
+	opportunism = 22
+}
+
+set_convoys = 16
+
+recruit_character = HRN_freedom_lloteien_calionath
+recruit_character = HRN_alquantur_calionath
+recruit_character = HRN_telcontar_calionath
+recruit_character = HRN_arbereth
+recruit_character = HRN_olurin_seregonir
+recruit_character = HRN_alquatir
+recruit_character = HRN_terendul
+recruit_character = HRN_isilme
+recruit_character = HRN_yavien
+recruit_character = HRN_ivorwen
+add_ideas = numenorean_heritage_idea
+
+						####EQUIPMENT VARIANTS
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	### Variants ###
+	create_equipment_variant = {	###MINELAYER
+		name = "Cair-Ethir"
+		type = ship_hull_light_1
+		name_group = HRN_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = empty
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_mine_layer_1
+		}
+	}
+	create_equipment_variant = {	###DESTROYER
+		name = "Celbar"
+		type = ship_hull_light_1
+		name_group = HRN_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+	}
+	create_equipment_variant = {	###LIGHT CRUISER
+		name = "Cairuil"
+		type = ship_hull_cruiser_1
+		name_group = HRN_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = empty
+			fixed_ship_secondaries_slot = empty
+			mid_1_custom_slot = ship_light_medium_battery_1
+			mid_2_custom_slot = ship_light_medium_battery_1
+			rear_1_custom_slot = ship_light_medium_battery_1
+		}
+	}
+	create_equipment_variant = {	###HEAVY CRUISER
+		name = "Celfalas"
+		type = ship_hull_cruiser_1
+		name_group = HRN_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = empty
+			mid_1_custom_slot = ship_medium_battery_1
+			mid_2_custom_slot = ship_medium_battery_1
+			rear_1_custom_slot = ship_medium_battery_1
+		}
+	}
+	create_equipment_variant = {	###BATTLESHIP
+		name = "Aercrist"
+		type = ship_hull_heavy_1
+		name_group = HRN_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			fixed_ship_secondaries_slot = empty
+			front_1_custom_slot = ship_heavy_battery_1
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_heavy_battery_1
+		}
+	}
+}
+			####ARMOR
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "Harondorian Nobles"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 1
+		}
+	}
+}
+add_ideas = female_leader_chance_idea
+#!&!&!

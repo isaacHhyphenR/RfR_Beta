@@ -1,0 +1,187 @@
+﻿capital = 64 #Harestolad
+	#88 VPs
+load_VorV_OOB = yes
+
+set_research_slots = 2
+set_stability = .70
+set_war_support = 0.4
+
+set_fuel_ratio = 0.5
+
+enedwaith_tribes_3015_tech = yes
+
+set_politics = {
+	ruling_party = opportunism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 23
+	freedom = 6
+	opportunism = 52
+	conquest = 13
+	melkorite = 6
+}
+recruit_character = HST_Tithayndhotir_map_Dein
+recruit_character = HST_adon_map_fraid
+recruit_character = HST_drus_cenfaling
+add_ideas = enedwaith_heritage_idea
+
+#!&!&!
+######################An Intellectual Coalition
+@tribalAdvisorCost = 100
+######CIV CONSTRUCTION
+generate_character = {
+	token_base = ENE_civ_construction
+	#name = funny_name
+	gender = female
+	advisor = {
+		slot = political_advisor
+		cost = @tribalAdvisorCost
+		idea_token = ENE_civ_construction
+		traits = {
+			tribal_architect
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_an_intellectual_coalition
+		}
+	}
+}
+ENE_civ_construction = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_f_2_small" }
+	}
+}
+######STABILITY
+generate_character = {
+	token_base = ENE_stability
+	#name = funny_name
+	gender = female
+	advisor = {
+		slot = political_advisor
+		cost = @tribalAdvisorCost
+		idea_token = ENE_stability
+		traits = {
+			tribal_loremaster
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_an_intellectual_coalition
+		}
+	}
+}
+ENE_stability = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_f_2_small" }
+	}
+}
+######THEORIST
+generate_character = {
+	token_base = ENE_theorist
+	#name = funny_name
+	gender = male
+	advisor = {
+		slot = theorist
+		ledger = army
+		cost = @tribalAdvisorCost
+		idea_token = ENE_theorist
+		traits = {
+			tribal_theorist
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_an_intellectual_coalition
+		}
+	}
+}
+ENE_theorist = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_m_3_small" }
+	}
+}
+######################Hire <Regions> Brightest
+@royalAdvisorCost = 150
+######CONSUMER GOODS
+generate_character = {
+	token_base = ENE_consumer_goods
+	gender = male
+	advisor = {
+		slot = political_advisor
+		cost = @royalAdvisorCost
+		idea_token = ENE_consumer_goods
+		traits = {
+			financial_expert
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_hire_regions_brightest
+		}
+	}
+}
+ENE_consumer_goods = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_m_4_small" }
+	}
+}
+######PRODUCTION EFFICIENCY
+generate_character = {
+	token_base = ENE_production_efficiency
+	gender = male
+	advisor = {
+		slot = political_advisor
+		cost = @royalAdvisorCost
+		idea_token = ENE_production_efficiency
+		traits = {
+			economist
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_hire_regions_brightest
+		}
+	}
+}
+ENE_production_efficiency = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_m_4_small" }
+	}
+}
+######TECH
+generate_character = {
+	token_base = ENE_tech
+	gender = male
+	advisor = {
+		slot = political_advisor
+		cost = @royalAdvisorCost
+		idea_token = ENE_tech
+		traits = {
+			technocrat
+		}
+		allowed = {
+			always = yes
+		}
+		available = {
+			has_completed_focus = ENE_hire_regions_brightest
+		}
+	}
+}
+ENE_tech = {
+	set_portraits = {
+		civilian = { small = "GFX_Portrait_Wild_Generic_m_3_small" }
+	}
+}
+
+add_ideas = female_leader_chance_idea
+#!&!&!

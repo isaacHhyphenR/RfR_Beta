@@ -1,0 +1,118 @@
+﻿capital = 53 #Mount Gundabad-Mount Gundabad
+	#45 VPs
+# if = {
+	# limit = { has_dlc = "No Step Back" }
+	# set_oob = "GDB_3015_nsb"
+	# else = {
+		set_oob = "GDB_3015"
+	# }
+# }
+
+set_research_slots = 3
+set_stability = 0.5
+set_war_support = 0.5
+
+set_technology = {
+	hidden_fort_tech = 1
+	infantry_weapons = 1
+	gw_artillery = 1
+	tech_support = 1
+	tech_military_police = 1
+	basic_train = 1
+	orcish_heritage_tech = 1
+}
+starting_train_buffer = 0.85
+set_fuel_ratio = 0.2
+################### ARMOR TECH
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+		basic_heavy_tank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+			basic_heavy_tank = 1
+		}
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+			mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = opportunism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	opportunism = 46
+	freedom = 27
+	opportunism = 27
+}
+
+# 3015.1.1 = {
+	# declare_war_on = {
+		# target = BER
+		# type = annex_everything
+	# }
+# }
+
+# 3015.1.1 = {
+	# declare_war_on = {
+		# target = LOR
+		# type = annex_everything
+	# }
+# }
+# 3015.1.1 = {
+	# declare_war_on = {
+		# target = WOD
+		# type = annex_everything
+	# }
+# }
+
+recruit_character = GDB_pragmatic_azarag
+recruit_character = GDB_gazdush
+recruit_character = GDB_ragash
+recruit_character = GDB_laglu_u_n
+recruit_character = GDB_fimbul
+recruit_character = GDB_zagbed
+recruit_character = GDB_ulthugga
+recruit_character = GDB_gorshag
+add_ideas = troll_tamers_spirit
+add_ideas = orcish_heritage_idea
+
+			####ARMOR
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "Trolls"
+		type = heavy_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_medium_cannon
+			turret_type_slot = tank_heavy_fixed_superstructure_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+		}
+	}
+}
+add_ideas = female_leader_chance_idea
+#!&!&!

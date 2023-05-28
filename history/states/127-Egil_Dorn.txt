@@ -2,7 +2,7 @@ state = {
 	id = 127
 	name = "STATE_127" #Nebur
 	state_category = rural
-	manpower = 316000	local_supplies=0.0
+	manpower = 316000
 	resources = {
 		cloth = 1
 		wood = 1
@@ -12,8 +12,8 @@ state = {
 		602 1781 4893 5143 6435 6482 
 	}
 	history = {
-		owner = RUN
-		add_core_of = RUN
+		owner = MED
+		add_core_of = MED
 		victory_points = { #3
 			5143 3
 		}

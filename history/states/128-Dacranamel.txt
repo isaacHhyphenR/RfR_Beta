@@ -9,13 +9,8 @@ state={
 	}
 
 	history={
-		owner = RUN
-		add_core_of = RUN
-		set_ring_victory_point = yes
-		set_variable = {
-			historical_capital_for_country = RUN
-
-		}
+		owner = SAG
+		add_core_of = SAG
 		victory_points = {
 			3667 10 
 		}

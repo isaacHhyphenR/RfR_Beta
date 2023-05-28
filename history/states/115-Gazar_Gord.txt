@@ -9,9 +9,8 @@ state={
 	}
 
 	history={
-		owner = RUN
-		add_core_of = RUN
-
+		owner = LOG
+		add_core_of = LOG
 	}
 
 	provinces={

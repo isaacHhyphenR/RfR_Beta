@@ -4,8 +4,8 @@ state={
 	name="STATE_305"
 
 	history={
-		owner = MIR
-		add_core_of = MIR
+		owner = DOR
+		add_core_of = DOR
 		buildings = {
 			infrastructure = 1
 

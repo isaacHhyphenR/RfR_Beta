@@ -4,8 +4,9 @@ state={
 	name="STATE_131"
 
 	history={
-		owner = RUN
-		add_core_of = RUN
+		owner = ULG
+		add_core_of = ULG
+		set_variable = { historical_capital_for_country = ULG }
 		buildings = {
 			infrastructure = 1
 

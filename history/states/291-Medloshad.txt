@@ -4,8 +4,10 @@ state={
 	name="STATE_291"
 
 	history={
-		owner = RUN
-		add_core_of = RUN
+		owner = MED
+		add_core_of = MED
+		set_ring_victory_point = yes
+		set_variable = { historical_capital_for_country = MED }
 		buildings = {
 			infrastructure = 1
 
