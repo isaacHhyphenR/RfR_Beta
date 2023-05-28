@@ -1,0 +1,79 @@
+difficulty_settings = {
+	difficulty_setting = {
+		key = "custom_diff_strong_mor"
+		icon = "GFX_game_rule_Mordor_heritage"
+		modifier = diff_strong_ai_generic
+		countries = { MOR }
+		multiplier = 2.0
+	}
+	difficulty_setting = {
+		key = "custom_diff_strong_gon"
+		icon = "GFX_game_rule_gondor_heritage"
+		modifier = diff_strong_ai_generic
+		countries = { GON HRN ITH ANF PNG }
+		multiplier = 2.0
+	}
+	difficulty_setting = {
+		key = "custom_diff_strong_isn"
+		icon = "GFX_game_rule_Isengardian_heritage"
+		modifier = diff_strong_ai_generic
+		countries = { ISN }
+		multiplier = 2.0
+	}
+	difficulty_setting = {
+		key = "custom_diff_strong_roh"
+		icon = "GFX_game_rule_rohirric_heritage"
+		modifier = diff_strong_ai_generic
+		countries = { ROH }
+		multiplier = 2.0
+	}
+	difficulty_setting = {
+		key = "custom_diff_strong_southrons"
+		icon = "GFX_game_rule_Southron_heritage"
+		modifier = diff_strong_ai_generic
+		countries = { HAR KND UMB }
+		multiplier = 2.0
+	}
+	difficulty_setting = {
+		key = "custom_diff_strong_rhun"
+		icon = "GFX_game_rule_Southron_heritage"
+		modifier = diff_strong_ai_generic
+		countries = { LGA MED SAG SRB ULG }
+		multiplier = 2.0
+	}
+	difficulty_setting = {
+		key = "custom_diff_strong_elves"
+		icon = "GFX_game_rule_Elven_heritage"
+		modifier = diff_strong_ai_generic
+		countries = { LIN LOR RIV WOD }
+		multiplier = 2.0
+	}
+	difficulty_setting = {
+		key = "custom_diff_strong_northmen"
+		icon = "GFX_game_rule_Northern_heritage"
+		modifier = diff_strong_ai_generic
+		countries = { DAL DOR BER }
+		multiplier = 2.0
+	}
+	difficulty_setting = {
+		key = "custom_diff_strong_dwarves"
+		icon = "GFX_game_rule_Dwarven_heritage"
+		modifier = diff_strong_ai_generic
+		countries = { ERE EDL KZD }
+		multiplier = 2.0
+	}
+	difficulty_setting = {
+		key = "custom_diff_strong_orcs"
+		icon = "GFX_game_rule_Orcish_heritage"
+		modifier = diff_strong_ai_generic
+		countries = { MST GDB GLD }
+		multiplier = 2.0
+	}
+	difficulty_setting = {
+		key = "custom_diff_strong_greater_enedwaith"
+		icon = "GFX_game_rule_Greater_Enedwaith_heritage"
+		modifier = diff_strong_ai_generic
+		countries = { ERG REE HOL MBL DUN DFN CGN DTH COL AGR STK HST BYR IRN DRU AKN NIF HVK ANU TAW RAF NEN PRI ADB }
+		multiplier = 2.0
+	}
+}

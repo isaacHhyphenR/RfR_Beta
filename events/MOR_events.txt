@@ -1,0 +1,327 @@
+add_namespace = mordor
+country_event = { ##1## Occupation of Dagorland
+	id = mordor.1
+	title = mordor.1.t
+	desc = mordor.1.d
+	picture = GFX_mordor_armies_march_forth
+	
+	is_triggered_only = yes
+	option = { ##Take it all
+		name = mordor.1.a
+		ai_chance = {
+			factor = 1
+		}
+		annex_country = {
+			target = DAG
+			transfer_troops = yes
+		}
+		build_dagorlad_supply_for_ai = yes
+	}
+	option = { ##Garrison the Dead Marshes
+		name = mordor.1.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+		}
+		if = {
+			limit = { has_dlc = "Death or Dishonor" }
+			set_autonomy = {
+				target = DAG
+				autonomous_state = autonomy_reichskommissariat
+			}
+		}
+		else_if = {
+			limit = { OR = { has_dlc = "Together for Victory" has_dlc = "Waking the Tiger" } }
+			set_autonomy = {
+				target = DAG
+				autonomous_state = autonomy_integrated_puppet
+			}
+		}
+		else = {
+			puppet = DAG
+		}
+		transfer_state = 124
+		add_state_core = 124
+		build_dagorlad_supply_for_ai = yes
+	}
+	option = { ##Puppet
+		name = mordor.1.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+		}
+		if = {
+			limit = { has_dlc = "Death or Dishonor" }
+			set_autonomy = {
+				target = DAG
+				autonomous_state = autonomy_reichskommissariat
+			}
+		}
+		else_if = {
+			limit = { OR = { has_dlc = "Together for Victory" has_dlc = "Waking the Tiger" } }
+			set_autonomy = {
+				target = DAG
+				autonomous_state = autonomy_integrated_puppet
+			}
+		}
+		else = {
+			puppet = DAG
+		}
+		DAG = {
+			add_manpower = 50000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+			}
+		}
+		build_dagorlad_supply_for_ai = yes
+	}
+}
+
+country_event = { ##2## Sauron Demands Submission
+	id = mordor.2
+	title = mordor.2.t
+	desc = mordor.2.d
+	picture = GFX_mordor_mouth_of_sauron
+	
+	is_triggered_only = yes
+	
+	option = { ##bow to the dark lord
+		name = mordor.2.a
+		trigger = { is_subject = no }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				OR = {
+					has_government = isolationism
+					has_government = freedom
+				}
+				factor = 0
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+				factor = 10
+			}
+		}
+		every_subject_country = {
+			ROOT = {
+				annex_country = {
+					target = PREV
+					transfer_troops = yes
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Death or Dishonor" }
+			FROM = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_satellite
+				}
+			}
+		}
+		else_if = {
+			limit = { OR = { has_dlc = "Together for Victory" has_dlc = "Waking the Tiger" } }
+			FROM = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_dominion
+				}
+			}
+		}
+		else = {
+			FROM = {
+				puppet = DAG
+			}
+		}
+	}
+	option = { ##We will never submit
+		name = mordor.2.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_government = melkorite
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = freedom
+			popularity = 0.2
+		}
+		add_ideas = spurned_sauron
+		custom_effect_tooltip = refused_dark_lord_tooltip
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_submission
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = demanded_submission
+		}
+		add_ai_strategy = {
+			type = prepare_for_war
+			id = FROM
+			value = 20
+		}
+		FROM = {
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = ROOT
+				value = 5
+			}
+		}
+	}
+}
+
+country_event = { ##3## Sauron Offers Collaboration to Saruman
+	id = mordor.3
+	title = mordor.3.t
+	desc = mordor.3.d
+	picture = GFX_mordor_mouth_of_sauron
+	
+	is_triggered_only = yes
+	
+	option = { ##Agree
+		name = mordor.3.a
+		ai_chance = {
+			factor = 4
+			modifier = {
+				OR = {
+					has_government = isolationism
+					has_government = freedom
+				}
+				factor = 0
+			}
+		}
+		add_ideas = mordor_military_wisdom
+		FROM = {
+			if = { limit = { has_dlc = "La Resistance" }
+				add_ideas = isengardian_espionage_wisdom_lar
+			}
+			else = {
+				add_ideas = isengardian_espionage_wisdom
+			}
+		}
+		diplomatic_relation = {
+			country = FROM
+			relation = non_aggression_pact
+			active = yes
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = cooperation
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = cooperation
+		}
+	}
+	option = { ##Refuse
+		name = mordor.3.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				OR = {
+					has_government = melkorite
+					is_in_faction_with = FROM
+				}
+				factor = 0
+			}
+			modifier = {
+				has_completed_focus = ISN_our_own_way
+				factor = 4
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+	}
+}
+
+@daysBetweenPalantir = 180
+country_event = { ##4## Influence Palantir Visions
+	id = mordor.4
+	title = mordor.4.t
+	desc = mordor.4.d
+	picture = GFX_palantir_eye_of_sauron_vision
+	
+	is_triggered_only = yes
+	option = { ##Do not interfere: despair, decryption
+		name = mordor.4.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_political_power < 50
+			}
+		}
+		FROM = {
+			effect_tooltip = {
+				add_basic_palantir_180 = yes
+				spied_on_sauron_bonus = yes
+				increase_leader_despair_level = yes
+			}
+			hidden_effect = {
+				country_event = { id = gondor.4 hours = 1 }
+			}
+		}
+	}
+	option = { ##Obscure his visions: decryption
+		name = mordor.4.b
+		ai_chance = {
+			factor = 1
+			# modifier = {
+				# is_historical_focus_on = yes
+				# factor = 0
+			# }
+		}
+		FROM = {
+			effect_tooltip = {
+				add_basic_palantir_180 = yes
+			}
+			hidden_effect = {
+				country_event = { id = gondor.5 hours = 1 }
+			}
+		}
+		add_political_power = -25
+	}
+	option = { ##Let him Despair: despair
+		name = mordor.4.c
+		ai_chance = {
+			factor = 1
+		}
+		FROM = {
+			effect_tooltip = {
+				spied_on_sauron_bonus = yes
+				increase_leader_despair_level = yes
+			}
+			hidden_effect = {
+				country_event = { id = gondor.6 hours = 1 }
+			}
+		}
+		add_political_power = -25
+	}
+}
+
+country_event = { ##5## King masters Palantir
+	id = mordor.5
+	title = mordor.5.t
+	desc = mordor.5.d
+	picture = GFX_PALANTIR_aragorn_uses
+	
+	is_triggered_only = yes
+	option = { ##Drats
+		name = mordor.5.a
+		custom_effect_tooltip = cannot_influence_palantir_visions_tooltip
+	}
+}
