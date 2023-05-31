@@ -1,4 +1,3 @@
-
 state={
 	id=113
 	name="STATE_113"
@@ -11,22 +10,36 @@ state={
 	history={
 		owner = DOR
 		add_core_of = DOR
-		victory_points = {
-			4924 2 
+		victory_points = { #Mihrasond, 7
+			4924 4
+		}
+		victory_points = { #Iaurgobel
+			4811 2
+		}
+		victory_points = { #Orivalond
+			570 1
+		}
+		victory_points = { #Arasant
+			5372 1
 		}
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 3
-
+			4924 = {
+				naval_base = 2
+			}
+			4811 = {
+				naval_base = 1
+			}
+			5372 = {
+				naval_base = 1
+			}
 		}
-
 	}
 
-	provinces={
+	provinces={ #41
 		94 189 570 620 987 1080 1157 1392 1698 2073 2646 4085 4181 4437 4531 4544 4811 4924 5028 5372 5442 6116 6132 6146 6158 6225 6241 
 	}
 	manpower=4117000
-	buildings_max_level_factor=1.000
 	state_category=large_city
-	local_supplies=0.000
 }

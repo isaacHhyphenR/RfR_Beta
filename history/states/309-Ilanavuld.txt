@@ -1,4 +1,3 @@
-
 state={
 	id=309
 	name="STATE_309"
@@ -6,18 +5,29 @@ state={
 	history={
 		owner = DOR
 		add_core_of = DOR
+		victory_points = { #Eldrast, 12
+			950 5
+		}
+		victory_points = { #Caravasanor
+			762 4
+		}
+		victory_points = { #Lendembas
+			4493 2
+		}
+		victory_points = { #Pargeltir
+			2535 1
+		}
 		buildings = {
 			infrastructure = 1
-
+			950 = {
+				naval_base = 1
+			}
 		}
-
 	}
 
-	provinces={
+	provinces={ #19
 		762 950 1039 2307 2535 3586 3863 4105 4741 4848 4967 4993 5126 6200 6240 6264 6265 6289 6349 
 	}
 	manpower=100000
-	buildings_max_level_factor=1.000
 	state_category=town
-	local_supplies=0.000
 }

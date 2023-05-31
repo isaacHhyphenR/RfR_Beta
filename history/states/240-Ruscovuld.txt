@@ -1,4 +1,3 @@
-
 state={
 	id=240
 	name="STATE_240"
@@ -6,18 +5,32 @@ state={
 	history={
 		owner = DOR
 		add_core_of = DOR
+		victory_points = { #Sant Rovalug, 12
+			627 8
+		}
+		victory_points = { #Maethgannen
+			6051 1
+		}
+		victory_points = { #Ladhrolk
+			5193 1
+		}
+		victory_points = { #Kardovan
+			6189 2
+		}
 		buildings = {
 			infrastructure = 1
-
+			627 = {
+				naval_base = 4
+			}
+			6189 = {
+				naval_base = 1
+			}
 		}
-
 	}
 
-	provinces={
+	provinces={ #24
 		56 255 295 509 627 785 842 886 1098 1386 1891 2209 3452 3504 3594 5193 5999 6027 6051 6066 6087 6172 6189 6198 
 	}
 	manpower=100000
-	buildings_max_level_factor=1.000
 	state_category=town
-	local_supplies=0.000
 }
