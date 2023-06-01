@@ -1,0 +1,37 @@
+spriteTypes = {
+						######################################
+									#Generic
+						######################################
+	SpriteType = {
+		name = "GFX_gw_light_lancer_medium"
+		texturefile = "gfx/interface/technologies/cavalry_variants/gw_lancer.dds"
+	}
+	SpriteType = {
+		name = "GFX_basic_light_lancer_medium"
+		texturefile = "gfx/interface/technologies/cavalry_variants/basic_light_lancer.dds"
+	}
+	SpriteType = {
+		name = "GFX_improved_light_lancer_medium"
+		texturefile = "gfx/interface/technologies/cavalry_variants/improved_light_lancer.dds"
+	}
+	SpriteType = {
+		name = "GFX_advanced_light_lancer_medium"
+		texturefile = "gfx/interface/technologies/cavalry_variants/advanced_light_lancer.dds"
+	}
+	SpriteType = {
+		name = "GFX_gw_light_mounted_archer_medium"
+		texturefile = "gfx/interface/technologies/cavalry_variants/gw_mounted_archer.dds"
+	}
+	SpriteType = {
+		name = "GFX_basic_light_mounted_archer_medium"
+		texturefile = "gfx/interface/technologies/cavalry_variants/basic_light_mounted_archer.dds"
+	}
+	SpriteType = {
+		name = "GFX_improved_light_mounted_archer_medium"
+		texturefile = "gfx/interface/technologies/cavalry_variants/improved_light_mounted_archer.dds"
+	}
+	SpriteType = {
+		name = "GFX_advanced_light_mounted_archer_medium"
+		texturefile = "gfx/interface/technologies/cavalry_variants/advanced_light_mounted_archer.dds"
+	}
+}

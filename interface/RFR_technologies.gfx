@@ -1,0 +1,532 @@
+spriteTypes = {
+							######################################
+									#CUSTOM TECHS
+							######################################
+	SpriteType = {
+		name = "GFX_black_powder_medium"
+		texturefile = "gfx/interface/technologies/black_powder.dds"
+	}
+	SpriteType = {
+		name = "GFX_standardized_regimens_medium"
+		texturefile = "gfx/interface/technologies/atomic_research.dds"
+	}
+	SpriteType = {
+		name = "GFX_dedicated_trainers_medium"
+		texturefile = "gfx/interface/technologies/atomic_research.dds"
+	}
+	SpriteType = {
+		name = "GFX_recruitment_quotas_medium"
+		texturefile = "gfx/interface/technologies/map_sextant.dds"
+	}
+	SpriteType = {
+		name = "GFX_national_census_medium"
+		texturefile = "gfx/interface/technologies/map_sextant.dds"
+	}
+	SpriteType = {
+		name = "GFX_supply_catalogues_medium"
+		texturefile = "gfx/interface/technologies/supply_crates.dds"
+	}
+	SpriteType = {
+		name = "GFX_professional_logistics_corp_medium"
+		texturefile = "gfx/interface/technologies/supply_crates.dds"
+	}
+	SpriteType = {
+		name = "GFX_professional_looting_medium"
+		texturefile = "gfx/interface/technologies/loot_sack.dds"
+	}
+	SpriteType = {
+		name = "GFX_fort_tech_1_medium"
+		texturefile = "gfx/interface/technologies/Fort1.dds"
+	}
+	SpriteType = {
+		name = "GFX_fort_tech_2_medium"
+		texturefile = "gfx/interface/technologies/Fort2.dds"
+	}
+	SpriteType = {
+		name = "GFX_fort_tech_3_medium"
+		texturefile = "gfx/interface/technologies/Fort3.dds"
+	}
+	SpriteType = {
+		name = "GFX_fort_tech_4_medium"
+		texturefile = "gfx/interface/technologies/Fort4.dds"
+	}
+	SpriteType = {
+		name = "GFX_fort_tech_5_medium"
+		texturefile = "gfx/interface/technologies/Fort5.dds"
+	}
+							######################################
+									#COUNTRY SPECIFIC INFANTRY
+							######################################
+##########################ISENGARD INFANTRY
+	SpriteType = {
+		name = "GFX_ISN_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_infantry_weapons2_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_weapons.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_improved_infantry_weapons_2_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_weapons2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_advanced_infantry_weapons2_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_weapons3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_support_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_support_weapons.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_support_weapons2_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_support_weapons2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_support_weapons3_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_support_weapons3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_support_weapons4_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_support_weapons4.dds"
+	}
+##########################MORDOR INFANTRY
+	SpriteType = {
+		name = "GFX_MOR_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Mordor/MOR_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Mordor/MOR_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Mordor/MOR_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Mordor/MOR_infantry_equipment_0.dds"
+	}
+##########################ROHAN INFANTRY
+	SpriteType = {
+		name = "GFX_ROH_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_infantry_weapons2_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_weapons.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_improved_infantry_weapons_2_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_weapons2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_advanced_infantry_weapons2_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_weapons3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_support_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_support_weapons.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_support_weapons2_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_support_weapons2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_support_weapons3_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_support_weapons3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_support_weapons4_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_support_weapons4.dds"
+	}
+							######################################
+										#GENERIC ARMOR
+							######################################
+	SpriteType = {
+		name = "GFX_inter_war_heavy_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/generic_inter_war_heavy_tank_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_amphibious_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/generic_amphibious_chassis.dds"
+	}
+							######################################
+									#COUNTRY SPECIFIC ARMOR
+							######################################
+##########################ISENGARD ARMOR
+	SpriteType = {
+		name = "GFX_ISN_amphibious_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_amphibious_tank_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_gwtank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_tank.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ISN_gwtank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_tank.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ISN_light_tank_chassis_0"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_light_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ISN_medium_tank_chassis_0"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_medium_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ISN_basic_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_light_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ISN_improved_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_light_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ISN_advanced_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_light_tank_chassis_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_basic_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_improved_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_advanced_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_tank.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_basic_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_improved_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_advanced_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_basic_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_art.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_improved_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_art.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_advanced_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_art.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ISN_basic_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_medium_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ISN_improved_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_medium_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ISN_advanced_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_medium_tank_chassis_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_basic_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_improved_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_ISN_advanced_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_tank.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_basic_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_improved_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_advanced_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_basic_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_art.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_improved_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_art.dds"
+	}
+	spriteType = {
+		name = "GFX_ISN_advanced_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_art.dds"
+	}
+##########################MORDOR ARMOR (same as ISN for now)
+	SpriteType = {
+		name = "GFX_MOR_amphibious_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_amphibious_tank_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_gwtank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_tank.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_MOR_gwtank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_tank.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_MOR_light_tank_chassis_0"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_light_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_MOR_medium_tank_chassis_0"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_medium_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_MOR_basic_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_light_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_MOR_improved_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_light_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_MOR_advanced_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_light_tank_chassis_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_basic_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_improved_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_advanced_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_tank.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_basic_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_td.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_improved_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_td.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_advanced_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_td.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_basic_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_art.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_improved_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_art.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_advanced_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_light_art.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_MOR_basic_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_medium_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_MOR_improved_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_medium_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_MOR_advanced_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_medium_tank_chassis_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_basic_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_improved_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_advanced_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_tank.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_basic_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_td.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_improved_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_td.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_advanced_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_td.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_basic_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_art.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_improved_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_art.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_advanced_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Isengard/ISN_basic_medium_art.dds"
+	}
+##########################ROHAN ARMOR
+	SpriteType = {
+		name = "GFX_ROH_amphibious_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_amphibious_tank_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_gwtank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_tank.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ROH_gwtank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_tank.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ROH_light_tank_chassis_0"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_light_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ROH_medium_tank_chassis_0"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_medium_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ROH_basic_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_light_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ROH_improved_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_light_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ROH_advanced_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_light_tank_chassis_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_basic_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_improved_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_advanced_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_tank.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_basic_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_improved_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_advanced_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_basic_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_art.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_improved_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_art.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_advanced_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_art.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ROH_basic_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_medium_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ROH_improved_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_medium_tank_chassis_1.dds"
+	}
+	SpriteType = { #NSB
+		name = "GFX_ROH_advanced_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_medium_tank_chassis_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_basic_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_improved_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_advanced_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_tank.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_basic_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_improved_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_advanced_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_td.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_basic_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_art.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_improved_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_art.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_advanced_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_art.dds"
+	}
+}

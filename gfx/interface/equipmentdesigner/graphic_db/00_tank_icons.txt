@@ -1,0 +1,216 @@
+default = {
+						######################################
+									#LIGHT
+						######################################
+	light_tank_chassis = {
+		pool = {
+			weight = 0.1 #generics appear at bottom
+			icons = {
+				GFX_gwtank_medium
+				GFX_basic_light_tank_medium
+				GFX_improved_light_tank_medium
+				GFX_advanced_light_tank_medium
+			}
+		}
+	}
+	light_tank_chassis_0 = {
+		pool = {
+			weight = 2 #correct icon appears at top
+			icons = {
+				GFX_gwtank_medium
+			}
+		}
+	}
+	light_tank_chassis_1 = {
+		pool = {
+			weight = 2 #correct icon appears at top
+			icons = {
+				GFX_basic_light_tank_medium
+			}
+		}
+	}
+	light_tank_chassis_2 = {
+		pool = {
+			weight = 2 #correct icon appears at top
+			icons = {
+				GFX_improved_light_tank_medium
+			}
+		}
+	}
+
+	light_tank_chassis_3 = {
+		pool = {
+			weight = 2 #correct icon appears at top
+			icons = {
+				GFX_advanced_light_tank_medium
+			}
+		}
+	}
+##########################LIGHT ARCHER
+	light_tank_artillery_chassis = {
+		pool = {
+			weight = 0.2 #generics appear at bottom
+			icons = {
+				GFX_gw_light_mounted_archer_medium
+				GFX_basic_light_mounted_archer_medium
+				GFX_improved_light_mounted_archer_medium
+				GFX_advanced_light_mounted_archer_medium
+			}
+		}
+	}
+	light_tank_artillery_chassis_0 = {
+		pool = {
+			weight = 2.2 #correct icon at top
+			icons = {
+				GFX_gw_light_mounted_archer_medium
+			}
+		}
+	}
+	light_tank_artillery_chassis_1 = {
+		pool = {
+			weight = 2.2 #correct icon at top
+			icons = {
+				GFX_basic_light_mounted_archer_medium
+			}
+		}
+	}
+	light_tank_artillery_chassis_2 = {
+		pool = {
+			weight = 2.2 #correct icon at top
+			icons = {
+				GFX_improved_light_mounted_archer_medium
+			}
+		}
+	}
+	light_tank_artillery_chassis_3 = {
+		pool = {
+			weight = 2.2 #correct icon at top
+			icons = {
+				GFX_advanced_light_mounted_archer_medium
+			}
+		}
+	}
+##########################LIGHT LANCER
+	light_tank_destroyer_chassis = {
+		pool = {
+			weight = 0.2 #generics appear at bottom
+			icons = {
+				GFX_gw_light_lancer_medium
+				GFX_basic_light_lancer_medium
+				GFX_improved_light_lancer_medium
+				GFX_advanced_light_lancer_medium
+			}
+		}
+	}
+	light_tank_destroyer_chassis_0 = {
+		pool = {
+			weight = 2.2 #correct icon at top
+			icons = {
+				GFX_gw_light_lancer_medium
+			}
+		}
+	}
+	light_tank_destroyer_chassis_1 = {
+		pool = {
+			weight = 2.2 #correct icon at top
+			icons = {
+				GFX_basic_light_lancer_medium
+			}
+		}
+	}
+	light_tank_destroyer_chassis_2 = {
+		pool = {
+			weight = 2.2 #correct icon at top
+			icons = {
+				GFX_improved_light_lancer_medium
+			}
+		}
+	}
+	light_tank_destroyer_chassis_3 = {
+		pool = {
+			weight = 2.2 #correct icon at top
+			icons = {
+				GFX_advanced_light_lancer_medium
+			}
+		}
+	}
+						######################################
+									#MEDIUM
+						######################################
+	medium_tank_chassis_0 = {
+		pool = {
+			icons = {
+				"gfx/interface/equipmentdesigner/tanks/designer/generic/basic_medium_tank.dds"
+			}
+		}
+	}
+	medium_tank_chassis_1 = {
+		pool = {
+			icons = {
+				"gfx/interface/equipmentdesigner/tanks/designer/generic/basic_medium_tank.dds"
+			}
+		}
+	}
+
+	medium_tank_chassis_2 = {
+		pool = {
+			icons = {
+				"gfx/interface/equipmentdesigner/tanks/designer/generic/basic_medium_tank.dds"
+			}
+		}
+	}
+
+	medium_tank_chassis_3 = {
+		pool = {
+			icons = {
+				"gfx/interface/equipmentdesigner/tanks/designer/generic/basic_medium_tank.dds"
+			}
+		}
+	}
+	heavy_tank_chassis_0 = {
+		pool = {
+			icons = {
+				GFX_inter_war_heavy_tank_chassis_medium
+			}
+		}
+	}
+	heavy_tank_chassis_1 = {
+		pool = {
+			icons = {
+				GFX_basic_heavy_tank_medium
+			}
+		}
+	}
+
+	heavy_tank_chassis_2 = {
+		pool = {
+			icons = {
+				GFX_improved_heavy_tank_medium
+			}
+		}
+	}
+
+	heavy_tank_chassis_3 = {
+		pool = {
+			icons = {
+				GFX_advanced_heavy_tank_medium
+			}
+		}
+	}
+
+	super_heavy_tank_chassis_1 = {
+		pool = {
+			icons = {
+				GFX_super_heavy_tank_medium
+			}
+		}
+	}
+
+	modern_tank_chassis_1 = {
+		pool = {
+			icons = {
+				GFX_main_battle_tank_medium
+			}
+		}
+	}
+}
