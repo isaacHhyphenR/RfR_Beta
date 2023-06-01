@@ -22,9 +22,6 @@ state={
 			4197 = {
 				naval_base = 1
 			}
-			4251 = {
-				naval_base = 1
-			}
 		}
 	}
 
