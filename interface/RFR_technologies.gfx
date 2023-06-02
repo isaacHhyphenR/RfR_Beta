@@ -54,6 +54,48 @@ spriteTypes = {
 		name = "GFX_fort_tech_5_medium"
 		texturefile = "gfx/interface/technologies/Fort5.dds"
 	}
+##########################INFANTRY ARMOR
+	SpriteType = {
+		name = "GFX_infantry_armor_0_medium"
+		texturefile = "gfx/interface/technologies/infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_infantry_armor_1_medium"
+		texturefile = "gfx/interface/technologies/infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_infantry_armor_2_medium"
+		texturefile = "gfx/interface/technologies/infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_infantry_armor_3_medium"
+		texturefile = "gfx/interface/technologies/infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/infantry_armor_upgrade_2.dds"
+	}
+##########################TWO HANDED WEAPONS
+	SpriteType = {
+		name = "GFX_double_infantry_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/double_infantry_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_double_infantry_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/double_infantry_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_double_infantry_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/double_infantry_equipment_3.dds"
+	}
 							######################################
 									#COUNTRY SPECIFIC INFANTRY
 							######################################
