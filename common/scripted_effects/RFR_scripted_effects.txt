@@ -1,0 +1,2089 @@
+color_saruman = {
+	set_portraits = {
+		character = ISN_saruman
+		civilian = { large = "GFX_Portrait_SarumanC" }
+	}
+	set_country_leader_name = {
+		name = "Saruman of Many Colors"
+	}
+} 
+
+randomise_ai_strategy = {##Call at game start to randomise the strategy_plan for any AIs with the 'random' game rule
+	if = { limit = { has_game_rule = { rule = ROH_ai_behavior option = RANDOM } }
+		ROH = {
+			random_list = {
+				1 = { set_country_flag = ROH_AI_RANDOM_HISTORICAL }
+				1 = { set_country_flag = ROH_AI_RANDOM_GRIMA }
+				1 = { set_country_flag = ROH_AI_RANDOM_EOMER }
+			}
+		}
+	}
+	if = { limit = { has_game_rule = { rule = ISN_ai_behavior option = RANDOM } }
+		ISN = {
+			random_list = {
+				1 = { set_country_flag = ISN_AI_RANDOM_HISTORICAL }
+				1 = { set_country_flag = ISN_AI_RANDOM_MELKORITE }
+			}
+		}
+	}
+	if = { limit = { has_game_rule = { rule = GON_ai_behavior option = RANDOM } }
+		GON = {
+			random_list = {
+				1 = { set_country_flag = GON_AI_RANDOM_HISTORICAL }
+				1 = { set_country_flag = GON_AI_RANDOM_HURIN }
+			}
+		}
+	}
+}
+
+ISN_ai_buff = { ##buffs the ISN AI
+	# if = { limit = { is_ai = yes NOT = { has_completed_focus = ISN_cross_the_isen } }
+		# army_experience = 3
+		# air_experience = 2
+		# set_variable = { level_4_law_cost = 28 } #Gets the basic laws earlier to make use of them, but upgrades later as compensation
+		# if = { limit = { any_country = { original_tag = ROH is_ai = no } } ##extra buff if rohan is human
+			# army_experience = 4
+			# air_experience = 1.5
+		# }
+	# }
+}
+
+upgrade_inspirational_trait = { ##call in tag to upgrade ruler's inspirational trait
+	if = { limit = { has_country_leader_with_trait = theoden_inspirational_3 }
+		swap_ruler_traits = {
+			add = theoden_inspirational_4
+			remove = theoden_inspirational_3
+		}
+	}
+	else_if = { limit = { has_country_leader_with_trait = theoden_inspirational_2 }
+		swap_ruler_traits = {
+			add = theoden_inspirational_3
+			remove = theoden_inspirational_2
+		}
+	}
+	else_if = { limit = { has_country_leader_with_trait = theoden_inspirational_1 }
+		swap_ruler_traits = {
+			add = theoden_inspirational_2
+			remove = theoden_inspirational_1
+		}
+	}
+	else_if = { limit = { has_country_leader_with_trait = inspirational }
+		swap_ruler_traits = {
+			add = theoden_inspirational_1
+			remove = inspirational
+		}
+	}
+}
+
+build_dagorlad_supply_for_ai = { #call anywhere to build a supply node in dagorlad for AI mordor
+	if = { limit = { MOR = { is_ai = yes } }
+		124 = { #dead marshes
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 3663
+			}
+		}
+	}
+}
+
+gon_increase_steward_authority = { #call in GON to increase the steward's authority by 1
+	add_to_variable = { stewards_authority = 1 }
+	custom_effect_tooltip = increase_steward_authority_tooltip
+}
+gon_increase_steward_authority_three = { #call in GON to increase the steward's authority by 3
+	add_to_variable = { stewards_authority = 3 }
+	custom_effect_tooltip = increase_steward_authority_three_tooltip
+}
+
+gon_replace_steward_laws = { #replaces the steward's laws with the nromal counterparts when a king is crowned
+	# if = {
+		# limit = { has_dynamic_modifier = { modifier = stewards_authority_modifier } }
+		# remove_dynamic_modifier = { modifier = stewards_authority_modifier }
+	# }
+	# ##MANPOWER
+	# if = { limit = { has_idea = disarmed_nation_steward }
+		# swap_ideas = { remove_idea = disarmed_nation_steward add_idea = disarmed_nation }
+	# }
+	# else_if = { limit = { has_idea = volunteer_only_steward }
+		# swap_ideas = { remove_idea = volunteer_only_steward add_idea = volunteer_only }
+	# }
+	# else_if = { limit = { has_idea = limited_conscription_steward }
+		# swap_ideas = { remove_idea = limited_conscription_steward add_idea = limited_conscription }
+	# }
+	# else_if = { limit = { has_idea = extensive_conscription_steward }
+		# swap_ideas = { remove_idea = extensive_conscription_steward add_idea = extensive_conscription }
+	# }
+	# else_if = { limit = { has_idea = service_by_requirement_steward }
+		# swap_ideas = { remove_idea = service_by_requirement_steward add_idea = service_by_requirement }
+	# }
+	# else_if = { limit = { has_idea = all_adults_serve_steward }
+		# swap_ideas = { remove_idea = all_adults_serve_steward add_idea = all_adults_serve }
+	# }
+	# else_if = { limit = { has_idea = scraping_the_barrel_steward }
+		# swap_ideas = { remove_idea = scraping_the_barrel_steward add_idea = scraping_the_barrel }
+	# }
+	# ##ECONOMY
+	# if = { limit = { has_idea = civilian_economy_steward }
+		# swap_ideas = { remove_idea = civilian_economy_steward add_idea = civilian_economy }
+	# }
+	# else_if = { limit = { has_idea = low_economic_mobilisation_steward }
+		# swap_ideas = { remove_idea = low_economic_mobilisation_steward add_idea = low_economic_mobilisation }
+	# }
+	# else_if = { limit = { has_idea = partial_economic_mobilisation_steward }
+		# swap_ideas = { remove_idea = partial_economic_mobilisation_steward add_idea = partial_economic_mobilisation }
+	# }
+	# else_if = { limit = { has_idea = war_economy_steward }
+		# swap_ideas = { remove_idea = war_economy_steward add_idea = war_economy }
+	# }
+	# else_if = { limit = { has_idea = tot_economic_mobilisation_steward }
+		# swap_ideas = { remove_idea = tot_economic_mobilisation_steward add_idea = tot_economic_mobilisation }
+	# }
+	# ##TRADE
+	# if = { limit = { has_idea = free_trade_steward }
+		# swap_ideas = { remove_idea = free_trade_steward add_idea = free_trade }
+	# }
+	# else_if = { limit = { has_idea = export_focus_steward }
+		# swap_ideas = { remove_idea = export_focus_steward add_idea = export_focus }
+	# }
+	# else_if = { limit = { has_idea = limited_exports_steward }
+		# swap_ideas = { remove_idea = limited_exports_steward add_idea = limited_exports }
+	# }
+	# else_if = { limit = { has_idea = closed_economy_steward }
+		# swap_ideas = { remove_idea = closed_economy_steward add_idea = closed_economy }
+	# }
+}
+
+load_starting_rohirrim_armor_variants = { #Call in a tag to give them ROH's starting tank variants
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		create_equipment_variant = {
+			name = "Basic Riddermark Muster"
+			type = light_tank_chassis_1
+			obsolete = no
+			parent_version = 0
+			icon = "GFX_ROH_basic_light_tank_medium"
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_two_man_tank_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+			}
+		}
+		create_equipment_variant = {
+			name = "Basic Archer Muster"
+			type = light_tank_artillery_chassis_1
+			obsolete = no
+			parent_version = 0
+			icon = "GFX_ROH_basic_light_art_medium"
+			modules = {
+				main_armament_slot = tank_close_support_gun
+				turret_type_slot = tank_light_two_man_tank_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+			}
+		}
+		create_equipment_variant = {
+			name = "Basic Lancer Muster"
+			type = light_tank_destroyer_chassis_1
+			obsolete = no
+			parent_version = 0
+			icon = "GFX_ROH_basic_light_td_medium"
+			modules = {
+				main_armament_slot = tank_high_velocity_cannon
+				turret_type_slot = tank_light_two_man_tank_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+			}
+		}
+	}
+	else = {
+		create_equipment_variant = {
+			name = "Basic Riddermark Muster"
+			type = light_tank_equipment_1
+			obsolete = no
+			parent_version = 0
+			icon = "GFX_ROH_basic_light_tank_medium"
+			upgrades = {
+				tank_reliability_upgrade = 1
+			}
+		}
+		create_equipment_variant = {
+			name = "Basic Archer Muster"
+			type = light_tank_artillery_equipment_1
+			obsolete = no
+			parent_version = 0
+			icon = "GFX_ROH_basic_light_art_medium"
+			upgrades = {
+				tank_reliability_upgrade = 1
+			}
+		}
+		create_equipment_variant = {
+			name = "Basic Lancer Muster"
+			type = light_tank_destroyer_equipment_1
+			obsolete = no
+			parent_version = 0
+			icon = "GFX_ROH_basic_light_td_medium"
+			upgrades = {
+				tank_reliability_upgrade = 1
+			}
+		}
+	}
+		#################IMPROVED
+	if = { limit = { ROH = { has_country_flag = light_tank_2 } }
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			create_equipment_variant = {
+				name = "Improved Riddermark Muster"
+				type = light_tank_chassis_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_tank_medium"
+				modules = {
+					main_armament_slot = tank_heavy_machine_gun
+					turret_type_slot = tank_light_two_man_tank_turret
+					suspension_type_slot = tank_christie_suspension
+					armor_type_slot = tank_welded_armor
+					engine_type_slot = tank_diesel_engine
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 5
+				}
+			}
+			create_equipment_variant = {
+				name = "Improved Archer Muster"
+				type = light_tank_artillery_chassis_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_art_medium"
+				modules = {
+					main_armament_slot = tank_close_support_gun
+					turret_type_slot = tank_light_two_man_tank_turret
+					suspension_type_slot = tank_christie_suspension
+					armor_type_slot = tank_welded_armor
+					engine_type_slot = tank_diesel_engine
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 5
+				}
+			}
+			create_equipment_variant = {
+				name = "Improved Lancer Muster"
+				type = light_tank_destroyer_chassis_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_td_medium"
+				modules = {
+					main_armament_slot = tank_high_velocity_cannon
+					turret_type_slot = tank_light_two_man_tank_turret
+					suspension_type_slot = tank_christie_suspension
+					armor_type_slot = tank_welded_armor
+					engine_type_slot = tank_diesel_engine
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 5
+				}
+			}
+		}
+		else = {
+			create_equipment_variant = {
+				name = "Improved Riddermark Muster"
+				type = light_tank_equipment_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_tank_medium"
+				upgrades = {
+					tank_reliability_upgrade = 1
+				}
+			}
+			create_equipment_variant = {
+				name = "Improved Archer Muster"
+				type = light_tank_artillery_equipment_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_art_medium"
+				upgrades = {
+					tank_reliability_upgrade = 1
+				}
+			}
+			create_equipment_variant = {
+				name = "Improved Lancer Muster"
+				type = light_tank_destroyer_equipment_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_td_medium"
+				upgrades = {
+					tank_reliability_upgrade = 1
+				}
+			}
+		}
+	}
+}
+
+add_basic_palantir_180 = { #Adds the appropriate (lar/non lar) version of basic_palantir for 180 days
+	if = { limit = { has_dlc = "La Resistance" }
+		add_timed_idea = {
+			idea = basic_palantir_lar
+			days = 180
+		}
+	}
+	else = {
+		add_timed_idea = {
+			idea = basic_palantir
+			days = 180
+		}
+	}
+}
+
+add_crown_portrait = { ##call in a tag to give their leader a crowned version of portrait (if available)
+	# if = { limit = { has_country_leader = { character = GON_denethor ruling_only = yes } }
+		# GON_denethor = {
+			# set_portraits = {
+				# civilian = { large = "GFX_Portrait_Denethor_king" }
+				# army = { large = "GFX_Portrait_Denethor_king" }
+			# }
+		# }
+	# }
+	# else_if = { limit = { has_country_leader = { character = GON_boromir ruling_only = yes } }
+		# GON_boromir = {
+			# set_portraits = {
+				# civilian = { large = "GFX_Portrait_Boromir_king" }
+				# army = { large = "GFX_Portrait_Boromir_king" }
+			# }
+		# }
+	# }
+	# else_if = { limit = { has_country_leader = { character = GON_faramir ruling_only = yes } }
+		# GON_faramir = {
+			# set_portraits = {
+				# civilian = { large = "GFX_Portrait_Faramir_king" }
+				# army = { large = "GFX_Portrait_Faramir_king" }
+			# }
+		# }
+	# }
+}
+
+gon_befriend_lord = { #call in character to add XP & trusted advisor trait
+	gain_xp = 1000
+	add_unit_leader_trait = GON_trusted_advisor_mil
+	custom_effect_tooltip = plus_one_every_skill
+}
+
+gon_crown_aragorn = { #Aragorn becomes king
+	random_character = {
+		limit = { is_country_leader = yes }
+		remove_country_leader_role = {
+			ideology = stewardship
+		}
+	}
+	FEL_aragorn = {
+		add_country_leader_role = {
+			promote_leader = yes
+			country_leader = {
+				ideology = rightful_monarchy
+				expire = "3041.3.1.1"
+				traits = { king_of_the_west compassionate_gentleman financial_expert army_chief_morale_3 }
+			}
+		}
+		set_portraits = {
+			civilian = { large = "GFX_Portrait_Aragorn_king" }
+			#army = { large = "GFX_Portrait_Aragorn_king" }
+		}
+		set_character_name = "Aragorn II Elessar"
+	}
+	gon_replace_steward_laws = yes
+	hidden_effect = {
+		news_event = {
+			id = rfr_news.5
+		}
+	}
+}
+
+make_faramir_heir_apparent = { ##Replaces Faramir's second in line traits with heir apparent traits
+	GON_faramir = {
+		if = {
+			limit = { has_trait = second_in_line_mil }
+			remove_unit_leader_trait = second_in_line_mil
+			add_unit_leader_trait = heir_apparent_mil
+		}
+		if = {
+			limit = { has_trait = second_in_line_pol }
+			remove_trait = {
+				slot = army_chief
+				trait = second_in_line_pol
+			}
+			add_trait = {
+				slot = army_chief
+				trait = heir_apparent_pol
+			}
+		}
+	}
+}
+
+gondor_steward_inheritance = { #Call in GON after removing the current steward to make a new person the steward
+	if = { limit = { has_character = GON_boromir }
+		GON_boromir = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					ideology = stewardship
+					expire = "3090.1.1.1"
+					traits = { ruling_steward army_chief_offensive_3 inspirational }
+				}
+			}
+			remove_unit_leader_trait = heir_apparent_mil
+			add_unit_leader_trait = monarch_mil
+			if = { limit = { PREV = { has_character = GON_faramir } }
+				make_faramir_heir_apparent = yes
+			}
+		}
+	}
+	else_if = { limit = { has_character = GON_faramir }
+		GON_faramir = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					ideology = stewardship
+					expire = "3090.1.1.1"
+					traits = { ruling_steward army_chief_defensive_3 humble }
+				}
+			}
+			if = { limit = { has_trait = heir_apparent_mil }
+				remove_unit_leader_trait = heir_apparent_mil
+			}
+			else = {
+				remove_unit_leader_trait = second_in_line_mil
+			}
+			add_unit_leader_trait = monarch_mil
+		}
+	}
+}
+
+upgrade_state_category = { #Call in a state to increase its base slots
+	if = { limit = { has_state_category = wasteland }
+		set_state_category = pastoral
+	}
+	else_if = { limit = { has_state_category = enclave }
+		set_state_category = pastoral
+	}
+	else_if = { limit = { has_state_category = tiny_island }
+		set_state_category = small_island
+	}
+	else_if = { limit = { has_state_category = pastoral }
+		set_state_category = rural
+	}
+	else_if = { limit = { has_state_category = small_island }
+		set_state_category = rural
+	}
+	else_if = { limit = { has_state_category = rural }
+		set_state_category = town
+	}
+	else_if = { limit = { has_state_category = town }
+		set_state_category = large_town
+	}
+	else_if = { limit = { has_state_category = large_town }
+		set_state_category = city
+	}
+	else_if = { limit = { has_state_category = city }
+		set_state_category = large_city
+	}
+	else_if = { limit = { has_state_category = large_city }
+		set_state_category = metropolis
+	}
+	else_if = { limit = { has_state_category = metropolis }
+		set_state_category = megalopolis
+	}
+}
+
+gon_line_of_kings_effect = {
+	#add_stability = -0.2
+}
+
+gon_upgrade_to_kingdom_effect = {
+	set_cosmetic_tag = GON_king
+	increase_prestige_3 = yes
+	if = { limit = { has_dynamic_modifier = { modifier = stewards_authority_modifier } }
+		remove_dynamic_modifier  = { modifier = stewards_authority_modifier }
+	}
+}
+
+remove_leader_despair = { #call in a tag to remove all despair from their leader
+	if = { limit = { has_country_leader_with_trait = despair_10 }
+		remove_country_leader_trait = despair_10
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_9 }
+		remove_country_leader_trait = despair_9
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_8 }
+		remove_country_leader_trait = despair_8
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_7 }
+		remove_country_leader_trait = despair_7
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_6 }
+		remove_country_leader_trait = despair_6
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_5 }
+		remove_country_leader_trait = despair_5
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_4 }
+		remove_country_leader_trait = despair_4
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_3 }
+		remove_country_leader_trait = despair_3
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_2 }
+		remove_country_leader_trait = despair_2
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_1 }
+		remove_country_leader_trait = despair_1
+	}
+}
+
+increase_leader_despair_level = { #call in a tag to make their leader more desperate
+	if = { limit = { has_country_leader_with_trait = despair_10 }
+		add_war_support = -0.05
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_9 }
+		swap_ruler_traits = { remove = despair_9 add = despair_10 }
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_8 }
+		swap_ruler_traits = { remove = despair_8 add = despair_9 }
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_7 }
+		swap_ruler_traits = { remove = despair_7 add = despair_8 }
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_6 }
+		swap_ruler_traits = { remove = despair_6 add = despair_7 }
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_5 }
+		swap_ruler_traits = { remove = despair_5 add = despair_6 }
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_4 }
+		swap_ruler_traits = { remove = despair_4 add = despair_5 }
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_3 }
+		swap_ruler_traits = { remove = despair_3 add = despair_4 }
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_2 }
+		swap_ruler_traits = { remove = despair_2 add = despair_3 }
+	}
+	else_if = { limit = { has_country_leader_with_trait = despair_1 }
+		swap_ruler_traits = { remove = despair_1 add = despair_2 }
+	}
+	else = {
+		add_country_leader_trait = despair_1
+	}
+}
+
+upgrade_inf_armor_tech = {
+	if = { limit = { has_tech = infantry_armor_upgrade_2 }
+		add_tech_bonus = {
+			bonus = 1
+			uses = 2
+			category = infantry_tech
+		}
+	}
+	else_if = { limit = { has_tech = infantry_armor_tech_3 }
+		set_technology = { infantry_armor_upgrade_2 = 1 }
+	}
+	else_if = { limit = { has_tech = infantry_armor_upgrade_1 }
+		set_technology = { infantry_armor_tech_3 = 1 }
+	}
+	else_if = { limit = { has_tech = infantry_armor_tech_2 }
+		set_technology = { infantry_armor_upgrade_1 = 1 }
+	}
+	else_if = { limit = { has_tech = infantry_armor_upgrade_0 }
+		set_technology = { infantry_armor_tech_2 = 1 }
+	}
+	else_if = { limit = { has_tech = infantry_armor_tech_1 }
+		set_technology = { infantry_armor_upgrade_0 = 1 }
+	}
+	else_if = { limit = { has_tech = infantry_armor_tech_0 }
+		set_technology = { infantry_armor_tech_1 = 1 }
+	}
+	else = {
+		set_technology = { infantry_armor_tech_0 = 1 }
+	}
+}
+upgrade_mot_tech = {
+	if = { limit = { has_tech = mechanised_infantry3 }
+		add_tech_bonus = {
+			bonus = 1
+			uses = 2
+			category = infantry_tech
+		}
+	}
+	else_if = { limit = { has_tech = mechanised_infantry2 }
+		set_technology = { mechanised_infantry3 = 1 }
+	}
+	else_if = { limit = { has_tech = mechanised_infantry }
+		set_technology = { mechanised_infantry2 = 1 }
+	}
+	else_if = { limit = { has_tech = motorised_infantry }
+		set_technology = { mechanised_infantry = 1 }
+	}
+	else = {
+		set_technology = { motorised_infantry = 1 }
+	}
+}
+
+spied_on_sauron_bonus = { ##Call in a tag that has just used the palantir to decipher sauron's intentions
+	if = { ##Fires of industry: +1 mil
+		limit = {
+			is_sauron_firing_industry = yes
+		}
+		random_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = no
+				}
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	else_if = { #Fires of war: +20k manpower
+		limit = {
+			is_sauron_firing_war = yes
+		}
+		add_manpower = 20000
+	}
+	else_if = { #East: +defence vs RUN, then +250 pikes
+		limit = {
+			is_sauron_looking_east = yes
+		}
+		if = { limit = { NOT = { has_idea = generic_defend_against_rhun } }
+			add_ideas = generic_defend_against_rhun
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 500
+			}
+		}
+	}
+	else_if = { #South: +defence against HAR, then +dockyard
+		limit = {
+			is_sauron_looking_south = yes
+		}
+		if = { limit = { NOT = { has_idea = generic_defend_against_harad } }
+			add_ideas = generic_defend_against_harad
+		}
+		else = {
+			random_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	else_if = { #West: +1 fort every border province
+		limit = {
+			is_sauron_looking_west = yes
+		}
+		every_controlled_state = {
+			limit = {
+				any_neighbor_state = {
+					is_controlled_by = MOR
+				}
+			}
+			add_building_construction = {
+				type = bunker
+				level = 1
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_border = yes
+				}
+			}
+		}
+	}
+	else = { ##Anythign else (north, ring, nothing): +1 civ
+		random_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = no
+				}
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+rohan_arrest_character = {
+	set_character_flag = under_arrest
+	##sets the flag for the country to know they are arrested
+	if = { limit = { ROOT = { has_character = roh_beowyrt_rungaring } is_character = roh_beowyrt_rungaring }
+		ROH = { set_country_flag = roh_beowyrt_rungaring_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_eadmaer_stangard } is_character = roh_eadmaer_stangard }
+		ROH = { set_country_flag = roh_eadmaer_stangard_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_elfhelm } is_character = roh_elfhelm }
+		ROH = { set_country_flag = roh_elfhelm_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_eomer } is_character = roh_eomer }
+		ROH = { set_country_flag = roh_eomer_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_eowyn } is_character = roh_eowyn }
+		ROH = { set_country_flag = roh_eowyn_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_erkenbrand } is_character = roh_erkenbrand }
+		ROH = { set_country_flag = roh_erkenbrand_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_frea_ordgaring } is_character = roh_frea_ordgaring }
+		ROH = { set_country_flag = roh_frea_ordgaring_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_gamling } is_character = roh_gamling }
+		ROH = { set_country_flag = roh_gamling_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_grimbold } is_character = roh_grimbold }
+		ROH = { set_country_flag = roh_grimbold_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_hama } is_character = roh_hama }
+		ROH = { set_country_flag = roh_hama_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_isenmund_wulfing } is_character = roh_isenmund_wulfing }
+		ROH = { set_country_flag = roh_isenmund_wulfing_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_theodred } is_character = roh_theodred }
+		ROH = { set_country_flag = roh_theodred_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_wigluf_wadelingas } is_character = roh_wigluf_wadelingas }
+		ROH = { set_country_flag = roh_wigluf_wadelingas_imprisoned }
+	}
+	else_if = { limit = { ROOT = { has_character = roh_wulfwynn_eogaring } is_character = roh_wulfwynn_eogaring }
+		ROH = { set_country_flag = roh_wulfwynn_eogaring_imprisoned }
+	}
+	if = { ##Adds the imprisonment display idea if Rohan doesn't have it already
+		limit = { NOT = { ROH = { has_idea = ROH_imprisoned_traitors } } }
+		ROH = {
+			add_ideas = ROH_imprisoned_traitors
+		}
+	}
+	set_nationality = FOR
+}
+
+rohan_release_character = {
+	if = { limit = { has_character_flag = under_arrest }
+		clr_character_flag = under_arrest
+		##sets the flag for the country to know they are arrested
+		if = { limit = { ROOT = { has_character = roh_beowyrt_rungaring } is_character = roh_beowyrt_rungaring }
+			ROH = { clr_country_flag = roh_beowyrt_rungaring_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_elfhelm } is_character = roh_elfhelm }
+			ROH = { clr_country_flag = roh_eadmaer_stangard_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_elfhelm } is_character = roh_elfhelm }
+			ROH = { clr_country_flag = roh_elfhelm_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_eomer } is_character = roh_eomer }
+			ROH = { clr_country_flag = roh_eomer_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_eowyn } is_character = roh_eowyn }
+			ROH = { clr_country_flag = roh_eowyn_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_erkenbrand } is_character = roh_erkenbrand }
+			ROH = { clr_country_flag = roh_erkenbrand_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_frea_ordgaring } is_character = roh_frea_ordgaring }
+			ROH = { clr_country_flag = roh_frea_ordgaring_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_gamling } is_character = roh_gamling }
+			ROH = { clr_country_flag = roh_gamling_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_grimbold } is_character = roh_grimbold }
+			ROH = { clr_country_flag = roh_grimbold_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_hama } is_character = roh_hama }
+			ROH = { clr_country_flag = roh_hama_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_isenmund_wulfing } is_character = roh_isenmund_wulfing }
+			ROH = { clr_country_flag = roh_isenmund_wulfing_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_theodred } is_character = roh_theodred }
+			ROH = { clr_country_flag = roh_theodred_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_wigluf_wadelingas } is_character = roh_wigluf_wadelingas }
+			ROH = { clr_country_flag = roh_wigluf_wadelingas_imprisoned }
+		}
+		else_if = { limit = { ROOT = { has_character = roh_wulfwynn_eogaring } is_character = roh_wulfwynn_eogaring }
+			ROH = { clr_country_flag = roh_wulfwynn_eogaring_imprisoned }
+		}
+		set_nationality = ROH
+	}
+}
+
+rohan_revolt_random_house = { ##Call in EOM to switch one the 8 base houses + their character from ROH to EOM
+	set_temp_variable = { recruit_boolean = 0 }
+	random_list = {
+		1 = { #bregdanings
+			modifier = { ##Can't revolt a house that has already revolted
+				factor = 0
+				has_country_flag = has_bregdanings
+			}
+			##Can only transfer if they were't locked up
+			if = { limit = { ROH = { has_country_flag = has_bregdanings ROH_hama = { is_sarumans_pupil = no } } }
+				set_country_flag = has_bregdanings
+				ROH = { clr_country_flag = has_bregdanings }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { has_idea = rohan_house_bregdanings } }
+					add_ideas = rohan_house_bregdanings	
+				}
+			}
+			###Advisor
+			if = { limit = { ROH = { has_character = ROH_hama ROH_hama = { is_sarumans_pupil = no } } }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { ROH_hama = { has_character_flag = advisor_in_power } } }
+					set_temp_variable = { recruit_boolean = 1 }
+				}
+				ROH = { ROH_hama = { set_nationality = EOM} }
+				if = { limit = { check_variable = { recruit_boolean = 1 } }
+					activate_advisor = ROH_hama
+				}
+			}
+		}
+		1 = { #felandings
+			modifier = { ##Can't revolt a house that has already revolted
+				factor = 0
+				has_country_flag = has_felandings
+			}
+			##Can only transfer if they were't locked up
+			if = { limit = { ROH = { has_country_flag = has_felandings ROH_erkenbrand = { is_sarumans_pupil = no } } }
+				set_country_flag = has_felandings
+				ROH = { clr_country_flag = has_felandings }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { has_idea = rohan_house_felandings } }
+					add_ideas = rohan_house_felandings	
+				}
+			}
+			###Advisor
+			if = { limit = { ROH = { has_character = ROH_erkenbrand ROH_erkenbrand = { is_sarumans_pupil = no } } }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { ROH_erkenbrand = { has_character_flag = advisor_in_power } } }
+					set_temp_variable = { recruit_boolean = 1 }
+				}
+				ROH = { ROH_erkenbrand = { set_nationality = EOM} }
+				if = { limit = { check_variable = { recruit_boolean = 1 } }
+					activate_advisor = ROH_erkenbrand
+				}
+			}
+		}
+		1 = { #eogarings
+			modifier = { ##Can't revolt a house that has already revolted
+				factor = 0
+				has_country_flag = has_eogarings
+			}
+			##Can only transfer if they were't locked up
+			if = { limit = { ROH = { has_country_flag = has_eogarings ROH_wulfwynn_eogaring = { is_sarumans_pupil = no } } }
+				set_country_flag = has_eogarings
+				ROH = { clr_country_flag = has_eogarings }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { has_idea = rohan_house_eogarings } }
+					add_ideas = rohan_house_eogarings	
+				}
+			}
+			###Advisor
+			if = { limit = { ROH = { has_character = ROH_wulfwynn_eogaring ROH_wulfwynn_eogaring = { is_sarumans_pupil = no } } }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { ROH_wulfwynn_eogaring = { has_character_flag = advisor_in_power } } }
+					set_temp_variable = { recruit_boolean = 1 }
+				}
+				ROH = { ROH_wulfwynn_eogaring = { set_nationality = EOM} }
+				if = { limit = { check_variable = { recruit_boolean = 1 } }
+					activate_advisor = ROH_wulfwynn_eogaring
+				}
+			}
+		}
+		1 = { #ordgarings
+			modifier = { ##Can't revolt a house that has already revolted
+				factor = 0
+				has_country_flag = has_ordgarings
+			}
+			##Can only transfer if they were't locked up
+			if = { limit = { ROH = { has_country_flag = has_ordgarings ROH_frea_ordgaring = { is_sarumans_pupil = no } } }
+				set_country_flag = has_ordgarings
+				ROH = { clr_country_flag = has_ordgarings }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { has_idea = rohan_house_ordgarings } }
+					add_ideas = rohan_house_ordgarings	
+				}
+			}
+			###Advisor
+			if = { limit = { ROH = { has_character = ROH_frea_ordgaring ROH_frea_ordgaring = { is_sarumans_pupil = no } } }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { ROH_frea_ordgaring = { has_character_flag = advisor_in_power } } }
+					set_temp_variable = { recruit_boolean = 1 }
+				}
+				ROH = { ROH_frea_ordgaring = { set_nationality = EOM} }
+				if = { limit = { check_variable = { recruit_boolean = 1 } }
+					activate_advisor = ROH_frea_ordgaring
+				}
+			}
+		}
+		1 = { #rungarings
+			modifier = { ##Can't revolt a house that has already revolted
+				factor = 0
+				has_country_flag = has_rungarings
+			}
+			##Can only transfer if they were't locked up
+			if = { limit = { ROH = { has_country_flag = has_rungarings ROH_beowyrt_rungaring = { is_sarumans_pupil = no } } }
+				set_country_flag = has_rungarings
+				ROH = { clr_country_flag = has_rungarings }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { has_idea = rohan_house_rungarings } }
+					add_ideas = rohan_house_rungarings	
+				}
+			}
+			###Advisor
+			if = { limit = { ROH = { has_character = ROH_beowyrt_rungaring ROH_beowyrt_rungaring = { is_sarumans_pupil = no } } }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { ROH_beowyrt_rungaring = { has_character_flag = advisor_in_power } } }
+					set_temp_variable = { recruit_boolean = 1 }
+				}
+				ROH = { ROH_beowyrt_rungaring = { set_nationality = EOM} }
+				if = { limit = { check_variable = { recruit_boolean = 1 } }
+					activate_advisor = ROH_beowyrt_rungaring
+				}
+			}
+		}
+		1 = { #stangard
+			modifier = { ##Can't revolt a house that has already revolted
+				factor = 0
+				has_country_flag = has_stangard
+			}
+			##Can only transfer if they were't locked up
+			if = { limit = { ROH = { has_country_flag = has_stangard ROH_eadmaer_stangard = { is_sarumans_pupil = no } } }
+				set_country_flag = has_stangard
+				ROH = { clr_country_flag = has_stangard }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { has_idea = rohan_house_stangard } }
+					add_ideas = rohan_house_stangard	
+				}
+			}
+			###Advisor
+			if = { limit = { ROH = { has_character = ROH_eadmaer_stangard ROH_eadmaer_stangard = { is_sarumans_pupil = no } } }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { ROH_eadmaer_stangard = { has_character_flag = advisor_in_power } } }
+					set_temp_variable = { recruit_boolean = 1 }
+				}
+				ROH = { ROH_eadmaer_stangard = { set_nationality = EOM} }
+				if = { limit = { check_variable = { recruit_boolean = 1 } }
+					activate_advisor = ROH_eadmaer_stangard
+				}
+			}
+		}
+		1 = { #wadelingas
+			modifier = { ##Can't revolt a house that has already revolted
+				factor = 0
+				has_country_flag = has_wadelingas
+			}
+			##Can only transfer if they were't locked up
+			if = { limit = { ROH = { has_country_flag = has_wadelingas ROH_wigluf_wadelingas = { is_sarumans_pupil = no } } }
+				set_country_flag = has_wadelingas
+				ROH = { clr_country_flag = has_wadelingas }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { has_idea = rohan_house_wadelingas } }
+					add_ideas = rohan_house_wadelingas	
+				}
+			}
+			###Advisor
+			if = { limit = { ROH = { has_character = ROH_wigluf_wadelingas ROH_wigluf_wadelingas = { is_sarumans_pupil = no } } }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { ROH_wigluf_wadelingas = { has_character_flag = advisor_in_power } } }
+					set_temp_variable = { recruit_boolean = 1 }
+				}
+				ROH = { ROH_wigluf_wadelingas = { set_nationality = EOM} }
+				if = { limit = { check_variable = { recruit_boolean = 1 } }
+					activate_advisor = ROH_wigluf_wadelingas
+				}
+			}
+		}
+		1 = { #wulfings
+			modifier = { ##Can't revolt a house that has already revolted
+				factor = 0
+				has_country_flag = has_wulfings
+			}
+			##Can only transfer if they were't locked up
+			if = { limit = { ROH = { has_country_flag = has_wulfings ROH_isenmund_wulfing = { is_sarumans_pupil = no } } }
+				set_country_flag = has_wulfings
+				ROH = { clr_country_flag = has_wulfings }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { has_idea = rohan_house_wulfings } }
+					add_ideas = rohan_house_wulfings	
+				}
+			}
+			###Advisor
+			if = { limit = { ROH = { has_character = ROH_isenmund_wulfing ROH_isenmund_wulfing = { is_sarumans_pupil = no } } }
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { ROH_isenmund_wulfing = { has_character_flag = advisor_in_power } } }
+					set_temp_variable = { recruit_boolean = 1 }
+				}
+				ROH = { ROH_isenmund_wulfing = { set_nationality = EOM} }
+				if = { limit = { check_variable = { recruit_boolean = 1 } }
+					activate_advisor = ROH_isenmund_wulfing
+				}
+			}
+		}
+	}
+}
+
+rohan_revolt_random_military = { ##Call in EOM to switch one the 3 commanders
+	set_temp_variable = { recruit_boolean = 0 }
+	random_list = {
+		1 = { #elfhelm
+			modifier = { ##Can't revolt a character that has already revolted
+				factor = 0
+				has_character = ROH_elfhelm
+			}
+			if = { limit = { ROH = { has_character = ROH_elfhelm } } ##Can't revolt if locked up
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH_elfhelm = { has_character_flag = advisor_in_power } }
+					set_temp_variable = { recruit_boolean = 1 }
+				}
+				ROH = { ROH_elfhelm = { set_nationality = EOM} }
+				if = { limit = { check_variable = { recruit_boolean = 1 } }
+					activate_advisor = ROH_elfhelm
+				}
+			}
+		}
+		1 = { #gamling
+			modifier = { ##Can't revolt a character that has already revolted
+				factor = 0
+				has_character = ROH_gamling
+			}
+			if = { limit = { ROH = { has_character = ROH_gamling } } ##Can't revolt if locked up
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { has_idea = ROH_gamling } }
+					set_temp_variable = { recruit_boolean = 1 }
+				}
+				ROH = { ROH_gamling = { set_nationality = EOM} }
+				if = { limit = { check_variable = { recruit_boolean = 1 } }
+					activate_advisor = ROH_gamling
+				}
+			}
+		}
+		1 = { #grimbold
+			modifier = { ##Can't revolt a character that has already revolted
+				factor = 0
+				has_character = ROH_grimbold
+			}
+			if = { limit = { ROH = { has_character = ROH_grimbold } } ##Can't revolt if locked up
+				if = { #If ROH had them recruited, EOM will get them recruited
+					limit = { ROH = { has_idea = ROH_grimbold } }
+					set_temp_variable = { recruit_boolean = 1 }
+				}
+				ROH = { ROH_grimbold = { set_nationality = EOM} }
+				if = { limit = { check_variable = { recruit_boolean = 1 } }
+					activate_advisor = ROH_grimbold
+				}
+			}
+		}
+	}
+}
+
+rohan_revolt_random_state_not_eastmark = { ##Call in EOM to grant them a random state. This is for the first rebellion, when the Eastmark, harrowdale, & helms deep are handled seperately
+	random_list = {
+		1 = { #69 adorn vale 1001
+			modifier = { ##EOM can't get state if ROH doesn't control it
+				factor = 0
+				NOT = { ROH = { controls_state = 69 } }
+			}
+			69 = { #adorn vale
+				transfer_state_to = EOM
+				# ROH = { delete_unit = { ID = 1001 disband = no } }
+				# create_unit = {
+					# division = "name = \"Adorn Garrison\" division_template = \"Eorling Militia\" start_experience_factor = 0.3 start_equipment_factor = 1"
+					# owner = EOM
+					# prioritize_location = 6863 #derwath
+					# id = 1001
+				# }
+			}
+		}
+		1 = { #70 gap of rohan 1002
+			modifier = { ##EOM can't get state if ROH doesn't control it
+				factor = 0
+				NOT = { ROH = { controls_state = 70 } }
+			}
+			70 = { #Gap of rohan
+				transfer_state_to = EOM
+				# ROH = { delete_unit = { ID = 1002 disband = no } }
+				# create_unit = {
+					# division = "name = \"Fords Garrison\" division_template = \"Eorling Militia\" start_experience_factor = 0.3 start_equipment_factor = 1"
+					# owner = EOM
+					# prioritize_location = 6809 #Foldburg
+					# id = 1002
+				# }
+			}
+		}
+		1 = { #75 norwold 1004
+			modifier = { ##EOM can't get state if ROH doesn't control it
+				factor = 0
+				NOT = { ROH = { controls_state = 75 } }
+			}
+			75 = { #norwold
+				transfer_state_to = EOM
+				# ROH = { delete_unit = { ID = 1004 disband = no } }
+				# create_unit = {
+					# division = "name = \"Norwold Garrison\" division_template = \"Eorling Militia\" start_experience_factor = 0.3 start_equipment_factor = 1"
+					# owner = EOM
+					# prioritize_location = 5417 #Rochburg
+					# id = 1004
+				# }
+			}
+		}
+		1 = { #76 westemnet 1005
+			modifier = { ##EOM can't get state if ROH doesn't control it
+				factor = 0
+				NOT = { ROH = { controls_state = 76 } }
+			}
+			76 = { #Westemnet
+				transfer_state_to = EOM
+				# ROH = { delete_unit = { ID = 1005 disband = no } }
+				# create_unit = {
+					# division = "name = \"Westemnet Garrison\" division_template = \"Eorling Militia\" start_experience_factor = 0.3 start_equipment_factor = 1"
+					# owner = EOM
+					# prioritize_location = 4234 #Orodrith
+					# id = 1005
+				# }
+			}
+		}
+		1 = { #202 westmark 1007
+			modifier = { ##EOM can't get state if ROH doesn't control it
+				factor = 0
+				NOT = { ROH = { controls_state = 202 } }
+			}
+			202 = { #westmark
+				transfer_state_to = EOM
+				# ROH = { delete_unit = { ID = 1007 disband = no } }
+				# create_unit = {
+					# division = "name = \"Westmark Garrison\" division_template = \"Eorling Militia\" start_experience_factor = 0.3 start_equipment_factor = 1"
+					# owner = EOM
+					# prioritize_location = 2453 #Gineard
+					# id = 1007
+				# }
+			}
+		}
+		1 = { #203 westfold 1017
+			modifier = { ##EOM can't get state if ROH doesn't control it
+				factor = 0
+				NOT = { ROH = { controls_state = 203 } }
+			}
+			203 = { #westfold
+				transfer_state_to = EOM
+				# ROH = { delete_unit = { ID = 1017 disband = no } }
+				# create_unit = {
+					# division = "name = \"Westfold Garrison\" division_template = \"Eorling Militia\" start_experience_factor = 0.3 start_equipment_factor = 1"
+					# owner = EOM
+					# prioritize_location = 2697 #Grimslade
+					# id = 1017
+				# }
+			}
+		}
+		1 = { #206 eastfold 1009
+			modifier = { ##EOM can't get state if ROH doesn't control it
+				factor = 0
+				NOT = { ROH = { controls_state = 206 } }
+			}
+			206 = { #eastfold
+				transfer_state_to = EOM
+				# ROH = { delete_unit = { ID = 1009 disband = no } }
+				# create_unit = {
+					# division = "name = \"Eastfold Garrison\" division_template = \"Eorling Militia\" start_experience_factor = 0.3 start_equipment_factor = 1"
+					# owner = EOM
+					# prioritize_location = 7028 #Fenmarch
+					# id = 1009
+				# }
+			}
+		}
+		1 = { #207 fortalf 1010
+			modifier = { ##EOM can't get state if ROH doesn't control it
+				factor = 0
+				NOT = { ROH = { controls_state = 207 } }
+			}
+			207 = { #fortalf
+				transfer_state_to = EOM
+				# ROH = { delete_unit = { ID = 1010 disband = no } }
+				# create_unit = {
+					# division = "name = \"Fortalf Garrison\" division_template = \"Eorling Militia\" start_experience_factor = 0.3 start_equipment_factor = 1"
+					# owner = EOM
+					# prioritize_location = 3416 #Harwick
+					# id = 1010
+				# }
+			}
+		}
+		1 = { #208 sutwold 1015
+			modifier = { ##EOM can't get state if ROH doesn't control it
+				factor = 0
+				NOT = { ROH = { controls_state = 208 } }
+			}
+			208 = { #sutwold
+				transfer_state_to = EOM
+				# ROH = { delete_unit = { ID = 1015 disband = no } }
+				# create_unit = {
+					# division = "name = \"Sutwold Garrison\" division_template = \"Eorling Militia\" start_experience_factor = 0.3 start_equipment_factor = 1"
+					# owner = EOM
+					# prioritize_location = 3595 #Entwade
+					# id = 1015
+				# }
+			}
+		}
+	}
+}
+	
+rohan_choose_random_sway_decision = { ##Activates a random 'sway house' decision for eomer
+	random_list = {
+		1 = { #bregdanings
+			modifier = {
+				factor = 0
+				has_country_flag = swayedBregdanings
+			}
+			activate_decision = sway_house_bregdanings_decision
+		}
+		1 = { #felandings
+			modifier = {
+				factor = 0
+				has_country_flag = swayedFelandings
+			}
+			activate_decision = sway_house_felandings_decision
+		}
+		1 = { #eogarings
+			modifier = {
+				factor = 0
+				has_country_flag = swayedEogarings
+			}
+			activate_decision = sway_house_eogarings_decision
+		}
+		1 = { #ordgarings
+			modifier = {
+				factor = 0
+				has_country_flag = swayedOrdgarings
+			}
+			activate_decision = sway_house_ordgarings_decision
+		}
+		1 = { #rungarings
+			modifier = {
+				factor = 0
+				has_country_flag = swayedRungarings
+			}
+			activate_decision = sway_house_rungarings_decision
+		}
+		1 = { #stangard
+			modifier = {
+				factor = 0
+				has_country_flag = swayedStangard
+			}
+			activate_decision = sway_house_stangard_decision
+		}
+		1 = { #wadelingas
+			modifier = {
+				factor = 0
+				has_country_flag = swayedWadelingas
+			}
+			activate_decision = sway_house_wadelingas_decision
+		}
+		1 = { #wulfings
+			modifier = {
+				factor = 0
+				has_country_flag = swayedWulfings
+			}
+			activate_decision = sway_house_wulfings_decision
+		}
+	}
+}
+
+rohan_make_grima_king = { ##Gives grima country leader roles for evil ideologies
+	ROH_grima = { ##becomes ruler
+		remove_advisor_role = { slot = political_advisor } #Doesnt happen automatically
+		add_country_leader_role = {
+		  promote_leader = yes
+		  country_leader = {
+			ideology = petty_monarchy
+			expire = "3050.1.1.1"
+			traits = { backroom_backstabber silent_workhorse }
+		  }
+		}
+		add_country_leader_role = {
+		  promote_leader = yes
+		  country_leader = {
+			ideology = glorious_monarchy
+			expire = "3050.1.1.1"
+			traits = { backroom_backstabber silent_workhorse }
+		  }
+		}
+		add_country_leader_role = {
+		  promote_leader = yes
+		  country_leader = {
+			ideology = evil_monarchy
+			expire = "3050.1.1.1"
+			traits = { backroom_backstabber silent_workhorse }
+		  }
+		}
+		# set_portraits = {
+			# army = {
+				# large = gfx/leaders/ROH/Grima_king.dds
+			# }
+		# }
+		##Gainsroyal artifacts
+		if = { limit = { ROH = { has_country_flag = herugrim_safeguarded } }
+			add_trait = {
+				ideology = petty_monarchy
+				trait = ROH_herugrim
+			}
+			add_trait = {
+				ideology = glorious_monarchy
+				trait = ROH_herugrim
+			}
+			add_trait = {
+				ideology = evil_monarchy
+				trait = ROH_herugrim
+			}
+		}
+		if = { limit = { ROH = { has_country_flag = royal_standard_safeguarded } }
+			add_trait = {
+				ideology = petty_monarchy
+				trait = ROH_royal_standard
+			}
+			add_trait = {
+				ideology = glorious_monarchy
+				trait = ROH_royal_standard
+			}
+			add_trait = {
+				ideology = evil_monarchy
+				trait = ROH_royal_standard
+			}
+		}
+	}
+}
+
+rohan_bypass_eomer_completed_focuses = {##Call in EOM to let ROH bypass all focuses EOM had completed
+	if = { limit = { has_completed_focus = ROH_for_rohan }
+		ROH = { unlock_national_focus = ROH_for_rohan }
+	}
+	if = { limit = { has_completed_focus = ROH_secure_the_country }
+		ROH = { unlock_national_focus = ROH_secure_the_country }
+	}
+	if = { limit = { has_completed_focus = ROH_secure_our_base }
+		ROH = { unlock_national_focus = ROH_secure_our_base }
+	}
+	if = { limit = { has_completed_focus = ROH_a_noble_feud }
+		ROH = { unlock_national_focus = ROH_a_noble_feud }
+	}
+	if = { limit = { has_completed_focus = ROH_support_house_halethring }
+		ROH = { unlock_national_focus = ROH_support_house_halethring }
+	}
+	if = { limit = { has_completed_focus = ROH_support_house_hunthelming }
+		ROH = { unlock_national_focus = ROH_support_house_hunthelming }
+	}
+	if = { limit = { has_completed_focus = ROH_marital_alliance }
+		ROH = { unlock_national_focus = ROH_marital_alliance }
+	}
+	if = { limit = { has_completed_focus = ROH_noble_war_council }
+		ROH = { unlock_national_focus = ROH_noble_war_council }
+	}
+	if = { limit = { has_completed_focus = ROH_compensate_defection }
+		ROH = { unlock_national_focus = ROH_compensate_defection }
+	}
+	if = { limit = { has_completed_focus = ROH_transfer_wormtongues_estates }
+		ROH = { unlock_national_focus = ROH_transfer_wormtongues_estates }
+	}
+	if = { limit = { has_completed_focus = ROH_a_peasants_duty }
+		ROH = { unlock_national_focus = ROH_a_peasants_duty }
+	}
+	if = { limit = { has_completed_focus = ROH_all_must_serve }
+		ROH = { unlock_national_focus = ROH_all_must_serve }
+	}
+	if = { limit = { has_completed_focus = ROH_jobs_for_all }
+		ROH = { unlock_national_focus = ROH_jobs_for_all }
+	}
+	if = { limit = { has_completed_focus = ROH_requisition_supplies }
+		ROH = { unlock_national_focus = ROH_requisition_supplies }
+	}
+	if = { limit = { has_completed_focus = ROH_establish_emergency_tythes }
+		ROH = { unlock_national_focus = ROH_establish_emergency_tythes }
+	}
+	if = { limit = { has_completed_focus = ROH_seize_wormtongues_estates }
+		ROH = { unlock_national_focus = ROH_seize_wormtongues_estates }
+	}
+	if = { limit = { has_completed_focus = ROH_a_peasants_cause }
+		ROH = { unlock_national_focus = ROH_a_peasants_cause }
+	}
+	if = { limit = { has_completed_focus = ROH_fraternize_with_the_people }
+		ROH = { unlock_national_focus = ROH_fraternize_with_the_people }
+	}
+	if = { limit = { has_completed_focus = ROH_fall_in_love }
+		ROH = { unlock_national_focus = ROH_fall_in_love }
+	}
+	if = { limit = { has_completed_focus = ROH_spend_generously }
+		ROH = { unlock_national_focus = ROH_spend_generously }
+	}
+	if = { limit = { has_completed_focus = ROH_favor_the_carpentry_guild }
+		ROH = { unlock_national_focus = ROH_favor_the_carpentry_guild }
+	}
+	if = { limit = { has_completed_focus = ROH_favor_the_smithing_guild }
+		ROH = { unlock_national_focus = ROH_favor_the_smithing_guild }
+	}
+	if = { limit = { has_completed_focus = ROH_redistribute_wormtongues_estates }
+		ROH = { unlock_national_focus = ROH_redistribute_wormtongues_estates }
+	}
+	if = { limit = { has_completed_focus = ROH_seek_allies }
+		ROH = { unlock_national_focus = ROH_seek_allies }
+	}
+	if = { limit = { has_completed_focus = ROH_ask_gondor }
+		ROH = { unlock_national_focus = ROH_ask_gondor }
+	}
+	if = { limit = { has_completed_focus = ROH_ask_enedwaith }
+		ROH = { unlock_national_focus = ROH_ask_enedwaith }
+	}
+	if = { limit = { has_completed_focus = ROH_ask_lorien }
+		ROH = { unlock_national_focus = ROH_ask_lorien }
+	}
+	if = { limit = { has_completed_focus = ROH_ask_beornings }
+		ROH = { unlock_national_focus = ROH_ask_beornings }
+	}
+	if = { limit = { has_completed_focus = ROH_ask_dale }
+		ROH = { unlock_national_focus = ROH_ask_dale }
+	}
+}
+
+rohan_crown_eomer = { #Call in a tag with Eomer to make him king
+	ROH_eomer = {
+		add_country_leader_role = {
+			promote_leader = yes
+			country_leader = {
+				ideology = rightful_monarchy
+				expire = "3075.1.1.1"
+				traits = { army_chief_offensive_3 loyal }
+			}
+		}
+		if = { limit = { PREV = { has_completed_focus = ROH_speak_of_unity } }
+			add_country_leader_trait = unifying_leader
+		}
+		if = { limit = { PREV = { has_completed_focus = ROH_speak_of_morality } }
+			add_country_leader_trait = moralizing_leader
+		}
+		if = { limit = { has_trait = heir_apparent_mil }
+			remove_unit_leader_trait = heir_apparent_mil
+		}
+		if = { limit = { has_trait = second_in_line_mil }
+			remove_unit_leader_trait = second_in_line_mil
+		}
+		add_unit_leader_trait = monarch_mil
+	}
+}
+rohan_crown_theodred = { #Call in a tag with Theodred to make him king
+	ROH_theodred = {
+		add_country_leader_role = {
+			promote_leader = yes
+			country_leader = {
+				ideology = rightful_monarchy
+				expire = "3075.1.1.1"
+				traits = { army_chief_morale_3 stalwart }
+			}
+		}
+		add_unit_leader_trait = monarch_mil
+		remove_unit_leader_trait = heir_apparent_mil
+	}
+}
+rohan_crown_eowyn = { #Call in a tag with Eowyn to make her queen
+	ROH_eowyn = {
+		add_country_leader_role = {
+			promote_leader = yes
+			country_leader = {
+				ideology = rightful_monarchy
+				expire = "3075.1.1.1"
+				traits = { silent_workhorse determined }
+			}
+		}
+		if = { limit = { is_unit_leader = yes }
+			if = { limit = { has_trait = heir_apparent_mil }
+				remove_unit_leader_trait = heir_apparent_mil
+			}
+			if = { limit = { has_trait = second_in_line_mil }
+				remove_unit_leader_trait = second_in_line_mil
+			}
+			add_unit_leader_trait = monarch_mil
+		}
+	}
+}
+
+rohan_theoden_dies_pelennor_fields = {##Call in a scope with ROH_theoden to kill him & transfer succession
+	##Ensures the new ruler gets all the correct artifacts
+	hidden_effect = {
+		set_temp_variable = { has_herugrim = 0 }
+		set_temp_variable = { has_royal_standard = 0 }
+		if = { limit = { has_country_leader_with_trait = roh_herugrim }
+			set_temp_variable = { has_herugrim = 1 }
+		}
+		if = { limit = { has_country_leader_with_trait = roh_royal_standard }
+			set_temp_variable = { has_royal_standard = 1 }
+		}
+		retire_character = ROH_theoden
+	}
+	custom_effect_tooltip = ROH_theoden_dies_tooltip
+	if = {##If theodred is around, he becomes king
+		limit = { has_character = ROH_theodred }
+		hidden_effect = {
+			rohan_crown_theodred = yes
+		}
+		custom_effect_tooltip = ROH_theodred_becomes_ruler_tooltip
+	}
+	else_if = { ##If theodred isn't available but eomer is, eomer becomes king
+		limit = { has_character = ROH_eomer }
+		hidden_effect = {
+			rohan_crown_eomer = yes
+		}
+		custom_effect_tooltip = ROH_eomer_becomes_ruler_tooltip
+	}
+	else_if = { ##Finally, passes to Eowyn. If none of them around, random leader I guess
+		limit = { has_character = ROH_eowyn }
+		hidden_effect = {
+			rohan_crown_eowyn = yes
+		}
+		custom_effect_tooltip = ROH_eowyn_becomes_ruler_tooltip
+	}
+	##gives the new ruler appropriate traits
+	hidden_effect = {
+		if = { limit = { check_variable = { has_herugrim = 1 } }
+			add_country_leader_trait = roh_herugrim
+		}
+		if = { limit = { check_variable = { has_royal_standard = 1 } }
+			add_country_leader_trait = roh_royal_standard
+		}
+		news_event = {
+			id = rfr_news.7
+		}
+	}
+}
+	
+calculate_council_subject_research_bonus = {##Call in on_actions to recalculate the research speed bonus from council-type subjects
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = council_subject_research_bonus } } }
+		add_dynamic_modifier = { modifier = council_subject_research_bonus }
+	}
+	set_variable = { research_bonus_from_subjects = 0.0 }
+	every_subject_country = {
+		add_to_variable = { PREV.research_bonus_from_subjects = modifier@overlord_research_speed_factor }
+	}
+}
+
+isengard_make_sarumans_pupil = { ##Call in a political advisor to grant them the saruman's pupil trait matching ISN's ideology 
+	if = { limit = { ISN = { has_government = conquest } }
+		if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_conquest_zeroth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_conquest_zeroth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_conquest_first } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_conquest_first }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_conquest_second } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_conquest_second }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_conquest_third } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_conquest_third }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_conquest_fourth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_conquest_fourth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_conquest_fifth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_conquest_fifth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_conquest_sixth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_conquest_sixth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_conquest_seventh } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_conquest_seventh }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_conquest_eighth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_conquest_eighth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_conquest_ninth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_conquest_ninth }
+		}
+		else = {
+			add_trait = { slot = political_advisor trait = sarumans_pupil_conquest_tenth }
+		}
+	}
+	else_if = { limit = { ISN = { has_government = melkorite } }
+		if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_melkorite_zeroth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_melkorite_zeroth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_melkorite_first } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_melkorite_first }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_melkorite_second } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_melkorite_second }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_melkorite_third } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_melkorite_third }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_melkorite_fourth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_melkorite_fourth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_melkorite_fifth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_melkorite_fifth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_melkorite_sixth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_melkorite_sixth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_melkorite_seventh } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_melkorite_seventh }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_melkorite_eighth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_melkorite_eighth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_melkorite_ninth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_melkorite_ninth }
+		}
+		else = {
+			add_trait = { slot = political_advisor trait = sarumans_pupil_melkorite_tenth }
+		}
+	}
+	else_if = { limit = { ISN = { has_government = opportunism } }
+		if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_opportunism_zeroth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_opportunism_zeroth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_opportunism_first } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_opportunism_first }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_opportunism_second } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_opportunism_second }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_opportunism_third } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_opportunism_third }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_opportunism_fourth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_opportunism_fourth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_opportunism_fifth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_opportunism_fifth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_opportunism_sixth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_opportunism_sixth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_opportunism_seventh } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_opportunism_seventh }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_opportunism_eighth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_opportunism_eighth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_opportunism_ninth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_opportunism_ninth }
+		}
+		else = {
+			add_trait = { slot = political_advisor trait = sarumans_pupil_opportunism_tenth }
+		}
+	}
+	else_if = { limit = { ISN = { has_government = isolationism } }
+		if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_isolationism_zeroth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_isolationism_zeroth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_isolationism_first } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_isolationism_first }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_isolationism_second } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_isolationism_second }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_isolationism_third } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_isolationism_third }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_isolationism_fourth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_isolationism_fourth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_isolationism_fifth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_isolationism_fifth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_isolationism_sixth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_isolationism_sixth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_isolationism_seventh } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_isolationism_seventh }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_isolationism_eighth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_isolationism_eighth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_isolationism_ninth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_isolationism_ninth }
+		}
+		else = {
+			add_trait = { slot = political_advisor trait = sarumans_pupil_isolationism_tenth }
+		}
+	}
+	else_if = { limit = { ISN = { has_government = freedom } }
+		if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_freedom_zeroth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_freedom_zeroth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_freedom_first } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_freedom_first }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_freedom_second } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_freedom_second }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_freedom_third } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_freedom_third }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_freedom_fourth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_freedom_fourth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_freedom_fifth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_freedom_fifth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_freedom_sixth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_freedom_sixth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_freedom_seventh } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_freedom_seventh }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_freedom_eighth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_freedom_eighth }
+		}
+		else_if = { limit = { NOT = { PREV = { any_character = { has_trait = sarumans_pupil_freedom_ninth } } } }
+			add_trait = { slot = political_advisor trait = sarumans_pupil_freedom_ninth }
+		}
+		else = {
+			add_trait = { slot = political_advisor trait = sarumans_pupil_freedom_tenth }
+		}
+	}
+	set_character_flag = sarumans_pupil_flag
+}
+
+isengard_make_country_leader_sarumans_pupil = { ##Call in a country to make their leader saruman's pupil
+	if = { limit = { ISN = { has_government = conquest } }
+		add_country_leader_trait = sarumans_pupil_conquest_zeroth
+	}
+	else_if = { limit = { ISN = { has_government = melkorite } }
+		add_country_leader_trait = sarumans_pupil_melkorite_zeroth
+	}
+	else_if = { limit = { ISN = { has_government = opportunism } }
+		add_country_leader_trait = sarumans_pupil_opportunism_zeroth
+	}
+	else_if = { limit = { ISN = { has_government = freedom } }
+		add_country_leader_trait = sarumans_pupil_freedom_zeroth
+	}
+	else_if = { limit = { ISN = { has_government = isolationism } }
+		add_country_leader_trait = sarumans_pupil_isolationism_zeroth
+	}
+}
+
+isengard_upgrade_sarumans_pupils = { ##Call in a character to upgrade their trait to Saruman & give them saruman's pupil
+	if = { limit = { has_trait = captain_of_industry }
+		remove_trait = { slot = political_advisor trait = captain_of_industry }
+		add_trait = { slot = political_advisor trait = expert_captain_of_industry }
+		isengard_make_sarumans_pupil = yes
+	}
+	if = { limit = { has_trait = war_industrialist }
+		remove_trait = { slot = political_advisor trait = war_industrialist }
+		add_trait = { slot = political_advisor trait = expert_war_industrialist }
+		isengard_make_sarumans_pupil = yes
+	}
+	if = { limit = { has_trait = loremaster }
+		remove_trait = { slot = political_advisor trait = loremaster }
+		add_trait = { slot = political_advisor trait = expert_loremaster }
+		isengard_make_sarumans_pupil = yes
+	}
+	if = { limit = { has_trait = head_of_intelligence }
+		remove_trait = { slot = political_advisor trait = head_of_intelligence }
+		add_trait = { slot = political_advisor trait = expert_head_of_intelligence }
+		isengard_make_sarumans_pupil = yes
+	}
+	if = { limit = { has_trait = silent_workhorse }
+		remove_trait = { slot = political_advisor trait = silent_workhorse }
+		add_trait = { slot = political_advisor trait = expert_silent_workhorse }
+		isengard_make_sarumans_pupil = yes
+	}
+}
+
+add_foreign_ideology_drift_idea_365 = { ##Call in a TAG to add the drift idea for PREV's ideology for 365 days
+	if = { limit = { PREV = { has_government = isolationism } }
+		add_timed_idea = {
+			idea = isolationism_influence
+			days = 365
+		}
+	}
+	else_if = { limit = { PREV = { has_government = freedom } }
+		add_timed_idea = {
+			idea = freedom_influence
+			days = 365
+		}
+	}
+	else_if = { limit = { PREV = { has_government = opportunism } }
+		add_timed_idea = {
+			idea = opportunism_influence
+			days = 365
+		}
+	}
+	else_if = { limit = { PREV = { has_government = conquest } }
+		add_timed_idea = {
+			idea = conquest_influence
+			days = 365
+		}
+	}
+	else_if = { limit = { PREV = { has_government = melkorite } }
+		add_timed_idea = {
+			idea = melkorite_influence
+			days = 365
+		}
+	}
+}
+
+add_var_popularity_to_foreign_country = { ##Call in a tag to add PREV.scriptedForeignSupport of PREV's ruling party to TAG
+	add_popularity = {
+		ideology = var:PREV.current_party_ideology_group
+		popularity = var:PREV.scriptedForeignSupport
+	}
+}
+
+speak_with_saruman_effect = { ##Call in ISN to signs white peace with all countries, but lose all states except Orthanc
+	###If fangorn is at war with us, Fangorn occupies nan curunir & ered curunir. If not, whoever controls it will
+	FAN = {
+		if = { limit = { has_war_with = PREV }
+			hidden_effect = {
+				transfer_state = 67
+				transfer_state = 68
+			}
+		}
+	}
+	hidden_effect = {
+		set_variable = { prestige = 0 }
+		every_subject_country = { #ISN releases all subjects
+			limit = { NOT = { tag = SHI } } ##Don't release the shire, messes up saruman's ability to flee if he already pupepted them
+			ISN = {
+				set_autonomy = {
+					target = PREV
+					autonomy_state = autonomy_free
+					end_wars = no
+					end_civil_wars = no
+				}
+				decrease_PREV_trust_towards_THIS = yes
+				decrease_PREV_trust_towards_THIS = yes
+				decrease_PREV_trust_towards_THIS = yes
+				decrease_PREV_trust_towards_THIS = yes
+			}
+		}
+		leave_faction = yes
+		###Every owned state we don't currently control gets transfered to its controller
+		every_state = {
+			limit = {
+				NOT = { is_controlled_by = ISN }
+				owner = {
+					tag = ISN
+				}
+			}
+			controller = {
+				transfer_state = PREV
+			}
+		}
+		#####Any states we still own (except orthanc) get transfered to ROH
+		every_state = {
+			limit = {
+				NOT = { state = 210 }
+				owner = {
+					tag = ISN
+				}
+			}
+			random_country = { ##We don't know if ROH or EOM is sending the offer
+				limit = { original_tag = ROH has_war_with = PREV.PREV }
+				transfer_state = PREV
+			}
+		}
+		
+		##Deletes all units
+		every_state = {
+			ISN = {
+				delete_unit = {
+					state = PREV
+					disband = no
+				}
+			}
+		}
+		
+		###########################################White peaces with everyone
+		every_country = {
+			limit = {
+				has_war_with = PREV
+			}
+			white_peace = PREV
+		}
+	}
+}
+
+
+@AIDiplomacyWeight = 10
+add_AI_hostile_desire_towards_PREV = {
+	hidden_effect = {
+		add_ai_strategy = {
+			type = antagonize
+			id = PREV
+			value = @AIDiplomacyWeight
+		}
+		add_ai_strategy = {
+			type = conquer
+			id = PREV
+			value = @AIDiplomacyWeight
+		}
+		add_ai_strategy = {
+			type = contain
+			id = PREV
+			value = @AIDiplomacyWeight
+		}
+	}
+}
+add_AI_friendly_desire_towards_PREV = {
+	hidden_effect = {
+		add_ai_strategy = {
+			type = befriend
+			id = PREV
+			value = @AIDiplomacyWeight
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = PREV
+			value = @AIDiplomacyWeight
+		}
+	}
+}
+
+THIS_faction_peace_with_PREV_faction = {
+	custom_effect_tooltip = THIS_faction_peace_with_PREV_faction_tooltip
+	hidden_effect = {
+		every_country = {
+			limit = { OR = { tag = PREV is_ally_with = PREV } }
+			every_country = {
+				limit = { OR = { tag = PREV.PREV.PREV is_ally_with = PREV.PREV.PREV } }
+				white_peace = PREV
+			}
+		}
+	}
+}
+
+save_current_politics = { #saves the popularities of each ideology to variables
+	set_variable = { savedIsolationism = party_popularity_100@isolationism }
+	set_variable = { savedFreedom = party_popularity_100@freedom }
+	set_variable = { savedOpportunism = party_popularity_100@opportunism }
+	set_variable = { savedConquest = party_popularity_100@conquest }
+	set_variable = { savedMelkorite = party_popularity_100@melkorite }
+	set_variable = { rulingParty = current_party_ideology_group }
+}
+load_saved_politics = { #sets popularities of each ideology from stored variables
+	set_popularities = {
+		isolationism = var:savedIsolationism
+		freedom = var:savedFreedom
+		opportunism = var:savedOpportunism
+		conquest = var:savedConquest
+		melkorite = var:savedMelkorite
+	}
+	if = { limit = { check_variable = { rulingParty = isolationism } }
+		set_politics = {
+			ruling_party = isolationism
+		}
+	}
+	else_if = { limit = { check_variable = { rulingParty = freedom } }
+		set_politics = {
+			ruling_party = freedom
+		}
+	}
+	else_if = { limit = { check_variable = { rulingParty = opportunism } }
+		set_politics = {
+			ruling_party = opportunism
+		}
+	}
+	else_if = { limit = { check_variable = { rulingParty = conquest } }
+		set_politics = {
+			ruling_party = conquest
+		}
+	}
+	else_if = { limit = { check_variable = { rulingParty = melkorite } }
+		set_politics = {
+			ruling_party = melkorite
+		}
+	}
+}
+clear_saved_politics = { #clears the variables saving all the ideologies
+	clear_variable = savedIsolationism
+	clear_variable = savedFreedom
+	clear_variable = savedOpportunism
+	clear_variable = savedConquest
+	clear_variable = savedMelkorite
+	clear_variable = rulingParty
+}
+	
+promote_to_trained_uruk = {
+}
+
+saruman_fuel_for_fires_manpower = {
+	add_manpower = 500000
+}
+
+ROH_grima_ai_buff = {
+	hidden_effect = {
+		if = {
+			limit = { ROH_get_ai_buff = yes }
+			random_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+ROH_eomer_ai_buff = {
+	hidden_effect = {
+		if = {
+			limit = { ROH_get_ai_buff = yes }
+			add_equipment_to_stockpile = {
+				type = light_tank_chassis
+				amount = 300
+			}
+			if = {
+				limit = { OR = { has_tech = basic_medium_tank_chassis has_tech = basic_medium_tank } }
+				add_equipment_to_stockpile = {
+					type = medium_tank_chassis
+					amount = 300
+				}
+			}
+		}
+	}
+}
+	
+	
+	
+	
+	

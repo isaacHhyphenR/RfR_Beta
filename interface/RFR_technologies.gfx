@@ -56,19 +56,19 @@ spriteTypes = {
 	}
 ##########################INFANTRY ARMOR
 	SpriteType = {
-		name = "GFX_infantry_armor_0_medium"
+		name = "GFX_infantry_armor_tech_0_medium"
 		texturefile = "gfx/interface/technologies/infantry_armor_0.dds"
 	}
 	SpriteType = {
-		name = "GFX_infantry_armor_1_medium"
+		name = "GFX_infantry_armor_tech_1_medium"
 		texturefile = "gfx/interface/technologies/infantry_armor_1.dds"
 	}
 	SpriteType = {
-		name = "GFX_infantry_armor_2_medium"
+		name = "GFX_infantry_armor_tech_2_medium"
 		texturefile = "gfx/interface/technologies/infantry_armor_2.dds"
 	}
 	SpriteType = {
-		name = "GFX_infantry_armor_3_medium"
+		name = "GFX_infantry_armor_tech_3_medium"
 		texturefile = "gfx/interface/technologies/infantry_armor_3.dds"
 	}
 	SpriteType = {
@@ -85,64 +85,66 @@ spriteTypes = {
 	}
 ##########################TWO HANDED WEAPONS
 	SpriteType = {
-		name = "GFX_double_infantry_equipment_1_medium"
-		texturefile = "gfx/interface/technologies/double_infantry_equipment_1.dds"
+		name = "GFX_double_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/double_infantry_weapons1.dds"
 	}
 	SpriteType = {
-		name = "GFX_double_infantry_equipment_2_medium"
-		texturefile = "gfx/interface/technologies/double_infantry_equipment_2.dds"
+		name = "GFX_double_infantry_weapons2_medium"
+		texturefile = "gfx/interface/technologies/double_infantry_weapons2.dds"
 	}
 	SpriteType = {
-		name = "GFX_double_infantry_equipment_3_medium"
-		texturefile = "gfx/interface/technologies/double_infantry_equipment_3.dds"
+		name = "GFX_double_infantry_weapons3_medium"
+		texturefile = "gfx/interface/technologies/double_infantry_weapons3.dds"
 	}
 							######################################
-									#COUNTRY SPECIFIC INFANTRY
+									#COUNTRY SPECIFIC
 							######################################
-##########################ISENGARD INFANTRY
+###############################GON
+	SpriteType = {
+		name = "GFX_GON_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry3.dds"
+	}
+###INFANTRY ARMOR
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_upgrade_2.dds"
+	}
+###############################ISN
 	SpriteType = {
 		name = "GFX_ISN_infantry_weapons_medium"
 		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_equipment_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_ISN_infantry_weapons1_medium"
-		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_equipment_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_ISN_improved_infantry_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_equipment_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_ISN_advanced_infantry_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_equipment_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_ISN_infantry_weapons2_medium"
-		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_weapons.dds"
-	}
-	SpriteType = {
-		name = "GFX_ISN_improved_infantry_weapons_2_medium"
-		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_weapons2.dds"
-	}
-	SpriteType = {
-		name = "GFX_ISN_advanced_infantry_weapons2_medium"
-		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_weapons3.dds"
-	}
-	SpriteType = {
-		name = "GFX_ISN_support_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Isengard/ISN_support_weapons.dds"
-	}
-	SpriteType = {
-		name = "GFX_ISN_support_weapons2_medium"
-		texturefile = "gfx/interface/technologies/00_Isengard/ISN_support_weapons2.dds"
-	}
-	SpriteType = {
-		name = "GFX_ISN_support_weapons3_medium"
-		texturefile = "gfx/interface/technologies/00_Isengard/ISN_support_weapons3.dds"
-	}
-	SpriteType = {
-		name = "GFX_ISN_support_weapons4_medium"
-		texturefile = "gfx/interface/technologies/00_Isengard/ISN_support_weapons4.dds"
 	}
 ##########################MORDOR INFANTRY
 	SpriteType = {
@@ -178,36 +180,8 @@ spriteTypes = {
 		name = "GFX_ROH_advanced_infantry_weapons_medium"
 		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_equipment_0.dds"
 	}
-	SpriteType = {
-		name = "GFX_ROH_infantry_weapons2_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_weapons.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_improved_infantry_weapons_2_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_weapons2.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_advanced_infantry_weapons2_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_weapons3.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_support_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_support_weapons.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_support_weapons2_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_support_weapons2.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_support_weapons3_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_support_weapons3.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_support_weapons4_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_support_weapons4.dds"
-	}
 							######################################
-										#GENERIC ARMOR
+										#GENERIC CAVALRY
 							######################################
 	SpriteType = {
 		name = "GFX_inter_war_heavy_tank_chassis_medium"
@@ -218,9 +192,9 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/generic_amphibious_chassis.dds"
 	}
 							######################################
-									#COUNTRY SPECIFIC ARMOR
+									#COUNTRY SPECIFIC CAVALRY
 							######################################
-##########################ISENGARD ARMOR
+##########################ISENGARD CAVALRY
 	SpriteType = {
 		name = "GFX_ISN_amphibious_tank_chassis_medium"
 		texturefile = "gfx/interface/technologies/00_Isengard/ISN_amphibious_tank_chassis.dds"

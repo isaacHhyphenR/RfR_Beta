@@ -24,6 +24,7 @@ set_technology = {
 	electronic_mechanical_engineering = 1
 	infantry_weapons = 1
 	infantry_weapons1 = 1
+	infantry_armor_tech_0 = 1
 	tech_special_forces = 1
 	gw_artillery = 1
 	tech_support = 1

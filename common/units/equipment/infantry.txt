@@ -216,8 +216,6 @@ equipments = {
 		
 		interface_category = interface_category_land
 		
-		active = no
-		
 		#Misc Abilities
 		reliability = 0.6
 
@@ -239,9 +237,8 @@ equipments = {
 	# Regular armor  3000
 	infantry_armor_0 = {
 		year = 3000
-	
+		
 		archetype = infantry_armor
-		active = yes
 		priority = 05
 		visual_level = 0
 	}

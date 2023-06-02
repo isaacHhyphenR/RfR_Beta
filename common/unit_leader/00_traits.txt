@@ -412,7 +412,6 @@ leader_traits = {
 		trait_type = personality_trait
 		unit_type = {
 			type = cavalry
-			type = camelry
 			type = motorized
 			type = mechanized
 		}
@@ -420,7 +419,6 @@ leader_traits = {
 		unit_trigger = {
 			OR = {
 				division_has_majority_template = cavalry
-				division_has_majority_template = camelry
 				division_has_majority_template = motorized
 				division_has_majority_template = mechanized
 			}

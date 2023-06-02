@@ -25,6 +25,10 @@ technologies = {
 	@3024 = 18
 	@3025 = 20
 
+
+###########################################################
+				#ONE HANDED WEAPONS
+###########################################################
 	infantry_weapons = {
 
 		enable_equipments = {
@@ -44,6 +48,10 @@ technologies = {
 		path = {
 			leads_to_tech = infantry_weapons1
 			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = double_infantry_weapons1
+			research_cost_coeff = 1
 		}		
 
 		research_cost = 1.5
@@ -56,6 +64,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 			infantry_tech
+			one_handed
 		}
 		
 		ai_will_do = {
@@ -68,11 +77,15 @@ technologies = {
 		enable_equipments = {
 			infantry_equipment_1
 		}
-				
-		path = {
+
+		path = { #equip
+			leads_to_tech = improved_infantry_weapons
+			research_cost_coeff = 1
+		}
+		path = { #upgrade
 			leads_to_tech = infantry_weapons2
 			research_cost_coeff = 1
-		}		
+		}
 
 		research_cost = 1.5
 		start_year = 3015
@@ -84,6 +97,7 @@ technologies = {
 		categories = {
 			infantry_weapons
 			infantry_tech
+			one_handed
 		}
 		
 		ai_will_do = {
@@ -96,22 +110,101 @@ technologies = {
 		}
 	}	
 	
+	improved_infantry_weapons = {
+
+		enable_equipments = {
+			infantry_equipment_2
+		}
+		
+		path = { #equip
+			leads_to_tech = advanced_infantry_weapons
+			research_cost_coeff = 1
+		}	
+		path = { #upgrade
+			leads_to_tech = improved_infantry_weapons_2
+			research_cost_coeff = 1
+		}	
+
+		research_cost = 2
+		start_year = 3018
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @3018 }
+		}
+		
+		categories = {
+			infantry_weapons
+			infantry_tech
+			one_handed
+		}
+		
+		ai_will_do = {
+			factor = 3
+						
+			modifier = {
+				factor = 10
+				date > "3018.1.1"
+			}
+			modifier = {
+				num_of_military_factories < 50
+				factor = 0.5
+			}
+		}
+	}
+	
+	advanced_infantry_weapons = {
+
+		enable_equipments = {
+			infantry_equipment_3
+		}
+		
+		path = {
+			leads_to_tech = advanced_infantry_weapons2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3021
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @3021 }
+		}
+		
+		categories = {
+			infantry_weapons
+			infantry_tech
+			one_handed
+		}
+		
+		ai_will_do = {
+			factor = 0.8
+			
+			modifier = {
+				num_of_military_factories > 150
+				factor = 2.5
+			}
+			
+			modifier = {
+				num_of_military_factories < 50
+				factor = 0.5
+			}
+		}
+	}
+###########################################################
+				#WEAPON UPGRADES
+###########################################################
+	@weaponUpgradeX = 1
 	infantry_weapons2 = {
 
 		category_all_infantry = {
 			soft_attack = 0.05
 		}
 		
-		path = {
-			leads_to_tech = improved_infantry_weapons
-			research_cost_coeff = 1
-		}		
-
 		research_cost = 1.5
 		start_year = 3017
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = @3017 }
+			position = { x = @weaponUpgradeX y = @3017 }
 		}
 		
 		categories = {
@@ -129,62 +222,17 @@ technologies = {
 		}
 	}
 	
-	improved_infantry_weapons = {
-
-		enable_equipments = {
-			infantry_equipment_2
-		}
-		
-		path = {
-			leads_to_tech = improved_infantry_weapons_2
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = infantry_at
-			research_cost_coeff = 1
-		}		
-
-		research_cost = 2
-		start_year = 3018
-		folder = {
-			name = infantry_folder
-			position = { x = 0 y = @3018 }
-		}
-		
-		categories = {
-			infantry_weapons
-			infantry_tech
-		}
-		
-		ai_will_do = {
-			factor = 3
-						
-			modifier = {
-				factor = 10
-				date > "3018.1.1"
-			}
-			modifier = {
-				num_of_military_factories < 50
-				factor = 0.5
-			}
-		}
-	}
 	improved_infantry_weapons_2 = {
 
 		category_all_infantry = {
 			soft_attack = 0.05
-		}
-		
-		path = {
-			leads_to_tech = advanced_infantry_weapons
-			research_cost_coeff = 1
 		}
 
 		research_cost = 2
 		start_year = 3019
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = @3019 }
+			position = { x = @weaponUpgradeX y = @3019 }
 		}
 		
 		categories = {
@@ -212,44 +260,6 @@ technologies = {
 		}
 	}
 	
-	advanced_infantry_weapons = {
-
-		enable_equipments = {
-			infantry_equipment_3
-		}	
-		
-		path = {
-			leads_to_tech = advanced_infantry_weapons2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
-		start_year = 3021
-		folder = {
-			name = infantry_folder
-			position = { x = 0 y = @3021 }
-		}
-		
-		categories = {
-			infantry_weapons
-			infantry_tech
-		}
-		
-		ai_will_do = {
-			factor = 0.8
-			
-			modifier = {
-				num_of_military_factories > 150
-				factor = 2.5
-			}
-			
-			modifier = {
-				num_of_military_factories < 50
-				factor = 0.5
-			}
-		}
-	}
-	
 	advanced_infantry_weapons2 = {
 
 		category_all_infantry = {
@@ -260,7 +270,7 @@ technologies = {
 		start_year = 3023
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = @3023 }
+			position = { x = @weaponUpgradeX y = @3023 }
 		}
 		
 		categories = {
@@ -287,12 +297,132 @@ technologies = {
 			}
 		}
 	}
+###########################################################
+				#TWO HANDED WEAPONS
+###########################################################
+	@doubleInfantryX = 2
+	double_infantry_weapons1 = {
+
+		enable_equipments = {
+			double_infantry_equipment_1
+		}
+
+		path = {
+			leads_to_tech = infantry_weapons2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = double_infantry_weapons2
+			research_cost_coeff = 1
+		}	
+
+		research_cost = 1.5
+		start_year = 3015
+		folder = {
+			name = infantry_folder
+			position = { x = @doubleInfantryX y = @3015 }
+		}
+		
+		categories = {
+			infantry_weapons
+			infantry_tech
+			two_handed
+		}
+		
+		ai_will_do = {
+			factor = 1
+						
+			modifier = {
+				factor = 10
+				date > "3015.1.3"
+			}
+		}
+	}	
 	
+	double_infantry_weapons2 = {
+
+		enable_equipments = {
+			double_infantry_equipment_2
+		}
+		
+		path = {
+			leads_to_tech = improved_infantry_weapons_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = double_infantry_weapons3
+			research_cost_coeff = 1
+		}		
+
+		research_cost = 2
+		start_year = 3018
+		folder = {
+			name = infantry_folder
+			position = { x = @doubleInfantryX y = @3018 }
+		}
+		
+		categories = {
+			infantry_weapons
+			infantry_tech
+			two_handed
+		}
+		
+		ai_will_do = {
+			factor = 3
+						
+			modifier = {
+				factor = 10
+				date > "3018.1.1"
+			}
+			modifier = {
+				num_of_military_factories < 50
+				factor = 0.5
+			}
+		}
+	}
 	
+	double_infantry_weapons3 = {
+
+		enable_equipments = {
+			double_infantry_equipment_3
+		}	
+		
+		path = {
+			leads_to_tech = advanced_infantry_weapons2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3021
+		folder = {
+			name = infantry_folder
+			position = { x = @doubleInfantryX y = @3021 }
+		}
+		
+		categories = {
+			infantry_weapons
+			infantry_tech
+			two_handed
+		}
+		
+		ai_will_do = {
+			factor = 0.8
+			
+			modifier = {
+				num_of_military_factories > 150
+				factor = 2.5
+			}
+			
+			modifier = {
+				num_of_military_factories < 50
+				factor = 0.5
+			}
+		}
+	}
 ###########################################################
 				#INFANTRY ARMOR
 ###########################################################
-	infantry_armor_0 = {
+	infantry_armor_tech_0 = {
 		
 		enable_equipments = {
 			infantry_armor_0
@@ -302,7 +432,7 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = infantry_armor_1
+			leads_to_tech = infantry_armor_tech_1
 			research_cost_coeff = 1
 		}
 
@@ -310,7 +440,7 @@ technologies = {
 		start_year = 3000
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = @3000 }
+			position = { x = 0 y = -1 }
 		}
 		
 		categories = {
@@ -344,7 +474,7 @@ technologies = {
 		}
 	}
 	
-	infantry_armor_1 = {
+	infantry_armor_tech_1 = {
 		
 		enable_equipments = {
 			infantry_armor_1
@@ -406,7 +536,7 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = infantry_armor_2
+			leads_to_tech = infantry_armor_tech_2
 			research_cost_coeff = 1
 		}
 		
@@ -451,7 +581,7 @@ technologies = {
 		}
 	}
 	
-	infantry_armor_2 = {
+	infantry_armor_tech_2 = {
 
 		enable_equipments = {
 			infantry_armor_2
@@ -508,7 +638,7 @@ technologies = {
 			breakthrough = 0.05
 		}
 		path = {
-			leads_to_tech = infantry_armor_3
+			leads_to_tech = infantry_armor_tech_3
 			research_cost_coeff = 1
 		}
 		research_cost = 1.5
@@ -552,7 +682,7 @@ technologies = {
 		}
 	}
 	
-	infantry_armor_3 = {
+	infantry_armor_tech_3 = {
 
 		enable_equipments = {
 			infantry_armor_3
