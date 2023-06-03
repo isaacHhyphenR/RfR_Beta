@@ -1,0 +1,56 @@
+spriteTypes = {
+
+####DEAD
+	spriteType = { 
+		name = "GFX_unit_army_of_the_dead_icon_medium"				
+		textureFile = "gfx/interface/counters/divisions_large/army_of_the_dead_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = { 
+		name = "GFX_unit_army_of_the_dead_icon_medium_white"						
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_army_of_the_dead_icon.dds" 
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_army_of_the_dead_icon_small"
+		texturefile = "gfx/texticons/unit_army_of_the_dead_icon_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2		
+	}
+
+####HEAVY INFANTRY
+	spriteType = { 
+		name = "GFX_unit_heavy_infantry_icon_medium"				
+		textureFile = "gfx/interface/counters/divisions_large/unit_heavy_infantry_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = { 
+		name = "GFX_unit_heavy_infantry_icon_medium_white"						
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_heavy_infantry_icon.dds" 
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_heavy_infantry_icon_small"
+		texturefile = "gfx/texticons/unit_heavy_infantry_icon_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2		
+	}
+
+####HEAVY PIKES
+	spriteType = { 
+		name = "GFX_unit_heavy_pikes_icon_medium"				
+		textureFile = "gfx/interface/counters/divisions_large/heavy_pikes_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = { 
+		name = "GFX_unit_heavy_pikes_icon_medium_white"						
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_heavy_pikes_icon.dds" 
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_heavy_pikes_icon_small"
+		texturefile = "gfx/texticons/unit_heavy_pikes_icon_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2		
+	}
+}
