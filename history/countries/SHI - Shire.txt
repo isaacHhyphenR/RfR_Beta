@@ -20,7 +20,7 @@ if = {
 		has_dlc = "La Resistance"
 	}
 	set_technology = {
-		armored_car1 = 1
+		#armored_car1 = 1
 	}
 }
 ################### NAVAL TECH

@@ -81,7 +81,7 @@ sub_units = {
 		suppression = 1.5
 		weight = 0.5
 		
-		supply_consumption = 0.06
+		supply_consumption = 0.07
 	
 		need = {
 			infantry_equipment = 100
@@ -337,8 +337,10 @@ sub_units = {
 		
 		categories = {
 			category_front_line
+			category_light_infantry
 			category_all_infantry
 			category_army
+			category_motorized
 		}
 		
 		combat_width = 2
@@ -360,6 +362,77 @@ sub_units = {
 	
 		need = {
 			infantry_equipment = 100
+			motorized_equipment = 35
+		}
+
+		forest = {
+			attack = -0.1
+			movement = -0.5
+		}
+		mountain = {
+			attack = -0.05
+		}
+		jungle = {
+			attack = -0.2
+			movement = -0.5
+		}
+		marsh = {
+			attack = -0.1
+			movement = -0.3
+		}
+		urban = {
+			attack = -0.1
+		}
+		river = {
+			attack = -0.1
+			movement = -0.1
+		}
+		amphibious = {
+			attack = -0.2
+		}
+	}
+	heavy_motorized = {
+		abbreviation = "HMOT"
+		sprite = motorized
+		map_icon_category = infantry
+
+		priority = 599
+		ai_priority = 200
+
+		type = {
+			motorized
+		}
+		
+		group = mobile
+		
+		categories = {
+			category_front_line
+			category_heavy_infantry
+			category_all_infantry
+			category_army
+			category_motorized
+		}
+		
+		combat_width = 2
+		
+		#Size Definitions
+		max_strength = 25
+		max_organisation = 60
+		default_morale = 0.30
+		manpower = 1200
+
+		#Misc Abilities
+		training_time = 90
+		suppression = 2.2
+		weight = 0.75
+		supply_consumption = 0.075
+	
+		# this is what moves us and sets speed
+		transport = motorized_equipment
+	
+		need = {
+			infantry_equipment = 100
+			infantry_armor = 100
 			motorized_equipment = 35
 		}
 

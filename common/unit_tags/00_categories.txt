@@ -12,4 +12,9 @@ sub_unit_categories = {
 	category_artillery
 	category_special_forces
 	category_recon
+	category_anti_tank
+	category_all_anti_tank
+	category_tank_destroyer
+	category_sp_artillery
+	category_motorized
 }

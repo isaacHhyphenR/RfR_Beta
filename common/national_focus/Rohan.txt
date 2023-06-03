@@ -1,0 +1,6089 @@
+@swayableHousesCost = 3
+@eomerCivilWarCost = 2
+@grimaCivilWarCost = 4
+@storyFocusCost = 2
+@pelennorFeildsDays = 100
+@techBoostBonus = 0.8
+focus_tree = {
+	id = rohan_focus
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ROH
+		}
+		modifier = {
+			add = 10
+			has_cosmetic_tag = EOM_cosmetic
+		}
+	}
+	continuous_focus_position = { x = 400 y = 1700 } #x= y= }
+	default = no
+	initial_show_position = { ##Side with grima
+		x = 14
+		y = 0
+		
+		#x= y= {
+		offset = { ##side with eomer
+			x = 30
+			trigger = {
+				has_country_flag = ROH_sided_with_eomer
+				NOT = { has_cosmetic_tag = EOM_cosmetic }
+			}
+		}
+		offset = { #for Rohan!
+			x = 30 
+			y = 8
+			trigger = {
+				# x= {
+				has_cosmetic_tag = EOM_cosmetic
+			}
+		}
+		offset = { #rule undistracted
+			x = -5 
+			y = 9
+				# x= {
+			trigger = {
+				NOT = { has_idea = ROH_a_hall_divided }
+				has_character = ROH_grima
+				has_character = ROH_theoden
+			}
+		}
+		offset = { #quash the troublemakers
+			x = 8
+			y = 9
+				# x= {
+			trigger = {
+				NOT = { has_cosmetic_tag = EOM_cosmetic }
+				has_civil_war = yes
+			}
+		}
+
+		#x= y= }
+		#}
+	}
+	
+######################################################################GRIMA BRANCH
+#################################MAIN SUB-BRANCH
+	focus = { #Side with grima
+		id = ROH_side_with_grima
+		icon = GFX_goal_grima
+		x = 14
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		mutually_exclusive = { focus = ROH_side_with_eomer }
+		available = { has_idea = ROH_a_hall_divided } #political struggle branches only available during political struggle
+		search_filters = {  FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = { limit = { NOT = { has_country_flag = ROH_sided_with_eomer } }
+				add_political_power = 120
+				activate_decision = side_with_eomer_decision
+			}
+			add_stability = 0.05
+			add_war_support = -0.075
+			custom_effect_tooltip = ROH_side_with_grima_tooltip
+			hidden_effect = {
+				if = { limit = { NOT = { has_country_flag = ROH_sided_with_eomer } }
+					set_country_flag = ROH_sided_with_grima
+				}
+			}
+			ROH_grima_ai_buff = yes
+		}
+	}
+	focus = { #whisper lies against eomer
+		id = ROH_whisper_lies_against_eomer
+		icon = GFX_goal_grima
+		x = 0
+		y = 1
+		relative_position_id = ROH_side_with_grima
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_side_with_grima }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT  }
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = -0.075
+			ROH_grima_ai_buff = yes
+		}
+	}
+	focus = { #soothe anxious courtiers
+		id = ROH_soothe_anxious_courtiers
+		icon = GFX_goal_grima
+		x = 0
+		y = 2
+		relative_position_id = ROH_side_with_grima
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_whisper_lies_against_eomer }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = {  FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = -0.075
+			ROH_grima_ai_buff = yes
+		}
+	}
+	focus = { #draw up legal framework
+		id = ROH_draw_up_legal_framework
+		icon = GFX_goal_grima
+		x = 0
+		y = 3
+		relative_position_id = ROH_side_with_grima
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_soothe_anxious_courtiers }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = {  FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = -0.075
+			ROH_grima_ai_buff = yes
+		}
+	}
+	focus = { #be rid of this pest
+		id = ROH_be_rid_of_this_pest
+		icon = GFX_goal_grima
+		x = 0
+		y = 4
+		relative_position_id = ROH_side_with_grima
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_draw_up_legal_framework }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = 0.15
+			add_war_support = -0.30
+			ROH_grima_ai_buff = yes
+		}
+	}
+#################################SIDE WITH GRIMA SUB-BRANCH
+	focus = { #safeguard the royal tresury
+		id = ROH_safeguard_the_royal_treasury
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -3
+		y = 1
+		relative_position_id = ROH_side_with_grima
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_side_with_grima }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = ROH_safeguard_the_royal_treasury_tooltip
+		}
+	}
+	focus = { #safeguard herugrim
+		id = ROH_safeguard_herugrim
+		icon = GFX_goal_herugrim
+		x = 1
+		y = 1
+		relative_position_id = ROH_safeguard_the_royal_treasury
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_safeguard_the_royal_treasury }
+		available = { has_country_leader_with_trait = ROH_herugrim has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_WAR_SUPPORT}
+		completion_reward = { ##Removes herugrim from theoden
+			remove_country_leader_trait = ROH_herugrim
+			custom_effect_tooltip = ROH_safeguard_herugrim_tooltip
+			hidden_effect = {
+				set_country_flag = herugrim_safeguarded
+			}
+		}
+	}
+	focus = { #safeguard the royal standard
+		id = ROH_safeguard_the_royal_standard
+		icon = GFX_goal_roh_royal_standard
+		x = -1
+		y = 1
+		relative_position_id = ROH_safeguard_the_royal_treasury
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_safeguard_the_royal_treasury }
+		available = { has_country_leader_with_trait = ROH_royal_standard has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY }
+		completion_reward = {
+			remove_trait = {
+				character = ROH_theoden
+				slot = country_leader
+				trait = ROH_royal_standard
+			}
+			custom_effect_tooltip = ROH_safeguard_the_royal_standard_tooltip
+			hidden_effect = {
+				set_country_flag = royal_standard_safeguarded
+			}
+		}
+	}
+	focus = { #promote house grimmoding
+		id = ROH_promote_house_grimmoding
+		icon = GFX_goal_house_grimmodings
+		x = -7
+		y = 1
+		relative_position_id = ROH_side_with_grima
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_side_with_grima }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES FOCUS_FILTER_POLITICAL }
+		completion_reward = { #Makes house grimmoding available as industrial concern
+			custom_effect_tooltip = ROH_promote_house_grimmoding_tooltip
+		}
+	}
+	focus = { #heed aegelas counsel
+		id = ROH_heed_aegelas_counsel
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 1
+		y = 1
+		relative_position_id = ROH_promote_house_grimmoding
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_promote_house_grimmoding }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##makes aegela available as advisor
+			custom_effect_tooltip = ROH_heed_aegelas_council_toolip
+			hidden_effect = {
+				ROH_aegela_grimmoding = {
+					add_advisor_role = {
+						advisor = {
+							slot = political_advisor
+							idea_token = ROH_aegela_grimmoding
+							traits = { backroom_backstabber }
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #heed freawines counsel
+		id = ROH_heed_freawines_counsel
+		icon = GFX_goal_generic_nobility
+		x = -1
+		y = 1
+		relative_position_id = ROH_promote_house_grimmoding
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_promote_house_grimmoding }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			custom_effect_tooltip = ROH_heed_freawines_council_tooltip
+			hidden_effect = {
+				ROH_freawine_grimmoding = {
+					add_corps_commander_role = {
+						traits = { politically_connected panzer_leader trait_reckless }
+						skill = 3
+						attack_skill = 5
+						defense_skill = 2
+						planning_skill = 2
+						logistics_skill = 1
+					}
+					if = { limit = { ROOT = { has_country_flag = recruit_mark_nobles } }
+						add_unit_leader_trait = ROH_noble_of_the_mark
+					}
+				}
+			}
+		}
+	}
+#################################LIES SUB-BRANCH
+	focus = { #reassure our neighbours
+		id = ROH_reassure_our_neighbours
+		icon = GFX_goal_tripartite_pact
+		x = 3
+		y = 1
+		relative_position_id = ROH_whisper_lies_against_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_whisper_lies_against_eomer }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #+15% opinion gain
+			add_trait = {
+				 character = ROH_grima
+				 slot = political_advisor
+				 trait = master_diplomat
+			}
+		}
+	}
+	focus = { #lie to the east
+		id = ROH_lie_to_the_east
+		icon = GFX_goal_generic_befriend_gondor
+		x = 1
+		y = 1
+		relative_position_id = ROH_reassure_our_neighbours
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_reassure_our_neighbours }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #ENE -50 opinion of traitors
+			custom_effect_tooltip = ROH_lie_to_the_east_tooltip
+		}
+	}
+	focus = { #lie to the west
+		id = ROH_lie_to_the_west
+		icon = GFX_goal_generic_befriend_enedwaith
+		x = -1
+		y = 1
+		relative_position_id = ROH_reassure_our_neighbours
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_reassure_our_neighbours }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #GON -50 opinion of traitors
+			custom_effect_tooltip = ROH_lie_to_the_west_tooltip
+		}
+	}
+	focus = { #reach agreements
+		id = ROH_reach_agreements
+		icon = GFX_goal_bribery
+		x = 6
+		y = 1
+		relative_position_id = ROH_whisper_lies_against_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_whisper_lies_against_eomer }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##Enables "reach agreement" decisions
+			custom_effect_tooltip = ROH_reach_agreements_tooltip
+		}
+	}
+	focus = { #monitor suspicions individuals
+		id = ROH_monitor_suspicious_individuals
+		icon = GFX_focus_mex_arrest_general_cedillo
+		x = 8
+		y = 1
+		relative_position_id = ROH_whisper_lies_against_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_whisper_lies_against_eomer }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##25% chance of arresting each traitor on rebellion
+			custom_effect_tooltip = ROH_monitor_suspicious_individuals_tooltip
+		}
+	}
+	focus = { #prepare for disappearances
+		id = ROH_prepare_for_disappearances
+		icon = GFX_focus_generic_self_management
+		x = 7
+		y = 2
+		relative_position_id = ROH_whisper_lies_against_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_monitor_suspicious_individuals focus = ROH_reach_agreements }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##+120 pp on rebellion
+			custom_effect_tooltip = ROH_prepare_for_disappearances_tooltip
+		}
+	}
+	focus = { #paint false portraits of middle earth
+		id = ROH_paint_false_portraits_of_middle_earth
+		icon = GFX_goal_middle_earth_on_fire
+		x = 11
+		y = 1
+		relative_position_id = ROH_whisper_lies_against_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_whisper_lies_against_eomer }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##-5% freedom
+			add_popularity = {
+				ideology = freedom
+				popularity = -0.05
+			}
+		}
+	}
+	focus = { #distract the court
+		id = ROH_distract_the_court
+		icon = GFX_goal_generic_neutrality_focus
+		x = -1
+		y = 1
+		relative_position_id = ROH_paint_false_portraits_of_middle_earth
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_paint_false_portraits_of_middle_earth }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##-0.5% freedom daily
+			add_ideas = attention_diverted
+		}
+	}
+	focus = { #indoctrinate royal courtiers
+		id = ROH_indoctrinate_royal_courtiers
+		icon = GFX_goal_generic_propaganda
+		x = 1
+		y = 1
+		relative_position_id = ROH_paint_false_portraits_of_middle_earth
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_paint_false_portraits_of_middle_earth }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##-5% freedom
+			add_popularity = {
+				ideology = freedom
+				popularity = -0.05
+			}
+		}
+	}
+	focus = { #advise the king
+		id = ROH_advise_the_king
+		icon = GFX_goal_theoden_old
+		x = 17
+		y = 1
+		relative_position_id = ROH_whisper_lies_against_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = ROH_whisper_lies_against_eomer
+		}
+		available = {
+			has_idea = ROH_a_hall_divided #political struggle branches only available during political struggle
+			hidden_trigger = { has_country_flag = ROH_sided_with_grima }
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#add_war_support = -0.05
+			add_political_power = 120
+		}
+	}
+	focus = { #speak of war
+		id = ROH_speak_of_war
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -2
+		y = 1
+		relative_position_id = ROH_advise_the_king
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = ROH_advise_the_king
+		}
+		available = {
+			has_idea = ROH_a_hall_divided #political struggle branches only available during political struggle
+			hidden_trigger = { has_country_flag = ROH_sided_with_grima }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##Grima gains trait based on traits he already has
+			if = {
+				limit = { ROH_grima = { has_trait = grima_political_advisor } }
+				remove_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = grima_political_advisor
+				}
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_military_political_advisor
+				}
+			}
+			else_if = {
+				limit = { ROH_grima = { has_trait = grima_economic_advisor } }
+				remove_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = grima_economic_advisor
+				}
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_military_economic_advisor
+				}
+			}
+			else_if = {
+				limit = { ROH_grima = { has_trait = grima_political_economic_advisor } }
+				remove_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = grima_political_economic_advisor
+				}
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_royal_advisor
+				}
+			}
+			else = {
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_military_advisor
+				}
+			}
+		}
+	}
+	focus = { #Speak of politics
+		id = ROH_speak_of_politics
+		icon = GFX_focus_generic_self_management
+		x = 0
+		y = 1
+		relative_position_id = ROH_advise_the_king
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = ROH_advise_the_king
+		}
+		available = {
+			has_idea = ROH_a_hall_divided #political struggle branches only available during political struggle
+			hidden_trigger = { has_country_flag = ROH_sided_with_grima }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##Grima gains trait based on traits he already has
+			if = {
+				limit = { ROH_grima = { has_trait = grima_military_advisor } }
+				remove_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = grima_military_advisor
+				}
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_military_political_advisor
+				}
+			}
+			else_if = {
+				limit = { ROH_grima = { has_trait = grima_economic_advisor } }
+				remove_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = grima_economic_advisor
+				}
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_political_economic_advisor
+				}
+			}
+			else_if = {
+				limit = { ROH_grima = { has_trait = grima_military_economic_advisor } }
+				remove_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = grima_military_economic_advisor
+				}
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_royal_advisor
+				}
+			}
+			else = {
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_political_advisor
+				}
+			}
+		}
+
+
+	}
+	focus = { #Speak of economics
+		id = ROH_speak_of_economics
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 2
+		y = 1
+		relative_position_id = ROH_advise_the_king
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = ROH_advise_the_king
+		}
+		available = {
+			has_idea = ROH_a_hall_divided #political struggle branches only available during political struggle
+			hidden_trigger = { has_country_flag = ROH_sided_with_grima }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##Grima gains trait based on traits he already has
+			if = {
+				limit = { ROH_grima = { has_trait = grima_military_advisor } }
+				remove_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = grima_military_advisor
+				}
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_military_economic_advisor
+				}
+			}
+			else_if = {
+				limit = { ROH_grima = { has_trait = grima_political_advisor } }
+				remove_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = grima_political_advisor
+				}
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_political_economic_advisor
+				}
+			}
+			else_if = {
+				limit = { ROH_grima = { has_trait = GRIMA_military_political_advisor } }
+				remove_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_military_political_advisor
+				}
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_royal_advisor
+				}
+			}
+			else = {
+				add_trait = {
+					character = ROH_grima
+					slot = political_advisor
+					trait = GRIMA_economic_advisor
+				}
+			}
+		}
+
+
+	}
+	focus = { #speak of succession
+		id = ROH_speak_of_succession
+		icon = GFX_focus_generic_monarchy_2
+		x = 0
+		y = 2
+		relative_position_id = ROH_advise_the_king
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = ROH_speak_of_war
+			focus = ROH_speak_of_politics
+			focus = ROH_speak_of_economics
+		}
+		available = {
+			has_idea = ROH_a_hall_divided #political struggle branches only available during political struggle
+			hidden_trigger = { has_country_flag = ROH_sided_with_grima }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##Grima replaces Eomer as second in line
+			if = {
+				limit = { ROH_eomer = { has_trait = second_in_line_pol } }
+				remove_trait = {
+					character = ROH_eomer
+					slot = political_advisor
+					trait = second_in_line_pol
+				}
+				remove_trait = {
+					character = ROH_eomer
+					slot = field_marshal
+					trait = second_in_line_mil
+				}
+			}
+			add_trait = {
+				character = ROH_grima
+				slot = political_advisor
+				trait = second_in_line_pol
+			}
+		}
+	}
+#################################SOOTHE SUB-BRANCH
+	focus = { #invest in ederossy propserity
+		id = ROH_invest_in_ederossy_prosperity
+		icon = GFX_focus_generic_industry_2
+		x = -2
+		y = 1
+		relative_position_id = ROH_soothe_anxious_courtiers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_soothe_anxious_courtiers }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } controls_state = 157 } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
+		completion_reward = { ##+1 cloth & slot in folde
+			157 = { #folde
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = cloth
+					amount = 1
+				}
+			}
+		}
+	}
+	focus = { #hold a parade in Theoden's honor
+		id = ROH_hold_a_parade_in_theodens_honor
+		icon = GFX_goal_theoden_old
+		x = -4
+		y = 1
+		relative_position_id = ROH_soothe_anxious_courtiers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_soothe_anxious_courtiers }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } controls_state = 157 } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP }
+		completion_reward = { ##+50% doctrine research bonus
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = { #defend against raiders
+		id = ROH_defend_against_raiders
+		icon = GFX_goal_generic_construct_military
+		x = -6
+		y = 1
+		relative_position_id = ROH_soothe_anxious_courtiers
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ROH_soothe_anxious_courtiers
+		}
+		available = { #Must control either Norwold or Fortalf, the Anduin borders
+			has_idea = ROH_a_hall_divided #political struggle branches only available during political struggle
+			OR = { controls_state = 57 controls_state = 207 }
+			hidden_trigger = { has_country_flag = ROH_sided_with_grima }
+		}
+		search_filters = { FOCUS_FILTER_FORTIFICATION }
+		completion_reward = { ##Bunkers along the Anduin
+			custom_effect_tooltip = ROH_defend_against_raiders_tooltip
+			hidden_effect = {
+				57 = { #Norwold
+					if = {
+						limit = { ROOT = { controls_province = 3546 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 3546
+						}
+					}
+					if = {
+						limit = { ROOT = { controls_province = 2411 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 2411
+						}
+					}
+					if = {
+						limit = { ROOT = { controls_province = 6638 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 6638
+						}
+					}
+					if = {
+						limit = { ROOT = { controls_province = 2103 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 2103
+						}
+					}
+				}
+				207 = { #Fortalf
+					if = {
+						limit = { ROOT = { controls_province = 1126 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 1126
+						}
+					}
+					if = {
+						limit = { ROOT = { controls_province = 3887 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 3887
+						}
+					}
+					if = {
+						limit = { ROOT = { controls_province = 6754 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 6754
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #remind Theodred of his lineage
+		id = ROH_remind_theodred_of_his_lineage
+		icon = GFX_goal_theodred
+		x = -1
+		y = 1
+		relative_position_id = ROH_hold_a_parade_in_theodens_honor
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_defend_against_raiders }
+		prerequisite = { focus = ROH_hold_a_parade_in_theodens_honor }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } controls_state = 157 } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##theodred will not be arrested
+			custom_effect_tooltip = ROH_remind_theodred_of_his_lineage_tooltip
+		}
+	}
+	focus = { #remind eowyn of her uncles need
+		id = ROH_remind_eowyn_of_her_uncles_need
+		icon = GFX_goal_eowyn
+		x = 1
+		y = 1
+		relative_position_id = ROH_hold_a_parade_in_theodens_honor
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_invest_in_ederossy_prosperity }
+		prerequisite = { focus = ROH_hold_a_parade_in_theodens_honor }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } controls_state = 157 } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##theodred will not be arrested
+			custom_effect_tooltip = ROH_remind_eowyn_of_her_uncles_need_tooltip
+		}
+	}
+	focus = { #train peasant guards
+		id = ROH_train_peasant_guards
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -8
+		y = 1
+		relative_position_id = ROH_soothe_anxious_courtiers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_soothe_anxious_courtiers }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = { #trains 1 fyrd in every eastmark state without countign against limit
+			custom_effect_tooltip = ROH_train_peasant_guards_tooltip
+			hidden_effect = { #trains 2 fyrd in edoras
+				157 = { #FOLDE
+					set_variable = { extra_state_fyrd = 2 }
+				}
+			}
+		}
+	}
+	focus = { #fortify meduseld
+		id = ROH_fortify_meduseld
+		icon = GFX_goal_roh_meduseld
+		x = -10
+		y = 1
+		relative_position_id = ROH_soothe_anxious_courtiers
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_soothe_anxious_courtiers }
+		available = { controls_province = 3811 has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_FORTIFICATION }
+		completion_reward = {
+			#add_war_support = -0.05
+			157 = { #Folde
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3811
+				}
+			}
+		}
+	}
+	focus = { #link with orthanc
+		id = ROH_link_with_orthanc
+		icon = GFX_goal_orthanc
+		x = 1
+		y = 1
+		relative_position_id = ROH_fortify_meduseld
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_fortify_meduseld focus = ROH_train_peasant_guards }
+		available = { can_build_railway = { start_province = 3811 target_province = 770 } has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #railway from edoras to isengard
+			build_railway = {
+				level = 1
+				start_province = 3811
+				target_province = 770
+			}
+		}
+	}
+	focus = { #import isengardian weapons
+		id = ROH_import_isengardian_weapons
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 2
+		relative_position_id = ROH_fortify_meduseld
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_link_with_orthanc }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+500 infantry equipment
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 750
+				producer = ISN
+			}
+		}
+	}
+	focus = { #import isengardian tools
+		id = ROH_import_isengardian_tools
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 2
+		relative_position_id = ROH_fortify_meduseld
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_link_with_orthanc }
+		available = { 157 = { free_building_slots = { building = arms_factory size > 0 include_locked = no } } } #Must have a free slot
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+1 mil
+			157 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+#################################LEGAL SUB-BRANCH
+	focus = { #exploit the wold
+		id = ROH_exploit_the_wold
+		icon = GFX_goal_wold
+		x = 2
+		y = 1
+		relative_position_id = ROH_draw_up_legal_framework
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_draw_up_legal_framework }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		completion_reward = { ##+2 slots in wold
+			random_controlled_state = {
+				limit = { has_state_flag = wold_state }
+				add_extra_state_shared_building_slots = 1
+			}
+			random_controlled_state = {
+				limit = { has_state_flag = wold_state }
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = { #industrialize the wold
+		id = ROH_industrialize_the_wold
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 1
+		relative_position_id = ROH_exploit_the_wold
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_exploit_the_wold }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { ##+1 civ in wold
+			random_controlled_state = {
+				limit = {
+					has_state_flag = wold_state
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #exploit fangorn
+		id = ROH_exploit_fangorn
+		icon = GFX_goal_generic_wood
+		x = 1
+		y = 1
+		relative_position_id = ROH_exploit_the_wold
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_exploit_the_wold }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { ##+2 wood in wold
+			random_controlled_state = {
+				limit = {
+					has_state_flag = wold_state
+					any_neighbor_state = { state = 74 }
+				}
+				add_resource = {
+					type = wood
+					amount = 1
+				}
+				add_resource = {
+					type = wood
+					amount = 1
+				}
+			}
+		}
+	}
+	focus = { #recruit wold experts
+		id = ROH_recruit_wold_experts
+		icon = GFX_goal_wold
+		x = 0
+		y = 2
+		relative_position_id = ROH_exploit_the_wold
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_industrialize_the_wold focus = ROH_exploit_fangorn }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { ##50% construction tech bonus
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = architecture
+			}
+		}
+	}
+	focus = { #exploit the eastmark
+		id = ROH_exploit_the_eastmark
+		icon = GFX_goal_eastmark
+		x = 5
+		y = 1
+		relative_position_id = ROH_draw_up_legal_framework
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_draw_up_legal_framework }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		completion_reward = { ##+2 slots in eastmark
+			random_controlled_state = {
+				limit = { has_state_flag = eastmark_state }
+				add_extra_state_shared_building_slots = 1
+			}
+			random_controlled_state = {
+				limit = { has_state_flag = eastmark_state }
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = { #industrialize the eastmark
+		id = ROH_industrialize_the_eastmark
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 2
+		relative_position_id = ROH_exploit_the_eastmark
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_exploit_the_eastmark }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { ##+1 civ in eastmark
+			random_controlled_state = {
+				limit = {
+					has_state_flag = eastmark_state
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #exploit the entwash
+		id = ROH_exploit_the_entwash
+		icon = GFX_goal_generic_food
+		x = 1
+		y = 2
+		relative_position_id = ROH_exploit_the_eastmark
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_exploit_the_eastmark }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { ##+2 food in eastmark
+			random_controlled_state = {
+				limit = {
+					has_state_flag = eastmark_state
+				}
+				add_resource = {
+					type = food
+					amount = 1
+				}
+				add_resource = {
+					type = food
+					amount = 1
+				}
+			}
+		}
+	}
+	focus = { #recruit eastmark experts
+		id = ROH_recruit_eastmark_experts
+		icon = GFX_goal_eastmark
+		x = 0
+		y = 3
+		relative_position_id = ROH_exploit_the_eastmark
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_industrialize_the_eastmark focus = ROH_exploit_the_entwash }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { ##+50% excavation tech bonus
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = excavation_tech
+			}
+		}
+	}
+	focus = { #exploit the folde
+		id = ROH_exploit_the_folde
+		icon = GFX_goal_folde
+		x = 8
+		y = 1
+		relative_position_id = ROH_draw_up_legal_framework
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_draw_up_legal_framework }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		completion_reward = { ##+2 slots in folde
+			random_controlled_state = {
+				limit = { has_state_flag = folde_state }
+				add_extra_state_shared_building_slots = 1
+			}
+			random_controlled_state = {
+				limit = { has_state_flag = folde_state }
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = { #industrialize the folde
+		id = ROH_industrialize_the_folde
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 1
+		relative_position_id = ROH_exploit_the_folde
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_exploit_the_folde }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { ##+1 civ in folde
+			random_controlled_state = {
+				limit = {
+					has_state_flag = folde_state
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #exploit the white mountains
+		id = ROH_exploit_the_white_mountains
+		icon = GFX_goal_generic_iron
+		x = 1
+		y = 1
+		relative_position_id = ROH_exploit_the_folde
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_exploit_the_folde }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { ##+2 iron in folde
+			random_controlled_state = {
+				limit = {
+					has_state_flag = folde_state
+				}
+				add_resource = {
+					type = iron
+					amount = 1
+				}
+				add_resource = {
+					type = iron
+					amount = 1
+				}
+			}
+		}
+	}
+	focus = { #recruit folde experts
+		id = ROH_recruit_folde_experts
+		icon = GFX_goal_folde
+		x = 0
+		y = 2
+		relative_position_id = ROH_exploit_the_folde
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_industrialize_the_folde focus = ROH_exploit_the_white_mountains }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { ##50% production tech bonus
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = cat_production
+			}
+		}
+	}
+	focus = { #exploit the adorn vale
+		id = ROH_exploit_the_adorn_vale
+		icon = GFX_goal_adorn_vale
+		x = 11
+		y = 1
+		relative_position_id = ROH_draw_up_legal_framework
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_draw_up_legal_framework }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } any_controlled_state = { has_state_flag = adorn_state } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		completion_reward = { ##+2 slots in adorn
+			random_controlled_state = {
+				limit = { has_state_flag = adorn_state }
+				add_extra_state_shared_building_slots = 1
+			}
+			random_controlled_state = {
+				limit = { has_state_flag = adorn_state }
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = { #industrialize the adorn vale
+		id = ROH_industrialize_the_adorn_vale
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 2
+		relative_position_id = ROH_exploit_the_adorn_vale
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_exploit_the_adorn_vale }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } any_controlled_state = { has_state_flag = adorn_state } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { ##+1 civ in adorn
+			random_controlled_state = {
+				limit = {
+					has_state_flag = adorn_state
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #exploit the isen
+		id = ROH_exploit_the_isen
+		icon = GFX_goal_generic_cloth
+		x = 1
+		y = 2
+		relative_position_id = ROH_exploit_the_adorn_vale
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_exploit_the_adorn_vale }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } any_controlled_state = { has_state_flag = adorn_state } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { ##+2 cloth in adorn
+			random_controlled_state = {
+				limit = {
+					has_state_flag = adorn_state
+				}
+				add_resource = {
+					type = cloth
+					amount = 1
+				}
+				add_resource = {
+					type = cloth
+					amount = 1
+				}
+			}
+		}
+	}
+	focus = { #recruit adorn experts
+		id = ROH_recruit_adorn_experts
+		icon = GFX_goal_adorn_vale
+		x = 0
+		y = 3
+		relative_position_id = ROH_exploit_the_adorn_vale
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_industrialize_the_adorn_vale focus = ROH_exploit_the_isen }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } any_controlled_state = { has_state_flag = adorn_state } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { ##+50% excavation tech bonus
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = cat_synth_rubber
+			}
+		}
+	}
+	focus = { #exploit the westmark
+		id = ROH_exploit_the_westmark
+		icon = GFX_goal_westmark
+		x = 14
+		y = 1
+		relative_position_id = ROH_draw_up_legal_framework
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_draw_up_legal_framework }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		completion_reward = { ##+2 slots in westmark
+			random_controlled_state = {
+				limit = { has_state_flag = westmark_state }
+				add_extra_state_shared_building_slots = 1
+			}
+			random_controlled_state = {
+				limit = { has_state_flag = westmark_state }
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = { #industrialize the westmark
+		id = ROH_industrialize_the_westmark
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 1
+		relative_position_id = ROH_exploit_the_westmark
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_exploit_the_westmark }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { ##+1 civ in westmark
+			random_controlled_state = {
+				limit = {
+					has_state_flag = westmark_state
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #exploit the steppes
+		id = ROH_exploit_the_steppes
+		icon = GFX_goal_generic_mounts
+		x = 1
+		y = 1
+		relative_position_id = ROH_exploit_the_westmark
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_exploit_the_westmark }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { ##+2 mounts in westmark
+			random_controlled_state = {
+				limit = {
+					has_state_flag = westmark_state
+				}
+				add_resource = {
+					type = mounts
+					amount = 1
+				}
+				add_resource = {
+					type = mounts
+					amount = 1
+				}
+			}
+		}
+	}
+	focus = { #recruit westmark experts
+		id = ROH_recruit_westmark_experts
+		icon = GFX_goal_westmark
+		x = 0
+		y = 2
+		relative_position_id = ROH_exploit_the_westmark
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_industrialize_the_westmark focus = ROH_exploit_the_steppes }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_grima } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { ##50% synthetic tech bonus
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = cat_synth_oil
+			}
+		}
+	}
+######################################################################EOMER BRANCH
+#################################MAIN SUB-BRANCH
+	focus = { #Side with eomer
+		id = ROH_side_with_eomer
+		icon = GFX_goal_eomer
+		x = 30
+		y = 0
+		relative_position_id = ROH_side_with_grima
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		mutually_exclusive = { focus = ROH_side_with_grima }
+		available = { has_idea = ROH_a_hall_divided } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = { limit = { NOT = { has_country_flag = ROH_sided_with_grima } } #no double dipping
+				add_political_power = 120
+				activate_decision = side_with_grima_decision
+			}
+			add_stability = -0.066
+			add_war_support = 0.05
+			custom_effect_tooltip = ROH_side_with_eomer_tooltip
+			hidden_effect = {
+				if = { limit = { NOT = { has_country_flag = ROH_sided_with_grima } }
+					set_country_flag = ROH_sided_with_eomer
+				}
+			}
+			ROH_eomer_ai_buff = yes
+		}
+	}
+	focus = { #speak against grima
+		id = ROH_speak_against_grima
+		icon = GFX_goal_eomer
+		x = 0
+		y = 1
+		relative_position_id = ROH_side_with_eomer
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_side_with_eomer }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = -0.075
+			add_war_support = 0.05
+			add_trait = {
+				character = ROH_eomer
+				slot = political_advisor
+				trait = EOMER_popular
+			}
+			ROH_eomer_ai_buff = yes
+		}
+	}
+	focus = { #seek sympathetic ears
+		id = ROH_seek_sympathetic_ears
+		icon = GFX_goal_eomer
+		x = 0
+		y = 2
+		relative_position_id = ROH_side_with_eomer
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = ROH_speak_against_grima
+		}
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = -0.075
+			add_war_support = 0.05
+			ROH_eomer_ai_buff = yes
+		}
+	}
+	focus = { #set aside provisions
+		id = ROH_set_aside_provisions
+		icon = GFX_goal_eomer
+		x = 0
+		y = 3
+		relative_position_id = ROH_side_with_eomer
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = ROH_seek_sympathetic_ears
+		}
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = -0.075
+			add_war_support = 0.05
+			ROH_eomer_ai_buff = yes
+		}
+	}
+	focus = { #bear this injustice no longer
+		id = ROH_bear_this_injustice_no_longer
+		icon = GFX_goal_eomer
+		x = 0
+		y = 4
+		relative_position_id = ROH_side_with_eomer
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = ROH_set_aside_provisions
+		}
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = -0.30
+			add_war_support = 0.15
+			ROH_eomer_ai_buff = yes
+		}
+	}
+#################################SIDE WITH EOMER SUB-BRANCH
+	focus = { #confer with eowyn
+		id = ROH_confer_with_eowyn
+		icon = GFX_goal_eowyn
+		x = 3
+		y = 1
+		relative_position_id = ROH_side_with_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_side_with_eomer }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #Eowyn become loyal to country
+			#add_political_power = 70
+			ROH_eowyn = {
+				add_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				set_character_flag = ROH_loyal_to_country
+			}
+		}
+	}
+	focus = { #plan for the peace
+		id = ROH_plan_for_the_peace
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 1
+		relative_position_id = ROH_confer_with_eowyn
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_confer_with_eowyn }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #Eowyn gains rebuilder on rebellion
+			custom_effect_tooltip = ROH_plan_for_the_peace_tooltip
+		}
+	}
+	focus = { #plan for the war
+		id = ROH_plan_for_the_war
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 1
+		y = 1
+		relative_position_id = ROH_confer_with_eowyn
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_confer_with_eowyn }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
+		completion_reward = { #Eowyn becomes corps commander on rebellion
+			custom_effect_tooltip = ROH_plan_for_the_war_tooltip
+			custom_effect_tooltip = ROH_swayed_commander_bonuses_tooltip
+		}
+	}
+	focus = { #speak with brothers in arms
+		id = ROH_speak_with_brothers_in_arms
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 10
+		y = 1
+		relative_position_id = ROH_side_with_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_side_with_eomer }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #Eowyn becomes corps commander on rebellion
+			custom_effect_tooltip = ROH_speak_with_brothers_in_arms_tooltip
+			custom_effect_tooltip = ROH_swayed_commander_bonuses_tooltip
+		}
+	}
+	focus = { #establish command structure
+		id = ROH_establish_command_structure
+		icon = GFX_focus_generic_little_entente
+		x = -2
+		y = 1
+		relative_position_id = ROH_speak_with_brothers_in_arms
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_speak_with_brothers_in_arms }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Eowyn becomes corps commander on rebellion
+			custom_effect_tooltip = ROH_establish_command_structure_tooltip
+		}
+	}
+	focus = { #talking points for their men
+		id = ROH_talking_points_for_their_soldiers
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 1
+		relative_position_id = ROH_speak_with_brothers_in_arms
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_speak_with_brothers_in_arms }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = { #10k manpower on rebellion
+			custom_effect_tooltip = ROH_talking_points_for_their_soldiers_tooltip
+		}
+	}
+	focus = { #rehearse scenarios
+		id = ROH_rehearse_scenarios
+		icon = GFX_goal_generic_position_armies
+		x = 2
+		y = 1
+		relative_position_id = ROH_speak_with_brothers_in_arms
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_speak_with_brothers_in_arms }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #50 army XP on rebellion
+			custom_effect_tooltip = ROH_rehearse_scenarios_tooltip
+		}
+	}
+	focus = { #steal royal artifacts
+		id = ROH_steal_royal_artifacts
+		icon = GFX_goal_herugrim
+		x = 6
+		y = 1
+		relative_position_id = ROH_side_with_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_side_with_eomer }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = { #herugrim & royal standard on rebellion
+			custom_effect_tooltip = ROH_steal_royal_artifacts_tooltip
+		}
+	}
+#################################SPEAK AGAINST SUB-BRANCH
+	focus = { #establish covert communication networks
+		id = ROH_establish_covert_communication_networks
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 2
+		relative_position_id = ROH_side_with_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_speak_against_grima }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = {  FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #05% stab, +1 infrastructure in each rebelling state
+			#add_stability = -0.05
+			custom_effect_tooltip = ROH_establish_covert_communication_networks_tooltip
+		}
+	}
+	focus = { #appeal abroad
+		id = ROH_appeal_abroad
+		icon = GFX_focus_generic_treaty
+		x = -5
+		y = 2
+		relative_position_id = ROH_side_with_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_speak_against_grima }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #unlocks meet with foreign representatives decisions
+			custom_effect_tooltip = ROH_appeal_abroad_tooltip
+		}
+	}
+	focus = { #fortify the fords
+		id = ROH_fortify_the_fords
+		icon = GFX_goal_generic_construct_military
+		x = -8
+		y = 2
+		relative_position_id = ROH_side_with_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = { #must control the fords
+			controls_state = 70 #Gap of Rohan
+		}
+		prerequisite = { focus = ROH_speak_against_grima }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = {  FOCUS_FILTER_FORTIFICATION }
+		completion_reward = { #-5% stab, 2 bunkers along the isen
+			#add_stability = -0.05
+			70 = { #Gap of Rohan
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4321 #gapholt
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 2727
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4016
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6828
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 5014 #Hariantryn
+				}
+			}
+		}
+	}
+	focus = { #connect with smugglers
+		id = ROH_connect_with_smugglers
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 1
+		relative_position_id = ROH_appeal_abroad
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_appeal_abroad focus = ROH_establish_covert_communication_networks }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_LOGISTICS FOCUS_FILTER_RESOURCES FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY FOCUS_FILTER_POLITICAL }
+		completion_reward = { #unlocks smuggling decisions
+			custom_effect_tooltip = ROH_connect_with_smugglers_tooltip
+		}
+	}
+	focus = { #invite second siblings
+		id = ROH_invite_second_siblings
+		icon = GFX_goal_generic_nobility
+		x = -1
+		y = 1
+		relative_position_id = ROH_appeal_abroad
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_appeal_abroad focus = ROH_fortify_the_fords }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #grants 2 commanders on rebellion
+			custom_effect_tooltip = ROH_invite_second_siblings_tooltip
+		}
+	}
+#################################SEEK EARS SUB_BRANCH
+	focus = { #speak to the people
+		id = ROH_speak_to_the_people
+		icon = GFX_goal_generic_propaganda
+		x = 3
+		y = 3
+		relative_position_id = ROH_side_with_eomer
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_seek_sympathetic_ears }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = {  FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
+		completion_reward = { #+5 stab &+15 WS on rebellion
+			#add_stability = -0.05
+			# hidden_effect = {
+				# add_to_variable = {
+					# var = ROH.eomerPopularity
+					# value = -0.1
+				# }
+			# }
+			#custom_effect_tooltip = increase_eomer_popularity_tooltip
+			custom_effect_tooltip = ROH_speak_to_the_people_tooltip
+		}
+	}
+	focus = { #speak of unity
+		id = ROH_speak_of_unity
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -1
+		y = 1
+		relative_position_id = ROH_speak_to_the_people
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_speak_to_the_people }
+		mutually_exclusive = { focus = ROH_speak_of_morality }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #Eomer gets "unifying leader" on revolt (+10% infrastructure build speed)
+			custom_effect_tooltip = ROH_speak_of_unity_tooltip
+		}
+	}
+	focus = { #speak of morality
+		id = ROH_speak_of_morality
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 1
+		y = 1
+		relative_position_id = ROH_speak_to_the_people
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_speak_to_the_people }
+		mutually_exclusive = { focus = ROH_speak_of_unity }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Eomer gets "moralizing leader" on revolt (-10% trainign time)
+			custom_effect_tooltip = ROH_speak_of_morality_tooltip
+		}
+	}
+	focus = { #speak to civic leaders
+		id = ROH_speak_to_civic_leaders
+		icon = GFX_focus_generic_self_management
+		x = 0
+		y = 2
+		relative_position_id = ROH_speak_to_the_people
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_speak_of_unity focus = ROH_speak_of_morality }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #Eomer gets 200 PP on revolt
+			custom_effect_tooltip = ROH_speak_to_civic_leaders_tooltip
+		}
+	}
+#################################SEEK ALLIES
+	focus = { #seek allies among the nobility
+		id = ROH_seek_allies_among_the_nobility
+		icon = GFX_focus_generic_self_management
+		x = 7
+		y = 0
+		relative_position_id = ROH_speak_to_the_people
+		cost = 1
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_seek_sympathetic_ears }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #50 pp
+			if = {
+				limit = { NOT = { has_country_flag = ROH_sided_with_grima } }
+				add_political_power = 50
+			}
+			else = {
+				custom_effect_tooltip = ROH_seek_allies_among_the_nobility_tooltip
+			}
+		}
+	}
+	focus = { #convince theodred
+		id = ROH_convince_theodred
+		icon = GFX_goal_theodred
+		x = 2
+		y = 3
+		relative_position_id = ROH_speak_to_the_people
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_speak_to_civic_leaders }  ###Needs civic leaders AND at least one swayed house
+		prerequisite = {
+			focus = ROH_sway_house_bregdanings_1 focus = ROH_sway_house_eogarings_1 focus = ROH_sway_house_felandings_1 focus = ROH_sway_house_ordgarings_1 focus = ROH_sway_house_stangard_1 focus = ROH_sway_house_rungaring_1 focus = ROH_sway_house_wadelingas_1 focus = ROH_sway_house_wulfings_1
+		}
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
+		completion_reward = { #-5% stab, sways theodred
+			#add_stability = -0.05
+			ROH_theodred = {
+				add_trait = {
+					slot = army_chief
+					trait = ROH_loyal_to_country_army_chief
+				}
+				add_unit_leader_trait = ROH_loyal_to_country_mil
+				set_character_flag = ROH_loyal_to_country
+			}
+			custom_effect_tooltip = ROH_convince_theodred_tooltip
+			custom_effect_tooltip = ROH_swayed_commander_bonuses_tooltip
+		}
+	}
+#################################SWAY HOUSES
+#################################_1 WEEK
+	focus = { #sway bregdanings
+		id = ROH_sway_house_bregdanings_1
+		icon = GFX_goal_house_bregdanings
+		x = -4
+		y = 2
+		relative_position_id = ROH_seek_allies_among_the_nobility
+		cost = @swayableHousesCost
+		allow_branch = { ##Outdated, ignore
+			check_variable = {
+				var = ROH.eomers_houses
+				value = 0
+				compare = greater_than_or_equals
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ROH_seek_allies_among_the_nobility
+		}
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		bypass = { hidden_trigger = { has_country_flag = swayedBregdanings } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = ROH_sway_house_tooltip
+			#custom_effect_tooltip = ROH_westmarkLoyalty_tooltip
+			hidden_effect = { #+2 weeks to sway, sways the house, -1 loyalty in province
+				set_country_flag = swayedBregdanings
+				add_to_variable = {
+					var = ROH.eomers_houses
+					value = 1
+				}
+				#mark_focus_tree_layout_dirty = yes
+			}
+			ROH_hama = {
+				add_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				set_character_flag = ROH_loyal_to_country
+			}
+			# ROH_hama = { add_unit_leader_trait = ROH_loyal_to_country_mil }
+			subtract_from_variable = { ROH.westmarkLoyalty = 0.5 }
+		}
+	}
+	focus = { #sway eogarings
+		id = ROH_sway_house_eogarings_1
+		icon = GFX_goal_house_eogarings
+		x = -3
+		y = 1
+		relative_position_id = ROH_seek_allies_among_the_nobility
+		cost = @swayableHousesCost
+		allow_branch = { ##Outdated, ignore
+			check_variable = {
+				var = ROH.eomers_houses
+				value = 0
+				compare = greater_than_or_equals
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_seek_allies_among_the_nobility }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		bypass = { hidden_trigger = { has_country_flag = swayedEogarings } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = ROH_sway_house_tooltip
+			#custom_effect_tooltip = ROH_woldLoyalty_tooltip
+			hidden_effect = { #+2 weeks to sway, sways the house, -1 loyalty in province
+				set_country_flag = swayedEogarings
+				add_to_variable = {
+					var = ROH.eomers_houses
+					value = 1
+				}
+				#mark_focus_tree_layout_dirty = yes
+			}
+			ROH_wulfwynn_eogaring = {
+				add_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				set_character_flag = ROH_loyal_to_country
+			}
+			subtract_from_variable = { ROH.woldLoyalty = 0.5 }
+		}
+	}
+	focus = { #sway felandings
+		id = ROH_sway_house_felandings_1
+		icon = GFX_goal_house_felandings
+		x = -2
+		y = 2
+		relative_position_id = ROH_seek_allies_among_the_nobility
+		cost = @swayableHousesCost
+		allow_branch = { ##Outdated, ignore
+			check_variable = {
+				var = ROH.eomers_houses
+				value = 0
+				compare = greater_than_or_equals
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ROH_seek_allies_among_the_nobility
+		}
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		bypass = { hidden_trigger = { has_country_flag = swayedFelandings } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = ROH_sway_house_tooltip
+			#custom_effect_tooltip = ROH_westmarkLoyalty_tooltip
+			set_country_flag = swayedFelandings
+			hidden_effect = { #+2 weeks to sway, sways the house, -1 loyalty in province
+				add_to_variable = {
+					var = ROH.eomers_houses
+					value = 1
+				}
+				#mark_focus_tree_layout_dirty = yes
+			}
+			ROH_erkenbrand = {
+				add_trait = {
+					slot = theorist
+					trait = ROH_loyal_to_country_theorist
+				}
+				set_character_flag = ROH_loyal_to_country
+			}
+			subtract_from_variable = { ROH.westmarkLoyalty = 0.5 }
+		}
+	}
+	focus = { #sway ordgarings
+		id = ROH_sway_house_ordgarings_1
+		icon = GFX_goal_house_ordgarings
+		x = -1
+		y = 1
+		relative_position_id = ROH_seek_allies_among_the_nobility
+		cost = @swayableHousesCost
+		allow_branch = { ##Outdated, ignore
+			check_variable = {
+				var = ROH.eomers_houses
+				value = 0
+				compare = greater_than_or_equals
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ROH_seek_allies_among_the_nobility
+		}
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		bypass = { hidden_trigger = { has_country_flag = swayedOrdgarings } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = ROH_sway_house_tooltip
+			#custom_effect_tooltip = ROH_westmarkLoyalty_tooltip
+			hidden_effect = { #+2 weeks to sway, sways the house, -1 loyalty in province
+				set_country_flag = swayedOrdgarings
+				add_to_variable = {
+					var = ROH.eomers_houses
+					value = 1
+				}
+				#mark_focus_tree_layout_dirty = yes
+			}
+			ROH_frea_ordgaring = {
+				add_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				set_character_flag = ROH_loyal_to_country
+			}
+			subtract_from_variable = { ROH.westmarkLoyalty = 0.5 }
+		}
+	}
+	focus = { #sway rungarings
+		id = ROH_sway_house_rungaring_1
+		icon = GFX_goal_house_rungaring
+		x = 0
+		y = 2
+		relative_position_id = ROH_seek_allies_among_the_nobility
+		cost = @swayableHousesCost
+		allow_branch = { ##Outdated, ignore
+			check_variable = {
+				var = ROH.eomers_houses
+				value = 0
+				compare = greater_than_or_equals
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ROH_seek_allies_among_the_nobility
+		}
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		bypass = { hidden_trigger = { has_country_flag = swayedRungarings } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = ROH_sway_house_tooltip
+			#custom_effect_tooltip = ROH_woldLoyalty_tooltip
+			hidden_effect = { #+2 weeks to sway, sways the house, -1 loyalty in province
+				set_country_flag = swayedRungarings
+				add_to_variable = {
+					var = ROH.eomers_houses
+					value = 1
+				}
+				#mark_focus_tree_layout_dirty = yes
+			}
+			ROH_beowyrt_rungaring = {
+				add_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				set_character_flag = ROH_loyal_to_country
+			}
+			subtract_from_variable = { ROH.woldLoyalty = 0.5 }
+		}
+	}
+	focus = { #sway stangard
+		id = ROH_sway_house_stangard_1
+		icon = GFX_goal_house_stangard
+		x = 1
+		y = 1
+		relative_position_id = ROH_seek_allies_among_the_nobility
+		cost = @swayableHousesCost
+		allow_branch = { ##Outdated, ignore
+			check_variable = {
+				var = ROH.eomers_houses
+				value = 0
+				compare = greater_than_or_equals
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ROH_seek_allies_among_the_nobility
+		}
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		bypass = { hidden_trigger = { has_country_flag = swayedStangard } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = ROH_sway_house_tooltip
+			#custom_effect_tooltip = ROH_woldLoyalty_tooltip
+			hidden_effect = { #+2 weeks to sway, sways the house, -1 loyalty in province
+				set_country_flag = swayedStangard
+				add_to_variable = {
+					var = ROH.eomers_houses
+					value = 1
+				}
+				#mark_focus_tree_layout_dirty = yes
+			}
+			ROH_eadmaer_stangard = {
+				add_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				set_character_flag = ROH_loyal_to_country
+			}
+			subtract_from_variable = { ROH.woldLoyalty = 0.5 }
+		}
+	}
+	focus = { #sway wadelingas
+		id = ROH_sway_house_wadelingas_1
+		icon = GFX_goal_house_wadelingas
+		x = 2
+		y = 2
+		relative_position_id = ROH_seek_allies_among_the_nobility
+		cost = @swayableHousesCost
+		allow_branch = { ##Outdated, ignore
+			check_variable = {
+				var = ROH.eomers_houses
+				value = 0
+				compare = greater_than_or_equals
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ROH_seek_allies_among_the_nobility
+		}
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		bypass = { hidden_trigger = { has_country_flag = swayedWadelingas } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = ROH_sway_house_tooltip
+			#custom_effect_tooltip = ROH_woldLoyalty_tooltip
+			hidden_effect = { #+2 weeks to sway, sways the house, -1 loyalty in province
+				set_country_flag = swayedWadelingas
+				add_to_variable = {
+					var = ROH.eomers_houses
+					value = 1
+				}
+				#mark_focus_tree_layout_dirty = yes
+			}
+			ROH_wigluf_wadelingas = {
+				add_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				set_character_flag = ROH_loyal_to_country
+			}
+			subtract_from_variable = { ROH.woldLoyalty = 0.5 }
+		}
+	}
+	focus = { #sway wulfings
+		id = ROH_sway_house_wulfings_1
+		icon = GFX_goal_house_wulfings
+		x = 3
+		y = 1
+		relative_position_id = ROH_seek_allies_among_the_nobility
+		cost = @swayableHousesCost
+		allow_branch = { ##Outdated, ignore
+			check_variable = {
+				var = ROH.eomers_houses
+				value = 0
+				compare = greater_than_or_equals
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ROH_seek_allies_among_the_nobility
+		}
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		bypass = { hidden_trigger = { has_country_flag = swayedWulfings } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = ROH_sway_house_tooltip
+			#custom_effect_tooltip = ROH_westmarkLoyalty_tooltip
+			hidden_effect = { #+2 weeks to sway, sways the house, -1 loyalty in province
+				set_country_flag = swayedWulfings
+				add_to_variable = {
+					var = ROH.eomers_houses
+					value = 1
+				}
+				#mark_focus_tree_layout_dirty = yes
+			}
+			ROH_isenmund_wulfing = {
+				add_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				set_character_flag = ROH_loyal_to_country
+			}
+			subtract_from_variable = { ROH.westmarkLoyalty = 0.5 }
+		}
+	}
+#################################SET ASIDE PROVISIONS SUB_BRANCH
+	focus = { #train all willing hands to war
+		id = ROH_train_all_willing_hands_to_war
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -5
+		y = 1
+		relative_position_id = ROH_set_aside_provisions
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_set_aside_provisions }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = { #trains 1 fyrd in every eastmark state without countign against limit
+			custom_effect_tooltip = ROH_train_all_willing_hands_to_war_tooltip
+			hidden_effect = {
+				every_controlled_state = {
+					limit = { has_state_flag = eastmark_state }
+					set_variable = { extra_state_fyrd = 1 }
+				}
+			}
+		}
+	}
+	focus = { #stockpile weapons
+		id = ROH_stockpile_weapons
+		icon = GFX_goal_generic_small_arms
+		x = -8
+		y = 1
+		relative_position_id = ROH_set_aside_provisions
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_set_aside_provisions }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = {  FOCUS_FILTER_ARMY }
+		completion_reward = { #-5% stab, +2000 infantry equipment on revolt
+			#add_stability = -0.05
+			custom_effect_tooltip = ROH_stockpile_weapons_tooltip
+		}
+	}
+	focus = { #fill the warehouses
+		id = ROH_fill_the_warehouses
+		icon = GFX_goal_generic_construct_supply_node
+		x = -8
+		y = 2
+		relative_position_id = ROH_set_aside_provisions
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_stockpile_weapons }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_LOGISTICS }
+		completion_reward = { # +2 supply nodes on revolt
+			custom_effect_tooltip = ROH_fill_the_warehouses_tooltip
+		}
+	}
+	focus = { #secret horse purchases
+		id = ROH_secret_horse_purchases
+		icon = GFX_goal_generic_army_tanks
+		x = -6
+		y = 2
+		relative_position_id = ROH_set_aside_provisions
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_stockpile_weapons }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { # +300 light cav equipment on revolt
+			custom_effect_tooltip = ROH_secret_horse_purchases_tooltip
+		}
+	}
+	focus = { #side with herders
+		id = ROH_side_with_herders
+		icon = GFX_goal_generic_mounts
+		x = -6
+		y = 3
+		relative_position_id = ROH_set_aside_provisions
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_secret_horse_purchases }
+		mutually_exclusive = { focus = ROH_side_with_farmers }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { # +8 mounts on revolt
+			custom_effect_tooltip = ROH_side_with_herders_tooltip
+		}
+	}
+	focus = { #stockpile money
+		id = ROH_stockpile_money
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -2
+		y = 1
+		relative_position_id = ROH_set_aside_provisions
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_set_aside_provisions }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = {  FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #-5% stab, +3 civ factories on revolt
+			#add_stability = -0.05
+			custom_effect_tooltip = ROH_stockpile_money_tooltip
+		}
+	}
+	focus = { #train workers in many tasks
+		id = ROH_train_workers_in_many_tasks
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -2
+		y = 2
+		relative_position_id = ROH_set_aside_provisions
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_stockpile_money }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { # +3 mil factories on revolt
+			custom_effect_tooltip = ROH_train_workers_in_many_tasks_tooltip
+		}
+	}
+	focus = { #begin irrigation projects
+		id = ROH_begin_irrigation_projects
+		icon = GFX_focus_generic_industry_2
+		x = -4
+		y = 2
+		relative_position_id = ROH_set_aside_provisions
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_stockpile_money }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
+		completion_reward = { # +3 farms on revolt
+			custom_effect_tooltip = ROH_begin_irrigation_projects_tooltip
+		}
+	}
+	focus = { #side with farmers
+		id = ROH_side_with_farmers
+		icon = GFX_goal_generic_food
+		x = -4
+		y = 3
+		relative_position_id = ROH_set_aside_provisions
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_begin_irrigation_projects }
+		mutually_exclusive = { focus = ROH_side_with_herders }
+		available = { has_idea = ROH_a_hall_divided hidden_trigger = { has_country_flag = ROH_sided_with_eomer } } #political struggle branches only available during political struggle
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { # +8 food on revolt
+			custom_effect_tooltip = ROH_side_with_farmers_tooltip
+		}
+	}
+######################################################################REBELLION BRANCH
+	focus = { #For Rohan!
+		id = ROH_for_rohan
+		icon = GFX_goal_eorling_horse
+		x = 0
+		y = 3
+		relative_position_id = ROH_bear_this_injustice_no_longer
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 10
+		}
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = { #120 pp, 30 WS, 15 stab
+			add_political_power = 120
+			add_war_support = 0.3
+			add_stability = 0.15
+		}
+	}
+	focus = { #secure the country
+		id = ROH_secure_the_country
+		icon = GFX_goal_calenardhon
+		x = 5
+		y = 1
+		relative_position_id = ROH_for_rohan
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_for_rohan }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+10% core territory attack for war duration
+			add_ideas = securing_the_country
+		}
+	}
+	focus = { #secure our base
+		id = ROH_secure_our_base
+		icon = GFX_goal_generic_construct_military
+		x = 7
+		y = 1
+		relative_position_id = ROH_for_rohan
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_for_rohan }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+2 bunker on eastmark border
+			custom_effect_tooltip = ROH_secure_our_base_tooltip
+			hidden_effect = {
+				77 = { #Eastemnet
+					if = { limit = { ROOT = { controls_province = 2975 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 2975
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 6817 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 6817
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 1855 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 1855
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 3638 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 3638
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 3770 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 3770
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 829 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 829
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 2113 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 2113
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 133 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 133
+						}
+					}
+				}
+				204 = { #Eastmark
+					if = { limit = { ROOT = { controls_province = 2046 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 2046
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 5296 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 5296
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 6811 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 6811
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 6822 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 6822
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 615 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 615
+						}
+					}
+				}
+				205 = { #Hartalf
+					if = { limit = { ROOT = { controls_province = 6969 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 6969
+						}
+					}
+					if = { limit = { ROOT = { controls_province = 4984 } }
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = 4984
+						}
+					}
+				}
+			}
+		}
+	}
+#################################NOBLE SUB-BRANCH
+	focus = { #a noble feud
+		id = ROH_a_noble_feud
+		icon = GFX_goal_generic_nobility
+		x = -6
+		y = 1
+		relative_position_id = ROH_for_rohan
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_for_rohan }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }# has_completed_focus = ROH_seek_allies_among_the_nobility }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #+2 units
+			custom_effect_tooltip = ROH_a_noble_feud_tooltip
+			hidden_effect = {
+				random_controlled_state = {
+					create_unit = {
+						division = "name = \"1.Noble Retinue\" division_template = \"Riddermark Retinue\" start_experience_factor = 0.3 start_equipment_factor = 1"
+						owner = ROOT
+						id = 1051
+					}
+				}
+				random_controlled_state = {
+					create_unit = {
+						division = "name = \"2.Noble Retinue\" division_template = \"Riddermark Retinue\" start_experience_factor = 0.3 start_equipment_factor = 1"
+						owner = ROOT
+						id = 1052
+					}
+				}
+			}
+		}
+	}
+	focus = { #support house hunthelming
+		id = ROH_support_house_hunthelming
+		icon = GFX_goal_house_hunthelming
+		x = -1
+		y = 1
+		relative_position_id = ROH_a_noble_feud
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_a_noble_feud }
+		mutually_exclusive = { focus = ROH_support_house_halethring }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL }
+		completion_reward = { #unlocks house hunthelming (forging) and commander
+			custom_effect_tooltip = ROH_support_house_hunthelming_tooltip
+			hidden_effect = {
+				ROH = {
+					ROH_eofolda_hunthelming = {
+						add_corps_commander_role = {
+							traits = { engineer_officer trait_engineer }
+							skill = 2
+							attack_skill = 1
+							defense_skill = 1
+							planning_skill = 2
+							logistics_skill = 3
+						}
+						if = { limit = { ROOT = { has_country_flag = recruit_mark_nobles } }
+							add_unit_leader_trait = ROH_noble_of_the_mark
+						}
+						set_nationality = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = { #support house halethring
+		id = ROH_support_house_halethring
+		icon = GFX_goal_house_halethring
+		x = -3
+		y = 1
+		relative_position_id = ROH_a_noble_feud
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_a_noble_feud }
+		mutually_exclusive = { focus = ROH_support_house_hunthelming }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL }
+		completion_reward = { #unlocks house halethring (agriculture) and commander
+			custom_effect_tooltip = ROH_support_house_halethring_tooltip
+			hidden_effect = {
+				ROH = {
+					ROH_haleth_halethring = {
+						add_corps_commander_role = {
+							traits = { infantry_officer skilled_staffer }
+							skill = 2
+							attack_skill = 2
+							defense_skill = 2
+							planning_skill = 1
+							logistics_skill = 2
+						}
+						if = { limit = { ROOT = { has_country_flag = recruit_mark_nobles } }
+							add_unit_leader_trait = ROH_noble_of_the_mark
+						}
+						set_nationality = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = { #marital alliance
+		id = ROH_marital_alliance
+		icon = GFX_goal_eomer_married
+		x = -2
+		y = 2
+		relative_position_id = ROH_a_noble_feud
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_support_house_halethring focus = ROH_support_house_hunthelming }
+		bypass = { custom_trigger_tooltip = { tooltip = ROH_eomer_is_married_tooltip ROH_eomer = { has_character_flag = is_married } } }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
+		completion_reward = { #+1 commander, +advisor
+			custom_effect_tooltip = ROH_marital_alliance_tooltip
+			ROH_eomer = {
+				set_character_flag = is_married
+			}
+			hidden_effect = {
+				ROH = { ROH_aetta_halethring = { set_nationality = ROOT } }
+				ROH = { ROH_eorida_hunthelming = { set_nationality = ROOT } }
+			}
+		}
+	}
+	focus = { #noble war council
+		id = ROH_noble_war_council
+		icon = GFX_goal_generic_army_doctrines
+		x = 1
+		y = 1
+		relative_position_id = ROH_a_noble_feud
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 8
+		}
+		prerequisite = { focus = ROH_a_noble_feud }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #+20 army xp #CP
+			army_experience = 20
+			add_command_power = 20
+		}
+	}
+	focus = { #compensate defection
+		id = ROH_compensate_defection
+		icon = GFX_goal_generic_army_doctrines
+		x = 1
+		y = 2
+		relative_position_id = ROH_a_noble_feud
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 8
+		}
+		prerequisite = { focus = ROH_noble_war_council }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #+1 75% land doctrine bonus
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = { #transfer wormtongues estates
+		id = ROH_transfer_wormtongues_estates
+		icon = GFX_goal_grima
+		x = 0
+		y = 3
+		relative_position_id = ROH_a_noble_feud
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_marital_alliance focus = ROH_compensate_defection }
+		mutually_exclusive = { focus = ROH_seize_wormtongues_estates }
+		mutually_exclusive = { focus = ROH_redistribute_wormtongues_estates }
+		available = { controls_state = 157 }
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+2 industrial farms
+			157 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+#################################PEASANTS CAUSE SUB-BRANCH
+	focus = { #a peasant's cause
+		id = ROH_a_peasants_cause
+		icon = GFX_goal_a_peasants_cause
+		x = 2
+		y = 1
+		relative_position_id = ROH_for_rohan
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_for_rohan }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } } #custom_trigger_tooltip = { tooltip = ROH_a_peasants_cause_trigger_tooltip check_variable = { ROH.eomerPopularity < 0.0 } } } ## greater than sign because negative trainign time factor is a good thing
+		mutually_exclusive = { focus = ROH_a_peasants_duty }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Retrains 3 random fyrd
+			custom_effect_tooltip = ROH_a_peasants_cause_tooltip
+			hidden_effect = {
+				#add_to_variable = { ROH.eomerPopularity = -0.1 }
+				random_controlled_state = {
+					limit = {
+						has_dynamic_modifier = { modifier = raised_fyrd_1 }
+					}
+					remove_dynamic_modifier = { modifier = raised_fyrd_1 }
+					add_dynamic_modifier = { modifier = raised_fyrd_1 }
+				}
+				random_controlled_state = {
+					limit = {
+						has_dynamic_modifier = { modifier = raised_fyrd_1 }
+					}
+					remove_dynamic_modifier = { modifier = raised_fyrd_1 }
+					add_dynamic_modifier = { modifier = raised_fyrd_1 }
+				}
+				random_controlled_state = {
+					limit = {
+						has_dynamic_modifier = { modifier = raised_fyrd_1 }
+					}
+					remove_dynamic_modifier = { modifier = raised_fyrd_1 }
+					add_dynamic_modifier = { modifier = raised_fyrd_1 }
+				}
+			}
+		}
+	}
+	focus = { #fraternize with the people
+		id = ROH_fraternize_with_the_people
+		icon = GFX_goal_generic_party
+		x = -1
+		y = 1
+		relative_position_id = ROH_a_peasants_cause
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_a_peasants_cause }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }#custom_trigger_tooltip = { tooltip = ROH_a_peasants_cause_trigger_tooltip check_variable = { ROH.eomerPopularity < 0.0 } } }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #+1 popularity, gains Dunhere herefring (wandering storyteller)
+			#custom_effect_tooltip = increase_eomer_popularity_tooltip
+			custom_effect_tooltip = ROH_fraternize_with_the_people_tooltip
+			hidden_effect = {
+				#add_to_variable = { ROH.eomerPopularity = -0.1 }
+				ROH = {
+					ROH_dunhere_herefring = {
+						set_nationality = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = { #fall in love
+		id = ROH_fall_in_love
+		icon = GFX_goal_eomer_married
+		x = -1
+		y = 2
+		relative_position_id = ROH_a_peasants_cause
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_fraternize_with_the_people }
+		bypass = { custom_trigger_tooltip = { tooltip = ROH_eomer_is_married_tooltip ROH_eomer = { has_character_flag = is_married } } }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }# custom_trigger_tooltip = { tooltip = ROH_a_peasants_cause_trigger_tooltip check_variable = { ROH.eomerPopularity < 0.0 } } }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = { #+1 loyalty, +advisor
+			#custom_effect_tooltip = increase_eomer_popularity_tooltip
+				#add_to_variable = { ROH.eomerPopularity = -0.1 }
+			custom_effect_tooltip = ROH_fall_in_love_tooltip
+			ROH_eomer = {
+				set_character_flag = is_married
+			}
+			hidden_effect = {
+				ROH = { ROH_elfhild_harolding = { set_nationality = ROOT } }
+			}
+		}
+	}
+	focus = { #spend generously
+		id = ROH_spend_generously
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 1
+		relative_position_id = ROH_a_peasants_cause
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 8
+		}
+		prerequisite = { focus = ROH_a_peasants_cause }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }# custom_trigger_tooltip = { tooltip = ROH_a_peasants_cause_trigger_tooltip check_variable = { ROH.eomerPopularity < 0.0 } } }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+1 popularity, +1 50% production bonus
+			#custom_effect_tooltip = increase_eomer_popularity_tooltip
+				#add_to_variable = { ROH.eomerPopularity = -0.1 }
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = cat_production
+			}
+		}
+	}
+	focus = { #favor the carpentry guild
+		id = ROH_favor_the_carpentry_guild
+		icon = GFX_goal_carpentry_guild
+		x = 1
+		y = 2
+		relative_position_id = ROH_a_peasants_cause
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 8
+		}
+		prerequisite = { focus = ROH_spend_generously }
+		mutually_exclusive = { focus = ROH_favor_the_smithing_guild }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }# custom_trigger_tooltip = { tooltip = ROH_a_peasants_cause_trigger_tooltip check_variable = { ROH.eomerPopularity < 0.0 } } }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #unlocks carpentry guild, +1 civ & slot
+			custom_effect_tooltip = ROH_favor_the_carpentry_guild_tooltip
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #favor the smithing guild
+		id = ROH_favor_the_smithing_guild
+		icon = GFX_goal_smithing_guild
+		x = 3
+		y = 2
+		relative_position_id = ROH_a_peasants_cause
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 8
+		}
+		prerequisite = { focus = ROH_spend_generously }
+		mutually_exclusive = { focus = ROH_favor_the_carpentry_guild }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }# custom_trigger_tooltip = { tooltip = ROH_a_peasants_cause_trigger_tooltip check_variable = { ROH.eomerPopularity < 0.0 } } }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #unlocks smithing guild, +500 infantry equipment
+			custom_effect_tooltip = ROH_favor_the_smithing_guild_tooltip
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = ROOT
+			}
+		}
+	}
+	focus = { #redistribute wormtongues estates
+		id = ROH_redistribute_wormtongues_estates
+		icon = GFX_goal_grima
+		x = 0
+		y = 3
+		relative_position_id = ROH_a_peasants_cause
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_fall_in_love focus = ROH_favor_the_carpentry_guild focus = ROH_favor_the_smithing_guild }
+		mutually_exclusive = { focus = ROH_transfer_wormtongues_estates }
+		mutually_exclusive = { focus = ROH_seize_wormtongues_estates }
+		available = { controls_state = 157 }
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+1 popularity, +4 build slots
+			#custom_effect_tooltip = increase_eomer_popularity_tooltip
+			#add_to_variable = { ROH.eomerPopularity = -0.1 }
+			157 = { #Folde
+				add_extra_state_shared_building_slots = 4
+			}
+		}
+	}
+#################################PEASANTS DUTY SUB-BRANCH
+	focus = { #a peasant's duty
+		id = ROH_a_peasants_duty
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -2
+		y = 1
+		relative_position_id = ROH_for_rohan
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_for_rohan }
+		mutually_exclusive = { focus = ROH_a_peasants_cause }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #-1 popularity, +15 mil & civ output for war duration
+			#custom_effect_tooltip =decrease_eomer_popularity_tooltip
+			#hidden_effect = { add_to_variable = { ROH.eomerPopularity = 0.1 } }
+			add_ideas = the_peasants_duty
+		}
+	}
+	focus = { #all must serve
+		id = ROH_all_must_serve
+		icon = GFX_focus_generic_manpower
+		x = -1
+		y = 1
+		relative_position_id = ROH_a_peasants_duty
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_a_peasants_duty }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #-1 popularity, +10000 manpower
+			#custom_effect_tooltip =decrease_eomer_popularity_tooltip
+			#hidden_effect = { add_to_variable = { ROH.eomerPopularity = 0.1 } }
+			add_manpower = 10000
+		}
+	}
+	focus = { #jobs for all
+		id = ROH_jobs_for_all
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -1
+		y = 2
+		relative_position_id = ROH_a_peasants_duty
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_all_must_serve }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #-1 popularity, +2mils no slot
+			#custom_effect_tooltip =decrease_eomer_popularity_tooltip
+			#hidden_effect = { add_to_variable = { ROH.eomerPopularity = 0.1 } }
+			random_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = no
+				}
+			}
+			random_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #requisition supplies
+		id = ROH_requisition_supplies
+		icon = GFX_goal_generic_small_arms
+		x = 1
+		y = 1
+		relative_position_id = ROH_a_peasants_duty
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 8
+		}
+		prerequisite = { focus = ROH_a_peasants_duty }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #11 popularity, +250 support, +50 towed
+			#custom_effect_tooltip =decrease_eomer_popularity_tooltip
+			#hidden_effect = { add_to_variable = { ROH.eomerPopularity = 0.1 } }
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 250
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 50
+				producer = ROOT
+			}
+		}
+	}
+	focus = { #establish emergency tythes
+		id = ROH_establish_emergency_tythes
+		icon = GFX_focus_ETH_adopt_the_lira
+		x = 1
+		y = 2
+		relative_position_id = ROH_a_peasants_duty
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_requisition_supplies }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #-1 popularity, +20 daily support & 1- daily gwtank for war duration
+			#custom_effect_tooltip =decrease_eomer_popularity_tooltip
+			#hidden_effect = { add_to_variable = { ROH.eomerPopularity = 0.1 } }
+			add_ideas = ROH_emergency_tythes
+			activate_decision = ROH_emergency_tythes
+		}
+	}
+	focus = { #seize wormtongues estates
+		id = ROH_seize_wormtongues_estates
+		icon = GFX_goal_grima
+		x = 0
+		y = 3
+		relative_position_id = ROH_a_peasants_duty
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_jobs_for_all focus = ROH_establish_emergency_tythes }
+		mutually_exclusive = { focus = ROH_transfer_wormtongues_estates }
+		mutually_exclusive = { focus = ROH_redistribute_wormtongues_estates }
+		available = { controls_state = 157 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+1 civ, +1 slot
+			157 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+#################################PEASANTS DUTY SUB-BRANCH
+	focus = { #seek allies
+		id = ROH_seek_allies
+		icon = GFX_focus_generic_treaty
+		x = 10
+		y = 1
+		relative_position_id = ROH_for_rohan
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_for_rohan }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #+25% opinion gain monthly factor
+			add_ideas = generic_diplomatic_idea
+		}
+	}
+	focus = { #ask enedwaith
+		id = ROH_ask_enedwaith
+		icon = GFX_goal_generic_befriend_enedwaith
+		x = -2
+		y = 2
+		relative_position_id = ROH_seek_allies
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_seek_allies }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } country_exists = ENE }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #If they accept, they send volunteers
+			custom_effect_tooltip = ROH_ask_enedwaith_tooltip
+			hidden_effect = {
+				# ENE = {
+					# country_event = {
+						# id = rohan.5
+						# days = 1
+					# }
+				# }
+			}
+		}
+	}
+	focus = { #ask beornings
+		id = ROH_ask_beornings
+		icon = GFX_goal_generic_befriend_beornings
+		x = -1
+		y = 1
+		relative_position_id = ROH_seek_allies
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_seek_allies }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } country_exists = BER }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #If they accept, they send volunteers
+			custom_effect_tooltip = ROH_ask_beornings_tooltip
+			hidden_effect = {
+				BER = {
+					country_event = {
+						id = rohan.5
+						days = 1
+					}
+				}
+			}
+		}
+	}
+	focus = { #ask gondor
+		id = ROH_ask_gondor
+		icon = GFX_goal_generic_befriend_gondor
+		x = 0
+		y = 2
+		relative_position_id = ROH_seek_allies
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_seek_allies }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } country_exists = GON }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #If gondor accepts, they send volunteers
+			custom_effect_tooltip = ROH_ask_gondor_tooltip
+			hidden_effect = {
+				GON = {
+					country_event = {
+						id = rohan.5
+						days = 1
+					}
+				}
+			}
+		}
+	}
+	focus = { #ask lorien
+		id = ROH_ask_lorien
+		icon = GFX_goal_generic_befriend_lorien
+		x = 1
+		y = 1
+		relative_position_id = ROH_seek_allies
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_seek_allies }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } country_exists = LOR }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #If they accept, they send volunteers
+			custom_effect_tooltip = ROH_ask_lorien_tooltip
+			hidden_effect = {
+				LOR = {
+					country_event = {
+						id = rohan.5
+						days = 1
+					}
+				}
+			}
+		}
+	}
+	focus = { #ask dale
+		id = ROH_ask_dale
+		icon = GFX_goal_generic_befriend_dale
+		x = 2
+		y = 2
+		relative_position_id = ROH_seek_allies
+		cost = @eomerCivilWarCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_seek_allies }
+		available = { custom_trigger_tooltip = { tooltip = ROH_is_EOM_condition_tooltip has_cosmetic_tag = EOM_cosmetic } country_exists = DAL }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #If they accept, they send volunteers
+			custom_effect_tooltip = ROH_ask_dale_tooltip
+			hidden_effect = {
+				DAL = {
+					country_event = {
+						id = rohan.5
+						days = 1
+					}
+				}
+			}
+		}
+	}
+######################################################################GRIMA CIVIL WAR BRANCH	
+	focus = { #quash the troublemakers
+		id = ROH_quash_the_troublemakers
+		icon = GFX_goal_generic_attack_Eomer
+		x = 8
+		y = 4
+		relative_position_id = ROH_be_rid_of_this_pest
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 10
+		}
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
+		completion_reward = { #+15% war support, +7.5% stab
+			add_war_support = 0.15
+			add_stability = 0.075
+		}
+	}
+#################################EMERGENCY DECREES SUB-BRANCH
+	focus = { #pass emergency decrees
+		id = ROH_pass_emergency_decrees
+		icon = GFX_goal_generic_forceful_treaty
+		x = -3
+		y = 1
+		relative_position_id = ROH_quash_the_troublemakers
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_quash_the_troublemakers }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #+75 pp
+			add_political_power = 75
+		}
+	}
+	focus = { #impress all beasts
+		id = ROH_impress_all_beasts
+		icon = GFX_goal_generic_army_tanks
+		x = -2
+		y = 1
+		relative_position_id = ROH_pass_emergency_decrees
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { focus = ROH_pass_emergency_decrees }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #+100 GW tanks, +30 towed, +20 trains
+			add_equipment_to_stockpile = {
+				type = gw_tank_equipment
+				amount = 100
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 30
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 20
+				producer = ROOT
+			}
+		}
+	}
+	focus = { #implement emergency taxes
+		id = ROH_implement_emergency_taxes
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = ROH_pass_emergency_decrees
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = { focus = ROH_pass_emergency_decrees }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+2 mils
+			random_controlled_state = {
+				limit = {
+					free_building_slots = { building = arms_factory size > 0 include_locked = no }
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				limit = {
+					free_building_slots = { building = arms_factory size > 0 include_locked = no }
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #bureaucracy of war
+		id = ROH_bureaucracy_of_war
+		icon = GFX_goal_generic_army_doctrines
+		x = -1
+		y = 2
+		relative_position_id = ROH_pass_emergency_decrees
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 7
+		}
+		prerequisite = { focus = ROH_pass_emergency_decrees }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
+		completion_reward = { #+50 army xp, +50% land doctrine tech bonus
+			army_experience = 50
+			add_tech_bonus = {
+				category = land_doctrine
+				bonus = @techBoostBonus
+				uses = 1
+			}
+		}
+	}
+	focus = { #authorise supply requisitions
+		id = ROH_authorise_supply_requisitions
+		icon = GFX_goal_generic_construct_supply_node
+		x = 1
+		y = 2
+		relative_position_id = ROH_pass_emergency_decrees
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = ROH_pass_emergency_decrees }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } }
+		search_filters = { FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #+500% supply node build speed
+			custom_effect_tooltip = ROH_authorise_supply_requisitions_tooltip
+			hidden_effect = {
+				activate_decision = ROH_requisitioning_supplies
+			}
+		}
+	}
+#################################ISENGARDIAN AID SUB-BRANCH
+	focus = { #request isengardian aid
+		id = ROH_request_isengardian_aid
+		icon = GFX_goal_generic_befriend_isengard
+		x = 0
+		y = 1
+		relative_position_id = ROH_quash_the_troublemakers
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 8
+		}
+		prerequisite = { focus = ROH_quash_the_troublemakers }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } country_exists = ISN }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+500 infantry equipment
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = ISN
+			}
+		}
+	}
+	focus = { #request covert assistance
+		id = ROH_request_covert_assistance
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 1
+		relative_position_id = ROH_request_isengardian_aid
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 7
+		}
+		prerequisite = { focus = ROH_request_isengardian_aid }
+		mutually_exclusive = { focus = ROH_request_direct_intervention }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } country_exists = ISN }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #ISN sends volunteers in return for civs when war ends
+			custom_effect_tooltip = ROH_request_covert_assistance_tooltip
+			hidden_effect = {
+				ISN = {
+					country_event = {
+						id = isengard.2
+						days = 1
+					}
+				}
+			}
+		}
+	}
+	focus = { #request direct intervention
+		id = ROH_request_direct_intervention
+		icon = GFX_goal_orthanc_pikes
+		x = 1
+		y = 1
+		relative_position_id = ROH_request_isengardian_aid
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 0
+		}
+		prerequisite = { focus = ROH_request_isengardian_aid }
+		mutually_exclusive = { focus = ROH_request_covert_assistance }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } country_exists = ISN }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #ISN joins war & puppets
+			custom_effect_tooltip = ROH_request_direct_intervention_tooltip_councils_servant
+			hidden_effect = {
+				ISN = {
+					country_event = {
+						id = isengard.1
+						days = 1
+					}
+				}
+			}
+		}
+	}
+	focus = { #A new leader
+		id = ROH_a_new_leader
+		icon = GFX_goal_grima_king
+		x = 0
+		y = 2
+		relative_position_id = ROH_request_isengardian_aid
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 5
+		}
+		bypass = { ROH_grima = { is_country_leader = yes } }
+		prerequisite = { focus = ROH_request_covert_assistance focus = ROH_request_direct_intervention }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #+20% ISN ideology
+			add_popularity = {
+			  ideology = ISN
+			  popularity = 0.2
+			}
+			# custom_effect_tooltip = ROH_a_new_leader_tooltip
+			# hidden_effect = {
+				# ##Ensures king grima gets artifacts
+				# if = { limit = { has_country_leader_with_trait = ROH_herugrim }
+					# set_country_flag = herugrim_safeguarded
+				# }
+				# if = { limit = { has_country_leader_with_trait = ROH_royal_standard }
+					# set_country_flag = royal_standard_safeguarded
+				# }
+				# retire_character = ROH_theoden
+				# rohan_make_grima_king = yes
+			# }
+		}
+	}
+#################################MERCENARIES SUB-BRANCH
+	focus = { #hire mercenaries
+		id = ROH_hire_mercenaries
+		icon = GFX_goal_generic_mercenaries
+		x = 3
+		y = 1
+		relative_position_id = ROH_quash_the_troublemakers
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 4
+		}
+		prerequisite = { focus = ROH_quash_the_troublemakers }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #+5k mapower
+			add_manpower = 5000
+		}
+	}
+	focus = { #hire enedwaithy mercenaries
+		id = ROH_hire_enedwaithy_mercenaries
+		icon = GFX_goal_generic_befriend_enedwaith
+		x = -1
+		y = 2
+		relative_position_id = ROH_hire_mercenaries
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 4
+		}
+		prerequisite = { focus = ROH_hire_mercenaries }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } num_of_available_civilian_factories > 0 } ##must be able to pay
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY }
+		completion_reward = { #+2 units, 1 civ factory use
+			custom_effect_tooltip = ROH_hire_enedwaithy_mercenaries_tooltip
+			hidden_effect = {
+				add_ideas = roh_enedwaithy_mercenaries
+				rohan_enedwaithy_mercenaries_template_effect = yes
+				random_controlled_state = {
+					create_unit = {
+						division = "name = \"Company of Trout\" division_template = \"Enedwaithy Mercenaries\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Company of Bass\" division_template = \"Enedwaithy Mercenaries\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = { #hire dunlending mercenaries
+		id = ROH_hire_dunlending_mercenaries
+		icon = GFX_goal_generic_befriend_dunland
+		x = 0
+		y = 1
+		relative_position_id = ROH_hire_mercenaries
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 4
+		}
+		prerequisite = { focus = ROH_hire_mercenaries }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } num_of_available_civilian_factories > 0 } ##must be able to pay
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY }
+		completion_reward = { #+2 units, 1 civ factory use
+			custom_effect_tooltip = ROH_hire_dunlending_mercenaries_tooltip
+			hidden_effect = {
+				add_ideas = roh_dunlending_mercenaries
+				rohan_dunlending_mercenaries_template_effect = yes
+				if = { ##If rohan doesn't have pikes tech, the units spawn with none so this fixes that
+					limit = { NOT = { has_tech = spear_tech_0 } }
+					add_equipment_to_stockpile = {
+						type = anti_tank_equipment
+						amount = 144
+						producer = DUN
+					}
+				}
+				random_controlled_state = {
+					create_unit = {
+						division = "name = \"Company of Crows\" division_template = \"Dunlending Mercenaries\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Company of Hawks\" division_template = \"Dunlending Mercenaries\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = { #hire beorning mercenaries
+		id = ROH_hire_beorning_mercenaries
+		icon = GFX_goal_generic_befriend_beornings
+		x = 1
+		y = 2
+		relative_position_id = ROH_hire_mercenaries
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 4
+		}
+		prerequisite = { focus = ROH_hire_mercenaries }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } num_of_available_civilian_factories > 0 } ##must be able to pay
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY }
+		completion_reward = { #+2 units, 1 civ factory use
+			custom_effect_tooltip = ROH_hire_beorning_mercenaries_tooltip
+			hidden_effect = {
+				add_ideas = roh_beorning_mercenaries
+				rohan_beorning_mercenaries_template_effect = yes
+				random_controlled_state = {
+					create_unit = {
+						division = "name = \"Company of Bears\" division_template = \"Beorning Mercenaries\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Company of Wolves\" division_template = \"Beorning Mercenaries\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = { #hire misty mountain mercenaries
+		id = ROH_hire_misty_mountain_mercenaries
+		icon = GFX_goal_generic_befriend_misty_mountains
+		x = 2
+		y = 1
+		relative_position_id = ROH_hire_mercenaries
+		cost = @grimaCivilWarCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_hire_mercenaries }
+		available = { has_civil_war = yes custom_trigger_tooltip = { tooltip = ROH_isnt_EOM_condition_tooltip not = { has_cosmetic_tag = EOM_cosmetic } } num_of_available_civilian_factories > 0 } ##must be able to pay
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY }
+		completion_reward = { #+2 units, 1 civ factory use
+			custom_effect_tooltip = ROH_hire_misty_mountain_mercenaries_tooltip
+			hidden_effect = {
+				add_ideas = roh_misty_mountain_mercenaries
+				rohan_misty_mountains_mercenaries_template_effect = yes
+				random_controlled_state = {
+					create_unit = {
+						division = "name = \"Company of Snakes\" division_template = \"Misty Mountain Mercenaries\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Company of Spiders\" division_template = \"Misty Mountain Mercenaries\" start_experience_factor = 0.5 start_equipment_factor = 1 start_manpower_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+######################################################################GRIMA RULING BRANCH
+	focus = { #rule undistracted
+		id = ROH_rule_undistracted
+		icon = GFX_goal_grima
+		x = -5
+		y = 4
+		relative_position_id = ROH_be_rid_of_this_pest
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = { #+15%  stab
+			add_stability = 0.15
+		}
+	}
+#################################SOOTHE THE ECONOMY SUB-BRANCH
+	focus = { #soothe the economy
+		id = ROH_soothe_the_economy
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -4
+		y = 1
+		relative_position_id = ROH_rule_undistracted
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_rule_undistracted }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #4 off map civs for 100 days
+			add_timed_idea = {
+				idea = ROH_soothed_economy
+				days = 100
+			}
+		}
+	}
+	focus = { #invest in artisans
+		id = ROH_invest_in_artisans
+		icon = GFX_goal_generic_cloth
+		x = -1
+		y = 1
+		relative_position_id = ROH_soothe_the_economy
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_soothe_the_economy }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima  ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
+		completion_reward = { #2 civs, 2 cloth
+			random_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+					impassable = no
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_resource = {
+					type = cloth
+					amount = 1
+				}
+			}
+			random_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_resource = {
+					type = cloth
+					amount = 1
+				}
+			}
+		}
+	}
+	focus = { #invest in peasants
+		id = ROH_invest_in_peasants
+		icon = GFX_goal_generic_food
+		x = 1
+		y = 1
+		relative_position_id = ROH_soothe_the_economy
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_soothe_the_economy }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
+		completion_reward = { #4 slots, 2 food
+			random_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					impassable = no
+				}
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = food
+					amount = 1
+				}
+			}
+			random_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					impassable = no
+				}
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = food
+					amount = 1
+				}
+			}
+		}
+	}
+	focus = { #invest in nobles
+		id = ROH_invest_in_nobles
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 2
+		relative_position_id = ROH_soothe_the_economy
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_invest_in_artisans focus = ROH_invest_in_peasants }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #1 civ, 1 slot, 1 infrastructure
+			random_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					impassable = no
+					infrastructure < 5
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+#################################SOOTHE POLITICS SUB-BRANCH
+	focus = { #soothe politics
+		id = ROH_soothe_politics
+		icon = GFX_focus_generic_court
+		x = 0
+		y = 1
+		relative_position_id = ROH_rule_undistracted
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_rule_undistracted }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #100 pp
+			add_political_power = 100
+		}
+	}
+	focus = { #promote like-minded advisors
+		id = ROH_promote_like_minded_advisors
+		icon = GFX_goal_generic_dangerous_deal
+		x = -1
+		y = 1
+		relative_position_id = ROH_soothe_politics
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_soothe_politics }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #Gain 3 advisors
+			custom_effect_tooltip = ROH_promote_like_minded_advisors_tooltip
+			hidden_effect = {
+				ROH_rynelda_maharth = {
+					add_advisor_role = {
+						advisor ={
+							slot = political_advisor
+							idea_token = ROH_rynelda_maharth
+							traits = { little_worm_a minor_captain_of_industry }
+						}
+					}
+				}
+				ROH_ecgfrida_ordlacing = {
+					add_advisor_role = {
+						advisor ={
+							slot = political_advisor
+							idea_token = ROH_ecgfrida_ordlacing
+							traits = { little_worm_b minor_prince_of_terror }
+						}
+					}
+				}
+				ROH_osulf_firienfeld = {
+					add_advisor_role = {
+						advisor ={
+							slot = political_advisor
+							idea_token = ROH_osulf_firienfeld
+							traits = { little_worm_c minor_war_industrialist }
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #grant wormtongue the kings voice
+		id = ROH_grant_wormtongue_the_kings_voice
+		icon = GFX_focus_generic_monarchy_1
+		x = 1
+		y = 1
+		relative_position_id = ROH_soothe_politics
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_soothe_politics }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #15 opportunism
+			add_popularity = {
+				ideology = opportunism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = { #marry Eowyn
+		id = ROH_marry_eowyn
+		icon = GFX_goal_eowyn_married
+		x = -2
+		y = 0
+		relative_position_id = ROH_soothe_politics
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_rule_undistracted }
+		bypass = { OR = { NOT = { has_character = ROH_eowyn } custom_trigger_tooltip = { tooltip = ROH_eowyn_is_married_tooltip ROH_eowyn = { has_character_flag = is_married } } } }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = { #Marries eowyn, +10% stab
+			add_stability = 0.1
+			hidden_effect = {
+				ROH_eowyn = { set_character_flag = is_married }
+				ROH_grima = { set_character_flag = is_married }
+			}
+			##promotes grima in succession
+			if = { ##if theodred's around, grima is second in line
+				limit = { has_character = ROH_theodred }
+				ROH_grima = {
+					if = { ##Only needs to change if grima isn't already second in line
+						limit = { NOT = { has_trait = second_in_line_pol } }
+						add_trait = {
+							slot = political_advisor
+							trait = second_in_line_pol
+						}
+						if = { ##Grima gets the second in line mil trait if he's a commander
+							limit = { is_unit_leader = yes }
+							add_unit_leader_trait = second_in_line_mil
+						}
+						ROH_eowyn = {
+							if = { #If eowyn was second in line, she isn't anymore
+								limit = { has_trait = second_in_line_pol }
+								remove_trait = {
+									slot = political_advisor
+									trait = second_in_line_pol
+								}
+							}
+							if = { #If eowyn was second in line, she isn't anymore
+								limit = { has_trait = second_in_line_mil }
+								remove_unit_leader_trait = second_in_line_mil
+							}
+						}
+					}
+				}
+			}
+			else = { #If theodred is not around, grima is heir now
+				ROH_grima = {
+					if = { #Only needs to change stuff if grima's not already heir
+						limit = { NOT = { has_trait = heir_apparent_pol } }
+						add_trait = {
+							slot = political_advisor
+							trait = heir_apparent_pol
+						}
+						if = { #Grima is no longer second
+							limit = { has_trait = second_in_line_pol }
+							remove_trait = {
+								slot = political_advisor
+								trait = second_in_line_pol
+							}
+						}
+						if = { #Grima is no longer second
+							limit = { has_trait = second_in_line_mil }
+							remove_unit_leader_trait = second_in_line_mil
+						}
+						if = { ##Grima gets the heir apparent mil trait if he's a commander
+							limit = { is_unit_leader = yes }
+							add_unit_leader_trait = heir_apparent_mil
+						}
+						ROH_eowyn = {
+							if = { #If eowyn was heir, she is now second
+								limit = { has_trait = heir_apparent_pol }
+								remove_trait = {
+									slot = political_advisor
+									trait = heir_apparent_pol
+								}
+								add_trait = {
+									slot = political_advisor
+									trait = second_in_line_pol
+								}
+							}
+							if = { #If eowyn was heir, she isn't anymore
+								limit = { has_trait = heir_apparent_mil }
+								remove_unit_leader_trait = heir_apparent_mil
+								add_unit_leader_trait = second_in_line_mil
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #end theodred's suffering
+		id = ROH_end_theodreds_suffering
+		icon = GFX_goal_theodred_kill
+		x = 2
+		y = 0
+		relative_position_id = ROH_soothe_politics
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_rule_undistracted }
+		bypass = { NOT = { has_character = ROH_theodred } }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #Kills theodred
+			retire_character = ROH_theodred
+			##promotes grima in succession
+			theodred_death_succession = yes
+		}
+	}
+	focus = { #brew a royal poison
+		id = ROH_brew_a_royal_poison
+		icon = GFX_goal_grima_king
+		x = 0
+		y = 2
+		relative_position_id = ROH_soothe_politics
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_promote_like_minded_advisors focus = ROH_grant_wormtongue_the_kings_voice }
+		bypass = { has_country_leader = { character = ROH_grima ruling_only = yes } }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { has_trait = heir_apparent_pol } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #Kills ruler, makes Grima king, starts civil war if Grima hasn't already defeated the dissidents
+			custom_effect_tooltip = ROH_brew_a_royal_poison_tooltip
+			hidden_effect = {
+				##Ensures king grima gets artifacts
+				if = { limit = { has_country_leader_with_trait = ROH_herugrim }
+					set_country_flag = herugrim_safeguarded
+				}
+				if = { limit = { has_country_leader_with_trait = ROH_royal_standard }
+					set_country_flag = royal_standard_safeguarded
+				}
+				retire_character = ROH_theoden
+				set_politics = {
+					ruling_party = opportunism
+				}
+				rohan_make_grima_king = yes
+				hidden_effect = { set_cosmetic_tag = WRM }
+				if = { ##Revolt
+					limit = { NOT = { has_country_flag = ROH_eomer_revolted } }
+					country_event = {
+						id = rohan.8
+					}
+				}
+			}
+		}
+	}
+	focus = { #seek Isengard's protection
+		id = ROH_seek_isengards_protection
+		icon = GFX_goal_orthanc
+		x = 0
+		y = 3
+		relative_position_id = ROH_soothe_politics
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_brew_a_royal_poison }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_country_leader = { character = ROH_grima } is_subject = no country_exists = ISN }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #asks Isengard to puppet
+			custom_effect_tooltip = ROH_seek_isengards_protection_tooltip_councils_ward
+			hidden_effect = {
+				ISN = {
+					country_event = {
+						id = isengard.4
+						days = 1
+					}
+				}
+			}
+		}
+	}
+#################################SOOTHE THE MILITARY SUB-BRANCH
+	focus = { #soothe the military
+		id = ROH_soothe_the_military
+		icon = GFX_focus_generic_little_entente
+		x = 4
+		y = 1
+		relative_position_id = ROH_rule_undistracted
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_rule_undistracted }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #40 cp
+			add_command_power = 40
+		}
+	}
+	focus = { #reinforce eastern defences
+		id = ROH_reinforce_eastern_defences
+		icon = GFX_goal_generic_construct_military
+		x = -1
+		y = 1
+		relative_position_id = ROH_soothe_the_military
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_soothe_the_military }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_FORTIFICATION }
+		completion_reward = { #3 forts along eastfol-gondor bordor, 1 along hartalf-gondor borer
+			custom_effect_tooltip = ROH_reinforce_eastern_defences_tooltip
+			hidden_effect = {
+				206 = { #eastfold
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 7045
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 7028
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 3049
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 4178
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 1443
+					}
+				}
+				205 = { #Hartalf
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 4984
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 6986
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 6982
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 6954
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 6948
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 5260
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 804
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 2690
+					}
+				}
+			}
+		}
+	}
+	focus = { #secure western logistics
+		id = ROH_secure_western_logistics
+		icon = GFX_goal_generic_construct_supply_node
+		x = 1
+		y = 1
+		relative_position_id = ROH_soothe_the_military
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_soothe_the_military }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } controls_state = 70 }
+		search_filters = { FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #1 node & 2 silos + slots in gap of rohan
+			70 = { #Gap of rohan
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 6809
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = fuel_silo
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #replace the fallen marshal
+		id = ROH_replace_the_fallen_marshal
+		icon = GFX_goal_eomer
+		x = 0
+		y = 2
+		relative_position_id = ROH_soothe_the_military
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_reinforce_eastern_defences focus = ROH_secure_western_logistics }
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } has_character = ROH_grima ROH_grima = { is_country_leader = no } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Grima become feild marshal
+			custom_effect_tooltip = ROH_replace_the_fallen_marshal_tooltip
+			hidden_effect = {
+				ROH_grima = {
+					add_field_marshal_role = {
+					  skill = 4
+					  attack_skill = 2
+					  defense_skill = 2
+					  planning_skill = 5
+					  logistics_skill = 4
+					  traits = { harsh_leader organizer skilled_staffer expert_delegator }
+					}
+					if = { limit = { ROOT = { has_country_flag = recruit_mark_nobles } }
+						add_unit_leader_trait = ROH_noble_of_the_mark
+					}
+				}
+			}
+			ROH_grima = {
+				if = {
+					limit = { has_trait = heir_apparent_pol }
+					add_unit_leader_trait = heir_apparent_mil
+				}
+				if = {
+					limit = { has_trait = second_in_line_pol }
+					add_unit_leader_trait = second_in_line_mil
+				}
+			}	
+		}
+	}	
+######################################################################STORY BRANCH
+	focus = { #reverse grimas damage
+		id = ROH_reverse_grimas_damage
+		icon = GFX_goal_theoden
+		x = 17
+		y = 0
+		relative_position_id = ROH_side_with_eomer
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 10
+		}
+		available = { has_civil_war = no NOT = { has_idea = ROH_a_hall_divided } NOT = { has_idea = ROH_distrustful_military } has_government = freedom } #Only after political struggle resolved AGAINST grima
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_ARMY }
+		completion_reward = { #+25% war support, Theoden becomes feild marshal
+			add_war_support = 0.25
+			add_stability = 0.25
+			if = { limit = { ISN = { is_evil = yes } NOT = { has_war_with = ISN } }
+				create_wargoal = {
+					target = ISN
+					type = topple_government
+				}
+			}
+			if = { limit = { has_character = ROH_theoden }
+				custom_effect_tooltip = ROH_reverse_grimas_damage_tooltip
+				add_country_leader_trait = inspirational
+				custom_effect_tooltip = unlocks_a_speech_tooltip
+				hidden_effect = {
+					ROH_theoden = {
+						add_field_marshal_role = {
+						  skill = 6
+						  attack_skill = 6
+						  defense_skill = 4
+						  planning_skill = 5
+						  logistics_skill = 4
+						  traits = { monarch_mil trait_reckless brilliant_strategist panzer_leader organizer aggressive_assaulter offensive_doctrine fast_planner inspirational_leader }
+						}
+						if = { limit = { ROOT = { has_country_flag = recruit_mark_nobles } }
+							add_unit_leader_trait = ROH_noble_of_the_mark
+						}
+					}
+				}
+			}
+			if = { limit = { is_ai = yes }
+				rohan_militia_muster_template_effect = yes
+			}
+		}
+	}	
+	focus = { #For theodred
+		id = ROH_for_theodred
+		icon = GFX_focus_rom_royal_dictatorship
+		x = -3
+		y = 1
+		relative_position_id = ROH_reverse_grimas_damage
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_reverse_grimas_damage }
+		available = { NOT = { has_character = ROH_theodred } has_war_with = ISN } #Theodred must be dead
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+defence vs ISN, +500 xp for all commanders
+			add_ideas = generic_defend_against_isengard
+			every_unit_leader = {
+				gain_xp = 500
+			}
+		}
+	}
+	focus = { #For the westfold
+		id = ROH_for_the_westfold
+		icon = GFX_focus_generic_the_giant_wakes
+		x =3
+		y = 1
+		relative_position_id = ROH_reverse_grimas_damage
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_reverse_grimas_damage }
+		available = { any_core_state = { NOT = { is_controlled_by = ROOT } } has_war = yes } #Any core state must have fallen
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #+500k manpower
+			add_manpower = 500000
+		}
+	}
+	focus = { #defend the hornburg
+		id = ROH_defend_the_hornburg
+		icon = GFX_goal_roh_hornburg
+		x = -1
+		y = 1
+		relative_position_id = ROH_reverse_grimas_damage
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = ROH_reverse_grimas_damage }
+		mutually_exclusive = { focus = ROH_defend_edoras }
+		available = { has_war = yes controls_province = 4049 } #Must control the hornburg
+		search_filters = { FOCUS_FILTER_FORTIFICATION }
+		completion_reward = { #+2 bunker, +500% supplies at hornburg, +25% core defence
+			add_ideas = ROH_defend_the_hornburg_spirit
+			73 = { #helm's deep
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4049 #hornburg
+				}
+				add_dynamic_modifier = {
+					modifier = well_stocked_fortress
+				}
+			}
+		}
+	}
+	focus = { #defend edoras
+		id = ROH_defend_edoras
+		icon = GFX_goal_roh_meduseld
+		x = 1
+		y = 1
+		relative_position_id = ROH_reverse_grimas_damage
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_reverse_grimas_damage }
+		mutually_exclusive = { focus = ROH_defend_the_hornburg }
+		available = { has_war = yes controls_province = 3811 } #must control edoras
+		search_filters = { FOCUS_FILTER_FORTIFICATION FOCUS_FILTER_ARMY }
+		completion_reward = { #+2 bunker, +1 fyrd unit at Edoras, -15% training time
+			add_ideas = ROH_defend_edoras_spirit
+			157 = { #Folde
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3811 #edoras
+				}
+				custom_effect_tooltip = ROH_defend_edoras_tooltip
+				hidden_effect = {
+					create_unit = { 
+						division = "name = \"Emergency Fyrd\" division_template = \"Fyrd\" start_experience_factor = 0.0 force_equipment_variants = { infantry_equipment_0 = { creator = \"ROH\" } }" 
+						owner = ROOT
+						prioritize_location = 3811 #edoras
+					}
+				}
+			}
+		}
+	}
+	focus = { #call erkenbrand back into service
+		id = ROH_call_erkenbrand_back_into_service
+		icon = GFX_goal_erkenbrand
+		x = -1
+		y = 1
+		relative_position_id = ROH_defend_the_hornburg
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_defend_the_hornburg }
+		available = { has_character = ROH_erkenbrand }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Erkenbrand becomes feild marshal
+			custom_effect_tooltip = ROH_call_erkenbrand_back_into_service_tooltip
+			hidden_effect = {
+				ROH_erkenbrand = {
+					add_field_marshal_role = {
+					  skill = 5
+					  attack_skill = 2
+					  defense_skill = 6
+					  planning_skill = 4
+					  logistics_skill = 4
+					  traits = { old_guard trait_cautious infantry_leader panzer_leader defensive_doctrine organization_first }
+					}
+					if = { limit = { ROOT = { has_country_flag = recruit_mark_nobles } }
+						add_unit_leader_trait = ROH_noble_of_the_mark
+					}
+				}
+			}
+		}
+	}
+	focus = { #give hama command
+		id = ROH_give_hama_command
+		icon = GFX_goal_hama
+		x = 1
+		y = 1
+		relative_position_id = ROH_defend_edoras
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_defend_edoras }
+		available = { has_character = ROH_hama }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Hama becomes commander
+			custom_effect_tooltip = ROH_give_hama_command_tooltip
+			hidden_effect = {
+				ROH_hama = {
+					add_corps_commander_role = {
+					  skill = 3
+					  attack_skill = 1
+					  defense_skill = 4
+					  planning_skill = 3
+					  logistics_skill = 2
+					  traits = { captain_of_guard_mil infantry_leader ambusher }
+					}
+					if = { limit = { ROOT = { has_country_flag = recruit_mark_nobles } }
+						add_unit_leader_trait = ROH_noble_of_the_mark
+					}
+				}
+			}
+		}
+	}
+	focus = { #push to isengard
+		id = ROH_push_to_isengard
+		icon = GFX_goal_orthanc
+		x = -1
+		y = 1
+		relative_position_id = ROH_defend_edoras
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_defend_edoras focus = ROH_defend_the_hornburg }
+		bypass = { NOT = { country_exists = ISN } }
+		available = { has_war_with = ISN }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+15% attack vs ISN
+			add_ideas = generic_attack_isengard
+			if = { limit = { has_country_leader = { character = ROH_theoden ruling_only = yes } }
+				custom_effect_tooltip = unlocks_a_speech_tooltip
+			}
+		}
+	}
+	focus = { #speak_with_saruman
+		id = ROH_speak_with_saruman
+		icon = GFX_goal_generic_befriend_isengard
+		x = -1
+		y = 1
+		relative_position_id = ROH_push_to_isengard
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = ROH_push_to_isengard }
+		#bypass = { NOT = { ISN = { controls_state = 210 } } }
+		available = { has_war_with = ISN any_country = { has_war_with = ISN controls_state = 68 } } #Nan curunir controlled by a country at war with ISN
+		mutually_exclusive = { focus = ROH_hang_saruman_for_his_crimes }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #White peace: ISN retains orthanc, ents occupy nan curunir, ISN disbands all units, isengard & orthanc switch VPs
+			custom_effect_tooltip = isengard_white_peace_tooltip
+			if = { limit = { FAN = { has_war_with = ISN } }
+				custom_effect_tooltip = isengard_white_peace_fangorn_occupation_tooltip
+			}
+			custom_effect_tooltip = isengard_white_peace_territory_return_tooltip
+			hidden_effect = {
+				ISN = {
+					speak_with_saruman_effect = yes
+				}
+			}
+			ISN = {
+				add_manpower = -2000000
+				set_rule = {
+					desc = saruman_defeated_rule_tooltip
+					can_join_factions = no
+				}
+			}
+			
+			###Exchanges orthanc & ring of isengard's VPs. Important for the ring calculation
+			set_victory_points = {
+				province = 4782 #Ring of isengard
+				value = 50
+			}
+			68 = { #Nan Curunir
+				set_ring_victory_point = yes
+			}
+			set_victory_points = {
+				province = 770 #Orthanc
+				value = 15
+			}
+			210 = { #Orthanc
+				remove_ring_victory_point = yes
+			}
+			###########Event to tell everyone about it
+			hidden_effect = {
+				news_event = {
+					id = rfr_news.2
+				}
+			}
+		}
+	}
+	focus = { #Hang Saruman for his crimes
+		id = ROH_hang_saruman_for_his_crimes
+		icon = GFX_goal_generic_attack_isengard
+		x = 1
+		y = 1
+		relative_position_id = ROH_push_to_isengard
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_push_to_isengard }
+		bypass = { NOT = { ISN = { controls_state = 210 } } }
+		available = { has_war_with = ISN any_country = { has_war_with = ISN controls_state = 68 } } #Nan curunir controlled by a country at war with ISN
+		mutually_exclusive = { focus = ROH_speak_with_saruman }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #-5 forts in orthanc
+			210 = { #Orthanc
+				remove_building = {
+					type = bunker
+					level = 5
+					province = 770 #orthanc
+				}
+			}
+			hidden_effect = { ###Event lets ISN know
+				ISN = { country_event = { id = isengard.5 } }
+			}
+		}
+	}
+	focus = { #hail the victorious dead
+		id = ROH_hail_the_victorious_dead
+		icon = GFX_goal_roh_hail_the_victorious_dead
+		x = 0
+		y = 2
+		relative_position_id = ROH_push_to_isengard
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_speak_with_saruman focus = ROH_hang_saruman_for_his_crimes }
+		bypass = { NOT = { ISN = { controls_state = 210 } } }
+		available = { saruman_defeated_trigger = yes } #Nan curunir controlled by a country at war with ISN
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+50% recruitable population factor
+			add_ideas = ROH_hail_the_victorious_dead_spirit
+			if = { limit = { has_country_leader = { character = ROH_theoden ruling_only = yes } }
+				custom_effect_tooltip = unlocks_a_speech_tooltip
+			}
+		}
+	}
+	focus = { #Call the Fyrd
+		id = ROH_call_the_fyrd
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -1
+		y = 1
+		relative_position_id = ROH_hail_the_victorious_dead
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_hail_the_victorious_dead }
+		mutually_exclusive = { focus = ROH_muster_the_riders }
+		available = { has_war = yes } #At war
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Raises 1 fyrd in every core state
+			custom_effect_tooltip = ROH_call_the_fyrd_tooltip
+			hidden_effect = {
+				every_core_state = { #Except thryhyrne, harrowdale, & helms deep
+					limit = { is_controlled_by = ROOT NOT = { state = 72 state = 73 state = 209 } }
+					create_unit = {
+						division = "name = \"Fyrd\" division_template = \"Fyrd\" start_experience_factor = 0.0 force_equipment_variants = { infantry_equipment_0 = { creator = \"ROH\" } }" 
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = { #Muster the Riders
+		id = ROH_muster_the_riders
+		icon = GFX_goal_generic_army_tanks
+		x = 1
+		y = 1
+		relative_position_id = ROH_hail_the_victorious_dead
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = ROH_hail_the_victorious_dead }
+		mutually_exclusive = { focus = ROH_call_the_fyrd }
+		available = { has_war = yes } #At war
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Raises 4 eorling militia at dunharrow
+			custom_effect_tooltip = ROH_muster_the_riders_tooltip
+			rohan_eorling_muster_template_effect = yes
+			hidden_effect = {
+				209 = { #Harrowdale
+					create_unit = {
+						division = "name = \"Foldish Muster\" division_template = \"Eorling Muster\" start_experience_factor = 0.3 start_equipment_factor = 1"
+						owner = ROOT
+						prioritize_location = 7478 #Dunharrow
+						id = 1050
+					}
+					create_unit = {
+						division = "name = \"Eastmarker Muster\" division_template = \"Eorling Muster\" start_experience_factor = 0.3 start_equipment_factor = 1"
+						owner = ROOT
+						prioritize_location = 7478 #Dunharrow
+						id = 1051
+					}
+					create_unit = {
+						division = "name = \"Westmarker Muster\" division_template = \"Eorling Muster\" start_experience_factor = 0.3 start_equipment_factor = 1"
+						owner = ROOT
+						prioritize_location = 7478 #Dunharrow
+						id = 1052
+					}
+					create_unit = {
+						division = "name = \"Woldish Muster\" division_template = \"Eorling Muster\" start_experience_factor = 0.3 start_equipment_factor = 1"
+						owner = ROOT
+						prioritize_location = 7478 #Dunharrow
+						id = 1053
+					}
+				}
+			}
+		}
+	}
+	focus = { #negotiation with the druedain
+		id = ROH_negotiate_with_the_druedain
+		icon = GFX_goal_generic_befriend_druedain
+		x = 0
+		y = 1
+		relative_position_id = ROH_call_the_fyrd
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_muster_the_riders focus = ROH_call_the_fyrd }
+		available = { has_war = yes country_exists = DAI } #At war & DAI exists
+		bypass = { OR = { NOT = { country_exists = MOR } MOR = { is_subject = yes } MOR = { has_capitulated = yes } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Druedain joins faction/gives military access
+			DAI = { give_military_access = ROOT }
+			if = {
+				limit = { is_in_faction = yes }
+				add_to_faction = DAI
+			}
+		}
+	}
+	focus = { #move quickly
+		id = ROH_move_quickly
+		icon = GFX_focus_POL_prussia_line
+		x = 0
+		y = 1
+		relative_position_id = ROH_muster_the_riders
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_muster_the_riders focus = ROH_call_the_fyrd }
+		available = { has_war = yes } #At war
+		bypass = { OR = { NOT = { country_exists = MOR } MOR = { is_subject = yes } MOR = { has_capitulated = yes } } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+25% move speed for 60 days
+			add_timed_idea = {
+				idea = ROH_ride_through_the_night
+				days = @pelennorFeildsDays
+			}
+		}
+	}
+	focus = { #ride for ruin focus
+		id = ROH_ride_for_ruin_focus
+		icon = GFX_goal_roh_charge
+		x = -1
+		y = 1
+		relative_position_id = ROH_move_quickly
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_negotiate_with_the_druedain focus = ROH_move_quickly }
+		available = { has_war = yes } #At war
+		bypass = { OR = { NOT = { country_exists = MOR } MOR = { is_subject = yes } MOR = { has_capitulated = yes } } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+25% breakthrough & attack for 60 days
+			# add_dynamic_modifier = {
+				# modifier = ROH_ride_for_ruin_modifier
+				# days = @pelennorFeildsDays
+			# }
+			add_timed_idea = {
+				idea = ROH_ride_for_ruin_spirit
+				days = @pelennorFeildsDays
+			}
+			if = { limit = { has_country_leader = { character = ROH_theoden ruling_only = yes } }
+				custom_effect_tooltip = unlocks_a_speech_tooltip
+			}
+		}
+	}
+	focus = { #route the oliphants
+		id = ROH_route_the_oliphants
+		icon = GFX_goal_generic_attack_harad
+		x = -2
+		y = 1
+		relative_position_id = ROH_ride_for_ruin_focus
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_ride_for_ruin_focus }
+		available = { any_country = { original_tag = HAR has_war_with = ROOT } } #At war with harad
+		bypass = { sauron_defeated_trigger = yes }
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_POLITICAL }
+		completion_reward = { #-2 monsters in harad, theoden dies!
+			if = { #Theoden dies if he's around
+				limit = { has_character = ROH_theoden }
+				rohan_theoden_dies_pelennor_fields = yes
+			}
+			random_country = {
+				limit = { original_tag = HAR }
+				random_core_state = {
+					limit = {
+						is_controlled_by = PREV
+						has_resources_amount = {
+							resource = monsters
+							amount > 0
+						}
+					}
+					add_resource = {
+						type = monsters
+						amount = -1
+					}
+				}
+				random_core_state = {
+					limit = {
+						is_controlled_by = PREV
+						has_resources_amount = {
+							resource = monsters
+							amount > 0
+						}
+					}
+					add_resource = {
+						type = monsters
+						amount = -1
+					}
+				}
+			}
+		}
+	}
+	focus = { #slay the witch king
+		id = ROH_slay_the_witch_king
+		icon = GFX_goal_witch_king_kill
+		x = 0
+		y = 1
+		relative_position_id = ROH_ride_for_ruin_focus
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_ride_for_ruin_focus }
+		available = { has_character = ROH_eowyn any_country = { has_character = MOR_witch_king has_war_with = ROOT } } #At war with MOrdor
+		bypass = { sauron_defeated_trigger = yes }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_POLITICAL }
+		completion_reward = { #witch king dies, theoden dies!
+			if = { #Theoden dies if he's around
+				limit = { has_character = ROH_theoden }
+				rohan_theoden_dies_pelennor_fields = yes
+			}
+			random_country = {
+				limit = { has_character = MOR_witch_king }
+				retire_character = MOR_witch_king
+				hidden_effect = {
+					news_event = {
+						id = rfr_news.8
+					}
+				}
+			}
+		}
+	}
+	focus = { #slay the southron chieftan
+		id = ROH_slay_the_southron_chieftan
+		icon = GFX_goal_generic_attack_harad
+		x = 2
+		y = 1
+		relative_position_id = ROH_ride_for_ruin_focus
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_ride_for_ruin_focus }
+		available = { any_country = { original_tag = HAR has_war_with = ROOT } } #At war with harad
+		bypass = { sauron_defeated_trigger = yes }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_POLITICAL }
+		completion_reward = { #random haradrim unit leader dies, theoden dies!
+			if = { #Theoden dies if he's around
+				limit = { has_character = ROH_theoden }
+				rohan_theoden_dies_pelennor_fields = yes
+			}
+			random_country = { ##kills random haradrim general. This will be their leader once harad gets content
+				limit = { original_tag = HAR }
+				random_unit_leader = {
+					retire = yes
+				}
+			}
+		}
+	}
+	focus = { #march on the morannon
+		id = ROH_march_on_the_morannon
+		icon = GFX_goal_roh_charge
+		x = 0
+		y = 2
+		relative_position_id = ROH_ride_for_ruin_focus
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_route_the_oliphants focus = ROH_slay_the_witch_king focus = ROH_slay_the_southron_chieftan }
+		available = { has_war_with = MOR } #At war with MOR
+		bypass = { OR = { NOT = { country_exists = MOR } MOR = { is_subject = yes } MOR = { has_capitulated = yes } } } 
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+25% defence & org for 60 days
+			add_timed_idea = {
+				idea = ROH_march_on_the_morannon_spirit
+				days = @pelennorFeildsDays
+			}
+		}
+	}
+	focus = { #celebrate saurons downfall
+		id = ROH_celebrate_saurons_downfall
+		icon = GFX_goal_sauron_defeated
+		x = 0
+		y = 1
+		relative_position_id = ROH_march_on_the_morannon
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_march_on_the_morannon }
+		available = { sauron_defeated_trigger = yes }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+25% defence & org for 60 days
+			add_timed_idea = {
+				idea = celebrating_saurons_fall
+				days = 365
+			}
+		}
+	}
+	focus = { #renew the oath of Eorl
+		id = ROH_renew_the_oath_of_eorl
+		icon = GFX_goal_generic_befriend_gondor
+		x = 0
+		y = 1
+		relative_position_id = ROH_celebrate_saurons_downfall
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_celebrate_saurons_downfall }
+		available = { country_exists = GON GON = { has_opinion = { target = ROOT value > 25 } has_line_of_kings = yes } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #1 build slot every core state
+			every_core_state = { #Except thryhyrne, harrowdale, & helms deep
+				limit = { is_controlled_by = ROOT NOT = { state = 72 state = 73 state = 209 } }
+				add_extra_state_shared_building_slots = 1
+			}
+			add_opinion_modifier = {
+				target = GON
+				modifier = renewed_oath_of_eorl
+			}
+			reverse_add_opinion_modifier = {
+				target = GON
+				modifier = renewed_oath_of_eorl
+			}
+		}
+	}
+	focus = { #wed eomer and lothiriel
+		id = ROH_wed_eomer_and_lothiriel
+		icon = GFX_goal_eomer_married
+		x = -2
+		y = 1
+		relative_position_id = ROH_celebrate_saurons_downfall
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_celebrate_saurons_downfall }
+		available = { has_character = ROH_eomer any_other_country = { has_character = GON_lothiriel } }
+		bypass = { custom_trigger_tooltip = { tooltip = ROH_eomer_is_married_tooltip ROH_eomer = { has_character_flag = is_married } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_POLITICAL }
+		completion_reward = { #If gondor agrees, you gain lothiriel & gondor gains 120 pp
+			custom_effect_tooltip = if_they_agree_tooltip
+			random_other_country = {
+				limit = { has_character = GON_lothiriel }
+				custom_effect_tooltip = lothiriel_joins_you_tooltip
+				effect_tooltip = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = royal_marraige
+					}
+					reverse_add_opinion_modifier = {
+						target = ROOT
+						modifier = royal_marraige
+					}
+					add_political_power = 200
+				}
+				hidden_effect = {
+					country_event = { id = gondor.1 days = 1 }
+				}
+			}
+		}
+	}
+	focus = { #wed eowyn and faramir
+		id = ROH_wed_eowyn_and_faramir
+		icon = GFX_goal_eowyn_married
+		x = 2
+		y = 1
+		relative_position_id = ROH_celebrate_saurons_downfall
+		cost = @storyFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_celebrate_saurons_downfall }
+		available = { has_character = ROH_eowyn any_other_country = { has_character = GON_faramir } }
+		bypass = { custom_trigger_tooltip = { tooltip = ROH_eowyn_is_married_tooltip ROH_eowyn = { has_character_flag = is_married } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_POLITICAL }
+		completion_reward = { #If gondor agrees, you gain 200 pp & gondor gains eowyn
+			custom_effect_tooltip = if_they_agree_tooltip
+			effect_tooltip = { add_political_power = 200 }
+			random_other_country = {
+				limit = { has_character = GON_faramir }
+				custom_effect_tooltip = eowyn_joins_them_tooltip
+				effect_tooltip = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = royal_marraige
+					}
+					reverse_add_opinion_modifier = {
+						target = ROOT
+						modifier = royal_marraige
+					}
+				}
+				hidden_effect = {
+					country_event = { id = gondor.2 days = 1 }
+				}
+			}
+		}
+	}
+######################################################################ARMY BRANCH
+	focus = { #Inspect the Army
+		id = ROH_inspect_the_army
+		icon = GFX_goal_generic_army_doctrines
+		x = 6
+		y = 0
+		relative_position_id = ROH_reverse_grimas_damage
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		available = { NOT = { has_idea = ROH_a_hall_divided has_idea = ROH_distrustful_military } has_civil_war = no }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #20 army xp & 20 cp
+			army_experience = 20
+			add_command_power = 20
+		}
+	}
+#################################PROUD TRADITIONS SUB-BRANCH
+	focus = { #Proud traditions
+		id = ROH_proud_traditions
+		icon = GFX_goal_generic_backwards
+		x = 0
+		y = 1
+		relative_position_id = ROH_inspect_the_army
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = ROH_inspect_the_army }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #-15% cav research cost
+			swap_ideas = {
+				remove_idea = rohirric_heritage_idea
+				add_idea = rohirric_heritage_idea_1
+			}
+		}
+	}
+	focus = { #every rohirrim a rider
+		id = ROH_every_rohirrim_a_rider
+		icon = GFX_focus_generic_horse_studs
+		x = 0
+		y = 1
+		relative_position_id = ROH_proud_traditions
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = ROH_proud_traditions }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #-15% tank production cost
+			swap_ideas = {
+				remove_idea = rohirric_heritage_idea_1
+				add_idea = rohirric_heritage_idea_2
+			}
+		}
+	}
+	focus = { #as we have always done
+		id = ROH_as_we_have_always_done
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 0
+		y = 1
+		relative_position_id = ROH_every_rohirrim_a_rider
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = ROH_every_rohirrim_a_rider }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #-15% mobile warfare research cost
+			swap_ideas = {
+				remove_idea = rohirric_heritage_idea_2
+				add_idea = rohirric_heritage_idea_3
+			}
+		}
+	}
+	focus = { #proud innovations
+		id = ROH_proud_innovations
+		icon = GFX_goal_generic_forwards
+		x = 0
+		y = 1
+		relative_position_id = ROH_as_we_have_always_done
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = ROH_as_we_have_always_done }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #-15% land equipment upgrade cost cost
+			swap_ideas = {
+				remove_idea = rohirric_heritage_idea_3
+				add_idea = rohirric_heritage_idea_4
+			}
+		}
+	}
+	focus = { #martial society
+		id = ROH_martial_society
+		icon = GFX_goal_eorling_horse
+		x = 0
+		y = 1
+		relative_position_id = ROH_proud_innovations
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = ROH_proud_innovations }
+		prerequisite = { focus = ROH_help_our_infantry_keep_pace focus = ROH_auxiliary_weapons }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #+0.1 daily army xp
+			swap_ideas = {
+				remove_idea = rohirric_heritage_idea_4
+				add_idea = rohirric_heritage_idea_5
+			}
+		}
+	}
+#################################FOCUS ON LEVIES SUB-BRANCH
+	focus = { #focus on our levies
+		id = ROH_focus_on_our_levies
+		icon = GFX_goal_generic_small_arms
+		x = -2
+		y = 2
+		relative_position_id = ROH_inspect_the_army
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_inspect_the_army }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 50% infantry research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+	}
+	focus = { #support large forces
+		id = ROH_support_large_forces
+		icon = GFX_focus_chi_army_reform
+		x = 0
+		y = 1
+		relative_position_id = ROH_focus_on_our_levies
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_focus_on_our_levies }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 50% support research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = support_tech
+			}
+		}
+	}
+	focus = { #help our infantry keep pace
+		id = ROH_help_our_infantry_keep_pace
+		icon = GFX_goal_generic_army_motorized
+		x = 0
+		y = 1
+		relative_position_id = ROH_support_large_forces
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ROH_support_large_forces }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 50% mot/mech research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = motorized_equipment
+			}
+		}
+	}
+#################################FOCUS ON NOBLES SUB-BRANCH
+	focus = { #focus on our nobles
+		id = ROH_focus_on_our_nobles
+		icon = GFX_goal_generic_nobility
+		x = 2
+		y = 2
+		relative_position_id = ROH_inspect_the_army
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_inspect_the_army }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 50% cavalry research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	focus = { #the finer tactical details
+		id = ROH_the_finer_tactical_details
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = ROH_focus_on_our_nobles
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_focus_on_our_nobles }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 50% land doctrine research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	focus = { #help our infantry keep pace
+		id = ROH_auxiliary_weapons
+		icon = GFX_focus_generic_combined_arms
+		x = 0
+		y = 1
+		relative_position_id = ROH_the_finer_tactical_details
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_the_finer_tactical_details }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 50% artillery research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+######################################################################ECONOMY BRANCH
+#################################TRADITIONAL ECONOMY SUB-BRANCH
+	focus = { #A Traditional Economy
+		id = ROH_a_traditional_economy
+		icon = GFX_goal_generic_backwards
+		x = 6
+		y = 0
+		relative_position_id = ROH_inspect_the_army
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+		available = { NOT = { has_idea = ROH_a_hall_divided has_idea = ROH_distrustful_military } has_civil_war = no }
+		mutually_exclusive = { focus = ROH_a_modern_economy }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #8 build slots
+			random_owned_controlled_state = {
+				limit = { ##must have free slots for slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots for slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots for slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots for slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = { #proud animal lineages
+		id = ROH_proud_animal_lineages
+		icon = GFX_goal_generic_food
+		x = -2
+		y = 1
+		relative_position_id = ROH_a_traditional_economy
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_a_traditional_economy }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #+4 cloth, +4 food
+			random_owned_controlled_state = {
+				limit = { ##must have free slots for slots
+					has_resources_amount = {
+						resource = mounts
+						amount > 0
+					}
+				}
+				add_resource = {
+					type = food
+					amount = 1
+				}
+				add_resource = {
+					type = cloth
+					amount = 1
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots for slots
+					has_resources_amount = {
+						resource = mounts
+						amount > 0
+					}
+				}
+				add_resource = {
+					type = food
+					amount = 1
+				}
+				add_resource = {
+					type = cloth
+					amount = 1
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots for slots
+					has_resources_amount = {
+						resource = mounts
+						amount > 0
+					}
+				}
+				add_resource = {
+					type = food
+					amount = 1
+				}
+				add_resource = {
+					type = cloth
+					amount = 1
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots for slots
+					has_resources_amount = {
+						resource = mounts
+						amount > 0
+					}
+				}
+				add_resource = {
+					type = food
+					amount = 1
+				}
+				add_resource = {
+					type = cloth
+					amount = 1
+				}
+			}
+		}
+	}
+	focus = { #everything a family needs
+		id = ROH_everything_a_family_needs
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = ROH_proud_animal_lineages
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_proud_animal_lineages }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+4 civs
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #cottage_industries
+		id = ROH_cottage_industries
+		icon = GFX_goal_generic_dispersed_industry
+		x = 0
+		y = 1
+		relative_position_id = ROH_a_traditional_economy
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_a_traditional_economy }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 50% dispersed industry research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = dispersed_industry_category
+			}
+		}	
+	}
+	focus = { #inherited crafts
+		id = ROH_inherited_crafts
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = ROH_cottage_industries
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_cottage_industries }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+4 civs
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #look to our past
+		id = ROH_look_to_our_past
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		relative_position_id = ROH_everything_a_family_needs
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_everything_a_family_needs focus = ROH_inherited_crafts }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #-10% consumer goods
+			add_ideas = ROH_traditional_economy_spirit
+		}
+	}
+#################################MODERN ECONOMY SUB-BRANCH
+	focus = { #A Modern Economy
+		id = ROH_a_modern_economy
+		icon = GFX_goal_generic_forwards
+		x = 2
+		y = 0
+		relative_position_id = ROH_a_traditional_economy
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+		available = { NOT = { has_idea = ROH_a_hall_divided has_idea = ROH_distrustful_military } has_civil_war = no }
+		mutually_exclusive = { focus = ROH_a_traditional_economy }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 50% industry research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	focus = { #government breeding programs
+		id = ROH_government_breeding_programs
+		icon = GFX_goal_generic_food
+		x = 2
+		y = 1
+		relative_position_id = ROH_a_modern_economy
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_a_modern_economy }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 50% synthetic resources research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = synth_resources
+			}
+		}
+	}
+	focus = { #establish royal inspection offices
+		id = ROH_establish_royal_inspection_offices
+		icon = GFX_goal_generic_construction
+		x = 0
+		y = 1
+		relative_position_id = ROH_government_breeding_programs
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_government_breeding_programs }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 50% construction resources research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = construction_tech
+			}
+		}
+	}
+	focus = { #urban industries
+		id = ROH_urban_industries
+		icon = GFX_goal_generic_concentrated_industry
+		x = 0
+		y = 1
+		relative_position_id = ROH_a_modern_economy
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_a_modern_economy }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 50% concentrated industry research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = concentrated_industry_category
+			}
+		}	
+	}
+	focus = { #learned professions
+		id = ROH_learned_professions
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = ROH_urban_industries
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_urban_industries }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+4 mils
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ##must have free slots
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #look to our future
+		id = ROH_look_to_our_future
+		icon = GFX_focus_research
+		x = 0
+		y = 1
+		relative_position_id = ROH_establish_royal_inspection_offices
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_establish_royal_inspection_offices focus = ROH_learned_professions }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #+1 research slot
+			add_research_slot = 1
+		}
+	}
+	focus = { #look to our present
+		id = ROH_look_to_our_present
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 1
+		relative_position_id = ROH_inherited_crafts
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ROH_inherited_crafts focus = ROH_learned_professions }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+1 infrastructure in every state
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+######################################################################NAVAL BRANCH
+	focus = { #pony upon a boat upon the ocean
+		id = ROH_pony_upon_a_boat_upon_the_ocean
+		icon = GFX_goal_generic_navy_battleship
+		x = 5
+		y = 0
+		relative_position_id = ROH_a_modern_economy
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = { NOT = { has_idea = ROH_a_hall_divided has_idea = ROH_distrustful_military } has_civil_war = no any_controlled_state = { is_coastal = yes } }
+		search_filters = { FOCUS_FILTER_NAVY }
+		completion_reward = { #+20 naval xp
+			navy_experience = 20
+		}
+	}
+	focus = { #study shipbuilding techniques
+		id = ROH_study_shipbuilding_techniques
+		icon = GFX_goal_generic_build_navy
+		x = -1
+		y = 1
+		relative_position_id = ROH_pony_upon_a_boat_upon_the_ocean
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = { any_controlled_state = { is_coastal = yes } }
+		prerequisite = { focus = ROH_pony_upon_a_boat_upon_the_ocean }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
+		completion_reward = { #1 50% naval doctrine bonuse
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = naval_equipment
+			}
+		}
+	}
+	focus = { #study sailing techniques
+		id = ROH_study_sailing_techniques
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 1
+		y = 1
+		relative_position_id = ROH_pony_upon_a_boat_upon_the_ocean
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = { any_controlled_state = { is_coastal = yes } }
+		prerequisite = { focus = ROH_pony_upon_a_boat_upon_the_ocean }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
+		completion_reward = { #1 50% naval doctrine bonuse
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = { #put research into practice
+		id = ROH_put_research_into_practice
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 2
+		relative_position_id = ROH_pony_upon_a_boat_upon_the_ocean
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = { any_controlled_state = { free_building_slots = { building = dockyard size > 1 include_locked = no } } }
+		prerequisite = { focus = ROH_study_shipbuilding_techniques focus = ROH_study_sailing_techniques }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+		completion_reward = { #2 dockyards
+			random_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #royal eorling navy
+		id = ROH_royal_eorling_navy
+		icon = GFX_focus_generic_destroyer
+		x = 0
+		y = 1
+		relative_position_id = ROH_put_research_into_practice
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		allow_branch = { has_dlc = "Man the Guns" }
+		available = { any_controlled_state = { is_coastal = yes } }
+		prerequisite = { focus = ROH_put_research_into_practice }
+		search_filters = { FOCUS_FILTER_NAVY }
+		completion_reward = { #destroyer template
+			create_equipment_variant = {	###DESTROYER
+				name = "Destroyer"
+				type = ship_hull_light_1
+				name_group = ROH_DD_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_light_battery_1
+					fixed_ship_fire_control_system_slot = empty
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = light_ship_engine_1
+					fixed_ship_torpedo_slot = ship_torpedo_1
+					mid_1_custom_slot = empty
+					rear_1_custom_slot = empty
+				}
+			}
+		}
+	}
+}

@@ -96,6 +96,35 @@ spriteTypes = {
 		name = "GFX_double_infantry_weapons3_medium"
 		texturefile = "gfx/interface/technologies/double_infantry_weapons3.dds"
 	}
+##########################SPEARS
+	SpriteType = {
+		name = "GFX_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/spear_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_spear_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/spear_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_spear_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/spear_upgrade_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_spear_upgrade_3_medium"
+		texturefile = "gfx/interface/technologies/spear_upgrade_3.dds"
+	}
 							######################################
 									#COUNTRY SPECIFIC
 							######################################
@@ -111,6 +140,22 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_GON_advanced_infantry_weapons_medium"
 		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON_spear_3.dds"
 	}
 ###INFANTRY ARMOR
 	SpriteType = {

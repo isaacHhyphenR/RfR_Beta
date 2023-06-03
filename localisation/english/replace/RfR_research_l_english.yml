@@ -3,6 +3,8 @@
  #atomic_research_subtitle: ""
  TITLE_EXP_ROCKETS_SUBTITLE: "Bureaucracy & Central Planning"
                     ###FOLDERS
+ infantry_folder: "Melee"
+ infantry_folder_desc: "How to kill and survive in close quarters combat."
  armour_folder: "Cavalry"
  armour_folder_desc: "The various ways of fighting from other creatures' backs."
  artillery_folder: "Ranged"
@@ -10,7 +12,7 @@
  electronics_folder_desc: "Engineering, math, encryption and advanced tech research."
  INFANTRY_TITLE_WEAPONS: "WEAPONS & EQUIPMENT"
  INFANTRY_TITLE_SPECIAL: "SPECIAL FORCES"
- INFANTRY_TITLE_MOTORISED: "MOBILE INFANTRY"
+ INFANTRY_TITLE_MOTORISED: "SPEARS"
  ARMOUR_TITLE: "CAVALRY"
  ARMOUR_TITLE_HEAVY: "MONSTERS"
  ARMOUR_TITLE_MEDIUM: "HEAVY"
@@ -54,8 +56,8 @@
  cat_medium_armor_research: "Heavy Cavalry Research Speed"
  cat_heavy_armor: "Monsters"
  cat_heavy_armor_research: "Monsters Research Speed"
- cat_anti_tank: "Anti-Cav"
- cat_anti_tank_research: "Anti-Cav Research Speed"
+ cat_anti_tank: "Spear"
+ cat_anti_tank_research: "Spear Research Speed"
  electronics: "Mathematics"
  electronics_research: "Mathematics Research Speed"
  TITLE_ELECTRONIC_SUBTITLE: "Mathematical Advancements"
@@ -129,13 +131,13 @@
  rocket_artillery2_desc: "Sharper tips cut flesh and bone more easily."
  rocket_artillery3: "Fire Hardening"
  rocket_artillery3_desc: "By making the tips of our javelins firmer we can ensure they will penetrate thicker armour."
-            ###PIKES
- antitank1: "Smoother Handles"
- antitank1_desc: "By ensuring the poles of our polearms are easy to grip we can give our soldiers better leverage on their weapons."
- antitank3: "Protective Coating"
- antitank3_desc: "By covering our polearm handles in a thin layer of protective material we can keep them safe from the elements and ensure they're structurally sound enough for the rigours of combat."
- antitank4: "Heavier Heads"
- antitank4_desc: "Polearms with better balance are less unweildy, allowing our soldiers greater flexibility and power."
+            ###Spears
+ spear_upgrade_0: "Smoother Handles"
+ spear_upgrade_0_desc: "By ensuring the poles of our polearms are easy to grip we can give our soldiers better leverage on their weapons."
+ spear_upgrade_1: "Protective Coating"
+ spear_upgrade_1_desc: "By covering our polearm handles in a thin layer of protective material we can keep them safe from the elements and ensure they're structurally sound enough for the rigours of combat."
+ spear_upgrade_2: "Heavier Heads"
+ spear_upgrade_2_desc: "Polearms with better balance are less unweildy, allowing our soldiers greater flexibility and power."
  
                      ###INFANTRY
             ###UPGRADES

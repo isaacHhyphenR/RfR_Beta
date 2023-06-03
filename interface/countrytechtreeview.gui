@@ -279,11 +279,18 @@ guiTypes = {
 				position = { x = 140 y = 325 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
-			}			
+			}	
 
 			gridboxtype = {
-				name = "motorised_infantry_tree"
+				name = "spear_tech_0_tree"
 				position = { x = 140 y = 620 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			
+			gridboxtype = {
+				name = "motorised_infantry_tree"
+				position = { x = 140 y = 770 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}

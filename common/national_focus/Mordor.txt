@@ -1,0 +1,2880 @@
+@techBoostBonus = 1.0
+@doctrineBoostBonus = 0.5
+@techBoostUses = 2
+@factoryBonuses = 2
+focus_tree = {
+	id = mordor_focus_tree
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = MOR 
+		}
+	}
+	default = no
+	#reset_on_civil_war = yes
+	initial_show_position = {
+		focus = MOR_the_eye_looks_inward
+	}
+	continuous_focus_position = {
+		x = 200
+		y = 1500
+		# x = 
+		# y = 
+	}
+	
+############={} ={}
+######################################################################INTERNAL BRANCH
+	focus = { #The eye looks inward
+		id = MOR_the_eye_looks_inward
+		icon = GFX_goal_the_eye_of_sauron
+		x = 29
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+#################################TITLES SUB-BRANCH
+	@sauronTitleCost = 100
+	@sauronTitleCostNegative = -100
+	focus = { #The Deciever
+		id = MOR_the_deciever
+		icon = GFX_goal_the_deciever
+		x = -3
+		y = 1
+		relative_position_id = MOR_the_eye_looks_inward
+		cost = 10
+		continue_if_invalid = yes
+		cancel_if_invalid = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_inward
+		}
+		available = { has_political_power > @sauronTitleCost has_country_leader = { character = MOR_sauron } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_POLITICAL }
+		select_effect = {
+			add_political_power = @sauronTitleCostNegative
+		}
+		completion_reward = {
+			add_country_leader_trait = the_deciever
+			custom_effect_tooltip = MOR_the_deciever_tooltip
+		}
+	}
+	focus = { #The Necromancer
+		id = MOR_the_necromancer
+		icon = GFX_goal_the_necromancer
+		x = -1
+		y = 1
+		relative_position_id = MOR_the_eye_looks_inward
+		cost = 10
+		continue_if_invalid = yes
+		cancel_if_invalid = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_inward
+		}
+		available = { has_political_power > @sauronTitleCost has_country_leader = { character = MOR_sauron } }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL }
+		select_effect = {
+			add_political_power = @sauronTitleCostNegative
+		}
+		completion_reward = {
+			add_country_leader_trait = the_necromancer
+			custom_effect_tooltip = MOR_the_necromancer_tooltip
+		}
+	}
+	focus = { #The Black Hand
+		id = MOR_the_black_hand
+		icon = GFX_goal_the_black_hand
+		x = 1
+		y = 1
+		relative_position_id = MOR_the_eye_looks_inward
+		cost = 10
+		continue_if_invalid = yes
+		cancel_if_invalid = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_inward
+		}
+		available = { has_political_power > @sauronTitleCost has_country_leader = { character = MOR_sauron } }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+		select_effect = {
+			add_political_power = @sauronTitleCostNegative
+		}
+		completion_reward = {
+			add_country_leader_trait = the_black_hand
+			custom_effect_tooltip = MOR_the_black_hand_tooltip
+		}
+	}
+	focus = { #The Dark Lord
+		id = MOR_the_dark_lord
+		icon = GFX_goal_the_dark_lord
+		x = 3
+		y = 1
+		relative_position_id = MOR_the_eye_looks_inward
+		cost = 10
+		continue_if_invalid = yes
+		cancel_if_invalid = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_inward
+		}
+		available = { has_political_power > @sauronTitleCost has_country_leader = { character = MOR_sauron } }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+		select_effect = {
+			add_political_power = @sauronTitleCostNegative
+		}
+		completion_reward = {
+			add_country_leader_trait = the_dark_lord
+			custom_effect_tooltip = MOR_the_dark_lord_tooltip
+		}
+	}
+	focus = { #The Lord of the Rings
+		id = MOR_the_lord_of_the_rings
+		icon = GFX_goal_the_one_ring
+		x = 0
+		y = 2
+		relative_position_id = MOR_the_eye_looks_inward
+		cost = 10
+		continue_if_invalid = yes
+		cancel_if_invalid = no
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_inward
+		}
+		available = { has_political_power > @sauronTitleCost has_country_leader = { character = MOR_sauron } has_idea = the_one_ring_spirit }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+		select_effect = {
+			add_political_power = @sauronTitleCostNegative
+		}
+		completion_reward = {
+			add_country_leader_trait = the_lord_of_the_rings
+			custom_effect_tooltip = MOR_the_lord_of_the_rings_tooltip
+		}
+	}
+####################################################ECONOMIC BRANCH
+	focus = { #The fires of industry
+		id = MOR_the_fires_of_industry
+		icon = GFX_goal_fires_of_industry
+		x = -7
+		y = 1
+		relative_position_id = MOR_the_eye_looks_inward
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_inward
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = industry
+				name = MOR_the_fires_of_industry
+			}
+			gorgoroth_focus_effect = yes
+			nurn_focus_effect = yes
+		}
+	}
+#########################################GORGOROTH SUB-BRANCH
+	focus = { #The Slums of gorgoroth
+		id = MOR_the_slums_of_gorgoroth
+		icon = GFX_goal_gorgoroth_slum
+		x = -3
+		y = 1
+		relative_position_id = MOR_the_fires_of_industry
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_fires_of_industry
+		}
+		available = { controls_gorgoroth_state = yes }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+1 infrastrucutre in each gorgoroth state
+			every_controlled_state = {
+				limit = { has_state_flag = gorgoroth_state }
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			gorgoroth_focus_effect = yes
+		}
+	}
+#################################MINING SUB-BRANCH
+	focus = { #Tools of peace
+		id = MOR_tools_of_peace
+		icon = GFX_goal_generic_construction2
+		x = -2
+		y = 1
+		relative_position_id = MOR_the_slums_of_gorgoroth
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_slums_of_gorgoroth
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = excavation_tech
+			}
+			gorgoroth_focus_effect = yes
+		}
+	}
+	focus = { #Extract the shadow ore
+		id = MOR_extract_the_shadow_ore
+		icon = GFX_goal_generic_iron
+		x = -2
+		y = 2
+		relative_position_id = MOR_the_slums_of_gorgoroth
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_tools_of_peace
+		}
+		available = { controls_gorgoroth_state = yes }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #+8 iron in each gorgoroth state
+			every_controlled_state = {
+				limit = { has_state_flag = gorgoroth_state }
+				add_resource = {
+					type = iron
+					amount = 8
+				}
+			}
+			gorgoroth_focus_effect = yes
+		}
+	}
+	focus = { #Occupy depleted mines
+		id = MOR_occupy_depleted_mines
+		icon = GFX_goal_generic_construction2
+		x = -2
+		y = 3
+		relative_position_id = MOR_the_slums_of_gorgoroth
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_extract_the_shadow_ore
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+15% factories in a state
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { occupyDepletedMines = focus_modifier_bonus }
+			custom_effect_tooltip = MOR_occupy_depleted_mines_tooltip
+			gorgoroth_focus_effect = yes
+		}
+	}
+#################################CONSTRUCTION SUB-BRANCH
+	focus = { #Ramshackle cities
+		id = MOR_ramshackle_cities
+		icon = GFX_goal_generic_construction
+		x = 0
+		y = 1
+		relative_position_id = MOR_the_slums_of_gorgoroth
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_slums_of_gorgoroth
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = construction_tech
+			}
+			gorgoroth_focus_effect = yes
+		}
+	}
+	focus = { #Work the chain gangs
+		id = MOR_work_the_chain_gangs
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 2
+		relative_position_id = MOR_the_slums_of_gorgoroth
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_ramshackle_cities
+		}
+		available = { controls_gorgoroth_state = yes }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			every_controlled_state = {
+				limit = { has_state_flag = gorgoroth_state }
+				add_building_construction = {
+					type = industrial_complex
+					level = @factoryBonuses
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = @factoryBonuses
+			}
+			gorgoroth_focus_effect = yes
+		}
+	}
+	focus = { #Clear broken ground
+		id = MOR_clear_broken_ground
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 3
+		relative_position_id = MOR_the_slums_of_gorgoroth
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_work_the_chain_gangs
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+15% construction speed
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { clearBrokenGround = focus_modifier_bonus }
+			custom_effect_tooltip = MOR_clear_broken_ground_tooltip
+			gorgoroth_focus_effect = yes
+		}
+	}
+#################################PRODUCTION SUB-BRANCH
+	focus = { #Pump the Bellows
+		id = MOR_pump_the_bellows
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 1
+		relative_position_id = MOR_the_slums_of_gorgoroth
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_slums_of_gorgoroth
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = cat_production
+			}
+			gorgoroth_focus_effect = yes
+		}
+	}
+	focus = { #Fires in the Deep
+		id = MOR_fires_in_the_deep
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = MOR_pump_the_bellows
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_pump_the_bellows
+		}
+		available = { controls_gorgoroth_state = yes }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			every_controlled_state = {
+				limit = { has_state_flag = gorgoroth_state }
+				add_building_construction = {
+					type = arms_factory
+					level = @factoryBonuses
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = @factoryBonuses
+			}
+			gorgoroth_focus_effect = yes
+		}
+	}
+	focus = { #Unceasing Hammers
+		id = MOR_unceasing_hammers
+		icon = GFX_goal_generic_production2
+		x = 0
+		y = 2
+		relative_position_id = MOR_pump_the_bellows
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_fires_in_the_deep
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #-15% infantry equipment production cost
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { unceasingHammers = focus_modifier_bonus_negative }
+			custom_effect_tooltip = MOR_unceasing_hammers_tooltip
+			hidden_effect = {
+				add_ideas = mor_hidden_infantry_equipment_cost
+			}
+			gorgoroth_focus_effect = yes
+		}
+	}
+#########################################NURN SUB-BRANCH
+	focus = { #The deserts of nurn
+		id = MOR_the_deserts_of_nurn
+		icon = GFX_goal_nurn_desert
+		x = 3
+		y = 1
+		relative_position_id = MOR_the_fires_of_industry
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_fires_of_industry
+		}
+		available = { controls_nurn_state = yes }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			every_controlled_state = {
+				limit = { has_state_flag = nurn_state }
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			nurn_focus_effect = yes
+		}
+	}
+#################################FOOD SUB-BRANCH
+	focus = { #Ash as fertilizer
+		id = MOR_ash_as_fertilizer
+		icon = GFX_goal_generic_construct_synth_refinery
+		x = -2
+		y = 1
+		relative_position_id = MOR_the_deserts_of_nurn
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_deserts_of_nurn
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = synth_resources
+			}
+			nurn_focus_effect = yes
+		}
+	}
+	focus = { #Invest in Irrigation
+		id = MOR_invest_in_irrigation
+		icon = GFX_goal_generic_food
+		x = 0
+		y = 1
+		relative_position_id = MOR_ash_as_fertilizer
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_ash_as_fertilizer
+		}
+		available = { controls_nurn_state = yes }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #+8 iron in each gorgoroth state
+			every_controlled_state = {
+				limit = { has_state_flag = nurn_state }
+				add_resource = {
+					type = food
+					amount = 8
+				}
+			}
+			nurn_focus_effect = yes
+		}
+	}
+	focus = { #Drain the Earth
+		id = MOR_drain_the_earth
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		x = 0
+		y = 1
+		relative_position_id = MOR_invest_in_irrigation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_invest_in_irrigation
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #+15% factories in a state
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { drainTheEarth = focus_modifier_bonus }
+			custom_effect_tooltip = MOR_drain_the_earth_tooltip
+			nurn_focus_effect = yes
+		}
+	}
+#################################POPULATION SUB-BRANCH
+	focus = { #Survey our Subjects
+		id = MOR_survey_our_subjects
+		icon = GFX_focus_generic_industry_1
+		x = 0
+		y = 1
+		relative_position_id = MOR_the_deserts_of_nurn
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_deserts_of_nurn
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER FOCUS_FILTER_LOGISTICS }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = cat_bureaucracy
+			}
+			nurn_focus_effect = yes
+		}
+	}
+	focus = { #Expand Encampments
+		id = MOR_expand_encampments
+		icon = GFX_focus_generic_industry_2
+		x = 0
+		y = 1
+		relative_position_id = MOR_survey_our_subjects
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_survey_our_subjects
+		}
+		available = { controls_nurn_state = yes }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #+2.5m pop & 2 slots in each nurn state
+			every_controlled_state = {
+				limit = { has_state_flag = nurn_state }
+				add_manpower = 2000000
+				set_state_category = city
+			}
+			nurn_focus_effect = yes
+		}
+	}
+	focus = { #Integrate Remaining Tribes
+		id = MOR_integrate_remaining_tribes
+		icon = GFX_focus_generic_industry_3
+		x = 0
+		y = 1
+		relative_position_id = MOR_expand_encampments
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_expand_encampments
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #+15% pop growth
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { integrateRemainingTribes = focus_modifier_bonus }
+			custom_effect_tooltip = MOR_integrate_remaining_tribes_tooltip
+			nurn_focus_effect = yes
+		}
+	}
+#################################BEASTS SUB-BRANCH
+	focus = { #Leather Curing
+		id = MOR_leather_curing
+		icon = GFX_goal_generic_cloth
+		x = 2
+		y = 1
+		relative_position_id = MOR_the_deserts_of_nurn
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_deserts_of_nurn
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = cat_synth_rubber
+			}
+			nurn_focus_effect = yes
+		}
+	}
+	focus = { #Train Beasts Around Orcs
+		id = MOR_train_beasts_around_orcs
+		icon = GFX_goal_generic_mounts
+		x = 0
+		y = 1
+		relative_position_id = MOR_leather_curing
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_leather_curing
+		}
+		available = { controls_nurn_state = yes }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #+4 mounts in each nurn state
+			every_controlled_state = {
+				limit = { has_state_flag = nurn_state }
+				add_resource = {
+					type = mounts
+					amount = 4
+				}
+			}
+			nurn_focus_effect = yes
+		}
+	}
+	focus = { #Meat for the trolls
+		id = MOR_meat_for_the_trolls
+		icon = GFX_goal_generic_monsters
+		x = 0
+		y = 1
+		relative_position_id = MOR_train_beasts_around_orcs
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_train_beasts_around_orcs
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+1 mosnters from refineries
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { meatForTheTrolls = 1 }
+			custom_effect_tooltip = MOR_meat_for_the_trolls_tooltip
+			hidden_effect = {
+				add_ideas = mor_hidden_troll_production
+			}
+			nurn_focus_effect = yes
+		}
+	}
+####################################################MILITARY BRANCH
+	focus = { #The fires of war
+		id = MOR_the_fires_of_war
+		icon = GFX_goal_fires_of_war
+		x = 7
+		y = 1
+		relative_position_id = MOR_the_eye_looks_inward
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_inward
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			#army_experience = 35
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = infantry_tech
+				name = MOR_the_fires_of_war
+			}
+			legions_focus_effect = yes
+			hordes_focus_effect = yes
+		}
+	}
+#########################################LEGIONS SUB-BRANCH
+	focus = { #Raise the Legions
+		id = MOR_raise_the_legions
+		icon = GFX_goal_orcish_legions
+		x = -3
+		y = 1
+		relative_position_id = MOR_the_fires_of_war
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_fires_of_war
+		}
+		available = { controls_gorgoroth_state = yes }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #2 grand battleplan bonuses
+			add_doctrine_cost_reduction = {
+				cost_reduction = @doctrineBoostBonus
+				uses = @techBoostUses
+				category = cat_grand_battle_plan
+			}
+			legions_focus_effect = yes
+		}
+	}
+#################################CAVALRY SUB-BRANCH
+	focus = { #Subdue the Mountain Wargs
+		id = MOR_subdue_the_mountain_wargs
+		icon = GFX_goal_generic_warg_focus
+		x = -2
+		y = 1
+		relative_position_id = MOR_raise_the_legions
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_raise_the_legions
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #2 tech boosts for cavalry
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = armor
+			}
+			legions_focus_effect = yes
+		}
+	}
+	focus = { #Breed Tougher Trolls
+		id = MOR_breed_tougher_trolls
+		icon = GFX_goal_generic_troll_focus
+		x = 0
+		y = 1
+		relative_position_id = MOR_subdue_the_mountain_wargs
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_subdue_the_mountain_wargs
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #400 trolls
+			add_equipment_to_stockpile = {
+				type = heavy_tank_chassis
+				amount = 400
+			}
+			legions_focus_effect = yes
+		}
+	}
+	focus = { #prioritize beast rations
+		id = MOR_prioritize_beast_rations
+		icon = GFX_goal_generic_army_tanks
+		x = 0
+		y = 1
+		relative_position_id = MOR_breed_tougher_trolls
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_breed_tougher_trolls
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+15% armor attack
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { prioritizeBeastRations = focus_modifier_bonus }
+			custom_effect_tooltip = MOR_prioritize_beast_rations_tooltip
+			legions_focus_effect = yes
+		}
+	}
+#################################ELITE SUB-BRANCH
+	focus = { #Select the exceptional
+		id = MOR_select_the_exceptional
+		icon = GFX_goal_generic_special_forces
+		x = 0
+		y = 1
+		relative_position_id = MOR_raise_the_legions
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_raise_the_legions
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #2 Special forces research boost
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = cat_special_forces
+			}
+			legions_focus_effect = yes
+		}
+	}
+	focus = { #Promote the meanest
+		id = MOR_promote_the_meanest
+		icon = GFX_goal_generic_secret_weapon
+		x = 0
+		y = 1
+		relative_position_id = MOR_select_the_exceptional
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_select_the_exceptional
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			if = { limit = { NOT = { has_dlc = "No Step Back" } }
+				custom_effect_tooltip = non_nazgul_plus_one_attack_tooltip
+				hidden_effect = {
+					every_unit_leader = {
+						limit = { NOT = { has_trait = nazgul } }
+						add_attack = 1
+					}
+				}
+			}
+			else = {
+				custom_effect_tooltip = MOR_promote_the_meanest_tooltip
+				show_ideas_tooltip = promote_the_meanest_spirit
+			}
+			legions_focus_effect = yes
+		}
+	}
+	focus = { #Rigid Command Structure
+		id = MOR_rigid_command_structure
+		icon = GFX_goal_support_fascism
+		x = 0
+		y = 1
+		relative_position_id = MOR_promote_the_meanest
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_promote_the_meanest
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+15% command power gain
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { rigidCommandStructure = focus_modifier_bonus }
+			custom_effect_tooltip = MOR_rigid_command_structure_tooltip
+			legions_focus_effect = yes
+		}
+	}
+#################################ARTILLERY SUB-BRANCH
+	focus = { #Specialists in killing
+		id = MOR_specialised_murder_tools
+		icon = GFX_goal_generic_army_artillery
+		x = 2
+		y = 1
+		relative_position_id = MOR_raise_the_legions
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_raise_the_legions
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = artillery
+			}
+			legions_focus_effect = yes
+		}
+	}
+	focus = { #Finest Orcish Artisanry
+		id = MOR_finest_orcish_artisanry
+		icon = GFX_goal_generic_army_artillery2
+		x = 0
+		y = 1
+		relative_position_id = MOR_specialised_murder_tools
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_specialised_murder_tools
+		}
+		available = { controls_gorgoroth_state = yes }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 200
+			}
+			legions_focus_effect = yes
+		}
+	}
+	focus = { #Standardized Weapons
+		id = MOR_standardized_weapons
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = MOR_finest_orcish_artisanry
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_finest_orcish_artisanry
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+15% infantry attack
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { standardizedWeapons = focus_modifier_bonus }
+			custom_effect_tooltip = MOR_standardized_weapons_tooltip
+			legions_focus_effect = yes
+		}
+	}
+#########################################HORDES SUB-BRANCH
+	focus = { #Raise the Hordes
+		id = MOR_raise_the_hordes
+		icon = GFX_goal_orcish_hordes
+		x = 3
+		y = 1
+		relative_position_id = MOR_the_fires_of_war
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_fires_of_war
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #2 grand battleplan bonuses
+			add_doctrine_cost_reduction = {
+				cost_reduction = @doctrineBoostBonus
+				uses = @techBoostUses
+				category = cat_mass_assault
+			}
+			hordes_focus_effect = yes
+		}
+	}
+#################################MASSIVE ARMIES SUB-BRANCH
+	focus = { #Prepare for massive armies
+		id = MOR_prepare_for_massive_armies
+		icon = GFX_goal_generic_army_motorized
+		x = -2
+		y = 1
+		relative_position_id = MOR_raise_the_hordes
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_raise_the_hordes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = support_tech
+			}
+			hordes_focus_effect = yes
+		}
+	}
+	focus = { #Logistics Lieutenants
+		id = MOR_logistics_lieutenants
+		icon = GFX_goal_generic_position_armies
+		x = 0
+		y = 1
+		relative_position_id = MOR_prepare_for_massive_armies
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_prepare_for_massive_armies
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+1 log skill for land commanders
+			if = { limit = { NOT = { has_dlc = "No Step Back" } }
+				custom_effect_tooltip = non_nazgul_plus_one_logistics_tooltip
+				hidden_effect = {
+					every_unit_leader = {
+						limit = {
+							NOT = { has_trait = nazgul }
+							is_army_leader = yes
+						}
+						add_logistics = 1
+					}
+				}
+			}
+			else = {
+				custom_effect_tooltip = MOR_logistics_lieutenants_tooltip
+				show_ideas_tooltip = logistics_lieutenants_spirit
+			}
+			hordes_focus_effect = yes
+		}
+	}
+	focus = { #Marching Seargents
+		id = MOR_marching_seargents
+		icon = GFX_focus_SOV_womens_fascist_movement
+		x = 0
+		y = 1
+		relative_position_id = MOR_logistics_lieutenants
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_logistics_lieutenants
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+100% army size for all unit leaders
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { marchingSeargents = 12 }
+			custom_effect_tooltip = MOR_marching_seargents_tooltip
+			hidden_effect = {
+				every_unit_leader = {
+					limit = { is_army_leader = yes }
+					add_unit_leader_trait = horde_commander
+				}
+			}
+			hordes_focus_effect = yes
+		}
+	}
+#################################MANPOWER SUB-BRANCH
+	focus = { #Bodies for the Grinder
+		id = MOR_bodies_for_the_grinder
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 0
+		y = 1
+		relative_position_id = MOR_raise_the_hordes
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_raise_the_hordes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = cat_training
+			}
+			hordes_focus_effect = yes
+		}
+	}
+	focus = { #Desertion Patrols
+		id = MOR_desertion_patrols
+		icon = GFX_goal_demand_sudetenland
+		x = 0
+		y = 1
+		relative_position_id = MOR_bodies_for_the_grinder
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_bodies_for_the_grinder
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #+250k manpower
+			add_manpower = 250000
+			hordes_focus_effect = yes
+		}
+	}
+	focus = { #Trample all living things
+		id = MOR_trample_all_living_things
+		icon = GFX_goal_generic_boot
+		x = 0
+		y = 1
+		relative_position_id = MOR_desertion_patrols
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_desertion_patrols
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #-0.4 combat width
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { trampleAllLivingThings = -0.4 }
+			custom_effect_tooltip = MOR_trample_all_living_things_tooltip
+			hidden_effect = {
+				set_technology = {
+					trample_all_living_things_tech = 1
+					popup = no
+				}
+			}
+			hordes_focus_effect = yes
+		}
+	}
+#################################SWORD SUB-BRANCH
+	focus = { #Test Sword Designs
+		id = MOR_test_sword_designs
+		icon = GFX_goal_generic_small_arms
+		x = 2
+		y = 1
+		relative_position_id = MOR_raise_the_hordes
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_raise_the_hordes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = infantry_weapons
+			}
+			hordes_focus_effect = yes
+		}
+	}
+	focus = { #As long as its sharp
+		id = MOR_as_long_as_its_sharp
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = MOR_test_sword_designs
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_test_sword_designs
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #2.5k infantry equipment
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 5000
+			}
+			hordes_focus_effect = yes
+		}
+	}
+	focus = { #Scavenge from the fallen
+		id = MOR_scavenge_from_the_fallen
+		icon = GFX_goal_generic_construct_supply_node
+		x = 0
+		y = 1
+		relative_position_id = MOR_as_long_as_its_sharp
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+		prerequisite = {
+			focus = MOR_as_long_as_its_sharp
+		}
+		search_filters = { FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #-15% attrition
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } } }
+				add_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			set_variable = { scavengeFromTheFallen = focus_modifier_bonus_negative }
+			custom_effect_tooltip = MOR_scavenge_from_the_fallen_tooltip
+			hordes_focus_effect = yes
+		}
+	}
+######################################################################NORTHERN BRANCH
+	focus = { #The Eye looks north
+		id = MOR_the_eye_looks_north
+		icon = GFX_goal_the_eye_looks_north
+		x = 0
+		y = -4
+		relative_position_id = MOR_the_eye_looks_inward
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Anduin, Misty Mountains, Gundabad, Dale, & Erebor get 'sauron demands submission'
+			every_country = {
+				limit = {
+					OR = {
+						tag = BER
+						tag = DAL
+						tag = ERE
+						tag = GDB
+						tag = MST
+					}
+				}
+				hidden_effect = {
+					country_event = { id = mordor.2 days = 1 }
+				}
+				custom_effect_tooltip = MOR_sauron_demands_submission_tooltip
+			}
+			add_named_threat = { 
+				threat = 5
+				name = MOR_demanded_northern_submission_tension_tooltip
+			}
+		}
+	}
+	focus = { #Subjugate the North
+		id = MOR_subjugate_the_north
+		icon = GFX_goal_generic_attack_dale
+		x = 0
+		y = 1
+		relative_position_id = MOR_the_eye_looks_north
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_north
+		}
+		available = { RUN = { is_subject_of = ROOT } OR = { DAL = { can_ROOT_get_wargoal_on_THIS = yes } ERE = { can_ROOT_get_wargoal_on_THIS = yes } } }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #RUN: attack bonus vs Dale & Erebor
+			RUN = {
+				add_ideas = {
+					generic_attack_dale
+					generic_attack_erebor
+				}
+			}
+		}
+	}
+#################################DOL-GULDUR SUB-BRANCH
+	focus = { #Rebuild Dol-guldur
+		id = MOR_rebuild_dol_guldur
+		icon = GFX_goal_dol_guldur
+		x = -2
+		y = 1
+		relative_position_id = MOR_the_eye_looks_north
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_north
+		}
+		available = { 93 = { controls_or_subject_of = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #+2 civs, 2 mils, 1m pop, & 100 pp for GLD
+			93 = { #Reaches of the Wood
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 4
+				add_manpower = 1000000
+			}
+			GLD = {
+				add_political_power = 100
+			}
+		}
+	}
+	focus = { #Cultivate Mirkwood's Spiders
+		id = MOR_cultivate_mirkwoods_spiders
+		icon = GFX_goal_generic_giant_spiders_focus
+		x = 1
+		y = 1
+		relative_position_id = MOR_rebuild_dol_guldur
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_rebuild_dol_guldur
+		}
+		available = { GLD = { is_subject_of = ROOT controls_mirkwood_state = yes } }
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #+1 inf, +2 monsters, +4 mounts every GLD forest state
+			GLD = {
+				every_controlled_state = {
+					limit = { has_state_flag = mirkwood_state }
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_resource = {
+						type = monsters
+						amount = 2
+					}
+					add_resource = {
+						type = mounts
+						amount = 4
+					}
+				}
+			}
+		}
+	}
+	focus = { #Strike the Elves
+		id = MOR_strike_the_elves
+		icon = GFX_goal_generic_anti_elves
+		x = -1
+		y = 1
+		relative_position_id = MOR_rebuild_dol_guldur
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_rebuild_dol_guldur
+		}
+		available = { OR = { country_exists = LOR country_exists = WOD } }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Reserve wargoals vs WOD & LOR GLD: attack bonus vs Lor & WOD
+			add_named_threat = { 
+				threat = 2
+				name = MOR_planning_aggression_tooltip
+			}
+			LOR = {
+				add_ideas = saurons_prize_spirit
+			}
+			WOD = {
+				add_ideas = saurons_prize_spirit
+			}
+			GLD = {
+				add_ideas = {
+					generic_attack_woodland_realm
+					generic_attack_lorien
+				}
+			}
+		}
+	}
+#################################MISTY MOUNTAINS SUB-BRANCH
+	focus = { #Call Forth the Mountain Hordes
+		id = MOR_call_forth_the_mountain_hordes
+		icon = GFX_goal_generic_befriend_misty_mountains
+		x = 2
+		y = 1
+		relative_position_id = MOR_the_eye_looks_north
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_north
+		}
+		available = { OR = { country_exists = MST country_exists = GDB } }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #+1 factory & 500k pop in every MST/GDB core state
+			every_country = {
+				limit = { OR = { tag = MST tag = GDB } }
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = saurons_friendship
+				}
+				every_controlled_state = {
+					limit = { is_core_of = PREV }
+					random_list = { #50% chance civ, 50% chance mil
+						1 = {
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+						}
+						1 = {
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+					add_manpower = 500000
+				}
+			}
+		}
+	}
+	focus = { #Blot the Western Slopes
+		id = MOR_blot_the_western_slopes
+		icon = GFX_goal_generic_attack_Arnor
+		x = 1
+		y = 1
+		relative_position_id = MOR_call_forth_the_mountain_hordes
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_call_forth_the_mountain_hordes
+		}
+		available = { OR = { GDB = { is_subject_of = ROOT } MST = { is_subject_of = ROOT } } }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Gundabad & Misty Mountains: attack vs arnor
+			every_country = {
+				limit = { OR = { tag = MST tag = GDB } }
+				add_ideas = {
+					generic_attack_arthedain
+					generic_attack_cardolan
+					generic_attack_rhudaur
+				}
+			}
+			add_named_threat = { 
+				threat = 3
+				name = MOR_planning_aggression_tooltip
+			}
+		}
+	}
+	focus = { #Blot the Eastern Slopes
+		id = MOR_blot_the_eastern_slopes
+		icon = GFX_goal_generic_attack_beornings
+		x = -1
+		y = 1
+		relative_position_id = MOR_call_forth_the_mountain_hordes
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_call_forth_the_mountain_hordes
+		}
+		available = { OR = { GDB = { is_subject_of = ROOT } MST = { is_subject_of = ROOT } } }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Gundabad & Misty Mountains: attack vs arnor
+			every_country = {
+				limit = { OR = { tag = MST tag = GDB } }
+				add_ideas = {
+					generic_attack_beornings
+					generic_attack_erebor
+					generic_attack_lorien
+				}
+			}
+			add_named_threat = { 
+				threat = 3
+				name = MOR_planning_aggression_tooltip
+			}
+		}
+	}
+######################################################################WESTERN BRANCH
+	focus = { #The Eye looks west
+		id = MOR_the_eye_looks_west
+		icon = GFX_goal_the_eye_looks_west
+		x = -21
+		y = 0
+		relative_position_id = MOR_the_eye_looks_inward
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = { OR = { NOT = { country_exists = DAG } DAG = { is_subject_of = ROOT } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Reoccupy Dagorland
+			hidden_effect = {
+				country_event = { id = mordor.1 }
+			}
+			custom_effect_tooltip = MOR_the_eye_looks_west_tooltip
+			add_named_threat = { 
+				threat = 5
+				name = MOR_dagorlad_tension_tooltip
+			}
+		}
+	}
+#################################ISENGARD SUB-BRANCH
+	focus = { #Sway the White Wizard
+		id = MOR_sway_the_white_wizard
+		icon = GFX_goal_saruman
+		x = -7
+		y = 1
+		relative_position_id = MOR_the_eye_looks_west
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_west
+		}
+		bypass = { OR = { has_war_with = ISN NOT = { country_exists = ISN } NOT = { ISN = { has_country_leader = { character = ISN_saruman } } } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Influence ISN
+			ISN = {
+				add_timed_idea = {
+					idea = melkorite_influence
+					days = 365
+				}
+				add_political_power = 50
+			}
+		}
+	}
+	focus = { #Exchange Wisdom
+		id = MOR_exchange_wisdom
+		icon = GFX_goal_generic_befriend_isengard
+		x = 1
+		y = 1
+		relative_position_id = MOR_sway_the_white_wizard
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_sway_the_white_wizard
+		}
+		available = { ISN = { has_country_leader = { character = ISN_saruman } } has_opinion = { target = ISN value > 0 } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ESPIONAGE }
+		completion_reward = { #Influence ISN
+			hidden_effect = {
+				ISN = {
+					country_event = { id = mordor.3 days = 1 }
+				}
+			}
+			custom_effect_tooltip = if_isengard_accepts_tooltip
+			effect_tooltip = {
+				if = { limit = { has_dlc = "La Resistance" }
+					add_ideas = isengardian_espionage_wisdom_lar
+				}
+				else = {
+					add_ideas = isengardian_espionage_wisdom
+				}
+				diplomatic_relation = {
+					country = ISN
+					relation = non_aggression_pact
+					active = yes
+				}
+				ISN = {
+					add_ideas = mordor_military_wisdom
+				}
+			}
+		}
+	}
+	focus = { #Punish the Treacherous Wizard
+		id = MOR_punish_the_treacherous_wizard
+		icon = GFX_goal_generic_attack_isengard
+		x = -1
+		y = 1
+		relative_position_id = MOR_sway_the_white_wizard
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war_with_major = yes
+				factor = 0
+			}
+		}
+		prerequisite = {
+			focus = MOR_sway_the_white_wizard
+		}
+		available = { has_opinion = { target = ISN value < 0 } }
+		bypass = { OR = { has_war_with = ISN NOT = { country_exists = ISN } NOT = { ISN = { has_country_leader = { character = ISN_saruman } } } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Wargoal on ISN
+			if = { limit = { has_non_aggression_pact_with = ISN }
+				diplomatic_relation = {
+					country = ISN
+					relation = non_aggression_pact
+					active = no
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ISN
+			}
+		}
+	}
+	focus = { #A more Trustworthy Lieutenant
+		id = MOR_a_more_trustworthy_lieutenant
+		icon = GFX_goal_the_mouth_of_sauron
+		x = 0
+		y = 1
+		relative_position_id = MOR_punish_the_treacherous_wizard
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_punish_the_treacherous_wizard
+		}
+		available = { ISN = { can_PREV_release_as_puppet = yes } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #Release buff ISN as puppet ruled by the mouth
+			release_puppet = ISN
+			210 = { #orthanc
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 10
+			}
+			hidden_effect = {
+				MOR_mouth_of_sauron = {
+					remove_advisor_role = {
+					  slot = political_advisor
+					}
+					remove_advisor_role = {
+					  slot = theorist
+					}
+					set_nationality = ISN
+				}
+			}
+			ISN = {
+				hidden_effect = {
+					if = { limit = { has_dynamic_modifier = { modifier = isengardian_heritage_modifier } }
+						remove_dynamic_modifier  = { modifier = isengardian_heritage_modifier }
+					}
+				}
+				if = { limit = { has_character = MOR_mouth_of_sauron }
+					MOR_mouth_of_sauron = {
+						add_country_leader_role = {
+							promote_leader = yes
+							country_leader = {
+								ideology = shadow_worship
+								expire = "3050.1.1.1"
+								traits = { chancellor military_theorist greedy_syncophant }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+#################################ROHAN SUB-BRANCH
+	focus = { #Raid the Herds and Studs of Rohan
+		id = MOR_raid_the_herds_and_studs_of_rohan
+		icon = GFX_goal_generic_mounts
+		x = -3
+		y = 1
+		relative_position_id = MOR_the_eye_looks_west
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_west
+		}
+		available = { can_raid_the_herds_and_studs_of_rohan = yes }
+		bypass = { 75 = { is_controlled_by_ROOT_or_ally = yes } 207 = { is_controlled_by_ROOT_or_ally = yes } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_RESOURCES }
+		completion_reward = { #Steal ROH's horses
+			if = { limit = { 75 = { is_controlled_by_ROOT_or_ally = no } }
+				75 = {
+					add_resource = {
+						type = mounts
+						amount = -8
+					}
+				}
+				random_controlled_state = {
+					limit = { is_core_of = ROOT impassable = no }
+					add_resource = {
+						type = mounts
+						amount = 8
+					}
+				}
+			}
+			if = { limit = { 207 = { is_controlled_by_ROOT_or_ally = no } }
+				207 = {
+					add_resource = {
+						type = mounts
+						amount = -8
+					}
+				}
+				random_controlled_state = {
+					limit = { is_core_of = ROOT impassable = no }
+					add_resource = {
+						type = mounts
+						amount = 8
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					original_tag = ROH
+				}
+				add_opinion_modifier = {
+					modifier = raided_us
+					target = ROOT
+				}
+				hidden_effect = {
+					country_event = { id = rohan.14 hours = 1 }
+				}
+			}
+			add_named_threat = {
+				threat = 1.5
+				name = raid_the_herds_and_studs_of_rohan_tension_tooltip
+			}
+		}
+	}
+	focus = { #Subjugate Calenardhon
+		id = MOR_subjugate_calenardhon
+		icon = GFX_goal_generic_attack_rohan
+		x = 0
+		y = 1
+		will_lead_to_war_with = ROH
+		will_lead_to_war_with = EOM
+		relative_position_id = MOR_raid_the_herds_and_studs_of_rohan
+		cost = 10
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				any_other_country = {
+					is_major = yes
+					OR = {
+						has_war_with = MOR
+						MOR = {
+							has_wargoal_against = PREV
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+		prerequisite = {
+			focus = MOR_raid_the_herds_and_studs_of_rohan
+		}
+		bypass = { any_country = { original_tag = ROH has_war_with = ROOT } }
+		available = { any_country = { original_tag = ROH can_ROOT_get_wargoal_on_THIS = yes } }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Wargoal vs ROH
+			random_country = {
+				limit = { original_tag = ROH }
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = PREV
+					}
+					add_ai_strategy = {
+						type = declare_war
+						id = PREV
+						value = 10000
+					}
+				}
+			}
+		}
+	}
+	focus = { #Form Ranks You Maggots
+		id = MOR_form_ranks_you_maggots
+		icon = GFX_goal_form_ranks_you_maggots
+		x = -2
+		y = 1
+		relative_position_id = MOR_subjugate_calenardhon
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_subjugate_calenardhon
+		}
+		available = { any_country = { original_tag = ROH has_war_with = ROOT } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Wargoal vs ROH
+			add_ideas = generic_defend_against_rohan
+		}
+	}
+	focus = { #Pikes in front archers behind
+		id = MOR_pikes_in_front_archers_behind
+		icon = GFX_goal_generic_army_artillery2
+		x = 0
+		y = 1
+		relative_position_id = MOR_subjugate_calenardhon
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_subjugate_calenardhon
+		}
+		available = { any_country = { original_tag = ROH has_war_with = ROOT } }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #Bows & pikes research bonus
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = cat_actual_artillery
+			}
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = cat_anti_tank
+			}
+		}
+	}
+#################################GONDOR SUB-BRANCH
+	focus = { #Probe Ithilien Garrisons
+		id = MOR_probe_ithilien_garrisons
+		icon = GFX_focus_generic_provoke_border_clashes
+		x = 0
+		y = 1
+		relative_position_id = MOR_the_eye_looks_west
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_west
+		}
+		available = { any_state = { custom_trigger_tooltip = { tooltip = is_ithilien_state_tooltip has_state_flag = ithilien_state } owner = { NOT = { has_war_with = ROOT } can_ROOT_get_wargoal_on_THIS = yes } } }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Border wars for Ithilien
+			custom_effect_tooltip = MOR_probe_ithilien_garrisons_tooltip
+		}
+	}
+	focus = { #End the Age of men
+		id = MOR_end_the_age_of_men
+		icon = GFX_goal_generic_attack_gondor
+		x = 2
+		y = 1
+		will_lead_to_war_with = GON
+		relative_position_id = MOR_the_eye_looks_west
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_west
+		}
+		bypass = { has_war_with = GON }
+		available = { GON = { can_ROOT_get_wargoal_on_THIS = yes } }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Wargoal vs GON & it's subjects
+			custom_effect_tooltip = wargoal_vs_all_GON_and_subjects_tooltip
+			hidden_effect = {
+				create_wargoal = {
+					type = annex_everything
+					target = GON
+				}
+				every_country = {
+					limit = { is_subject_of = GON }
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+			add_ai_strategy = {
+				type = declare_war
+				id = GON
+				value = 10000
+			}
+		}
+	}
+	focus = { #Cross the Anduin
+		id = MOR_cross_the_anduin
+		icon = GFX_goal_generic_crossing_anduin_west
+		x = 0
+		y = 1
+		relative_position_id = MOR_probe_ithilien_garrisons
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_probe_ithilien_garrisons
+			focus = MOR_end_the_age_of_men
+		}
+		available = { has_war_with = GON }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY }
+		completion_reward = { #marine & transport bonus, convoys
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = marine_tech
+			}
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = tp_tech
+			}
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 20
+			}
+		}
+	}
+	focus = { #Block the river with Bodies
+		id = MOR_block_the_river_with_bodies
+		icon = GFX_goal_orcish_hordes
+		x = -1
+		y = 1
+		relative_position_id = MOR_cross_the_anduin
+		cost = 10
+		ai_will_do = {
+			factor = 15
+			modifier = { ##Less likely if controls at least one crossing. Mouths of Anduin don't count
+				OR = {
+					AND = {
+						161 = { is_controlled_by_ROOT_or_ally = yes } #Doranorien
+						162 = { is_controlled_by_ROOT_or_ally = yes } #cair andros
+					}
+					163 = { is_controlled_by_ROOT_or_ally = yes } #West osgiliath
+				}
+				factor = 0.5
+			}
+			modifier = { ##Less likely if already controls the far bank
+				151 = { is_controlled_by_ROOT_or_ally = yes } #Lossarnach
+				152 = { is_controlled_by_ROOT_or_ally = yes } #Pelennor Fields
+				159 = { is_controlled_by_ROOT_or_ally = yes } #Anorien
+				factor = 0.2
+			}
+			modifier = { ##Will not do if the crossings are fully controlled
+				161 = { is_controlled_by_ROOT_or_ally = yes } #Doranorien
+				162 = { is_controlled_by_ROOT_or_ally = yes } #cair andros
+				163 = { is_controlled_by_ROOT_or_ally = yes } #West osgiliath
+				factor = 0
+			}
+		}
+		prerequisite = {
+			focus = MOR_cross_the_anduin
+		}
+		mutually_exclusive = {
+			focus = MOR_cover_the_river_with_boats
+		}
+		available = { has_war_with = GON }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+25% attack & breakthrough at the crossings for 365 days
+			161 = { #Doranorien
+				add_dynamic_modifier = { modifier = mor_savage_attack_state_modifier days = 365 }
+			}
+			162 = { #Cair Andros
+				add_dynamic_modifier = { modifier = mor_savage_attack_state_modifier days = 365 }
+			}
+			163 = { #West Osgiliath
+				add_dynamic_modifier = { modifier = mor_savage_attack_state_modifier days = 365 }
+			}
+			189 = { #Mouths of Anduin
+				add_dynamic_modifier = { modifier = mor_savage_attack_state_modifier days = 365 }
+			}
+		}
+	}
+	focus = { #Cover the river with Boats
+		id = MOR_cover_the_river_with_boats
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		x = 1
+		y = 1
+		relative_position_id = MOR_cross_the_anduin
+		cost = 10
+		ai_will_do = {
+			factor = 3
+			modifier = { ##Less likely if controls at least one crossing. Mouths of Anduin don't count
+				OR = {
+					AND = {
+						161 = { is_controlled_by_ROOT_or_ally = yes } #Doranorien
+						162 = { is_controlled_by_ROOT_or_ally = yes } #cair andros
+					}
+					163 = { is_controlled_by_ROOT_or_ally = yes } #West osgiliath
+				}
+				factor = 0.5
+			}
+			modifier = { ##Less likely if already controls the far bank
+				151 = { is_controlled_by_ROOT_or_ally = yes } #Lossarnach
+				152 = { is_controlled_by_ROOT_or_ally = yes } #Pelennor Fields
+				159 = { is_controlled_by_ROOT_or_ally = yes } #Anorien
+				factor = 0.2
+			}
+			modifier = { ##Will not do if the crossings are fully controlled
+				161 = { is_controlled_by_ROOT_or_ally = yes } #Doranorien
+				162 = { is_controlled_by_ROOT_or_ally = yes } #cair andros
+				163 = { is_controlled_by_ROOT_or_ally = yes } #West osgiliath
+				factor = 0
+			}
+		}
+		prerequisite = {
+			focus = MOR_cross_the_anduin
+		}
+		mutually_exclusive = {
+			focus = MOR_block_the_river_with_bodies
+		}
+		available = { has_war_with = GON controls_ithilien_state = yes }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+2 in each controlled ithilien state
+			every_controlled_state = {
+				limit = { has_state_flag = ithilien_state }
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			navy_experience = 10
+		}
+	}
+	focus = { #Bombard the City
+		id = MOR_bombard_the_city
+		icon = GFX_goal_generic_siege_artillery
+		x = 0
+		y = 1
+		relative_position_id = MOR_end_the_age_of_men
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_end_the_age_of_men
+		}
+		mutually_exclusive = {
+			focus = MOR_batter_down_the_gates
+		}
+		available = { has_war_with = GON }
+		bypass = { controls_province = 7184 }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #+2 bonuses for siege artillery
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = cat_siege_artillery
+			}
+		}
+	}
+	focus = { #Batter down the gates
+		id = MOR_batter_down_the_gates
+		icon = GFX_goal_mordor_grond
+		x = 2
+		y = 0
+		relative_position_id = MOR_bombard_the_city
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = MOR_end_the_age_of_men
+		}
+		mutually_exclusive = {
+			focus = MOR_bombard_the_city
+		}
+		available = { has_war_with = GON }
+		bypass = { controls_province = 7184 }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #+2 bonuses for engineers
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = engineers_tech
+			}
+		}
+	}
+	focus = { #Corrupt the White City
+		id = MOR_corrupt_the_white_city
+		icon = GFX_goal_minas_tirith
+		x = 1
+		y = 1
+		relative_position_id = MOR_bombard_the_city
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_bombard_the_city
+			focus = MOR_batter_down_the_gates
+		}
+		available = { controls_province = 7184 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #Rename minas tirith, no resistance in pelennor
+			set_province_name = {
+				id = 7184
+				name = "Minas Moth"
+			}
+			152 = { #Pelennor Feilds
+				add_resistance = -100
+				add_resistance_target = -100
+				set_compliance = 100
+			}
+		}
+	}
+	focus = { #Reunited in Shadow
+		id = MOR_reunited_in_shadow
+		icon = GFX_goal_reunited_kingdom
+		x = 0
+		y = 1
+		relative_position_id = MOR_corrupt_the_white_city
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = { #Less likely if mopping up some wars
+				has_war = yes
+				factor = 0.5
+			}
+			modifier = { #Won't do if at war with major
+				any_other_country = {
+					has_war_with = ROOT
+					is_major = yes
+				}
+				factor = 0
+			}
+		}
+		prerequisite = {
+			focus = MOR_corrupt_the_white_city
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Demand submission from Arnor, Dunland, & Enedwaith
+			every_country = {
+				limit = {
+					OR = {
+						tag = ART
+						tag = CAR
+						tag = DUN
+						tag = ERE
+						tag = RDR
+					}
+					can_ROOT_get_wargoal_on_THIS = yes
+				}
+				country_event = { id = mordor.2 days = 1 }
+			}
+		}
+	}
+	focus = { #Send forth all legions
+		id = MOR_send_forth_all_legions
+		icon = GFX_goal_send_forth_all_legions
+		x = 4
+		y = 0
+		relative_position_id = MOR_bombard_the_city
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_end_the_age_of_men
+		}
+		available = { has_war_with = GON }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #attack bonus vs gondor
+			add_ideas = generic_attack_gondor
+		}
+	}
+	focus = { #Do not stop until the city is taken
+		id = MOR_do_not_stop_until_the_city_is_taken
+		icon = GFX_goal_do_not_stop_until_the_city_is_taken
+		x = 0
+		y = 1
+		relative_position_id = MOR_send_forth_all_legions
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_send_forth_all_legions
+		}
+		available = { has_war_with = GON }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #-75% cost for force attack
+			set_country_flag = cheaper_force_attack
+			custom_effect_tooltip = MOR_do_not_stop_until_the_city_is_taken_tooltip
+		}
+	}
+#################################GREATER ENEDWAITH SUB-BRANCH
+	focus = { #Dispatch Agents to Greater Enedwaith
+		id = MOR_dispatch_agents_to_greater_enedwaith
+		icon = GFX_focus_SWI_embrace_rote_drei
+		x = -3
+		y = 0
+		relative_position_id = MOR_sway_the_white_wizard
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				any_country = {
+					is_greater_enedwaith_tag = yes
+					has_country_flag = melkorite_flag
+				}
+				factor = 1.5
+			}
+		}
+		prerequisite = { focus = MOR_the_eye_looks_west }
+		mutually_exclusive = { focus = MOR_send_black_riders_to_greater_enedwaith }
+		available = { any_other_country = { is_greater_enedwaith_tag = yes NOT = { has_war_with = ROOT } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #event allowing recruitment of melkorite advisor
+			every_country = {
+				limit = { is_greater_enedwaith_tag = yes NOT = { has_war_with = ROOT } }
+				country_event = { id = blood_oath.33 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				custom_effect_tooltip = MOR_send_agents_to_greater_enedwaith_tooltip
+			}
+		}
+	}
+	focus = { #Send black riders to greater enedwaith
+		id = MOR_send_black_riders_to_greater_enedwaith
+		icon = GFX_goal_nazgul
+		x = -2
+		y = 0
+		relative_position_id = MOR_dispatch_agents_to_greater_enedwaith
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				any_country = {
+					is_greater_enedwaith_tag = yes
+					has_country_flag = melkorite_flag
+				}
+				factor = 1.5
+			}
+		}
+		prerequisite = { focus = MOR_the_eye_looks_west }
+		mutually_exclusive = { focus = MOR_dispatch_agents_to_greater_enedwaith }
+		available = { any_other_country = { is_greater_enedwaith_tag = yes NOT = { has_war_with = ROOT } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #event demanding they increase melkorite support
+			every_country = {
+				limit = { is_greater_enedwaith_tag = yes NOT = { has_war_with = ROOT } }
+				country_event = { id = blood_oath.34 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = { add_ideas = melkorite_influence }
+			}
+		}
+	}
+	focus = { #integrate our enedwiathy allies
+		id = MOR_integrate_our_enedwaithy_allies
+		icon = GFX_goal_generic_befriend_Greater_Enedwaith
+		x = -1
+		y = 1
+		relative_position_id = MOR_dispatch_agents_to_greater_enedwaith
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				any_country = {
+					is_greater_enedwaith_tag = yes
+					has_country_flag = melkorite_flag
+				}
+				factor = 1.5
+			}
+		}
+		prerequisite = { focus = MOR_dispatch_agents_to_greater_enedwaith focus = MOR_send_black_riders_to_greater_enedwaith }
+		available = { any_other_country = { is_greater_enedwaith_tag = yes has_government = melkorite } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #event demanding they 
+			every_country = {
+				limit = { is_greater_enedwaith_tag = yes has_government = melkorite }
+				country_event = { id = blood_oath.35 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = {
+					if = {
+						limit = { has_dlc = "Death or Dishonor" }
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomous_state = autonomy_satellite
+							}
+						}
+					}
+					else_if = {
+						limit = { OR = { has_dlc = "Together for Victory" has_dlc = "Waking the Tiger" } }
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomous_state = autonomy_dominion
+							}
+						}
+					}
+					else = {
+						ROOT = {
+							puppet = PREV
+						}
+					}
+				}
+				custom_effect_tooltip = if_they_refuse_tooltip
+				effect_tooltip = {
+					ROOT = {
+						create_wargoal = {
+							type = puppet_wargoal_focus
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #punish tribal foolishness
+		id = MOR_punish_tribal_foolishness
+		icon = GFX_goal_generic_attack_Greater_Enedwaith
+		x = -1
+		y = 1
+		relative_position_id = MOR_send_black_riders_to_greater_enedwaith
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = MOR_dispatch_agents_to_greater_enedwaith }
+		available = { any_other_country = { is_greater_enedwaith_tag = yes has_country_flag = rejected_black_riders } }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #wargoal against every tag that rejected the black riders
+			custom_effect_tooltip = MOR_punish_tribal_foolishness_tooltip
+			every_country = {
+				limit = { is_greater_enedwaith_tag = yes has_country_flag = rejected_black_riders }
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = PREV
+					}
+				}
+			}
+		}
+	}
+######################################################################SOUTHERN BRANCH
+	focus = { #The Eye looks South
+		id = MOR_the_eye_looks_south
+		icon = GFX_goal_the_eye_looks_south
+		x = 0
+		y = 7
+		relative_position_id = MOR_the_eye_looks_inward
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Harad & Umbar get 'sauron demands submission'
+			every_country = {
+				limit = {
+					OR = {
+						tag = HAR
+						tag = UMB
+					}
+				}
+				hidden_effect = {
+					country_event = { id = mordor.2 days = 1 }
+				}
+				custom_effect_tooltip = MOR_sauron_demands_submission_tooltip
+			}
+			add_named_threat = { 
+				threat = 2
+				name = MOR_demanded_southern_submission_tension_tooltip
+			}
+		}
+	}
+#################################UMBAR SUB-BRANCH
+	focus = { #Expand the Corsair Fleet
+		id = MOR_expand_the_corsair_fleet
+		icon = GFX_goal_corsairs
+		x = 2
+		y = 1
+		relative_position_id = MOR_the_eye_looks_south
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_south
+		}
+		available = { UMB = { is_in_faction_with = ROOT } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_NAVY FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+2 docks in each UMB coastal state
+			UMB = {
+				every_owned_state = {
+					limit = {
+						is_core_of = UMB
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 2
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = saurons_friendship
+				}
+			}
+		}
+	}
+	focus = { #Coordinate Raiding Actions
+		id = MOR_coordinate_raiding_actions
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 1
+		y = 1
+		relative_position_id = MOR_expand_the_corsair_fleet
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_expand_the_corsair_fleet
+		}
+		available = { UMB = { is_in_faction_with = ROOT } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_NAVY_XP }
+		completion_reward = { #+25 navy XP, attack bonus vs GON
+			UMB = {
+				navy_experience = 25
+				add_ideas = generic_attack_gondor
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = saurons_friendship
+				}
+			}
+		}
+	}
+#################################HARAD SUB-BRANCH
+	focus = { #Aid in mumak training
+		id = MOR_aid_in_mumak_training
+		icon = GFX_goal_generic_mumakil_focus
+		x = -2
+		y = 1
+		relative_position_id = MOR_the_eye_looks_south
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_south
+		}
+		available = { HAR = { is_in_faction_with = ROOT } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_RESOURCES FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+1 civ & +3 monsters in each haradwaith state
+			199 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = monsters
+					amount = 3
+				}
+			}
+			200 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = monsters
+					amount = 3
+				}
+			}
+			201 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = monsters
+					amount = 3
+				}
+			}
+			HAR = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = saurons_friendship
+				}
+			}
+		}
+	}
+	focus = { #Import Mumakil
+		id = MOR_import_mumakil
+		icon = GFX_goal_generic_mumakil_focus
+		x = 0
+		y = 1
+		relative_position_id = MOR_aid_in_mumak_training
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_aid_in_mumak_training
+		}
+		available = { HAR = { is_in_faction_with = ROOT } controls_nurn_state = yes }
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #+2 monster in each nurn state, unlocks mumakil research
+			every_controlled_state = {
+				limit = { has_state_flag = nurn_state }
+				add_resource = {
+					type = monsters
+					amount = 2
+				}
+			}
+			add_ideas = mumakil_tamers_spirit
+		}
+	}
+	focus = { #Subsidize the Serpent Cavalry
+		id = MOR_subsidize_the_serpent_cavalry
+		icon = GFX_goal_generic_befriend_harad
+		x = 0
+		y = 1
+		relative_position_id = MOR_the_eye_looks_south
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_south
+		}
+		available = { HAR = { is_in_faction_with = ROOT } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #HAR: +4 mils, +2 cav research
+			HAR = {
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 2
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 2
+				}
+				add_tech_bonus = {
+					bonus = @techBoostBonus
+					uses = @techBoostUses
+					category = armor
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = saurons_friendship
+				}
+			}
+		}
+	}
+	focus = { #Expand the Serpent Fleet
+		id = MOR_expand_the_serpent_fleet
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = -1
+		y = 1
+		relative_position_id = MOR_expand_the_corsair_fleet
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_expand_the_corsair_fleet
+			focus = MOR_subsidize_the_serpent_cavalry
+		}
+		available = { HAR = { is_in_faction_with = ROOT } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_NAVY FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+2 docks in each HAR coastal state
+			HAR = {
+				every_owned_state = {
+					limit = {
+						is_core_of = PREV
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 2
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = saurons_friendship
+				}
+			}
+		}
+	}
+######################################################################EASTERN BRANCH
+	focus = { #The Eye looks east
+		id = MOR_the_eye_looks_east
+		icon = GFX_goal_the_eye_looks_east
+		x = 16
+		y = 0
+		relative_position_id = MOR_the_eye_looks_inward
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Rhun, Khand, & Dorwinion get 'sauron demands submission'
+			every_country = {
+				limit = {
+					OR = {
+						tag = DOR
+						tag = KND
+						tag = RUN
+					}
+				}
+				hidden_effect = {
+					country_event = { id = mordor.2 days = 1 }
+				}
+				custom_effect_tooltip = MOR_sauron_demands_submission_tooltip
+			}
+			add_named_threat = { 
+				threat = 3
+				name = MOR_demanded_eastern_submission_tension_tooltip
+			}
+		}
+	}
+	focus = { #Favor the Variags
+		id = MOR_favor_the_variags
+		icon = GFX_goal_generic_befriend_khand
+		x = -2
+		y = 1
+		relative_position_id = MOR_the_eye_looks_east
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_east
+		}
+		available = { KND = { is_in_faction_with = ROOT } }
+		mutually_exclusive = {
+			focus = MOR_favor_the_wainriders
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #+1 armor tech, KND: +5k weapons, +100 pp
+			upgrade_inf_armor_tech = yes
+			KND = {
+				add_political_power = 100
+				upgrade_inf_armor_tech = yes
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = saurons_friendship
+				}
+			}
+		}
+	}
+	focus = { #Favor the Wainriders
+		id = MOR_favor_the_wainriders
+		icon = GFX_goal_generic_befriend_rhun
+		x = 2
+		y = 1
+		relative_position_id = MOR_the_eye_looks_east
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_east
+		}
+		available = { KND = { is_in_faction_with = ROOT } }
+		mutually_exclusive = {
+			focus = MOR_favor_the_variags
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #RUN: +1 chariot tech, +100 pp MOR: +500 RUN chariots
+			RUN = {
+				add_political_power = 100
+				upgrade_mot_tech = yes
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = saurons_friendship
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = mechanized_equipment
+				amount = 500
+				producer = RUN
+			}
+		}
+	}
+	@connectionLevel = 2
+	focus = { #Connections to the east
+		id = MOR_connections_to_the_east
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -1
+		y = 2
+		relative_position_id = MOR_the_eye_looks_east
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_east
+		}
+		available = { OR = { DOR = { is_in_faction_with = ROOT } KND = { is_in_faction_with = ROOT } RUN = { is_in_faction_with = ROOT } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #DOR, KND, RUN: +1 infra every state, +lvl 2 railway to mordor
+			every_country = {
+				limit = {
+					OR = { tag = DOR tag = RUN tag = KND }
+					is_in_faction_with = ROOT
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = saurons_friendship
+				}
+				every_owned_state = {
+					limit = {
+						is_controlled_by = PREV
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = { limit = { KND = { is_in_faction_with = ROOT } }
+				build_railway = {
+				  level = @connectionLevel
+				  build_only_on_allied = yes
+				  start_province = 2051
+				  target_province = 5156
+				}
+			}
+			if = { limit = { RUN = { is_in_faction_with = ROOT } }
+				build_railway = {
+				  level = @connectionLevel
+				  build_only_on_allied = yes
+				  start_province = 2051
+				  target_province = 4688
+				}
+			}
+			if = { limit = { DOR = { is_in_faction_with = ROOT } }
+				build_railway = {
+				  level = @connectionLevel
+				  build_only_on_allied = yes
+				  start_province = 2051
+				  target_province = 810
+				}
+			}
+		}
+	}
+	focus = { #United in Hatred
+		id = MOR_united_in_hatred
+		icon = GFX_goal_generic_forceful_treaty
+		x = 1
+		y = 2
+		relative_position_id = MOR_the_eye_looks_east
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_the_eye_looks_east
+		}
+		available = { OR = { DOR = { is_subject_of = ROOT } KND = { is_subject_of = ROOT } RUN = { is_subject_of = ROOT } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_POLITICAL }
+		completion_reward = { #DOR, KND, RUN: -1k autonomy if autonomy enabled, +20 ws, +20 stab, +100 pp otherwise
+			every_country = {
+				limit = {
+					OR = { tag = DOR tag = RUN tag = KND }
+					is_subject_of = ROOT
+				}
+				if = { limit = { OR = { has_dlc = "Waking the Tiger" has_dlc = "Together for Victory" has_dlc = "Death or Dishonor" } }
+					add_autonomy_score = {
+						value = -1000
+						localization = united_in_hatred_autonomy_tooltip
+					}
+				}
+				else = {
+					add_war_support = 0.2
+					add_stability = 0.2
+					ROOT = { add_political_power = 100 }
+				}
+			}
+		}
+	}
+	focus = { #Mobilize the far east
+		id = MOR_mobilize_the_far_east
+		icon = GFX_focus_SOV_mobilization_plan
+		x = 0
+		y = 3
+		relative_position_id = MOR_the_eye_looks_east
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = MOR_united_in_hatred
+			focus = MOR_connections_to_the_east
+		}
+		available = { OR = { DOR = { is_subject_of = ROOT } KND = { is_subject_of = ROOT } RUN = { is_subject_of = ROOT } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
+		completion_reward = { #Rhunwaith: +2 civs, +2 mils, +1m pop
+			every_state = {
+				limit = {
+					OR = { state = 115 state = 130 state = 132 state = 184 }
+					is_controlled_by_ROOT_or_ally = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 4
+				add_manpower = 1000000
+			}
+		}
+	}
+}

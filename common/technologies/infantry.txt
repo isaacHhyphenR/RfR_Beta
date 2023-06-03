@@ -1341,10 +1341,520 @@ technologies = {
 			factor = 0.7
 		}
 	}
+###########################################################
+				#SPEARS
+###########################################################
+	spear_tech_0 = {
 
+		# enable_subunits = {
+			# anti_tank_brigade
+		# }
+		enable_equipments = {
+			anti_tank_equipment_0
+		}
+		enable_equipment_modules = {
+			tank_high_velocity_cannon
+			tank_heavy_cannon
+		}
+		on_research_complete_limit = {
+			NOT = {	has_template_containing_unit = anti_tank_brigade }
+		}
+		on_research_complete = {
+			division_template = {
+				name = "Pike Template 1"
+				regiments = {
+					anti_tank_brigade = { x = 0 y = 0 }
+					anti_tank_brigade = { x = 0 y = 1 }
+					anti_tank_brigade = { x = 1 y = 0 }
+					anti_tank_brigade = { x = 1 y = 1 }
+				}
+			}
+		}
+		path = {
+			leads_to_tech = spear_tech_1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+
+		start_year = 3000
+
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = -1 }
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 100
+				original_tag = ISN
+			}
+
+			modifier = {
+				factor = 5
+				date > "3017.1.1"
+			}
+
+			modifier = {
+				factor = 5
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 10
+				any_enemy_country = {
+					ROOT = {
+						estimated_intel_max_armor = {
+							tag = PREV
+							value > 30
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { original_tag = ROH }
+			}
+			modifier = {
+				factor = 2
+				OR = { original_tag = ISN original_tag = DUN }
+			}
+		}
+
+		categories = {
+			infantry_tech
+			cat_anti_tank
+		}
+	}
+	spear_tech_1 = {
+
+		enable_equipments = {
+			anti_tank_equipment_1
+		}
+		enable_equipment_modules = {
+			tank_high_velocity_cannon
+			tank_heavy_cannon
+		}
+		#####AI isengard gets a free division template becuase they're really stupid otherwise
+		on_research_complete_limit = {
+			original_tag = ISN
+			is_ai = yes
+			NOT = {	has_template_containing_unit = anti_tank_brigade }
+		}
+		on_research_complete = {
+			division_template = {
+				name = "Pike Legion"
+				regiments = {
+					anti_tank_brigade = { x = 0 y = 0 }
+					anti_tank_brigade = { x = 0 y = 1 }
+					anti_tank_brigade = { x = 0 y = 2 }
+					anti_tank_brigade = { x = 1 y = 0 }
+					anti_tank_brigade = { x = 1 y = 2 }
+					anti_tank_brigade = { x = 1 y = 1 }
+					anti_tank_brigade = { x = 2 y = 0 }
+					anti_tank_brigade = { x = 2 y = 1 }
+				}
+			}
+		}
+		path = {
+			leads_to_tech = spear_upgrade_1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+
+		start_year = 3015
+
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @3015 }
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 100
+				original_tag = ISN
+			}
+
+			modifier = {
+				factor = 5
+				date > "3017.1.1"
+			}
+
+			modifier = {
+				factor = 5
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 10
+				any_enemy_country = {
+					ROOT = {
+						estimated_intel_max_armor = {
+							tag = PREV
+							value > 30
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { original_tag = ROH }
+			}
+			modifier = {
+				factor = 2
+				OR = { original_tag = ISN original_tag = DUN }
+			}
+		}
+
+		categories = {
+			infantry_tech
+			cat_anti_tank
+		}
+	}
+
+	spear_upgrade_1 = {
+
+		category_anti_tank = {
+			hard_attack = 0.1
+			ap_attack = 0.2
+		}
+		category_tank_destroyer = {
+			hard_attack = 0.15
+			ap_attack = 0.2
+		}
+
+		enable_equipment_modules = {
+			tank_medium_cannon
+			squeezebore_adaptor
+		}
+		path = {
+			leads_to_tech = spear_tech_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+
+		start_year = 3018
+
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @3018 }
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				any_enemy_country = {
+					ROOT = {
+						estimated_intel_max_armor = {
+							tag = PREV
+							value > 30
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				date > "3018.1.6"
+			}
+
+			modifier = {
+				factor = 5
+				date > "3019.1.1"
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { original_tag = ROH }
+			}
+			modifier = {
+				factor = 2
+				OR = { original_tag = ISN original_tag = DUN }
+			}
+		}
+
+		categories = {
+			infantry_tech
+			cat_anti_tank
+		}
+	}
+
+	spear_tech_2 = {
+
+		mot_anti_tank_brigade = {
+			hard_attack = 0.2
+			ap_attack = 0.2
+		}
+
+		enable_equipments = {
+			anti_tank_equipment_2
+		}
+		enable_equipment_modules = {
+			tank_heavy_cannon_2
+		}
+		path = {
+			leads_to_tech = spear_upgrade_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+
+		start_year = 3019
+
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @3019 }
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				date > "3018.1.9"
+			}
+			modifier = {
+				factor = 2
+				date > "3019.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "3019.1.6"
+			}
+			modifier = {
+				factor = 10
+				any_enemy_country = {
+					ROOT = {
+						estimated_intel_max_armor = {
+							tag = PREV
+							value > 32
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { original_tag = ROH }
+			}
+			modifier = {
+				factor = 2
+				OR = { original_tag = ISN original_tag = DUN }
+			}
+		}
+
+		categories = {
+			infantry_tech
+			cat_anti_tank
+		}
+	}
+
+	spear_upgrade_2 = {
+		enable_equipment_modules = {
+			tank_medium_cannon_2
+		}
+		category_all_anti_tank = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+
+		path = {
+			leads_to_tech = spear_upgrade_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+
+		start_year = 3020
+
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @3020 }
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				date > "3020.1.6"
+			}
+			modifier = {
+				factor = 2
+				date > "3021.1.1"
+			}
+
+			modifier = {
+				factor = 5
+				date > "3022.1.1"
+			}
+			modifier = {
+				factor = 10
+				any_enemy_country = {
+					ROOT = {
+						estimated_intel_max_armor = {
+							tag = PREV
+							value > 32
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { original_tag = ROH }
+			}
+			modifier = {
+				factor = 2
+				OR = { original_tag = ISN original_tag = DUN }
+			}
+		}
+
+		categories = {
+			infantry_tech
+			cat_anti_tank
+		}
+	}
+
+	spear_upgrade_3 = {
+		enable_equipment_modules = {
+			tank_high_velocity_cannon_2
+		}
+		category_anti_tank = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+		category_tank_destroyer = {
+			hard_attack = 0.05
+			ap_attack = 0.1
+		}
+
+		path = {
+			leads_to_tech = spear_tech_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+
+		start_year = 3021
+
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @3021 }
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				date > "3021.1.6"
+			}
+			modifier = {
+				factor = 5
+				date > "3022.1.1"
+			}
+			modifier = {
+				factor = 10
+				any_enemy_country = {
+					ROOT = {
+						estimated_intel_max_armor = {
+							tag = PREV
+							value > 35
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { original_tag = ROH }
+			}
+			modifier = {
+				factor = 2
+				OR = { original_tag = ISN original_tag = DUN }
+			}
+		}
+
+		categories = {
+			infantry_tech
+			cat_anti_tank
+		}
+	}
+
+	spear_tech_3 = {
+
+		enable_equipments = {
+			anti_tank_equipment_3
+		}
+		enable_equipment_modules = {
+			tank_high_velocity_cannon_3
+			tank_heavy_cannon_3
+			auto_loader
+		}
+		research_cost = 1
+
+		start_year = 3022
+
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @3022 }
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				date > "3021.1.9"
+			}
+			modifier = {
+				factor = 2
+				date > "3022.1.1"
+			}
+
+			modifier = {
+				factor = 5
+				date > "3022.1.6"
+			}
+			modifier = {
+				factor = 10
+				any_enemy_country = {
+					ROOT = {
+						estimated_intel_max_armor = {
+							tag = PREV
+							value > 35
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { original_tag = ROH }
+			}
+			modifier = {
+				factor = 2
+				OR = { original_tag = ISN original_tag = DUN }
+			}
+		}
+
+		categories = {
+			infantry_tech
+			cat_anti_tank
+		}
+	}
 ###########################################################
 				#MOT
 ###########################################################
+	@motMechX = 1
 	motorised_infantry = {
 
 		enable_subunits = {
@@ -1385,7 +1895,7 @@ technologies = {
 		start_year = 3015
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = @3015 }
+			position = { x = @motMechX y = @3015 }
 		}
 		
 		folder = {
@@ -1402,209 +1912,6 @@ technologies = {
 			infantry_tech
 		}
 		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "3016.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3017.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3018.1.1"
-			}
-			modifier = {
-				is_major = no
-				factor = 0.5
-			}
-		}
-	}
-	motorized_rocket_unit = {
-
-		enable_subunits = {
-			motorized_rocket_brigade
-		}
-		enable_equipments = {
-			motorized_rocket_equipment_1
-		}
-	
-		research_cost = 1.5
-		start_year = 3018
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			mot_rockets
-		}
-	}
-	
-	armored_car1 = {
-
-		enable_subunits = {
-			armored_car
-		}
-
-		enable_equipments = {
-			gw_armored_car_equipment
-		}
-		allow_branch = { has_dlc = "La Resistance" }
-		path = {
-			leads_to_tech = armored_car2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
-		start_year = 3000
-		folder = {
-			name = infantry_folder
-			position = { x = 4 y = @3015 }
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-		}
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "3016.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3017.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3018.1.1"
-			}
-			modifier = {
-				is_major = no
-				factor = 0.5
-			}
-		}
-	}
-
-	armored_car2 = {
-
-		enable_equipments = {
-			armored_car_equipment_1
-		}
-		
-		path = {
-			leads_to_tech = armored_car3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
-		start_year = 3019
-		folder = {
-			name = infantry_folder
-			position = { x = 4 y = @3019 }
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-		}
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "3016.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3017.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3018.1.1"
-			}
-			modifier = {
-				is_major = no
-				factor = 0.5
-			}
-		}
-	}
-
-	armored_car3 = {
-
-		enable_equipments = {
-			armored_car_equipment_2
-		}
-
-		research_cost = 2
-		start_year = 3021
-		folder = {
-			name = infantry_folder
-			position = { x = 4 y = @3021 }
-		}
-		
-		categories = {
-			motorized_equipment
-			armor
-		}
-		
-		sub_technologies = {
-			armored_car_at_upgrade
-		}
-
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "3016.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3017.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3018.1.1"
-			}
-			modifier = {
-				is_major = no
-				factor = 0.5
-			}
-		}
-	}
-
-	armored_car_at_upgrade = {
-
-		enable_equipments = {
-			armored_car_at_equipment
-		}
-
-		research_cost = 1
-		start_year = 3021
-		sub_tech_index = 1
-		
-		categories = {
-			motorized_equipment
-			armor
-		}
-
 		ai_will_do = {
 			factor = 1
 			
@@ -1666,78 +1973,13 @@ technologies = {
 		start_year = 3019
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = @3019 }
+			position = { x = @motMechX y = @3019 }
 		}
 		
 		categories = {
 			motorized_equipment
 			infantry_tech
 			cat_mechanized_equipment
-		}
-		
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	amphibious_mechanized_infantry = {
-
-		enable_equipments = {
-			amphibious_mechanized_equipment_1
-		}
-
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}
-
-		enable_subunits = {
-			amphibious_mechanized
-		}
-
-		path = {
-			leads_to_tech = amphibious_mechanized_infantry_2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
-		start_year = 3020
-		folder = {
-			name = infantry_folder
-			position = { x = 2 y = @3020 }
-		}
-		
-		categories = {
-			motorized_equipment
-			infantry_tech
-			cat_mechanized_equipment
-			tp_tech
-		}
-		
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	amphibious_mechanized_infantry_2 = {
-
-		enable_equipments = {
-			amphibious_mechanized_equipment_2
-		}
-
-		
-
-		research_cost = 2
-		start_year = 3022
-		folder = {
-			name = infantry_folder
-			position = { x = 2 y = @3022 }
-		}
-		
-		categories = {
-			motorized_equipment
-			infantry_tech
-			cat_mechanized_equipment
-			tp_tech
 		}
 		
 		ai_will_do = {
@@ -1760,7 +2002,7 @@ technologies = {
 		start_year = 3021
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = @3021 }
+			position = { x = @motMechX y = @3021 }
 		}
 		
 		categories = {
@@ -1789,7 +2031,7 @@ technologies = {
 		start_year = 3023
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = @3023 }
+			position = { x = @motMechX y = @3023 }
 		}
 		
 		categories = {
@@ -1800,6 +2042,68 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+		}
+	}
+	@amtracX = 3
+	amphibious_mechanized_infantry = {
+
+		enable_equipments = {
+			amphibious_mechanized_equipment_1
+		}
+
+		allow_branch = {
+			has_dlc = "Man the Guns"
+		}
+
+		enable_subunits = {
+			amphibious_mechanized
+		}
+
+		path = {
+			leads_to_tech = amphibious_mechanized_infantry_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3020
+		folder = {
+			name = infantry_folder
+			position = { x = @amtracX y = @3020 }
+		}
+		
+		categories = {
+			motorized_equipment
+			infantry_tech
+			cat_mechanized_equipment
+			tp_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	amphibious_mechanized_infantry_2 = {
+
+		enable_equipments = {
+			amphibious_mechanized_equipment_2
+		}
+		research_cost = 2
+		start_year = 3022
+		folder = {
+			name = infantry_folder
+			position = { x = @amtracX y = @3022 }
+		}
+		
+		categories = {
+			motorized_equipment
+			infantry_tech
+			cat_mechanized_equipment
+			tp_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
 		}
 	}
 	

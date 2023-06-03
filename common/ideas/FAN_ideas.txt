@@ -1,0 +1,39 @@
+ideas = {
+    country = {
+        FAN_start_the_defense_idea = {
+            allowed = {
+                always = no
+            }
+            removal_cost = -1
+            picture = prc_permit_opium_trade
+            modifier = {
+                army_defence_factor = 0.2
+            }
+        }
+        FAN_the_defence_of_the_forest_idea = {
+            allowed = {
+                always = no
+            }
+            removal_cost = -1
+            picture = prc_permit_opium_trade
+            # modifier = {
+                # equipment_bonus = {
+                    # HOS = {
+                        # instant = yes 
+                        # trickleback = 0.5
+                    # }
+                # }
+            # }
+        }
+        FAN_Ent_war_council_idea = {
+            allowed = {
+                always = no
+            }
+            removal_cost = -1
+            picture = prc_permit_opium_trade
+            modifier = {
+                army_attack_factor = 0.2
+            }
+        }
+    }
+}

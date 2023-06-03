@@ -1,0 +1,3218 @@
+#################REGIONAL STARTING TECH
+andrast_tribes_3015_tech = {
+	set_technology = {
+		hidden_fort_tech = 1
+		infantry_weapons = 1
+		gw_artillery = 1
+		tech_support = 1
+		spear_tech_0 = 1
+		andrast_food_from_dockyards = 1
+	}
+	################### ARMOR TECH
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			gwtank_chassis = 1
+		}
+		else = {
+			set_technology = {
+				gwtank = 1
+			}
+		}
+	}
+	################### NAVAL TECH
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			basic_naval_mines = 1
+			early_ship_hull_light = 1
+			basic_ship_hull_light = 1
+			early_ship_hull_cruiser = 1
+			basic_battery = 1
+			mtg_transport = 1
+		}
+		### Variants ###
+		create_equipment_variant = {	###MINELAYER
+			name = "Trapper"
+			type = ship_hull_light_1
+			name_group = ENE_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_fire_control_system_slot = empty
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = empty
+				mid_1_custom_slot = ship_mine_layer_1
+				rear_1_custom_slot = ship_mine_layer_1
+			}
+		}
+		create_equipment_variant = {	###MINESWEEPER
+			name = "Fisher"
+			type = ship_hull_light_1
+			name_group = ENE_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = empty
+				mid_1_custom_slot = ship_mine_sweeper_1
+				rear_1_custom_slot = ship_mine_sweeper_1
+			}
+		}
+	}
+	else = {
+		set_technology = {
+			early_destroyer = 1
+			basic_destroyer = 1
+			early_light_cruiser = 1
+			transport = 1
+		}
+	}
+}
+
+druwaith_tribes_3015_tech = {
+	set_technology = {
+		hidden_fort_tech = 1
+		infantry_weapons = 1
+		gw_artillery = 1
+		tech_support = 1
+		spear_tech_0 = 1
+		basic_train = 1
+		fuel_silos = 1
+		motorised_infantry = 1
+	}
+	################### ARMOR TECH
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			gwtank_chassis = 1
+		}
+		else = {
+			set_technology = {
+				gwtank = 1
+			}
+		}
+	}
+	################### NAVAL TECH
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			mtg_transport = 1
+			early_ship_hull_light = 1
+			basic_battery = 1
+		}
+		### Variants ###
+		create_equipment_variant = {	###DD 1
+			name = "Basic Isen Patroller"
+			type = ship_hull_light_1
+			name_group = ENE_DD_HISTORICAL
+			parent_version = 0
+			obsolete = yes
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_fire_control_system_slot = empty
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = empty
+			}
+		}
+		else = {
+			set_technology = {
+				transport = 1
+				early_destroyer = 1
+			}
+		}
+	}
+}
+
+dunland_tribes_3015_tech = {
+	set_technology = {
+		hidden_fort_tech = 1
+		infantry_weapons = 1
+		gw_artillery = 1
+		tech_support = 1
+		spear_tech_0 = 1
+		dunland_hills_boost = 1
+		basic_train = 1
+	}
+	################### ARMOR TECH
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			gwtank_chassis = 1
+		}
+		else = {
+			set_technology = {
+				gwtank = 1
+			}
+		}
+	}
+	################### NAVAL TECH
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			mtg_transport = 1
+		}
+		else = {
+			set_technology = {
+				transport = 1
+			}
+		}
+	}
+}
+
+eregion_tribes_3015_tech = {
+	set_technology = {
+		hidden_fort_tech = 1
+		infantry_weapons = 1
+		gw_artillery = 1
+		tech_support = 1
+		spear_tech_0 = 1
+	}
+	################### ARMOR TECH
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			gwtank_chassis = 1
+		}
+		else = {
+			set_technology = {
+				gwtank = 1
+			}
+		}
+	}
+	################### NAVAL TECH
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			mtg_transport = 1
+		}
+		else = {
+			set_technology = {
+				transport = 1
+			}
+		}
+	}
+}
+
+enedwaith_tribes_3015_tech = {
+	set_technology = {
+		hidden_fort_tech = 1
+		infantry_weapons = 1
+		gw_artillery = 1
+		tech_support = 1
+		spear_tech_0 = 1
+		motorised_infantry = 1
+		basic_train = 1
+		electronic_mechanical_engineering = 1 ##need it for ships
+	}
+	################### ARMOR TECH
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			gwtank_chassis = 1
+		}
+		else = {
+			set_technology = {
+				gwtank = 1
+			}
+		}
+	}
+	################### ARMOR VARIANT
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		set_technology = {
+			basic_light_tank_chassis = 1
+		}
+		create_equipment_variant = {
+			name = "Light Riders"
+			type = light_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_one_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+			upgrades = {
+			}
+		}
+		else = {
+			set_technology = {
+				basic_light_tank = 1
+			}
+		}
+	}
+	################### NAVAL TECH
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			early_ship_hull_light = 1
+			basic_ship_hull_light = 1
+			early_ship_hull_cruiser = 1
+			basic_secondary_battery = 1
+			basic_battery = 1
+			basic_light_battery = 1
+			basic_torpedo = 1
+			smoke_generator = 1
+			mtg_transport = 1
+		}
+		### Variants ###
+		create_equipment_variant = {	###DD 1
+			name = "Basic Gwathlo Patroller"
+			type = ship_hull_light_1
+			name_group = ENE_DD_HISTORICAL
+			parent_version = 0
+			obsolete = yes
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_fire_control_system_slot = empty
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = empty
+			}
+		}
+		create_equipment_variant = {	###DD 2
+			name = "Improved Gwathlo Patroller"
+			type = ship_hull_light_2
+			name_group = ENE_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_2
+				fixed_ship_fire_control_system_slot = empty
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = ship_light_battery_2
+			}
+		}
+		create_equipment_variant = {	###LC 1
+			name = "Basic Enedwaith Flagship"
+			type = ship_hull_cruiser_1
+			name_group = ENE_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				mid_1_custom_slot = ship_light_battery_1
+				mid_2_custom_slot = ship_light_battery_1
+				rear_1_custom_slot = ship_light_medium_battery_1
+			}
+		}
+		else = {
+			set_technology = {
+				early_destroyer = 1
+				basic_destroyer = 1
+				early_light_cruiser = 1
+				early_heavy_cruiser = 1
+				transport = 1
+			}
+		}
+	}
+}
+
+saralain_tribes_3015_tech = {
+	enedwaith_tribes_3015_tech = yes
+}
+
+white_mountains_tribes_3015_tech = {
+	set_technology = {
+		hidden_fort_tech = 1
+		infantry_weapons = 1
+		gw_artillery = 1
+		tech_support = 1
+		spear_tech_0 = 1
+		tech_mountaineers = 1
+		white_mountains_mountain_boost = 1
+	}
+	################### ARMOR TECH
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			gwtank_chassis = 1
+		}
+		else = {
+			set_technology = {
+				gwtank = 1
+			}
+		}
+	}
+	################### NAVAL TECH
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			mtg_transport = 1
+		}
+		else = {
+			set_technology = {
+				transport = 1
+			}
+		}
+	}
+}
+
+
+#######################################TRIBAL SETUP
+add_to_enedwaith_tribal_array = { #adds the tag to the array of enedwaith tribes, so that it can have trust with other tribes
+	add_to_array = {
+		global.greater_enedwaith_tribes = THIS
+	}
+	set_variable = { tribal_array_position = global.numEnedwaithTribes }
+	add_to_variable = { global.numEnedwaithTribes = 1 } #to dynamically keep track of number
+}
+
+setup_enedwaith_trust_array = { #creates an array (initialized to 0) of every greater enedwaith tag's trust towards this tag
+	for_loop_effect = {
+		start = 0
+		end = var:global.numEnedwaithTribes
+		add_to_array = {
+			enedwaith_tag_trust_towards_this = 0
+		}
+	}
+}
+
+setup_enedwaith_states = {
+	every_country = {
+		limit = { is_greater_enedwaith_tag = yes }
+		every_core_state = {
+			set_state_flag = greater_enedwaith_state
+			if = { limit = { PREV = { is_andrast_tag = yes } }
+				add_dynamic_modifier = { modifier = Andrast_state_modifier }
+			}
+			if = { limit = { PREV = { is_Druwaith_Iaur_tag = yes } }
+				add_dynamic_modifier = { modifier = Druwaith_Iaur_state_modifier }
+			}
+			if = { limit = { PREV = { is_Dunland_tag = yes } }
+				add_dynamic_modifier = { modifier = Dunland_state_modifier }
+			}
+			if = { limit = { PREV = { is_Enedwaith_tag = yes } }
+				add_dynamic_modifier = { modifier = Enedwaith_state_modifier }
+			}
+			if = { limit = { PREV = { is_Eregion_tag = yes } }
+				add_dynamic_modifier = { modifier = Eregion_state_modifier }
+			}
+			if = { limit = { PREV = { is_Saralain_tag = yes } }
+				add_dynamic_modifier = { modifier = Saralain_state_modifier }
+			}
+			if = { limit = { PREV = { is_White_Mountains_tag = yes } }
+				add_dynamic_modifier = { modifier = White_Mountains_state_modifier }
+			}
+
+		}
+	}
+	39 = { #minhiriath
+		add_dynamic_modifier = { modifier = Saralain_state_modifier }
+	}
+	every_state = { #W.Mts of Morthond, Andhen, Dividing spur
+		limit = { OR = { state = 139 state = 153 state = 229 } }
+		add_dynamic_modifier = { modifier = White_Mountains_state_modifier }
+	}
+		
+}
+
+#############FRIENDS AND ENEMIES
+set_PREV_ancestral_enemy = { #Sets PREV to be THIS's ancestral enemy, and vice versa
+	set_variable = { ancestral_enemy = PREV }
+	add_opinion_modifier = {
+		target = PREV
+		modifier = ancestral_enemy_opinion
+	}
+	PREV = {
+		set_variable = { ancestral_enemy = PREV }
+		add_opinion_modifier = {
+			target = PREV
+			modifier = ancestral_enemy_opinion
+		}
+		#decrease_PREV_trust_towards_THIS = yes
+		#decrease_PREV_trust_towards_THIS = yes
+	}
+}
+set_PREV_ancestral_friend = { #Sets PREV to be THIS's ancestral friend, and vice versa
+	set_variable = { ancestral_friend = PREV }
+	add_opinion_modifier = {
+		target = PREV
+		modifier = ancestral_friend_opinion
+	}
+	PREV = {
+		set_variable = { ancestral_friend = PREV }
+		add_opinion_modifier = {
+			target = PREV
+			modifier = ancestral_friend_opinion
+		}
+	}
+	increase_PREV_trust_towards_THIS = yes
+}
+set_enedwaith_ancestral_friends_and_enemys = { ##list of all ancestral friends and enemies, to be executed on_startup
+	#Enemies
+	ADB = { PRI = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	AGR = { COL = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	AKN = { IRN = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	ANU = { NIF = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	BYR = { DRU = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	CGN = { DTH = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	DFN = { DUN = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	ERG = { HOL = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	HST = { STK = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	HVK = { TAW = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	MBL = { REE = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	NEN = { RAF = { set_PREV_ancestral_enemy = yes mutually_decrease_trust_twice = yes } }
+	#Friends
+	ADB = { NEN = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	AGR = { STK = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	AKN = { PRI = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	ANU = { TAW = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	BYR = { RAF = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	CGN = { DFN = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	COL = { HST = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	DRU = { IRN = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	DTH = { DUN = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	ERG = { REE = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	HOL = { MBL = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	HVK = { NIF = { set_PREV_ancestral_friend = yes mutually_increase_trust = yes } }
+	
+	every_country = {
+		limit = { is_greater_enedwaith_tag = yes }
+		var:THIS.ancestral_enemy = {
+			add_AI_hostile_desire_towards_PREV = yes
+			add_AI_hostile_desire_towards_PREV = yes
+		}
+		var:THIS.ancestral_friend = {
+			add_AI_friendly_desire_towards_PREV = yes
+		}
+	}
+}
+
+add_attack_bonus_vs_same_and_neighbour_culture = { ##Adds the attack bonus idea against THIS's culture & all of THIS's neighbouring cultures
+	if = { limit = { is_Andrast_tag = yes }
+		add_ideas = Andrast_attack_neighbors
+	}
+	else_if = { limit = { is_Druwaith_Iaur_tag = yes }
+		add_ideas = Druwaith_Iaur_attack_neighbors
+	}
+	else_if = { limit = { is_Dunland_tag = yes }
+		add_ideas = Dunland_attack_neighbors
+	}
+	else_if = { limit = { is_Enedwaith_tag = yes }
+		add_ideas = Enedwaith_attack_neighbors
+	}
+	else_if = { limit = { is_Eregion_tag = yes }
+		add_ideas = Eregion_attack_neighbors
+	}
+	else_if = { limit = { is_White_Mountains_tag = yes }
+		add_ideas = White_Mountains_attack_neighbors
+	}
+
+}
+
+activate_attack_ancestral_enemy_decision = { ##Activates the appropriate mission for your culture
+	if = { limit = { is_andrast_tag = yes }
+		activate_mission = attack_andrast_enemy_mission
+	}
+	else_if = { limit = { is_druwaith_iaur_tag = yes }
+		activate_mission = attack_druwaith_iaur_enemy_mission
+		custom_effect_tooltip = activate_attack_enemy_mission_tooltip
+	}
+	else_if = { limit = { is_dunland_tag = yes }
+		activate_mission = attack_dunland_enemy_mission
+		custom_effect_tooltip = activate_attack_enemy_mission_tooltip
+	}
+	else_if = { limit = { is_enedwaith_tag = yes }
+		activate_mission = attack_enedwaith_enemy_mission
+		custom_effect_tooltip = activate_attack_enemy_mission_tooltip
+	}
+	else_if = { limit = { is_eregion_tag = yes }
+		activate_mission = attack_eregion_enemy_mission
+		custom_effect_tooltip = activate_attack_enemy_mission_tooltip
+	}
+	else_if = { limit = { is_white_mountains_tag = yes }
+		activate_mission = attack_white_mountains_enemy_mission
+		custom_effect_tooltip = activate_attack_enemy_mission_tooltip
+	}
+}
+attack_ancestral_enemy_mission_complete_effect = { ##Adds war support and removes the hidden attack bonus
+	add_war_support = 0.15
+	hidden_effect = {
+		remove_ideas = hidden_attack_ancestral_enemy
+	}
+}
+attack_ancestral_enemy_mission_timeout_effect = { ##Removes war support and removes the hidden attack bonus
+	add_war_support = -0.15
+	hidden_effect = {
+		remove_ideas = hidden_attack_ancestral_enemy
+	}
+}
+
+ai_antagonize_ENE_tribes = { ##Adds antisocial AI strats vs all ENE tags
+	hidden_effect = {
+		every_country = {
+			limit = { is_greater_enedwaith_tag = yes }
+			PREV = {
+				add_AI_hostile_desire_towards_PREV = yes
+			}
+		}
+	}
+}
+ai_befriend_ENE_tribes = { ##Adds friendly AI strats vs all ENE tags
+	hidden_effect = {
+		every_country = {
+			limit = { is_greater_enedwaith_tag = yes }
+			PREV = {
+				add_AI_friendly_desire_towards_PREV = yes
+			}
+		}
+	}
+}
+THIS_wants_to_conquer_ENE_tags = {
+	every_country = {
+		limit = { is_greater_enedwaith_tag = yes }
+		PREV = {
+			add_ai_strategy = {
+				type = conquer
+				id = PREV
+				value = 22
+			}
+			add_ai_strategy = {
+				type = declare_war
+				id = PREV
+				value = 22
+			}
+		}
+	}
+}
+
+ai_ENE_tags_antagonize_you = { ##Makes all ENE AI tags more hostile to you
+	hidden_effect = {
+		every_country = {
+			limit = { is_greater_enedwaith_tag = yes }
+			add_AI_hostile_desire_towards_PREV = yes
+		}
+	}
+}
+ai_ENE_tags_befriend_you = { ##Makes all ENE AI tags more friendly to you
+	hidden_effect = {
+		every_country = {
+			limit = { is_greater_enedwaith_tag = yes }
+			add_AI_friendly_desire_towards_PREV = yes
+		}
+	}
+}
+
+#################TRIBAL MECHANICS
+initialize_global_vars_VoV = {
+	set_variable = { global.numEnedwaithTribes = 0 }
+	#Base Costs
+	set_variable = { global.base_tribal_coring_cost = 50 }
+	set_variable = { global.base_tribal_trust_cost = 50 }
+	#########BLOOD OATH ACCEPTANCE
+	
+	#faction contribution to blood oath acceptance
+	set_variable = { global.faction_leader_blood_oath_modifier = 0.2 }
+	set_variable = { global.same_faction_blood_oath_modifier = 0.1 }
+	#ideology contribution to blood oath acceptance
+	set_variable = { global.same_culture_blood_oath_modifier = 0.2 }
+	set_variable = { global.neighbouring_culture_blood_oath_modifier = 0.0 }
+	set_variable = { global.related_culture_blood_oath_modifier = -0.2 }
+	set_variable = { global.distant_culture_blood_oath_modifier = -0.4 }
+	#ideology contribution to blood oath acceptance
+	set_variable = { global.opposing_ideologies_blood_oath_modifier = -0.5 }
+	set_variable = { global.neutral_ideologies_blood_oath_modifier = 0.0 }
+	set_variable = { global.same_ideology_blood_oath_modifier = 0.2 }
+	#network contribution to blood oath acceptance
+	set_variable = { global.blood_oath_network_threshold_1 = 20 }
+	set_variable = { global.blood_oath_network_threshold_2 = 40 }
+	set_variable = { global.blood_oath_network_threshold_3 = 60 }
+	set_variable = { global.blood_oath_network_threshold_4 = 80 }
+	set_variable = { global.blood_oath_network_threshold_5 = 100 }
+	set_variable = { global.blood_oath_network_threshold_6 = 120 }
+	set_variable = { global.blood_oath_network_threshold_7 = 140 }
+	set_variable = { global.blood_oath_network_threshold_8 = 160 }
+	set_variable = { global.blood_oath_network_threshold_9 = 180 }
+	#strength contribution to blood oath acceptance
+	set_variable = { global.blood_oath_strength_threshold_1 = 3 } #4
+	set_variable = { global.blood_oath_strength_threshold_2 = 2 } #2
+	set_variable = { global.blood_oath_strength_threshold_3 = 1.5 } #1
+	set_variable = { global.blood_oath_strength_threshold_4 = 0.99 } #0
+	set_variable = { global.blood_oath_strength_threshold_5 = 0.75 } #-2, #-5
+	set_variable = { global.blood_oath_strength_acceptance_1 = 0.4 } #>3
+	set_variable = { global.blood_oath_strength_acceptance_2 = 0.2 } #>2
+	set_variable = { global.blood_oath_strength_acceptance_3 = 0.1 } #>1.5
+	set_variable = { global.blood_oath_strength_acceptance_4 = 0.0 } #>1
+	set_variable = { global.blood_oath_strength_acceptance_5 = -0.2 } #>0.75
+	set_variable = { global.blood_oath_strength_acceptance_6 = -0.5 } #<=0.75
+	
+	
+	##############################MISC
+	set_variable = { global.CAR_factories_per_benefit = 4 }
+	set_variable = { global.ENE_cloth_per_benefit = 2 }
+}
+increase_PREV_trust_towards_THIS = {
+	custom_effect_tooltip = increase_PREV_trust_towards_THIS_tooltip
+	set_temp_variable = { current_trust = enedwaith_tag_trust_towards_this^PREV.tribal_array_position }
+	add_to_temp_variable = { current_trust = 1 }
+	set_variable = { enedwaith_tag_trust_towards_this^PREV.tribal_array_position = current_trust }
+}
+decrease_PREV_trust_towards_THIS = {
+	custom_effect_tooltip = decrease_PREV_trust_towards_THIS_tooltip
+	set_temp_variable = { current_trust = enedwaith_tag_trust_towards_this^PREV.tribal_array_position }
+	add_to_temp_variable = { current_trust = -1 }
+	set_variable = { enedwaith_tag_trust_towards_this^PREV.tribal_array_position = current_trust }
+}
+
+increase_THIS_trust_towards_PREV = {
+	custom_effect_tooltip = increase_THIS_trust_towards_PREV_tooltip
+	set_temp_variable = { current_trust = PREV.enedwaith_tag_trust_towards_this^THIS.tribal_array_position }
+	add_to_temp_variable = { current_trust = 1 }
+	set_variable = { PREV.enedwaith_tag_trust_towards_this^THIS.tribal_array_position = current_trust }
+}
+increase_THIS_trust_towards_PREV_2 = {
+	hidden_effect = {
+		increase_THIS_trust_towards_PREV = yes
+		increase_THIS_trust_towards_PREV = yes
+	}
+	custom_effect_tooltip = increase_THIS_trust_towards_PREV_tooltip_2
+}
+
+mutually_increase_trust = {
+	increase_PREV_trust_towards_THIS = yes
+	PREV = { increase_PREV_trust_towards_THIS = yes }
+}
+	
+mutually_decrease_trust = {
+	decrease_PREV_trust_towards_THIS = yes
+	PREV = { decrease_PREV_trust_towards_THIS = yes }
+}
+mutually_decrease_trust_twice = { #for initializing enemy trust
+	mutually_decrease_trust = yes
+	mutually_decrease_trust = yes
+}
+
+increase_prestige_1 = { ##Increases prestige by 1
+	custom_effect_tooltip = increase_prestige_by_1_tooltip
+	add_to_variable = { prestige = 1 }
+}
+decrease_prestige_1 = { ##Decreases prestige by 1
+	custom_effect_tooltip = decrease_prestige_by_1_tooltip
+	add_to_variable = { prestige = -1 }
+}
+increase_prestige_2 = { ##Increases prestige by 2
+	custom_effect_tooltip = increase_prestige_by_2_tooltip
+	add_to_variable = { prestige = 2 }
+}
+increase_prestige_3 = { ##Increases prestige by 3
+	custom_effect_tooltip = increase_prestige_by_3_tooltip
+	add_to_variable = { prestige = 3 }
+}
+increase_prestige_4 = { ##Increases prestige by 4
+	custom_effect_tooltip = increase_prestige_by_4_tooltip
+	add_to_variable = { prestige = 4 }
+}
+increase_prestige_5 = { ##Increases prestige by 5
+	custom_effect_tooltip = increase_prestige_by_5_tooltip
+	add_to_variable = { prestige = 5 }
+}
+
+PREV_annex_THIS_blood_oath_vassal = { ##Call when the overlord (PREV) integrates a blood oath vassal (THIS)
+	every_core_state = { #Overlord gets vassal's cores
+		add_core_of = PREV.PREV
+	}
+	if = { ##Remove vassal's cores if you are the same culture & Overlord is the formable
+		limit = {
+			tribal_cultural_similarity_tier_1 = yes
+			PREV = { is_greater_enedwaith_formable = yes }
+		}
+		every_core_state = {
+			remove_core_of = PREV
+		}
+	}
+	
+	every_character = { #Overlord gets country leader (including already gained leaders) as advisor & field marshals as generals
+		if = { limit = { is_field_marshal = yes }
+			if = { limit = { has_trait = monarch_mil }
+				remove_unit_leader_trait = monarch_mil
+			}
+			demote_leader = yes
+			set_nationality = PREV.PREV
+		}
+		else_if = { limit = { can_be_country_leader = yes }
+			set_nationality = PREV.PREV
+		}
+		else_if = {#A central Perspective gives you all recruited advisors
+			limit = {
+				PREV.PREV = { has_completed_focus = ENE_a_central_perspective }
+				OR = {
+					is_political_advisor = yes
+					is_high_command = yes
+					is_theorist = yes
+					is_air_chief = yes
+					is_army_chief = yes
+					is_navy_chief = yes
+				}
+			}
+			set_nationality = PREV.PREV
+		}
+	}
+	PREV = {
+		annex_country = {
+			target = PREV
+			transfer_troops = yes
+		}
+	}
+}
+ROOT_annex_THIS_blood_oath_vassal = { ##Call when the overlord (FROM) integrates a blood oath vassal (THIS). Had to do this because the other one uses the same scope for PREV and THIS in the decision
+	every_core_state = { #Overlord gets vassal's cores
+		add_core_of = ROOT
+	}
+	if = { ##Remove vassal's cores if you are the same culture & Overlord is the formable
+		limit = {
+			ROOT = { tribal_cultural_similarity_tier_1 = yes }
+			ROOT = { is_greater_enedwaith_formable = yes }
+		}
+		every_core_state = {
+			remove_core_of = PREV
+		}
+	}
+	
+	every_character = { #Overlord gets country leader (including already gained leaders) as advisor & field marshals as generals
+		if = { limit = { is_field_marshal = yes }
+			if = { limit = { has_trait = monarch_mil }
+				remove_unit_leader_trait = monarch_mil
+			}
+			demote_leader = yes
+			set_nationality = ROOT
+		}
+		else_if = { limit = { can_be_country_leader = yes }
+			set_nationality = ROOT
+		}
+		else_if = {#A central Perspective gives you all recruited advisors
+			limit = {
+				ROOT = { has_completed_focus = ENE_a_central_perspective }
+				OR = {
+					is_political_advisor = yes
+					is_high_command = yes
+					is_theorist = yes
+					is_air_chief = yes
+					is_army_chief = yes
+					is_navy_chief = yes
+				}
+			}
+			set_nationality = ROOT
+		}
+	}
+	ROOT = {
+		annex_country = {
+			target = PREV
+			transfer_troops = yes
+		}
+	}
+}
+PREV_annex_THIS_blood_oath_vassal_on_swear = {
+	every_core_state = { #Overlord gets compliance
+		set_state_flag = compliance_state
+	}
+	if = { ##Remove vassal's cores if you are the same culture & Overlord is the formable
+		limit = {
+			tribal_cultural_similarity_tier_1 = yes
+			PREV = { is_greater_enedwaith_formable = yes }
+		}
+		# every_core_state = {
+			# remove_core_of = PREV
+		# }
+	}
+	
+	every_character = { #Overlord gets country leader (including already gained leaders) as advisor & field marshals as generals
+		if = { limit = { is_field_marshal = yes }
+			if = { limit = { has_trait = monarch_mil }
+				remove_unit_leader_trait = monarch_mil
+			}
+			demote_leader = yes
+			set_nationality = PREV.PREV
+		}
+		else_if = { limit = { can_be_country_leader = yes }
+			set_nationality = PREV.PREV
+		}
+		else_if = {#A central Perspective gives you all recruited advisors
+			limit = {
+				PREV.PREV = { has_completed_focus = ENE_a_central_perspective }
+				OR = {
+					is_political_advisor = yes
+					is_high_command = yes
+					is_theorist = yes
+					is_air_chief = yes
+					is_army_chief = yes
+					is_navy_chief = yes
+				}
+			}
+			set_nationality = PREV.PREV
+		}
+	}
+	PREV = {
+		annex_country = {
+			target = PREV
+			transfer_troops = yes
+		}
+	}
+}
+
+
+remove_minor_cores_greater_enedwaith_state = { #Call in a state to remove all cores of the controllers's same-culture
+	custom_effect_tooltip = remove_minor_cores_greater_enedwaith_state_tooltip
+	for_each_scope_loop = {
+		array = core_countries
+		if = { #removes THIS's core if it's the same culture as controller but isn't controller
+			limit = {
+				PREV.controller = { PREV = { tribal_cultural_similarity_tier_1 = yes } }
+				NOT = { tag = PREV.controller }
+				always = yes
+			}
+			THIS = { remove_state_core = PREV.PREV }
+		}
+	}
+}
+
+remove_minor_cores_greater_enedwaith = { ##Call in <Formable> to remove the all cores by other <Formable Culture> tags that <Formable> has cores on
+	every_core_state = {
+		remove_minor_cores_greater_enedwaith_state = yes
+	}
+}
+	
+THIS_makes_PREV_tribal_free = { #Call when a subject becomes autonomy_tribal_free to release them
+	set_autonomy = {
+		target = PREV
+		autonomy_state = autonomy_free
+		end_wars = no
+		end_civil_wars = no
+	}
+}
+
+#################FOUND FACTIONS
+found_ENE_isolationism_faction = {
+	if = { limit = { is_Andrast_tag = yes }
+		create_faction = Andrast_faction_isolationism
+	}
+	else_if = { limit = { is_Druwaith_Iaur_tag = yes }
+		create_faction = Druwaith_Iaur_faction_isolationism
+	}
+	else_if = { limit = { is_Dunland_tag = yes }
+		create_faction = Dunland_faction_isolationism
+	}
+	else_if = { limit = { is_Enedwaith_tag = yes }
+		create_faction = Enedwaith_faction_isolationism
+	}
+	else_if = { limit = { is_Eregion_tag = yes }
+		create_faction = Eregion_faction_isolationism
+	}
+	else_if = { limit = { is_Saralain_tag = yes }
+		create_faction = Saralain_faction_isolationism
+	}
+	else_if = { limit = { is_White_Mountains_tag = yes }
+		create_faction = White_Mountains_faction_isolationism
+	}
+}
+found_ENE_freedom_faction = {
+	if = { limit = { is_Andrast_tag = yes }
+		create_faction = Andrast_faction_freedom
+	}
+	else_if = { limit = { is_Druwaith_Iaur_tag = yes }
+		create_faction = Druwaith_Iaur_faction_freedom
+	}
+	else_if = { limit = { is_Dunland_tag = yes }
+		create_faction = Dunland_faction_freedom
+	}
+	else_if = { limit = { is_Enedwaith_tag = yes }
+		create_faction = Enedwaith_faction_freedom
+	}
+	else_if = { limit = { is_Eregion_tag = yes }
+		create_faction = Eregion_faction_freedom
+	}
+	else_if = { limit = { is_Saralain_tag = yes }
+		create_faction = Saralain_faction_freedom
+	}
+	else_if = { limit = { is_White_Mountains_tag = yes }
+		create_faction = White_Mountains_faction_freedom
+	}
+}
+found_ENE_opportunism_faction = {
+	if = { limit = { is_Andrast_tag = yes }
+		create_faction = Andrast_faction_opportunism
+	}
+	else_if = { limit = { is_Druwaith_Iaur_tag = yes }
+		create_faction = Druwaith_Iaur_faction_opportunism
+	}
+	else_if = { limit = { is_Dunland_tag = yes }
+		create_faction = Dunland_faction_opportunism
+	}
+	else_if = { limit = { is_Enedwaith_tag = yes }
+		create_faction = Enedwaith_faction_opportunism
+	}
+	else_if = { limit = { is_Eregion_tag = yes }
+		create_faction = Eregion_faction_opportunism
+	}
+	else_if = { limit = { is_Saralain_tag = yes }
+		create_faction = Saralain_faction_opportunism
+	}
+	else_if = { limit = { is_White_Mountains_tag = yes }
+		create_faction = White_Mountains_faction_opportunism
+	}
+}
+found_ENE_conquest_faction = {
+	if = { limit = { is_Andrast_tag = yes }
+		create_faction = Andrast_faction_conquest
+	}
+	else_if = { limit = { is_Druwaith_Iaur_tag = yes }
+		create_faction = Druwaith_Iaur_faction_conquest
+	}
+	else_if = { limit = { is_Dunland_tag = yes }
+		create_faction = Dunland_faction_conquest
+	}
+	else_if = { limit = { is_Enedwaith_tag = yes }
+		create_faction = Enedwaith_faction_conquest
+	}
+	else_if = { limit = { is_Eregion_tag = yes }
+		create_faction = Eregion_faction_conquest
+	}
+	else_if = { limit = { is_Saralain_tag = yes }
+		create_faction = Saralain_faction_conquest
+	}
+	else_if = { limit = { is_White_Mountains_tag = yes }
+		create_faction = White_Mountains_faction_conquest
+	}
+}
+found_ENE_melkorite_faction = {
+	if = { limit = { is_Andrast_tag = yes }
+		create_faction = Andrast_faction_melkorite
+	}
+	else_if = { limit = { is_Druwaith_Iaur_tag = yes }
+		create_faction = Druwaith_Iaur_faction_melkorite
+	}
+	else_if = { limit = { is_Dunland_tag = yes }
+		create_faction = Dunland_faction_melkorite
+	}
+	else_if = { limit = { is_Enedwaith_tag = yes }
+		create_faction = Enedwaith_faction_melkorite
+	}
+	else_if = { limit = { is_Eregion_tag = yes }
+		create_faction = Eregion_faction_melkorite
+	}
+	else_if = { limit = { is_Saralain_tag = yes }
+		create_faction = Saralain_faction_melkorite
+	}
+	else_if = { limit = { is_White_Mountains_tag = yes }
+		create_faction = White_Mountains_faction_melkorite
+	}
+}
+
+ENE_ISN_liberation_war_scripted_peace = { #done here so that I can edit while the game is running
+	custom_effect_tooltip = ENE_ISN_liberation_white_peace_tooltip
+	hidden_effect = {
+		every_subject_country = {
+			limit = { is_greater_enedwaith_tag = yes }
+			hidden_effect = { remove_from_faction = yes }
+			FROM = {
+				set_autonomy = {
+					target = PREV
+					autonomy_state = autonomy_blood_oath
+					end_wars = yes
+					end_civil_wars = yes
+				}
+			}
+		}
+		every_state = {
+			limit = { owns_or_subject_of = yes is_greater_enedwaith_core = yes }
+			set_state_owner_to = FROM
+		}
+		every_country = {
+			limit = { OR = { tag = FROM is_in_faction_with = FROM } }
+			every_country = {
+				limit = { OR = { tag = ROOT is_in_faction_with = ROOT } }
+				white_peace = PREV
+			}
+		}
+	}
+}
+
+ENE_ISN_puppet_joins_FROM_faction = {
+	custom_effect_tooltip = ENE_ISN_puppet_joins_FROM_faction_tooltip
+	hidden_effect = {
+		ISN = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = autonomy_free
+				end_wars = yes
+				end_civil_wars = yes
+			}
+			remove_from_faction = ROOT
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = faction_traitor
+			}
+		}
+		white_peace = FROM
+		FROM = { add_to_faction = ROOT }
+		add_to_war = {
+			targeted_alliance = FROM
+			enemy = ISN
+			hostility_reason = betrayed_saruman_war_reason
+		}
+	}
+}
+
+find_alliance_strength_ratio_betray_saruman = {
+	set_temp_variable = { isengard_divisions = ISN.num_divisions }
+	set_temp_variable = { enedwaith_divisions = FROM.num_divisions }
+	every_country = {
+		if = { limit = { is_ally_with = ISN NOT = { tag = ROOT } }
+			add_to_temp_variable = { PREV.isengard_divisions = num_divisions }
+		}
+		else_if = { limit = { is_ally_with = FROM }
+			add_to_temp_variable = { PREV.enedwaith_divisions = num_divisions }
+		}
+	}
+	#########Calculates strength of the alliances ratio
+	set_temp_variable = { ratio = enedwaith_divisions }
+	divide_temp_variable = { ratio = isengard_divisions } #the more divisions ENE alliance has, the higher this number
+	clamp_temp_variable = {
+		var = ratio
+		min = 0.1
+		max = 2
+	}
+}
+
+@AIDiplomacyWeight = 15
+guidance_with_saruman = {
+	add_opinion_modifier = {
+		target = ISN
+		modifier = sarumans_guidance
+	}
+	reverse_add_opinion_modifier = {
+		target = ISN
+		modifier = sought_our_guidance
+	}
+	hidden_effect = {
+		add_ai_strategy = {
+			type = befriend
+			id = ISN
+			value = @AIDiplomacyWeight
+		}
+		ISN = {
+			add_ai_strategy = {
+				type = befriend
+				id = ROOT
+				value = @AIDiplomacyWeight
+			}
+		}
+	}
+}
+
+ENE_innovations_of_the_white_wizard_effect = {
+	army_experience = 5
+	PREV = {
+		guidance_with_saruman = yes
+		add_tech_bonus = {
+			bonus = 1.25 #Isengard's bonus strength
+			uses = 2
+			category = industry
+			name = ENE_innovations_of_the_white_wizard
+		}
+	}
+}
+
+request_ENE_state_return_effect = {
+	set_state_owner_to = PREV
+	hidden_effect = {
+		if = { limit = { controller = { original_tag = ISN } }
+			set_state_controller_to = PREV
+		}
+	}
+}
+
+ENE_mordor_tribute_for_mordor = {
+	random_state = {
+		limit = {
+			has_state_flag = build_ene_tribute_here
+		}
+		clr_state_flag = build_ene_tribute_here
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}
+	}
+}
+ENE_mordor_tribute_for_mordor_accepted = {
+	add_political_power = -10
+	FROM = { #Mutually increased relations
+		add_AI_friendly_desire_towards_PREV = yes
+		add_opinion_modifier = {
+			target = ROOT
+			modifier = rewarded_tribute
+		}
+		ROOT = {
+			add_AI_friendly_desire_towards_PREV = yes
+			add_opinion_modifier = {
+				target = FROM
+				modifier = sent_tribute
+			}
+		}
+	}
+}
+
+
+############ROYAL ROAD
+construct_royal_road_railway_in_state = {#Call in any royal road state to build the railway between the correct two provinces
+	if = { limit = { state = 161 } #Doranorien
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 7150
+		  target_province = 1268
+		}
+	}
+	else_if = { limit = { state = 159 } #Anorien
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 4747
+		  target_province = 262
+		}
+	}
+	else_if = { limit = { state = 206 } #Eastfold
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 7048
+		  target_province = 4881
+		}
+	}
+	else_if = { limit = { state = 157 } #The Folde
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 6992
+		  target_province = 3785
+		}
+	}
+	else_if = { limit = { state = 203 } #Westfold
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 2031
+		  target_province = 6869
+		}
+	}
+	else_if = { limit = { state = 70 } #Gap of Rohan
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 2063
+		  target_province = 4016
+		}
+	}
+	else_if = { limit = { state = 211 } #Fords of Isen
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 1478
+		  target_province = 3241
+		}
+	}
+	else_if = { limit = { state = 66 } #Dathabha
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 3241
+		  target_province = 5348
+		}
+	}
+	else_if = { limit = { state = 216 } #Carreglyn
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 6722
+		  target_province = 475
+		}
+	}
+	else_if = { limit = { state = 213 } #Dunfearn
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 6673
+		  target_province = 2095
+		}
+	}
+	else_if = { limit = { state = 63 } #Dunfells
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 415
+		  target_province = 6500
+		}
+	}
+	else_if = { limit = { state = 60 } #Reedwater
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 4728
+		  target_province = 2573
+		}
+	}
+	else_if = { limit = { state = 218 } #South Tharbad
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 6376
+		  target_province = 1720
+		}
+	}
+	else_if = { limit = { state = 219 } #North Tharbad
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 4397
+		  target_province = 6342
+		}
+	}
+	else_if = { limit = { state = 37 } #Generic Cardolan
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 2173
+		  target_province = 2744
+		}
+	}
+	else_if = { limit = { state = 35 } #Weather Hills
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 314
+		  target_province = 4910
+		}
+	}
+	else_if = { limit = { state = 25 } #Breeland
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 5989
+		  target_province = 4876
+		}
+	}
+	else_if = { limit = { state = 23 } #Numerido
+		build_railway = {
+		  level = 5
+		  build_only_on_allied = no
+		  start_province = 190
+		  target_province = 4876
+		}
+	}
+}
+repair_royal_road_modifier_effect = {
+	custom_effect_tooltip = repair_royal_road_modifier_effect_tooltip
+	hidden_effect = {
+		 remove_dynamic_modifier = { modifier = dilapidated_royal_road_modifier } 
+		 add_dynamic_modifier = { modifier = repaired_royal_road_modifier } 
+	}
+}
+
+set_up_royal_road_states = { #easier to change the list than track down every state file
+	every_state = {
+		limit = {
+			OR = {
+				state = 23 #numeridor
+				state = 25 #breeland
+				state = 35 #weather hills
+				state = 37 #generic cardolan
+				state = 219 #north tharbad
+				state = 218 #south tharbad
+				state = 60 #reedwater
+				state = 63 #dunfells
+				state = 213 #dunfearn
+				state = 216 #carreglyn
+				state = 66 #Dathabha
+				state = 211 #fords of isen
+				state = 70 #gap of rohan
+				state = 203 #westfold
+				state = 157 #the folde
+				state = 206 #eastfold
+				state = 159 #anorien
+				state = 161 #doranorien
+			}
+		}
+		add_dynamic_modifier = {
+			modifier = dilapidated_royal_road_modifier
+		}
+	}
+	152 = { #pelenor fields
+		add_dynamic_modifier = {
+			modifier = repaired_royal_road_modifier
+		}
+	}
+}
+
+ISN_cooperate_with_greater_enedwaith_culture = {
+	add_opinion_modifier = {
+		target = ROOT
+		modifier = sarumans_friendship
+	}
+	increase_THIS_trust_towards_PREV = yes
+}
+
+upgrade_voice_of_saruman_to_autonomy = {
+	if = { limit = { has_dlc = "La Resistance" }
+		if = { limit = { has_trait = voice_of_saruman_network_impact_lar }
+			swap_country_leader_traits = {
+				remove = voice_of_saruman_network_impact_lar
+				add = voice_of_saruman_autonomy_network_impact_lar
+				ideology = petty_monarchy
+			}
+			hidden_effect = {
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact_lar
+					add = voice_of_saruman_autonomy_network_impact_lar
+					ideology = glorious_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact_lar
+					add = voice_of_saruman_autonomy_network_impact_lar
+					ideology = evil_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact_lar
+					add = voice_of_saruman_autonomy_network_impact_lar
+					ideology = rightful_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact_lar
+					add = voice_of_saruman_autonomy_network_impact_lar
+					ideology = wise_monarchy
+				}
+			}
+		}
+		else = {
+			swap_country_leader_traits = {
+				remove = voice_of_saruman_lar
+				add = voice_of_saruman_autonomy_lar
+				ideology = petty_monarchy
+			}
+			hidden_effect = {
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_lar
+					add = voice_of_saruman_autonomy_lar
+					ideology = glorious_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_lar
+					add = voice_of_saruman_autonomy_lar
+					ideology = evil_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_lar
+					add = voice_of_saruman_autonomy_lar
+					ideology = rightful_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_lar
+					add = voice_of_saruman_autonomy_lar
+					ideology = wise_monarchy
+				}
+			}
+		}
+	}
+	else = {
+		if = { limit = { has_trait = voice_of_saruman_network_impact }
+			swap_country_leader_traits = {
+				remove = voice_of_saruman_network_impact
+				add = voice_of_saruman_autonomy_network_impact
+				ideology = petty_monarchy
+			}
+			hidden_effect = {
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = glorious_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = evil_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = rightful_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = wise_monarchy
+				}
+			}
+		}
+		else = {
+			swap_country_leader_traits = {
+				remove = voice_of_saruman
+				add = voice_of_saruman_autonomy
+				ideology = petty_monarchy
+			}
+			hidden_effect = {
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_autonomy
+					ideology = glorious_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_autonomy
+					ideology = evil_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_autonomy
+					ideology = rightful_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_autonomy
+					ideology = wise_monarchy
+				}
+			}
+		}
+	}
+}
+upgrade_voice_of_saruman_to_network_impact = {
+	if = { limit = { has_dlc = "La Resistance" }
+		if = { limit = { has_trait = voice_of_saruman_autonomy }
+			swap_country_leader_traits = {
+				remove = voice_of_saruman_autonomy
+				add = voice_of_saruman_autonomy_network_impact
+				ideology = petty_monarchy
+			}
+			hidden_effect = {
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_autonomy
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = glorious_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_autonomy
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = evil_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_autonomy
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = rightful_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_autonomy
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = wise_monarchy
+				}
+			}
+		}
+		else = {
+			swap_country_leader_traits = {
+				remove = voice_of_saruman
+				add = voice_of_saruman_network_impact
+				ideology = petty_monarchy
+			}
+			hidden_effect = {
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_network_impact
+					ideology = glorious_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_network_impact
+					ideology = evil_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_network_impact
+					ideology = rightful_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_network_impact
+					ideology = wise_monarchy
+				}
+			}
+		}
+	}
+	else = {
+		if = { limit = { has_trait = voice_of_saruman_network_impact }
+			swap_country_leader_traits = {
+				remove = voice_of_saruman_network_impact
+				add = voice_of_saruman_autonomy_network_impact
+				ideology = petty_monarchy
+			}
+			hidden_effect = {
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = glorious_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = evil_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = rightful_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman_network_impact
+					add = voice_of_saruman_autonomy_network_impact
+					ideology = wise_monarchy
+				}
+			}
+		}
+		else = {
+			swap_country_leader_traits = {
+				remove = voice_of_saruman
+				add = voice_of_saruman_autonomy
+				ideology = petty_monarchy
+			}
+			hidden_effect = {
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_autonomy
+					ideology = glorious_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_autonomy
+					ideology = evil_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_autonomy
+					ideology = rightful_monarchy
+				}
+				swap_country_leader_traits = {
+					remove = voice_of_saruman
+					add = voice_of_saruman_autonomy
+					ideology = wise_monarchy
+				}
+			}
+		}
+	}
+}
+######################################AI PATH
+setup_enedwaith_ai_path = {
+	###################################FREEDOM
+	set_temp_variable = { freedom_weight = 0 }
+	if = { ##historical
+		limit = { has_game_rule = { rule = ENE_ai_behavior option = HISTORICAL } }
+		if = { limit = { ENE_freedom_tag = yes }
+			add_to_temp_variable = { freedom_weight = 10 }
+		}
+		else = {
+			add_to_temp_variable = { freedom_weight = -10 }
+		}
+	}
+	else = { ##non-historical
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 2.5
+					has_game_rule = { rule = ENE_ai_behavior option = GOOD }
+				}
+				modifier = {
+					factor = 1.5
+					ENE_freedom_tag = yes
+				}
+				add_to_temp_variable = { freedom_weight = 20 }
+			}
+			4 = {
+			}
+		}
+	}
+	###################################OPPORTUNISM
+	set_temp_variable = { opportunism_weight = 0 }
+	if = { ##historical
+		limit = { has_game_rule = { rule = ENE_ai_behavior option = HISTORICAL } }
+		if = { limit = { ENE_opportunism_tag = yes }
+			add_to_temp_variable = { opportunism_weight = 10 }
+		}
+		else = {
+			add_to_temp_variable = { opportunism_weight = -10 }
+		}
+	}
+	else = { ##non-historical
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 1.5
+					has_game_rule = { rule = ENE_ai_behavior option = INDEPENDENT }
+				}
+				modifier = {
+					factor = 1.5
+					ENE_opportunism_tag = yes
+				}
+				modifier = {
+					factor = 0.75
+					has_game_rule = { rule = ENE_ai_behavior option = GOOD }
+				}
+				modifier = {
+					factor = 0.75
+					has_game_rule = { rule = ENE_ai_behavior option = SAURON }
+				}
+				modifier = {
+					factor = 0.75
+					has_game_rule = { rule = ENE_ai_behavior option = SARUMAN }
+				}
+				add_to_temp_variable = { opportunism_weight = 20 }
+			}
+			4 = {
+			}
+		}
+	}
+	###################################CONQUEST
+	set_temp_variable = { conquest_weight = 0 }
+	if = { ##historical
+		limit = { has_game_rule = { rule = ENE_ai_behavior option = HISTORICAL } }
+		if = { limit = { ENE_conquest_tag = yes }
+			add_to_temp_variable = {conquest_weight = 10 }
+		}
+		else = {
+			add_to_temp_variable = { conquest_weight = -10 }
+		}
+	}
+	else = { ##non-historical
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 1.5
+					has_game_rule = { rule = ENE_ai_behavior option = SARUMAN }
+				}
+				modifier = {
+					factor = 1.5
+					ENE_conquest_tag = yes
+				}
+				modifier = {
+					factor = 0.75
+					has_game_rule = { rule = ENE_ai_behavior option = SAURON }
+				}
+				modifier = {
+					factor = 0.5
+					has_game_rule = { rule = ENE_ai_behavior option = GOOD }
+				}
+				add_to_temp_variable = { conquest_weight = 20 }
+			}
+			4 = {
+			}
+		}
+	}
+	###################################MELKORITE
+	set_temp_variable = { melkorite_weight = 0 }
+	if = { ##historical
+		limit = { has_game_rule = { rule = ENE_ai_behavior option = HISTORICAL } }
+		if = { limit = { ENE_melkorite_tag = yes }
+			add_to_temp_variable = {melkorite_weight = 10 }
+		}
+		else = {
+			add_to_temp_variable = { melkorite_weight = -10 }
+		}
+	}
+	else = { ##non-historical
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 3
+					has_game_rule = { rule = ENE_ai_behavior option = SAURON }
+				}
+				modifier = {
+					factor = 2
+					ENE_melkorite_tag = yes
+				}
+				modifier = {
+					factor = 0.5
+					has_game_rule = { rule = ENE_ai_behavior option = GOOD }
+				}
+				add_to_temp_variable = { melkorite_weight = 10 }
+			}
+			5 = { ##less likely than other paths
+			}
+		}
+	}
+	###################################SIDE WITH SARUMAN
+	set_temp_variable = { saruman_weight = 0 }
+	if = { ##historical
+		limit = { has_game_rule = { rule = ENE_ai_behavior option = HISTORICAL } }
+		if = { limit = { ENE_side_with_saruman_tag = yes }
+			add_to_temp_variable = { saruman_weight = 10 }
+		}
+		else = {
+			add_to_temp_variable = { saruman_weight = -10 }
+		}
+	}
+	else = { ##non-historical
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 2.5
+					has_game_rule = { rule = ENE_ai_behavior option = SARUMAN }
+				}
+				modifier = {
+					factor = 1.5
+					ENE_side_with_saruman_tag = yes
+				}
+				modifier = {
+					factor = 0.75
+					ENE_reject_saruman_tag = yes
+				}
+				modifier = {
+					factor = 0.5
+					has_game_rule = { rule = ENE_ai_behavior option = INDEPENDENT }
+				}
+				add_to_temp_variable = { saruman_weight = 20 }
+			}
+			4 = {
+			}
+		}
+	}
+	###################################REJECT SARUMAN
+	set_temp_variable = { anti_saruman_weight = 0 }
+	if = { ##historical
+		limit = { has_game_rule = { rule = ENE_ai_behavior option = HISTORICAL } }
+		if = { limit = { ENE_reject_saruman_tag = yes }
+			add_to_temp_variable = { anti_saruman_weight = 10 }
+		}
+		else = {
+			add_to_temp_variable = { anti_saruman_weight = -10 }
+		}
+	}
+	else = { ##non-historical
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 2.5
+					has_game_rule = { rule = ENE_ai_behavior option = INDEPENDENT }
+				}
+				modifier = {
+					factor = 1.5
+					ENE_reject_saruman_tag = yes
+				}
+				modifier = {
+					factor = 0.75
+					ENE_side_with_saruman_tag = yes
+				}
+				modifier = {
+					factor = 0.5
+					has_game_rule = { rule = ENE_ai_behavior option = SARUMAN }
+				}
+				add_to_temp_variable = { anti_saruman_weight = 20 }
+			}
+			4 = {
+			}
+		}
+	}
+	###################################DIPLOMATIC
+	set_temp_variable = { diplomatic_weight = 0 }
+	if = { ##historical
+		limit = { has_game_rule = { rule = ENE_ai_behavior option = HISTORICAL } }
+		if = { limit = { ENE_diplomatic_tag = yes }
+			add_to_temp_variable = { diplomatic_weight = 10 }
+		}
+		else = {
+			add_to_temp_variable = { diplomatic_weight = -10 }
+		}
+	}
+	else = { ##non-historical
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 2
+					ENE_diplomatic_tag = yes
+				}
+				modifier = {
+					factor = 1.5
+					has_game_rule = { rule = ENE_ai_behavior option = INDEPENDENT }
+				}
+				modifier = {
+					factor = 0.5
+					has_game_rule = { rule = ENE_ai_behavior option = SAURON }
+				}
+				add_to_temp_variable = { diplomatic_weight = 20 }
+			}
+			2.5 = {
+			}
+		}
+	}
+	###################################FLAGS
+	if = { limit = { check_variable = { conquest_weight > 5 } } #conquest_flag
+		set_country_flag = conquest_flag
+		#makes them actually want to conquer
+		THIS_wants_to_conquer_ENE_tags = yes
+		log = "[THIS.GetName] goes conquest"
+	}
+	else_if = { limit = { check_variable = { opportunism_weight > 5 } } #opportunism_flag
+		set_country_flag = opportunism_flag
+		log = "[THIS.GetName] goes opportunist"
+	}
+	else_if = { limit = { check_variable = { melkorite_weight > 5 } } #melkorite_flag
+		set_country_flag = melkorite_flag
+		log = "[THIS.GetName] goes melkorite"
+	}
+	else = { #freedom_flag
+		set_country_flag = freedom_flag
+		log = "[THIS.GetName] goes freedom"
+	}
+	if = { limit = { check_variable = { saruman_weight > 5 } } #saruman_flag
+		set_country_flag = saruman_flag
+		log = "[THIS.GetName] goes with Saruman"
+	}
+	else_if = { limit = { check_variable = { anti_saruman_weight > 5 } } #anti_saruman_flag
+		set_country_flag = ant_saruman_flag
+		log = "[THIS.GetName] goes against Saruman"
+	}
+}
+
+
+set_new_diplo_target = {
+	clear_variable = THIS.diplo_target
+	set_temp_variable = { iter = 0.8 }
+	#log = "###############################################################"
+	while_loop_effect = {
+		limit = {
+			check_variable = { iter > -1 }
+		}
+		every_country = {
+			limit = {
+				invalid_ENE_diplo_target = no
+				any_neighbor_country = {
+					OR = {
+						tag = PREV.PREV
+						is_subject_of = PREV.PREV
+					}
+				}
+			}
+			set_temp_variable = { total_acceptance = 0.0 }
+			if = {
+				limit = {
+					calculate_blood_oath_submission_chance = yes
+					check_variable = {
+						var = total_acceptance
+						value = iter
+						compare = equals
+					}
+					check_variable = { PREV.iter > -1 }
+					NOT = { check_variable = { ROOT.mil_target = THIS } }#don't befriend your victim
+				}
+				set_variable = { PREV.diplo_target = THIS }
+				set_temp_variable = { PREV.iter = -100 }
+			}
+		}
+		add_to_temp_variable = { iter = -0.1 }
+	}
+	if = { limit = { OR = { check_variable = { diplo_target = 0 } check_variable = { diplo_target = THIS } } }
+		random_country = {
+			limit = {
+				invalid_ENE_diplo_target = no
+				any_neighbor_country = {
+					OR = {
+						tag = PREV.PREV
+						is_subject_of = PREV.PREV
+					}
+				}
+			}
+			set_variable = { PREV.diplo_target = THIS }
+		}
+	}
+	var:THIS.diplo_target = {
+		PREV = {
+			if = { limit = { has_country_flag = diplomatic_flag } #diplo oriented AIs are extra enthusiastic
+				add_ai_strategy = {
+					type = diplo_action_desire
+					id = PREV
+					value = 100
+					target = improve_relation
+				}
+				add_AI_friendly_desire_towards_PREV = yes
+			}
+			add_AI_friendly_desire_towards_PREV = yes
+			add_ai_strategy = {
+				type = diplo_action_desire
+				id = PREV
+				value = 100
+				target = improve_relation
+			}
+		}
+	}
+	if = { limit = { tag = ISN }log = "Country: [THIS.getName]              Diplo Target: [?diplo_target.GetName]" }
+}
+calculate_ENE_mil_target_weight = { #Outputs to a variable called mil_target_weight PREV is the calculator, THIS is the target
+	set_variable = { PREV.current_target_weight = 0 }
+	add_to_variable = { PREV.current_target_weight = THIS.num_battalions }
+	if = { #more likely to conquer their homeland
+		limit = {
+			any_owned_state = { #state
+				ROOT = { #sending country
+					PREV = { #state
+						THIS_state_has_same_heritage_as_PREV_tag = yes
+					}
+				}
+			}
+		}
+		multiply_variable = { PREV.current_target_weight = 0.5 }
+	}
+	if = { #give glenis a break
+		limit = {
+			PREV = { original_tag = AGR }
+			original_tag = IRN
+		}
+		multiply_variable = { PREV.current_target_weight = 2 }
+	}
+	if = { #dunland won't get bogged down in stupid war against reedwater
+		limit = {
+			PREV = { is_dunland_tag = yes }
+			NOT = { OR = { 64 = { is_controlled_by_ROOT_or_ally = yes } 61 = { is_controlled_by_ROOT_or_ally = yes } } }
+			OR = { tag = REE tag = ERG }
+		}
+		set_variable = { PREV.current_target_weight = -1 }
+	}
+	else_if = {
+		limit = { #don't declare on ISN if you want to ally them
+			has_country_flag = saruman_flag
+			PREV = { OR = { is_in_faction_with = ISN is_subject_of = ISN } }
+		}
+		set_variable = { PREV.current_target_weight = -1 }
+	}
+	else_if = { #melkorites should stop getting in wars that make them join dumb factions
+		limit = {
+			has_government = melkorite
+			PREV = {
+				OR = {
+					has_government = melkorite
+					is_in_faction_with = MOR
+					is_in_faction_with = ISN
+					AND = {
+						has_government = ISN
+						is_in_faction = no
+						date > 3015.6.1
+					}
+				}
+			}
+		}
+		set_variable = { PREV.current_target_weight = -1 }
+	}
+	else_if = { #Don't attack anyone with good relations (ancestral friend, diplo target, > 50 opinion)
+		limit = {
+			OR = {
+				has_opinion = {
+					target = PREV
+					value > 50
+				}
+				check_variable = { PREV.ancestral_friend = THIS }
+				check_variable = { PREV.diplo_target = THIS }
+			}
+		}
+		set_variable = { PREV.current_target_weight = -1 }
+	}
+	else_if = { #don't attack saruman's allys if you want to ally him
+		limit = {
+			ISN = { is_ally_with = PREV.PREV }
+			OR = {
+				has_country_flag = saruman_flag
+				has_opinion = {
+					target = ISN
+					value > 25
+				}
+			}
+		}
+		set_variable = { PREV.current_target_weight = -1 }
+	}
+	else_if = { #good folks don't attack anyone except evil
+		limit = {
+			is_good = yes
+			PREV = { is_true_evil = no }
+		}
+		set_variable = { PREV.current_target_weight = -1 }
+	}
+
+	#log = "[THIS.getName] battaltions: [?THIS.num_battalions] weight: [?PREV.current_target_weight]"
+	#NOT = { check_variable = { ROOT.current_target_weight = -1 } }
+}
+set_new_mil_target = {
+	clear_variable = THIS.mil_target
+	set_temp_variable = { iter = 0.8 }
+	set_variable = { target_weight = 99999 }
+	every_country = {
+		limit = {
+			is_greater_enedwaith_tag = yes
+			can_ROOT_get_wargoal_on_THIS = yes
+			any_neighbor_country = {
+				OR = {
+					tag = PREV.PREV
+					is_subject_of = PREV.PREV
+				}
+			}
+			if = { #Dunfells, please stop invading reedwater! I'm begging you!
+				limit = { ROOT = { is_dunland_tag = yes } }
+				OR = {
+					NOT = { OR = { original_tag = ERG original_tag = REE } }
+					OR = { 64 = { is_controlled_by_ROOT_or_ally = yes } 61 = { is_controlled_by_ROOT_or_ally = yes } }
+				}
+			}
+		}
+		calculate_ENE_mil_target_weight = yes
+		if = {
+			limit = {
+				NOT = { check_variable = { PREV.current_target_weight = -1 } }
+				check_variable = { PREV.current_target_weight < PREV.target_weight }
+			}
+			set_variable = { PREV.target_weight = PREV.current_target_weight }
+			set_variable = { PREV.mil_target = THIS }
+		}
+	}
+	# if = { #because dunfells keeps invading reedwater and it does not works
+		# limit = {
+			# original_tag = DUN
+			# THIS.mil_target = { OR = { original_tag = REE original_tag = ERG } }
+			# NOT = { 
+		# }
+	# }
+	#set_variable = { mil_target = target_country }
+	var:THIS.mil_target = {
+		PREV = {
+			add_AI_hostile_desire_towards_PREV = yes
+			add_ai_strategy = {
+				type = diplo_action_desire
+				id = PREV
+				value = 100
+				target = improve_relation
+			}
+		}
+	}
+	log = "Country: [THIS.getName]              Mil Target: [?mil_target.GetName]"
+}
+
+calculate_wargoal_decision_cost = { #must set COST beforehand, collect it afterwards
+	if = { limit = { has_country_leader_with_trait = raging_unifier }
+		multiply_variable = { COST = 0.25 }
+	}
+	else_if = { limit = { any_character = { has_trait = minor_raging_unifier is_political_advisor = yes } }
+		multiply_variable = { COST = 0.63 }
+	}
+	#multiply_temp_variable = { COST = @justify_war_goal_time }
+	set_temp_variable = { WT = global.threat }
+	multiply_temp_variable = { WT = 0.5 }
+	set_temp_variable = { modifier = 1 }
+	subtract_from_temp_variable = { modifier = WT }
+	multiply_variable = { COST = modifier }
+}
+
+ENE_establish_royal_tax_office_reward = { #1 civ & 1 slot
+	add_building_construction = {
+		type = industrial_complex
+		level = 1
+		instant_build = yes
+	}
+	add_extra_state_shared_building_slots = 1
+}
+
+ENE_summon_isolated_tribes_reward = {
+	add_manpower = 500000
+}
+
+accept_gondorian_protectorate = {
+	add_ideas = gondorian_protectorate
+}
+generate_ENE_character_random_portrait = {
+	if = { limit = { check_variable = { characterGender = female } }
+		random_list = {
+			1 = {
+				set_portraits = {
+					civilian = { small = "GFX_Portrait_Wild_Generic_f_1_small" }
+				}
+			}
+			1 = {
+				set_portraits = {
+					civilian = { small = "GFX_Portrait_Wild_Generic_f_2_small" }
+				}
+			}
+			1 = {
+				set_portraits = {
+					civilian = { small = "GFX_Portrait_Wild_Generic_f_3_small" }
+				}
+			}
+			1 = {
+				set_portraits = {
+					civilian = { small = "GFX_Portrait_Wild_Generic_f_4_small" }
+				}
+			}
+			1 = {
+				set_portraits = {
+					civilian = { small = "GFX_Portrait_Wild_Generic_f_5_small" }
+				}
+			}
+		}
+	}
+	else = {
+		random_list = {
+			1 = {
+				set_portraits = {
+					civilian = { small = "GFX_Portrait_Wild_Generic_m_1_small" }
+				}
+			}
+			1 = {
+				set_portraits = {
+					civilian = { small = "GFX_Portrait_Wild_Generic_m_2_small" }
+				}
+			}
+			1 = {
+				set_portraits = {
+					civilian = { small = "GFX_Portrait_Wild_Generic_m_3_small" }
+				}
+			}
+			1 = {
+				set_portraits = {
+					civilian = { small = "GFX_Portrait_Wild_Generic_m_4_small" }
+				}
+			}
+			1 = {
+				set_portraits = {
+					civilian = { small = "GFX_Portrait_Wild_Generic_m_5_small" }
+				}
+			}
+		}
+	}
+}
+generate_ENE_character_random_female_portrait = {
+	random_list = {
+		1 = {
+			set_portraits = {
+				civilian = { small = "GFX_Portrait_Wild_Generic_f_1_small" }
+			}
+		}
+		1 = {
+			set_portraits = {
+				civilian = { small = "GFX_Portrait_Wild_Generic_f_2_small" }
+			}
+		}
+		1 = {
+			set_portraits = {
+				civilian = { small = "GFX_Portrait_Wild_Generic_f_3_small" }
+			}
+		}
+		1 = {
+			set_portraits = {
+				civilian = { small = "GFX_Portrait_Wild_Generic_f_4_small" }
+			}
+		}
+		1 = {
+			set_portraits = {
+				civilian = { small = "GFX_Portrait_Wild_Generic_f_5_small" }
+			}
+		}
+	}
+}
+generate_ENE_character_random_male_portrait = {
+	random_list = {
+		1 = {
+			set_portraits = {
+				civilian = { small = "GFX_Portrait_Wild_Generic_m_1_small" }
+			}
+		}
+		1 = {
+			set_portraits = {
+				civilian = { small = "GFX_Portrait_Wild_Generic_m_2_small" }
+			}
+		}
+		1 = {
+			set_portraits = {
+				civilian = { small = "GFX_Portrait_Wild_Generic_m_3_small" }
+			}
+		}
+		1 = {
+			set_portraits = {
+				civilian = { small = "GFX_Portrait_Wild_Generic_m_4_small" }
+			}
+		}
+		1 = {
+			set_portraits = {
+				civilian = { small = "GFX_Portrait_Wild_Generic_m_5_small" }
+			}
+		}
+	}
+}
+
+
+##############################TRADE
+PREV_ENE_benefits_of_THIS_CAR_trade = {
+	custom_effect_tooltip = PREV_ENE_benefits_of_THIS_CAR_trade_tooltip
+}
+THIS_CAR_benefits_of_PREV_ENE_trade = {
+	custom_effect_tooltip = THIS_CAR_benefits_of_PREV_ENE_trade_tooltip
+}
+########FROM, for events
+FROM_ENE_benefits_of_THIS_CAR_trade = {
+	custom_effect_tooltip = FROM_ENE_benefits_of_THIS_CAR_trade_tooltip
+	hidden_effect = {
+		for_loop_effect = {
+			end = factoriesGained
+			FROM = {
+				random_controlled_state = {
+					limit = { is_core_of = FROM }
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+}
+THIS_CAR_benefits_of_FROM_ENE_trade = {
+	custom_effect_tooltip = THIS_CAR_benefits_of_FROM_ENE_trade_tooltip
+	custom_effect_tooltip = cloth_gained_tooltip
+	hidden_effect = {
+		for_loop_effect = {
+			end = clothGained
+			random_controlled_state = {
+				limit = { is_core_of = PREV }
+				add_resource = {
+					type = cloth
+					amount = 1
+				}
+			}
+		}
+	}
+}
+
+ENE_trade_to_the_north_effect_tooltip = {
+	country_event = { id = blood_oath.13 hours = 1 }
+	custom_effect_tooltip = ENE_trade_to_the_north_tooltip
+	effect_tooltip = {
+		PREV_ENE_benefits_of_THIS_CAR_trade = yes
+		THIS_CAR_benefits_of_PREV_ENE_trade = yes
+		diplomatic_relation = {
+			country = FROM
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = cooperation
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = cooperation
+		}
+	}
+}
+	
+repair_tharbad = {
+	218 = {
+		upgrade_state_category = yes
+		add_manpower = 1000000
+		set_state_flag = tharbad_repaired
+	}
+	219 = {
+		upgrade_state_category = yes
+		add_manpower = 1000000
+		set_state_flag = tharbad_repaired
+	}
+}
+repair_tharbad_together = {
+	repair_tharbad = yes
+	build_railway = {
+		level = 5
+		build_only_on_allied = no
+		start_state = 218
+		target_state = 219
+	}
+}
+
+initiate_white_mountain_uprising = {
+	every_country = {
+		limit = { is_white_mountains_tag = yes NOT = { original_tag = WHT } }
+		check_if_white_mountains_sponsor = yes
+	}
+	WHT = {
+		set_variable = { uprising_enemy = 139.owner }
+		transfer_state = 139
+		load_oob = "WHT_uprising"
+		#saves the popularities of each ideology to variables
+		var:sponsor = {
+			set_variable = { WHT.savedIsolationism = party_popularity_100@isolationism }
+			set_variable = { WHT.savedFreedom = party_popularity_100@freedom }
+			set_variable = { WHT.savedOpportunism = party_popularity_100@opportunism }
+			set_variable = { WHT.savedConquest = party_popularity_100@conquest }
+			set_variable = { WHT.savedMelkorite = party_popularity_100@melkorite }
+			set_variable = { WHT.rulingParty = current_party_ideology_group }
+		}
+		var:uprising_enemy = {
+			puppet = WHT
+			hidden_effect = { news_event = { id = rfr_news.50 hours = 1 } }
+		}
+		load_saved_politics = yes
+		if = { limit = { var:sponsor = { has_government = isolationism } }
+			set_politics = { ruling_party = isolationism }
+			set_country_flag = isolationism_flag
+		}
+		else_if = { limit = { var:sponsor = { has_government = freedom } }
+			set_politics = { ruling_party = freedom }
+			set_country_flag = freedom_flag
+		}
+		else_if = { limit = { var:sponsor = { has_government = opportunism } }
+			set_politics = { ruling_party = opportunism }
+			set_country_flag = opportunism_flag
+		}
+		else_if = { limit = { var:sponsor = { has_government = conquest } }
+			set_politics = { ruling_party = conquest }
+			set_country_flag = conquest_flag
+		}
+		else_if = { limit = { var:sponsor = { has_government = melkorite } }
+			set_politics = { ruling_party = melkorite }
+			set_country_flag = melkorite_flag
+		}
+		clear_saved_politics = yes
+		#halves resistance, represents fighters joining army
+		multiply_variable = { resistance_target_var = 0.5 }
+		multiply_variable = { resistance_growth_var = 0.5 }
+	}
+	139 = { set_state_flag = wmt_uprising_happened }
+	every_country = {
+		limit = { is_white_mountains_tag = yes is_ai = no }
+		country_event = { id = blood_oath.16 hours = 1 }
+	}
+}
+check_if_white_mountains_sponsor = {
+	every_other_country = {
+		limit = { is_white_mountains_tag = yes }
+		if = {
+			limit = { check_variable = { wmt_influence > PREV.wmt_influence } }
+			PREV = { set_country_flag = not_sponsor }
+		}
+		else = {
+			set_variable = { sponsor_flag_frame = 0 }
+		}
+	}
+	if = { limit = { has_country_flag = not_sponsor }
+		clr_country_flag = not_sponsor
+		set_variable = { sponsor_flag_frame = 1 }
+	}
+	else = {
+		set_variable = { WHT.sponsor = THIS }
+		set_variable = { sponsor_flag_frame = 2 }
+	}
+}
+increase_white_mountain_influence_1 = {
+	add_to_variable = { wmt_influence = 1 }
+	check_if_white_mountains_sponsor = yes
+	custom_effect_tooltip = increase_white_mountain_influence_1_tooltip
+}
+increase_white_mountain_influence_2 = {
+	hidden_effect = {
+		increase_white_mountain_influence_1 = yes
+		increase_white_mountain_influence_1 = yes
+	}
+	custom_effect_tooltip = increase_white_mountain_influence_2_tooltip
+}
+create_white_mountain_uprising_volunteers = {
+	custom_effect_tooltip = create_white_mountain_uprising_volunteers_tooltip
+	hidden_effect = {
+		WHT = { news_event = { id = blood_oath.49 hours = 1 } }
+		if = { limit = { original_tag = ANU }
+			139 = {
+				create_unit = {
+					division = "name = \"Annúlefnuin Volunteers\" division_template = \"White Mountain Volunteers\" start_experience_factor = 0.5"
+					owner = WHT
+				}
+			}
+		}
+		else_if = { limit = { original_tag = HVK }
+			139 = {
+				create_unit = {
+					division = "name = \"Hairaverkienian Volunteers\" division_template = \"White Mountain Volunteers\" start_experience_factor = 0.5"
+					owner = WHT
+				}
+			}
+		}
+		else_if = { limit = { original_tag = NIF }
+			139 = {
+				create_unit = {
+					division = "name = \"Nan-i-Ferythian Volunteers\" division_template = \"White Mountain Volunteers\" start_experience_factor = 0.5"
+					owner = WHT
+				}
+			}
+		}
+		else_if = { limit = { original_tag = TAW }
+			139 = {
+				create_unit = {
+					division = "name = \"Tawartelehan Volunteers\" division_template = \"White Mountain Volunteers\" start_experience_factor = 0.5"
+					owner = WHT
+				}
+			}
+		}
+	}
+}
+
+THIS_swear_blood_oath_to_PREV = {
+	save_current_politics = yes
+	every_subject_country = {
+		limit = { has_autonomy_state = autonomy_blood_oath }
+		PREV_annex_THIS_blood_oath_vassal_on_swear = yes
+	}
+	PREV = {
+		if = { limit = { has_completed_focus = ISN_reorganize_the_tribes }
+			set_autonomy = {
+				target = PREV
+				autonomy_state = autonomy_councils_ward
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		else = {
+			set_autonomy = {
+				target = PREV
+				autonomy_state = autonomy_blood_oath
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		add_ai_strategy = { #AI doesn't need to keep trying to vassalise you now
+			type = diplo_action_desire
+			id = PREV
+			value = -200
+			target = improve_relation
+		}
+	}
+	hidden_effect = {
+		load_saved_politics = yes
+		clear_saved_politics = yes
+	}
+}
+PREV_swear_blood_oath_to_THIS = {
+	PREV = {
+		every_subject_country = {
+			limit = { has_autonomy_state = autonomy_blood_oath }
+			PREV_annex_THIS_blood_oath_vassal_on_swear = yes
+		}
+		save_current_politics = yes
+	}
+	if = { limit = { has_completed_focus = ISN_reorganize_the_tribes }
+		set_autonomy = {
+			target = PREV
+			autonomy_state = autonomy_councils_ward
+			end_wars = no
+			end_civil_wars = no
+		}
+	}
+	else = {
+		set_autonomy = {
+			target = PREV
+			autonomy_state = autonomy_blood_oath
+			end_wars = no
+			end_civil_wars = no
+		}
+	}
+	add_ai_strategy = { #AI doesn't need to keep trying to vassalise you now
+		type = diplo_action_desire
+		id = PREV
+		value = -200
+		target = improve_relation
+	}
+	PREV = {
+		hidden_effect = {
+			load_saved_politics = yes
+			clear_saved_politics = yes
+		}
+	}
+	hidden_effect = { country_event = { id = blood_oath.36 days = 1 } } #can't add compliance this tick
+}
+
+increase_white_mountain_resistance_target = {
+	add_to_variable = { WHT.resistance_target_var = WHT.resistance_increase }
+	custom_effect_tooltip = increase_white_mountain_resistance_target_tooltip
+}
+increase_white_mountain_resistance_growth = {
+	add_to_variable = { WHT.resistance_growth_var = WHT.resistance_increase }
+	custom_effect_tooltip = increase_white_mountain_resistance_growth_tooltip
+}
+
+increase_white_mountain_resistance_target_2 = {
+	add_to_variable = { WHT.resistance_target_var = WHT.resistance_increase }
+	add_to_variable = { WHT.resistance_target_var = WHT.resistance_increase }
+	custom_effect_tooltip = increase_white_mountain_resistance_target_twice_tooltip
+}
+increase_white_mountain_resistance_growth_2 = {
+	add_to_variable = { WHT.resistance_growth_var = WHT.resistance_increase }
+	add_to_variable = { WHT.resistance_growth_var = WHT.resistance_increase }
+	custom_effect_tooltip = increase_white_mountain_resistance_growth_twice_tooltip
+}
+
+ISN_recieve_FROM_ENE_mil_bonus = {
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = ISN_ENE_mil_bonus_modifier } } }
+		add_dynamic_modifier = { modifier = ISN_ENE_mil_bonus_modifier }
+	}
+	if = { limit = { FROM = { is_andrast_tag = yes } }
+		custom_effect_tooltip = andrast_ISN_mil_bonus_tooltip
+		hidden_effect = { add_ideas = andrast_ISN_mil_bonus }
+	}
+	else_if = { limit = { FROM = { is_dunland_tag = yes } }
+		custom_effect_tooltip = dunland_ISN_mil_bonus_tooltip
+		hidden_effect = { add_ideas = dunland_ISN_mil_bonus }
+	}
+	else_if = { limit = { FROM = { is_druwaith_iaur_tag = yes } }
+		custom_effect_tooltip = druwaith_iaur_ISN_mil_bonus_tooltip
+		hidden_effect = { add_ideas = druwaith_iaur_ISN_mil_bonus }
+	}
+	else_if = { limit = { FROM = { is_enedwaith_tag = yes } }
+		custom_effect_tooltip = enedwaith_ISN_mil_bonus_tooltip
+		hidden_effect = { add_ideas = enedwaith_ISN_mil_bonus }
+	}
+	else_if = { limit = { FROM = { is_eregion_tag = yes } }
+		custom_effect_tooltip = eregion_ISN_mil_bonus_tooltip
+		hidden_effect = { add_ideas = eregion_ISN_mil_bonus }
+	}
+	else_if = { limit = { FROM = { is_saralain_tag = yes } }
+		custom_effect_tooltip = saralain_ISN_mil_bonus_tooltip
+		hidden_effect = { add_ideas = saralain_ISN_mil_bonus }
+	}
+	else_if = { limit = { FROM = { is_white_mountains_tag = yes } }
+		custom_effect_tooltip = white_mountains_ISN_mil_bonus_tooltip
+		hidden_effect = { add_ideas = white_mountains_ISN_mil_bonus }
+	}
+	custom_effect_tooltip = ENE_cooperation_discipline_impact_tooltip
+}
+
+ISN_druwaith_trade_accept_effect = {
+	if = { limit = { FROM = { original_tag = AKN } }
+		add_ideas = isen_trade_with_an_khorgan
+	}
+	else_if = { limit = { FROM = { original_tag = BYR } }
+		add_ideas = isen_trade_with_byrig
+	}
+	else_if = { limit = { FROM = { original_tag = DRU } }
+		add_ideas = isen_trade_with_drulad
+	}
+	else_if = { limit = { FROM = { original_tag = IRN } }
+		add_ideas = isen_trade_with_isenrun
+	}
+	FROM = {
+		add_ideas = druwaith_trade_with_isengard
+	}
+	FROM = { increase_THIS_trust_towards_PREV = yes }
+}
+druwaith_ISN_trade_accept_effect = {
+	if = { limit = { ROOT = { original_tag = AKN } }
+		add_ideas = isen_trade_with_an_khorgan
+	}
+	else_if = { limit = { ROOT = { original_tag = BYR } }
+		add_ideas = isen_trade_with_byrig
+	}
+	else_if = { limit = { ROOT = { original_tag = DRU } }
+		add_ideas = isen_trade_with_drulad
+	}
+	else_if = { limit = { ROOT = { original_tag = IRN } }
+		add_ideas = isen_trade_with_isenrun
+	}
+	ROOT = {
+		add_ideas = druwaith_trade_with_isengard
+	}
+	increase_PREV_trust_towards_THIS = yes
+}
+
+gain_5_random_civs = {
+	random_controlled_state = {
+		limit = {
+			is_core_of = PREV
+			free_building_slots = {
+				building = industrial_complex
+				size > 0
+				include_locked = yes
+			}
+		}
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}
+		add_extra_state_shared_building_slots = 1
+	}
+	random_controlled_state = {
+		limit = {
+			is_core_of = PREV
+			free_building_slots = {
+				building = industrial_complex
+				size > 0
+				include_locked = yes
+			}
+		}
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}
+		add_extra_state_shared_building_slots = 1
+	}
+	random_controlled_state = {
+		limit = {
+			is_core_of = PREV
+			free_building_slots = {
+				building = industrial_complex
+				size > 0
+				include_locked = yes
+			}
+		}
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}
+		add_extra_state_shared_building_slots = 1
+	}
+	random_controlled_state = {
+		limit = {
+			is_core_of = PREV
+			free_building_slots = {
+				building = industrial_complex
+				size > 0
+				include_locked = yes
+			}
+		}
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}
+		add_extra_state_shared_building_slots = 1
+	}
+	random_controlled_state = {
+		limit = {
+			is_core_of = PREV
+			free_building_slots = {
+				building = industrial_complex
+				size > 0
+				include_locked = yes
+			}
+		}
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}
+		add_extra_state_shared_building_slots = 1
+	}
+}
+
+instantiate_WLF_leader = { #call in the character who is WLF's leader to give them name & portrait. PREV is the country they belong to
+	if = { limit = { PREV = { is_subject_of = CGN } }
+		set_character_name = CGN_WLF_leader_name
+		set_portraits = {
+			civilian = {
+				large = GFX_Portrait_Wild_Generic_m_4
+				small = GFX_Portrait_Wild_Generic_m_4_small
+			}
+		}
+		add_country_leader_trait = {
+			ideology = clanship
+			trait = smooth_talking_charmer
+		}
+		add_country_leader_trait = {
+			ideology = feudalism
+			trait = smooth_talking_charmer
+		}
+		add_country_leader_trait = {
+			ideology = tribalism
+			trait = smooth_talking_charmer
+		}
+		add_country_leader_trait = {
+			ideology = autocracy
+			trait = smooth_talking_charmer
+		}
+		add_country_leader_trait = {
+			ideology = shadow_worship
+			trait = smooth_talking_charmer
+		}
+	}
+	else_if = { limit = { PREV = { is_subject_of = DFN } }
+		set_character_name = DFN_WLF_leader_name
+		set_portraits = {
+			civilian = {
+				large = GFX_Portrait_Wild_Generic_m_6
+				small = GFX_Portrait_Wild_Generic_m_6_small
+			}
+		}
+		add_country_leader_trait = {
+			ideology = clanship
+			trait = economist
+		}
+		add_country_leader_trait = {
+			ideology = feudalism
+			trait = economist
+		}
+		add_country_leader_trait = {
+			ideology = tribalism
+			trait = economist
+		}
+		add_country_leader_trait = {
+			ideology = autocracy
+			trait = economist
+		}
+		add_country_leader_trait = {
+			ideology = shadow_worship
+			trait = economist
+		}
+	}
+	else_if = { limit = { PREV = { is_subject_of = DTH } }
+		set_character_name = DTH_WLF_leader_name
+		set_portraits = {
+			civilian = {
+				large = GFX_Portrait_Wild_Generic_m_1
+				small = GFX_Portrait_Wild_Generic_m_1_small
+			}
+		}
+		add_country_leader_trait = {
+			ideology = clanship
+			trait = war_industrialist
+		}
+		add_country_leader_trait = {
+			ideology = feudalism
+			trait = war_industrialist
+		}
+		add_country_leader_trait = {
+			ideology = tribalism
+			trait = war_industrialist
+		}
+		add_country_leader_trait = {
+			ideology = autocracy
+			trait = war_industrialist
+		}
+		add_country_leader_trait = {
+			ideology = shadow_worship
+			trait = war_industrialist
+		}
+	}
+	else_if = { limit = { PREV = { is_subject_of = DUN } }
+		set_character_name = DUN_WLF_leader_name
+		set_portraits = {
+			civilian = {
+				large = GFX_Portrait_Wild_Generic_f_3
+				small = GFX_Portrait_Wild_Generic_f_3_small
+			}
+		}
+		add_country_leader_trait = {
+			ideology = clanship
+			trait = retired_officer
+		}
+		add_country_leader_trait = {
+			ideology = feudalism
+			trait = retired_officer
+		}
+		add_country_leader_trait = {
+			ideology = tribalism
+			trait = retired_officer
+		}
+		add_country_leader_trait = {
+			ideology = autocracy
+			trait = retired_officer
+		}
+		add_country_leader_trait = {
+			ideology = shadow_worship
+			trait = retired_officer
+		}
+	}
+}
+
+##Outsiders shouldn't join greater enedwaith factions
+@dontJoinEneFactionWeight = 50
+@dontJoinEneFactionWeightNeg = -50
+dont_join_ENE_factions_effect = {
+	every_country = {
+		limit = { is_greater_enedwaith_tag = yes }
+		every_country = {
+			limit = { is_greater_enedwaith_tag = no }
+			add_ai_strategy = {
+				type = consider_weak
+				id = PREV
+				value = 20
+			}
+			add_ai_strategy = {
+				type = diplo_action_acceptance
+				id = PREV
+				value = @dontJoinEneFactionWeightNeg
+				target = offer_join_faction
+			}
+			add_ai_strategy = {
+				type = diplo_action_desire
+				id = PREV
+				value = @dontJoinEneFactionWeightNeg
+				target = join_faction
+			}
+			# add_ai_strategy = {
+				# type = alliance
+				# id = PREV
+				# value = -25
+			# }
+		}
+	}
+}
+	
+ISN_befriend_ENE_effect = {
+	every_country = {
+		limit = { is_greater_enedwaith_tag = yes NOT = { has_country_flag = anti_saruman_flag } }
+		if = {
+			limit = { has_country_flag = saruman_flag }
+			@friendlySarumanBoost = 20
+			ROOT = {
+				add_ai_strategy = {
+					type = alliance
+					id = PREV
+					value = @friendlySarumanBoost
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = PREV
+					value = @friendlySarumanBoost
+				}
+				add_ai_strategy = {
+					type = support
+					id = PREV
+					value = @friendlySarumanBoost
+				}
+				add_ai_strategy = {
+					type = diplo_action_desire
+					id = PREV
+					value = @friendlySarumanBoost
+					target = offer_join_faction
+				}
+			}
+		}
+		@neutralSarumanBoost = 10
+		else = {
+			ROOT = {
+				add_ai_strategy = {
+					type = alliance
+					id = PREV
+					value = @neutralSarumanBoost
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = PREV
+					value = @neutralSarumanBoost
+				}
+				add_ai_strategy = {
+					type = support
+					id = PREV
+					value = @neutralSarumanBoost
+				}
+				add_ai_strategy = {
+					type = diplo_action_desire
+					id = PREV
+					value = @neutralSarumanBoost
+					target = offer_join_faction
+				}
+			}
+		}
+	}
+}
+
+activate_enedwaith_formable_decision = {
+	if = { limit = { is_andrast_tag = yes }
+		activate_decision = form_Andrast
+	}
+	else_if = { limit = { is_druwaith_iaur_tag = yes }
+		activate_decision = form_Druwaith_Iaur
+	}
+	else_if = { limit = { is_dunland_tag = yes }
+		activate_decision = form_Dunland
+	}
+	else_if = { limit = { is_enedwaith_tag = yes }
+		activate_decision = form_Enedwaith
+	}
+	else_if = { limit = { is_eregion_tag = yes }
+		activate_decision = form_Eregion
+	}
+	else_if = { limit = { is_white_mountains_tag = yes }
+		activate_decision = form_White_Mountains
+	}
+	add_political_power = 50
+}
+
+deactivate_THIS_saruman_pupil = {
+	if = { limit = { ROOT = { has_character = ADB_Arid_Rast_Hwarin } is_character = ADB_Arid_Rast_Hwarin }
+		ROOT = { deactivate_advisor = ADB_Arid_Rast_Hwarin }
+	}
+	else_if = { limit = { ROOT = { has_character = ADB_avan_ziraxes } is_character = ADB_avan_ziraxes }
+		ROOT = { deactivate_advisor = ADB_avan_ziraxes }
+	}
+	else_if = { limit = { ROOT = { has_character = ADB_sinna_urengarozing } is_character = ADB_sinna_urengarozing }
+		ROOT = { deactivate_advisor = ADB_sinna_urengarozing }
+	}
+	else_if = { limit = { ROOT = { has_character = NEN_Nifad_Arunozing } is_character = NEN_Nifad_Arunozing }
+		ROOT = { deactivate_advisor = NEN_Nifad_Arunozing }
+	}
+	else_if = { limit = { ROOT = { has_character = NEN_rinir_falfarozaing } is_character = NEN_rinir_falfarozaing }
+		ROOT = { deactivate_advisor = NEN_rinir_falfarozaing }
+	}
+	else_if = { limit = { ROOT = { has_character = NEN_dinak_tundrezing } is_character = NEN_dinak_tundrezing }
+		ROOT = { deactivate_advisor = NEN_dinak_tundrezing }
+	}
+	else_if = { limit = { ROOT = { has_character = PRI_Eribin_Rholfosing } is_character = PRI_Eribin_Rholfosing }
+		ROOT = { deactivate_advisor = PRI_Eribin_Rholfosing }
+	}
+	else_if = { limit = { ROOT = { has_character = PRI_rint_ceneling } is_character = PRI_rint_ceneling }
+		ROOT = { deactivate_advisor = PRI_rint_ceneling }
+	}
+	else_if = { limit = { ROOT = { has_character = PRI_rana_gutharozing } is_character = PRI_rana_gutharozing }
+		ROOT = { deactivate_advisor = PRI_rana_gutharozing }
+	}
+	else_if = { limit = { ROOT = { has_character = RAF_Goned_Ilondoti } is_character = RAF_Goned_Ilondoti }
+		ROOT = { deactivate_advisor = RAF_Goned_Ilondoti }
+	}
+	else_if = { limit = { ROOT = { has_character = RAF_malad_hildfafosing } is_character = RAF_malad_hildfafosing }
+		ROOT = { deactivate_advisor = RAF_malad_hildfafosing }
+	}
+	else_if = { limit = { ROOT = { has_character = RAF_ruz_lengfealozing } is_character = RAF_ruz_lengfealozing }
+		ROOT = { deactivate_advisor = RAF_ruz_lengfealozing }
+	}
+	else_if = { limit = { ROOT = { has_character = ERG_Cus_Frerogh_Fergoling } is_character = ERG_Cus_Frerogh_Fergoling }
+		ROOT = { deactivate_advisor = ERG_Cus_Frerogh_Fergoling }
+	}
+	else_if = { limit = { ROOT = { has_character = ERG_gin_tothrening } is_character = ERG_gin_tothrening }
+		ROOT = { deactivate_advisor = ERG_gin_tothrening }
+	}
+	else_if = { limit = { ROOT = { has_character = ERG_hedrig_gutharding } is_character = ERG_hedrig_gutharding }
+		ROOT = { deactivate_advisor = ERG_hedrig_gutharding }
+	}
+	else_if = { limit = { ROOT = { has_character = HOL_alfrid_henning } is_character = HOL_alfrid_henning }
+		ROOT = { deactivate_advisor = HOL_alfrid_henning }
+	}
+	else_if = { limit = { ROOT = { has_character = HOL_gerun_map_inyr } is_character = HOL_gerun_map_inyr }
+		ROOT = { deactivate_advisor = HOL_gerun_map_inyr }
+	}
+	else_if = { limit = { ROOT = { has_character = HOL_atherhin_map_cadfan } is_character = HOL_atherhin_map_cadfan }
+		ROOT = { deactivate_advisor = HOL_atherhin_map_cadfan }
+	}
+	else_if = { limit = { ROOT = { has_character = MBL_Bluain_clanna_Banoc } is_character = MBL_Bluain_clanna_Banoc }
+		ROOT = { deactivate_advisor = MBL_Bluain_clanna_Banoc }
+	}
+	else_if = { limit = { ROOT = { has_character = MBL_erlis_map_lorcan } is_character = MBL_erlis_map_lorcan }
+		ROOT = { deactivate_advisor = MBL_erlis_map_lorcan }
+	}
+	else_if = { limit = { ROOT = { has_character = MBL_cadualader_frenfaling } is_character = MBL_cadualader_frenfaling }
+		ROOT = { deactivate_advisor = MBL_cadualader_frenfaling }
+	}
+	else_if = { limit = { ROOT = { has_character = REE_Cenel_Duillean } is_character = REE_Cenel_Duillean }
+		ROOT = { deactivate_advisor = REE_Cenel_Duillean }
+	}
+	else_if = { limit = { ROOT = { has_character = REE_marin_londing } is_character = REE_marin_londing }
+		ROOT = { deactivate_advisor = REE_marin_londing }
+	}
+	else_if = { limit = { ROOT = { has_character = REE_laskdar_falfaling } is_character = REE_laskdar_falfaling }
+		ROOT = { deactivate_advisor = REE_laskdar_falfaling }
+	}
+	else_if = { limit = { ROOT = { has_character = AKN_Nuth_clenna_Emon } is_character = AKN_Nuth_clenna_Emon }
+		ROOT = { deactivate_advisor = AKN_Nuth_clenna_Emon }
+	}
+	else_if = { limit = { ROOT = { has_character = AKN_aynsar_nienfeading } is_character = AKN_aynsar_nienfeading }
+		ROOT = { deactivate_advisor = AKN_aynsar_nienfeading }
+	}
+	else_if = { limit = { ROOT = { has_character = AKN_lena_nienfeading } is_character = AKN_lena_nienfeading }
+		ROOT = { deactivate_advisor = AKN_lena_nienfeading }
+	}
+	else_if = { limit = { ROOT = { has_character = BYR_Dera_Dunlogan } is_character = BYR_Dera_Dunlogan }
+		ROOT = { deactivate_advisor = BYR_Dera_Dunlogan }
+	}
+	else_if = { limit = { ROOT = { has_character = BYR_doeth_falfaling } is_character = BYR_doeth_falfaling }
+		ROOT = { deactivate_advisor = BYR_doeth_falfaling }
+	}
+	else_if = { limit = { ROOT = { has_character = BYR_derg_arfanding } is_character = BYR_derg_arfanding }
+		ROOT = { deactivate_advisor = BYR_derg_arfanding }
+	}
+	else_if = { limit = { ROOT = { has_character = DRU_Glenis_Hedricing } is_character = DRU_Glenis_Hedricing }
+		ROOT = { deactivate_advisor = DRU_Glenis_Hedricing }
+	}
+	else_if = { limit = { ROOT = { has_character = DRU_dremitudh_balfing } is_character = DRU_dremitudh_balfing }
+		ROOT = { deactivate_advisor = DRU_dremitudh_balfing }
+	}
+	else_if = { limit = { ROOT = { has_character = DRU_dwac_arunding } is_character = DRU_dwac_arunding }
+		ROOT = { deactivate_advisor = DRU_dwac_arunding }
+	}
+	else_if = { limit = { ROOT = { has_character = IRN_Slacon_och_Cadlus } is_character = IRN_Slacon_och_Cadlus }
+		ROOT = { deactivate_advisor = IRN_Slacon_och_Cadlus }
+	}
+	else_if = { limit = { ROOT = { has_character = IRN_iren_henning } is_character = IRN_iren_henning }
+		ROOT = { deactivate_advisor = IRN_iren_henning }
+	}
+	else_if = { limit = { ROOT = { has_character = IRN_emlyn_cenfaling } is_character = IRN_emlyn_cenfaling }
+		ROOT = { deactivate_advisor = IRN_emlyn_cenfaling }
+	}
+	else_if = { limit = { ROOT = { has_character = AGR_acha_map_cada } is_character = AGR_acha_map_cada }
+		ROOT = { deactivate_advisor = AGR_acha_map_cada }
+	}
+	else_if = { limit = { ROOT = { has_character = AGR_aidd_map_rioc } is_character = AGR_aidd_map_rioc }
+		ROOT = { deactivate_advisor = AGR_aidd_map_rioc }
+	}
+	else_if = { limit = { ROOT = { has_character = AGR_Madogh_Morcad } is_character = AGR_Madogh_Morcad }
+		ROOT = { deactivate_advisor = AGR_Madogh_Morcad }
+	}
+	else_if = { limit = { ROOT = { has_character = AGR_una_pafrading } is_character = AGR_una_pafrading }
+		ROOT = { deactivate_advisor = AGR_una_pafrading }
+	}
+	else_if = { limit = { ROOT = { has_character = COL_adderhin_map_lond_daer } is_character = COL_adderhin_map_lond_daer }
+		ROOT = { deactivate_advisor = COL_adderhin_map_lond_daer }
+	}
+	else_if = { limit = { ROOT = { has_character = COL_Cail_Burol_Colgrin } is_character = COL_Cail_Burol_Colgrin }
+		ROOT = { deactivate_advisor = COL_Cail_Burol_Colgrin }
+	}
+	else_if = { limit = { ROOT = { has_character = COL_ninfria_linfarding } is_character = COL_ninfria_linfarding }
+		ROOT = { deactivate_advisor = COL_ninfria_linfarding }
+	}
+	else_if = { limit = { ROOT = { has_character = HST_adon_map_fraid } is_character = HST_adon_map_fraid }
+		ROOT = { deactivate_advisor = HST_adon_map_fraid }
+	}
+	else_if = { limit = { ROOT = { has_character = HST_drus_cenfaling } is_character = HST_drus_cenfaling }
+		ROOT = { deactivate_advisor = HST_drus_cenfaling }
+	}
+	else_if = { limit = { ROOT = { has_character = HST_Tithayndhotir_map_Dein } is_character = HST_Tithayndhotir_map_Dein }
+		ROOT = { deactivate_advisor = HST_Tithayndhotir_map_Dein }
+	}
+	else_if = { limit = { ROOT = { has_character = STK_Bulafrard_Corgail } is_character = STK_Bulafrard_Corgail }
+		ROOT = { deactivate_advisor = STK_Bulafrard_Corgail }
+	}
+	else_if = { limit = { ROOT = { has_character = STK_cenfranain_tothrening } is_character = STK_cenfranain_tothrening }
+		ROOT = { deactivate_advisor = STK_cenfranain_tothrening }
+	}
+	else_if = { limit = { ROOT = { has_character = STK_erulfdin_roricing } is_character = STK_erulfdin_roricing }
+		ROOT = { deactivate_advisor = STK_erulfdin_roricing }
+	}
+	else_if = { limit = { ROOT = { has_character = CGN_athin_arfarding } is_character = CGN_athin_arfarding }
+		ROOT = { deactivate_advisor = CGN_athin_arfarding }
+	}
+	else_if = { limit = { ROOT = { has_character = CGN_Fridalda_ard_Phuing } is_character = CGN_Fridalda_ard_Phuing }
+		ROOT = { deactivate_advisor = CGN_Fridalda_ard_Phuing }
+	}
+	else_if = { limit = { ROOT = { has_character = CGN_nefyn_fulfing } is_character = CGN_nefyn_fulfing }
+		ROOT = { deactivate_advisor = CGN_nefyn_fulfing }
+	}
+	else_if = { limit = { ROOT = { has_character = CGN_WLF_leader_name } is_character = CGN_WLF_leader_name }
+		ROOT = { deactivate_advisor = CGN_WLF_leader_name }
+	}
+	else_if = { limit = { ROOT = { has_character = DFN_afralyb_bocaerning } is_character = DFN_afralyb_bocaerning }
+		ROOT = { deactivate_advisor = DFN_afralyb_bocaerning }
+	}
+	else_if = { limit = { ROOT = { has_character = DFN_Morrin_Riasach } is_character = DFN_Morrin_Riasach }
+		ROOT = { deactivate_advisor = DFN_Morrin_Riasach }
+	}
+	else_if = { limit = { ROOT = { has_character = DFN_yrn_map_dunfearn } is_character = DFN_yrn_map_dunfearn }
+		ROOT = { deactivate_advisor = DFN_yrn_map_dunfearn }
+	}
+	else_if = { limit = { ROOT = { has_character = DFN_WLF_leader_name } is_character = DFN_WLF_leader_name }
+		ROOT = { deactivate_advisor = DFN_WLF_leader_name }
+	}
+	else_if = { limit = { ROOT = { has_character = DTH_doeth_arfoling } is_character = DTH_doeth_arfoling }
+		ROOT = { deactivate_advisor = DTH_doeth_arfoling }
+	}
+	else_if = { limit = { ROOT = { has_character = DTH_ifsa_branting } is_character = DTH_ifsa_branting }
+		ROOT = { deactivate_advisor = DTH_ifsa_branting }
+	}
+	else_if = { limit = { ROOT = { has_character = DTH_Lenfeld_map_Luarch } is_character = DTH_Lenfeld_map_Luarch }
+		ROOT = { deactivate_advisor = DTH_Lenfeld_map_Luarch }
+	}
+	else_if = { limit = { ROOT = { has_character = DTH_WLF_leader_name } is_character = DTH_WLF_leader_name }
+		ROOT = { deactivate_advisor = DTH_WLF_leader_name }
+	}
+	else_if = { limit = { ROOT = { has_character = DUN_turen_map_glanduin } is_character = DUN_turen_map_glanduin }
+		ROOT = { deactivate_advisor = DUN_turen_map_glanduin }
+	}
+	else_if = { limit = { ROOT = { has_character = DUN_wulfgar_brynjarsson } is_character = DUN_wulfgar_brynjarsson }
+		ROOT = { deactivate_advisor = DUN_wulfgar_brynjarsson }
+	}
+	else_if = { limit = { ROOT = { has_character = DUN_yngust_erlaening } is_character = DUN_yngust_erlaening }
+		ROOT = { deactivate_advisor = DUN_yngust_erlaening }
+	}
+	else_if = { limit = { ROOT = { has_character = DUN_WLF_leader_name } is_character = DUN_WLF_leader_name }
+		ROOT = { deactivate_advisor = DUN_WLF_leader_name }
+	}
+	else_if = { limit = { ROOT = { has_character = ISD_Aga_Londing } is_character = ISD_Aga_Londing }
+		ROOT = { deactivate_advisor = ISD_Aga_Londing }
+	}
+	else_if = { limit = { ROOT = { has_character = WLF_rwyn_erraigarding } is_character = WLF_rwyn_erraigarding }
+		ROOT = { deactivate_advisor = WLF_rwyn_erraigarding }
+	}
+	else_if = { limit = { ROOT = { has_character = WLF_gerginauw_nelfaining } is_character = WLF_gerginauw_nelfaining }
+		ROOT = { deactivate_advisor = WLF_gerginauw_nelfaining }
+	}
+	else_if = { limit = { ROOT = { has_character = WLF_wuldyn_map_inyr } is_character = WLF_wuldyn_map_inyr }
+		ROOT = { deactivate_advisor = WLF_wuldyn_map_inyr }
+	}
+	else_if = { limit = { ROOT = { has_character = WLF_beorhtfrith_fen } is_character = WLF_beorhtfrith_fen }
+		ROOT = { deactivate_advisor = WLF_beorhtfrith_fen }
+	}
+	else_if = { limit = { ROOT = { has_character = WLF_gytha_fen } is_character = WLF_gytha_fen }
+		ROOT = { deactivate_advisor = WLF_gytha_fen }
+	}
+	else_if = { limit = { ROOT = { has_character = WLF_eadsige_slaighreluath } is_character = WLF_eadsige_slaighreluath }
+		ROOT = { deactivate_advisor = WLF_eadsige_slaighreluath }
+	}
+	else_if = { limit = { ROOT = { has_character = WLF_aranel_map_merfyn } is_character = WLF_aranel_map_merfyn }
+		ROOT = { deactivate_advisor = WLF_aranel_map_merfyn }
+	}
+	else_if = { limit = { ROOT = { has_character = ANU_Erliz_Hundarin } is_character = ANU_Erliz_Hundarin }
+		ROOT = { deactivate_advisor = ANU_Erliz_Hundarin }
+	}
+	else_if = { limit = { ROOT = { has_character = ANU_diyilaz_dranting } is_character = ANU_diyilaz_dranting }
+		ROOT = { deactivate_advisor = ANU_diyilaz_dranting }
+	}
+	else_if = { limit = { ROOT = { has_character = ANU_guthard_fudreiming } is_character = ANU_guthard_fudreiming }
+		ROOT = { deactivate_advisor = ANU_guthard_fudreiming }
+	}
+	else_if = { limit = { ROOT = { has_character = HVK_Ruratharu_dol_Thorod } is_character = HVK_Ruratharu_dol_Thorod }
+		ROOT = { deactivate_advisor = HVK_Ruratharu_dol_Thorod }
+	}
+	else_if = { limit = { ROOT = { has_character = HVK_saluzi_daeglafosing } is_character = HVK_saluzi_daeglafosing }
+		ROOT = { deactivate_advisor = HVK_saluzi_daeglafosing }
+	}
+	else_if = { limit = { ROOT = { has_character = HVK_glarnmo_rhoricing } is_character = HVK_glarnmo_rhoricing }
+		ROOT = { deactivate_advisor = HVK_glarnmo_rhoricing }
+	}
+	else_if = { limit = { ROOT = { has_character = NIF_Amadoyuz_norn_Eleyu } is_character = NIF_Amadoyuz_norn_Eleyu }
+		ROOT = { deactivate_advisor = NIF_Amadoyuz_norn_Eleyu }
+	}
+	else_if = { limit = { ROOT = { has_character = NIF_rerna_pafanozing } is_character = NIF_rerna_pafanozing }
+		ROOT = { deactivate_advisor = NIF_rerna_pafanozing }
+	}
+	else_if = { limit = { ROOT = { has_character = NIF_teyarn_ilffanozing } is_character = NIF_teyarn_ilffanozing }
+		ROOT = { deactivate_advisor = NIF_teyarn_ilffanozing }
+	}
+	else_if = { limit = { ROOT = { has_character = TAW_Malmadon_Hundarin } is_character = TAW_Malmadon_Hundarin }
+		ROOT = { deactivate_advisor = TAW_Malmadon_Hundarin }
+	}
+	else_if = { limit = { ROOT = { has_character = TAW_vingo_bocaerning } is_character = TAW_vingo_bocaerning }
+		ROOT = { deactivate_advisor = TAW_vingo_bocaerning }
+	}
+	else_if = { limit = { ROOT = { has_character = TAW_gumga_vulfgarozing } is_character = TAW_gumga_vulfgarozing }
+		ROOT = { deactivate_advisor = TAW_gumga_vulfgarozing }
+	}
+	else_if = { limit = { ROOT = { has_character = WHT_Helvi_Wildebeorh } is_character = WHT_Helvi_Wildebeorh }
+		ROOT = { deactivate_advisor = WHT_Helvi_Wildebeorh }
+	}
+	else_if = { limit = { ROOT = { has_character = WHT_Brorn_Vulfosing } is_character = WHT_Brorn_Vulfosing }
+		ROOT = { deactivate_advisor = WHT_Brorn_Vulfosing }
+	}
+	else_if = { limit = { ROOT = { has_character = WHT_Malmadon_Lonozing } is_character = WHT_Malmadon_Lonozing }
+		ROOT = { deactivate_advisor = WHT_Malmadon_Lonozing }
+	}
+
+}
+	
