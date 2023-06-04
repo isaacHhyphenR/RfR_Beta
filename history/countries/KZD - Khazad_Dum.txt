@@ -1,4 +1,4 @@
-﻿capital = 57 #Moria-Khazad Dum
+﻿capital = 58 #Azanulbizar so it gets marked as dwarf in continent.
 	# VPs
 
 set_research_slots = 3
