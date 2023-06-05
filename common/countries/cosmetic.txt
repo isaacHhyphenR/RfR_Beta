@@ -63,14 +63,14 @@ MED_khanate = {
 	color_ui = rgb { 176 121 43 }
 }
 SAG_khanate = {
-	color = rgb { 142 83 32 }
-	color_ui = rgb { 161 93 34 }
+	color = rgb { 161 93 34 }
+	color_ui = rgb { 142 83 32 }
 }
 SRB_khanate = {
 	color = rgb { 189 109 36 }
 	color_ui = rgb { 176 105 43 }
 }
 ULG_khanate = {
-	color = rgb { 170 74 45 }
-	color_ui = rgb { 180 89 51 }
+	color = rgb { 180 89 51 }
+	color_ui = rgb { 170 74 45 }
 }

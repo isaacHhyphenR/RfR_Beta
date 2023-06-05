@@ -232,7 +232,7 @@ NIF = {
 	color_ui = rgb { 64 109 198 }
 }
 ORI = {
-	color = rgb { 255 0 170 }
+	color = rgb { 255 0 153 }
 	color_ui = rgb { 212 0 141 }
 }
 PNG = {
@@ -301,7 +301,7 @@ UMB = {
 }
 WHT = {
 	color = rgb { 140 202 255 }
-	color_ui = rgb { 21 115 196 }
+	color_ui = rgb { 95 183 230 }
 }
 WND = {
 	color = rgb { 141 184 152 }
