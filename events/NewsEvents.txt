@@ -1,0 +1,1224 @@
+﻿add_namespace = rfr_news
+
+news_event = { ##1## Gandalf cures theoden
+	id = rfr_news.1
+	title = rfr_news.1.t
+	desc = rfr_news.1.d
+	picture = GFX_news_gandalf_and_theoden
+	
+	major = yes
+	fire_for_sender = no
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.1.a
+	}
+}
+
+news_event = { ##2## Saruman forced to white peace
+	id = rfr_news.2
+	title = rfr_news.2.t
+	desc = rfr_news.2.d
+	picture = GFX_news_rohan_theoden_negotiates
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.2.a
+	}
+}
+
+news_event = { ##3## The Ring is Destroyed
+	id = rfr_news.3
+	title = rfr_news.3.t
+	desc = rfr_news.3.d
+	picture = GFX_news_fall_of_sauron
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.3.a
+	}
+}
+
+news_event = { ##4## The Ring is Destroyed
+	id = rfr_news.4
+	title = rfr_news.4.t
+	desc = rfr_news.4.d
+	picture = GFX_news_sauron_embodied
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.4.a
+	}
+}
+
+news_event = { ##5## Aragorn coronated
+	id = rfr_news.5
+	title = rfr_news.5.t
+	desc = rfr_news.5.d
+	picture = GFX_news_aragorn_coronation
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.5.a
+	}
+}
+
+news_event = { ##6## Denethor crowns himself
+	id = rfr_news.6
+	title = rfr_news.6.t
+	desc = rfr_news.6.d
+	picture = GFX_news_aragorn_coronation
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.6.a
+	}
+}
+
+news_event = { ##7## Theoden Dies
+	id = rfr_news.7
+	title = rfr_news.7.t
+	desc = rfr_news.7.d
+	picture = GFX_news_theoden_death
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.7.a
+	}
+}
+
+news_event = { ##8## Witch King Dies
+	id = rfr_news.8
+	title = rfr_news.8.t
+	desc = rfr_news.8.d
+	picture = GFX_news_witch_king_death
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.8.a
+	}
+}
+
+news_event = { ##9## Theodred Dies
+	id = rfr_news.9
+	title = rfr_news.9.t
+	desc = rfr_news.9.d
+	picture = GFX_news_theodred_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.9.a
+	}
+}
+
+news_event = { ##10## Starting popup
+	id = rfr_news.10
+	title = rfr_news.10.t
+	desc = rfr_news.10.d
+	picture = GFX_news_pelennor_rohan_army
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.10.a
+	}
+}
+
+news_event = { ##11## Denethor Dies
+	id = rfr_news.11
+	title = rfr_news.11.t
+	desc = rfr_news.11.d
+	picture = GFX_news_denethors_death
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.11.a
+	}
+}
+
+news_event = { ##12## Rohan answers the call
+	id = rfr_news.12
+	title = rfr_news.12.t
+	desc = rfr_news.12.d
+	picture = GFX_news_warning_beacons_lit
+	
+	major = yes
+	fire_for_sender = no
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.12.a
+	}
+}
+
+news_event = { ##13## Last march of the ents
+	id = rfr_news.13
+	title = rfr_news.13.t
+	desc = rfr_news.13.d
+	picture = GFX_news_last_march_of_the_ents
+	
+	major = yes
+	fire_for_sender = no
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.13.a
+	}
+}
+######################################################################################################VorV
+news_event = { ##14## Swore a blood oath
+	id = rfr_news.14
+	title = rfr_news.14.t
+	desc = rfr_news.14.d
+	picture = GFX_news_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.14.a
+		#FROM = { custom_effect_tooltip = debug_vars }
+	}
+}
+news_event = { ##15## Rejected a blood oath
+	id = rfr_news.15
+	title = rfr_news.15.t
+	desc = rfr_news.15.d
+	picture = GFX_news_dunlendings_rally
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.15.a
+	}
+}
+
+news_event = { ##16## ENE tag refused to betray saruman for us
+	id = rfr_news.16
+	title = rfr_news.16.t
+	desc = rfr_news.16.d
+	picture = GFX_news_saruman_rallies_dunlendings
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.16.a
+	}
+}
+news_event = { ##17## ENE tag betrayed saruman for us
+	id = rfr_news.17
+	title = rfr_news.17.t
+	desc = rfr_news.17.d
+	picture = GFX_news_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.17.a
+	}
+}
+news_event = { ##18## ENE tag betrayed us for their kinsfolk
+	id = rfr_news.18
+	title = rfr_news.18.t
+	desc = rfr_news.18.d
+	picture = GFX_news_dunlendings_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.18.a
+	}
+}
+
+news_event = { ##19## Saruman accepts our innovation offer
+	id = rfr_news.19
+	title = rfr_news.19.t
+	desc = rfr_news.19.d
+	picture = GFX_news_saruman_innovations
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.19.a
+	}
+}
+news_event = { ##20## Saruman rejects our innovation offer
+	id = rfr_news.20
+	title = rfr_news.20.t
+	desc = rfr_news.20.d
+	picture = GFX_news_saruman_innovations
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.20.a
+	}
+}
+
+news_event = { ##21## Saruman Returns state
+	id = rfr_news.21
+	title = rfr_news.21.t
+	desc = rfr_news.21.d
+	picture = GFX_news_saruman_pleased
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.21.a
+	}
+}
+news_event = { ##22## Saruman refuses to return state
+	id = rfr_news.22
+	title = rfr_news.22.t
+	desc = rfr_news.22.d
+	picture = GFX_news_saruman_regal
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.22.a
+	}
+}
+
+news_event = { ##23## Sauron rewards with PP
+	id = rfr_news.23
+	title = rfr_news.23.t
+	desc = rfr_news.23.d
+	picture = GFX_news_eye_of_sauron
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.23.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = { add_political_power = 100 }
+	}
+}
+news_event = { ##24## Sauron rewards with STAB/WS
+	id = rfr_news.24
+	title = rfr_news.24.t
+	desc = rfr_news.24.d
+	picture = GFX_news_eye_of_sauron
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.24.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = { add_stability = 0.1 add_war_support = 0.1 }
+	}
+}
+news_event = { ##25## Sauron rewards with army XP
+	id = rfr_news.25
+	title = rfr_news.25.t
+	desc = rfr_news.25.d
+	picture = GFX_news_eye_of_sauron
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.25.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = { army_experience = 40 }
+	}
+}
+news_event = { ##26## Sauron does not reward
+	id = rfr_news.26
+	title = rfr_news.26.t
+	desc = rfr_news.26.d
+	picture = GFX_news_eye_of_sauron
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.26.a
+	}
+}
+
+news_event = { ##27## Generic country joins alliance
+	id = rfr_news.27
+	title = rfr_news.27.t
+	picture = GFX_news_event_generic_sign_treaty3
+	desc = rfr_news.27.d
+
+	major = yes
+
+	is_triggered_only = yes
+
+	#Together we will prevail.
+	option = {
+		name = rfr_news.27.a
+		trigger = {
+			OR = {
+				has_country_flag = alliance_inviter@FROM
+				has_country_flag = alliance_applicant@FROM
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = alliance_inviter@FROM
+			clr_country_flag = alliance_applicant@FROM
+		}
+	}
+
+	#They prepare for what is coming.
+	option = {
+		name = rfr_news.27.b
+		trigger = {
+			NOT = { FROM = { has_war = yes } }
+			event_target:alliance_inviter = {
+				NOT = { has_war = yes }
+			}
+			NOT = {
+				any_allied_country = {
+					has_country_flag = alliance_applicant@FROM
+				}
+			}
+			AND = {
+				NOT = { has_country_flag = alliance_inviter@FROM }
+				NOT = { has_country_flag = alliance_applicant@FROM }
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = alliance_inviter@FROM
+			clr_country_flag = alliance_applicant@FROM
+		}
+	}
+
+	#It will not avail them!
+	option = {
+		name = rfr_news.27.c
+		trigger = {
+			any_enemy_country = {
+				OR = {
+					has_country_flag = alliance_inviter@FROM
+					has_country_flag = alliance_applicant@FROM
+				}
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = alliance_inviter@FROM
+			clr_country_flag = alliance_applicant@FROM
+		}
+	}
+
+	#The war escalates...
+	option = {
+		name = rfr_news.27.e
+		trigger = {
+			NOT = {
+				any_allied_country = {
+					OR = {
+						has_country_flag = alliance_inviter@FROM
+						has_country_flag = alliance_applicant@FROM
+					}
+				}
+				any_enemy_country = {
+					OR = {
+						has_country_flag = alliance_inviter@FROM
+						has_country_flag = alliance_applicant@FROM
+					}
+				}
+			}
+			event_target:alliance_inviter = {
+				has_war = yes
+			}
+			AND = {
+				NOT = { has_country_flag = alliance_inviter@FROM }
+				NOT = { has_country_flag = alliance_applicant@FROM }
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = alliance_inviter@FROM
+			clr_country_flag = alliance_applicant@FROM
+		}
+	}
+
+	#Our alliance grows stronger.
+	option = {
+		name = rfr_news.27.f
+		trigger = {
+			any_allied_country = {
+				OR = {
+					has_country_flag = alliance_inviter@FROM
+					has_country_flag = alliance_applicant@FROM
+				}
+			}
+			AND = {
+				NOT = { has_country_flag = alliance_inviter@FROM }
+				NOT = { has_country_flag = alliance_applicant@FROM }
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = alliance_inviter@FROM
+			clr_country_flag = alliance_applicant@FROM
+		}
+	}
+}
+
+news_event = { ##28## Dunlendings conquer adorn
+	id = rfr_news.28
+	title = rfr_news.28.t
+	desc = rfr_news.28.d
+	picture = GFX_news_dunlendings_conquer
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { #injustice put right
+		name = rfr_news.28.a
+		trigger = {
+			OR = {
+				is_greater_enedwaith_tag = yes
+				any_allied_country = {
+					is_greater_enedwaith_tag = yes
+				}
+			}
+		}
+	}
+	option = { #thats a shame
+		name = rfr_news.28.b
+		trigger = {
+			OR = {
+				tag = event_target:lostAdornValeTarget
+				is_in_faction_with = event_target:lostAdornValeTarget
+			}
+		}
+		clear_global_event_target = lostAdornValeTarget
+	}
+	option = { #so what?
+		name = rfr_news.28.c
+		trigger = {
+			NOT = {
+				OR = {
+					is_greater_enedwaith_tag = yes
+					any_allied_country = {
+						is_greater_enedwaith_tag = yes
+					}
+					tag = event_target:lostAdornValeTarget
+					is_ally_with = event_target:lostAdornValeTarget
+				}
+			}
+		}
+	}
+}
+news_event = { ##29## Dunlendings do NOT conquer adorn
+	id = rfr_news.29
+	title = rfr_news.29.t
+	desc = rfr_news.29.d
+	picture = GFX_news_battle_of_fords_of_isen
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = rfr_news.29.a
+		trigger = {
+			is_greater_enedwaith_tag = yes
+		}
+	}
+	option = {
+		name = rfr_news.29.b
+		trigger = {
+			OR = {
+				tag = event_target:heldAdornValeTarget
+				is_ally_with = event_target:heldAdornValeTarget
+			}
+		}
+		clear_global_event_target = heldAdornValeTarget
+	}
+	option = {
+		name = rfr_news.29.c
+		trigger = {
+			NOT = {
+				OR = {
+					is_greater_enedwaith_tag = yes
+					tag = event_target:heldAdornValeTarget
+					is_ally_with = event_target:heldAdornValeTarget
+				}
+			}
+		}
+	}
+}
+news_event = { ##30## Adorn conflict escalates
+	id = rfr_news.30
+	title = rfr_news.30.t
+	desc = rfr_news.30.d
+	picture = GFX_news_dunlendings_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.30.a
+	}
+}
+
+news_event = { ##31## Gondor grants guarantee
+	id = rfr_news.31
+	title = rfr_news.31.t
+	desc = rfr_news.31.d
+	picture = GFX_news_gondor_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.31.a
+	}
+}
+news_event = { ##32## Gondor refuses to grant guarantee
+	id = rfr_news.32
+	title = rfr_news.32.t
+	desc = rfr_news.32.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.32.a
+	}
+}
+
+news_event = { ##33## ENE tag becomes protectorate
+	id = rfr_news.33
+	title = rfr_news.33.t
+	desc = rfr_news.33.d
+	picture = GFX_news_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.33.a
+	}
+}
+news_event = { ##34## ENE tag refuses to become protectorate
+	id = rfr_news.34
+	title = rfr_news.34.t
+	desc = rfr_news.34.d
+	picture = GFX_news_dunlendings_rally
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.34.a
+	}
+}
+
+news_event = { ##35## GON invests in our economy
+	id = rfr_news.35
+	title = rfr_news.35.t
+	desc = rfr_news.35.d
+	picture = GFX_news_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.35.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			var:capital = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			FROM = {
+				increase_PREV_trust_towards_THIS = yes
+			}
+		}
+	}
+}
+news_event = { ##36## GON invests in our technology
+	id = rfr_news.36
+	title = rfr_news.36.t
+	desc = rfr_news.36.d
+	picture = GFX_news_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.36.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+				steal_random_tech_bonus = {
+					category = electronics
+					# folder = naval_folder
+					bonus = 2
+					name = GON_invest_protectorate_technology
+					target = FROM
+					uses = 1
+				}
+				steal_random_tech_bonus = {
+					category = industry
+					# folder = naval_folder
+					bonus = 2
+					name = GON_invest_protectorate_technology
+					target = FROM
+					uses = 1
+				}
+				steal_random_tech_bonus = {
+					category = infantry_tech
+					# folder = naval_folder
+					bonus = 2
+					name = GON_invest_protectorate_technology
+					target = FROM
+					uses = 1
+				}
+				steal_random_tech_bonus = {
+					category = armor
+					# folder = naval_folder
+					bonus = 2
+					name = GON_invest_protectorate_technology
+					target = FROM
+					uses = 1
+				}
+			FROM = {
+				increase_PREV_trust_towards_THIS = yes
+			}
+		}
+	}
+}
+news_event = { ##37## GON invests in our military
+	id = rfr_news.37
+	title = rfr_news.37.t
+	desc = rfr_news.37.d
+	picture = GFX_news_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.37.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			army_experience = 50
+			add_manpower = 5000
+			FROM = {
+				increase_PREV_trust_towards_THIS = yes
+			}
+		}
+	}
+}
+
+news_event = { ##38## ENE protectorate becomes puppet
+	id = rfr_news.38
+	title = rfr_news.38.t
+	desc = rfr_news.38.d
+	picture = GFX_news_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.38.a
+	}
+}
+news_event = { ##39## ENE protectorate refuses to become puppet
+	id = rfr_news.39
+	title = rfr_news.39.t
+	desc = rfr_news.39.d
+	picture = GFX_news_dunlendings_rally
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.39.a
+	}
+}
+
+news_event = { ##40## GON refuses our help against mordor
+	id = rfr_news.40
+	title = rfr_news.40.t
+	desc = rfr_news.40.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.40.a
+	}
+}
+news_event = { ##41## GON accepts our help against mordor
+	id = rfr_news.41
+	title = rfr_news.41.t
+	desc = rfr_news.41.d
+	picture = GFX_news_boromir_victorious
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.41.a
+	}
+}
+
+news_event = { ##42## ARN accepts our trade offer
+	id = rfr_news.42
+	title = rfr_news.42.t
+	desc = rfr_news.42.d
+	picture = GFX_news_event_trade2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.42.a
+	}
+}
+news_event = { ##43## ARN rejects our trade offer
+	id = rfr_news.43
+	title = rfr_news.43.t
+	desc = rfr_news.43.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.43.a
+	}
+}
+
+news_event = { ##44## ARN agrees to repair tharbad with us
+	id = rfr_news.44
+	title = rfr_news.44.t
+	desc = rfr_news.44.d
+	picture = GFX_news_event_trade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.44.a
+	}
+}
+news_event = { ##45## ARN refuses to repair tharbad with us
+	id = rfr_news.45
+	title = rfr_news.45.t
+	desc = rfr_news.45.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.45.a
+	}
+}
+
+news_event = { ##46## WHT gains andhen & dividing spur
+	id = rfr_news.46
+	title = rfr_news.46.t
+	desc = rfr_news.46.d
+	picture = GFX_news_dunlendings_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.46.a
+	}
+}
+
+news_event = { ##47## GON lets white mountain rebels go
+	id = rfr_news.47
+	title = rfr_news.47.t
+	desc = rfr_news.47.d
+	picture = GFX_news_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.47.a
+	}
+}
+news_event = { ##48## GON chooses war with white mountain rebels
+	id = rfr_news.48
+	title = rfr_news.48.t
+	desc = rfr_news.48.d
+	picture = GFX_news_boromir_victorious
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.48.a
+	}
+}
+
+news_event = { ##49## WHT recieves volunteer
+	id = rfr_news.49
+	title = rfr_news.49.t
+	desc = rfr_news.49.d
+	picture = GFX_news_dunlendings_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.49.a
+	}
+}
+
+news_event = { ##50## WHT rises up
+	id = rfr_news.50
+	title = rfr_news.50.t
+	desc = rfr_news.50.d
+	picture = GFX_news_dunlendings_rally
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.50.a
+	}
+}
+news_event = { ##51## WHT begins resistance
+	id = rfr_news.51
+	title = rfr_news.51.t
+	desc = rfr_news.51.d
+	picture = GFX_news_dunlendings_rally
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.51.a
+	}
+}
+
+news_event = { ##52## GON surrenders WHT uprising
+	id = rfr_news.52
+	title = rfr_news.52.t
+	desc = rfr_news.52.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.52.a
+	}
+}
+
+news_event = { ##53## Saruman Agrees to military exchange
+	id = rfr_news.53
+	title = rfr_news.53.t
+	desc = rfr_news.53.d
+	picture = GFX_news_saruman_rallies_dunlendings
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.53.a
+	}
+}
+news_event = { ##54## Saruman refuses military exchange
+	id = rfr_news.54
+	title = rfr_news.54.t
+	desc = rfr_news.54.d
+	picture = GFX_news_saruman_regal
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.54.a
+	}
+}
+
+news_event = { ##55## DUN prepares coordinated attacks on Rohan
+	id = rfr_news.55
+	title = rfr_news.55.t
+	desc = rfr_news.55.d
+	picture = GFX_news_dunlendings_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.55.a
+	}
+}
+
+news_event = { ##56## Saruman Agrees to pikes for armor
+	id = rfr_news.56
+	title = rfr_news.56.t
+	desc = rfr_news.56.d
+	picture = GFX_news_saruman_innovations
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.56.a
+	}
+}
+news_event = { ##57## Saruman refuses pikes for armor
+	id = rfr_news.57
+	title = rfr_news.57.t
+	desc = rfr_news.57.d
+	picture = GFX_news_saruman_regal
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.57.a
+	}
+}
+
+news_event = { ##58## Saruman Agrees to druwaith trade
+	id = rfr_news.58
+	title = rfr_news.58.t
+	desc = rfr_news.58.d
+	picture = GFX_news_event_trade2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.58.a
+	}
+}
+news_event = { ##59## Saruman rejects druwaith trade
+	id = rfr_news.59
+	title = rfr_news.59.t
+	desc = rfr_news.59.d
+	picture = GFX_news_saruman_regal
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.59.a
+	}
+}
+
+news_event = { ##60## Gondor returns white mountains
+	id = rfr_news.60
+	title = rfr_news.60.t
+	desc = rfr_news.60.d
+	picture = GFX_news_gondor_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.60.a
+	}
+}
+news_event = { ##61## Gondor refuses to return white mountains
+	id = rfr_news.61
+	title = rfr_news.61.t
+	desc = rfr_news.61.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.61.a
+	}
+}
+
+news_event = { ##62## Rohan accepts NAPs
+	id = rfr_news.62
+	title = rfr_news.62.t
+	desc = rfr_news.62.d
+	picture = GFX_news_rohan_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.62.a
+	}
+}
+news_event = { ##63## Rohan refuses NAPs
+	id = rfr_news.63
+	title = rfr_news.63.t
+	desc = rfr_news.63.d
+	picture = GFX_news_rohan_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.63.a
+	}
+}
+
+news_event = { ##64## Rohan accepts our offer for the Adorn Vale
+	id = rfr_news.64
+	title = rfr_news.64.t
+	desc = rfr_news.64.d
+	picture = GFX_news_rohan_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.64.a
+	}
+}
+news_event = { ##65## Rohan refuses our offer for the Adorn Vale
+	id = rfr_news.65
+	title = rfr_news.65.t
+	desc = rfr_news.65.d
+	picture = GFX_news_rohan_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.65.a
+	}
+}
+
+news_event = { ##66## Saruman exerts influence on us
+	id = rfr_news.66
+	title = rfr_news.66.t
+	desc = rfr_news.66.d
+	picture = GFX_news_saruman_rallies_dunlendings
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.66.a
+	}
+}
+
+news_event = { ##67## Southern tribe accepts our protection
+	id = rfr_news.67
+	title = rfr_news.67.t
+	desc = rfr_news.67.d
+	picture = GFX_news_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.67.a
+	}
+}
+news_event = { ##68## Southern tribe rejects our protection
+	id = rfr_news.68
+	title = rfr_news.68.t
+	desc = rfr_news.68.d
+	picture = GFX_news_dunlendings_rally
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.68.a
+	}
+}
+
+news_event = { ##69## isen river tribe accepts investment
+	id = rfr_news.69
+	title = rfr_news.69.t
+	desc = rfr_news.69.d
+	picture = GFX_news_saruman_industry
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.69.a
+	}
+}
+news_event = { ##70## Isen river tribe rejects investment
+	id = rfr_news.70
+	title = rfr_news.70.t
+	desc = rfr_news.70.d
+	picture = GFX_news_dunlendings_rally
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.70.a
+	}
+}
+
+news_event = { ##71## ENE tag accepts sarumans influence
+	id = rfr_news.71
+	title = rfr_news.71.t
+	desc = rfr_news.71.d
+	picture = GFX_news_swear_blood_oath
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.71.a
+	}
+}
+news_event = { ##72## ENE tag rejects sarumans influence
+	id = rfr_news.72
+	title = rfr_news.72.t
+	desc = rfr_news.72.d
+	picture = GFX_news_dunlendings_rally
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.72.a
+	}
+}
+news_event = { ##73## Saruman dynamites fortress
+	id = rfr_news.73
+	title = rfr_news.73.t
+	desc = rfr_news.73.d
+	picture = GFX_news_saruman_explosion
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.73.a
+	}
+}
+
+news_event = { ##74## ENE tag accepts agent of Barad-Dur
+	id = rfr_news.74
+	title = rfr_news.74.t
+	desc = rfr_news.74.d
+	picture = GFX_news_swear_blood_oath
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.74.a
+	}
+}
+
+news_event = { ##75## ENE tag submits to Sauron
+	id = rfr_news.75
+	title = rfr_news.75.t
+	desc = rfr_news.75.d
+	picture = GFX_news_swear_blood_oath
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.75.a
+	}
+}
+news_event = { ##76## ENE refuses to submit to sauron
+	id = rfr_news.76
+	title = rfr_news.76.t
+	desc = rfr_news.76.d
+	picture = GFX_news_mouth_of_sauron_killed
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.76.a
+	}
+}
+
+######################################################################################################AtEM
+news_event = { ##77## Accepted submission to Sauron
+	id = rfr_news.77
+	title = rfr_news.77.t
+	desc = rfr_news.77.d
+	picture = GFX_news_swear_blood_oath
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.77.a
+	}
+}
+news_event = { ##78## Refused submission to Sauron
+	id = rfr_news.78
+	title = rfr_news.78.t
+	desc = rfr_news.78.d
+	picture = GFX_news_mouth_of_sauron_killed
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.78.a
+	}
+}
+
+
