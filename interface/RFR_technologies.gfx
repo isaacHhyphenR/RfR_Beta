@@ -128,86 +128,6 @@ spriteTypes = {
 							######################################
 									#COUNTRY SPECIFIC
 							######################################
-###############################GON
-	SpriteType = {
-		name = "GFX_GON_infantry_weapons1_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry1.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_improved_infantry_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry2.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_advanced_infantry_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry3.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_spear_tech_0_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_spear_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_spear_tech_1_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_spear_1.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_spear_tech_2_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_spear_2.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_spear_tech_3_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_spear_3.dds"
-	}
-###INFANTRY ARMOR
-	SpriteType = {
-		name = "GFX_GON_infantry_armor_tech_0_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_infantry_armor_tech_1_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_1.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_infantry_armor_tech_2_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_2.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_infantry_armor_tech_3_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_3.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_infantry_armor_upgrade_0_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_upgrade_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_infantry_armor_upgrade_1_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_upgrade_1.dds"
-	}
-	SpriteType = {
-		name = "GFX_GON_infantry_armor_upgrade_2_medium"
-		texturefile = "gfx/interface/technologies/00_Numenorean/GON_infantry_armor_upgrade_2.dds"
-	}
-###############################ISN
-	SpriteType = {
-		name = "GFX_ISN_infantry_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Isengard/ISN_infantry_equipment_0.dds"
-	}
-##########################MORDOR INFANTRY
-	SpriteType = {
-		name = "GFX_MOR_infantry_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Mordor/MOR_infantry_equipment_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_MOR_infantry_weapons1_medium"
-		texturefile = "gfx/interface/technologies/00_Mordor/MOR_infantry_equipment_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_MOR_improved_infantry_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Mordor/MOR_infantry_equipment_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_MOR_advanced_infantry_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Mordor/MOR_infantry_equipment_0.dds"
-	}
 ##########################ROHAN INFANTRY
 	SpriteType = {
 		name = "GFX_ROH_infantry_weapons_medium"
@@ -235,6 +155,74 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_amphibious_tank_chassis_medium"
 		texturefile = "gfx/interface/technologies/generic_amphibious_chassis.dds"
+	}
+	spriteType = {
+		name = "GFX_gw_light_art"
+		texturefile = gfx/interface/technologies/cavalry_variants/gw_skirmisher.dds
+	}
+	spriteType = {
+		name = "GFX_gw_light_td"
+		texturefile = gfx/interface/technologies/cavalry_variants/gw_lancer.dds
+	}
+	spriteType = {
+		name = "GFX_basic_light_art"
+		texturefile = gfx/interface/technologies/cavalry_variants/basic_light_skirmisher.dds
+	}
+	spriteType = {
+		name = "GFX_improved_light_art"
+		texturefile = gfx/interface/technologies/cavalry_variants/improved_light_skirmisher.dds
+	}
+	spriteType = {
+		name = "GFX_advanced_light_art"
+		texturefile = gfx/interface/technologies/cavalry_variants/advanced_light_skirmisher.dds
+	}
+	spriteType = {
+		name = "GFX_basic_light_td"
+		texturefile = gfx/interface/technologies/cavalry_variants/basic_light_lancer.dds
+	}
+	spriteType = {
+		name = "GFX_improved_light_td"
+		texturefile = gfx/interface/technologies/cavalry_variants/improved_light_lancer.dds
+	}
+	spriteType = {
+		name = "GFX_advanced_light_td"
+		texturefile = gfx/interface/technologies/cavalry_variants/advanced_light_lancer.dds
+	}
+	spriteType = {
+		name = "GFX_basic_medium_art"
+		texturefile = gfx/interface/technologies/cavalry_variants/basic_medium_skirmisher.dds
+	}
+	spriteType = {
+		name = "GFX_improved_medium_art"
+		texturefile = gfx/interface/technologies/cavalry_variants/improved_medium_skirmisher.dds
+	}
+	spriteType = {
+		name = "GFX_advanced_medium_art"
+		texturefile = gfx/interface/technologies/cavalry_variants/advanced_medium_skirmisher.dds
+	}
+	spriteType = {
+		name = "GFX_basic_medium_td"
+		texturefile = gfx/interface/technologies/cavalry_variants/basic_medium_lancer.dds
+	}
+	spriteType = {
+		name = "GFX_improved_medium_td"
+		texturefile = gfx/interface/technologies/cavalry_variants/improved_medium_lancer.dds
+	}
+	spriteType = {
+		name = "GFX_advanced_medium_td"
+		texturefile = gfx/interface/technologies/cavalry_variants/advanced_medium_lancer.dds
+	}
+	spriteType = {
+		name = "GFX_advanced_medium_td"
+		texturefile = gfx/interface/technologies/cavalry_variants/advanced_medium_lancer.dds
+	}
+	spriteType = {
+		name = "GFX_modern_art"
+		texturefile = gfx/interface/technologies/cavalry_variants/modern_skirmisher.dds
+	}
+	spriteType = {
+		name = "GFX_modern_td"
+		texturefile = gfx/interface/technologies/cavalry_variants/modern_lancer.dds
 	}
 							######################################
 									#COUNTRY SPECIFIC CAVALRY

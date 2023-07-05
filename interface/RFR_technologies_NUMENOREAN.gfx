@@ -1,0 +1,63 @@
+spriteTypes = {
+							######################################
+									#ORCISH INFANTRY
+							######################################
+###NUMENOREAN INFANTRY ARMOR
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_infantry_armor_upgrade_2.dds"
+	}
+###############################GONDORIAN INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_GON_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GON_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/NUMENOREAN_spear_3.dds"
+	}
+}
