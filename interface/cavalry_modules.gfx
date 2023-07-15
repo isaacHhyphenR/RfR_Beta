@@ -1,0 +1,7 @@
+spriteTypes = {
+######################Mounts
+	SpriteType = {
+		name = "GFX_cav_sumpter_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/sumpter_horse.dds"
+	}
+}

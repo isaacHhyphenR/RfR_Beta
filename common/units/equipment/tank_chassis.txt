@@ -1,6 +1,6 @@
 equipments = {
 
-	light_tank_chassis = {
+	light_tank_chassis = { #Light Cav
 		year = 3000
 		is_archetype = yes
 		is_buildable = no
@@ -11,42 +11,41 @@ equipments = {
 		interface_category = interface_category_armor
 		priority = 2000
 
-		
-
 		module_slots = {
-			main_armament_slot = {
+			main_armament_slot = { #weapon
 				required = yes
 				allowed_module_categories = {
-					tank_small_main_armament
-					tank_flamethrower
+					cav_small_melee_weapon
+					cav_large_melee_weapon
+					cav_lance_weapon
+					cav_ranged_weapon
+					cav_thrown_weapon
 				}
 			}
 
-			turret_type_slot = {
-				required = yes
+			turret_type_slot = { #warrior armor
 				allowed_module_categories = {
-					tank_light_turret_type
+					cav_warrior_armor_type
 				}
 			}
-			suspension_type_slot = {
+			suspension_type_slot = { #saddle
 				required = yes
 				allowed_module_categories = {
-					tank_suspension_type
-					tank_non_tracked_suspension_type
-				}
-			}
-
-			armor_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					tank_armor_type
+					cav_saddle_type
 				}
 			}
 
-			engine_type_slot = {
+			armor_type_slot = { #barding
 				required = yes
 				allowed_module_categories = {
-					tank_engine_type
+					cav_barding_type
+				}
+			}
+
+			engine_type_slot = { #mount
+				required = yes
+				allowed_module_categories = {
+					cav_mount_type
 				}
 			}
 
@@ -88,9 +87,9 @@ equipments = {
 			
 		}
 		module_count_limit = {
-			module = sloped_armor
+			module = caparison
 			count < 2
-		}	
+		}
 		module_count_limit = {
 			category = tank_radio_module
 			count < 2
@@ -100,62 +99,58 @@ equipments = {
 			count < 2
 		}
 		module_count_limit = {
-			module = amphibious_drive
-			count < 2
-		}
-
-		module_count_limit = {
-			module = wet_ammo_storage
-			count < 2
-		}
-
-		module_count_limit = {
-			module = squeezebore_adaptor
-			count < 2
-		}
-
-		module_count_limit = {
-			module = armor_skirts
-			count < 2
-		}
-
-		module_count_limit = {
-			module = dozer_blade
-			count < 2
-		}
-
-		module_count_limit = {
-			module = easy_maintenance
+			module = tournament_armor
 			count < 2
 		}
 		module_count_limit = {
-			module = auto_loader
+			module = plough
 			count < 2
 		}
+		module_count_limit = {
+			module = pontoon
+			count < 2
+		}
+		module_count_limit = {
+			module = war_horn
+			count < 2
+		}
+		module_count_limit = {
+			module = veterinary_supplies
+			count < 2
+		}
+		##Wrong chassis
+		module_count_limit = {
+			module = tusk_rope
+			count = 0
+		}
+		module_count_limit = {
+			module = foot_spike
+			count = 0
+		}
+		
 		default_modules = {
 			main_armament_slot = empty
-			turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_bogie_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_gasoline_engine
+			turret_type_slot = empty
+			suspension_type_slot = cavalry_bareback_saddle
+			armor_type_slot = cavalry_one_size_fits_all_barding
+			engine_type_slot = cav_sumpter_mount
 		}
 
 		fuel_consumption = 0
 		maximum_speed = 4
+		breakthrough = 3
 		build_cost_ic = 1
 		reliability = 0.8
 		hardness = 0.8
-		armor_value = 5
+		armor_value = 10
 		resources = {
 			mounts = 1
 		}
 
 		manpower = 2
-
 	}
-
 	light_tank_chassis_0 = { #also great war tank
-		abbreviation = "lt0"
+		abbreviation = "lc0"
 		derived_variant_name = light_tank_equipment_0
 		visual_level = 0
 		year = 3000
@@ -168,9 +163,8 @@ equipments = {
 			tank_nsb_armor_upgrade
 		}
 	}
-
 	light_tank_chassis_1 = {
-		abbreviation = "lt1"
+		abbreviation = "lc1"
 		derived_variant_name = light_tank_equipment_1
 		visual_level = 0
 		year = 3013
@@ -178,14 +172,21 @@ equipments = {
 		parent = light_tank_chassis_0
 		priority = 2000
 		module_slots = inherit
-		maximum_speed = 4
+		maximum_speed = 4.5
 		build_cost_ic = 1.25
 		reliability = 0.95
-		armor_value = 10
+		armor_value = 13
+		
+		default_modules = {
+			main_armament_slot = empty
+			turret_type_slot = empty
+			suspension_type_slot = cavalry_four_horn_saddle
+			armor_type_slot = cavalry_standard_barding
+			engine_type_slot = cav_rouncey_mount
+		}
 	}
-
 	light_tank_chassis_2 = {
-		abbreviation = "lt2"
+		abbreviation = "lc2"
 		derived_variant_name = light_tank_equipment_2
 		visual_level = 1
 		year = 3015
@@ -194,16 +195,15 @@ equipments = {
 		priority = 2000
 		module_slots = inherit
 		build_cost_ic = 1.6
-		maximum_speed = 4.5
+		maximum_speed = 5
 		reliability = 1.1
-		armor_value = 15
+		armor_value = 17
 		resources = {
 			mounts = 1
 		}
 	}
-
 	light_tank_chassis_3 = {
-		abbreviation = "lt3"
+		abbreviation = "lc3"
 		derived_variant_name = light_tank_equipment_3
 		visual_level = 2
 		year = 3021
@@ -212,7 +212,7 @@ equipments = {
 		priority = 2000
 		module_slots = inherit
 		build_cost_ic = 2
-		maximum_speed = 5
+		maximum_speed = 5.5
 		reliability = 1.3
 		armor_value = 20
 		resources = {
@@ -220,9 +220,7 @@ equipments = {
 		}
 	}
 
-	
-
-	medium_tank_chassis = {
+	medium_tank_chassis = { #Heavy Cav
 		year = 3000
 		is_archetype = yes
 		is_buildable = no
@@ -233,137 +231,129 @@ equipments = {
 		priority = 2000
 
 		module_slots = {
-			main_armament_slot = {
+			main_armament_slot = { #weapon
 				required = yes
 				allowed_module_categories = {
-					tank_small_main_armament
-					tank_flamethrower
+					cav_small_melee_weapon
+					cav_large_melee_weapon
+					cav_lance_weapon
+					cav_ranged_weapon
+					cav_thrown_weapon
+				}
+			}
+			turret_type_slot = { #warrior armor
+				allowed_module_categories = {
+					cav_warrior_armor_type
+				}
+			}
+			suspension_type_slot = { #saddle
+				required = yes
+				allowed_module_categories = {
+					cav_saddle_type
 				}
 			}
 
-			turret_type_slot = {
+			armor_type_slot = { #barding
 				required = yes
 				allowed_module_categories = {
-					tank_light_turret_type
-					tank_medium_turret_type
+					cav_barding_type
 				}
 			}
-
-			suspension_type_slot = {
+			engine_type_slot = { #mount
 				required = yes
 				allowed_module_categories = {
-					tank_suspension_type
+					cav_mount_type
 				}
 			}
-
-			armor_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					tank_armor_type
-				}
-			}
-
-			engine_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					tank_engine_type
-				}
-			}
-
 			special_type_slot_1 = {
 				required = no
 				allowed_module_categories = {
-					tank_radio_module
 					tank_special_module
+					tank_radio_module
 					tank_secondary_turret
 				}
 			}
-
 			special_type_slot_2 = {
 				required = no
 				allowed_module_categories = {
 					tank_special_module
-					tank_secondary_turret
 					tank_radio_module
+					tank_secondary_turret
 				}
 			}
-
 			special_type_slot_3 = {
 				required = no
 				allowed_module_categories = {
 					tank_special_module
-					tank_secondary_turret
 					tank_radio_module
+					tank_secondary_turret
 				}
 			}
-
 			special_type_slot_4 = {
 				required = no
 				allowed_module_categories = {
 					tank_special_module
-					tank_secondary_turret
 					tank_radio_module
+					tank_secondary_turret
 				}
 			}
-			
 		}
 		module_count_limit = {
-			module = sloped_armor
+			module = caparison
 			count < 2
-		}	
+		}
 		module_count_limit = {
 			category = tank_radio_module
 			count < 2
 		}
 		module_count_limit = {
 			category = tank_secondary_turret
-			count < 3 #two secondary turrets only
-		}
-		module_count_limit = {
-			module = amphibious_drive
 			count < 2
 		}
 		module_count_limit = {
-			module = wet_ammo_storage
-			count < 2
-		}
-
-		module_count_limit = {
-			module = squeezebore_adaptor
-			count < 2
-		}
-
-		module_count_limit = {
-			module = armor_skirts
-			count < 2
-		}
-
-		module_count_limit = {
-			module = dozer_blade
-			count < 2
-		}
-
-		module_count_limit = {
-			module = easy_maintenance
+			module = tournament_armor
 			count < 2
 		}
 		module_count_limit = {
-			module = auto_loader
+			module = plough
 			count < 2
 		}
+		module_count_limit = {
+			module = pontoon
+			count < 2
+		}
+		module_count_limit = {
+			module = war_horn
+			count < 2
+		}
+		module_count_limit = {
+			module = veterinary_supplies
+			count < 2
+		}
+		##Wrong chassis
+		module_count_limit = {
+			module = tusk_rope
+			count = 0
+		}
+		module_count_limit = {
+			module = foot_spike
+			count = 0
+		}
+		
 		default_modules = {
 			main_armament_slot = empty
-			turret_type_slot = tank_medium_one_man_tank_turret
-			suspension_type_slot = tank_bogie_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_gasoline_engine
+			turret_type_slot = cav_gambeson_warrior
+			suspension_type_slot = cavalry_four_horn_saddle
+			armor_type_slot = cavalry_standard_barding
+			engine_type_slot = cav_rouncey_mount
 		}
-
+		
 		fuel_consumption = 0
 		maximum_speed = 4
-		build_cost_ic = 2
-		reliability = 1
-		armor_value = 15
+		breakthrough = 6
+		build_cost_ic = 2.5
+		reliability = 0.95
+		armor_value = 30
 		hardness = 0.85
 		resources = {
 			mounts = 1
@@ -373,29 +363,8 @@ equipments = {
 		manpower = 2
 
 	}
-	medium_tank_chassis_0 = { #used for interwar tanks
-		abbreviation = "mt0"
-		derived_variant_name = medium_tank_equipment_0
-		visual_level = 0
-		year = 3000
-		archetype = medium_tank_chassis
-		priority = 2000
-		module_slots = inherit
-		upgrades = {
-			tank_nsb_engine_upgrade
-			tank_nsb_armor_upgrade
-		}
-		maximum_speed = 4
-		build_cost_ic = 2.5
-		reliability = 0.75
-		armor_value = 25
-		resources = {
-			mounts = 1
-		}
-	}
-
 	medium_tank_chassis_1 = {
-		abbreviation = "mt1"
+		abbreviation = "hc1"
 		derived_variant_name = medium_tank_equipment_1
 		visual_level = 0
 		year = 3015
@@ -403,11 +372,14 @@ equipments = {
 		parent = medium_tank_chassis_0
 		priority = 2000
 		module_slots = inherit
-		armor_value = 35
-		build_cost_ic = 2.5
+		
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
 	}
 	medium_tank_chassis_2 = {
-		abbreviation = "mt2"
+		abbreviation = "hc2"
 		derived_variant_name = medium_tank_equipment_2
 		visual_level = 1
 		year = 3019
@@ -415,17 +387,24 @@ equipments = {
 		archetype = medium_tank_chassis
 		priority = 2000
 		module_slots = inherit
-		maximum_speed = 4
+		maximum_speed = 4.25
 		build_cost_ic = 3.2
-		reliability = 1.3
-		armor_value = 45
+		reliability = 1.1
+		armor_value = 35
 		resources = {
 			mounts = 1
 			iron = 1
 		}
+		default_modules = {
+			main_armament_slot = empty
+			turret_type_slot = cav_mail_warrior
+			suspension_type_slot = cavalry_four_horn_saddle
+			armor_type_slot = cavalry_standard_barding
+			engine_type_slot = cav_rouncey_mount
+		}
 	}
 	medium_tank_chassis_3 = {
-		abbreviation = "mt3"
+		abbreviation = "hc3"
 		derived_variant_name = medium_tank_equipment_3
 		visual_level = 2
 		year = 3022
@@ -435,15 +414,168 @@ equipments = {
 		module_slots = inherit
 		maximum_speed = 4.5
 		build_cost_ic = 4
-		reliability = 1.6
-		armor_value = 50
+		reliability = 1.3
+		armor_value = 40
 		resources = {
 			mounts = 2
 			iron = 1
 		}
 	}
 
-	heavy_tank_chassis = {
+	modern_tank_chassis = { ##Modern Cav
+		year = 3027
+		is_archetype = yes
+		is_buildable = no
+		picture = archetype_modern_tank_equipment
+		type = armor
+		group_by = archetype
+		interface_category = interface_category_armor
+		priority = 2000
+		module_slots = {
+			main_armament_slot = { #weapon
+				required = yes
+				allowed_module_categories = {
+					cav_small_melee_weapon
+					cav_large_melee_weapon
+					cav_lance_weapon
+					cav_ranged_weapon
+					cav_thrown_weapon
+				}
+			}
+			turret_type_slot = { #warrior armor
+				allowed_module_categories = {
+					cav_warrior_armor_type
+				}
+			}
+			suspension_type_slot = { #saddle
+				required = yes
+				allowed_module_categories = {
+					cav_saddle_type
+				}
+			}
+
+			armor_type_slot = { #barding
+				required = yes
+				allowed_module_categories = {
+					cav_barding_type
+				}
+			}
+			engine_type_slot = { #mount
+				required = yes
+				allowed_module_categories = {
+					cav_mount_type
+				}
+			}
+			special_type_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_radio_module
+					tank_secondary_turret
+				}
+			}
+			special_type_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_radio_module
+					tank_secondary_turret
+				}
+			}
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_radio_module
+					tank_secondary_turret
+				}
+			}
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_radio_module
+					tank_secondary_turret
+				}
+			}
+		}
+		module_count_limit = {
+			category = tank_radio_module
+			count < 2
+		}
+		module_count_limit = {
+			category = tank_secondary_turret
+			count < 2
+		}
+		module_count_limit = {
+			module = tournament_armor
+			count < 2
+		}
+		module_count_limit = {
+			module = plough
+			count < 2
+		}
+		module_count_limit = {
+			module = pontoon
+			count < 2
+		}
+		module_count_limit = {
+			module = war_horn
+			count < 2
+		}
+		module_count_limit = {
+			module = veterinary_supplies
+			count < 2
+		}
+		##Wrong chassis
+		module_count_limit = {
+			module = tusk_rope
+			count = 0
+		}
+		module_count_limit = {
+			module = foot_spike
+			count = 0
+		}
+		
+		default_modules = {
+			main_armament_slot = empty
+			turret_type_slot = cav_partial_plate_warrior
+			suspension_type_slot = cavalry_protective_saddle
+			armor_type_slot = cavalry_standard_barding
+			engine_type_slot = cavalry_destrier_mount
+		}
+
+		fuel_consumption = 0
+		maximum_speed = 5
+		breakthrough = 5
+		build_cost_ic = 4
+		reliability = 1.3
+		armor_value = 30
+		hardness = 0.85
+		resources = {
+			mounts = 3
+			iron = 1
+		}
+
+		manpower = 2
+
+	}
+	modern_tank_chassis_1 = {
+		abbreviation = "mod"
+		derived_variant_name = modern_tank_equipment_1
+		visual_level = 0
+		year = 3027
+		archetype = modern_tank_chassis
+		priority = 2000
+		module_slots = inherit
+
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+
+	heavy_tank_chassis = { #Troll/Ent
 		year = 3000
 		is_archetype = yes
 		is_buildable = no
@@ -461,41 +593,35 @@ equipments = {
 			main_armament_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_small_main_armament
-					tank_flamethrower
+					troll_blunt_weapon
+					troll_sharp_weapon
+					troll_ranged_weapon
 				}
 			}
-
 			turret_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_light_turret_type
-					tank_medium_turret_type
-					tank_heavy_turret_type
+					troll_warrior_armor_type
 				}
 			}
-
 			suspension_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_suspension_type
+					troll_saddle_type
 				}
 			}
-
 			armor_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_armor_type
+					cav_barding_type
 				}
 			}
-
 			engine_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_engine_type
+					troll_mount_type
 				}
 			}
-
 			special_type_slot_1 = {
 				required = no
 				allowed_module_categories = {
@@ -504,7 +630,6 @@ equipments = {
 					tank_secondary_turret
 				}
 			}
-
 			special_type_slot_2 = {
 				required = no
 				allowed_module_categories = {
@@ -513,7 +638,6 @@ equipments = {
 					tank_radio_module
 				}
 			}
-
 			special_type_slot_3 = {
 				required = no
 				allowed_module_categories = {
@@ -522,7 +646,6 @@ equipments = {
 					tank_radio_module
 				}
 			}
-
 			special_type_slot_4 = {
 				required = no
 				allowed_module_categories = {
@@ -531,73 +654,75 @@ equipments = {
 					tank_radio_module
 				}
 			}
-
 		}
 		module_count_limit = {
-			module = sloped_armor
+			module = caparison
 			count < 2
-		}	
+		}
 		module_count_limit = {
 			category = tank_radio_module
 			count < 2
 		}
-
 		module_count_limit = {
-			module = amphibious_drive
+			category = tank_secondary_turret
 			count < 2
 		}
 		module_count_limit = {
-			module = wet_ammo_storage
-			count < 2
-		}
-
-		module_count_limit = {
-			module = squeezebore_adaptor
-			count < 2
-		}
-
-		module_count_limit = {
-			module = armor_skirts
-			count < 2
-		}
-
-		module_count_limit = {
-			module = dozer_blade
-			count < 2
-		}
-
-		module_count_limit = {
-			module = easy_maintenance
+			module = plough
 			count < 2
 		}
 		module_count_limit = {
-			module = auto_loader
+			module = pontoon
 			count < 2
 		}
+		module_count_limit = {
+			module = war_horn
+			count < 2
+		}
+		module_count_limit = {
+			module = veterinary_supplies
+			count < 2
+		}
+		##Wrong chassis
+		module_count_limit = {
+			module = tusk_rope
+			count = 0
+		}
+		module_count_limit = {
+			module = foot_spike
+			count = 0
+		}
+		module_count_limit = {
+			module = backup_lance
+			count = 0
+		}
+		module_count_limit = {
+			module = tournament_armor
+			count = 0
+		}
+		
 		default_modules = {
-			main_armament_slot = empty
-			turret_type_slot = tank_heavy_two_man_tank_turret
-			suspension_type_slot = tank_bogie_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_gasoline_engine
+			main_armament_slot = troll_bare_hand
+			turret_type_slot = empty
+			suspension_type_slot = troll_bareback_saddle
+			armor_type_slot = cavalry_standard_barding
+			engine_type_slot = monster_troll_mount
 		}
 
 		fuel_consumption = 0
 		maximum_speed = 3.5
-		build_cost_ic = 10
+		breakthrough = 10
+		build_cost_ic = 8
 		reliability = 1
-		armor_value = 25
+		armor_value = 45
 		hardness = 0.95
 		resources = {
 			monsters = 1
 		}
-
-		manpower = 2
-
+		manpower = 3
 	}
-
 	heavy_tank_chassis_0 = { #interwar heavy tanks
-		abbreviation = "hv0"
+		abbreviation = "tr1"
 		derived_variant_name = heavy_tank_equipment_0
 		visual_level = 0
 		year = 3000
@@ -608,14 +733,9 @@ equipments = {
 			tank_nsb_engine_upgrade
 			tank_nsb_armor_upgrade
 		}
-		maximum_speed = 4
-		build_cost_ic = 10
-		reliability = 1
-		armor_value = 30
 	}
-
 	heavy_tank_chassis_1 = {
-		abbreviation = "hv1"
+		abbreviation = "tr1"
 		derived_variant_name = heavy_tank_equipment_1
 		visual_level = 0
 		year = 3015
@@ -623,11 +743,17 @@ equipments = {
 		parent = heavy_tank_chassis_0
 		priority = 2000
 		module_slots = inherit
-		armor_value = 35
+		maximum_speed = 3.75
+		armor_value = 55
+		build_cost_ic = 10
+		reliability = 1.05
+		
+		resources = {
+			monsters = 2
+		}
 	}
-
 	heavy_tank_chassis_2 = {
-		abbreviation = "hv2"
+		abbreviation = "tr2"
 		derived_variant_name = heavy_tank_equipment_2
 		visual_level = 1
 		year = 3019
@@ -635,18 +761,16 @@ equipments = {
 		parent = heavy_tank_chassis_1
 		priority = 2000
 		module_slots = inherit
-		build_cost_ic = 10
+		build_cost_ic = 12
 		maximum_speed = 4
 		reliability = 1.15
-		armor_value = 55
+		armor_value = 65
 		resources = {
 			monsters = 2
-			iron = 1
 		}
 	}
-
 	heavy_tank_chassis_3 = {
-		abbreviation = "hv3"
+		abbreviation = "tr3"
 		derived_variant_name = heavy_tank_equipment_3
 		visual_level = 2
 		year = 3022
@@ -654,180 +778,17 @@ equipments = {
 		parent = heavy_tank_chassis_2
 		priority = 2000
 		module_slots = inherit
-		build_cost_ic = 12
-		maximum_speed = 4
+		build_cost_ic = 14
+		maximum_speed = 4.25
 		reliability = 1.3
 		armor_value = 75
 		resources = {
 			monsters = 3
-			iron = 2
 		}
 	}
 
-	modern_tank_chassis = {
-		year = 3027
-		is_archetype = yes
-		is_buildable = no
-		picture = archetype_modern_tank_equipment
-		type = armor
-		group_by = archetype
-		interface_category = interface_category_armor
-		priority = 2000
-
-		module_slots = {
-			main_armament_slot = {
-				required = yes
-				allowed_module_categories = {
-					tank_small_main_armament
-				}
-			}
-
-			turret_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					tank_light_turret_type
-					tank_medium_turret_type
-					tank_heavy_turret_type
-					tank_modern_turret_type
-				}
-			}
-
-			suspension_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					tank_suspension_type
-				}
-			}
-
-			armor_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					tank_armor_type
-				}
-			}
-
-			engine_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					tank_engine_type
-				}
-			}
-
-			special_type_slot_1 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_radio_module
-				}
-			}
-
-			special_type_slot_2 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_radio_module
-				}
-			}
-
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_radio_module
-				}
-			}
-
-			special_type_slot_4 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_radio_module
-				}
-			}
-
-		}
-		module_count_limit = {
-			module = sloped_armor
-			count < 2
-		}	
-		module_count_limit = {
-			category = tank_radio_module
-			count < 2
-		}
-		module_count_limit = {
-			module = amphibious_drive
-			count < 1
-		}
-
-		module_count_limit = {
-			module = wet_ammo_storage
-			count < 2
-		}
-
-		module_count_limit = {
-			module = squeezebore_adaptor
-			count < 2
-		}
-
-		module_count_limit = {
-			module = armor_skirts
-			count < 2
-		}
-
-		module_count_limit = {
-			module = dozer_blade
-			count < 2
-		}
-
-		module_count_limit = {
-			module = easy_maintenance
-			count < 2
-		}
-		module_count_limit = {
-			module = auto_loader
-			count < 2
-		}
-
-		default_modules = {
-			main_armament_slot = empty
-			turret_type_slot = tank_modern_tank_turret
-			suspension_type_slot = tank_bogie_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_gasoline_engine
-		}
-
-		fuel_consumption = 0
-		maximum_speed = 4.5
-		build_cost_ic = 6
-		reliability = 1.6
-		armor_value = 75
-		hardness = 0.95
-		resources = {
-			wood = 2
-			monsters = 1
-		}
-
-		manpower = 2
-
-	}
-
-	modern_tank_chassis_1 = {
-		abbreviation = "mbt0"
-		derived_variant_name = modern_tank_equipment_1
-		visual_level = 0
-		year = 3027
-		archetype = modern_tank_chassis
-		priority = 2000
-		module_slots = inherit
-
-		upgrades = {
-			tank_nsb_engine_upgrade
-			tank_nsb_armor_upgrade
-		}
-	}
-
-	super_heavy_tank_chassis = {
-		year = 3027
+	super_heavy_tank_chassis = { #Mumakil
+		year = 3000
 		is_archetype = yes
 		is_buildable = no
 		picture = archetype_super_heavy_tank_equipment
@@ -840,145 +801,125 @@ equipments = {
 			main_armament_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_small_main_armament
+					mumak_blunt_force
+					mumak_ranged_weapon
+					mumak_thrown_weapon
+					mumak_artillery_weapon
 				}
 			}
-
 			turret_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_light_turret_type
-					tank_medium_turret_type
-					tank_heavy_turret_type
-					tank_super_heavy_turret_type
+					mumak_warrior_armor_type
 				}
 			}
-
 			suspension_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_suspension_type
+					mumakil_saddle_type
 				}
 			}
-
 			armor_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_armor_type
+					cav_barding_type
 				}
 			}
-
 			engine_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					tank_engine_type
+					mumakil_mount_type
 				}
 			}
-
 			special_type_slot_1 = {
 				required = no
 				allowed_module_categories = {
 					tank_special_module
-					tank_radio_module
 					tank_secondary_turret
 				}
 			}
-
 			special_type_slot_2 = {
 				required = no
 				allowed_module_categories = {
 					tank_special_module
 					tank_secondary_turret
-					tank_radio_module
 				}
 			}
-
 			special_type_slot_3 = {
 				required = no
 				allowed_module_categories = {
 					tank_special_module
 					tank_secondary_turret
-					tank_radio_module
 				}
 			}
-
 			special_type_slot_4 = {
 				required = no
 				allowed_module_categories = {
 					tank_special_module
 					tank_secondary_turret
-					tank_radio_module
 				}
 			}
-
 		}
 		module_count_limit = {
-			module = sloped_armor
-			count < 2
-		}	
-		module_count_limit = {
-			category = tank_radio_module
+			module = caparison
 			count < 2
 		}
 		module_count_limit = {
-			module = amphibious_drive
-			count < 1
-		}
-		module_count_limit = {
-			module = wet_ammo_storage
-			count < 2
-		}
-
-		module_count_limit = {
-			module = squeezebore_adaptor
-			count < 2
-		}
-
-		module_count_limit = {
-			module = armor_skirts
-			count < 2
-		}
-
-		module_count_limit = {
-			module = dozer_blade
-			count < 2
-		}
-
-		module_count_limit = {
-			module = easy_maintenance
+			module = tusk_rope
 			count < 2
 		}
 		module_count_limit = {
-			module = auto_loader
+			module = war_horn
 			count < 2
 		}
+		module_count_limit = {
+			module = veterinary_supplies
+			count < 2
+		}
+		##Wrong chassis
+		module_count_limit = {
+			module = tournament_armor
+			count = 0
+		}
+		module_count_limit = {
+			module = pontoon
+			count = 0
+		}
+		module_count_limit = {
+			module = plough
+			count = 0
+		}
+		module_count_limit = {
+			module = backup_lance
+			count = 0
+		}
+		
 		default_modules = {
-			main_armament_slot = empty
-			turret_type_slot = tank_super_heavy_three_man_tank_turret
-			suspension_type_slot = tank_bogie_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_gasoline_engine
+			main_armament_slot = mumak_unridden
+			turret_type_slot = empty
+			suspension_type_slot = mumakil_bareback_saddle
+			armor_type_slot = cavalry_standard_barding
+			engine_type_slot = monster_mumak_mount
 		}
 
 		fuel_consumption = 0
-		maximum_speed = 2.5
-		build_cost_ic = 24
-		reliability = 1.3
-		armor_value = 85
+		maximum_speed = 4
+		breakthrough = 16
+		build_cost_ic = 12
+		reliability = 0.75
+		armor_value = 90
 		hardness = 1
 		resources = {
-			monsters = 5
+			monsters = 4
 		}
 
-		manpower = 2
-
+		manpower = 5
 	}
-
 	super_heavy_tank_chassis_1 = {
-		abbreviation = "sh0"
+		abbreviation = "mk1"
 		derived_variant_name = super_heavy_tank_equipment_1
 		visual_level = 0
-		year = 3022
+		year = 3000
 		archetype = super_heavy_tank_chassis
 		priority = 2000
 		module_slots = inherit
@@ -987,6 +928,44 @@ equipments = {
 			tank_nsb_armor_upgrade
 		}
 	}
+	super_heavy_tank_chassis_2 = {
+		abbreviation = "mk2"
+		derived_variant_name = super_heavy_tank_equipment_1
+		visual_level = 1
+		year = 3018
+		archetype = super_heavy_tank_chassis
+		priority = 2000
+		module_slots = inherit
+		parent = super_heavy_tank_chassis_1
+		
+		maximum_speed = 4.12
+		build_cost_ic = 16
+		reliability = 0.85
+		armor_value = 100
+		resources = {
+			monsters = 5
+		}
+	}
+	super_heavy_tank_chassis_3 = {
+		abbreviation = "mk3"
+		derived_variant_name = super_heavy_tank_equipment_1
+		visual_level = 2
+		year = 3022
+		archetype = super_heavy_tank_chassis
+		priority = 2000
+		module_slots = inherit
+		parent = super_heavy_tank_chassis_2
+		
+		maximum_speed = 4.25
+		build_cost_ic = 20
+		reliability = 0.95
+		armor_value = 110
+		resources = {
+			monsters = 6
+		}
+	}
+
+
 
 	amphibious_tank_chassis = {
 		year = 3015
@@ -1078,7 +1057,7 @@ equipments = {
 
 		module_count_limit = {
 			module = amphibious_drive
-			count < 1
+			count = 0
 		}
 		module_count_limit = {
 			module = wet_ammo_storage
@@ -1135,7 +1114,6 @@ equipments = {
 		manpower = 2
 
 	}
-
 	amphibious_tank_chassis_1 = {
 		abbreviation = "am0"
 		derived_variant_name = amphibious_tank_equipment_1
