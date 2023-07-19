@@ -37,7 +37,6 @@ default = {
 			}
 		}
 	}
-
 	light_tank_chassis_3 = {
 		pool = {
 			weight = 2 #correct icon appears at top
@@ -163,7 +162,6 @@ default = {
 			}
 		}
 	}
-
 	medium_tank_chassis_3 = {
 		pool = {
 			weight = 2 #correct icon appears at top
@@ -180,14 +178,6 @@ default = {
 				GFX_basic_medium_skirmisher_medium
 				GFX_improved_medium_skirmisher_medium
 				GFX_advanced_medium_skirmisher_medium
-			}
-		}
-	}
-	medium_tank_artillery_chassis_0 = {
-		pool = {
-			weight = 2.2 #correct icon at top
-			icons = {
-				GFX_gw_medium_skirmisher_medium
 			}
 		}
 	}
@@ -256,7 +246,7 @@ default = {
 	heavy_tank_chassis_0 = {
 		pool = {
 			icons = {
-				GFX_inter_war_heavy_tank_chassis_medium
+				GFX_feral_troll_chassis_medium
 			}
 		}
 	}
@@ -267,7 +257,6 @@ default = {
 			}
 		}
 	}
-
 	heavy_tank_chassis_2 = {
 		pool = {
 			icons = {
@@ -275,7 +264,6 @@ default = {
 			}
 		}
 	}
-
 	heavy_tank_chassis_3 = {
 		pool = {
 			icons = {

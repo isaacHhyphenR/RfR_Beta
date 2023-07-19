@@ -9,7 +9,7 @@
 # }
 
 set_research_slots = 2
-set_stability = 100.0w
+set_stability = 100.0
 set_war_support = 0.1
 
 set_technology = {
@@ -23,7 +23,8 @@ set_fuel_ratio = 0.5
 if = {
 	limit = { has_dlc = "No Step Back" }
 	set_technology = {
-		main_battle_tank_chassis = 1
+		feral_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
 	}
 	else = {
 		set_technology = {
@@ -67,14 +68,14 @@ if = {
 	}
 	create_equipment_variant = {
 		name = "Ents"
-		type = modern_tank_chassis_1
+		type = heavy_tank_chassis_1
 		parent_version = 0
 		modules = {
-			main_armament_slot = tank_small_cannon
-			turret_type_slot = tank_modern_tank_turret
-			suspension_type_slot = tank_bogie_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_gasoline_engine
+			main_armament_slot = troll_bare_hand
+			turret_type_slot = empty
+			suspension_type_slot = troll_bareback_saddle
+			armor_type_slot = cavalry_custom_barding
+			engine_type_slot = monster_troll_mount
 		}
 	}
 }

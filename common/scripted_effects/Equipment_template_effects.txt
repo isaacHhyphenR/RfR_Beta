@@ -1,0 +1,281 @@
+#############EASTERLING
+load_steppe_warband = {
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		create_equipment_variant = {
+			name = "Steppe Warband"
+			type = light_tank_chassis_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = cav_early_small_weapon
+				turret_type_slot = empty
+				suspension_type_slot = cavalry_racing_saddle
+				armor_type_slot = cavalry_standard_barding
+				engine_type_slot = cav_rouncey_mount
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+			}
+		}
+	}
+}
+#############GONDORIAN
+load_gondorian_noble_militia = {
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		create_equipment_variant = {
+			name = "Noble Militia"
+			type = light_tank_chassis_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = cav_basic_small_weapon
+				turret_type_slot = cav_gambeson_warrior
+				suspension_type_slot = cavalry_four_horn_saddle
+				armor_type_slot = cavalry_standard_barding
+				engine_type_slot = cav_rouncey_mount
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 1
+				tank_nsb_armor_upgrade = 6
+			}
+		}
+	}
+}
+#############ORCS
+load_early_warg_riders = {
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		create_equipment_variant = {
+			name = "Early Warg Rider"
+			type = light_tank_chassis_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = cav_early_small_weapon
+				turret_type_slot = empty
+				suspension_type_slot = cavalry_bareback_saddle
+				armor_type_slot = cavalry_one_size_fits_all_barding
+				engine_type_slot = cav_warg_mount
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+			}
+		}
+	}
+}
+load_feral_trolls = {
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		create_equipment_variant = {
+			name = "Feral Troll"
+			type = heavy_tank_chassis_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = troll_bare_hand
+				turret_type_slot = empty
+				suspension_type_slot = troll_bareback_saddle
+				armor_type_slot = cavalry_one_size_fits_all_barding
+				engine_type_slot = monster_troll_mount
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+			}
+		}
+	}
+}
+
+#############ROHIRRIM
+load_starting_rohirrim_armor_variants = { #Call in a tag to give them ROH's starting tank variants
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		create_equipment_variant = {
+			name = "Basic Riddermark Muster"
+			obsolete = no
+			type = light_tank_chassis_1
+			icon = "GFX_ROH_basic_light_tank_medium"
+			parent_version = 0
+			modules = {
+				main_armament_slot = cav_basic_small_weapon
+				turret_type_slot = cav_gambeson_warrior
+				suspension_type_slot = cavalry_racing_saddle
+				armor_type_slot = cavalry_standard_barding
+				engine_type_slot = cav_courser_mount
+				special_type_slot_1 = cav_sheild_1
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = 2
+			}
+		}
+		create_equipment_variant = {
+			name = "Basic Archer Muster"
+			type = light_tank_artillery_chassis_1
+			obsolete = no
+			parent_version = 0
+			icon = "GFX_ROH_basic_light_art_medium"
+			modules = {
+				main_armament_slot = cav_basic_bow
+				turret_type_slot = cav_gambeson_warrior
+				suspension_type_slot = cavalry_racing_saddle
+				armor_type_slot = cavalry_standard_barding
+				engine_type_slot = cav_courser_mount
+				special_type_slot_1 = cav_sheild_1
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = 2
+			}
+		}
+		create_equipment_variant = {
+			name = "Basic Lancer Muster"
+			type = light_tank_destroyer_chassis_1
+			obsolete = no
+			parent_version = 0
+			icon = "GFX_ROH_basic_light_td_medium"
+			modules = {
+				main_armament_slot = cav_spear_weapon
+				turret_type_slot = cav_gambeson_warrior
+				suspension_type_slot = cavalry_racing_saddle
+				armor_type_slot = cavalry_standard_barding
+				engine_type_slot = cav_courser_mount
+				special_type_slot_1 = cav_sheild_1
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 5
+				tank_nsb_armor_upgrade = 2
+			}
+		}
+	}
+	else = {
+		create_equipment_variant = {
+			name = "Basic Riddermark Muster"
+			type = light_tank_equipment_1
+			obsolete = no
+			parent_version = 0
+			icon = "GFX_ROH_basic_light_tank_medium"
+			upgrades = {
+				tank_reliability_upgrade = 1
+			}
+		}
+		create_equipment_variant = {
+			name = "Basic Archer Muster"
+			type = light_tank_artillery_equipment_1
+			obsolete = no
+			parent_version = 0
+			icon = "GFX_ROH_basic_light_art_medium"
+			upgrades = {
+				tank_reliability_upgrade = 1
+			}
+		}
+		create_equipment_variant = {
+			name = "Basic Lancer Muster"
+			type = light_tank_destroyer_equipment_1
+			obsolete = no
+			parent_version = 0
+			icon = "GFX_ROH_basic_light_td_medium"
+			upgrades = {
+				tank_reliability_upgrade = 1
+			}
+		}
+	}
+		#################IMPROVED
+	if = { limit = { ROH = { has_country_flag = light_tank_2 } }
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			create_equipment_variant = {
+				name = "Improved Riddermark Muster"
+				type = light_tank_chassis_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_tank_medium"
+				modules = {
+					main_armament_slot = cav_basic_small_weapon
+					turret_type_slot = cav_gambeson_warrior
+					suspension_type_slot = cavalry_racing_saddle
+					armor_type_slot = cavalry_standard_barding
+					engine_type_slot = cav_courser_mount
+					special_type_slot_1 = cav_sheild_1
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 5
+					tank_nsb_armor_upgrade = 2
+				}
+			}
+			create_equipment_variant = {
+				name = "Improved Archer Muster"
+				type = light_tank_artillery_chassis_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_art_medium"
+				modules = {
+					main_armament_slot = cav_basic_bow
+					turret_type_slot = cav_gambeson_warrior
+					suspension_type_slot = cavalry_racing_saddle
+					armor_type_slot = cavalry_standard_barding
+					engine_type_slot = cav_courser_mount
+					special_type_slot_1 = cav_sheild_1
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 5
+					tank_nsb_armor_upgrade = 2
+				}
+			}
+			create_equipment_variant = {
+				name = "Improved Lancer Muster"
+				type = light_tank_destroyer_chassis_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_td_medium"
+				modules = {
+					main_armament_slot = cav_spear_weapon
+					turret_type_slot = cav_gambeson_warrior
+					suspension_type_slot = cavalry_racing_saddle
+					armor_type_slot = cavalry_standard_barding
+					engine_type_slot = cav_courser_mount
+					special_type_slot_1 = cav_sheild_1
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 5
+					tank_nsb_armor_upgrade = 2
+				}
+			}
+		}
+		else = {
+			create_equipment_variant = {
+				name = "Improved Riddermark Muster"
+				type = light_tank_equipment_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_tank_medium"
+				upgrades = {
+					tank_reliability_upgrade = 1
+				}
+			}
+			create_equipment_variant = {
+				name = "Improved Archer Muster"
+				type = light_tank_artillery_equipment_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_art_medium"
+				upgrades = {
+					tank_reliability_upgrade = 1
+				}
+			}
+			create_equipment_variant = {
+				name = "Improved Lancer Muster"
+				type = light_tank_destroyer_equipment_2
+				parent_version = 0
+				icon = "GFX_ROH_basic_light_td_medium"
+				upgrades = {
+					tank_reliability_upgrade = 1
+				}
+			}
+		}
+	}
+}

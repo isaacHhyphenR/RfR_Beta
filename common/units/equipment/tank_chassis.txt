@@ -22,7 +22,6 @@ equipments = {
 					cav_thrown_weapon
 				}
 			}
-
 			turret_type_slot = { #warrior armor
 				allowed_module_categories = {
 					cav_warrior_armor_type
@@ -34,14 +33,12 @@ equipments = {
 					cav_saddle_type
 				}
 			}
-
 			armor_type_slot = { #barding
 				required = yes
 				allowed_module_categories = {
 					cav_barding_type
 				}
 			}
-
 			engine_type_slot = { #mount
 				required = yes
 				allowed_module_categories = {
@@ -117,6 +114,11 @@ equipments = {
 		module_count_limit = {
 			module = veterinary_supplies
 			count < 2
+		}
+		##Wrong Class
+		module_count_limit = {
+			module = extra_quiver
+			count = 0
 		}
 		##Wrong chassis
 		module_count_limit = {
@@ -361,7 +363,6 @@ equipments = {
 		}
 
 		manpower = 2
-
 	}
 	medium_tank_chassis_1 = {
 		abbreviation = "hc1"
@@ -369,7 +370,6 @@ equipments = {
 		visual_level = 0
 		year = 3015
 		archetype = medium_tank_chassis
-		parent = medium_tank_chassis_0
 		priority = 2000
 		module_slots = inherit
 		
@@ -594,12 +594,11 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					troll_blunt_weapon
-					troll_sharp_weapon
 					troll_ranged_weapon
 				}
 			}
 			turret_type_slot = {
-				required = yes
+				required = no
 				allowed_module_categories = {
 					troll_warrior_armor_type
 				}
@@ -698,6 +697,10 @@ equipments = {
 		}
 		module_count_limit = {
 			module = tournament_armor
+			count = 0
+		}
+		module_count_limit = {
+			module = spare_mount
 			count = 0
 		}
 		
@@ -802,6 +805,145 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					mumak_blunt_force
+				}
+			}
+			turret_type_slot = {
+				required = no
+				allowed_module_categories = {
+				}
+			}
+			suspension_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					mumakil_saddle_type
+				}
+			}
+			armor_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					cav_barding_type
+				}
+			}
+			engine_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					mumakil_mount_type
+				}
+			}
+			special_type_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+				}
+			}
+			special_type_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+				}
+			}
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+				}
+			}
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+				}
+			}
+		}
+		module_count_limit = {
+			module = caparison
+			count < 2
+		}
+		module_count_limit = {
+			module = tusk_rope
+			count < 2
+		}
+		module_count_limit = {
+			module = war_horn
+			count < 2
+		}
+		module_count_limit = {
+			module = veterinary_supplies
+			count < 2
+		}
+		##Wrong chassis
+		module_count_limit = {
+			module = tournament_armor
+			count = 0
+		}
+		module_count_limit = {
+			module = pontoon
+			count = 0
+		}
+		module_count_limit = {
+			module = plough
+			count = 0
+		}
+		module_count_limit = {
+			module = backup_lance
+			count = 0
+		}
+		module_count_limit = {
+			module = spare_mount
+			count = 0
+		}
+		##Not Without rider
+		module_count_limit = {
+			module = extra_quiver
+			count = 0
+		}
+		default_modules = {
+			main_armament_slot = mumak_unridden
+			turret_type_slot = empty
+			suspension_type_slot = mumakil_bareback_saddle
+			armor_type_slot = cavalry_standard_barding
+			engine_type_slot = monster_mumak_mount
+		}
+
+		fuel_consumption = 0
+		maximum_speed = 4
+		breakthrough = 16
+		build_cost_ic = 12
+		reliability = 0.75
+		armor_value = 90
+		hardness = 1
+		resources = {
+			monsters = 4
+		}
+
+		manpower = 5
+	}
+	super_heavy_tank_chassis_1 = {
+		abbreviation = "mk1"
+		derived_variant_name = super_heavy_tank_equipment_1
+		visual_level = 0
+		year = 3000
+		archetype = super_heavy_tank_chassis
+		priority = 2000
+		module_slots = inherit
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	super_heavy_tank_chassis_2 = {
+		abbreviation = "mk2"
+		derived_variant_name = super_heavy_tank_equipment_1
+		visual_level = 1
+		year = 3018
+		archetype = super_heavy_tank_chassis
+		priority = 2000
+		parent = super_heavy_tank_chassis_1
+		
+		module_slots = {
+			main_armament_slot = {
+				required = yes
+				allowed_module_categories = {
 					mumak_ranged_weapon
 					mumak_thrown_weapon
 					mumak_artillery_weapon
@@ -861,83 +1003,9 @@ equipments = {
 			}
 		}
 		module_count_limit = {
-			module = caparison
-			count < 2
+			module = extra_quiver
+			count = any
 		}
-		module_count_limit = {
-			module = tusk_rope
-			count < 2
-		}
-		module_count_limit = {
-			module = war_horn
-			count < 2
-		}
-		module_count_limit = {
-			module = veterinary_supplies
-			count < 2
-		}
-		##Wrong chassis
-		module_count_limit = {
-			module = tournament_armor
-			count = 0
-		}
-		module_count_limit = {
-			module = pontoon
-			count = 0
-		}
-		module_count_limit = {
-			module = plough
-			count = 0
-		}
-		module_count_limit = {
-			module = backup_lance
-			count = 0
-		}
-		
-		default_modules = {
-			main_armament_slot = mumak_unridden
-			turret_type_slot = empty
-			suspension_type_slot = mumakil_bareback_saddle
-			armor_type_slot = cavalry_standard_barding
-			engine_type_slot = monster_mumak_mount
-		}
-
-		fuel_consumption = 0
-		maximum_speed = 4
-		breakthrough = 16
-		build_cost_ic = 12
-		reliability = 0.75
-		armor_value = 90
-		hardness = 1
-		resources = {
-			monsters = 4
-		}
-
-		manpower = 5
-	}
-	super_heavy_tank_chassis_1 = {
-		abbreviation = "mk1"
-		derived_variant_name = super_heavy_tank_equipment_1
-		visual_level = 0
-		year = 3000
-		archetype = super_heavy_tank_chassis
-		priority = 2000
-		module_slots = inherit
-		upgrades = {
-			tank_nsb_engine_upgrade
-			tank_nsb_armor_upgrade
-		}
-	}
-	super_heavy_tank_chassis_2 = {
-		abbreviation = "mk2"
-		derived_variant_name = super_heavy_tank_equipment_1
-		visual_level = 1
-		year = 3018
-		archetype = super_heavy_tank_chassis
-		priority = 2000
-		module_slots = inherit
-		parent = super_heavy_tank_chassis_1
-		
 		maximum_speed = 4.12
 		build_cost_ic = 16
 		reliability = 0.85
@@ -945,6 +1013,7 @@ equipments = {
 		resources = {
 			monsters = 5
 		}
+		manpower = 16
 	}
 	super_heavy_tank_chassis_3 = {
 		abbreviation = "mk3"
@@ -963,6 +1032,7 @@ equipments = {
 		resources = {
 			monsters = 6
 		}
+		manpower = 20
 	}
 
 
@@ -986,7 +1056,7 @@ equipments = {
 			}
 
 			turret_type_slot = {
-				required = yes
+				required = no
 				allowed_module_categories = {
 					tank_light_turret_type
 				}

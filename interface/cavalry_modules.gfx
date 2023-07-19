@@ -1,7 +1,528 @@
 spriteTypes = {
+######################Categories
+	SpriteType = {
+		name = "GFX_EMI_cav_small_melee_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/early_small_weapon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_large_melee_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/early_large_weapon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_lance_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/early_lance.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_ranged_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/early_bow.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_thrown_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/early_javelin.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_blunt_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/troll_club.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_sharp_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/early_troll_sword.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_ranged_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/early_troll_sling.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_blunt_force"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/nothing.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_ranged_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/early_bow.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_thrown_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/early_javelin.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_artillery_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/ballista.dds"
+		legacy_lazy_load = no
+	}
 ######################Mounts
 	SpriteType = {
-		name = "GFX_cav_sumpter_mount"
+		name = "GFX_EMI_cav_sumpter_mount"
 		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/sumpter_horse.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_rouncey_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/rouncey_horse.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_courser_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/courser_horse.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_destrier_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/destrier_horse.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_steppe_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/steppe_pony.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_camel_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/camel.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_warg_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warg.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_elk_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/elk.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_monster_troll_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/troll.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_monster_ent_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/ent.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_monster_mumak_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/mumak.dds"
+		legacy_lazy_load = no
+	}
+######################Barding
+	SpriteType = {
+		name = "GFX_EMI_cavalry_one_size_fits_all_barding"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/one_size_fits_all_barding.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cavalry_standard_barding"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/standardized_barding.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cavalry_custom_barding"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/custom_barding.dds"
+		legacy_lazy_load = no
+	}
+######################Saddles
+	SpriteType = {
+		name = "GFX_EMI_cavalry_bareback_saddle"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/nothing.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cavalry_four_horn_saddle"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/four_horn_saddle.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cavalry_racing_saddle"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/racing_saddle.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cavalry_protective_saddle"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/protective_saddle.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_bareback_saddle"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/nothing.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_ent_bareback_saddle"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/nothing.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumakil_bareback_saddle"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/nothing.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumakil_basic_tower_saddle"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_mumakil_tower.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumakil_improved_tower_saddle"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_mumakil_tower.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumakil_advanced_tower_saddle"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/advanced_mumakil_tower.dds"
+		legacy_lazy_load = no
+	}
+######################Warrior Armor
+	SpriteType = {
+		name = "GFX_EMI_cav_gambeson_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_gambeson.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_mail_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_mail.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_partial_plate_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_partial_plate.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_full_plate_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_full_plate.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_gambeson_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_gambeson.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_mail_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_mail.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_partial_plate_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_partial_plate.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_full_plate_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_full_plate.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_gambeson_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_gambeson.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_mail_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_mail.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_partial_plate_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_partial_plate.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_full_plate_warrior"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/warrior_full_plate.dds"
+		legacy_lazy_load = no
+	}
+######################Cavalry Weapon
+	SpriteType = {
+		name = "GFX_EMI_cav_early_small_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/early_small_weapon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_basic_small_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_small_weapon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_improved_small_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_small_weapon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_advanced_small_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/advanced_small_weapon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_basic_large_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_large_weapon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_improved_large_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_large_weapon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_advanced_large_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/advanced_large_weapon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_spear_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/spear.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_basic_lance_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_lance.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_improved_lance_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_lance.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_advanced_lance_weapon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/advanced_lance.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_basic_bow"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_bow.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_improved_bow"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_bow.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_advanced_bow"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/advanced_bow.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_basic_javelin"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_javelin.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_improved_javelin"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_javelin.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_advanced_javelin"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/advanced_javelin.dds"
+		legacy_lazy_load = no
+	}
+######################Troll Weapon
+	SpriteType = {
+		name = "GFX_EMI_troll_bare_hand"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/troll_hand.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_club"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/troll_club.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_mace"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/troll_mace.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_basic_sword"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_troll_sword.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_improved_sword"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_troll_sword.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_basic_sling"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_troll_sling.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_improved_sling"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_troll_sling.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_troll_advanced_sling"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/advanced_troll_sling.dds"
+		legacy_lazy_load = no
+	}
+######################Mumakil Weapon
+	SpriteType = {
+		name = "GFX_EMI_mumak_unridden"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/troll_hand.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_basic_bow_tower"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_bow.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_improved_bow_tower"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_bow.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_advanced_bow_tower"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/advanced_bow.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_basic_javelin_tower"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_javelin.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_improved_javelin_tower"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_javelin.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_advanced_javelin_tower"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/advanced_javelin.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_ballista_tower"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/ballista.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_basic_ballista_tower"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_ballista.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_improved_ballista_tower"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_ballista.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_mumak_catapult_tower"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/catapult.dds"
+		legacy_lazy_load = no
+	}
+######################Sheild
+	SpriteType = {
+		name = "GFX_EMI_cav_sheild_1"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/round_sheild.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_sheild_2"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/kite_sheild.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_sheild_3"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/heater_sheild.dds"
+		legacy_lazy_load = no
+	}
+######################Sidearm
+	SpriteType = {
+		name = "GFX_EMI_early_sidearm"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/early_sidearm.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_basic_sidearm"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/basic_sidearm.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_improved_sidearm"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/improved_sidearm.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_advanced_sidearm"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/advanced_sidearm.dds"
+		legacy_lazy_load = no
+	}
+######################Special
+	SpriteType = {
+		name = "GFX_EMI_caparison"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/caparison.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_tournament_armor"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/tournament_armor.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_plough"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/plough.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_pontoon"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/pontoon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_war_horn"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/war_horn.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_veterinary_supplies"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/veterinary_supplies.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_tusk_rope"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/tusk_rope.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_spare_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/spare_mount.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_extra_quiver"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/extra_quiver.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_extra_saddlebag"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/extra_saddlebag.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_backup_lance"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/backup_lance.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_foot_spike"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/foot_spike.dds"
+		legacy_lazy_load = no
 	}
 }

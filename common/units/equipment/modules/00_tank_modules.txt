@@ -249,6 +249,18 @@ equipment_modules = {
 		dismantle_cost_ic = 0
 
 	}
+	cavalry_basic_saddle = {
+		abbreviation = "bsc"
+		category = cav_saddle_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+		}
+		multiply_stats = {
+		}
+		dismantle_cost_ic = 0
+
+	}
 	cavalry_four_horn_saddle = {
 		abbreviation = "hrn"
 		category = cav_saddle_type
@@ -337,7 +349,6 @@ equipment_modules = {
 		add_stats = {
 			build_cost_ic = 8
 			reliability = -0.2
-			manpower = 10
 		}
 		multiply_stats = {
 		}
@@ -360,7 +371,6 @@ equipment_modules = {
 		add_stats = {
 			build_cost_ic = 11
 			reliability = -0.2
-			manpower = 14
 		}
 		multiply_stats = {
 			soft_attack = 0.1
@@ -385,7 +395,6 @@ equipment_modules = {
 		add_stats = {
 			build_cost_ic = 14
 			reliability = -0.2
-			manpower = 18
 		}
 		multiply_stats = {
 			soft_attack = 0.2
@@ -429,7 +438,7 @@ equipment_modules = {
 		abbreviation = "mal"
 		category = cav_warrior_armor_type
 		sfx = sfx_ui_sd_module_turret
-		parent = cav_mail_warrior
+		parent = cav_gambeson_warrior
 
 		add_stats = {
 			build_cost_ic = 0.75
@@ -453,7 +462,7 @@ equipment_modules = {
 		abbreviation = "prt"
 		category = cav_warrior_armor_type
 		sfx = sfx_ui_sd_module_turret
-		parent = cav_partial_plate_warrior
+		parent = cav_mail_warrior
 
 		add_stats = {
 			build_cost_ic = 1.25
@@ -477,7 +486,7 @@ equipment_modules = {
 		abbreviation = "plt"
 		category = cav_warrior_armor_type
 		sfx = sfx_ui_sd_module_turret
-		parent = cav_full_plate_warrior
+		parent = cav_partial_plate_warrior
 
 		add_stats = {
 			build_cost_ic = 2
@@ -524,7 +533,7 @@ equipment_modules = {
 		abbreviation = "mal"
 		category = troll_warrior_armor_type
 		sfx = sfx_ui_sd_module_turret
-		parent = troll_mail_warrior
+		parent = troll_gambeson_warrior
 
 		add_stats = {
 			build_cost_ic = 5
@@ -548,7 +557,7 @@ equipment_modules = {
 		abbreviation = "prt"
 		category = troll_warrior_armor_type
 		sfx = sfx_ui_sd_module_turret
-		parent = troll_partial_plate_warrior
+		parent = troll_mail_warrior
 
 		add_stats = {
 			build_cost_ic = 5.5
@@ -572,7 +581,7 @@ equipment_modules = {
 		abbreviation = "plt"
 		category = troll_warrior_armor_type
 		sfx = sfx_ui_sd_module_turret
-		parent = troll_full_plate_warrior
+		parent = troll_partial_plate_warrior
 
 		add_stats = {
 			build_cost_ic = 6
@@ -619,7 +628,7 @@ equipment_modules = {
 		abbreviation = "mal"
 		category = mumak_warrior_armor_type
 		sfx = sfx_ui_sd_module_turret
-		parent = mumak_mail_warrior
+		parent = mumak_gambeson_warrior
 
 		add_stats = {
 			build_cost_ic = 10
@@ -643,7 +652,7 @@ equipment_modules = {
 		abbreviation = "prt"
 		category = mumak_warrior_armor_type
 		sfx = sfx_ui_sd_module_turret
-		parent = mumak_partial_plate_warrior
+		parent = mumak_mail_warrior
 
 		add_stats = {
 			build_cost_ic = 12
@@ -667,7 +676,7 @@ equipment_modules = {
 		abbreviation = "plt"
 		category = mumak_warrior_armor_type
 		sfx = sfx_ui_sd_module_turret
-		parent = mumak_full_plate_warrior
+		parent = mumak_partial_plate_warrior
 
 		add_stats = {
 			build_cost_ic = 14
@@ -703,24 +712,16 @@ equipment_modules = {
 		}
 		dismantle_cost_ic = 0.5
 
-		can_convert_from = {
-			module_category = cav_large_melee_weapon
-			convert_cost_ic = 1.5
-		}
+		# can_convert_from = {
+			# module_category = cav_small_melee_weapon #cav_large_melee_weapon
+			# convert_cost_ic = 1.5
+		# }
 		can_convert_from = {
 			module_category = cav_small_melee_weapon
 			convert_cost_ic = 1
 		}
 		build_cost_resources = {
 			iron = 1
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
-		}
-		module_count_limit = {
-			category = tank_secondary_turret
-			count = 0
 		}
 		xp_cost = 1
 	}
@@ -739,21 +740,13 @@ equipment_modules = {
 		}
 		dismantle_cost_ic = 1
 		xp_cost = 1
-		can_convert_from = {
-			module_category = cav_large_melee_weapon
-			convert_cost_ic = 2.5
-		}
+		# can_convert_from = {
+			# module_category = cav_small_melee_weapon #cav_large_melee_weapon
+			# convert_cost_ic = 2.5
+		# }
 		can_convert_from = {
 			module_category = cav_small_melee_weapon
 			convert_cost_ic = 2
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
-		}
-		module_count_limit = {
-			category = tank_secondary_turret
-			count = 0
 		}
 		build_cost_resources = {
 			iron = 1
@@ -774,21 +767,13 @@ equipment_modules = {
 		}
 		dismantle_cost_ic = 1
 		xp_cost = 1
-		can_convert_from = {
-			module_category = cav_large_melee_weapon
-			convert_cost_ic = 3.5
-		}
+		# can_convert_from = {
+			# module_category = cav_small_melee_weapon #cav_large_melee_weapon
+			# convert_cost_ic = 3.5
+		# }
 		can_convert_from = {
 			module_category = cav_small_melee_weapon
 			convert_cost_ic = 3
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
-		}
-		module_count_limit = {
-			category = tank_secondary_turret
-			count = 0
 		}
 		build_cost_resources = {
 			iron = 2
@@ -809,21 +794,13 @@ equipment_modules = {
 		}
 		dismantle_cost_ic = 1
 		xp_cost = 1
-		can_convert_from = {
-			module_category = cav_large_melee_weapon
-			convert_cost_ic = 4.5
-		}
+		# can_convert_from = {
+			# module_category = cav_small_melee_weapon #cav_large_melee_weapon
+			# convert_cost_ic = 4.5
+		# }
 		can_convert_from = {
 			module_category = cav_small_melee_weapon
 			convert_cost_ic = 4
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
-		}
-		module_count_limit = {
-			category = tank_secondary_turret
-			count = 0
 		}
 		build_cost_resources = {
 			iron = 2
@@ -832,7 +809,7 @@ equipment_modules = {
 
 	cav_basic_large_weapon = {
 		abbreviation = "lg1"
-		category = cav_large_melee_weapon
+		category = cav_small_melee_weapon #cav_large_melee_weapon
 		sfx = sfx_ui_sd_module_turret
 		
 		add_stats = {
@@ -847,26 +824,18 @@ equipment_modules = {
 		build_cost_resources = {
 			iron = 2
 		}
-		can_convert_from = {
-			module_category = cav_large_melee_weapon
-			convert_cost_ic = 3
-		}
+		# can_convert_from = {
+			# module_category = cav_small_melee_weapon #cav_large_melee_weapon
+			# convert_cost_ic = 3
+		# }
 		can_convert_from = {
 			module_category = cav_small_melee_weapon
-			convert_cost_ic = 3.5
-		}
-		module_count_limit = {
-			category = cavalry_shield
-			count = 0
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
+			convert_cost_ic = 3
 		}
 	}
 	cav_improved_large_weapon = {
 		abbreviation = "lg2"
-		category = cav_large_melee_weapon
+		category = cav_small_melee_weapon #cav_large_melee_weapon
 		sfx = sfx_ui_sd_module_turret
 		parent = cav_basic_large_weapon
 
@@ -882,26 +851,18 @@ equipment_modules = {
 		build_cost_resources = {
 			iron = 3
 		}
-		can_convert_from = {
-			module_category = cav_large_melee_weapon
-			convert_cost_ic = 4
-		}
+		# can_convert_from = {
+			# module_category = cav_small_melee_weapon #cav_large_melee_weapon
+			# convert_cost_ic = 4
+		# }
 		can_convert_from = {
 			module_category = cav_small_melee_weapon
-			convert_cost_ic = 4.5
-		}
-		module_count_limit = {
-			category = cavalry_shield
-			count = 0
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
+			convert_cost_ic = 4
 		}
 	}
 	cav_advanced_large_weapon = {
 		abbreviation = "lg3"
-		category = cav_large_melee_weapon
+		category = cav_small_melee_weapon #cav_large_melee_weapon
 		sfx = sfx_ui_sd_module_turret
 		parent = cav_improved_large_weapon
 		
@@ -917,21 +878,13 @@ equipment_modules = {
 		build_cost_resources = {
 			iron = 4
 		}
-		can_convert_from = {
-			module_category = cav_large_melee_weapon
-			convert_cost_ic = 5
-		}
+		# can_convert_from = {
+			# module_category = cav_small_melee_weapon #cav_large_melee_weapon
+			# convert_cost_ic = 5
+		# }
 		can_convert_from = {
 			module_category = cav_small_melee_weapon
-			convert_cost_ic = 5.5
-		}
-		module_count_limit = {
-			category = cavalry_shield
-			count = 0
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
+			convert_cost_ic = 5
 		}
 	}
 
@@ -956,10 +909,6 @@ equipment_modules = {
 		}
 		build_cost_resources = {
 			wood = 1
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
 		}
 	}
 	cav_basic_lance_weapon = {
@@ -986,10 +935,6 @@ equipment_modules = {
 			wood = 1
 			iron = 1
 		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
-		}
 	}
 	cav_improved_lance_weapon = {
 		abbreviation = "ln2"
@@ -1014,10 +959,6 @@ equipment_modules = {
 		build_cost_resources = {
 			wood = 2
 			iron = 1
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
 		}
 	}
 	cav_advanced_lance_weapon = {
@@ -1044,10 +985,6 @@ equipment_modules = {
 			wood = 2
 			iron = 2
 		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
-		}
 	}
 
 	cav_basic_bow = {
@@ -1073,10 +1010,10 @@ equipment_modules = {
 			module_category = cav_ranged_weapon
 			convert_cost_ic = 4
 		}
-		can_convert_from = {
-			module_category = cav_thrown_weapon
-			convert_cost_ic = 4.5
-		}
+		# can_convert_from = {
+			# module_category = cav_ranged_weapon #cav_thrown_weapon
+			# convert_cost_ic = 4.5
+		# }
 	}
 	cav_improved_bow = {
 		abbreviation = "bo2"
@@ -1103,10 +1040,10 @@ equipment_modules = {
 			module_category = cav_ranged_weapon
 			convert_cost_ic = 5
 		}
-		can_convert_from = {
-			module_category = cav_thrown_weapon
-			convert_cost_ic = 5.5
-		}
+		# can_convert_from = {
+			# module_category = cav_ranged_weapon #cav_thrown_weapon
+			# convert_cost_ic = 5.5
+		# }
 	}
 	cav_advanced_bow = {
 		abbreviation = "bo3"
@@ -1133,15 +1070,15 @@ equipment_modules = {
 			module_category = cav_ranged_weapon
 			convert_cost_ic = 6
 		}
-		can_convert_from = {
-			module_category = cav_thrown_weapon
-			convert_cost_ic = 6.5
-		}
+		# can_convert_from = {
+			# module_category = cav_ranged_weapon #cav_thrown_weapon
+			# convert_cost_ic = 6.5
+		# }
 	}
 	
 	cav_basic_javelin = {
 		abbreviation = "jv1"
-		category = cav_thrown_weapon
+		category = cav_ranged_weapon #cav_thrown_weapon
 		sfx = sfx_ui_sd_module_turret
 		allow_equipment_type = artillery
 		
@@ -1159,16 +1096,16 @@ equipment_modules = {
 		}
 		can_convert_from = {
 			module_category = cav_ranged_weapon
-			convert_cost_ic = 2.5
-		}
-		can_convert_from = {
-			module_category = cav_thrown_weapon
 			convert_cost_ic = 2
 		}
+		# can_convert_from = {
+			# module_category = cav_ranged_weapon #cav_thrown_weapon
+			# convert_cost_ic = 2
+		# }
 	}
 	cav_improved_javelin = {
 		abbreviation = "jv2"
-		category = cav_thrown_weapon
+		category = cav_ranged_weapon #cav_thrown_weapon
 		sfx = sfx_ui_sd_module_turret
 		parent = cav_basic_javelin
 		allow_equipment_type = artillery
@@ -1188,16 +1125,16 @@ equipment_modules = {
 		}
 		can_convert_from = {
 			module_category = cav_ranged_weapon
-			convert_cost_ic = 3.5
-		}
-		can_convert_from = {
-			module_category = cav_thrown_weapon
 			convert_cost_ic = 3
 		}
+		# can_convert_from = {
+			# module_category = cav_ranged_weapon #cav_thrown_weapon
+			# convert_cost_ic = 3
+		# }
 	}
 	cav_advanced_javelin = {
 		abbreviation = "jv3"
-		category = cav_thrown_weapon
+		category = cav_ranged_weapon #cav_thrown_weapon
 		sfx = sfx_ui_sd_module_turret
 		parent = cav_improved_javelin
 		allow_equipment_type = artillery
@@ -1217,12 +1154,12 @@ equipment_modules = {
 		}
 		can_convert_from = {
 			module_category = cav_ranged_weapon
-			convert_cost_ic = 4.5
-		}
-		can_convert_from = {
-			module_category = cav_thrown_weapon
 			convert_cost_ic = 4
 		}
+		# can_convert_from = {
+			# module_category = cav_ranged_weapon #cav_thrown_weapon
+			# convert_cost_ic = 4
+		# }
 	}
 
 	troll_bare_hand = {
@@ -1238,10 +1175,6 @@ equipment_modules = {
 		dismantle_cost_ic = 0
 		xp_cost = 0
 		build_cost_resources = {
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
 		}
 	}
 	troll_club = {
@@ -1267,14 +1200,10 @@ equipment_modules = {
 			module_category = troll_blunt_weapon
 			convert_cost_ic = 4
 		}
-		can_convert_from = {
-			module_category = troll_sharp_weapon
-			convert_cost_ic = 4.5
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
-		}
+		# can_convert_from = {
+			# module_category = troll_blunt_weapon #troll_sharp_weapon
+			# convert_cost_ic = 4.5
+		# }
 	}
 	troll_mace = {
 		abbreviation = "mac"
@@ -1300,19 +1229,14 @@ equipment_modules = {
 			module_category = troll_blunt_weapon
 			convert_cost_ic = 7
 		}
-		can_convert_from = {
-			module_category = troll_sharp_weapon
-			convert_cost_ic = 7.5
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
-		}
+		# can_convert_from = {
+			# module_category = troll_blunt_weapon #troll_sharp_weapon
+			# convert_cost_ic = 7.5
+		# }
 	}
-
 	troll_basic_sword = {
 		abbreviation = "ms1"
-		category = troll_sharp_weapon
+		category = troll_blunt_weapon #troll_sharp_weapon
 		sfx = sfx_ui_sd_module_turret
 		allow_equipment_type = anti_tank
 		
@@ -1332,22 +1256,18 @@ equipment_modules = {
 		
 		can_convert_from = {
 			module_category = troll_blunt_weapon
-			convert_cost_ic = 6
-		}
-		can_convert_from = {
-			module_category = troll_sharp_weapon
 			convert_cost_ic = 5.5
 		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
-		}
+		# can_convert_from = {
+			# module_category = troll_blunt_weapon #troll_sharp_weapon
+			# convert_cost_ic = 5.5
+		# }
 	}
 	troll_improved_sword = {
 		abbreviation = "ms2"
-		category = troll_sharp_weapon
+		category = troll_blunt_weapon
 		sfx = sfx_ui_sd_module_turret
-		parent = troll_basic_sword
+		parent = troll_basic_sword #troll_sharp_weapon
 		allow_equipment_type = anti_tank
 		
 		add_stats = {
@@ -1366,16 +1286,12 @@ equipment_modules = {
 		
 		can_convert_from = {
 			module_category = troll_blunt_weapon
-			convert_cost_ic = 7.5
-		}
-		can_convert_from = {
-			module_category = troll_sharp_weapon
 			convert_cost_ic = 7
 		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
-		}
+		# can_convert_from = {
+			# module_category = troll_blunt_weapon #troll_sharp_weapon
+			# convert_cost_ic = 7
+		# }
 	}
 	
 	troll_basic_sling = {
@@ -1470,31 +1386,6 @@ equipment_modules = {
 		}
 		dismantle_cost_ic = 0
 		xp_cost = 0
-		##can't have ridden warriors without a tower
-		module_count_limit = {
-			category = mumak_ranged_weapon
-			count = 0
-		}
-		module_count_limit = {
-			category = mumak_thrown_weapon
-			count = 0
-		}
-		module_count_limit = {
-			category = mumak_artillery_weapon
-			count = 0
-		}
-		module_count_limit = {
-			category = tank_secondary_turret
-			count = 0
-		}
-		module_count_limit = {
-			module = extra_quiver
-			count = 0
-		}
-		module_count_limit = {
-			module = war_horn
-			count = 0
-		}
 	}
 	
 	mumak_basic_bow_tower = {
@@ -1521,10 +1412,10 @@ equipment_modules = {
 			module_category = mumak_ranged_weapon
 			convert_cost_ic = 3
 		}
-		can_convert_from = {
-			module_category = mumak_thrown_weapon
-			convert_cost_ic = 4
-		}
+		# can_convert_from = {
+			# module_category = mumak_ranged_weapon #mumak_thrown_weapon
+			# convert_cost_ic = 4
+		# }
 	}
 	mumak_improved_bow_tower = {
 		abbreviation = "bt2"
@@ -1551,10 +1442,10 @@ equipment_modules = {
 			module_category = mumak_ranged_weapon
 			convert_cost_ic = 3
 		}
-		can_convert_from = {
-			module_category = mumak_thrown_weapon
-			convert_cost_ic = 4
-		}
+		# can_convert_from = {
+			# module_category = mumak_ranged_weapon #mumak_thrown_weapon
+			# convert_cost_ic = 4
+		# }
 	}
 	mumak_advanced_bow_tower = {
 		abbreviation = "bt3"
@@ -1582,15 +1473,15 @@ equipment_modules = {
 			module_category = mumak_ranged_weapon
 			convert_cost_ic = 3
 		}
-		can_convert_from = {
-			module_category = mumak_thrown_weapon
-			convert_cost_ic = 4
-		}
+		# can_convert_from = {
+			# module_category = mumak_ranged_weapon #mumak_thrown_weapon
+			# convert_cost_ic = 4
+		# }
 	}
 
 	mumak_basic_javelin_tower = {
 		abbreviation = "jt1"
-		category = mumak_thrown_weapon
+		category = mumak_ranged_weapon #mumak_thrown_weapon
 		sfx = sfx_ui_sd_module_turret
 		
 		add_stats = {
@@ -1608,18 +1499,18 @@ equipment_modules = {
 			cloth = 1
 		}
 		
-		can_convert_from = {
-			module_category = mumak_thrown_weapon
-			convert_cost_ic = 3
-		}
+		# can_convert_from = {
+			# module_category = mumak_ranged_weapon #mumak_thrown_weapon
+			# convert_cost_ic = 3
+		# }
 		can_convert_from = {
 			module_category = mumak_ranged_weapon
-			convert_cost_ic = 4
+			convert_cost_ic = 8
 		}
 	}
 	mumak_improved_javelin_tower = {
 		abbreviation = "jt2"
-		category = mumak_thrown_weapon
+		category = mumak_ranged_weapon #mumak_thrown_weapon
 		sfx = sfx_ui_sd_module_turret
 		parent = mumak_basic_javelin_tower
 		
@@ -1639,18 +1530,18 @@ equipment_modules = {
 			iron = 1
 		}
 		
-		can_convert_from = {
-			module_category = mumak_thrown_weapon
-			convert_cost_ic = 3
-		}
+		# can_convert_from = {
+			# module_category = mumak_ranged_weapon #mumak_thrown_weapon
+			# convert_cost_ic = 3
+		# }
 		can_convert_from = {
 			module_category = mumak_ranged_weapon
-			convert_cost_ic = 4
+			convert_cost_ic = 10
 		}
 	}
 	mumak_advanced_javelin_tower = {
 		abbreviation = "jt3"
-		category = mumak_thrown_weapon
+		category = mumak_ranged_weapon #mumak_thrown_weapon
 		sfx = sfx_ui_sd_module_turret
 		parent = mumak_improved_javelin_tower
 		
@@ -1670,13 +1561,13 @@ equipment_modules = {
 			iron = 1
 		}
 		
-		can_convert_from = {
-			module_category = mumak_thrown_weapon
-			convert_cost_ic = 3
-		}
+		# can_convert_from = {
+			# module_category = mumak_ranged_weapon #mumak_thrown_weapon
+			# convert_cost_ic = 3
+		# }
 		can_convert_from = {
 			module_category = mumak_ranged_weapon
-			convert_cost_ic = 4
+			convert_cost_ic = 12
 		}
 	}
 
@@ -1704,7 +1595,7 @@ equipment_modules = {
 		
 		can_convert_from = {
 			module_category = mumak_artillery_weapon
-			convert_cost_ic = 4
+			convert_cost_ic = 12
 		}
 	}
 	mumak_catapult_tower = {
@@ -1721,9 +1612,6 @@ equipment_modules = {
 			hard_attack = 40
 			ap_attack = 200
 		}
-		fort = {
-			attack = 0.25
-		}
 		dismantle_cost_ic = 1
 		xp_cost = 1
 		build_cost_resources = {
@@ -1734,7 +1622,7 @@ equipment_modules = {
 		
 		can_convert_from = {
 			module_category = mumak_artillery_weapon
-			convert_cost_ic = 4
+			convert_cost_ic = 14
 		}
 	}
 	################Special Modules

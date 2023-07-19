@@ -125,6 +125,35 @@ spriteTypes = {
 		name = "GFX_spear_upgrade_3_medium"
 		texturefile = "gfx/interface/technologies/spear_upgrade_3.dds"
 	}
+##########################JAVELINS
+	SpriteType = {
+		name = "GFX_javelins1_medium"
+		texturefile = "gfx/interface/technologies/javelins1.dds"
+	}
+	SpriteType = {
+		name = "GFX_javelins2_medium"
+		texturefile = "gfx/interface/technologies/javelins2.dds"
+	}
+	SpriteType = {
+		name = "GFX_javelins3_medium"
+		texturefile = "gfx/interface/technologies/javelins3.dds"
+	}
+	SpriteType = {
+		name = "GFX_javelin_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/javelin_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_javelin_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/javelin_upgrade_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_javelin_upgrade_3_medium"
+		texturefile = "gfx/interface/technologies/javelin_upgrade_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_javelin_upgrade_4_medium"
+		texturefile = "gfx/interface/technologies/javelin_upgrade_4.dds"
+	}
 							######################################
 									#COUNTRY SPECIFIC
 							######################################
@@ -149,7 +178,7 @@ spriteTypes = {
 										#GENERIC CAVALRY
 							######################################
 	SpriteType = {
-		name = "GFX_inter_war_heavy_tank_chassis_medium"
+		name = "GFX_feral_troll_chassis_medium"
 		texturefile = "gfx/interface/technologies/generic_inter_war_heavy_tank_chassis.dds"
 	}
 	SpriteType = {
@@ -223,6 +252,18 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_modern_td"
 		texturefile = gfx/interface/technologies/cavalry_variants/modern_lancer.dds
+	}
+	spriteType = {
+		name = "GFX_basic_mumakil_chassis_medium"
+		texturefile = gfx/interface/technologies/basic_mumakil.dds
+	}
+	spriteType = {
+		name = "GFX_improved_mumakil_chassis_medium"
+		texturefile = gfx/interface/technologies/improved_mumakil.dds
+	}
+	spriteType = {
+		name = "GFX_advanced_mumakil_chassis_medium"
+		texturefile = gfx/interface/technologies/advanced_mumakil.dds
 	}
 							######################################
 									#COUNTRY SPECIFIC CAVALRY

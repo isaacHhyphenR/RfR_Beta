@@ -1,0 +1,10 @@
+on_actions = {
+	on_startup = {
+		effect = {##setup Easterling khanates
+			every_country = {
+				limit = { OR = { has_idea = easterling_heritage_idea has_idea = steppe_heritage_idea } }
+				load_steppe_warband = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,131 @@
+technologies = {
+	#@rohirric_heritage_cav_bonus = 0.15
+	#@rohirric_heritage_cav_bonus_negative = -0.15
+	@rohirric_heritage_equipment_bonus = 1
+	@rohirric_heritage_equipment_bonus_half = 0.1
+	#@rohirric_heritage_organisation_bonus = 10
+	#############HIDDEN ROHAN TECHNOLOGY
+	rohan_cav_boost = {
+
+		research_cost = 1
+		allow = {
+			always = no
+		}
+		light_armor = {
+			# build_cost_ic = -0.1
+			reliability = @rohirric_heritage_equipment_bonus_half
+			soft_attack = @rohirric_heritage_equipment_bonus
+			hard_attack = @rohirric_heritage_equipment_bonus
+			breakthrough = @rohirric_heritage_equipment_bonus
+		}
+		light_sp_artillery_brigade = {
+			reliability = @rohirric_heritage_equipment_bonus_half
+			soft_attack = @rohirric_heritage_equipment_bonus
+			hard_attack = @rohirric_heritage_equipment_bonus
+			breakthrough = @rohirric_heritage_equipment_bonus
+		}
+		light_tank_destroyer_brigade = {
+			reliability = @rohirric_heritage_equipment_bonus_half
+			soft_attack = @rohirric_heritage_equipment_bonus
+			hard_attack = @rohirric_heritage_equipment_bonus
+			breakthrough = @rohirric_heritage_equipment_bonus
+		}
+		medium_armor = {
+			# build_cost_ic = -0.1
+			reliability = @rohirric_heritage_equipment_bonus_half
+			soft_attack = @rohirric_heritage_equipment_bonus
+			hard_attack = @rohirric_heritage_equipment_bonus
+			breakthrough = @rohirric_heritage_equipment_bonus
+		}
+		medium_sp_artillery_brigade = {
+			reliability = @rohirric_heritage_equipment_bonus_half
+			soft_attack = @rohirric_heritage_equipment_bonus
+			hard_attack = @rohirric_heritage_equipment_bonus
+			breakthrough = @rohirric_heritage_equipment_bonus
+		}
+		medium_tank_destroyer_brigade = {
+			reliability = @rohirric_heritage_equipment_bonus_half
+			soft_attack = @rohirric_heritage_equipment_bonus
+			hard_attack = @rohirric_heritage_equipment_bonus
+			breakthrough = @rohirric_heritage_equipment_bonus
+		}
+		
+		enable_equipment_modules = {
+			tank_high_velocity_cannon
+		}
+	}
+	############################################# VorV Heritage
+	andrast_food_from_dockyards = {#ANDRAST HERITAGE
+		allow = {
+			always = no
+		}
+
+		on_research_complete = {
+			modify_building_resources = {
+				building = dockyard
+				resource = food
+				amount = 3
+			}
+		}
+		research_cost = 1
+	}
+	dunland_hills_boost = {#DUNLAND HERITAGE
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		category_army = {
+			hills = {
+				attack = 0.2
+				defence = 0.2
+			}
+		}
+	}
+	white_mountains_mountain_boost = {#WHITE MOUNTAINS HERITAGE
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		category_army = {
+			hills = {
+				attack = 0.05
+				defence = 0.1
+			}
+			mountain = {
+				attack = 0.1
+				defence = 0.2
+			}
+		}
+	}
+	white_mountains_mountain_boost_minor = {#WHITE MOUNTAINS ISN MIL BONUS
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		category_army = {
+			mountain = {
+				attack = 0.07
+				defence = 0.07
+			}
+		}
+	}
+
+	orcish_heritage_tech = {#orcish heritage
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		infantry = {
+			combat_width = -0.4
+		}
+		enable_equipment_modules = {
+			cav_warg_mount
+		}
+	}
+
+}
+

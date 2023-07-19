@@ -4,9 +4,6 @@
 duplicate_archetypes = {
 
 	# light_tank
-
-
-
 	light_tank_artillery_chassis = {
 		archetype = light_tank_chassis
 		type = { armor artillery }
@@ -15,7 +12,6 @@ duplicate_archetypes = {
 			hardness = { set = 0.5 }
 		}
 	}
-
 	light_tank_destroyer_chassis = {
 		archetype = light_tank_chassis
 		type = { armor anti_tank }
@@ -23,7 +19,6 @@ duplicate_archetypes = {
 			variant_name = { find_and_replace = { "chassis" "equipment" } }
 		}
 	}
-
 	light_tank_amphibious_chassis = {
 		archetype = light_tank_chassis
 		type = { armor amphibious }
@@ -33,17 +28,7 @@ duplicate_archetypes = {
 		}
 	}
 
-	light_tank_flame_chassis = {
-		archetype = light_tank_chassis
-		type = { armor flame }
-		for_each = {
-			variant_name = { find_and_replace = { "chassis" "equipment" } }
-		}
-	}
-
 	# medium_tank
-
-
 	medium_tank_artillery_chassis = {
 		archetype = medium_tank_chassis
 		type = { armor artillery }
@@ -52,7 +37,6 @@ duplicate_archetypes = {
 			hardness = { set = 0.65 }
 		}
 	}
-
 	medium_tank_destroyer_chassis = {
 		archetype = medium_tank_chassis
 		type = { armor anti_tank }
@@ -60,7 +44,6 @@ duplicate_archetypes = {
 			variant_name = { find_and_replace = { "chassis" "equipment" } }
 		}
 	}
-
 	medium_tank_amphibious_chassis = {
 		archetype = medium_tank_chassis
 		type = { armor amphibious }
@@ -70,17 +53,24 @@ duplicate_archetypes = {
 		}
 	}
 
-	medium_tank_flame_chassis = {
-		archetype = medium_tank_chassis
-		type = { armor flame }
+	# modern tank
+	modern_tank_artillery_chassis = {
+		archetype = modern_tank_chassis
+		type = { armor artillery }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.85 }
+		}
+	}
+	modern_tank_destroyer_chassis = {
+		archetype = modern_tank_chassis
+		type = { armor anti_tank }
 		for_each = {
 			variant_name = { find_and_replace = { "chassis" "equipment" } }
 		}
 	}
-
+	
 	# heavy_tank
-
-
 	heavy_tank_artillery_chassis = {
 		archetype = heavy_tank_chassis
 		type = { armor artillery }
@@ -89,7 +79,6 @@ duplicate_archetypes = {
 			hardness = { set = 0.8 }
 		}
 	}
-
 	heavy_tank_destroyer_chassis = {
 		archetype = heavy_tank_chassis
 		type = { armor anti_tank }
@@ -97,7 +86,6 @@ duplicate_archetypes = {
 			variant_name = { find_and_replace = { "chassis" "equipment" } }
 		}
 	}
-
 	heavy_tank_amphibious_chassis = {
 		archetype = heavy_tank_chassis
 		type = { armor amphibious }
@@ -107,17 +95,7 @@ duplicate_archetypes = {
 		}
 	}
 
-	heavy_tank_flame_chassis = {
-		archetype = heavy_tank_chassis
-		type = { armor flame }
-		for_each = {
-			variant_name = { find_and_replace = { "chassis" "equipment" } }
-		}
-	}
-
 	# superheavy tank
-
-
 	super_heavy_tank_artillery_chassis = {
 		archetype = super_heavy_tank_chassis
 		type = { armor artillery }
@@ -126,7 +104,6 @@ duplicate_archetypes = {
 			hardness = { set = 0.9 }
 		}
 	}
-
 	super_heavy_tank_destroyer_chassis = {
 		archetype = super_heavy_tank_chassis
 		type = { armor anti_tank }
@@ -135,25 +112,6 @@ duplicate_archetypes = {
 		}
 	}
 
-	# modern tank
-
-
-	modern_tank_artillery_chassis = {
-		archetype = modern_tank_chassis
-		type = { armor artillery }
-		for_each = {
-			variant_name = { find_and_replace = { "chassis" "equipment" } }
-			hardness = { set = 0.85 }
-		}
-	}
-
-	modern_tank_destroyer_chassis = {
-		archetype = modern_tank_chassis
-		type = { armor anti_tank }
-		for_each = {
-			variant_name = { find_and_replace = { "chassis" "equipment" } }
-		}
-	}
 }
 
 equipments = {
@@ -190,7 +148,6 @@ equipments = {
 		build_cost_ic = 7 #gw tanks are clunky
 		fuel_consumption = 1.0
 	}
-
 	light_tank_equipment_1 = {
 		year = 3013
 		
@@ -227,7 +184,6 @@ equipments = {
 
 		fuel_consumption = 2.4
 	}
-
 	light_tank_equipment_2 = {
 		year = 3015
 		
@@ -257,7 +213,6 @@ equipments = {
 			mounts = 3
 		}
 	}
-
 	light_tank_equipment_3 = {
 		year = 3020
 	
@@ -330,7 +285,6 @@ equipments = {
 		}
 		fuel_consumption = 1.2
 	}
-
 	light_tank_artillery_equipment_2 = {
 		year = 3015
 
@@ -363,7 +317,6 @@ equipments = {
 			iron= 1
 		}
 	}
-
 	light_tank_artillery_equipment_3 = {
 		year = 3020
 
@@ -437,7 +390,6 @@ equipments = {
 		}
 		fuel_consumption = 1.2
 	}
-
 	light_tank_destroyer_equipment_2 = {
 		year = 3015
 
@@ -472,7 +424,6 @@ equipments = {
 			iron = 2
 		}
 	}
-
 	light_tank_destroyer_equipment_3 = {
 		year = 3020
 
@@ -550,8 +501,6 @@ equipments = {
 		
 		fuel_consumption = 3.6
 	}
-
-	# 3020
 	medium_tank_equipment_2 = {
 		year = 3020
 
@@ -582,8 +531,6 @@ equipments = {
 			mounts = 3
 		}	
 	}
-
-	# 3022
 	medium_tank_equipment_3 = {
 		year = 3022
 
@@ -656,7 +603,6 @@ equipments = {
 		}
 		fuel_consumption = 1.8
 	}
-
 	medium_tank_artillery_equipment_2 = {
 		year = 3020
 
@@ -690,7 +636,6 @@ equipments = {
 			#oil = 1
 		}
 	}
-
 	medium_tank_artillery_equipment_3 = {
 		year = 3022
 
@@ -766,8 +711,6 @@ equipments = {
 		}
 		fuel_consumption = 1.8
 	}
-
-	# 3020
 	medium_tank_destroyer_equipment_2 = {
 		year = 3020
 
@@ -802,8 +745,6 @@ equipments = {
 			mounts = 3
 		}		
 	}
-
-	# 3022
 	medium_tank_destroyer_equipment_3 = {
 		year = 3022
 
@@ -840,7 +781,7 @@ equipments = {
 	}
 
 
-	# 3013
+
 	heavy_tank_equipment_1 = {
 		year = 3013
 
@@ -884,8 +825,6 @@ equipments = {
 			tank_gun_upgrade
 		}
 	}
-
-	# 3020
 	heavy_tank_equipment_2 = {
 		year = 3020
 
@@ -915,8 +854,6 @@ equipments = {
 			monsters = 3
 		}
 	}
-
-	# 3022
 	heavy_tank_equipment_3 = {
 		year = 3022
 
@@ -987,7 +924,6 @@ equipments = {
 		}
 		fuel_consumption = 2.2
 	}
-
 	heavy_tank_artillery_equipment_2 = {
 		year = 3020
 
@@ -1020,7 +956,6 @@ equipments = {
 			monsters = 3
 		}
 	}
-
 	heavy_tank_artillery_equipment_3 = {
 		year = 3022
 
@@ -1053,6 +988,7 @@ equipments = {
 			monsters = 3
 		}
 	}
+
 	heavy_tank_destroyer_equipment_1 = {
 		year = 3013
 
@@ -1093,7 +1029,6 @@ equipments = {
 		}
 		fuel_consumption = 2.2
 	}
-
 	heavy_tank_destroyer_equipment_2 = {
 		year = 3020
 
@@ -1128,7 +1063,6 @@ equipments = {
 			monsters = 3
 		}
 	}
-
 	heavy_tank_destroyer_equipment_3 = {
 		year = 3022
 
@@ -1163,6 +1097,7 @@ equipments = {
 			monsters = 4
 		}
 	}
+
 
 
 	modern_tank_equipment_1 = {
@@ -1206,7 +1141,6 @@ equipments = {
 		
 		fuel_consumption = 5
 	}
-
 	modern_tank_artillery_equipment_1 = {
 		year = 3024
 
@@ -1247,7 +1181,6 @@ equipments = {
 		}
 		fuel_consumption = 2.5
 	}
-
 	modern_tank_destroyer_equipment_1 = {
 		year = 3024
 
@@ -1289,6 +1222,7 @@ equipments = {
 		}
 		fuel_consumption = 2.5
 	}
+
 
 
 	super_heavy_tank_equipment_1 = {
@@ -1458,7 +1392,6 @@ equipments = {
 
 		fuel_consumption = 4
 	}
-
 	amphibious_tank_equipment_2 = {
 		year = 3018
 		
