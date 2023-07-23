@@ -1,18 +1,16 @@
 default = {
-						######################################
-									#LIGHT
-						######################################
-	light_tank_chassis = {
-		pool = {
-			weight = 0.1 #generics appear at bottom
-			icons = {
-				GFX_gwtank_medium
-				GFX_basic_light_tank_medium
-				GFX_improved_light_tank_medium
-				GFX_advanced_light_tank_medium
-			}
-		}
-	}
+						#######################################LIGHT
+	# light_tank_chassis = {
+		# pool = {
+			# weight = 0.1 #generics appear at bottom
+			# icons = {
+				# GFX_gwtank_medium
+				# GFX_basic_light_tank_medium
+				# GFX_improved_light_tank_medium
+				# GFX_advanced_light_tank_medium
+			# }
+		# }
+	# }
 	light_tank_chassis_0 = {
 		pool = {
 			weight = 2 #correct icon appears at top
@@ -46,17 +44,17 @@ default = {
 		}
 	}
 ##########################LIGHT SKIRMISHER
-	light_tank_artillery_chassis = {
-		pool = {
-			weight = 0.2 #generics appear at bottom
-			icons = {
-				GFX_gw_light_skirmisher_medium
-				GFX_basic_light_skirmisher_medium
-				GFX_improved_light_skirmisher_medium
-				GFX_advanced_light_skirmisher_medium
-			}
-		}
-	}
+	# light_tank_artillery_chassis = {
+		# pool = {
+			# weight = 0.2 #generics appear at bottom
+			# icons = {
+				# GFX_gw_light_skirmisher_medium
+				# GFX_basic_light_skirmisher_medium
+				# GFX_improved_light_skirmisher_medium
+				# GFX_advanced_light_skirmisher_medium
+			# }
+		# }
+	# }
 	light_tank_artillery_chassis_0 = {
 		pool = {
 			weight = 2.2 #correct icon at top
@@ -90,17 +88,17 @@ default = {
 		}
 	}
 ##########################LIGHT LANCER
-	light_tank_destroyer_chassis = {
-		pool = {
-			weight = 0.2 #generics appear at bottom
-			icons = {
-				GFX_gw_light_lancer_medium
-				GFX_basic_light_lancer_medium
-				GFX_improved_light_lancer_medium
-				GFX_advanced_light_lancer_medium
-			}
-		}
-	}
+	# light_tank_destroyer_chassis = {
+		# pool = {
+			# weight = 0.2 #generics appear at bottom
+			# icons = {
+				# GFX_gw_light_lancer_medium
+				# GFX_basic_light_lancer_medium
+				# GFX_improved_light_lancer_medium
+				# GFX_advanced_light_lancer_medium
+			# }
+		# }
+	# }
 	light_tank_destroyer_chassis_0 = {
 		pool = {
 			weight = 2.2 #correct icon at top
@@ -133,19 +131,17 @@ default = {
 			}
 		}
 	}
-						######################################
-									#MEDIUM
-						######################################
-	medium_tank_chassis = {
-		pool = {
-			weight = 0.1 #generics appear at bottom
-			icons = {
-				GFX_basic_medium_tank_medium
-				GFX_improved_medium_tank_medium
-				GFX_advanced_medium_tank_medium
-			}
-		}
-	}
+						#######################################MEDIUM
+	# medium_tank_chassis = {
+		# pool = {
+			# weight = 0.1 #generics appear at bottom
+			# icons = {
+				# GFX_basic_medium_tank_medium
+				# GFX_improved_medium_tank_medium
+				# GFX_advanced_medium_tank_medium
+			# }
+		# }
+	# }
 	medium_tank_chassis_1 = {
 		pool = {
 			weight = 2 #correct icon appears at top
@@ -171,16 +167,16 @@ default = {
 		}
 	}
 ##########################MEDIUM SKIRMISHER
-	medium_tank_artillery_chassis = {
-		pool = {
-			weight = 0.2 #generics appear at bottom
-			icons = {
-				GFX_basic_medium_skirmisher_medium
-				GFX_improved_medium_skirmisher_medium
-				GFX_advanced_medium_skirmisher_medium
-			}
-		}
-	}
+	# medium_tank_artillery_chassis = {
+		# pool = {
+			# weight = 0.2 #generics appear at bottom
+			# icons = {
+				# GFX_basic_medium_skirmisher_medium
+				# GFX_improved_medium_skirmisher_medium
+				# GFX_advanced_medium_skirmisher_medium
+			# }
+		# }
+	# }
 	medium_tank_artillery_chassis_1 = {
 		pool = {
 			weight = 2.2 #correct icon at top
@@ -206,16 +202,16 @@ default = {
 		}
 	}
 ##########################MEDIUM LANCER
-	medium_tank_destroyer_chassis = {
-		pool = {
-			weight = 0.2 #generics appear at bottom
-			icons = {
-				GFX_basic_medium_lancer_medium
-				GFX_improved_medium_lancer_medium
-				GFX_advanced_medium_lancer_medium
-			}
-		}
-	}
+	# medium_tank_destroyer_chassis = {
+		# pool = {
+			# weight = 0.2 #generics appear at bottom
+			# icons = {
+				# GFX_basic_medium_lancer_medium
+				# GFX_improved_medium_lancer_medium
+				# GFX_advanced_medium_lancer_medium
+			# }
+		# }
+	# }
 	medium_tank_destroyer_chassis_1 = {
 		pool = {
 			weight = 2.2 #correct icon at top
@@ -240,9 +236,7 @@ default = {
 			}
 		}
 	}
-						######################################
-									#HEAVY
-						######################################
+						#######################################TROLL
 	heavy_tank_chassis_0 = {
 		pool = {
 			icons = {
@@ -271,7 +265,7 @@ default = {
 			}
 		}
 	}
-
+						#######################################MUMAK
 	super_heavy_tank_chassis_1 = {
 		pool = {
 			icons = {
@@ -279,10 +273,7 @@ default = {
 			}
 		}
 	}
-						######################################
-									#MODERN
-						######################################
-
+						#######################################MODERN
 	modern_tank_chassis_1 = {
 		pool = {
 			icons = {

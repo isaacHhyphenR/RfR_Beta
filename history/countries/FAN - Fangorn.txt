@@ -13,6 +13,7 @@ set_stability = 100.0
 set_war_support = 0.1
 
 set_technology = {
+	entish_heritage_tech = 1
 	hidden_fort_tech = 1
 	infantry_weapons = 1
 	motorised_infantry = 1
@@ -23,7 +24,7 @@ set_fuel_ratio = 0.5
 if = {
 	limit = { has_dlc = "No Step Back" }
 	set_technology = {
-		feral_tank_chassis = 1
+		feral_troll_chassis = 1
 		basic_heavy_tank_chassis = 1
 	}
 	else = {
@@ -75,7 +76,7 @@ if = {
 			turret_type_slot = empty
 			suspension_type_slot = troll_bareback_saddle
 			armor_type_slot = cavalry_custom_barding
-			engine_type_slot = monster_troll_mount
+			engine_type_slot = monster_ent_mount
 		}
 	}
 }

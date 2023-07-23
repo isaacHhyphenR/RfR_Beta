@@ -1,0 +1,44 @@
+# MOR = { ##Uses ISN for now
+	# light_tank_chassis = {
+		# pool = {
+			# icons = {
+				# GFX_ISN_basic_light_tank_medium
+			# }
+		# }
+	# }
+	# light_tank_artillery_chassis = {
+		# pool = {
+			# icons = {
+				# GFX_ISN_basic_light_art_medium
+			# }
+		# }
+	# }
+	# light_tank_destroyer_chassis = {
+		# pool = {
+			# icons = {
+				# GFX_ISN_basic_light_td_medium
+			# }
+		# }
+	# }
+	# medium_tank_chassis = {
+		# pool = {
+			# icons = {
+				# GFX_ISN_basic_medium_tank_medium
+			# }
+		# }
+	# }
+	# medium_tank_artillery_chassis = {
+		# pool = {
+			# icons = {
+				# GFX_ISN_basic_medium_art_medium
+			# }
+		# }
+	# }
+	# medium_tank_destroyer_chassis = {
+		# pool = {
+			# icons = {
+				# GFX_ISN_basic_medium_td_medium
+			# }
+		# }
+	# }
+# }

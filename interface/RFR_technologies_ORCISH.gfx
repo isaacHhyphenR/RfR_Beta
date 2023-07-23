@@ -128,5 +128,134 @@ spriteTypes = {
 		name = "GFX_MOR_mechanised_infantry3_medium"
 		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_mechanized_equipment_3.dds"
 	}
+###ORCISH CAVALRY
+	SpriteType = {
+		name = "GFX_MOR_gwtank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_early_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_gwtank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_early_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_gw_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_early_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_gw_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_early_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_basic_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_basic_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_basic_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_basic_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_improved_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_improved_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_improved_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_improved_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_advanced_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_advanced_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_advanced_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_advanced_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_basic_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_basic_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_basic_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_basic_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_improved_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_improved_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_improved_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_improved_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_advanced_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_advanced_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_advanced_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_advanced_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_main_battle_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_modern_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_MOR_main_battle_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_modern_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_modern_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_MOR_modern_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_skirmisher.dds"
+	}
 	
 }

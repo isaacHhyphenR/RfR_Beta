@@ -8,7 +8,6 @@ set_war_support = 0.80
 
 set_fuel_ratio = 0.5
 
-
 enedwaith_tribes_3015_tech = yes
 
 add_equipment_to_stockpile = {

@@ -82,6 +82,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			traits = { hidden_troll_tamer_trait }
 			modifier = {
 				custom_modifier_tooltip = allows_ents_tooltip
 				fortification_damage = 1
@@ -143,12 +144,6 @@ ideas = {
 			picture = rohirric_heritage
 			allowed_civil_war = {
 				always = yes
-			}
-			on_add = {
-				set_technology = { rohan_cav_boost = 1 popup = no }
-			}
-			on_remove = {
-				set_technology = { rohan_cav_boost = 0 popup = no }
 			}
 			# equipment_bonus = {
 				# light_tank_chassis = {

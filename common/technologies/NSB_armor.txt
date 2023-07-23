@@ -40,10 +40,6 @@ technologies = {
 			cavalry_one_size_fits_all_barding
 			cavalry_standard_barding
 			cavalry_custom_barding
-			cav_sumpter_mount
-			cav_rouncey_mount
-			cav_courser_mount
-			cav_destrier_mount
 			cavalry_bareback_saddle
 			cavalry_four_horn_saddle
 			cavalry_racing_saddle
@@ -176,11 +172,6 @@ technologies = {
 
 		path = {
 			leads_to_tech = improved_light_tank_chassis
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = amphibious_tank_chassis
 			research_cost_coeff = 1
 		}
 
@@ -659,7 +650,6 @@ technologies = {
 		enable_equipment_modules = {
 			troll_bareback_saddle
 			troll_bare_hand
-			monster_troll_mount
 			cavalry_one_size_fits_all_barding
 			cavalry_standard_barding
 			cavalry_custom_barding
@@ -891,7 +881,6 @@ technologies = {
 			super_heavy_armor
 		}
 		enable_equipment_modules = {
-			monster_mumak_mount
 			mumak_unridden
 			mumakil_bareback_saddle
 			cavalry_one_size_fits_all_barding
@@ -1525,54 +1514,22 @@ technologies = {
 			tank_engine
 		}
 	}
-	# #@rohirric_heritage_cav_bonus = 0.15
-	# #@rohirric_heritage_cav_bonus_negative = -0.15
-	# @rohirric_heritage_equipment_bonus = 1
-	# @rohirric_heritage_equipment_bonus_half = 0.1
-	# #@rohirric_heritage_organisation_bonus = 10
-	# #############HIDDEN ROHAN TECHNOLOGY
-	# rohan_cav_boost_nsb = {
+	rohan_cav_boost_nsb = {
 
-		# research_cost = 1
-		# allow = {
-			# always = no
-		# }
-		# light_armor = {
-			# # build_cost_ic = -0.1
-			# reliability = @rohirric_heritage_equipment_bonus_half
-			# soft_attack = @rohirric_heritage_equipment_bonus
-			# hard_attack = @rohirric_heritage_equipment_bonus
-			# breakthrough = @rohirric_heritage_equipment_bonus
-		# }
-		# light_sp_artillery_brigade = {
-			# reliability = @rohirric_heritage_equipment_bonus_half
-			# soft_attack = @rohirric_heritage_equipment_bonus
-			# hard_attack = @rohirric_heritage_equipment_bonus
-			# breakthrough = @rohirric_heritage_equipment_bonus
-		# }
-		# light_tank_destroyer_brigade = {
-			# reliability = @rohirric_heritage_equipment_bonus_half
-			# soft_attack = @rohirric_heritage_equipment_bonus
-			# hard_attack = @rohirric_heritage_equipment_bonus
-			# breakthrough = @rohirric_heritage_equipment_bonus
-		# }
-		# medium_armor = {
-			# # build_cost_ic = -0.1
-			# reliability = @rohirric_heritage_equipment_bonus_half
-			# soft_attack = @rohirric_heritage_equipment_bonus
-			# breakthrough = @rohirric_heritage_equipment_bonus
-		# }
-		# medium_sp_artillery_brigade = {
-			# reliability = @rohirric_heritage_equipment_bonus_half
-			# soft_attack = @rohirric_heritage_equipment_bonus
-			# hard_attack = @rohirric_heritage_equipment_bonus
-			# breakthrough = @rohirric_heritage_equipment_bonus
-		# }
-		# medium_tank_destroyer_brigade = {
-			# reliability = @rohirric_heritage_equipment_bonus_half
-			# soft_attack = @rohirric_heritage_equipment_bonus
-			# hard_attack = @rohirric_heritage_equipment_bonus
-			# breakthrough = @rohirric_heritage_equipment_bonus
-		# }
-	# }
+		research_cost = 1
+		allow = {
+			always = no
+		}
+		enable_equipment_modules = {
+			war_horn
+			extra_saddlebag
+			spare_mount
+			cavalry_one_size_fits_all_barding
+			cavalry_standard_barding
+			cavalry_custom_barding
+			cavalry_bareback_saddle
+			cavalry_four_horn_saddle
+			cavalry_racing_saddle
+		}
+	}
 }

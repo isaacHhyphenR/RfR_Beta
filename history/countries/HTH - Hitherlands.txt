@@ -15,6 +15,7 @@ set_stability = .7
 set_war_support = 0.4
 
 set_technology = {
+	southron_heritage_tech = 1
 	hidden_fort_tech = 1
 	infantry_armor_tech_0 = 1
 	infantry_weapons = 1
@@ -32,7 +33,7 @@ if = {
 	limit = { has_dlc = "No Step Back" }
 	set_technology = {
 		gwtank_chassis = 1
-		super_heavy_tank_chassis = 1
+		basic_mumakil_chassis = 1
 	}
 	else = {
 		set_technology = {

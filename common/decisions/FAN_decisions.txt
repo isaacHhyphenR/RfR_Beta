@@ -1,0 +1,58 @@
+FAN_mobilization_category = {
+	FAN_declare_on_ISN = {
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		war_with_on_complete = ISN
+		available = {
+			freedom > 0.5
+			#has_government = freedom
+			ISN = {
+				has_country_flag = has_harvested_fangorn
+			}
+			# has_opinion = {
+				# target = ISN
+				# value < -40
+			# }
+		}
+		complete_effect = {
+			add_war_support = 0.5
+			add_manpower = 150000
+			add_equipment_to_stockpile = {
+				type = heavy_tank_chassis_1
+				amount = 1000
+				producer = FAN
+			}
+			74 = { #Fangorn
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 3985
+				}
+			}
+			build_railway = {
+				level = 1
+				#build_only_on_allied = yes
+				start_province = 1516 #Derndingle
+				target_province = 3985
+			}
+			build_railway = { #So that rohan can have supply in fangorn # fangorn can move their gun
+				level = 1
+				#build_only_on_allied = yes
+				start_province = 3985 
+				target_province = 4234 #Orodrith
+			}
+			 create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				location = 1516
+			}
+			declare_war_on = {
+				target = ISN
+				type = topple_government
+			}
+			hidden_effect = { news_event = { id = rfr_news.13 hours = 1 } }
+		}
+	}
+}

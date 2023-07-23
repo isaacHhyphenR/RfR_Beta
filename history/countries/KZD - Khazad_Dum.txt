@@ -6,6 +6,7 @@ set_stability = .98
 set_war_support = 0.4
 
 set_technology = {
+	dwarven_heritage_tech = 1
 	hidden_fort_tech = 1
 	infantry_weapons = 1
 	tech_support = 1

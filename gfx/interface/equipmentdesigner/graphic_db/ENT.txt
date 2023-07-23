@@ -1,0 +1,35 @@
+FAN = {
+#######################################ENT
+	heavy_tank_chassis_0 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_FAN_feral_troll_medium
+			}
+		}
+	}
+	heavy_tank_chassis_1 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_FAN_basic_heavy_tank_medium
+			}
+		}
+	}
+	heavy_tank_chassis_2 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_FAN_improved_heavy_tank_medium
+			}
+		}
+	}
+	heavy_tank_chassis_3 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_FAN_advanced_heavy_tank_medium
+			}
+		}
+	}
+}

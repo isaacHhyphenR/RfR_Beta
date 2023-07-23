@@ -7,6 +7,7 @@ set_war_support = 0.7
 set_oob = "ITH_3015"
 
 set_technology = {
+	numenorean_heritage_tech = 1
 	hidden_fort_tech = 1
 	electronic_mechanical_engineering = 1
 	infantry_weapons = 1

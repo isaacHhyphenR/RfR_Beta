@@ -7,6 +7,7 @@ set_stability = .95
 set_war_support = 0.5
 
 set_technology = {
+	isengarder_heritage_tech = 1
 	hidden_fort_tech = 1
 	electronic_mechanical_engineering = 1
 	infantry_weapons = 1

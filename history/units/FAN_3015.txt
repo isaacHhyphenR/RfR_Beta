@@ -1,0 +1,131 @@
+﻿division_template = {
+	name = "Ents"
+	priority = 2
+	regiments = {
+		heavy_armor = { x = 0 y = 0 }
+		heavy_armor = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+division_template = {
+	name = "Huorns"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 2 y = 0 }
+	}
+	support = {
+	}
+}
+units = {
+	division = {	
+		name = "The Moot"
+		location = 1516
+		division_template = "Ents"
+	}
+	division = {	
+		name = "The Moot"
+		location = 1516
+		division_template = "Ents"
+	}
+	division = {	
+		name = "The Moot"
+		location = 1516
+		division_template = "Ents"
+	}
+	division = {	
+		name = "The Moot"
+		location = 1516
+		division_template = "Ents"
+	}
+	division = {	
+		name = "Huorns"
+		location = 2912
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 6501
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 176
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 3325
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 352
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 2529
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 2041
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 1502
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 6667
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 986
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 2019
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 3381
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 332
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 1933
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 4381
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 3337
+		division_template = "Huorns"
+	}
+	division = {	
+		name = "Huorns"
+		location = 6731
+		division_template = "Huorns"
+	}
+}
+

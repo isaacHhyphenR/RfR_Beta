@@ -1,15 +1,198 @@
 technologies = {
+	dwarven_heritage_tech = {
+		allow = {
+			always = no
+		}
+		research_cost = 1
+		infantry = {
+			combat_width = -0.4
+		}
+		enable_equipment_modules = {
+			cav_sumpter_mount_expensive
+			cav_rouncey_mount_expensive
+			cav_courser_mount_expensive
+			cav_destrier_mount_expensive
+			cav_boar_mount
+			monster_troll_mount
+			monster_mumak_mount
+		}
+	}
+	easterling_heritage_tech = {
+		allow = {
+			always = no
+		}
+		research_cost = 1
+		
+		enable_equipment_modules = {
+			cav_sumpter_mount
+			cav_rouncey_mount
+			cav_courser_mount
+			cav_destrier_mount
+			cav_steppe_mount
+			monster_troll_mount
+			monster_mumak_mount
+		}
+	}
+	elven_heritage_tech = {
+		allow = {
+			always = no
+		}
+		research_cost = 1
+		
+		enable_equipment_modules = {
+			cav_sumpter_mount
+			cav_rouncey_mount
+			cav_courser_mount
+			cav_destrier_mount
+			cav_elk_mount
+			monster_ent_mount
+			monster_mumak_mount
+		}
+	}
+	entish_heritage_tech = {
+		allow = {
+			always = no
+		}
+		research_cost = 1
+		
+		enable_equipment_modules = {
+			cav_sumpter_mount
+			cav_rouncey_mount
+			cav_courser_mount
+			cav_destrier_mount
+			monster_ent_mount
+			monster_mumak_mount
+		}
+	}
+	halfling_heritage_tech = {
+		allow = {
+			always = no
+		}
+		research_cost = 1
+		
+		enable_equipment_modules = {
+			cav_sumpter_mount
+			monster_troll_mount
+			monster_mumak_mount
+		}
+	}
+	isengarder_heritage_tech = {
+		allow = {
+			always = no
+		}
+		
+		research_cost = 1
+		infantry = {
+			combat_width = -0.4
+		}
+		enable_equipment_modules = {
+			cav_sumpter_mount_expensive
+			cav_rouncey_mount_expensive
+			cav_courser_mount_expensive
+			cav_destrier_mount_expensive
+			cav_warg_mount
+			monster_troll_mount
+			monster_mumak_mount
+		}
+	}
+	northron_heritage_tech = {
+		allow = {
+			always = no
+		}
+		research_cost = 1
+		
+		enable_equipment_modules = {
+			cav_sumpter_mount
+			cav_rouncey_mount
+			cav_courser_mount
+			cav_destrier_mount
+			monster_troll_mount
+			monster_mumak_mount
+		}
+	}
+	numenorean_heritage_tech = {
+		allow = {
+			always = no
+		}
+		research_cost = 1
+		
+		enable_equipment_modules = {
+			cav_sumpter_mount
+			cav_rouncey_mount
+			cav_courser_mount
+			cav_destrier_mount
+			monster_troll_mount
+			monster_mumak_mount
+		}
+	}
+	orcish_heritage_tech = {
+		allow = {
+			always = no
+		}
+		
+		research_cost = 1
+		infantry = {
+			combat_width = -0.4
+		}
+		enable_equipment_modules = {
+			cav_sumpter_mount_expensive
+			cav_rouncey_mount_expensive
+			cav_courser_mount_expensive
+			cav_destrier_mount_expensive
+			cav_warg_mount
+			monster_troll_mount
+			monster_mumak_mount
+		}
+	}
+	southron_heritage_tech = {
+		allow = {
+			always = no
+		}
+		research_cost = 1
+		
+		enable_equipment_modules = {
+			cav_sumpter_mount
+			cav_rouncey_mount
+			cav_courser_mount
+			cav_destrier_mount
+			cav_camel_mount
+			monster_troll_mount
+			monster_mumak_mount
+		}
+	}
+	wildling_heritage_tech = {
+		allow = {
+			always = no
+		}
+		research_cost = 1
+		
+		enable_equipment_modules = {
+			cav_sumpter_mount
+			cav_rouncey_mount
+			cav_courser_mount
+			cav_destrier_mount
+			monster_troll_mount
+			monster_mumak_mount
+		}
+	}
 	#@rohirric_heritage_cav_bonus = 0.15
 	#@rohirric_heritage_cav_bonus_negative = -0.15
 	@rohirric_heritage_equipment_bonus = 1
 	@rohirric_heritage_equipment_bonus_half = 0.1
 	#@rohirric_heritage_organisation_bonus = 10
 	#############HIDDEN ROHAN TECHNOLOGY
-	rohan_cav_boost = {
-
+	rohirrim_heritage_tech = {
 		research_cost = 1
 		allow = {
 			always = no
+		}
+		enable_equipment_modules = {
+			cav_sumpter_mount
+			cav_rouncey_mount
+			cav_courser_mount
+			cav_destrier_mount
+			monster_troll_mount
+			monster_mumak_mount
 		}
 		light_armor = {
 			# build_cost_ic = -0.1
@@ -112,20 +295,5 @@ technologies = {
 			}
 		}
 	}
-
-	orcish_heritage_tech = {#orcish heritage
-		allow = {
-			always = no
-		}
-
-		research_cost = 1
-		infantry = {
-			combat_width = -0.4
-		}
-		enable_equipment_modules = {
-			cav_warg_mount
-		}
-	}
-
 }
 

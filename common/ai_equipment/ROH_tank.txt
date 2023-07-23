@@ -845,7 +845,7 @@ rohan_medium_tank_destroyer = {
 		priority = {
 			factor = 100
 			modifier = { 
-				has_tech = medium_tank_destroyer_chassis_2 
+				has_tech = advanced_medium_tank_chassis 
 				factor = 0 #let's not waste XP here
 			}
 		}

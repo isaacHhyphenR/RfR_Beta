@@ -135,7 +135,7 @@ equipments = {
 			turret_type_slot = empty
 			suspension_type_slot = cavalry_bareback_saddle
 			armor_type_slot = cavalry_one_size_fits_all_barding
-			engine_type_slot = cav_sumpter_mount
+			engine_type_slot = empty #otherwise unlocks cav_sumpter_mount
 		}
 
 		fuel_consumption = 0
@@ -184,7 +184,7 @@ equipments = {
 			turret_type_slot = empty
 			suspension_type_slot = cavalry_four_horn_saddle
 			armor_type_slot = cavalry_standard_barding
-			engine_type_slot = cav_rouncey_mount
+			engine_type_slot = empty #otherwise unlocks cav_rouncey_mount
 		}
 	}
 	light_tank_chassis_2 = {
@@ -347,7 +347,7 @@ equipments = {
 			turret_type_slot = cav_gambeson_warrior
 			suspension_type_slot = cavalry_four_horn_saddle
 			armor_type_slot = cavalry_standard_barding
-			engine_type_slot = cav_rouncey_mount
+			engine_type_slot = empty #otherwise unlocks cav_rouncey_mount
 		}
 		
 		fuel_consumption = 0
@@ -400,7 +400,7 @@ equipments = {
 			turret_type_slot = cav_mail_warrior
 			suspension_type_slot = cavalry_four_horn_saddle
 			armor_type_slot = cavalry_standard_barding
-			engine_type_slot = cav_rouncey_mount
+			engine_type_slot = empty #otherwise unlocks cav_rouncey_mount
 		}
 	}
 	medium_tank_chassis_3 = {
@@ -542,7 +542,7 @@ equipments = {
 			turret_type_slot = cav_partial_plate_warrior
 			suspension_type_slot = cavalry_protective_saddle
 			armor_type_slot = cavalry_standard_barding
-			engine_type_slot = cavalry_destrier_mount
+			engine_type_slot = empty #otherwise unlocks cavalry_destrier_mount
 		}
 
 		fuel_consumption = 0
@@ -709,7 +709,7 @@ equipments = {
 			turret_type_slot = empty
 			suspension_type_slot = troll_bareback_saddle
 			armor_type_slot = cavalry_standard_barding
-			engine_type_slot = monster_troll_mount
+			engine_type_slot = empty #otherwise unlocks monster_troll_mount
 		}
 
 		fuel_consumption = 0
@@ -902,7 +902,7 @@ equipments = {
 			turret_type_slot = empty
 			suspension_type_slot = mumakil_bareback_saddle
 			armor_type_slot = cavalry_standard_barding
-			engine_type_slot = monster_mumak_mount
+			engine_type_slot = empty #otherwise unlocks monster_mumak_mount
 		}
 
 		fuel_consumption = 0

@@ -1,0 +1,34 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_FAN_feral_troll_medium"
+		texturefile = "gfx/interface/technologies/00_Other/early_ent.dds"
+	}
+	SpriteType = {
+		name = "GFX_FAN_basic_heavy_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Other/basic_ent.dds"
+	}
+	SpriteType = {
+		name = "GFX_FAN_improved_heavy_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Other/improved_ent.dds"
+	}
+	SpriteType = {
+		name = "GFX_FAN_advanced_heavy_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Other/advanced_ent.dds"
+	}
+	SpriteType = {
+		name = "GFX_FAN_feral_troll_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Other/early_ent.dds"
+	}
+	SpriteType = {
+		name = "GFX_FAN_basic_heavy_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Other/basic_ent.dds"
+	}
+	SpriteType = {
+		name = "GFX_FAN_improved_heavy_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Other/improved_ent.dds"
+	}
+	SpriteType = {
+		name = "GFX_FAN_advanced_heavy_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Other/advanced_ent.dds"
+	}
+}

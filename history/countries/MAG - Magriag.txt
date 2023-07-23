@@ -6,6 +6,7 @@ set_stability = .95
 set_war_support = 0.8
 
 set_technology = {
+	easterling_heritage_tech = 1
 	hidden_fort_tech = 1
 	infantry_weapons = 1
 	gw_artillery = 1

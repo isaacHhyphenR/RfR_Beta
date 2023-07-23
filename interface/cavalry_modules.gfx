@@ -82,8 +82,33 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 	SpriteType = {
+		name = "GFX_EMI_cav_sumpter_mount_expensive"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/sumpter_horse.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_rouncey_mount_expensive"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/rouncey_horse.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_courser_mount_expensive"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/courser_horse.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_destrier_mount_expensive"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/destrier_horse.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
 		name = "GFX_EMI_cav_steppe_mount"
 		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/steppe_pony.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_EMI_cav_boar_mount"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/boar.dds"
 		legacy_lazy_load = no
 	}
 	SpriteType = {

@@ -22,6 +22,7 @@ set_stability = .90
 set_war_support = 0.6
 
 set_technology = {
+	numenorean_heritage_tech = 1
 	hidden_fort_tech = 1
 	infantry_armor_tech_0 = 1
 	electronic_mechanical_engineering = 1

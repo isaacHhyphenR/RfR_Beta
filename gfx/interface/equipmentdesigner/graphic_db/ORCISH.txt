@@ -1,0 +1,200 @@
+MOR = {
+						#######################################LIGHT
+	light_tank_chassis_0 = {
+		pool = {
+			weight = 5 #correct icon appears at top
+			icons = {
+				GFX_MOR_gwtank_medium
+			}
+		}
+	}
+	light_tank_chassis_1 = {
+		pool = {
+			weight = 5 #correct icon appears at top
+			icons = {
+				GFX_MOR_basic_light_tank_medium
+			}
+		}
+	}
+	light_tank_chassis_2 = {
+		pool = {
+			weight = 5 #correct icon appears at top
+			icons = {
+				GFX_MOR_improved_light_tank_medium
+			}
+		}
+	}
+	light_tank_chassis_3 = {
+		pool = {
+			weight = 5 #correct icon appears at top
+			icons = {
+				GFX_MOR_advanced_light_tank_medium
+			}
+		}
+	}
+##########################LIGHT art
+	light_tank_artillery_chassis_0 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_gw_art_medium
+			}
+		}
+	}
+	light_tank_artillery_chassis_1 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_basic_light_art_medium
+			}
+		}
+	}
+	light_tank_artillery_chassis_2 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_improved_light_art_medium
+			}
+		}
+	}
+	light_tank_artillery_chassis_3 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_advanced_light_art_medium
+			}
+		}
+	}
+##########################LIGHT td
+	light_tank_destroyer_chassis_0 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_gw_td_medium
+			}
+		}
+	}
+	light_tank_destroyer_chassis_1 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_basic_light_td_medium
+			}
+		}
+	}
+	light_tank_destroyer_chassis_2 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_improved_light_td_medium
+			}
+		}
+	}
+	light_tank_destroyer_chassis_3 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_advanced_light_td_medium
+			}
+		}
+	}
+						#######################################MEDIUM
+	medium_tank_chassis_1 = {
+		pool = {
+			weight = 5 #correct icon appears at top
+			icons = {
+				GFX_MOR_basic_medium_tank_medium
+			}
+		}
+	}
+	medium_tank_chassis_2 = {
+		pool = {
+			weight = 5 #correct icon appears at top
+			icons = {
+				GFX_MOR_improved_medium_tank_medium
+			}
+		}
+	}
+	medium_tank_chassis_3 = {
+		pool = {
+			weight = 5 #correct icon appears at top
+			icons = {
+				GFX_MOR_advanced_medium_tank_medium
+			}
+		}
+	}
+##########################MEDIUM art
+	medium_tank_artillery_chassis_1 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_basic_medium_art_medium
+			}
+		}
+	}
+	medium_tank_artillery_chassis_2 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_improved_medium_art_medium
+			}
+		}
+	}
+	medium_tank_artillery_chassis_3 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_advanced_medium_art_medium
+			}
+		}
+	}
+##########################MEDIUM td
+	medium_tank_destroyer_chassis_1 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_basic_medium_td_medium
+			}
+		}
+	}
+	medium_tank_destroyer_chassis_2 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_improved_medium_td_medium
+			}
+		}
+	}
+	medium_tank_destroyer_chassis_3 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_advanced_medium_td_medium
+			}
+		}
+	}
+						#######################################MODERN
+	modern_tank_chassis_1 = {
+		pool = {
+			icons = {
+				GFX_MOR_main_battle_tank_medium
+			}
+		}
+	}
+	modern_tank_destroyer_chassis_1 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_modern_td_medium
+			}
+		}
+	}
+	modern_tank_artillery_chassis_1 = {
+		pool = {
+			weight = 5.2 #correct icon at top
+			icons = {
+				GFX_MOR_modern_art_medium
+			}
+		}
+	}
+}
