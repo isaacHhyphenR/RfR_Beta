@@ -1,0 +1,52 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_cavalry_blueprint"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/generic_tank_blueprint_background.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DWARVEN_cavalry_blueprint"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/DWARVEN_cavalry_blueprint.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EASTERLING_cavalry_blueprint"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/EASTERLING_cavalry_blueprint.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NORTHRON_cavalry_blueprint"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/NORTHRON_cavalry_blueprint.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NUMENOREAN_cavalry_blueprint"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/NUMENOREAN_cavalry_blueprint.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ORCISH_cavalry_blueprint"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/ORCISH_cavalry_blueprint.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ROHIRRIM_cavalry_blueprint"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/ROHIRRIM_cavalry_blueprint.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SOUTHRON_cavalry_blueprint"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/SOUTHRON_cavalry_blueprint.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MUMAKIL_cavalry_blueprint"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/MUMAKIL_cavalry_blueprint.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TROLLS_cavalry_blueprint"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/TROLLS_cavalry_blueprint.dds"
+		legacy_lazy_load = no
+	}
+}

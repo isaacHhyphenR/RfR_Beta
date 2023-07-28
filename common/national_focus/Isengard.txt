@@ -1,0 +1,3615 @@
+﻿@developmentFocusCost = 10
+@fangornFocusCost = 5
+@heritageFocusCost = 5
+@techBoostBonus = 1.25
+@diplomacyFocusIdeologyBonus = 0.15
+focus_tree = {
+	id = ISN
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ISN
+		}
+	}
+	
+	default = no
+	reset_on_civilwar = no
+	
+#######################################################################################################################DEVELOPMENT BRANCH
+
+#######################################################################################ERED CURUNIR SUB-BRANCH
+	focus = { #The Fires of Industry
+		id = ISN_the_fires_of_industry
+		icon = GFX_goal_fires_of_industry
+		x = 10
+		y = 0
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			# every_country = { ##For testing
+				# limit = { is_greater_enedwaith_tag = yes }
+				# setup_enedwaith_ai_path = yes
+			# }
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	focus = { #Roads of Stone
+		id = ISN_roads_of_stone
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_the_fires_of_industry }
+		relative_position_id = ISN_the_fires_of_industry
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = ISN_roads_of_stone_tooltip
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						impassable = no
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = { #Strip the Mountains
+		id = ISN_strip_the_mountains
+		icon = GFX_goal_generic_iron
+		x = 2
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_the_fires_of_industry}
+		relative_position_id = ISN_the_fires_of_industry
+		#available_if_capitulated = yes
+		available = { 67 = { is_controlled_by = ROOT } } ##must control ered curunir
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = {#12 iron in ered curunir
+			add_resource = {
+				type = iron
+				amount = 12
+				state = 67
+			}
+		}
+	}
+	focus = { #Delve the Mountains
+		id = ISN_delve_the_mountains
+		icon = GFX_focus_GRE_a_land_of_mountains
+		x = 6
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_strip_the_mountains }
+		available = { 67 = { is_controlled_by = ROOT } } ##must control ered curunir
+		relative_position_id = ISN_strip_the_mountains
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			67 = { #Ered Curunir
+				set_state_category = town
+			}
+		}
+	}
+	focus = { #Secure Storages
+		id = ISN_secure_storages
+		icon = GFX_goal_generic_construct_synth_refinery
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_delve_the_mountains}
+		available = { 67 = { is_controlled_by = ROOT } } ##must control ered curunir
+		relative_position_id = ISN_delve_the_mountains
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #4 silos & slots in ered curunir
+			67 = { #Ered curunir
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = fuel_silo
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #Promote the fittest
+		id = ISN_promote_the_fittest
+		icon = GFX_goal_generic_army_doctrines
+		x = -4
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_the_fires_of_industry }
+		relative_position_id = ISN_the_fires_of_industry
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			air_experience = 20
+			#add_ideas = ISN_survival_of_the_fittest_idea
+		}
+	}
+#######################################################################################FEED THE LEGIONS SUB_BRANCH
+	focus = { #Clear the ring of Isengard
+		id = ISN_clear_the_ring_of_isengard
+		icon = GFX_goal_clear_the_ring_of_isengard
+		x = 0
+		y = 1
+		cost = @fangornFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_the_fires_of_industry}
+		relative_position_id = ISN_the_fires_of_industry
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			custom_effect_tooltip = ISN_clear_the_ring_of_isengard_tooltip
+			hidden_effect = {
+				set_country_flag = not_auto_fueling_the_fires
+			}
+		}
+	}
+	focus = { #Feed the legions
+		id = ISN_feed_the_legions
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		x = -4
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_clear_the_ring_of_isengard}
+		relative_position_id = ISN_clear_the_ring_of_isengard
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES }
+		completion_reward = {
+				add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = synth_resources
+			}
+		}
+	}
+	focus = { #Repurpuse the rejects
+		id = ISN_repurpose_the_rejects
+		icon = GFX_goal_generic_construct_synth_refinery
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_feed_the_legions}
+		available = { 68 = { is_controlled_by = ROOT free_building_slots = { building = synthetic_refinery size > 0 include_locked = yes } } } ##must control ered curunir # have available slots
+		relative_position_id = ISN_feed_the_legions
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #2 refineries & slots in nan curunir
+			68 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #Develop the isenhead
+		id = ISN_develop_the_isenhead
+		icon = GFX_goal_generic_food
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_repurpose_the_rejects}
+		available = { 68 = { is_controlled_by = ROOT } } #Must control nan curunir
+		relative_position_id = ISN_repurpose_the_rejects
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #12 food in nan curunir
+			add_resource = {
+				type = food
+				amount = 12
+				state = 68
+			}
+		}
+	}
+	focus = { #Harvest fangorn
+		id = ISN_harvest_fangorn
+		icon = GFX_goal_fangorn_devastated
+		x = -6
+		y = 1
+		cost = @fangornFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_clear_the_ring_of_isengard }
+		relative_position_id = ISN_clear_the_ring_of_isengard
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #unlocks decisions ot harvest fangorn
+			custom_effect_tooltip = ISN_harvest_fangorn_tooltip
+			hidden_effect = {
+				set_country_flag = not_auto_harvesting_fangorn
+			}
+		}
+	}
+	focus = { #Subjugate fangorn
+		id = ISN_subjugate_fangorn
+		icon = GFX_goal_generic_forest_burning
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					has_war = yes
+					157 = {
+						is_controlled_by_ROOT_or_ally = yes
+					}
+				}
+				factor = 0
+			}
+		}
+		available = { FAN = { can_ROOT_get_wargoal_on_THIS = yes } }
+		bypass = { OR = { has_war_with = FAN NOT = { country_exists = FAN } } }
+		prerequisite = { focus = ISN_harvest_fangorn}
+		relative_position_id = ISN_harvest_fangorn
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = FAN
+			}
+		}
+	}
+#######################################################################################CIVS SUB_BRANCH
+	focus = { #pits and tunnels
+		id = ISN_pits_and_tunnels
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_clear_the_ring_of_isengard}
+		available = { 68 = { is_controlled_by = ROOT free_building_slots = { building = industrial_complex size > 0 include_locked = yes } } } ##must control nan curunir & have available slots
+		relative_position_id = ISN_clear_the_ring_of_isengard
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			#hidden_effect = { set_major = yes }
+			hidden_effect = { ##The AI needs some XP to reform templates before the war
+				ISN_ai_buff = yes
+			}
+			68 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #Wood and stone
+		id = ISN_wood_and_stone
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_pits_and_tunnels }
+		relative_position_id = ISN_pits_and_tunnels
+		available = { 68 = { is_controlled_by = ROOT free_building_slots = { building = industrial_complex size > 0 include_locked = yes } } } ##must control nan curunir & have available slots
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			#hidden_effect = { set_major = yes }
+			hidden_effect = { ##The AI needs some XP to reform templates before the war
+				ISN_ai_buff = yes
+			}
+			68 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}	
+	focus = { #Ledges and cave
+		id = ISN_ledges_and_caves
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_wood_and_stone focus = ISN_hammer_and_anvil }
+		available = { 68 = { is_controlled_by = ROOT free_building_slots = { building = industrial_complex size > 0 include_locked = yes } } } ##must control nan curunir & have available slots
+		relative_position_id = ISN_wood_and_stone
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			hidden_effect = { ##The AI needs some XP to reform templates before the war
+				ISN_ai_buff = yes
+			}
+			68 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #Platforms and cranes
+		id = ISN_platforms_and_cranes
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_ledges_and_caves focus = ISN_forge_and_storeroom }
+		available = { 68 = { is_controlled_by = ROOT free_building_slots = { building = industrial_complex size > 0 include_locked = yes } } } ##must control nan curunir & have available slots
+		relative_position_id = ISN_ledges_and_caves
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			#hidden_effect = { set_major = yes }
+			hidden_effect = { ##The AI needs some XP to reform templates before the war
+				ISN_ai_buff = yes
+			}
+			68 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = industrial_complex
+					level = 6
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #Monument to Industry
+		id = ISN_monument_to_industry
+		icon = GFX_focus_research
+		x = 1
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_platforms_and_cranes focus = ISN_bellows_and_quench }
+		relative_position_id = ISN_platforms_and_cranes
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+#########################################################CIV RESEARCH SUB_BRANCH
+	focus = { #Strip mining
+		id = ISN_strip_mining
+		icon = GFX_goal_generic_construction2
+		x = -2
+		y = 1
+		cost = @heritageFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_pits_and_tunnels}
+		relative_position_id = ISN_pits_and_tunnels
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = excavation_tech
+			}
+			custom_effect_tooltip = ISN_strip_mining_tooltip
+			set_variable = { ISN.stripMining = var:heritageVariableBonus }
+		}
+	}
+	focus = { #reinforce outer defences
+		id = ISN_reinforce_outer_defenses
+		icon = GFX_goal_generic_radar
+		x = -2
+		y = 1
+		cost = @heritageFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_wood_and_stone}
+		relative_position_id = ISN_wood_and_stone
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = radar_tech
+			}
+			custom_effect_tooltip = ISN_reinforce_outer_defences_tooltip
+			set_variable = { ISN.reinforceOuterDefences = var:heritageVariableBonus }
+		}
+	}
+	focus = { #Coordinated Economy
+		id = ISN_coordinated_economy
+		icon = GFX_goal_generic_production2
+		x = -2
+		y = 1
+		cost = @heritageFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_ledges_and_caves}
+		relative_position_id = ISN_ledges_and_caves
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = concentrated_industry_category
+				category = dispersed_industry_category
+			}
+			custom_effect_tooltip = ISN_coordinated_economy_tooltip
+			set_variable = { ISN.coordinatedEconomy = var:heritageVariableBonus }
+		}
+	}
+	focus = { #Train Surveying Teams
+		id = ISN_train_surveying_teams
+		icon = GFX_goal_generic_construction
+		x = -2
+		y = 1
+		cost = @heritageFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_platforms_and_cranes}
+		relative_position_id = ISN_platforms_and_cranes
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = construction_tech
+			}
+			custom_effect_tooltip = ISN_train_surveying_teams_tooltip
+			set_variable = { ISN.surveyingTeams = var:heritageVariableBonus }
+		}
+	}
+#######################################################################################MILS SUB_BRANCH
+	focus = { #Ore Experiments
+		id = ISN_ore_experiments
+		icon = GFX_goal_generic_construction2
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_strip_the_mountains }
+		relative_position_id = ISN_strip_the_mountains
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			hidden_effect = { ##The AI needs some XP to reform templates before the war
+				ISN_ai_buff = yes
+			}
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = industry
+			}
+			add_tech_bonus = {
+				ahead_reduction = 1
+				uses = 2
+				category = industry
+			}
+			custom_effect_tooltip = ISN_ore_experiments_tooltip
+			hidden_effect = {
+				ISN_mauhur = {
+					add_corps_commander_role = {
+						Character = ISN_mauhur
+						skill = 4
+						attack_skill = 1
+						defense_skill = 5
+						planning_skill = 4
+						logistics_skill = 3
+						traits = { infantry_officer trait_cautious trait_engineer }
+					}
+				}
+			}
+		}
+	}
+	focus = { #Hammer and anvil
+		id = ISN_hammer_and_anvil
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_ore_experiments focus = ISN_pits_and_tunnels }
+		available = { 68 = { is_controlled_by = ROOT free_building_slots = { building = arms_factory size > 0 include_locked = yes } } } ##must control nan curunir & have available slots
+		relative_position_id = ISN_ore_experiments
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			hidden_effect = { ##The AI needs some XP to reform templates before the war
+				ISN_ai_buff = yes
+			}
+			68 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = ISN_hammer_and_anvil_tooltip
+			hidden_effect = {
+				ISN_lurtz = {
+					add_corps_commander_role = {
+						skill = 4
+						attack_skill = 5
+						defense_skill = 3
+						planning_skill = 3
+						logistics_skill = 4
+						traits = { brilliant_strategist trait_reckless organizer }
+					}
+				}
+			}
+		}
+	}
+	focus = { #Forge and Storeroom
+		id = ISN_forge_and_storeroom
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_hammer_and_anvil focus = ISN_wood_and_stone }
+		available = { 68 = { is_controlled_by = ROOT free_building_slots = { building = arms_factory size > 0 include_locked = yes } } } ##must control nan curunir & have available slots
+		relative_position_id = ISN_hammer_and_anvil
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			hidden_effect = { ##The AI needs some XP to reform templates before the war
+				ISN_ai_buff = yes
+			}
+			68 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = ISN_forge_and_storeroom_tooltip
+			hidden_effect = {
+				ISN_ugluk = {
+					add_corps_commander_role = {
+						Character = ISN_ugluk
+						skill = 4
+						attack_skill = 3
+						defense_skill = 3
+						planning_skill = 4
+						logistics_skill = 6
+						traits = { inflexible_strategist harsh_leader skilled_staffer }
+					}
+				}
+			}
+		}
+	}
+	focus = { #Bellows and quench
+		id = ISN_bellows_and_quench
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_forge_and_storeroom focus = ISN_ledges_and_caves }
+		available = { 68 = { is_controlled_by = ROOT free_building_slots = { building = arms_factory size > 0 include_locked = yes } } } ##must control nan curunir & have available slots
+		relative_position_id = ISN_forge_and_storeroom
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			hidden_effect = { ##The AI needs some XP to reform templates before the war
+				ISN_ai_buff = yes
+			}
+			68 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = ISN_bellows_and_quench_tooltip
+			hidden_effect = {
+				ISN_barbrutta = {
+					add_corps_commander_role = {
+						skill = 4
+						attack_skill = 2
+						defense_skill = 6
+						planning_skill = 2
+						logistics_skill = 4
+						traits = { inflexible_strategist trait_cautious organizer }
+					}
+				}
+			}
+		}
+	}
+#########################################################MIL RESEARCH SUB_BRANCH
+	focus = { #Harness Earth
+		id = ISN_harness_earth
+		icon = GFX_goal_generic_mining
+		x = 2
+		y = 1
+		cost = @heritageFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_ore_experiments }
+		relative_position_id = ISN_ore_experiments
+		#available_if_capitulated = yes
+		mutually_exclusive = { focus = ISN_harness_fire }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = engineers_tech
+			}
+			custom_effect_tooltip = ISN_harness_earth_tooltip
+			set_variable = { ISN.harnessFire = var:heritageVariableBonus }
+		}
+	}
+	focus = { #Harness Fire
+		id = ISN_harness_fire
+		icon = GFX_goal_harness_fire
+		x = 4
+		y = 1
+		cost = @heritageFocusCost
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = ISN_ore_experiments }
+		relative_position_id = ISN_ore_experiments
+		#available_if_capitulated = yes
+		mutually_exclusive = { focus = ISN_harness_earth }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			custom_effect_tooltip = ISN_harness_fire_tooltip
+			hidden_effect = { set_technology = { black_powder = 1 popup = no } }
+		}
+	}
+	focus = { #Prepare for the horselords
+		id = ISN_prepare_for_the_horselords
+		icon = GFX_goal_generic_army_artillery2
+		x = 2
+		y = 1
+		cost = @heritageFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_hammer_and_anvil}
+		relative_position_id = ISN_hammer_and_anvil
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = cat_anti_tank
+			}
+			#custom_effect_tooltip = prepare_for_the_horselords_tooltip
+			add_ideas = ISN_pikes_bonus_spirit
+		}
+	}
+	focus = { #Arm the legions
+		id = ISN_arm_the_legions
+		icon = GFX_goal_generic_small_arms
+		x = 2
+		y = 1
+		cost = @heritageFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_forge_and_storeroom }
+		relative_position_id = ISN_forge_and_storeroom
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = infantry_weapons
+			}
+			custom_effect_tooltip = ISN_arm_the_legions_tooltip
+			set_variable = { ISN.armTheLegions = var:heritageVariableBonus }
+		}
+	}
+	focus = { #White hand and black iron
+		id = ISN_white_hand_and_black_iron
+		icon = GFX_goal_orthanc_pikes
+		x = 2
+		y = 1
+		cost = @heritageFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_bellows_and_quench}
+		relative_position_id = ISN_bellows_and_quench
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = @techBoostBonus
+				uses = 2
+				category = infantry_support_weapons
+			}
+			custom_effect_tooltip = ISN_white_hand_and_black_iron_tooltip
+			set_variable = { ISN.whiteHandBlackIron = var:heritageVariableBonus }
+		}
+	}
+#######################################################################################################################BEASTS BRANCH
+	focus = { #Speak to Beasts
+		id = ISN_speak_to_beasts
+		icon = GFX_focus_generic_secret_service_agency
+		x = 12
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_the_fires_of_industry
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		bypass = { has_intelligence_agency = yes }
+		completion_reward = { #Form agency/cryption tech bonuses
+			if = { limit = { has_dlc = "La Resistance" }
+				create_intelligence_agency = {
+					name = "Spies of Saruman"
+					icon = GFX_intelligence_agency_logo_spa
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = @techBoostBonus
+					uses = 2
+					category = decryption_tech
+					category = encryption_tech
+				}
+			}
+		}
+	}
+	focus = { #Breed blackest Ravens
+		id = ISN_breed_blackest_ravens
+		icon = GFX_goal_generic_raven_focus
+		x = -2
+		y = 3
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		allow_branch = {
+			has_dlc = "La Resistance"
+		}
+		relative_position_id = ISN_speak_to_beasts
+		prerequisite = { focus = ISN_speak_to_beasts }
+		#available_if_capitulated = yes
+		mutually_exclusive = { focus = ISN_train_wild_crebain }
+		search_filters = { FOCUS_FILTER_ESPIONAGE FOCUS_FILTER_POLITICAL }
+		completion_reward = { #+head of intelligence
+		}
+	}
+	focus = { #Train Wild Crebain
+		id = ISN_train_wild_crebain
+		icon = GFX_goal_generic_raven_focus
+		x = 0
+		y = 3
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		allow_branch = {
+			has_dlc = "La Resistance"
+		}
+		relative_position_id = ISN_speak_to_beasts
+		prerequisite = { focus = ISN_speak_to_beasts }
+		#available_if_capitulated = yes
+		mutually_exclusive = { focus = ISN_breed_blackest_ravens }
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = { #+operative slot
+			add_ideas = crebain
+		}
+	}
+	focus = { #Ally with the mountain wargs
+		id = ISN_ally_with_the_mountain_wargs
+		icon = GFX_goal_generic_warg_focus
+		x = -1
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		available = { OR = { has_government = melkorite has_government = conquest } }
+		relative_position_id = ISN_speak_to_beasts
+		prerequisite = { focus = ISN_speak_to_beasts }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #+8 mounts in ered curunir
+			add_resource = {
+				type = mounts
+				amount = 8
+				state = 67 #ered curunir
+			}
+		}
+	}
+	focus = { #Raise wargs and orcs together
+		id = ISN_raise_wargs_and_orcs_together
+		icon = GFX_goal_generic_warg_focus
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_ally_with_the_mountain_wargs
+		prerequisite = { focus = ISN_ally_with_the_mountain_wargs }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #+2 cav research bonuses, +1 commander
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = cat_light_armor
+				category = cat_medium_armor
+			}
+			
+			custom_effect_tooltip = ISN_raise_wargs_and_orcs_together_tooltip
+			hidden_effect = {
+				ISN_sharku = {
+					add_corps_commander_role = {
+						skill = 4
+						attack_skill = 6
+						defense_skill = 2
+						planning_skill = 1
+						logistics_skill = 4
+						traits = { trait_reckless panzer_leader trickster }
+					}
+				}
+			}
+		}
+	}
+	focus = { #Capture mountain trolls
+		id = ISN_capture_mountain_trolls
+		icon = GFX_goal_generic_troll_focus
+		x = 1
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_speak_to_beasts
+		prerequisite = { focus = ISN_speak_to_beasts }
+		#available_if_capitulated = yes
+		available = { OR = { has_government = melkorite has_government = conquest } }
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #+4 monsters in ered curunir, unlocks troll research
+			add_resource = {
+				type = monsters
+				amount = 4
+				state = 67 #ered curunir
+			}
+			if = { limit = { NOT = { has_idea = troll_tamers_spirit } }
+				add_ideas = troll_tamers_spirit
+			}
+		}
+	}
+	focus = { #Teach them the lash
+		id = ISN_teach_them_the_lash
+		icon = GFX_goal_generic_troll_focus
+		x = 0
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_capture_mountain_trolls
+		prerequisite = { focus = ISN_capture_mountain_trolls }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #+2 troll research bonuses, +1 commander
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = cat_heavy_armor
+			}
+			
+			custom_effect_tooltip = ISN_teach_them_the_lash_tooltip
+			hidden_effect = {
+				ISN_flizhpot = {
+					add_corps_commander_role = {
+						skill = 4
+						attack_skill = 8
+						defense_skill = 1
+						planning_skill = 2
+						logistics_skill = 3
+						traits = { harsh_leader trait_reckless monster_leader }
+					}
+				}
+			}
+		}
+	}
+	focus = { #Troll Spawning Pits
+		id = ISN_troll_spawning_pits
+		icon = GFX_goal_generic_troll_focus
+		x = 2
+		y = 1
+		cost = @developmentFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_capture_mountain_trolls
+		prerequisite = { focus = ISN_capture_mountain_trolls }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #Unlocks decision to trade wood for monsters
+			custom_effect_tooltip = ISN_troll_spawning_pits_tooltip
+		}
+	}
+#######################################################################################################################POLITICAL BRANCH
+#################################MELKORITE BRANCH
+	@politicalFocusCost = 5
+	focus = { #Embrace the Shadow
+		id = ISN_embrace_the_shadow
+		icon = GFX_goal_generic_befriend_mordor
+		x = 7
+		y = 0
+		cost = @politicalFocusCost
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea = melkorite_influence
+				factor = 7
+			}
+		}
+		relative_position_id = ISN_speak_to_beasts
+		#available_if_capitulated = yes
+		mutually_exclusive = { focus = ISN_our_own_way }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		bypass = { has_government = melkorite }
+		completion_reward = { #become melkorite, gain editor
+			add_war_support = 0.5
+			add_timed_idea = {
+				idea = melkorite_influence
+				days = 365
+			}
+			set_politics = {
+				ruling_party = melkorite
+			}
+			color_saruman = yes
+		}
+	}
+	focus = { #Unite the two towers
+		id = ISN_unite_the_two_towers
+		icon = GFX_goal_barad_dur
+		x = -1
+		y = 1
+		cost = @politicalFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_embrace_the_shadow
+		prerequisite = { focus = ISN_embrace_the_shadow }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_DIPLOMATIC }
+		bypass = { is_in_faction_with = MOR }
+		available = { country_exists = MOR }
+		completion_reward = { #join The Shadow, +120 pp
+			MOR = { add_to_faction = ROOT }
+			add_political_power = 120
+		}
+	}
+	focus = { #Collaborate through the Palantiri
+		id = ISN_collaborate_through_the_palantiri
+		icon = GFX_goal_sauron_palantir
+		x = 1
+		y = 1
+		cost = @politicalFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_embrace_the_shadow
+		prerequisite = { focus = ISN_embrace_the_shadow }
+		#available_if_capitulated = yes
+		available = { country_exists = MOR }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Tech sharing with MOR
+			if = { limit = { has_dlc = "Together for Victory" }
+				add_to_tech_sharing_group = palantiri_tech_sharing
+				MOR = { add_to_tech_sharing_group = palantiri_tech_sharing }
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = @techBoostBonus
+					uses = 1
+					category = infantry_weapons
+				}
+				add_tech_bonus = {
+					bonus = @techBoostBonus
+					uses = 1
+					category = industry
+				}
+				add_tech_bonus = {
+					bonus = @techBoostBonus
+					uses = 1
+					category = support_tech
+				}
+				MOR = {
+					add_tech_bonus = {
+						bonus = @techBoostBonus
+						uses = 1
+						category = cat_anti_tank
+					}
+					add_tech_bonus = {
+						bonus = @techBoostBonus
+						uses = 1
+						category = electronics
+					}
+					add_tech_bonus = {
+						bonus = @techBoostBonus
+						uses = 1
+						category = infantry_support_weapons
+					}
+				}
+			}
+		}
+	}
+	focus = { #Split Gondor
+		id = ISN_split_gondor
+		icon = GFX_goal_generic_attack_gondor
+		x = -1
+		y = 1
+		cost = @politicalFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_unite_the_two_towers
+		prerequisite = { focus = ISN_unite_the_two_towers }
+		available = { is_in_faction_with = MOR }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_ARMY }
+		completion_reward = { #claims on GON, +15% attack vs gon
+			add_ideas = generic_attack_gondor
+			GON = {
+				random_owned_state = {
+					limit = { NOT = { is_claimed_by = ROOT } }
+					add_claim_by = ROOT
+				}
+				random_owned_state = {
+					limit = { NOT = { is_claimed_by = ROOT } }
+					add_claim_by = ROOT
+				}
+				random_owned_state = {
+					limit = { NOT = { is_claimed_by = ROOT } }
+					add_claim_by = ROOT
+				}
+				random_owned_state = {
+					limit = { NOT = { is_claimed_by = ROOT } }
+					add_claim_by = ROOT
+				}
+				random_owned_state = {
+					limit = { NOT = { is_claimed_by = ROOT } }
+					add_claim_by = ROOT
+				}
+			}
+		}
+	}
+	focus = { #Share military Wisdom
+		id = ISN_share_military_wisdom
+		icon = GFX_goal_generic_army_doctrines
+		x = 1
+		y = 1
+		cost = @politicalFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_unite_the_two_towers
+		prerequisite = { focus = ISN_unite_the_two_towers }
+		prerequisite = { focus = ISN_collaborate_through_the_palantiri }
+		available = { is_in_faction_with = MOR }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #you and MOR: +50 army xp
+			army_experience = 50
+			MOR = { army_experience = 50 }
+		}
+	}	
+#######################################################################################CONQUEST BRANCH
+	focus = { #Our Own way
+		id = ISN_our_own_way
+		icon = GFX_goal_isn_white_hand
+		x = 4
+		y = 0
+		cost = @politicalFocusCost
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_idea = conquest_influence
+				factor = 5
+			}
+		}
+		relative_position_id = ISN_embrace_the_shadow
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		bypass = { has_government = conquest }
+		mutually_exclusive = { focus = ISN_embrace_the_shadow }
+		completion_reward = { #become conquest, gain silent workhorse
+			add_war_support = 0.5
+			add_timed_idea = {
+				idea = conquest_influence
+				days = 365
+			}
+			set_politics = {
+				ruling_party = conquest
+			}
+			color_saruman = yes
+		}
+	}
+	focus = { #A new Council
+		id = ISN_a_new_council
+		icon = GFX_goal_orthanc
+		x = 1
+		y = 1
+		cost = @politicalFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_our_own_way
+		prerequisite = { focus = ISN_our_own_way }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		bypass = { is_faction_leader = yes }
+		completion_reward = { #Create a new faction
+			create_faction = the_rainbow_council
+			add_political_power = 50
+		}
+	}
+	focus = { #Master the Palantir
+		id = ISN_master_the_palantir
+		icon = GFX_goal_claim_palantir
+		x = -1
+		y = 1
+		cost = @politicalFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_our_own_way
+		prerequisite = { focus = ISN_our_own_way }
+		#available_if_capitulated = yes
+		available = { custom_trigger_tooltip = { tooltip = has_basic_palantir_tooltip OR = { has_idea = basic_palantir_LAR has_idea = basic_palantir } } }
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = { #+30 decryption
+			if = { limit = { has_dlc = "La Resistance" }
+				swap_ideas = {
+					remove_idea = basic_palantir_LAR
+					add_idea = mastered_palantir_LAR
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = basic_palantir
+					add_idea = mastered_palantir
+				}
+			}
+		}
+	}
+	focus = { #Monitor our enemies
+		id = ISN_monitor_our_enemies
+		icon = GFX_goal_military_palantir
+		x = -1
+		y = 1
+		cost = @politicalFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_master_the_palantir
+		mutually_exclusive = { focus = ISN_monitor_our_servants }
+		prerequisite = { focus = ISN_master_the_palantir }
+		available = { custom_trigger_tooltip = { tooltip = has_mastered_palantir_tooltip OR = { has_idea = mastered_palantir_LAR has_idea = mastered_palantir } } }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+30 decryption
+			if = { limit = { has_dlc = "La Resistance" }
+				swap_ideas = {
+					remove_idea = mastered_palantir_LAR
+					add_idea = mastered_palantir_offence_LAR
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = mastered_palantir
+					add_idea = mastered_palantir_offence
+				}
+			}
+		}
+	}
+	focus = { #Monitor our servants
+		id = ISN_monitor_our_servants
+		icon = GFX_goal_economic_palantir
+		x = 1
+		y = 1
+		cost = @politicalFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_master_the_palantir
+		mutually_exclusive = { focus = ISN_monitor_our_enemies }
+		prerequisite = { focus = ISN_master_the_palantir }
+		available = { custom_trigger_tooltip = { tooltip = has_mastered_palantir_tooltip OR = { has_idea = mastered_palantir_LAR has_idea = mastered_palantir } } }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+30 decryption
+			if = { limit = { has_dlc = "La Resistance" }
+				swap_ideas = {
+					remove_idea = mastered_palantir_LAR
+					add_idea = mastered_palantir_efficiency_LAR
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = mastered_palantir
+					add_idea = mastered_palantir_efficiency
+				}
+			}
+		}
+	}
+	focus = { #One Master of Middle Earth
+		id = ISN_one_master_of_middle_earth
+		icon = GFX_goal_generic_middle_earth
+		x = 1
+		y = 1
+		cost = @politicalFocusCost
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+			modifier = {
+				strength_ratio = {
+					tag = MOR
+					ratio < 0.9
+				}
+				factor = 0
+			}
+		}
+		relative_position_id = ISN_a_new_council
+		prerequisite = { focus = ISN_a_new_council }
+		available = { MOR = { can_ROOT_get_wargoal_on_THIS = yes } }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		will_lead_to_war_with = MOR
+		completion_reward = { #Wargoal vs MOR
+			create_wargoal = {
+				type = annex_everything
+				target = MOR
+			}
+		}
+	}
+#######################################################################################################################DIPLOMATIC BRANCHS
+	@diplomaticFocusCost = 5
+#######################################################################################ROHAN BRANCH
+	focus = { #The Rotting House of Eorl
+		id = ISN_the_rotting_house_of_eorl
+		icon = GFX_goal_roh_meduseld_burning
+		x = 7
+		y = 0
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_our_own_way
+		#available_if_capitulated = yes
+		bypass = { OR = { NOT = { country_exists = ROH } NOT = { ROH = { has_character = ROH_grima } } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Rohan: -5% freedom
+			ROH = {
+				add_popularity = {
+					ideology = freedom
+					popularity = -0.05
+				}
+			}
+			# hidden_effect = { #cause the AI is stupid, I need to explicitely tell them to build a supply node at the fords
+				# if = { limit = { is_ai = yes }
+					# 211 = { #fords of isen
+						# add_building_construction = {
+							# type = supply_node
+							# level = 1
+							# instant_build = no
+							# province = 1478 #isenrun
+						# }
+					# }
+				# }
+			# }
+		}
+	}
+	focus = { #Sow Dissent within
+		id = ISN_sow_dissent_within
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = -2
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_the_rotting_house_of_eorl
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_the_rotting_house_of_eorl }
+		available = { country_exists = ROH ROH = { has_character = ROH_grima NOT = { has_country_leader = { character = ROH_grima ruling_only = yes } } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Completes a focus for Grima
+			ROH = {
+				custom_effect_tooltip = ISN_sow_dissent_within_tooltip
+				hidden_effect = {
+					country_event = {
+						id = rohan.11
+						days = 1
+					}
+				}
+			}
+		}
+	}
+	focus = { #Speak Undercover
+		id = ISN_speak_undercover
+		icon = GFX_goal_generic_propaganda
+		x = 1
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_sow_dissent_within
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_sow_dissent_within }
+		available = { country_exists = ROH ROH = { has_character = ROH_grima NOT = { has_country_leader = { character = ROH_grima ruling_only = yes } } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #ROH: +10% ISN ideology
+			ROH = {
+				add_popularity = {
+					ideology = var:ROOT.current_party_ideology_group
+					popularity = 0.1
+				}
+			}
+		}
+	}
+	focus = { #Covertly meet with ministers
+		id = ISN_covertly_meet_with_rohirric_ministers
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_sow_dissent_within
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_sow_dissent_within }
+		available = { country_exists = ROH ROH = { has_character = ROH_grima NOT = { has_country_leader = { character = ROH_grima ruling_only = yes } } } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Can bribe ROH ministers
+			custom_effect_tooltip = ISN_covertly_meet_with_rohirric_ministers_tooltip
+		}
+	}
+	focus = { #Supply Wormtongue
+		id = ISN_supply_wormtongue
+		icon = GFX_goal_tfv_saf_support_ossebrandwag
+		x = 1
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_covertly_meet_with_rohirric_ministers
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_covertly_meet_with_rohirric_ministers focus = ISN_speak_undercover }
+		available = { country_exists = ROH ROH = { has_character = ROH_grima has_civil_war = yes } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Grima: +500 infantry equip, +100 support equip, +1 civ, +1 mil
+			ROH = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 500
+					producer = ROOT
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 100
+					producer = ROOT
+				}
+				random_owned_state = {
+					limit = {
+						is_controlled_by = PREV
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_state = {
+					limit = {
+						is_controlled_by = PREV
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = no
+						}
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = { #Cross the Isen
+		id = ISN_cross_the_isen
+		icon = GFX_goal_generic_attack_rohan
+		x = 0
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_the_rotting_house_of_eorl
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_the_rotting_house_of_eorl }
+		available = {
+			any_country = { original_tag = ROH can_ROOT_get_wargoal_on_THIS = yes }
+			OR = { has_government = conquest has_government = melkorite }
+			hidden_trigger = { NOT = { AND = { is_ai = yes ROH = { has_country_leader = { character = ROH_grima ruling_only = yes } }  date < 3018.02.01  } } } ## AI won't attack grima, but with date to prevent cheese
+		}
+		bypass = { any_country = { has_war_with = ISN original_tag = ROH } }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		will_lead_to_war_with = ROH
+		completion_reward = { #Wargoal vs ROH/EOM
+			if = { limit = { ROH = { can_ROOT_get_wargoal_on_THIS = yes } }
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = ROH
+				}
+				if = { limit = { country_exists = EOM }##also wargoal EOM
+					create_wargoal = {
+						type = puppet_wargoal_focus
+						target = EOM
+					}
+				}
+			}
+			else = {
+				random_country = {
+					limit = { original_tag = ROH can_ROOT_get_wargoal_on_THIS = yes }
+					create_wargoal = {
+						type = puppet_wargoal_focus
+						target = THIS
+					}
+				}
+			}
+			hidden_effect = { #cause the AI is stupid, they get a free supply node ##if ROH is human
+				if = { limit = { is_ai = yes 211 = { controls_or_subject_of = yes } } #any_country = { original_tag = ROH is_ai = no } }
+					211 = { #fords of isen
+						add_building_construction = {
+							type = supply_node
+							level = 1
+							instant_build = yes
+							province = 1478 #isenrun
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #Skirmish at the fords
+		id = ISN_skirmish_at_the_fords
+		icon = GFX_focus_generic_provoke_border_clashes
+		x = 2
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_the_rotting_house_of_eorl
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_the_rotting_house_of_eorl }
+		available = {
+			any_country = { owns_state = 70 NOT = { has_war_with = ROOT } can_ROOT_get_wargoal_on_THIS = yes } #Rohan must control the gap
+			hidden_trigger = { ## AI won't attack grima, but with date to prevent cheese
+				OR = {
+					NOT = { AND = { is_ai = yes ROH = { has_country_leader = { character = ROH_grima ruling_only = yes } } date < 3017.12.01 } }
+					EOM = { controls_state = 70 }
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		select_effect = { ##Alerts the victims
+			hidden_effect = {
+				every_country = {
+					limit = { original_tag = ROH }
+					activate_mission = skirmish_at_the_fords_warning
+				}
+			}
+			if = { ##If Dunland is puppet, ISN gets the fords of isen state
+				limit = { 211 = { controller = { is_subject_of = ROOT } } }
+				transfer_state = 211 #Fords of Isen
+				hidden_effect = { #cause the AI is stupid, they get a free supply node ##if ROH is human
+					if = { limit = { is_ai = yes } #any_country = { original_tag = ROH is_ai = no } }
+						211 = { #fords of isen
+							add_building_construction = {
+								type = supply_node
+								level = 1
+								instant_build = yes
+								province = 1478 #isenrun
+							}
+						}
+					}
+				}
+			}
+			if = { #If a DUN tag has completed the right focus they start a border war for the adorn vale
+				limit = { any_country = { if = { limit = { country_exists = yes } is_ally_with = ROOT } has_completed_focus = ENE_coordinate_attacks_on_rohan } }
+				random_other_country = {
+					limit = {  if = { limit = { country_exists = yes } is_ally_with = ROOT } has_completed_focus = ENE_coordinate_attacks_on_rohan }
+					activate_mission = skirmish_in_adorn_preparation
+				}
+				every_country = {
+					limit = { original_tag = ROH }
+					activate_targeted_decision = { decision = skirmish_in_adorn_warning target = var:global.adorn_vale_skirmisher }
+				}
+			}
+		}
+		completion_reward = { #Borderwar for gap
+			add_named_threat = { 
+				threat = 2.5
+				name = battle_of_fords_of_isen_tension_tooltip
+			}
+			70 = {#gap of rohan
+				controller = {
+					add_war_support = 0.1
+				}
+			}
+			if = { limit = { controls_state = 211 }
+				start_border_war = {
+					change_state_after_war = no
+					attacker = {
+						state = 211 #Fords of Isen
+						num_provinces = 2
+						on_win = rfr_border_war.1
+						on_lose = rfr_border_war.2
+						on_cancel = rfr_border_war.3
+					}
+					defender = {
+						state = 70 #Gap of Rohan
+						num_provinces = 1
+						on_win = rfr_border_war.2
+						on_lose = rfr_border_war.1
+						on_cancel = rfr_border_war.3
+					}
+				}
+			}
+			else = {
+				start_border_war = {
+					change_state_after_war = no
+					attacker = {
+						state = 68 #Nan curunir
+						num_provinces = 1
+						on_win = rfr_border_war.1
+						on_lose = rfr_border_war.2
+						on_cancel = rfr_border_war.3
+					}
+					defender = {
+						state = 70 #Gap of Rohan
+						num_provinces = 1
+						on_win = rfr_border_war.2
+						on_lose = rfr_border_war.1
+						on_cancel = rfr_border_war.3
+					}
+				}
+			}
+			if = { #If a DUN tag has completed the right focus they start a border war for the adorn vale
+				limit = { any_country = { if = { limit = { country_exists = yes } is_ally_with = ROOT } has_completed_focus = ENE_coordinate_attacks_on_rohan } }
+				hidden_effect = { ##resets the border war origin state if its no longer valid
+					if = {
+						limit = { NOT = { var:dunland_border_state = { controller = { has_completed_focus = ENE_coordinate_attacks_on_rohan } } } }
+						random_state = {
+							limit = {
+								controller = { has_completed_focus = ENE_coordinate_attacks_on_rohan }
+								any_neighbor_state = { state = 69 }
+							}
+							set_variable = { ISN.dunland_border_state = THIS }
+						}
+					}
+				}
+				start_border_war = {
+					change_state_after_war = no
+					attacker = {
+						state = var:ISN.dunland_border_state#THIS #dunland state
+						num_provinces = 3
+						on_win = rfr_border_war.7
+						on_lose = rfr_border_war.8
+						on_cancel = rfr_border_war.9
+					}
+					defender = {
+						state = 69 #Adorn vale
+						num_provinces = 3
+						on_win = rfr_border_war.8
+						on_lose = rfr_border_war.7
+						on_cancel = rfr_border_war.9
+					}
+				}
+			}
+		}
+	}
+	focus = { #Kill the princeling
+		id = ISN_kill_the_princeling
+		icon = GFX_goal_theodred_kill
+		x = 3
+		y = 2
+		cost = 1 #@diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_the_rotting_house_of_eorl
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_the_rotting_house_of_eorl }
+		available = { any_country = { has_character = ROH_theodred OR = { has_war_with = ROOT has_border_war_with = ROOT } } }
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Wound Theodred
+			random_country = {
+				limit = { has_character = ROH_theodred }
+				# ROH_theodred = {
+					# add_timed_unit_leader_trait = {
+						# trait = wounded
+						# days = 180
+					# }
+				# }
+				hidden_effect = {
+					country_event = { id = rohan.15 hours = 1 }
+				}
+			}
+			custom_effect_tooltip = ISN_kill_the_princeling_tooltip
+		}
+	}
+	@greaterEnedwaithFocusCost = 5
+	@greaterEnedwaithFocusCostDouble = 10
+#######################################################################################DUNLAND COOPERATION
+	focus = { #Cooperate with the dunlendings
+		id = ISN_cooperate_with_the_dunlendings
+		icon = GFX_goal_generic_befriend_dunland
+		x = 11
+		y = 0
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 9
+		}
+		relative_position_id = ISN_the_rotting_house_of_eorl
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PRESTIGE }
+		mutually_exclusive = { focus = ISN_conquer_the_dunlendings }
+		completion_reward = { #+25 opinion & +1 trust with all DUN tags
+			every_country = {
+				limit = { is_dunland_tag = yes }
+				ISN_cooperate_with_greater_enedwaith_culture = yes
+				add_AI_friendly_desire_towards_PREV = yes
+				PREV = { add_AI_friendly_desire_towards_PREV = yes }
+				if = { limit = { give_saruman_blood_oath_bonus = yes }
+					increase_THIS_trust_towards_PREV = yes
+				}
+			}
+			hidden_effect = { ISN_befriend_ENE_effect = yes }
+		}
+	}
+	focus = { #Study tribal politics
+		id = ISN_study_tribal_politics
+		icon = GFX_goal_study_tribal_politics
+		x = 0
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_cooperate_with_the_dunlendings
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_cooperate_with_the_dunlendings }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #Unlocks many tribal mechanics
+			custom_effect_tooltip = ISN_study_tribal_politics_tooltip
+		}
+	}
+	focus = { #Words of honey and poision
+		id = ISN_words_of_honey_and_poison
+		icon = GFX_goal_honey_and_poison
+		x = -2
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_study_tribal_politics
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_study_tribal_politics }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #refusing blood oath grants wargoal
+			custom_effect_tooltip = ISN_words_of_honey_and_poison_tooltip
+		}
+	}
+	focus = { #Study Tribal Lore
+		id = ISN_study_tribal_lore
+		icon = GFX_goal_tribal_crown
+		x = 0
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_study_tribal_politics
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_study_tribal_politics }
+		search_filters = { FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #+1 prestige
+			increase_prestige_1 = yes
+			if = { limit = { give_saruman_blood_oath_bonus = yes }
+				increase_prestige_1 = yes
+			}
+		}
+	}
+	focus = { #Study Tribal customs
+		id = ISN_study_tribal_customs
+		icon = GFX_goal_ENE_three_cultures
+		x = 2
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_study_tribal_politics
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_study_tribal_politics }
+		search_filters = { FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #-25% tribal trust cost advisor
+			custom_effect_tooltip = ISN_study_tribal_customs_tooltip
+		}
+	}
+	focus = { #Draw Comparisons to Wulf
+		id = ISN_draw_comparisons_to_wulf
+		icon = GFX_goal_wulf_and_saruman
+		x = -1
+		y = 1
+		cost = 10 #this is a big one
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_study_tribal_lore
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_study_tribal_lore }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #use dunlending culture for blood oath submission
+			custom_effect_tooltip = ISN_draw_comparisons_to_wulf_tooltip
+		}
+	}
+	focus = { #Recount stories of past cooperation
+		id = ISN_recount_stories_of_past_cooperation
+		icon = GFX_goal_saruman_rallies_dunlendings
+		x = 1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_study_tribal_lore
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_study_tribal_lore focus = ISN_study_tribal_customs }
+		search_filters = { FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #+1 prestige
+			increase_prestige_1 = yes
+			if = { limit = { give_saruman_blood_oath_bonus = yes }
+				increase_prestige_1 = yes
+			}
+		}
+	}
+	focus = { #Enhance Traditional Structures
+		id = ISN_enhance_traditional_structures
+		icon = GFX_goal_tribal_throne
+		x = 1
+		y = 1
+		cost = @greaterEnedwaithFocusCostDouble
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = ISN_study_tribal_customs
+		#available_if_capitulated = yes
+		mutually_exclusive = { focus = ISN_reorganize_the_tribes }
+		prerequisite = { focus = ISN_study_tribal_customs }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #-0.65 daily subject autonomy
+			ISN_saruman = {
+				upgrade_voice_of_saruman_to_autonomy = yes
+			}
+		}
+	}
+	focus = { #Reorganize the tribes
+		id = ISN_reorganize_the_tribes
+		icon = GFX_focus_generic_improve_the_administration
+		x = 3
+		y = 1
+		cost = @greaterEnedwaithFocusCostDouble
+		ai_will_do = {
+			factor = 4
+		}
+		relative_position_id = ISN_study_tribal_customs
+		#available_if_capitulated = yes
+		mutually_exclusive = { focus = ISN_enhance_traditional_structures }
+		prerequisite = { focus = ISN_study_tribal_customs }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #use normal ISN dusbjects instead of blood oaths
+			custom_effect_tooltip = ISN_reorganize_the_tribes_tooltip
+			every_subject_country = {
+				limit = { has_autonomy_state = autonomy_blood_oath }
+				ROOT = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_councils_ward
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+			}
+		}
+	}
+#########################################################ESPIONAGE
+	focus = { #Bribe local agents
+		id = ISN_bribe_local_agents
+		icon = GFX_goal_bribery
+		x = -5
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 0
+		}
+		allow_branch = { has_dlc = "La Resistance" }
+		relative_position_id = ISN_cooperate_with_the_dunlendings
+		#available_if_capitulated = yes
+		available = { has_intelligence_agency = yes }
+		bypass = { has_done_agency_upgrade = upgrade_training_centers }
+		prerequisite = { focus = ISN_cooperate_with_the_dunlendings }
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = { #local training centers upgrade
+			upgrade_intelligence_agency = upgrade_training_centers
+		}
+	}
+	focus = { #Assist them with spells
+		id = ISN_assist_them_with_spells
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_bribe_local_agents
+		#available_if_capitulated = yes
+		available = { has_completed_focus = ISN_study_tribal_politics has_country_leader = { character = ISN_saruman ruling_only = yes } }
+		prerequisite = { focus = ISN_bribe_local_agents }
+		search_filters = { FOCUS_FILTER_ESPIONAGE FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #+50% network impact on blood oath submission
+			ISN_saruman = {
+				upgrade_voice_of_saruman_to_network_impact = yes
+			}
+		}
+	}
+	focus = { #Instruct them with our wisdom
+		id = ISN_instruct_them_with_our_wisdom
+		icon = GFX_focus_generic_military_academy
+		x = -1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 1
+			modifier = { #don't do if not in final form
+				is_assertive = no
+				factor = 0
+			}
+		}
+		relative_position_id = ISN_bribe_local_agents
+		#available_if_capitulated = yes
+		available = { has_country_leader = { character = ISN_saruman ruling_only = yes } }
+		prerequisite = { focus = ISN_bribe_local_agents }
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = { #can give random ministers in other countries the 'sarumans pupil' trait, giving ideology drift and acceptance
+			custom_effect_tooltip = ISN_instruct_them_with_our_wisdom_tooltip
+		}
+	}
+#########################################################WHITE MOUNTAINS/ANDRAST COOPERATION
+	focus = { #Condemn the Fate of the Restless Dead
+		id = ISN_condemn_the_fate_of_the_restless_dead
+		icon = GFX_goal_generic_befriend_White_Mountains
+		x = -7
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				var:diplo_target = { is_white_mountains_tag = yes }
+				factor = 4
+			}
+		}
+		relative_position_id = ISN_recount_stories_of_past_cooperation
+		#available_if_capitulated = yes
+		available = { any_country = { is_white_mountains_tag = yes country_exists = THIS } }
+		prerequisite = { focus = ISN_recount_stories_of_past_cooperation }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #+1 trust & 25 opinion with every ERG tag
+			every_country = {
+				limit = { is_white_mountains_tag = yes }
+				increase_THIS_trust_towards_PREV = yes
+				add_opinion_modifier = { target = ROOT modifier = sarumans_friendship }
+				hidden_effect = { news_event = { id = RFR_news.66 hours = 1 } }
+			}
+		}
+	}
+	focus = { #Sponsor the White Mountain rebels
+		id = ISN_sponsor_the_white_mountain_rebels
+		icon = GFX_goal_white_mountain_rebellion
+		x = -1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				var:diplo_target = { is_white_mountains_tag = yes }
+				factor = 2
+			}
+			modifier = {
+				has_war_with = GON
+				factor = 4
+			}
+		}
+		relative_position_id = ISN_condemn_the_fate_of_the_restless_dead
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_condemn_the_fate_of_the_restless_dead }
+		available = { white_mountain_uprising_system_active = yes }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #WHT gains weapons, manpower, XP, and PP, plus resistance if valid
+			if = {
+				limit = { country_exists = WHT }
+				WHT = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						producer = ROOT
+						amount = 500
+					}
+					add_manpower = 5000
+					add_political_power = 50
+					army_experience = 25
+					increase_THIS_trust_towards_PREV_2 = yes
+				}
+			}
+			else = {
+				139 = {
+					increase_white_mountain_resistance_target_2 = yes
+					increase_white_mountain_resistance_target_2 = yes
+				}
+				WHT = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						producer = ROOT
+						amount = 250
+					}
+					add_manpower = 2500
+					add_political_power = 25
+					army_experience = 12.5
+					increase_THIS_trust_towards_PREV_2 = yes
+				}
+			}
+		}
+	}
+	focus = { #Tell tales of Gondorian brutality
+		id = ISN_tell_tales_of_gondorian_brutality
+		icon = GFX_goal_generic_befriend_Andrast
+		x = -5
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				var:diplo_target = { is_andrast_tag = yes }
+				factor = 4
+			}
+		}
+		relative_position_id = ISN_recount_stories_of_past_cooperation
+		#available_if_capitulated = yes
+		available = { any_country = { is_andrast_tag = yes country_exists = THIS } }
+		prerequisite = { focus = ISN_recount_stories_of_past_cooperation }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #+ideology drift on every andrast tag
+			every_country = {
+				limit = { is_andrast_tag = yes }
+				add_foreign_ideology_drift_idea_365 = yes
+				hidden_effect = { news_event = { id = RFR_news.66 hours = 1 } }
+			}
+		}
+	}
+	focus = { #offer protection from gondor
+		id = ISN_offer_protection_from_gondor
+		icon = GFX_goal_generic_defence
+		x = 1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				var:diplo_target = { OR = { is_white_mountains_tag = yes is_andrast_tag = yes } }
+				factor = 4
+			}
+		}
+		relative_position_id = ISN_condemn_the_fate_of_the_restless_dead
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_condemn_the_fate_of_the_restless_dead focus = ISN_tell_tales_of_gondorian_brutality }
+		available = { any_country = { OR = { is_white_mountains_tag = yes is_andrast_tag = yes } } }#country_exists = yes } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #Offer AND & WHT tribes guarantees for trust
+			every_country = {
+				limit = { OR = { is_white_mountains_tag = yes is_andrast_tag = yes } }
+				country_event = { id = blood_oath.26 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = {
+					ROOT = { give_guarantee = PREV }
+					increase_THIS_trust_towards_PREV = yes
+				}
+			}
+		}
+	}
+	focus = { #twist our agreement offensively
+		id = ISN_twist_our_agreement_offensively
+		icon = GFX_goal_generic_attack_gondor
+		x = 0
+		y = 1
+		cost = @greaterEnedwaithFocusCostDouble
+		ai_will_do = {
+			factor = 4
+			modifier = { #don't start another major war
+				has_war_with_major = yes
+				NOT = { has_war_with = GON }
+				add = -2
+			}
+			modifier = { #don't start another major war
+				NOT = { has_war_with = GON }
+				strength_ratio = {
+					tag = GON
+					ratio < 1
+				}
+				add = -2
+			}
+			modifier = {
+				var:diplo_target = { OR = { is_white_mountains_tag = yes is_andrast_tag = yes } }
+				factor = 2
+			}
+			modifier = {
+				is_good = yes
+				has_government = GON
+				factor = 0
+			}
+		}
+		will_lead_to_war_with = GON
+		relative_position_id = ISN_offer_protection_from_gondor
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_offer_protection_from_gondor }
+		available = {
+			any_country = { OR = { is_white_mountains_tag = yes is_andrast_tag = yes } OR = { if = { limit = { country_exists = yes } is_ally_with = ROOT } is_guaranteed_by = ROOT } is_neighbor_of = GON }
+			GON = { can_ROOT_get_wargoal_on_THIS = yes }
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Allied/gauranteed AND & WHT tribes get claims on neighboruing gondor states, you gain wargoal vs gondor
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = GON
+			}
+			custom_effect_tooltip = ISN_twist_our_agreement_offensively_tooltip
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = { is_white_mountains_tag = yes is_andrast_tag = yes }
+						is_neighbor_of = GON
+					}
+					country_event = { id = blood_oath.27 hours = 1 }
+				}
+			}
+		}
+	}
+#########################################################EREGION COOPERATION
+	focus = { #Warn of Elven Contempt
+		id = ISN_warn_of_elven_contempt
+		icon = GFX_goal_generic_befriend_Eregion
+		x = 3
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				var:diplo_target = { is_eregion_tag = yes }
+				factor = 4
+			}
+		}
+		relative_position_id = ISN_recount_stories_of_past_cooperation
+		#available_if_capitulated = yes
+		available = { any_country = { is_eregion_tag = yes country_exists = THIS } }
+		prerequisite = { focus = ISN_recount_stories_of_past_cooperation }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #+1 trust & ideology drift with every ERG tag
+			every_country = {
+				limit = { is_eregion_tag = yes }
+				increase_THIS_trust_towards_PREV = yes
+				add_foreign_ideology_drift_idea_365 = yes
+				hidden_effect = { news_event = { id = RFR_news.66 hours = 1 } }
+			}
+		}
+	}
+	focus = { #Study forgotten elven equipment
+		id = ISN_study_forgotten_elven_equipment
+		icon = GFX_goal_generic_small_arms
+		x = -1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 3
+		}
+		relative_position_id = ISN_warn_of_elven_contempt
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_warn_of_elven_contempt }
+		available = { any_allied_country = { is_eregion_tag = yes } }
+		mutually_exclusive = { focus = ISN_study_ruined_elven_architecture}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #+2 infantry bonuses for you and all ERG allies
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_tech
+				name = ISN_study_forgotten_elven_equipment
+			}
+			custom_effect_tooltip = ISN_study_forgotten_elven_equipment_tooltip
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_tech
+				name = ISN_study_forgotten_elven_equipment
+			}
+			every_country = {
+				limit = { if = { limit = { country_exists = yes } is_ally_with = ROOT } is_eregion_tag = yes }
+				add_opinion_modifier = { target = FROM modifier = cooperation }
+				hidden_effect = { 
+					country_event = { id = blood_oath.25 hours = 1 }
+				}
+			}
+		}
+	}
+	focus = { #Study ruined elven architecture
+		id = ISN_study_ruined_elven_architecture
+		icon = GFX_goal_ost_in_edhil_ruined
+		x = 1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 3
+		}
+		relative_position_id = ISN_warn_of_elven_contempt
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_warn_of_elven_contempt }
+		available = { any_allied_country = { is_eregion_tag = yes } }
+		mutually_exclusive = { focus = ISN_study_forgotten_elven_equipment}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+2 industry bonuses for you and all ERG allies
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+				name = ISN_study_ruined_elven_architecture
+			}
+			custom_effect_tooltip = ISN_study_forgotten_elven_equipment_tooltip
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+				name = ISN_study_ruined_elven_architecture
+			}
+			every_country = {
+				limit = { if = { limit = { country_exists = yes } is_ally_with = ROOT } is_eregion_tag = yes }
+				add_opinion_modifier = { target = FROM modifier = cooperation }
+				hidden_effect = { 
+					country_event = { id = blood_oath.25 hours = 1 }
+				}
+			}
+		}
+	}
+#########################################################DRUWAITH/ENEDWAITH COOPERATION
+	focus = { #Dispatch expeditions along the isen
+		id = ISN_dispatch_expeditions_along_the_isen
+		icon = GFX_goal_generic_positive_trade_relations
+		x = -1
+		y = 1
+		cost = @greaterEnedwaithFocusCostDouble
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				OR = {
+					var:diplo_target = { is_druwaith_iaur_tag = yes }
+					var:diplo_target = { is_enedwaith_tag = yes }
+				}
+				factor = 4
+			}
+		}
+		relative_position_id = ISN_recount_stories_of_past_cooperation
+		#available_if_capitulated = yes
+		available = { any_country = { is_greater_enedwaith_tag = yes NOT = { has_war_with = ROOT } any_controlled_state = { is_isen_river_state = yes } } }
+		prerequisite = { focus = ISN_recount_stories_of_past_cooperation }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #offer all isen river tribes a factory in exchange for trust
+			every_country = {
+				limit = { is_greater_enedwaith_tag = yes NOT = { has_war_with = ROOT } any_controlled_state = { is_isen_river_state = yes } }
+				country_event = { id = blood_oath.28 hours = 1 }
+				custom_effect_tooltip = ISN_dispatch_expeditions_along_the_isen_tooltip
+			}
+		}
+	}
+	focus = { #Spread our Message Through Trade Contacts
+		id = ISN_spread_our_message_through_trade_contacts
+		icon = GFX_goal_generic_befriend_enedwaith
+		x = 1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				OR = {
+					var:diplo_target = { is_enedwaith_tag = yes }
+				}
+				factor = 4
+			}
+		}
+		relative_position_id = ISN_dispatch_expeditions_along_the_isen
+		#available_if_capitulated = yes
+		available = { any_country = { is_enedwaith_tag = yes NOT = { has_war_with = ROOT } } }
+		prerequisite = { focus = ISN_dispatch_expeditions_along_the_isen }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #+25 opinion from all enedwiath tribes, +1 trust if they accepted investment
+			every_country = {
+				limit = { is_enedwaith_tag = yes NOT = { has_war_with = ROOT } }
+				hidden_effect = { news_event = { id = rfr_news.66 hours = 1 } }
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = sarumans_friendship
+				}
+				custom_effect_tooltip = ISN_spread_our_message_through_trade_contacts_tooltip
+				hidden_effect = {
+					if = { limit = { has_country_flag = accepted_ISN_investment }
+						increase_THIS_trust_towards_PREV = yes
+					}
+				}
+			}
+		}
+	}
+	focus = { #Compare ourselves favorably to sauron
+		id = ISN_compare_ourselves_favourably_to_sauron
+		icon = GFX_goal_support_melkorite
+		x = 1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				OR = {
+					var:diplo_target = { is_enedwaith_tag = yes }
+				}
+				factor = 2
+			}
+			modifier = {
+				OR = {
+					var:diplo_target = { is_enedwaith_tag = yes THIS_and_PREV_good_vs_evil = yes }
+				}
+				factor = 2
+			}
+			modifier = { #literally no reason
+				all_country = {
+					OR = {
+						is_enedwaith_tag = no
+						has_government = ROOT
+						is_subject_of = ROOT
+					}
+				}
+				factor = 0
+			}
+		}
+		relative_position_id = ISN_spread_our_message_through_trade_contacts
+		#available_if_capitulated = yes
+		available = { any_country = { is_enedwaith_tag = yes } }
+		prerequisite = { focus = ISN_spread_our_message_through_trade_contacts }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #ideology drift on all enedwaith tribes
+			every_country = {
+				limit = { is_enedwaith_tag = yes }
+				hidden_effect = { news_event = { id = rfr_news.66 hours = 1 } }
+				add_foreign_ideology_drift_idea_365 = yes
+			}
+		}
+	}
+	focus = { #support their claims to saralain
+		id = ISN_support_their_claims_to_saralain
+		icon = GFX_goal_claim_saralain
+		x = 0
+		y = 2
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 4
+			modifier = { #don't start another major war
+				has_war_with_major = yes
+				39 = { owner = { NOT = { has_war_with = ROOT } } }
+				add = -2
+			}
+			modifier = { #don't start another major war
+				39 = {
+					owner = {
+						NOT = { has_war_with = ROOT }
+						strength_ratio = {
+							tag = ROOT
+							ratio > 1
+						}
+					}
+				}
+				add = -2
+			}
+			modifier = {
+				var:diplo_target = { OR = { is_enedwaith_tag = yes } }
+				factor = 2
+			}
+			modifier = {
+				is_good = yes
+				39 = { owner = { has_government = ROOT  } }
+				factor = 0
+			}
+		}
+		will_lead_to_war_with = CAR
+		relative_position_id = ISN_spread_our_message_through_trade_contacts
+		#available_if_capitulated = yes
+		available = { any_subject_country = { is_enedwaith_tag = yes } 39 = { owner = { can_ROOT_get_wargoal_on_THIS = yes } } }
+		prerequisite = { focus = ISN_spread_our_message_through_trade_contacts }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #ideology drift on all enedwaith tribes
+			hidden_effect = { add_state_claim = 39 }
+			39 = {
+				owner = {
+					ROOT = {
+						create_wargoal = {
+							type = take_claimed_state
+							target = PREV
+							generator = { 39 }
+						}
+					}
+				}
+			}
+			hidden_effect = { remove_state_claim = 39 }
+		}
+	}
+	focus = { #Invest in Druwaith Iaur
+		id = ISN_invest_in_druwaith_iaur
+		icon = GFX_goal_generic_befriend_Druwaith_Iaur
+		x = -2
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				OR = {
+					var:diplo_target = { is_druwaith_iaur_tag = yes }
+				}
+				factor = 4
+			}
+			modifier = {
+				any_country = { has_completed_focus = ENE_increase_trade_along_the_isen }
+				factor = 4
+			}
+		}
+		relative_position_id = ISN_dispatch_expeditions_along_the_isen
+		#available_if_capitulated = yes
+		available = { any_country = { is_druwaith_iaur_tag = yes NOT = { has_war_with = ROOT } OR = { is_ally_with = ROOT has_country_flag = accepted_ISN_investment } } }
+		prerequisite = { focus = ISN_dispatch_expeditions_along_the_isen }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PRESTIGE }
+		completion_reward = { #+1 trust with all trading druwaith tags, they gain research
+			every_country = {
+				limit = {
+					is_druwaith_iaur_tag = yes
+					NOT = { has_war_with = ROOT }
+					OR = { is_ally_with = ROOT has_country_flag = accepted_ISN_investment }
+				}
+				hidden_effect = { country_event = { id = blood_oath.29 hours = 1 } }
+				custom_effect_tooltip = ISN_invest_in_druwaith_iaur_tooltip
+			}
+		}
+	}
+	focus = { #Share our wisdom with the druwaith leaders
+		id = ISN_share_our_wisdom_with_the_druwaith_leaders
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = -1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				OR = {
+					var:diplo_target = {
+						is_druwaith_iaur_tag = yes
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+				factor = 4
+			}
+			modifier = { #no need
+				all_country = { OR = { is_druwaith_iaur_tag = no is_in_faction_with = ROOT } }
+				factor = 0
+			}
+		}
+		relative_position_id = ISN_invest_in_druwaith_iaur
+		#available_if_capitulated = yes
+		available = { is_faction_leader = yes any_country = { is_druwaith_iaur_tag = yes NOT = { has_war_with = ROOT } } }
+		prerequisite = { focus = ISN_invest_in_druwaith_iaur }
+		mutually_exclusive = { focus = ISN_share_our_wisdom_with_the_druwaith_people }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Druwaith tags can join our faction in exchange for PP
+			every_country = {
+				limit = {
+					is_druwaith_iaur_tag = yes
+					NOT = { has_war_with = ROOT }
+				}
+				country_event = { id = blood_oath.30 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = {
+					add_political_power = var:ISN.druwaith_investment_PP
+					ROOT = { add_to_faction = PREV }
+				}
+			}
+		}
+	}
+	focus = { #Share our wisdom with the druwaith people
+		id = ISN_share_our_wisdom_with_the_druwaith_people
+		icon = GFX_goal_generic_propaganda
+		x = 1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				OR = {
+					var:diplo_target = {
+						is_druwaith_iaur_tag = yes
+						NOT = { has_government = ROOT }
+					}
+				}
+				factor = 4
+			}
+			modifier = { #no need
+				all_country = { OR = { is_druwaith_iaur_tag = no has_government = ROOT } }
+				factor = 0
+			}
+		}
+		relative_position_id = ISN_invest_in_druwaith_iaur
+		#available_if_capitulated = yes
+		available = { any_country = { is_druwaith_iaur_tag = yes NOT = { has_war_with = ROOT } } }
+		prerequisite = { focus = ISN_invest_in_druwaith_iaur }
+		mutually_exclusive = { focus = ISN_share_our_wisdom_with_the_druwaith_leaders }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Druwaith tags can boost our ideology in exchange for PP
+			every_country = {
+				limit = {
+					is_druwaith_iaur_tag = yes
+					NOT = { has_war_with = ROOT }
+				}
+				add_popularity = {
+					ideology = ROOT
+					popularity = 0.1
+				}
+				country_event = { id = blood_oath.31 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = {
+					add_political_power = var:ISN.druwaith_investment_PP
+					add_foreign_ideology_drift_idea_365 = yes
+				}
+			}
+		}
+	}
+#######################################################################################DUNLAND CONQUEST
+	focus = { #Conquer the dunlendings
+		id = ISN_conquer_the_dunlendings
+		icon = GFX_goal_generic_attack_dunland
+		x = 9
+		y = 0
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				any_country = {
+					is_dunland_tag = yes
+					strength_ratio = {
+						tag = ISN
+						ratio > 1.25
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				is_assertive = no
+				factor = 0
+			}
+		}
+		relative_position_id = ISN_cooperate_with_the_dunlendings
+		#available_if_capitulated = yes
+		will_lead_to_war_with = CGN
+		will_lead_to_war_with = DFN
+		will_lead_to_war_with = DTH
+		will_lead_to_war_with = DUN
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		mutually_exclusive = { focus = ISN_cooperate_with_the_dunlendings }
+		completion_reward = { #wargoals vs all DUN tags
+			custom_effect_tooltip = ISN_conquer_the_dunlendings_tooltip
+			hidden_effect = {
+				every_country = {
+					limit = { is_dunland_tag = yes can_ROOT_get_wargoal_on_THIS = yes }
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #Study their tactics
+		id = ISN_study_their_tactics
+		icon = GFX_goal_generic_army_doctrines
+		x = -2
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_conquer_the_dunlendings
+		#available_if_capitulated = yes
+		available = { any_state = { is_greater_enedwaith_state = yes controls_or_subject_of = yes } }
+		prerequisite = { focus = ISN_conquer_the_dunlendings }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #pike, recon, and special forces bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = cat_anti_tank
+			}
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = recon_tech
+			}
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = cat_special_forces
+			}
+		}
+	}
+	focus = { #Rally them against common enemies
+		id = ISN_rally_them_against_common_enemies
+		icon = GFX_goal_generic_military_deal
+		x = 2
+		y = 1
+		cost = @greaterEnedwaithFocusCostDouble
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				garrison_manpower_need > 10000
+				factor = 1.5
+			}
+			modifier = {
+				garrison_manpower_need > 25000
+				factor = 2
+			}
+			modifier = {
+				garrison_manpower_need > 50000
+				factor = 2
+			}
+		}
+		relative_position_id = ISN_conquer_the_dunlendings
+		#available_if_capitulated = yes
+		available = { any_controlled_state = { is_greater_enedwaith_state = yes } }
+		prerequisite = { focus = ISN_conquer_the_dunlendings }
+		mutually_exclusive = { focus = ISN_rely_on_collaborators }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #unique occupation law in greater enedwaith
+			custom_effect_tooltip = ISN_rally_them_against_common_enemies_tooltip
+		}
+	}
+	focus = { #rely on collaborators
+		id = ISN_rely_on_collaborators
+		icon = GFX_goal_province_of_dunland
+		x = 4
+		y = 1
+		cost = @greaterEnedwaithFocusCostDouble
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				garrison_manpower_need > 10000
+				factor = 1.5
+			}
+			modifier = {
+				garrison_manpower_need > 25000
+				factor = 2
+			}
+			modifier = {
+				garrison_manpower_need > 50000
+				factor = 2
+			}
+		}
+		relative_position_id = ISN_conquer_the_dunlendings
+		#available_if_capitulated = yes
+		available = { any_owned_state = { is_greater_enedwaith_state = yes } }
+		prerequisite = { focus = ISN_conquer_the_dunlendings }
+		mutually_exclusive = { focus = ISN_rally_them_against_common_enemies }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #creates province of dunland collaboration
+			custom_effect_tooltip = ISN_rely_on_collaborators_tooltip
+			hidden_effect = {
+				create_dynamic_country = {
+					original_tag = DUN
+					set_country_flag = Province_of_Dunland
+					set_cosmetic_tag = Province_of_Dunland
+					add_ideas = dunland_saruman_heritage
+					add_ideas = dunland_heritage_idea
+					##to give them a garrison
+					add_manpower = 5000
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 500
+						producer = DUN
+					}
+					every_core_state = {
+						remove_core_of = PREV
+					}
+					every_state = {
+						limit = { is_dunland_state = yes }
+						add_claim_by = PREV
+					}
+					#AI
+					set_country_flag = saruman_flag
+					if = { limit = { ROOT = { has_government = isolationism } }
+						set_country_flag = isolationism_flag
+					}
+					else_if = { limit = { ROOT = { has_government = freedom } }
+						set_country_flag = freedom_flag
+					}
+					else_if = { limit = { ROOT = { has_government = opportunism } }
+						set_country_flag = opportunism_flag
+					}
+					else_if = { limit = { ROOT = { has_government = conquest } }
+						set_country_flag = conquest_flag
+					}
+					else_if = { limit = { ROOT = { has_government = melkorite } }
+						set_country_flag = melkorite_flag
+					}
+					load_focus_tree = { tree = enedwaith_focus keep_completed = no }
+					set_variable = { collaboration_formed_by = ROOT }
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_collaboration_government
+							end_wars = no
+							end_civil_wars = no
+						}
+						every_owned_state = {
+							limit = { is_greater_enedwaith_state = yes }
+							set_state_owner_to = ISD
+						}
+						every_state = {
+							limit = { is_greater_enedwaith_state = yes }
+							set_state_province_controller = {
+								controller = ISD
+								limit = {
+									OR = {
+										tag = ROOT
+										is_subject_of = ROOT
+									}
+								}
+							}
+						}
+						every_character = {
+							limit = { has_character_flag = ISD_character }
+							set_nationality = ISD
+						}
+					}
+					kill_country_leader = yes
+				}
+			}
+		}
+	}
+	focus = { #Invest in our 'Allies'
+		id = ISN_invest_in_our_allies
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -1
+		y = 1
+		cost = @greaterEnedwaithFocusCostDouble
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				ISD = {
+					num_of_controlled_states > 4
+				}
+				factor = 4
+			}
+			modifier = {
+				controls_3_true_dunland_state = yes
+				factor = 3
+			}
+			modifier = {
+				controls_3_true_enedwaith_state = yes
+				factor = 3
+			}
+			modifier = {
+				controls_3_true_druwaith_iaur_state = yes
+				factor = 3
+			}
+			modifier = {
+				controls_3_true_eregion_state = yes
+				factor = 3
+			}
+		}
+		relative_position_id = ISN_rely_on_collaborators
+		#available_if_capitulated = yes
+		available = { any_state = { is_greater_enedwaith_core = yes controls_or_subject_of = yes } }
+		prerequisite = { focus = ISN_rally_them_against_common_enemies focus = ISN_rely_on_collaborators }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #infrastructure and compliance in greater enedwaith
+			custom_effect_tooltip = ISN_invest_in_our_allies_tooltip
+			every_state = {
+				limit = {
+					is_greater_enedwaith_core = yes
+					controls_or_subject_of = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_compliance = 10
+				# if = { limit = { controller = { is_subject_of = ROOT } }
+					# controller = {
+						# add_autonomy_score = {
+							# value = -100
+							# localization = ISN_invest_in_our_allies
+						# }
+					# }
+				# }
+			}
+		}
+	}
+	focus = { #Stoke ancestral feuds
+		id = ISN_stoke_ancestral_feuds
+		icon = GFX_goal_generic_attack_Greater_Enedwaith
+		x = 0
+		y = 2
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				NOT = {
+					any_country = {
+						is_greater_enedwaith_tag = yes
+						has_war_with = ROOT
+					}
+				}
+				factor = 0
+			}
+		}
+		relative_position_id = ISN_rely_on_collaborators
+		#available_if_capitulated = yes
+		available = { custom_trigger_tooltip = { tooltip = ISD_exists_tooltip country_exists = ISD } custom_trigger_tooltip = { tooltip = ISD_is_subject_tooltip has_subject = ISD } }
+		prerequisite = { focus = ISN_rely_on_collaborators }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #ISD gains attack vs greater enedwaith
+			if = { limit = { NOT = { country_exists = ISD } }
+				custom_effect_tooltip = ISN_stoke_ancestral_feuds_tooltip
+			}
+			ISD = { add_ideas = generic_attack_greater_enedwaith }
+		}
+	}
+	focus = { #Recruit Sleeper Agents
+		id = ISN_recruit_sleeper_agents
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 1
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				NOT = {
+					any_state = {
+						is_greater_enedwaith_state = yes
+						controls_or_subject_of = no
+					}
+				}
+				factor = 0
+			}
+		}
+		relative_position_id = ISN_rely_on_collaborators
+		#available_if_capitulated = yes
+		available = { custom_trigger_tooltip = { tooltip = ISD_exists_tooltip country_exists = ISD } custom_trigger_tooltip = { tooltip = ISD_is_subject_tooltip has_subject = ISD } }
+		prerequisite = { focus = ISN_rely_on_collaborators }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #unlocks decisions to grant ISD claims on other regions of greater enedwaith
+			custom_effect_tooltip = ISN_recruit_sleeper_agents_tooltip
+		}
+	}
+	focus = { #subjugate the route to rivendell
+		id = ISN_subjugate_the_route_to_rivendell
+		icon = GFX_goal_generic_attack_Eregion
+		x = -1
+		y = 2
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				has_war_with_major = yes
+				factor = 0
+			}
+			modifier = {
+				NOT = { any_country = { is_eregion_tag = yes can_ROOT_get_wargoal_on_THIS = yes any_neighbor_country = { OR = { tag = ROOT is_subject_of = ROOT } } } }
+				factor = 0
+			}
+		}
+		will_lead_to_war_with = ERG
+		will_lead_to_war_with = HOL
+		will_lead_to_war_with = MBL
+		will_lead_to_war_with = REE
+		relative_position_id = ISN_conquer_the_dunlendings
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_conquer_the_dunlendings }
+		bypass = { NOT = { any_country = { is_eregion_tag = yes can_ROOT_get_wargoal_on_THIS = yes } } }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #wargoals vs all DUN tags
+			custom_effect_tooltip = ISN_subjugate_the_route_to_rivendell_tooltip
+			hidden_effect = {
+				every_country = {
+					limit = { is_eregion_tag = yes can_ROOT_get_wargoal_on_THIS = yes }
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #Eliminate elven influence
+		id = ISN_eliminate_elven_influence
+		icon = GFX_goal_generic_attack_rivendell
+		x = 3
+		y = 1
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war_with_major = yes
+				strength_ratio = {
+					tag = RIV
+					ratio < 1.5
+				}
+				factor = 0.2
+			}
+			modifier = {
+				strength_ratio = {
+					tag = RIV
+					ratio < 1
+				}
+				factor = 0.2
+			}
+		}
+		will_lead_to_war_with = RIV
+		relative_position_id = ISN_warn_of_elven_contempt
+		#available_if_capitulated = yes
+		bypass = { has_war_with = RIV }
+		prerequisite = { focus = ISN_warn_of_elven_contempt focus = ISN_subjugate_the_route_to_rivendell }
+		available = { OR = { is_neighbor_of = RIV any_subject_country = { is_neighbor_of = RIV } } RIV = { can_ROOT_get_wargoal_on_THIS = yes } }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #wargoal vs RIV
+			create_wargoal = {
+				type = annex_everything
+				target = RIV
+			}
+		}
+	}
+	focus = { #Pacify the isen
+		id = ISN_pacify_the_isen
+		icon = GFX_goal_attack_enedwaith_druwaith_iaur
+		x = 0
+		y = 3
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				has_war_with_major = yes
+				factor = 0.1
+			}
+			modifier = {
+				NOT = { any_country = { OR = { is_enedwaith_tag = yes is_druwaith_iaur_tag = yes } can_ROOT_get_wargoal_on_THIS = yes any_neighbor_country = { OR = { tag = ROOT is_subject_of = ROOT } } } }
+				factor = 0
+			}
+		}
+		will_lead_to_war_with = AGR
+		will_lead_to_war_with = COL
+		will_lead_to_war_with = HST
+		will_lead_to_war_with = STK
+		will_lead_to_war_with = AKN
+		will_lead_to_war_with = BYR
+		will_lead_to_war_with = DRU
+		will_lead_to_war_with = IRN
+		relative_position_id = ISN_conquer_the_dunlendings
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_conquer_the_dunlendings }
+		bypass = { NOT = { any_country = { OR = { is_enedwaith_tag = yes is_druwaith_iaur_tag = yes } can_ROOT_get_wargoal_on_THIS = yes } } }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #wargoals vs all ENE & DWI tags
+			custom_effect_tooltip = ISN_pacify_the_isen_tooltip
+			hidden_effect = {
+				every_country = {
+					limit = { OR = { is_enedwaith_tag = yes is_druwaith_iaur_tag = yes } can_ROOT_get_wargoal_on_THIS = yes }
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #Secure the passes to gondor
+		id = ISN_secure_the_passes_to_gondor
+		icon = GFX_goal_attack_andrast_white_mountains
+		x = 1
+		y = 2
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				has_war_with_major = yes
+				factor = 0.1
+			}
+			modifier = {
+				NOT = { any_country = { OR = { is_andrast_tag = yes is_white_mountains_tag = yes } can_ROOT_get_wargoal_on_THIS = yes any_neighbor_country = { OR = { tag = ROOT is_subject_of = ROOT } } } }
+				factor = 0
+			}
+		}
+		will_lead_to_war_with = ADB
+		will_lead_to_war_with = NEN
+		will_lead_to_war_with = PRI
+		will_lead_to_war_with = RAF
+		will_lead_to_war_with = ANU
+		will_lead_to_war_with = HVK
+		will_lead_to_war_with = NIF
+		will_lead_to_war_with = TAW
+		will_lead_to_war_with = WHT
+		relative_position_id = ISN_conquer_the_dunlendings
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_conquer_the_dunlendings }
+		bypass = { NOT = { any_country = { OR = { is_andrast_tag = yes is_white_mountains_tag = yes } can_ROOT_get_wargoal_on_THIS = yes } } }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #wargoals vs all AND & WHT tags
+			custom_effect_tooltip = ISN_secure_the_passes_to_gondor_tooltip
+			hidden_effect = {
+				every_country = {
+					limit = { OR = { is_andrast_tag = yes is_white_mountains_tag = yes } can_ROOT_get_wargoal_on_THIS = yes }
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #Prepare for a campaign in Pinnath Gelin
+		id = ISN_prepare_for_a_campaign_in_pinnath_gelin
+		icon = GFX_goal_generic_construct_supply_node
+		x = 0
+		y = 2
+		cost = @greaterEnedwaithFocusCost
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				141 = { controller = { has_war_with = ROOT } }
+				factor = 5
+			}
+			modifier = {
+				141 = { owner = { ROOT = { has_wargoal_against = PREV } } }
+				factor = 5
+			}
+			modifier = {
+				141 = { owner = { is_ally_with = ROOT } }
+				factor = 0
+			}
+		}
+		relative_position_id = ISN_secure_the_passes_to_gondor
+		#available_if_capitulated = yes
+		available = { any_state = { is_white_mountains_state = yes controls_or_subject_of = yes } }
+		prerequisite = { focus = ISN_secure_the_passes_to_gondor }
+		search_filters = { FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #wargoals vs all AND & WHT tags
+			custom_effect_tooltip = ISN_prepare_for_a_campaign_in_pinnath_gelin_tooltip
+			every_state = {
+				limit = {
+					is_white_mountains_state = yes
+					controls_or_subject_of = yes
+					can_build_railway = { start_state = 210 target_state = THIS }
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				ROOT = {
+					build_railway = {
+						level = 3
+						build_only_on_allied = yes
+						controller_priority = {
+							base = 1
+							modifier = {
+								tag = ROOT
+								add = 2
+							}
+						}
+						start_state = PREV
+						target_state = 210 #orthanc
+					}
+				}
+			}
+		}
+	}
+#######################################################################################MISTY MOUNTAINS BRANCH
+	focus = { #Recruit Misty Mountain Orcs
+		id = ISN_recruit_misty_mountain_orcs
+		icon = GFX_goal_generic_befriend_misty_mountains
+		x = 17
+		y = 0
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_cooperate_with_the_dunlendings
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_MANPOWER }
+		completion_reward = { #+150k manpower
+			add_manpower = 150000
+			MST = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = sarumans_guidance
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = { #Support western ambitions
+		id = ISN_support_western_ambitions
+		icon = GFX_goal_generic_attack_rivendell
+		x = -1
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_recruit_misty_mountain_orcs
+		prerequisite = { focus = ISN_recruit_misty_mountain_orcs }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #+150k manpower
+			army_experience = 20
+			MST = {
+				army_experience = 10
+				add_ideas = { generic_attack_rivendell generic_attack_rhudaur }
+				RIV = {
+					every_core_state = {
+						add_claim_by = PREV.PREV
+					}
+				}
+				RDR = {
+					every_core_state = {
+						add_claim_by = PREV.PREV
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = sarumans_guidance
+				}
+			}
+		}
+	}
+	focus = { #Support eastern ambitions
+		id = ISN_support_eastern_ambitions
+		icon = GFX_goal_generic_attack_lorien
+		x = 1
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_recruit_misty_mountain_orcs
+		prerequisite = { focus = ISN_recruit_misty_mountain_orcs }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #+150k manpower
+			army_experience = 20
+			MST = {
+				army_experience = 10
+				add_ideas = { generic_attack_lorien generic_attack_beornings }
+				LOR = {
+					every_core_state = {
+						add_claim_by = PREV.PREV
+					}
+				}
+				BER = {
+					every_core_state = {
+						add_claim_by = PREV.PREV
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = sarumans_guidance
+				}
+			}
+		}
+	}
+	focus = { #Demand misty mountains Submission
+		id = ISN_demand_misty_mountains_submission
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 0
+		y = 2
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ISN_support_western_ambitions focus = ISN_support_eastern_ambitions }
+		relative_position_id = ISN_recruit_misty_mountain_orcs
+		available = { MST = { PREV_can_puppet_THIS = yes } is_assertive = yes }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #enedwaith: all advisors boost ISN ideology & are 33% stronger
+			MST = {
+				hidden_effect = {
+					country_event = {
+						id = isengard.6
+						days = 1
+					}
+				}
+				custom_effect_tooltip = ISN_demand_submission_tooltip
+			}
+		}
+	}
+	focus = { #Hire seasoned raiders
+		id = ISN_hire_seasoned_raiders
+		icon = GFX_goal_generic_military_deal
+		x = 3
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_recruit_misty_mountain_orcs
+		prerequisite = { focus = ISN_recruit_misty_mountain_orcs }
+		#available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ARMY }
+		completion_reward = { #4 commanders
+			custom_effect_tooltip = ISN_ambal_commander_tooltip
+			custom_effect_tooltip = ISN_gazlaggi_commander_tooltip
+			custom_effect_tooltip = ISN_greb_commander_tooltip
+			custom_effect_tooltip = ISN_thrugg_commander_tooltip
+			hidden_effect = {
+				ISN_ambal = {
+					add_corps_commander_role = {
+						skill = 3
+						attack_skill = 4
+						defense_skill = 2
+						planning_skill = 3
+						logistics_skill = 1
+						traits = { trait_reckless commando }
+					}
+				}
+				ISN_gazlaggi = {
+					add_corps_commander_role = {
+						skill = 3
+						attack_skill = 1
+						defense_skill = 3
+						planning_skill = 3
+						logistics_skill = 3
+						traits = { trait_cautious organizer }
+					}
+				}
+				ISN_greb = {
+					add_corps_commander_role = {
+						skill = 3
+						attack_skill = 3
+						defense_skill = 2
+						planning_skill = 3
+						logistics_skill = 2
+						traits = { trait_mountaineer engineer_officer }
+					}
+				}
+				ISN_thrugg = {
+					add_corps_commander_role = {
+						skill = 3
+						attack_skill = 3
+						defense_skill = 1
+						planning_skill = 3
+						logistics_skill = 3
+						traits = { career_officer trickster }
+					}
+				}
+			}
+			MST = {
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = sarumans_guidance
+				}
+			}
+		}
+	}
+	focus = { #Hire Troll Handlers
+		id = ISN_hire_troll_handlers
+		icon = GFX_goal_generic_troll_focus
+		x = 0
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = ISN_hire_seasoned_raiders
+		#available_if_capitulated = yes
+		prerequisite = { focus = ISN_hire_seasoned_raiders }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ARMY }
+		completion_reward = { #1 commander, unlocks troll research
+			if = { limit = { NOT = { has_idea = troll_tamers_spirit } }
+				add_ideas = troll_tamers_spirit
+			}
+			custom_effect_tooltip = ISN_hire_troll_handlers_tooltip
+			hidden_effect = {
+				ISN_moranogal = {
+					add_corps_commander_role = {
+						skill = 4
+						attack_skill = 3
+						defense_skill = 2
+						planning_skill = 5
+						logistics_skill = 5
+						traits = { armor_officer monster_leader organizer }
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = cat_heavy_armor
+			}
+			MST = {
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = sarumans_guidance
+				}
+			}
+		}
+	}
+#######################################################################################SHIRE BRANCH
+	focus = { #investigate the shire
+		id = ISN_investigate_the_shire
+		icon = GFX_goal_generic_befriend_shire
+		x = 0
+		y = 2
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 20
+		}
+		relative_position_id = ISN_monitor_our_enemies
+		#available_if_capitulated = yes
+		available = { country_exists = SHI }
+		bypass = { SHI = { is_subject_of = ROOT } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #lotho becomes saruman's pupil
+			SHI = {
+				SHI_lotho_sackville_baggins = {
+					isengard_make_sarumans_pupil = yes
+				}
+				#add_foreign_ideology_drift_idea_365 = yes
+			}
+		}
+	}
+	focus = { #depose the mayor
+		id = ISN_depose_the_mayor
+		icon = GFX_focus_usa_voter_registration_act
+		x = 0
+		y = 2
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 20
+		}
+		relative_position_id = ISN_investigate_the_shire
+		#available_if_capitulated = yes
+		available = { ##Is evil, shire exists, shire has at least 33% evil support
+			OR = { has_government = opportunism has_government = conquest has_government = melkorite }
+			country_exists = SHI
+			SHI = {
+				custom_trigger_tooltip = {
+					tooltip = ISN_depose_the_mayor_trigger_tooltip
+					OR = {
+						AND = { ROOT = { has_government = opportunism } opportunism > 0.33 }
+						AND = { ROOT = { has_government = conquest } conquest > 0.33 }
+						AND = { ROOT = { has_government = melkorite } melkorite > 0.33 }
+					}
+				}
+			}
+		}
+		bypass = { SHI = { is_subject_of = ROOT } }
+		prerequisite = { focus = ISN_investigate_the_shire }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Shi becomes puppet
+			set_autonomy = {
+				target = SHI
+				autonomy_state = autonomy_councils_servant
+				end_wars = no
+				end_civil_wars = no
+			}
+			hidden_effect = {
+				SHI = {
+					set_politics = {
+						ruling_party = var:ROOT.current_party_ideology_group
+						elections_allowed = no
+					}
+					isengard_make_country_leader_sarumans_pupil = yes
+				}
+			}
+		}
+	}
+	focus = { #Take the Reigns
+		id = ISN_take_the_reigns
+		icon = GFX_goal_lotho_kill
+		x = 0
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 20
+			modifier = { ##will never do unless reduced to orthanc
+				any_controlled_state = {
+					NOT = { state = 210 } #Orthanc
+				}
+				factor = 0
+			}
+		}
+		relative_position_id = ISN_depose_the_mayor
+		#available_if_capitulated = yes
+		available = { country_exists = SHI SHI = { is_subject_of = ISN has_autonomy_state = autonomy_councils_slave } has_war = no }
+		prerequisite = { focus = ISN_depose_the_mayor }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Become the Shire
+			custom_effect_tooltip = ISN_take_the_reigns_tooltip
+			hidden_effect = {
+				remove_dynamic_modifier = { modifier = isengardian_heritage_modifier } #It's all about saruman
+				SHI = {
+					kill_country_leader = yes
+					change_tag_from = ROOT
+				}
+				ISN_saruman = {
+					set_nationality = { target_country = SHI }
+				}
+				SHI = { ##he's no longer in ISN; Gotta use an if statement to avoid infinite errors though
+					if = { limit = { has_character = ISN_saruman }
+						ISN_saruman = {
+							promote_character = {
+								ideology = petty_monarchy
+							}
+							promote_character = {
+								ideology = glorious_monarchy
+							}
+							promote_character = {
+								ideology = evil_monarchy
+							}
+						}
+					}
+					add_dynamic_modifier = { modifier = isengardian_heritage_modifier }
+					leave_faction = yes ##SHI becomes major if they control the faction, let this war end
+				}
+				if = { limit = { has_character = ROH_grima } #grima comes with
+					ROH_grima = { set_nationality = { target_country = SHI } }
+				}
+				##Owner of nan curunir gets all your states
+				if = { limit = { NOT = { owns_state = 68 } }
+					random_country = {
+						limit = { owns_state = 68 }
+						every_state = {
+							limit = { is_owned_by = ROOT }
+							PREV = { transfer_state = PREV }
+						}
+					}
+				}
+				else = {
+					random_neighbor_country = {
+						every_state = {
+							limit = { is_owned_by = ROOT }
+							PREV = { transfer_state = PREV }
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #Dispatch ruffians
+		id = ISN_dispatch_ruffians
+		icon = GFX_focus_POL_riot_of_37
+		x = 1
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = ISN_investigate_the_shire
+		#available_if_capitulated = yes
+		available = { country_exists = SHI OR = { has_government = opportunism has_government = conquest has_government = melkorite } }##Is evil, shire exists
+		prerequisite = { focus = ISN_investigate_the_shire }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #SHI: +20% isn ideology
+			set_variable = { scriptedForeignSupport = 0.2 }
+			SHI = {
+				custom_effect_tooltip = ISN_dispatch_ruffians_tooltip
+				hidden_effect = {
+					add_var_popularity_to_foreign_country = yes
+					if = { limit = { ROOT = { is_ai = yes } }##extra boost if AI, since they won't manually boost
+						set_variable = { scriptedForeignSupport = 0.1 }
+						add_var_popularity_to_foreign_country = yes
+					}
+				}
+			}
+			clear_variable = scriptedForeignSupport
+		}
+	}
+	focus = { #Purchase Pipeweed
+		id = ISN_purchase_pipeweed
+		icon = GFX_goal_generic_trade
+		x = -1
+		y = 1
+		cost = @diplomaticFocusCost
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = ISN_investigate_the_shire
+		#available_if_capitulated = yes
+		available = { country_exists = SHI }##Is evil, shire exists
+		prerequisite = { focus = ISN_investigate_the_shire }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #+10 stab SHI: +1 temp civ
+			add_ideas = shire_trade_spirit
+			SHI = {
+				add_ideas = isengard_trade_spirit
+			}
+		}
+	}
+}
+
