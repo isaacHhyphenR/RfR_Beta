@@ -155,103 +155,87 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/javelin_upgrade_4.dds"
 	}
 							######################################
-									#COUNTRY SPECIFIC
-							######################################
-##########################ROHAN INFANTRY
-	SpriteType = {
-		name = "GFX_ROH_infantry_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_equipment_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_infantry_weapons1_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_equipment_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_improved_infantry_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_equipment_0.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_advanced_infantry_weapons_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_infantry_equipment_0.dds"
-	}
-							######################################
 										#GENERIC CAVALRY
 							######################################
-	SpriteType = {
-		name = "GFX_feral_troll_chassis_medium"
-		texturefile = "gfx/interface/technologies/generic_inter_war_heavy_tank_chassis.dds"
-	}
 	SpriteType = {
 		name = "GFX_amphibious_tank_chassis_medium"
 		texturefile = "gfx/interface/technologies/generic_amphibious_chassis.dds"
 	}
 	spriteType = {
-		name = "GFX_gw_light_art"
+		name = "GFX_gw_light_art_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/gw_skirmisher.dds
 	}
 	spriteType = {
-		name = "GFX_gw_light_td"
+		name = "GFX_gw_light_td_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/gw_lancer.dds
 	}
 	spriteType = {
-		name = "GFX_basic_light_art"
+		name = "GFX_basic_light_art_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/basic_light_skirmisher.dds
 	}
 	spriteType = {
-		name = "GFX_improved_light_art"
+		name = "GFX_improved_light_art_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/improved_light_skirmisher.dds
 	}
 	spriteType = {
-		name = "GFX_advanced_light_art"
+		name = "GFX_advanced_light_art_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/advanced_light_skirmisher.dds
 	}
 	spriteType = {
-		name = "GFX_basic_light_td"
+		name = "GFX_basic_light_td_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/basic_light_lancer.dds
 	}
 	spriteType = {
-		name = "GFX_improved_light_td"
+		name = "GFX_improved_light_td_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/improved_light_lancer.dds
 	}
 	spriteType = {
-		name = "GFX_advanced_light_td"
+		name = "GFX_advanced_light_td_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/advanced_light_lancer.dds
 	}
 	spriteType = {
-		name = "GFX_basic_medium_art"
+		name = "GFX_basic_medium_art_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/basic_medium_skirmisher.dds
 	}
 	spriteType = {
-		name = "GFX_improved_medium_art"
+		name = "GFX_improved_medium_art_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/improved_medium_skirmisher.dds
 	}
 	spriteType = {
-		name = "GFX_advanced_medium_art"
+		name = "GFX_advanced_medium_art_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/advanced_medium_skirmisher.dds
 	}
 	spriteType = {
-		name = "GFX_basic_medium_td"
+		name = "GFX_basic_medium_td_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/basic_medium_lancer.dds
 	}
 	spriteType = {
-		name = "GFX_improved_medium_td"
+		name = "GFX_improved_medium_td_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/improved_medium_lancer.dds
 	}
 	spriteType = {
-		name = "GFX_advanced_medium_td"
+		name = "GFX_advanced_medium_td_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/advanced_medium_lancer.dds
 	}
 	spriteType = {
-		name = "GFX_advanced_medium_td"
+		name = "GFX_advanced_medium_td_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/advanced_medium_lancer.dds
 	}
 	spriteType = {
-		name = "GFX_modern_art"
+		name = "GFX_modern_art_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/modern_skirmisher.dds
 	}
 	spriteType = {
-		name = "GFX_modern_td"
+		name = "GFX_modern_td_medium"
 		texturefile = gfx/interface/technologies/cavalry_variants/modern_lancer.dds
+	}
+	SpriteType = {
+		name = "GFX_feral_troll_chassis_medium"
+		texturefile = "gfx/interface/technologies/generic_inter_war_heavy_tank_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_early_heavy_tank_medium"
+		texturefile = "gfx/interface/technologies/generic_inter_war_heavy_tank_chassis.dds"
 	}
 	spriteType = {
 		name = "GFX_basic_mumakil_chassis_medium"
@@ -265,124 +249,16 @@ spriteTypes = {
 		name = "GFX_advanced_mumakil_chassis_medium"
 		texturefile = gfx/interface/technologies/advanced_mumakil.dds
 	}
-							######################################
-									#COUNTRY SPECIFIC CAVALRY
-							######################################
-##########################ROHAN ARMOR
-	SpriteType = {
-		name = "GFX_ROH_amphibious_tank_chassis_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_amphibious_tank_chassis.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_gwtank_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_tank.dds"
-	}
-	SpriteType = { #NSB
-		name = "GFX_ROH_gwtank_chassis_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_tank.dds"
-	}
-	SpriteType = { #NSB
-		name = "GFX_ROH_light_tank_chassis_0"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_light_tank_chassis_1.dds"
-	}
-	SpriteType = { #NSB
-		name = "GFX_ROH_medium_tank_chassis_0"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_medium_tank_chassis_1.dds"
-	}
-	SpriteType = { #NSB
-		name = "GFX_ROH_basic_light_tank_chassis_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_light_tank_chassis_1.dds"
-	}
-	SpriteType = { #NSB
-		name = "GFX_ROH_improved_light_tank_chassis_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_light_tank_chassis_1.dds"
-	}
-	SpriteType = { #NSB
-		name = "GFX_ROH_advanced_light_tank_chassis_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_light_tank_chassis_1.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_basic_light_tank_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_tank.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_improved_light_tank_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_tank.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_advanced_light_tank_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_tank.dds"
+	spriteType = {
+		name = "GFX_basic_mumak_medium"
+		texturefile = gfx/interface/technologies/basic_mumakil.dds
 	}
 	spriteType = {
-		name = "GFX_ROH_basic_light_td_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_td.dds"
+		name = "GFX_improved_mumak_medium"
+		texturefile = gfx/interface/technologies/improved_mumakil.dds
 	}
 	spriteType = {
-		name = "GFX_ROH_improved_light_td_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_td.dds"
-	}
-	spriteType = {
-		name = "GFX_ROH_advanced_light_td_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_td.dds"
-	}
-	spriteType = {
-		name = "GFX_ROH_basic_light_art_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_art.dds"
-	}
-	spriteType = {
-		name = "GFX_ROH_improved_light_art_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_art.dds"
-	}
-	spriteType = {
-		name = "GFX_ROH_advanced_light_art_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_light_art.dds"
-	}
-	SpriteType = { #NSB
-		name = "GFX_ROH_basic_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_medium_tank_chassis_1.dds"
-	}
-	SpriteType = { #NSB
-		name = "GFX_ROH_improved_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_medium_tank_chassis_1.dds"
-	}
-	SpriteType = { #NSB
-		name = "GFX_ROH_advanced_medium_tank_chassis_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_medium_tank_chassis_1.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_basic_medium_tank_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_tank.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_improved_medium_tank_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_tank.dds"
-	}
-	SpriteType = {
-		name = "GFX_ROH_advanced_medium_tank_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_tank.dds"
-	}
-	spriteType = {
-		name = "GFX_ROH_basic_medium_td_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_td.dds"
-	}
-	spriteType = {
-		name = "GFX_ROH_improved_medium_td_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_td.dds"
-	}
-	spriteType = {
-		name = "GFX_ROH_advanced_medium_td_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_td.dds"
-	}
-	spriteType = {
-		name = "GFX_ROH_basic_medium_art_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_art.dds"
-	}
-	spriteType = {
-		name = "GFX_ROH_improved_medium_art_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_art.dds"
-	}
-	spriteType = {
-		name = "GFX_ROH_advanced_medium_art_medium"
-		texturefile = "gfx/interface/technologies/00_Rohirrim/ROH_basic_medium_art.dds"
+		name = "GFX_advanced_mumak_medium"
+		texturefile = gfx/interface/technologies/advanced_mumakil.dds
 	}
 }

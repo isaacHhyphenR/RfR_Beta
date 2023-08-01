@@ -585,7 +585,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = { 
-					width = 1450 height = 1090 
+					width = 1600 height = 1090 
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -598,13 +598,13 @@ guiTypes = {
 				iconType = {
 					name ="armortech_bg"
 					spriteType = "GFX_armortech_bg"
-					position = { x=0 y=0 }
+					position = { x=-0 y=0 }
 					alwaystransparent = yes
 				}
 
 				containerWindowType = {
-					name = "armour_year_right"
-					position = { x=10 y=140 }
+					name = "armour_year_left"
+					position = { x=10 y=50 }
 					size = { width = 80 height = 100%% }
 					orientation = upper_left
 						
@@ -702,10 +702,23 @@ guiTypes = {
 					
 					
 				containerWindowType = {
-					name = "armour_year_left"
-					position = { x=-100 y=140 }
+					name = "armour_year_right"
+					position = { x=-100 y=50 }
 					size = { width = 80 height = 100%% }
 					orientation = upper_right
+
+					instantTextBoxType = {
+						name = "armour_year1"
+						position = { x = 0 y = 2 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3000
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}					
 				
 					instantTextBoxType = {
 						name = "armour_year2_left"
@@ -786,71 +799,25 @@ guiTypes = {
 					}				
 				}			
 			}
-
-
-			containerWindowType = {
-				name = "armour_subtitles"
-				position = { x = 0 y = 172 }
-				size = { width = 600 height = 80% }				
-				orientation = center_up
-				origo = center_up
 			
-				instantTextBoxType = {
-					name = "armour_subtitle_heavy"
-					position = { x = 480 y = 55 }
-					textureFile = ""
-					font = "hoi_33"
-					borderSize = {x = 0 y = 4}
-					text = "ARMOUR_TITLE_HEAVY"
-					maxWidth = 200
-					maxHeight = 62
-					format = center
-					Orientation = "UPPER_LEFT"
-				}				
-
-				instantTextBoxType = {
-					name = "armour_subtitle_medium"
-					position = { x = 207 y = 335 }
-					textureFile = ""
-					font = "hoi_33"
-					borderSize = {x = 0 y = 4}
-					text = "ARMOUR_TITLE_MEDIUM"
-					maxWidth = 200
-					maxHeight = 62
-					format = center
-					Orientation = "UPPER_LEFT"
-				}
-
-				instantTextBoxType = {
-					name = "armour_subtitle_light"
-					position = { x = -84 y = 55  }
-					textureFile = ""
-					font = "hoi_33"
-					borderSize = {x = 0 y = 4}
-					text = "ARMOUR_TITLE_LIGHT"
-					maxWidth = 200
-					maxHeight = 62
-					format = center
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "armour_subtitle_amphibious"
-					position = { x = -360 y = 335 }
-					textureFile = ""
-					font = "hoi_33"
-					borderSize = {x = 0 y = 4}
-					text = "ARMOUR_TITLE_AMPH"
-					maxWidth = 200
-					maxHeight = 62
-					format = center
-					Orientation = "UPPER_LEFT"
-				}		
-			}	
-
-				
+			@vanillaArmorY = 40
 			gridboxtype = {
 				name = "gwtank_tree"
-				position = { x = 10% y = 172 }
+				position = { x = 10% y = @vanillaArmorY }
+				size = { width = 80% height = 80% }
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
+			gridboxtype = {
+				name = "early_heavy_tank_tree"
+				position = { x = 28% y = @vanillaArmorY }
+				size = { width = 80% height = 80% }
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
+			gridboxtype = {
+				name = "basic_mumak_tree"
+				position = { x = 50% y = @vanillaArmorY }
 				size = { width = 80% height = 80% }
 				slotsize = { width = 70 height = 70 }
 				format = "UP"

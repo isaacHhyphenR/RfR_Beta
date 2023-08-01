@@ -1,0 +1,193 @@
+spriteTypes = {
+							######################################
+									#ROHIRRIM INFANTRY
+							######################################
+###ROHIRRIM INFANTRY ARROH
+	SpriteType = {
+		name = "GFX_ROH_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry_armor_upgrade_2.dds"
+	}
+###ROHIRRIM INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_ROH_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_double_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/double_infantry_weapons1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_double_infantry_weapons2_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/double_infantry_weapons2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_double_infantry_weapons3_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/double_infantry_weapons3.dds"
+	}
+###ROHIRRIM CAVALRY
+	SpriteType = {
+		name = "GFX_ROH_gwtank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/early_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_gwtank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/early_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_gw_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/early_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_gw_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/early_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_basic_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/basic_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_basic_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/basic_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_basic_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/basic_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_basic_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/basic_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_improved_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/improved_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_improved_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/improved_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_improved_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/improved_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_improved_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/improved_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_advanced_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/advanced_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_advanced_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/advanced_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_advanced_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/advanced_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_advanced_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/advanced_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_basic_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/basic_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_basic_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/basic_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_basic_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/basic_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_basic_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/basic_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_improved_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/improved_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_improved_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/improved_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_improved_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/improved_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_improved_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/improved_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_advanced_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/advanced_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_advanced_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/advanced_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_advanced_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/advanced_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_advanced_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/advanced_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_main_battle_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/modern_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_ROH_main_battle_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/modern_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_modern_td_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/basic_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_ROH_modern_art_medium"
+		texturefile = "gfx/interface/technologies/00_Rohirrim/cavalry_variants/basic_heavy_skirmisher.dds"
+	}
+	
+}

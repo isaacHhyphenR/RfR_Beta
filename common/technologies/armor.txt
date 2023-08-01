@@ -1,18 +1,42 @@
 technologies = {
+	@3000 = 0
+	@3013 = 2
+	@3014 = 3
+	@3015 = 4
+	@3017 = 5
+	@3018 = 6
+	@3019 = 7
+	@3020 = 8
+	@3021 = 9
+	@3022 = 10
+	@3023 = 11
+	@3024 = 12
+	@3025 = 20
+
+	@lightCavX = -4
+	@heavyCavX = 0
+	@modernCavX = -3
+	@trollX = 0
+	@mumakX = 0
+	@armorTechX = 2
+	@engineTechX = 0
+	@amphibiousTankX = -7
+	
+	@improvedMedYear = 3019
+	@advancedLightYear = 3020
+	@advancedMedYear = 3021
+	@modernYear = 3022
 	### GERMAN TANK NAMES IN COMMENTS SO YOU CAN FIND STUFF MORE EASILY
 	gwtank = { #Leichttraktor
 
 		enable_equipments = {
-			gw_tank_equipment
-
+			light_tank_equipment_0
 		}
 		enable_subunits = {
 			light_armor
-
 		}
 		on_research_complete_limit = {
 			NOT = {	has_template_containing_unit = light_armor }
-			NOT = {	has_template_containing_unit = heavy_armor }
 			NOT = {	has_template_containing_unit = medium_armor }
 		}
 		on_research_complete = {
@@ -40,17 +64,22 @@ technologies = {
 			leads_to_tech = basic_light_tank
 			research_cost_coeff = 1
 		}
-	
+		
 		path = {
-			leads_to_tech = basic_heavy_tank
+			leads_to_tech = basic_medium_tank
 			research_cost_coeff = 1
+		}
+		
+		sub_technologies = {
+			gw_light_td
+			gw_light_art
 		}
 		
 		research_cost = 2
 		start_year = 3000
 		folder = {
 			name = armour_folder
-			position = { x = 0 y = 0 }
+			position = { x = @lightCavX y = @3000 }
 		}
 		
 		ai_will_do = {
@@ -93,7 +122,106 @@ technologies = {
 			armor
 			cat_light_armor
 		}
-	}	
+	}
+	gw_light_td = {
+
+		enable_equipments = {
+			light_tank_destroyer_equipment_0
+		}
+		enable_subunits = {
+			light_tank_destroyer_brigade
+		}
+	
+		research_cost = 0.5
+		start_year = 3000
+		
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				has_template_containing_unit = light_tank_destroyer_brigade
+				factor = 2
+			}
+			modifier = {
+				num_of_military_factories > 50
+				num_of_military_factories < 120
+				factor = 2
+			}
+
+			modifier = {
+				factor = 0
+				OR = {
+					has_tech = basic_light_td
+					can_research = basic_light_td
+					is_researching_technology = basic_light_tank
+				}
+			}
+			modifier = {
+				factor = 4
+				original_tag = ROH
+			}
+			modifier = {
+				factor = 2
+				OR = { is_rhunnic_tag = yes original_tag = KND }
+			}
+			modifier = {
+				factor = 0.1
+				has_idea = dwarven_heritage_idea
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { original_tag = ROH }
+			}
+		}
+		
+		categories = {
+			armor
+		}
+	}
+	
+	gw_light_art = {
+
+		enable_equipments = {
+			light_tank_artillery_equipment_0
+		}
+		enable_subunits = {
+			light_sp_artillery_brigade
+		}
+	
+		research_cost = 0.5
+		start_year = 3000
+		
+		ai_will_do = {
+			factor = 0.25
+			modifier = {
+				has_template_containing_unit = light_sp_artillery_brigade
+				add = 2
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_tech = basic_light_art
+					can_research = basic_light_art
+					is_researching_technology = basic_light_tank
+				}
+			}
+			modifier = {
+				factor = 4
+				original_tag = ROH
+			}
+			modifier = {
+				factor = 2
+				OR = { is_rhunnic_tag = yes original_tag = KND }
+			}
+			modifier = {
+				factor = 0.1
+				has_idea = dwarven_heritage_idea
+			}
+		}
+		
+		categories = {
+			armor
+		}
+	}
 
 	basic_light_tank = { #Panzer I
 	
@@ -102,32 +230,6 @@ technologies = {
 		}
 		enable_subunits = {
 			light_armor
-		}
-
-		on_research_complete_limit = {
-			NOT = {	has_template_containing_unit = light_armor }
-			NOT = {	has_template_containing_unit = heavy_armor }
-			NOT = {	has_template_containing_unit = medium_armor }
-		}
-		on_research_complete = {
-			hidden_effect = {
-				if = {
-					limit = {
-						has_tech = motorised_infantry
-					}
-
-					load_oob = "unlock_tanks_mot"
-				}
-				if = {
-					limit = {
-						NOT = { has_tech = motorised_infantry }
-					}
-
-					load_oob = "unlock_tanks"
-				}
-			}
-
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
 		
 		path = {
@@ -139,7 +241,7 @@ technologies = {
 		start_year = 3013
 		folder = {
 			name = armour_folder
-			position = { x = -4 y = 2 }
+			position = { x = @lightCavX y = @3013 }
 		}
 		
 		sub_technologies = {
@@ -306,17 +408,12 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		path = {
-			leads_to_tech = basic_medium_tank
-			research_cost_coeff = 1
-		}
-		
 		research_cost = 2
 		start_year = 3015
 		
 		folder = {
 			name = armour_folder
-			position = { x = -4 y = 4 }
+			position = { x = @lightCavX y = @3015 }
 		}
 		
 		sub_technologies = {
@@ -473,11 +570,11 @@ technologies = {
 		}
 		
 		research_cost = 2
-		start_year = 3019
+		start_year = 3017
 		
 		folder = {
 			name = armour_folder
-			position = { x = -8 y = 7 }
+			position = { x = @amphibiousTankX y = @3017 }
 		}
 		
 		ai_will_do = {
@@ -522,11 +619,11 @@ technologies = {
 		}
 		
 		research_cost = 2
-		start_year = 3021
+		start_year = 3020
 		
 		folder = {
 			name = armour_folder
-			position = { x = -8 y = 9 }
+			position = { x = @amphibiousTankX y = @3020 }
 		}
 		
 		ai_will_do = {
@@ -568,14 +665,18 @@ technologies = {
 
 		enable_equipments = {
 			light_tank_equipment_3 
-		}	
+		}
+		path = {
+			leads_to_tech = main_battle_tank 
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 2
-		start_year = 3020
+		start_year = @advancedLightYear
 		
 		folder = {
 			name = armour_folder
-			position = { x = -4 y = 8 }
+			position = { x = @lightCavX y = @3020 }
 		}
 		
 		sub_technologies = {
@@ -631,7 +732,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3020
+		start_year = @advancedLightYear
 		
 		ai_will_do = {
 			factor = 0
@@ -665,7 +766,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3020
+		start_year = @advancedLightYear
 	
 		ai_will_do = {
 			factor = 0.1
@@ -705,11 +806,11 @@ technologies = {
 		}
 		
 		research_cost = 2
-		start_year = 3018
+		start_year = 3015
 
 		folder = {
 			name = armour_folder
-			position = { x = 0 y = 6 }
+			position = { x = @heavyCavX y = @3015 }
 		}
 		
 		sub_technologies = {
@@ -722,17 +823,17 @@ technologies = {
 			
 			modifier = {
 				factor = 1.1
-				date > "3019.1.1"
+				date > "3016.1.1"
 			}
 			
 			modifier = {
 				factor = 1.1
-				date > "3020.1.1"
+				date > "3017.1.1"
 			}
 			
 			modifier = {
 				factor = 1.1
-				date > "3021.1.1"
+				date > "3018.1.1"
 			}
 			modifier = {
 				factor = 4
@@ -770,7 +871,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3018
+		start_year = 3015
 
 		
 		ai_will_do = {
@@ -784,20 +885,19 @@ technologies = {
 					is_researching_technology = improved_medium_tank
 				}
 			}
-			
 			modifier = {
 				factor = 1.1
-				date > "3019.1.1"
+				date > "3016.1.1"
 			}
 			
 			modifier = {
 				factor = 1.1
-				date > "3020.1.1"
+				date > "3017.1.1"
 			}
 			
 			modifier = {
 				factor = 1.1
-				date > "3021.1.1"
+				date > "3018.1.1"
 			}
 			modifier = {
 				factor = 4
@@ -837,7 +937,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3018
+		start_year = 3015
 		
 		ai_will_do = {
 			factor = 1
@@ -850,20 +950,19 @@ technologies = {
 					is_researching_technology = improved_medium_tank
 				}
 			}
-			
 			modifier = {
 				factor = 1.1
-				date > "3019.1.1"
+				date > "3016.1.1"
 			}
 			
 			modifier = {
 				factor = 1.1
-				date > "3020.1.1"
+				date > "3017.1.1"
 			}
 			
 			modifier = {
 				factor = 1.1
-				date > "3021.1.1"
+				date > "3018.1.1"
 			}
 			modifier = {
 				factor = 4
@@ -888,7 +987,6 @@ technologies = {
 		}
 	}
 	
-	
 	improved_medium_tank = { #Panzer IV
 
 		enable_equipments = {
@@ -899,17 +997,13 @@ technologies = {
 			leads_to_tech = advanced_medium_tank 
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = improved_heavy_tank 
-			research_cost_coeff = 0.9
-		}
 		
 		research_cost = 2
-		start_year = 3020
+		start_year = @improvedMedYear
 		
 		folder = {
 			name = armour_folder
-			position = { x = 0 y = 8 }
+			position = { x = @heavyCavX y = @3019 }
 		}
 		
 		sub_technologies = {
@@ -921,8 +1015,13 @@ technologies = {
 			factor = 3
 			
 			modifier = {
-				date < "3020.1.1"
+				date < "3019.1.1"
 				factor = 0.3
+			}
+			
+			modifier = {
+				factor = 1.1
+				date > "3020.1.1"
 			}
 			
 			modifier = {
@@ -933,11 +1032,6 @@ technologies = {
 			modifier = {
 				factor = 1.1
 				date > "3022.1.1"
-			}
-			
-			modifier = {
-				factor = 1.1
-				date > "3023.1.1"
 			}
 			modifier = {
 				factor = 4
@@ -970,7 +1064,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3020
+		start_year = @improvedMedYear
 
 		ai_will_do = {
 			factor = 0
@@ -988,6 +1082,10 @@ technologies = {
 					is_researching_technology = advanced_medium_tank
 				}
 			}
+			modifier = {
+				factor = 1.1
+				date > "3020.1.1"
+			}
 			
 			modifier = {
 				factor = 1.1
@@ -997,11 +1095,6 @@ technologies = {
 			modifier = {
 				factor = 1.1
 				date > "3022.1.1"
-			}
-			
-			modifier = {
-				factor = 1.1
-				date > "3023.1.1"
 			}
 			modifier = {
 				factor = 4
@@ -1037,7 +1130,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3020
+		start_year = @improvedMedYear
 		
 		ai_will_do = {
 			factor = 1
@@ -1056,17 +1149,17 @@ technologies = {
 			}
 			modifier = {
 				factor = 1.1
+				date > "3020.1.1"
+			}
+			
+			modifier = {
+				factor = 1.1
 				date > "3021.1.1"
 			}
 			
 			modifier = {
 				factor = 1.1
 				date > "3022.1.1"
-			}
-			
-			modifier = {
-				factor = 1.1
-				date > "3023.1.1"
 			}
 			modifier = {
 				factor = 4
@@ -1091,7 +1184,7 @@ technologies = {
 		}
 	}
 	
-
+	
 	advanced_medium_tank = { #Panther
 
 		enable_equipments = {
@@ -1102,17 +1195,13 @@ technologies = {
 			leads_to_tech = main_battle_tank 
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = advanced_heavy_tank 
-			research_cost_coeff = 0.9
-		}
 		
 		research_cost = 2
-		start_year = 3022
+		start_year = @advancedMedYear
 		
 		folder = {
 			name = armour_folder
-			position = { x = 0 y = 10 }
+			position = { x = @heavyCavX y = @3021 }
 		}
 		
 		sub_technologies = {
@@ -1126,17 +1215,17 @@ technologies = {
 			
 			modifier = {
 				factor = 1.2
+				date > "3022.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
 				date > "3023.1.1"
 			}
 			
 			modifier = {
 				factor = 1.2
 				date > "3024.1.1"
-			}
-			
-			modifier = {
-				factor = 1.2
-				date > "3025.1.1"
 			}
 			modifier = {
 				factor = 4
@@ -1169,7 +1258,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3022
+		start_year = @advancedMedYear
 		
 		ai_will_do = {
 			factor = 1
@@ -1186,20 +1275,19 @@ technologies = {
 				has_template_containing_unit = medium_tank_destroyer_brigade
 				factor = 3
 			}
+			modifier = {
+				factor = 1.2
+				date > "3022.1.1"
+			}
 			
 			modifier = {
-				factor = 1.1
+				factor = 1.2
 				date > "3023.1.1"
 			}
 			
 			modifier = {
-				factor = 1.1
+				factor = 1.2
 				date > "3024.1.1"
-			}
-			
-			modifier = {
-				factor = 1.1
-				date > "3025.1.1"
 			}
 			modifier = {
 				factor = 4
@@ -1235,7 +1323,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3022
+		start_year = @advancedMedYear
 		
 		ai_will_do = {
 			factor = 1
@@ -1252,20 +1340,17 @@ technologies = {
 				has_template_containing_unit = medium_sp_artillery_brigade
 				factor = 3
 			}
-			
 			modifier = {
-				factor = 1.1
+				factor = 1.2
+				date > "3022.1.1"
+			}
+			modifier = {
+				factor = 1.2
 				date > "3023.1.1"
 			}
-			
 			modifier = {
-				factor = 1.1
+				factor = 1.2
 				date > "3024.1.1"
-			}
-			
-			modifier = {
-				factor = 1.1
-				date > "3025.1.1"
 			}
 			modifier = {
 				factor = 4
@@ -1292,10 +1377,6 @@ technologies = {
 	
 
 	main_battle_tank = { #E-50
-		allow = {
-			has_idea = entish_heritage
-		}
-
 		enable_equipments = {
 			modern_tank_equipment_1
 		}	
@@ -1304,11 +1385,11 @@ technologies = {
 		}
 		
 		research_cost = 2.5
-		start_year = 3024
+		start_year = @modernYear
 		
 		folder = {
 			name = armour_folder
-			position = { x = 2 y = 12 }
+			position = { x = @modernCavX y = @3022 }
 		}
 		
 		sub_technologies = {
@@ -1321,17 +1402,15 @@ technologies = {
 			
 			modifier = {
 				factor = 2
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "3024.1.1"
+			}
+			modifier = {
+				factor = 2
 				date > "3025.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3026.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3027.1.1"
 			}
 		}
 		
@@ -1355,24 +1434,22 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3024
+		start_year = @modernYear
 		
 		ai_will_do = {
 			factor = 1
 			
 			modifier = {
 				factor = 2
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "3024.1.1"
+			}
+			modifier = {
+				factor = 2
 				date > "3025.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3026.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3027.1.1"
 			}
 			modifier = {
 				factor = 2
@@ -1399,24 +1476,22 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3024
+		start_year = @modernYear
 		
 		ai_will_do = {
 			factor = 1
 			
 			modifier = {
 				factor = 2
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "3024.1.1"
+			}
+			modifier = {
+				factor = 2
 				date > "3025.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3026.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "3027.1.1"
 			}
 		}
 		
@@ -1425,6 +1500,162 @@ technologies = {
 		}
 	}
 	
+	early_heavy_tank = { #Grosstraktor
+		allow = {
+			has_idea_with_trait = hidden_troll_tamer_trait
+		}
+
+		enable_equipments = {
+			heavy_tank_equipment_0 
+		}
+
+		enable_subunits = {
+			heavy_armor
+		}
+
+		on_research_complete_limit = {
+			NOT = {	has_template_containing_unit = heavy_armor }
+		}
+		on_research_complete = {
+			hidden_effect = {
+				if = {
+					limit = {
+						has_tech = motorised_infantry
+					}
+
+					load_oob = "unlock_trolls_mot"
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = motorised_infantry }
+					}
+
+					load_oob = "unlock_trolls"
+				}
+			}
+
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		
+		path = {
+			leads_to_tech = basic_heavy_tank
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 3000
+		
+		folder = {
+			name = armour_folder
+			position = { x = @trollX y = @3000 }
+		}
+		
+		sub_technologies = {
+			early_heavy_td
+			early_heavy_art
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 1.2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					can_research = basic_heavy_tank
+					has_tech = basic_heavy_tank
+				}
+			}
+		}
+		
+		categories = {
+			armor
+			cat_heavy_armor
+		}
+	}
+	
+	early_heavy_td = {
+		allow = {
+			has_idea_with_trait = hidden_troll_tamer_trait
+		}
+
+		enable_equipments = {
+			heavy_tank_destroyer_equipment_1
+		}
+
+		enable_subunits = {
+			heavy_tank_destroyer_brigade
+		}
+	
+		research_cost = 0.5
+		start_year = 3000
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					has_tech = basic_heavy_td
+					can_research = basic_heavy_td
+					is_researching_technology = basic_heavy_tank
+				}
+			}
+			modifier = {
+				factor = 2
+				any_enemy_country = { original_tag = ROH }
+			}
+		}
+		
+		categories = {
+			armor
+		}
+	}
+	
+	early_heavy_art = {
+		allow = {
+			has_idea_with_trait = hidden_troll_tamer_trait
+		}
+
+		enable_equipments = {
+			heavy_tank_artillery_equipment_1
+		}
+
+		enable_subunits = {
+			heavy_sp_artillery_brigade
+		}
+	
+		research_cost = 0.5
+		start_year = 3000
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					has_tech = basic_heavy_art
+					can_research = basic_heavy_art
+					is_researching_technology = basic_heavy_tank
+				}
+			}
+		}
+		
+		categories = {
+			armor
+		}
+	}
 	
 	basic_heavy_tank = { #Grosstraktor
 		allow = {
@@ -1438,32 +1669,6 @@ technologies = {
 		enable_subunits = {
 			heavy_armor
 		}
-
-		on_research_complete_limit = {
-			NOT = {	has_template_containing_unit = light_armor }
-			NOT = {	has_template_containing_unit = heavy_armor }
-			NOT = {	has_template_containing_unit = medium_armor }
-		}
-		on_research_complete = {
-			hidden_effect = {
-				if = {
-					limit = {
-						has_tech = motorised_infantry
-					}
-
-					load_oob = "unlock_tanks_mot"
-				}
-				if = {
-					limit = {
-						NOT = { has_tech = motorised_infantry }
-					}
-
-					load_oob = "unlock_tanks"
-				}
-			}
-
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
-		}
 		
 		path = {
 			leads_to_tech = improved_heavy_tank
@@ -1471,11 +1676,11 @@ technologies = {
 		}
 		
 		research_cost = 2
-		start_year = 3013
+		start_year = 3015
 		
 		folder = {
 			name = armour_folder
-			position = { x = 4 y = 2 }
+			position = { x = @trollX y = @3015 }
 		}
 		
 		sub_technologies = {
@@ -1529,7 +1734,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3013
+		start_year = 3015
 
 		ai_will_do = {
 			factor = 1
@@ -1567,7 +1772,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3013
+		start_year = 3015
 		
 		ai_will_do = {
 			factor = 1
@@ -1600,22 +1805,13 @@ technologies = {
 			leads_to_tech = advanced_heavy_tank 
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = improved_medium_tank 
-			research_cost_coeff = 0.9
-		}
-		
-		path = {
-			leads_to_tech = super_heavy_tank 
-			research_cost_coeff = 1
-		}
 		
 		research_cost = 2.5
-		start_year = 3020
+		start_year = 3019
 		
 		folder = {
 			name = armour_folder
-			position = { x = 4 y = 8 }
+			position = { x = @trollX y = @3019 }
 		}
 		
 		sub_technologies = {
@@ -1627,17 +1823,17 @@ technologies = {
 			factor = 2
 			modifier = {
 				factor = 1.2
+				date > "3020.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
 				date > "3021.1.1"
 			}
 			
 			modifier = {
 				factor = 1.2
 				date > "3022.1.1"
-			}
-			
-			modifier = {
-				factor = 1.2
-				date > "3023.1.1"
 			}
 			modifier = {
 				factor = 0
@@ -1664,7 +1860,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3020
+		start_year = 3019
 		
 		ai_will_do = {
 			factor = 1
@@ -1698,7 +1894,7 @@ technologies = {
 		}
 	
 		research_cost = 0.5
-		start_year = 3020
+		start_year = 3019
 		
 		ai_will_do = {
 			factor = 1
@@ -1718,7 +1914,7 @@ technologies = {
 		}
 	}
 	
-	advanced_heavy_tank = { #King Tiger
+	advanced_heavy_tank = { #Olog hai
 		allow = {
 			has_idea_with_trait = hidden_troll_tamer_trait
 		}
@@ -1727,21 +1923,12 @@ technologies = {
 			heavy_tank_equipment_3 
 		}
 		
-		path = {
-			leads_to_tech = main_battle_tank 
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = advanced_medium_tank 
-			research_cost_coeff = 0.9
-		}
-		
 		research_cost = 2.5
 		start_year = 3022
 		
 		folder = {
 			name = armour_folder
-			position = { x = 4 y = 10 }
+			position = { x = @trollX y = @3022 }
 		}
 		
 		sub_technologies = {
@@ -1838,33 +2025,74 @@ technologies = {
 		}
 	}
 	
-	super_heavy_tank = { #Maus
+	basic_mumak = { #feral
 		allow = {
 			has_idea_with_trait = hidden_mumakil_tamer_trait
 		}
 
 		enable_equipments = {
-			super_heavy_tank_equipment_1
+			super_heavy_tank_equipment_0
 		}
-
 		enable_subunits = {
 			super_heavy_armor
 		}
+		
+		on_research_complete_limit = {
+			NOT = {	has_template_containing_unit = super_heavy_armor }
+		}
+		on_research_complete = {
+			hidden_effect = {
+				if = {
+					limit = {
+						has_tech = motorised_infantry
+					}
+
+					load_oob = "unlock_mumakil_mot"
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = motorised_infantry }
+					}
+
+					load_oob = "unlock_mumakil"
+				}
+			}
+
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		
+		path = {
+			leads_to_tech = improved_mumak 
+			research_cost_coeff = 1
+		}
 	
 		research_cost = 2.5
-		start_year = 3022
+		start_year = 3000
 		folder = {
 			name = armour_folder
-			position = { x = 8 y = 10 }
+			position = { x = @mumakX y = @3000 }
 		}
 		
 		sub_technologies = {
-			super_heavy_td
-			super_heavy_art
+			basic_mumak_art
 		}
 		
 		ai_will_do = {
-			factor = 1 # Hitler cries on the inside
+			factor = 4
+			modifier = {
+				factor = 1.2
+				date > "3016.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3017.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
 		}
 		
 		categories = {
@@ -1873,28 +2101,24 @@ technologies = {
 		}
 	}
 	
-	super_heavy_td = {
+	basic_mumak_art = {
 		allow = {
 			has_idea_with_trait = hidden_mumakil_tamer_trait
 		}
 
 		enable_equipments = {
-			super_heavy_tank_destroyer_equipment_1
+			super_heavy_tank_artillery_equipment_0
 		}
 
 		enable_subunits = {
-			super_heavy_tank_destroyer_brigade
+			super_heavy_sp_artillery_brigade
 		}
 	
 		research_cost = 0.5
-		start_year = 3022
+		start_year = 3000
 		
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 2
-				any_enemy_country = { original_tag = ROH }
-			}
 		}
 		
 		categories = {
@@ -1902,7 +2126,55 @@ technologies = {
 		}
 	}
 	
-	super_heavy_art = {
+	improved_mumak = { #tamed
+		allow = {
+			has_idea_with_trait = hidden_mumakil_tamer_trait
+		}
+
+		enable_equipments = {
+			super_heavy_tank_equipment_1
+		}
+		path = {
+			leads_to_tech = advanced_mumak 
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 2.5
+		start_year = 3018
+		folder = {
+			name = armour_folder
+			position = { x = @mumakX y = @3018 }
+		}
+		
+		sub_technologies = {
+			improved_mumak_art
+		}
+		
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				factor = 1.2
+				date > "3019.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3020.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3021.1.1"
+			}
+		}
+		
+		categories = {
+			armor
+			cat_heavy_armor
+		}
+	}
+	
+	improved_mumak_art = {
 		allow = {
 			has_idea_with_trait = hidden_mumakil_tamer_trait
 		}
@@ -1916,10 +2188,79 @@ technologies = {
 		}
 	
 		research_cost = 0.5
+		start_year = 3018
+		
+		ai_will_do = {
+			factor = 4
+		}
+		
+		categories = {
+			armor
+		}
+	}
+	
+	advanced_mumak = { #trained
+		allow = {
+			has_idea_with_trait = hidden_mumakil_tamer_trait
+		}
+
+		enable_equipments = {
+			super_heavy_tank_equipment_1
+		}
+	
+		research_cost = 2.5
+		start_year = 3022
+		folder = {
+			name = armour_folder
+			position = { x = @mumakX y = @3022 }
+		}
+		
+		sub_technologies = {
+			advanced_mumak_art
+		}
+		
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				factor = 1.2
+				date > "3012.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3025.1.1"
+			}
+		}
+		
+		categories = {
+			armor
+			cat_heavy_armor
+		}
+	}
+	
+	advanced_mumak_art = {
+		allow = {
+			has_idea_with_trait = hidden_mumakil_tamer_trait
+		}
+
+		enable_equipments = {
+			super_heavy_tank_artillery_equipment_2
+		}
+
+		enable_subunits = {
+			super_heavy_sp_artillery_brigade
+		}
+	
+		research_cost = 0.5
 		start_year = 3022
 		
 		ai_will_do = {
-			factor = 1
+			factor = 4
 		}
 		
 		categories = {

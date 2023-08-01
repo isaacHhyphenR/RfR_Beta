@@ -3511,7 +3511,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_LOGISTICS }
 		completion_reward = { #+100 GW tanks, +30 towed, +20 trains
 			add_equipment_to_stockpile = {
-				type = gw_tank_equipment
+				type = light_tank_equipment_0
 				amount = 100
 				producer = ROOT
 			}

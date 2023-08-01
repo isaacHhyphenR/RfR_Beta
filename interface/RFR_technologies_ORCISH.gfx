@@ -138,11 +138,11 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_early_light_cavalry.dds"
 	}
 	spriteType = {
-		name = "GFX_MOR_gw_td_medium"
+		name = "GFX_MOR_gw_light_td_medium"
 		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_early_light_lancer.dds"
 	}
 	spriteType = {
-		name = "GFX_MOR_gw_art_medium"
+		name = "GFX_MOR_gw_light_art_medium"
 		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_early_light_skirmisher.dds"
 	}
 	SpriteType = {

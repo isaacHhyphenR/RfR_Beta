@@ -1,0 +1,1555 @@
+@politicalStruggleDays = 70
+@politicalStruggleHalfDays = 35
+@swayableHouseDays = 21
+
+@exploitationStabCost = -0.025
+@exploitationDays = 7
+@baseFyrdDays = 14
+@discountFyrdDays = 7
+@fyrdTrainingDays = 30
+
+@foreignMeetingCost = 50
+@foreignMeetingDays = 7
+
+@smugglingDays = 14
+
+ROH_political_struggle_category = {
+	side_with_grima_decision = { ##MAIN 1
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		
+		days_remove = @politicalStruggleHalfDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_side_with_grima
+			hidden_effect = {
+				activate_decision = safeguard_the_royal_treasury_decision
+			}
+		}
+	}
+	whisper_lies_against_eomer_decision = { ##MAIN 2
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleHalfDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_whisper_lies_against_eomer
+			hidden_effect = {
+				activate_decision = paint_false_portraits_of_middle_earth_decision
+			}
+		}
+	}
+	soothe_anxious_courtiers_decision = { ##MAIN 3
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleHalfDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_soothe_anxious_courtiers
+			hidden_effect = {
+				activate_decision = train_peasant_guards_decision
+			}
+		}
+	}
+	draw_up_legal_framework_decision = { ##MAIN 4
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleHalfDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_draw_up_legal_framework
+			hidden_effect = {
+				activate_decision = exploit_the_folde_decision
+			}
+		}
+	}
+	be_rid_of_this_pest_decision = { ##MAIN 5
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleHalfDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_be_rid_of_this_pest
+		}
+	}
+	safeguard_the_royal_treasury_decision = { ##1
+		icon = GFX_decision_Wormtongue_flag
+		fixed_random_seed = no
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_safeguard_the_royal_treasury
+			hidden_effect = {
+				random_list = {
+					3 = {
+						activate_decision = safeguard_herugrim_decision
+					}
+					2 = {
+						activate_decision = safeguard_the_royal_standard_decision
+					}
+				}
+			}
+		}
+	}
+	safeguard_herugrim_decision = { ##2A
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_safeguard_herugrim
+			hidden_effect = {
+				activate_decision = whisper_lies_against_eomer_decision
+			}
+		}
+	}
+	safeguard_the_royal_standard_decision = { ##2B
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_safeguard_the_royal_standard
+			hidden_effect = {
+				activate_decision = whisper_lies_against_eomer_decision
+			}
+		}
+	}
+	paint_false_portraits_of_middle_earth_decision = { ##3
+		icon = GFX_decision_Wormtongue_flag
+		fixed_random_seed = no
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_paint_false_portraits_of_middle_earth
+			hidden_effect = {
+				random_list = {
+					3 = {
+						activate_decision = indoctrinate_royal_courtiers_decision
+					}
+					2 = {
+						activate_decision = distract_the_court_decision
+					}
+				}
+			}
+		}
+	}
+	indoctrinate_royal_courtiers_decision = { ##4A
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_indoctrinate_royal_courtiers
+			hidden_effect = {
+				activate_decision = soothe_anxious_courtiers_decision
+			}
+		}
+	}
+	distract_the_court_decision = { ##4B
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_distract_the_court
+			hidden_effect = {
+				activate_decision = soothe_anxious_courtiers_decision
+			}
+		}
+	}
+	train_peasant_guards_decision = { ##5
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_train_peasant_guards
+			hidden_effect = {
+				activate_decision = promote_house_grimmoding_decision
+			}
+		}
+	}
+	promote_house_grimmoding_decision = { ##6
+		icon = GFX_decision_Wormtongue_flag
+		fixed_random_seed = no
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_promote_house_grimmoding
+			hidden_effect = {
+				random_list = {
+					3 = {
+						activate_decision = heed_freawines_counsel_decision
+					}
+					2 = {
+						activate_decision = heed_aegelas_counsel_decision
+					}
+				}
+			}
+		}
+	}
+	heed_freawines_counsel_decision = { ##7A
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_heed_freawines_counsel
+			hidden_effect = {
+				activate_decision = draw_up_legal_framework_decision
+			}
+		}
+	}
+	heed_aegelas_counsel_decision = { ##7B
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_heed_aegelas_counsel
+			hidden_effect = {
+				activate_decision = draw_up_legal_framework_decision
+			}
+		}
+	}
+	exploit_the_folde_decision = { ##8
+		icon = GFX_decision_Wormtongue_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_exploit_the_folde
+			hidden_effect = {
+				activate_decision = be_rid_of_this_pest_decision
+			}
+		}
+	}
+	################EOMER
+	side_with_eomer_decision = { ##MAIN 1
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleHalfDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_side_with_eomer
+			hidden_effect = {
+				activate_decision = steal_royal_artifacts_decision
+			}
+		}
+	}
+	speak_against_grima_decision = { ##MAIN 2
+		icon = GFX_decision_Eomer_flag
+		fixed_random_seed = no
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleHalfDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_speak_against_grima
+			hidden_effect = {
+				random_list = {
+					4 = {
+						activate_decision = seek_sympathetic_ears_decision
+					}
+					2 = {
+						activate_decision = appeal_abroad_decision
+					}
+				}
+			}
+		}
+	}
+	seek_sympathetic_ears_decision = { ##MAIN 3
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleHalfDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_seek_sympathetic_ears
+			hidden_effect = {
+				if = {
+					limit = { has_completed_focus = ROH_appeal_abroad }
+					activate_decision = seek_allies_among_the_nobility_decision
+				}
+				else = {
+					activate_decision = speak_to_the_people_decision
+				}
+			}
+		}
+	}
+	set_aside_provisions_decision = { ##MAIN 4
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleHalfDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_set_aside_provisions
+			hidden_effect = {
+				activate_decision = train_all_willing_hands_to_war_decision
+			}
+		}
+	}
+	bear_this_injustice_no_longer_decision = { ##MAIN 5
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleHalfDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_bear_this_injustice_no_longer
+		}
+	}
+	steal_royal_artifacts_decision = { ##1
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_steal_royal_artifacts
+			hidden_effect = {
+				activate_decision = speak_against_grima_decision
+			}
+		}
+	}
+	appeal_abroad_decision = { ##2A
+		icon = GFX_decision_Eomer_flag
+		fixed_random_seed = no
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_appeal_abroad
+			hidden_effect = {
+				random_list = {
+					3 = {
+						activate_decision = invite_second_siblings_decision
+					}
+					1 = {
+						activate_decision = connect_with_smugglers_decision
+					}
+				}
+			}
+		}
+	}
+	invite_second_siblings_decision = { ##3A.A
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_invite_second_siblings
+			hidden_effect = {
+				activate_decision = seek_sympathetic_ears_decision
+			}
+		}
+	}
+	connect_with_smugglers_decision = { ##3A.B
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_connect_with_smugglers
+			hidden_effect = {
+				activate_decision = seek_sympathetic_ears_decision
+			}
+		}
+	}
+	speak_to_the_people_decision = { ##2B
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_speak_to_the_people
+			hidden_effect = {
+				activate_decision = speak_of_morality_decision
+			}
+		}
+	}
+	speak_of_morality_decision = { ##3B
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_speak_of_morality
+			hidden_effect = {
+				activate_decision = seek_allies_among_the_nobility_decision
+			}
+		}
+	}
+	seek_allies_among_the_nobility_decision = { ##4
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = 7
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_seek_allies_among_the_nobility
+			hidden_effect = {
+				rohan_choose_random_sway_decision = yes
+			}
+		}
+	}
+	sway_house_bregdanings_decision = { ##4.5A
+		icon = GFX_decision_Eomer_flag
+		visible = { always = no }
+		days_remove = @swayableHouseDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_sway_house_bregdanings_1
+			hidden_effect = {
+				if = {
+					limit = { check_variable = { ROH.eomers_houses < 3 } }
+					rohan_choose_random_sway_decision = yes
+				}
+				else = {
+					activate_decision = set_aside_provisions_decision
+				}
+			}
+		}
+	}
+	sway_house_felandings_decision = { ##4.5B
+		icon = GFX_decision_Eomer_flag
+		visible = { always = no }
+		days_remove = @swayableHouseDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_sway_house_felandings_1
+			hidden_effect = {
+				if = {
+					limit = { check_variable = { ROH.eomers_houses < 3 } }
+					rohan_choose_random_sway_decision = yes
+				}
+				else = {
+					activate_decision = set_aside_provisions_decision
+				}
+			}
+		}
+	}
+	sway_house_eogarings_decision = { ##4.5C
+		icon = GFX_decision_Eomer_flag
+		visible = { always = no }
+		days_remove = @swayableHouseDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_sway_house_eogarings_1
+			hidden_effect = {
+				if = {
+					limit = { check_variable = { ROH.eomers_houses < 3 } }
+					rohan_choose_random_sway_decision = yes
+				}
+				else = {
+					activate_decision = set_aside_provisions_decision
+				}
+			}
+		}
+	}
+	sway_house_ordgarings_decision = { ##4.5D
+		icon = GFX_decision_Eomer_flag
+		visible = { always = no }
+		days_remove = @swayableHouseDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_sway_house_ordgarings_1
+			hidden_effect = {
+				if = {
+					limit = { check_variable = { ROH.eomers_houses < 3 } }
+					rohan_choose_random_sway_decision = yes
+				}
+				else = {
+					activate_decision = set_aside_provisions_decision
+				}
+			}
+		}
+	}
+	sway_house_rungarings_decision = { ##4.5E
+		icon = GFX_decision_Eomer_flag
+		visible = { always = no }
+		days_remove = @swayableHouseDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_sway_house_rungaring_1
+			hidden_effect = {
+				if = {
+					limit = { check_variable = { ROH.eomers_houses < 3 } }
+					rohan_choose_random_sway_decision = yes
+				}
+				else = {
+					activate_decision = set_aside_provisions_decision
+				}
+			}
+		}
+	}
+	sway_house_stangard_decision = { ##4.5F
+		icon = GFX_decision_Eomer_flag
+		visible = { always = no }
+		days_remove = @swayableHouseDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_sway_house_stangard_1
+			hidden_effect = {
+				if = {
+					limit = { check_variable = { ROH.eomers_houses < 3 } }
+					rohan_choose_random_sway_decision = yes
+				}
+				else = {
+					activate_decision = set_aside_provisions_decision
+				}
+			}
+		}
+	}
+	sway_house_wadelingas_decision = { ##4.5G
+		icon = GFX_decision_Eomer_flag
+		visible = { always = no }
+		days_remove = @swayableHouseDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_sway_house_wadelingas_1
+			hidden_effect = {
+				if = {
+					limit = { check_variable = { ROH.eomers_houses < 3 } }
+					rohan_choose_random_sway_decision = yes
+				}
+				else = {
+					activate_decision = set_aside_provisions_decision
+				}
+			}
+		}
+	}
+	sway_house_wulfings_decision = { ##4.5H
+		icon = GFX_decision_Eomer_flag
+		visible = { always = no }
+		days_remove = @swayableHouseDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_sway_house_wulfings_1
+			hidden_effect = {
+				if = {
+					limit = { check_variable = { ROH.eomers_houses < 3 } }
+					rohan_choose_random_sway_decision = yes
+				}
+				else = {
+					activate_decision = set_aside_provisions_decision
+				}
+			}
+		}
+	}
+	train_all_willing_hands_to_war_decision = { ##5
+		icon = GFX_decision_Eomer_flag
+		fixed_random_seed = no
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_train_all_willing_hands_to_war
+			hidden_effect = {
+				random_list = {
+					3 = {
+						activate_decision = stockpile_weapons_decision
+					}
+					2 = {
+						activate_decision = stockpile_money_decision
+					}
+				}
+			}
+		}
+	}
+	stockpile_weapons_decision = { ##6A
+		icon = GFX_decision_Eomer_flag
+		fixed_random_seed = no
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_stockpile_weapons
+			hidden_effect = {
+				random_list = {
+					2 = {
+						activate_decision = fill_the_warehouses_decision
+					}
+					2 = {
+						activate_decision = secret_horse_purchases_decision
+					}
+				}
+			}
+		}
+	}
+	fill_the_warehouses_decision = { ##7A.A
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_fill_the_warehouses
+			hidden_effect = {
+				random_list = {
+					2 = {
+						activate_decision = establish_covert_communication_networks_decision
+					}
+					2 = {
+						activate_decision = speak_to_civic_leaders_decision
+					}
+				}
+			}
+		}
+	}
+	secret_horse_purchases_decision = { ##7A.B
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_secret_horse_purchases
+			hidden_effect = {
+				random_list = {
+					2 = {
+						activate_decision = establish_covert_communication_networks_decision
+					}
+					2 = {
+						activate_decision = speak_to_civic_leaders_decision
+					}
+				}
+			}
+		}
+	}
+	stockpile_money_decision = { ##6B
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_stockpile_money
+			hidden_effect = {
+				activate_decision = train_workers_in_many_tasks_decision
+			}
+		}
+	}
+	train_workers_in_many_tasks_decision = { ##7B
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_train_workers_in_many_tasks
+			hidden_effect = {
+				random_list = {
+					2 = {
+						activate_decision = establish_covert_communication_networks_decision
+					}
+					2 = {
+						activate_decision = speak_to_civic_leaders_decision
+					}
+				}
+			}
+		}
+	}
+	establish_covert_communication_networks_decision = { ##8A
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_establish_covert_communication_networks
+			hidden_effect = {
+				activate_decision = bear_this_injustice_no_longer_decision
+			}
+		}
+	}
+	speak_to_civic_leaders_decision = { ##8B
+		icon = GFX_decision_Eomer_flag
+		visible = {
+			always = no
+		}
+		days_remove = @politicalStruggleDays
+		cancel_trigger = { ##Cancels if the struggle is resolved
+			NOT = { has_idea = ROH_a_hall_divided }
+		}
+		remove_effect = {
+			complete_national_focus = ROH_speak_to_civic_leaders
+			hidden_effect = {
+				activate_decision = bear_this_injustice_no_longer_decision
+			}
+		}
+	}
+}
+
+propaganda_efforts = {
+	theoden_speech_1 = {
+		allowed = {
+			tag = ROH
+		}
+		visible = { has_completed_focus = ROH_reverse_grimas_damage has_country_leader = { character = ROH_theoden ruling_only = yes } }
+		cost = 25
+		fire_only_once = yes
+		icon = GFX_decision_eng_propaganda_campaigns
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			upgrade_inspirational_trait = yes
+		}
+	}
+	theoden_speech_2 = {
+		allowed = {
+			tag = ROH
+		}
+		visible = { has_completed_focus = ROH_push_to_isengard has_country_leader = { character = ROH_theoden ruling_only = yes } }
+		cost = 25
+		fire_only_once = yes
+		icon = GFX_decision_eng_propaganda_campaigns
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			upgrade_inspirational_trait = yes
+		}
+	}
+	theoden_speech_3 = {
+		allowed = {
+			tag = ROH
+		}
+		visible = { has_completed_focus = ROH_hail_the_victorious_dead has_country_leader = { character = ROH_theoden ruling_only = yes } }
+		cost = 25
+		fire_only_once = yes
+		icon = GFX_decision_eng_propaganda_campaigns
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			upgrade_inspirational_trait = yes
+		}
+	}
+	theoden_speech_4 = {
+		allowed = {
+			tag = ROH
+		}
+		visible = { has_completed_focus = ROH_ride_for_ruin_focus has_country_leader = { character = ROH_theoden ruling_only = yes } }
+		cost = 25
+		fire_only_once = yes
+		icon = GFX_decision_eng_propaganda_campaigns
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			upgrade_inspirational_trait = yes
+		}
+	}
+}
+
+ROH_emergency_tythes_category = {
+	ROH_emergency_tythes = {
+		visible = { has_idea = ROH_emergency_tythes }
+		days_remove = 1
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 20
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = light_tank_equipment_0
+				amount = 10
+				producer = ROOT
+			}
+			if = { limit = { has_idea = ROH_emergency_tythes } #repeats until war ends
+				activate_decision = ROH_emergency_tythes
+			}
+		}
+	}
+	ROH_requisitioning_supplies = {
+		visible = { always = no }
+		days_remove = 365
+		cancel_trigger = { ##Cancels if the war ends
+			has_civil_war = no
+		}
+		modifier = {
+			production_speed_supply_node_factor = 5
+		}
+	}
+}
+
+ROH_reach_agreements_category = {
+	bribe_elfhelm = {
+		visible = { has_idea = ROH_a_hall_divided ROH_elfhelm = { has_character_flag = ROH_loyal_to_country } }
+		available = {
+			num_of_available_civilian_factories > 0
+		}
+		days_remove = @exploitationDays
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			ROH_elfhelm = {
+				remove_trait = {
+					slot = high_command
+					trait = ROH_loyal_to_country_elfhelm
+				}
+				
+				clr_character_flag = ROH_loyal_to_country
+			}
+		}
+	}
+	bribe_gamling = {
+		visible = { has_idea = ROH_a_hall_divided ROH_gamling = { has_character_flag = ROH_loyal_to_country } }
+		available = {
+			num_of_available_civilian_factories > 0
+		}
+		days_remove = @exploitationDays
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			ROH_gamling = {
+				remove_trait = {
+					slot = high_command
+					trait = ROH_loyal_to_country_gamling
+				}
+				
+				clr_character_flag = ROH_loyal_to_country
+			}
+		}
+	}
+	bribe_grimbold = {
+		visible = { has_idea = ROH_a_hall_divided ROH_grimbold = { has_character_flag = ROH_loyal_to_country } }
+		available = {
+			num_of_available_civilian_factories > 0
+		}
+		days_remove = @exploitationDays
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			ROH_grimbold = {
+				remove_trait = {
+					slot = high_command
+					trait = ROH_loyal_to_country_grimbold
+				}
+				
+				clr_character_flag = ROH_loyal_to_country
+			}
+		}
+	}
+	bribe_erkenbrand = {
+		visible = { has_idea = ROH_a_hall_divided ROH_erkenbrand = { has_character_flag = ROH_loyal_to_country } }
+		available = {
+			num_of_available_civilian_factories > 0
+		}
+		days_remove = @exploitationDays
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			ROH_erkenbrand = {
+				remove_trait = {
+					slot = theorist
+					trait = ROH_loyal_to_country_theorist
+				}
+				clr_character_flag = ROH_loyal_to_country
+			}
+		}
+	}
+	bribe_hama = {
+		visible = { has_idea = ROH_a_hall_divided ROH_hama = { has_character_flag = ROH_loyal_to_country } }
+		available = {
+			num_of_available_civilian_factories > 0
+		}
+		days_remove = @exploitationDays
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			ROH_hama = {
+				remove_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				clr_character_flag = ROH_loyal_to_country
+			}
+		}
+	}	
+	bribe_wulfwynn_eogaring = {
+		visible = { has_idea = ROH_a_hall_divided ROH_wulfwynn_eogaring = { has_character_flag = ROH_loyal_to_country } }
+		available = {
+			num_of_available_civilian_factories > 0
+		}
+		days_remove = @exploitationDays
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			ROH_wulfwynn_eogaring = {
+				remove_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				clr_character_flag = ROH_loyal_to_country
+			}
+		}
+	}
+	bribe_wigluf_wadelingas = {
+		visible = { has_idea = ROH_a_hall_divided ROH_wigluf_wadelingas = { has_character_flag = ROH_loyal_to_country } }
+		available = {
+			num_of_available_civilian_factories > 0
+		}
+		days_remove = @exploitationDays
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			ROH_wigluf_wadelingas = {
+				remove_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				clr_character_flag = ROH_loyal_to_country
+			}
+		}
+	}
+	bribe_beowyrt_rungaring = {
+		visible = { has_idea = ROH_a_hall_divided ROH_beowyrt_rungaring = { has_character_flag = ROH_loyal_to_country } }
+		available = {
+			num_of_available_civilian_factories > 0
+		}
+		days_remove = @exploitationDays
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			ROH_wigluf_wadelingas = {
+				remove_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				clr_character_flag = ROH_loyal_to_country
+			}
+		}
+	}
+	bribe_isenmund_wulfing = {
+		visible = { has_idea = ROH_a_hall_divided ROH_isenmund_wulfing = { has_character_flag = ROH_loyal_to_country } }
+		available = {
+			num_of_available_civilian_factories > 0
+		}
+		days_remove = @exploitationDays
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			ROH_isenmund_wulfing = {
+				remove_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				clr_character_flag = ROH_loyal_to_country
+			}
+		}
+	}
+	bribe_frea_ordgaring = {
+		visible = { has_idea = ROH_a_hall_divided ROH_frea_ordgaring = { has_character_flag = ROH_loyal_to_country } }
+		available = {
+			num_of_available_civilian_factories > 0
+		}
+		days_remove = @exploitationDays
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			ROH_frea_ordgaring = {
+				remove_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				clr_character_flag = ROH_loyal_to_country
+			}
+		}
+	}
+	bribe_eadmaer_stangard = {
+		visible = { has_idea = ROH_a_hall_divided ROH_eadmaer_stangard = { has_character_flag = ROH_loyal_to_country } }
+		available = {
+			num_of_available_civilian_factories > 0
+		}
+		days_remove = @exploitationDays
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			ROH_eadmaer_stangard = {
+				remove_trait = {
+					slot = political_advisor
+					trait = ROH_loyal_to_country_political_advisor
+				}
+				clr_character_flag = ROH_loyal_to_country
+			}
+		}
+	}
+}
+
+ROH_sway_commanders_category = {
+	sway_elfhelm = {
+		visible = { has_idea = ROH_a_hall_divided NOT = { ROH_elfhelm = { has_character_flag = ROH_loyal_to_country } } }
+		cost = 50
+		days_remove = @exploitationDays
+		ai_will_do = {
+			factor = 5
+		}
+		remove_effect = {
+			ROH_elfhelm = {
+				add_trait = {
+					slot = high_command
+					trait = ROH_loyal_to_country_elfhelm
+				}
+				
+				set_character_flag = ROH_loyal_to_country
+			}
+			custom_effect_tooltip = ROH_swayed_commander_bonuses_tooltip
+		}
+	}
+	sway_gamling = {
+		visible = { has_idea = ROH_a_hall_divided NOT = { ROH_gamling = { has_character_flag = ROH_loyal_to_country } } }
+		cost = 50
+		days_remove = @exploitationDays
+		ai_will_do = {
+			factor = 0.2
+		}
+		remove_effect = {
+			ROH_gamling = {
+				add_trait = {
+					slot = high_command
+					trait = ROH_loyal_to_country_gamling
+				}
+				
+				set_character_flag = ROH_loyal_to_country
+			}
+			custom_effect_tooltip = ROH_swayed_commander_bonuses_tooltip
+		}
+	}
+	sway_grimbold = {
+		visible = { has_idea = ROH_a_hall_divided NOT = { ROH_grimbold = { has_character_flag = ROH_loyal_to_country } } }
+		cost = 50
+		days_remove = @exploitationDays
+		ai_will_do = {
+			factor = 5
+		}
+		remove_effect = {
+			ROH_grimbold = {
+				add_trait = {
+					slot = high_command
+					trait = ROH_loyal_to_country_grimbold
+				}
+				
+				set_character_flag = ROH_loyal_to_country
+			}
+			custom_effect_tooltip = ROH_swayed_commander_bonuses_tooltip
+		}
+	}
+}
+
+ROH_meet_foreign_representatives_category = {
+	meet_gondorian_representatives = {
+		visible = { has_idea = ROH_a_hall_divided }
+		fire_only_once = yes
+		cost = @foreignMeetingCost
+		days_remove = @foreignMeetingDays
+		remove_effect = {
+			set_country_flag = eomer_swayed_gondor
+			custom_effect_tooltip = meet_gondorian_representatives_remove_tooltip
+		}
+	}
+	meet_beorning_representatives = {
+		visible = { has_idea = ROH_a_hall_divided }
+		fire_only_once = yes
+		cost = @foreignMeetingCost
+		days_remove = @foreignMeetingDays
+		remove_effect = {
+			set_country_flag = eomer_swayed_beornings
+			custom_effect_tooltip = meet_beorning_representatives_remove_tooltip
+		}
+	}
+	meet_elvish_representatives = {
+		visible = { has_idea = ROH_a_hall_divided }
+		fire_only_once = yes
+		cost = @foreignMeetingCost
+		days_remove = @foreignMeetingDays
+		remove_effect = {
+			set_country_flag = eomer_swayed_elves
+			custom_effect_tooltip = meet_elvish_representatives_remove_tooltip
+		}
+	}
+	meet_dalian_representatives = {
+		visible = { has_idea = ROH_a_hall_divided }
+		fire_only_once = yes
+		cost = @foreignMeetingCost
+		days_remove = @foreignMeetingDays
+		remove_effect = {
+			set_country_flag = eomer_swayed_dale
+			custom_effect_tooltip = meet_dalian_representatives_remove_tooltip
+		}
+	}
+	meet_enedwaith_representatives = {
+		visible = { has_idea = ROH_a_hall_divided }
+		fire_only_once = yes
+		cost = @foreignMeetingCost
+		days_remove = @foreignMeetingDays
+		remove_effect = {
+			set_country_flag = eomer_swayed_enedwaith
+			custom_effect_tooltip = meet_enedwaith_representatives_remove_tooltip
+		}
+	}
+}
+
+ROH_connect_with_smugglers_category = {
+	smuggle_consumer_goods = { #1 Civ factory
+		available = {
+			any_controlled_state = { #must have free slot
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = no
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		fire_only_once = yes
+		modifier = {
+			civilian_factory_use = 1
+		}
+		days_remove = @smugglingDays
+		remove_effect = {
+			random_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	smuggle_weapons = { #1000 Infantry equipment
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		fire_only_once = yes
+		modifier = {
+			civilian_factory_use = 1
+		}
+		days_remove = @smugglingDays
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = GON
+			}
+		}
+	}
+	smuggle_sheep = { #3 Cloth
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		fire_only_once = yes
+		modifier = {
+			civilian_factory_use = 1
+		}
+		days_remove = @smugglingDays
+		remove_effect = {
+			random_controlled_state = {
+				add_resource = {
+					type = cloth
+					amount = 3
+				}
+			}
+		}
+	}
+	smuggle_smelting_equipment = { #3 iron
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		fire_only_once = yes
+		modifier = {
+			civilian_factory_use = 1
+		}
+		days_remove = @smugglingDays
+		remove_effect = {
+			random_controlled_state = {
+				add_resource = {
+					type = iron
+					amount = 3
+				}
+			}
+		}
+	}
+	smuggle_luxury_goods = { #10% stability
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		fire_only_once = yes
+		modifier = {
+			civilian_factory_use = 1
+		}
+		days_remove = @smugglingDays
+		remove_effect = {
+			add_stability = 0.10
+		}
+	}
+	smuggle_rations = { #2k fuel
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		fire_only_once = yes
+		modifier = {
+			civilian_factory_use = 1
+		}
+		days_remove = @smugglingDays
+		remove_effect = {
+			add_fuel = 2000
+		}
+	}
+}
+
+ROH_recruit_fyrd_category = {
+	
+	train_fyrd_in_state = {
+		icon = GFX_decision_POL_looming_peasants_strike
+		custom_cost_trigger = {
+			FROM = { NOT = { check_variable = { current_state_fyrd > building_level@arms_factory } } }
+		}
+		custom_cost_text = decision_cost_mil_1
+		fire_only_once = no
+		ai_will_do = { #Spam them
+			factor = 10
+			modifier = { #eomer will not recruit outside eastmark initially
+				OR = { ##going down EOMER path
+					has_country_flag = ROH_AI_RANDOM_EOMER #Randomly chosen
+					has_game_rule = { #Set to historical
+						rule = ROH_ai_behavior
+						option = EOMER
+					}
+					has_country_flag = sided_with_eomer
+				}
+				has_idea = ROH_a_hall_divided ##Will start training normally once revolt happens
+				NOT = { FROM = { OR = { state = 205 state = 204 state = 77 } } } ##Will not recruit except in eastmark
+				factor = 0
+			}
+		}
+		days_remove = ROH.fyrdRecruitmentDays
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				check_variable = { max_state_fyrd > 0 }
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+		}
+		available = {
+			FROM = {
+				custom_trigger_tooltip = { tooltip = more_factories_than_fyrd_tooltip NOT = { check_variable = { current_state_fyrd > building_level@arms_factory } } }
+			}
+			has_war_support > 0.25
+		}
+		complete_effect = {
+			FROM = {
+				remove_building = { type = arms_factory level = 1 } #uses the factory for duration
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				if = { limit = { is_controlled_by = ROOT } #Only gets the fyrd if you still control the state
+					custom_effect_tooltip = train_fyrd_tooltip
+					hidden_effect = {
+						add_to_variable = { current_state_fyrd = 1 }
+						add_to_variable = { available_state_fyrd = 1 }
+					}
+				}
+			}
+		}
+	}
+	
+	raise_fyrd = {
+		ai_will_do = { #AI should always do if in a war
+			factor = 10000
+		}
+		fire_only_once = no
+		available = {
+			any_controlled_state = {
+				custom_trigger_tooltip = { tooltip = available_fyrd_to_raise_tooltip check_variable = { current_state_fyrd > state_raised_fyrd }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = not_limited_war_tooltip
+				any_country = { has_war_with = ROOT NOT = { has_country_flag = limited_war_with_rohan } }
+			}
+		}
+		days_remove = @baseFyrdDays
+		complete_effect = {
+			hidden_effect = {
+				every_controlled_state = {
+					set_variable = { fyrd_to_raise = current_state_fyrd }
+					subtract_from_variable = { fyrd_to_raise = state_raised_fyrd }
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = raise_fyrd_tooltip
+			hidden_effect = {
+				every_controlled_state = {
+					for_loop_effect = {
+						start = 0
+						end = fyrd_to_raise
+						create_unit = { 
+							division = "name = \"Fyrd\" division_template = \"Fyrd\" start_experience_factor = 0.0 force_equipment_variants = { infantry_equipment_0 = { creator = \"ROH\" } }" 
+							owner = ROOT
+						}
+						add_to_variable = { state_raised_fyrd = 1 }
+						subtract_from_variable = { available_state_fyrd = 1 }
+					}
+					for_loop_effect = { ##Bonus fyrd from focuses
+						start = 0
+						end = extra_state_fyrd
+						create_unit = { 
+							division = "name = \"Fyrd\" division_template = \"Fyrd\" start_experience_factor = 0.0 force_equipment_variants = { infantry_equipment_0 = { creator = \"ROH\" } }" 
+							owner = ROOT
+						}
+					}
+					clear_variable = extra_state_fyrd
+					clear_variable = fyrd_to_raise
+					if = { limit = { NOT = { has_dynamic_modifier = { modifier = raised_fyrd_1 } } }
+						add_dynamic_modifier = { modifier = raised_fyrd_1 }
+					}
+				}
+			}
+		}
+	}
+}
+
+rfr_border_war_category = {
+	skirmish_at_the_fords_warning = {
+		icon = GFX_decision_border_war
+		is_good = no
+		days_mission_timeout = 35
+		war_with_on_remove = ISN
+		allowed = { always = no }
+		available = { hidden_trigger = { always = no } }
+		fire_only_once = yes
+		highlight_states = {
+			highlight_state_targets = {
+				state = 70 ##Gap of Rohan
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+	}
+	skirmish_in_adorn_warning = {
+		icon = GFX_decision_border_war
+		is_good = no
+		days_mission_timeout = 35
+		war_with_target_on_remove = yes
+		allowed = { always = no }
+		available = { hidden_trigger = { always = no } }
+		target_trigger = {
+			always = no
+		}
+		fire_only_once = yes
+		highlight_states = {
+			highlight_state_targets = {
+				state = 69 ##Adorn Vale
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+	}
+	skirmish_in_adorn_preparation = {
+		icon = GFX_decision_border_war
+		is_good = no
+		days_mission_timeout = 35
+		war_with_on_remove = ROH
+		war_with_on_remove = EOM
+		allowed = { always = no }
+		available = { hidden_trigger = { always = no } }
+		fire_only_once = yes
+		highlight_states = {
+			highlight_state_targets = {
+				state = 69 ##Adorn Vale
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+

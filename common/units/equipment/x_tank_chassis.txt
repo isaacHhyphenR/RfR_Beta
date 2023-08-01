@@ -116,8 +116,8 @@ duplicate_archetypes = {
 
 equipments = {
 
-	gw_tank_equipment = {
-		year = 3000
+	light_tank_equipment_0 = {
+		#year = 3000
 	
 		archetype = light_tank_chassis
 		priority = 5
@@ -149,10 +149,10 @@ equipments = {
 		fuel_consumption = 1.0
 	}
 	light_tank_equipment_1 = {
-		year = 3013
+		#year = 3013
 		
 		archetype = light_tank_chassis
-		parent = gw_tank_equipment
+		parent = light_tank_equipment_0
 		priority = 10
 		visual_level = 0
 		is_convertable = yes
@@ -185,7 +185,7 @@ equipments = {
 		fuel_consumption = 2.4
 	}
 	light_tank_equipment_2 = {
-		year = 3015
+		#year = 3015
 		
 		archetype = light_tank_chassis
 		parent = light_tank_equipment_1
@@ -214,7 +214,7 @@ equipments = {
 		}
 	}
 	light_tank_equipment_3 = {
-		year = 3020
+		#year = 3020
 	
 		archetype = light_tank_chassis
 		parent = light_tank_equipment_2
@@ -243,15 +243,15 @@ equipments = {
 		}
 	}
 
-	light_tank_artillery_equipment_1 = {
-		year = 3013
+	light_tank_artillery_equipment_0 = {
+		#year = 3000
 
 		archetype = light_tank_artillery_chassis
-#		family = light_tank_equipment_1
+#		family = light_tank_equipment_0
 		priority = 20
 		visual_level = 0
 		can_convert_from = { 
-			light_tank_equipment_1 
+			light_tank_equipment_0
 		}
 
 		upgrades = {
@@ -285,14 +285,51 @@ equipments = {
 		}
 		fuel_consumption = 1.2
 	}
+	light_tank_artillery_equipment_1 = {
+		#year = 3013
+
+		archetype = light_tank_artillery_chassis
+		parent = light_tank_artillery_equipment_0
+#		family = light_tank_equipment_1
+		priority = 20
+		visual_level = 1
+		can_convert_from = {
+			light_tank_equipment_0
+			light_tank_equipment_1
+		}
+
+		#Misc Abilities
+		maximum_speed = 10
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 4
+		breakthrough = 2
+		hardness = 0.5
+		armor_value = 5
+
+		#Offensive Abilities
+		soft_attack = 34
+		hard_attack = 0.5
+		ap_attack = 4
+		air_attack = 0		
+		
+		build_cost_ic = 8
+		resources = {
+			#oil = 1
+			mounts = 2
+			iron= 1
+		}
+		fuel_consumption = 1.2
+	}
 	light_tank_artillery_equipment_2 = {
-		year = 3015
+		#year = 3015
 
 		archetype = light_tank_artillery_chassis
 		parent = light_tank_artillery_equipment_1
 #		family = light_tank_equipment_2
 		priority = 20
-		visual_level = 1
+		visual_level = 2
 		can_convert_from = { 
 			light_tank_equipment_1 
 			light_tank_equipment_2
@@ -318,13 +355,13 @@ equipments = {
 		}
 	}
 	light_tank_artillery_equipment_3 = {
-		year = 3020
+		#year = 3020
 
 		archetype = light_tank_artillery_chassis
 		parent = light_tank_artillery_equipment_2
 #		family = light_tank_equipment_3
 		priority = 20
-		visual_level = 2
+		visual_level = 3
 		can_convert_from = { 
 			light_tank_equipment_2
 			light_tank_equipment_3
@@ -350,15 +387,15 @@ equipments = {
 		}
 	}
 
-	light_tank_destroyer_equipment_1 = {
-		year = 3013
+	light_tank_destroyer_equipment_0 = {
+		#year = 3000
 
 		archetype = light_tank_destroyer_chassis
-#		family = light_tank_equipment_1
+#		family = light_tank_equipment_0
 		priority = 40
 		visual_level = 0
 		can_convert_from = { 
-			light_tank_equipment_1 
+			light_tank_equipment_0 
 		}
 		upgrades = {
 			tank_reliability_upgrade
@@ -390,14 +427,50 @@ equipments = {
 		}
 		fuel_consumption = 1.2
 	}
+	light_tank_destroyer_equipment_1 = {
+		#year = 3013
+
+		archetype = light_tank_destroyer_chassis
+		parent = light_tank_destroyer_equipment_0
+#		family = light_tank_equipment_1
+		priority = 40
+		visual_level = 1
+		can_convert_from = {
+			light_tank_equipment_0
+			light_tank_equipment_1
+		}
+		#Misc Abilities
+		maximum_speed = 10
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 4
+		breakthrough = 1
+		hardness = 0.8
+		armor_value = 10
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 10
+		ap_attack = 50
+		air_attack = 0
+		
+		build_cost_ic = 8
+		resources = {
+			#oil = 1
+			mounts = 2
+			iron = 2
+		}
+		fuel_consumption = 1.2
+	}
 	light_tank_destroyer_equipment_2 = {
-		year = 3015
+		#year = 3015
 
 		archetype = light_tank_destroyer_chassis
 		parent = light_tank_destroyer_equipment_1
 #		family = light_tank_equipment_2
 		priority = 40
-		visual_level = 1
+		visual_level = 2
 		can_convert_from = { 
 			light_tank_equipment_1 
 			light_tank_equipment_2
@@ -425,13 +498,13 @@ equipments = {
 		}
 	}
 	light_tank_destroyer_equipment_3 = {
-		year = 3020
+		#year = 3020
 
 		archetype = light_tank_destroyer_chassis
 		parent = light_tank_destroyer_equipment_2
 #		family = light_tank_equipment_3
 		priority = 40
-		visual_level = 2
+		visual_level = 3
 		can_convert_from = { 
 			light_tank_equipment_2
 			light_tank_equipment_3
@@ -461,7 +534,7 @@ equipments = {
 
 
 	medium_tank_equipment_1 = {
-		year = 3018
+		#year = 3018
 
 		archetype = medium_tank_chassis
 		priority = 50
@@ -502,7 +575,7 @@ equipments = {
 		fuel_consumption = 3.6
 	}
 	medium_tank_equipment_2 = {
-		year = 3020
+		#year = 3020
 
 		archetype = medium_tank_chassis
 		parent = medium_tank_equipment_1
@@ -532,7 +605,7 @@ equipments = {
 		}	
 	}
 	medium_tank_equipment_3 = {
-		year = 3022
+		#year = 3022
 
 		archetype = medium_tank_chassis
 		parent = medium_tank_equipment_2
@@ -563,7 +636,7 @@ equipments = {
 	}
 
 	medium_tank_artillery_equipment_1 = {
-		year = 3018
+		#year = 3018
 
 		archetype = medium_tank_artillery_chassis
 #		family = medium_tank_equipment_1
@@ -604,7 +677,7 @@ equipments = {
 		fuel_consumption = 1.8
 	}
 	medium_tank_artillery_equipment_2 = {
-		year = 3020
+		#year = 3020
 
 		archetype = medium_tank_artillery_chassis
 		parent = medium_tank_artillery_equipment_1
@@ -637,7 +710,7 @@ equipments = {
 		}
 	}
 	medium_tank_artillery_equipment_3 = {
-		year = 3022
+		#year = 3022
 
 		archetype = medium_tank_artillery_chassis
 		parent = medium_tank_artillery_equipment_2
@@ -671,7 +744,7 @@ equipments = {
 	}
 
 	medium_tank_destroyer_equipment_1 = {
-		year = 3018
+		#year = 3018
 
 		archetype = medium_tank_destroyer_chassis
 #		family = medium_tank_equipment_1
@@ -712,7 +785,7 @@ equipments = {
 		fuel_consumption = 1.8
 	}
 	medium_tank_destroyer_equipment_2 = {
-		year = 3020
+		#year = 3020
 
 		archetype = medium_tank_destroyer_chassis
 		parent = medium_tank_destroyer_equipment_1
@@ -746,7 +819,7 @@ equipments = {
 		}		
 	}
 	medium_tank_destroyer_equipment_3 = {
-		year = 3022
+		#year = 3022
 
 		archetype = medium_tank_destroyer_chassis
 		parent = medium_tank_destroyer_equipment_2
@@ -782,8 +855,8 @@ equipments = {
 
 
 
-	heavy_tank_equipment_1 = {
-		year = 3013
+	heavy_tank_equipment_0 = {
+		#year = 3000
 
 		archetype = heavy_tank_chassis
 		priority = 90
@@ -825,13 +898,50 @@ equipments = {
 			tank_gun_upgrade
 		}
 	}
+	heavy_tank_equipment_1 = {
+		#year = 3013
+
+		archetype = heavy_tank_chassis
+		parent = heavy_tank_equipment_0
+		priority = 90
+		visual_level = 1
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 5
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 6
+		breakthrough = 36
+		hardness = 0.95
+		armor_value = 70
+
+		#Offensive Abilities
+		soft_attack = 15
+		hard_attack = 12
+		ap_attack = 35
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 14
+		
+		build_cost_ic = 25 
+		resources = {
+			#oil = 1
+			mounts = 3
+			monsters = 3
+		}
+		
+		fuel_consumption = 4.4
+	}
 	heavy_tank_equipment_2 = {
-		year = 3020
+		#year = 3020
 
 		archetype = heavy_tank_chassis
 		parent = heavy_tank_equipment_1
 		priority = 90
-		visual_level = 1
+		visual_level = 2
 		is_convertable = yes
 		
 		#Misc Abilities
@@ -855,12 +965,12 @@ equipments = {
 		}
 	}
 	heavy_tank_equipment_3 = {
-		year = 3022
+		#year = 3022
 
 		archetype = heavy_tank_chassis
 		parent = heavy_tank_equipment_2
 		priority = 90
-		visual_level = 2
+		visual_level = 3
 		is_convertable = yes
 
 		#Misc Abilities
@@ -884,13 +994,13 @@ equipments = {
 		}
 	}
 
-	heavy_tank_artillery_equipment_1 = {
-		year = 3013
+	heavy_tank_artillery_equipment_0 = {
+		#year = 3000
 
 		archetype = heavy_tank_artillery_chassis
-		family = heavy_tank_equipment_1
+		family = heavy_tank_equipment_0
 		can_convert_from = { 
-			heavy_tank_equipment_1 
+			heavy_tank_equipment_0 
 		}
 		priority = 100
 		visual_level = 0
@@ -924,8 +1034,44 @@ equipments = {
 		}
 		fuel_consumption = 2.2
 	}
+	heavy_tank_artillery_equipment_1 = {
+		#year = 3013
+
+		archetype = heavy_tank_artillery_chassis
+		parent = heavy_tank_artillery_equipment_0
+		family = heavy_tank_equipment_1
+		can_convert_from = {
+			heavy_tank_equipment_0
+			heavy_tank_equipment_1
+		}
+		priority = 100
+		visual_level = 1
+
+		#Misc Abilities
+		maximum_speed = 5
+		reliability = 0.8
+		#Defensive Abilities
+		defense = 4
+		breakthrough = 2
+		hardness = 0.8
+		armor_value = 45
+
+		#Offensive Abilities
+		soft_attack = 55
+		hard_attack = 1
+		ap_attack = 8
+		air_attack = 0
+		
+		build_cost_ic = 25
+		resources = {
+			#oil = 1
+			mounts = 3
+			monsters = 3
+		}
+		fuel_consumption = 2.2
+	}
 	heavy_tank_artillery_equipment_2 = {
-		year = 3020
+		#year = 3020
 
 		archetype = heavy_tank_artillery_chassis
 		parent = heavy_tank_artillery_equipment_1
@@ -935,7 +1081,7 @@ equipments = {
 			heavy_tank_equipment_2
 		}
 		priority = 100
-		visual_level = 1
+		visual_level = 2
 
 		#Misc Abilities
 		maximum_speed = 6
@@ -957,17 +1103,17 @@ equipments = {
 		}
 	}
 	heavy_tank_artillery_equipment_3 = {
-		year = 3022
+		#year = 3022
 
 		archetype = heavy_tank_artillery_chassis
 		parent = heavy_tank_artillery_equipment_2
 		family = heavy_tank_equipment_3
-		can_convert_from = { 
+		can_convert_from = {
 			heavy_tank_equipment_2
 			heavy_tank_equipment_3
 		}
 		priority = 100
-		visual_level = 2
+		visual_level = 3
 
 		#Misc Abilities
 		maximum_speed = 6
@@ -989,13 +1135,13 @@ equipments = {
 		}
 	}
 
-	heavy_tank_destroyer_equipment_1 = {
-		year = 3013
+	heavy_tank_destroyer_equipment_0 = {
+		#year = 3000
 
 		archetype = heavy_tank_destroyer_chassis
-		family = heavy_tank_equipment_1
-		can_convert_from = { 
-			heavy_tank_equipment_1 
+		family = heavy_tank_equipment_0
+		can_convert_from = {
+			heavy_tank_equipment_0
 		}
 		priority = 120
 		visual_level = 0
@@ -1029,8 +1175,44 @@ equipments = {
 		}
 		fuel_consumption = 2.2
 	}
+	heavy_tank_destroyer_equipment_1 = {
+		#year = 3013
+
+		archetype = heavy_tank_destroyer_chassis
+		parent = heavy_tank_destroyer_equipment_0
+		family = heavy_tank_equipment_1
+		can_convert_from = {
+			heavy_tank_equipment_0
+			heavy_tank_equipment_1 
+		}
+		priority = 120
+		visual_level = 1
+		#Misc Abilities
+		maximum_speed = 5
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 4
+		breakthrough = 1
+		hardness = 0.95
+		armor_value = 70
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 25
+		ap_attack = 96
+		air_attack = 0
+		
+		build_cost_ic = 25
+		resources = {
+			#oil = 1
+			mounts = 3
+			monsters = 3
+		}
+		fuel_consumption = 2.2
+	}
 	heavy_tank_destroyer_equipment_2 = {
-		year = 3020
+		#year = 3020
 
 		archetype = heavy_tank_destroyer_chassis
 		parent = heavy_tank_destroyer_equipment_1
@@ -1040,7 +1222,7 @@ equipments = {
 			heavy_tank_equipment_2
 		}
 		priority = 120
-		visual_level = 1
+		visual_level = 2
 
 		#Misc Abilities
 		maximum_speed = 6
@@ -1064,7 +1246,7 @@ equipments = {
 		}
 	}
 	heavy_tank_destroyer_equipment_3 = {
-		year = 3022
+		#year = 3022
 
 		archetype = heavy_tank_destroyer_chassis
 		parent = heavy_tank_destroyer_equipment_2
@@ -1074,7 +1256,7 @@ equipments = {
 			heavy_tank_equipment_3
 		}
 		priority = 120
-		visual_level = 2
+		visual_level = 3
 		
 		#Misc Abilities
 		maximum_speed = 6
@@ -1101,7 +1283,7 @@ equipments = {
 
 
 	modern_tank_equipment_1 = {
-		year = 3024
+		#year = 3024
 
 		archetype = modern_tank_chassis
 		priority = 170
@@ -1142,7 +1324,7 @@ equipments = {
 		fuel_consumption = 5
 	}
 	modern_tank_artillery_equipment_1 = {
-		year = 3024
+		#year = 3024
 
 		archetype = modern_tank_artillery_chassis
 		priority = 180
@@ -1182,7 +1364,7 @@ equipments = {
 		fuel_consumption = 2.5
 	}
 	modern_tank_destroyer_equipment_1 = {
-		year = 3024
+		#year = 3024
 
 		archetype = modern_tank_destroyer_chassis
 		priority = 200
@@ -1225,8 +1407,8 @@ equipments = {
 
 
 
-	super_heavy_tank_equipment_1 = {
-		year = 3022
+	super_heavy_tank_equipment_0 = {
+		#year = 3000
 
 		archetype = super_heavy_tank_chassis
 		priority = 130
@@ -1266,15 +1448,87 @@ equipments = {
 		
 		fuel_consumption = 10
 	}
+	super_heavy_tank_equipment_1 = {
+		#year = 3015
 
-	super_heavy_tank_artillery_equipment_1 = {
-		year = 3022
+		archetype = super_heavy_tank_chassis
+		parent = super_heavy_tank_equipment_0
+		priority = 130
+		visual_level = 1
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 4
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 10
+		breakthrough = 74
+		hardness = 0.99
+		armor_value = 145
+
+		#Offensive Abilities
+		soft_attack = 38
+		hard_attack = 45
+		ap_attack = 146
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 15
+		build_cost_ic = 100
+		resources = {
+			#oil = 2
+			mounts = 3
+			monsters = 4
+		}
+		
+		fuel_consumption = 10
+	}
+	super_heavy_tank_equipment_2 = {
+		#year = 3015
+
+		archetype = super_heavy_tank_chassis
+		parent = super_heavy_tank_equipment_1
+		priority = 130
+		visual_level = 2
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 4
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 10
+		breakthrough = 74
+		hardness = 0.99
+		armor_value = 145
+
+		#Offensive Abilities
+		soft_attack = 38
+		hard_attack = 45
+		ap_attack = 146
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 15
+		build_cost_ic = 100
+		resources = {
+			#oil = 2
+			mounts = 3
+			monsters = 4
+		}
+		
+		fuel_consumption = 10
+	}
+	
+	super_heavy_tank_artillery_equipment_0 = {
+		#year = 3000
 
 		archetype = super_heavy_tank_artillery_chassis
 		priority = 140
 		visual_level = 0
 		can_convert_from = { 
-			super_heavy_tank_equipment_1 
+			super_heavy_tank_equipment_0
 		}
 		upgrades = {
 			tank_reliability_upgrade
@@ -1306,21 +1560,16 @@ equipments = {
 		}
 		fuel_consumption = 5
 	}
+	super_heavy_tank_artillery_equipment_1 = {
+		#year = 3015
 
-	super_heavy_tank_destroyer_equipment_1 = {
-		year = 3022
-
-		archetype = super_heavy_tank_destroyer_chassis
-		priority = 160
-		visual_level = 0
+		archetype = super_heavy_tank_artillery_chassis
+		parent = super_heavy_tank_artillery_equipment_0
+		priority = 140
+		visual_level = 1
 		can_convert_from = { 
 			super_heavy_tank_equipment_1 
-		}
-		upgrades = {
-			tank_reliability_upgrade
-			tank_engine_upgrade
-			tank_armor_upgrade
-			tank_at_upgrade
+			super_heavy_tank_equipment_0
 		}
 		#Misc Abilities
 		maximum_speed = 4
@@ -1328,14 +1577,49 @@ equipments = {
 
 		#Defensive Abilities
 		defense = 7
-		breakthrough = 1.8
-		hardness = 0.99
-		armor_value = 145
+		breakthrough = 3.5
+		hardness = 0.9
+		armor_value = 100
 
 		#Offensive Abilities
-		soft_attack = 12
-		hard_attack = 70
-		ap_attack = 170
+		soft_attack = 85
+		hard_attack = 3
+		ap_attack = 9
+		air_attack = 0
+		
+		build_cost_ic = 100
+		resources = {
+			#oil = 2
+			mounts = 3
+			monsters = 4
+		}
+		fuel_consumption = 5
+	}
+	super_heavy_tank_artillery_equipment_2 = {
+		#year = 3015
+
+		archetype = super_heavy_tank_artillery_chassis
+		parent = super_heavy_tank_artillery_equipment_1
+		priority = 140
+		visual_level = 2
+		can_convert_from = { 
+			super_heavy_tank_equipment_1 
+			super_heavy_tank_equipment_2
+		}
+		#Misc Abilities
+		maximum_speed = 4
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 7
+		breakthrough = 3.5
+		hardness = 0.9
+		armor_value = 100
+
+		#Offensive Abilities
+		soft_attack = 85
+		hard_attack = 3
+		ap_attack = 9
 		air_attack = 0
 		
 		build_cost_ic = 100
@@ -1348,8 +1632,9 @@ equipments = {
 	}
 
 
+
 	amphibious_tank_equipment_1 = {
-		year = 3013
+		#year = 3013
 		
 		archetype = amphibious_tank_chassis
 		priority = 10
@@ -1393,7 +1678,7 @@ equipments = {
 		fuel_consumption = 4
 	}
 	amphibious_tank_equipment_2 = {
-		year = 3018
+		#year = 3018
 		
 		archetype = amphibious_tank_chassis
 		parent = amphibious_tank_equipment_1

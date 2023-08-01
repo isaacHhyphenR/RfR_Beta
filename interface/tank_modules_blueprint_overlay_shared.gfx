@@ -1,7 +1,22 @@
 spriteTypes = {
 	spriteType = {
-		name = "GFX_cavalry_blueprint"
-		textureFile = "gfx/interface/equipmentdesigner/tanks/generic_tank_blueprint_background.dds"
+		name = "GFX_tank_blueprint_background"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/empty.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_TM_tank_armor"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/empty.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TM_tank_engine"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/generic_tank_engine.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_designer_background_title_box"
+		textureFile = "gfx/interface/equipmentdesigner/background_title_box.dds"
 		legacy_lazy_load = no
 	}
 	spriteType = {
