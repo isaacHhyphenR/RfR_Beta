@@ -240,7 +240,7 @@ default = {
 	heavy_tank_chassis_0 = {
 		pool = {
 			icons = {
-				GFX_feral_troll_chassis_medium
+				GFX_early_heavy_tank_medium
 			}
 		}
 	}
@@ -269,7 +269,21 @@ default = {
 	super_heavy_tank_chassis_1 = {
 		pool = {
 			icons = {
-				GFX_super_heavy_tank_medium
+				GFX_basic_mumak_medium
+			}
+		}
+	}
+	super_heavy_tank_chassis_2 = {
+		pool = {
+			icons = {
+				GFX_improved_mumak_medium
+			}
+		}
+	}
+	super_heavy_tank_chassis_3 = {
+		pool = {
+			icons = {
+				GFX_advanced_mumak_medium
 			}
 		}
 	}

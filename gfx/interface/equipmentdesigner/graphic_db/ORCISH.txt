@@ -37,7 +37,7 @@ MOR = {
 		pool = {
 			weight = 5.2 #correct icon at top
 			icons = {
-				GFX_MOR_gw_art_medium
+				GFX_MOR_gw_light_art_medium
 			}
 		}
 	}
@@ -70,7 +70,7 @@ MOR = {
 		pool = {
 			weight = 5.2 #correct icon at top
 			icons = {
-				GFX_MOR_gw_td_medium
+				GFX_MOR_gw_light_td_medium
 			}
 		}
 	}

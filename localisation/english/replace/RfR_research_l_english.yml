@@ -14,10 +14,11 @@
  INFANTRY_TITLE_SPECIAL: "SPECIAL FORCES"
  INFANTRY_TITLE_MOTORISED: "SPEARS"
  ARMOUR_TITLE: "CAVALRY"
+ ARMOUR_TITLE_AMPH: "AMPHIBIOUS"
  ARMOUR_TITLE_LIGHT: "LIGHT"
  ARMOUR_TITLE_MEDIUM: "HEAVY"
  ARMOUR_TITLE_HEAVY: "TROLLS"
- ARMOUR_TITLE_AMPH: "MÛMAKIL"
+ ARMOUR_TITLE_MUMAK: "MÛMAKIL"
  ARTILLERY_TITLE_ROCKET: "TOWED JAVELINS"
  ARTILLERY_TITLE_AT: "ANTI-CAV"
  ARTILLERY_TITLE: "RANGED"
@@ -139,16 +140,6 @@
  spear_upgrade_2: "Heavier Heads"
  spear_upgrade_2_desc: "Polearms with better balance are less unweildy, allowing our soldiers greater flexibility and power."
  
-                     ###INFANTRY
-            ###UPGRADES
- night_vision: "Night Vision I"
- night_vision_desc: "Being able to see the enemy without being seen is key to night operations. With the invention of infra-red technology, we can outfit our army with devices which, though unwieldy, makes this possible."
- night_vision2: "Night Vision II"
- night_vision2_desc: "Early infra-red scopes, although initially intended for use by snipers, had a limited vision range. As both portability and vision improves, these devices can be used by more troops operating at night."
- infantry_at: "Infantry Anticav I"
- infantry_at_desc: "Arming our infantry with polearms will allow them to take out cavalry in melee combat while maintaining mobility."
- infantry_at2: "Infantry Anticav II"
- infantry_at2_desc: "For infantry to effectively engage charging cavalry units, normal infantry weapons need to be made longer and sturdier."
             ###ARMOR
  infantry_armor_upgrade_0: "Helmets I"
  infantry_armor_upgrade_0_desc: "A mail coif, while leaving the face vulnerable, protects the skull from above and the sides."
@@ -251,7 +242,6 @@
  fuel_refining5_desc: "We can preserve the food for longer by preparing it carefully."
             ###CONSTRUCTION
             ###ENCRYPTION
-            
  atomic_research: "Central Bureaucracy"
  atomic_research_desc: "A central governing body comprised of professionals can oversee our military much more efficiently than a loose collection of feudal nobles."
  standardized_regimens: "Standardized Training Regimens"

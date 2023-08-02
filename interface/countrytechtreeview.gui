@@ -800,6 +800,76 @@ guiTypes = {
 				}			
 			}
 			
+			@vanillaArmorSubtitlesY = 0
+			containerWindowType = {
+				name = "nsb_armour_subtitles"
+				position = { x = 518 y = 0 }
+				size = { width = 600 height = 80% }
+				orientation = upper_left
+				origo = upper_left
+			
+				instantTextBoxType = { #amphib
+					name = "armour_subtitle_amphibious"
+					position = { x = -360 y = @vanillaArmorSubtitlesY }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = {x = 0 y = 4}
+					text = "ARMOUR_TITLE_AMPH"
+					maxWidth = 200
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "armour_subtitle_light"
+					position = { x = -150 y = @vanillaArmorSubtitlesY   }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = {x = 0 y = 4}
+					text = "ARMOUR_TITLE_LIGHT"
+					maxWidth = 200
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "armour_subtitle_medium"
+					position = { x = 130 y = @vanillaArmorSubtitlesY  }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = {x = 0 y = 4}
+					text = "ARMOUR_TITLE_MEDIUM"
+					maxWidth = 200
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "armour_subtitle_heavy"
+					position = { x = 390 y = @vanillaArmorSubtitlesY  }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = {x = 0 y = 4}
+					text = "ARMOUR_TITLE_HEAVY"
+					maxWidth = 200
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = { #mumakil
+					name = "armour_subtitle_mumakil"
+					position = { x = 725 y = @vanillaArmorSubtitlesY }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = {x = 0 y = 4}
+					text = "ARMOUR_TITLE_MUMAK"
+					maxWidth = 200
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}		
+			}
+			
 			@vanillaArmorY = 40
 			gridboxtype = {
 				name = "gwtank_tree"
@@ -1108,13 +1178,13 @@ guiTypes = {
 					textureFile = ""
 					font = "hoi_33"
 					borderSize = {x = 0 y = 4}
-					text = "ARMOUR_TITLE_AMPH"
+					text = "ARMOUR_TITLE_MUMAK"
 					maxWidth = 200
 					maxHeight = 62
 					format = center
 					Orientation = "UPPER_LEFT"
 				}		
-			}	
+			}
 
 			@nsbArmorY = 40
 			gridboxtype = {

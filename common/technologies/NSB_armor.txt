@@ -16,7 +16,7 @@ technologies = {
 
 	@lightCavX = -4
 	@heavyCavX = 0
-	@modernCavX = -2
+	@modernCavX = -3
 	@trollX = 0
 	@mumakX = 0
 	@armorTechX = 2
@@ -872,7 +872,6 @@ technologies = {
 
 		enable_equipments = {
 			super_heavy_tank_chassis_1
-			super_heavy_tank_destroyer_chassis_1
 			super_heavy_tank_artillery_chassis_1
 		}
 
@@ -952,7 +951,6 @@ technologies = {
 
 		enable_equipments = {
 			super_heavy_tank_chassis_2
-			super_heavy_tank_destroyer_chassis_2
 			super_heavy_tank_artillery_chassis_2
 		}
 
@@ -998,7 +996,6 @@ technologies = {
 
 		enable_equipments = {
 			super_heavy_tank_chassis_3
-			super_heavy_tank_destroyer_chassis_3
 			super_heavy_tank_artillery_chassis_3
 		}
 

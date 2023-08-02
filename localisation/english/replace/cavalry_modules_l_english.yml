@@ -16,6 +16,7 @@
  EQ_MOD_CAT_cav_thrown_weapon_TITLE: "Thrown"
  EQ_MOD_CAT_troll_blunt_weapon_TITLE: "Melee"
  EQ_MOD_CAT_troll_sharp_weapon_TITLE: "Sharp"
+ EQ_MOD_CAT_troll_ranged_weapon_TITLE: "Ranged"
  EQ_MOD_CAT_mumak_blunt_force_TITLE: "Unridded"
  EQ_MOD_CAT_mumak_ranged_weapon_TITLE: "$EQ_MOD_CAT_cav_ranged_weapon_TITLE$"
  EQ_MOD_CAT_mumak_thrown_weapon_TITLE: "$EQ_MOD_CAT_cav_thrown_weapon_TITLE$"
