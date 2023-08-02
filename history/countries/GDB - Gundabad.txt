@@ -34,7 +34,7 @@ if = {
 	else = {
 		set_technology = {
 			gwtank = 1
-			basic_heavy_tank = 1
+			early_heavy_tank = 1
 		}
 	}
 }
