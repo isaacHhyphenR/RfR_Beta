@@ -20,7 +20,7 @@ FAN_mobilization_category = {
 			add_war_support = 0.5
 			add_manpower = 150000
 			add_equipment_to_stockpile = {
-				type = heavy_tank_chassis_1
+				type = heavy_tank_chassis
 				amount = 1000
 				producer = FAN
 			}

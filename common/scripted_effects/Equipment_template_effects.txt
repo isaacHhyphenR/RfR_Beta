@@ -128,7 +128,7 @@ load_starting_rohirrim_armor_variants = { #Call in a tag to give them ROH's star
 				suspension_type_slot = cavalry_racing_saddle
 				armor_type_slot = cavalry_standard_barding
 				engine_type_slot = cav_courser_mount
-				special_type_slot_1 = cav_sheild_1
+				special_type_slot_1 = empty
 			}
 			upgrades = {
 				tank_nsb_engine_upgrade = 5

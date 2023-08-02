@@ -60,6 +60,11 @@ spriteTypes = {
 		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/ballista.dds"
 		legacy_lazy_load = no
 	}
+	SpriteType = {
+		name = "GFX_EMI_cav_ammunition"
+		texturefile = "gfx/interface/equipmentdesigner/tanks/modules/extra_quiver.dds"
+		legacy_lazy_load = no
+	}
 ######################Mounts
 	SpriteType = {
 		name = "GFX_EMI_cav_sumpter_mount"

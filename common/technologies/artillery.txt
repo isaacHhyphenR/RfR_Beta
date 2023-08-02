@@ -38,7 +38,7 @@ technologies = {
 		enable_equipment_modules = {
 			cav_basic_bow
 			mumak_basic_bow_tower
-			#extra_quiver
+			extra_quiver
 		}
 
 		research_cost = 1.5
@@ -445,7 +445,7 @@ technologies = {
 			cav_basic_javelin
 			troll_basic_sling
 			mumak_basic_javelin_tower
-			#extra_quiver
+			extra_quiver
 		}
 
 		path = {
@@ -619,9 +619,6 @@ technologies = {
 			soft_attack = 0.15
 		}
 		mot_rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		motorized_rocket_brigade = {
 			soft_attack = 0.15
 		}
 

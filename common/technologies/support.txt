@@ -1602,73 +1602,16 @@ technologies = {
 				date > "3021.1.1"
 			}
 		}
-		# path = {
-			# leads_to_tech = black_powder 
-			# research_cost_coeff = 1
-		# }
 	}
 
-	# armored_train = {
-		# enable_equipments = {
-			# train_equipment_3
-		# }
-
-		# allow_branch = {
-			# has_dlc = "No Step Back"
-		# }
-
-		# path = {
-			# leads_to_tech = railway_gun
-			# research_cost_coeff = 1
-		# }
-		
-		# allow_branch = {
-			# has_dlc = "No Step Back"
-		# }
-		
-		# research_cost = 1.5
-		# start_year = 3015
-		# folder = {
-			# name = support_folder
-			# position = { x = 2 y = 3 }
-		# }
-		
-		# categories = {
-			# train_tech
-		# }
-		
-		# ai_will_do = {
-			# factor = 1
-			# modifier = {
-				# OR = {
-					# tag = ISN
-					# tag = MOR
-				# }
-				# factor = 5
-			# }
-			# modifier = {
-				# factor = 1.2
-				# date > "3017.1.1"
-			# }
-			
-			# modifier = {
-				# factor = 1.2
-				# date > "3018.1.1"
-			# }
-			
-			# modifier = {
-				# factor = 1.2
-				# date > "3019.1.1"
-			# }
-		# }
-	# }
-
-	
 	experimental_rockets = {
 
 		enable_building = {
 			building = rocket_site
 			level = 2
+		}
+		enable_equipment_modules = {
+			mumak_ballista_tower
 		}
 		
 		path = {
@@ -1769,6 +1712,9 @@ technologies = {
 		
 		enable_equipments = {
 			guided_missile_equipment_3
+		}
+		enable_equipment_modules = {
+			mumak_catapult_tower
 		}
 		
 		research_cost = 1.2

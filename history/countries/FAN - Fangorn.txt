@@ -29,22 +29,23 @@ if = {
 	}
 	else = {
 		set_technology = {
-			main_battle_tank = 1
+			early_heavy_tank = 1
+			basic_heavy_tank = 1
 		}
 	}
 }
 ################### NAVAL TECH
-if = {
-	limit = { has_dlc = "Man the Guns" }
-	set_technology = {
-			mtg_transport = 1
-	}
-	else = {
-		set_technology = {
-			transport = 1
-		}
-	}
-}
+# if = {
+	# limit = { has_dlc = "Man the Guns" }
+	# set_technology = {
+			# mtg_transport = 1
+	# }
+	# else = {
+		# set_technology = {
+			# transport = 1
+		# }
+	# }
+# }
 
 set_politics = {
 	ruling_party = isolationism

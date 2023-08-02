@@ -220,7 +220,7 @@
  heavy_tank_equipment_3: "Olog-hai"
  heavy_tank_equipment_3_short: "$heavy_tank_equipment_3$"
  heavy_tank_equipment_3_desc: "Olog-hai are the toughest breed of trolls, specially crafted by their dark master to withstand sunlight."
- advanced_heavy_tank_chassis: "$heavy_tank_equipment_3$ $monster_mount$
+ advanced_heavy_tank_chassis: "$heavy_tank_equipment_3$ $monster_mount$"
  advanced_heavy_tank_chassis_short: "$advanced_heavy_tank_chassis$"
  advanced_heavy_tank_chassis_desc: "$heavy_tank_equipment_3_desc$"
  heavy_tank_chassis_3: "$advanced_heavy_tank_chassis$"
@@ -350,13 +350,16 @@
             ###JAVELINS
  rocket_artillery_equipment: "Javelins"
  rocket_artillery_equipment_short: "Javelins"
- rocket_artillery_equipment_desc: "Throwing weapons have much shorter ranges than bows, thus making it more difficult to take out large or mobile enemies--- and doublly difficult to do so without being taken out yourself. However, they are devastating at shorter distances."
- rocket_artillery_equipment_1: "Javelins"
- rocket_artillery_equipment_1_short: "Javelins"
+ rocket_artillery_equipment_desc: "Throwing weapons have much shorter ranges than bows, thus making it more difficult to take out large or mobile enemies--- and doublly difficult to do so without being taken out yourself. However, they are devastating at shorter distances, and far cheaper to produce."
+ rocket_artillery_equipment_1: "Basic Javelins"
+ rocket_artillery_equipment_1_short: "$rocket_artillery_equipment_1$"
  rocket_artillery_equipment_1_desc: "These sharp wooden stakes are a type of spear optimised for throwing."
- rocket_artillery_equipment_2: "Advanced Javelins"
- rocket_artillery_equipment_2_short: "Advanced Javelins"
+ rocket_artillery_equipment_2: "Improved Javelins"
+ rocket_artillery_equipment_2_short: "$rocket_artillery_equipment_2$"
  rocket_artillery_equipment_2_desc: "The iron we cap these javelins with not only improves their weight distribution but keeps its edge better when in contact with armour."
+ rocket_artillery_equipment_3: "Advanced Javelins"
+ rocket_artillery_equipment_3_short: "$rocket_artillery_equipment_3$"
+ rocket_artillery_equipment_3_desc: "The finest throwing weapons in Middle Earth."
             ###PIKES
  anti_tank_equipment: "Spears"
  anti_tank_equipment_short: "Spears"
@@ -437,7 +440,7 @@
                                     ###CATEGORIES
  
                                     ###UPGRADES
- tank_armor_upgrade: "Armor"
+ tank_armor_upgrade: "Barding"
  tank_armor_upgrade_desc: "More armor grants better protection form enemy blows, but also increases weight."
  tank_gun_upgrade: "Main Weapon"
  tank_gun_upgrade_desc: "Larger and heavier weapons can reach foes from further away and penetrate their armor more easily."
@@ -449,5 +452,10 @@
  tank_reliability_upgrade_desc: "Improving the care we give our mounts means they'll be out of action less often."
  tank_engine_upgrade: "Speed"
  tank_engine_upgrade_desc: "More mobility gives tactical and strategic advantages, as well as allowing more armor without being slowed down significantly."
-                                    ###TOOLTIPS
+ tank_nsb_engine_upgrade: "Shoes"
+ tank_nsb_engine_upgrade_desc: "Better shoes both protect the mount's feet and grant them better traction."
+ tank_nsb_armor_upgrade: "$tank_armor_upgrade$"
+ tank_nsb_armor_upgrade_desc: "$tank_armor_upgrade_desc$"
+
+                                   ###TOOLTIPS
  

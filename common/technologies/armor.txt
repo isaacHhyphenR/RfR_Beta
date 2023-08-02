@@ -2073,9 +2073,9 @@ technologies = {
 			position = { x = @mumakX y = @3000 }
 		}
 		
-		sub_technologies = {
-			basic_mumak_art
-		}
+		# sub_technologies = {
+			# basic_mumak_art
+		# }
 		
 		ai_will_do = {
 			factor = 4
