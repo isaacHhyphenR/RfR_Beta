@@ -16,7 +16,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_designer_background_title_box"
-		textureFile = "gfx/interface/equipmentdesigner/background_title_box.dds"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/background_title_box.dds"
 		legacy_lazy_load = no
 	}
 	spriteType = {
