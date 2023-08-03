@@ -469,11 +469,11 @@ technologies = {
 		}
 
 		research_cost = 2
-		start_year = 3019
+		start_year = 3018
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = @heavyCavX y = @3019 }
+			position = { x = @heavyCavX y = @3018 }
 		}
 
 		ai_will_do = {
@@ -484,8 +484,13 @@ technologies = {
 				is_major = yes
 			}
 			modifier = {
-				date < "3020.1.1"
+				date < "3019.1.1"
 				factor = 0.3
+			}
+
+			modifier = {
+				factor = 1.1
+				date > "3020.1.1"
 			}
 
 			modifier = {
@@ -496,11 +501,6 @@ technologies = {
 			modifier = {
 				factor = 1.1
 				date > "3022.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "3023.1.1"
 			}
 			modifier = {
 				factor = 4

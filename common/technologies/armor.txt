@@ -22,7 +22,7 @@ technologies = {
 	@engineTechX = 0
 	@amphibiousTankX = -7
 	
-	@improvedMedYear = 3019
+	@improvedMedYear = 3018
 	@advancedLightYear = 3020
 	@advancedMedYear = 3021
 	@modernYear = 3022
@@ -1003,7 +1003,7 @@ technologies = {
 		
 		folder = {
 			name = armour_folder
-			position = { x = @heavyCavX y = @3019 }
+			position = { x = @heavyCavX y = @3018 }
 		}
 		
 		sub_technologies = {
@@ -1015,8 +1015,13 @@ technologies = {
 			factor = 3
 			
 			modifier = {
-				date < "3019.1.1"
+				date < "3018.1.1"
 				factor = 0.3
+			}
+			
+			modifier = {
+				factor = 1.1
+				date > "3019.1.1"
 			}
 			
 			modifier = {
@@ -1027,11 +1032,6 @@ technologies = {
 			modifier = {
 				factor = 1.1
 				date > "3021.1.1"
-			}
-			
-			modifier = {
-				factor = 1.1
-				date > "3022.1.1"
 			}
 			modifier = {
 				factor = 4

@@ -1,4 +1,9 @@
 ﻿l_english:
+ TANK_DESIGNER_TITLE: "Cavalry Designer"
+ idea_group_tank_manufacturer: "Cavalry Breeder"
+ tank_manufacturer_cost_factor: "$TANK_DESIGNER_TITLE$ Cost"
+ TRIGGER_HAS_NOT_IDEA_TANK_MANUFACTURER: "Does not have cavalry designer $IDEA|H$"
+ TRIGGER_HAS_IDEA_TANK_MANUFACTURER: "Has cavalry designer $IDEA|H$"
  EQ_MOD_CAT_cav_mount_type_TITLE: "Breed"
  EQ_MOD_CAT_troll_mount_type_TITLE: "Breed"
  EQ_MOD_CAT_mumakil_mount_type_TITLE: "Breed"
