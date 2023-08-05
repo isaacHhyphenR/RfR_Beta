@@ -1,2 +1,7 @@
 ﻿l_english:
+ unlocker_bonus: "100"
+ metallurgy1_tooltip: "$metallurgy_early_research$: §G+$unlocker_bonus$%§!"
+ metallurgy2_tooltip: "$metallurgy_basic_research$: §G+$unlocker_bonus$%§!"
+ metallurgy3_tooltip: "$metallurgy_improved_research$: §G+$unlocker_bonus$%§!"
+ metallurgy4_tooltip: "$metallurgy_advanced_research$: §G+$unlocker_bonus$%§!"
  wargoal_vs_all_GON_and_subjects_tooltip: "Gains §YAnnex§! war goal against §Y[GON.GetNameDef]§! and all of its §Ysubjects§!."

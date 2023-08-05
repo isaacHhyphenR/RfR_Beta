@@ -53,7 +53,7 @@ technologies = {
 		research_cost = 1.0
 		start_year = 3000
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 0 y = @3000 }
 		}
 		
@@ -100,7 +100,7 @@ technologies = {
 		research_cost = 2
 		start_year = 3015
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 0 y = @3015 }
 		}
 		
@@ -162,7 +162,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3018
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 0 y = @3018 }
 		}
 		
@@ -213,7 +213,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3021
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 0 y = @3021 }
 		}
 		
@@ -258,7 +258,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3024
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 0 y = @3024 }
 		}
 		
@@ -308,7 +308,7 @@ technologies = {
 		research_cost = 2
 		start_year = 3015
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 2 y = @3015 }
 		}
 		
@@ -360,7 +360,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3018
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 2 y = @3018 }
 		}
 		
@@ -402,7 +402,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3021
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 2 y = @3021 }
 		}
 		
@@ -439,7 +439,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3024
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 2 y = @3024 }
 		}
 		
@@ -482,7 +482,7 @@ technologies = {
 		research_cost = 2
 		start_year = 3015
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 4 y = @3015 }
 		}
 		
@@ -559,7 +559,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3018
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 4 y = @3018 }
 		}
 		
@@ -634,7 +634,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3021
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 4 y = @3021 }
 		}
 		
@@ -704,7 +704,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3024
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 4 y = @3024 }
 		}
 		
@@ -780,7 +780,7 @@ technologies = {
 		research_cost = 2
 		start_year = 3015
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 6 y = @3015 }
 		}
 		
@@ -825,7 +825,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3018
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 6 y = @3018 }
 		}
 		
@@ -868,7 +868,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3021
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 6 y = @3021 }
 		}
 		
@@ -906,7 +906,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3024
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 6 y = @3024 }
 		}
 		
@@ -956,7 +956,7 @@ technologies = {
 		research_cost = 2
 		start_year = 3015
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 8 y = @3015 }
 		}
 		
@@ -1005,7 +1005,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3018
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 8 y = @3018 }
 		}
 		
@@ -1053,7 +1053,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3021
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 8 y = @3021 }
 		}
 		
@@ -1096,7 +1096,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3024
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 8 y = @3024 }
 		}
 		
@@ -1148,7 +1148,7 @@ technologies = {
 		research_cost = 2
 		start_year = 3015
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 10 y = @3015 }
 		}
 		
@@ -1198,7 +1198,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3018
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 10 y = @3018 }
 		}
 		
@@ -1247,7 +1247,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3021
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 10 y = @3021 }
 		}
 		
@@ -1286,7 +1286,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3024
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 10 y = @3024 }
 		}
 		
@@ -1336,7 +1336,7 @@ technologies = {
 		research_cost = 2
 		start_year = 3015
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 12 y = @3015 }
 		}
 		
@@ -1372,7 +1372,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3018
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 12 y = @3018 }
 		}
 		
@@ -1415,7 +1415,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3021
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 12 y = @3021 }
 		}
 		
@@ -1453,7 +1453,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3024
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 12 y = @3024 }
 		}
 		
@@ -1491,7 +1491,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3000
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 0 y = @3000 }
 		}
 
@@ -1536,7 +1536,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3015
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 2 y = 3 }
 		}
 		
@@ -1572,7 +1572,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 3018
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 0 y = @3018 }
 		}
 		
@@ -1627,7 +1627,7 @@ technologies = {
 		start_year = 3015
 		
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 0 y = 0 }
 		}
 	
@@ -1658,7 +1658,7 @@ technologies = {
 		start_year = 3018
 		
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 0 y = @3018 }
 		}
 		
@@ -1691,7 +1691,7 @@ technologies = {
 		start_year = 3021
 		
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 0 y = @3021 }
 		}
 		
@@ -1721,7 +1721,7 @@ technologies = {
 		start_year = 3024
 		
 		folder = {
-			name = support_folder
+			name = infantry_folder
 			position = { x = 0 y = @3024 }
 		}
 		

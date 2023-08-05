@@ -6,5 +6,25 @@ on_actions = {
 				load_steppe_warband = yes
 			}
 		}
+		effect = { ##setup technology slowers
+			every_country = {
+				if = {
+					limit = { NOT = { has_tech = metallurgy1 } }
+					add_ideas = hidden_metallurgy1
+				}
+				if = {
+					limit = { NOT = { has_tech = metallurgy2 } }
+					add_ideas = hidden_metallurgy2
+				}
+				if = {
+					limit = { NOT = { has_tech = metallurgy3 } }
+					add_ideas = hidden_metallurgy3
+				}
+				if = {
+					limit = { NOT = { has_tech = metallurgy4 } }
+					add_ideas = hidden_metallurgy4
+				}
+			}
+		}
 	}
 }

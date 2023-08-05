@@ -12,7 +12,6 @@ sub_units = {
 		type = {
 			armor
 		}
-		
 		group = armor
 		
 		categories = {
@@ -76,8 +75,6 @@ sub_units = {
 		#Tanks are awesome
 		# soft_attack = 0.5
 		
-		suppression = 2.5		
+		suppression = 1.5		
 	}
-
-	
 }

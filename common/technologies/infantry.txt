@@ -13,7 +13,7 @@
 
 technologies = {
 	
-	@3000 = 0
+	@3000 = -1
 	@3015 = 2
 	@3017 = 4
 	@3018 = 6
@@ -44,7 +44,9 @@ technologies = {
 		enable_subunits = {
 			infantry
 		}
-		
+		dependencies = {
+			metallurgy0 = 1
+		}
 		path = {
 			leads_to_tech = infantry_weapons1
 			research_cost_coeff = 1
@@ -58,13 +60,14 @@ technologies = {
 		start_year = 3000
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = -1 }
+			position = { x = 0 y = @3000 }
 		}
 		
 		categories = {
 			infantry_weapons
 			infantry_tech
 			one_handed
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -103,6 +106,8 @@ technologies = {
 			infantry_weapons
 			infantry_tech
 			one_handed
+			metallurgy_early
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -146,6 +151,8 @@ technologies = {
 			infantry_weapons
 			infantry_tech
 			one_handed
+			metallurgy_basic
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -189,6 +196,8 @@ technologies = {
 			infantry_weapons
 			infantry_tech
 			one_handed
+			metallurgy_advanced
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -225,6 +234,8 @@ technologies = {
 		categories = {
 			infantry_weapons
 			infantry_tech
+			metallurgy_basic
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -253,6 +264,8 @@ technologies = {
 		categories = {
 			infantry_weapons
 			infantry_tech
+			metallurgy_improved
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -282,15 +295,17 @@ technologies = {
 		}
 
 		research_cost = 1.5
-		start_year = 3023
+		start_year = 3022
 		folder = {
 			name = infantry_folder
-			position = { x = @weaponUpgradeX y = @3023 }
+			position = { x = @weaponUpgradeX y = @3022 }
 		}
 		
 		categories = {
 			infantry_weapons
 			infantry_tech
+			metallurgy_advanced
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -346,6 +361,8 @@ technologies = {
 			infantry_weapons
 			infantry_tech
 			two_handed
+			metallurgy_early
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -388,6 +405,8 @@ technologies = {
 			infantry_weapons
 			infantry_tech
 			two_handed
+			metallurgy_basic
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -430,6 +449,8 @@ technologies = {
 			infantry_weapons
 			infantry_tech
 			two_handed
+			metallurgy_advanced
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -464,6 +485,9 @@ technologies = {
 			heavy_infantry
 		}
 		
+		dependencies = {
+			metallurgy0 = 1
+		}
 		path = {
 			leads_to_tech = infantry_armor_tech_1
 			research_cost_coeff = 1
@@ -473,12 +497,13 @@ technologies = {
 		start_year = 3000
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = -1 }
+			position = { x = 0 y = @3000  }
 		}
 		
 		categories = {
 			infantry_tech
 			infantry_support_weapons
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -532,6 +557,8 @@ technologies = {
 		categories = {
 			infantry_tech
 			infantry_support_weapons
+			metallurgy_early
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -588,6 +615,8 @@ technologies = {
 		categories = {
 			infantry_tech
 			infantry_support_weapons
+			metallurgy_basic
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -644,6 +673,8 @@ technologies = {
 		categories = {
 			infantry_tech
 			infantry_support_weapons
+			metallurgy_basic
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -695,6 +726,8 @@ technologies = {
 		categories = {
 			infantry_tech
 			infantry_support_weapons
+			metallurgy_improved
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -750,6 +783,8 @@ technologies = {
 		categories = {
 			infantry_tech
 			infantry_support_weapons
+			metallurgy_advanced
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -789,15 +824,17 @@ technologies = {
 		}
 		
 		research_cost = 1.5
-		start_year = 3023
+		start_year = 3022
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = @3023 }
+			position = { x = 0 y = @3022 }
 		}
 		
 		categories = {
 			infantry_tech
 			infantry_support_weapons
+			metallurgy_advanced
+			metallurgy
 		}
 		
 		ai_will_do = {
@@ -1418,6 +1455,9 @@ technologies = {
 				}
 			}
 		}
+		dependencies = {
+			metallurgy0 = 1
+		}
 		path = {
 			leads_to_tech = spear_tech_1
 			research_cost_coeff = 1
@@ -1432,6 +1472,12 @@ technologies = {
 			position = { x = 0 y = -1 }
 		}
 
+		categories = {
+			infantry_tech
+			cat_anti_tank
+			metallurgy
+		}
+
 		ai_will_do = {
 			factor = 1
 
@@ -1473,11 +1519,6 @@ technologies = {
 				OR = { original_tag = ISN original_tag = DUN }
 			}
 		}
-
-		categories = {
-			infantry_tech
-			cat_anti_tank
-		}
 	}
 	spear_tech_1 = {
 
@@ -1487,27 +1528,6 @@ technologies = {
 		enable_equipment_modules = {
 			cav_basic_lance_weapon
 			backup_lance
-		}
-		#####AI isengard gets a free division template becuase they're really stupid otherwise
-		on_research_complete_limit = {
-			original_tag = ISN
-			is_ai = yes
-			NOT = {	has_template_containing_unit = anti_tank_brigade }
-		}
-		on_research_complete = {
-			division_template = {
-				name = "Pike Legion"
-				regiments = {
-					anti_tank_brigade = { x = 0 y = 0 }
-					anti_tank_brigade = { x = 0 y = 1 }
-					anti_tank_brigade = { x = 0 y = 2 }
-					anti_tank_brigade = { x = 1 y = 0 }
-					anti_tank_brigade = { x = 1 y = 2 }
-					anti_tank_brigade = { x = 1 y = 1 }
-					anti_tank_brigade = { x = 2 y = 0 }
-					anti_tank_brigade = { x = 2 y = 1 }
-				}
-			}
 		}
 		path = {
 			leads_to_tech = spear_upgrade_1
@@ -1522,6 +1542,12 @@ technologies = {
 			name = infantry_folder
 			position = { x = 0 y = @3015 }
 		}
+		categories = {
+			infantry_tech
+			cat_anti_tank
+			metallurgy_early
+			metallurgy
+		}
 
 		ai_will_do = {
 			factor = 1
@@ -1565,10 +1591,6 @@ technologies = {
 			}
 		}
 
-		categories = {
-			infantry_tech
-			cat_anti_tank
-		}
 	}
 
 	spear_upgrade_1 = {
@@ -1594,6 +1616,13 @@ technologies = {
 		folder = {
 			name = infantry_folder
 			position = { x = 0 y = @3018 }
+		}
+
+		categories = {
+			infantry_tech
+			cat_anti_tank
+			metallurgy_basic
+			metallurgy
 		}
 
 		ai_will_do = {
@@ -1627,11 +1656,6 @@ technologies = {
 				OR = { original_tag = ISN original_tag = DUN }
 			}
 		}
-
-		categories = {
-			infantry_tech
-			cat_anti_tank
-		}
 	}
 
 	spear_tech_2 = {
@@ -1659,6 +1683,12 @@ technologies = {
 		folder = {
 			name = infantry_folder
 			position = { x = 0 y = @3019 }
+		}
+		categories = {
+			infantry_tech
+			cat_anti_tank
+			metallurgy_improved
+			metallurgy
 		}
 
 		ai_will_do = {
@@ -1696,11 +1726,6 @@ technologies = {
 				OR = { original_tag = ISN original_tag = DUN }
 			}
 		}
-
-		categories = {
-			infantry_tech
-			cat_anti_tank
-		}
 	}
 
 	spear_upgrade_2 = {
@@ -1721,6 +1746,12 @@ technologies = {
 		folder = {
 			name = infantry_folder
 			position = { x = 0 y = @3020 }
+		}
+		categories = {
+			infantry_tech
+			cat_anti_tank
+			metallurgy_improved
+			metallurgy
 		}
 
 		ai_will_do = {
@@ -1759,11 +1790,6 @@ technologies = {
 				OR = { original_tag = ISN original_tag = DUN }
 			}
 		}
-
-		categories = {
-			infantry_tech
-			cat_anti_tank
-		}
 	}
 
 	spear_upgrade_3 = {
@@ -1788,6 +1814,12 @@ technologies = {
 		folder = {
 			name = infantry_folder
 			position = { x = 0 y = @3021 }
+		}
+		categories = {
+			infantry_tech
+			cat_anti_tank
+			metallurgy_advanced
+			metallurgy
 		}
 
 		ai_will_do = {
@@ -1821,11 +1853,6 @@ technologies = {
 				OR = { original_tag = ISN original_tag = DUN }
 			}
 		}
-
-		categories = {
-			infantry_tech
-			cat_anti_tank
-		}
 	}
 
 	spear_tech_3 = {
@@ -1843,6 +1870,12 @@ technologies = {
 		folder = {
 			name = infantry_folder
 			position = { x = 0 y = @3022 }
+		}
+		categories = {
+			infantry_tech
+			cat_anti_tank
+			metallurgy_advanced
+			metallurgy
 		}
 
 		ai_will_do = {
@@ -1880,11 +1913,6 @@ technologies = {
 				factor = 2
 				OR = { original_tag = ISN original_tag = DUN }
 			}
-		}
-
-		categories = {
-			infantry_tech
-			cat_anti_tank
 		}
 	}
 ###########################################################
@@ -2068,6 +2096,250 @@ technologies = {
 		research_cost = 1
 		infantry = {
 			combat_width = -0.4
+		}
+	}
+###########################################################
+				#METALLURGY
+###########################################################
+	@infantryMetallurgyX = 1
+	@3000Y = 0
+	@3015Y = 2
+	@3016Y = 4
+	@3017Y = 6
+	@3018Y = 8
+	@3019Y = 10
+	@3020Y = 12
+	@3021Y = 14
+	@3022Y = 16
+	@3023Y = 18
+	@metallurgySmithX = 0
+	@unlockerCost = 0.75
+	metallurgy0 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3000
+		folder = {
+			name = smithing_folder
+			position = { x = @metallurgySmithX y = @3000Y }
+		}
+		folder = {
+			name = infantry_folder
+			position = { x = @infantryMetallurgyX y = -2 }
+		}
+		path = {
+			leads_to_tech = metallurgy1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tools1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = concentrated_industry
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = dispersed_industry
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			metallurgy
+			true_metallurgy
+		}
+		force_use_small_tech_layout = yes
+		ai_will_do = {
+			factor = 10
+			
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3018.1.1"
+			}
+		}
+	}
+	metallurgy1 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3015
+		folder = {
+			name = smithing_folder
+			position = { x = @metallurgySmithX y = @3015Y }
+		}
+		folder = {
+			name = infantry_folder
+			position = { x = @infantryMetallurgyX y = @3015 }
+		}
+		path = {
+			leads_to_tech = metallurgy2
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			metallurgy
+			true_metallurgy
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_metallurgy1
+			}
+			custom_effect_tooltip = metallurgy1_tooltip
+		}
+		show_effect_as_desc = yes
+		
+		ai_will_do = {
+			factor = 7
+			
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3018.1.1"
+			}
+		}
+	}
+	metallurgy2 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3017
+		folder = {
+			name = smithing_folder
+			position = { x = @metallurgySmithX y = @3017Y }
+		}
+		folder = {
+			name = infantry_folder
+			position = { x = @infantryMetallurgyX y = 5 }
+		}
+		path = {
+			leads_to_tech = metallurgy3
+			research_cost_coeff = 1
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_metallurgy2
+			}
+			custom_effect_tooltip = metallurgy2_tooltip
+		}
+		
+		categories = {
+			metallurgy
+			true_metallurgy
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3019.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3020.1.1"
+			}
+		}
+	}
+	metallurgy3 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3019
+		folder = {
+			name = smithing_folder
+			position = { x = @metallurgySmithX y = @3019Y }
+		}
+		folder = {
+			name = infantry_folder
+			position = { x = @infantryMetallurgyX y = @3019 }
+		}
+		path = {
+			leads_to_tech = metallurgy4
+			research_cost_coeff = 1
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_metallurgy3
+			}
+			custom_effect_tooltip = metallurgy3_tooltip
+		}
+		
+		categories = {
+			metallurgy
+			true_metallurgy
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3020.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3021.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3022.1.1"
+			}
+		}
+	}
+	metallurgy4 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3021
+		folder = {
+			name = smithing_folder
+			position = { x = @metallurgySmithX y = @3021Y }
+		}
+		folder = {
+			name = infantry_folder
+			position = { x = @infantryMetallurgyX y = @3021 }
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_metallurgy4
+			}
+			custom_effect_tooltip = metallurgy4_tooltip
+		}
+		
+		categories = {
+			metallurgy
+			true_metallurgy
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3022.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3024.1.1"
+			}
 		}
 	}
 }

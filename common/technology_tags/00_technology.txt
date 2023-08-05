@@ -10,16 +10,12 @@ technology_categories = {
 	cat_medium_armor
 	cat_heavy_armor
 	artillery
-	cat_anti_tank
-	cat_anti_air
 	naval_air
-	infantry_weapons
 	motorized_equipment
 	cat_mechanized_equipment
 	naval_equipment
 	rocketry
 	nuclear
-	industry
 	electronics
 	land_doctrine
 	air_doctrine
@@ -52,10 +48,8 @@ technology_categories = {
 	decryption_tech
 	computing_tech
 	radar_tech
-	infantry_tech
 	marine_tech
 	construction_tech
-	excavation_tech
 	submarine_doctrine
 	air_equipment
 	cat_mobile_warfare
@@ -89,11 +83,9 @@ technology_categories = {
 	naval_minelaying
 	cat_scout_plane
 	train_tech
-	cat_production
 	cat_synth_rubber
 	cat_synth_oil
 	
-	infantry_support_weapons
 	architecture
 	cat_actual_artillery
 	cat_special_forces
@@ -107,9 +99,25 @@ technology_categories = {
 	
 	tank_armor
 	tank_engine
+##################Metallurgy
+	metallurgy
+	true_metallurgy
+	metallurgy_early
+	metallurgy_basic
+	metallurgy_improved
+	metallurgy_advanced
 	
+	infantry_tech #infantry equipment
 	one_handed
 	two_handed
+	infantry_support_weapons #infantry armor
+	infantry_weapons
+	cat_anti_tank #spears
+	
+	industry #smithing
+	cat_tool_tech
+	excavation_tech #resources
+	cat_production
 	
 }
 
@@ -117,8 +125,8 @@ technology_folders = {
 	infantry_folder = {
 		ledger = army
 	}
-	support_folder = {
-		ledger = army
+	smithing_folder = {
+		ledger = civilian
 	}
 	armour_folder = {
 		ledger = army
@@ -136,9 +144,6 @@ technology_folders = {
 	}
 	artillery_folder = {
 		ledger = army
-	}
-	air_techs_folder = {
-		ledger = air
 	}
 	naval_folder = {
 		available = {
@@ -170,7 +175,6 @@ technology_folders = {
 	electronics_folder = {
 		ledger = civilian
 	}
-	#secret_weapons_folder
 }
 
  

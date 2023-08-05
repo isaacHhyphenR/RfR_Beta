@@ -1,7 +1,85 @@
 spriteTypes = {
+	spriteType = {
+		name = "GFX_tech_connector"
+		textureFile = "gfx/interface/techtree/tech_connector.dds"
+	}
+	spriteType = {
+		name = "GFX_smithing_folder_tab"
+		textureFile = "gfx/interface/techtree/techtree_smithing_tab.dds"
+		noOfFrames = 2		
+	}
+	SpriteType = {
+		name = "GFX_idea_empty"
+		texturefile = "gfx/interface/ideas/empty.dds"
+		allwaystransparent = yes
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_technology_smithing_folder_small_available_item_bg"
+		textureFile = "gfx/interface/techtree/tech_doctrine_available_item_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_technology_smithing_folder_small_unavailable_item_bg"
+		textureFile = "gfx/interface/techtree/tech_doctrine_unavailable_item_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_technology_smithing_folder_small_researched_item_bg"
+		textureFile = "gfx/interface/techtree/tech_landdoctrine_researched_item_bg.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_smithing_folder_small_currently_researching_item_bg"
+		texturefile = "gfx/interface/techtree/tech_doctrine_researching_anim_strip.dds"
+		noOfFrames = 9
+		loadType = "INGAME"
+		transparencecheck = yes
+		animation_rate_fps = 15
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
 							######################################
 									#CUSTOM TECHS
 							######################################
+	SpriteType = {
+		name = "GFX_metallurgy0_medium"
+		texturefile = "gfx/interface/technologies/metallurgy0.dds"
+	}
+	SpriteType = {
+		name = "GFX_metallurgy1_medium"
+		texturefile = "gfx/interface/technologies/metallurgy1.dds"
+	}
+	SpriteType = {
+		name = "GFX_metallurgy2_medium"
+		texturefile = "gfx/interface/technologies/metallurgy2.dds"
+	}
+	SpriteType = {
+		name = "GFX_metallurgy3_medium"
+		texturefile = "gfx/interface/technologies/metallurgy3.dds"
+	}
+	SpriteType = {
+		name = "GFX_metallurgy4_medium"
+		texturefile = "gfx/interface/technologies/metallurgy4.dds"
+	}
+	SpriteType = {
+		name = "GFX_tools1_medium"
+		texturefile = "gfx/interface/technologies/tools1.dds"
+	}
+	SpriteType = {
+		name = "GFX_tools2_medium"
+		texturefile = "gfx/interface/technologies/tools2.dds"
+	}
+	SpriteType = {
+		name = "GFX_tools3_medium"
+		texturefile = "gfx/interface/technologies/tools3.dds"
+	}
+	SpriteType = {
+		name = "GFX_tools4_medium"
+		texturefile = "gfx/interface/technologies/tools4.dds"
+	}
+	SpriteType = {
+		name = "GFX_tools5_medium"
+		texturefile = "gfx/interface/technologies/tools5.dds"
+	}
 	SpriteType = {
 		name = "GFX_black_powder_medium"
 		texturefile = "gfx/interface/technologies/black_powder.dds"

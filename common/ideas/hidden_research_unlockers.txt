@@ -1,0 +1,49 @@
+ideas = {
+	@bonus = -0.5
+	hidden_ideas = {
+		hidden_metallurgy1 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				metallurgy_early = @bonus
+			}
+		}
+		hidden_metallurgy2 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				metallurgy_basic = @bonus
+			}
+		}
+		hidden_metallurgy3 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				metallurgy_improved = @bonus
+			}
+		}
+		hidden_metallurgy4 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				metallurgy_advanced = @bonus
+			}
+		}
+	}
+}
