@@ -1,0 +1,231 @@
+ideas = {
+	@bonus = -0.5
+	hidden_ideas = {
+		hidden_metallurgy1 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				metallurgy_early = @bonus
+			}
+		}
+		hidden_metallurgy2 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				metallurgy_basic = @bonus
+			}
+		}
+		hidden_metallurgy3 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				metallurgy_improved = @bonus
+			}
+		}
+		hidden_metallurgy4 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				metallurgy_advanced = @bonus
+			}
+		}
+		@infantry_equip_cost = 0.04
+		hidden_infantry_equip_cost1 = {
+			name = concentrated_production1
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = @infantry_equip_cost
+				}
+				infantry_armor = {
+					instant = yes
+					build_cost_ic = @infantry_equip_cost
+				}
+			}
+		}
+		hidden_infantry_equip_cost2 = {
+			name = concentrated_production2
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = @infantry_equip_cost
+				}
+				infantry_armor = {
+					instant = yes
+					build_cost_ic = @infantry_equip_cost
+				}
+			}
+		}
+		hidden_infantry_equip_cost3 = {
+			name = concentrated_production3
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = @infantry_equip_cost
+				}
+				infantry_armor = {
+					instant = yes
+					build_cost_ic = @infantry_equip_cost
+				}
+			}
+		}
+		hidden_infantry_equip_cost4 = {
+			name = concentrated_production4
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = @infantry_equip_cost
+				}
+				infantry_armor = {
+					instant = yes
+					build_cost_ic = @infantry_equip_cost
+				}
+			}
+		}
+		hidden_infantry_equip_cost5 = {
+			name = concentrated_production5
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = @infantry_equip_cost
+				}
+				infantry_armor = {
+					instant = yes
+					build_cost_ic = @infantry_equip_cost
+				}
+			}
+		}
+				@infantry_equip_reliability = -0.02
+		hidden_infantry_equip_reliability1 = {
+			name = dispersed_production1
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					reliability = @infantry_equip_reliability
+				}
+				infantry_armor = {
+					instant = yes
+					reliability = @infantry_equip_reliability
+				}
+			}
+		}
+		hidden_infantry_equip_reliability2 = {
+			name = dispersed_production2
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					reliability = @infantry_equip_reliability
+				}
+				infantry_armor = {
+					instant = yes
+					reliability = @infantry_equip_reliability
+				}
+			}
+		}
+		hidden_infantry_equip_reliability3 = {
+			name = dispersed_production3
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					reliability = @infantry_equip_reliability
+				}
+				infantry_armor = {
+					instant = yes
+					reliability = @infantry_equip_reliability
+				}
+			}
+		}
+		hidden_infantry_equip_reliability4 = {
+			name = dispersed_production4
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					reliability = @infantry_equip_reliability
+				}
+				infantry_armor = {
+					instant = yes
+					reliability = @infantry_equip_reliability
+				}
+			}
+		}
+		hidden_infantry_equip_reliability5 = {
+			name = dispersed_production5
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					reliability = @infantry_equip_reliability
+				}
+				infantry_armor = {
+					instant = yes
+					reliability = @infantry_equip_reliability
+				}
+			}
+		}
+	}
+}

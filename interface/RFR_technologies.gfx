@@ -132,6 +132,23 @@ spriteTypes = {
 		name = "GFX_fort_tech_5_medium"
 		texturefile = "gfx/interface/technologies/Fort5.dds"
 	}
+##########################SUPPORT EQUIPMENT
+	# SpriteType = {
+		# name = "GFX_tech_maintenance_company_medium"
+		# texturefile = "gfx/interface/technologies/maintenance_equipment1.dds"
+	# }
+	# SpriteType = {
+		# name = "GFX_tech_maintenance_company_medium2"
+		# texturefile = "gfx/interface/technologies/maintenance_equipment2.dds"
+	# }
+	# SpriteType = {
+		# name = "GFX_tech_maintenance_company_medium3"
+		# texturefile = "gfx/interface/technologies/maintenance_equipment3.dds"
+	# }
+	# SpriteType = {
+		# name = "GFX_tech_maintenance_company_medium4"
+		# texturefile = "gfx/interface/technologies/maintenance_equipment4.dds"
+	# }
 ##########################INFANTRY ARMOR
 	SpriteType = {
 		name = "GFX_infantry_armor_tech_0_medium"

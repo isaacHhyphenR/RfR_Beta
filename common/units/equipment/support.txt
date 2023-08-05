@@ -14,9 +14,6 @@ equipments = {
 		
 		interface_category = interface_category_land
 		
-		
-		
-		
 		#Space taken in convoy
 		lend_lease_cost = 1
 
@@ -26,12 +23,100 @@ equipments = {
 			wood = 1
 		}
 	}
-
 	support_equipment_1 = {
 		year = 3000
 
 		archetype = support_equipment
 		priority = 20	
+	}
+	support_equipment_2 = {
+		year = 3000
+		parent = support_equipment_1
+
+		archetype = support_equipment
+		priority = 20	
+	}
+	
+	maintenance_equipment = {
+		year = 3000
+
+		is_archetype = yes
+		picture = archetype_maintenance_equipment
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+		interface_category = interface_category_land
+		#Space taken in convoy
+		lend_lease_cost = 1
+	}
+	maintenance_equipment_1 = {
+		#year = 3015
+
+		archetype = maintenance_equipment
+		priority = 20
+		visual_level = 1
+
+		build_cost_ic = 2
+		
+		reliability_factor = 0.05
+		equipment_capture_factor = 0.05
+		
+		resources = {
+			iron = 1
+		}
+	}
+	maintenance_equipment_2 = {
+		#year = 3017
+
+		archetype = maintenance_equipment
+		priority = 20
+		parent = maintenance_equipment_1
+		visual_level = 2
+
+		build_cost_ic = 2.6
+		
+		reliability_factor = 0.10
+		equipment_capture_factor = 0.10
+		
+		resources = {
+			iron = 2
+		}
+	}
+	maintenance_equipment_3 = {
+		#year = 3020
+
+		archetype = maintenance_equipment
+		priority = 20
+		parent = maintenance_equipment_2
+		visual_level = 3
+
+		build_cost_ic = 3.3
+		
+		reliability_factor = 0.15
+		equipment_capture_factor = 0.15
+		
+		resources = {
+			iron = 2
+		}
+	}
+	maintenance_equipment_4 = {
+		#year = 3022
+
+		archetype = maintenance_equipment
+		priority = 20
+		parent = maintenance_equipment_3
+		visual_level = 4
+
+		build_cost_ic = 4
+		
+		reliability_factor = 0.2
+		equipment_capture_factor = 0.2
+		
+		resources = {
+			iron = 3
+		}
 	}
 
 }

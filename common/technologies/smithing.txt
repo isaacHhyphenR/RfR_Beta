@@ -12,9 +12,265 @@ technologies = {
 	@3023Y = 18
 	@toolsX = 2
 	@excavationx = 4
-	@concentratedX = 6
-	@dispersedX = 8
+	@concProdX = 6
+	@concentratedX = 8
+	@dispersedX = 10
+	@dispProdX = 12
+	@maintenanceX = 14
+	@conversionX = 16
 	
+	@AIbehindMetallurgy = 0.2
+###########################################################
+				#METALLURGY
+###########################################################
+	@infantryMetallurgyX = 1
+	@3000Inf = -1
+	@3015Inf = 2
+	@3017Inf = 4
+	@3018Inf = 6
+	@3019Inf = 8
+	@3020Inf = 10
+	@3021Inf = 12
+	@3022Inf = 14
+	@3023Inf = 16
+	@3024Inf = 18
+	@3025Inf = 20
+	@metallurgySmithX = 0
+	@unlockerCost = 0.75
+	metallurgy0 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3000
+		folder = {
+			name = smithing_folder
+			position = { x = @metallurgySmithX y = @3000Y }
+		}
+		folder = {
+			name = infantry_folder
+			position = { x = @infantryMetallurgyX y = -2 }
+		}
+		path = {
+			leads_to_tech = metallurgy1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tools1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = concentrated_industry
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = dispersed_industry
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_maintenance_company
+			research_cost_coeff = 1
+		}
+		
+		enable_building = { building = arms_factory level = 10 }
+		
+		categories = {
+			metallurgy
+			true_metallurgy
+		}
+		force_use_small_tech_layout = yes
+		ai_will_do = {
+			factor = 10
+			
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3018.1.1"
+			}
+		}
+	}
+	metallurgy1 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3015
+		folder = {
+			name = smithing_folder
+			position = { x = @metallurgySmithX y = @3015Y }
+		}
+		folder = {
+			name = infantry_folder
+			position = { x = @infantryMetallurgyX y = @3015Inf }
+		}
+		path = {
+			leads_to_tech = metallurgy2
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			metallurgy
+			true_metallurgy
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_metallurgy1
+			}
+			custom_effect_tooltip = metallurgy1_tooltip
+		}
+		show_effect_as_desc = yes
+		
+		ai_will_do = {
+			factor = 7
+			
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3018.1.1"
+			}
+		}
+	}
+	metallurgy2 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3017
+		folder = {
+			name = smithing_folder
+			position = { x = @metallurgySmithX y = @3017Y }
+		}
+		folder = {
+			name = infantry_folder
+			position = { x = @infantryMetallurgyX y = 5 }
+		}
+		path = {
+			leads_to_tech = metallurgy3
+			research_cost_coeff = 1
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_metallurgy2
+			}
+			custom_effect_tooltip = metallurgy2_tooltip
+		}
+		
+		categories = {
+			metallurgy
+			true_metallurgy
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3019.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3020.1.1"
+			}
+		}
+	}
+	metallurgy3 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3019
+		folder = {
+			name = smithing_folder
+			position = { x = @metallurgySmithX y = @3019Y }
+		}
+		folder = {
+			name = infantry_folder
+			position = { x = @infantryMetallurgyX y = @3019Inf }
+		}
+		path = {
+			leads_to_tech = metallurgy4
+			research_cost_coeff = 1
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_metallurgy3
+			}
+			custom_effect_tooltip = metallurgy3_tooltip
+		}
+		
+		categories = {
+			metallurgy
+			true_metallurgy
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3020.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3021.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3022.1.1"
+			}
+		}
+	}
+	metallurgy4 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3021
+		folder = {
+			name = smithing_folder
+			position = { x = @metallurgySmithX y = @3021Y }
+		}
+		folder = {
+			name = infantry_folder
+			position = { x = @infantryMetallurgyX y = @3021Inf }
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_metallurgy4
+			}
+			custom_effect_tooltip = metallurgy4_tooltip
+		}
+		
+		categories = {
+			metallurgy
+			true_metallurgy
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3022.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3024.1.1"
+			}
+		}
+	}
 ###########################################################
 				#TOOLS
 ###########################################################
@@ -43,6 +299,12 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
+			}
 		}
 		
 		categories = {
@@ -82,6 +344,12 @@ technologies = {
 				factor = 10
 				date > "3016.1.1"
 			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
+			}
 		}
 		
 		categories = {
@@ -119,6 +387,12 @@ technologies = {
 			modifier = {
 				factor = 10
 				date > "3018.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy2
+				}
+				factor = @AIbehindMetallurgy
 			}
 		}
 		
@@ -158,7 +432,13 @@ technologies = {
 			modifier = {
 				factor = 10
 				date > "3020.1.1"
-			}			
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy3
+				}
+				factor = @AIbehindMetallurgy
+			}
 		}
 		
 		categories = {
@@ -192,6 +472,12 @@ technologies = {
 			modifier = {
 				factor = 10
 				date > "3022.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy4
+				}
+				factor = @AIbehindMetallurgy
 			}
 		}
 		
@@ -250,6 +536,12 @@ technologies = {
 					monsters > 8
 				}
 			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
+			}
 		}
 	}
 	excavation2 = {
@@ -298,6 +590,12 @@ technologies = {
 					iron > 8
 					monsters > 8
 				}
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
 			}
 		}
 	}
@@ -348,6 +646,12 @@ technologies = {
 					monsters > 8
 				}
 			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy2
+				}
+				factor = @AIbehindMetallurgy
+			}
 		}
 	}
 	excavation4 = {
@@ -397,6 +701,12 @@ technologies = {
 					monsters > 8
 				}
 			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy3
+				}
+				factor = @AIbehindMetallurgy
+			}
 		}
 	}
 	excavation5 = {
@@ -445,77 +755,12 @@ technologies = {
 					monsters > 8
 				}
 			}
-		}
-	}
-###########################################################
-				#CONVERSION
-###########################################################
-
-	#Conversion branch - Enabled in DoD
-	improved_equipment_conversion = {
-	
-		equipment_conversion_speed = 0.40
-
-		allow_branch = {
-			has_dlc = "Death or Dishonor"
-		}
-
-		path = {
-			leads_to_tech = advanced_equipment_conversion
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 1.5
-		start_year = 3016
-		
-		folder = {
-			name = smithing_folder
-			position = { x = 2 y = 4 }
-		}
-
-		ai_will_do = {
-			factor = 1
-
 			modifier = {
-				factor = 2
-				date > "3016.1.1"
+				NOT = {
+					has_tech = metallurgy4
+				}
+				factor = @AIbehindMetallurgy
 			}
-		}
-		
-		categories = {
-			industry
-			cat_tool_tech
-			metallurgy
-			metallurgy_early
-		}
-	}
-	
-	advanced_equipment_conversion = {
-		
-		equipment_conversion_speed = 0.40
-
-		research_cost = 1.5
-		start_year = 3018
-		
-		folder = {
-			name = smithing_folder
-			position = { x = 2 y = 6 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 2
-				date > "3016.1.1"
-			}
-		}
-		
-		categories = {
-			industry
-			cat_tool_tech
-			metallurgy
-			metallurgy_basic
 		}
 	}
 
@@ -534,11 +779,16 @@ technologies = {
 		#industrial_capacity_dockyard = 0.1
 		#global_building_slots_factor = 0.20
 		
+		enable_building = { building = arms_factory level = 12 }
 		# dependencies = {
 			# metallurgy0 = 1
 		# }
 		path = {
 			leads_to_tech = concentrated_industry2 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = concentrated_production1 
 			research_cost_coeff = 1
 		}
 		
@@ -559,15 +809,27 @@ technologies = {
 				factor = 0
 				has_tech = dispersed_industry
 			}
-			
 			modifier = {
 				factor = 0
 				is_researching_technology = dispersed_industry
 			}
-						
 			modifier = {
 				factor = 5
 				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_idea = orcish_heritage_idea
+			}
+			modifier = {
+				factor = 1.25
+				has_government = melkorite
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
 			}
 		}
 		
@@ -590,8 +852,14 @@ technologies = {
 		#industrial_capacity_dockyard = 0.1
 		#global_building_slots_factor = 0.20
 		
+		enable_building = { building = arms_factory level = 14 }
+		
 		path = {
 			leads_to_tech = concentrated_industry3 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = concentrated_production2 
 			research_cost_coeff = 1
 		}
 		
@@ -609,6 +877,12 @@ technologies = {
 			modifier = {
 				factor = 10
 				date > "3016.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
 			}
 			
 		}
@@ -632,8 +906,14 @@ technologies = {
 		#industrial_capacity_dockyard = 0.1
 		#global_building_slots_factor = 0.20
 		
+		enable_building = { building = arms_factory level = 16 }
+		
 		path = {
 			leads_to_tech = concentrated_industry4 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = concentrated_production3 
 			research_cost_coeff = 1
 		}
 		
@@ -651,7 +931,13 @@ technologies = {
 			modifier = {
 				factor = 10
 				date > "3018.1.1"
-			}			
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy2
+				}
+				factor = @AIbehindMetallurgy
+			}
 		}
 		
 		categories = {
@@ -673,8 +959,14 @@ technologies = {
 		#industrial_capacity_dockyard = 0.1
 		#global_building_slots_factor = 0.20
 		
+		enable_building = { building = arms_factory level = 18 }
+		
 		path = {
 			leads_to_tech = concentrated_industry5
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = concentrated_production4
 			research_cost_coeff = 1
 		}
 		
@@ -692,6 +984,12 @@ technologies = {
 			modifier = {
 				factor = 10
 				date > "3020.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy3
+				}
+				factor = @AIbehindMetallurgy
 			}
 		}
 		
@@ -714,6 +1012,13 @@ technologies = {
 		#industrial_capacity_dockyard = 0.1
 		#global_building_slots_factor = 0.20
 		
+		enable_building = { building = arms_factory level = 20 }
+		
+		path = {
+			leads_to_tech = concentrated_production5 
+			research_cost_coeff = 1
+		}
+		
 		research_cost = 2
 		start_year = 3022
 		
@@ -733,7 +1038,13 @@ technologies = {
 			modifier = {
 				factor = 20
 				date > "3022.1.1"
-			}			
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy4
+				}
+				factor = @AIbehindMetallurgy
+			}
 		}
 		
 		categories = {
@@ -747,7 +1058,228 @@ technologies = {
 			offensive = -1.0
 		}
 	}
-	
+##########################Concentrated Production
+	@concProdCost = 1.5
+	concentrated_production1 = {
+		
+		research_cost = @concProdCost
+		start_year = 3015
+		folder = {
+			name = smithing_folder
+			position = { x = @concProdX y = @3015Y }
+		}
+		custom_modifier_tooltip = concentrated_production1_tooltip
+		on_research_complete = {
+			hidden_effect = {
+				add_ideas = hidden_infantry_equip_cost1
+			}
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			metallurgy
+			concentrated_industry_category
+			metallurgy_early
+		}
+		ai_will_do = {
+			factor = 7
+			
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3018.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	concentrated_production2 = {
+		
+		research_cost = @concProdCost
+		start_year = 3016
+		folder = {
+			name = smithing_folder
+			position = { x = @concProdX y = @3016Y }
+		}
+		custom_modifier_tooltip = concentrated_production2_tooltip
+		on_research_complete = {
+			hidden_effect = {
+				add_ideas = hidden_infantry_equip_cost2
+			}
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			metallurgy
+			concentrated_industry_category
+			metallurgy_early
+		}
+		ai_will_do = {
+			factor = 7
+			
+			modifier = {
+				factor = 2
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3019.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	concentrated_production3 = {
+		
+		research_cost = @concProdCost
+		start_year = 3018
+		folder = {
+			name = smithing_folder
+			position = { x = @concProdX y = @3018Y }
+		}
+		custom_modifier_tooltip = concentrated_production1_tooltip
+		on_research_complete = {
+			hidden_effect = {
+				add_ideas = hidden_infantry_equip_cost3
+			}
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			metallurgy
+			concentrated_industry_category
+			metallurgy_basic
+		}
+		ai_will_do = {
+			factor = 7
+			
+			modifier = {
+				factor = 2
+				date > "3019.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3020.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3021.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy2
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	concentrated_production4 = {
+		
+		research_cost = @concProdCost
+		start_year = 3020
+		folder = {
+			name = smithing_folder
+			position = { x = @concProdX y = @3020Y }
+		}
+		custom_modifier_tooltip = concentrated_production4_tooltip
+		on_research_complete = {
+			hidden_effect = {
+				add_ideas = hidden_infantry_equip_cost4
+			}
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			metallurgy
+			concentrated_industry_category
+			metallurgy_improved
+		}
+		ai_will_do = {
+			factor = 7
+			
+			modifier = {
+				factor = 2
+				date > "3021.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3022.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3023.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy3
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	concentrated_production5 = {
+		
+		research_cost = @concProdCost
+		start_year = 3022
+		folder = {
+			name = smithing_folder
+			position = { x = @concProdX y = @3022Y }
+		}
+		custom_modifier_tooltip = concentrated_production5_tooltip
+		on_research_complete = {
+			hidden_effect = {
+				add_ideas = hidden_infantry_equip_cost5
+			}
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			metallurgy
+			concentrated_industry_category
+			metallurgy_early
+		}
+		ai_will_do = {
+			factor = 7
+			
+			modifier = {
+				factor = 2
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3024.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3025.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy4
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
 ###########################################################
 				#DISPERSED
 ###########################################################
@@ -759,11 +1291,17 @@ technologies = {
 		#industrial_capacity_dockyard = 0.1
 		#global_building_slots_factor = 0.2
 		
+		enable_building = { building = arms_factory level = 11 }
+		
 		# dependencies = {
 			# metallurgy0 = 1
 		# }
 		path = {
 			leads_to_tech = dispersed_industry2 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = dispersed_production1 
 			research_cost_coeff = 1
 		}
 		
@@ -784,15 +1322,27 @@ technologies = {
 				factor = 0
 				has_tech = concentrated_industry
 			}
-			
 			modifier = {
 				factor = 0
 				is_researching_technology = concentrated_industry
 			}
-
 			modifier = {
 				factor = 5
 				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 5
+				has_idea = elven_heritage_idea
+			}
+			modifier = {
+				factor = 2
+				original_tag = ROH
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
 			}
 		}
 		
@@ -816,8 +1366,14 @@ technologies = {
 		#industrial_capacity_dockyard = 0.1
 		#global_building_slots_factor = 0.2
 		
+		enable_building = { building = arms_factory level = 12 }
+		
 		path = {
-			leads_to_tech = dispersed_industry3 
+			leads_to_tech = dispersed_industry3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = dispersed_production2
 			research_cost_coeff = 1
 		}
 		
@@ -835,6 +1391,12 @@ technologies = {
 			modifier = {
 				factor = 10
 				date > "3016.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
 			}
 		}
 		
@@ -858,8 +1420,14 @@ technologies = {
 		#industrial_capacity_dockyard = 0.1
 		#global_building_slots_factor = 0.2
 		
+		enable_building = { building = arms_factory level = 13 }
+		
 		path = {
 			leads_to_tech = dispersed_industry4 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = dispersed_production3
 			research_cost_coeff = 1
 		}
 		
@@ -877,7 +1445,13 @@ technologies = {
 			modifier = {
 				factor = 10
 				date > "3018.1.1"
-			}			
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy2
+				}
+				factor = @AIbehindMetallurgy
+			}
 		}
 		
 		categories = {
@@ -900,8 +1474,14 @@ technologies = {
 		#industrial_capacity_dockyard = 0.1
 		#global_building_slots_factor = 0.2
 		
+		enable_building = { building = arms_factory level = 14 }
+		
 		path = {
 			leads_to_tech = dispersed_industry5 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = dispersed_production4 
 			research_cost_coeff = 1
 		}
 		
@@ -919,6 +1499,12 @@ technologies = {
 			modifier = {
 				factor = 10
 				date > "3020.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy3
+				}
+				factor = @AIbehindMetallurgy
 			}
 		}
 		
@@ -942,6 +1528,12 @@ technologies = {
 		#industrial_capacity_dockyard = 0.1
 		#global_building_slots_factor = 0.2
 		
+		enable_building = { building = arms_factory level = 15 }
+		
+		path = {
+			leads_to_tech = dispersed_production5 
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 2
 		start_year = 3022
@@ -953,11 +1545,15 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 15
-			
-			
 			modifier = {
 				factor = 10
 				date > "3022.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy4
+				}
+				factor = @AIbehindMetallurgy
 			}
 		}
 		
@@ -970,6 +1566,570 @@ technologies = {
 		
 		ai_research_weights = {
 			defensive = -1.0
+		}
+	}
+	
+##########################dispersed Production
+	@dispProdCost = 0.75
+	dispersed_production1 = {
+		
+		research_cost = @dispProdCost
+		start_year = 3015
+		folder = {
+			name = smithing_folder
+			position = { x = @dispProdX y = @3015Y }
+		}
+		custom_modifier_tooltip = dispersed_production1_tooltip
+		on_research_complete = {
+			hidden_effect = {
+				add_ideas = hidden_infantry_equip_cost1
+			}
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			metallurgy
+			dispersed_industry_category
+			metallurgy_early
+		}
+		ai_will_do = {
+			factor = 5
+			
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3018.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	dispersed_production2 = {
+		
+		research_cost = @dispProdCost
+		start_year = 3016
+		folder = {
+			name = smithing_folder
+			position = { x = @dispProdX y = @3016Y }
+		}
+		custom_modifier_tooltip = dispersed_production2_tooltip
+		on_research_complete = {
+			hidden_effect = {
+				add_ideas = hidden_infantry_equip_cost2
+			}
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			metallurgy
+			dispersed_industry_category
+			metallurgy_early
+		}
+		ai_will_do = {
+			factor = 5
+			
+			modifier = {
+				factor = 2
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3019.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	dispersed_production3 = {
+		
+		research_cost = @dispProdCost
+		start_year = 3018
+		folder = {
+			name = smithing_folder
+			position = { x = @dispProdX y = @3018Y }
+		}
+		custom_modifier_tooltip = dispersed_production1_tooltip
+		on_research_complete = {
+			hidden_effect = {
+				add_ideas = hidden_infantry_equip_cost3
+			}
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			metallurgy
+			dispersed_industry_category
+			metallurgy_basic
+		}
+		ai_will_do = {
+			factor = 5
+			
+			modifier = {
+				factor = 2
+				date > "3019.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3020.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3021.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy2
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	dispersed_production4 = {
+		
+		research_cost = @dispProdCost
+		start_year = 3020
+		folder = {
+			name = smithing_folder
+			position = { x = @dispProdX y = @3020Y }
+		}
+		custom_modifier_tooltip = dispersed_production4_tooltip
+		on_research_complete = {
+			hidden_effect = {
+				add_ideas = hidden_infantry_equip_cost4
+			}
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			metallurgy
+			dispersed_industry_category
+			metallurgy_improved
+		}
+		ai_will_do = {
+			factor = 5
+			
+			modifier = {
+				factor = 2
+				date > "3021.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3022.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3023.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy3
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	dispersed_production5 = {
+		
+		research_cost = @dispProdCost
+		start_year = 3022
+		folder = {
+			name = smithing_folder
+			position = { x = @dispProdX y = @3022Y }
+		}
+		custom_modifier_tooltip = dispersed_production5_tooltip
+		on_research_complete = {
+			hidden_effect = {
+				add_ideas = hidden_infantry_equip_reliability5
+			}
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			metallurgy
+			dispersed_industry_category
+			metallurgy_early
+		}
+		ai_will_do = {
+			factor = 5
+			
+			modifier = {
+				factor = 2
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3024.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3025.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy4
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	
+	
+###########################################################
+				#MAINTAINENCE
+###########################################################
+	tech_maintenance_company = {
+
+		enable_subunits = {
+			maintenance_company
+		}
+		enable_equipments = {
+			maintenance_equipment_1
+		}
+		
+		path = {
+			leads_to_tech = tech_maintenance_company2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = basic_equipment_conversion
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3015
+		folder = {
+			name = smithing_folder
+			position = { x = @maintenanceX y = @3015Y }
+		}
+		
+		categories = {
+			support_tech
+			maintenance_company_tech
+			metallurgy
+			metallurgy_early
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3016.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3017.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	
+	tech_maintenance_company2 = {
+
+		# maintenance_company = {
+			# reliability_factor = 0.05
+			# equipment_capture_factor = 0.05
+		# }
+		enable_equipments = {
+			maintenance_equipment_2
+		}
+		
+		
+		path = {
+			leads_to_tech = tech_maintenance_company3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3017
+		folder = {
+			name = smithing_folder
+			position = { x = @maintenanceX y = @3017Y }
+		}
+		
+		categories = {
+			support_tech
+			maintenance_company_tech
+			metallurgy
+			metallurgy_basic
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3019.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3020.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy2
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	
+	tech_maintenance_company3 = {
+
+		# maintenance_company = {
+			# reliability_factor = 0.05
+			# equipment_capture_factor = 0.05
+		# }
+		enable_equipments = {
+			maintenance_equipment_3
+		}
+		path = {
+			leads_to_tech = tech_maintenance_company4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3020
+		folder = {
+			name = smithing_folder
+			position = { x = @maintenanceX y = @3020Y }
+		}
+		
+		categories = {
+			support_tech
+			maintenance_company_tech
+			metallurgy
+			metallurgy_improved
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3021.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3022.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy3
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	tech_maintenance_company4 = {
+
+		# maintenance_company = {
+			# reliability_factor = 0.05
+			# equipment_capture_factor = 0.05
+		# }
+		enable_equipments = {
+			maintenance_equipment_4
+		}
+
+		research_cost = 1.5
+		start_year = 3022
+		folder = {
+			name = smithing_folder
+			position = { x = @maintenanceX y = @3022Y }
+		}
+		
+		categories = {
+			support_tech
+			maintenance_company_tech
+			metallurgy
+			metallurgy_advanced
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3024.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3025.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy4
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+	}
+	
+	
+###########################################################
+				#CONVERSION
+###########################################################
+
+	#Conversion branch - Enabled in DoD
+	basic_equipment_conversion = {
+	
+		equipment_conversion_speed = 0.3
+
+		allow_branch = {
+			has_dlc = "Death or Dishonor"
+		}
+
+		path = {
+			leads_to_tech = improved_equipment_conversion
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 3016
+		
+		folder = {
+			name = smithing_folder
+			position = { x = @conversionX y = @3016Y }
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy1
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+		
+		categories = {
+			industry
+			cat_tool_tech
+			metallurgy
+			metallurgy_early
+		}
+	}
+	
+	improved_equipment_conversion = {
+		
+		equipment_conversion_speed = 0.3
+
+		research_cost = 1
+		start_year = 3018
+		
+		path = {
+			leads_to_tech = advanced_equipment_conversion
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = smithing_folder
+			position = { x = @conversionX y = @3018Y }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				date > "3019.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy2
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+		
+		categories = {
+			industry
+			cat_tool_tech
+			metallurgy
+			metallurgy_basic
+		}
+	}
+	advanced_equipment_conversion = {
+		
+		equipment_conversion_speed = 0.3
+
+		research_cost = 1
+		start_year = 3021
+		
+		folder = {
+			name = smithing_folder
+			position = { x = @conversionX y = @3021Y }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				date > "3022.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = metallurgy4
+				}
+				factor = @AIbehindMetallurgy
+			}
+		}
+		
+		categories = {
+			industry
+			cat_tool_tech
+			metallurgy
+			metallurgy_advanced
 		}
 	}
 }

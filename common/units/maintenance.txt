@@ -35,15 +35,13 @@ sub_units = {
 		can_be_parachuted = yes
 		
 		# Important Ability
-		reliability_factor = 0.05
-		equipment_capture_factor = 0.05
 		
 		essential = {
-			support_equipment
+			maintenance_equipment
 		}
 		
 		need = {
-			support_equipment = 25
+			maintenance_equipment = 25
 		}
 
 	}
