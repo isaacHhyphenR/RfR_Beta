@@ -3,7 +3,7 @@
 equipments = {
 
 	infantry_equipment = {
-		year = 3015
+		#year = 3000
 	
 		is_archetype = yes
 		picture = archetype_infantry_equipment		
@@ -14,6 +14,37 @@ equipments = {
 		interface_category = interface_category_land
 		
 		active = yes
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+		
+	}
+	# Regular infantry  3000
+	infantry_equipment_99 = {
+		#year = 3000
+	
+		archetype = infantry_equipment
+		active = yes
+		priority = 05
+		visual_level = -2
+		
+		soft_attack = 0.5
+		hard_attack = 0.05
+		ap_attack = 0.1
+		defense = 2
+		breakthrough = 0.2
+		build_cost_ic = 0.1
+	}
+	# Regular infantry  3000
+	infantry_equipment_0 = {
+		#year = 3000
+	
+		archetype = infantry_equipment
+		parent = infantry_equipment_99
+		active = no
+		priority = 05
+		visual_level = 0
 		
 		#Misc Abilities
 		reliability = 0.9
@@ -28,29 +59,15 @@ equipments = {
 		soft_attack = 2.7 #-10% from vanilla
 		hard_attack = 0.3 #-25% from vanilla
 		ap_attack = 0.5 #-50% from vanilla
-		air_attack = 0
-
-		#Space taken in convoy
-		lend_lease_cost = 1
 		
 		build_cost_ic = 0.27 #-10% from vanilla
 		resources = {
 			iron = 1
 		}
-		
-	}
-	# Regular infantry  3000
-	infantry_equipment_0 = {
-		year = 3000
-	
-		archetype = infantry_equipment
-		active = yes
-		priority = 05
-		visual_level = 0
 	}
 	# Regular infantry  3015
 	infantry_equipment_1 = {
-		year = 3015
+		#year = 3015
 	
 		archetype = infantry_equipment
 		parent = infantry_equipment_0
@@ -70,7 +87,7 @@ equipments = {
 	}
 	# Improved weapons  3018
 	infantry_equipment_2 = {
-		year = 3018
+		#year = 3018
 	
 		archetype = infantry_equipment
 		parent = infantry_equipment_1
@@ -94,7 +111,7 @@ equipments = {
 	}
 	# Advanced weapons  3021
 	infantry_equipment_3 = {
-		year = 3021
+		#year = 3021
 	
 		archetype = infantry_equipment
 		parent = infantry_equipment_2
@@ -122,7 +139,7 @@ equipments = {
 ##################################################################
 	# Regular infantry  3015
 	double_infantry_equipment_1 = {
-		year = 3015
+		#year = 3015
 	
 		archetype = infantry_equipment
 		parent = infantry_equipment_0
@@ -150,7 +167,7 @@ equipments = {
 	}
 	# Improved weapons  ~3018
 	double_infantry_equipment_2 = {
-		year = 3018
+		#year = 3018
 	
 		archetype = infantry_equipment
 		parent = double_infantry_equipment_1
@@ -174,7 +191,7 @@ equipments = {
 	}
 	# Advanced weapons  ~3021
 	double_infantry_equipment_3 = {
-		year = 3021
+		#year = 3021
 	
 		archetype = infantry_equipment
 		parent = double_infantry_equipment_2
@@ -200,7 +217,7 @@ equipments = {
 				#Armor
 ##################################################################
 	infantry_armor = {
-		year = 3015
+		#year = 3015
 	
 		is_archetype = yes
 		picture = archetype_infantry_armor		
@@ -228,7 +245,7 @@ equipments = {
 	}
 	# Regular armor  3000
 	infantry_armor_0 = {
-		year = 3000
+		#year = 3000
 		
 		archetype = infantry_armor
 		priority = 05
@@ -236,7 +253,7 @@ equipments = {
 	}
 	# Regular armor  3015
 	infantry_armor_1 = {
-		year = 3015
+		#year = 3015
 	
 		archetype = infantry_armor
 		parent = infantry_armor_0
@@ -256,7 +273,7 @@ equipments = {
 	}
 	# Improved armor  3018
 	infantry_armor_2 = {
-		year = 3018
+		#year = 3018
 	
 		archetype = infantry_armor
 		parent = infantry_armor_1
@@ -277,7 +294,7 @@ equipments = {
 	}
 	# Advanced armor  3021
 	infantry_armor_3 = {
-		year = 3021
+		#year = 3021
 	
 		archetype = infantry_armor
 		parent = infantry_armor_2

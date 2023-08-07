@@ -14,7 +14,7 @@ set_war_support = 0.3
 
 set_technology = {
 	northron_heritage_tech = 1
-	hidden_fort_tech = 1
+	fort_tech_1 = 1
 	infantry_armor_tech_0 = 1
 	infantry_weapons = 1
 	gw_artillery = 1

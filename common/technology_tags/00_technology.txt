@@ -2,36 +2,20 @@
 # If adding new technology, make sure they are uniquely named.
 
 technology_categories = {
-	light_air
-	medium_air
-	heavy_air
 	armor
 	cat_light_armor
 	cat_medium_armor
 	cat_heavy_armor
-	artillery
 	naval_air
 	motorized_equipment
 	cat_mechanized_equipment
 	naval_equipment
-	rocketry
 	nuclear
 	electronics
 	land_doctrine
-	air_doctrine
 	naval_doctrine
-	strategic_destruction_tree
-	battlefield_support_tree
-	operational_integrity_tree
-	jet_technology
 	trade_interdiction_tree
 	convoy_defense_tree
-	light_fighter
-	cat_heavy_fighter
-	tactical_bomber
-	cat_strategic_bomber
-	naval_bomber
-	cas_bomber
 	ship_modules_tech
 	dd_tech
 	cl_tech
@@ -49,9 +33,7 @@ technology_categories = {
 	computing_tech
 	radar_tech
 	marine_tech
-	construction_tech
 	submarine_doctrine
-	air_equipment
 	cat_mobile_warfare
 	cat_superior_firepower
 	cat_grand_battle_plan
@@ -64,10 +46,8 @@ technology_categories = {
 	cat_operational_integrity
 	night_vision
 	base_strike_main
-	mot_rockets
 	support_tech
 	para_tech
-	engineers_tech
 	recon_tech
 	mountaineers_tech
 	military_police_tech
@@ -76,8 +56,6 @@ technology_categories = {
 	signal_company_tech
 	maintenance_company_tech
 	naval_mines
-	concentrated_industry_category
-	dispersed_industry_category
 	asw_tech
 	naval_minesweeping
 	naval_minelaying
@@ -86,16 +64,12 @@ technology_categories = {
 	cat_synth_rubber
 	cat_synth_oil
 	
-	architecture
-	cat_actual_artillery
 	cat_special_forces
 	
 	cat_bureaucracy
 	cat_recordkeeping
 	cat_supply_lines
 	cat_training
-	cat_fortification
-	cat_siege_artillery
 	
 	tank_armor
 	tank_engine
@@ -107,40 +81,49 @@ technology_categories = {
 	metallurgy_improved
 	metallurgy_advanced
 	
+	industry #smithing
+	cat_production #tools
+	excavation_tech #resources
+	concentrated_industry_category
+	dispersed_industry_category
+	cat_equipment_conversion
+	
 	infantry_tech #infantry equipment
 	one_handed
 	two_handed
 	infantry_support_weapons #infantry armor
 	infantry_weapons
 	cat_anti_tank #spears
+##################Carpentry
+	carpentry
+	true_carpentry
+	carpentry_early
+	carpentry_basic
+	carpentry_improved
+	carpentry_advanced
 	
-	industry #smithing
-	cat_tool_tech
-	excavation_tech #resources
-	cat_production
+	construction_tech
+	architecture
+	cat_fortification
+	cat_shipbuilding
+	cat_urbanisation
+	engineers_tech
 	
+	artillery
+	cat_actual_artillery
+	rocketry
+	cat_siege_artillery
 }
 
 technology_folders = {
-	infantry_folder = {
-		ledger = army
-	}
 	smithing_folder = {
 		ledger = civilian
 	}
-	armour_folder = {
+	infantry_folder = {
 		ledger = army
-		available = {
-			NOT = {
-				has_dlc = "No Step Back"
-			}
-		}
 	}
-	nsb_armour_folder = {
-		ledger = army
-		available = {
-			has_dlc = "No Step Back"
-		}
+	construction_folder = {
+		ledger = civilian
 	}
 	artillery_folder = {
 		ledger = army
@@ -160,16 +143,26 @@ technology_folders = {
 	industry_folder = {
 		ledger = civilian
 	}
+	armour_folder = {
+		ledger = army
+		available = {
+			NOT = {
+				has_dlc = "No Step Back"
+			}
+		}
+	}
+	nsb_armour_folder = {
+		ledger = army
+		available = {
+			has_dlc = "No Step Back"
+		}
+	}
 	land_doctrine_folder = {
 		ledger = army
 		doctrine = yes
 	}
 	naval_doctrine_folder = {
 		ledger = navy
-		doctrine = yes
-	}
-	air_doctrine_folder = {
-		ledger = air
 		doctrine = yes
 	}
 	electronics_folder = {

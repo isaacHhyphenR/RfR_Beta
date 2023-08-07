@@ -1,10 +1,7 @@
 ﻿l_english:
- NO_RAILWAY_ACCESS_TO_TARGET: "Unit cannot enter provinces lacking railways."
- NO_RAILWAY_ACCESS_TO_TARGET_COOLDOWN: "Unit cannot enter provinces with unconverted railways. Conversion completed in $DAYS$ days."
- NO_RAILWAY_ACCESS_STANDING_COOLDOWN: "Unit cannot move as it's in a province with unconverted railways. Conversion completed in $DAYS$ days."
- NO_SAFE_RAILWAY_ACCESS: "Unit cannot enter provinces with enemy units."
- anti_tank: "Support Pikes"
- anti_tank_desc: "The longer your spear, the easier it is to pierce a beast's vitals while reamining out of range."
+ NO_RAILWAY_ACCESS_TO_TARGET: "Unit cannot enter provinces lacking $rail_way_lowercase_singular$s."
+ NO_RAILWAY_ACCESS_TO_TARGET_COOLDOWN: "Unit cannot enter provinces with unconverted $rail_way_lowercase_singular$s. Conversion completed in $DAYS$ days."
+ NO_RAILWAY_ACCESS_STANDING_COOLDOWN: "Unit cannot move as it's in a province with unconverted $rail_way_lowercase_singular$s. Conversion completed in $DAYS$ days."
  artillery: "Support Bows"
  artillery_desc: "A small contingent of archers to support the main army."
  rocket_artillery: "Support Javelins"
@@ -111,3 +108,8 @@
  heavy_motorized_desc: "Armored infantry with riding in horse drawn wagons for quick redeployment."
  mot_heavy_pikes_brigade: "Towed Heavy Pikes"
  mot_heavy_pikes_brigade_desc: "Armored pike infantry in horse drawn wagons for quick redeployment".
+ 
+ engineer: "Campaign Engineer"
+ engineer_desc: "Carpenters and smiths specialised in bridges, boats, and hacking through inhospitable terrain."
+ siege_engineer: "Seige Engineer"
+ siege_engineer_desc: "Carpenters and smiths specialised in erecting ladders, towers, artillery, and tunnels to breach enemy walls."

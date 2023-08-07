@@ -1,0 +1,1700 @@
+technologies = {
+	@3000 = 0
+	@3015 = 2
+	@3016 = 4
+	@3017 = 6
+	@3018 = 8
+	@3019 = 10
+	@3020 = 12
+	@3021 = 14
+	@3022 = 16
+	@3023 = 18
+	@architectureX = 4
+	@urbanisationX = 7
+	@shipbuildingX = 11
+	@campaignEngineerX = 17
+	@engineerX = 20
+	@siegeEngineerX = 23
+	@fortX = 0
+
+	@AIbehindCarpentry = 0.2
+###########################################################
+				#CARPENTRY
+###########################################################
+	@rangedcarpentryX = 1
+	@3000Rng = -1
+	@3015Rng = 2
+	@3017Rng = 4
+	@3018Rng = 6
+	@3019Rng = 8
+	@3020Rng = 10
+	@3021Rng = 12
+	@3022Rng = 14
+	@3023Rng = 16
+	@3024Rng = 18
+	@3025Rng = 20
+	@carpentryConstructionX = 0
+	@unlockerCost = 0.75
+	carpentry0 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3000
+		folder = {
+			name = construction_folder
+			position = { x = @carpentryConstructionX y = @3000 }
+		}
+		folder = {
+			name = ranged_folder
+			position = { x = @rangedcarpentryX y = -2 }
+		}
+		path = {
+			leads_to_tech = carpentry1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = construction1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = shipbuilding1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_combined_engineers
+			research_cost_coeff = 1
+		}
+		
+		enable_building = { building = industrial_complex level = 10 }
+		
+		categories = {
+			carpentry
+			true_carpentry
+		}
+		force_use_small_tech_layout = yes
+		ai_will_do = {
+			factor = 10
+			
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3018.1.1"
+			}
+		}
+	}
+	carpentry1 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3015
+		folder = {
+			name = construction_folder
+			position = { x = @carpentryConstructionX y = @3015 }
+		}
+		folder = {
+			name = ranged_folder
+			position = { x = @rangedcarpentryX y = @3015Rng }
+		}
+		path = {
+			leads_to_tech = carpentry2
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			carpentry
+			true_carpentry
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_carpentry1
+			}
+			custom_effect_tooltip = carpentry1_tooltip
+		}
+		show_effect_as_desc = yes
+		
+		ai_will_do = {
+			factor = 7
+			
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3018.1.1"
+			}
+		}
+	}
+	carpentry2 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3017
+		folder = {
+			name = construction_folder
+			position = { x = @carpentryConstructionX y = @3017 }
+		}
+		folder = {
+			name = ranged_folder
+			position = { x = @rangedcarpentryX y = 5 }
+		}
+		path = {
+			leads_to_tech = carpentry3
+			research_cost_coeff = 1
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_carpentry2
+			}
+			custom_effect_tooltip = carpentry2_tooltip
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			carpentry
+			true_carpentry
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3019.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3020.1.1"
+			}
+		}
+	}
+	carpentry3 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3019
+		folder = {
+			name = construction_folder
+			position = { x = @carpentryConstructionX y = @3019 }
+		}
+		folder = {
+			name = ranged_folder
+			position = { x = @rangedcarpentryX y = @3019Rng }
+		}
+		path = {
+			leads_to_tech = carpentry4
+			research_cost_coeff = 1
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_carpentry3
+			}
+			custom_effect_tooltip = carpentry3_tooltip
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			carpentry
+			true_carpentry
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3020.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3021.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3022.1.1"
+			}
+		}
+	}
+	carpentry4 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3021
+		folder = {
+			name = construction_folder
+			position = { x = @carpentryConstructionX y = @3021 }
+		}
+		folder = {
+			name = ranged_folder
+			position = { x = @rangedcarpentryX y = @3021Rng }
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_carpentry4
+			}
+			custom_effect_tooltip = carpentry4_tooltip
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			carpentry
+			true_carpentry
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3022.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3024.1.1"
+			}
+		}
+	}
+###########################################################
+				#ARCHITECTURE
+###########################################################
+	construction1 = {
+		
+		production_speed_buildings_factor = 0.10
+		industry_repair_factor = 0.10
+
+		enable_equipment_modules = {
+			mumakil_basic_tower_saddle
+		}
+		path = {
+			leads_to_tech = construction2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = urbanisation1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 3015
+		categories = {
+			carpentry
+			carpentry_early
+			construction_tech
+			architecture
+		}
+		
+		enable_building = { building = industrial_complex level = 12 }
+		
+		folder = {
+			name = construction_folder
+			position = { x = @architectureX y = @3015 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+			
+			modifier = {
+				factor = 5
+				date > "3016.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	construction2 = {
+
+		production_speed_buildings_factor = 0.10
+		industry_repair_factor = 0.10
+		
+		path = {
+			leads_to_tech = construction3 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = urbanisation2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 3016
+		
+		categories = {
+			carpentry
+			carpentry_early
+			construction_tech
+			architecture
+		}
+		enable_building = { building = industrial_complex level = 14 }
+		
+		folder = {
+			name = construction_folder
+			position = { x = @architectureX y = @3016 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "3016.1.1"
+			}	
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}		
+		}
+	}
+
+	construction3 = {
+
+		production_speed_buildings_factor = 0.10
+		industry_repair_factor = 0.10
+		
+		enable_equipment_modules = {
+			mumakil_improved_tower_saddle
+		}
+		
+		path = {
+			leads_to_tech = construction4 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = urbanisation3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 3018
+		
+		categories = {
+			carpentry
+			carpentry_basic
+			construction_tech
+			architecture
+		}
+		
+		enable_building = { building = industrial_complex level = 16 }
+		folder = {
+			name = construction_folder
+			position = { x = @architectureX y = @3018 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+			
+			modifier = {
+				factor = 1.5
+				has_war = yes
+			}
+			
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+			
+			modifier = {
+				factor = 3
+				date > "3019.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry2
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	construction4 = {
+
+		production_speed_buildings_factor = 0.10
+		industry_repair_factor = 0.10
+		
+		path = {
+			leads_to_tech = construction5 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = urbanisation4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 3020
+		
+		categories = {
+			carpentry
+			carpentry_improved
+			construction_tech
+			architecture
+		}
+		enable_building = { building = industrial_complex level = 18 }
+		
+		folder = {
+			name = construction_folder
+			position = { x = @architectureX y = @3020 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "3020.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	construction5 = {
+
+		production_speed_buildings_factor = 0.10
+		industry_repair_factor = 0.10
+		
+		path = {
+			leads_to_tech = urbanisation5
+			research_cost_coeff = 1
+		}
+		
+		enable_equipment_modules = {
+			mumakil_advanced_tower_saddle
+		}
+
+		research_cost = 2
+		start_year = 3022
+		
+		categories = {
+			carpentry
+			carpentry_advanced
+			construction_tech
+			architecture
+		}
+		enable_building = { building = industrial_complex level = 20 }
+		
+		folder = {
+			name = construction_folder
+			position = { x = @architectureX y = @3022 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "3022.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+###########################################################
+				#URBANISATION
+###########################################################
+	@urbanisationCost = 1
+	urbanisation1 = {
+		global_building_slots_factor = 0.20
+		
+		research_cost = @urbanisationCost
+		start_year = 3015
+		categories = {
+			carpentry
+			carpentry_early
+			construction_tech
+			architecture
+			cat_urbanisation
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @urbanisationX y = @3015 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+			
+			modifier = {
+				factor = 5
+				date > "3016.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	urbanisation2 = {
+
+		global_building_slots_factor = 0.20
+
+		research_cost = @urbanisationCost
+		start_year = 3016
+		
+		categories = {
+			carpentry
+			carpentry_early
+			construction_tech
+			architecture
+			cat_urbanisation
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @urbanisationX y = @3016 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "3016.1.1"
+			}	
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}		
+		}
+	}
+
+	urbanisation3 = {
+
+		global_building_slots_factor = 0.20
+		
+		research_cost = @urbanisationCost
+		start_year = 3018
+		
+		categories = {
+			carpentry
+			carpentry_basic
+			construction_tech
+			architecture
+			cat_urbanisation
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @urbanisationX y = @3018 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+			
+			modifier = {
+				factor = 1.5
+				has_war = yes
+			}
+			
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+			
+			modifier = {
+				factor = 3
+				date > "3019.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry2
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	urbanisation4 = {
+
+		global_building_slots_factor = 0.20
+		
+		research_cost = @urbanisationCost
+		start_year = 3020
+		
+		categories = {
+			carpentry
+			carpentry_improved
+			construction_tech
+			architecture
+			cat_urbanisation
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @urbanisationX y = @3020 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "3020.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	urbanisation5 = {
+
+		global_building_slots_factor = 0.20
+
+		research_cost = @urbanisationCost
+		start_year = 3022
+		
+		categories = {
+			carpentry
+			carpentry_advanced
+			construction_tech
+			architecture
+			cat_urbanisation
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @urbanisationX y = @3022 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "3022.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+###########################################################
+				#SHIPBUILDING
+###########################################################
+	@shipbuildingCost = 1.25
+	@dockBonus = 0.15
+	shipbuilding1 = {
+		industrial_capacity_dockyard = @dockBonus
+		
+		research_cost = @shipbuildingCost
+		start_year = 3015
+		categories = {
+			carpentry
+			carpentry_early
+			construction_tech
+			cat_shipbuilding
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @shipbuildingX y = @3015 }
+		}
+		path = {
+			leads_to_tech = shipbuilding2
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 50
+			
+			modifier = {
+				factor = 5
+				date > "3016.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
+			modifier = { original_tag = UMB factor = 5 } #ship
+			modifier = { original_tag = GON factor = 2 } #ship
+			modifier = { original_tag = DOR factor = 2 } #ship
+			modifier = { original_tag = LIN factor = 2 } #ship
+			modifier = { original_tag = ROH factor = 0.1 }  #ship
+			modifier = { dockyard < 1 factor = 0 }
+		}
+	}
+	
+	shipbuilding2 = {
+
+		industrial_capacity_dockyard = @dockBonus
+
+		research_cost = @shipbuildingCost
+		start_year = 3016
+		
+		categories = {
+			carpentry
+			carpentry_early
+			construction_tech
+			cat_shipbuilding
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @shipbuildingX y = @3016 }
+		}
+		path = {
+			leads_to_tech = shipbuilding3
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "3016.1.1"
+			}	
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}	
+			modifier = { original_tag = UMB factor = 5 } #ship
+			modifier = { original_tag = GON factor = 2 } #ship
+			modifier = { original_tag = DOR factor = 2 } #ship
+			modifier = { original_tag = LIN factor = 2 } #ship
+			modifier = { original_tag = ROH factor = 0.1 }  #ship
+			modifier = { dockyard < 1 factor = 0 }	
+		}
+	}
+
+	shipbuilding3 = {
+
+		industrial_capacity_dockyard = @dockBonus
+		
+		research_cost = @shipbuildingCost
+		start_year = 3018
+		
+		categories = {
+			carpentry
+			carpentry_basic
+			construction_tech
+			cat_shipbuilding
+		}
+		path = {
+			leads_to_tech = shipbuilding4
+			research_cost_coeff = 1
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @shipbuildingX y = @3018 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+			
+			modifier = {
+				factor = 1.5
+				has_war = yes
+			}
+			
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+			
+			modifier = {
+				factor = 3
+				date > "3019.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry2
+				}
+				factor = @AIbehindCarpentry
+			}
+			modifier = { original_tag = UMB factor = 5 } #ship
+			modifier = { original_tag = GON factor = 2 } #ship
+			modifier = { original_tag = DOR factor = 2 } #ship
+			modifier = { original_tag = LIN factor = 2 } #ship
+			modifier = { original_tag = ROH factor = 0.1 }  #ship
+			modifier = { dockyard < 1 factor = 0 }
+		}
+	}
+	
+	shipbuilding4 = {
+
+		industrial_capacity_dockyard = @dockBonus
+		
+		research_cost = @shipbuildingCost
+		start_year = 3020
+		
+		categories = {
+			carpentry
+			carpentry_improved
+			construction_tech
+			cat_shipbuilding
+		}
+		path = {
+			leads_to_tech = shipbuilding5
+			research_cost_coeff = 1
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @shipbuildingX y = @3020 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "3020.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
+			modifier = { original_tag = UMB factor = 5 } #ship
+			modifier = { original_tag = GON factor = 2 } #ship
+			modifier = { original_tag = DOR factor = 2 } #ship
+			modifier = { original_tag = LIN factor = 2 } #ship
+			modifier = { original_tag = ROH factor = 0.1 }  #ship
+			modifier = { dockyard < 1 factor = 0 }
+		}
+	}
+	
+	shipbuilding5 = {
+
+		industrial_capacity_dockyard = @dockBonus
+
+		research_cost = @shipbuildingCost
+		start_year = 3022
+		
+		categories = {
+			carpentry
+			carpentry_advanced
+			construction_tech
+			cat_shipbuilding
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @shipbuildingX y = @3022 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "3022.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
+			modifier = { original_tag = UMB factor = 5 } #ship
+			modifier = { original_tag = GON factor = 2 } #ship
+			modifier = { original_tag = DOR factor = 2 } #ship
+			modifier = { original_tag = LIN factor = 2 } #ship
+			modifier = { original_tag = ROH factor = 0.1 }  #ship
+			modifier = { dockyard < 1 factor = 0 }
+		}
+	}
+###########################################################
+				#ENGINEERS
+###########################################################
+	tech_combined_engineers = {
+
+		enable_subunits = {
+			engineer
+			siege_engineer
+		}
+		enable_equipment_modules = {
+			pontoon
+		}
+		enable_equipments = {
+			engineering_equipment_1
+		}
+		
+		path = {
+			leads_to_tech = tech_campaign_engineers2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_siege_engineers2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3015
+		folder = {
+			name = construction_folder
+			position = { x = @engineerX y = @3015 }
+		}
+		
+		categories = {
+			support_tech
+			engineers_tech
+			carpentry
+			carpentry_early
+			construction_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3016.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3017.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "3019.1.1"
+			}
+			modifier = {
+				factor = 2
+				original_tag = GON
+			}
+			modifier = {
+				factor = 1.5
+				original_tag = ISN
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	tech_campaign_engineers2 = {
+
+		engineer = {
+			river = {
+				attack = 0.05
+			}
+			amphibious = {
+				attack = 0.05
+			}
+		}
+		enable_equipments = {
+			engineering_equipment_2
+		}
+		
+		
+		path = {
+			leads_to_tech = tech_campaign_engineers3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3017
+		folder = {
+			name = construction_folder
+			position = { x = @campaignEngineerX y = @3017 }
+		}
+		
+		categories = {
+			support_tech
+			engineers_tech
+			carpentry
+			carpentry_basic
+			construction_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3019.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3020.1.1"
+			}
+			modifier = {
+				factor = 2
+				original_tag = GON
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry2
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	tech_campaign_engineers3 = {
+
+		engineer = {
+			river = {
+				attack = 0.05
+			}
+			amphibious = {
+				attack = 0.05
+			}
+		}
+		enable_equipments = {
+			engineering_equipment_3
+		}
+
+		path = {
+			leads_to_tech = tech_campaign_engineers4
+			research_cost_coeff = 1
+		}		
+
+		research_cost = 1.5
+		start_year = 3020
+		folder = {
+			name = construction_folder
+			position = { x = @campaignEngineerX y = @3020 }
+		}
+		
+		categories = {
+			support_tech
+			engineers_tech
+			carpentry
+			carpentry_improved
+			construction_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 1.2
+				date > "3021.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3022.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 2
+				original_tag = GON
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	tech_campaign_engineers4 = {
+
+		engineer = {
+			river = {
+				attack = 0.05
+			}
+			amphibious = {
+				attack = 0.05
+			}
+		}
+		enable_equipments = {
+			engineering_equipment_4
+		}
+		research_cost = 1.5
+		start_year = 3022
+		folder = {
+			name = construction_folder
+			position = { x = @campaignEngineerX y = @3022 }
+		}
+		
+		categories = {
+			support_tech
+			engineers_tech
+			carpentry
+			carpentry_advanced
+			construction_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3024.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3025.1.1"
+			}
+			modifier = {
+				factor = 2
+				original_tag = GON
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	
+	tech_siege_engineers2 = {
+
+		siege_engineer = {
+			urban = {
+				attack = 0.1
+				defence = 0.05
+			}
+			fort = {
+				attack = 0.1
+				defence = 0.05
+			}
+		}
+		enable_equipments = {
+			engineering_equipment_2
+		}
+		
+		
+		path = {
+			leads_to_tech = tech_siege_engineers3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3017
+		folder = {
+			name = construction_folder
+			position = { x = @siegeEngineerX y = @3017 }
+		}
+		
+		categories = {
+			support_tech
+			engineers_tech
+			carpentry
+			carpentry_basic
+			construction_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3019.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3020.1.1"
+			}
+			modifier = {
+				factor = 2
+				original_tag = GON
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry2
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	tech_siege_engineers3 = {
+
+		siege_engineer = {
+			urban = {
+				attack = 0.1
+				defence = 0.05
+			}
+			fort = {
+				attack = 0.1
+				defence = 0.05
+			}
+		}
+		enable_equipments = {
+			engineering_equipment_3
+		}
+
+		path = {
+			leads_to_tech = tech_siege_engineers4
+			research_cost_coeff = 1
+		}		
+
+		research_cost = 1.5
+		start_year = 3020
+		folder = {
+			name = construction_folder
+			position = { x = @siegeEngineerX y = @3020 }
+		}
+		
+		categories = {
+			support_tech
+			engineers_tech
+			carpentry
+			carpentry_improved
+			construction_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 1.2
+				date > "3021.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3022.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 2
+				original_tag = GON
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	tech_siege_engineers4 = {
+
+		siege_engineer = {
+			urban = {
+				attack = 0.1
+				defence = 0.05
+			}
+			fort = {
+				attack = 0.1
+				defence = 0.05
+			}
+		}
+		enable_equipments = {
+			engineering_equipment_4
+		}
+		research_cost = 1.5
+		start_year = 3022
+		folder = {
+			name = construction_folder
+			position = { x = @siegeEngineerX y = @3022 }
+		}
+		
+		categories = {
+			support_tech
+			engineers_tech
+			carpentry
+			carpentry_advanced
+			construction_tech
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3024.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3025.1.1"
+			}
+			modifier = {
+				factor = 2
+				original_tag = GON
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+###########################################################
+				#FORTIFICATION
+###########################################################
+	fort_tech_1 = {
+		
+		enable_building = {
+            building = bunker
+            level = 2
+       }
+		enable_building = {
+            building = coastal_bunker
+            level = 2
+       }
+
+		path = {
+			leads_to_tech = fort_tech_2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 3000
+		categories = {
+			carpentry
+			construction_tech
+			cat_fortification
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @fortX y = @3000 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				enemies_strength_ratio > 1
+				factor = 10
+			}
+			modifier = {
+				original_tag = GON
+				factor = 10
+			}
+			modifier = {
+				has_idea = dwarven_heritage_idea
+				factor = 10
+			}
+			modifier = {
+				original_tag = ROH
+				factor = 0.1
+			}
+		}
+	}
+
+	fort_tech_2 = {
+		
+		enable_building = {
+            building = bunker
+            level = 4
+		}
+		enable_building = {
+            building = coastal_bunker
+            level = 4
+		}
+
+		path = {
+			leads_to_tech = fort_tech_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 3015
+		categories = {
+			carpentry
+			carpentry_early
+			construction_tech
+			cat_fortification
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @fortX y = @3015 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				enemies_strength_ratio > 1
+				factor = 10
+			}
+			modifier = {
+				original_tag = GON
+				factor = 10
+			}
+			modifier = {
+				has_idea = dwarven_heritage_idea
+				factor = 10
+			}
+			modifier = {
+				original_tag = ROH
+				factor = 0.1
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	
+	fort_tech_3 = {
+		
+		enable_building = {
+            building = bunker
+            level = 6
+		}
+		enable_building = {
+            building = coastal_bunker
+            level = 6
+		}
+
+		path = {
+			leads_to_tech = fort_tech_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 3016
+		categories = {
+			carpentry
+			carpentry_early
+			construction_tech
+			cat_fortification
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @fortX y = @3016 }
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			
+			modifier = {
+				enemies_strength_ratio > 1
+				factor = 10
+			}
+			modifier = {
+				original_tag = GON
+				factor = 10
+			}
+			modifier = {
+				has_idea = dwarven_heritage_idea
+				factor = 10
+			}
+			modifier = {
+				original_tag = ROH
+				factor = 0.1
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+
+	fort_tech_4 = {
+		
+		enable_building = {
+            building = bunker
+            level = 8
+		}
+		enable_building = {
+            building = coastal_bunker
+            level = 8
+		}
+
+		path = {
+			leads_to_tech = fort_tech_5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 3018
+		categories = {
+			carpentry
+			carpentry_basic
+			construction_tech
+			cat_fortification
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @fortX y = @3018 }
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			
+			modifier = {
+				enemies_strength_ratio > 1
+				factor = 10
+			}
+			modifier = {
+				original_tag = GON
+				factor = 10
+			}
+			modifier = {
+				has_idea = dwarven_heritage_idea
+				factor = 10
+			}
+			modifier = {
+				original_tag = ROH
+				factor = 0.1
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry2
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+
+	fort_tech_5 = {
+		
+		enable_building = {
+            building = bunker
+            level = 10
+		}
+		enable_building = {
+            building = coastal_bunker
+            level = 10
+		}
+		
+		research_cost = 2
+		start_year = 3020
+		categories = {
+			carpentry
+			carpentry_advanced
+			construction_tech
+			cat_fortification
+		}
+		
+		folder = {
+			name = construction_folder
+			position = { x = @fortX y = @3020 }
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			
+			modifier = {
+				enemies_strength_ratio > 1
+				factor = 10
+			}
+			modifier = {
+				original_tag = GON
+				factor = 10
+			}
+			modifier = {
+				has_idea = dwarven_heritage_idea
+				factor = 10
+			}
+			modifier = {
+				original_tag = ROH
+				factor = 0.1
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
+		}
+	}
+	# hidden_fort_tech = { ##unlocks forts
+		
+		# enable_building = {
+            # building = bunker
+            # level = 5
+       # }
+		# enable_building = {
+            # building = coastal_bunker
+            # level = 5
+       # }
+		# allow = {
+			# always = no
+		# }
+	# }
+}

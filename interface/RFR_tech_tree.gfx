@@ -1,0 +1,76 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_smithing_techtree_bg"
+		textureFile = "gfx/interface/techtree/smithing_techtree_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_construction_techtree_bg"
+		textureFile = "gfx/interface/techtree/construction_techtree_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_tech_connector"
+		textureFile = "gfx/interface/techtree/tech_connector.dds"
+	}
+	spriteType = {
+		name = "GFX_smithing_folder_tab"
+		textureFile = "gfx/interface/techtree/techtree_smithing_tab.dds"
+		noOfFrames = 2		
+	}
+	spriteType = {
+		name = "GFX_construction_folder_tab"
+		textureFile = "gfx/interface/techtree/techtree_construction_tab.dds"
+		noOfFrames = 2		
+	}
+	SpriteType = {
+		name = "GFX_idea_empty"
+		texturefile = "gfx/interface/ideas/empty.dds"
+		allwaystransparent = yes
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_technology_smithing_folder_small_available_item_bg"
+		textureFile = "gfx/interface/techtree/tech_doctrine_available_item_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_technology_smithing_folder_small_unavailable_item_bg"
+		textureFile = "gfx/interface/techtree/tech_doctrine_unavailable_item_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_technology_smithing_folder_small_researched_item_bg"
+		textureFile = "gfx/interface/techtree/tech_landdoctrine_researched_item_bg.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_smithing_folder_small_currently_researching_item_bg"
+		texturefile = "gfx/interface/techtree/tech_doctrine_researching_anim_strip.dds"
+		noOfFrames = 9
+		loadType = "INGAME"
+		transparencecheck = yes
+		animation_rate_fps = 15
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	spriteType = {
+		name = "GFX_technology_construction_folder_small_available_item_bg"
+		textureFile = "gfx/interface/techtree/tech_doctrine_available_item_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_technology_construction_folder_small_unavailable_item_bg"
+		textureFile = "gfx/interface/techtree/tech_doctrine_unavailable_item_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_technology_construction_folder_small_researched_item_bg"
+		textureFile = "gfx/interface/techtree/tech_landdoctrine_researched_item_bg.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_construction_folder_small_currently_researching_item_bg"
+		texturefile = "gfx/interface/techtree/tech_doctrine_researching_anim_strip.dds"
+		noOfFrames = 9
+		loadType = "INGAME"
+		transparencecheck = yes
+		animation_rate_fps = 15
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+}

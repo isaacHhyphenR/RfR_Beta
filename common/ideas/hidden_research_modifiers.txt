@@ -45,7 +45,52 @@ ideas = {
 				metallurgy_advanced = @bonus
 			}
 		}
-		@infantry_equip_cost = 0.04
+
+		hidden_carpentry1 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				carpentry_early = @bonus
+			}
+		}
+		hidden_carpentry2 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				carpentry_basic = @bonus
+			}
+		}
+		hidden_carpentry3 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				carpentry_improved = @bonus
+			}
+		}
+		hidden_carpentry4 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				carpentry_advanced = @bonus
+			}
+		}
+		@infantry_equip_cost = -0.025
 		hidden_infantry_equip_cost1 = {
 			name = concentrated_production1
 			picture = empty
@@ -136,7 +181,7 @@ ideas = {
 				}
 			}
 		}
-				@infantry_equip_reliability = -0.02
+		@infantry_equip_reliability = 0.05
 		hidden_infantry_equip_reliability1 = {
 			name = dispersed_production1
 			picture = empty

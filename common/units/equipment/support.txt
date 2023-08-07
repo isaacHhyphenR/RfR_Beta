@@ -36,7 +36,8 @@ equipments = {
 		archetype = support_equipment
 		priority = 20	
 	}
-	
+
+########################################Maintenance	
 	maintenance_equipment = {
 		year = 3000
 
@@ -119,4 +120,93 @@ equipments = {
 		}
 	}
 
+########################################ENGINEER
+	engineering_equipment = {
+		year = 3000
+
+		is_archetype = yes
+		picture = archetype_engineering_equipment
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+		interface_category = interface_category_land
+		#Space taken in convoy
+		lend_lease_cost = 1
+	}
+	engineering_equipment_1 = {
+		#year = 3015
+
+		archetype = engineering_equipment
+		priority = 20
+		visual_level = 1
+
+		build_cost_ic = 2
+		
+		entrenchment = 5
+		defense = 0.08
+		breakthrough = 0.4
+		
+		resources = {
+			wood = 1
+		}
+	}
+	engineering_equipment_2 = {
+		#year = 3017
+
+		archetype = engineering_equipment
+		priority = 20
+		parent = engineering_equipment_1
+		visual_level = 2
+
+		build_cost_ic = 2.6
+		
+		entrenchment = 2
+		defense = 0.1
+		breakthrough = 0.5
+		
+		resources = {
+			wood = 1
+			iron = 1
+		}
+	}
+	engineering_equipment_3 = {
+		#year = 3020
+
+		archetype = engineering_equipment
+		priority = 20
+		parent = engineering_equipment_2
+		visual_level = 3
+
+		build_cost_ic = 3.3
+		
+		entrenchment = 2
+		defense = 0.12
+		breakthrough = 0.6
+		
+		resources = {
+			wood = 1
+			iron = 1
+		}
+	}
+	engineering_equipment_4 = {
+		#year = 3022
+
+		archetype = engineering_equipment
+		priority = 20
+		parent = engineering_equipment_3
+		visual_level = 4
+
+		build_cost_ic = 4
+		
+		entrenchment = 2
+		defense = 0.14
+		breakthrough = 0.7
+		
+		resources = {
+			wood = 2
+			iron = 1
+		}
+	}
 }

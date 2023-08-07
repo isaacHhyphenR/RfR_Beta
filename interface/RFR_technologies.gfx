@@ -1,44 +1,6 @@
 spriteTypes = {
-	spriteType = {
-		name = "GFX_tech_connector"
-		textureFile = "gfx/interface/techtree/tech_connector.dds"
-	}
-	spriteType = {
-		name = "GFX_smithing_folder_tab"
-		textureFile = "gfx/interface/techtree/techtree_smithing_tab.dds"
-		noOfFrames = 2		
-	}
-	SpriteType = {
-		name = "GFX_idea_empty"
-		texturefile = "gfx/interface/ideas/empty.dds"
-		allwaystransparent = yes
-		transparencecheck = yes
-	}
-	spriteType = {
-		name = "GFX_technology_smithing_folder_small_available_item_bg"
-		textureFile = "gfx/interface/techtree/tech_doctrine_available_item_bg.dds"
-	}
-	spriteType = {
-		name = "GFX_technology_smithing_folder_small_unavailable_item_bg"
-		textureFile = "gfx/interface/techtree/tech_doctrine_unavailable_item_bg.dds"
-	}
-	spriteType = {
-		name = "GFX_technology_smithing_folder_small_researched_item_bg"
-		textureFile = "gfx/interface/techtree/tech_landdoctrine_researched_item_bg.dds"
-	}
-	frameAnimatedSpriteType = {
-		name = "GFX_technology_smithing_folder_small_currently_researching_item_bg"
-		texturefile = "gfx/interface/techtree/tech_doctrine_researching_anim_strip.dds"
-		noOfFrames = 9
-		loadType = "INGAME"
-		transparencecheck = yes
-		animation_rate_fps = 15
-		looping = yes
-		play_on_show = yes
-		pause_on_loop = 0.0
-	}
 							######################################
-									#CUSTOM TECHS
+									#SMITHING
 							######################################
 	SpriteType = {
 		name = "GFX_metallurgy0_medium"
@@ -81,6 +43,180 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/tools5.dds"
 	}
 	SpriteType = {
+		name = "GFX_concentrated_production1_medium"
+		texturefile = "gfx/interface/technologies/concentrated_production1.dds"
+	}
+	SpriteType = {
+		name = "GFX_concentrated_production2_medium"
+		texturefile = "gfx/interface/technologies/concentrated_production2.dds"
+	}
+	SpriteType = {
+		name = "GFX_concentrated_production3_medium"
+		texturefile = "gfx/interface/technologies/concentrated_production3.dds"
+	}
+	SpriteType = {
+		name = "GFX_concentrated_production4_medium"
+		texturefile = "gfx/interface/technologies/concentrated_production4.dds"
+	}
+	SpriteType = {
+		name = "GFX_concentrated_production5_medium"
+		texturefile = "gfx/interface/technologies/concentrated_production5.dds"
+	}
+	SpriteType = {
+		name = "GFX_dispersed_production1_medium"
+		texturefile = "gfx/interface/technologies/dispersed_production1.dds"
+	}
+	SpriteType = {
+		name = "GFX_dispersed_production2_medium"
+		texturefile = "gfx/interface/technologies/dispersed_production2.dds"
+	}
+	SpriteType = {
+		name = "GFX_dispersed_production3_medium"
+		texturefile = "gfx/interface/technologies/dispersed_production3.dds"
+	}
+	SpriteType = {
+		name = "GFX_dispersed_production4_medium"
+		texturefile = "gfx/interface/technologies/dispersed_production4.dds"
+	}
+	SpriteType = {
+		name = "GFX_dispersed_production5_medium"
+		texturefile = "gfx/interface/technologies/dispersed_production5.dds"
+	}
+	SpriteType = {
+		name = "GFX_basic_equipment_conversion_medium"
+		texturefile = "gfx/interface/technologies/equipment_conversion0.dds"
+	}
+							######################################
+									#carpentry
+							######################################
+	SpriteType = {
+		name = "GFX_carpentry0_medium"
+		texturefile = "gfx/interface/technologies/carpentry0.dds"
+	}
+	SpriteType = {
+		name = "GFX_carpentry1_medium"
+		texturefile = "gfx/interface/technologies/carpentry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_carpentry2_medium"
+		texturefile = "gfx/interface/technologies/carpentry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_carpentry3_medium"
+		texturefile = "gfx/interface/technologies/carpentry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_carpentry4_medium"
+		texturefile = "gfx/interface/technologies/carpentry4.dds"
+	}
+	SpriteType = {
+		name = "GFX_urbanisation1_medium"
+		texturefile = "gfx/interface/technologies/urbanisation1.dds"
+	}
+	SpriteType = {
+		name = "GFX_urbanisation2_medium"
+		texturefile = "gfx/interface/technologies/urbanisation2.dds"
+	}
+	SpriteType = {
+		name = "GFX_urbanisation3_medium"
+		texturefile = "gfx/interface/technologies/urbanisation3.dds"
+	}
+	SpriteType = {
+		name = "GFX_urbanisation4_medium"
+		texturefile = "gfx/interface/technologies/urbanisation4.dds"
+	}
+	SpriteType = {
+		name = "GFX_urbanisation5_medium"
+		texturefile = "gfx/interface/technologies/urbanisation5.dds"
+	}
+	SpriteType = {
+		name = "GFX_shipbuilding1_medium"
+		texturefile = "gfx/interface/technologies/shipbuilding1.dds"
+	}
+	SpriteType = {
+		name = "GFX_shipbuilding2_medium"
+		texturefile = "gfx/interface/technologies/shipbuilding2.dds"
+	}
+	SpriteType = {
+		name = "GFX_shipbuilding3_medium"
+		texturefile = "gfx/interface/technologies/shipbuilding3.dds"
+	}
+	SpriteType = {
+		name = "GFX_shipbuilding4_medium"
+		texturefile = "gfx/interface/technologies/shipbuilding4.dds"
+	}
+	SpriteType = {
+		name = "GFX_shipbuilding5_medium"
+		texturefile = "gfx/interface/technologies/shipbuilding5.dds"
+	}
+	SpriteType = {
+		name = "GFX_fort_tech_1_medium"
+		texturefile = "gfx/interface/technologies/Fort1.dds"
+	}
+	SpriteType = {
+		name = "GFX_fort_tech_2_medium"
+		texturefile = "gfx/interface/technologies/Fort2.dds"
+	}
+	SpriteType = {
+		name = "GFX_fort_tech_3_medium"
+		texturefile = "gfx/interface/technologies/Fort3.dds"
+	}
+	SpriteType = {
+		name = "GFX_fort_tech_4_medium"
+		texturefile = "gfx/interface/technologies/Fort4.dds"
+	}
+	SpriteType = {
+		name = "GFX_fort_tech_5_medium"
+		texturefile = "gfx/interface/technologies/Fort5.dds"
+	}
+	SpriteType = {
+		name = "GFX_fort_tech_5_medium"
+		texturefile = "gfx/interface/technologies/Fort5.dds"
+	}
+	SpriteType = {
+		name = "GFX_tech_combined_engineers_medium"
+		texturefile = "gfx/interface/technologies/engineering_equipment1.dds"
+	}
+	SpriteType = {
+		name = "GFX_tech_campaign_engineers2_medium"
+		texturefile = "gfx/interface/technologies/engineering_equipment2.dds"
+	}
+	SpriteType = {
+		name = "GFX_tech_campaign_engineers3_medium"
+		texturefile = "gfx/interface/technologies/engineering_equipment3.dds"
+	}
+	SpriteType = {
+		name = "GFX_tech_campaign_engineers4_medium"
+		texturefile = "gfx/interface/technologies/engineering_equipment4.dds"
+	}
+	SpriteType = {
+		name = "GFX_tech_siege_engineers2_medium"
+		texturefile = "gfx/interface/technologies/engineering_equipment2.dds"
+	}
+	SpriteType = {
+		name = "GFX_tech_siege_engineers3_medium"
+		texturefile = "gfx/interface/technologies/engineering_equipment3.dds"
+	}
+	SpriteType = {
+		name = "GFX_tech_siege_engineers4_medium"
+		texturefile = "gfx/interface/technologies/engineering_equipment4.dds"
+	}
+	SpriteType = {
+		name = "GFX_basic_artillery_medium"
+		texturefile = "gfx/interface/technologies/basic_artillery.dds"
+	}
+	SpriteType = {
+		name = "GFX_improved_artillery_medium"
+		texturefile = "gfx/interface/technologies/improved_artillery.dds"
+	}
+	SpriteType = {
+		name = "GFX_advanced_artillery_medium"
+		texturefile = "gfx/interface/technologies/advanced_artillery.dds"
+	}
+							######################################
+									#MISC
+							######################################
+	SpriteType = {
 		name = "GFX_black_powder_medium"
 		texturefile = "gfx/interface/technologies/black_powder.dds"
 	}
@@ -111,26 +247,6 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_professional_looting_medium"
 		texturefile = "gfx/interface/technologies/loot_sack.dds"
-	}
-	SpriteType = {
-		name = "GFX_fort_tech_1_medium"
-		texturefile = "gfx/interface/technologies/Fort1.dds"
-	}
-	SpriteType = {
-		name = "GFX_fort_tech_2_medium"
-		texturefile = "gfx/interface/technologies/Fort2.dds"
-	}
-	SpriteType = {
-		name = "GFX_fort_tech_3_medium"
-		texturefile = "gfx/interface/technologies/Fort3.dds"
-	}
-	SpriteType = {
-		name = "GFX_fort_tech_4_medium"
-		texturefile = "gfx/interface/technologies/Fort4.dds"
-	}
-	SpriteType = {
-		name = "GFX_fort_tech_5_medium"
-		texturefile = "gfx/interface/technologies/Fort5.dds"
 	}
 ##########################SUPPORT EQUIPMENT
 	# SpriteType = {
@@ -179,6 +295,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/infantry_armor_upgrade_2.dds"
 	}
 ##########################TWO HANDED WEAPONS
+	SpriteType = {
+		name = "GFX_infantry_equipment_99_medium"
+		texturefile = "gfx/interface/technologies/improvised_infantry_weapons.dds"
+	}
 	SpriteType = {
 		name = "GFX_double_infantry_weapons1_medium"
 		texturefile = "gfx/interface/technologies/double_infantry_weapons1.dds"

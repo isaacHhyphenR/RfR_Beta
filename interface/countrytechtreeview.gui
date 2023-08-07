@@ -47,6 +47,322 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_plain_bg2"
 		}
 
+		containerWindowType = {#################################SMITH
+			name = "smithing_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25}
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+			scroll_wheel_factor = 40
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+			### TODO THESE SHOULD NOT USE RELATIVE POSITIONING, BUT RATHER USE FIXED
+
+			containerWindowType = {
+				name = "size_filler"
+				position = { x=0 y=0 }
+				size = {
+					width = 1550 height = 1000 
+					min = { width = 100%% height = 100%% }
+				}
+				
+				iconType = {
+					name ="GFX_smithing_techtree_bg"
+					spriteType = "GFX_smithing_techtree_bg"
+					position = { x=0 y=0 }
+				}	
+
+				containerWindowType = {
+					name = "smithing_year_left"
+					position = { x=50 y=40 }
+					size = { width = 130 height = 100% }
+					orientation = upper_left
+				
+					instantTextBoxType = {
+						name = "industry_year3000"
+						position = { x = 0 y = 50 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3000
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "industry_year3015"
+						position = { x = 0 y = 150 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3015
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+
+					instantTextBoxType = {
+						name = "industry_year3016"
+						position = { x = 0 y = 250 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3016
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+
+					instantTextBoxType = {
+						name = "industry_year3017"
+						position = { x = 0 y = 350 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3017
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+
+					instantTextBoxType = {
+						name = "industry_year3018"
+						position = { x = 0 y = 450 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3018
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+
+					instantTextBoxType = {
+						name = "industry_year3019"
+						position = { x = 0 y = 550 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3019
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "industry_year3020"
+						position = { x = 0 y = 650 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3020
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "industry_year3021"
+						position = { x = 0 y = 750 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3021
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "industry_year3022"
+						position = { x = 0 y = 850 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3022
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+				}			
+
+				containerWindowType = {
+					name = "industry_year_right"
+					position = { x=-160 y=40 }
+					size = { width = 80 height = 100% }
+					orientation = upper_right
+				
+					instantTextBoxType = {
+						name = "industry_year3000"
+						position = { x = 0 y = 50 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3000
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "industry_year3015"
+						position = { x = 0 y = 150 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3015
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+
+					instantTextBoxType = {
+						name = "industry_year3016"
+						position = { x = 0 y = 250 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3016
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+
+					instantTextBoxType = {
+						name = "industry_year3017"
+						position = { x = 0 y = 350 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3017
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+
+					instantTextBoxType = {
+						name = "industry_year3018"
+						position = { x = 0 y = 450 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3018
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+
+					instantTextBoxType = {
+						name = "industry_year3019"
+						position = { x = 0 y = 550 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3019
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "industry_year3020"
+						position = { x = 0 y = 650 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3020
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "industry_year3021"
+						position = { x = 0 y = 750 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3021
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "industry_year3022"
+						position = { x = 0 y = 850 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = @3022
+						maxWidth = 130
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+				}
+			}
+			instantTextBoxType = {
+				name = "industry_subtitle_tools"
+				position = { x = 325 y = 95  }
+				textureFile = ""
+				font = "hoi_33"
+				borderSize = {x = 0 y = 4}
+				text = "INDUSTRY_TITLE_TOOLS"
+				maxWidth = 200
+				maxHeight = 62
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			instantTextBoxType = {
+				name = "concentrated_subtitle"
+				position = { x = 565 y = 75 }
+				textureFile = ""
+				font = "hoi_33"
+				borderSize = {x = 0 y = 4}
+				text = "CONCENTRATED_TITLE"
+				maxWidth = 200
+				maxHeight = 62
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			instantTextBoxType = {
+				name = "dispersed_subtitle"
+				position = { x = 820 y = 75 }
+				textureFile = ""
+				font = "hoi_33"
+				borderSize = {x = 0 y = 4}
+				text = "DISPERSED_TITLE"
+				maxWidth = 200
+				maxHeight = 62
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			
+			gridboxtype = {
+				name = "metallurgy0_tree"
+				position = { x = 210 y = 75 }
+				slotsize = { width = 35 height = 50 }
+				format = "UP"
+			}
+		}
+		
 		containerWindowType = {
 			name = "infantry_folder"
 			position = { x=0 y=47 }
@@ -244,8 +560,8 @@ guiTypes = {
 			}
 		}
 
-		containerWindowType = {
-			name = "smithing_folder"
+		containerWindowType = {#################################construction
+			name = "construction_folder"
 			position = { x=0 y=47 }
 			size = { width = 100%% height = 100%% }
 			margin = { top = 13 left = 13 bottom = 24 right = 25}
@@ -264,24 +580,24 @@ guiTypes = {
 				name = "size_filler"
 				position = { x=0 y=0 }
 				size = {
-					width = 1550 height = 1100 
+					width = 1450 height = 1000 
 					min = { width = 100%% height = 100%% }
 				}
 				
 				iconType = {
-					name ="GFX_industry_techtree_bg"
-					spriteType = "GFX_industry_techtree_bg"
+					name ="GFX_construction_techtree_bg"
+					spriteType = "GFX_construction_techtree_bg"
 					position = { x=0 y=0 }
 				}	
 
 				containerWindowType = {
-					name = "engineering_year_left"
-					position = { x=100 y=40 }
+					name = "construction_year_left"
+					position = { x=50 y=40 }
 					size = { width = 130 height = 100% }
 					orientation = upper_left
 				
 					instantTextBoxType = {
-						name = "industry_year3000"
+						name = "construction_year3000"
 						position = { x = 0 y = 50 }
 						textureFile = ""
 						font = "hoi_36header"
@@ -293,7 +609,7 @@ guiTypes = {
 						Orientation = "UPPER_LEFT"
 					}
 					instantTextBoxType = {
-						name = "industry_year3015"
+						name = "construction_year3015"
 						position = { x = 0 y = 150 }
 						textureFile = ""
 						font = "hoi_36header"
@@ -306,7 +622,7 @@ guiTypes = {
 					}
 
 					instantTextBoxType = {
-						name = "industry_year3016"
+						name = "construction_year3016"
 						position = { x = 0 y = 250 }
 						textureFile = ""
 						font = "hoi_36header"
@@ -319,7 +635,7 @@ guiTypes = {
 					}
 
 					instantTextBoxType = {
-						name = "industry_year3017"
+						name = "construction_year3017"
 						position = { x = 0 y = 350 }
 						textureFile = ""
 						font = "hoi_36header"
@@ -332,7 +648,7 @@ guiTypes = {
 					}
 
 					instantTextBoxType = {
-						name = "industry_year3018"
+						name = "construction_year3018"
 						position = { x = 0 y = 450 }
 						textureFile = ""
 						font = "hoi_36header"
@@ -345,7 +661,7 @@ guiTypes = {
 					}
 
 					instantTextBoxType = {
-						name = "industry_year3019"
+						name = "construction_year3019"
 						position = { x = 0 y = 550 }
 						textureFile = ""
 						font = "hoi_36header"
@@ -357,7 +673,7 @@ guiTypes = {
 						Orientation = "UPPER_LEFT"
 					}
 					instantTextBoxType = {
-						name = "industry_year3020"
+						name = "construction_year3020"
 						position = { x = 0 y = 650 }
 						textureFile = ""
 						font = "hoi_36header"
@@ -369,7 +685,7 @@ guiTypes = {
 						Orientation = "UPPER_LEFT"
 					}
 					instantTextBoxType = {
-						name = "industry_year3021"
+						name = "construction_year3021"
 						position = { x = 0 y = 750 }
 						textureFile = ""
 						font = "hoi_36header"
@@ -381,7 +697,7 @@ guiTypes = {
 						Orientation = "UPPER_LEFT"
 					}
 					instantTextBoxType = {
-						name = "industry_year3022"
+						name = "construction_year3022"
 						position = { x = 0 y = 850 }
 						textureFile = ""
 						font = "hoi_36header"
@@ -392,29 +708,17 @@ guiTypes = {
 						format = left
 						Orientation = "UPPER_LEFT"
 					}
-					instantTextBoxType = {
-						name = "industry_year3023"
-						position = { x = 0 y = 950 }
-						textureFile = ""
-						font = "hoi_36header"
-						borderSize = {x = 0 y = 4}
-						text = @3023
-						maxWidth = 130
-						maxHeight = 32
-						format = left
-						Orientation = "UPPER_LEFT"
-					}
 				}			
 
 				containerWindowType = {
-					name = "industry_year_right"
-					position = { x=150 y=40 }
+					name = "construction_year_right"
+					position = { x=-160 y=40 }
 					size = { width = 80 height = 100% }
 					orientation = upper_right
 				
 					instantTextBoxType = {
-						name = "industry_year3000"
-						position = { x = 0 y = 0 }
+						name = "construction_year3000"
+						position = { x = 0 y = 50 }
 						textureFile = ""
 						font = "hoi_36header"
 						borderSize = {x = 0 y = 4}
@@ -425,8 +729,8 @@ guiTypes = {
 						Orientation = "UPPER_LEFT"
 					}
 					instantTextBoxType = {
-						name = "industry_year3015"
-						position = { x = 0 y = 100 }
+						name = "construction_year3015"
+						position = { x = 0 y = 150 }
 						textureFile = ""
 						font = "hoi_36header"
 						borderSize = {x = 0 y = 4}
@@ -438,8 +742,8 @@ guiTypes = {
 					}
 
 					instantTextBoxType = {
-						name = "industry_year3016"
-						position = { x = 0 y = 200 }
+						name = "construction_year3016"
+						position = { x = 0 y = 250 }
 						textureFile = ""
 						font = "hoi_36header"
 						borderSize = {x = 0 y = 4}
@@ -451,8 +755,8 @@ guiTypes = {
 					}
 
 					instantTextBoxType = {
-						name = "industry_year3017"
-						position = { x = 0 y = 300 }
+						name = "construction_year3017"
+						position = { x = 0 y = 350 }
 						textureFile = ""
 						font = "hoi_36header"
 						borderSize = {x = 0 y = 4}
@@ -464,8 +768,8 @@ guiTypes = {
 					}
 
 					instantTextBoxType = {
-						name = "industry_year3018"
-						position = { x = 0 y = 400 }
+						name = "construction_year3018"
+						position = { x = 0 y = 450 }
 						textureFile = ""
 						font = "hoi_36header"
 						borderSize = {x = 0 y = 4}
@@ -477,8 +781,8 @@ guiTypes = {
 					}
 
 					instantTextBoxType = {
-						name = "industry_year3019"
-						position = { x = 0 y = 500 }
+						name = "construction_year3019"
+						position = { x = 0 y = 550 }
 						textureFile = ""
 						font = "hoi_36header"
 						borderSize = {x = 0 y = 4}
@@ -489,8 +793,8 @@ guiTypes = {
 						Orientation = "UPPER_LEFT"
 					}
 					instantTextBoxType = {
-						name = "industry_year3020"
-						position = { x = 0 y = 600 }
+						name = "construction_year3020"
+						position = { x = 0 y = 650 }
 						textureFile = ""
 						font = "hoi_36header"
 						borderSize = {x = 0 y = 4}
@@ -501,8 +805,8 @@ guiTypes = {
 						Orientation = "UPPER_LEFT"
 					}
 					instantTextBoxType = {
-						name = "industry_year3021"
-						position = { x = 0 y = 700 }
+						name = "construction_year3021"
+						position = { x = 0 y = 750 }
 						textureFile = ""
 						font = "hoi_36header"
 						borderSize = {x = 0 y = 4}
@@ -513,8 +817,8 @@ guiTypes = {
 						Orientation = "UPPER_LEFT"
 					}
 					instantTextBoxType = {
-						name = "industry_year3022"
-						position = { x = 0 y = 800 }
+						name = "construction_year3022"
+						position = { x = 0 y = 850 }
 						textureFile = ""
 						font = "hoi_36header"
 						borderSize = {x = 0 y = 4}
@@ -524,53 +828,81 @@ guiTypes = {
 						format = left
 						Orientation = "UPPER_LEFT"
 					}
-					instantTextBoxType = {
-						name = "industry_year3023"
-						position = { x = 0 y = 900 }
-						textureFile = ""
-						font = "hoi_36header"
-						borderSize = {x = 0 y = 4}
-						text = @3023
-						maxWidth = 130
-						maxHeight = 32
-						format = left
-						Orientation = "UPPER_LEFT"
-					}
 				}
 			}
 			instantTextBoxType = {
-				name = "industry_subtitle"
-				position = { x = 610 y = 210 }
+				name = "construction_subtitle_architecture"
+				position = { x = 325 y = 95  }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_33"
 				borderSize = {x = 0 y = 4}
-				text = "INDUSTRY_TITLE"
+				text = "CONSTRUCTION_TITLE_ARCHITECTURE"
+				maxWidth = 200
+				maxHeight = 62
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			# instantTextBoxType = {
+				# name = "shipbuilding_subtitle"
+				# position = { x = 590 y = 95 }
+				# textureFile = ""
+				# font = "hoi_33"
+				# borderSize = {x = 0 y = 4}
+				# text = "CONSTRUCTION_TITLE_SHIPBUILDING"
+				# maxWidth = 200
+				# maxHeight = 62
+				# format = center
+				# Orientation = "UPPER_LEFT"
+			# }
+			instantTextBoxType = {
+				name = "engineers_subtitle"
+				position = { x = 825 y = 95 }
+				textureFile = ""
+				font = "hoi_33"
+				borderSize = {x = 0 y = 4}
+				text = "CONSTRUCTION_TITLE_ENGINEERS"
 				maxWidth = 200
 				maxHeight = 62
 				format = center
 				Orientation = "UPPER_LEFT"
 			}
 
+			
+			gridboxtype = {
+				name = "carpentry0_tree"
+				position = { x = 210 y = 75 }
+				slotsize = { width = 35 height = 50 }
+				format = "UP"
+			}
+			gridboxtype = {
+				name = "fort_tech_1_tree"
+				position = { x = 1210 y = 75 }
+				slotsize = { width = 35 height = 50 }
+				format = "UP"
+			}
 			instantTextBoxType = {
-				name = "industry_subtitle_tools"
-				position = { x = 350 y = 115  }
+				name = "campaign_engineers_subtitle"
+				position = { x = 720 y = 325 }
 				textureFile = ""
-				font = "hoi_33"
+				font = "hoi_22"
 				borderSize = {x = 0 y = 4}
-				text = "INDUSTRY_TITLE_TOOLS"
+				text = "CAMPAIGN_ENGINEERS_SUBTITLE"
 				maxWidth = 200
 				maxHeight = 62
 				format = center
 				Orientation = "UPPER_LEFT"
 			}
-				
-			@smithingStartX = 50
-			@smithingStartY = 75
-			gridboxtype = {
-				name = "metallurgy0_tree"
-				position = { x = 240 y = @smithingStartY }
-				slotsize = { width = 70 height = 50 }
-				format = "UP"
+			instantTextBoxType = {
+				name = "siege_engineers_subtitle"
+				position = { x = 935 y = 325 }
+				textureFile = ""
+				font = "hoi_22"
+				borderSize = {x = 0 y = 4}
+				text = "SIEGE_ENGINEERS_SUBTITLE"
+				maxWidth = 200
+				maxHeight = 62
+				format = center
+				Orientation = "UPPER_LEFT"
 			}
 		}
 
@@ -2597,31 +2929,31 @@ guiTypes = {
 			size = { width = 100%% height = 30 }
 	
 			buttonType = {
-				name = "infantry_folder_tab"
-				position = { x = 22 y = 0 }
-				quadTextureSprite = "GFX_infantry_folder_tab"
-				frame = 1
-				clicksound = ui_research_tab_infantry
-			}
-
-			iconType = {
-				name = "highlight_infantry_folder"
-				spriteType = "GFX_tutorial_research_folder_icon_glow"
-				position = { x=22 y=-5}
-				hide = yes
-				alwaystransparent = yes
-			}
-
-			buttonType = {
 				name = "smithing_folder_tab"
-				position = { x = 111 y = 0 }
+				position = { x = 22 y = 0 }
 				quadTextureSprite = "GFX_smithing_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_industry
 			}
 			buttonType = {
-				name = "armour_folder_tab"
+				name = "infantry_folder_tab"
+				position = { x = 111 y = 0 }
+				quadTextureSprite = "GFX_infantry_folder_tab"
+				frame = 1
+				clicksound = ui_research_tab_infantry
+			}
+
+			buttonType = {
+				name = "construction_folder_tab"
 				position = { x = 200 y = 0 }
+				quadTextureSprite = "GFX_construction_folder_tab"
+				frame = 1
+				clicksound = ui_research_tab_industry
+			}
+
+			buttonType = {
+				name = "armour_folder_tab"
+				position = { x = 600 y = 0 }
 				quadTextureSprite = "GFX_armour_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_armor
@@ -2629,7 +2961,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "nsb_armour_folder_tab"
-				position = { x = 200 y = 0 }
+				position = { x = 600 y = 0 }
 				quadTextureSprite = "GFX_armour_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_armor
@@ -2657,17 +2989,9 @@ guiTypes = {
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
-			# buttonType = {
-				# name = "air_techs_folder_tab"
-				# position = { x = 467 y = 0 }
-				# quadTextureSprite = "GFX_air_techs_folder_tab"
-				# frame = 1
-				# clicksound = ui_research_tab_air
-			# }
-
 			buttonType = {
-				position = { x = 467 y = 0 }
 				name = "electronics_folder_tab"
+				position = { x = 467 y = 0 }
 				quadTextureSprite = "GFX_techtree_engineering_tab"
 				frame = 1
 				clicksound = ui_research_tab_engineering
@@ -3153,12 +3477,114 @@ guiTypes = {
 				spriteType = "GFX_subtech_rocket"
 				alwaystransparent = yes
 			}
-		}		
-		
+		}
 	}
 	
 	containerWindowType = {
 		name = "techtree_smithing_folder_small_item"
+		position = { x=0 y=5 }
+		size = { width = 204 height = 72 }
+		clipping = no
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_industry_unavailable_item_bg"
+		}
+		iconType = {
+			name = "Icon"
+			position = { x=34 y=35 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "bonus_icon"
+			position = { x=-1 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = -1 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 80
+			maxHeight = 20
+			format = center
+		}
+	}
+	
+	containerWindowType = {
+		name = "techtree_construction_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=90 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+			textureFile = ""
+			font = "hoi_20bs"
+			borderSize = {x = 4 y = 4}
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 166
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+		iconType = {
+			name = "bonus_icon"
+			position = { x=111 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 111 y = -21 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 80
+			maxHeight = 20
+			format = center
+		}
+		
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=141 y=1 }
+			size = { width = 35 height = 26 }
+			clipping = no
+			
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+			
+			iconType = {
+				name = "picture"
+				position = { x=2 y=2 }
+				spriteType = "GFX_subtech_rocket"
+				alwaystransparent = yes
+			}
+		}
+	}
+	
+	containerWindowType = {
+		name = "techtree_construction_folder_small_item"
 		position = { x=0 y=5 }
 		size = { width = 204 height = 72 }
 		clipping = no
