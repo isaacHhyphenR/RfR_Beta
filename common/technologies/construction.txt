@@ -18,21 +18,21 @@ technologies = {
 	@fortX = 0
 
 	@AIbehindCarpentry = 0.2
+	
 ###########################################################
 				#CARPENTRY
 ###########################################################
 	@rangedcarpentryX = 1
-	@3000Rng = -1
-	@3015Rng = 2
-	@3017Rng = 4
-	@3018Rng = 6
-	@3019Rng = 8
-	@3020Rng = 10
-	@3021Rng = 12
-	@3022Rng = 14
-	@3023Rng = 16
-	@3024Rng = 18
-	@3025Rng = 20
+	@3000Rng = 0
+	@3013Rng = 2
+	@3015Rng = 4
+	@3017Rng = 6
+	@3018Rng = 8
+	@3019Rng = 10
+	@3020Rng = 12
+	@3021Rng = 14
+	@3022Rng = 16
+	
 	@carpentryConstructionX = 0
 	@unlockerCost = 0.75
 	carpentry0 = {
@@ -45,7 +45,7 @@ technologies = {
 		}
 		folder = {
 			name = ranged_folder
-			position = { x = @rangedcarpentryX y = -2 }
+			position = { x = @rangedcarpentryX y = @3000Rng }
 		}
 		path = {
 			leads_to_tech = carpentry1
@@ -144,7 +144,7 @@ technologies = {
 		}
 		folder = {
 			name = ranged_folder
-			position = { x = @rangedcarpentryX y = 5 }
+			position = { x = @rangedcarpentryX y = @3017Rng }
 		}
 		path = {
 			leads_to_tech = carpentry3

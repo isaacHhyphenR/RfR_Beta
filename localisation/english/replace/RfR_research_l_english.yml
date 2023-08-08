@@ -11,8 +11,8 @@
  construction_folder_desc: "How to build great structures of wood."
  armour_folder: "Cavalry"
  armour_folder_desc: "The various ways of fighting from other creatures' backs."
- artillery_folder: "Ranged"
- artillery_folder_desc: "Specialised weapons for dealing death from afar."
+ ranged_folder: "Ranged"
+ ranged_folder_desc: "Specialised weapons for dealing death from afar."
  electronics_folder_desc: "Engineering, math, encryption and advanced tech research."
  INFANTRY_TITLE_ARMOR: "ARMOR"
  INFANTRY_TITLE_WEAPONS: "WEAPONS"
@@ -32,7 +32,7 @@
  ARMOUR_TITLE_MUMAK: "MÛMAKIL"
  BOW_TITLE: "BOWS"
  ARTILLERY_TITLE_JAVELIN: "JAVELINS"
- ARTILLERT_TITLE_AA: "ANTI-AIR"
+ SIEGE_ARTILLERY_TITLE: "ARTILLERY"
  INDUSTRY_TITLE_OIL: "INDUSTRIAL FARMS"
                     ###CATEGORIES
  cat_mechanized_equipment: "Chariot Models"
@@ -143,7 +143,7 @@
  
  rocketry: "Javelins"
  rocketry_research: "Javelin Research Speed"
- cat_siege_artillery: "Siege Artillery"
+ cat_siege_artillery: "Artillery"
  cat_siege_artillery_research: "$cat_siege_artillery$ Research Speed"
  
                      ###AGRICULTURE
@@ -466,3 +466,10 @@
  engine_tech_3_desc: "Shoes protect the feet from wear and tear, allowing the mount to run faster and for longer periods."
  engine_tech_4: "Modern Shoes"
  engine_tech_4_desc: "Shoes protect the feet from wear and tear, allowing the mount to run faster and for longer periods."
+ 
+ basic_artillery: "Ballistas"
+ basic_artillery_desc: "Huge crossbows that can hurl stones, bolts, or even grappling hooks over great distances."
+ improved_artillery: "Catapults"
+ improved_artillery_desc: "Tension is built up then released all at once, launching a heavy bolder into the enemy fortifications."
+ advanced_artillery: "Trebuchets"
+ advanced_artillery_desc: "Heavy counterweights grant these behomoths far more power and accuracy than a torsion catapult."

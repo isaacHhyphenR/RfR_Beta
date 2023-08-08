@@ -1141,41 +1141,6 @@ technologies = {
 		}
 	}
 
-	railway_gun = {
-		enable_equipments = {
-			railway_gun_equipment_1
-		}
-
-		research_cost = 1.5
-		start_year = 3015
-		folder = {
-			name = infantry_folder
-			position = { x = 2 y = 3 }
-		}
-		
-		categories = {
-			train_tech
-			cat_siege_artillery
-		}
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				is_major = yes
-				factor = 2
-			}
-
-			modifier = {
-				OR = {
-					TAG = MOR
-					tag = ISN
-				}
-				factor = 1.5
-			}
-		}
-		
-	}
 
 	wartime_train = {
 		enable_equipments = {

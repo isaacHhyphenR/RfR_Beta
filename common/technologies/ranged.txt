@@ -15,12 +15,17 @@
 #antitank4 (antitank5)
 
 @3000 = 0
-@3015 = 2
-@3018 = 4
-@3019 = 6
-@3020 = 8
-@3021 = 10
-@3022 = 12
+@3013 = 2
+@3015 = 4
+@3017 = 6
+@3018 = 8
+@3019 = 10
+@3020 = 12
+@3021 = 14
+@3022 = 16
+
+@railgunX = -3
+@monsterGunX = 2
 
 technologies = {
 
@@ -34,6 +39,9 @@ technologies = {
 			leads_to_tech = interwar_artillery
 			research_cost_coeff = 1
 		}
+		dependencies = {
+			carpentry0 = 1
+		}
 
 		enable_equipment_modules = {
 			cav_basic_bow
@@ -44,8 +52,8 @@ technologies = {
 		research_cost = 1.5
 
 		folder = {
-			name = artillery_folder
-			position = { x = 0 y = @3000 }
+			name = ranged_folder
+			position = { x = 0 y = @3013 }
 		}
 
 		categories = {
@@ -115,7 +123,7 @@ technologies = {
 		start_year = 3015
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3015 }
 		}
 
@@ -165,7 +173,7 @@ technologies = {
 		start_year = 3018
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3018 }
 		}
 
@@ -231,7 +239,7 @@ technologies = {
 		start_year = 3019
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3019 }
 		}
 
@@ -297,7 +305,7 @@ technologies = {
 		start_year = 3020
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3020 }
 		}
 
@@ -342,7 +350,7 @@ technologies = {
 		start_year = 3021
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3021 }
 		}
 
@@ -403,7 +411,7 @@ technologies = {
 		start_year = 3022
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3022 }
 		}
 
@@ -432,6 +440,9 @@ technologies = {
 		}
 	}
 
+###########################################################
+				#JAVELINS
+###########################################################
 	javelins1 = {
 
 		enable_equipments = {
@@ -452,14 +463,17 @@ technologies = {
 			leads_to_tech = javelin_upgrade_1
 			research_cost_coeff = 1
 		}
+		dependencies = {
+			carpentry0 = 1
+		}
 
 		research_cost = 2
 
 		start_year = 3000
 
 		folder = {
-			name = artillery_folder
-			position = { x = 0 y = @3000 }
+			name = ranged_folder
+			position = { x = 0 y = @3013 }
 		}
 
 		ai_will_do = {
@@ -493,7 +507,7 @@ technologies = {
 		start_year = 3015
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3015 }
 		}
 
@@ -528,7 +542,7 @@ technologies = {
 		start_year = 3018
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3018 }
 		}
 
@@ -562,7 +576,7 @@ technologies = {
 		start_year = 3019
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3019 }
 		}
 
@@ -597,7 +611,7 @@ technologies = {
 		start_year = 3020
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3020 }
 		}
 
@@ -632,7 +646,7 @@ technologies = {
 		start_year = 3021
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3021 }
 		}
 
@@ -661,7 +675,7 @@ technologies = {
 		start_year = 3022
 
 		folder = {
-			name = artillery_folder
+			name = ranged_folder
 			position = { x = 0 y = @3022 }
 		}
 
@@ -700,9 +714,12 @@ technologies = {
 ###########################################################
 	basic_artillery = {
 
+		show_equipment_icon = no
+		force_use_small_tech_layout = yes	
+		
 		enable_building = {
 			building = rocket_site
-			level = 2
+			level = 6
 		}
 		enable_equipment_modules = {
 			mumak_ballista_tower
@@ -719,13 +736,16 @@ technologies = {
 			leads_to_tech = railway_gun
 			research_cost_coeff = 1
 		}
+		dependencies = {
+			carpentry0 = 1
+		}
 		
 		research_cost = 1.2
-		start_year = 3015
+		start_year = 3000
 		
 		folder = {
-			name = infantry_folder
-			position = { x = 0 y = 0 }
+			name = ranged_folder
+			position = { x = 0 y = @3013 }
 		}
 	
 		ai_will_do = {
@@ -740,10 +760,17 @@ technologies = {
 	improved_artillery = {
 
 		show_equipment_icon = no
-
+		force_use_small_tech_layout = yes	
 		# can build v1s/rocket planes
 		enable_equipments = {
 			guided_missile_equipment_2
+		}
+		enable_equipment_modules = {
+			mumak_catapult_tower
+		}
+		enable_building = {
+			building = rocket_site
+			level = 8
 		}
 		
 		path = {
@@ -755,7 +782,7 @@ technologies = {
 		start_year = 3018
 		
 		folder = {
-			name = infantry_folder
+			name = ranged_folder
 			position = { x = 0 y = @3018 }
 		}
 		
@@ -772,23 +799,23 @@ technologies = {
 	advanced_artillery = {
 
 		show_equipment_icon = no
+		force_use_small_tech_layout = yes	
 		
 		# can build v2s
 		
+		enable_building = {
+			building = rocket_site
+			level = 10
+		}
 		enable_equipments = {
 			guided_missile_equipment_3
-		}
-		
-		path = {
-			leads_to_tech = advanced_rocket_engines 
-			research_cost_coeff = 1
 		}
 		
 		research_cost = 1.2
 		start_year = 3021
 		
 		folder = {
-			name = infantry_folder
+			name = ranged_folder
 			position = { x = 0 y = @3021 }
 		}
 		
@@ -798,6 +825,84 @@ technologies = {
 		
 		categories = {
 			cat_siege_artillery
+		}
+	}
+	railway_gun = {
+		enable_equipments = {
+			railway_gun_equipment_1
+		}
+
+		path = {
+			leads_to_tech = monster_gun 
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 3015
+		folder = {
+			name = ranged_folder
+			position = { x = @railgunX y = @3015 }
+		}
+		
+		categories = {
+			train_tech
+			cat_siege_artillery
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+
+			modifier = {
+				OR = {
+					TAG = MOR
+					tag = ISN
+				}
+				factor = 5
+			}
+		}
+	}
+	monster_gun = {
+		enable_equipments = {
+			monster_gun_equipment_1
+		}
+
+		research_cost = 1.5
+		start_year = 3018
+		folder = {
+			name = ranged_folder
+			position = { x = @railgunX y = @3018 }
+		}
+		dependencies = {
+			railway_gun = 1
+		}
+		dependencies = { #so that either NSB or non-NSB tech will unlock it
+			hidden_troll_gun_prerequisite = 1
+		}
+		
+		categories = {
+			train_tech
+			cat_siege_artillery
+			cat_heavy_armor
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+
+			modifier = {
+				OR = {
+					TAG = MOR
+				}
+				factor = 4
+			}
 		}
 	}
 	

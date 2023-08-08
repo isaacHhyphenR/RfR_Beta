@@ -213,6 +213,18 @@ spriteTypes = {
 		name = "GFX_advanced_artillery_medium"
 		texturefile = "gfx/interface/technologies/advanced_artillery.dds"
 	}
+	SpriteType = {
+		name = "GFX_improved_artillery_medium"
+		texturefile = "gfx/interface/technologies/improved_artillery.dds"
+	}
+	SpriteType = {
+		name = "GFX_advanced_artillery_medium"
+		texturefile = "gfx/interface/technologies/advanced_artillery.dds"
+	}
+	SpriteType = {
+		name = "GFX_monster_gun_medium"
+		texturefile = "gfx/interface/technologies/monster_artillery.dds"
+	}
 							######################################
 									#MISC
 							######################################

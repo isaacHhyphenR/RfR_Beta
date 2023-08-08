@@ -1,0 +1,76 @@
+equipments = {
+
+	railway_gun_equipment = {
+		year = 3013
+
+		is_archetype = yes
+		picture = archetype_artillery_equipment		
+		type = railway_gun
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		active = yes
+		
+		manpower = 1000
+	}
+
+	railway_gun_equipment_1 = {
+		#year = 3013
+
+		archetype = railway_gun_equipment
+		priority = 50
+		visual_level = 0
+		active = no
+
+		#Misc Abilities
+		reliability = 0.8
+		maximum_speed = 4
+
+		#Offensive Abilities
+		railway_gun_attack = 25
+		
+		build_cost_ic = 600.0
+		resources = {
+			wood = 4
+			iron = 2
+		}		
+	}
+	
+	monster_gun_equipment = {
+		year = 3013
+
+		is_archetype = yes
+		picture = archetype_artillery_equipment		
+		type = railway_gun
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		active = yes
+
+		manpower = 1000
+	}
+	monster_gun_equipment_1 = {
+		#year = 3013
+
+		archetype = monster_gun_equipment
+		priority = 50
+		visual_level = 1
+		active = no
+
+		#Misc Abilities
+		reliability = 0.8
+		maximum_speed = 4
+
+		#Offensive Abilities
+		railway_gun_attack = 40
+		
+		build_cost_ic = 900.0
+		resources = {
+			wood = 4
+			iron = 2
+			monsters = 2
+		}		
+	}
+}

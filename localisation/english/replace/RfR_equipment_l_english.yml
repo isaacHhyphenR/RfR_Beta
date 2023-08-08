@@ -195,6 +195,8 @@
 
                     ###TROLLS
  monster_mount: "Specimen"
+ hidden_troll_gun_prerequisite: "$heavy_tank_equipment_0$"
+ hidden_troll_gun_prerequisite_desc: "$heavy_tank_equipment_0_desc$"
  heavy_tank_chassis_desc: "Trolls stand far taller and wider than any human, elf, or orc. They can lift great weights and carry huge weapons, but are highly unintelligent."
  heavy_tank_equipment_0: "Cave Troll"
  heavy_tank_equipment_0_short: "$heavy_tank_equipment_0$"
@@ -323,8 +325,12 @@
  train_equipment_2_desc: "A simplified design that ommits many features commonly found on regular freight wagon for the sake of cheaper production. It is still every bit as vulnerable as a regular wagon, but can more easily be replaced."
  railway_gun_equipment: "Seige Artillery"
  railway_gun_equipment_desc: "A heavy artilley piece that becomes stuck in all but the clearest of terrain-- best build a good road."
- railway_gun_desc: "A heavy artilley piece that becomes stuck in all but the clearest of terrain-- best build a good road."
  railway_gun_equipment_1: "Seige Artillery"
+ railway_gun_desc: "A heavy artilley piece that becomes stuck in all but the clearest of terrain-- best build a good road."
+ monster_gun_equipment: "Monster Artillery"
+ monster_gun_equipment_desc: "Massive artillery pieces requiring the help of monsters to operate."
+ monster_gun_equipment_1: "Troll Artillery"
+ monster_gun_equipment_1_desc: "Catapults so large only trolls can transport and operate them."
 
  floating_harbor_equipment: "Floating Harbor"
  floating_harbor_equipment_desc: "A series of pontoons and pre-fabricated wooden structures that can be moved across water and assembled within hours to create a sheltered landing space to unload supplies."

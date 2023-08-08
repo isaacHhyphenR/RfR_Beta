@@ -1514,7 +1514,7 @@ technologies = {
 		}
 
 		on_research_complete_limit = {
-			NOT = {	has_template_containing_unit = heavy_armor }
+			#NOT = {	has_template_containing_unit = heavy_armor }
 		}
 		on_research_complete = {
 			hidden_effect = {
@@ -1533,12 +1533,21 @@ technologies = {
 					load_oob = "unlock_trolls"
 				}
 			}
-
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			hidden_effect = {
+				set_technology = {
+					hidden_troll_gun_prerequisite = 1
+					popup = no
+				}
+			}
 		}
 		
 		path = {
 			leads_to_tech = basic_heavy_tank
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = monster_gun
 			research_cost_coeff = 1
 		}
 		

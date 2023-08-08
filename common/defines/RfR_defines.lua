@@ -1,3 +1,5 @@
+NDefines.NBuildings.ROCKETSITE_CAPACITY_MULT = 1
+
 NDefines.NCountry.MAJOR_MIN_FACTORIES = 25
 NDefines.NCountry.FEMALE_UNIT_LEADER_BASE_CHANCE = {1.0,1.0,1.0,1.0,1.0,}
 

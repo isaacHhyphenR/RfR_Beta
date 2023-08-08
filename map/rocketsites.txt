@@ -163,8 +163,8 @@
 163={7182 } #West Osgiliath
 164={7176 } #East Osgiliath
 165={3442 } #Minas Morgul
-166={735 }
-167={654 }
+166={7168 } #Bar Aroth
+167={7201 } #Abad Elemir
 168={43 }
 169={370 }
 170={438 }

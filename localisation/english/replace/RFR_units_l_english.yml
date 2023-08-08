@@ -97,6 +97,10 @@
  motorized_rocket_brigade_desc: "Horse-drawn javelins allow for javelineers who can both move in and out quickly after striking a target area."
  RAILWAY_GUN: "Siege Artillery"
  RAILWAY_GUN_PLURAL: "Siege artillery pieces"
+ railway_gun: "Siege Artillery"
+ railway_gun_desc: "$railway_gun_equipment_desc$"
+ monster_gun: "Monster Artillery"
+ monster_gun_desc: "$monster_gun_equipment_desc$"
  army_of_the_dead: "Army of the Dead"
  army_of_the_dead_desc: "These were once Men of the White Mountains who swore an oath to fight for King Isildur. When they forsook him and joined Sauron instead, he cursed them to know no peace until they at least fulfilled their oath to one of his heirs."
 

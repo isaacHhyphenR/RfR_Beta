@@ -131,7 +131,7 @@ buildings = {
 		base_cost = 14500
 		icon_frame = 10
 		#local_resources_food = 1 # May use local_resources_ + any resource name
-		local_resources_cloth = 1 # May use local_resources_ + any resource name
+		local_resources_mounts = 1 # May use local_resources_ + any resource name
 		local_resources_monsters = 0 # May use local_resources_ + any resource name
 		refinery = yes
 		max_level = 3 # This is the max unlock level
@@ -173,12 +173,12 @@ buildings = {
 
 	rocket_site = {
 		show_on_map = 1
-		base_cost = 6400
+		base_cost = 1000
 		icon_frame = 12
 		rocket_production = 5
 		rocket_launch_capacity = 1
-		max_level = 5
-		shares_slots = yes
+		max_level = 10
+		#shares_slots = yes
 		value = 1
 		infrastructure_construction_effect = yes
 	}

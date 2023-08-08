@@ -125,7 +125,7 @@ technology_folders = {
 	construction_folder = {
 		ledger = civilian
 	}
-	artillery_folder = {
+	ranged_folder = {
 		ledger = army
 	}
 	naval_folder = {
