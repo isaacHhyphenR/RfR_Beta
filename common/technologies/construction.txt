@@ -33,6 +33,12 @@ technologies = {
 	@3021Rng = 14
 	@3022Rng = 16
 	
+	@3000nav = 0
+	@3015nav = 5
+	@3017nav = 9
+	@3019nav = 13
+	@3021nav = 16
+	
 	@carpentryConstructionX = 0
 	@unlockerCost = 0.75
 	carpentry0 = {
@@ -46,6 +52,14 @@ technologies = {
 		folder = {
 			name = ranged_folder
 			position = { x = @rangedcarpentryX y = @3000Rng }
+		}
+		folder = {
+			name = naval_folder
+			position = { x = 0 y = @3000nav }
+		}
+		folder = {
+			name = mtgnavalfolder
+			position = { x = 0 y = @3000nav }
 		}
 		path = {
 			leads_to_tech = carpentry1
@@ -100,6 +114,14 @@ technologies = {
 			name = ranged_folder
 			position = { x = @rangedcarpentryX y = @3015Rng }
 		}
+		folder = {
+			name = naval_folder
+			position = { x = 0 y = @3015nav }
+		}
+		folder = {
+			name = mtgnavalfolder
+			position = { x = 0 y = @3015nav }
+		}
 		path = {
 			leads_to_tech = carpentry2
 			research_cost_coeff = 1
@@ -145,6 +167,14 @@ technologies = {
 		folder = {
 			name = ranged_folder
 			position = { x = @rangedcarpentryX y = @3017Rng }
+		}
+		folder = {
+			name = naval_folder
+			position = { x = 0 y = @3017nav }
+		}
+		folder = {
+			name = mtgnavalfolder
+			position = { x = 0 y = @3017nav }
 		}
 		path = {
 			leads_to_tech = carpentry3
@@ -192,6 +222,14 @@ technologies = {
 			name = ranged_folder
 			position = { x = @rangedcarpentryX y = @3019Rng }
 		}
+		folder = {
+			name = naval_folder
+			position = { x = 0 y = @3019nav }
+		}
+		folder = {
+			name = mtgnavalfolder
+			position = { x = 0 y = @3019nav }
+		}
 		path = {
 			leads_to_tech = carpentry4
 			research_cost_coeff = 1
@@ -237,6 +275,14 @@ technologies = {
 		folder = {
 			name = ranged_folder
 			position = { x = @rangedcarpentryX y = @3021Rng }
+		}
+		folder = {
+			name = naval_folder
+			position = { x = 0 y = @3021nav }
+		}
+		folder = {
+			name = mtgnavalfolder
+			position = { x = 0 y = @3021nav }
 		}
 		on_research_complete = {
 			hidden_effect = {
@@ -356,13 +402,13 @@ technologies = {
 			modifier = {
 				factor = 10
 				date > "3016.1.1"
-			}	
+			}
 			modifier = {
 				NOT = {
 					has_tech = carpentry1
 				}
 				factor = @AIbehindCarpentry
-			}		
+			}
 		}
 	}
 

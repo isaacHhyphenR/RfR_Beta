@@ -59,6 +59,8 @@ technologies = {
 		categories = {
 			artillery
 			cat_actual_artillery
+			carpentry
+			carpentry_early
 		}
 
 		ai_will_do = {
@@ -130,6 +132,8 @@ technologies = {
 		categories = {
 			artillery
 			cat_actual_artillery
+			carpentry
+			carpentry_early
 		}
 
 		ai_will_do = {
@@ -180,6 +184,8 @@ technologies = {
 		categories = {
 			artillery
 			cat_actual_artillery
+			carpentry
+			carpentry_basic
 		}
 
 		ai_will_do = {
@@ -246,6 +252,8 @@ technologies = {
 		categories = {
 			artillery
 			cat_actual_artillery
+			carpentry
+			carpentry_improved
 		}
 
 		ai_will_do = {
@@ -312,6 +320,8 @@ technologies = {
 		categories = {
 			artillery
 			cat_actual_artillery
+			carpentry
+			carpentry_improved
 		}
 
 		ai_will_do = {
@@ -357,6 +367,8 @@ technologies = {
 		categories = {
 			artillery
 			cat_actual_artillery
+			carpentry
+			carpentry_advanced
 		}
 
 		ai_will_do = {
@@ -418,6 +430,8 @@ technologies = {
 		categories = {
 			artillery
 			cat_actual_artillery
+			carpentry
+			carpentry_advanced
 		}
 
 		ai_will_do = {
@@ -482,6 +496,9 @@ technologies = {
 
 		categories = {
 			rocketry
+			artillery
+			carpentry
+			carpentry_early
 		}
 	}
 
@@ -517,6 +534,9 @@ technologies = {
 
 		categories = {
 			rocketry
+			artillery
+			carpentry
+			carpentry_early
 		}
 	}
 
@@ -552,6 +572,9 @@ technologies = {
 
 		categories = {
 			rocketry
+			artillery
+			carpentry
+			carpentry_basic
 		}
 	}
 
@@ -586,6 +609,9 @@ technologies = {
 
 		categories = {
 			rocketry
+			artillery
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -621,6 +647,9 @@ technologies = {
 
 		categories = {
 			rocketry
+			artillery
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -656,6 +685,9 @@ technologies = {
 
 		categories = {
 			rocketry
+			artillery
+			carpentry
+			carpentry_advanced
 		}
 	}
 
@@ -685,6 +717,9 @@ technologies = {
 
 		categories = {
 			rocketry
+			artillery
+			carpentry
+			carpentry_advanced
 		}
 	}
 
@@ -754,6 +789,9 @@ technologies = {
 		
 		categories = {
 			cat_siege_artillery
+			artillery
+			carpentry
+			carpentry_early
 		}
 	}
 	
@@ -793,6 +831,9 @@ technologies = {
 		
 		categories = {
 			cat_siege_artillery
+			artillery
+			carpentry
+			carpentry_basic
 		}		
 	}
 	
@@ -825,6 +866,9 @@ technologies = {
 		
 		categories = {
 			cat_siege_artillery
+			artillery
+			carpentry
+			carpentry_advanced
 		}
 	}
 	railway_gun = {
@@ -844,8 +888,10 @@ technologies = {
 		}
 		
 		categories = {
-			train_tech
 			cat_siege_artillery
+			artillery
+			carpentry
+			carpentry_early
 		}
 		
 		ai_will_do = {
@@ -884,9 +930,11 @@ technologies = {
 		}
 		
 		categories = {
-			train_tech
 			cat_siege_artillery
 			cat_heavy_armor
+			artillery
+			carpentry
+			carpentry_improved
 		}
 		
 		ai_will_do = {

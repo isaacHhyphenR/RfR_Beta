@@ -5,7 +5,7 @@ technologies = {
 #    #  # ## ####  #       #  ####  #  ###   #  
 #    #  #  # #  #  #        # #  #  #  #      # 
 ### ###  ##  #  #  #      ##  #  # ### #    ##  
-
+@AIbehindCarpentry = 0.2
 
 	early_ship_hull_light = {
 
@@ -24,6 +24,9 @@ technologies = {
 			leads_to_tech = smoke_generator 
 			research_cost_coeff = 1
 		}
+		dependencies = {
+			carpentry0 = 1
+		}
 		
 		allow_branch = {
 			has_dlc = "Man the Guns"
@@ -31,7 +34,7 @@ technologies = {
 		
 		research_cost = 1.5
 
-		start_year = 1922
+		start_year = 3000
 		
 		folder = {
 			name = mtgnavalfolder
@@ -45,6 +48,7 @@ technologies = {
 		categories = {
 			naval_equipment
 			dd_tech
+			carpentry
 		}
 	}
 	
@@ -80,11 +84,19 @@ technologies = {
 				has_war = yes
 				factor = 2
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			dd_tech
+			carpentry
+			carpentry_early
 		}
 	}
 	
@@ -117,11 +129,19 @@ technologies = {
 			modifier = {
 				factor = 4
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			dd_tech
+			carpentry
+			carpentry_improved
 		}
 	}
 	
@@ -149,11 +169,19 @@ technologies = {
 			modifier = {
 				factor = 4
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			dd_tech
+			carpentry
+			carpentry_advanced
 		}
 	}
 
@@ -163,7 +191,7 @@ technologies = {
 		
 		research_cost = 0.75
 
-		start_year = 1922
+		start_year = 3000
 		
 		folder = {
 			name = mtgnavalfolder
@@ -177,6 +205,7 @@ technologies = {
 		categories = {
 			naval_equipment
 			dd_tech
+			carpentry
 		}
 	}
  ##  ###  #  # ###  ## ### ###   ## 
@@ -198,6 +227,9 @@ technologies = {
 			leads_to_tech = basic_ship_hull_cruiser
 			research_cost_coeff = 1
 		}
+		dependencies = {
+			carpentry0 = 1
+		}
 		
 		allow_branch = {
 			has_dlc = "Man the Guns"
@@ -205,7 +237,7 @@ technologies = {
 		
 		research_cost = 1.5
 
-		start_year = 1922
+		start_year = 3000
 		
 		folder = {
 			name = mtgnavalfolder
@@ -220,6 +252,7 @@ technologies = {
 			naval_equipment
 			cl_tech
 			ca_tech
+			carpentry
 		}
 	}
 
@@ -253,12 +286,20 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			cl_tech
 			ca_tech
+			carpentry
+			carpentry_early
 		}
 	}
 
@@ -286,12 +327,20 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			cl_tech
 			ca_tech
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -314,12 +363,20 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			cl_tech
 			ca_tech
+			carpentry
+			carpentry_advanced
 		}
 	}
 
@@ -353,12 +410,20 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			cl_tech
 			ca_tech
+			carpentry
+			carpentry_early
 		}
 	}
 
@@ -392,12 +457,20 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			cl_tech
 			ca_tech
+			carpentry
+			carpentry_improved
 		}
 	}
 	advanced_cruiser_armor_scheme = {
@@ -425,12 +498,20 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			cl_tech
 			ca_tech
+			carpentry
+			carpentry_advanced
 		}
 	}
 
@@ -453,6 +534,9 @@ technologies = {
 			heavy_ship_engine_1
 		}
 		
+		dependencies = {
+			carpentry0 = 1
+		}
 		path = {
 			leads_to_tech = basic_ship_hull_heavy
 			research_cost_coeff = 1
@@ -465,7 +549,7 @@ technologies = {
 		
 		research_cost = 1.75
 
-		start_year = 1922
+		start_year = 3000
 		
 		folder = {
 			name = mtgnavalfolder
@@ -488,6 +572,7 @@ technologies = {
 			naval_equipment
 			bb_tech
 			bc_tech
+			carpentry
 		}
 	}
 
@@ -526,12 +611,20 @@ technologies = {
 				is_major = no
 				factor = 0
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			bb_tech
 			bc_tech
+			carpentry
+			carpentry_early
 		}
 	}
 	ship_hull_super_heavy = {
@@ -550,12 +643,20 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			bb_tech
 			bc_tech
+			carpentry
+			carpentry_early
 		}
 	}
 
@@ -587,12 +688,20 @@ technologies = {
 				is_major = no
 				factor = 0
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			bb_tech
 			bc_tech
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -619,12 +728,20 @@ technologies = {
 				is_major = no
 				factor = 0
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			bb_tech
 			bc_tech
+			carpentry
+			carpentry_advanced
 		}
 	}
 	basic_heavy_armor_scheme = {
@@ -658,12 +775,20 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			bb_tech
 			bc_tech
+			carpentry
+			carpentry_early
 		}
 	}
 
@@ -697,12 +822,20 @@ technologies = {
 				has_tech = improved_ship_hull_heavy 
 				factor = 2
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
 			bb_tech
 			bc_tech
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -724,7 +857,7 @@ technologies = {
 		
 		research_cost = 2.0
 
-		start_year = 1922
+		start_year = 3000
 
 		path = {
 			leads_to_tech = magnetic_detonator
@@ -764,6 +897,7 @@ technologies = {
 		
 		categories = {
 			naval_equipment
+			carpentry
 		}
 	}
 
@@ -809,10 +943,18 @@ technologies = {
 				has_war = yes
 				factor = 3
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 
@@ -844,10 +986,18 @@ technologies = {
 				has_war = yes
 				factor = 3
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -871,10 +1021,18 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 	improved_ship_torpedo_launcher = {
@@ -905,10 +1063,18 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 	advanced_ship_torpedo_launcher = {
@@ -938,10 +1104,18 @@ technologies = {
 		}
 		
 		ai_will_do = {
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 	modern_ship_torpedo_launcher = {
@@ -965,10 +1139,18 @@ technologies = {
 		}
 		
 		ai_will_do = {
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_advanced
 		}
 	}
 
@@ -984,7 +1166,7 @@ technologies = {
 		
 		research_cost = 1
 
-		start_year = 1922
+		start_year = 3000
 
 		path = {
 			leads_to_tech = basic_light_battery
@@ -1034,6 +1216,7 @@ technologies = {
 		
 		categories = {
 			naval_equipment
+			carpentry
 		}
 	}
 
@@ -1074,10 +1257,18 @@ technologies = {
 				has_tech = basic_ship_hull_light
 				factor = 20
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 	improved_light_battery = {
@@ -1112,10 +1303,18 @@ technologies = {
 				has_tech = improved_ship_hull_light
 				factor = 20
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 	advanced_light_battery = {
@@ -1144,10 +1343,18 @@ technologies = {
 				has_tech = advanced_ship_hull_light
 				factor = 20
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_advanced
 		}
 	}
 
@@ -1197,10 +1404,18 @@ technologies = {
 				has_war = yes
 				factor = 10
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 	improved_light_shell = {
@@ -1244,10 +1459,18 @@ technologies = {
 				has_war = yes
 				factor = 10
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -1289,10 +1512,18 @@ technologies = {
 				has_tech = improved_ship_hull_cruiser
 				factor = 5
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 	improved_medium_battery = {
@@ -1326,10 +1557,18 @@ technologies = {
 				has_tech = advanced_ship_hull_cruiser
 				factor = 5
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 	advanced_medium_battery = {
@@ -1354,10 +1593,18 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_advanced
 		}
 	}
 	basic_medium_shell = {
@@ -1394,10 +1641,18 @@ technologies = {
 				has_war = yes
 				factor = 7
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 	improved_medium_shell = {
@@ -1431,10 +1686,18 @@ technologies = {
 				has_war = yes
 				factor = 7
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_advanced
 		}
 	}
 
@@ -1474,10 +1737,18 @@ technologies = {
 				has_tech = basic_ship_hull_heavy
 				factor = 20
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 	improved_heavy_battery = {
@@ -1510,10 +1781,18 @@ technologies = {
 				has_tech = improved_ship_hull_heavy
 				factor = 20
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 	advanced_heavy_battery = {
@@ -1541,10 +1820,18 @@ technologies = {
 				has_tech = advanced_ship_hull_heavy
 				factor = 20
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_advanced
 		}
 	}
 	basic_heavy_shell = {
@@ -1582,11 +1869,18 @@ technologies = {
 				has_war = yes
 				factor = 5
 			}
-
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 	improved_heavy_shell = {
@@ -1620,10 +1914,18 @@ technologies = {
 				has_war = yes
 				factor = 5
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_advanced
 		}
 	}
 
@@ -1631,7 +1933,7 @@ technologies = {
 		
 		research_cost = 0.8
 
-		start_year = 1922
+		start_year = 3000
 
 		path = {
 			leads_to_tech = improved_secondary_battery
@@ -1664,6 +1966,7 @@ technologies = {
 		
 		categories = {
 			naval_equipment
+			carpentry
 		}
 	}
 	improved_secondary_battery = {
@@ -1699,10 +2002,18 @@ technologies = {
 				}
 				factor = 5
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 	dp_secondary_battery = {
@@ -1727,10 +2038,18 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -1764,10 +2083,18 @@ technologies = {
 				has_war = yes
 				factor = 2
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 
@@ -1794,10 +2121,18 @@ technologies = {
 				has_war = yes
 				factor = 2
 			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindCarpentry
+			}
 		}
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -1824,6 +2159,8 @@ technologies = {
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -1868,6 +2205,8 @@ technologies = {
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 
@@ -1908,6 +2247,8 @@ technologies = {
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 
@@ -1952,6 +2293,8 @@ technologies = {
 		
 		categories = {
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -1966,7 +2309,7 @@ technologies = {
 		
 		research_cost = 2
 
-		start_year = 2999
+		start_year = 3000
 
 		path = {
 			leads_to_tech = improved_naval_mines 
@@ -2002,6 +2345,7 @@ technologies = {
 			naval_mines
 			naval_minelaying
 			naval_equipment
+			carpentry
 		}
 	}
 	
@@ -2042,6 +2386,8 @@ technologies = {
 			naval_mines
 			naval_minelaying
 			naval_equipment
+			carpentry
+			carpentry_early
 		}
 	}
 
@@ -2066,6 +2412,8 @@ technologies = {
 			naval_mines
 			naval_minesweeping
 			naval_equipment
+			carpentry
+			carpentry_basic
 		}
 	}
 
@@ -2094,6 +2442,8 @@ technologies = {
 			naval_mines
 			naval_minelaying
 			naval_equipment
+			carpentry
+			carpentry_improved
 		}
 	}
 
@@ -2117,6 +2467,8 @@ technologies = {
 			naval_mines
 			naval_minelaying
 			naval_equipment
+			carpentry
+			carpentry_advanced
 		}
 	}
 
@@ -2132,7 +2484,7 @@ technologies = {
 		}
 		
 		research_cost = 1.5
-		start_year = 1922
+		start_year = 3000
 
 		folder = {
 			name = mtgnavalfolder
@@ -2151,6 +2503,7 @@ technologies = {
 		categories = {
 			naval_equipment
 			tp_tech
+			carpentry
 		}
 	}
 	
@@ -2191,6 +2544,8 @@ technologies = {
 		categories = {
 			naval_equipment
 			tp_tech
+			carpentry
+			carpentry_improved
 		}
 	}
 	
@@ -2219,6 +2574,8 @@ technologies = {
 		categories = {
 			naval_equipment
 			tp_tech
+			carpentry
+			carpentry_advanced
 		}
 	}
 
