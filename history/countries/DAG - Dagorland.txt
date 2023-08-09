@@ -8,8 +8,6 @@ set_war_support = 0.1
 
 set_technology = {
 	orcish_heritage_tech = 1
-	fort_tech_1 = 1
-	infantry_weapons = 1
 }
 set_fuel_ratio = 0.1
 ################### NAVAL TECH

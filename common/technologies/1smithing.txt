@@ -36,7 +36,7 @@ technologies = {
 	@3024Inf = 18
 	@3025Inf = 20
 	@metallurgySmithX = 0
-	@unlockerCost = 0.75
+	@unlockerCost = 1.25
 	metallurgy0 = {
 		
 		research_cost = @unlockerCost

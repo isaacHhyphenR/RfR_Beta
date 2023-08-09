@@ -14,13 +14,16 @@ set_war_support = 0.5
 
 set_technology = {
 	orcish_heritage_tech = 1
-	fort_tech_1 = 1
+	metallurgy0 = 1
 	infantry_weapons = 1
+	carpentry0 = 1
+	fort_tech_1 = 1
 	gw_artillery = 1
+	agriculture0 = 1
+	motorised_infantry = 1
+	basic_train = 1
 	#tech_support = 1
 	tech_military_police = 1
-	basic_train = 1
-	orcish_heritage_tech = 1
 }
 starting_train_buffer = 0.85
 set_fuel_ratio = 0.2

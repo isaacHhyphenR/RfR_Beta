@@ -15,13 +15,18 @@ set_war_support = 0.2
 
 set_technology = {
 	numenorean_heritage_tech = 1
-	fort_tech_1 = 1
+	metallurgy0 = 1
 	infantry_weapons = 1
-	tech_special_forces = 1
+	infantry_armor_tech_0 = 1
+	infantry_weapons1 = 1
+	spear_tech_0 = 1
+	carpentry0 = 1
+	fort_tech_1 = 1
 	gw_artillery = 1
-	#tech_support = 1
-	tech_recon = 1
+	agriculture0 = 1
+	motorised_infantry = 1
 	basic_train = 1
+	tech_recon = 1
 	paratroopers = 1
 }
 starting_train_buffer = 1

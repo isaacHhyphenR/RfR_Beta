@@ -2,12 +2,14 @@
 andrast_tribes_3015_tech = {
 	set_technology = {
 		wildling_heritage_tech = 1
-		fort_tech_1 = 1
-		infantry_weapons = 1
-		gw_artillery = 1
-		#tech_support = 1
-		spear_tech_0 = 1
 		andrast_food_from_dockyards = 1
+		metallurgy0 = 1
+		infantry_weapons = 1
+		spear_tech_0 = 1
+		carpentry0 = 1
+		fort_tech_1 = 1
+		gw_artillery = 1
+		agriculture0 = 1
 	}
 	################### ARMOR TECH
 	if = {
@@ -77,13 +79,15 @@ andrast_tribes_3015_tech = {
 druwaith_tribes_3015_tech = {
 	set_technology = {
 		wildling_heritage_tech = 1
-		fort_tech_1 = 1
+		metallurgy0 = 1
 		infantry_weapons = 1
-		gw_artillery = 1
-		#tech_support = 1
 		spear_tech_0 = 1
+		carpentry0 = 1
+		fort_tech_1 = 1
+		gw_artillery = 1
+		agriculture0 = 1
+		agriculture1 = 1
 		basic_train = 1
-		#fuel_silos = 1
 		motorised_infantry = 1
 	}
 	################### ARMOR TECH
@@ -135,12 +139,14 @@ druwaith_tribes_3015_tech = {
 dunland_tribes_3015_tech = {
 	set_technology = {
 		wildling_heritage_tech = 1
-		fort_tech_1 = 1
-		infantry_weapons = 1
-		gw_artillery = 1
-		#tech_support = 1
-		spear_tech_0 = 1
 		dunland_hills_boost = 1
+		metallurgy0 = 1
+		infantry_weapons = 1
+		spear_tech_0 = 1
+		carpentry0 = 1
+		fort_tech_1 = 1
+		gw_artillery = 1
+		agriculture0 = 1
 		basic_train = 1
 	}
 	################### ARMOR TECH
@@ -172,11 +178,13 @@ dunland_tribes_3015_tech = {
 eregion_tribes_3015_tech = {
 	set_technology = {
 		wildling_heritage_tech = 1
-		fort_tech_1 = 1
+		metallurgy0 = 1
 		infantry_weapons = 1
-		gw_artillery = 1
-		#tech_support = 1
 		spear_tech_0 = 1
+		carpentry0 = 1
+		fort_tech_1 = 1
+		gw_artillery = 1
+		agriculture0 = 1
 	}
 	################### ARMOR TECH
 	if = {
@@ -207,13 +215,16 @@ eregion_tribes_3015_tech = {
 enedwaith_tribes_3015_tech = {
 	set_technology = {
 		wildling_heritage_tech = 1
-		fort_tech_1 = 1
+		metallurgy0 = 1
 		infantry_weapons = 1
-		gw_artillery = 1
-		#tech_support = 1
+		infantry_armor_tech_0 = 1
 		spear_tech_0 = 1
-		motorised_infantry = 1
+		carpentry0 = 1
+		fort_tech_1 = 1
+		gw_artillery = 1
+		agriculture0 = 1
 		basic_train = 1
+		motorised_infantry = 1
 		electronic_mechanical_engineering = 1 ##need it for ships
 	}
 	################### ARMOR TECH
@@ -339,13 +350,15 @@ saralain_tribes_3015_tech = {
 white_mountains_tribes_3015_tech = {
 	set_technology = {
 		wildling_heritage_tech = 1
-		fort_tech_1 = 1
-		infantry_weapons = 1
-		gw_artillery = 1
-		#tech_support = 1
-		spear_tech_0 = 1
-		tech_mountaineers = 1
 		white_mountains_mountain_boost = 1
+		metallurgy0 = 1
+		infantry_weapons = 1
+		spear_tech_0 = 1
+		carpentry0 = 1
+		fort_tech_1 = 1
+		javelins1 = 1
+		agriculture0 = 1
+		tech_mountaineers = 1
 	}
 	################### ARMOR TECH
 	if = {

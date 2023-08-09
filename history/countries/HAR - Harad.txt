@@ -21,15 +21,18 @@ set_war_support = 0.2
 
 set_technology = {
 	southron_heritage_tech = 1
-	fort_tech_1 = 1
+	metallurgy0 = 1
 	infantry_weapons = 1
 	infantry_armor_tech_0 = 1
+	spear_tech_0 = 1
+	carpentry0 = 1
+	fort_tech_1 = 1
 	gw_artillery = 1
-	#tech_support = 1
-	tech_recon = 1
-	motorised_infantry = 1
-	tech_logistics_company = 1
+	agriculture0 = 1
 	basic_train = 1
+	motorised_infantry = 1
+	tech_recon = 1
+	tech_logistics_company = 1
 }
 starting_train_buffer = 1
 set_fuel_ratio = 0.5

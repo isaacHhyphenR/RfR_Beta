@@ -8,11 +8,14 @@ set_war_support = 0.5
 
 set_technology = {
 	isengarder_heritage_tech = 1
-	fort_tech_1 = 1
-	electronic_mechanical_engineering = 1
+	metallurgy0 = 1
 	infantry_weapons = 1
+	carpentry0 = 1
+	fort_tech_1 = 1
+	fort_tech_2 = 1
+	electronic_mechanical_engineering = 1
+	mechanical_computing = 1
 	#tech_support = 1
-	basic_train = 1
 	superior_firepower = 1
 }
 starting_train_buffer = 0.75
@@ -21,11 +24,9 @@ set_fuel_ratio = 0.2
 if = {
 	limit = { has_dlc = "Man the Guns" }
 	set_technology = {
-			mtg_transport = 1
 	}
 	else = {
 		set_technology = {
-			transport = 1
 		}
 	}
 }

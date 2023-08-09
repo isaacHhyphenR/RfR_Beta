@@ -14,17 +14,20 @@ set_war_support = 0.70
 
 set_technology = {
 	easterling_heritage_tech = 1
-	fort_tech_1 = 1
+	metallurgy0 = 1
 	infantry_weapons = 1
-	double_infantry_weapons1 = 1
-	interwar_artillery = 1
-	# spear_tech_0 = 1
+	infantry_armor_tech_0 = 1
+	spear_tech_0 = 1
+	carpentry0 = 1
+	fort_tech_1 = 1
 	gw_artillery = 1
-	#tech_support = 1
-	motorised_infantry = 1
+	agriculture0 = 1
+	agriculture1 = 1
 	basic_train = 1
+	motorised_infantry = 1
+	mechanised_infantry = 1
 }
-starting_train_buffer = 1.5
+starting_train_buffer = 1.25
 set_fuel_ratio = 0.5
 ################### ARMOR TECH
 if = {
@@ -33,6 +36,7 @@ if = {
 		gwtank_chassis = 1
 		basic_light_tank_chassis = 1
 		engine_tech_1 = 1
+		armor_tech_1 = 1
 	}
 	else = {
 		set_technology = {

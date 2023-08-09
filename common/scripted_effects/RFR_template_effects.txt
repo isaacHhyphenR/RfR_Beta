@@ -1,0 +1,344 @@
+#############This doc exists so that I don't have to deal with the stupidity of template effects messing up brackets anywhere else
+army_of_the_dead_template_effect = {
+	division_template = {
+		name = "Army of the Dead"
+		is_locked = yes
+		priority = 3
+		#template_counter = 2
+		regiments = {
+			army_of_the_dead = { x = 0 y = 0 }
+			army_of_the_dead = { x = 0 y = 1 }
+			army_of_the_dead = { x = 0 y = 2 }
+			army_of_the_dead = { x = 1 y = 0 }
+			army_of_the_dead = { x = 1 y = 1 }
+			army_of_the_dead = { x = 1 y = 2 }
+			army_of_the_dead = { x = 2 y = 0 }
+			army_of_the_dead = { x = 2 y = 1 }
+			army_of_the_dead = { x = 2 y = 2 }
+		}
+		# support = { 
+			# artillery = { x = 0 y = 0 }
+			# anti_tank = { x = 0 y = 0 }
+			# light_tank_recon = { x = 0 y = 0 }
+		# } 
+	}
+}
+
+
+rohan_eorling_muster_template_effect = {
+	division_template = {
+		name = "Eorling Muster"
+		is_locked = no
+		priority = 1
+		regiments = {
+			light_armor = { x = 0 y = 0 }
+			light_armor = { x = 0 y = 1 }
+			light_armor = { x = 0 y = 2 }
+			motorized = { x = 1 y = 0 }
+			motorized = { x = 1 y = 1 }
+		}
+	}
+}
+rohan_militia_muster_template_effect = {
+	division_template = {
+		name = "Riddermark Militia"
+		is_locked = no
+		priority = 1
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+		}
+	}
+}
+
+rohan_beorning_mercenaries_template_effect = {
+	division_template = {
+		name = "Beorning Mercenaries"
+		is_locked = yes
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+		}
+		support = {
+			engineer = { x = 0 y = 0 }
+		}
+	}
+}
+
+rohan_dunlending_mercenaries_template_effect = {
+	division_template = {
+		name = "Dunlending Mercenaries"
+		is_locked = yes
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			anti_tank_brigade = { x = 0 y = 1 }
+			infantry = { x = 1 y = 0 }
+			anti_tank_brigade = { x = 1 y = 1 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+		}
+	}
+}
+
+rohan_enedwaithy_mercenaries_template_effect = {
+	division_template = {
+		name = "Enedwaithy Mercenaries"
+		is_locked = yes
+		regiments = {
+			infantry = { x = 0 y = 1 }
+			artillery_brigade = { x = 0 y = 1 }
+			infantry = { x = 1 y = 0 }
+			artillery_brigade = { x = 1 y = 1 }
+		}
+	}
+}
+
+rohan_misty_mountains_mercenaries_template_effect = {
+	division_template = {
+		name = "Misty Mountain Mercenaries"
+		is_locked = yes
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+		}
+	}
+}
+
+########################################################################################################VorV
+load_VorV_OOB = {
+	if = { limit = { is_andrast_tag = yes }
+		division_template = {
+			name = "Andralathrim Warbands"
+
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				anti_tank_brigade = { x = 0 y = 2 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+			}
+			support = {
+			}
+		}
+		if = { limit = { tag = ADB }
+			set_oob = "VorV_ADB_3015"
+			if = { limit = { has_dlc = "Man the Guns" }
+				set_naval_oob = "VorV_ADB_naval_MTG"
+			}
+			else = {
+				set_naval_oob = "VorV_ADB_naval_Legacy"
+			}
+		}
+		else_if = { limit = { tag = PRI }
+			set_oob = "VorV_PRI_3015"
+			if = { limit = { has_dlc = "Man the Guns" }
+				set_naval_oob = "VorV_PRI_naval_MTG"
+			}
+			else = {
+				set_naval_oob = "VorV_PRI_naval_Legacy"
+			}
+		}
+		else_if = { limit = { tag = NEN }
+			set_oob = "VorV_NEN_3015"
+			if = { limit = { has_dlc = "Man the Guns" }
+				set_naval_oob = "VorV_NEN_naval_MTG"
+			}
+			else = {
+				set_naval_oob = "VorV_NEN_naval_Legacy"
+			}
+		}
+		else_if = { limit = { tag = RAF }
+			set_oob = "VorV_RAF_3015"
+			if = { limit = { has_dlc = "Man the Guns" }
+				set_naval_oob = "VorV_RAF_naval_MTG"
+			}
+			else = {
+				set_naval_oob = "VorV_RAF_naval_Legacy"
+			}
+		}
+	}
+	else_if = { limit = { is_dunland_tag = yes }
+		division_template = {
+			name = "Dunlending Warbands"
+
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				anti_tank_brigade = { x = 0 y = 2 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+			}
+			support = {
+			}
+		}
+		if = { limit = { tag = CGN }
+			set_oob = "VorV_CGN_3015"
+		}
+		else_if = { limit = { tag = DFN }
+			set_oob = "VorV_DFN_3015"
+		}
+		else_if = { limit = { tag = DTH }
+			set_oob = "VorV_DTH_3015"
+		}
+		else_if = { limit = { tag = DUN }
+			set_oob = "VorV_DUN_3015"
+		}
+	}
+	else_if = { limit = { is_druwaith_iaur_tag = yes }
+		division_template = {
+			name = "Druwaith Warbands"
+
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+			}
+			support = {
+			}
+		}
+		if = { limit = { tag = AKN }
+			set_oob = "VorV_AKN_3015"
+		}
+		else_if = { limit = { tag = BYR }
+			set_oob = "VorV_BYR_3015"
+			if = { limit = { has_dlc = "Man the Guns" }
+				set_naval_oob = "VorV_BYR_naval_MTG"
+			}
+			else = {
+				set_naval_oob = "VorV_BYR_naval_Legacy"
+			}
+		}
+		else_if = { limit = { tag = DRU }
+			set_oob = "VorV_DRU_3015"
+		}
+		else_if = { limit = { tag = IRN }
+			set_oob = "VorV_IRN_3015"
+		}
+	}
+	else_if = { limit = { is_enedwaith_tag = yes }
+		division_template = {
+			name = "Enedwaith Warbands"
+
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+			}
+			support = {
+			}
+		}
+		division_template = {
+			name = "Enedwaith Riders"
+
+			regiments = {
+				light_armor = { x = 0 y = 0 }
+				light_armor = { x = 0 y = 1 }
+				motorized = { x = 1 y = 0 }
+				motorized = { x = 1 y = 1 }
+			}
+			support = {
+			}
+		}
+		if = { limit = { tag = AGR }
+			set_oob = "VorV_AGR_3015"
+			if = { limit = { has_dlc = "Man the Guns" }
+				set_naval_oob = "VorV_AGR_naval_MTG"
+			}
+			else = {
+				set_naval_oob = "VorV_AGR_naval_Legacy"
+			}
+		}
+		else_if = { limit = { tag = COL }
+			set_oob = "VorV_COL_3015"
+			if = { limit = { has_dlc = "Man the Guns" }
+				set_naval_oob = "VorV_COL_naval_MTG"
+			}
+			else = {
+				set_naval_oob = "VorV_COL_naval_Legacy"
+			}
+		}
+		else_if = { limit = { tag = HST }
+			set_oob = "VorV_HST_3015"
+			if = { limit = { has_dlc = "Man the Guns" }
+				set_naval_oob = "VorV_HST_naval_MTG"
+			}
+			else = {
+				set_naval_oob = "VorV_HST_naval_Legacy"
+			}
+		}
+		else_if = { limit = { tag = STK }
+			set_oob = "VorV_STK_3015"
+		}
+	}
+	else_if = { limit = { is_eregion_tag = yes }
+		division_template = {
+			name = "Eregonian Warbands"
+
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				artillery_brigade = { x = 0 y = 1 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+			}
+			support = {
+			}
+		}
+		if = { limit = { tag = ERG }
+			set_oob = "VorV_ERG_3015"
+		}
+		else_if = { limit = { tag = HOL }
+			set_oob = "VorV_HOL_3015"
+		}
+		else_if = { limit = { tag = MBL }
+			set_oob = "VorV_MBL_3015"
+		}
+		else_if = { limit = { tag = REE }
+			set_oob = "VorV_REE_3015"
+		}
+	}
+	else_if = { limit = { is_white_mountains_tag = yes }
+		division_template = {
+			name = "White Mountain Warriors"
+			template_counter = 2
+			regiments = {
+				mountaineers = { x = 0 y = 0 }
+				mountaineers = { x = 0 y = 1 }
+				mountaineers = { x = 0 y = 2 }
+			}
+			support = {
+				rocket_artillery = { x = 0 y = 0 }
+			}
+		}
+		division_template = {
+			name = "White Mountain Warbands"
+
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+			}
+			support = {
+			}
+		}
+		if = { limit = { tag = ANU }
+			set_oob = "VorV_ANU_3015"
+		}
+		else_if = { limit = { tag = HVK }
+			set_oob = "VorV_HVK_3015"
+		}
+		else_if = { limit = { tag = NIF }
+			set_oob = "VorV_NIF_3015"
+		}
+		else_if = { limit = { tag = TAW }
+			set_oob = "VorV_TAW_3015"
+		}
+	}
+}
