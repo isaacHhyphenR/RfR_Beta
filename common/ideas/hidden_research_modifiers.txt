@@ -90,6 +90,53 @@ ideas = {
 				carpentry_advanced = @bonus
 			}
 		}
+		
+		
+		hidden_agriculture1 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				agriculture_early = @bonus
+			}
+		}
+		hidden_agriculture2 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				agriculture_basic = @bonus
+			}
+		}
+		hidden_agriculture3 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				agriculture_improved = @bonus
+			}
+		}
+		hidden_agriculture4 = {
+			picture = empty
+			name = undeveloped_techniques
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				agriculture_advanced = @bonus
+			}
+		}
+
 		@infantry_equip_cost = -0.025
 		hidden_infantry_equip_cost1 = {
 			name = concentrated_production1
@@ -181,6 +228,7 @@ ideas = {
 				}
 			}
 		}
+
 		@infantry_equip_reliability = 0.05
 		hidden_infantry_equip_reliability1 = {
 			name = dispersed_production1

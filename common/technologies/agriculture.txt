@@ -1,0 +1,1356 @@
+technologies = {
+
+	@3000 = 0
+	@3015 = 2
+	@3016 = 4
+	@3017 = 6
+	@3018 = 8
+	@3019 = 10
+	@3020 = 12
+	@3021 = 14
+	@3022 = 16
+	@3023 = 18
+	@agricultureFarmingX = 0
+	@foodX = 2
+	@experimentsX = 2
+	@mountsX = 4
+	@rationsX = 6
+	@fieldHospitalX = 9
+###########################################################
+				#AGRICULTURE
+###########################################################
+	@unlockerCost = 0.75
+	@AIbehindAgriculture = 0.2
+	agriculture0 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3000
+		folder = {
+			name = farming_folder
+			position = { x = @agricultureFarmingX y = @3000 }
+		}
+		path = {
+			leads_to_tech = agriculture1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fuel_silos
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_field_hospital
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			agriculture
+			true_agriculture
+		}
+		force_use_small_tech_layout = yes
+		ai_will_do = {
+			factor = 10
+			
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3018.1.1"
+			}
+		}
+	}
+	agriculture1 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3015
+		folder = {
+			name = farming_folder
+			position = { x = @agricultureFarmingX y = @3015 }
+		}
+		
+		path = {
+			leads_to_tech = agriculture2
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			agriculture
+			true_agriculture
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_agriculture1
+			}
+			custom_effect_tooltip = agriculture1_tooltip
+		}
+		show_effect_as_desc = yes
+		
+		ai_will_do = {
+			factor = 7
+			
+			modifier = {
+				factor = 2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3018.1.1"
+			}
+		}
+	}
+	agriculture2 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3017
+		folder = {
+			name = farming_folder
+			position = { x = @agricultureFarmingX y = @3017 }
+		}
+		
+		path = {
+			leads_to_tech = agriculture3
+			research_cost_coeff = 1
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_agriculture2
+			}
+			custom_effect_tooltip = agriculture2_tooltip
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			agriculture
+			true_agriculture
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3019.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3020.1.1"
+			}
+		}
+	}
+	agriculture3 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3019
+		folder = {
+			name = farming_folder
+			position = { x = @agricultureFarmingX y = @3019 }
+		}
+		
+		path = {
+			leads_to_tech = agriculture4
+			research_cost_coeff = 1
+		}
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_agriculture3
+			}
+			custom_effect_tooltip = agriculture3_tooltip
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			agriculture
+			true_agriculture
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3020.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3021.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3022.1.1"
+			}
+		}
+	}
+	agriculture4 = {
+		
+		research_cost = @unlockerCost
+		start_year = 3021
+		folder = {
+			name = farming_folder
+			position = { x = @agricultureFarmingX y = @3021 }
+		}
+		
+		on_research_complete = {
+			hidden_effect = {
+				remove_ideas = hidden_agriculture4
+			}
+			custom_effect_tooltip = agriculture4_tooltip
+		}
+		show_effect_as_desc = yes
+		
+		categories = {
+			agriculture
+			true_agriculture
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 2
+				date > "3022.1.1"
+			}
+			modifier = {
+				factor = 4
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 8
+				date > "3024.1.1"
+			}
+		}
+	}
+###########################################################
+				#INDUSTRIAL FARMS
+###########################################################
+
+	fuel_silos = {
+
+		enable_building = {
+			building = fuel_silo
+			level = 3
+		}
+				
+		path = {
+			leads_to_tech = synth_oil_experiments 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fuel_refining 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 3015
+		folder = {
+			name = farming_folder
+			position = { x = @mountsX y = @3015 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_early
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				food > 10
+			}
+			modifier = {
+				factor = 3
+				food > 20
+			}
+			modifier = {
+				factor = 4
+				food > 30
+			}
+			
+			modifier = {
+				factor = 2
+				num_of_military_factories > 10
+			}
+			modifier = {
+				factor = 3
+				num_of_military_factories > 20
+			}
+			modifier = {
+				factor = 4
+				num_of_military_factories > 30
+			}
+			modifier = {
+				factor = 4
+				num_of_military_factories > 40
+			}
+			modifier = {
+				factor = 4
+				num_of_military_factories > 50
+			}
+
+			modifier = {
+				factor = 2
+				num_of_naval_factories > 10
+			}
+			modifier = {
+				factor = 3
+				num_of_naval_factories > 20
+			}
+			modifier = {
+				factor = 4
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				factor = 4
+				num_of_naval_factories > 40
+			}
+			modifier = {
+				factor = 4
+				num_of_naval_factories > 50
+			}
+			
+			modifier = {
+				factor = 0.2
+				date < "3016.1.1"
+			}
+			modifier = {
+				factor = 0.4
+				date < "3017.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+
+	fuel_refining = {
+
+		fuel_gain_factor = 0.2
+		fuel_gain_factor_from_states = 0.1
+					
+		path = {
+			leads_to_tech = fuel_refining2 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 3015
+		folder = {
+			name = farming_folder
+			position = { x = @rationsX y = @3015 }
+		}
+		
+		categories = {
+			farming
+			synth_resources
+			agriculture
+			agriculture_early
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 10
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 10
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+
+	fuel_refining2 = {
+		
+		fuel_gain_factor = 0.2
+		fuel_gain_factor_from_states = 0.1
+
+		path = {
+			leads_to_tech = fuel_refining3 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 3016
+		folder = {
+			name = farming_folder
+			position = { x = @rationsX y = @3016 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_early
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+
+	fuel_refining3 = {
+		
+		fuel_gain_factor = 0.2
+		fuel_gain_factor_from_states = 0.1
+
+		path = {
+			leads_to_tech = fuel_refining4 
+			research_cost_coeff = 1
+		}
+		research_cost = 3
+		start_year = 3018
+		folder = {
+			name = farming_folder
+			position = { x = @rationsX y = @3018 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_basic
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry2
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+
+	fuel_refining4 = {
+		
+		fuel_gain_factor = 0.20
+		fuel_gain_factor_from_states = 0.1
+
+		path = {
+			leads_to_tech = fuel_refining5
+			research_cost_coeff = 1
+		}
+		research_cost = 3
+		start_year = 3020
+		folder = {
+			name = farming_folder
+			position = { x = @rationsX y = @3020 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_improved
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+
+	fuel_refining5 = {
+		
+		fuel_gain_factor = 0.20
+		fuel_gain_factor_from_states = 0.1
+
+		research_cost = 3
+		start_year = 3022
+		folder = {
+			name = farming_folder
+			position = { x = @rationsX y = @3022 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_advanced
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 40
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 40
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	
+###########################################################
+				#INDUSTRIAL FOOD
+###########################################################
+	synth_oil_experiments = {
+
+		enable_building = {
+			building = synthetic_refinery
+			level = 3
+		}
+				
+		path = {
+			leads_to_tech = oil_processing 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = rubber_processing 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 3015
+		folder = {
+			name = farming_folder
+			position = { x = @experimentsX y = @3015 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_early
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0.5
+				food > 10
+			}
+			modifier = {
+				factor = 0.5
+				food > 20
+			}
+			modifier = {
+				factor = 0.5
+				food > 30
+			}
+			modifier = { #needs it to unlock their dev tree
+				factor = 4
+				is_druwaith_iaur_tag = yes
+			}
+			modifier = { #they don't have enough food
+				factor = 1.5
+				original_tag = ROH
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+		
+		ai_research_weights = {
+			food = -2.0
+		}
+	}
+	
+	oil_processing = {
+		
+		fuel_gain_factor_from_states = 0.5
+
+		start_year = 3016
+
+		path = {
+			leads_to_tech = improved_oil_processing
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = farming_folder
+			position = { x = @foodX y = @3016 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_early
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				food > 10
+			}
+			modifier = {
+				factor = 0.5
+				food > 20
+			}
+			modifier = {
+				factor = 0.5
+				food > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+		
+		ai_research_weights = {
+			food = -2.0
+		}
+		
+		show_effect_as_desc = yes
+	}
+	
+	improved_oil_processing = {
+		
+		fuel_gain_factor_from_states = 0.5
+
+		path = {
+			leads_to_tech = advanced_oil_processing
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 3018
+		
+		folder = {
+			name = farming_folder
+			position = { x = @foodX y = @3018 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_basic
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				food > 10
+			}
+			modifier = {
+				factor = 0.5
+				food > 20
+			}
+			modifier = {
+				factor = 0.5
+				food > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry2
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+		
+		ai_research_weights = {
+			food = -2.0
+		}
+		
+		show_effect_as_desc = yes
+	}
+	
+	advanced_oil_processing = {
+
+		fuel_gain_factor_from_states = 0.5
+
+		path = {
+			leads_to_tech = modern_oil_processing
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 3020
+		
+		folder = {
+			name = farming_folder
+			position = { x = @foodX y = @3020 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_improved
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				mounts > 10
+			}
+			modifier = {
+				factor = 0.5
+				mounts > 20
+			}
+			modifier = {
+				factor = 0.5
+				mounts > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+		
+		ai_research_weights = {
+			mounts = -2.0
+		}
+		
+		show_effect_as_desc = yes
+	}
+
+	modern_oil_processing = {
+
+		fuel_gain_factor_from_states = 0.5
+		
+		research_cost = 1.5
+		start_year = 3022
+		
+		folder = {
+			name = farming_folder
+			position = { x = @foodX y = @3022 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_advanced
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.5
+				food > 10
+			}
+			modifier = {
+				factor = 0.5
+				food > 20
+			}
+			modifier = {
+				factor = 0.5
+				food > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+		
+		ai_research_weights = {
+			food = -2.0
+		}
+		
+		show_effect_as_desc = yes
+	}
+###########################################################
+				#INDUSTRIAL MOUNTS
+###########################################################
+	rubber_processing = {
+
+		on_research_complete = {
+			modify_building_resources = {
+				building = synthetic_refinery
+				resource = mounts
+				amount = 1
+			}
+		}
+
+		path = {
+			leads_to_tech = improved_rubber_processing
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 3016
+		
+		folder = {
+			name = farming_folder
+			position = { x = @mountsX y = @3016 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_early
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				mounts > 10
+			}
+			modifier = {
+				factor = 0.5
+				mounts > 20
+			}
+			modifier = {
+				factor = 0.5
+				mounts > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+		
+		ai_research_weights = {
+			mounts = -2.0
+		}
+		
+		show_effect_as_desc = yes
+	}
+	
+	improved_rubber_processing = {
+
+		on_research_complete = {
+			modify_building_resources = {
+				building = synthetic_refinery
+				resource = mounts
+				amount = 1
+			}
+		}
+
+		path = {
+			leads_to_tech = advanced_rubber_processing
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 3018
+		
+		folder = {
+			name = farming_folder
+			position = { x = @mountsX y = @3018 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_basic
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				mounts > 10
+			}
+			modifier = {
+				factor = 0.5
+				mounts > 20
+			}
+			modifier = {
+				factor = 0.5
+				mounts > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry2
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+		
+		ai_research_weights = {
+			mounts = -2.0
+		}
+		
+		show_effect_as_desc = yes
+	}
+	
+	advanced_rubber_processing = {
+
+		on_research_complete = {
+			modify_building_resources = {
+				building = synthetic_refinery
+				resource = mounts
+				amount = 1
+			}
+		}
+
+		path = {
+			leads_to_tech = modern_rubber_processing
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 3020
+		
+		folder = {
+			name = farming_folder
+			position = { x = @mountsX y = @3020 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_improved
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				mounts > 10
+			}
+			modifier = {
+				factor = 0.5
+				mounts > 20
+			}
+			modifier = {
+				factor = 0.5
+				mounts > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+		
+		ai_research_weights = {
+			mounts = -2.0
+		}
+		
+		show_effect_as_desc = yes
+	}
+
+	modern_rubber_processing = {
+
+		on_research_complete = {
+			modify_building_resources = {
+				building = synthetic_refinery
+				resource = mounts
+				amount = 1
+			}
+		}
+		
+		research_cost = 1.5
+		start_year = 3022
+		
+		folder = {
+			name = farming_folder
+			position = { x = @mountsX y = @3022 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_advanced
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.5
+				mounts > 10
+			}
+			modifier = {
+				factor = 0.5
+				mounts > 20
+			}
+			modifier = {
+				factor = 0.5
+				mounts > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+		
+		ai_research_weights = {
+			mounts = -2.0
+		}
+		
+		show_effect_as_desc = yes
+	}
+###########################################################
+				#FIELD HOSPITAL
+###########################################################
+	tech_field_hospital = {
+
+		enable_subunits = {
+			field_hospital
+		}
+		enable_equipments = {
+			medical_equipment_1
+		}
+		enable_equipment_modules = {
+			veterinary_supplies
+		}
+		
+		path = {
+			leads_to_tech = tech_field_hospital2
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			motorised_infantry = 1
+		}
+
+		research_cost = 2
+		start_year = 3015
+		folder = {
+			name = farming_folder
+			position = { x = @fieldHospitalX y = @3015 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_early
+			farming
+			support_tech
+			hospital_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3016.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3017.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 2
+				original_tag = GON
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	
+	tech_field_hospital2 = {
+
+		enable_equipments = {
+			medical_equipment_2
+		}
+		
+		path = {
+			leads_to_tech = tech_field_hospital3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3017
+		folder = {
+			name = farming_folder
+			position = { x = @fieldHospitalX y = @3017 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_basic
+			farming
+			support_tech
+			hospital_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3019.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3020.1.1"
+			}
+			modifier = {
+				factor = 2
+				original_tag = GON
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry2
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	
+	tech_field_hospital3 = {
+
+		enable_equipments = {
+			medical_equipment_3
+		}
+		path = {
+			leads_to_tech = tech_field_hospital4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3020
+		folder = {
+			name = farming_folder
+			position = { x = @fieldHospitalX y = @3020 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_improved
+			farming
+			support_tech
+			hospital_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3021.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3022.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 2
+				original_tag = GON
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry3
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	tech_field_hospital4 = {
+
+		enable_equipments = {
+			medical_equipment_4
+		}
+
+		research_cost = 1.5
+		start_year = 3022
+		folder = {
+			name = farming_folder
+			position = { x = @fieldHospitalX y = @3022 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_advanced
+			farming
+			support_tech
+			hospital_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3024.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3025.1.1"
+			}
+			modifier = {
+				factor = 2
+				original_tag = GON
+			}
+			modifier = {
+				NOT = {
+					has_tech = carpentry4
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+}

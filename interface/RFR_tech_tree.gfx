@@ -12,6 +12,14 @@ spriteTypes = {
 		textureFile = "gfx/interface/techtree/ranged_techtree_bg.dds"
 	}
 	spriteType = {
+		name = "GFX_farming_techtree_bg"
+		textureFile = "gfx/interface/techtree/farming_techtree_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_cavalry_techtree_bg"
+		textureFile = "gfx/interface/techtree/cavalry_techtree_bg.dds"
+	}
+	spriteType = {
 		name = "GFX_tech_connector"
 		textureFile = "gfx/interface/techtree/tech_connector.dds"
 	}
@@ -32,6 +40,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_ranged_folder_tab"
 		textureFile = "gfx/interface/techtree/techtree_ranged_tab.dds"
+		noOfFrames = 2		
+	}
+	spriteType = {
+		name = "GFX_farming_folder_tab"
+		textureFile = "gfx/interface/techtree/techtree_farming_tab.dds"
 		noOfFrames = 2		
 	}
 	SpriteType = {
@@ -100,6 +113,29 @@ spriteTypes = {
 	}
 	frameAnimatedSpriteType = {
 		name = "GFX_technology_ranged_folder_small_currently_researching_item_bg"
+		texturefile = "gfx/interface/techtree/tech_doctrine_researching_anim_strip.dds"
+		noOfFrames = 9
+		loadType = "INGAME"
+		transparencecheck = yes
+		animation_rate_fps = 15
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	spriteType = {
+		name = "GFX_technology_farming_folder_small_available_item_bg"
+		textureFile = "gfx/interface/techtree/tech_doctrine_available_item_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_technology_farming_folder_small_unavailable_item_bg"
+		textureFile = "gfx/interface/techtree/tech_doctrine_unavailable_item_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_technology_farming_folder_small_researched_item_bg"
+		textureFile = "gfx/interface/techtree/tech_landdoctrine_researched_item_bg.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_farming_folder_small_currently_researching_item_bg"
 		texturefile = "gfx/interface/techtree/tech_doctrine_researching_anim_strip.dds"
 		noOfFrames = 9
 		loadType = "INGAME"

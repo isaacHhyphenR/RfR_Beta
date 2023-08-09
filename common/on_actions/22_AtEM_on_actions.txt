@@ -24,6 +24,38 @@ on_actions = {
 					limit = { NOT = { has_tech = metallurgy4 } }
 					add_ideas = hidden_metallurgy4
 				}
+				if = {
+					limit = { NOT = { has_tech = carpentry1 } }
+					add_ideas = hidden_carpentry1
+				}
+				if = {
+					limit = { NOT = { has_tech = carpentry2 } }
+					add_ideas = hidden_carpentry2
+				}
+				if = {
+					limit = { NOT = { has_tech = carpentry3 } }
+					add_ideas = hidden_carpentry3
+				}
+				if = {
+					limit = { NOT = { has_tech = carpentry4 } }
+					add_ideas = hidden_carpentry4
+				}
+				if = {
+					limit = { NOT = { has_tech = agriculture1 } }
+					add_ideas = hidden_agriculture1
+				}
+				if = {
+					limit = { NOT = { has_tech = agriculture2 } }
+					add_ideas = hidden_agriculture2
+				}
+				if = {
+					limit = { NOT = { has_tech = agriculture3 } }
+					add_ideas = hidden_agriculture3
+				}
+				if = {
+					limit = { NOT = { has_tech = agriculture4 } }
+					add_ideas = hidden_agriculture4
+				}
 			}
 		}
 	}

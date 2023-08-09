@@ -394,7 +394,7 @@
  rfr_news.31.d: "Our messengers return from [FROM.capital.GetCapitalVictoryPointName] with excellent news-- [FROM.getLeader] has agreed to guarantee our independece with the [FROM.GetAdjectiveCap] army! With this understanding we can work towards closer cooperation."
  rfr_news.31.a: "Humanity's strength runs strong."
  rfr_news.32.t: "[FROM.GetName] Refuses to Grant Protection"
- rfr_news.32.d: "Our messengers return from [FROM.capital.GetCapitalVictoryPointName] with dire news. [FROM.getLeader] refuses to risk [FROM.GetAdjectiveCap] for our sake."
+ rfr_news.32.d: "Our messengers return from [FROM.capital.GetCapitalVictoryPointName] with dire news. [FROM.getLeader] refuses to risk [FROM.GetAdjectiveCap] lives for our sake."
  rfr_news.32.a: "Somehow, we must stand alone."
  rfr_news.33.t: "[FROM.GetName] Accepts our Protection"
  rfr_news.33.d: "Excellent news-- [FROM.GetLeader] has agreed to our offer of full protection in exchange for regular tribute."

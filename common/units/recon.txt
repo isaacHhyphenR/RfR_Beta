@@ -1,6 +1,6 @@
 sub_units = {
-	recon = { #mounted cav
-		abbreviation = "CREC"
+	recon = { #just some scouts
+		abbreviation = "IREC"
 		sprite = infantry
 		map_icon_category = infantry
 		priority = 0
@@ -43,16 +43,14 @@ sub_units = {
 		soft_attack = -0.9
 		hard_attack = -0.9
 
-		maximum_speed = 0.6 # move at horsie speeds
+		#maximum_speed = 0.6 # move at horsie speeds
 		
 		essential = {
 			infantry_equipment
-			support_equipment
 		}
 
 		need = {
 			infantry_equipment = 40
-			support_equipment = 10
 		}
 
 		forest = {
@@ -82,9 +80,8 @@ sub_units = {
 		
 		same_support_type = recon # blocks adding other recon types to template
 	}
-
-	mot_recon = { #trucks, motorcyles, ill-placed cars
-		abbreviation = "MREC"
+	mot_recon = { #RANGERS
+		abbreviation = "RREC"
 		sprite = infantry
 		map_icon_category = infantry
 		priority = 0
@@ -129,15 +126,12 @@ sub_units = {
 		
 		essential = {
 			infantry_equipment
-			support_equipment
-			motorized_equipment
+			artillery_equipment
 		}
 
-		transport = motorized_equipment
 		need = {
 			infantry_equipment = 40
-			support_equipment = 10
-			motorized_equipment = 20
+			artillery_equipment = 10
 		}
 
 		forest = {
@@ -168,88 +162,8 @@ sub_units = {
 		same_support_type = recon # blocks adding other recon types to template
 	}
 
-	armored_car_recon = { #armored_cars
-		abbreviation = "AREC"
-		sprite = infantry
-		map_icon_category = infantry
-		priority = 0
-		ai_priority = 0
-		active = no
-
-		type = {
-			infantry
-			support
-		}
-		
-		group = support
-		
-		categories = {
-			category_front_line
-			category_support_battalions
-			category_army
-			category_recon
-		}
-
-	
-		combat_width = 0
-	
-		#Size Definitions
-		max_strength = 2
-		max_organisation = 20
-		default_morale = 0.3
-		manpower = 500
-		training_time = 120
-
-		#Misc Abilities
-		weight = 0.1
-		supply_consumption = 0.02
-		recon = 2
-		can_be_parachuted = yes
-
-		# Support nerfs to combat abilities
-		breakthrough 	= -0.2
-		defense 		= -0.5		
-		soft_attack 	= -0.5
-		hard_attack 	= -0.5
-		
-		essential = {
-			armored_car_equipment
-		}
-
-		need = {
-			armored_car_equipment = 24
-		}
-
-		forest = {
-			movement = 0.05
-		}
-		hills = {
-			movement = 0.1
-		}
-		mountain = {
-			movement = 0.05
-		}
-		jungle = {
-			movement = 0.05
-		}
-		#marsh = {
-		#	movement = 0.1
-		#}
-		plains = {
-			movement = 0.15
-		}
-		desert = {
-			movement = 0.15
-		}
-		river = {
-			movement = 0.1
-		}
-		
-		same_support_type = recon # blocks adding other recon types to template
-	}
-
-	light_tank_recon = { #light tanks
-		abbreviation = "TREC"
+	light_tank_recon = { #light Cavalry
+		abbreviation = "LREC"
 		sprite = infantry
 		map_icon_category = infantry
 		priority = 0
@@ -284,7 +198,7 @@ sub_units = {
 		#Misc Abilities
 		weight = 0.1
 		supply_consumption = 0.02
-		recon = 1
+		recon = 2
 		can_be_parachuted = yes
 
 		# Support nerfs to combat abilities
@@ -298,6 +212,84 @@ sub_units = {
 
 		need = {
 			light_tank_chassis = 24
+		}
+
+		forest = {
+			movement = 0.1
+		}
+		hills = {
+			movement = 0.1
+		}
+		mountain = {
+			movement = 0.1
+		}
+		jungle = {
+			movement = 0.1
+		}
+		marsh = {
+			movement = 0.1
+		}
+		plains = {
+			movement = 0.1
+		}
+		desert = {
+			movement = 0.1
+		}
+		river = {
+			movement = 0.1
+		}
+		same_support_type = recon # blocks adding other recon types to template
+	}
+	heavy_cav_recon = { #heavy Cavalry
+		abbreviation = "HREC"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_all_armor
+			category_recon
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		recon = 1.75
+		can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		defense = -0.5
+		breakthrough = -0.2
+		soft_attack = -0.5
+		hard_attack = -0.5
+		essential = {
+			medium_tank_chassis
+		}
+
+		need = {
+			medium_tank_chassis = 24
 		}
 
 		forest = {
