@@ -35,7 +35,7 @@ sub_units = {
 		weight = 0.1
 		supply_consumption = 0.02
 		recon = 1
-		can_be_parachuted = yes
+		##can_be_parachuted = yes
 
 		# Support nerfs to combat abilities
 		defense = -0.5
@@ -116,7 +116,7 @@ sub_units = {
 		weight 				= 0.1
 		supply_consumption 	= 0.02
 		recon 				= 1.5
-		can_be_parachuted 	= yes
+		#can_be_parachuted 	= yes
 
 		# Support nerfs to combat abilities
 		defense = -0.09
@@ -199,7 +199,7 @@ sub_units = {
 		weight = 0.1
 		supply_consumption = 0.02
 		recon = 2
-		can_be_parachuted = yes
+		##can_be_parachuted = yes
 
 		# Support nerfs to combat abilities
 		defense = -0.5
@@ -277,7 +277,7 @@ sub_units = {
 		weight = 0.1
 		supply_consumption = 0.02
 		recon = 1.75
-		can_be_parachuted = yes
+		##can_be_parachuted = yes
 
 		# Support nerfs to combat abilities
 		defense = -0.5

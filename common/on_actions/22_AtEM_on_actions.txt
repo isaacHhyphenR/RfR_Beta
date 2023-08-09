@@ -6,7 +6,7 @@ on_actions = {
 				load_steppe_warband = yes
 			}
 		}
-		effect = { ##setup technology slowers
+		effect = { ##setup technology slowers, monster unlockers
 			every_country = {
 				if = {
 					limit = { NOT = { has_tech = metallurgy1 } }
@@ -55,6 +55,15 @@ on_actions = {
 				if = {
 					limit = { NOT = { has_tech = agriculture4 } }
 					add_ideas = hidden_agriculture4
+				}
+				###MONSTERS
+				if = {
+					limit = { has_idea_with_trait = hidden_troll_tamer_trait }
+					set_technology = { hidden_troll_unlocker = 1 popup = no }
+				}
+				if = {
+					limit = { has_idea_with_trait = hidden_mumakil_tamer_trait }
+					set_technology = { hidden_mumak_unlocker = 1 popup = no }
 				}
 			}
 		}

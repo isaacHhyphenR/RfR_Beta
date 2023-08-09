@@ -289,4 +289,160 @@ equipments = {
 			iron = 1
 		}
 	}
+	
+########################################SIGNALS
+	signals_equipment = {
+		year = 3000
+		is_archetype = yes
+		picture = archetype_signals_equipment
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+		interface_category = interface_category_land
+		#Space taken in convoy
+		lend_lease_cost = 1
+	}
+	signals_equipment_1 = {
+		#year = 3015
+		archetype = signals_equipment
+		priority = 20
+		visual_level = 1
+
+		build_cost_ic = 2
+		
+		initiative = 0.20
+		
+		resources = {
+			cloth = 1
+		}
+	}
+	signals_equipment_2 = {
+		#year = 3017
+		archetype = signals_equipment
+		priority = 20
+		parent = signals_equipment_1
+		visual_level = 2
+
+		build_cost_ic = 2.6
+		
+		initiative = 0.32
+		
+		resources = {
+			cloth = 1
+			wood = 1
+		}
+	}
+	signals_equipment_3 = {
+		#year = 3020
+		archetype = signals_equipment
+		priority = 20
+		parent = signals_equipment_2
+		visual_level = 3
+
+		build_cost_ic = 3.3
+		
+		initiative = 0.44
+		
+		resources = {
+			cloth = 1
+			wood = 1
+		}
+	}
+	signals_equipment_4 = {
+		#year = 3022
+		archetype = signals_equipment
+		priority = 20
+		parent = signals_equipment_3
+		visual_level = 4
+
+		build_cost_ic = 4
+		
+		initiative = 0.56
+		
+		resources = {
+			cloth = 1
+			wood = 1
+			iron = 1
+		}
+	}
+
+########################################SUPPRESSION
+	suppression_equipment = {
+		year = 3000
+		is_archetype = yes
+		picture = archetype_suppression_equipment
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+		interface_category = interface_category_land
+		#Space taken in convoy
+		lend_lease_cost = 1
+	}
+	suppression_equipment_1 = {
+		#year = 3015
+		archetype = suppression_equipment
+		priority = 20
+		visual_level = 1
+
+		build_cost_ic = 2
+		
+		suppression_factor = 0.20
+		
+		resources = {
+			wood = 1
+		}
+	}
+	suppression_equipment_2 = {
+		#year = 3017
+		archetype = suppression_equipment
+		priority = 20
+		parent = suppression_equipment_1
+		visual_level = 2
+
+		build_cost_ic = 2.6
+		
+		suppression_factor = 0.30
+		
+		resources = {
+			cloth = 1
+			wood = 1
+		}
+	}
+	suppression_equipment_3 = {
+		#year = 3020
+		archetype = suppression_equipment
+		priority = 20
+		parent = suppression_equipment_2
+		visual_level = 3
+
+		build_cost_ic = 3.3
+		
+		suppression_factor = 0.40
+		
+		resources = {
+			cloth = 1
+			wood = 1
+		}
+	}
+	suppression_equipment_4 = {
+		#year = 3022
+		archetype = suppression_equipment
+		priority = 20
+		parent = suppression_equipment_3
+		visual_level = 4
+
+		build_cost_ic = 4
+		
+		suppression_factor = 0.50
+		
+		resources = {
+			cloth = 1
+			wood = 1
+			iron = 1
+		}
+	}
 }

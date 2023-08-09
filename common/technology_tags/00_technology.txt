@@ -2,18 +2,11 @@
 # If adding new technology, make sure they are uniquely named.
 
 technology_categories = {
-	nuclear
-	electronics
 	land_doctrine
 	naval_doctrine
 	trade_interdiction_tree
 	convoy_defense_tree
 	fleet_in_being_tree
-	encryption_tech
-	decryption_tech
-	computing_tech
-	radar_tech
-	marine_tech
 	submarine_doctrine
 	cat_mobile_warfare
 	cat_superior_firepower
@@ -26,26 +19,9 @@ technology_categories = {
 	cat_battlefield_support
 	cat_operational_integrity
 	base_strike_main
+	
 	support_tech
-	para_tech
-	recon_tech
-	mountaineers_tech
-	military_police_tech
-	logistics_tech
-	signal_company_tech
-	naval_mines
-	naval_minesweeping
-	naval_minelaying
 	
-	cat_special_forces
-	
-	cat_bureaucracy
-	cat_recordkeeping
-	cat_supply_lines
-	cat_training
-	
-	tank_armor
-	tank_engine
 ##################Metallurgy
 	metallurgy
 	true_metallurgy
@@ -100,6 +76,9 @@ technology_categories = {
 	shbb_tech
 	ss_tech
 	tp_tech
+	naval_mines
+	naval_minesweeping
+	naval_minelaying
 
 ##################Agriculture
 	agriculture
@@ -122,6 +101,26 @@ technology_categories = {
 	cat_light_armor
 	cat_medium_armor
 	cat_heavy_armor
+	tank_armor
+	tank_engine
+	
+##################Organisation
+	cat_bureaucracy
+	electronics
+	encryption_tech
+	decryption_tech
+	
+	radar_tech
+	comms_tech
+	signal_company_tech
+	recon_tech
+	military_police_tech
+	logistics_tech
+	
+	cat_special_forces
+	para_tech
+	marine_tech
+	mountaineers_tech
 }
 
 technology_folders = {
@@ -155,12 +154,13 @@ technology_folders = {
 	cavalry_folder = {
 		ledger = army
 	}
+	organisation_folder = {
+		ledger = civilian
+	}
+	
 	land_doctrine_folder = {
 		ledger = army
 		doctrine = yes
-	}
-	electronics_folder = {
-		ledger = civilian
 	}
 	naval_doctrine_folder = {
 		ledger = navy

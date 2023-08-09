@@ -1582,9 +1582,6 @@ technologies = {
 	}
 	
 	modern_td = {
-		allow = {
-			has_idea = entish_heritage
-		}
 
 		enable_equipments = {
 			modern_tank_destroyer_equipment_1
@@ -1632,9 +1629,6 @@ technologies = {
 	}
 	
 	modern_art = {
-		allow = {
-			has_idea = entish_heritage
-		}
 
 		enable_equipments = {
 			modern_tank_artillery_equipment_1
@@ -1724,6 +1718,7 @@ technologies = {
 		
 		dependencies = {
 			agriculture0 = 1
+			hidden_troll_unlocker = 1
 		}
 		path = {
 			leads_to_tech = basic_heavy_tank
@@ -2304,9 +2299,7 @@ technologies = {
 		allow_branch = {
 			NOT = { has_dlc = "No Step Back" }
 		}
-		allow = {
-			has_idea_with_trait = hidden_mumakil_tamer_trait
-		}
+		allow = { has_idea_with_trait = hidden_mumakil_tamer_trait }
 
 		enable_equipments = {
 			super_heavy_tank_equipment_1
@@ -2341,6 +2334,7 @@ technologies = {
 		
 		dependencies = {
 			agriculture0 = 1
+			hidden_mumak_unlocker = 1
 		}
 		path = {
 			leads_to_tech = improved_mumak 
@@ -2384,9 +2378,7 @@ technologies = {
 	}
 	
 	basic_mumak_art = {
-		allow = {
-			has_idea_with_trait = hidden_mumakil_tamer_trait
-		}
+		allow = { has_idea_with_trait = hidden_mumakil_tamer_trait }
 
 		enable_equipments = {
 			super_heavy_tank_artillery_equipment_1

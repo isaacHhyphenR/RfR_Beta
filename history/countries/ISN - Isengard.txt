@@ -11,7 +11,7 @@ set_technology = {
 	fort_tech_1 = 1
 	electronic_mechanical_engineering = 1
 	infantry_weapons = 1
-	tech_support = 1
+	#tech_support = 1
 	basic_train = 1
 	superior_firepower = 1
 }

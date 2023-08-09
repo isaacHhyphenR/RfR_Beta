@@ -583,6 +583,14 @@ ideas = {
 			# modifier = {
 				# custom_modifier_tooltip = allows_trolls_tooltip
 			# }
+			on_add = {
+				hidden_effect = {
+					set_technology = {
+						hidden_troll_unlocker = 1
+						popup = no
+					}
+				}
+			}
 			traits = { hidden_troll_tamer_trait }
 		}
 		mumakil_tamers_spirit = {
@@ -590,6 +598,14 @@ ideas = {
 			picture = mumakil_tamers
 			allowed_civil_war = {
 				always = yes
+			}
+			on_add = {
+				hidden_effect = {
+					set_technology = {
+						hidden_mumak_unlocker = 1
+						popup = no
+					}
+				}
 			}
 			# modifier = {
 				# custom_modifier_tooltip = allows_mumakil_tooltip

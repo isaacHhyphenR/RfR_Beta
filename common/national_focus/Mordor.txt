@@ -1105,7 +1105,7 @@ focus_tree = {
 			add_tech_bonus = {
 				bonus = @techBoostBonus
 				uses = @techBoostUses
-				category = cat_training
+				category = cat_bureaucracy
 			}
 			hordes_focus_effect = yes
 		}

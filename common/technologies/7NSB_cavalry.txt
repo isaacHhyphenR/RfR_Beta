@@ -633,10 +633,7 @@ technologies = {
 	}
 
 	main_battle_tank_chassis = { #E-50
-		allow = {
-			has_idea = entish_heritage_idea
-		}
-
+	
 		enable_equipments = {
 			modern_tank_chassis_1
 			modern_tank_destroyer_chassis_1
@@ -692,9 +689,7 @@ technologies = {
 		allow_branch = {
 			has_dlc = "No Step Back"
 		}
-		allow = {
-			has_idea_with_trait = hidden_troll_tamer_trait
-		}
+		allow = { has_idea_with_trait = hidden_troll_tamer_trait }
 
 		enable_equipments = {
 			heavy_tank_chassis_0
@@ -744,6 +739,7 @@ technologies = {
 
 		dependencies = {
 			agriculture0 = 1
+			hidden_troll_unlocker = 1
 		}
 		path = {
 			leads_to_tech = basic_heavy_tank_chassis
@@ -790,9 +786,7 @@ technologies = {
 
 
 	basic_heavy_tank_chassis = { #Cave Troll
-		allow = {
-			has_idea_with_trait = hidden_troll_tamer_trait
-		}
+		allow = { has_idea_with_trait = hidden_troll_tamer_trait }
 
 		enable_equipments = {
 			heavy_tank_chassis_1
@@ -845,9 +839,7 @@ technologies = {
 	}
 
 	improved_heavy_tank_chassis = { #Mountain Troll
-		allow = {
-			has_idea_with_trait = hidden_troll_tamer_trait
-		}
+		allow = { has_idea_with_trait = hidden_troll_tamer_trait }
 
 		enable_equipments = {
 			heavy_tank_chassis_2
@@ -902,9 +894,7 @@ technologies = {
 
 
 	advanced_heavy_tank_chassis = { #Olog Hai
-		allow = {
-			has_idea_with_trait = hidden_troll_tamer_trait
-		}
+		allow = { has_idea_with_trait = hidden_troll_tamer_trait }
 
 		enable_equipments = {
 			heavy_tank_chassis_3
@@ -959,9 +949,6 @@ technologies = {
 		allow_branch = {
 			has_dlc = "No Step Back"
 		}
-		allow = {
-			has_idea_with_trait = hidden_mumakil_tamer_trait
-		}
 
 		enable_equipments = {
 			super_heavy_tank_chassis_1
@@ -1010,6 +997,7 @@ technologies = {
 		}
 		dependencies = {
 			agriculture0 = 1
+			hidden_mumak_unlocker = 1
 		}
 		path = {
 			leads_to_tech = improved_mumakil_chassis
@@ -1042,9 +1030,7 @@ technologies = {
 		}
 	}
 	improved_mumakil_chassis = { #Tamed
-		allow = {
-			has_idea_with_trait = hidden_mumakil_tamer_trait
-		}
+		allow = { has_idea_with_trait = hidden_mumakil_tamer_trait }
 
 		enable_equipments = {
 			super_heavy_tank_chassis_2
@@ -1095,9 +1081,7 @@ technologies = {
 		}
 	}
 	advanced_mumakil_chassis = { #trained
-		allow = {
-			has_idea_with_trait = hidden_mumakil_tamer_trait
-		}
+		allow = { has_idea_with_trait = hidden_mumakil_tamer_trait }
 
 		enable_equipments = {
 			super_heavy_tank_chassis_3
@@ -1734,6 +1718,18 @@ technologies = {
 		}
 	}
 	hidden_troll_gun_prerequisite = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+	}
+	hidden_troll_unlocker = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+	}
+	hidden_mumak_unlocker = {
 		research_cost = 1
 		allow = {
 			always = no

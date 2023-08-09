@@ -1,0 +1,2309 @@
+technologies = {
+	@3000 = 0
+	@3013 = 2
+	@3015 = 4
+	@3016 = 6
+	@3017 = 8
+	@3018 = 10
+	@3019 = 12
+	@3020 = 14
+	@3021 = 16
+	@3022 = 18
+	
+	@speedX = -1
+	@encryptionX = -3
+	@decryptionX = 1
+	@commsX = 9
+	@signalsX = 5
+	@towerX = 9
+	@reconX = 11
+	
+	@MPX = 15
+	@logX = 19
+	
+	@rangerX = 0
+	@marineX = 0
+	@mountaineerX = 0
+	@specialX = 0
+	@specialExtraSpecialX = -1
+	@specialMassX = 1
+	
+	
+###########################################################
+				#RESEARCH SPEED
+###########################################################
+	electronic_mechanical_engineering = {
+
+		# small boost to research speed
+		research_speed_factor = 0.03
+
+		path = {
+			leads_to_tech = mechanical_computing 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = radio
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_military_police
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_logistics_company 
+			research_cost_coeff = 1
+		}
+
+		enable_equipment_modules = { 
+			ship_fire_control_system_0
+		}
+		
+		research_cost = 1
+		start_year = 3000
+		folder = {
+			name = organisation_folder
+			position = { x = @speedX y = @3000 }
+		}
+		
+		ai_will_do = {
+			factor = 30
+			
+			
+			modifier = {
+				factor = 3
+				date > "3016.1.1"
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+		}
+	}
+	mechanical_computing = {
+
+		# small boost to research speed
+		research_speed_factor = 0.04
+		
+		path = {
+			leads_to_tech = computing_machine 
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = basic_fire_control_system
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.5
+		
+		start_year = 3015
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @speedX y = @3015 }
+		}
+		
+		ai_will_do = {
+			factor = 7
+		}
+		
+		categories = {
+			cat_bureaucracy
+			electronics
+		}
+	}
+	computing_machine = {
+
+		# small boost to research speed
+		research_speed_factor = 0.05
+		
+		path = {
+			leads_to_tech = improved_computing_machine 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = basic_encryption 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = basic_decryption 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = improved_fire_control_system
+			research_cost_coeff = 1
+		}
+		research_cost = 2.5
+		start_year = 3017
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @speedX y = @3017 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 3
+				date > "3017.1.6"
+			}
+			
+			modifier = {
+				factor = 3
+				date > "3018.1.1"
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			electronics
+			encryption_tech
+			decryption_tech
+		}
+	}
+	improved_computing_machine = {
+
+		# small boost to research speed
+		research_speed_factor = 0.08
+		enable_equipment_modules = {
+			stabilizer
+		}
+		path = {
+			leads_to_tech = advanced_computing_machine 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = improved_encryption 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = improved_decryption 
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = advanced_fire_control_system
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.5
+		start_year = 3019
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @speedX y = @3019 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 3
+				date > "3019.1.6"
+			}
+			
+			modifier = {
+				factor = 3
+				date > "3020.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				tag = ISN
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			electronics
+			encryption_tech
+			decryption_tech
+		}
+	}
+	advanced_computing_machine = {
+
+		# small boost to research speed
+		research_speed_factor = 0.08
+		
+		path = {
+			leads_to_tech = advanced_encryption 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = advanced_decryption 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.5
+		start_year = 3021
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @speedX y = @3021 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 3
+				date > "3021.1.6"
+			}
+			
+			modifier = {
+				factor = 3
+				date > "3022.1.1"
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			electronics
+			encryption_tech
+			decryption_tech
+		}
+	}
+	
+###########################################################
+				#ENCRYPTION
+###########################################################
+	basic_encryption = {
+
+		# encryption 1
+		encryption = 1
+		
+		research_cost = 1
+		start_year = 3017
+		allow_branch = {
+			NOT = { has_dlc = "La Resistance" }
+		}
+		folder = {
+			name = organisation_folder
+			position = { x = @encryptionX y = @3017 }
+		}
+		
+		ai_will_do = {
+			factor = 1.75
+			modifier = {
+				has_war = yes
+				factor = 3
+			}
+			modifier = {
+				num_of_military_factories < 50
+				factor = 1.5 # not a major
+			}
+			modifier = {
+				factor = 3
+
+				tag = GON
+			}
+			modifier = {
+				factor = 3
+
+				tag = MOR
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			electronics
+			encryption_tech
+		}
+	}
+	
+	improved_encryption = {
+
+		# encryption 2
+		encryption = 1
+		allow_branch = {
+			NOT = { has_dlc = "La Resistance" }
+		}
+		research_cost = 1
+		start_year = 3019
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @encryptionX y = @3019 }
+		}
+		
+		ai_will_do = {
+			factor = 1.75
+			modifier = {
+				has_war = yes
+				factor = 3
+			}
+			modifier = {
+				num_of_military_factories < 50
+				factor = 1.5 # not a major
+			}
+			modifier = {
+				factor = 3
+
+				tag = GON
+			}
+			modifier = {
+				factor = 3
+
+				tag = MOR
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			electronics
+			encryption_tech
+		}
+	}
+	
+	advanced_encryption = {
+
+		# encryption 3
+		encryption = 1
+		allow_branch = {
+			NOT = { has_dlc = "La Resistance" }
+		}
+		research_cost = 1
+		start_year = 3021
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @encryptionX y = @3021 }
+		}
+		
+		ai_will_do = {
+			factor = 1.75
+			modifier = {
+				has_war = yes
+				factor = 3
+			}
+			modifier = {
+				num_of_military_factories < 50
+				factor = 1.5 # not a major
+			}
+			modifier = {
+				factor = 3
+
+				tag = GON
+			}
+			modifier = {
+				factor = 3
+
+				tag = MOR
+			}
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+		}
+	}
+	
+	basic_decryption = {
+
+		# decryption 1
+		decryption = 1
+		allow_branch = {
+			NOT = { has_dlc = "La Resistance" }
+		}
+		research_cost = 1.5
+		start_year = 3017
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @decryptionX y = @3017 }
+		}
+		
+		ai_will_do = {
+			factor = 1.5
+			modifier = {
+				num_of_military_factories < 50
+				factor = 1.5 # not a major
+			}
+			modifier = {
+				factor = 3
+
+				tag = GON
+			}
+			modifier = {
+				factor = 3
+
+				tag = MOR
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			electronics
+			decryption_tech
+		}
+	}
+	
+	improved_decryption = {
+
+		# decryption 2
+		decryption = 1
+		allow_branch = {
+			NOT = { has_dlc = "La Resistance" }
+		}
+		research_cost = 1.5
+		start_year = 3019
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @decryptionX y = @3019 }
+		}
+		
+		ai_will_do = {
+			factor = 1.5
+			modifier = {
+				num_of_military_factories < 50
+				factor = 1.5 # not a major
+			}
+			modifier = {
+				factor = 3
+
+				tag = GON
+			}
+			modifier = {
+				factor = 3
+
+				tag = MOR
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			electronics
+			decryption_tech
+		}
+	}
+	
+	advanced_decryption = {
+
+		# decryption 3
+		decryption = 1
+		allow_branch = {
+			NOT = { has_dlc = "La Resistance" }
+		}
+		research_cost = 1.5
+		start_year = 3021
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @decryptionX y = @3021 }
+		}
+		
+		ai_will_do = {
+			factor = 1.5
+			modifier = {
+				num_of_military_factories < 50
+				factor = 1.5 # not a major
+			}
+			modifier = {
+				factor = 3
+
+				tag = GON
+			}
+			modifier = {
+				factor = 3
+
+				tag = MOR
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			electronics
+			decryption_tech
+		}
+	}
+	
+	
+###########################################################
+				#COMMS/RADAR
+###########################################################
+	radio = {
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.05
+		coordination_bonus = 0.04
+		
+		path = {
+			leads_to_tech = radio_detection 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_signal_company
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.75
+		
+		start_year = 3013
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @commsX y = @3013 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 6
+				has_war = yes
+			}
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+			modifier = {
+				factor = 5
+				date > "3018.8.1"
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			signal_company_tech
+		}
+	}
+	
+	radio_detection = {
+		enable_building = {
+			building = radar_station
+			level = 1
+		}
+		coordination_bonus = 0.01
+		path = {
+			leads_to_tech = decimetric_radar 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_recon
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.75
+		
+		start_year = 3015
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @towerX y = @3015 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				tag = GON
+				factor = 4
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+		}
+	}
+	
+	decimetric_radar = {
+
+		# can build radars/radar boost in air/sea combat depends on radar level
+
+		path = {
+			leads_to_tech = improved_decimetric_radar 
+			research_cost_coeff = 1
+		}
+		coordination_bonus = 0.01
+		research_cost = 1.25
+		start_year = 3017
+		enable_equipment_modules = { 
+			ship_radar_1
+		}
+		folder = {
+			name = organisation_folder
+			position = { x = @towerX y = @3017 }
+		}
+		path = {
+			leads_to_tech = tech_recon2
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = GON
+				}
+				factor = 5
+			}
+			modifier = {
+				date < "3017.1.1"
+				factor = 0.5
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+		}
+		
+		enable_building = {
+			building = radar_station
+			level = 2
+		}
+	}
+	
+	improved_decimetric_radar = {
+
+		# radar boost in air/sea combat depends on radar level
+		enable_building = {
+			building = radar_station
+			level = 3
+		}
+		coordination_bonus = 0.01
+		enable_equipment_modules = { 
+			ship_radar_2
+		}
+
+		path = {
+			leads_to_tech = centimetric_radar 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.25
+		start_year = 3018
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @towerX y = @3018 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = GON
+				}
+				factor = 5
+			}
+			modifier = {
+				date < "3018.1.1"
+				factor = 0.5
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+		}
+	}
+	
+	centimetric_radar = {
+
+		# radar boost in air/sea combat depends on radar level
+		enable_building = {
+			building = radar_station
+			level = 4
+		}
+		coordination_bonus = 0.01
+		enable_equipment_modules = { 
+			ship_radar_3
+		}
+		
+		path = {
+			leads_to_tech = improved_centimetric_radar 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.25
+		start_year = 3020
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @towerX y = @3020 }
+		}
+		path = {
+			leads_to_tech = tech_recon3
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = GON
+				}
+				factor = 4
+			}
+			modifier = {
+				date < "3019.1.1"
+				factor = 0.5
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+		}
+	}
+	
+	improved_centimetric_radar = {
+
+		# radar boost in air/sea combat depends on radar level
+		enable_building = {
+			building = radar_station
+			level = 5
+		}
+		coordination_bonus = 0.01
+		
+		
+		path = {
+			leads_to_tech = advanced_centimetric_radar 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.25
+		start_year = 3021
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @towerX y = @3021 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = GON
+				}
+				factor = 4
+			}
+			modifier = {
+				date < "3020.1.1"
+				factor = 0.5
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+		}
+	}
+	
+	advanced_centimetric_radar = {
+
+		# radar boost in air/sea combat depends on radar level
+		enable_building = {
+			building = radar_station
+			level = 6
+		}
+		coordination_bonus = 0.01
+		enable_equipment_modules = { 
+			ship_radar_4
+		}
+		path = {
+			leads_to_tech = tech_recon4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.25
+		start_year = 3022
+		
+		folder = {
+			name = organisation_folder
+			position = { x = @towerX y = @3022 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = GON
+				}
+				factor = 5
+			}
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+		}
+	}
+
+###########################################################
+				#RECON
+###########################################################
+
+	tech_recon = {
+
+		enable_subunits = {
+			recon
+			mot_recon
+			light_tank_recon
+			heavy_cav_recon
+		}
+
+		research_cost = 2
+		start_year = 3015
+		folder = {
+			name = organisation_folder
+			position = { x = @reconX y = @3015 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+			support_tech
+			recon_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3016.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3017.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "3019.1.1"
+			}
+		}
+	}
+	
+	tech_recon2 = {
+
+		category_recon = {
+			recon = 2
+		}
+
+		research_cost = 1.5
+		start_year = 3017
+		folder = {
+			name = organisation_folder
+			position = { x = @reconX y = @3017 }
+		}
+		dependencies = {
+			tech_recon = 1
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+			support_tech
+			recon_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3019.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3020.1.1"
+			}
+		}
+	}
+	
+	tech_recon3 = {
+
+		category_recon = {
+			recon = 2
+		}
+
+		research_cost = 1.5
+		start_year = 3020
+		folder = {
+			name = organisation_folder
+			position = { x = @reconX y = @3020 }
+		}
+		
+		dependencies = {
+			tech_recon = 1
+		}
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+			support_tech
+			recon_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3021.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3022.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3023.1.1"
+			}
+		}
+	}
+	tech_recon4 = {
+
+		category_recon = {
+			recon = 2
+		}
+
+		research_cost = 1.5
+		start_year = 3022
+		folder = {
+			name = organisation_folder
+			position = { x = @reconX y = @3022 }
+		}
+		
+		dependencies = {
+			tech_recon = 1
+		}
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+			support_tech
+			recon_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3024.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3025.1.1"
+			}
+		}
+	}
+###########################################################
+				#SIGNALS
+###########################################################
+	tech_signal_company = {
+
+		enable_subunits = {
+			signal_company
+		}
+		enable_equipments = {
+			signals_equipment_1
+		}
+		enable_equipment_modules = { 
+			ship_fire_control_system_1
+			war_horn
+		}
+		
+		path = {
+			leads_to_tech = tech_signal_company2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3015
+		folder = {
+			name = organisation_folder
+			position = { x = @signalsX y = @3015 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+			support_tech
+			signal_company_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				is_major = yes
+				date > "3019.1.1"
+			}
+		}
+	}
+	
+	tech_signal_company2 = {
+
+		enable_equipments = {
+			signals_equipment_2
+		}
+		enable_equipment_modules = { 
+			ship_fire_control_system_2
+		}
+		
+		path = {
+			leads_to_tech = tech_signal_company3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3017
+		folder = {
+			name = organisation_folder
+			position = { x = @signalsX y = @3017 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+			support_tech
+			signal_company_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3019.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3020.1.1"
+			}
+		}
+	}
+	
+	tech_signal_company3 = {
+
+		enable_equipments = {
+			signals_equipment_3
+		}
+		enable_equipment_modules = { 
+			ship_fire_control_system_3
+		}
+		path = {
+			leads_to_tech = tech_signal_company4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3020
+		folder = {
+			name = organisation_folder
+			position = { x = @signalsX y = @3020 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+			support_tech
+			signal_company_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3021.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3022.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+		}
+	}
+	tech_signal_company4 = {
+
+		enable_equipments = {
+			signals_equipment_4
+		}
+
+		research_cost = 1.5
+		start_year = 3022
+		folder = {
+			name = organisation_folder
+			position = { x = @signalsX y = @3022 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			comms_tech
+			radar_tech
+			support_tech
+			signal_company_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3024.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "3025.1.1"
+			}
+		}
+	}
+
+###########################################################
+				#MP
+###########################################################
+	tech_military_police = {
+
+		enable_subunits = {
+			military_police
+		}
+		enable_equipments = {
+			suppression_equipment_1
+		}
+		
+		path = {
+			leads_to_tech = tech_military_police2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3015
+		folder = {
+			name = organisation_folder
+			position = { x = @MPX y = @3015 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			support_tech
+			military_police_tech
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			
+			modifier = {
+				factor = 4
+				OR = {
+					has_government = melkorite
+					has_government = conquest
+				}
+			}
+			modifier = {
+				factor = 5
+				tag = MOR
+			}
+			modifier = {
+				factor = 10
+				tag = MOR
+				MOR = { has_war = yes }
+			}
+			modifier = {
+				factor = 10
+				tag = MOR
+				GON = { has_capitulated = yes }
+			}
+			modifier = {
+				factor = 5
+				tag = ISN
+			}
+			modifier = {
+				factor = 10
+				tag = ISN
+				ROH = { has_capitulated = yes }
+			}
+			modifier = {
+				factor = 2
+				tag = HAR
+			}
+			modifier = {
+				factor = 2
+				is_rhunnic_tag = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+		}
+	}
+	
+	tech_military_police2 = {
+
+		enable_equipments = {
+			suppression_equipment_2
+		}
+		path = {
+			leads_to_tech = tech_military_police3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3017
+		folder = {
+			name = organisation_folder
+			position = { x = @MPX y = @3017 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			support_tech
+			military_police_tech
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			
+			modifier = {
+				factor = 4
+				OR = {
+					has_government = melkorite
+					has_government = conquest
+				}
+			}
+			modifier = {
+				factor = 5
+				tag = MOR
+			}
+			modifier = {
+				factor = 10
+				tag = MOR
+				MOR = { has_war = yes }
+			}
+			modifier = {
+				factor = 10
+				tag = MOR
+				GON = { has_capitulated = yes }
+			}
+			modifier = {
+				factor = 5
+				tag = ISN
+			}
+			modifier = {
+				factor = 10
+				tag = ISN
+				ROH = { has_capitulated = yes }
+			}
+			modifier = {
+				factor = 2
+				tag = HAR
+			}
+			modifier = {
+				factor = 2
+				is_rhunnic_tag = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3019.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3020.1.1"
+			}
+		}
+	}
+	
+	tech_military_police3 = {
+
+		enable_equipments = {
+			suppression_equipment_3
+		}
+		path = {
+			leads_to_tech = tech_military_police4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3020
+		folder = {
+			name = organisation_folder
+			position = { x = @MPX y = @3020 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			support_tech
+			military_police_tech
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			
+			modifier = {
+				factor = 4
+				OR = {
+					has_government = melkorite
+					has_government = conquest
+				}
+			}
+			modifier = {
+				factor = 5
+				tag = MOR
+			}
+			modifier = {
+				factor = 10
+				tag = MOR
+				MOR = { has_war = yes }
+			}
+			modifier = {
+				factor = 10
+				tag = MOR
+				GON = { has_capitulated = yes }
+			}
+			modifier = {
+				factor = 5
+				tag = ISN
+			}
+			modifier = {
+				factor = 10
+				tag = ISN
+				ROH = { has_capitulated = yes }
+			}
+			modifier = {
+				factor = 2
+				tag = HAR
+			}
+			modifier = {
+				factor = 2
+				is_rhunnic_tag = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.2
+				date > "3021.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3022.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+		}
+	}
+	tech_military_police4 = {
+
+		enable_equipments = {
+			suppression_equipment_4
+		}
+
+		research_cost = 1.5
+		start_year = 3022
+		folder = {
+			name = organisation_folder
+			position = { x = @MPX y = @3022 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			support_tech
+			military_police_tech
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			
+			modifier = {
+				factor = 4
+				OR = {
+					has_government = melkorite
+					has_government = conquest
+				}
+			}
+			modifier = {
+				factor = 5
+				tag = MOR
+			}
+			modifier = {
+				factor = 10
+				tag = MOR
+				MOR = { has_war = yes }
+			}
+			modifier = {
+				factor = 10
+				tag = MOR
+				GON = { has_capitulated = yes }
+			}
+			modifier = {
+				factor = 5
+				tag = ISN
+			}
+			modifier = {
+				factor = 10
+				tag = ISN
+				ROH = { has_capitulated = yes }
+			}
+			modifier = {
+				factor = 2
+				tag = HAR
+			}
+			modifier = {
+				factor = 2
+				is_rhunnic_tag = yes
+			}
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3024.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3025.1.1"
+			}
+		}
+	}
+###########################################################
+				#LOGISTICS
+###########################################################
+	tech_logistics_company = {
+
+		enable_subunits = {
+			logistics_company
+		}
+		
+		path = {
+			leads_to_tech = tech_logistics_company2
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			motorised_infantry = 1
+		}
+
+		research_cost = 2
+		start_year = 3015
+		folder = {
+			name = organisation_folder
+			position = { x = @logX y = @3015 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			support_tech
+			logistics_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3016.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3018.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "3019.1.1"
+			}
+		}
+	}
+	
+	tech_logistics_company2 = {
+
+		logistics_company = {
+			supply_consumption_factor = -0.1
+			fuel_consumption_factor = -0.05
+		}
+		
+		
+		path = {
+			leads_to_tech = tech_logistics_company3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3017
+		folder = {
+			name = organisation_folder
+			position = { x = @logX y = @3017 }
+		}
+		
+		categories = {
+			support_tech
+			logistics_tech
+			cat_bureaucracy
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				date > "3017.1.1"
+			}
+			modifier = {
+				factor = 1.2
+				date > "3019.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "3020.1.1"
+			}
+			
+
+			modifier = {
+				factor = 2
+				tag = ISN
+			}
+		}
+	}
+	
+	tech_logistics_company3 = {
+
+		logistics_company = {
+			supply_consumption_factor = -0.1
+			fuel_consumption_factor = -0.05
+		}
+		path = {
+			leads_to_tech = tech_logistics_company4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3020
+		folder = {
+			name = organisation_folder
+			position = { x = @logX y = @3020 }
+		}
+		
+		categories = {
+			support_tech
+			logistics_tech
+			cat_bureaucracy
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3021.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3022.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3023.1.1"
+			}
+		}
+	}
+	tech_logistics_company4 = {
+
+		logistics_company = {
+			supply_consumption_factor = -0.1
+			fuel_consumption_factor = -0.05
+		}
+
+		research_cost = 1.5
+		start_year = 3022
+		folder = {
+			name = organisation_folder
+			position = { x = @logX y = @3022 }
+		}
+		
+		categories = {
+			support_tech
+			logistics_tech
+			cat_bureaucracy
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1.2
+				date > "3023.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3024.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "3025.1.1"
+			}
+		}
+	}
+###########################################################
+				#SPECIAL FORCE COMPANIES
+###########################################################
+	paratroopers = {
+		enable_subunits = {
+			cavalry
+		}
+		
+		path = {
+			leads_to_tech = paratroopers2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3015
+		folder = {
+			name = organisation_folder
+			position = { x = @rangerX y = @3015 }
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = cavalry
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_rangers"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		
+		categories = {
+			cat_bureaucracy
+			para_tech
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			
+			modifier = {
+				factor = 2
+				tag = GON
+			}
+			modifier = {
+				factor = 2
+				tag = CAR
+			}
+			modifier = {
+				factor = 2
+				tag = ART
+			}
+			modifier = {
+				factor = 2
+				tag = RDR
+			}
+			modifier = {
+				factor = 2
+				has_idea = elven_heritage_idea
+			}
+		}
+	}
+	
+	paratroopers2 = {
+
+		cavalry = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		path = {
+			leads_to_tech = paratroopers3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 3018
+		folder = {
+			name = organisation_folder
+			position = { x = @rangerX y = @3018 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			para_tech
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			
+			modifier = {
+				factor = 2
+				tag = GON
+			}
+			modifier = {
+				factor = 2
+				tag = CAR
+			}
+			modifier = {
+				factor = 2
+				tag = ART
+			}
+			modifier = {
+				factor = 2
+				tag = RDR
+			}
+			modifier = {
+				factor = 2
+				has_idea = elven_heritage_idea
+			}
+		}
+	}
+
+	paratroopers3 = {
+
+		cavalry = {
+			max_organisation = 5
+		}
+		research_cost = 2.0
+		start_year = 3022
+		folder = {
+			name = organisation_folder
+			position = { x = @rangerX y = @3022 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			para_tech
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			
+			modifier = {
+				factor = 2
+				tag = GON
+			}
+			modifier = {
+				factor = 2
+				tag = CAR
+			}
+			modifier = {
+				factor = 2
+				tag = ART
+			}
+			modifier = {
+				factor = 2
+				tag = RDR
+			}
+			modifier = {
+				factor = 2
+				has_idea = elven_heritage_idea
+			}
+		}
+	}
+	
+	marines = {
+
+		enable_subunits = {
+			marine
+		}
+		
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = marine
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_marines"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		path = {
+			leads_to_tech = marines2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3015
+		folder = {
+			name = organisation_folder
+			position = { x = @marineX y = @3015 }
+		}
+		
+		categories = {
+			marine_tech
+			cat_bureaucracy
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	
+	marines2 = {
+
+		marine = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		path = {
+			leads_to_tech = marines3
+			research_cost_coeff = 1
+		}
+		
+
+		research_cost = 1.5
+		start_year = 3018
+		folder = {
+			name = organisation_folder
+			position = { x = @marineX y = @3018 }
+		}
+		
+		categories = {
+			marine_tech
+			cat_bureaucracy
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	
+	marines3 = {
+
+		marine = {
+			max_organisation = 5
+		}
+
+		research_cost = 2.0
+		start_year = 3022
+		folder = {
+			name = organisation_folder
+			position = { x = @marineX y = @3022 }
+		}
+		
+		categories = {
+			marine_tech
+			cat_bureaucracy
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}	
+	
+	tech_mountaineers = {
+
+		enable_subunits = {
+			mountaineers
+		}
+
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = mountaineers
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_mountineers"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		
+		path = {
+			leads_to_tech = tech_mountaineers2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3015
+		folder = {
+			name = organisation_folder
+			position = { x = @mountaineerX y = @3015 }
+		}
+		
+		categories = {
+			mountaineers_tech
+			cat_bureaucracy
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	
+	tech_mountaineers2 = {
+
+		mountaineers = {
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		path = {
+			leads_to_tech = tech_mountaineers3
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 1.5
+		start_year = 3018
+		folder = {
+			name = organisation_folder
+			position = { x = @mountaineerX y = @3018 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			mountaineers_tech
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	
+	tech_mountaineers3 = {	
+		mountaineers = {
+			max_organisation = 5
+		}
+
+		research_cost = 2.0
+		start_year = 3022
+		folder = {
+			name = organisation_folder
+			position = { x = @mountaineerX y = @3022 }
+		}
+		
+		categories = {
+			cat_bureaucracy
+			mountaineers_tech
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+###########################################################
+				#SPECIAL FORCES
+###########################################################
+	tech_special_forces = {
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.05
+			acclimatization_cold_climate_gain_factor = 0.05
+		}
+		
+		# dependencies = {
+			# OR = {
+				# marines = 1
+				# paratrooper = 1
+				# mountaineer = 1
+			# }
+		# }
+		path = {
+			leads_to_tech = advanced_special_forces
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = improved_special_forces
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3016
+		folder = {
+			name = organisation_folder
+			position = { x = @specialX y = @3016 }
+		}
+		
+		categories = {
+			mountaineers_tech
+			marine_tech
+			para_tech
+			cat_bureaucracy
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	advanced_special_forces = {
+		xor={
+			improved_special_forces
+		}
+
+		category_special_forces = {
+			max_organisation = 5
+			defense = 0.05
+		}
+
+		special_forces_training_time_factor = 0.1
+		
+		path = {
+			leads_to_tech = extreme_environment_training
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3018
+		folder = {
+			name = organisation_folder
+			position = { x = @specialExtraSpecialX  y = @3018 }
+		}
+		
+		categories = {
+			mountaineers_tech
+			marine_tech
+			para_tech
+			cat_bureaucracy
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	improved_special_forces = {
+		xor={
+			advanced_special_forces
+		}
+
+		special_forces_cap = 0.05
+		special_forces_training_time_factor = -0.1
+		
+		path = {
+			leads_to_tech = survival_training
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3018
+		folder = {
+			name = organisation_folder
+			position = { x = @specialMassX y = @3018 }
+		}
+		
+		categories = {
+			mountaineers_tech
+			marine_tech
+			para_tech
+			cat_bureaucracy
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	extreme_environment_training = {
+
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.50
+			acclimatization_cold_climate_gain_factor = 0.50
+		}
+		
+		special_forces_no_supply_grace = 48
+		special_forces_training_time_factor = 0.1
+		
+		path = {
+			leads_to_tech = elite_forces
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3020
+		folder = {
+			name = organisation_folder
+			position = { x = @specialExtraSpecialX y = @3020 }
+		}
+		
+		categories = {
+			mountaineers_tech
+			marine_tech
+			para_tech
+			cat_bureaucracy
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	survival_training = {
+
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.20
+			acclimatization_cold_climate_gain_factor = 0.20
+		}
+		
+		special_forces_out_of_supply_factor = -0.1
+		
+		path = {
+			leads_to_tech = elite_forces
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 3020
+		folder = {
+			name = organisation_folder
+			position = { x = @specialMassX y = @3020 }
+		}
+		
+		categories = {
+			mountaineers_tech
+			marine_tech
+			para_tech
+			cat_bureaucracy
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	elite_forces = {
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.20
+			acclimatization_cold_climate_gain_factor = 0.20
+			max_organisation = 5
+			soft_attack = 0.05
+		}
+		
+		special_forces_no_supply_grace = 48
+
+		research_cost = 2
+		start_year = 3022
+		folder = {
+			name = organisation_folder
+			position = { x = @specialX y = @3022 }
+		}
+		
+		categories = {
+			mountaineers_tech
+			marine_tech
+			para_tech
+			cat_bureaucracy
+			cat_special_forces
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	
+	
+	
+	
+	
+	
+	lar_decryption_bonus_tech = {
+				
+		research_cost = 1.5 #Carrier Variant
+		start_year = 3023
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+		decryption_power = 10
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+		################
+	}
+}

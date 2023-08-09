@@ -125,12 +125,7 @@ spriteTypes = {
 ####HEAVY CAVALRY RECON
 	spriteType = { 
 		name = "GFX_unit_heavy_cav_recon_icon_medium"				
-		textureFile = "gfx/interface/counters/divisions_large/heavy_cav_recon_icon.dds"
-		noOfFrames = 2
-	}
-	spriteType = { 
-		name = "GFX_unit_heavy_cav_recon_icon_medium_white"						
-		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_heavy_cav_recon_icon.dds" 
+		textureFile = "gfx/interface/counters/divisions_large/unit_heavy_cav_recon_icon.dds"
 		noOfFrames = 2
 	}
 	spriteType = {
