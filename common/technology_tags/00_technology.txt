@@ -152,30 +152,19 @@ technology_folders = {
 	farming_folder = {
 		ledger = civilian
 	}
-	armour_folder = {
+	cavalry_folder = {
 		ledger = army
-		available = {
-			NOT = {
-				has_dlc = "No Step Back"
-			}
-		}
-	}
-	nsb_armour_folder = {
-		ledger = army
-		available = {
-			has_dlc = "No Step Back"
-		}
 	}
 	land_doctrine_folder = {
 		ledger = army
 		doctrine = yes
 	}
+	electronics_folder = {
+		ledger = civilian
+	}
 	naval_doctrine_folder = {
 		ledger = navy
 		doctrine = yes
-	}
-	electronics_folder = {
-		ledger = civilian
 	}
 }
 

@@ -3,28 +3,27 @@ technologies = {
 	@3013 = 2
 	@3014 = 3
 	@3015 = 4
-	@3016 = 5
-	@3017 = 5
-	@3018 = 6
-	@3019 = 7
-	@3020 = 8
-	@3021 = 9
-	@3022 = 10
-	@3023 = 11
-	@3024 = 12
-	@3025 = 20
+	@3017 = 6
+	@3018 = 7
+	@3019 = 8
+	@3020 = 9
+	@3021 = 10
+	@3022 = 12
 
-	@lightCavX = -4
-	@heavyCavX = 0
-	@modernCavX = -3
-	@trollX = 0
-	@mumakX = 0
-	@armorTechX = 2
-	@engineTechX = 0
+	@lightCavX = -2
+	@heavyCavX = 1
+	@modernCavX = -1
+	@armorTechX = 3
+	@engineTechX = 5
+	@trollX = 7
+	@mumakX = 9
 	
-
+	@AIbehindAgriculture = 0.2
 	### GERMAN TANK NAMES IN COMMENTS SO YOU CAN FIND STUFF MORE EASILY
 	gwtank_chassis = { #Leichttraktor
+		allow_branch = {
+			has_dlc = "No Step Back"
+		}
 
 		enable_equipments = {
 			light_tank_chassis_0
@@ -71,6 +70,9 @@ technologies = {
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
 
+		dependencies = {
+			agriculture0 = 1
+		}
 		path = {
 			leads_to_tech = basic_light_tank_chassis
 			research_cost_coeff = 1
@@ -84,7 +86,7 @@ technologies = {
 		research_cost = 2
 		start_year = 3000
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @lightCavX y = 0 }
 		}
 
@@ -128,6 +130,7 @@ technologies = {
 		categories = {
 			armor
 			cat_light_armor
+			agriculture
 		}
 	}
 
@@ -177,7 +180,7 @@ technologies = {
 		research_cost = 2
 		start_year = 3013
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @lightCavX y = @3013 }
 		}
 
@@ -220,6 +223,7 @@ technologies = {
 		categories = {
 			armor
 			cat_light_armor
+			agriculture
 		}
 	}
 
@@ -241,7 +245,7 @@ technologies = {
 		start_year = 3015
 
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @lightCavX y = @3015 }
 		}
 
@@ -284,11 +288,19 @@ technologies = {
 				factor = 0.1
 				has_idea = dwarven_heritage_idea
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture1
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			cat_light_armor
+			agriculture
+			agriculture_early
 		}
 	}
 
@@ -310,7 +322,7 @@ technologies = {
 		start_year = 3020
 
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @lightCavX y = @3020 }
 		}
 
@@ -347,11 +359,19 @@ technologies = {
 				factor = 0.1
 				has_idea = dwarven_heritage_idea
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture3
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			cat_light_armor
+			agriculture
+			agriculture_improved
 		}
 	}
 
@@ -403,7 +423,7 @@ technologies = {
 		start_year = 3015
 
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @heavyCavX y = @3015 }
 		}
 
@@ -445,11 +465,19 @@ technologies = {
 				factor = 0.1
 				has_idea = dwarven_heritage_idea
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture1
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			cat_medium_armor
+			agriculture
+			agriculture_early
 		}
 	}
 
@@ -472,7 +500,7 @@ technologies = {
 		start_year = 3018
 
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @heavyCavX y = @3018 }
 		}
 
@@ -518,11 +546,19 @@ technologies = {
 				factor = 0.1
 				has_idea = dwarven_heritage_idea
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture2
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			cat_medium_armor
+			agriculture
+			agriculture_basic
 		}
 	}
 
@@ -543,7 +579,7 @@ technologies = {
 		start_year = 3021
 
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @heavyCavX y = @3021 }
 		}
 
@@ -580,11 +616,19 @@ technologies = {
 				factor = 0.1
 				has_idea = dwarven_heritage_idea
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture4
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			cat_medium_armor
+			agriculture
+			agriculture_advanced
 		}
 	}
 
@@ -606,7 +650,7 @@ technologies = {
 		start_year = 3022
 
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @modernCavX y = @3022 }
 		}
 
@@ -627,16 +671,27 @@ technologies = {
 				factor = 2
 				date > "3025.1.1"
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture4
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			cat_medium_armor
+			agriculture
+			agriculture_advanced
 		}
 	}
 
 
 	feral_troll_chassis = { #Feral Troll
+		allow_branch = {
+			has_dlc = "No Step Back"
+		}
 		allow = {
 			has_idea_with_trait = hidden_troll_tamer_trait
 		}
@@ -687,6 +742,9 @@ technologies = {
 			}
 		}
 
+		dependencies = {
+			agriculture0 = 1
+		}
 		path = {
 			leads_to_tech = basic_heavy_tank_chassis
 			research_cost_coeff = 1
@@ -700,7 +758,7 @@ technologies = {
 		start_year = 3000
 
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @trollX y = @3000 }
 		}
 
@@ -726,6 +784,7 @@ technologies = {
 		categories = {
 			armor
 			cat_heavy_armor
+			agriculture
 		}
 	}
 
@@ -750,7 +809,7 @@ technologies = {
 		start_year = 3015
 
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @trollX y = @3015 }
 		}
 
@@ -770,6 +829,12 @@ technologies = {
 			modifier = {
 				factor = 1.2
 				date > "3018.1.1"
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture1
+				}
+				factor = @AIbehindAgriculture
 			}
 		}
 
@@ -799,7 +864,7 @@ technologies = {
 		start_year = 3019
 
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @trollX y = @3019 }
 		}
 
@@ -819,11 +884,19 @@ technologies = {
 				factor = 1.2
 				date > "3022.1.1"
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture2
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			cat_heavy_armor
+			agriculture
+			agriculture_early
 		}
 	}
 
@@ -844,7 +917,7 @@ technologies = {
 		start_year = 3022
 
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @trollX y = @3022 }
 		}
 
@@ -865,16 +938,27 @@ technologies = {
 				factor = 1.2
 				date > "3025.1.1"
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture4
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			cat_heavy_armor
+			agriculture
+			agriculture_advanced
 		}
 	}
 
 	###Mumakil
 	basic_mumakil_chassis = { #Feral
+		allow_branch = {
+			has_dlc = "No Step Back"
+		}
 		allow = {
 			has_idea_with_trait = hidden_mumakil_tamer_trait
 		}
@@ -921,8 +1005,11 @@ technologies = {
 		research_cost = 2.5
 		start_year = 3000
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @mumakX y = @3000 }
+		}
+		dependencies = {
+			agriculture0 = 1
 		}
 		path = {
 			leads_to_tech = improved_mumakil_chassis
@@ -951,6 +1038,7 @@ technologies = {
 		categories = {
 			armor
 			cat_heavy_armor
+			agriculture
 		}
 	}
 	improved_mumakil_chassis = { #Tamed
@@ -966,7 +1054,7 @@ technologies = {
 		research_cost = 2.5
 		start_year = 3017
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @mumakX y = @3017 }
 		}
 		path = {
@@ -991,11 +1079,19 @@ technologies = {
 				factor = 1.2
 				date > "3020.1.1"
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture2
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			cat_heavy_armor
+			agriculture
+			agriculture_basic
 		}
 	}
 	advanced_mumakil_chassis = { #trained
@@ -1011,7 +1107,7 @@ technologies = {
 		research_cost = 2.5
 		start_year = 3022
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @mumakX y = @3022 }
 		}
 
@@ -1032,11 +1128,19 @@ technologies = {
 				factor = 1.2
 				date > "3025.1.1"
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture4
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			cat_heavy_armor
+			agriculture
+			agriculture_advanced
 		}
 	}
 	
@@ -1062,7 +1166,7 @@ technologies = {
 		research_cost = 1
 		start_year = 3013
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @armorTechX y = @3013 }
 		}
 
@@ -1109,6 +1213,7 @@ technologies = {
 		categories = {
 			armor
 			tank_armor
+			agriculture
 		}
 	}
 
@@ -1131,10 +1236,10 @@ technologies = {
 		show_effect_as_desc = yes
 
 		research_cost = 1
-		start_year = 3016
+		start_year = 3017
 		folder = {
-			name = nsb_armour_folder
-			position = { x = @armorTechX y = @3016 }
+			name = cavalry_folder
+			position = { x = @armorTechX y = @3017 }
 		}
 
 		ai_will_do = {
@@ -1175,11 +1280,19 @@ technologies = {
 				factor = 0.1
 				has_idea = dwarven_heritage_idea
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture2
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			tank_armor
+			agriculture
+			agriculture_basic
 		}
 	}
 
@@ -1201,7 +1314,7 @@ technologies = {
 		research_cost = 1
 		start_year = 3020
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @armorTechX y = @3020 }
 		}
 
@@ -1243,11 +1356,19 @@ technologies = {
 				factor = 0.1
 				has_idea = dwarven_heritage_idea
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture3
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			tank_armor
+			agriculture
+			agriculture_improved
 		}
 	}
 
@@ -1259,7 +1380,7 @@ technologies = {
 		research_cost = 1
 		start_year = 3022
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @armorTechX y = @3022 }
 		}
 
@@ -1306,14 +1427,25 @@ technologies = {
 				factor = 0.1
 				has_idea = dwarven_heritage_idea
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture4
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			tank_armor
+			agriculture
+			agriculture_advanced
 		}
 	}
 	engine_tech_1 = {
+		allow_branch = {
+			has_dlc = "No Step Back"
+		}
 		path = {
 			leads_to_tech = engine_tech_2
 			research_cost_coeff = 1
@@ -1325,7 +1457,7 @@ technologies = {
 		research_cost = 1
 		start_year = 3013
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @engineTechX y = @3013 }
 		}
 
@@ -1372,12 +1504,11 @@ technologies = {
 		categories = {
 			armor
 			tank_engine
+			agriculture
 		}
 	}
 
 	engine_tech_2 = {
-
-
 		path = {
 			leads_to_tech = engine_tech_3
 			research_cost_coeff = 1
@@ -1391,7 +1522,7 @@ technologies = {
 		research_cost = 1
 		start_year = 3017
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @engineTechX y = @3017 }
 		}
 
@@ -1433,11 +1564,19 @@ technologies = {
 				factor = 0.1
 				has_idea = dwarven_heritage_idea
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture2
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			tank_engine
+			agriculture
+			agriculture_basic
 		}
 	}
 
@@ -1453,7 +1592,7 @@ technologies = {
 		research_cost = 1
 		start_year = 3020
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @engineTechX y = @3020 }
 		}
 
@@ -1495,11 +1634,19 @@ technologies = {
 				factor = 0.1
 				has_idea = dwarven_heritage_idea
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture3
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			tank_engine
+			agriculture
+			agriculture_improved
 		}
 	}
 
@@ -1508,7 +1655,7 @@ technologies = {
 		research_cost = 1
 		start_year = 3022
 		folder = {
-			name = nsb_armour_folder
+			name = cavalry_folder
 			position = { x = @engineTechX y = @3022 }
 		}
 		on_research_complete = {
@@ -1553,11 +1700,19 @@ technologies = {
 				factor = 0.1
 				has_idea = dwarven_heritage_idea
 			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture4
+				}
+				factor = @AIbehindAgriculture
+			}
 		}
 
 		categories = {
 			armor
 			tank_engine
+			agriculture
+			agriculture_advanced
 		}
 	}
 	rohan_cav_boost_nsb = {

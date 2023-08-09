@@ -10,9 +10,21 @@ technologies = {
 	@3021 = 14
 	@3022 = 16
 	@3023 = 18
+	
+	@3000Cav = 0
+	@3013Cav = 2
+	@3014Cav = 3
+	@3015Cav = 4
+	@3017Cav = 6
+	@3018Cav = 7
+	@3019Cav = 8
+	@3020Cav = 9
+	@3021Cav = 10
+	@3022Cav = 12
 	@agricultureFarmingX = 0
+	@agricultureCavalryX = -5
 	@foodX = 2
-	@experimentsX = 2
+	@experimentsX = 5
 	@mountsX = 4
 	@rationsX = 6
 	@fieldHospitalX = 9
@@ -29,17 +41,30 @@ technologies = {
 			name = farming_folder
 			position = { x = @agricultureFarmingX y = @3000 }
 		}
+		folder = {
+			name = cavalry_folder
+			position = { x = @agricultureCavalryX y = @3000Cav }
+		}
 		path = {
 			leads_to_tech = agriculture1
 			research_cost_coeff = 1
 		}
 		path = {
-			leads_to_tech = fuel_silos
+			leads_to_tech = tech_field_hospital
 			research_cost_coeff = 1
 		}
 		path = {
-			leads_to_tech = tech_field_hospital
+			leads_to_tech = synth_oil_experiments 
 			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fuel_refining 
+			research_cost_coeff = 1
+		}
+		
+		enable_building = {
+			building = fuel_silo
+			level = 3
 		}
 		
 		categories = {
@@ -71,6 +96,10 @@ technologies = {
 		folder = {
 			name = farming_folder
 			position = { x = @agricultureFarmingX y = @3015 }
+		}
+		folder = {
+			name = cavalry_folder
+			position = { x = @agricultureCavalryX y = @3015Cav }
 		}
 		
 		path = {
@@ -114,6 +143,10 @@ technologies = {
 		folder = {
 			name = farming_folder
 			position = { x = @agricultureFarmingX y = @3017 }
+		}
+		folder = {
+			name = cavalry_folder
+			position = { x = @agricultureCavalryX y = @3017Cav }
 		}
 		
 		path = {
@@ -159,6 +192,10 @@ technologies = {
 			position = { x = @agricultureFarmingX y = @3019 }
 		}
 		
+		folder = {
+			name = cavalry_folder
+			position = { x = @agricultureCavalryX y = @3019Cav }
+		}
 		path = {
 			leads_to_tech = agriculture4
 			research_cost_coeff = 1
@@ -201,6 +238,10 @@ technologies = {
 			name = farming_folder
 			position = { x = @agricultureFarmingX y = @3021 }
 		}
+		folder = {
+			name = cavalry_folder
+			position = { x = @agricultureCavalryX y = @3021Cav }
+		}
 		
 		on_research_complete = {
 			hidden_effect = {
@@ -236,109 +277,109 @@ technologies = {
 				#INDUSTRIAL FARMS
 ###########################################################
 
-	fuel_silos = {
+	# fuel_silos = {
 
-		enable_building = {
-			building = fuel_silo
-			level = 3
-		}
+		# enable_building = {
+			# building = fuel_silo
+			# level = 3
+		# }
 				
-		path = {
-			leads_to_tech = synth_oil_experiments 
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = fuel_refining 
-			research_cost_coeff = 1
-		}
+		# path = {
+			# leads_to_tech = synth_oil_experiments 
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = fuel_refining 
+			# research_cost_coeff = 1
+		# }
 		
-		research_cost = 1
-		start_year = 3015
-		folder = {
-			name = farming_folder
-			position = { x = @mountsX y = @3015 }
-		}
+		# research_cost = 1
+		# start_year = 3015
+		# folder = {
+			# name = farming_folder
+			# position = { x = @mountsX y = @3015 }
+		# }
 		
-		categories = {
-			agriculture
-			agriculture_early
-			farming
-			synth_resources
-		}
+		# categories = {
+			# agriculture
+			# agriculture_early
+			# farming
+			# synth_resources
+		# }
 		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 2
-				food > 10
-			}
-			modifier = {
-				factor = 3
-				food > 20
-			}
-			modifier = {
-				factor = 4
-				food > 30
-			}
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 2
+				# food > 10
+			# }
+			# modifier = {
+				# factor = 3
+				# food > 20
+			# }
+			# modifier = {
+				# factor = 4
+				# food > 30
+			# }
 			
-			modifier = {
-				factor = 2
-				num_of_military_factories > 10
-			}
-			modifier = {
-				factor = 3
-				num_of_military_factories > 20
-			}
-			modifier = {
-				factor = 4
-				num_of_military_factories > 30
-			}
-			modifier = {
-				factor = 4
-				num_of_military_factories > 40
-			}
-			modifier = {
-				factor = 4
-				num_of_military_factories > 50
-			}
+			# modifier = {
+				# factor = 2
+				# num_of_military_factories > 10
+			# }
+			# modifier = {
+				# factor = 3
+				# num_of_military_factories > 20
+			# }
+			# modifier = {
+				# factor = 4
+				# num_of_military_factories > 30
+			# }
+			# modifier = {
+				# factor = 4
+				# num_of_military_factories > 40
+			# }
+			# modifier = {
+				# factor = 4
+				# num_of_military_factories > 50
+			# }
 
-			modifier = {
-				factor = 2
-				num_of_naval_factories > 10
-			}
-			modifier = {
-				factor = 3
-				num_of_naval_factories > 20
-			}
-			modifier = {
-				factor = 4
-				num_of_naval_factories > 30
-			}
-			modifier = {
-				factor = 4
-				num_of_naval_factories > 40
-			}
-			modifier = {
-				factor = 4
-				num_of_naval_factories > 50
-			}
+			# modifier = {
+				# factor = 2
+				# num_of_naval_factories > 10
+			# }
+			# modifier = {
+				# factor = 3
+				# num_of_naval_factories > 20
+			# }
+			# modifier = {
+				# factor = 4
+				# num_of_naval_factories > 30
+			# }
+			# modifier = {
+				# factor = 4
+				# num_of_naval_factories > 40
+			# }
+			# modifier = {
+				# factor = 4
+				# num_of_naval_factories > 50
+			# }
 			
-			modifier = {
-				factor = 0.2
-				date < "3016.1.1"
-			}
-			modifier = {
-				factor = 0.4
-				date < "3017.1.1"
-			}
-			modifier = {
-				NOT = {
-					has_tech = carpentry1
-				}
-				factor = @AIbehindAgriculture
-			}
-		}
-	}
+			# modifier = {
+				# factor = 0.2
+				# date < "3016.1.1"
+			# }
+			# modifier = {
+				# factor = 0.4
+				# date < "3017.1.1"
+			# }
+			# modifier = {
+				# NOT = {
+					# has_tech = carpentry1
+				# }
+				# factor = @AIbehindAgriculture
+			# }
+		# }
+	# }
 
 	fuel_refining = {
 

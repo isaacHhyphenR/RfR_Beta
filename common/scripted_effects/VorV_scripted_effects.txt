@@ -83,7 +83,7 @@ druwaith_tribes_3015_tech = {
 		tech_support = 1
 		spear_tech_0 = 1
 		basic_train = 1
-		fuel_silos = 1
+		#fuel_silos = 1
 		motorised_infantry = 1
 	}
 	################### ARMOR TECH
