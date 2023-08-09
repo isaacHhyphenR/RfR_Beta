@@ -320,5 +320,25 @@ ideas = {
 				}
 			}
 		}
+
+		@supfireCost = -0.05
+		hidden_superior_firepower_equip_cost = {
+			name = superior_firepower
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				anti_tank_equipment = {
+					instant = yes
+					build_cost_ic = @supfireCost
+				}
+				artillery_equipment = {
+					instant = yes
+					build_cost_ic = @supfireCost
+				}
+			}
+		}
 	}
 }

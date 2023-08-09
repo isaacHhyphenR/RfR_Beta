@@ -24,3 +24,4 @@
  dispersed_production5_tooltip: "$dispersed_production1_tooltip$"
  wargoal_vs_all_GON_and_subjects_tooltip: "Gains §YAnnex§! war goal against §Y[GON.GetNameDef]§! and all of its §Ysubjects§!."
  production_cost: "£GFX_production_cost Production Cost"
+ superior_firepower_tooltip: "§Y$anti_tank_equipment$§!: $production_cost$: §G-5%§!\n§Y$artillery_equipment$§!: $production_cost$: §G-5%§!"
