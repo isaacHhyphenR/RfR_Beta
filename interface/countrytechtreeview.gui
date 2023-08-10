@@ -2356,7 +2356,7 @@ guiTypes = {
 			
 				instantTextBoxType = {
 					name = "organisation_year3000"
-					position = { x = 0 y = 140 }
+					position = { x = 0 y = 10 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
@@ -2368,7 +2368,7 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "organisation_year3013"
-					position = { x = 0 y = 260 }
+					position = { x = 0 y = 130 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
@@ -2380,7 +2380,7 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "organisation_year3015"
-					position = { x = 0 y = 380 }
+					position = { x = 0 y = 250 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
@@ -2392,7 +2392,7 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "organisation_year3016"
-					position = { x = 0 y = 500 }
+					position = { x = 0 y = 370 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
@@ -2404,7 +2404,7 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "organisation_year3017"
-					position = { x = 0 y = 620 }
+					position = { x = 0 y = 490 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
@@ -2416,7 +2416,7 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "organisation_year3018"
-					position = { x = 0 y = 740 }
+					position = { x = 0 y = 610 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
@@ -2428,7 +2428,7 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "organisation_year3019"
-					position = { x = 0 y = 860 }
+					position = { x = 0 y = 730 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
@@ -2440,7 +2440,7 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "organisation_year3020"
-					position = { x = 0 y = 980 }
+					position = { x = 0 y = 850 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
@@ -2452,7 +2452,7 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "organisation_year3021"
-					position = { x = 0 y = 1120 }
+					position = { x = 0 y = 970 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
@@ -2464,7 +2464,7 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "organisation_year3022"
-					position = { x = 0 y = 1260 }
+					position = { x = 0 y = 1090 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
@@ -2478,7 +2478,7 @@ guiTypes = {
 	
 			instantTextBoxType = {
 				name = "communications_subtitle"
-				position = { x = 550 y = 200 }
+				position = { x = 550 y = 70 }
 				font = "hoi_33"
 				borderSize = {x = 0 y = 4}
 				text = "ORGANISATION_TITLE_COMMUNICATION"
@@ -2489,7 +2489,7 @@ guiTypes = {
 			}
 			instantTextBoxType = {
 				name = "special_forces_subtitle"
-				position = { x = 1325 y = 350 }
+				position = { x = 1325 y = 220 }
 				font = "hoi_33"
 				borderSize = {x = 0 y = 4}
 				text = "ORGANISATION_TITLE_SPECIAL_FORCES"
@@ -2499,7 +2499,7 @@ guiTypes = {
 				Orientation = "UPPER_LEFT"
 			}
 				
-			@organisationY = 172
+			@organisationY = 40
 			gridboxtype = {
 				name = "electronic_mechanical_engineering_tree"
 				position = { x=-0 y=@organisationY }

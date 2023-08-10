@@ -31,7 +31,7 @@ technologies = {
 ###########################################################
 				#AGRICULTURE
 ###########################################################
-	@unlockerCost = 0.75
+	@unlockerCost = 1.25
 	@AIbehindAgriculture = 0.2
 	agriculture0 = {
 		

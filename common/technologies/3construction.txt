@@ -40,7 +40,7 @@ technologies = {
 	@3021nav = 16
 	
 	@carpentryConstructionX = 0
-	@unlockerCost = 0.75
+	@unlockerCost = 1.25
 	carpentry0 = {
 		
 		research_cost = @unlockerCost
