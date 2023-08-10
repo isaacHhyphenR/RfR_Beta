@@ -1185,10 +1185,6 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		dependencies = {
-			motorised_infantry = 1
-		}
-
 		research_cost = 2
 		start_year = 3015
 		folder = {

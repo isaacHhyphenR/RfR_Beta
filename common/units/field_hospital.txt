@@ -41,12 +41,10 @@ sub_units = {
 
 		essential = {
 			medical_equipment
-			motorized_equipment
 		}
 		
 		need = {
 			medical_equipment = 30
-			motorized_equipment = 20
 		}
 	}
 }
