@@ -68,4 +68,20 @@ on_actions = {
 			}
 		}
 	}
+	on_daily_FOR = { #wine & precious metals gain
+		effect = {
+			every_state = {
+				limit = { check_variable = { modifier@wine_gain > 0 } }
+				set_temp_variable = { num_wine = modifier@wine_gain }
+				controller = {
+				multiply_temp_variable = { PREV.num_wine = modifier@wine_gain_factor }
+				log = "mod [?DOR.modifier@wine_gain_factor]"
+					add_equipment_to_stockpile = {
+						type = wine_equipment_0
+						amount = var:num_wine
+					}
+				}
+			}
+		}
+	}
 }

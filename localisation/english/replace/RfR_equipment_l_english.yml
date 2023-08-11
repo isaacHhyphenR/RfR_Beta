@@ -517,3 +517,12 @@
  suppression_equipment_desc_3: "Sticking a miscreant in the pillory allows us to publicly humiliate them."
  suppression_equipment_4: "Advanced Suppression Equipment"
  suppression_equipment_desc_4: "No criminal can escape iron handcuffs without our key."
+ 
+ wine_equipment: "Wine"
+ wine_equipment_desc: "The grapes of Dorwinion create a drink so strong and heady even elves can find joy or solace in its embrace."
+ wine_equipment_0: "Wine"
+ wine_equipment_0_desc: "$wine_equipment_desc$"
+ precious_metals_equipment: "Precious Metals"
+ precious_metals_equipment_desc: "The gleaming fruit of the Earth have few practical uses and yet all folk, both good an evil, covet them."
+ precious_metals_equipment_0: "Precious Metals"
+ precious_metals_equipment_0_desc: "$precious_metals_equipment_desc$

@@ -248,9 +248,33 @@ spriteTypes = {
 		name = "GFX_agriculture4_medium"
 		texturefile = "gfx/interface/technologies/agriculture4.dds"
 	}
+	SpriteType = {
+		name = "GFX_wine_tech1_medium"
+		texturefile = "gfx/interface/technologies/grapes.dds"
+	}
+	SpriteType = {
+		name = "GFX_wine_tech2_medium"
+		texturefile = "gfx/interface/technologies/grapes2.dds"
+	}
+	SpriteType = {
+		name = "GFX_wine_tech3_medium"
+		texturefile = "gfx/interface/technologies/grapes3.dds"
+	}
+	SpriteType = {
+		name = "GFX_wine_tech4_medium"
+		texturefile = "gfx/interface/technologies/grapes4.dds"
+	}
 							######################################
 									#MISC
 							######################################
+	SpriteType = {
+		name = "GFX_precious_metals_equipment_0_medium"
+		texturefile = "gfx/interface/technologies/precious_metals.dds"
+	}
+	SpriteType = {
+		name = "GFX_wine_equipment_0_medium"
+		texturefile = "gfx/interface/technologies/wine.dds"
+	}
 	SpriteType = {
 		name = "GFX_black_powder_medium"
 		texturefile = "gfx/interface/technologies/black_powder.dds"
@@ -283,23 +307,6 @@ spriteTypes = {
 		name = "GFX_professional_looting_medium"
 		texturefile = "gfx/interface/technologies/loot_sack.dds"
 	}
-##########################SUPPORT EQUIPMENT
-	# SpriteType = {
-		# name = "GFX_tech_maintenance_company_medium"
-		# texturefile = "gfx/interface/technologies/maintenance_equipment1.dds"
-	# }
-	# SpriteType = {
-		# name = "GFX_tech_maintenance_company_medium2"
-		# texturefile = "gfx/interface/technologies/maintenance_equipment2.dds"
-	# }
-	# SpriteType = {
-		# name = "GFX_tech_maintenance_company_medium3"
-		# texturefile = "gfx/interface/technologies/maintenance_equipment3.dds"
-	# }
-	# SpriteType = {
-		# name = "GFX_tech_maintenance_company_medium4"
-		# texturefile = "gfx/interface/technologies/maintenance_equipment4.dds"
-	# }
 ##########################INFANTRY ARMOR
 	SpriteType = {
 		name = "GFX_infantry_armor_tech_0_medium"

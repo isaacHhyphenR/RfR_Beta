@@ -93,9 +93,7 @@ technology_categories = {
 	cat_synth_oil
 	cat_synth_rubber
 	hospital_tech
-	train_tech
-	motorized_equipment
-	cat_mechanized_equipment
+	wine_tech_category
 	
 	armor
 	cat_light_armor
@@ -103,6 +101,9 @@ technology_categories = {
 	cat_heavy_armor
 	tank_armor
 	tank_engine
+	train_tech
+	motorized_equipment
+	cat_mechanized_equipment
 	
 ##################Organisation
 	cat_bureaucracy

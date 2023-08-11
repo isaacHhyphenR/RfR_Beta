@@ -28,6 +28,7 @@ technologies = {
 	@mountsX = 4
 	@rationsX = 6
 	@fieldHospitalX = 9
+	@wineX = 12
 ###########################################################
 				#AGRICULTURE
 ###########################################################
@@ -50,15 +51,19 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		path = {
-			leads_to_tech = tech_field_hospital
-			research_cost_coeff = 1
-		}
-		path = {
 			leads_to_tech = synth_oil_experiments 
 			research_cost_coeff = 1
 		}
 		path = {
 			leads_to_tech = fuel_refining 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_field_hospital
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = wine_tech1 
 			research_cost_coeff = 1
 		}
 		
@@ -374,7 +379,7 @@ technologies = {
 			# }
 			# modifier = {
 				# NOT = {
-					# has_tech = carpentry1
+					# has_tech = agriculture1
 				# }
 				# factor = @AIbehindAgriculture
 			# }
@@ -442,7 +447,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry1
+					has_tech = agriculture1
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -502,7 +507,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry1
+					has_tech = agriculture1
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -552,7 +557,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry2
+					has_tech = agriculture2
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -603,7 +608,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry3
+					has_tech = agriculture3
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -650,7 +655,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry4
+					has_tech = agriculture4
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -714,7 +719,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry1
+					has_tech = agriculture1
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -766,7 +771,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry1
+					has_tech = agriculture1
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -819,7 +824,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry2
+					has_tech = agriculture2
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -872,7 +877,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry3
+					has_tech = agriculture3
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -920,7 +925,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry4
+					has_tech = agriculture4
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -981,7 +986,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry1
+					has_tech = agriculture1
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -1040,7 +1045,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry2
+					has_tech = agriculture2
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -1099,7 +1104,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry3
+					has_tech = agriculture3
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -1153,7 +1158,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry4
+					has_tech = agriculture4
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -1223,7 +1228,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry1
+					has_tech = agriculture1
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -1279,7 +1284,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry2
+					has_tech = agriculture2
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -1334,7 +1339,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry3
+					has_tech = agriculture3
 				}
 				factor = @AIbehindAgriculture
 			}
@@ -1384,7 +1389,86 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = carpentry4
+					has_tech = agriculture4
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+###########################################################
+				#WINE
+###########################################################
+	hidden_wine_unlocker = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+	}
+	wine_tech1 = {
+		hidden_modifier = { wine_gain_factor = 1 } ##without this it is 0
+		wine_gain_allowed = 1
+		# path = {
+			# leads_to_tech = fuel_refining2 
+			# research_cost_coeff = 1
+		# }
+		enable_building = {
+			building = vineyard
+			level = 5
+		}
+		
+		research_cost = 3
+		start_year = 3015
+		dependencies = { hidden_wine_unlocker = 1 }
+		folder = {
+			name = farming_folder
+			position = { x = @wineX y = @3015 }
+		}
+		
+		categories = {
+			farming
+			agriculture
+			agriculture_early
+			wine_tech_category
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 10
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 10
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture1
 				}
 				factor = @AIbehindAgriculture
 			}

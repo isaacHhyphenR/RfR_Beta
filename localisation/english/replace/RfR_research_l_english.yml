@@ -131,6 +131,8 @@
  cat_synth_oil_research: "Industrial Food Technology Research Speed"
  cat_synth_rubber: "Industrial Husbandry"
  cat_synth_rubber_research: "$cat_synth_rubber$ Technology Research Speed"
+ wine_tech_category: "Wine"
+ wine_tech_category_research: "Wine Research Speed"
  
  armor: "Cavalry Technology"
  armor_research: "Cavalry Technology Research Speed"
@@ -390,6 +392,9 @@
  fuel_refining4_desc: "We can preserve the food for longer by preparing it carefully."
  fuel_refining5: "Baking Techniques V"
  fuel_refining5_desc: "We can preserve the food for longer by preparing it carefully."
+ wine_tech1: "Vineyards"
+ wine_tech1_desc: "Only the finest vineyard and vintners can produce wine worthy of international sale."
+ hidden_wine_unlocker: "A spirit that allows wine production."
  
  motorised_infantry: "Wagons"
  motorised_infantry_desc: "Soldiers can advance much further when being pulled by a horse than when trudging on foot, though they must still get out to fight."

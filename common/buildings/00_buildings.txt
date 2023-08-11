@@ -182,5 +182,17 @@ buildings = {
 		value = 1
 		infrastructure_construction_effect = yes
 	}
+	
+	vineyard = {
+		base_cost = 8000
+		icon_frame = 13
+		max_level = 5
+		value = 1
+		shares_slots = yes
+		show_modifier = yes
+
+		infrastructure_construction_effect = yes
+		wine_gain = 100
+	}
 
 }
