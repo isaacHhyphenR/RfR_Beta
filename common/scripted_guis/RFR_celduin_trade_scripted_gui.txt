@@ -1,0 +1,11 @@
+scripted_gui = {
+
+	celduin_trade_GUI = {
+		context_type = player_context
+		window_name = "celduin_trade_ui_window"
+		parent_window_token = trade_tab
+		visible = { can_celduin_trade = yes }
+		properties = {
+		}
+	}
+}

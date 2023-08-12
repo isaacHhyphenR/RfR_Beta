@@ -1,8 +1,13 @@
-
 state={
 	id=310
 	name="STATE_310"
+	manpower=100000
+	state_category=town
 
+	provinces={ #23
+		597 732 1015 1061 1274 1380 1822 2808 3824 4341 4358 4805 4879 5314 6221 6244 6247 6248 6272 6284 6286 6302 6355 
+	}
+	
 	history={
 		owner = DOR
 		add_core_of = DOR
@@ -23,6 +28,7 @@ state={
 		}
 		buildings = {
 			infrastructure = 1
+			market = 1
 			1822 = {
 				naval_base = 3
 			}
@@ -30,13 +36,15 @@ state={
 				naval_base = 1
 			}
 		}
+		add_dynamic_modifier = { modifier = wine_country }
+##########################################TRADE
+		set_variable = { downstream_node = 116 } #riavod
+		set_variable = { upstream_node = 305 } #rinnavuld
+		set_variable = { node_index = 8 }
+		add_to_array = {
+			array = global.celduin_markets
+			value = THIS
+			index = 9
+		}
 	}
-
-	provinces={ #23
-		597 732 1015 1061 1274 1380 1822 2808 3824 4341 4358 4805 4879 5314 6221 6244 6247 6248 6272 6284 6286 6302 6355 
-	}
-	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
 }

@@ -1,0 +1,287 @@
+spriteTypes = {
+	##############CELDUIN TRADE
+	spriteType = {
+		name = "GFX_celduin_trade_background"
+		texturefile = "gfx/misc/celduin_trade_background.dds"
+	}
+	
+	##############aaaaa
+	spriteType = {
+		name = "GFX_white_star_9"
+		texturefile = "gfx/misc/white_star_9.dds"
+	}
+	spriteType = {
+		name = "GFX_red_star_9"
+		texturefile = "gfx/misc/red_star_9.dds"
+	}
+	spriteType = {
+		name = "GFX_ring_stars_9"
+		texturefile = "gfx/misc/ring_stars_9.dds"
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_ANU_wmt_strip"
+		texturefile = "gfx/misc/White_Mountain_Uprising/ANU_wmt_strip.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_HVK_wmt_strip"
+		texturefile = "gfx/misc/White_Mountain_Uprising/HVK_wmt_strip.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_NIF_wmt_strip"
+		texturefile = "gfx/misc/White_Mountain_Uprising/NIF_wmt_strip.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_TAW_wmt_strip"
+		texturefile = "gfx/misc/White_Mountain_Uprising/TAW_wmt_strip.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	##############FLAGS BUT FRAMES
+	spriteType = {
+		name = "GFX_double_frame_arnor_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_arnor.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_arthedain_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_arthedain.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_beornings_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_Beornings.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_cardolan_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_cardolan.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_dagorlad_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_dagorlad.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_dale_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_dale.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_dol_guldur_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_dol_guldur.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_dorwinion_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_dorwinion.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_druedain_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_druedain.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_erebor_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_erebor.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_ered_luin_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_ered_luin.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_fangorn_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_fangorn.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_gundabad_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_gundabad.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_harad_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_harad.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_harondor_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_harondor.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_khand_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_khand.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_khazad_dum_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_khazad_dum.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_lindon_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_lindon.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_lorien_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_lorien.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_mirvan_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_mirvan.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_misty_mountains_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_misty_mountains.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_rhudaur_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_rhudaur.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_rhun_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_rhun.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_rivendell_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_rivendell.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_shire_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_shire.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_woodland_realm_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_woodland_realm.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_umbar_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_umbar.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_andrast_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_andrast.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_druwaith_iaur_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_druwaith_iaur.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_dunland_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_dunland.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_enedwaith_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_enedwaith.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_eomer_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_eomer.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_eregion_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_eregion.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_gondor_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_gondor.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_isengard_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_isengard.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_mordor_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_mordor.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_saralain_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_saralain.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_double_frame_reunited_kingdom_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_reunited_kingdom.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_rohan_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_rohan.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	SpriteType = {
+		name = "GFX_double_frame_white_mountains_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_frames/flag_white_mountains.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+}

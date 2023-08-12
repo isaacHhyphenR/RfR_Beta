@@ -1,23 +1,27 @@
-
 state={
 	id=294
 	name="STATE_294"
+	manpower=100000
+	state_category=town
 
+	provinces={
+		138 284 294 346 801 1119 1558 2496 2684 3444 4005 4054 4411 4499 5265 6367 6456 6477 6495 6512 6528 6561 8724 
+	}
+	
 	history={
 		owner = MED
 		add_core_of = MED
 		buildings = {
 			infrastructure = 1
-
+			market = 1
 		}
-
+##########################################TRADE
+		set_variable = { upstream_node = 116 } #riavod
+		set_variable = { node_index = 11 }
+		add_to_array = {
+			array = global.celduin_markets
+			value = THIS
+			index = 14
+		}
 	}
-
-	provinces={
-		138 284 294 346 801 1119 1558 2496 2684 3444 4005 4054 4411 4499 5265 6367 6456 6477 6495 6512 6528 6561 8724 
-	}
-	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
 }

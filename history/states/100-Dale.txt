@@ -2,7 +2,7 @@ state = {
 	id = 100
 	name = "STATE_100" #Dale
 	state_category = large_city
-	manpower = 4620000	local_supplies=0.0
+	manpower = 4620000
 	resources = {
 		food = 8
 		cloth = 2
@@ -27,9 +27,19 @@ state = {
 			infrastructure = 2
 			arms_factory = 1
 			industrial_complex = 5
+			market = 1
 			5658 = {
 				bunker = 3
 			}
+		}
+##########################################TRADE
+		set_variable = { downstream_node = 102 } #laketown
+		set_variable = { upstream_node = 101 } #erebor
+		set_variable = { node_index = 1 }
+		add_to_array = {
+			array = global.celduin_markets
+			value = THIS
+			index = 1
 		}
 	}
 }

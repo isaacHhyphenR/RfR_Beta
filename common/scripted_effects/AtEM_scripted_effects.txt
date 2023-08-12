@@ -1,0 +1,40 @@
+calculate_all_wine_production = { #call in FOR
+	every_state = { #state wine production
+		limit = { check_variable = { modifier@wine_gain > 0 } }
+		set_temp_variable = { wine_production = modifier@wine_gain }
+		controller = {
+			set_temp_variable = { wine_factor = PREV.modifier@wine_gain_factor }
+			add_to_temp_variable = { wine_factor = modifier@wine_gain_factor }
+			multiply_temp_variable = { PREV:wine_production = wine_factor }
+			add_to_variable = { wine_produced = PREV:wine_production }
+		}
+	}
+	every_country = { #add wine to stockpile/market based on state production (NOT trade or offmap, those don't get exported)
+		limit = { OR = { check_variable = { modifier@wine_gain_allowed > 0 } } }  #only compute for those actually producing wine
+		#log = "[?modifier@wine_gain_factor]"
+		calculate_national_wine_production = yes
+	}
+}
+
+calculate_national_wine_production = { #call in tag
+	##compute export
+	if = { #only export if you actually have a market to export from
+		limit = { capital_scope = { market > 0 } }
+		set_variable = { wine_export = wine_produced }
+		multiply_variable = { wine_export = modifier@min_export }
+		subtract_from_variable = { wine_produced = wine_export }
+		set_variable = { wine_export_stokpile = wine_export } #how much is actually available for sale
+	}
+	##compute off-map gain, which is not exported
+	set_variable = { national_wine = modifier@national_wine_gain }
+	multiply_variable = { national_wine = modifier@wine_gain_factor }
+	add_to_variable = { wine_produced = national_wine }
+	set_variable = { wine_production_SHOWCASE = wine_produced } #for tooltips
+	##gain production
+	add_equipment_to_stockpile = {
+		type = wine_equipment_0
+		amount = var:wine_produced
+	}
+	set_variable = { wine_available = wine_produced }
+	set_variable = { wine_produced = 0 } #reset for tomorrow
+}

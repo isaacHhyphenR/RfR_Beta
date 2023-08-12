@@ -1,0 +1,285 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+
+
+observer_country = { ##Apply to FOR to more easily observe AI games
+	navy_intel_factor = 1000
+	civilian_intel_factor = 1000
+	army_intel_factor = 1000
+	decryption = 100
+	political_power_factor = -10
+}
+
+sabotaged_resources = {
+	remove_trigger = { 
+		has_resistance = no
+	}
+	
+	icon = GFX_modifiers_sabotaged_resource
+	
+	temporary_state_resource_food = sabotaged_food
+	temporary_state_resource_cloth = sabotaged_cloth
+	temporary_state_resource_iron = sabotaged_iron
+	temporary_state_resource_wood = sabotaged_wood
+	temporary_state_resource_mounts = sabotaged_mounts
+	temporary_state_resource_monsters = sabotaged_monsters
+}
+
+damaged_resources = {
+	
+	icon = GFX_modifiers_sabotaged_resource
+	
+	state_resources_factor = -0.5
+}
+
+trampled_crops = {
+	icon = GFX_sabotaged_food
+	state_resource_cost_food = 4
+	state_resource_cost_cloth = 2
+}
+slaughtered_herds = {
+	icon = GFX_sabotaged_mounts
+	state_resource_cost_mounts = 4
+	state_resource_cost_cloth = 2
+}
+
+autonomous_state = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_sabotaged_resource
+	
+	recruitable_population_factor = -0.5
+	local_building_slots_factor = -0.25
+	state_resources_factor = -0.25
+	state_production_speed_buildings_factor = -0.25
+}
+
+semi_autonomous_state = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_sabotaged_resource
+	
+	local_building_slots_factor = -0.25
+	state_resources_factor = -0.25
+	state_production_speed_buildings_factor = -0.25
+}
+	
+investment_shortage = {
+	icon = GFX_reduced_build_speed
+	state_production_speed_buildings_factor = -0.25
+}
+
+well_stocked_fortress = {
+	icon = GFX_modifiers_generic_defense
+	local_supplies_for_controller = 5
+}
+prepared_defence = {
+	icon = GFX_modifiers_generic_defense
+	enable = {
+		controller = {
+			OR = {
+				original_tag = GON
+				overlord = { original_tag = GON }
+			}
+		}
+	}
+	army_defence_factor = 0.2
+	custom_modifier_tooltip = only_active_when_controlled_by_GON_or_subject
+}
+prepared_resistance = {
+	icon = GFX_state_resistance
+	resistance_target = 0.2
+}
+########################TRADE
+
+
+########################GON
+stewards_authority_modifier = {
+	icon = GFX_idea_steward_authority
+	political_power_factor = steward_political_authority
+	conscription = steward_conscription_authority
+	consumer_goods_factor = steward_economy_authority
+	industrial_capacity_factory = steward_trade_authority
+	industrial_capacity_dockyard = steward_trade_authority
+	production_speed_buildings_factor = steward_trade_authority
+	steward_authority_mod_token = stewards_authority
+}
+########################ISN
+council_subject_research_bonus = {
+	enable = { always = yes }
+	research_speed_factor = var:research_bonus_from_subjects
+}
+
+isengardian_heritage_modifier = {
+	enable  = { always = yes }
+	icon = GFX_idea_isengardian_heritage
+	
+	local_resources_factor = var:ISN.stripMining
+	production_speed_buildings_factor = var:ISN.reinforceOuterDefences
+	industrial_capacity_factory = var:ISN.coordinatedEconomy
+	army_infantry_attack_factor = var:ISN.armTheLegions
+	global_building_slots_factor = var:ISN.surveyingTeams
+	army_infantry_defence_factor = var:ISN.whiteHandBlackIron
+	fortification_damage = var:ISN.harnessFire
+}
+
+########################MOR
+servants_of_sauron_modifier = {
+	enable  = { always = yes }
+	icon = GFX_idea_saurons_slaves_icon
+	
+	global_building_slots_factor = var:MOR.occupyDepletedMines
+	production_speed_buildings_factor = var:MOR.clearBrokenGround
+	infantry_equipment_production_cost = var:MOR.unceasingHammers
+	fuel_gain_factor = var:MOR.drainTheEarth
+	monthly_population = var:MOR.integrateRemainingTribes
+	monsters_from_refinery = var:MOR.meatForTheTrolls
+	army_armor_attack_factor = var:MOR.prioritizeBeastRations
+	command_power_gain_mult = var:MOR.rigidCommandStructure
+	army_infantry_attack_factor = var:MOR.standardizedWeapons
+	army_leader_max_divisions = var:MOR.marchingSeargents
+	infantry_width = var:MOR.trampleAllLivingThings
+	attrition = var:MOR.scavengeFromTheFallen
+}
+mor_savage_attack_state_modifier = {
+	icon = GFX_savage_attack_modifier
+	attacker_modifier = yes
+	army_attack_factor = 1
+	breakthrough_factor = 1
+}
+########################ROH
+can_send_volunteers_to_EOM = {
+	enable = { always = yes }
+	send_volunteers_tension = -100
+}
+ROH_cooperative_local_nobility = {
+	enable = { always = yes }
+
+	icon = GFX_cooperative_local_nobility
+	
+	local_manpower = 0.02
+}
+# ROH_ride_for_ruin_modifier = {
+	# enable = { always = yes }
+
+	# icon = GFX_idea_roh_riding_for_ruin
+	
+	# army_attack_factor = 0.25
+	# army_breakthrough_against_major_factor = 0.25
+	# army_breakthrough_against_minor_factor = 0.25
+# }
+		##FYRD
+local_fyrd_1 = {
+	enable = { always = yes }
+	icon = GFX_local_fyrd
+	local_fyrd_modifier = var:available_state_fyrd
+	custom_modifier_tooltip = fyrd_modifier_tooltip
+}
+local_fyrd_2 = {
+	enable = { always = yes }
+	icon = GFX_local_fyrd
+}
+local_fyrd_3 = {
+	enable = { always = yes }
+	icon = GFX_local_fyrd
+}
+local_fyrd_4 = {
+	enable = { always = yes }
+	icon = GFX_local_fyrd
+}
+local_fyrd_5 = {
+	enable = { always = yes }
+	icon = GFX_local_fyrd
+}
+local_fyrd_6 = {
+	enable = { always = yes }
+	icon = GFX_local_fyrd
+}
+local_fyrd_7 = {
+	enable = { always = yes }
+	icon = GFX_local_fyrd
+}
+local_fyrd_8 = {
+	enable = { always = yes }
+	icon = GFX_local_fyrd
+}
+local_fyrd_9 = {
+	enable = { always = yes }
+	icon = GFX_local_fyrd
+}
+local_fyrd_10 = {
+	enable = { always = yes }
+	icon = GFX_local_fyrd
+}
+raised_fyrd_1 = {
+	enable = { always = yes }
+	icon = GFX_raised_fyrd
+}
+raised_fyrd_2 = {
+	enable = { always = yes }
+	icon = GFX_raised_fyrd
+}
+raised_fyrd_3 = {
+	enable = { always = yes }
+	icon = GFX_raised_fyrd
+}
+raised_fyrd_4 = {
+	enable = { always = yes }
+	icon = GFX_raised_fyrd
+}
+raised_fyrd_5 = {
+	enable = { always = yes }
+	icon = GFX_raised_fyrd
+}
+raised_fyrd_6 = {
+	enable = { always = yes }
+	icon = GFX_raised_fyrd
+}
+raised_fyrd_7 = {
+	enable = { always = yes }
+	icon = GFX_raised_fyrd
+}
+raised_fyrd_8 = {
+	enable = { always = yes }
+	icon = GFX_raised_fyrd
+}
+raised_fyrd_9 = {
+	enable = { always = yes }
+	icon = GFX_raised_fyrd
+}
+raised_fyrd_10 = {
+	enable = { always = yes }
+	icon = GFX_raised_fyrd
+}
+
+
+under_siege_modifier = {
+	icon = GFX_under_siege_modifier
+	attrition_for_controller = 0.33
+	local_org_regain = -0.33
+}
+

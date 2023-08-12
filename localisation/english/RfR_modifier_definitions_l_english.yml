@@ -27,5 +27,7 @@
  prestige_modifier: "$prestige$"
  submission_strength_projection: "Strength Projection for $autonomy_blood_oath$ Submission"
  wine_gain: "Wine Production"
+ national_wine_gain: "Wine Production"
  wine_gain_factor: "Wine Production Factor"
+ national_wine_gain_factor: "Wine Production Factor"
  wine_gain_allowed: "Can Produce Wine"

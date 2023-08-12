@@ -2,9 +2,9 @@ state = {
 	id = 102
 	name = "STATE_102"
 	state_category = small_island
-	manpower = 679000	local_supplies=0.0
+	manpower = 679000
 	provinces = {
-		7804 
+		7804
 	}
 	history = {
 		3000.1.1 = { ##Extra building slot for proper categorization
@@ -20,6 +20,18 @@ state = {
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
+			market = 2
+		}
+##########################################TRADE
+		set_variable = { downstream_node = 306 } #sunnarina
+		set_variable = { upstream_towards_90 = 90 } #woodland realm
+		set_variable = { upstream_towards_100 = 100 } #dale
+		set_variable = { upstream_towards_101 = 100 } #dale--erebor
+		set_variable = { node_index = 2 }
+		add_to_array = {
+			array = global.celduin_markets
+			value = THIS
+			index = 3
 		}
 	}
 }

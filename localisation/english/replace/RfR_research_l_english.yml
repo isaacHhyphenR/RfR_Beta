@@ -478,3 +478,6 @@
  black_powder_equipment_0: "$black_powder$"
  black_powder_equipment_0_short: "$black_powder_equipment$"
  black_powder_equipment_0_desc: "$black_powder_desc$"
+
+ hidden_market_unlocker: "Markets cannot be manually constructed."
+ 

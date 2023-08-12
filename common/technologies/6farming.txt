@@ -1400,12 +1400,12 @@ technologies = {
 ###########################################################
 	hidden_wine_unlocker = {
 		research_cost = 1
+		hidden_modifier = { wine_gain_factor = 1 } ##without this it is 0
 		allow = {
 			always = no
 		}
 	}
 	wine_tech1 = {
-		hidden_modifier = { wine_gain_factor = 1 } ##without this it is 0
 		wine_gain_allowed = 1
 		# path = {
 			# leads_to_tech = fuel_refining2 
@@ -1434,37 +1434,8 @@ technologies = {
 		ai_will_do = {
 			factor = 5
 			modifier = {
-				has_war = yes
+				has_war = no
 				factor = 2
-			}
-			modifier = {
-				is_major = no
-				factor = 0.25
-			}
-			modifier = {
-				factor = 1.5
-				num_of_military_factories > 10
-			}
-			modifier = {
-				factor = 1.5
-				num_of_military_factories > 20
-			}
-			modifier = {
-				factor = 1.5
-				num_of_military_factories > 30
-			}
-
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 10
-			}
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 20
-			}
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 30
 			}
 			modifier = {
 				NOT = {
@@ -1472,6 +1443,16 @@ technologies = {
 				}
 				factor = @AIbehindAgriculture
 			}
+		}
+	}
+	hidden_market_unlocker = { ##to prevent manual building
+		research_cost = 1
+		allow = {
+			always = no
+		}
+		enable_building = {
+			building = market
+			level = 5
 		}
 	}
 }

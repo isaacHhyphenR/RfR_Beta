@@ -7,3 +7,7 @@ is_rhunnic_tag = {
 		original_tag = ULG
 	}
 }
+
+can_celduin_trade = {
+	capital_scope = { market > 0 }
+}

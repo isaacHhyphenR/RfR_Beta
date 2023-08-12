@@ -35,16 +35,30 @@ wine_gain = {
 	color_type = good
 	value_type = number
 	precision = 0
-	category = all
+	category = state
+	postfix = daily
+}
+national_wine_gain = {
+	color_type = good
+	value_type = number
+	precision = 0
+	category = country
 	postfix = daily
 }
 wine_gain_factor = {
 	color_type = good
 	value_type = percentage
 	precision = 2
-	category = country
+	category = state
 	postfix = none
 }
+# national_wine_gain_factor = {
+	# color_type = good
+	# value_type = percentage
+	# precision = 2
+	# category = country
+	# postfix = none
+# }
 wine_gain_allowed = {
 	color_type = good
 	value_type = yes_no

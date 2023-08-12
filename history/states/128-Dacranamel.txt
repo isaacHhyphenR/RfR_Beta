@@ -1,7 +1,11 @@
-
 state={
 	id=128
 	name="STATE_128"
+	manpower=3721000
+	state_category=large_city
+	provinces={
+		282 338 348 506 876 1700 2130 2251 2322 2342 2494 2791 3064 3261 3667 4179 4330 4395 4483 4814 5219 6539 6552 6553 6655 6693 6717 
+	}
 	resources={
 		food=2.000
 		cloth=4.000
@@ -20,16 +24,15 @@ state={
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 3
-
+			market = 1
 		}
-
+##########################################TRADE
+		set_variable = { upstream_node = 118 } #folyvuld
+		set_variable = { node_index = 11 }
+		add_to_array = {
+			array = global.celduin_markets
+			value = THIS
+			index = 12
+		}
 	}
-
-	provinces={
-		282 338 348 506 876 1700 2130 2251 2322 2342 2494 2791 3064 3261 3667 4179 4330 4395 4483 4814 5219 6539 6552 6553 6655 6693 6717 
-	}
-	manpower=3721000
-	buildings_max_level_factor=1.000
-	state_category=large_city
-	local_supplies=0.000
 }

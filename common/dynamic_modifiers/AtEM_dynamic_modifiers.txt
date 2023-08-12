@@ -1,0 +1,4 @@
+wine_country = { ##Apply to FOR to more easily observe AI games
+	icon = GFX_wine_country
+	wine_gain_factor = 1
+}

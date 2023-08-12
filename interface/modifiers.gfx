@@ -1,0 +1,154 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_savage_attack_modifier"
+		texturefile = "gfx/interface/modifiers/savage_attack.dds"
+	}
+	spriteType = {
+		name = "GFX_reduced_build_speed"
+		texturefile = "gfx/interface/modifiers/reduced_build_speed.dds"
+	}
+	spriteType = {
+		name = "GFX_sabotaged_monsters"
+		texturefile = "gfx/interface/modifiers/sabotaged_monsters.dds"
+	}
+	spriteType = {
+		name = "GFX_sabotaged_mounts"
+		texturefile = "gfx/interface/modifiers/sabotaged_mounts.dds"
+	}
+	spriteType = {
+		name = "GFX_sabotaged_iron"
+		texturefile = "gfx/interface/modifiers/sabotaged_iron.dds"
+	}
+	spriteType = {
+		name = "GFX_sabotaged_wood"
+		texturefile = "gfx/interface/modifiers/sabotaged_wood.dds"
+	}
+	spriteType = {
+		name = "GFX_sabotaged_cloth"
+		texturefile = "gfx/interface/modifiers/sabotaged_cloth.dds"
+	}
+	spriteType = {
+		name = "GFX_sabotaged_food"
+		texturefile = "gfx/interface/modifiers/sabotaged_food.dds"
+	}
+	spriteType = {
+		name = "GFX_local_nobility"
+		texturefile = "gfx/interface/modifiers/local_nobility.dds"
+	}
+	spriteType = {
+		name = "GFX_cooperative_local_nobility"
+		texturefile = "gfx/interface/modifiers/cooperative_local_nobility.dds"
+	}
+	spriteType = {
+		name = "GFX_uncooperative_local_nobility"
+		texturefile = "gfx/interface/modifiers/uncooperative_local_nobility.dds"
+	}
+	spriteType = {
+		name = "GFX_local_fyrd"
+		texturefile = "gfx/interface/modifiers/local_fyrd.dds"
+	}
+	spriteType = {
+		name = "GFX_raised_fyrd"
+		texturefile = "gfx/interface/modifiers/raised_fyrd.dds"
+	}
+	SpriteType = {
+		name = "GFX_dwarven_heritage"
+		texturefile = "gfx/interface/ideas/dwarven_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_elven_heritage"
+		texturefile = "gfx/interface/ideas/elven_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_numenorean_heritage"
+		texturefile = "gfx/interface/ideas/numenorean_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_rohirric_heritage"
+		texturefile = "gfx/interface/ideas/rohirric_heritage.dds"			
+	}
+	spriteType = {
+		name = "GFX_Andrast_state"
+		texturefile = "gfx/interface/modifiers/Andrast_state.dds"
+	}
+	spriteType = {
+		name = "GFX_Druwaith_Iaur_state"
+		texturefile = "gfx/interface/modifiers/Druwaith_Iaur_state.dds"
+	}
+	spriteType = {
+		name = "GFX_Dunland_state"
+		texturefile = "gfx/interface/modifiers/Dunland_state.dds"
+	}
+	spriteType = {
+		name = "GFX_Enedwaith_state"
+		texturefile = "gfx/interface/modifiers/Enedwaith_state.dds"
+	}
+	spriteType = {
+		name = "GFX_Eregion_state"
+		texturefile = "gfx/interface/modifiers/Eregion_state.dds"
+	}
+	spriteType = {
+		name = "GFX_Saralain_state"
+		texturefile = "gfx/interface/modifiers/Saralain_state.dds"
+	}
+	spriteType = {
+		name = "GFX_White_Mountains_state"
+		texturefile = "gfx/interface/modifiers/White_Mountains_state.dds"
+	}
+	spriteType = {
+		name = "GFX_Andrast_settlers"
+		texturefile = "gfx/interface/modifiers/Andrast_settlers.dds"
+	}
+	spriteType = {
+		name = "GFX_Druwaith_Iaur_settlers"
+		texturefile = "gfx/interface/modifiers/Druwaith_Iaur_settlers.dds"
+	}
+	spriteType = {
+		name = "GFX_Dunland_settlers"
+		texturefile = "gfx/interface/modifiers/Dunland_settlers.dds"
+	}
+	spriteType = {
+		name = "GFX_Enedwaith_settlers"
+		texturefile = "gfx/interface/modifiers/Enedwaith_settlers.dds"
+	}
+	spriteType = {
+		name = "GFX_Eregion_settlers"
+		texturefile = "gfx/interface/modifiers/Eregion_settlers.dds"
+	}
+	spriteType = {
+		name = "GFX_Saralain_settlers"
+		texturefile = "gfx/interface/modifiers/Saralain_settlers.dds"
+	}
+	spriteType = {
+		name = "GFX_White_Mountains_settlers"
+		texturefile = "gfx/interface/modifiers/White_Mountains_settlers.dds"
+	}
+	spriteType = {
+		name = "GFX_Gondor_settlers"
+		texturefile = "gfx/interface/modifiers/Gondor_settlers.dds"
+	}
+	spriteType = {
+		name = "GFX_elven_settlers"
+		texturefile = "gfx/interface/modifiers/elven_settlers.dds"
+	}
+	spriteType = {
+		name = "GFX_royal_road_modifier"
+		texturefile = "gfx/interface/modifiers/royal_road_modifier.dds"
+	}
+	spriteType = {
+		name = "GFX_royal_road_repaired_modifier"
+		texturefile = "gfx/interface/modifiers/royal_road_repaired_modifier.dds"
+	}
+	spriteType = {
+		name = "GFX_under_siege_modifier"
+		texturefile = "gfx/interface/modifiers/under_siege_modifier.dds"
+	}
+	spriteType = {
+		name = "GFX_PBGR"
+		texturefile = "gfx/interface/modifiers/PBGR.dds"
+	}
+	spriteType = {
+		name = "GFX_wine_country"
+		texturefile = "gfx/interface/modifiers/wine_country.dds"
+	}
+}

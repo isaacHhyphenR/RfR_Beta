@@ -1,8 +1,13 @@
 state={
 	id=118
 	name="STATE_118"
+	manpower=2830000
+	state_category=town
 	resources={
 		iron=12.000
+	}
+	provinces={ #16
+		63 611 1125 1912 2065 2115 2585 3092 3201 4638 4791 5259 6361 6426 6449 6464 
 	}
 
 	history={
@@ -20,6 +25,7 @@ state={
 		buildings = {
 			infrastructure = 2
 			arms_factory = 2
+			market = 1
 			1912 = {
 				naval_base = 4
 			}
@@ -27,13 +33,16 @@ state={
 				naval_base = 1
 			}
 		}
+		add_dynamic_modifier = { modifier = wine_country }
+##########################################TRADE
+		set_variable = { downstream_towards_128 = 128 } #dacranamel
+		set_variable = { downstream_towards_291 = 291 } #medloshad
+		set_variable = { upstream_node = 116 } #riavod
+		set_variable = { node_index = 10 }
+		add_to_array = {
+			array = global.celduin_markets
+			value = THIS
+			index = 11
+		}
 	}
-
-	provinces={ #16
-		63 611 1125 1912 2065 2115 2585 3092 3201 4638 4791 5259 6361 6426 6449 6464 
-	}
-	manpower=2830000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
 }

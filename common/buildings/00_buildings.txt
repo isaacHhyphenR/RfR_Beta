@@ -4,6 +4,17 @@ buildings = {
 	#    if provincial = yes, then show_on_map = X is amount per each province
 	#    if provincial = no, then show_on_map = X is amount per state
 
+	vineyard = {
+		base_cost = 8000
+		icon_frame = 13
+		max_level = 5
+		value = 1
+		shares_slots = yes
+		show_modifier = yes
+
+		infrastructure_construction_effect = yes
+		wine_gain = 10
+	}
 
 	infrastructure = {
 		base_cost = 6000
@@ -183,16 +194,19 @@ buildings = {
 		infrastructure_construction_effect = yes
 	}
 	
-	vineyard = {
+	market = {
 		base_cost = 8000
-		icon_frame = 13
+		icon_frame = 9
 		max_level = 5
 		value = 1
-		shares_slots = yes
+		shares_slots = no
 		show_modifier = yes
 
 		infrastructure_construction_effect = yes
-		wine_gain = 100
+		consumer_goods_factor = -0.01
+		trade_opinion_factor = 0.01
+		production_speed_buildings_factor = 0.05
+		local_building_slots = 1
 	}
 
 }

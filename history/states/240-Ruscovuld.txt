@@ -1,7 +1,13 @@
 state={
 	id=240
 	name="STATE_240"
+	manpower=100000
+	state_category=town
 
+	provinces={ #24
+		56 255 295 509 627 785 842 886 1098 1386 1891 2209 3452 3504 3594 5193 5999 6027 6051 6066 6087 6172 6189 6198 
+	}
+	
 	history={
 		owner = DOR
 		add_core_of = DOR
@@ -19,6 +25,7 @@ state={
 		}
 		buildings = {
 			infrastructure = 1
+			market = 1
 			627 = {
 				naval_base = 4
 			}
@@ -26,11 +33,14 @@ state={
 				naval_base = 1
 			}
 		}
+##########################################TRADE
+		set_variable = { downstream_node = 305 } #rinnavuld
+		set_variable = { upstream_node = 303 } #hamarsland
+		set_variable = { node_index = 6 }
+		add_to_array = {
+			array = global.celduin_markets
+			value = THIS
+			index = 7
+		}
 	}
-
-	provinces={ #24
-		56 255 295 509 627 785 842 886 1098 1386 1891 2209 3452 3504 3594 5193 5999 6027 6051 6066 6087 6172 6189 6198 
-	}
-	manpower=100000
-	state_category=town
 }

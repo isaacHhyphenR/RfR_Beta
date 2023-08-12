@@ -1,11 +1,15 @@
-
 state={
 	id=110
 	name="STATE_110"
+	manpower=1440000
+	state_category=town
 	resources={
 		food=12.000
 		cloth=8.000
 		mounts=4.000
+	}
+	provinces={
+		32 439 624 755 1281 1350 1796 1993 2636 2759 3232 3318 3762 4281 4338 4765 4803 4816 4821 4840 5871 5944 5985 6018 6042 6063 6105 6119 6123 6131 6138 6152 6157 
 	}
 
 	history={
@@ -14,16 +18,16 @@ state={
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
-
+			market = 1
 		}
-
+##########################################TRADE
+		set_variable = { downstream_node = 303 } #hamarsland
+		set_variable = { upstream_node = 306 } #sunnarina
+		set_variable = { node_index = 4 }
+		add_to_array = {
+			array = global.celduin_markets
+			value = THIS
+			index = 5
+		}
 	}
-
-	provinces={
-		32 439 624 755 1281 1350 1796 1993 2636 2759 3232 3318 3762 4281 4338 4765 4803 4816 4821 4840 5871 5944 5985 6018 6042 6063 6105 6119 6123 6131 6138 6152 6157 
-	}
-	manpower=1440000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
 }
