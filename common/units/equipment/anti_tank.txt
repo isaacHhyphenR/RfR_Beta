@@ -15,7 +15,16 @@ equipments = {
 
 		#Misc Abilities
 		reliability = 0.8
+		
+		lend_lease_cost = 1
+	}
 
+	anti_tank_equipment_0 = {
+		year = 3000
+
+		archetype = anti_tank_equipment
+		priority = 90
+		visual_level = 0
 		#Defensive Abilities
 		defense = 8 #equal to two handed
 		breakthrough = 0.7 #one hand of two handed
@@ -27,9 +36,6 @@ equipments = {
 		hard_attack = 10
 		ap_attack = 23
 		air_attack = 0
-
-		#Space taken in convoy
-		lend_lease_cost = 1
 				
 		build_cost_ic = 0.35 #same as two handed
 		resources = {
@@ -37,18 +43,15 @@ equipments = {
 			wood = 1
 		}
 	}
-
-	anti_tank_equipment_0 = {
-		year = 3000
-
-		archetype = anti_tank_equipment
-		priority = 90
-		visual_level = 0
-	}
 	
 	anti_tank_equipment_1 = {
 		year = 3015
-
+		
+		archetype = anti_tank_equipment
+		parent = anti_tank_equipment_0
+		priority = 90
+		visual_level = 1
+		
 		#Defensive Abilities
 		defense = 11
 		breakthrough = 1

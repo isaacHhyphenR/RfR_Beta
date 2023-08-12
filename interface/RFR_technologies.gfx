@@ -198,6 +198,18 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/engineering_equipment3.dds"
 	}
 	SpriteType = {
+		name = "GFX_engineering_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/engineering_equipment2.dds"
+	}
+	SpriteType = {
+		name = "GFX_engineering_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/engineering_equipment3.dds"
+	}
+	SpriteType = {
+		name = "GFX_engineering_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/engineering_equipment4.dds"
+	}
+	SpriteType = {
 		name = "GFX_tech_siege_engineers4_medium"
 		texturefile = "gfx/interface/technologies/engineering_equipment4.dds"
 	}

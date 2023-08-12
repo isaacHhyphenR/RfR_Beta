@@ -205,6 +205,7 @@ sub_units = {
 
 		need = {
 			anti_tank_equipment = 100
+			infantry_armor = 100
 		}
 		forest = {
 			attack = -0.2
@@ -271,6 +272,7 @@ sub_units = {
 		transport = motorized_equipment
 		need = {
 			anti_tank_equipment = 100
+			infantry_armor = 100
 			motorized_equipment = 35
 		}
 		

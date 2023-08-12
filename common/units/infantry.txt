@@ -85,8 +85,6 @@ sub_units = {
 	
 		need = {
 			infantry_equipment = 100
-		}
-		need = {
 			infantry_armor = 100
 		}
 	}

@@ -1,0 +1,1700 @@
+@trustForNoDLCAnnexation = 4
+
+core_greater_enedwaith_states_category = {
+	core_greater_enedwaith_state = {
+		icon = GFX_decision_hol_draw_up_staff_plans
+		custom_cost_trigger = {
+			set_temp_variable = { total_cost = 0 }
+			calculate_tribal_coring_cost = yes
+			add_to_temp_variable = { total_cost = -0.1 } ##so that the > works
+			has_political_power > var:total_cost
+		}
+		custom_cost_text = core_greater_enedwaith_state_cost
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		#days_remove = ROH.fyrdRecruitmentDays
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				NOT = { is_core_of = ROOT }
+				impassable = no
+				is_greater_enedwaith_state = yes
+			}
+		}
+		visible = {
+			can_tribally_subjugate = yes
+		}
+		available = {
+			FROM = { compliance > 70 }
+		}
+		complete_effect = {
+			hidden_effect = { #dynamic cost
+				if = { limit = { calculate_tribal_coring_cost = yes }
+					multiply_temp_variable = { total_cost = -1 }
+					add_political_power = var:total_cost
+				}
+			}
+			FROM = {
+				add_core_of = ROOT
+				##core bound impassable state
+				if = {
+					limit = { state = 134 } #Rafinfalas
+					137 = { add_core_of = ROOT } #Southern Ered Amrast
+				}
+				else_if = {
+					limit = { state = 135 } #Anulefnui
+					136 = { add_core_of = ROOT } #Central Ered Amrast
+				}
+				else_if = {
+					limit = { state = 139 } #W mts of Morthond
+					229 = { add_core_of = ROOT } #Tarlang
+				}
+				else_if = {
+					limit = { state = 140 } #Hairaverkien
+					167 = { add_core_of = ROOT } #Pukelhyrne
+				}
+				else_if = {
+					limit = { state = 226 } #Tawarteleh
+					227 = { add_core_of = ROOT } #Northern Ered Amrast
+				}
+					
+			}
+			custom_effect_tooltip = if_has_formed_enedwaith_formable_tooltip
+			effect_tooltip = {
+				remove_minor_cores_greater_enedwaith_state = yes
+			}
+			hidden_effect = {
+				if = { limit = { is_greater_enedwaith_formable = yes }
+					FROM = { remove_minor_cores_greater_enedwaith_state = yes }
+				}
+			}
+		}
+	}
+}
+
+demand_blood_oath_submission_category = {
+	DEBUG_ANNEX_STARTING_REGION = {
+		allowed = { is_greater_enedwaith_tag_no_tooltip = yes }
+		visible = { is_debug = yes }
+		fire_only_once = yes
+		complete_effect = {
+			every_other_country = {
+				limit = { tribal_cultural_similarity_tier_1 = yes }
+				PREV_annex_THIS_blood_oath_vassal = yes
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+	}
+	# demand_blood_oath_submission_decision = {
+		# fire_only_once = no
+		# icon = GFX_decision_blood_oath
+		# cost = 100
+		# ai_will_do = {
+			# base = 0
+			# modifier = {
+				# FROM = {
+					# ROOT = {
+						# set_temp_variable = { total_acceptance = 0 }
+						# AND = {
+							# calculate_blood_oath_submission_chance = yes
+							# check_variable = { total_acceptance > 0.6 }
+						# }
+					# }
+				# }
+				# add = 5
+			# }
+			# modifier = {
+				# FROM = {
+					# ROOT = {
+						# set_temp_variable = { total_acceptance = 0 }
+						# AND = {
+							# calculate_blood_oath_submission_chance = yes
+							# check_variable = { total_acceptance > 0.7 }
+						# }
+					# }
+				# }
+				# add = 25
+			# }
+			# modifier = {
+				# FROM = {
+					# ROOT = {
+						# set_temp_variable = { total_acceptance = 0 }
+						# AND = {
+							# calculate_blood_oath_submission_chance = yes
+							# check_variable = { total_acceptance > 0.8 }
+						# }
+					# }
+				# }
+				# add = 100
+			# }
+		# }
+		# available = {
+			# is_subject = NO
+			# FROM = {
+				# is_subject = NO
+				# NOT = { has_war_with = ROOT }
+			# }
+		# }
+		# visible = {
+			# can_tribally_subjugate = yes
+		# }
+		# target_trigger = {
+			# FROM = {
+				# is_greater_enedwaith_tag = yes
+				# if = { limit = { NOT = { ROOT = { original_tag = ISN } } } #Saruman can subjugate anyone
+					# any_neighbor_country = {
+						# OR = {
+							# tag = ROOT
+							# is_subject_of = ROOT
+						# }
+					# }
+				# }
+			# }
+			# NOT = { FROM = { is_subject_of = ROOT } }
+		# }
+		# highlight_states = {
+			# highlight_state_targets = {
+				# state = FROM.capital
+			# }
+			# highlight_color_while_active = 0
+			# highlight_color_before_active = 0
+		# }
+		# complete_effect = {
+			# FROM = {
+				# ROOT = { custom_effect_tooltip = display_blood_oath_submission_chance_tooltip }
+				# if = { limit = { ROOT = { has_country_leader = { character = ISN_saruman ruling_only = yes } } } #unique graphic for Saruman
+					# country_event = { id = blood_oath.0 hours = 1 }
+				# }
+				# else = {
+					# country_event = { id = blood_oath.1 hours = 1 }
+				# }
+			# }
+			# custom_effect_tooltip = blood_oath_vassal_info_tooltip
+		# }
+		# days_remove = 180 #cannot try again for 180 days
+	# }
+	annex_blood_oath_vassal_decision = {
+		allowed = { has_autonomy_DLC = no } ##Alternative to the autonomy system
+		cost = 50
+		ai_will_do = {
+			base = 10000
+		}
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				is_greater_enedwaith_tag = yes
+			}
+		}
+		available = {
+			FROM = {
+				ROOT = {
+					custom_trigger_tooltip = {
+						tooltip = enough_trust_to_annex_tribal_vassal_tooltip
+						set_temp_variable = { temp_trust = ROOT.modifier@prestige_modifier }
+						FROM = { add_to_temp_variable = { ROOT.temp_trust = ROOT.enedwaith_tag_trust_towards_this^THIS.tribal_array_position } }
+						check_variable = { temp_trust > @trustForNoDLCAnnexation }
+					}
+				}
+			}
+		}
+		complete_effect = {
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+			FROM = { ROOT_annex_THIS_blood_oath_vassal = yes }
+		}
+	}
+}
+
+@enemyMissionDays = 100
+
+expand_greater_enedwaith_category = {
+	@attackMissionWarSupportGood = 0.15
+	@attackMissionWarSupportBad = -0.15
+	ENE_attack_gondor_mission = {
+		allowed = { always = no }
+		available = {
+			any_country = {
+				original_tag = GON
+				has_war_with = ROOT
+			}
+		}
+		icon = GFX_decision_Gondor_flag
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = @enemyMissionDays
+		complete_effect = {
+			add_war_support = @attackMissionWarSupportGood
+		}
+		timeout_effect = {
+			add_war_support = @attackMissionWarSupportBad
+		}
+	}
+	ENE_attack_rohan_mission = {
+		allowed = { always = no }
+		available = {
+			any_country = {
+				original_tag = ROH
+				has_war_with = ROOT
+			}
+		}
+		icon = GFX_decision_Rohan_flag
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = @enemyMissionDays
+		complete_effect = {
+			add_war_support = @attackMissionWarSupportGood
+		}
+		timeout_effect = {
+			add_war_support = @attackMissionWarSupportBad
+		}
+	}
+	ENE_attack_arnor_mission = {
+		allowed = { always = no }
+		available = {
+			any_country = {
+				OR = {
+					original_tag = ART
+					original_tag = CAR
+					original_tag = RDR
+				}
+				has_war_with = ROOT
+			}
+		}
+		icon = GFX_arnor_flag_decision
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = @enemyMissionDays
+		complete_effect = {
+			add_war_support = @attackMissionWarSupportGood
+		}
+		timeout_effect = {
+			add_war_support = @attackMissionWarSupportBad
+		}
+	}
+	resettle_ancient_lands_decision = {
+		icon = GFX_decision_settle_territory
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				NOT = { is_core_of = ROOT }
+				if = { limit = { ROOT = { can_access_adorn_vale_branch = yes } }
+					is_core_of = ROH
+				}
+				else_if = { limit = { ROOT = { can_access_ENE_arnor_interaction = yes } }
+					is_core_of = CAR
+				}
+				else_if = { limit = { ROOT = { is_white_mountains_tag = yes } }
+					is_core_of = PNG
+				}
+				else_if = { limit = { ROOT = { is_andrast_tag = yes } }
+					is_core_of = ANF
+				}
+			}
+		}
+		allowed = { is_greater_enedwaith_tag = yes }
+		available = {
+		}
+		visible = { has_completed_focus = ENE_resettle_ancient_lands }
+		complete_effect = {
+			random_core_state = { add_manpower = -10000 }
+			if = { limit = { is_andrast_tag = yes }
+				FROM = {
+					add_dynamic_modifier = {
+						modifier = Andrast_settlers_modifier
+					}
+				}
+			}
+			else_if = { limit = { is_dunland_tag = yes }
+				FROM = {
+					add_dynamic_modifier = {
+						modifier = Dunland_settlers_modifier
+					}
+				}
+			}
+			else_if = { limit = { is_druwaith_iaur_tag = yes }
+				FROM = {
+					add_dynamic_modifier = {
+						modifier = Druwaith_Iaur_settlers_modifier
+					}
+				}
+			}
+			else_if = { limit = { is_enedwaith_tag = yes }
+				FROM = {
+					add_dynamic_modifier = {
+						modifier = Enedwaith_settlers_modifier
+					}
+				}
+			}
+			else_if = { limit = { is_eregion_tag = yes }
+				FROM = {
+					add_dynamic_modifier = {
+						modifier = Eregion_settlers_modifier
+					}
+				}
+			}
+			else_if = { limit = { is_white_mountains_tag = yes }
+				FROM = {
+					add_dynamic_modifier = {
+						modifier = White_Mountains_settlers_modifier
+					}
+				}
+			}
+		}
+	}
+}
+
+request_ENE_state_return_category = {
+	request_ENE_state_return = {
+		icon = GFX_decision_border_war
+		cost = 25
+		fire_only_once = no
+		days_remove = 180
+		ai_will_do = { #Will only request each state once
+			factor = 10
+			modifier = {
+				FROM = { has_state_flag = dont_request_from_ISN_again }
+				factor = 0
+			}
+		}
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_owned_by = ISN
+				is_greater_enedwaith_core = yes
+			}
+			has_completed_focus = ENE_request_ancestral_lands
+		}
+		visible = {
+			is_in_faction_with = ISN
+		}
+		complete_effect = {
+			FROM = { set_state_flag = dont_request_from_ISN_again }
+			ISN = { country_event = { id = blood_oath.5 hours = 1 } }
+			custom_effect_tooltip = if_they_accept_tooltip
+			effect_tooltip = { FROM = { request_ENE_state_return_effect = yes } }
+			custom_effect_tooltip = request_ENE_state_return_acceptance_chance_tooltip
+		}
+	}
+}
+
+ENE_send_tribute_to_barad_dur_decision_category = {
+	ENE_send_tribute_to_barad_dur_decision = {
+		icon = GFX_decision_barad_dur_tribute
+		fire_only_once = no
+		cost = 10
+		ai_will_do = {
+			base = 0.3
+			modifier = { #If they get nothing, they won't try again
+				has_country_flag = MOR_rejected_tribute
+				factor = 0
+			}
+		}
+		modifier = { consumer_goods_factor = -0.05 }
+		days_remove = 100
+		remove_effect = {
+			MOR = {
+				country_event = { id = blood_oath.6 hours = 1 }
+				random_core_state = {
+					prioritize = { 177 } #mordath/barad dur
+					limit = {
+						is_controlled_by = MOR
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+					}
+					set_state_flag = build_ene_tribute_here
+					effect_tooltip = {
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = ENE_send_tribute_to_barad_dur_decision_tooltip
+			effect_tooltip = { add_opinion_modifier = { target = FROM modifier = sent_tribute } }
+		}
+	}
+}
+
+repair_royal_road_decision_category = {
+	repair_royal_road_decision = {
+		icon = GFX_decision_generic_infrastructure
+		fire_only_once = yes
+		custom_cost_text = has_2_civ_factory_cost_tooltip
+		custom_cost_trigger = { num_of_civilian_factories_available_for_projects > 1 }
+		days_remove = 50
+		modifier = {
+			civilian_factory_use = 2
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				num_of_available_civilian_factories < 7
+				factor = 0
+			}
+		}
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				has_dynamic_modifier = { modifier = dilapidated_royal_road_modifier }
+			}
+		}
+		available = {
+			FROM = { infrastructure > 4 }
+		}
+		remove_effect = {
+			FROM = {
+				construct_royal_road_railway_in_state = yes
+				upgrade_state_category = yes
+				repair_royal_road_modifier_effect = yes
+			}
+		}
+	}
+}
+
+@adornValeLimitedWarDays = 45
+rfr_border_war_category = {
+	ROH_secure_the_adorn_vale = {
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		allowed = { original_tag = ROH }
+		visible = { hidden_trigger = { always = no } }
+		days_remove = @adornValeLimitedWarDays
+		modifier = {
+			defensive_war_stability_factor = 0.2
+			stability_factor = 0.15
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 69 #adorn vale
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+	}
+		
+	ENE_secure_the_adorn_vale = {
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		ai_will_do = {
+			base = 100
+		}
+		days_mission_timeout = @adornValeLimitedWarDays
+		is_good = yes
+		allowed = { always = no }
+		##If you take control of the Adorn Vale, you gain it & white peace
+		selectable_mission = no
+		available = {
+			controls_state = 69
+		}
+		complete_effect = {
+			clr_country_flag = limited_war_with_rohan
+			clear_variable = limited_war_enemy
+			69 = {
+				owner = {
+					save_global_event_target_as = lostAdornValeTarget
+					ROOT = { THIS_faction_peace_with_PREV_faction = yes }
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = conquered_our_border_region
+					}
+					set_truce = {
+						target = ROOT
+						days = 365
+					}
+				}
+			}
+			transfer_state = 69
+			hidden_effect = { news_event = { id = rfr_news.28 hours = 1 } }
+		}
+		##If the war goes on too long, it becomes a total war and follows normal rules. Rohan can raise fyrd
+		timeout_effect = {
+			clr_country_flag = limited_war_with_rohan
+			clear_variable = limited_war_enemy
+			custom_effect_tooltip = limited_war_escalated_tooltip
+			if = { limit = { var:limited_war_enemy = { original_tag = ROH } }
+				var:limited_war_enemy = { custom_effect_tooltip = rohan_can_raise_fyrd_now_tooltip }
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = {
+							tag = ROOT
+							is_in_faction_with = ROOT
+							69 = {
+								owner = {
+									tag = PREV.PREV
+									is_ally_with = PREV.PREV
+								}
+							}
+						}
+					}
+					news_event = { id = rfr_news.30 hours = 1 }
+				}
+			}
+		}
+		##If the enemy captures any core state, you lose war support & white peace
+		cancel_trigger = {
+			lose_adorn_vale_skirmish_trigger = yes
+		}
+		cancel_effect = {
+			clr_country_flag = limited_war_with_rohan
+			clear_variable = limited_war_enemy
+			69 = {
+				owner = {
+					save_global_event_target_as = heldAdornValeTarget
+					ROOT = { THIS_faction_peace_with_PREV_faction = yes }
+					set_truce = {
+						target = ROOT
+						days = 365
+					}
+				}
+			}
+			add_war_support = -0.1
+			add_political_power = -50
+			decrease_prestige_1 = yes
+			hidden_effect = { news_event = { id = rfr_news.29 hours = 1 } }
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 69 #adorn vale
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+	}
+	
+	GON_surrender_WHT_uprising_mission = {
+		icon = GFX_decision_generic_independence
+		fire_only_once = yes
+		ai_will_do = {
+			base = 100
+		}
+		days_mission_timeout = 30
+		is_good = no
+		allowed = { always = no }
+		##If you let WHT go, good job
+		selectable_mission = no
+		available = {
+			NOT = { has_war_with = WHT }
+		}
+		#You can still just win
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = WHT }
+				WHT = { has_capitulated = yes }
+			}
+		}
+		##If the war goes on too long, your people like war less
+		timeout_effect = {
+			add_war_support = -0.15
+		}
+	}
+	GON_surrender_WHT_uprising = {
+		fire_only_once = yes
+		icon = GFX_decision_generic_independence
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_active_mission = GON_surrender_WHT_uprising_mission
+				add = 100
+			}
+			modifier = {
+				count_triggers = {
+					amount = 3
+					has_country_flag = { flag = WHT_survived days > 365 }
+					var:uprising_enemy = {
+						casualties_inflicted_by = {
+							opponent = ROOT
+							thousands > 20
+						}
+					}
+					139 = { is_fully_controlled_by = ROOT }
+				}
+				add = 5
+			}
+		}
+		visible = { var:WHT.uprising_enemy = { tag = ROOT } has_war_with = WHT WHT = { NOT = { has_country_flag = uprising_completed } } }
+		complete_effect = {
+			every_country = {
+				limit = { OR = { tag = WHT is_ally_with = WHT } has_war_with = GON }
+				hidden_effect = { news_event = { id = rfr_news.52 hours = 1 } }
+				every_controlled_state = {
+					limit = { owner = { tag = ROOT is_ally_with = ROOT } }
+					set_state_owner_to = PREV
+				}
+			}
+			WHT = {
+				set_country_flag = uprising_completed
+				THIS_faction_peace_with_PREV_faction = yes
+			}
+		}
+	}
+}
+
+##Formable catagories contain 'attack enemy' missions
+form_Andrast_category = {
+	attack_Andrast_enemy_mission = {
+		allowed = { always = no }
+		available = {
+			NOT_ancestral_enemy_exists = yes
+		}
+		icon = GFX_generic_attack_decision_2
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = @enemyMissionDays
+		complete_effect = {
+			attack_ancestral_enemy_mission_complete_effect = yes
+		}
+		timeout_effect = {
+			attack_ancestral_enemy_mission_timeout_effect = yes
+		}
+	}
+}
+form_Druwaith_Iaur_category = {
+	attack_Druwaith_Iaur_enemy_mission = {
+		allowed = { always = no }
+		available = {
+			NOT_ancestral_enemy_exists = yes
+		}
+		icon = GFX_generic_attack_decision_2
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = @enemyMissionDays
+		complete_effect = {
+			attack_ancestral_enemy_mission_complete_effect = yes
+		}
+		timeout_effect = {
+			attack_ancestral_enemy_mission_timeout_effect = yes
+		}
+	}
+}
+form_Dunland_category = {
+	attack_Dunland_enemy_mission = {
+		allowed = { always = no }
+		available = {
+			NOT_ancestral_enemy_exists = yes
+		}
+		icon = GFX_generic_attack_decision_2
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = @enemyMissionDays
+		complete_effect = {
+			attack_ancestral_enemy_mission_complete_effect = yes
+		}
+		timeout_effect = {
+			attack_ancestral_enemy_mission_timeout_effect = yes
+		}
+	}
+}
+form_Enedwaith_category = {
+	attack_Enedwaith_enemy_mission = {
+		allowed = { always = no }
+		available = {
+			NOT_ancestral_enemy_exists = yes
+		}
+		icon = GFX_generic_attack_decision_2
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = @enemyMissionDays
+		complete_effect = {
+			attack_ancestral_enemy_mission_complete_effect = yes
+		}
+		timeout_effect = {
+			attack_ancestral_enemy_mission_timeout_effect = yes
+		}
+	}
+}
+form_Eregion_category = {
+	attack_Eregion_enemy_mission = {
+		allowed = { always = no }
+		available = {
+			NOT_ancestral_enemy_exists = yes
+		}
+		icon = GFX_generic_attack_decision_2
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = @enemyMissionDays
+		complete_effect = {
+			attack_ancestral_enemy_mission_complete_effect = yes
+		}
+		timeout_effect = {
+			attack_ancestral_enemy_mission_timeout_effect = yes
+		}
+	}
+}
+form_White_Mountains_category = {
+	attack_White_Mountains_enemy_mission = {
+		allowed = { always = no }
+		available = {
+			NOT_ancestral_enemy_exists = yes
+		}
+		icon = GFX_generic_attack_decision_2
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = @enemyMissionDays
+		complete_effect = {
+			attack_ancestral_enemy_mission_complete_effect = yes
+		}
+		timeout_effect = {
+			attack_ancestral_enemy_mission_timeout_effect = yes
+		}
+	}
+}
+
+AI_declare_tribal_wars_category = {
+	ENE_calculate_AI_justification_cost = {
+		icon = GFX_generic_attack_decision_2
+		fire_only_once = no
+		days_remove = var:ROOT.warTime
+		#lead_to
+		ai_will_do = {
+			base = 1
+			modifier = {
+				OR = {
+					has_war = yes
+					check_variable = { ROOT.mil_target = 0 }
+				}
+				factor = 0
+			}
+		}
+		visible = {
+			NOT = { check_variable = { var:mil_target = 0 } }
+		}
+		available = {
+			# if = {
+				# limit = { OR = { has_government = conquest has_government = melkorite } }
+				# always = yes
+			# }
+			# else_if = {
+				# limit = { has_government = opportunism }
+				# OR = {
+					# has_idea = enedwaith_unifier
+					# threat > 0.25
+				# }
+			# }
+			NOT = { threat < modifier@generate_wargoal_tension }
+		}
+		complete_effect = {
+			if = { #Tribal conquest wargoal
+				limit = { has_idea = enedwaith_unifier }
+				#DURATION
+				set_variable = { COST = 60 }
+				calculate_wargoal_decision_cost = yes
+				set_variable = { justification_decision_duration = COST }
+				#PP COST
+				set_variable = { COST = 12 }
+				calculate_wargoal_decision_cost = yes
+				set_variable = { justification_decision_cost = COST }
+
+			}
+			else = { #regular wargoal
+				#DURATION
+				set_variable = { COST = 250 }
+				calculate_wargoal_decision_cost = yes
+				set_variable = { justification_decision_duration = COST }
+				#PP COST
+				set_variable = { COST = 50 }
+				calculate_wargoal_decision_cost = yes
+				set_variable = { justification_decision_cost = COST }
+			}
+			set_country_flag = calculated_justification_cost
+			var:ROOT.mil_target = {
+				random_owned_state = {
+					limit = {
+						any_neighbor_state = {
+							is_owned_by = ROOT
+						}
+					}
+					set_variable = { ROOT.state_wargoal_target = THIS }
+				}
+				if = { limit = { check_variable = { ROOT.state_wargoal_target = 0 } } #backup
+					random_owned_state = {
+						set_variable = { ROOT.state_wargoal_target = THIS }
+					}
+				}
+			}
+		}
+	}
+	AI_create_wargoal_decision = {
+		icon = GFX_generic_attack_decision_2
+		fire_only_once = no
+		cost = var:ROOT.justification_decision_cost
+		days_remove = var:ROOT.justification_decision_duration
+		#war_with_on_remove = var:ROOT.mil_target
+		allowed = {
+		}
+		available = {
+			has_country_flag = calculated_justification_cost
+			NOT = { check_variable = { mil_target = 0 } }
+		}
+		ai_will_do = {
+			base = 2
+			modifier = { #more likely if stronger
+				var:ROOT.mil_target = {
+					ROOT = {
+						strength_ratio = {
+							ratio > 1.5
+							tag = PREV
+						}
+					}
+				}
+				add = 1
+			}
+			modifier = { #More likely if enemy holds cultural land
+				var:ROOT.mil_target = {
+					any_owned_state = { #state
+						ROOT = { #sending country
+							PREV = { #state
+								THIS_state_has_same_heritage_as_PREV_tag = yes
+							}
+						}
+					}
+				}
+				add = 1
+			}
+			modifier = { #Less likely if enemy has more faction members
+				set_temp_variable = { enemy_faction_members = ROOT.mil_target:num_faction_members }
+				check_variable = { enemy_faction_members > num_faction_members }
+				add = -1
+			}
+			modifier = { #Less likely if lowish war support
+				has_war_support < 0.7
+				add = -1
+			}
+			modifier = { #don't declare if weaker OR already at war OR already have wargoal OR low war support
+				OR = {
+					var:ROOT.mil_target = {
+						ROOT = {
+							OR = {
+								strength_ratio = {
+									ratio < 1.25
+									tag = PREV
+								}
+								has_wargoal_against = THIS
+							}
+						}
+					}
+					has_war = yes
+					
+					has_war_support < 0.5
+				}
+				factor = 0
+			}
+			modifier = { #won't do if ancestral enemy, since you get that wargoal from focus
+				check_variable = { var:ROOT.mil_target = var:ROOT.ancestral_enemy }
+				factor = 0
+			}
+			modifier = { #won't do if about to go to war together with Isengard
+				is_in_faction_with = ISN
+				date > 3017.1.1
+				factor = 0
+			}
+			modifier = { #won't do if is good & enemy isn't true evil
+				is_good = yes
+				var:ROOT.mil_target = { is_true_evil = no }
+				factor = 0
+			}
+			modifier = { #don't declare on ISN if you want ot ally them
+				has_country_flag = saruman_flag
+				var:ROOT.mil_target = { OR = { is_in_faction_with = ISN is_subject_of = ISN } }
+				factor = 0
+			}
+			modifier = { #DUN should take out DFN before going for HST
+				tag = DUN
+				213 = { is_controlled_by_ROOT_or_ally = no }
+				factor = 0
+			}
+			modifier = { #melkorites should stop getting in wars that make them join dumb factions
+				has_government = melkorite
+				var:ROOT.mil_target = {
+					OR = {
+						has_government = melkorite
+						is_in_faction_with = MOR
+						is_in_faction_with = ISN
+						AND = {
+							has_government = ISN
+							is_in_faction = no
+							date > 3015.6.1
+						}
+					}
+				}
+			}
+		}
+		complete_effect = {
+			var:ROOT.mil_target = {
+				random_owned_state = {
+					limit = {
+						any_neighbor_state = {
+							is_owned_by = ROOT
+						}
+					}
+					set_variable = { ROOT.state_wargoal_target = THIS }
+				}
+				if = { limit = { check_variable = { ROOT.state_wargoal_target = 0 } } #backup
+					random_owned_state = {
+						set_variable = { ROOT.state_wargoal_target = THIS }
+					}
+				}
+				add_ai_strategy = {
+					type = prepare_for_war
+					id = PREV
+					value = 20
+				}
+				set_variable = { warning_duration = ROOT.justification_decision_duration }
+				activate_targeted_decision = { decision = ENE_justification_warning target = ROOT }
+			}
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = PREV
+				value = 20
+			}
+			clr_country_flag = calculated_justification_cost
+		}
+		remove_effect = {
+			if = { #Tribal conquest wargoal
+				limit = { has_idea = enedwaith_unifier }
+				meta_effect = {
+					text = {
+						create_wargoal = {
+							type = tribal_invasion
+							generator = { [STATE_TO_TARGET] }
+							target = var:ROOT.mil_target
+						}
+					}
+					STATE_TO_TARGET = "[?ROOT.state_wargoal_target.GetID]"
+				}
+			}
+			else = { #Generic wargoal
+				meta_effect = {
+					text = {
+						create_wargoal = {
+							type = take_state
+							generator = { [STATE_TO_TARGET] }
+							target = var:ROOT.mil_target
+						}
+					}
+					STATE_TO_TARGET = "[?ROOT.state_wargoal_target.GetID]"
+				}
+			}
+		}
+	}
+	ENE_justification_warning = {
+		icon = GFX_generic_attack_decision_2
+		is_good = no
+		days_mission_timeout = var:warning_duration
+		allowed = { always = no }
+		target_trigger = {
+			always = no
+		}
+		war_with_target_on_remove = yes
+		available = { hidden_trigger = { always = no } }
+		fire_only_once = yes
+	}
+}
+
+ENE_spend_prestige_category = {
+	ENE_prestige_for_PP = {
+		icon = GFX_decision_generic_political_power
+		fire_only_once = yes
+		custom_cost_text = has_1_prestige_cost_tooltip
+		custom_cost_trigger = { check_variable = { prestige > 0 } }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				date > 3018.06.00 #probably done by now
+				add = 1
+			}
+		}
+		complete_effect = {
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = ENE_prestige_spirit } } }
+				add_dynamic_modifier = { modifier = ENE_prestige_spirit }
+			}
+			custom_effect_tooltip = ENE_prestige_for_PP_tooltip
+			add_to_variable = { prestige_PP = 0.2 }
+			hidden_effect = { decrease_prestige_1 = yes }
+		}
+	}
+	ENE_prestige_for_manpower = {
+		icon = GFX_decision_generic_reorganize_irregulars
+		fire_only_once = yes
+		custom_cost_text = has_1_prestige_cost_tooltip
+		custom_cost_trigger = { check_variable = { prestige > 0 } }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				date > 3018.06.00 #probably done by now
+				add = 1
+			}
+		}
+		complete_effect = {
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = ENE_prestige_spirit } } }
+				add_dynamic_modifier = { modifier = ENE_prestige_spirit }
+			}
+			custom_effect_tooltip = ENE_prestige_for_manpower_tooltip
+			add_to_variable = { prestige_manpower = 2500 }
+			hidden_effect = { decrease_prestige_1 = yes }
+		}
+	}
+	ENE_prestige_for_war_support = {
+		icon = GFX_decision_generic_civil_support
+		fire_only_once = yes
+		custom_cost_text = has_1_prestige_cost_tooltip
+		custom_cost_trigger = { check_variable = { prestige > 0 } }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				date > 3018.06.00 #probably done by now
+				add = 1
+			}
+		}
+		complete_effect = {
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = ENE_prestige_spirit } } }
+				add_dynamic_modifier = { modifier = ENE_prestige_spirit }
+			}
+			custom_effect_tooltip = ENE_prestige_for_war_support_tooltip
+			add_to_variable = { prestige_war_support = 0.15 }
+			hidden_effect = { decrease_prestige_1 = yes }
+		}
+	}
+	ENE_prestige_for_research = {
+		icon = GFX_decision_generic_research
+		fire_only_once = yes
+		custom_cost_text = has_1_prestige_cost_tooltip
+		custom_cost_trigger = { check_variable = { prestige > 0 } }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				date > 3018.06.00 #probably done by now
+				add = 1
+			}
+		}
+		complete_effect = {
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = ENE_prestige_spirit } } }
+				add_dynamic_modifier = { modifier = ENE_prestige_spirit }
+			}
+			custom_effect_tooltip = ENE_prestige_for_research_tooltip
+			add_to_variable = { prestige_research = 0.1 }
+			hidden_effect = { decrease_prestige_1 = yes }
+		}
+	}
+	ENE_prestige_for_autonomy = {
+		icon = GFX_decision_hol_war_on_pacifism
+		fire_only_once = yes
+		custom_cost_text = has_1_prestige_cost_tooltip
+		custom_cost_trigger = { check_variable = { prestige > 0 } }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				date > 3018.06.00 #probably done by now
+				add = 1
+			}
+			modifier = {
+				num_subjects < 1
+				factor = 0
+			}
+		}
+		complete_effect = {
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = ENE_prestige_spirit } } }
+				add_dynamic_modifier = { modifier = ENE_prestige_spirit }
+			}
+			if = { limit = { has_autonomy_DLC = yes }
+				custom_effect_tooltip = ENE_prestige_for_autonomy_tooltip
+				add_to_variable = { prestige_autonomy = -0.5 }
+			}
+			else = {
+				every_subject_country = {
+					hidden_effect = {
+						increase_THIS_trust_towards_PREV = yes
+						increase_THIS_trust_towards_PREV = yes
+					}
+					custom_effect_tooltip = increase_THIS_trust_towards_PREV_tooltip_2
+				}
+			}
+			hidden_effect = { decrease_prestige_1 = yes }
+		}
+	}
+	ENE_prestige_for_compliance = {
+		icon = GFX_decision_oppression
+		fire_only_once = yes
+		custom_cost_text = has_1_prestige_cost_tooltip
+		custom_cost_trigger = { check_variable = { prestige > 0 } }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				date > 3018.06.00 #probably done by now
+				add = 1
+			}
+		}
+		complete_effect = {
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = ENE_prestige_spirit } } }
+				add_dynamic_modifier = { modifier = ENE_prestige_spirit }
+			}
+			custom_effect_tooltip = ENE_prestige_for_compliance_tooltip
+			add_to_variable = { prestige_compliance = 0.05 }
+			hidden_effect = { decrease_prestige_1 = yes }
+		}
+	}
+}
+
+rfr_ideology_switch_category = {
+	spread_songs_of_freedom = {
+		fire_only_once = yes
+		icon = GFX_decision_SWI_swiss_democratic_tradition_campaign
+		cost = 50
+		ai_will_do = {
+			base = 0
+			modifier = {
+				var:ROOT.diplo_target = { tag = FROM }
+				add = 10
+			}
+			modifier = {
+				FROM = { has_government = freedom }
+				factor = 0
+			}
+		}
+		available = {
+			FROM = {
+				NOT = { has_idea = freedom_influence }
+			}
+		}
+		visible = {
+			has_completed_focus = ENE_commission_songs_of_alliance
+		}
+		target_trigger = {
+			FROM = {
+				is_greater_enedwaith_tag = yes
+				any_neighbor_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM.capital
+			}
+			highlight_color_while_active = 0
+			highlight_color_before_active = 0
+		}
+		complete_effect = {
+			FROM = {
+				add_timed_idea = {
+					idea = freedom_influence
+					days = 365
+				}
+			}
+		}
+	}
+}
+
+influence_white_mountain_uprising_category = {
+	@supportDays = 60
+	send_WHT_weapons = {
+		fire_only_once = no
+		icon = GFX_infantry_equipment_text_icon
+		custom_cost_text = has_500_infantry_equipment_cost_tooltip
+		custom_cost_trigger = { has_equipment = { infantry_equipment > 499 } }
+		ai_will_do = {
+			base = 1
+			modifier = { #they're better off than us
+				set_temp_variable = { equip = WHT.num_equipment@infantry_equipment }
+				check_variable = { num_equipment@infantry_equipment < equip }
+				factor = 0
+			}
+			modifier = { #AI will not bankrupt self
+				has_equipment = { infantry_equipment < 1000 }
+				factor = 0
+			}
+			modifier = {
+				has_opinion = { target = WHT value > 60 }
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = { target = WHT value < 10 }
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = { target = WHT value < -10 }
+				factor = 0
+			}
+			modifier = {
+				has_country_flag = diplomatic_flag
+				factor = 2
+			}
+			modifier = {
+				has_war_with = var:WHT.uprising_enemy
+				factor = 1.5
+			}
+			modifier = {
+				has_war_with_major = yes
+				factor = 0.5
+			}
+			modifier = {
+				WHT = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 0.5
+			}
+			modifier = {
+				is_ally_with = var:WHT.uprising_enemy
+				factor = 0
+			}
+			modifier = { #don't spam
+				has_country_flag = supported_WHT
+				factor = 0
+			}
+		}
+		visible = { NOT = { original_tag = WHT } }
+		complete_effect = {
+			set_country_flag = {
+				flag = supported_WHT
+				days = @supportDays
+				value = 1
+			}
+			increase_white_mountain_influence_1 = yes
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+			if = { limit = { country_exists = WHT } #WHT gets full benefit if spawned
+				WHT = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						producer = ROOT
+						amount = 500
+					}
+				}
+			}
+			else = { #otherwise gets half benefit, and gains resistance
+				WHT = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						producer = ROOT
+						amount = 250
+					}
+				}
+				139 = { increase_white_mountain_resistance_target = yes }
+			}
+		}
+	}
+	send_WHT_manpower = {
+		fire_only_once = no
+		icon = GFX_decision_generic_manpower
+		custom_cost_text = has_5000_manpower_cost_tooltip
+		custom_cost_trigger = { has_manpower > 4999 }
+		ai_will_do = {
+			base = 1
+			modifier = { #they're better off than us
+				set_temp_variable = { mp = WHT.manpower }
+				check_variable = { manpower < mp }
+				factor = 0
+			}
+			modifier = { #AI will not bankrupt self
+				has_manpower < 10000
+				factor = 0
+			}
+			modifier = {
+				has_opinion = { target = WHT value > 60 }
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = { target = WHT value < 10 }
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = { target = WHT value < -10 }
+				factor = 0
+			}
+			modifier = {
+				has_country_flag = diplomatic_flag
+				factor = 2
+			}
+			modifier = {
+				has_war_with = var:WHT.uprising_enemy
+				factor = 1.5
+			}
+			modifier = {
+				has_war_with_major = yes
+				factor = 0.5
+			}
+			modifier = {
+				WHT = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 0.5
+			}
+			modifier = {
+				is_ally_with = var:WHT.uprising_enemy
+				factor = 0
+			}
+			modifier = { #don't spam
+				has_country_flag = supported_WHT
+				factor = 0
+			}
+		}
+		visible = { NOT = { original_tag = WHT } }
+		complete_effect = {
+			set_country_flag = {
+				flag = supported_WHT
+				days = @supportDays
+				value = 1
+			}
+			increase_white_mountain_influence_1 = yes
+			add_manpower = -5000
+			if = { limit = { country_exists = WHT } #WHT gets full benefit if spawned
+				WHT = {
+					add_manpower = 5000
+				}
+			}
+			else = { #otherwise gets half benefit, and gains resistance
+				WHT = {
+					add_manpower = 2500
+				}
+				139 = { increase_white_mountain_resistance_target = yes }
+			}
+		}
+	}
+	send_WHT_pp = {
+		fire_only_once = no
+		icon = GFX_decision_generic_political_power
+		custom_cost_text = has_50_pp_cost_tooltip
+		custom_cost_trigger = { has_political_power > 49 }
+		ai_will_do = {
+			base = 1
+			modifier = { #they're better off than us
+				set_temp_variable = { pp = WHT.political_power }
+				check_variable = { political_power < pp }
+				factor = 0
+			}
+			modifier = { #AI will not bankrupt self
+				has_political_power < 100
+				factor = 0
+			}
+			modifier = {
+				has_opinion = { target = WHT value > 60 }
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = { target = WHT value < 10 }
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = { target = WHT value < -10 }
+				factor = 0
+			}
+			modifier = {
+				has_country_flag = diplomatic_flag
+				factor = 2
+			}
+			modifier = {
+				has_war_with = var:WHT.uprising_enemy
+				factor = 1.5
+			}
+			modifier = {
+				has_war_with_major = yes
+				factor = 0.5
+			}
+			modifier = {
+				WHT = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 0.5
+			}
+			modifier = {
+				is_ally_with = var:WHT.uprising_enemy
+				factor = 0
+			}
+			modifier = { #don't spam
+				has_country_flag = supported_WHT
+				factor = 0
+			}
+		}
+		visible = { NOT = { original_tag = WHT } }
+		complete_effect = {
+			set_country_flag = {
+				flag = supported_WHT
+				days = @supportDays
+				value = 1
+			}
+			increase_white_mountain_influence_1 = yes
+			add_political_power = -50
+			if = { limit = { country_exists = WHT } #WHT gets full benefit if spawned
+				WHT = {
+					add_political_power = 50
+				}
+			}
+			else = { #otherwise gets half benefit, and gains resistance
+				WHT = {
+					add_political_power = 25
+				}
+				139 = { increase_white_mountain_resistance_growth = yes }
+			}
+		}
+	}
+	
+	send_WHT_xp = {
+		fire_only_once = no
+		icon = GFX_army_experience
+		custom_cost_text = has_25_army_xp_cost_tooltip
+		custom_cost_trigger = { has_army_experience > 24 }
+		ai_will_do = {
+			base = 1
+			modifier = { #they're better off than us
+				set_temp_variable = { xp = WHT.army_experience }
+				check_variable = { army_experience < xp }
+				factor = 0
+			}
+			modifier = { #AI will not bankrupt self
+				has_political_power < 100
+				factor = 0
+			}
+			modifier = {
+				has_opinion = { target = WHT value > 60 }
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = { target = WHT value < 10 }
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = { target = WHT value < -10 }
+				factor = 0
+			}
+			modifier = {
+				has_country_flag = diplomatic_flag
+				factor = 2
+			}
+			modifier = {
+				has_war_with = var:WHT.uprising_enemy
+				factor = 1.5
+			}
+			modifier = {
+				has_war_with_major = yes
+				factor = 0.5
+			}
+			modifier = {
+				WHT = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 0.5
+			}
+			modifier = {
+				is_ally_with = var:WHT.uprising_enemy
+				factor = 0
+			}
+			modifier = { #don't spam
+				has_country_flag = supported_WHT
+				factor = 0
+			}
+		}
+		visible = { NOT = { original_tag = WHT } }
+		complete_effect = {
+			set_country_flag = {
+				flag = supported_WHT
+				days = @supportDays
+				value = 1
+			}
+			increase_white_mountain_influence_1 = yes
+			army_experience = -25
+			if = { limit = { country_exists = WHT } #WHT gets full benefit if spawned
+				WHT = {
+					army_experience = 25
+				}
+			}
+			else = { #otherwise gets half benefit, and gains resistance
+				WHT = {
+					army_experience = 12.5
+				}
+				139 = { increase_white_mountain_resistance_growth = yes }
+			}
+		}
+	}
+	##################################DECISIONS FOR THE REBELS
+	WHT_invite_builders = {
+		fire_only_once = yes
+		icon = GFX_decision_generic_construction
+		cost = 150
+		ai_will_do = {
+			base = 5
+		}
+		visible = { original_tag = WHT }
+		available = {
+			NOT = { has_country_flag = uprising_completed }
+			any_controlled_state = {
+				is_core_of = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = no
+				}
+			}
+		}
+		complete_effect = {
+			random_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	WHT_invite_smiths = {
+		fire_only_once = yes
+		icon = GFX_decision_generic_industry
+		cost = 150
+		ai_will_do = {
+			base = 10
+		}
+		visible = { original_tag = WHT }
+		available = {
+			NOT = { has_country_flag = uprising_completed }
+			any_controlled_state = {
+				is_core_of = ROOT
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = no
+				}
+			}
+		}
+		complete_effect = {
+			random_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	WHT_invite_warriors = {
+		fire_only_once = yes
+		icon = GFX_decision_generic_military
+		cost = 150
+		ai_will_do = {
+			base = 5
+		}
+		visible = { original_tag = WHT }
+		available = { NOT = { has_country_flag = uprising_completed } }
+		complete_effect = {
+			add_manpower = 7500
+		}
+	}
+
+	WHT_mechanic_explanation = {
+		fire_only_once = no
+		icon = GFX_decision_generic_decision
+		ai_will_do = {
+			base = 0
+		}
+		# complete_effect = {
+			# news_event = { id = rfr_info.1 }
+		# }
+	}
+}
+
+rfr_border_war_category = {
+	@gwathloBorderWarDays = 35
+	border_war_tharbad_warning = {
+		icon = GFX_decision_border_war
+		is_good = no
+		days_mission_timeout = @gwathloBorderWarDays
+		war_with_target_on_remove = yes
+		war_with_target_on_complete = yes
+		allowed = { always = no }
+		available = { hidden_trigger = { always = no } }
+		target_trigger = {
+			always = no
+		}
+		fire_only_once = yes
+		highlight_states = {
+			highlight_state_targets = {
+				state = 219 ##Northern tharbad
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+	}
+	border_war_minhiriath_warning = {
+		icon = GFX_decision_border_war
+		is_good = no
+		days_mission_timeout = @gwathloBorderWarDays
+		war_with_target_on_remove = yes
+		war_with_target_on_complete = yes
+		allowed = { always = no }
+		available = { hidden_trigger = { always = no } }
+		target_trigger = {
+			always = no
+		}
+		fire_only_once = yes
+		highlight_states = {
+			highlight_state_targets = {
+				state = 39 ##Minhiriath
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+	}
+}
+
+WLF_increase_ROH_compliance_category = {
+	WLF_increase_ROH_state_compliance = {
+		icon = GFX_decision_generic_speech
+		cost = 30
+		fire_only_once = yes
+		ai_will_do = { #Will only request each state once
+			base = 5
+			modifier = {
+				FROM = { has_state_flag = folde_state }
+				factor = 2
+			}
+			modifier = {
+				FROM = { compliance > 50 }
+				factor = 0
+			}
+		}
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				NOT = { is_core_of = ROOT }
+			}
+		}
+		complete_effect = {
+			FROM = { add_compliance = 25 }
+		}
+	}
+}
