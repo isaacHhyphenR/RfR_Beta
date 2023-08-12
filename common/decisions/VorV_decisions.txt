@@ -405,7 +405,7 @@ ENE_send_tribute_to_barad_dur_decision_category = {
 				factor = 0
 			}
 		}
-		modifier = { consumer_goods_factor = -0.05 }
+		modifier = { consumer_goods_factor = 0.05 }
 		days_remove = 100
 		remove_effect = {
 			MOR = {
