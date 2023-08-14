@@ -5,7 +5,7 @@ buildings = {
 	#    if provincial = no, then show_on_map = X is amount per state
 
 	vineyard = {
-		base_cost = 8000
+		base_cost = 7000
 		icon_frame = 13
 		max_level = 5
 		value = 1

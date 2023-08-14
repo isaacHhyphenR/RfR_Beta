@@ -67,8 +67,14 @@ on_actions = {
 				}
 			}
 		}
+		effect = { #party ideology index
+			every_possible_country = {
+				set_ideology_index = yes
+			}
+		}
 		effect = {
 			FOR = { #make day 1 wine
+				set_variable = { global.export_size = 8 }
 				calculate_all_wine_production = yes
 			}
 		}
@@ -76,6 +82,11 @@ on_actions = {
 	on_daily_FOR = { #wine & precious metals gain
 		effect = {
 			calculate_all_wine_production = yes
+		}
+	}
+	on_ruling_party_change = { #party ideology index
+		effect = {
+			set_ideology_index = yes
 		}
 	}
 }

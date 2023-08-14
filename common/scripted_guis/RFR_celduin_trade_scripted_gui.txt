@@ -1,11 +1,82 @@
 scripted_gui = {
-
 	celduin_trade_GUI = {
 		context_type = player_context
 		window_name = "celduin_trade_ui_window"
 		parent_window_token = trade_tab
 		visible = { can_celduin_trade = yes }
 		properties = {
+			flag1 = {
+				image = "[first_export_flag]"
+				frame = var:global.exporter_ideology_array^0
+			}
+		}
+		effects = {
+			increase_export_1_click = {
+				var:global.exporter_array^0 = {
+					#calculate how much actually transfers in this export
+					set_temp_variable = { TEMP_export_size = global.export_size }
+					log = "[?global.export_size] [?TEMP_export_size]"
+					clamp_temp_variable = { var = TEMP_export_size max = global.exporter_available_array^0 }
+					##costs factory & convoys
+					add_offsite_building = { type = industrial_complex level = 1 }
+					##transfers wine towards you
+					add_to_variable = { wine_exported = TEMP_export_size }
+					subtract_from_variable = { wine_export_available = TEMP_export_size }
+					ROOT = {
+						add_to_variable = { wine_imported = TEMP_export_size }
+						add_to_variable = { wine_imported@PREV = TEMP_export_size }
+						add_to_variable = { import_routes = 1 }
+						hidden_effect = {
+							if = { limit = { NOT = { has_dynamic_modifier = { modifier = import_cost } } }
+								add_dynamic_modifier = { modifier = import_cost }
+							}
+						}
+						custom_effect_tooltip = cost_civ_for_import
+					}
+					##adds prosperity to the markets in between
+					set_temp_variable = { current_node = ROOT.capital }
+					set_temp_variable = { nodes_left = current_node:node_index }
+					subtract_from_temp_variable = { nodes_left = capital:node_index }
+					if = { #traces path from buyer capital to seller capital
+						limit = { check_variable = { current_node:node_index < capital:node_index } }
+						multiply_temp_variable = { nodes_left = -1 }
+						while_loop_effect = {
+							limit = { check_variable = { nodes_left > 0 } }
+							subtract_from_temp_variable = { nodes_left = 1 }
+							log = "[?nodes_left] [?current_node.GetName] [?capital.GetName]"
+							#pick which way to go in forks
+							if = {
+								limit = { check_variable = { current_node:downstream_node = null } }
+								meta_effect = {
+									text = {
+										set_temp_variable = { current_node = current_node:downstream_towards_[DESTINATION] }
+									}
+									DESTINATION = "[?capital.GetID]"
+								}
+							}
+							#or just go straight
+							else = {
+								set_temp_variable = { current_node = current_node:downstream_node }
+							}
+						}
+					}
+					#updates display
+					subtract_from_variable = { global.exporter_available_array^0 = TEMP_export_size }
+				}
+			}
+		}
+		triggers = {
+			increase_export_1_click_enabled = {
+				custom_trigger_tooltip = {
+					tooltip = cant_import_from_yourself
+					NOT = { check_variable = { global.exporter_array^0 = ROOT } }
+				}
+				custom_trigger_tooltip = {
+					tooltip = first_export_wine_remaining_trigger
+					check_variable = { global.exporter_available_array^0 > 0 }
+				}
+				num_of_civilian_factories_available_for_projects > 0
+			}
 		}
 	}
 }

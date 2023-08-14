@@ -1,0 +1,121 @@
+guiTypes = {
+	
+	containerWindowType = {
+		name = "celduin_trade_ui_window"
+		position = { x = 550 y = 75 }
+		size = { width = 100% height = 100% }
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_celduin_trade_background"
+		}
+		@exportY = 80
+		@availableY = 106
+		@importY = 132
+		###############Subtitles
+		containerWindowType = {
+			name = "subtitles"
+			position = { x = 20 y = 26 }
+			instantTextBoxType = {
+				name = "wine_export_subtitle"
+				position = { x = 0 y = @exportY  }
+				font = "hoi_18mbs"
+				text = "wine_export_subtitle"
+				format = center
+				maxwidth = 75
+			}
+			instantTextBoxType = {
+				name = "wine_export_available_subtitle"
+				position = { x = 0 y = @availableY }
+				font = "hoi_18mbs"
+				text = "wine_export_available_subtitle"
+				format = center
+				maxwidth = 75
+			}
+			instantTextBoxType = {
+				name = "our_wine_imported_subtitle"
+				position = { x = 0 y = @importY }
+				font = "hoi_18mbs"
+				text = "our_wine_imported_subtitle"
+				format = center
+				maxwidth = 75
+			}
+		}
+		###############All of the exporters
+		containerWindowType = {
+			name = "list_of_exports"
+			position = { x = 105 y = 25 }
+			size = { width = 100% height = 100% }
+			@flagY = 10
+			@frameY = 0
+			@buttonY = 160
+			@minusX = 0
+			@plusX = 55
+		#############################################1
+			containerWindowType = {
+				name = "exporter1"
+				position = { x = 0 y = 0 }
+				size = { width = 100% height = 100% }
+				iconType = {
+					name = "flag1"
+					position = { x = 10 y = @flagY }
+					Orientation = "UPPER_LEFT"
+					pdx_tooltip = export_country_1
+				}
+				iconType = {
+					name = "flag_frame1"
+					quadTextureSprite = "GFX_large_flag_frame"
+					position = { x = 0 y = @frameY }
+					Orientation = "UPPER_LEFT"
+				}
+				iconType = {
+					name = "text_background1"
+					position = { x = -4 y = 77 }
+					quadTextureSprite = "GFX_trade_gui_text_background"
+					frame = 1
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name ="first_wine_export"
+					position = { x = 0 y = @exportY  }
+					font = "hoi_18mbs"
+					text = "first_wine_export"
+					format = center
+					maxwidth = 104
+				}
+				instantTextBoxType = {
+					name = "first_wine_export_available"
+					position = { x = 0 y = @availableY  }
+					font = "hoi_18mbs"
+					text = "first_wine_export_available"
+					format = center
+					maxwidth = 104
+				}
+				instantTextBoxType = {
+					name = "first_wine_import"
+					position = { x = 0 y = @importY  }
+					font = "hoi_18mbs"
+					text = "first_wine_import"
+					format = center
+					maxwidth = 104
+				}
+				buttonType = {
+					name = "decrease_export_1"
+					position = { x = @minusX y = @buttonY }
+					quadTextureSprite = "GFX_minus_button_strip"
+					frame = 1
+					Orientation = "UPPER_LEFT"
+					pdx_tooltip = decrease_export_1
+				}
+				buttonType = {
+					name = "increase_export_1"
+					position = { x = @plusX y = @buttonY }
+					quadTextureSprite = "GFX_plus_button_strip"
+					frame = 1
+					Orientation = "UPPER_LEFT"
+					pdx_tooltip = increase_export_1_tooltip
+				}
+			}
+		#############################################2
+		}
+	}
+}

@@ -882,7 +882,7 @@ guiTypes = {
 				name = "campaign_engineers_subtitle"
 				position = { x = 675 y = 335 }
 				textureFile = ""
-				font = "hoi_22"
+				font = "hoi_22tech"
 				borderSize = {x = 0 y = 4}
 				text = "CAMPAIGN_ENGINEERS_SUBTITLE"
 				maxWidth = 200
@@ -894,7 +894,7 @@ guiTypes = {
 				name = "siege_engineers_subtitle"
 				position = { x = 875 y = 335 }
 				textureFile = ""
-				font = "hoi_22"
+				font = "hoi_22tech"
 				borderSize = {x = 0 y = 4}
 				text = "SIEGE_ENGINEERS_SUBTITLE"
 				maxWidth = 200

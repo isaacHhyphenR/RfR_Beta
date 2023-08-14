@@ -1,0 +1,42 @@
+﻿l_english:
+########################################WHITE MOUNTAIN UPRISING
+ ANU_wmt_influence: "[?ANU.wmt_influence]"
+ HVK_wmt_influence: "[?HVK.wmt_influence]"
+ NIF_wmt_influence: "[?NIF.wmt_influence]"
+ TAW_wmt_influence: "[?TAW.wmt_influence]"
+ WHT_equipment: "[WHT_infantry_equipment]"
+ wht_inf_equipment_key: "[?inf_equipment]"
+ WHT_manpower: "[?WHT.manpower@infantry_equipment]"
+ WHT_pol_power: "[?WHT.political_power|0..0]"
+ WHT_army_xp: "[?WHT.army_experience]"
+ ANU_SPONSORSHIP_HOVERTEXT: "§Y[ANU.GetNameDef]§! currently has [?ANU.wmt_influence] levels of sponsorship. [is_ANU_the_WHT_sponsor]"
+ HVK_SPONSORSHIP_HOVERTEXT: "§Y[HVK.GetNameDef]§! currently has [?HVK.wmt_influence] levels of sponsorship. [is_HVK_the_WHT_sponsor]"
+ NIF_SPONSORSHIP_HOVERTEXT: "§Y[NIF.GetNameDef]§! currently has [?NIF.wmt_influence] levels of sponsorship. [is_NIF_the_WHT_sponsor]"
+ TAW_SPONSORSHIP_HOVERTEXT: "§Y[TAW.GetNameDef]§! currently has [?TAW.wmt_influence] levels of sponsorship. [is_TAW_the_WHT_sponsor]"
+ WHT_INFANTRY_STOCKPILE_HOVERTEXT: "§Y[WHT.GetNameDef]'s§! current stockpile of §Yinfantry equipment§!"
+ WHT_MANPOWER_STOCKPILE_HOVERTEXT: "§Y[WHT.GetNameDef]'s§! current stockpile of §Ymanpower§!"
+ WHT_PP_STOCKPILE_HOVERTEXT: "§Y[WHT.GetNameDef]'s§! current stockpile of §Ypolitical power§!"
+ WHT_XP_STOCKPILE_HOVERTEXT: "§Y[WHT.GetNameDef]'s§! current stockpile of §Yarmy experience§!"
+ they_are_the_current_sponsor: "They are the current sponsor."
+########################################CELDUIN TRADE
+ wine_export_tooltip: "How much wine the country is able to export daily."
+ wine_export_available_tooltip: "How much wine the country still has available for export."
+ our_wine_imported_tooltip: "How much wine we are currently importing."
+ wine_export_subtitle: "Exported"
+ wine_export_available_subtitle: "Available"
+ our_wine_imported_subtitle: "Imported"
+ cant_import_from_yourself: "Cannot import from yourself"
+ first_export_wine_remaining_trigger: "§Y$export_country_1_flag$§! has at least 1 §Y$wine_equipment$§! available for export"
+ cost_civ_for_import: "Use §R1§! §Y$industrial_complex$§! to pay for the goods" 
+ ##first exporter
+ export_country_1: "[?global.exporter_array^0.GetName]"
+ export_country_1_flag: "[?global.exporter_array^0.GetFlag] [?global.exporter_array^0.GetName]"
+ first_wine_export: "[?global.exporter_exported_array^0]"
+ first_wine_export_available: "[?global.exporter_available_array^0]"
+ first_wine_import: "[?wine_imported@DOR]"
+ DOR_flag_strip_key: "GFX_DOR_flag_strip"
+ VIR_flag_strip_key: "GFX_VIR_flag_strip"
+ increase_export_1_tooltip: "[!increase_export_1_click_enabled]\n[!increase_export_1_click]"
+ 
+ ##second exporter
+ 

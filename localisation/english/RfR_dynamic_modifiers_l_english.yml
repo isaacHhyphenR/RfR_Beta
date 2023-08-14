@@ -128,4 +128,5 @@
  pillaged_desc: "Raiders have stolen everything of value from this land"
  wine_country: "Wine Country"
  wine_country_desc: "Dorwinion's climate is perfect for growing grape varietals that produce a wine so strong and heady even elves can find joy or solace in its embrace."
+ import_cost: "Import Costs"
  

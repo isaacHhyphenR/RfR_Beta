@@ -1,0 +1,33 @@
+defined_text = { ##Returns which flag strip to use for the first celduin exporter slot
+	name = first_export_flag
+	text = { #VIR
+		trigger = {
+			check_variable = { global.exporter_array^0 = DOR }
+			DOR = {
+				has_cosmetic_tag = VIR
+			}
+		}
+		localization_key = VIR_flag_strip_key
+	}
+	text = { #DOR
+		trigger = {
+			check_variable = { global.exporter_array^0 = DOR }
+		}
+		localization_key = DOR_flag_strip_key
+	}
+}
+
+defined_text = {
+	name = first_export_flag_frame
+	text = {
+		trigger = { always = yes }
+		localization_key = "[?global:exporter_array^0.GetTag].ideology_index"
+	}
+}
+defined_text = {
+	name = first_wine_import_scripted_loc
+	text = {
+		trigger = { check_variable = { global:exporter_array^0 = DOR } }
+		localization_key = "[?wine_import@DOR]"
+	}
+}

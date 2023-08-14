@@ -4,6 +4,36 @@ spriteTypes = {
 		name = "GFX_celduin_trade_background"
 		texturefile = "gfx/misc/celduin_trade_background.dds"
 	}
+	spriteType = {
+		name = "GFX_trade_gui_text_background"
+		texturefile = "gfx/misc/trade_gui_text_background.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_large_flag_frame"
+		texturefile = "gfx/flag_strips/flag_frame.dds"
+		alwaysTransparent = yes
+	}
+	spriteType = {
+		name = "GFX_DOR_flag_strip"
+		texturefile = "gfx/flag_strips/DOR.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_VIR_flag_strip"
+		texturefile = "gfx/flag_strips/VIR.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_plus_button_strip"
+		texturefile = "gfx/misc/plus_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_minus_button_strip"
+		texturefile = "gfx/misc/minus_button.dds"
+		noOfFrames = 2
+	}
 	
 	##############aaaaa
 	spriteType = {
