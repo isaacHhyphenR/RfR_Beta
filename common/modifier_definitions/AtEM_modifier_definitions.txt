@@ -65,3 +65,20 @@ wine_gain_allowed = {
 	category = country
 	postfix = none
 }
+local_construction_speed = {
+	color_type = good
+	value_type = percentage
+	precision = 2
+	category = state
+	postfix = none
+}
+
+prosperity_gain_factor = {
+	color_type = good
+	value_type = percentage
+	precision = 2
+	category = state
+	category = country
+	postfix = none
+}
+	

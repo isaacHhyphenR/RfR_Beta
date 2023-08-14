@@ -42,5 +42,6 @@ state={
 			value = THIS
 			index = 7
 		}
+		add_dynamic_modifier = { modifier = market_modifiers }
 	}
 }

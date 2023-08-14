@@ -72,16 +72,20 @@ on_actions = {
 				set_ideology_index = yes
 			}
 		}
-		effect = {
-			FOR = { #make day 1 wine
-				set_variable = { global.export_size = 8 }
+		effect = { #make day 1 wine
+			FOR = {
 				calculate_all_wine_production = yes
 			}
 		}
 	}
-	on_daily_FOR = { #wine & precious metals gain
+	on_daily_FOR = { #wine & precious metals gain, prosperity
 		effect = {
 			calculate_all_wine_production = yes
+			log = "GLOBAL P:[?global.prosperity_per_passthrough] I:[?global.prosperity_per_import] E:[?global.prosperity_per_export]"
+			every_state = {
+				limit = { market > 0 }
+				daily_prosperity_gain = yes
+			}
 		}
 	}
 	on_ruling_party_change = { #party ideology index

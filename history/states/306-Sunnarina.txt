@@ -21,6 +21,7 @@ state={
 			value = THIS
 			index = 4
 		}
+		add_dynamic_modifier = { modifier = market_modifiers }
 	}
 
 	provinces={

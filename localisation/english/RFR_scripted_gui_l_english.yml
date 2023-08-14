@@ -36,7 +36,23 @@
  first_wine_import: "[?wine_imported@DOR]"
  DOR_flag_strip_key: "GFX_DOR_flag_strip"
  VIR_flag_strip_key: "GFX_VIR_flag_strip"
- increase_export_1_tooltip: "[!increase_export_1_click_enabled]\n[!increase_export_1_click]"
+ increase_export_1_tooltip: "[!increase_export_1_click_enabled]---------------\n[!increase_export_1_click]"
  
  ##second exporter
+########################################CELDUIN EXPORT
+ market_level: "[?non_damaged_building_level@market]/5"
+ state_prosperity_click: "[!prosperity_level_click]"
+ state_prosperity: "[?prosperity|+] Prosperity\n--------------\n $daily_prosperity_gain_tooltip$"
+ market_current_level_modifiers: "[market_current_level_modifiers_scripted_loc]"
+ market_header: "§YMarket§! (State level: [?building_level@market|Y0..0])\n--------------\n$market_desc$\n\n"
+ market_level_1_modifiers: "$market_header$Consumer Goods Factories: §G-1.0%§!\nMax Factories in State: §G+1§!\n$local_construction_speed$: §G+5.00%§!\nTrade deal opinion factor: §G+1.00%§!"
+ upgrade_market_click_tooltip: "[!upgrade_market_click_enabled]---------------\n[!upgrade_market_click]"
+ upgrade_market_effect_tooltip: "Adds §G1§! §Y$market$§! to the construction qeue.\nResets prosperity"
+ has_100_prosperity: "§Y[THIS.GetName]§! has §G100§! Prosperity"
  
+ daily_prosperity_gain_tooltip: "[?total_prosperity_gain|=+] Daily.\n   $prosperity_gain_from_imports$\n   $prosperity_gain_from_exports$\n   $prosperity_gain_from_passthrough$\n  $prosperity_gain_factor_in_state$\n  $prosperity_fain_factor_in_state_country$"
+ prosperity_gain_from_imports: "[?importGain|=+] total from [?num_import_routes|+0..0] Import Routes"
+ prosperity_gain_from_exports: "[?exportGain|=+] total from [?num_export_routes|+0..0] Export Routes"
+ prosperity_gain_from_passthrough: "[?passthroughGain|=+] total from [?num_passthrough_routes|+0..0] Routes Passing Through"
+ prosperity_gain_factor_in_state: "[?modifier@prosperity_gain_factor|=+%] Local $prosperity_gain_factor$"
+ prosperity_fain_factor_in_state_country: "[?controller.modifier@prosperity_gain_factor|=+%] National $prosperity_gain_factor$"

@@ -31,3 +31,91 @@ defined_text = {
 		localization_key = "[?wine_import@DOR]"
 	}
 }
+
+defined_text = { #displays the market city for the current state
+	name = market_name_scripted_loc
+	text = {
+		trigger = { state = 101 } #Erebor
+		localization_key = VICTORY_POINTS_4452
+	}
+	text = {
+		trigger = { state = 100 } #dale
+		localization_key = VICTORY_POINTS_5658
+	}
+	text = {
+		trigger = { state = 102 } #Esgaroth
+		localization_key = VICTORY_POINTS_7804
+	}
+	text = {
+		trigger = { state = 90 } #Woodland Realm
+		localization_key = VICTORY_POINTS_4150
+	}
+	text = {
+		trigger = { state = 306 } #Sunnarinna
+		localization_key = VICTORY_POINTS_5918
+	}
+	text = {
+		trigger = { state = 110 } #Yesterinna
+		localization_key = VICTORY_POINTS_5985
+	}
+	text = {
+		trigger = { state = 303 } #Hamarsland
+		localization_key = VICTORY_POINTS_5849
+	}
+	text = {
+		trigger = { state = 305 } #Rinnavuld
+		localization_key = VICTORY_POINTS_6151
+	}
+	text = {
+		trigger = { state = 240 } #Ruscovuld
+		localization_key = VICTORY_POINTS_627
+	}
+	text = {
+		trigger = { state = 310 } #Doraldana
+		localization_key = VICTORY_POINTS_1822
+	}
+	text = {
+		trigger = { state = 116 } #Riavod
+		localization_key = VICTORY_POINTS_6260
+	}
+	text = {
+		trigger = { state = 118 } #Folyvuld
+		localization_key = VICTORY_POINTS_1912
+	}
+	text = {
+		trigger = { state = 128 } #Dacranamel
+		localization_key = VICTORY_POINTS_3667
+	}
+	text = {
+		trigger = { state = 291 } #Medloshad
+		localization_key = VICTORY_POINTS_4688
+	}
+	text = {
+		trigger = { state = 115 } #Gazar Gord
+		localization_key = VICTORY_POINTS_1506
+	}
+}
+
+defined_text = { #displays the current modifiers from the market
+	name = market_current_level_modifiers_scripted_loc
+	text = {
+		trigger = { check_variable = { non_damaged_building_level@market = 1 } }
+		localization_key = market_level_1_modifiers
+	}
+	text = {
+		trigger = { check_variable = { non_damaged_building_level@market = 2 } }
+		localization_key = market_level_2_modifiers
+	}
+	text = {
+		trigger = { check_variable = { non_damaged_building_level@market = 3 } }
+		localization_key = market_level_3_modifiers
+	}
+	text = {
+		trigger = { check_variable = { non_damaged_building_level@market = 4 } }
+		localization_key = market_level_4_modifiers
+	}
+	text = {
+		trigger = { check_variable = { non_damaged_building_level@market = 5 } }
+		localization_key = market_level_5_modifiers
+	}
+}

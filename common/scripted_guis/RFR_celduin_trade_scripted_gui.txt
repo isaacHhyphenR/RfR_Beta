@@ -33,17 +33,37 @@ scripted_gui = {
 						}
 						custom_effect_tooltip = cost_civ_for_import
 					}
-					##adds prosperity to the markets in between
+					##adds prosperity to buyer & seller
+					var:ROOT.capital = { add_to_variable = { num_import_routes = 1 } } #tell it to gain prosperity
+					var:capital = { add_to_variable = { num_export_routes = 1 } } #tell it to gain prosperity
+					#######adds prosperity to the markets in between
 					set_temp_variable = { current_node = ROOT.capital }
 					set_temp_variable = { nodes_left = current_node:node_index }
 					subtract_from_temp_variable = { nodes_left = capital:node_index }
 					if = { #traces path from buyer capital to seller capital
 						limit = { check_variable = { current_node:node_index < capital:node_index } }
+						#Skip the buyer capital
+						if = {
+							limit = { check_variable = { current_node:downstream_node = null } }
+							meta_effect = {
+								text = {
+									set_temp_variable = { current_node = current_node:downstream_towards_[DESTINATION] }
+								}
+								DESTINATION = "[?capital.GetID]"
+							}
+						}
+						#or just go straight
+						else = {
+							set_temp_variable = { current_node = current_node:downstream_node }
+						}
 						multiply_temp_variable = { nodes_left = -1 }
+						subtract_from_temp_variable = { nodes_left = 2 } #skip buyer and seller
+						
+						##########################LOOP THROUGH INTERMEDIATE NODES
 						while_loop_effect = {
 							limit = { check_variable = { nodes_left > 0 } }
-							subtract_from_temp_variable = { nodes_left = 1 }
-							log = "[?nodes_left] [?current_node.GetName] [?capital.GetName]"
+							subtract_from_temp_variable = { nodes_left = 1 } #decrement
+							var:current_node = { add_to_variable = { num_passthrough_routes = 1 } } #tell it to gain prosperity
 							#pick which way to go in forks
 							if = {
 								limit = { check_variable = { current_node:downstream_node = null } }

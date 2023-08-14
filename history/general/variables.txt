@@ -1,0 +1,6 @@
+FOR = {
+	set_variable = { global.export_size = 8 }
+	set_variable = { global.prosperity_per_passthrough = 0.03 }
+	set_variable = { global.prosperity_per_import = 0.08 }
+	set_variable = { global.prosperity_per_export = 0.08 }
+}

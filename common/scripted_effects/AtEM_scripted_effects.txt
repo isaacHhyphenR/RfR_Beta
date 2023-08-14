@@ -58,6 +58,35 @@ calculate_national_wine_production = { #call in tag
 	set_variable = { wine_produced = 0 } #reset for tomorrow
 }
 
+daily_prosperity_gain = { #call in a state to gain it prosperity
+	#base gain from trade
+	set_variable = { passthroughGain = num_passthrough_routes }
+	set_variable = { importGain = num_import_routes }
+	set_variable = { exportGain = num_export_routes }
+	multiply_variable = { passthroughGain = global.prosperity_per_passthrough }
+	multiply_variable = { importGain = global.prosperity_per_import }
+	multiply_variable = { exportGain = global.prosperity_per_export }
+	set_variable = { base_prosperity_gain = passthroughGain }
+	add_to_variable = { base_prosperity_gain = importGain }
+	add_to_variable = { base_prosperity_gain = exportGain }
+	log = "[THIS.GetName] P:[?passthroughGain] I:[?importGain] E:[?exportGain]"
+	
+	#multiply by factors
+	set_temp_variable = { factor = modifier@prosperity_gain_factor }
+	add_to_temp_variable = { factor = controller.modifier@prosperity_gain_factor }
+	add_to_temp_variable = { factor = 1 } #so it's not 0
+	set_variable = { total_prosperity_gain = base_prosperity_gain }
+	multiply_variable = { total_prosperity_gain = factor }
+	
+	##actually add the damn stuff
+	add_to_variable = { prosperity = total_prosperity_gain }
+	clamp_temp_variable = {
+		var = prosperity
+		min = 0
+		max = 100
+	}
+}
+
 set_ideology_index = { #call in a tag
 	if = { limit = { has_government = isolationism }
 		set_variable = { ideology_index = 1 }

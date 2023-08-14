@@ -6,3 +6,7 @@ wine_country = { ##Apply to FOR to more easily observe AI games
 import_cost = { ##apply to country to cost them factorys
 	civilian_factory_use = var:import_routes
 }
+
+market_modifiers = {
+	state_production_speed_buildings_factor = modifier@local_construction_speed
+}

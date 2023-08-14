@@ -31,3 +31,5 @@
  wine_gain_factor: "Wine Production Factor"
  national_wine_gain_factor: "Wine Production Factor"
  wine_gain_allowed: "Can Produce Wine"
+ local_construction_speed: "Local Construction Speed"
+ prosperity_gain_factor: "Prosperity Gain Factor"

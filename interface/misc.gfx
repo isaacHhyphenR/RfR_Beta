@@ -34,6 +34,32 @@ spriteTypes = {
 		texturefile = "gfx/misc/minus_button.dds"
 		noOfFrames = 2
 	}
+	spriteType = {
+		name = "GFX_upgrade_button_strip"
+		texturefile = "gfx/misc/upgrade_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_market_icon_strip"
+		texturefile = "gfx/interface/buildings/market.dds"
+		noOfFrames = 2
+	}
+	progressbartype = {
+		name = "GFX_prosperity_progress_bar"
+		textureFile1 = "gfx/misc/prosperity_progress_full.dds"
+		textureFile2 = "gfx/misc/prosperity_progress.dds"
+		size = {x=108 y=11}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	spriteType = {
+		name = "GFX_celduin_market_background"
+		texturefile = "gfx/misc/celduin_market_background.dds"
+	}
+	spriteType = {
+		name = "GFX_celduin_market"
+		texturefile = "gfx/misc/celduin_market.dds"
+	}
 	
 	##############aaaaa
 	spriteType = {

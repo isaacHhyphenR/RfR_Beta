@@ -1,0 +1,53 @@
+scripted_gui = {
+	celduin_market_GUI = {
+		window_name = "celduin_market_ui_window"
+		context_type = selected_state_context
+		parent_window_name = countrystateview
+		visible = { market > 0 }
+		properties = {
+			prosperity_level = {
+				frame = var:prosperity
+			}
+		}
+		effects = {
+			upgrade_market_click = {
+				hidden_effect = {
+					add_building_construction = {
+						type = market
+						level = 1
+						instant_build = yes
+					}
+					damage_building = {
+						type = market
+						damage = 1
+					}
+					set_variable = { prosperity = 0 }
+				}
+				custom_effect_tooltip = upgrade_market_effect_tooltip
+			}
+			prosperity_level_click = {
+				custom_effect_tooltip = state_prosperity
+			}
+		}
+		triggers = {
+			upgrade_market_click_enabled = {
+				custom_trigger_tooltip = { #prosperity
+					tooltip = has_100_prosperity
+					check_variable = { ##use long form just in case I forget to clamp somewhere
+						var = prosperity
+						value = 100
+						compare = greater_than_or_equals
+					}
+				}
+				is_controlled_by = ROOT
+			}
+		}
+        ai_weights = {
+            upgrade_market_click = {
+                ai_will_do = { #upgrade your markets baby
+                    base = 100
+				}
+			}
+		}
+	}
+}
