@@ -8,22 +8,27 @@ scripted_gui = {
 			prosperity_level = {
 				frame = var:prosperity
 			}
+			market_building = {
+				frame = var:market_display_frame
+			}
 		}
 		effects = {
 			upgrade_market_click = {
-				hidden_effect = {
-					add_building_construction = {
-						type = market
-						level = 1
-						instant_build = yes
-					}
-					damage_building = {
-						type = market
-						damage = 1
-					}
-					set_variable = { prosperity = 0 }
-				}
 				custom_effect_tooltip = upgrade_market_effect_tooltip
+				set_state_flag = constructing_market
+				ROOT = {
+					activate_targeted_decision = {
+						target = PREV
+						decision = upgrade_market
+					}
+					add_to_variable = { market_upgrading_cost = global.market_upgrade_cost } #missions don't accept modifiers, so gotta jank it
+					hidden_effect = { #cost factories
+						if = {
+							limit = { NOT = { has_dynamic_modifier = { modifier = market_upgrade_cost_modifier } } }
+							add_dynamic_modifier = { modifier = market_upgrade_cost_modifier }
+						}
+					}
+				}
 			}
 			prosperity_level_click = {
 				custom_effect_tooltip = state_prosperity
@@ -39,13 +44,37 @@ scripted_gui = {
 						compare = greater_than_or_equals
 					}
 				}
+				controller = {
+					num_of_civilian_factories_available_for_projects > 2
+				}
+				NOT = { has_state_flag = constructing_market }
+				hidden_trigger = { market < 5 } #can't upgrade beyond level 5
 				is_controlled_by = ROOT
 			}
+		}
+		ai_enabled = {
+			always = yes
 		}
         ai_weights = {
             upgrade_market_click = {
                 ai_will_do = { #upgrade your markets baby
                     base = 100
+					modifier = { #but don't spend too much on factories all at once
+						controller = {
+							any_controlled_state = {
+								has_state_flag = constructing_market
+							}
+							num_of_civilian_factories_available_for_projects < 5
+						}
+						factor = 0
+					}
+					modifier = { #especially if you're at war
+						controller = {
+							has_war = yes
+							num_of_civilian_factories_available_for_projects < 6
+						}
+						factor = 0
+					}
 				}
 			}
 		}

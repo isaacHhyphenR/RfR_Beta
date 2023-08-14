@@ -7,6 +7,10 @@ import_cost = { ##apply to country to cost them factorys
 	civilian_factory_use = var:import_routes
 }
 
+market_upgrade_cost_modifier = { ##apply to country to cost them factorys
+	civilian_factory_use = var:market_upgrading_cost
+}
+
 market_modifiers = {
 	state_production_speed_buildings_factor = modifier@local_construction_speed
 }

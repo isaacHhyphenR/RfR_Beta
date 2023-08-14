@@ -76,6 +76,10 @@ on_actions = {
 			FOR = {
 				calculate_all_wine_production = yes
 			}
+			every_state = {
+				limit = { market > 0 }
+				daily_prosperity_gain = yes
+			}
 		}
 	}
 	on_daily_FOR = { #wine & precious metals gain, prosperity

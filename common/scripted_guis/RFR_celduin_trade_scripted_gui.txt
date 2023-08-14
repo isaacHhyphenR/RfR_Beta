@@ -15,73 +15,20 @@ scripted_gui = {
 				var:global.exporter_array^0 = {
 					#calculate how much actually transfers in this export
 					set_temp_variable = { TEMP_export_size = global.export_size }
-					log = "[?global.export_size] [?TEMP_export_size]"
 					clamp_temp_variable = { var = TEMP_export_size max = global.exporter_available_array^0 }
-					##costs factory & convoys
-					add_offsite_building = { type = industrial_complex level = 1 }
-					##transfers wine towards you
-					add_to_variable = { wine_exported = TEMP_export_size }
-					subtract_from_variable = { wine_export_available = TEMP_export_size }
-					ROOT = {
-						add_to_variable = { wine_imported = TEMP_export_size }
-						add_to_variable = { wine_imported@PREV = TEMP_export_size }
-						add_to_variable = { import_routes = 1 }
-						hidden_effect = {
-							if = { limit = { NOT = { has_dynamic_modifier = { modifier = import_cost } } }
-								add_dynamic_modifier = { modifier = import_cost }
-							}
-						}
-						custom_effect_tooltip = cost_civ_for_import
-					}
-					##adds prosperity to buyer & seller
-					var:ROOT.capital = { add_to_variable = { num_import_routes = 1 } } #tell it to gain prosperity
-					var:capital = { add_to_variable = { num_export_routes = 1 } } #tell it to gain prosperity
-					#######adds prosperity to the markets in between
-					set_temp_variable = { current_node = ROOT.capital }
-					set_temp_variable = { nodes_left = current_node:node_index }
-					subtract_from_temp_variable = { nodes_left = capital:node_index }
-					if = { #traces path from buyer capital to seller capital
-						limit = { check_variable = { current_node:node_index < capital:node_index } }
-						#Skip the buyer capital
-						if = {
-							limit = { check_variable = { current_node:downstream_node = null } }
-							meta_effect = {
-								text = {
-									set_temp_variable = { current_node = current_node:downstream_towards_[DESTINATION] }
-								}
-								DESTINATION = "[?capital.GetID]"
-							}
-						}
-						#or just go straight
-						else = {
-							set_temp_variable = { current_node = current_node:downstream_node }
-						}
-						multiply_temp_variable = { nodes_left = -1 }
-						subtract_from_temp_variable = { nodes_left = 2 } #skip buyer and seller
-						
-						##########################LOOP THROUGH INTERMEDIATE NODES
-						while_loop_effect = {
-							limit = { check_variable = { nodes_left > 0 } }
-							subtract_from_temp_variable = { nodes_left = 1 } #decrement
-							var:current_node = { add_to_variable = { num_passthrough_routes = 1 } } #tell it to gain prosperity
-							#pick which way to go in forks
-							if = {
-								limit = { check_variable = { current_node:downstream_node = null } }
-								meta_effect = {
-									text = {
-										set_temp_variable = { current_node = current_node:downstream_towards_[DESTINATION] }
-									}
-									DESTINATION = "[?capital.GetID]"
-								}
-							}
-							#or just go straight
-							else = {
-								set_temp_variable = { current_node = current_node:downstream_node }
-							}
-						}
-					}
+					increase_trade_level = yes
 					#updates display
 					subtract_from_variable = { global.exporter_available_array^0 = TEMP_export_size }
+				}
+			}
+			decrease_export_1_click = {
+				var:global.exporter_array^0 = {
+					#calculate how much actually transfers in this export
+					set_temp_variable = { TEMP_export_size = global.export_size }
+					clamp_temp_variable = { var = TEMP_export_size max = ROOT.wine_imported }
+					decrease_trade_level = yes
+					#updates display
+					add_to_variable = { global.exporter_available_array^0 = TEMP_export_size }
 				}
 			}
 		}
@@ -96,6 +43,16 @@ scripted_gui = {
 					check_variable = { global.exporter_available_array^0 > 0 }
 				}
 				num_of_civilian_factories_available_for_projects > 0
+			}
+			decrease_export_1_click_enabled = {
+				custom_trigger_tooltip = {
+					tooltip = cant_import_from_yourself
+					NOT = { check_variable = { global.exporter_array^0 = ROOT } }
+				}
+				custom_trigger_tooltip = {
+					tooltip = is_importing_wine
+					check_variable = { wine_imported > 0 }
+				}
 			}
 		}
 	}

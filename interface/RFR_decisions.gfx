@@ -1,0 +1,781 @@
+spriteTypes = {
+################################################CATEGORY PICTURES
+	spriteType = {
+		name = "GFX_decision_cat_generic_arnor"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_arnor.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_reunited_kingdom"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_reunited_kingdom.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_middle_earth"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_middle_earth.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_middle_earth_mts"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_middle_earth_mts.dds"
+	}
+################################################CATEGORIES
+	spriteType = {
+		name = "GFX_decision_category_steward_authority"
+		texturefile = "gfx/interface/decisions/categories/decision_category_steward_authority.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_the_one_ring"
+		texturefile = "gfx/interface/decisions/the_one_ring_decision_category.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_generic_research"
+		texturefile = "gfx/interface/decisions/categories/decision_category_generic_research.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_generic_attack_skill"
+		texturefile = "gfx/interface/decisions/categories/decision_category_attack_skill.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_generic_defense_skill"
+		texturefile = "gfx/interface/decisions/categories/decision_category_defense_skill.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_generic_logistics_skill"
+		texturefile = "gfx/interface/decisions/categories/decision_category_logistics_skill.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_generic_planning_skill"
+		texturefile = "gfx/interface/decisions/categories/decision_category_planning_skill.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_trade"
+		texturefile = "gfx/interface/decisions/categories/decision_category_trade.dds"
+	}
+################################################LAWS
+	SpriteType = {
+		name = "GFX_decision_volunteer_only"
+		texturefile = "gfx/interface/decisions/decision_volunteer_only.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_limited_conscription"
+		texturefile = "gfx/interface/decisions/decision_limited_conscription.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_extensive_conscription"
+		texturefile = "gfx/interface/decisions/decision_extensive_conscription.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_service_by_requirement"
+		texturefile = "gfx/interface/decisions/decision_service_by_requirement.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_all_adults_serve"
+		texturefile = "gfx/interface/decisions/decision_all_adults_serve.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_scraping_the_barrel"
+		texturefile = "gfx/interface/decisions/decision_scraping_the_barrel.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_isolation"
+		texturefile = "gfx/interface/decisions/decision_isolation.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_civilian_economy"
+		texturefile = "gfx/interface/decisions/decision_civilian_economy.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_low_economic_mobilisation"
+		texturefile = "gfx/interface/decisions/decision_low_economic_mobilisation.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_partial_economic_mobilisation"
+		texturefile = "gfx/interface/decisions/decision_partial_economic_mobilisation.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_war_economy"
+		texturefile = "gfx/interface/decisions/decision_war_economy.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_tot_economic_mobilisation"
+		texturefile = "gfx/interface/decisions/decision_tot_economic_mobilisation.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_limited_exports"
+		texturefile = "gfx/interface/decisions/decision_limited_exports.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_export_focus"
+		texturefile = "gfx/interface/decisions/decision_export_focus.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_closed_economy"
+		texturefile = "gfx/interface/decisions/decision_closed_economy.dds"
+	}
+	###################GENERIC
+	spriteType = {
+		name = "GFX_decision_the_one_ring"
+		texturefile = "gfx/interface/decisions/the_one_ring_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_flaming_wood_decision"
+		texturefile = "gfx/interface/decisions/flaming_wood_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_generic_trade"
+		texturefile = "gfx/interface/decisions/decision_generic_trade.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_generic_political_power"
+		texturefile = "gfx/interface/decisions/decision_generic_political_power.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_generic_manpower"
+		texturefile = "gfx/interface/decisions/decision_generic_manpower.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_generic_consumer_goods"
+		texturefile = "gfx/interface/decisions/decision_generic_consumer_goods.dds"
+	}
+################################################MORDOR
+	###################NAZGUL
+	spriteType = {
+		name = "GFX_adunabeth_attack_decision"
+		texturefile = "gfx/interface/decisions/nazgul/adunabeth_attack_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_adunabeth_defense_decision"
+		texturefile = "gfx/interface/decisions/nazgul/adunabeth_defense_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_adunabeth_logistics_decision"
+		texturefile = "gfx/interface/decisions/nazgul/adunabeth_logistics_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_adunabeth_planning_decision"
+		texturefile = "gfx/interface/decisions/nazgul/adunabeth_planning_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_dendra_dwar_attack_decision"
+		texturefile = "gfx/interface/decisions/nazgul/dendra_dwar_attack_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_dendra_dwar_defense_decision"
+		texturefile = "gfx/interface/decisions/nazgul/dendra_dwar_defense_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_dendra_dwar_logistics_decision"
+		texturefile = "gfx/interface/decisions/nazgul/dendra_dwar_logistics_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_dendra_dwar_planning_decision"
+		texturefile = "gfx/interface/decisions/nazgul/dendra_dwar_planning_decision.dds"
+	}
+	#spriteType = {
+		# name = "GFX_gothmog_attack_decision"
+		# texturefile = "gfx/interface/decisions/nazgul/gothmog_attack_decision.dds"
+	# }
+	# spriteType = {
+		# name = "GFX_gothmog_defense_decision"
+		# texturefile = "gfx/interface/decisions/nazgul/gothmog_defense_decision.dds"
+	# }
+	# spriteType = {
+		# name = "GFX_gothmog_logistics_decision"
+		# texturefile = "gfx/interface/decisions/nazgul/gothmog_logistics_decision.dds"
+	# }
+	# spriteType = {
+		# name = "GFX_gothmog_planning_decision"
+		# texturefile = "gfx/interface/decisions/nazgul/gothmog_planning_decision.dds"
+	# }
+	spriteType = {
+		name = "GFX_hoarmurath_attack_decision"
+		texturefile = "gfx/interface/decisions/nazgul/hoarmurath_attack_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_hoarmurath_defense_decision"
+		texturefile = "gfx/interface/decisions/nazgul/hoarmurath_defense_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_hoarmurath_logistics_decision"
+		texturefile = "gfx/interface/decisions/nazgul/hoarmurath_logistics_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_hoarmurath_planning_decision"
+		texturefile = "gfx/interface/decisions/nazgul/hoarmurath_planning_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_ji_indur_attack_decision"
+		texturefile = "gfx/interface/decisions/nazgul/ji_indur_attack_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_ji_indur_defense_decision"
+		texturefile = "gfx/interface/decisions/nazgul/ji_indur_defense_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_ji_indur_logistics_decision"
+		texturefile = "gfx/interface/decisions/nazgul/ji_indur_logistics_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_ji_indur_planning_decision"
+		texturefile = "gfx/interface/decisions/nazgul/ji_indur_planning_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_khamul_attack_decision"
+		texturefile = "gfx/interface/decisions/nazgul/khamul_attack_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_khamul_defense_decision"
+		texturefile = "gfx/interface/decisions/nazgul/khamul_defense_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_khamul_logistics_decision"
+		texturefile = "gfx/interface/decisions/nazgul/khamul_logistics_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_khamul_planning_decision"
+		texturefile = "gfx/interface/decisions/nazgul/khamul_planning_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_khorahil_attack_decision"
+		texturefile = "gfx/interface/decisions/nazgul/khorahil_attack_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_khorahil_defense_decision"
+		texturefile = "gfx/interface/decisions/nazgul/khorahil_defense_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_khorahil_logistics_decision"
+		texturefile = "gfx/interface/decisions/nazgul/khorahil_logistics_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_khorahil_planning_decision"
+		texturefile = "gfx/interface/decisions/nazgul/khorahil_planning_decision.dds"
+	}
+	# spriteType = {
+		# name = "GFX_mouth_of_sauron_attack_decision"
+		# texturefile = "gfx/interface/decisions/nazgul/mouth_of_sauron_attack_decision.dds"
+	# }
+	# spriteType = {
+		# name = "GFX_mouth_of_sauron_defense_decision"
+		# texturefile = "gfx/interface/decisions/nazgul/mouth_of_sauron_defense_decision.dds"
+	# }
+	# spriteType = {
+		# name = "GFX_mouth_of_sauron_logistics_decision"
+		# texturefile = "gfx/interface/decisions/nazgul/mouth_of_sauron_logistics_decision.dds"
+	# }
+	# spriteType = {
+		# name = "GFX_mouth_of_sauron_planning_decision"
+		# texturefile = "gfx/interface/decisions/nazgul/mouth_of_sauron_planning_decision.dds"
+	# }
+	spriteType = {
+		name = "GFX_ren_iey_attack_decision"
+		texturefile = "gfx/interface/decisions/nazgul/ren_iey_attack_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_ren_iey_defense_decision"
+		texturefile = "gfx/interface/decisions/nazgul/ren_iey_defense_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_ren_iey_logistics_decision"
+		texturefile = "gfx/interface/decisions/nazgul/ren_iey_logistics_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_ren_iey_planning_decision"
+		texturefile = "gfx/interface/decisions/nazgul/ren_iey_planning_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_uvatha_achef_attack_decision"
+		texturefile = "gfx/interface/decisions/nazgul/uvatha_achef_attack_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_uvatha_achef_defense_decision"
+		texturefile = "gfx/interface/decisions/nazgul/uvatha_achef_defense_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_uvatha_achef_logistics_decision"
+		texturefile = "gfx/interface/decisions/nazgul/uvatha_achef_logistics_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_uvatha_achef_planning_decision"
+		texturefile = "gfx/interface/decisions/nazgul/uvatha_achef_planning_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_witch_king_attack_decision"
+		texturefile = "gfx/interface/decisions/nazgul/witch_king_attack_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_witch_king_defense_decision"
+		texturefile = "gfx/interface/decisions/nazgul/witch_king_defense_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_witch_king_logistics_decision"
+		texturefile = "gfx/interface/decisions/nazgul/witch_king_logistics_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_witch_king_planning_decision"
+		texturefile = "gfx/interface/decisions/nazgul/witch_king_planning_decision.dds"
+	}
+##################################################################################################################################
+#####################################################VorV
+##################################################################################################################################
+	###################FLAGS
+	spriteType = {
+		name = "GFX_decision_arnor_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_arnor.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_arthedain_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_arthedain.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_beornings_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_Beornings.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cardolan_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_cardolan.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_dagorlad_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_dagorlad.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_dale_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_dale.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_dol_guldur_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_dol_guldur.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_dorwinion_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_dorwinion.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_druedain_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_druedain.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_erebor_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_erebor.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_ered_luin_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_ered_luin.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_fangorn_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_fangorn.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_gundabad_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_gundabad.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_harad_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_harad.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_harondor_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_harondor.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_khand_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_khand.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_khazad_dum_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_khazad_dum.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_lindon_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_lindon.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_lorien_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_lorien.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_mirvan_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_mirvan.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_misty_mountains_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_misty_mountains.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_rhudaur_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_rhudaur.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_rhun_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_rhun.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_rivendell_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_rivendell.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_shire_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_shire.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_woodland_realm_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_woodland_realm.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_umbar_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_umbar.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Andrast_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_andrast.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Druwaith_Iaur_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_druwaith_iaur.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Dunland_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_dunland.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Enedwaith_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_enedwaith.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Eomer_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_eomer.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Eregion_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_eregion.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Gondor_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_gondor.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Greater_Enedwaith_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_Greater_Enedwaith.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Isengard_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_isengard.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Mordor_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_mordor.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Saralain_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_saralain.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_Reunited_Kingdom_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_reunited_kingdom.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Rohan_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_rohan.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_White_Mountains_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_white_mountains.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Wormtongue_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_wormtongue.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_ADB_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_ADB.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_RAF_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_RAF.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_NEN_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_NEN.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_PRI_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_PRI.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_AKN_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_AKN.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_DRU_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_DRU.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_BYR_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_BYR.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_IRN_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_IRN.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_CGN_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_CGN.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_DFN_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_DFN.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_DTH_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_DTH.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_DUN_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_DUN.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_AGR_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_AGR.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_COL_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_COL.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_HST_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_HST.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_STK_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_STK.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_ERG_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_ERG.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_HOL_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_HOL.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_MBL_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_MBL.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_REE_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_REE.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_ANU_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_ANU.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_HVK_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_HVK.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_NIF_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_NIF.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_TAW_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_TAW.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_ISD_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_ISD.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_WHT_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_WHT.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_SAR_flag"
+		texturefile = "gfx/interface/decisions/flags/greater_enedwaith_tags/flag_SAR.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_blank_flag_highlight"
+		texturefile = "gfx/interface/decisions/flags/blank_highlight.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_decision_black_flag_highlight"
+		texturefile = "gfx/interface/decisions/flags/black_highlight.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_green_flag_highlight"
+		texturefile = "gfx/interface/decisions/flags/green_highlight.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_red_flag_highlight"
+		texturefile = "gfx/interface/decisions/flags/red_highlight.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_yellow_flag_highlight"
+		texturefile = "gfx/interface/decisions/flags/yellow_highlight.dds"
+	}
+
+	########OTHER
+	spriteType = {
+		name = "GFX_generic_attack_decision"
+		texturefile = "gfx/interface/decisions/generic_attack_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_attack_decision_2"
+		texturefile = "gfx/interface/decisions/generic_attack_decision_2.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_befriend_decision"
+		texturefile = "gfx/interface/decisions/generic_befriend_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_attack"
+		texturefile = "gfx/interface/decisions/categories/decision_category_attack.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_isolationism"
+		texturefile = "gfx/interface/decisions/isolationism_decision.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_conquest"
+		texturefile = "gfx/interface/decisions/conquest_decision.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_freedom"
+		texturefile = "gfx/interface/decisions/freedom_decision.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_melkorite"
+		texturefile = "gfx/interface/decisions/melkorite_decision.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_opportunism"
+		texturefile = "gfx/interface/decisions/opportunism_decision.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_barad_dur"
+		texturefile = "gfx/interface/decisions/barad_dur_decision.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_barad_dur_tribute"
+		texturefile = "gfx/interface/decisions/barad_dur_tribute_decision.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_generic_infrastructure"
+		texturefile = "gfx/interface/decisions/generic_infrastructure_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_settle_territory"
+		texturefile = "gfx/interface/decisions/generic_settlers_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_tribal_throne"
+		texturefile = "gfx/interface/decisions/tribal_throne_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_tribal_crown"
+		texturefile = "gfx/interface/decisions/tribal_crown_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_blood_oath"
+		texturefile = "gfx/interface/decisions/blood_oath_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_protectorate"
+		texturefile = "gfx/interface/decisions/gondorian_protectorate_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_explosion"
+		texturefile = "gfx/interface/decisions/explosion_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_upgrade_market"
+		texturefile = "gfx/interface/decisions/upgrade_market_decision.dds"
+	}
+################################################CATEGORY ICONS
+	spriteType = {
+		name = "GFX_decision_category_explosion"
+		texturefile = "gfx/interface/decisions/categories/decision_category_explosion.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_barad_dur"
+		texturefile = "gfx/interface/decisions/categories/decision_category_barad_dur.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_infrastructure"
+		texturefile = "gfx/interface/decisions/categories/decision_category_infrastructure.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_tribal_crown"
+		texturefile = "gfx/interface/decisions/categories/decision_category_tribal_crown.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_tribal_throne"
+		texturefile = "gfx/interface/decisions/categories/decision_category_tribal_throne.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_blood_oath"
+		texturefile = "gfx/interface/decisions/categories/decision_category_blood_oath.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_protectorate"
+		texturefile = "gfx/interface/decisions/categories/decision_category_gondorian_protectorate.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_white_mountain_uprising"
+		texturefile = "gfx/interface/decisions/categories/decision_category_white_mountain_uprising.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_espionage"
+		texturefile = "gfx/interface/decisions/categories/decision_category_espionage.dds"
+	}
+################################################CATEGORY PICTURES
+	spriteType = {
+		name = "GFX_decision_cat_generic_Andrast"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_Andrast.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_Druwaith_Iaur"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_Druwaith_Iaur.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_Dunland"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_Dunland.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_Enedwaith"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_Enedwaith.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_Eregion"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_Eregion.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_Greater_Enedwaith"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_Greater_Enedwaith.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_Greater_Saralain"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_Greater_Saralain.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_Saralain"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_Saralain.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_White_Mountains"
+		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_White_Mountains.dds"
+	}
+	spriteType = {
+		name = "GFX_white_mountain_uprising_background"
+		texturefile = "gfx/interface/decisions/cat_pictures/white_mountain_uprising_background.dds"
+	}
+	spriteType = {
+		name = "GFX_isengard_subjects_background"
+		texturefile = "gfx/interface/decisions/cat_pictures/isengard_subjects_background.dds"
+	}
+	spriteType = {
+		name = "GFX_blood_oath_background"
+		texturefile = "gfx/interface/decisions/cat_pictures/blood_oath_background.dds"
+	}
+}
