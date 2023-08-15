@@ -11,3 +11,18 @@ is_rhunnic_tag = {
 can_celduin_trade = {
 	capital_scope = { market > 0 }
 }
+
+calculate_trade_convoy_cost = { #Call where THIS is buyer/seller and ROOT is the other
+	set_temp_variable = { root_capital = ROOT.capital }
+	set_temp_variable = { route_convoy_cost = root_capital:node_index }
+	subtract_from_temp_variable = { route_convoy_cost = capital:node_index }
+	if = { #de-negative it
+		limit = { check_variable = { route_convoy_cost < 0 } }
+		multiply_temp_variable = { route_convoy_cost = -1 }
+	}
+	always = yes
+}
+calculate_trade_convoy_cost_negative = { #Call where THIS is buyer/seller and ROOT is the other
+	calculate_trade_convoy_cost = yes
+	multiply_temp_variable = { route_convoy_cost = -1 }
+}

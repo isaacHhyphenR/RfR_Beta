@@ -1,4 +1,4 @@
-﻿capital = 116 #Lower Dorwinion- Carag Sant
+﻿capital = 116 #Riavod-Riavod
 	#86 VPs
 # if = {
 	# limit = { has_dlc = "No Step Back" }
@@ -128,4 +128,5 @@ if = {
 	}
 }
 add_ideas = female_leader_chance_idea
+set_variable = { global.wine_exporter = THIS }
 #!&!&!

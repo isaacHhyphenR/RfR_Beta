@@ -7,28 +7,24 @@ scripted_gui = {
 		properties = {
 			flag1 = {
 				image = "[first_export_flag]"
-				frame = var:global.exporter_ideology_array^0
+				frame = var:global:wine_exporter.ideology_index
 			}
 		}
 		effects = {
 			increase_export_1_click = {
-				var:global.exporter_array^0 = {
+				var:global.wine_exporter = {
 					#calculate how much actually transfers in this export
 					set_temp_variable = { TEMP_export_size = global.export_size }
-					clamp_temp_variable = { var = TEMP_export_size max = global.exporter_available_array^0 }
+					clamp_temp_variable = { var = TEMP_export_size max = global.wine_export_available }
 					increase_trade_level = yes
-					#updates display
-					subtract_from_variable = { global.exporter_available_array^0 = TEMP_export_size }
 				}
 			}
 			decrease_export_1_click = {
-				var:global.exporter_array^0 = {
+				var:global.wine_exporter = {
 					#calculate how much actually transfers in this export
 					set_temp_variable = { TEMP_export_size = global.export_size }
 					clamp_temp_variable = { var = TEMP_export_size max = ROOT.wine_imported }
 					decrease_trade_level = yes
-					#updates display
-					add_to_variable = { global.exporter_available_array^0 = TEMP_export_size }
 				}
 			}
 		}
@@ -36,18 +32,22 @@ scripted_gui = {
 			increase_export_1_click_enabled = {
 				custom_trigger_tooltip = {
 					tooltip = cant_import_from_yourself
-					NOT = { check_variable = { global.exporter_array^0 = ROOT } }
+					NOT = { check_variable = { global.wine_exporter = ROOT } }
 				}
 				custom_trigger_tooltip = {
 					tooltip = first_export_wine_remaining_trigger
-					check_variable = { global.exporter_available_array^0 > 0 }
+					var:global.wine_exporter = { check_variable = { wine_export_available > 0 } } 
 				}
 				num_of_civilian_factories_available_for_projects > 0
+				##convoy cost
+				# if = { limit = { var:global.exporter_array^0 = {calculate_trade_convoy_cost = yes } } }
+				# subtract_from_temp_variable = { route_convoy_cost = 1 }
+				# has_equipment = { convoy > route_convoy_cost }
 			}
 			decrease_export_1_click_enabled = {
 				custom_trigger_tooltip = {
 					tooltip = cant_import_from_yourself
-					NOT = { check_variable = { global.exporter_array^0 = ROOT } }
+					NOT = { check_variable = { global.wine_exporter = ROOT } }
 				}
 				custom_trigger_tooltip = {
 					tooltip = is_importing_wine

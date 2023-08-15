@@ -5,6 +5,10 @@ spriteTypes = {
 		texturefile = "gfx/misc/celduin_trade_background.dds"
 	}
 	spriteType = {
+		name = "GFX_trade_gui_blank_text_background"
+		texturefile = "gfx/misc/trade_gui_blank_text_background.dds"
+	}
+	spriteType = {
 		name = "GFX_trade_gui_text_background"
 		texturefile = "gfx/misc/trade_gui_text_background.dds"
 		noOfFrames = 2

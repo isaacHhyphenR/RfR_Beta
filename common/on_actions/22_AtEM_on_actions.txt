@@ -97,4 +97,16 @@ on_actions = {
 			set_ideology_index = yes
 		}
 	}
+	on_state_control_changed = {
+		effect = { #exporters
+			if = {
+				limit = { FROM.FROM = { state = 116 } } #riavod
+				set_variable = { global.wine_exporter = ROOT }
+			}
+			else_if = {
+				limit = { FROM.FROM = { state = 101 } } #erebor
+				set_variable = { global.gold_exporter = ROOT }
+			}
+		}
+	}
 }

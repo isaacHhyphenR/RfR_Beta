@@ -2,7 +2,7 @@ defined_text = { ##Returns which flag strip to use for the first celduin exporte
 	name = first_export_flag
 	text = { #VIR
 		trigger = {
-			check_variable = { global.exporter_array^0 = DOR }
+			check_variable = { global.wine_exporter = DOR }
 			DOR = {
 				has_cosmetic_tag = VIR
 			}
@@ -11,7 +11,7 @@ defined_text = { ##Returns which flag strip to use for the first celduin exporte
 	}
 	text = { #DOR
 		trigger = {
-			check_variable = { global.exporter_array^0 = DOR }
+			check_variable = { global.wine_exporter = DOR }
 		}
 		localization_key = DOR_flag_strip_key
 	}

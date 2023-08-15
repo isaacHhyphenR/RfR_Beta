@@ -8,13 +8,13 @@ guiTypes = {
 			name = "Background"
 			quadTextureSprite ="GFX_celduin_trade_background"
 		}
-		@exportY = 80
-		@availableY = 106
-		@importY = 132
+		@exportY = 133
+		@availableY = 159
+		@importY = 185
 		###############Subtitles
 		containerWindowType = {
 			name = "subtitles"
-			position = { x = 20 y = 26 }
+			position = { x = 20 y = 21 }
 			instantTextBoxType = {
 				name = "wine_export_subtitle"
 				position = { x = 0 y = @exportY  }
@@ -22,6 +22,7 @@ guiTypes = {
 				text = "wine_export_subtitle"
 				format = center
 				maxwidth = 75
+				pdx_tooltip = wine_export_subtitle_desc
 			}
 			instantTextBoxType = {
 				name = "wine_export_available_subtitle"
@@ -30,6 +31,7 @@ guiTypes = {
 				text = "wine_export_available_subtitle"
 				format = center
 				maxwidth = 75
+				pdx_tooltip = wine_export_available_subtitle_desc
 			}
 			instantTextBoxType = {
 				name = "our_wine_imported_subtitle"
@@ -38,18 +40,22 @@ guiTypes = {
 				text = "our_wine_imported_subtitle"
 				format = center
 				maxwidth = 75
+				pdx_tooltip = wine_import_subtitle_desc
 			}
 		}
 		###############All of the exporters
 		containerWindowType = {
 			name = "list_of_exports"
-			position = { x = 105 y = 25 }
+			position = { x = 105 y = 20 }
 			size = { width = 100% height = 100% }
 			@flagY = 10
 			@frameY = 0
-			@buttonY = 160
-			@minusX = 0
-			@plusX = 55
+			@goodsY = 100
+			@textBackgroundY = 130
+			@buttonY = 213
+			@goodsX = 51 ##X
+			@minusX = 0 ##X
+			@plusX = 55 ##X
 		#############################################1
 			containerWindowType = {
 				name = "exporter1"
@@ -68,8 +74,16 @@ guiTypes = {
 					Orientation = "UPPER_LEFT"
 				}
 				iconType = {
+					name = "wine_icon1"
+					quadTextureSprite = "GFX_wine_equipment_0_medium"
+					position = { x = @goodsX y = @goodsY }
+					Orientation = "UPPER_LEFT"
+					centerposition = yes
+					pdx_tooltip = wine_equipment_0
+				}
+				iconType = {
 					name = "text_background1"
-					position = { x = -4 y = 77 }
+					position = { x = -4 y = @textBackgroundY }
 					quadTextureSprite = "GFX_trade_gui_text_background"
 					frame = 1
 					Orientation = "UPPER_LEFT"

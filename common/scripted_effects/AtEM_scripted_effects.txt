@@ -1,8 +1,8 @@
 calculate_all_wine_production = { #call in FOR
-	clear_array = global.exporter_array
-	clear_array = global.exporter_ideology_array
-	clear_array = global.exporter_exported_array
-	clear_array = global.exporter_available_array
+	# clear_array = global.exporter_array
+	# clear_array = global.exporter_ideology_array
+	# clear_array = global.exporter_exported_array
+	# clear_array = global.exporter_available_array
 	every_state = { #state wine production
 		limit = { check_variable = { modifier@wine_gain > 0 } }
 		set_temp_variable = { wine_production = modifier@wine_gain }
@@ -28,20 +28,23 @@ calculate_all_wine_production = { #call in FOR
 calculate_national_wine_production = { #call in tag
 	##compute export
 	if = { #only export if you actually have a market to export from
-		limit = { capital_scope = { market > 0 } }
+		limit = { check_variable = { global.wine_exporter = THIS } }
 		set_variable = { wine_export = wine_produced }
 		multiply_variable = { wine_export = modifier@min_export }
 		subtract_from_variable = { wine_produced = wine_export }
 		set_variable = { wine_export_available = wine_export } #how much is still available for sale
 		subtract_from_variable = { wine_export_available = wine_exported }
-		##add to exporter list
-		if = {
-			limit = { check_variable = { wine_export > 0 } }
-			add_to_array = { value = THIS array = global.exporter_array }
-			add_to_array = { value = ideology_index array = global.exporter_ideology_array }
-			add_to_array = { value = wine_export array = global.exporter_exported_array }
-			add_to_array = { value = wine_export_available array = global.exporter_available_array }
-		}
+		#global variables since variable chaining doesn't work for display
+		set_variable = { global.wine_export = wine_export }
+		set_variable = { global.wine_export_available = wine_export_available }
+		# ##add to exporter list
+		# if = {
+			# limit = { check_variable = { wine_export > 0 } }
+			# # add_to_array = { value = THIS array = global.exporter_array }
+			# # add_to_array = { value = ideology_index array = global.exporter_ideology_array }
+			# # add_to_array = { value = wine_export array = global.exporter_exported_array }
+			# # add_to_array = { value = wine_export_available array = global.exporter_available_array }
+		# }
 	}
 	##compute off-map/import gain, which is not exported
 	set_variable = { national_wine = modifier@national_wine_gain }
@@ -104,11 +107,13 @@ calculate_market_upgrade_time = { #call in state. Mission refuses to read variab
 }
 
 increase_trade_level = { #call in the tag of the seller with the buyer as ROOT
-	##costs factory & convoys
+	##costs factory
 	add_offsite_building = { type = industrial_complex level = 1 }
 	##transfers wine towards you
 	add_to_variable = { wine_exported = TEMP_export_size }
 	subtract_from_variable = { wine_export_available = TEMP_export_size }
+	set_variable = { global.wine_export_available = wine_export_available }
+	custom_effect_tooltip = increase_wine_import_level_tooltip
 	ROOT = {
 		add_to_variable = { wine_imported = TEMP_export_size }
 		add_to_variable = { wine_imported@PREV = TEMP_export_size }
@@ -210,11 +215,13 @@ increase_trade_level = { #call in the tag of the seller with the buyer as ROOT
 }
 
 decrease_trade_level = { #call in the tag of the seller with the buyer as ROOT
-	##costs factory & convoys
+	##costs factory
 	add_offsite_building = { type = industrial_complex level = -1 }
-	##transfers wine towards you
+	##untransfers wine towards you
+	custom_effect_tooltip = decrease_wine_import_level_tooltip
 	subtract_from_variable = { wine_exported = TEMP_export_size }
 	add_to_variable = { wine_export_available = TEMP_export_size }
+	set_variable = { global.wine_export_available = wine_export_available }
 	ROOT = {
 		subtract_from_variable = { wine_imported = TEMP_export_size }
 		subtract_from_variable = { wine_imported@PREV = TEMP_export_size }
