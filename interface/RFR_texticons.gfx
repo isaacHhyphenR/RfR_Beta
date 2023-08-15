@@ -1,0 +1,132 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_black_powder_texticon"
+		texturefile = "gfx/texticons/black_powder.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_cloth_texticon"
+		texturefile = "gfx/texticons/cloth_texticon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_food_texticon"
+		texturefile = "gfx/texticons/food_texticon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_iron_texticon"
+		texturefile = "gfx/texticons/iron_texticon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_monsters_texticon"
+		texturefile = "gfx/texticons/monsters_texticon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_mounts_texticon"
+		texturefile = "gfx/texticons/mounts_texticon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_wood_texticon"
+		texturefile = "gfx/texticons/wood_texticon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_war_support_texticon"
+		texturefile = "gfx/texticons/war_support_texticon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_attack_skill_texticon"
+		texturefile = "gfx/texticons/attack_skill_texticon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_defense_skill_texticon"
+		texturefile = "gfx/texticons/defense_skill_texticon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_logistics_skill_texticon"
+		texturefile = "gfx/texticons/logistics_skill_texticon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_planning_skill_texticon"
+		texturefile = "gfx/texticons/planning_skill_texticon.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_Andrast_texticon"
+		texturefile = "gfx/texticons/Andrast.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_Druwaith_Iaur_texticon"
+		texturefile = "gfx/texticons/Druwaith_Iaur.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_Dunland_texticon"
+		texturefile = "gfx/texticons/Dunland.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_Province_of_Dunland_texticon"
+		texturefile = "gfx/texticons/Province_of_Dunland.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_Enedwaith_texticon"
+		texturefile = "gfx/texticons/Enedwaith.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_Eregion_texticon"
+		texturefile = "gfx/texticons/Eregion.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_Greater_Enedwaith_texticon"
+		texturefile = "gfx/texticons/Greater_Enedwaith.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_Saralain_texticon"
+		texturefile = "gfx/texticons/Saralain.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_White_Mountains_texticon"
+		texturefile = "gfx/texticons/White_Mountains.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_tribal_throne_texticon"
+		texturefile = "gfx/texticons/tribal_throne.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_prestige_texticon"
+		texturefile = "gfx/texticons/tribal_crown.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_compliance_texticon"
+		texturefile = "gfx/texticons/compliance.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_wine_texticon"
+		texturefile = "gfx/texticons/wine.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_precious_metals_texticon"
+		texturefile = "gfx/texticons/precious_metals.dds"
+		legacy_lazy_load = no
+	}
+}

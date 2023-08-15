@@ -69,7 +69,7 @@ guiTypes = {
 				}
 				iconType = {
 					name = "flag_frame1"
-					quadTextureSprite = "GFX_large_flag_frame"
+					quadTextureSprite = "GFX_large_flag_frame_trade"
 					position = { x = 0 y = @frameY }
 					Orientation = "UPPER_LEFT"
 				}

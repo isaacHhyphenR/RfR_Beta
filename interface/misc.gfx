@@ -14,7 +14,7 @@ spriteTypes = {
 		noOfFrames = 2
 	}
 	spriteType = {
-		name = "GFX_large_flag_frame"
+		name = "GFX_large_flag_frame_trade"
 		texturefile = "gfx/flag_strips/flag_frame.dds"
 		alwaysTransparent = yes
 	}

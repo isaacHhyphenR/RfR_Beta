@@ -683,4 +683,10 @@
  rfr_news.78.t: "[FROM.GetName] Rejects our Overlordship!"
  rfr_news.78.d: "[FROM.GetLeader] has succumbed to foolish arrogance and refused to align [FROM.leader.GetHerselfHimself] more closely with our rule!"
  rfr_news.78.a: "A minor setback."
+ rfr_news.79.t: "We do not have enough Wine"
+ rfr_news.79.d: "Servants report that we do not have enough wine stockpiled to renew our generous usage of it."
+ rfr_news.79.a: "We shall resume after aquiring more."
+ rfr_news.80.t: "We do not have enough $precious_metals_equipment$"
+ rfr_news.80.d: "Servants report that we do not have enough precious metals stockpiled to renew our generous usage of them."
+ rfr_news.80.a: "We shall resume after aquiring more."
  

@@ -7,4 +7,5 @@ celduin_trade_category = {
 	allowed = {
 		always = yes
 	}
+	visible = { capital_scope = { market > 0 } }
 }

@@ -569,9 +569,26 @@
  WLF_increase_ROH_state_compliance: "Tour [FROM.getName]"
  WLF_increase_ROH_state_compliance_desc: "By mingling with the people we can improve their opinion of us."
  
- #####################################################################################################################################################
+ ############################################################################################################################
  ###########################################################AtEM
- #####################################################################################################################################################
+ ############################################################################################################################
+ celduin_trade_category: "Celduinic Trade"
+ celduin_trade_category_desc: "The flow of goods along the Celduin and Rhûnaer bring prosperity to all involved."
  upgrade_market: "Upgrading [FROM.GetName] Market"
  upgrade_market_desc: "Construction workers, merchants, and administrators are hard at work expanding the marketplace to accomodate higher volumes of trade."
- 
+ auto_renew_luxury: "Automatically Renew Luxury Allocations"
+ auto_renew_luxury_desc: "Our wealth is overflowing; we should keep investing as much of it as we can."
+ stop_auto_renew_luxury: "Stop Automatically Renewing Luxury Allocations"
+ stop_auto_renew_luxury_desc: "We must be more strategic about how we spend our resources."
+ wine_for_stability: "Subsidize Alcohol Sales"
+ wine_for_stability_desc: "By dipping into our own stockpile we can decrease the cost for our citizens to access good spirits."
+ wine_for_morale: "Increase Wine Rations"
+ wine_for_morale_desc: "The better care we take of our soldiers, the harder they will fight for us."
+ wine_for_diplomacy: "Send Gifts of Wine"
+ wine_for_diplomacy_desc: "Foreign rulers will look more kindly upon us if we send their emissaries home with barrels of fine wine."
+ wine_for_consumer_goods: "Sell off Stockpile"
+ wine_for_consumer_goods_desc: "Our populace will pay good money for quality wine."
+ wine_for_war_support: "Host Rousing Feasts"
+ wine_for_war_support_desc: "There is nothing like a good celebration to cheer up our people in these trying times."
+ wine_for_ideology_drift: "Let Mouths Run Freely"
+ wine_for_ideology_drift_desc: "Drunk citizens are more likely to listen to dangerous ideas-- and voice their own discontents."

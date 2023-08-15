@@ -1221,4 +1221,25 @@ news_event = { ##78## Refused submission to Sauron
 	}
 }
 
-
+news_event = { ##79## Out of wine
+	id = rfr_news.79
+	title = rfr_news.79.t
+	desc = rfr_news.79.d
+	picture = GFX_news_feast2
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.79.a
+	}
+}
+news_event = { ##80## Out of Precious Metals
+	id = rfr_news.80
+	title = rfr_news.80.t
+	desc = rfr_news.80.d
+	picture = GFX_news_feast2
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.80.a
+	}
+}

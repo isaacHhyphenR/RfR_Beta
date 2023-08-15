@@ -55,5 +55,34 @@ scripted_gui = {
 				}
 			}
 		}
+		ai_enabled = {
+			always = yes
+		}
+        ai_weights = {
+            increase_export_1_click = {
+                ai_will_do = { #at least 2 available factories for the first route
+					base = 1
+					modifier = {
+						num_of_civilian_factories_available_for_projects < 2
+						factor = 0
+					}
+					modifier = { #at least 3 factories per subsequent routes
+						set_temp_variable = { needed_factories = import_routes }
+						multiply_temp_variable = { needed_factories = 3 }
+						add_to_temp_variable = { needed_factories = 1 }
+						num_of_civilian_factories_available_for_projects < var:needed_factories
+						factor = 0
+					}
+				}
+			}
+            decrease_export_1_click = {
+                ai_will_do = {
+					base = 0
+					modifier = {
+						num_of_civilian_factories_available_for_projects < 1
+					}
+				}
+			}
+		}
 	}
 }

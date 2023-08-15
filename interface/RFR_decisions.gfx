@@ -135,6 +135,14 @@ spriteTypes = {
 		name = "GFX_decision_generic_consumer_goods"
 		texturefile = "gfx/interface/decisions/decision_generic_consumer_goods.dds"
 	}
+	spriteType = {
+		name = "GFX_decision_generic_stability"
+		texturefile = "gfx/interface/decisions/decision_generic_stability.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_generic_war_support"
+		texturefile = "gfx/interface/decisions/decision_generic_war_support.dds"
+	}
 ################################################MORDOR
 	###################NAZGUL
 	spriteType = {

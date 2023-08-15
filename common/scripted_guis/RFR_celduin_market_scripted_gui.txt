@@ -55,6 +55,7 @@ scripted_gui = {
 		ai_enabled = {
 			always = yes
 		}
+		ai_test_scopes = test_self_controlled_states
         ai_weights = {
             upgrade_market_click = {
                 ai_will_do = { #upgrade your markets baby

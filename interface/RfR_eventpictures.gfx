@@ -1,0 +1,503 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_mouth_of_sauron_killed"
+		texturefile = "gfx/event_pictures/mouth_of_sauron_killed.dds"
+	}
+	spriteType = {
+		name = "GFX_nazgul_advance_misty"
+		texturefile = "gfx/event_pictures/nazgul_advance_misty.dds"
+	}
+	spriteType = {
+		name = "GFX_nazgul_backlit"
+		texturefile = "gfx/event_pictures/nazgul_backlit.dds"
+	}
+	spriteType = {
+		name = "GFX_nazgul_advance_weathertop"
+		texturefile = "gfx/event_pictures/nazgul_advance_weathertop.dds"
+	}
+	spriteType = {
+		name = "GFX_nazgul_pursuit"
+		texturefile = "gfx/event_pictures/nazgul_pursuit.dds"
+	}
+	spriteType = {
+		name = "GFX_nazgul_ride_forest"
+		texturefile = "gfx/event_pictures/nazgul_ride_forest.dds"
+	}
+	spriteType = {
+		name = "GFX_nazgul_fide_forth"
+		texturefile = "gfx/event_pictures/nazgul_fide_forth.dds"
+	}
+	spriteType = {
+		name = "GFX_nazgul_ride_misty"
+		texturefile = "gfx/event_pictures/nazgul_ride_misty.dds"
+	}
+	spriteType = {
+		name = "GFX_nazgul_sniffing"
+		texturefile = "gfx/event_pictures/nazgul_sniffing.dds"
+	}
+	spriteType = {
+		name = "GFX_nazgul_sniffing_fellowship"
+		texturefile = "gfx/event_pictures/nazgul_sniffing_fellowship.dds"
+	}
+	spriteType = {
+		name = "GFX_nazgul_question"
+		texturefile = "gfx/event_pictures/nazgul_question.dds"
+	}
+	spriteType = {
+		name = "GFX_saruman_explosion"
+		texturefile = "gfx/event_pictures/saruman_explosion.dds"
+	}
+	spriteType = {
+		name = "GFX_aragorn_coronation_event"
+		texturefile = "gfx/event_pictures/aragorn_coronation.dds"
+	}
+	spriteType = {
+		name = "GFX_theodred_death"
+		texturefile = "gfx/event_pictures/theodred_death.dds"
+	}
+	spriteType = {
+		name = "GFX_theodred_wounded"
+		texturefile = "gfx/event_pictures/theodred_wounded.dds"
+	}
+	spriteType = {
+		name = "GFX_battle_of_fords_of_isen"
+		texturefile = "gfx/event_pictures/battle_of_fords_of_isen.dds"
+	}
+	spriteType = {
+		name = "GFX_fangorn_logging"
+		texturefile = "gfx/event_pictures/fangorn_logging.dds"
+	}
+	spriteType = {
+		name = "GFX_the_beacons_are_lit"
+		texturefile = "gfx/event_pictures/the_beacons_are_lit.dds"
+	}
+	spriteType = {
+		name = "GFX_boromirs_boat"
+		texturefile = "gfx/event_pictures/boromirs_boat.dds"
+	}
+	spriteType = {
+		name = "GFX_gondor_eowyn_and_faramir"
+		texturefile = "gfx/event_pictures/gondor_eowyn_and_faramir.dds"
+	}
+	spriteType = {
+		name = "GFX_isengard_army_marching"
+		texturefile = "gfx/event_pictures/isengard_army_marching.dds"
+	}
+	spriteType = {
+		name = "GFX_isengard_wildling_and_saruman"
+		texturefile = "gfx/event_pictures/isengard_wildling_and_saruman.dds"
+	}
+	spriteType = {
+		name = "GFX_rohan_burning_of_the_westfold"
+		texturefile = "gfx/event_pictures/rohan_burning_of_the_westfold.dds"
+	}
+	spriteType = {
+		name = "GFX_mordor_mouth_of_sauron"
+		texturefile = "gfx/event_pictures/MOR_mouth_of_sauron_event.dds"
+	}
+	spriteType = {
+		name = "GFX_mordor_grand_offensive"
+		texturefile = "gfx/event_pictures/MOR_grand_offensive.dds"
+	}
+	spriteType = {
+		name = "GFX_mordor_crossing_bridge"
+		texturefile = "gfx/event_pictures/MOR_crossing_bridge.dds"
+	}
+	spriteType = {
+		name = "GFX_mordor_armies_march_forth"
+		texturefile = "gfx/event_pictures/MOR_armies_march_forth.dds"
+	}
+	spriteType = {
+		name = "GFX_palantir_aragorn_uses"
+		texturefile = "gfx/event_pictures/PALANTIR_aragorn_uses.dds"
+	}
+	spriteType = {
+		name = "GFX_palantir_saruman_uses"
+		texturefile = "gfx/event_pictures/PALANTIR_saruman_uses.dds"
+	}
+	spriteType = {
+		name = "GFX_palantir_arwen_vision"
+		texturefile = "gfx/event_pictures/PALANTIR_arwen_vision.dds"
+	}
+	spriteType = {
+		name = "GFX_palantir_barad_dur_vision"
+		texturefile = "gfx/event_pictures/PALANTIR_barad_dur_vision.dds"
+	}
+	spriteType = {
+		name = "GFX_palantir_eye_of_sauron_vision"
+		texturefile = "gfx/event_pictures/PALANTIR_eye_of_sauron_vision.dds"
+	}
+	spriteType = {
+		name = "GFX_rohan_generic_charge"
+		texturefile = "gfx/event_pictures/rohan_generic_charge.dds"
+	}
+	spriteType = {
+		name = "GFX_rohan_eomer_revolt"
+		texturefile = "gfx/event_pictures/rohan_eomer_revolt.dds"
+	}
+	spriteType = {
+		name = "GFX_rohan_eomer_arrested"
+		texturefile = "gfx/event_pictures/rohan_eomer_arrested.dds"
+	}
+	spriteType = {
+		name = "GFX_rohan_gandalf_and_theoden"
+		texturefile = "gfx/event_pictures/rohan_gandalf_and_theoden.dds"
+	}
+	spriteType = {
+		name = "GFX_rohan_grima_and_theoden"
+		texturefile = "gfx/event_pictures/rohan_grima_and_theoden.dds"
+	}
+	spriteType = {
+		name = "GFX_rohan_grima_decree"
+		texturefile = "gfx/event_pictures/rohan_grima_decree.dds"
+	}
+	spriteType = {
+		name = "GFX_rohan_theoden_negotiates"
+		texturefile = "gfx/event_pictures/rohan_theoden_negotiates.dds"
+	}
+	spriteType = {
+		name = "GFX_aragorn_arrives_with_the_dead"
+		texturefile = "gfx/event_pictures/aragorn_arrives_with_the_dead.dds"
+	}
+	spriteType = {
+		name = "GFX_orcish_industry"
+		texturefile = "gfx/event_pictures/orcish_industry.dds"
+	}
+	spriteType = {
+		name = "GFX_saruman_industry"
+		texturefile = "gfx/event_pictures/saruman_industry.dds"
+	}
+###########################################################################################################################################
+##################################################################VorV
+###########################################################################################################################################
+	spriteType = {
+		name = "GFX_news_nazgul_advance_misty"
+		texturefile = "gfx/event_pictures/news_events/news_nazgul_advance_misty.dds"
+	}
+	spriteType = {
+		name = "GFX_news_nazgul_backlit"
+		texturefile = "gfx/event_pictures/news_events/news_nazgul_backlit.dds"
+	}
+	spriteType = {
+		name = "GFX_news_nazgul_advance_weathertop"
+		texturefile = "gfx/event_pictures/news_events/news_nazgul_advance_weathertop.dds"
+	}
+	spriteType = {
+		name = "GFX_news_nazgul_pursuit"
+		texturefile = "gfx/event_pictures/news_events/news_nazgul_pursuit.dds"
+	}
+	spriteType = {
+		name = "GFX_news_nazgul_ride_forest"
+		texturefile = "gfx/event_pictures/news_events/news_nazgul_ride_forest.dds"
+	}
+	spriteType = {
+		name = "GFX_news_nazgul_fide_forth"
+		texturefile = "gfx/event_pictures/news_events/news_nazgul_fide_forth.dds"
+	}
+	spriteType = {
+		name = "GFX_news_nazgul_ride_misty"
+		texturefile = "gfx/event_pictures/news_events/news_nazgul_ride_misty.dds"
+	}
+	spriteType = {
+		name = "GFX_news_nazgul_sniffing"
+		texturefile = "gfx/event_pictures/news_events/news_nazgul_sniffing.dds"
+	}
+	spriteType = {
+		name = "GFX_news_nazgul_sniffing_fellowship"
+		texturefile = "gfx/event_pictures/news_events/news_nazgul_sniffing_fellowship.dds"
+	}
+	spriteType = {
+		name = "GFX_news_nazgul_question"
+		texturefile = "gfx/event_pictures/news_events/news_nazgul_question.dds"
+	}
+	spriteType = {
+		name = "GFX_swear_blood_oath"
+		texturefile = "gfx/event_pictures/swear_blood_oath_event.dds"
+	}
+	spriteType = {
+		name = "GFX_dunlendings_conquer"
+		texturefile = "gfx/event_pictures/dunlendings_conquer.dds"
+	}
+	spriteType = {
+		name = "GFX_dunlendings_invade"
+		texturefile = "gfx/event_pictures/dunlendings_invade.dds"
+	}
+	spriteType = {
+		name = "GFX_dunlendings_rally"
+		texturefile = "gfx/event_pictures/dunlendings_rally.dds"
+	}
+	spriteType = {
+		name = "GFX_dunlendings_march"
+		texturefile = "gfx/event_pictures/dunlendings_march.dds"
+	}
+	spriteType = {
+		name = "GFX_saruman_rallies_dunlendings"
+		texturefile = "gfx/event_pictures/saruman_rallies_dunlendings.dds"
+	}
+	spriteType = {
+		name = "GFX_saruman_innovations"
+		texturefile = "gfx/event_pictures/saruman_innovations.dds"
+	}
+	spriteType = {
+		name = "GFX_fealty_to_gondor"
+		texturefile = "gfx/event_pictures/fealty_to_gondor.dds"
+	}
+	spriteType = {
+		name = "GFX_gondor_accepts_diplomacy"
+		texturefile = "gfx/event_pictures/gondor_accepts_diplomacy.dds"
+	}
+	spriteType = {
+		name = "GFX_gondor_rejects_diplomacy"
+		texturefile = "gfx/event_pictures/gondor_rejects_diplomacy.dds"
+	}
+	spriteType = {
+		name = "GFX_boromir_victorious"
+		texturefile = "gfx/event_pictures/boromir_victorious.dds"
+	}
+	spriteType = {
+		name = "GFX_event_trade"
+		texturefile = "gfx/event_pictures/event_trade.dds"
+	}
+	spriteType = {
+		name = "GFX_event_trade2"
+		texturefile = "gfx/event_pictures/event_trade2.dds"
+	}
+	spriteType = {
+		name = "GFX_saruman_angry"
+		texturefile = "gfx/event_pictures/saruman_angry.dds"
+	}
+	spriteType = {
+		name = "GFX_saruman_pleased"
+		texturefile = "gfx/event_pictures/saruman_pleased.dds"
+	}
+	spriteType = {
+		name = "GFX_saruman_regal"
+		texturefile = "gfx/event_pictures/saruman_regal.dds"
+	}
+	spriteType = {
+		name = "GFX_rohan_accepts_diplomacy"
+		texturefile = "gfx/event_pictures/rohan_accepts_diplomacy.dds"
+	}
+	spriteType = {
+		name = "GFX_rohan_rejects_diplomacy"
+		texturefile = "gfx/event_pictures/rohan_rejects_diplomacy.dds"
+	}
+##################################################################NEWS
+	spriteType = {
+		name = "GFX_news_mouth_of_sauron_killed"
+		texturefile = "gfx/event_pictures/news_events/news_mouth_of_sauron_killed.dds"
+	}
+	spriteType = {
+		name = "GFX_news_saruman_explosion"
+		texturefile = "gfx/event_pictures/news_events/news_saruman_explosion.dds"
+	}
+	spriteType = {
+		name = "GFX_news_aragorn_coronation"
+		texturefile = "gfx/event_pictures/news_events/news_aragorn_coronation.dds"
+	}
+	spriteType = {
+		name = "GFX_news_denethors_death"
+		texturefile = "gfx/event_pictures/news_events/news_denethors_death.dds"
+	}
+	spriteType = {
+		name = "GFX_news_fall_of_sauron"
+		texturefile = "gfx/event_pictures/news_events/news_fall_of_sauron.dds"
+	}
+	spriteType = {
+		name = "GFX_news_gandalf_and_theoden"
+		texturefile = "gfx/event_pictures/news_events/news_gandalf_and_theoden.dds"
+	}
+	spriteType = {
+		name = "GFX_news_rohan_theoden_negotiates"
+		texturefile = "gfx/event_pictures/news_events/news_rohan_theoden_negotiates.dds"
+	}
+	spriteType = {
+		name = "GFX_news_theoden_death"
+		texturefile = "gfx/event_pictures/news_events/news_theoden_death.dds"
+	}
+	spriteType = {
+		name = "GFX_news_sauron_embodied"
+		texturefile = "gfx/event_pictures/news_events/news_sauron_embodied.dds"
+	}
+	spriteType = {
+		name = "GFX_news_warning_beacons_lit"
+		texturefile = "gfx/event_pictures/news_events/news_warning_beacons_lit.dds"
+	}
+	spriteType = {
+		name = "GFX_news_witch_king_death"
+		texturefile = "gfx/event_pictures/news_events/news_witch_king_death.dds"
+	}
+	spriteType = {
+		name = "GFX_news_theodred_death"
+		texturefile = "gfx/event_pictures/news_events/news_theodred_death.dds"
+	}
+	spriteType = {
+		name = "GFX_news_theodred_wounded"
+		texturefile = "gfx/event_pictures/news_events/news_theodred_wounded.dds"
+	}
+	spriteType = {
+		name = "GFX_news_battle_of_fords_of_isen"
+		texturefile = "gfx/event_pictures/news_events/news_battle_of_fords_of_isen.dds"
+	}
+	spriteType = {
+		name = "GFX_news_pelennor_rohan_army"
+		texturefile = "gfx/event_pictures/news_events/news_pelennor_rohan_army.dds"
+	}
+	spriteType = {
+		name = "GFX_news_last_march_of_the_ents"
+		texturefile = "gfx/event_pictures/news_events/news_last_march_of_the_ents.dds"
+	}
+	spriteType = {
+		name = "GFX_news_gondor_flag"
+		texturefile = "gfx/event_pictures/news_events/flags/news_gondor_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_news_isengard_flag"
+		texturefile = "gfx/event_pictures/news_events/flags/news_isengard_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_news_mordor_flag"
+		texturefile = "gfx/event_pictures/news_events/flags/news_mordor_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_news_rohan_flag"
+		texturefile = "gfx/event_pictures/news_events/flags/news_rohan_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_news_andrast_flag"
+		texturefile = "gfx/event_pictures/news_events/flags/news_andrast_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_news_druwaith_iaur_flag"
+		texturefile = "gfx/event_pictures/news_events/flags/news_druwaith_iaur_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_news_dunland_flag"
+		texturefile = "gfx/event_pictures/news_events/flags/news_dunland_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_news_enedwaith_flag"
+		texturefile = "gfx/event_pictures/news_events/flags/news_enedwaith_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_news_eregion_flag"
+		texturefile = "gfx/event_pictures/news_events/flags/news_eregion_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_news_white_mountains_flag"
+		texturefile = "gfx/event_pictures/news_events/flags/news_white_mountains_flag.dds"
+	}
+
+	spriteType = {
+		name = "GFX_news_swear_blood_oath"
+		texturefile = "gfx/event_pictures/news_events/news_swear_blood_oath_event.dds"
+	}
+	spriteType = {
+		name = "GFX_news_saruman_innovations"
+		texturefile = "gfx/event_pictures/news_events/news_saruman_innovations.dds"
+	}
+	spriteType = {
+		name = "GFX_news_eye_of_sauron"
+		texturefile = "gfx/event_pictures/news_events/news_eye_of_sauron.dds"
+	}
+	spriteType = {
+		name = "GFX_news_dunlendings_conquer"
+		texturefile = "gfx/event_pictures/news_events/news_dunlendings_conquer.dds"
+	}
+	spriteType = {
+		name = "GFX_news_dunlendings_invade"
+		texturefile = "gfx/event_pictures/news_events/news_dunlendings_invade.dds"
+	}
+	spriteType = {
+		name = "GFX_news_dunlendings_rally"
+		texturefile = "gfx/event_pictures/news_events/news_dunlendings_rally.dds"
+	}
+	spriteType = {
+		name = "GFX_news_dunlendings_march"
+		texturefile = "gfx/event_pictures/news_events/news_dunlendings_march.dds"
+	}
+	spriteType = {
+		name = "GFX_news_saruman_rallies_dunlendings"
+		texturefile = "gfx/event_pictures/news_events/news_saruman_rallies_dunlendings.dds"
+	}
+	spriteType = {
+		name = "GFX_news_fealty_to_gondor"
+		texturefile = "gfx/event_pictures/news_events/news_fealty_to_gondor.dds"
+	}
+	spriteType = {
+		name = "GFX_news_gondor_accepts_diplomacy"
+		texturefile = "gfx/event_pictures/news_events/news_gondor_accepts_diplomacy.dds"
+	}
+	spriteType = {
+		name = "GFX_news_gondor_rejects_diplomacy"
+		texturefile = "gfx/event_pictures/news_events/news_gondor_rejects_diplomacy.dds"
+	}
+	spriteType = {
+		name = "GFX_news_boromir_victorious"
+		texturefile = "gfx/event_pictures/news_events/news_boromir_victorious.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_trade"
+		texturefile = "gfx/event_pictures/news_events/news_event_trade.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_trade2"
+		texturefile = "gfx/event_pictures/news_events/news_event_trade2.dds"
+	}
+	spriteType = {
+		name = "GFX_news_saruman_angry"
+		texturefile = "gfx/event_pictures/news_events/news_saruman_angry.dds"
+	}
+	spriteType = {
+		name = "GFX_news_saruman_pleased"
+		texturefile = "gfx/event_pictures/news_events/news_saruman_pleased.dds"
+	}
+	spriteType = {
+		name = "GFX_news_saruman_regal"
+		texturefile = "gfx/event_pictures/news_events/news_saruman_regal.dds"
+	}
+	spriteType = {
+		name = "GFX_news_rohan_accepts_diplomacy"
+		texturefile = "gfx/event_pictures/news_events/news_rohan_accepts_diplomacy.dds"
+	}
+	spriteType = {
+		name = "GFX_news_rohan_rejects_diplomacy"
+		texturefile = "gfx/event_pictures/news_events/news_rohan_rejects_diplomacy.dds"
+	}
+	spriteType = {
+		name = "GFX_news_orcish_industry"
+		texturefile = "gfx/event_pictures/news_events/news_orcish_industry.dds"
+	}
+	spriteType = {
+		name = "GFX_news_saruman_industry"
+		texturefile = "gfx/event_pictures/news_events/news_saruman_industry.dds"
+	}
+#######################################################################################################################
+##################################################################AteM
+#######################################################################################################################
+	spriteType = {
+		name = "GFX_feast"
+		texturefile = "gfx/event_pictures/events/feast.dds"
+	}
+	spriteType = {
+		name = "GFX_feast2"
+		texturefile = "gfx/event_pictures/events/feast2.dds"
+	}
+	spriteType = {
+		name = "GFX_offer_wine"
+		texturefile = "gfx/event_pictures/events/offer_wine.dds"
+	}
+##################################################################NEWS
+	spriteType = {
+		name = "GFX_news_feast"
+		texturefile = "gfx/event_pictures/news_events/news_feast.dds"
+	}
+	spriteType = {
+		name = "GFX_news_feast2"
+		texturefile = "gfx/event_pictures/news_events/news_feast2.dds"
+	}
+	spriteType = {
+		name = "GFX_news_offer_wine"
+		texturefile = "gfx/event_pictures/news_events/news_offer_wine.dds"
+	}
+}

@@ -40,4 +40,303 @@ celduin_trade_category = {
 			subtract_from_variable = { market_upgrading_cost = global.market_upgrade_cost }
 		}
 	}
+
+	@luxury_cost = 999
+	@luxury_cost_negative = -1000
+	@wine_decision_days = 100
+	
+	auto_renew_luxury = {
+		visible = { NOT = { has_country_flag = renew_luxury_decisions } }
+		complete_effect = { set_country_flag = renew_luxury_decisions }
+	}
+	stop_auto_renew_luxury = {
+		ai_will_do = { #ai should not auto renew
+			factor = 1
+		}
+		visible = { has_country_flag = renew_luxury_decisions }
+		complete_effect = { clr_country_flag = renew_luxury_decisions }
+	}
+	
+	#############SPEND WINE
+	wine_for_stability = {
+		icon = GFX_decision_generic_stability
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_stability < 0.75
+				factor = 2
+			}
+			modifier = {
+				has_stability < 0.5
+				factor = 10
+			}
+			modifier = { #don't do if enough stability
+				has_stability > 0.95
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost }
+		}
+		custom_cost_text = wine_decision_cost
+		days_remove = @wine_decision_days
+		modifier = {
+			stability_weekly = 0.005
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost } }
+						activate_decision = wine_for_stability
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+	
+	wine_for_war_support = {
+		icon = GFX_decision_generic_war_support
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war_support < 0.75
+				OR = {
+					has_war = yes
+					has_government = melkorite
+					has_government = conquest
+				}
+				factor = 2
+			}
+			modifier = {
+				has_war_support < 0.5
+				OR = {
+					has_war = yes
+					is_evil = yes
+				}
+				factor = 10
+			}
+			modifier = { #peaceful people don't really care
+				has_war = no
+				is_good = yes
+				factor = 0
+			}
+			modifier = { #don't do if enough stability
+				has_war_support > 0.95
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost }
+		}
+		custom_cost_text = wine_decision_cost
+		days_remove = @wine_decision_days
+		modifier = {
+			war_support_weekly = 0.005
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost } }
+						activate_decision = wine_for_war_support
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+	
+	wine_for_consumer_goods = {
+		icon = GFX_decision_generic_consumer_goods
+		ai_will_do = {
+			factor = 2
+			modifier = { #don't do if not enough factories to likely make a difference
+				num_of_factories < 15
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost }
+		}
+		custom_cost_text = wine_decision_cost
+		days_remove = @wine_decision_days
+		modifier = {
+			consumer_goods_factor = -0.035
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost } }
+						activate_decision = wine_for_consumer_goods
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+	
+	wine_for_morale = {
+		icon = GFX_decision_generic_military
+		ai_will_do = {
+			factor = 1
+			modifier = { #more likely if outmatched
+				enemies_strength_ratio > 1
+				factor = 2
+			}
+			modifier = { #more likely if outmatched
+				enemies_strength_ratio > 1.25
+				factor = 2
+			}
+			modifier = { #more likely if losing ground
+				any_owned_state = { NOT = { is_controlled_by = ROOT } }
+				factor = 3
+			}
+			modifier = { #no reason if at peace
+				has_war = no
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost }
+		}
+		custom_cost_text = wine_decision_cost
+		days_remove = @wine_decision_days
+		modifier = {
+			army_morale_factor = 0.25
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost } }
+						activate_decision = wine_for_morale
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+	
+	wine_for_diplomacy = {
+		icon = GFX_generic_befriend_decision
+		ai_will_do = {
+			factor = 0.25
+			modifier = { #you don't need diplomacy!
+				OR = {
+					is_subject = yes
+					AND = {
+						has_war = yes
+						is_in_faction = yes
+					}
+				}
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost }
+		}
+		custom_cost_text = wine_decision_cost
+		days_remove = @wine_decision_days
+		modifier = {
+			improve_relations_maintain_cost_factor = -0.75
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost } }
+						activate_decision = wine_for_diplomacy
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+	
+	wine_for_ideology_drift = {
+		icon = GFX_decision_eng_blackshirt_speech
+		ai_will_do = {
+			factor = 0.25
+			modifier = { #you don't need diplomacy!
+				OR = {
+					is_subject = yes
+					AND = {
+						has_war = yes
+						is_in_faction = yes
+					}
+				}
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost }
+		}
+		custom_cost_text = wine_decision_cost
+		days_remove = @wine_decision_days
+		modifier = {
+			drift_defence_factor = -0.25
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost } }
+						activate_decision = wine_for_ideology_drift
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
 }

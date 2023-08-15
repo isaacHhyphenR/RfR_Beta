@@ -18,7 +18,7 @@ state={
 			762 4
 		}
 		victory_points = { #Lendembas
-			4493 2
+			4993 2
 		}
 		victory_points = { #Pargeltir
 			2535 1
