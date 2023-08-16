@@ -56,8 +56,8 @@ CUV = {
 	color_ui = rgb { 97 118 80 }
 }
 DAG = {
-	color = rgb { 69 71 8 }
-	color_ui = rgb { 48 49 7 }
+	color = rgb { 152 152 152 }
+	color_ui = rgb { 136 136 136 }
 }
 DAI = {
 	color = rgb { 10 164 148 }
@@ -212,8 +212,8 @@ MED = {
 	color_ui = rgb { 32 42 60 }
 }
 MIR = {
-	color = rgb { 116 252 223 }
-	color_ui = rgb { 54 200 169 }
+	color = rgb { 215 176 20 }
+	color_ui = rgb { 205 156 6 }
 }
 MOR = {
 	color = rgb { 40 40 40 }

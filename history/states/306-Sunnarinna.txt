@@ -1,0 +1,60 @@
+state={
+	id=306
+	name="STATE_306"
+
+	history={
+		owner = MIR
+		add_core_of = MIR
+		buildings = {
+			infrastructure = 2
+			market = 1
+			industrial_complex = 1
+			arms_factory = 1
+			5961 = {
+				naval_base = 3
+				bunker = 2
+				coastal_bunker = 2
+			}
+			5860 = {
+				naval_base = 1
+			}
+		}
+		victory_points = { #Kornholm, 10
+			5961 6
+		}
+		victory_points = { #Aravinas
+			5288 2
+		}
+		victory_points = { #Kuivoll
+			2018 1
+		}
+		victory_points = { #Lanvaeg
+			5860 1
+		}
+		set_variable = {
+			downstream_node = 110
+		}
+		set_variable = {
+			upstream_node = 102
+		}
+		set_variable = {
+			node_index = 3
+		}
+		add_to_array = {
+			array = global.celduin_markets
+			value = THIS
+			index = 4
+		}
+		add_dynamic_modifier = {
+			modifier = market_modifiers
+		}
+	}
+
+	provinces={ #37
+		747 870 1013 1434 1531 2018 2329 2479 2502 2687 3407 3831 4080 4428 4592 4802 5288 5394 5860 5889 5917 5918 5927 5961 5975 5984 5996 6004 6012 6037 6049 6053 6057 6065 6086 6090 6117 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

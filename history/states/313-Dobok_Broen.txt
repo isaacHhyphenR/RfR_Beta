@@ -7,13 +7,11 @@ state={
 		owner = DOR
 		add_core_of = DOR
 		buildings = {
-			infrastructure = 1
-
 		}
 
 	}
 
-	provinces={
+	provinces={#22
 		2267 3125 3199 3206 3791 3794 3845 4155 4623 4960 6515 6524 6535 6547 6569 6570 6585 6596 6602 6613 6617 6619 
 	}
 	manpower=100000

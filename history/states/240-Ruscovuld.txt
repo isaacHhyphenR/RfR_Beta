@@ -9,8 +9,8 @@ state={
 	}
 	
 	history={
-		owner = DOR
-		add_core_of = DOR
+		owner = MIR
+		add_core_of = MIR
 		victory_points = { #Sant Rovalug, 12
 			627 8
 		}

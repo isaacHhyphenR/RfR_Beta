@@ -1,32 +1,24 @@
-
 state={
 	id=121
 	name="STATE_121"
-	resources={
-		cloth=1.000
-	}
 
 	history={
 		owner = DAG
 		add_core_of = DAG
-		victory_points = {
-			6743 1 
+		victory_points = { #Salur
+			6622 0 #1
 		}
-		victory_points = {
-			6622 1 
+		victory_points = { #Arakog
+			6743 0 #1
 		}
-		buildings = {
-			infrastructure = 0
-
+		victory_points = { #Tol Dagor
+			6842 0 #1
 		}
-
 	}
 
-	provinces={
+	provinces={ #48
 		363 453 512 1373 1415 1451 1456 1595 1948 1962 1974 1985 2220 2291 2506 2748 2838 2852 2887 3253 3364 3396 3478 3604 3716 3784 3893 4204 5029 5050 5155 5177 6615 6622 6644 6683 6690 6713 6729 6741 6743 6764 6767 6788 6798 6823 6825 6842 
 	}
 	manpower=62000
-	buildings_max_level_factor=1.000
-	state_category=pastoral
-	local_supplies=0.000
+	state_category=wasteland
 }

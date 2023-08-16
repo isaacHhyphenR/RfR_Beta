@@ -20,14 +20,14 @@ state={
 				coastal_bunker = 2
 			}
 		}
-		victory_points = { #Trotobor, 9
-			5985 6
+		victory_points = { #Trotobor, 13
+			5985 8
+		}
+		victory_points = { #Marlinborg 
+			439 3
 		}
 		victory_points = { #Krákabor 
 			6123 1
-		}
-		victory_points = { #Marlinborg 
-			439 1
 		}
 		victory_points = { #Aulenborg 
 			6119 1

@@ -8,19 +8,18 @@ state={
 		buildings = {
 			infrastructure = 1
 		}
-		victory_points = { #Srinagar, 5
+		victory_points = { #Srinagar, 6
 			2237 3
 		}
 		victory_points = { #Econiva
-			1503 1
+			1503 2
 		}
 		victory_points = { #Burh Seath
 			2452 1
 		}
-
 	}
 
-	provinces={
+	provinces={#38
 		515 678 694 1503 1522 1666 1907 2008 2237 2290 2325 2452 3061 3080 3178 3304 3471 3999 4559 4775 5055 5183 5217 5242 5268 6177 6192 6218 6220 6249 6263 6288 6310 6329 6347 6365 6381 7822 
 	}
 	manpower=100000

@@ -1,0 +1,22 @@
+
+state={
+	id=122
+	name="STATE_122"
+
+	history={
+		owner = DAG
+		add_core_of = DAG
+		victory_points = { #Agara, 0
+			3260 0 #2
+		}
+		victory_points = { #Kravod
+			6578 0 #1
+		}
+	}
+
+	provinces={ #
+		47 733 1057 1276 1446 1695 2172 2365 2476 2897 2946 3260 3336 3440 3527 3683 4009 4029 5304 6527 6530 6556 6571 6577 6578 6601 6629 6666 
+	}
+	manpower=107000
+	state_category=wasteland
+}

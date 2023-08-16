@@ -1,4 +1,3 @@
-
 state={
 	id=335
 	name="STATE_335"
@@ -6,18 +5,17 @@ state={
 	history={
 		owner = DAG
 		add_core_of = DAG
-		buildings = {
-			infrastructure = 1
-
+		victory_points = { #Hisaradi
+			2915 0 #2
 		}
-
+		victory_points = { #Adalina
+			75 0 #1
+		}
 	}
 
-	provinces={
+	provinces={#34
 		75 157 399 871 942 998 1017 1352 1808 2044 2435 2790 2915 3249 3565 3581 3623 3765 4272 4461 6714 6789 6790 6831 6852 6868 6873 6883 6900 6903 8799 10580 10769 10785 
 	}
 	manpower=100000
-	buildings_max_level_factor=1.000
 	state_category=wasteland
-	local_supplies=0.000
 }

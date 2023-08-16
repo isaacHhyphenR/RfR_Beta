@@ -16,11 +16,11 @@ state={
 			3996 2 
 		}
 		buildings = {
-			infrastructure = 0
+			infrastructure = 1
 		}
 	}
 
-	provinces={
+	provinces={ #27
 		221 279 404 589 657 1076 1492 1498 1507 1848 2258 2607 2922 3212 3935 3996 4092 4106 4444 4975 6440 6481 6526 6533 6559 8919 10797 
 	}
 	manpower=334000

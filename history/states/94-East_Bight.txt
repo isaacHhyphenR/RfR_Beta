@@ -1,29 +1,24 @@
 state = {
 	id = 94
 	name = "STATE_94" #East Bight
-	state_category = pastoral
-	manpower = 480000	local_supplies=0.0
+	state_category = wasteland
+	manpower = 480000
 	resources = {
-		food = 6
 	}
-	provinces = {
+	provinces = { #11
 		19 1065 2246 2569 3272 3650 4088 4312 6165 6190 6236 
 	}
 	history = {
-		owner = GLD
-		add_core_of = GLD
-		add_core_of = WOD
-		victory_points = { #3
-			4312 1
+		owner = DAG
+		add_core_of = DAG
+		victory_points = { #0
+			4312 0#1
 		}
 		victory_points = {
-			3272 1
+			3272 0#1
 		}
 		victory_points = {
-			2569 1
-		}
-		buildings = {
-			infrastructure = 0
+			2569 0#1
 		}
 	}
 }

@@ -10,28 +10,21 @@ state={
 	}
 
 	history={
-		add_core_of = MIR
-		owner = MIR
-		victory_points = {
-			1668 1 
-		}
-		victory_points = {
-			2572 1 
-		}
+		add_core_of = DAG
+		owner = DAG
 		buildings = {
-			infrastructure = 1
-			industrial_complex = 1
 		}
-		victory_points = { #Trotobor, 0
-			2270 0
+		victory_points = { #Ovanora, 0
+			1301 0 #2
+		}
+		victory_points = { #Aykolbaurg
+			2270 0 #1
 		}
 	}
 
-	provinces={
+	provinces={ #36
 		408 500 631 681 744 755 1062 1301 1315 1460 1668 2037 2270 2339 2572 2984 3362 3610 3616 3657 3700 3963 3966 4042 4115 4305 4557 4799 4904 6161 6176 6191 6255 6257 6328 7807 
 	}
 	manpower=1064000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
+	state_category=wasteland
 }
