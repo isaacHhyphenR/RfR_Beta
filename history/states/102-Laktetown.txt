@@ -1,26 +1,24 @@
 state = {
 	id = 102
 	name = "STATE_102"
-	state_category = small_island
+	state_category = large_town
 	manpower = 679000
-	provinces = {
+	provinces = { #1
 		7804
 	}
 	history = {
-		3000.1.1 = { ##Extra building slot for proper categorization
-			102 = {
-				add_extra_state_shared_building_slots = 1
-			}
-		}
 		owner = DAL
 		add_core_of = DAL
-		victory_points = { #15
+		victory_points = { #Esgaroth, 15
 			7804 15
 		}
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
 			market = 2
+			7804 = {
+				naval_base = 6
+			}
 		}
 ##########################################TRADE
 		set_variable = { downstream_node = 306 } #sunnarina

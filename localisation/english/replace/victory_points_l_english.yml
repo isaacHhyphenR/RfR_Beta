@@ -182,22 +182,6 @@
  VICTORY_POINTS_1310: "Ceres Amoneth"
  VICTORY_POINTS_5689: "Amon Angened"
  VICTORY_POINTS_754: "Thornholt"
- VICTORY_POINTS_5658: "Dale"
- VICTORY_POINTS_7804: "Esgaroth"
- VICTORY_POINTS_5702: "Westoft"
- VICTORY_POINTS_5720: "Londaroth"
- VICTORY_POINTS_2982: "Iach Celduin"
- VICTORY_POINTS_3901: "Grosgard"
- VICTORY_POINTS_2780: "Norholt"
- VICTORY_POINTS_712: "Myrrborg"
- VICTORY_POINTS_5964: "Kaupaborg"
- VICTORY_POINTS_3596: "Klofnakot"
- VICTORY_POINTS_3417: "Dokkavin"
- VICTORY_POINTS_5816: "Elliborg"
- VICTORY_POINTS_5741: "Erland's Ferry" #Gramavuld
- VICTORY_POINTS_5949: "Naertheiaborg"
- VICTORY_POINTS_6009: "Gramborg"
- VICTORY_POINTS_2135: "Marhlingeborg"
  VICTORY_POINTS_5673: "Dunn Eidirik"
  VICTORY_POINTS_4452: "Erebor" #The Lonely Mountain
  VICTORY_POINTS_1153: "Elrungagard"
@@ -692,26 +676,26 @@
  VICTORY_POINTS_5158: "Sarn Gebir"
  VICTORY_POINTS_3260: "Agara" #Talath Haroch
  VICTORY_POINTS_6578: "Kravod"
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
- # VICTORY_POINTS_: ""
+ VICTORY_POINTS_4439: "Austeinfell" #Hrafnvild
+ VICTORY_POINTS_4658: "Dale" #Dalelands
+ VICTORY_POINTS_5706: "Ulgerstat"
+ VICTORY_POINTS_5583: "Strandborg" #Vargurat
+ VICTORY_POINTS_4937: "Harbjarg" #Aldmyrr
+ VICTORY_POINTS_4937: "Aesfirion" #Aesfirion
+ VICTORY_POINTS_4937: "Caradsurga"
+ VICTORY_POINTS_4937: "Myrrfliot" #Hamarsland
+ VICTORY_POINTS_4937: "Hamarsborg"
+ VICTORY_POINTS_1041: "Kaupaborg" #Gramavuld
+ VICTORY_POINTS_4051: "Grissvoll"
+ VICTORY_POINTS_4937: "Thegenborg"
+ VICTORY_POINTS_5881: "Dokkavin"
+ VICTORY_POINTS_5838: "Arag Kyn" #Clanbyrst
+ VICTORY_POINTS_5059: "Mialag"
+ VICTORY_POINTS_5186: "Grasland"
+ VICTORY_POINTS_125: "Vargborg" #Vargfell
+ VICTORY_POINTS_5699: "Latasfena"
+ VICTORY_POINTS_4753: "Grasgard"
+ VICTORY_POINTS_7804: "Esgaroth" #Esgaroth
  # VICTORY_POINTS_: ""
  # VICTORY_POINTS_: ""
  # VICTORY_POINTS_: ""

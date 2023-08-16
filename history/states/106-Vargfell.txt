@@ -1,4 +1,3 @@
-
 state={
 	id=106
 	name="STATE_106"
@@ -14,9 +13,18 @@ state={
 			infrastructure = 2
 			industrial_complex = 1
 		}
+		victory_points = { #Vargborg, 9
+			125 5 
+		}
+		victory_points = { #Latasfena
+			5699 3 
+		}
+		victory_points = { #Grasgard
+			4753 1 
+		}
 	}
 
-	provinces={
+	provinces={ #26
 		125 248 389 933 995 1220 2242 2281 2478 2895 3573 3603 3648 4233 4377 4753 5648 5675 5699 5716 5721 5725 5739 5748 5772 5774 
 	}
 	manpower=921000

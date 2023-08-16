@@ -8,16 +8,16 @@ state={
 		add_core_of = DAL
 		buildings = {
 			infrastructure = 1
-
+		}
+		victory_points = { #Harbjarg, 4
+			4937 4
 		}
 
 	}
 
-	provinces={
+	provinces={ #12
 		1535 1791 2067 3188 3247 3901 5720 5724 5738 5750 5770 5809 
 	}
 	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
+	state_category=rural
 }

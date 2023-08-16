@@ -16,16 +16,16 @@ state={
 			infrastructure = 2
 			arms_factory = 1
 			industrial_complex = 1
-
+		}
+		victory_points = { #Austeinfell, 5
+			4439 5
 		}
 
 	}
 
-	provinces={
+	provinces={ #34
 		334 1688 2497 3167 3207 3389 3393 4254 4439 4508 5672 5680 5683 5715 5717 
 	}
 	manpower=1074000
-	buildings_max_level_factor=1.000
 	state_category=town
-	local_supplies=0.000
 }

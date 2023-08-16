@@ -2,20 +2,20 @@ state = {
 	id = 97
 	name = "STATE_97" #Dalian Hinterlands
 	state_category = pastoral
-	manpower = 396000	local_supplies=0.0
+	manpower = 396000
 	resources = {
 		food = 2
 		wood = 1
 		iron = 1
 	}
-	provinces = {
+	provinces = { #8
 		320 391 754 1060 2256 2295 5583 5605 
 	}
 	history = {
 		owner = DAL
 		add_core_of = DAL
-		victory_points = { #1
-			754 1
+		victory_points = { #Strandborg, 2
+			5583 2
 		}
 		buildings = {
 			infrastructure = 1
