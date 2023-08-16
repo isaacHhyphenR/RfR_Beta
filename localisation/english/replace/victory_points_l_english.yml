@@ -220,7 +220,6 @@
  VICTORY_POINTS_6495: "Holepon"
  VICTORY_POINTS_4460: "Fornton"
  VICTORY_POINTS_6336: "Yalamah"
- VICTORY_POINTS_5985: "Aravan"
  VICTORY_POINTS_4072: "Kugavod"
  VICTORY_POINTS_6113: "Kelepar"
  VICTORY_POINTS_3106: "Scarn"
@@ -247,13 +246,6 @@
  VICTORY_POINTS_4184: "Ost-en-Ery"
  VICTORY_POINTS_6920: "Varfest"
  VICTORY_POINTS_1094: "Celebrin"
- VICTORY_POINTS_6842: "Sarnen Thuringwath"
- VICTORY_POINTS_1729: "Lag-Dagúr"
- VICTORY_POINTS_5158: "Dor Nauroch"
- VICTORY_POINTS_6562: "Dort'ahad"
- VICTORY_POINTS_3525: "Lôgarth"
- VICTORY_POINTS_6743: "Dôthala"
- VICTORY_POINTS_6622: "Rómenost"
  VICTORY_POINTS_3811: "Edoras"
  VICTORY_POINTS_7478: "Dunharrow"
  VICTORY_POINTS_6992: "Aldburg"
@@ -680,11 +672,11 @@
  VICTORY_POINTS_4658: "Dale" #Dalelands
  VICTORY_POINTS_5706: "Ulgerstat"
  VICTORY_POINTS_5583: "Strandborg" #Vargurat
- VICTORY_POINTS_4937: "Harbjarg" #Aldmyrr
- VICTORY_POINTS_4937: "Aesfirion" #Aesfirion
- VICTORY_POINTS_4937: "Caradsurga"
- VICTORY_POINTS_4937: "Myrrfliot" #Hamarsland
- VICTORY_POINTS_4937: "Hamarsborg"
+ VICTORY_POINTS_5809: "Harbjarg" #Aldmyrr
+ VICTORY_POINTS_5061: "Aesfirion" #Aesfirion
+ VICTORY_POINTS_6009: "Caradsurga"
+ VICTORY_POINTS_5849: "Myrrfliot" #Hamarsland
+ VICTORY_POINTS_5904: "Hamarsborg"
  VICTORY_POINTS_1041: "Kaupaborg" #Gramavuld
  VICTORY_POINTS_4051: "Grissvoll"
  VICTORY_POINTS_4937: "Thegenborg"

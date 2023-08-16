@@ -8,12 +8,15 @@ state={
 		add_core_of = DAL
 		buildings = {
 			infrastructure = 1
+			6009 = {
+				naval_base = 1
+			}
 		}
 		victory_points = { #Aesfirion, 7
-			4937 6
+			5061 6
 		}
 		victory_points = { #Caradsurga
-			4937 1
+			6009 1
 		}
 
 	}
