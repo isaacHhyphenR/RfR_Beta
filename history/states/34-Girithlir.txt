@@ -13,8 +13,8 @@ state = {
 	}
 
 	history = {
-		owner = CAR
-		add_core_of = CAR
+		owner = ART
+		add_core_of = ART
 		set_variable = { historical_capital_for_country = CAR }
 		victory_points = {
 			1572 10

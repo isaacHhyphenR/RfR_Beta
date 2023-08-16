@@ -9,24 +9,19 @@ state={
 	history={
 		add_core_of = MIR
 		owner = MIR
-		victory_points = {
-			6481 1 
+		victory_points = { #Sarema, 4
+			221 2 
 		}
-		victory_points = {
-			3178 1 
-		}
-		victory_points = {
-			6380 1 
+		victory_points = { #Brista
+			3996 2 
 		}
 		buildings = {
 			infrastructure = 0
-
 		}
-
 	}
 
 	provinces={
-		221 279 404 589 657 1076 1492 1507 1848 2258 2607 2922 3212 3935 3996 4092 4106 4444 4975 6440 6481 6526 6533 6559 
+		221 279 404 589 657 1076 1492 1498 1507 1848 2258 2607 2922 3212 3935 3996 4092 4106 4444 4975 6440 6481 6526 6533 6559 8919 10797 
 	}
 	manpower=334000
 	buildings_max_level_factor=1.000

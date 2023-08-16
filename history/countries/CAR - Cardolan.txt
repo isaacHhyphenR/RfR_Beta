@@ -1,4 +1,4 @@
-﻿capital = 34 #Girithlir- Iach Sarn
+﻿capital = 36 #Caladhir
 	#74 VPs
 # if = {
 	# limit = { has_dlc = "No Step Back" }

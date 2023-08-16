@@ -12,8 +12,8 @@ state = {
 	}
 
 	history = {
-		owner = CAR
-		add_core_of = CAR
+		owner = ART
+		add_core_of = ART
 		victory_points = {
 			1171 1
 		}

@@ -2,14 +2,14 @@ state = {
 	id = 32
 	name = "STATE_32"#Barrow Downs
 	state_category = wasteland
-	manpower = 2000	local_supplies=0.0
+	manpower = 2000
 	provinces = {
 		1679 2386 3056 5411 
 	}
 
 
 	history = {
-		owner = ART
-		add_core_of = ART
+		owner = CAR
+		add_core_of = CAR
 	}
 }

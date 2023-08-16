@@ -1,0 +1,23 @@
+
+state={
+	id=336
+	name="STATE_336"
+
+	history={
+		owner = DAG
+		add_core_of = DAG
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		10 109 382 583 587 647 1774 2126 2277 2642 2991 3160 3646 3684 3839 4022 4031 4107 4200 4582 4610 4898 4985 5092 5243 6502 6529 6537 6543 6546 6555 6557 6562 6575 6576 6591 6595 6636 10781 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}

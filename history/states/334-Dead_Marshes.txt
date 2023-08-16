@@ -1,0 +1,23 @@
+
+state={
+	id=334
+	name="STATE_334"
+
+	history={
+		owner = DAG
+		add_core_of = DAG
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		1271 2397 2549 2835 3005 4328 6818 6856 10796 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}
