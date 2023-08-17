@@ -1,15 +1,13 @@
 
-state={
-	id=109
-	name="STATE_109"
-	resources={
-		food=8.000
-		cloth=6.000
-		wood=3.000
-		mounts=4.000
+state = {
+	id = 109
+	name = "STATE_109"
+	resources = {
+		wood = 1
+		iron = 1
 	}
 
-	history={
+	history = {
 		add_core_of = DAG
 		owner = DAG
 		buildings = {
@@ -22,9 +20,11 @@ state={
 		}
 	}
 
-	provinces={ #36
+	provinces = { #36
 		408 500 631 681 744 755 1062 1301 1315 1460 1668 2037 2270 2339 2572 2984 3362 3610 3616 3657 3700 3963 3966 4042 4115 4305 4557 4799 4904 6161 6176 6191 6255 6257 6328 7807 
 	}
-	manpower=1064000
-	state_category=wasteland
+	manpower = 39076
+	state_category = Wasteland
 }
+
+

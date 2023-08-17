@@ -1,9 +1,10 @@
 state = {
 	id = 94
 	name = "STATE_94" #East Bight
-	state_category = wasteland
-	manpower = 480000
+	state_category = Wasteland
+	manpower = 9087
 	resources = {
+		wood = 1
 	}
 	provinces = { #11
 		19 1065 2246 2569 3272 3650 4088 4312 6165 6190 6236 
@@ -20,5 +21,10 @@ state = {
 		victory_points = {
 			2569 0#1
 		}
+		buildings = {
+
+		}
 	}
 }
+
+

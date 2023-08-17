@@ -1,17 +1,17 @@
-state={
-	id=106
-	name="STATE_106"
-	resources={
-		food=12.000
-		mounts=6.000
+state = {
+	id = 106
+	name = "STATE_106"
+	resources = {
+		cloth = 15
+		mounts = 10
 	}
 
-	history={
+	history = {
 		owner = DAL
 		add_core_of = DAL
 		buildings = {
 			infrastructure = 2
-			industrial_complex = 1
+			arms_factory = 1
 		}
 		victory_points = { #Vargborg, 9
 			125 5 
@@ -24,11 +24,13 @@ state={
 		}
 	}
 
-	provinces={ #26
+	provinces = { #26
 		125 248 389 933 995 1220 2242 2281 2478 2895 3573 3603 3648 4233 4377 4753 5648 5675 5699 5716 5721 5725 5739 5748 5772 5774 
 	}
-	manpower=921000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
+	manpower = 954673
+	buildings_max_level_factor = 1.000
+	state_category = Town
+	local_supplies = 0.000
 }
+
+

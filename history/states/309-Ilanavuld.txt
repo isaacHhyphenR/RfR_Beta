@@ -1,14 +1,16 @@
-state={
-	id=309
-	name="STATE_309"
-	manpower=100000
-	state_category=town
+state = {
+	id = 309
+	name = "STATE_309"
+	manpower = 1230475
+	state_category = Town
 
-	provinces={ #19
+	provinces = { #19
 		762 950 1039 2307 2535 3586 3863 4105 4741 4848 4967 4993 5126 6200 6240 6264 6265 6289 6349 
 	}
-	
-	history={
+	 resources = {
+		wood = 2
+	}
+	history = {
 		owner = DOR
 		add_core_of = DOR
 		victory_points = { #Eldrast, 12
@@ -24,7 +26,8 @@ state={
 			2535 1
 		}
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
+			industrial_complex = 1
 			950 = {
 				naval_base = 1
 			}
@@ -32,3 +35,5 @@ state={
 		add_dynamic_modifier = { modifier = wine_country }
 	}
 }
+
+

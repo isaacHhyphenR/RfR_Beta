@@ -1,12 +1,14 @@
-state={
-	id=301
-	name="STATE_301"
+state = {
+	id = 301
+	name = "STATE_301"
 
-	history={
+	history = {
 		owner = DAL
 		add_core_of = DAL
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
 			1041 = {
 				naval_base = 3
 			}
@@ -29,11 +31,18 @@ state={
 
 	}
 
-	provinces={#
+	provinces = {#
 		377 642 714 1041 1602 1748 2982 3417 3429 3468 3712 4051 4481 4937 5679 5763 5810 5821 5835 5848 5881 5890 5895 5902 5909 5937 5964 
 	}
-	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
+	manpower = 1028700
+	buildings_max_level_factor = 1.000
+	state_category = Large_Town
+	local_supplies = 0.000
+	resources = {
+		food = 5
+		wood = 7
+
+	}
 }
+
+

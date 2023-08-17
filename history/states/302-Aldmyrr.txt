@@ -1,13 +1,14 @@
 
-state={
-	id=302
-	name="STATE_302"
+state = {
+	id = 302
+	name = "STATE_302"
 
-	history={
+	history = {
 		owner = DAL
 		add_core_of = DAL
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
+			industrial_complex = 1
 		}
 		victory_points = { #Harbjarg, 4
 			5809 4
@@ -15,9 +16,14 @@ state={
 
 	}
 
-	provinces={ #12
+	provinces = { #12
 		1535 1791 2067 3188 3247 3901 5720 5724 5738 5750 5770 5809 
 	}
-	manpower=100000
-	state_category=rural
+	manpower = 607432
+	state_category = Rural
+	resources = {
+
+	}
 }
+
+

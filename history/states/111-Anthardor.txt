@@ -1,13 +1,11 @@
-state={
-	id=111
-	name="STATE_111"
-	resources={
-		food=2.000
-		wood=2.000
-		mounts=1.000
+state = {
+	id = 111
+	name = "STATE_111"
+	resources = {
+		iron = 1
 	}
 
-	history={
+	history = {
 		add_core_of = DAG
 		owner = DAG
 		victory_points = { #Burh Sauthis, 0
@@ -16,11 +14,16 @@ state={
 		victory_points = { #Lesnathod
 			2651 0 #1
 		}
+		buildings = {
+
+		}
 	}
 
-	provinces={#27
+	provinces = {#27
 		179 367 425 1611 1871 1921 1942 2598 2651 3033 3137 4059 4196 4232 4472 4532 4854 6322 6364 6427 6473 6493 6496 6505 6507 6520 6623 
 	}
-	manpower=200000
-	state_category=wasteland
+	manpower = 10406
+	state_category = Wasteland
 }
+
+

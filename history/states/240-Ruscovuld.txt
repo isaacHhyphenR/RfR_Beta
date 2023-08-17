@@ -1,14 +1,17 @@
-state={
-	id=240
-	name="STATE_240"
-	manpower=100000
-	state_category=town
+state = {
+	id = 240
+	name = "STATE_240"
+	manpower = 1127082
+	state_category = Town
 
-	provinces={ #24
+	provinces = { #24
 		56 255 295 509 627 785 842 886 1098 1386 1891 2209 3452 3504 3594 5193 5999 6027 6051 6066 6087 6172 6189 6198 
 	}
-	
-	history={
+	resources = {
+		cloth = 15
+		wood = 6
+	}
+	history = {
 		owner = MIR
 		add_core_of = MIR
 		victory_points = { #Sant Rovalug, 12
@@ -24,7 +27,9 @@ state={
 			6189 2
 		}
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
+			dockyard = 1
+			industrial_complex = 1
 			market = 1
 			627 = {
 				naval_base = 4
@@ -34,7 +39,7 @@ state={
 			}
 		}
 ##########################################TRADE
-		set_variable = { downstream_node = 305 } #rinnavuld
+		set_variable = { downstream_node = 305 	}#rinnavuld
 		set_variable = { upstream_node = 303 } #hamarsland
 		set_variable = { node_index = 6 }
 		add_to_array = {
@@ -45,3 +50,5 @@ state={
 		add_dynamic_modifier = { modifier = market_modifiers }
 	}
 }
+
+

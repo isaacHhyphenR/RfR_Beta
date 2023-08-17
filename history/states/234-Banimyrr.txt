@@ -1,18 +1,23 @@
 
-state={
-	id=234
-	name="STATE_234"
+state = {
+	id = 234
+	name = "STATE_234"
 
-	history={
+	history = {
 		owner = DAL
 		add_core_of = DAL
 		buildings = {
 		}
 	}
 
-	provinces={ #8
+	provinces = { #8
 		1226 2289 2670 2766 3321 3531 5004 8428 
 	}
-	manpower=100000
-	state_category=wasteland
+	manpower = 96501
+	state_category = Wasteland
+	resources = {
+
+	}
 }
+
+

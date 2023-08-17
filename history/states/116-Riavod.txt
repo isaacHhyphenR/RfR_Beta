@@ -1,19 +1,18 @@
-state={
-	id=116
-	name="STATE_116"
-	manpower=4690000
-	state_category=large_city
+state = {
+	id = 116
+	name = "STATE_116"
+	manpower = 3678091
+	state_category = City
 
-	provinces={ #31
+	provinces = { #31
 		480 523 810 864 1129 1963 2401 2667 2947 3216 3940 3954 4109 4112 4489 4979 5176 6162 6209 6210 6224 6229 6252 6253 6260 6275 6285 6290 6323 6335 6352 
 	}
 	
-	resources={
-		food=6.000
-		cloth=27.000
+	resources = {
+		food = 15
 	}
 
-	history={
+	history = {
 		owner = DOR
 		add_core_of = DOR
 		set_ring_victory_point = yes
@@ -39,11 +38,11 @@ state={
 			1129 1
 		}
 		buildings = {
-			infrastructure = 2
-			industrial_complex = 2
-			dockyard = 2
-			vineyard = 1
-			market = 2
+			infrastructure = 3
+			dockyard = 1
+			industrial_complex = 1
+			vineyard = 2
+			market = 1
 			6260 = {
 				naval_base = 7
 			}
@@ -74,3 +73,5 @@ state={
 		add_dynamic_modifier = { modifier = market_modifiers }
 	}
 }
+
+

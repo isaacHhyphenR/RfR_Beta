@@ -1,12 +1,13 @@
 
-state={
-	id=112
-	name="STATE_112"
-	resources={
-		food=3.000
+state = {
+	id = 112
+	name = "STATE_112"
+	resources = {
+		wood = 12
+		mounts = 6
 	}
 
-	history={
+	history = {
 		add_core_of = MIR
 		owner = MIR
 		victory_points = { #Sarema, 4
@@ -20,11 +21,13 @@ state={
 		}
 	}
 
-	provinces={ #27
+	provinces = { #27
 		221 279 404 589 657 1076 1492 1498 1507 1848 2258 2607 2922 3212 3935 3996 4092 4106 4444 4975 6440 6481 6526 6533 6559 8919 10797 
 	}
-	manpower=334000
-	buildings_max_level_factor=1.000
-	state_category=pastoral
-	local_supplies=0.000
+	manpower = 300091
+	buildings_max_level_factor = 1.000
+	state_category = Pastoral
+	local_supplies = 0.000
 }
+
+

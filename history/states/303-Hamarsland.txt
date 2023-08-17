@@ -1,17 +1,23 @@
-state={
-	id=303
-	name="STATE_303"
-	manpower=100000
-	state_category=town
+state = {
+	id = 303
+	name = "STATE_303"
+	manpower = 1070605
+	state_category = Large_Town
+	resources = {
+		food = 5
 
-	provinces={#19
+	}
+
+	provinces = {#19
 		712 1417 1941 2062 2125 3222 4256 4714 4922 5245 5837 5849 5859 5875 5903 5904 5932 5957 5973 
 	}
-	history={
+	history = {
 		owner = DAL
 		add_core_of = DAL
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
+			dockyard = 1
+			industrial_complex = 1
 			market = 1
 			5849 = {
 				naval_base = 4
@@ -24,7 +30,7 @@ state={
 			5904 2
 		}
 ##########################################TRADE
-		set_variable = { downstream_node = 240 } #ruscovuld
+		set_variable = { downstream_node = 240 }#ruscovuld
 		set_variable = { upstream_node = 110 } #yesterinna
 		set_variable = { node_index = 5 }
 		add_to_array = {
@@ -35,3 +41,5 @@ state={
 		add_dynamic_modifier = { modifier = market_modifiers }
 	}
 }
+
+

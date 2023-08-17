@@ -1,8 +1,8 @@
-state={
-	id=120
-	name="STATE_120"
+state = {
+	id = 120
+	name = "STATE_120"
 
-	history={
+	history = {
 		owner = DAG
 		add_core_of = DAG
 		victory_points = { #Curnar, 0
@@ -14,11 +14,21 @@ state={
 		victory_points = { #Sarn Gebir
 			5158 0 #1
 		}
+		buildings = {
+
+		}
 	}
 
-	provinces={ #26
+	provinces = { #26
 		121 127 129 491 791 1215 1363 1521 2219 2268 2408 3046 3048 3088 3274 3372 3654 3859 5158 5224 5272 6486 6492 6523 6532 6558 
 	}
-	manpower=14000
-	state_category=wasteland
+	manpower = 16455
+	state_category = Wasteland
+	resources = {
+		cloth = 1
+		mounts = 1
+
+	}
 }
+
+

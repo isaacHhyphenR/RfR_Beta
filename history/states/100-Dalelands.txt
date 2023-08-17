@@ -1,13 +1,11 @@
 state = {
 	id = 100
 	name = "STATE_100" #Dale
-	state_category = large_city
-	manpower = 4620000
+	state_category = Large_City
+	manpower = 4235000
 	resources = {
-		food = 8
-		cloth = 2
-		wood = 3
-		mounts = 2
+		food = 5
+		cloth = 10
 	}
 	provinces = {
 		102 1738 2023 3208 5637 5658 5678 5687 5693 5702 5706 5712 
@@ -24,9 +22,9 @@ state = {
 			5706 3
 		}
 		buildings = {
-			infrastructure = 2
+			infrastructure = 4
 			arms_factory = 1
-			industrial_complex = 5
+			industrial_complex = 3
 			market = 1
 			5658 = {
 				bunker = 3
@@ -44,3 +42,5 @@ state = {
 		add_dynamic_modifier = { modifier = market_modifiers }
 	}
 }
+
+

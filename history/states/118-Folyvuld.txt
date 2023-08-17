@@ -1,16 +1,16 @@
-state={
-	id=118
-	name="STATE_118"
-	manpower=2830000
-	state_category=town
-	resources={
-		iron=12.000
+state = {
+	id = 118
+	name = "STATE_118"
+	manpower = 1271070
+	state_category = Town
+	resources = {
+		food = 9
 	}
-	provinces={ #16
+	provinces = { #16
 		63 611 1125 1912 2065 2115 2585 3092 3201 4638 4791 5259 6361 6426 6449 6464 
 	}
 
-	history={
+	history = {
 		owner = DOR
 		add_core_of = DOR
 		victory_points = { #caras sant, 16
@@ -24,7 +24,7 @@ state={
 		}
 		buildings = {
 			infrastructure = 2
-			arms_factory = 2
+			dockyard = 1
 			market = 1
 			1912 = {
 				naval_base = 4
@@ -47,3 +47,5 @@ state={
 		add_dynamic_modifier = { modifier = market_modifiers }
 	}
 }
+
+

@@ -1,14 +1,18 @@
-state={
-	id=305
-	name="STATE_305"
-	manpower=100000
-	state_category=town
+state = {
+	id = 305
+	name = "STATE_305"
+	manpower = 1406098
+	state_category = City
 
-	provinces={ #25
+	provinces = { #25
 		175 1047 1255 1399 1646 1893 2257 3139 3532 4127 4344 4835 6026 6033 6048 6074 6079 6094 6106 6118 6120 6149 6151 6179 7824 
 	}
+	resources = {
+		food = 5
+	}
 
-	history={
+
+	history = {
 		owner = MIR
 		add_core_of = MIR
 		victory_points = { #Rinnavod, 15
@@ -24,7 +28,9 @@ state={
 			6026 3
 		}
 		buildings = {
-			infrastructure = 1
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
 			market = 1
 			6151 = {
 				naval_base = 5
@@ -48,3 +54,5 @@ state={
 		add_dynamic_modifier = { modifier = market_modifiers }
 	}
 }
+
+

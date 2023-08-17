@@ -1,12 +1,9 @@
 state = {
 	id = 97
 	name = "STATE_97" #Dalian Hinterlands
-	state_category = pastoral
-	manpower = 396000
+	state_category = Pastoral
+	manpower = 396567
 	resources = {
-		food = 2
-		wood = 1
-		iron = 1
 	}
 	provinces = { #8
 		320 391 754 1060 2256 2295 5583 5605 
@@ -18,7 +15,9 @@ state = {
 			5583 2
 		}
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 		}
 	}
 }
+
+
