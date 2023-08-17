@@ -1480,7 +1480,7 @@ focus_tree = {
 					producer = ROOT
 				}
 				add_equipment_to_stockpile = {
-					type = support_equipment
+					type = infantry_armor
 					amount = 100
 					producer = ROOT
 				}

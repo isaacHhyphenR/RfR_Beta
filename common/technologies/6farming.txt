@@ -1079,6 +1079,7 @@ technologies = {
 				#HARVEST
 ###########################################################
 	@harvestBonus = 0.005
+	@harvestCost = 2
 	harvest1 = {
 		conscription = @harvestBonus
 		path = {
@@ -1086,7 +1087,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 3
+		research_cost = @harvestCost
 		start_year = 3016
 		folder = {
 			name = farming_folder
@@ -1137,7 +1138,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 3
+		research_cost = @harvestCost
 		start_year = 3018
 		folder = {
 			name = farming_folder
@@ -1188,7 +1189,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 3
+		research_cost = @harvestCost
 		start_year = 3020
 		folder = {
 			name = farming_folder
@@ -1235,7 +1236,7 @@ technologies = {
 	harvest4 = {
 		conscription = @harvestBonus
 		
-		research_cost = 3
+		research_cost = @harvestCost
 		start_year = 3022
 		folder = {
 			name = farming_folder
@@ -1570,13 +1571,14 @@ technologies = {
 	@colonyBonus = 2000
 	colony0 = {
 		colony_growth_monthly = 5000
+		hidden_modifier = { colony_growth_monthly_factor = 1 }
 		custom_modifier_tooltip = allows_colonisation_tooltip
 		path = {
 			leads_to_tech = colony1
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 3
+		research_cost = 2
 		start_year = 3015
 		folder = {
 			name = farming_folder
@@ -1633,7 +1635,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 3
+		research_cost = 1
 		start_year = 3016
 		folder = {
 			name = farming_folder
@@ -1690,7 +1692,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 3
+		research_cost = 1
 		start_year = 3018
 		folder = {
 			name = farming_folder
@@ -1739,7 +1741,7 @@ technologies = {
 			# research_cost_coeff = 1
 		# }
 		
-		research_cost = 3
+		research_cost = 1
 		start_year = 3020
 		folder = {
 			name = farming_folder
@@ -1784,7 +1786,7 @@ technologies = {
 	# colony4 = {
 		# colony_growth_monthly = @colonyBonus
 		
-		# research_cost = 3
+		# research_cost = 1
 		# start_year = 3022
 		# folder = {
 			# name = farming_folder

@@ -89,4 +89,11 @@ colony_growth_monthly = {
 	category = country
 	postfix = none
 }
+colony_growth_monthly_factor = {
+	color_type = good
+	value_type = percentage
+	precision = 2
+	category = country
+	postfix = none
+}
 	

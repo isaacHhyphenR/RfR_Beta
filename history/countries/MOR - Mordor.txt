@@ -134,5 +134,10 @@ set_variable = { nazgul_planning_cost_increase = 5 }
 
 set_variable = { focus_modifier_bonus = 0.15 }
 set_variable = { focus_modifier_bonus_negative = -0.15 }
+
+set_variable = { dagorlad_settlement_cost_base = 150000 }
+set_variable = { dagorlad_settlement_cost = dagorlad_settlement_cost_base }
+set_variable = { dagorlad_settlement_cost_increase = 50000 }
+
 add_ideas = female_leader_chance_idea
 #!&!&!

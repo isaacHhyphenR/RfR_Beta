@@ -26,4 +26,7 @@
  production_cost: "£GFX_production_cost Production Cost"
  superior_firepower_tooltip: "§Y$anti_tank_equipment$§!: $production_cost$: §G-5%§!\n§Y$artillery_equipment$§!: $production_cost$: §G-5%§!"
  already_colonising: "Already Colonising a State"
- allows_colonisation_tooltip: "Allows colonising wilderness states"
+ allows_colonisation_tooltip: "Allows colonising wilderness states that border any of our controlled core states"
+ clear_undeveloped_colony_resources_tooltip: "\nWe will lose any resources that we did not develop"
+ colony_cost_scales_with_pop: "Annexation costs 1 §Ypolitical power§! per every 3,000 residents"
+ MOR_unlock_dagorlad_settlement_tooltip: "$unlocks_decision_tooltip$ to annex & core Wilderness states that border any of your core states. Each decision costs §R[?dagorlad_settlement_cost_base]§! £GFX_manpower_texticon §Ymanpower§! and lasts for a week."

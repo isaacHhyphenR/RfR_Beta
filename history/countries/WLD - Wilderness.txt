@@ -32,5 +32,41 @@ add_ideas = {
 
 every_core_state = {
 	add_dynamic_modifier = { modifier = wilderness_state }
+	##create arrays of which states you can prospect for various resources
+	if = { #food
+		limit = { has_resources_amount = { resource = food amount > 0 delivered = no } }
+		add_to_array = {
+			array = WLD.food_state_array
+			value = THIS.id
+		}
+	}
+	if = { #cloth
+		limit = { has_resources_amount = { resource = cloth amount > 0 delivered = no } }
+		add_to_array = {
+			array = WLD.cloth_state_array
+			value = THIS.id
+		}
+	}
+	if = { #wood
+		limit = { has_resources_amount = { resource = wood amount > 0 delivered = no } }
+		add_to_array = {
+			array = WLD.wood_state_array
+			value = THIS.id
+		}
+	}
+	if = { #iron
+		limit = { has_resources_amount = { resource = iron amount > 0 delivered = no } }
+		add_to_array = {
+			array = WLD.iron_state_array
+			value = THIS.id
+		}
+	}
+	if = { #mounts
+		limit = { has_resources_amount = { resource = mounts amount > 0 delivered = no } }
+		add_to_array = {
+			array = WLD.mounts_state_array
+			value = THIS.id
+		}
+	}
 }
 #!&!&!

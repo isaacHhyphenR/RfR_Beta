@@ -129,4 +129,54 @@ spriteTypes = {
 		texturefile = "gfx/texticons/precious_metals.dds"
 		legacy_lazy_load = no
 	}
+	SpriteType = {
+		name = "GFX_engineering_equipment_texticon"
+		texturefile = "gfx/texticons/engineering_equipment.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_maintenance_equipment_texticon"
+		texturefile = "gfx/texticons/maintenance_equipment.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_medical_equipment_texticon"
+		texturefile = "gfx/texticons/medical_equipment.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_suppression_equipment_texticon"
+		texturefile = "gfx/texticons/suppression_equipment.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_signals_equipment_texticon"
+		texturefile = "gfx/texticons/signals_equipment.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_spear_equipment_texticon"
+		texturefile = "gfx/texticons/spear_equipment.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_motorized_equipment_texticon"
+		texturefile = "gfx/texticons/motorized_equipment.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_infantry_equipment_texticon"
+		texturefile = "gfx/texticons/infantry_equipment.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_armor_equipment_texticon"
+		texturefile = "gfx/texticons/armor_equipment.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_bow_equipment_texticon"
+		texturefile = "gfx/texticons/bow_equipment.dds"
+		legacy_lazy_load = no
+	}
 }

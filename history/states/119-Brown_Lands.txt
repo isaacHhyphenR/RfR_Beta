@@ -6,7 +6,7 @@ state = {
 		owner = WLD
 		add_core_of = WLD
 		victory_points = { #Tiringon
-			3525 0 #1
+			3525 0 #2
 		}
 
 		buildings = {

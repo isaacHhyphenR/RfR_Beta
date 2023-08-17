@@ -179,7 +179,7 @@ celduin_trade_category = {
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
 		modifier = {
-			consumer_goods_factor = -0.035
+			consumer_goods_factor = -0.05
 		}
 		complete_effect = { #cost
 			hidden_effect = {
@@ -343,6 +343,74 @@ celduin_trade_category = {
 
 
 colonisation_category = {
+	MOR_settle_wilderness = {
+		icon = GFX_decision_infiltrate_state
+		ai_will_do = {
+			base = 0 #I only want them annexing old dagorlad
+			modifier = {
+				OR = {
+					FROM = {
+						OR = {
+							state = 119 #brown lands
+							state = 120 #undeeps
+							state = 121 #dagorlad
+							state = 123 #emen muil
+							state = 124 #noman lands
+							state = 333 #nindalf
+							state = 334 #Dead marshes
+							state = 335 #ashkirir
+							state = 336 #tumcelon
+						}
+					}
+					#they can go ham in late game, though
+					date > 3022.1.1 
+					AND = {
+						date > 3020.1.1
+						has_war_with_major = no
+					}
+				}
+				add = 10
+			}
+		}
+		allowed = { original_tag = MOR }
+		visible = { has_completed_focus = MOR_the_eye_looks_west }
+		custom_cost_text = MOR_settle_wilderness_cost
+		custom_cost_trigger = { has_manpower > var:dagorlad_settlement_cost }
+		days_remove = 7
+		state_target = yes
+		target_array = WLD:core_states
+		complete_effect = { #cost
+			hidden_effect = {
+				set_temp_variable = { MPcost = dagorlad_settlement_cost }
+				multiply_temp_variable = { MPcost = -1 }
+				add_manpower = MPcost
+			}
+		}
+		cancel_trigger = {
+			FROM = { NOT = { is_owned_by = WLD } }
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = WLD
+				any_neighbor_state = { is_core_of = ROOT is_controlled_by = ROOT }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				transfer_state_to = ROOT
+				add_core_of = ROOT
+				remove_core_of = WLD
+				add_manpower = 100000
+				add_colony_start_victory_points = yes
+				add_colony_finished_victory_points = yes
+			}
+			add_named_threat = { 
+				threat = 1
+				name = MOR_dagorlad_tension_tooltip
+			}
+			#add_to_variable = { dagorlad_settlement_cost = dagorlad_settlement_cost_increase }
+		}
+	}
 	begin_colonisation = {
 		icon = GFX_decision_settle_territory
 		fire_only_once = no
@@ -377,7 +445,8 @@ colonisation_category = {
 		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
 		days_remove = 105
 		state_target = yes
-		targets = { 94 109 111 119 120 121 122  124 307 333 334 335 } #123 emyn muil
+		target_array = WLD:core_states
+		#targets = { 94 109 111 119 120 121 122  124 307 333 334 335  336 } #123 emyn muil
 		highlight_states = {
 			highlight_state_targets = {
 				state = FROM
@@ -387,7 +456,7 @@ colonisation_category = {
 		}
 		visible = {
 			NOT = { has_country_flag = already_colonising }
-			has_tech = colony1
+			has_tech = colony0
 		}
 			
 		available = {
@@ -398,7 +467,7 @@ colonisation_category = {
 		target_trigger = {
 			FROM = {
 				is_owned_by = WLD
-				any_neighbor_state = { is_core_of = ROOT }
+				any_neighbor_state = { is_core_of = ROOT is_controlled_by = ROOT  }
 			}
 		}
 		cancel_trigger = { ##upgrade gets canceled if conquered
@@ -422,19 +491,23 @@ colonisation_category = {
 				transfer_state_to = ROOT
 				set_variable = { base_population = state_population } #so it can reset if revolt
 				add_manpower = 15000
+				add_colony_start_victory_points = yes
+				set_variable = { integration_cost = state_population_k }
+				divide_variable = { integration_cost = 3 }
 			}
 		}
 	}
 	annex_colony = {
 		icon = GFX_decision_settle_territory
 		fire_only_once = yes
-		cost = 50
+		cost = var:FROM.integration_cost
 		ai_will_do = {
 			factor = 10
 		}
 		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
 		state_target = yes
-		targets = { 94 109 111 119 120 121 122 123 124 307 333 334 335 }
+		target_array = WLD:core_states
+		#targets = { 94 109 111 119 120 121 122 123 124 307 333 334 335 336 }
 		highlight_states = {
 			highlight_state_targets = {
 				state = FROM
@@ -443,15 +516,16 @@ colonisation_category = {
 			highlight_color_before_active = 2
 		}
 		available = {
+			custom_trigger_tooltip = { tooltip = colony_cost_scales_with_pop always = yes }
 			FROM = {
 				infrastructure > 0
+				compliance > 70
 				state_population_k > 150
 			}
 		}
 		target_trigger = {
 			FROM = {
 				is_owned_by = ROOT
-				is_core_of  = WLD
 			}
 		}
 		remove_effect = {
@@ -459,15 +533,723 @@ colonisation_category = {
 				add_core_of = ROOT
 				remove_core_of = WLD
 				upgrade_state_category = yes
+				add_colony_finished_victory_points = yes
+				clear_undeveloped_colony_resources = yes
 				remove_dynamic_modifier = { modifier = wilderness_state }
 			}
 			clr_country_flag = already_colonising
 		}
 	}
+
+	encourage_colonial_settlement = {
+		icon = GFX_decision_generic_nationalism
+		cost = 50
+		days_remove = 100
+		allowed = { NOT = { OR = { tag = FOR original_tag = WLD } } }
+		visible = { has_country_flag = already_colonising }
+		modifier = {
+			colony_growth_monthly_factor = 0.25
+		}
+	}
+	@resourcePerDecision = 8
+	@equipmentPerProspect = 49
+	@equipmentPerProspectNegative = -50
+	@prospectingRepeatable = no
+	colony_food = { #increase food in a colony that can produce food
+		icon = GFX_decision_food
+		fire_only_once = @prospectingRepeatable
+		cost = 50
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = { has_equipment = { engineering_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_prospect_decision_cost
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		state_target = yes
+		target_array = WLD:food_state_array
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				is_core_of  = WLD
+			}
+		}
+		available = { controls_state = FROM } #FROM = { NOT = { has_state_flag = already_prospecting } } }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = engineering_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_resource = {
+					type = food
+					amount = @resourcePerDecision
+				}
+				clr_state_flag = already_prospecting
+				remove_from_array = { WLD.food_state_array = THIS.id }
+				add_to_array = { value = THIS.id array = WLD.developed_food_state_array }
+			}
+		}
+	}
+	colony_cloth = { #increase cloth in a colony that can produce cloth
+		icon = GFX_decision_cloth
+		fire_only_once = @prospectingRepeatable
+		cost = 50
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = { has_equipment = { engineering_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_prospect_decision_cost
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		state_target = yes
+		target_array = WLD:cloth_state_array
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				is_core_of  = WLD
+			}
+		}
+		available = { controls_state = FROM } #FROM = { NOT = { has_state_flag = already_prospecting } } }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = engineering_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_resource = {
+					type = cloth
+					amount = @resourcePerDecision
+				}
+				clr_state_flag = already_prospecting
+				remove_from_array = { WLD.cloth_state_array = THIS.id }
+				add_to_array = { value = THIS.id array = WLD.developed_cloth_state_array }
+			}
+		}
+	}
+	colony_wood = { #increase wood in a colony that can produce wood
+		icon = GFX_decision_wood
+		fire_only_once = @prospectingRepeatable
+		cost = 50
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = { has_equipment = { engineering_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_prospect_decision_cost
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		state_target = yes
+		target_array = WLD:wood_state_array
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				is_core_of  = WLD
+			}
+		}
+		available = { controls_state = FROM } #FROM = { NOT = { has_state_flag = already_prospecting } } }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = engineering_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_resource = {
+					type = wood
+					amount = @resourcePerDecision
+				}
+				clr_state_flag = already_prospecting
+				remove_from_array = { WLD.wood_state_array = THIS.id }
+				add_to_array = { value = THIS.id array = WLD.developed_wood_state_array }
+			}
+		}
+	}
+	colony_iron = { #increase iron in a colony that can produce iron
+		icon = GFX_decision_steel
+		fire_only_once = @prospectingRepeatable
+		cost = 50
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = { has_equipment = { engineering_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_prospect_decision_cost
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		state_target = yes
+		target_array = WLD:iron_state_array
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				is_core_of  = WLD
+			}
+		}
+		available = { controls_state = FROM } #FROM = { NOT = { has_state_flag = already_prospecting } } }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = engineering_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_resource = {
+					type = iron
+					amount = @resourcePerDecision
+				}
+				clr_state_flag = already_prospecting
+				remove_from_array = { WLD.iron_state_array = THIS.id }
+				add_to_array = { value = THIS.id array = WLD.developed_iron_state_array }
+			}
+		}
+	}
+	colony_mounts = { #increase mounts in a colony that can produce mounts
+		icon = GFX_decision_mounts
+		fire_only_once = @prospectingRepeatable
+		cost = 50
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = { has_equipment = { engineering_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_prospect_decision_cost
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		state_target = yes
+		target_array = WLD:mounts_state_array
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				is_core_of  = WLD
+			}
+		}
+		available = { controls_state = FROM } #FROM = { NOT = { has_state_flag = already_prospecting } } }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = engineering_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_resource = {
+					type = mounts
+					amount = @resourcePerDecision
+				}
+				clr_state_flag = already_prospecting
+				remove_from_array = { WLD.mounts_state_array = THIS.id }
+				add_to_array = { value = THIS.id array = WLD.developed_mounts_state_array }
+			}
+		}
+	}
+	#################################################TIER2
+	colony_food2 = { #increase food in a colony that can produce food
+		icon = GFX_decision_food
+		fire_only_once = @prospectingRepeatable
+		cost = 50
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = { has_equipment = { engineering_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_prospect_decision_cost
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		state_target = yes
+		target_array = WLD:developed_food_state_array
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				is_core_of  = WLD
+			}
+		}
+		available = { controls_state = FROM } #FROM = { NOT = { has_state_flag = already_prospecting } } }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = engineering_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_resource = {
+					type = food
+					amount = @resourcePerDecision
+				}
+				clr_state_flag = already_prospecting
+				remove_from_array = { WLD.developed_food_state_array = THIS.id }
+				#add_to_array = { value = THIS.id array = WLD.developed_food_state_array }
+			}
+		}
+	}
+	colony_cloth2 = { #increase cloth in a colony that can produce cloth
+		icon = GFX_decision_cloth
+		fire_only_once = @prospectingRepeatable
+		cost = 50
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = { has_equipment = { engineering_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_prospect_decision_cost
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		state_target = yes
+		target_array = WLD:developed_cloth_state_array
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				is_core_of  = WLD
+			}
+		}
+		available = { controls_state = FROM } #FROM = { NOT = { has_state_flag = already_prospecting } } }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = engineering_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_resource = {
+					type = cloth
+					amount = @resourcePerDecision
+				}
+				clr_state_flag = already_prospecting
+				remove_from_array = { WLD.developed_cloth_state_array = THIS.id }
+				#add_to_array = { value = THIS.id array = WLD.developed_cloth_state_array }
+			}
+		}
+	}
+	colony_wood2 = { #increase wood in a colony that can produce wood
+		icon = GFX_decision_wood
+		fire_only_once = @prospectingRepeatable
+		cost = 50
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = { has_equipment = { engineering_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_prospect_decision_cost
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		state_target = yes
+		target_array = WLD:developed_wood_state_array
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				is_core_of  = WLD
+			}
+		}
+		available = { controls_state = FROM } #FROM = { NOT = { has_state_flag = already_prospecting } } }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = engineering_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_resource = {
+					type = wood
+					amount = @resourcePerDecision
+				}
+				clr_state_flag = already_prospecting
+				remove_from_array = { WLD.developed_wood_state_array = THIS.id }
+				#add_to_array = { value = THIS.id array = WLD.developed_wood_state_array }
+			}
+		}
+	}
+	colony_iron2 = { #increase iron in a colony that can produce iron
+		icon = GFX_decision_steel
+		fire_only_once = @prospectingRepeatable
+		cost = 50
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = { has_equipment = { engineering_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_prospect_decision_cost
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		state_target = yes
+		target_array = WLD:developed_iron_state_array
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				is_core_of  = WLD
+			}
+		}
+		available = { controls_state = FROM } #FROM = { NOT = { has_state_flag = already_prospecting } } }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = engineering_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_resource = {
+					type = iron
+					amount = @resourcePerDecision
+				}
+				clr_state_flag = already_prospecting
+				remove_from_array = { WLD.developed_iron_state_array = THIS.id }
+				#add_to_array = { value = THIS.id array = WLD.developed_iron_state_array }
+			}
+		}
+	}
+	colony_mounts2 = { #increase mounts in a colony that can produce mounts
+		icon = GFX_decision_mounts
+		fire_only_once = @prospectingRepeatable
+		cost = 50
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		custom_cost_trigger = { has_equipment = { engineering_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_prospect_decision_cost
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		state_target = yes
+		target_array = WLD:developed_mounts_state_array
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				is_core_of  = WLD
+			}
+		}
+		available = { controls_state = FROM }
+		available = { controls_state = FROM } #FROM = { NOT = { has_state_flag = already_prospecting } } }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = engineering_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_resource = {
+					type = mounts
+					amount = @resourcePerDecision
+				}
+				clr_state_flag = already_prospecting
+				remove_from_array = { WLD.developed_mounts_state_array = THIS.id }
+				#add_to_array = { value = THIS.id array = WLD.developed_mounts_state_array }
+			}
+		}
+	}
+	
+	colony_suppression = { #compliance
+		icon = GFX_decision_generic_arrest
+		on_map_mode = decision_view_only
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+			modifier = {
+				FROM = { compliance > 70 }
+				factor = 0
+			}
+		}
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		custom_cost_trigger = { has_equipment = { suppression_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_suppression_decision_cost
+		state_target = yes
+		target_array = WLD:core_states
+		#targets = { 94 109 111 119 120 121 122  124 307 333 334 335  336 } #123 emyn muil
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+			}
+		}
+		available = { controls_state = FROM }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = suppression_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_compliance = 25
+			}
+		}
+	}
+	colony_signals = { #resistance
+		icon = GFX_decision_SWI_expand_covert_operations
+		on_map_mode = decision_view_only
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+			modifier = {
+				FROM = { resistance < 35 }
+				factor = 0
+			}
+		}
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		custom_cost_trigger = { has_equipment = { signals_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_signals_decision_cost
+		state_target = yes
+		target_array = WLD:core_states
+		#targets = { 94 109 111 119 120 121 122  124 307 333 334 335  336 } #123 emyn muil
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+			}
+		}
+		available = { controls_state = FROM }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = signals_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_resistance_target = -25
+			}
+		}
+	}
+	colony_medical = { #population
+		icon = GFX_decision_ITA_italian_east_africa
+		on_map_mode = decision_view_only
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+			modifier = {
+				FROM = { resistance < 35 }
+				factor = 0
+			}
+		}
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		custom_cost_trigger = { has_equipment = { medical_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_medical_decision_cost
+		state_target = yes
+		target_array = WLD:core_states
+		#targets = { 94 109 111 119 120 121 122  124 307 333 334 335  336 } #123 emyn muil
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+			}
+		}
+		available = { controls_state = FROM }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = medical_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_manpower = 25000
+			}
+		}
+	}
+	colony_maintenance = { #state category
+		icon = GFX_decision_generic_industry
+		on_map_mode = decision_view_only
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		custom_cost_trigger = { has_equipment = { maintenance_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_maintenance_decision_cost
+		state_target = yes
+		target_array = WLD:core_states
+		#targets = { 94 109 111 119 120 121 122  124 307 333 334 335  336 } #123 emyn muil
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+			}
+		}
+		available = { controls_state = FROM }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = maintenance_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				upgrade_state_category = yes
+			}
+		}
+	}
+	colony_motorized = { #supply node
+		icon = GFX_decision_generic_trade
+		on_map_mode = decision_view_only
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
+		custom_cost_trigger = { has_equipment = { motorized_equipment > @equipmentPerProspect } }
+		custom_cost_text = colony_motorized_decision_cost
+		state_target = yes
+		targets = { 94 109 111 119 120 121 122 307 335 336 } #only the states with VPs
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		target_trigger = {
+			FROM = {
+				is_core_of = WLD
+				is_owned_by = ROOT
+			}
+		}
+		available = { controls_state = FROM }
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = motorized_equipment amount = @equipmentPerProspectNegative }
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_colony_supply_node = yes
+			}
+		}
+	}
+
 	
 	DEBUG_colony_growth = {
-		allowed = { is_debug = yes }
+		visible = { is_debug = yes }
 		days_remove = 100
-		modifier = { colony_growth_monthly = 10000 }
+		modifier = { colony_growth_monthly = 100000 }
 	}
 }

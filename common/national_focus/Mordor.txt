@@ -1514,14 +1514,14 @@ focus_tree = {
 		bypass = { OR = { NOT = { country_exists = DAG } DAG = { is_subject_of = ROOT } } }
 		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
 		completion_reward = { #Reoccupy Dagorland
-			hidden_effect = {
-				country_event = { id = mordor.1 }
-			}
-			custom_effect_tooltip = MOR_the_eye_looks_west_tooltip
-			add_named_threat = { 
-				threat = 5
-				name = MOR_dagorlad_tension_tooltip
-			}
+			# hidden_effect = {
+				# country_event = { id = mordor.1 }
+			# }
+			custom_effect_tooltip = MOR_unlock_dagorlad_settlement_tooltip #MOR_the_eye_looks_west_tooltip
+			# add_named_threat = { 
+				# threat = 5
+				# name = MOR_dagorlad_tension_tooltip
+			# }
 		}
 	}
 #################################ISENGARD SUB-BRANCH

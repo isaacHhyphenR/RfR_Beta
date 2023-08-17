@@ -3259,14 +3259,14 @@ focus_tree = {
 		completion_reward = { #11 popularity, +250 support, +50 towed
 			#custom_effect_tooltip =decrease_eomer_popularity_tooltip
 			#hidden_effect = { add_to_variable = { ROH.eomerPopularity = 0.1 } }
-			add_equipment_to_stockpile = {
-				type = support_equipment
-				amount = 250
-				producer = ROOT
-			}
+			# add_equipment_to_stockpile = {
+				# type = support_equipment
+				# amount = 250
+				# producer = ROOT
+			# }
 			add_equipment_to_stockpile = {
 				type = motorized_equipment
-				amount = 50
+				amount = 250
 				producer = ROOT
 			}
 		}

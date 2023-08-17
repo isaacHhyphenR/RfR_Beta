@@ -317,7 +317,6 @@ decrease_trade_level = { #call in the tag of the seller with the buyer as ROOT
 	}
 }
 
-
 set_ideology_index = { #call in a tag
 	if = { limit = { has_government = isolationism }
 		set_variable = { ideology_index = 1 }
@@ -333,5 +332,302 @@ set_ideology_index = { #call in a tag
 	}
 	else = {
 		set_variable = { ideology_index = 5 }
+	}
+}
+
+############################################################################################COLONIES
+clear_undeveloped_colony_resources = { #call in a state to remove any 1 size resources
+	custom_effect_tooltip = clear_undeveloped_colony_resources_tooltip
+	if = {
+		limit = {
+			has_resources_amount = { resource = food amount > 0 delivered = no }
+			has_resources_amount = { resource = food amount < 2 delivered = no }
+		}
+		add_resource = { type = food amount = -1 }
+	}
+	if = {
+		limit = {
+			has_resources_amount = { resource = cloth amount > 0 delivered = no }
+			has_resources_amount = { resource = cloth amount < 2 delivered = no }
+		}
+		add_resource = { type = cloth amount = -1 }
+	}
+	if = {
+		limit = {
+			has_resources_amount = { resource = iron amount > 0 delivered = no }
+			has_resources_amount = { resource = iron amount < 2 delivered = no }
+		}
+		add_resource = { type = iron amount = -1 }
+	}
+	if = {
+		limit = {
+			has_resources_amount = { resource = wood amount > 0 delivered = no }
+			has_resources_amount = { resource = wood amount < 2 delivered = no }
+		}
+		add_resource = { type = wood amount = -1 }
+	}
+	if = {
+		limit = {
+			has_resources_amount = { resource = mounts amount > 0 delivered = no }
+			has_resources_amount = { resource = mounts amount < 2 delivered = no }
+		}
+		add_resource = { type = mounts amount = -1 }
+	}
+}
+
+add_colony_start_victory_points = { #call in a state to add its first victory point
+	if = { limit = { state = 94 } #east bight
+		add_victory_points = {
+			province = 4312
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 109 } #medelmarna
+		add_victory_points = {
+			province = 1301
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 111 } #Anthardor
+		add_victory_points = {
+			province = 1921
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 119 } #Brown Lands
+		add_victory_points = {
+			province = 3525
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 120 } #Undeeps
+		add_victory_points = {
+			province = 6492
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 121 } #Dagorlad
+		add_victory_points = {
+			province = 6622
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 122 } #Talath Harroch
+		add_victory_points = {
+			province = 3260
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 307 } #Anwuning
+		add_victory_points = {
+			province = 3479
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 335 } #ashkirir
+		add_victory_points = {
+			province = 2915
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 336 } #tumcelon
+		add_victory_points = {
+			province = 6562
+			value = 1
+		}
+	}
+}
+
+add_colony_finished_victory_points = { #call in a state to add it's victory points
+	if = { limit = { state = 94 } #east bight
+		# add_victory_points = {
+			# province = 4312
+			# value = 1
+		# }
+		add_victory_points = {
+			province = 3272
+			value = 1
+		}
+		add_victory_points = {
+			province = 2569
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 109 } #medelmarna
+		add_victory_points = {
+			province = 1301
+			value = 1
+		}
+		add_victory_points = {
+			province = 2270
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 111 } #Anthardor
+		add_victory_points = {
+			province = 1921
+			value = 1
+		}
+		add_victory_points = {
+			province = 2651
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 119 } #Brown Lands
+		add_victory_points = {
+			province = 3525
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 120 } #Undeeps
+		# add_victory_points = {
+			# province = 6492
+			# value = 1
+		# }
+		add_victory_points = {
+			province = 3046
+			value = 1
+		}
+		add_victory_points = {
+			province = 5158
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 121 } #Dagorlad
+		# add_victory_points = {
+			# province = 6622
+			# value = 1
+		# }
+		add_victory_points = {
+			province = 6743
+			value = 1
+		}
+		add_victory_points = {
+			province = 6842
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 122 } #Talath Harroch
+		add_victory_points = {
+			province = 3260
+			value = 1
+		}
+		add_victory_points = {
+			province = 6578
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 307 } #Anwuning
+		add_victory_points = {
+			province = 3479
+			value = 1
+		}
+		add_victory_points = {
+			province = 3619
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 335 } #ashkirir
+		add_victory_points = {
+			province = 2915
+			value = 1
+		}
+		add_victory_points = {
+			province = 75
+			value = 1
+		}
+	}
+	else_if = { limit = { state = 336 } #tumcelon
+		add_victory_points = {
+			province = 6562
+			value = 1
+		}
+		add_victory_points = {
+			province = 4610
+			value = 1
+		}
+	}
+}
+
+add_colony_supply_node = { #call in a state to add a supply node to the capital
+	if = { limit = { state = 94 } #east bight
+		add_building_construction = {
+			type = supply_node
+			level = 1
+			instant_build = yes
+			province = 4312
+		}
+	}
+	else_if = { limit = { state = 109 } #medelmarna
+		add_building_construction = {
+			type = supply_node
+			level = 1
+			instant_build = yes
+			province = 1301
+		}
+	}
+	else_if = { limit = { state = 111 } #Anthardor
+		add_building_construction = {
+			type = supply_node
+			level = 1
+			instant_build = yes
+			province = 1921
+		}
+	}
+	else_if = { limit = { state = 119 } #Brown Lands
+		add_building_construction = {
+			type = supply_node
+			level = 1
+			instant_build = yes
+			province = 3525
+		}
+	}
+	else_if = { limit = { state = 120 } #Undeeps
+		add_building_construction = {
+			type = supply_node
+			level = 1
+			instant_build = yes
+			province = 6492
+		}
+	}
+	else_if = { limit = { state = 121 } #Dagorlad
+		add_building_construction = {
+			type = supply_node
+			level = 1
+			instant_build = yes
+			province = 6622
+		}
+	}
+	else_if = { limit = { state = 122 } #Talath Harroch
+		add_building_construction = {
+			type = supply_node
+			level = 1
+			instant_build = yes
+			province = 3260
+		}
+	}
+	else_if = { limit = { state = 307 } #Anwuning
+		add_building_construction = {
+			type = supply_node
+			level = 1
+			instant_build = yes
+			province = 3479
+		}
+	}
+	else_if = { limit = { state = 335 } #ashkirir
+		add_building_construction = {
+			type = supply_node
+			level = 1
+			instant_build = yes
+			province = 2915
+		}
+	}
+	else_if = { limit = { state = 336 } #tumcelon
+		add_building_construction = {
+			type = supply_node
+			level = 1
+			instant_build = yes
+			province = 6562
+		}
 	}
 }

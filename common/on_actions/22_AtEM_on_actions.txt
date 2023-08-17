@@ -97,8 +97,11 @@ on_actions = {
 			WLD = {
 				every_core_state = {
 					limit = { NOT = { is_controlled_by = WLD } }
-					set_temp_variable = { growth = controller:modifier@colony_growth_monthly }
+					set_temp_variable = { growth = controller:modifier@colony_growth_monthly_factor }
 					add_manpower = var:growth
+					#cost scales by populati0n
+					set_variable = { integration_cost = state_population_k }
+					divide_variable = { integration_cost = 3 }
 				}
 			}
 		}

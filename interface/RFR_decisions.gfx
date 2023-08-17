@@ -143,6 +143,26 @@ spriteTypes = {
 		name = "GFX_decision_generic_war_support"
 		texturefile = "gfx/interface/decisions/decision_generic_war_support.dds"
 	}
+	spriteType = {
+		name = "GFX_decision_food"
+		texturefile = "gfx/interface/decisions/decision_food.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cloth"
+		texturefile = "gfx/interface/decisions/decision_cloth.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_wood"
+		texturefile = "gfx/interface/decisions/decision_wood.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_mounts"
+		texturefile = "gfx/interface/decisions/decision_mounts.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_monsters"
+		texturefile = "gfx/interface/decisions/decision_monsters.dds"
+	}
 ################################################MORDOR
 	###################NAZGUL
 	spriteType = {
