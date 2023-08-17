@@ -14,3 +14,8 @@ market_upgrade_cost_modifier = { ##apply to country to cost them factorys
 market_modifiers = {
 	state_production_speed_buildings_factor = modifier@local_construction_speed
 }
+
+wilderness_state = {
+	icon = GFX_wilderness_state
+	starting_compliance = 0.25
+}

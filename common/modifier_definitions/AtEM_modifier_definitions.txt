@@ -81,4 +81,12 @@ prosperity_gain_factor = {
 	category = country
 	postfix = none
 }
+
+colony_growth_monthly = {
+	color_type = good
+	value_type = number
+	precision = 0
+	category = country
+	postfix = none
+}
 	

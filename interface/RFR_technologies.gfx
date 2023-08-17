@@ -261,6 +261,42 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/agriculture4.dds"
 	}
 	SpriteType = {
+		name = "GFX_harvest1_medium"
+		texturefile = "gfx/interface/technologies/harvest1.dds"
+	}
+	SpriteType = {
+		name = "GFX_harvest2_medium"
+		texturefile = "gfx/interface/technologies/harvest2.dds"
+	}
+	SpriteType = {
+		name = "GFX_harvest3_medium"
+		texturefile = "gfx/interface/technologies/harvest3.dds"
+	}
+	SpriteType = {
+		name = "GFX_harvest4_medium"
+		texturefile = "gfx/interface/technologies/harvest4.dds"
+	}
+	SpriteType = {
+		name = "GFX_colony0_medium"
+		texturefile = "gfx/interface/technologies/colony0.dds"
+	}
+	SpriteType = {
+		name = "GFX_colony1_medium"
+		texturefile = "gfx/interface/technologies/colony1.dds"
+	}
+	SpriteType = {
+		name = "GFX_colony2_medium"
+		texturefile = "gfx/interface/technologies/colony2.dds"
+	}
+	SpriteType = {
+		name = "GFX_colony3_medium"
+		texturefile = "gfx/interface/technologies/colony3.dds"
+	}
+	SpriteType = {
+		name = "GFX_colony4_medium"
+		texturefile = "gfx/interface/technologies/colony4.dds"
+	}
+	SpriteType = {
 		name = "GFX_wine_tech1_medium"
 		texturefile = "gfx/interface/technologies/grapes.dds"
 	}

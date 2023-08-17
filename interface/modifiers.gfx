@@ -151,4 +151,8 @@ spriteTypes = {
 		name = "GFX_wine_country"
 		texturefile = "gfx/interface/modifiers/wine_country.dds"
 	}
+	spriteType = {
+		name = "GFX_wilderness_state"
+		texturefile = "gfx/interface/modifiers/wilderness.dds"
+	}
 }

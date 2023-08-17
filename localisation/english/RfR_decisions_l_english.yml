@@ -592,3 +592,10 @@
  wine_for_war_support_desc: "There is nothing like a good celebration to cheer up our people in these trying times."
  wine_for_ideology_drift: "Let Mouths Run Freely"
  wine_for_ideology_drift_desc: "Drunk citizens are more likely to listen to dangerous ideas-- and voice their own discontents."
+ 
+ colonisation_category: "Colonisation"
+ colonisation_category_desc: "Many corners of Middle Earth are inhabited only by feral orcs and roving bandits, yet rich with resources."
+ begin_colonisation: "Begin Colonising [FROM.GetName]"
+ begin_colonisation_desc: "[FROM.GetName] holds incredible economic potential if only we are brave enough to take it."
+ annex_colony: "Integrate [FROM.GetName]"
+ annex_colony_desc: "Our settlers now exert such firm control over [FROM.GetName] that we can safely integrate it into [ROOT.GetName] without issue."

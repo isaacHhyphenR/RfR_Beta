@@ -94,6 +94,8 @@ technology_categories = {
 	cat_synth_rubber
 	hospital_tech
 	wine_tech_category
+	harvest_tech
+	colony_tech
 	
 	armor
 	cat_light_armor

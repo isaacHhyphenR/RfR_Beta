@@ -1,0 +1,406 @@
+spriteTypes = {
+############################################GON
+	spriteType = {
+		name = "GFX_Portrait_Angbor"
+		texturefile = "gfx/leaders/GON/Angbor.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Angbor_small"
+		texturefile = "gfx/advisors/GON/Angbor_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Aragorn"
+		texturefile = "gfx/leaders/GON/Aragorn.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Aragorn_small"
+		texturefile = "gfx/advisors/GON/Aragorn_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Aragorn_king"
+		texturefile = "gfx/leaders/GON/Aragorn_king.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Boromir"
+		texturefile = "gfx/leaders/GON/Boromir.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Boromir_small"
+		texturefile = "gfx/advisors/GON/Boromir_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Bormir_king"
+		texturefile = "gfx/leaders/GON/Bormir_king.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Ciryandur"
+		texturefile = "gfx/leaders/GON/Ciryandur.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Ciryandur_small"
+		texturefile = "gfx/advisors/GON/Ciryandur_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Denethor"
+		texturefile = "gfx/leaders/GON/Denethor.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Denethor_small"
+		texturefile = "gfx/advisors/GON/Denethor_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Denethor_king"
+		texturefile = "gfx/leaders/GON/Denethor_king.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dervorin"
+		texturefile = "gfx/leaders/GON/Dervorin.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dervorin_small"
+		texturefile = "gfx/advisors/GON/Dervorin_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Duinhir"
+		texturefile = "gfx/leaders/GON/Duinhir.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Duinhir_small"
+		texturefile = "gfx/advisors/GON/Duinhir_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Edhetariel"
+		texturefile = "gfx/leaders/GON/Edhetariel.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Edhetariel_small"
+		texturefile = "gfx/advisors/GON/Edhetariel_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Faramir"
+		texturefile = "gfx/leaders/GON/Faramir.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Faramir_small"
+		texturefile = "gfx/advisors/GON/Faramir_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Faramir_king"
+		texturefile = "gfx/leaders/GON/Faramir_king.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Forlong"
+		texturefile = "gfx/leaders/GON/Forlong.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Forlong_small"
+		texturefile = "gfx/advisors/GON/Forlong_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Golasgil"
+		texturefile = "gfx/leaders/GON/Golasgil.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Golasgil_small"
+		texturefile = "gfx/advisors/GON/Golasgil_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hirluin"
+		texturefile = "gfx/leaders/GON/Hirluin.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hirluin_small"
+		texturefile = "gfx/advisors/GON/Hirluin_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Imrahil"
+		texturefile = "gfx/leaders/GON/Imrahil.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Imrahil_small"
+		texturefile = "gfx/advisors/GON/Imrahil_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Istion"
+		texturefile = "gfx/leaders/GON/Istion.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Istion_small"
+		texturefile = "gfx/advisors/GON/Istion_small.dds"
+	}
+
+############################################ISN
+	spriteType = {
+		name = "GFX_Portrait_SarumanW"
+		texturefile = "gfx/leaders/ISN/SarumanW.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_SarumanC"
+		texturefile = "gfx/leaders/ISN/SarumanC.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Ambal"
+		texturefile = "gfx/leaders/ISN/Ambal.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Ambal_small"
+		texturefile = "gfx/advisors/ISN/Ambal_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Azbed"
+		texturefile = "gfx/leaders/ISN/Azbed.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Azbed_small"
+		texturefile = "gfx/advisors/ISN/Azbed_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Barbrutta"
+		texturefile = "gfx/leaders/ISN/Barbrutta.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Barbrutta_small"
+		texturefile = "gfx/advisors/ISN/Barbrutta_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Flizhpot"
+		texturefile = "gfx/leaders/ISN/Flizhpot.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Flizhpot_small"
+		texturefile = "gfx/advisors/ISN/Flizhpot_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Gazlaggi"
+		texturefile = "gfx/leaders/ISN/Gazlaggi.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Gazlaggi_small"
+		texturefile = "gfx/advisors/ISN/Gazlaggi_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Gornagga"
+		texturefile = "gfx/leaders/ISN/Gornagga.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Gornagga_small"
+		texturefile = "gfx/advisors/ISN/Gornagga_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Greb"
+		texturefile = "gfx/leaders/ISN/Greb.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Greb_small"
+		texturefile = "gfx/advisors/ISN/Greb_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Grimbosh"
+		texturefile = "gfx/leaders/ISN/Grimbosh.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Grimbosh_small"
+		texturefile = "gfx/advisors/ISN/Grimbosh_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Lurtz"
+		texturefile = "gfx/leaders/ISN/Lurtz.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Lurtz_small"
+		texturefile = "gfx/advisors/ISN/Lurtz_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Mauhur"
+		texturefile = "gfx/leaders/ISN/Mauhur.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Mauhur_small"
+		texturefile = "gfx/advisors/ISN/Mauhur_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Moranogal"
+		texturefile = "gfx/leaders/ISN/Moranogal.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Moranogal_small"
+		texturefile = "gfx/advisors/ISN/Moranogal_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Sharku"
+		texturefile = "gfx/leaders/ISN/Sharku.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Sharku_small"
+		texturefile = "gfx/advisors/ISN/Sharku_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Talug"
+		texturefile = "gfx/leaders/ISN/Talug.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Talug_small"
+		texturefile = "gfx/advisors/ISN/Talug_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Thrugg"
+		texturefile = "gfx/leaders/ISN/Thrugg.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Thrugg_small"
+		texturefile = "gfx/advisors/ISN/Thrugg_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Ugluk"
+		texturefile = "gfx/leaders/ISN/Ugluk.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Ugluk_small"
+		texturefile = "gfx/advisors/ISN/Ugluk_small.dds"
+	}
+############################################MOR
+	spriteType = {
+		name = "GFX_Portrait_Sauron_Embodied"
+		texturefile = "gfx/leaders/MOR/Sauron_Embodied.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_The_Eye"
+		texturefile = "gfx/leaders/MOR/The_Eye.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_the_Ruins_of_Barad_Dur"
+		texturefile = "gfx/leaders/MOR/the_Ruins_of_Barad_Dur.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_adunabeth"
+		texturefile = "gfx/leaders/MOR/adunabeth.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_adunabeth_small"
+		texturefile = "gfx/advisors/MOR/adunabeth_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_dendra_dwar"
+		texturefile = "gfx/leaders/MOR/dendra_dwar.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_dendra_dwar_small"
+		texturefile = "gfx/advisors/MOR/dendra_dwar_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_gothmog"
+		texturefile = "gfx/leaders/MOR/gothmog.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_gothmog_small"
+		texturefile = "gfx/advisors/MOR/gothmog_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_hoarmurath"
+		texturefile = "gfx/leaders/MOR/hoarmurath.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_hoarmurath_small"
+		texturefile = "gfx/advisors/MOR/hoarmurath_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ji_indur"
+		texturefile = "gfx/leaders/MOR/ji_indur.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ji_indur_small"
+		texturefile = "gfx/advisors/MOR/ji_indur_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_khamul"
+		texturefile = "gfx/leaders/MOR/khamul.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_khamul_small"
+		texturefile = "gfx/advisors/MOR/khamul_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_khorahil"
+		texturefile = "gfx/leaders/MOR/khorahil.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_khorahil_small"
+		texturefile = "gfx/advisors/MOR/khorahil_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_mouth_of_sauron"
+		texturefile = "gfx/leaders/MOR/mouth_of_sauron.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_mouth_of_sauron_small"
+		texturefile = "gfx/advisors/MOR/mouth_of_sauron_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ren_iey"
+		texturefile = "gfx/leaders/MOR/ren_iey.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_ren_iey_small"
+		texturefile = "gfx/advisors/MOR/ren_iey_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_uvatha_achef"
+		texturefile = "gfx/leaders/MOR/uvatha_achef.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_uvatha_achef_small"
+		texturefile = "gfx/advisors/MOR/uvatha_achef_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_witch_king"
+		texturefile = "gfx/leaders/MOR/witch_king.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_witch_king_small"
+		texturefile = "gfx/advisors/MOR/witch_king_small.dds"
+	}
+############################################WLD
+	spriteType = {
+		name = "GFX_wilderness_portrait"
+		texturefile = "gfx/leaders/00_Orcs/wilderness.dds"
+	}
+############################################ROH
+	spriteType = {
+		name = "GFX_Portrait_Angbor"
+		texturefile = "gfx/leaders/GON/Angbor.dds"
+	}
+############################################SHI
+	spriteType = {
+		name = "GFX_Portrait_Lotho_Sackville_Baggins"
+		texturefile = "gfx/leaders/SHI/lotho_sackville_baggins.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Lotho_Sackville_Baggins_small"
+		texturefile = "gfx/advisors/SHI/lotho_sackville_baggins_small.dds"
+	}
+############################################VorV
+	spriteType = {
+		name = "GFX_Portrait_Wulfgar_Brynarsson"
+		texturefile = "gfx/leaders/Greater_Enedwaith/DUN_wulfgar_brynjarsson.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wulfgar_Brynarsson_small"
+		texturefile = "gfx/advisors/Greater_Enedwaith/DUN_wulfgar_brynjarsson_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Madogh_Morcad"
+		texturefile = "gfx/leaders/Greater_Enedwaith/AGR_Madogh_Morcad.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Madogh_Morcad_small"
+		texturefile = "gfx/advisors/Greater_Enedwaith/AGR_Madogh_Morcad_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Glenis_Hedricing"
+		texturefile = "gfx/leaders/Greater_Enedwaith/DRU_Glenis_Hedricing.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Glenis_Hedricing_small"
+		texturefile = "gfx/advisors/Greater_Enedwaith/DRU_Glenis_Hedricing_small.dds"
+	}
+}

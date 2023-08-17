@@ -56,8 +56,8 @@ CUV = {
 	color_ui = rgb { 97 118 80 }
 }
 DAG = {
-	color = rgb { 152 152 152 }
-	color_ui = rgb { 136 136 136 }
+	color = rgb { 69 71 8 }
+	color_ui = rgb { 48 49 7 }
 }
 DAI = {
 	color = rgb { 10 164 148 }
@@ -302,6 +302,10 @@ UMB = {
 WHT = {
 	color = rgb { 140 202 255 }
 	color_ui = rgb { 95 183 230 }
+}
+WLD = {
+	color = rgb { 152 152 152 }
+	color_ui = rgb { 136 136 136 }
 }
 WND = {
 	color = rgb { 141 184 152 }

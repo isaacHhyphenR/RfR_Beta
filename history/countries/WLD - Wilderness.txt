@@ -1,0 +1,36 @@
+﻿capital = 124 #Dead Marshes-Sarnen Thuringwath
+OOB = "EMPTY"
+
+set_research_slots = 1
+set_stability = 1
+set_war_support = 1
+
+set_technology = {
+	orcish_heritage_tech = 1
+}
+set_fuel_ratio = 0.0
+set_politics = {
+	ruling_party = opportunism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 40
+	opportunism = 60
+}
+
+recruit_character = WLD_wilderness
+
+add_ideas = female_leader_chance_idea
+add_ideas = {
+	civilian_economy
+	closed_economy
+	volunteer_only
+}
+
+every_core_state = {
+	add_dynamic_modifier = { modifier = wilderness_state }
+}
+#!&!&!

@@ -27,8 +27,10 @@ technologies = {
 	@experimentsX = 3
 	@mountsX = 4
 	@rationsX = 6
-	@fieldHospitalX = 9
-	@wineX = 12
+	@harvestX = 8
+	@fieldHospitalX = 11
+	@colonyX = 14
+	@wineX = 16
 ###########################################################
 				#AGRICULTURE
 ###########################################################
@@ -60,6 +62,10 @@ technologies = {
 		}
 		path = {
 			leads_to_tech = tech_field_hospital
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = colony0 
 			research_cost_coeff = 1
 		}
 		path = {
@@ -278,390 +284,6 @@ technologies = {
 			}
 		}
 	}
-###########################################################
-				#INDUSTRIAL FARMS
-###########################################################
-
-	# fuel_silos = {
-
-		# enable_building = {
-			# building = fuel_silo
-			# level = 3
-		# }
-				
-		# path = {
-			# leads_to_tech = synth_oil_experiments 
-			# research_cost_coeff = 1
-		# }
-		# path = {
-			# leads_to_tech = fuel_refining 
-			# research_cost_coeff = 1
-		# }
-		
-		# research_cost = 1
-		# start_year = 3015
-		# folder = {
-			# name = farming_folder
-			# position = { x = @mountsX y = @3015 }
-		# }
-		
-		# categories = {
-			# agriculture
-			# agriculture_early
-			# farming
-			# synth_resources
-		# }
-		
-		# ai_will_do = {
-			# factor = 1
-			# modifier = {
-				# factor = 2
-				# food > 10
-			# }
-			# modifier = {
-				# factor = 3
-				# food > 20
-			# }
-			# modifier = {
-				# factor = 4
-				# food > 30
-			# }
-			
-			# modifier = {
-				# factor = 2
-				# num_of_military_factories > 10
-			# }
-			# modifier = {
-				# factor = 3
-				# num_of_military_factories > 20
-			# }
-			# modifier = {
-				# factor = 4
-				# num_of_military_factories > 30
-			# }
-			# modifier = {
-				# factor = 4
-				# num_of_military_factories > 40
-			# }
-			# modifier = {
-				# factor = 4
-				# num_of_military_factories > 50
-			# }
-
-			# modifier = {
-				# factor = 2
-				# num_of_naval_factories > 10
-			# }
-			# modifier = {
-				# factor = 3
-				# num_of_naval_factories > 20
-			# }
-			# modifier = {
-				# factor = 4
-				# num_of_naval_factories > 30
-			# }
-			# modifier = {
-				# factor = 4
-				# num_of_naval_factories > 40
-			# }
-			# modifier = {
-				# factor = 4
-				# num_of_naval_factories > 50
-			# }
-			
-			# modifier = {
-				# factor = 0.2
-				# date < "3016.1.1"
-			# }
-			# modifier = {
-				# factor = 0.4
-				# date < "3017.1.1"
-			# }
-			# modifier = {
-				# NOT = {
-					# has_tech = agriculture1
-				# }
-				# factor = @AIbehindAgriculture
-			# }
-		# }
-	# }
-
-	fuel_refining = {
-
-		fuel_gain_factor = 0.2
-		fuel_gain_factor_from_states = 0.1
-					
-		path = {
-			leads_to_tech = fuel_refining2 
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 3
-		start_year = 3015
-		folder = {
-			name = farming_folder
-			position = { x = @rationsX y = @3015 }
-		}
-		
-		categories = {
-			farming
-			synth_resources
-			agriculture
-			agriculture_early
-		}
-		
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				has_war = yes
-				factor = 2
-			}
-			modifier = {
-				is_major = no
-				factor = 0.25
-			}
-			modifier = {
-				factor = 1.5
-				num_of_military_factories > 10
-			}
-			modifier = {
-				factor = 1.5
-				num_of_military_factories > 20
-			}
-			modifier = {
-				factor = 1.5
-				num_of_military_factories > 30
-			}
-
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 10
-			}
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 20
-			}
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 30
-			}
-			modifier = {
-				NOT = {
-					has_tech = agriculture1
-				}
-				factor = @AIbehindAgriculture
-			}
-		}
-	}
-
-	fuel_refining2 = {
-		
-		fuel_gain_factor = 0.2
-		fuel_gain_factor_from_states = 0.1
-
-		path = {
-			leads_to_tech = fuel_refining3 
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 3
-		start_year = 3016
-		folder = {
-			name = farming_folder
-			position = { x = @rationsX y = @3016 }
-		}
-		
-		categories = {
-			agriculture
-			agriculture_early
-			farming
-			synth_resources
-		}
-		
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				has_war = yes
-				factor = 2
-			}
-			modifier = {
-				is_major = no
-				factor = 0.25
-			}
-			modifier = {
-				factor = 1.5
-				num_of_military_factories > 20
-			}
-			modifier = {
-				factor = 1.5
-				num_of_military_factories > 30
-			}
-
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 20
-			}
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 30
-			}
-			modifier = {
-				NOT = {
-					has_tech = agriculture1
-				}
-				factor = @AIbehindAgriculture
-			}
-		}
-	}
-
-	fuel_refining3 = {
-		
-		fuel_gain_factor = 0.2
-		fuel_gain_factor_from_states = 0.1
-
-		path = {
-			leads_to_tech = fuel_refining4 
-			research_cost_coeff = 1
-		}
-		research_cost = 3
-		start_year = 3018
-		folder = {
-			name = farming_folder
-			position = { x = @rationsX y = @3018 }
-		}
-		
-		categories = {
-			agriculture
-			agriculture_basic
-			farming
-			synth_resources
-		}
-		
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				has_war = yes
-				factor = 2
-			}
-			modifier = {
-				is_major = no
-				factor = 0.25
-			}
-			modifier = {
-				factor = 1.5
-				num_of_military_factories > 30
-			}
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 30
-			}
-			modifier = {
-				NOT = {
-					has_tech = agriculture2
-				}
-				factor = @AIbehindAgriculture
-			}
-		}
-	}
-
-	fuel_refining4 = {
-		
-		fuel_gain_factor = 0.20
-		fuel_gain_factor_from_states = 0.1
-
-		path = {
-			leads_to_tech = fuel_refining5
-			research_cost_coeff = 1
-		}
-		research_cost = 3
-		start_year = 3020
-		folder = {
-			name = farming_folder
-			position = { x = @rationsX y = @3020 }
-		}
-		
-		categories = {
-			agriculture
-			agriculture_improved
-			farming
-			synth_resources
-		}
-		
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				has_war = yes
-				factor = 2
-			}
-			modifier = {
-				is_major = no
-				factor = 0.25
-			}
-			modifier = {
-				factor = 1.5
-				num_of_military_factories > 30
-			}
-
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 30
-			}
-			modifier = {
-				NOT = {
-					has_tech = agriculture3
-				}
-				factor = @AIbehindAgriculture
-			}
-		}
-	}
-
-	fuel_refining5 = {
-		
-		fuel_gain_factor = 0.20
-		fuel_gain_factor_from_states = 0.1
-
-		research_cost = 3
-		start_year = 3022
-		folder = {
-			name = farming_folder
-			position = { x = @rationsX y = @3022 }
-		}
-		
-		categories = {
-			agriculture
-			agriculture_advanced
-			farming
-			synth_resources
-		}
-		
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				has_war = yes
-				factor = 2
-			}
-			modifier = {
-				is_major = no
-				factor = 0.25
-			}
-			modifier = {
-				factor = 1.5
-				num_of_military_factories > 40
-			}
-
-			modifier = {
-				factor = 1.5
-				num_of_naval_factories > 40
-			}
-			modifier = {
-				NOT = {
-					has_tech = agriculture4
-				}
-				factor = @AIbehindAgriculture
-			}
-		}
-	}
-	
 ###########################################################
 				#INDUSTRIAL FOOD
 ###########################################################
@@ -1171,6 +793,493 @@ technologies = {
 		show_effect_as_desc = yes
 	}
 ###########################################################
+				#INDUSTRIAL BAKING
+###########################################################
+	fuel_refining = {
+
+		fuel_gain_factor = 0.2
+		fuel_gain_factor_from_states = 0.1
+					
+		path = {
+			leads_to_tech = fuel_refining2 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = harvest1 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 3015
+		folder = {
+			name = farming_folder
+			position = { x = @rationsX y = @3015 }
+		}
+		
+		categories = {
+			farming
+			synth_resources
+			agriculture
+			agriculture_early
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 10
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 10
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+
+	fuel_refining2 = {
+		
+		fuel_gain_factor = 0.2
+		fuel_gain_factor_from_states = 0.1
+
+		path = {
+			leads_to_tech = fuel_refining3 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 3016
+		folder = {
+			name = farming_folder
+			position = { x = @rationsX y = @3016 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_early
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 20
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+
+	fuel_refining3 = {
+		
+		fuel_gain_factor = 0.2
+		fuel_gain_factor_from_states = 0.1
+
+		path = {
+			leads_to_tech = fuel_refining4 
+			research_cost_coeff = 1
+		}
+		research_cost = 3
+		start_year = 3018
+		folder = {
+			name = farming_folder
+			position = { x = @rationsX y = @3018 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_basic
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture2
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+
+	fuel_refining4 = {
+		
+		fuel_gain_factor = 0.20
+		fuel_gain_factor_from_states = 0.1
+
+		path = {
+			leads_to_tech = fuel_refining5
+			research_cost_coeff = 1
+		}
+		research_cost = 3
+		start_year = 3020
+		folder = {
+			name = farming_folder
+			position = { x = @rationsX y = @3020 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_improved
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 30
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 30
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture3
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+
+	fuel_refining5 = {
+		
+		fuel_gain_factor = 0.20
+		fuel_gain_factor_from_states = 0.1
+
+		research_cost = 3
+		start_year = 3022
+		folder = {
+			name = farming_folder
+			position = { x = @rationsX y = @3022 }
+		}
+		
+		categories = {
+			agriculture
+			agriculture_advanced
+			farming
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				is_major = no
+				factor = 0.25
+			}
+			modifier = {
+				factor = 1.5
+				num_of_military_factories > 40
+			}
+
+			modifier = {
+				factor = 1.5
+				num_of_naval_factories > 40
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture4
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	
+###########################################################
+				#HARVEST
+###########################################################
+	@harvestBonus = 0.005
+	harvest1 = {
+		conscription = @harvestBonus
+		path = {
+			leads_to_tech = harvest2 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 3016
+		folder = {
+			name = farming_folder
+			position = { x = @harvestX y = @3016 }
+		}
+		
+		categories = {
+			farming
+			agriculture
+			agriculture_early
+			harvest_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				has_manpower < 100000
+				factor = 2
+			}
+			modifier = {
+				has_manpower < 500000
+				factor = 2
+			}
+			modifier = {
+				tag = GON
+				factor = 5
+			}
+			modifier = {
+				tag = MOR
+				factor = 0.5
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	harvest2 = {
+		conscription = @harvestBonus
+		path = {
+			leads_to_tech = harvest3 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 3018
+		folder = {
+			name = farming_folder
+			position = { x = @harvestX y = @3018 }
+		}
+		
+		categories = {
+			farming
+			agriculture
+			agriculture_basic
+			harvest_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				has_manpower < 100000
+				factor = 2
+			}
+			modifier = {
+				has_manpower < 500000
+				factor = 2
+			}
+			modifier = {
+				tag = GON
+				factor = 5
+			}
+			modifier = {
+				tag = MOR
+				factor = 0.5
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture2
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	harvest3 = {
+		conscription = @harvestBonus
+		path = {
+			leads_to_tech = harvest4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 3020
+		folder = {
+			name = farming_folder
+			position = { x = @harvestX y = @3020 }
+		}
+		
+		categories = {
+			farming
+			agriculture
+			agriculture_improved
+			harvest_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				has_manpower < 100000
+				factor = 2
+			}
+			modifier = {
+				has_manpower < 500000
+				factor = 2
+			}
+			modifier = {
+				tag = GON
+				factor = 5
+			}
+			modifier = {
+				tag = MOR
+				factor = 0.5
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture3
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	harvest4 = {
+		conscription = @harvestBonus
+		
+		research_cost = 3
+		start_year = 3022
+		folder = {
+			name = farming_folder
+			position = { x = @harvestX y = @3022 }
+		}
+		
+		categories = {
+			farming
+			agriculture
+			agriculture_advanced
+			harvest_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+			modifier = {
+				has_manpower < 100000
+				factor = 2
+			}
+			modifier = {
+				has_manpower < 500000
+				factor = 2
+			}
+			modifier = {
+				tag = GON
+				factor = 5
+			}
+			modifier = {
+				tag = MOR
+				factor = 0.5
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture4
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+###########################################################
 				#FIELD HOSPITAL
 ###########################################################
 	tech_field_hospital = {
@@ -1455,4 +1564,266 @@ technologies = {
 			level = 5
 		}
 	}
+###########################################################
+				#COLONISATION
+###########################################################
+	@colonyBonus = 2000
+	colony0 = {
+		colony_growth_monthly = 5000
+		custom_modifier_tooltip = allows_colonisation_tooltip
+		path = {
+			leads_to_tech = colony1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 3015
+		folder = {
+			name = farming_folder
+			position = { x = @colonyX y = @3015 }
+		}
+		
+		categories = {
+			farming
+			agriculture
+			agriculture_early
+			colony_tech
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = wants_to_colonise
+				factor = 25
+			}
+			modifier = { #dont research if can't colonise
+				NOT = {
+					any_neighbor_country = { tag = WLD }
+				}
+				factor = 0
+			}
+			modifier = { #colonise better
+				any_owned_state = { is_core_of = WLD }
+				factor = 5
+			}
+			modifier = { #these tags shouldn't bother
+				OR = {
+					original_tag = ROH
+					tag = BER
+					tag = MOR
+				}
+				factor = 0.2
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	colony1 = {
+		colony_growth_monthly = @colonyBonus
+		path = {
+			leads_to_tech = colony2 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 3016
+		folder = {
+			name = farming_folder
+			position = { x = @colonyX y = @3016 }
+		}
+		
+		categories = {
+			farming
+			agriculture
+			agriculture_early
+			colony_tech
+		}
+		
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = wants_to_colonise
+				factor = 3
+			}
+			modifier = { #dont research if can't colonise
+				NOT = {
+					any_neighbor_country = { tag = WLD }
+				}
+				factor = 0
+			}
+			modifier = { #colonise better
+				any_owned_state = { is_core_of = WLD }
+				factor = 5
+			}
+			modifier = { #these tags shouldn't bother
+				OR = {
+					original_tag = ROH
+					tag = BER
+					tag = MOR
+				}
+				factor = 0.2
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	colony2 = {
+		colony_growth_monthly = @colonyBonus
+		path = {
+			leads_to_tech = colony3 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 3018
+		folder = {
+			name = farming_folder
+			position = { x = @colonyX y = @3018 }
+		}
+		
+		categories = {
+			farming
+			agriculture
+			agriculture_basic
+			colony_tech
+		}
+		
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = wants_to_colonise
+				factor = 3
+			}
+			modifier = { #dont research if can't colonise
+				NOT = {
+					any_neighbor_country = { tag = WLD }
+				}
+				factor = 0
+			}
+			modifier = { #colonise better
+				any_owned_state = { is_core_of = WLD }
+				factor = 5
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture2
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	colony3 = {
+		colony_growth_monthly = @colonyBonus
+		# path = {
+			# leads_to_tech = colony4
+			# research_cost_coeff = 1
+		# }
+		
+		research_cost = 3
+		start_year = 3020
+		folder = {
+			name = farming_folder
+			position = { x = @colonyX y = @3020 }
+		}
+		
+		categories = {
+			farming
+			agriculture
+			agriculture_improved
+			colony_tech
+		}
+		
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = wants_to_colonise
+				factor = 3
+			}
+			modifier = { #dont research if can't colonise
+				NOT = {
+					any_neighbor_country = { tag = WLD }
+				}
+				factor = 0
+			}
+			modifier = { #colonise better
+				any_owned_state = { is_core_of = WLD }
+				factor = 5
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture3
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	# colony4 = {
+		# colony_growth_monthly = @colonyBonus
+		
+		# research_cost = 3
+		# start_year = 3022
+		# folder = {
+			# name = farming_folder
+			# position = { x = @colonyX y = @3022 }
+		# }
+		
+		# categories = {
+			# farming
+			# agriculture
+			# agriculture_advanced
+			# colony_tech
+		# }
+		
+		# ai_will_do = {
+			# factor = 4
+			# modifier = {
+				# has_war = yes
+				# factor = 0.5
+			# }
+			# modifier = {
+				# has_country_flag = wants_to_colonise
+				# factor = 3
+			# }
+			# modifier = { #dont research if can't colonise
+				# NOT = {
+					# any_neighbor_country = { tag = WLD }
+				# }
+				# factor = 0
+			# }
+			# modifier = { #colonise better
+				# any_owned_state = { is_core_of = WLD }
+				# factor = 5
+			# }
+			# modifier = {
+				# NOT = {
+					# has_tech = agriculture4
+				# }
+				# factor = @AIbehindAgriculture
+			# }
+		# }
+	# }
 }

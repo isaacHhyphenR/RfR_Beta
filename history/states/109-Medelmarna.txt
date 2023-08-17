@@ -8,8 +8,8 @@ state = {
 	}
 
 	history = {
-		add_core_of = DAG
-		owner = DAG
+		add_core_of = WLD
+		owner = WLD
 		buildings = {
 		}
 		victory_points = { #Ovanora, 0

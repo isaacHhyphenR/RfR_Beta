@@ -6,8 +6,8 @@ state = {
 	}
 
 	history = {
-		add_core_of = DAG
-		owner = DAG
+		add_core_of = WLD
+		owner = WLD
 		victory_points = { #Burh Sauthis, 0
 			1921 0 #2
 		}

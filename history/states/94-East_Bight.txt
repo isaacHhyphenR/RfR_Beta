@@ -10,8 +10,8 @@ state = {
 		19 1065 2246 2569 3272 3650 4088 4312 6165 6190 6236 
 	}
 	history = {
-		owner = DAG
-		add_core_of = DAG
+		owner = WLD
+		add_core_of = WLD
 		victory_points = { #0
 			4312 0#1
 		}

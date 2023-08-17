@@ -1976,7 +1976,6 @@ set_new_diplo_target = {
 			}
 		}
 	}
-	if = { limit = { tag = ISN }log = "Country: [THIS.getName]              Diplo Target: [?diplo_target.GetName]" }
 }
 calculate_ENE_mil_target_weight = { #Outputs to a variable called mil_target_weight PREV is the calculator, THIS is the target
 	set_variable = { PREV.current_target_weight = 0 }
@@ -2121,7 +2120,7 @@ set_new_mil_target = {
 			}
 		}
 	}
-	log = "Country: [THIS.getName]              Mil Target: [?mil_target.GetName]"
+	#log = "Country: [THIS.getName]              Mil Target: [?mil_target.GetName]"
 }
 
 calculate_wargoal_decision_cost = { #must set COST beforehand, collect it afterwards

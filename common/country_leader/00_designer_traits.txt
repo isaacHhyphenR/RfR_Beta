@@ -1,0 +1,662 @@
+##sprite strip:
+#1-  monster
+#2-  bomb
+#3-  anchor
+#4-  submarine
+#5-  infantry helmet
+#6-  gas cannister
+#7-  sword
+#8-  tank
+#9-  sheild
+#10- industry
+#11- blank
+#12- star
+#13- political
+#14- gears (theorist)
+#15- intelllligence
+#16- artillery
+#17- horse head
+#18- Infantry salute
+
+
+leader_traits = {
+######################################################################################DESIGNERS
+	industrial_concern = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	blacksmithing_concern = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.15
+			}
+		}
+	}
+	blacksmith = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	carpenter = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	agricultural_concern = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	industrial_monopoly = {
+		random = no
+		min_export = 0.15
+		political_power_gain = -0.05
+		production_speed_buildings_factor = 0.05
+		production_factory_max_efficiency_factor = 0.15	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	inventive_genius = {
+		random = no
+		political_power_gain = 0.05
+		opinion_gain_monthly_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	railway_company = {
+		random = no
+		production_speed_rail_way_factor = 0.15
+		production_speed_supply_node_factor = 0.15
+		equipment_bonus = {
+			train_equipment = {
+				build_cost_ic = -0.25
+				reliability = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	mining_concern = {
+		random = no
+		#production_speed_buildings_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	construction_company = {
+		random = no
+		#production_speed_buildings_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	repair_company = {
+		random = no
+		#production_speed_buildings_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	refinery_concern = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	electronics_concern = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	electronics_developer = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	linchpin_of_infrastructure = {
+		random = no
+		production_speed_infrastructure_factor = 0.15
+		production_speed_rail_way_factor = 0.15
+		industry_repair_factor = 0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	armor_smith = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			infantry_equipment = {
+				defense = 0.05
+				breakthrough = 0.05
+			}
+		}
+	}
+		
+	loot_organizer = {
+		random = no
+		non_core_factories = 0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+			###HORSE BREEDERS
+	tank_refurbishment_plant = { #NSB
+		random = no
+		#generic
+
+		equipment_bonus = {
+			armor = {
+				reliability = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	fast_tank_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				maximum_speed = 0.05 reliability = 0.1 
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	armored_car_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armored_car_equipment = {
+				maximum_speed = 0.05
+				soft_attack = 0.05
+				hard_attack = 0.05
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	infantry_tank_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				soft_attack = 0.05
+				armor_value = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	medium_tank_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				reliability = 0.05 soft_attack = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	heavy_tank_manufacturer = {
+		random = no
+		equipment_bonus = {
+			armor = {
+				armor_value = 0.05 hard_attack = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tank_manufacturer = {
+		random = no
+		#generic
+
+		equipment_bonus = {
+			armor = {
+				reliability = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	horse_thief = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		production_lack_of_resource_penalty_factor = -0.2
+		equipment_bonus = {
+			armor = {
+				reliability = -0.05
+			}
+		}
+	}
+			##SHIPWRIGHTS
+	repair_and_refurbishment_plant = { #NSB - Repairs & Refit
+		random = no
+		equipment_bonus = {
+			screen_ship = {
+				build_cost_ic = -0.05
+			}
+			capital_ship = {
+				build_cost_ic = -0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	black_sea_naval_manufacturer = { #NSB - Screen Ships and Submarines
+		random = no
+
+		equipment_bonus = {
+			screen_ship = {
+				build_cost_ic = -0.15 sub_detection = 0.1 naval_range = -0.25
+			}
+			submarine = {
+				build_cost_ic = -0.15 sub_visibility = -0.1 naval_range = -0.25
+			}
+			carrier = {
+				build_cost_ic = 0.15 naval_range = -0.25
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	battlefleet_designer = { #armored carriers, slightly buffed cap ships
+		random = no
+		equipment_bonus = {
+			capital_ship = {
+				armor_value = 0.15 
+				hg_attack = 0.15
+			}
+			screen_ship = {
+				torpedo_attack = 0.25
+				#sub_detection = -0.25
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	swamp_shipwright = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	fishing_concern = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+	}
+		
+	# flagship_manufacturer = {
+		# random = no
+		# equipment_bonus = {
+			# capital_ship = {
+				# armor_value = 0.15
+				# hg_attack = 0.15
+			# }
+		# }
+		# ai_will_do = {
+			# factor = 1
+		# }
+	# }
+	# escort_manufacturer = {
+		# random = no
+		# equipment_bonus = {
+			# screen_ship = {
+				# naval_speed = 0.15
+				# lg_attack = 0.15
+			# }
+		# }
+		# ai_will_do = {
+			# factor = 1
+		# }
+	# }
+	raiding_fleet_naval_manufacturer = {
+		random = no
+		equipment_bonus = {
+			# carrier = {
+				# surface_visibility = -0.1 naval_speed = 0.1 carrier_size = -0.1
+			# }
+			capital_ship = {
+				surface_visibility = -0.1 naval_speed = 0.1 hg_attack = -0.1
+			}
+			screen_ship = {
+				surface_visibility = -0.1 naval_speed = 0.1
+			}
+			# submarine = {
+				# sub_visibility = -0.1 surface_visibility = -0.1 naval_speed = 0.1
+			# }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	convoy_escort_naval_manufacturer = {
+		random = no
+		equipment_bonus = {
+			screen_ship = {
+				naval_range = 0.3 naval_speed = 0.1 build_cost_ic = 0.1 #sub_detection = 0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	convoy_manufacturer = {
+		random = no
+		#generic
+		equipment_bonus = {
+			convoy = {
+				build_cost_ic = -0.20
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	mediterranean_naval_manufacturer = {
+		random = no
+		equipment_bonus = {
+			capital_ship = {
+				naval_range = -0.25 naval_speed = 0.1
+			}
+			screen_ship = {
+				naval_range = -0.25 naval_speed = 0.1 
+			}
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	coastal_defence_naval_manufacturer = {
+		random = no
+		equipment_bonus = {
+			carrier = {
+				build_cost_ic = -0.25 carrier_size = -0.2 naval_range = -0.5
+			}
+			capital_ship = {
+				build_cost_ic = -0.25 armor_value = -0.2 hg_attack = -0.2 naval_range = -0.5
+			}
+			screen_ship = {
+				build_cost_ic = -0.25 naval_range = -0.5
+			}
+			submarine = {
+				build_cost_ic = -0.25 naval_range = -0.5
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	naval_manufacturer = {
+		random = no
+		#generic
+		
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			screen_ship = {
+				reliability = 0.05
+			}
+			capital_ship = {
+				reliability = 0.05
+			}
+		}
+	}
+	dockyard_naval_manufacturer = {
+		random = no
+		#generic
+		
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			screen_ship = {
+				reliability = 0.05
+			}
+			capital_ship = {
+				reliability = 0.05
+			}
+		}
+		industrial_capacity_dockyard = 0.15
+	}
+			###WAGON CARPENTERS
+	motorized_equipment_manufacturer = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			motorized_equipment = {
+				reliability = 0.05 
+			}
+			mechanized_equipment = {
+				reliability = 0.05 
+			}
+		}
+	}
+	fast_motorized_equipment_manufacturer = {
+		random = no #Rohan
+		equipment_bonus = {
+			motorized_equipment = {
+				maximum_speed = 0.05 reliability = 0.1 
+			}
+			mechanized_equipment = {
+				maximum_speed = 0.05 reliability = 0.1 
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	heavy_motorized_equipment_manufacturer = {
+		random = no #Rohan
+		equipment_bonus = {
+			motorized_equipment = {
+				armor_value = 0.05 hard_attack = 0.05
+			}
+			mechanized_equipment = {
+				armor_value = 0.05 hard_attack = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	medium_motorized_equipment_manufacturer = {
+		random = no #Rohan
+		equipment_bonus = {
+			motorized_equipment = {
+				reliability = 0.05 soft_attack = 0.05
+			}
+			mechanized_equipment = {
+				reliability = 0.05 soft_attack = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	infantry_motorized_equipment_manufacturer = {
+		random = no #Rohan
+		equipment_bonus = {
+			motorized_equipment = {
+				soft_attack = 0.05
+				armor_value = 0.05
+			}
+			mechanized_equipment = {
+				soft_attack = 0.05
+				armor_value = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	loot_wagon_manufacturer = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		supply_node_range = 0.1
+		equipment_bonus = {
+			motorized_equipment = {
+				build_cost_ic = -0.1
+			}
+		}
+	}
+				###EQUIPMENT DESIGNER
+	infantry_equipment_manufacturer = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			infantry_equipment = {
+				reliability = 0.05
+			}
+		}
+	}
+	elegant_infantry_equipment_manufacturer = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			infantry_equipment = {
+				reliability = 0.05
+				soft_attack = 0.05
+				breakthrough = 0.05
+			}
+		}
+	}
+	support_equipment_manufacturer = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			support_equipment = {
+				reliability = 0.05
+			}
+		}
+	}
+	siege_artillery_manufacturer = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			guided_missile_equipment = {
+				reliability = 0.05
+			}
+		}
+	}
+	artillery_manufacturer = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			artillery_equipment = {
+				reliability = 0.05
+			}
+		}
+	}
+	hunting_equipment_manufacturer = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			artillery_equipment = {
+				reliability = 0.05
+				hard_attack  = 0.1
+			}
+		}
+	}
+	pike_manufacturer = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			anti_tank_equipment = {
+				reliability = 0.05
+			}
+		}
+	}
+	javelin_manufacturer = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		equipment_bonus = {
+			rocket_artillery_equipment = {
+				reliability = 0.05
+			}
+		}
+	}
+	mountain_guerrilla = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+		terrain_penalty_reduction = 0.1
+	}
+		
+	throne_room_architect = {
+		random = no
+		ai_will_do = {
+			base = 1
+		}
+	}
+}

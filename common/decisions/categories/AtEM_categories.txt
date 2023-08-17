@@ -9,3 +9,13 @@ celduin_trade_category = {
 	}
 	visible = { capital_scope = { market > 0 } }
 }
+########################################COLONISATION########################################
+colonisation_category = {
+	icon = GFX_decision_category_generic_prospect_for_resources
+	priority = {
+		base = 90
+	}
+	allowed = {
+		always = yes
+	}
+}

@@ -1,0 +1,42 @@
+characters = {
+		#######LEADERS
+	WLD_wilderness = {
+		name = "The Wilderness"
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_wilderness_portrait"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "4000.1.1.1"
+			id = -1
+			traits = { wilderness_trait }
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "4000.1.1.1"
+			id = -1
+			traits = { wilderness_trait }
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "4000.1.1.1"
+			id = -1
+			traits = { wilderness_trait }
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "4000.1.1.1"
+			id = -1
+			traits = { wilderness_trait }
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "4000.1.1.1"
+			id = -1
+			traits = { wilderness_trait }
+		}
+	}
+}

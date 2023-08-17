@@ -3,8 +3,8 @@ state = {
 	name = "STATE_121"
 
 	history = {
-		owner = DAG
-		add_core_of = DAG
+		owner = WLD
+		add_core_of = WLD
 		victory_points = { #Salur
 			6622 0 #1
 		}
