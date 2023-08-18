@@ -1,7 +1,7 @@
 celduin_trade_category = {
 	upgrade_market = {
 		icon = GFX_decision_upgrade_market
-		fire_only_once = no
+		fire_only_once = yes
 		ai_will_do = { #ASAP
 			factor = 10
 		}
