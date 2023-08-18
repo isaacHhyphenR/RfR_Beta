@@ -104,7 +104,7 @@ on_actions = {
 					set_variable = { integration_cost = state_population_k }
 					divide_variable = { integration_cost = 3 }
 					owner = {
-						set_variable = { integration_cost = integration_cost }
+						set_variable = { integration_cost = PREV.integration_cost }
 					}
 				}
 			}

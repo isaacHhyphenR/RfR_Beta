@@ -65,4 +65,4 @@
  prosperity_gain_from_passthrough: "[?passthroughGain|=+] total from [?num_passthrough_routes|+0..0] Routes Passing Through"
  prosperity_gain_factor_in_state: "[?modifier@prosperity_gain_factor|=+%] Local $prosperity_gain_factor$"
  prosperity_fain_factor_in_state_country: "[?controller.modifier@prosperity_gain_factor|=+%] National $prosperity_gain_factor$"
- market_name_loc: "Market of [market_name_scripted_loc]"
+ market_name_loc: "Market of [THIS.GetCapitalVictoryPointName]"

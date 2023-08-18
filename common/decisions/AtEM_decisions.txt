@@ -527,9 +527,12 @@ colonisation_category = {
 				add_colony_start_victory_points = yes
 				set_variable = { integration_cost = state_population_k }
 				divide_variable = { integration_cost = 3 }
+				add_claim_by = ROOT
 			}
+			ROOT = { set_variable = { integration_cost = FROM.integration_cost } }
 		}
 	}
+		
 	annex_colony = {
 		icon = GFX_decision_settle_territory
 		fire_only_once = yes
@@ -1281,9 +1284,9 @@ colonisation_category = {
 	}
 
 	
-	DEBUG_colony_growth = {
-		visible = { is_debug = yes }
-		days_remove = 100
-		modifier = { colony_growth_monthly = 100000 }
-	}
+	# DEBUG_colony_growth = {
+		# visible = { is_debug = yes }
+		# days_remove = 100
+		# modifier = { colony_growth_monthly = 100000 }
+	# }
 }
