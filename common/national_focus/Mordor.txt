@@ -1511,7 +1511,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		bypass = { OR = { NOT = { country_exists = DAG } DAG = { is_subject_of = ROOT } } }
+		bypass = { NOT = { country_exists = WLD } }
 		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
 		completion_reward = { #Reoccupy Dagorland
 			# hidden_effect = {

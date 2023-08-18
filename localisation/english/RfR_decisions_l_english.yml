@@ -599,8 +599,6 @@
  begin_colonisation_desc: "[FROM.GetName] holds incredible economic potential if only we are brave enough to take it."
  annex_colony: "Integrate [FROM.GetName]"
  annex_colony_desc: "Our settlers now exert such firm control over [FROM.GetName] that we can safely integrate it into [ROOT.GetName] without issue."
- 
- 
  colony_resource1: "(1/2)"
  colony_resource2: "(2/2)"
  colony_food: "Develop [FROM.GetName]'s Farms $colony_resource1$"
@@ -633,5 +631,11 @@
  colony_maintenance_desc: "The frontier provides many useful resources for our artisans back home, but with the right investments could support a profitable manufacturing industry of its own."
  colony_motorized: "Secure [FROM.GetName]'s Supply Lines"
  colony_motorized_desc: "We must ensure that our frontier has stable trade routes to export its produce along."
+ encourage_colonial_settlement: "Encourage Colonial Settlement"
+ encourage_colonial_settlement_desc: "We must spread tales far and wide of the riches to be found in our fledgling colony"
  MOR_settle_wilderness: "Occupy [FROM.GetName]"
  MOR_settle_wilderness_desc: "Though the vast reaches of Dagorlad hold little economic value, they open many new angles form which to assault our enemies."
+ uprising_in_colony: "Incursion in [FROM.GetName]"
+ uprising_in_colony_desc: "A horde of orcs has gathered in the wilderness and swept away our garrison! We must quickly drive them out before they undo all of our hard work."
+ 
+ 

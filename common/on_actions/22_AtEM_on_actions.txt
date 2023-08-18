@@ -97,11 +97,15 @@ on_actions = {
 			WLD = {
 				every_core_state = {
 					limit = { NOT = { is_controlled_by = WLD } }
-					set_temp_variable = { growth = controller:modifier@colony_growth_monthly_factor }
+					set_temp_variable = { growth = controller:modifier@colony_growth_monthly }
+					multiply_temp_variable = { growth = controller:modifier@colony_growth_monthly_factor }
 					add_manpower = var:growth
-					#cost scales by populati0n
+					#cost scales by population
 					set_variable = { integration_cost = state_population_k }
 					divide_variable = { integration_cost = 3 }
+					owner = {
+						set_variable = { integration_cost = integration_cost }
+					}
 				}
 			}
 		}
@@ -120,6 +124,77 @@ on_actions = {
 			else_if = {
 				limit = { FROM.FROM = { state = 101 } } #erebor
 				set_variable = { global.gold_exporter = ROOT }
+			}
+		}
+		effect = { #colony uprising
+			if = {
+				limit = {
+					ROOT = { original_tag = WLD }
+					FROM = { NOT = { original_tag = WLD } }
+					FROM.FROM = { is_core_of = WLD NOT = { has_state_flag = ongoing_incursion } }
+				}
+				WLD = {
+					##send a leader
+					if = {
+						limit = { has_character = WLD_wilderness1 }
+						WLD_wilderness1 = { set_nationality = ROOT }
+					}
+					else_if = {
+						limit = { has_character = WLD_wilderness2 }
+						WLD_wilderness2 = { set_nationality = ROOT }
+					}
+					else_if = {
+						limit = { has_character = WLD_wilderness3 }
+						WLD_wilderness3 = { set_nationality = ROOT }
+					}
+					else_if = {
+						limit = { has_character = WLD_wilderness4 }
+						WLD_wilderness4 = { set_nationality = ROOT }
+					}
+					else_if = {
+						limit = { has_character = WLD_wilderness5 }
+						WLD_wilderness5 = { set_nationality = ROOT }
+					}
+				}
+				ROOT = {
+					set_cosmetic_tag = WLD_incursion
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1000
+					}
+					add_manpower = 2000
+					if = {
+						limit = { has_character = WLD_wilderness1 }
+						WLD_wilderness1 = { promote_character = clanship promote_character = feudalism promote_character = tribalism promote_character = autocracy promote_character = shadow_worship }
+					}
+					else_if = {
+						limit = { has_character = WLD_wilderness2 }
+						WLD_wilderness2 = { promote_character = clanship promote_character = feudalism promote_character = tribalism promote_character = autocracy promote_character = shadow_worship }
+					}
+					else_if = {
+						limit = { has_character = WLD_wilderness3 }
+						WLD_wilderness3 = { promote_character = clanship promote_character = feudalism promote_character = tribalism promote_character = autocracy promote_character = shadow_worship }
+					}
+					else_if = {
+						limit = { has_character = WLD_wilderness4 }
+						WLD_wilderness4 = { promote_character = clanship promote_character = feudalism promote_character = tribalism promote_character = autocracy promote_character = shadow_worship }
+					}
+					else_if = {
+						limit = { has_character = WLD_wilderness5 }
+						WLD_wilderness5 = { promote_character = clanship promote_character = feudalism promote_character = tribalism promote_character = autocracy promote_character = shadow_worship }
+					}
+				}
+				FROM.FROM = {
+					set_state_flag = ongoing_incursion
+					save_event_target_as = incursion_state
+				}
+				FROM = { #inside to ensure event target carries over
+					activate_targeted_decision = {
+						target = FROM.FROM
+						decision = uprising_in_colony
+					}
+					news_event = rfr_news.81
+				}
 			}
 		}
 	}

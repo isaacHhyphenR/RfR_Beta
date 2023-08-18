@@ -689,4 +689,7 @@
  rfr_news.80.t: "We do not have enough $precious_metals_equipment$"
  rfr_news.80.d: "Servants report that we do not have enough precious metals stockpiled to renew our generous usage of them."
  rfr_news.80.a: "We shall resume after aquiring more."
+ rfr_news.81.t: "Incursion in [incursion_state.GetName]!"
+ rfr_news.81.d: "Refugees pour into [?capital.GetCapitalVictoryPointName], bringing with them tales of a terrible orc host that has overtaken their new homes in [incursion_state.GetName]. The horde overwhelmed our frontier militia, and now our people demand that we drive these monsters back into the wilderness from whence they came."
+ rfr_news.81.a: "We must restore order at once!"
  

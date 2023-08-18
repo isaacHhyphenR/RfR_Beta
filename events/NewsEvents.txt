@@ -1243,3 +1243,16 @@ news_event = { ##80## Out of Precious Metals
 		name = rfr_news.80.a
 	}
 }
+
+news_event = { ##81## Wilderness incursion
+	id = rfr_news.81
+	title = rfr_news.81.t
+	desc = rfr_news.81.d
+	picture = GFX_news_dunlendings_invade
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.81.a
+	}
+}
+

@@ -22,6 +22,11 @@ set_popularities = {
 }
 
 recruit_character = WLD_wilderness
+recruit_character = WLD_wilderness1 #backups for colony incursions
+recruit_character = WLD_wilderness2
+recruit_character = WLD_wilderness3
+recruit_character = WLD_wilderness4
+recruit_character = WLD_wilderness5
 
 add_ideas = female_leader_chance_idea
 add_ideas = {

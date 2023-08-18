@@ -133,3 +133,5 @@
  market_modifiers_desc: "$market_desc$"
  market_upgrade_cost_modifier: "Upgrading Markets"
  market_upgrade_cost_modifier_desc: "$upgrade_market_desc$"
+ wilderness_state: "Wilderness"
+ wilderness_state_desc: "This region's only inhabitants are scattered bands of orcs and bandits. Establishing civilisation will require significant investment."

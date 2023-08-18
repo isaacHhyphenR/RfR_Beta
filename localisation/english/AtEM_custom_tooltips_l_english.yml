@@ -30,3 +30,7 @@
  clear_undeveloped_colony_resources_tooltip: "\nWe will lose any resources that we did not develop"
  colony_cost_scales_with_pop: "Annexation costs 1 §Ypolitical power§! per every 3,000 residents"
  MOR_unlock_dagorlad_settlement_tooltip: "$unlocks_decision_tooltip$ to annex & core Wilderness states that border any of your core states. Each decision costs §R[?dagorlad_settlement_cost_base]§! £GFX_manpower_texticon §Ymanpower§! and lasts for a week."
+ wilderness_state_tooltip: "If this state remains under the control of [WLD.GetFlag] §Y[WLD.GetNameDef]§! for §Y100§! days, any colony will be §Rdestroyed§!."
+ crushed_colonial_incursion: "Crushed Incursion"
+ destroy_colony_tooltip: "[WLD.GetFlag] §Y[WLD.GetNameDefCap]§! will reclaim §Y[FROM.GetName]§! and all progress towards a colony will be lost.\n"
+ reset_colony_resources_tooltip: "All resource developments will be removed."

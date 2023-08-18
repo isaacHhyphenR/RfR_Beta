@@ -74,3 +74,8 @@ ULG_khanate = {
 	color = rgb { 180 89 51 }
 	color_ui = rgb { 170 74 45 }
 }
+
+WLD_incursion = {
+	color = rgb { 152 152 152 }
+	color_ui = rgb { 136 136 136 }
+}

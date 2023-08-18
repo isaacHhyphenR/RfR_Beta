@@ -375,6 +375,40 @@ clear_undeveloped_colony_resources = { #call in a state to remove any 1 size res
 	}
 }
 
+reset_colony_resources = { #call in a state to rest all developed resources to 1
+	custom_effect_tooltip = reset_colony_resources_tooltip
+	if = {
+		limit = {
+			has_resources_amount = { resource = food amount > 8 delivered = no }
+		}
+		add_resource = { type = food amount = -8 }
+	}
+	if = {
+		limit = {
+			has_resources_amount = { resource = cloth amount > 8 delivered = no }
+		}
+		add_resource = { type = cloth amount = -8 }
+	}
+	if = {
+		limit = {
+			has_resources_amount = { resource = iron amount > 8 delivered = no }
+		}
+		add_resource = { type = iron amount = -8 }
+	}
+	if = {
+		limit = {
+			has_resources_amount = { resource = wood amount > 8 delivered = no }
+		}
+		add_resource = { type = wood amount = -8 }
+	}
+	if = {
+		limit = {
+			has_resources_amount = { resource = mounts amount > 8 delivered = no }
+		}
+		add_resource = { type = mounts amount = -8 }
+	}
+}
+
 add_colony_start_victory_points = { #call in a state to add its first victory point
 	if = { limit = { state = 94 } #east bight
 		add_victory_points = {
@@ -549,6 +583,117 @@ add_colony_finished_victory_points = { #call in a state to add it's victory poin
 	}
 }
 
+remove_colony_victory_points = { #call in a state to clear its victory points
+	if = { limit = { state = 94 } #east bight
+		set_victory_points = {
+			province = 4312
+			value = 0
+		}
+		set_victory_points = {
+			province = 3272
+			value = 0
+		}
+		set_victory_points = {
+			province = 2569
+			value = 0
+		}
+	}
+	else_if = { limit = { state = 109 } #medelmarna
+		set_victory_points = {
+			province = 1301
+			value = 0
+		}
+		set_victory_points = {
+			province = 2270
+			value = 0
+		}
+	}
+	else_if = { limit = { state = 111 } #Anthardor
+		set_victory_points = {
+			province = 1921
+			value = 0
+		}
+		set_victory_points = {
+			province = 2651
+			value = 0
+		}
+	}
+	else_if = { limit = { state = 119 } #Brown Lands
+		set_victory_points = {
+			province = 3525
+			value = 0
+		}
+	}
+	else_if = { limit = { state = 120 } #Undeeps
+		set_victory_points = {
+			province = 6492
+			value = 0
+		}
+		set_victory_points = {
+			province = 3046
+			value = 0
+		}
+		set_victory_points = {
+			province = 5158
+			value = 0
+		}
+	}
+	else_if = { limit = { state = 121 } #Dagorlad
+		set_victory_points = {
+			province = 6622
+			value = 0
+		}
+		set_victory_points = {
+			province = 6743
+			value = 0
+		}
+		set_victory_points = {
+			province = 6842
+			value = 0
+		}
+	}
+	else_if = { limit = { state = 122 } #Talath Harroch
+		set_victory_points = {
+			province = 3260
+			value = 0
+		}
+		set_victory_points = {
+			province = 6578
+			value = 0
+		}
+	}
+	else_if = { limit = { state = 307 } #Anwuning
+		set_victory_points = {
+			province = 3479
+			value = 0
+		}
+		set_victory_points = {
+			province = 3619
+			value = 0
+		}
+	}
+	else_if = { limit = { state = 335 } #ashkirir
+		set_victory_points = {
+			province = 2915
+			value = 0
+		}
+		set_victory_points = {
+			province = 75
+			value = 0
+		}
+	}
+	else_if = { limit = { state = 336 } #tumcelon
+		set_victory_points = {
+			province = 6562
+			value = 0
+		}
+		set_victory_points = {
+			province = 4610
+			value = 0
+		}
+	}
+}
+
 add_colony_supply_node = { #call in a state to add a supply node to the capital
 	if = { limit = { state = 94 } #east bight
 		add_building_construction = {
@@ -630,4 +775,65 @@ add_colony_supply_node = { #call in a state to add a supply node to the capital
 			province = 6562
 		}
 	}
+}
+
+recycle_colony_uprising = { ##call in a colony uprising tag to reset the colony
+	hidden_effect = {
+		##destroy the colony
+		every_owned_state = {
+			limit = { has_state_flag = ongoing_incursion }
+			remove_colony_victory_points = yes
+			reset_colony_resources = yes #call twice in case of double development
+			reset_colony_resources = yes
+			set_temp_variable = { pop = state_population }
+			subtract_from_temp_variable = { pop = base_population }
+			multiply_temp_variable = { pop = -1 }
+			add_manpower = pop
+			set_building_level = {
+				type = infrastructure
+				level = 0
+			}
+			set_state_category = wasteland
+			clr_state_flag = ongoing_incursion
+		}
+		##recycle the leader
+		if = {
+			limit = { has_character = WLD_wilderness1 }
+			WLD_wilderness1 = { set_nationality = WLD }
+		}
+		else_if = {
+			limit = { has_character = WLD_wilderness2 }
+			WLD_wilderness2 = { set_nationality = WLD }
+		}
+		else_if = {
+			limit = { has_character = WLD_wilderness3 }
+			WLD_wilderness3 = { set_nationality = WLD }
+		}
+		else_if = {
+			limit = { has_character = WLD_wilderness4 }
+			WLD_wilderness4 = { set_nationality = WLD }
+		}
+		else_if = {
+			limit = { has_character = WLD_wilderness5 }
+			WLD_wilderness5 = { set_nationality = WLD }
+		}
+		###finally, end the rebellion
+		every_core_state = {
+			remove_core_of = PREV
+		}
+		WLD = {
+			annex_country = {
+				target = PREV
+				transfer_troops = no
+			}
+		}
+	}
+}
+
+promote_wilderness_leader = { ##call in the leader of wilderness to promote to actual leader
+	promote_character = clanship
+	promote_character = feudalism
+	promote_character = tribalism
+	promote_character = autocracy
+	promote_character = shadow_worship
 }

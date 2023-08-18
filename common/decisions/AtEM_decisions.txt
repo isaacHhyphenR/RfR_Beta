@@ -343,6 +343,38 @@ celduin_trade_category = {
 
 
 colonisation_category = {
+	uprising_in_colony = {
+		icon = GFX_decision_revolt
+		days_mission_timeout = 100
+		is_good = no
+		allowed = { always = no }
+		state_target = yes
+		available = {
+			owns_state = FROM
+		}
+		complete_effect = {
+			FROM = {
+				add_resistance_target = {
+					amount = -100
+					tooltip = crushed_colonial_incursion
+				}
+				clr_state_flag = ongoing_incursion
+			}
+		}
+		timeout_effect = {
+			custom_effect_tooltip = destroy_colony_tooltip
+			FROM = {
+				owner = {
+					if = { limit = { original_tag = WLD }
+						recycle_colony_uprising = yes
+					}
+				}
+				clr_state_flag = ongoing_incursion
+				clr_country_flag = already_colonising
+			}
+		}
+	}
+	
 	MOR_settle_wilderness = {
 		icon = GFX_decision_infiltrate_state
 		ai_will_do = {
@@ -403,6 +435,7 @@ colonisation_category = {
 				add_manpower = 100000
 				add_colony_start_victory_points = yes
 				add_colony_finished_victory_points = yes
+				hidden_effect = { clear_undeveloped_colony_resources = yes }
 			}
 			add_named_threat = { 
 				threat = 1
@@ -500,7 +533,7 @@ colonisation_category = {
 	annex_colony = {
 		icon = GFX_decision_settle_territory
 		fire_only_once = yes
-		cost = var:FROM.integration_cost
+		cost = var:integration_cost
 		ai_will_do = {
 			factor = 10
 		}
@@ -546,7 +579,7 @@ colonisation_category = {
 		cost = 50
 		days_remove = 100
 		allowed = { NOT = { OR = { tag = FOR original_tag = WLD } } }
-		visible = { has_country_flag = already_colonising }
+		visible = { any_controlled_state = { is_core_of = WLD } }
 		modifier = {
 			colony_growth_monthly_factor = 0.25
 		}
@@ -554,7 +587,7 @@ colonisation_category = {
 	@resourcePerDecision = 8
 	@equipmentPerProspect = 49
 	@equipmentPerProspectNegative = -50
-	@prospectingRepeatable = no
+	@prospectingRepeatable = yes #repeatable cause arrays & in case of colony destruction
 	colony_food = { #increase food in a colony that can produce food
 		icon = GFX_decision_food
 		fire_only_once = @prospectingRepeatable
@@ -1027,6 +1060,7 @@ colonisation_category = {
 			}
 		}
 	}
+	
 	
 	colony_suppression = { #compliance
 		icon = GFX_decision_generic_arrest
