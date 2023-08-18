@@ -61,4 +61,5 @@ set_popularities = {
 
 
 add_ideas = female_leader_chance_idea
+set_cosmetic_tag = RVN
 #!&!&!

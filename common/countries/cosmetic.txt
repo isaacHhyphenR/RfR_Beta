@@ -79,3 +79,7 @@ WLD_incursion = {
 	color = rgb { 152 152 152 }
 	color_ui = rgb { 136 136 136 }
 }
+RVN = {
+	color = rgb { 215 176 20 }
+	color_ui = rgb { 205 156 6 }
+}
