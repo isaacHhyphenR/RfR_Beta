@@ -1,0 +1,526 @@
+default = {
+	operative = {
+		male = {
+			"gfx/leaders/operative_unknown.dds"
+		}
+		female = {
+			"gfx/leaders/operative_unknown.dds"
+		}
+	}
+
+	male = {
+		"gfx/leaders/leader_unknown.dds"
+	}
+	female = {
+		"gfx/leaders/leader_unknown_female.dds"
+	}
+}
+
+####################################################################################
+				###NUMENOR
+continent = {
+	name = numenorean_race
+	female = {
+		"GFX_Portrait_Dunedain_Generic_f_1"
+		"GFX_Portrait_Dunedain_Generic_f_2"
+		"GFX_Portrait_Dunedain_Generic_f_3"
+		"GFX_Portrait_Dunedain_Generic_f_4"
+		"GFX_Portrait_Dunedain_Generic_f_5"
+		"GFX_Portrait_Dunedain_Generic_f_6"
+	}
+	male = {
+		"GFX_Portrait_Dunedain_Generic_m_1"
+		"GFX_Portrait_Dunedain_Generic_m_2"
+		"GFX_Portrait_Dunedain_Generic_m_3"
+		"GFX_Portrait_Dunedain_Generic_m_4"
+		"GFX_Portrait_Dunedain_Generic_m_5"
+		"GFX_Portrait_Dunedain_Generic_m_6"
+	}
+	operative = {
+		male = {
+			"GFX_Portrait_Dunedain_Generic_m_1"
+			"GFX_Portrait_Dunedain_Generic_m_2"
+			"GFX_Portrait_Dunedain_Generic_m_3"
+			"GFX_Portrait_Dunedain_Generic_m_4"
+			"GFX_Portrait_Dunedain_Generic_m_5"
+			"GFX_Portrait_Dunedain_Generic_m_6"
+		}
+		female = {
+			"GFX_Portrait_Dunedain_Generic_f_1"
+			"GFX_Portrait_Dunedain_Generic_f_2"
+			"GFX_Portrait_Dunedain_Generic_f_3"
+			"GFX_Portrait_Dunedain_Generic_f_4"
+			"GFX_Portrait_Dunedain_Generic_f_5"
+			"GFX_Portrait_Dunedain_Generic_f_6"
+		}
+	}
+}
+
+				###WILD + DUNEDAIN
+RDR = {  
+	female = {
+		"GFX_Portrait_Dunedain_Generic_f_1"
+		"GFX_Portrait_Dunedain_Generic_f_2"
+		"GFX_Portrait_Dunedain_Generic_f_3"
+		"GFX_Portrait_Dunedain_Generic_f_4"
+		"GFX_Portrait_Dunedain_Generic_f_5"
+		"GFX_Portrait_Dunedain_Generic_f_6"
+		"GFX_Portrait_Wild_Generic_f_1"
+		"GFX_Portrait_Wild_Generic_f_2"
+		"GFX_Portrait_Wild_Generic_f_3"
+		"GFX_Portrait_Wild_Generic_f_4"
+		"GFX_Portrait_Wild_Generic_f_5"
+	}
+	male = {
+		"GFX_Portrait_Dunedain_Generic_m_1"
+		"GFX_Portrait_Dunedain_Generic_m_2"
+		"GFX_Portrait_Dunedain_Generic_m_3"
+		"GFX_Portrait_Dunedain_Generic_m_4"
+		"GFX_Portrait_Dunedain_Generic_m_5"
+		"GFX_Portrait_Dunedain_Generic_m_6"
+		"GFX_Portrait_Wild_Generic_m_1"
+		"GFX_Portrait_Wild_Generic_m_2"
+		"GFX_Portrait_Wild_Generic_m_3"
+		"GFX_Portrait_Wild_Generic_m_4"
+		"GFX_Portrait_Wild_Generic_m_5"
+	}
+	operative = {
+		male = {
+			"GFX_Portrait_Dunedain_Generic_m_1"
+			"GFX_Portrait_Dunedain_Generic_m_2"
+			"GFX_Portrait_Dunedain_Generic_m_3"
+			"GFX_Portrait_Dunedain_Generic_m_4"
+			"GFX_Portrait_Dunedain_Generic_m_5"
+			"GFX_Portrait_Dunedain_Generic_m_6"
+			"GFX_Portrait_Wild_Operative_m_1"
+			"GFX_Portrait_Wild_Operative_m_2"
+			"GFX_Portrait_Wild_Operative_m_3"
+			"GFX_Portrait_Wild_Operative_m_4"
+			"GFX_Portrait_Wild_Operative_m_5"
+		}
+		female = {
+			"GFX_Portrait_Dunedain_Generic_f_1"
+			"GFX_Portrait_Dunedain_Generic_f_2"
+			"GFX_Portrait_Dunedain_Generic_f_3"
+			"GFX_Portrait_Dunedain_Generic_f_4"
+			"GFX_Portrait_Dunedain_Generic_f_5"
+			"GFX_Portrait_Dunedain_Generic_f_6"
+			"GFX_Portrait_Wild_Operative_f_1"
+			"GFX_Portrait_Wild_Operative_f_2"
+			"GFX_Portrait_Wild_Operative_f_3"
+			"GFX_Portrait_Wild_Operative_f_4"
+			"GFX_Portrait_Wild_Operative_f_5"
+		}
+	}
+}
+				###SOUTHRON + DUNEDAIN
+UMB = {
+	female = {
+		"GFX_Portrait_Dunedain_Generic_f_1"
+		"GFX_Portrait_Dunedain_Generic_f_2"
+		"GFX_Portrait_Dunedain_Generic_f_3"
+		"GFX_Portrait_Dunedain_Generic_f_4"
+		"GFX_Portrait_Dunedain_Generic_f_5"
+		"GFX_Portrait_Dunedain_Generic_f_6"
+		"GFX_Portrait_Southron_Generic_f_1"
+		"GFX_Portrait_Southron_Generic_f_2"
+		"GFX_Portrait_Southron_Generic_f_3"
+		"GFX_Portrait_Southron_Generic_f_4"
+		"GFX_Portrait_Southron_Generic_f_5"
+	}
+	male = {
+		"GFX_Portrait_Dunedain_Generic_m_1"
+		"GFX_Portrait_Dunedain_Generic_m_2"
+		"GFX_Portrait_Dunedain_Generic_m_3"
+		"GFX_Portrait_Dunedain_Generic_m_4"
+		"GFX_Portrait_Dunedain_Generic_m_5"
+		"GFX_Portrait_Dunedain_Generic_m_6"
+		"GFX_Portrait_Southron_Generic_m_1"
+		"GFX_Portrait_Southron_Generic_m_2"
+		"GFX_Portrait_Southron_Generic_m_3"
+		"GFX_Portrait_Southron_Generic_m_4"
+		"GFX_Portrait_Southron_Generic_m_5"
+	}
+	operative = {
+		male = {
+			"GFX_Portrait_Dunedain_Generic_m_1"
+			"GFX_Portrait_Dunedain_Generic_m_2"
+			"GFX_Portrait_Dunedain_Generic_m_3"
+			"GFX_Portrait_Dunedain_Generic_m_4"
+			"GFX_Portrait_Dunedain_Generic_m_5"
+			"GFX_Portrait_Dunedain_Generic_m_6"
+			"GFX_Portrait_Southron_Generic_m_1"
+			"GFX_Portrait_Southron_Generic_m_2"
+			"GFX_Portrait_Southron_Generic_m_3"
+			"GFX_Portrait_Southron_Generic_m_4"
+			"GFX_Portrait_Southron_Generic_m_5"
+		}
+		female = {
+			"GFX_Portrait_Dunedain_Generic_f_1"
+			"GFX_Portrait_Dunedain_Generic_f_2"
+			"GFX_Portrait_Dunedain_Generic_f_3"
+			"GFX_Portrait_Dunedain_Generic_f_4"
+			"GFX_Portrait_Dunedain_Generic_f_5"
+			"GFX_Portrait_Dunedain_Generic_f_6"
+			"GFX_Portrait_Southron_Generic_f_1"
+			"GFX_Portrait_Southron_Generic_f_2"
+			"GFX_Portrait_Southron_Generic_f_3"
+			"GFX_Portrait_Southron_Generic_f_4"
+			"GFX_Portrait_Southron_Generic_f_5"
+		}
+	}
+}
+####################################################################################
+				###DWARVES
+continent = {
+	name = dwarven_race
+	female = {
+		"GFX_Portrait_Dwarves_Generic_f_1"
+		"GFX_Portrait_Dwarves_Generic_f_2"
+		"GFX_Portrait_Dwarves_Generic_f_3"
+		"GFX_Portrait_Dwarves_Generic_f_4"
+	}
+	male = {
+		"GFX_Portrait_Dwarves_Generic_m_1"
+		"GFX_Portrait_Dwarves_Generic_m_2"
+		"GFX_Portrait_Dwarves_Generic_m_3"
+		"GFX_Portrait_Dwarves_Generic_m_4"
+		"GFX_Portrait_Dwarves_Generic_m_5"
+		"GFX_Portrait_Dwarves_Generic_m_6"
+	}
+	operative = {
+		male = {
+			"GFX_Portrait_Dwarves_Generic_m_1"
+			"GFX_Portrait_Dwarves_Generic_m_2"
+			"GFX_Portrait_Dwarves_Generic_m_3"
+			"GFX_Portrait_Dwarves_Generic_m_4"
+			"GFX_Portrait_Dwarves_Generic_m_5"
+			"GFX_Portrait_Dwarves_Generic_m_6"
+		}
+		female = {
+			"GFX_Portrait_Dwarves_Generic_f_1"
+			"GFX_Portrait_Dwarves_Generic_f_2"
+			"GFX_Portrait_Dwarves_Generic_f_3"
+			"GFX_Portrait_Dwarves_Generic_f_4"
+		}
+	}
+}
+
+
+####################################################################################
+				###EASTERLINGS
+continent = {
+	name = easterling_race
+	female = {
+		"GFX_Portrait_Easterling_Generic_f_1"
+		"GFX_Portrait_Easterling_Generic_f_2"
+		"GFX_Portrait_Easterling_Generic_f_3"
+		"GFX_Portrait_Easterling_Generic_f_4"
+		"GFX_Portrait_Easterling_Generic_f_5"
+	}
+	male = {
+		"GFX_Portrait_Easterling_Generic_m_1"
+		"GFX_Portrait_Easterling_Generic_m_2"
+		"GFX_Portrait_Easterling_Generic_m_3"
+		"GFX_Portrait_Easterling_Generic_m_4"
+		"GFX_Portrait_Easterling_Generic_m_5"
+	}
+	operative = {
+		male = {
+			"GFX_Portrait_Easterling_Generic_m_1"
+			"GFX_Portrait_Easterling_Generic_m_2"
+			"GFX_Portrait_Easterling_Generic_m_3"
+			"GFX_Portrait_Easterling_Generic_m_4"
+			"GFX_Portrait_Easterling_Generic_m_5"
+		}
+		female = {
+			"GFX_Portrait_Easterling_Generic_f_1"
+			"GFX_Portrait_Easterling_Generic_f_2"
+			"GFX_Portrait_Easterling_Generic_f_3"
+			"GFX_Portrait_Easterling_Generic_f_4"
+			"GFX_Portrait_Easterling_Generic_f_5"
+		}
+	}
+}
+
+
+####################################################################################
+				###ELVES
+continent = {
+	name = elven_race
+	female = {
+		"GFX_Portrait_Elves_Generic_f_1"
+		"GFX_Portrait_Elves_Generic_f_2"
+		"GFX_Portrait_Elves_Generic_f_3"
+		"GFX_Portrait_Elves_Generic_f_4"
+		"GFX_Portrait_Elves_Generic_f_5"
+	}
+	male = {
+		"GFX_Portrait_Elves_Generic_m_1"
+		"GFX_Portrait_Elves_Generic_m_2"
+		"GFX_Portrait_Elves_Generic_m_3"
+		"GFX_Portrait_Elves_Generic_m_4"
+		"GFX_Portrait_Elves_Generic_m_5"
+	}
+	operative = {
+		female = {
+			"GFX_Portrait_Elves_Generic_f_1"
+			"GFX_Portrait_Elves_Generic_f_2"
+			"GFX_Portrait_Elves_Generic_f_3"
+			"GFX_Portrait_Elves_Generic_f_4"
+			"GFX_Portrait_Elves_Generic_f_5"
+		}
+		male = {
+			"GFX_Portrait_Elves_Generic_m_1"
+			"GFX_Portrait_Elves_Generic_m_2"
+			"GFX_Portrait_Elves_Generic_m_3"
+			"GFX_Portrait_Elves_Generic_m_4"
+			"GFX_Portrait_Elves_Generic_m_5"
+		}
+	}
+}
+####################################################################################
+				###ENTS
+FAN = {
+	female = {
+		"GFX_Portrait_Ents_Generic_m_1"
+	}
+	male = {
+		"GFX_Portrait_Ents_Generic_m_1"
+	}
+	operative = {
+		female = {
+			"GFX_Portrait_Ents_Generic_m_1"
+		}
+		male = {
+			"GFX_Portrait_Ents_Generic_m_1"
+		}
+	}
+}
+
+####################################################################################
+				###HOBBITS
+SHI = {
+	female = {
+		"GFX_Portrait_Hobbits_Generic_f_1"
+		"GFX_Portrait_Hobbits_Generic_f_2"
+		"GFX_Portrait_Hobbits_Generic_f_3"
+	}
+	male = {
+		"GFX_Portrait_Hobbits_Generic_m_1"
+		"GFX_Portrait_Hobbits_Generic_m_2"
+		"GFX_Portrait_Hobbits_Generic_m_3"
+	}
+	operative = {
+		female = {
+			"GFX_Portrait_Hobbits_Generic_f_1"
+			"GFX_Portrait_Hobbits_Generic_f_2"
+			"GFX_Portrait_Hobbits_Generic_f_3"
+		}
+		male = {
+			"GFX_Portrait_Hobbits_Generic_m_1"
+			"GFX_Portrait_Hobbits_Generic_m_2"
+			"GFX_Portrait_Hobbits_Generic_m_3"
+		}
+	}
+}
+
+####################################################################################
+				###Northern
+continent = {
+	name = northron_race
+	female = {
+		"GFX_Portrait_Northern_Generic_f_1"
+		"GFX_Portrait_Northern_Generic_f_2"
+		"GFX_Portrait_Northern_Generic_f_3"
+		"GFX_Portrait_Northern_Generic_f_4"
+		"GFX_Portrait_Northern_Generic_f_5"
+	}
+	male = {
+		"GFX_Portrait_Northern_Generic_m_1"
+		"GFX_Portrait_Northern_Generic_m_2"
+		"GFX_Portrait_Northern_Generic_m_3"
+		"GFX_Portrait_Northern_Generic_m_4"
+		"GFX_Portrait_Northern_Generic_m_5"
+	}
+	operative = {
+		female = {
+			"GFX_Portrait_Northern_Generic_f_1"
+			"GFX_Portrait_Northern_Generic_f_2"
+			"GFX_Portrait_Northern_Generic_f_3"
+			"GFX_Portrait_Northern_Generic_f_4"
+			"GFX_Portrait_Northern_Generic_f_5"
+		}
+		male = {
+			"GFX_Portrait_Northern_Generic_m_1"
+			"GFX_Portrait_Northern_Generic_m_2"
+			"GFX_Portrait_Northern_Generic_m_3"
+			"GFX_Portrait_Northern_Generic_m_4"
+			"GFX_Portrait_Northern_Generic_m_5"
+		}
+	}
+}				###ROHIRRIM
+ROH = {
+	female = {
+		"GFX_Portrait_Rohirrim_Generic_f_1"
+		"GFX_Portrait_Rohirrim_Generic_f_2"
+		"GFX_Portrait_Rohirrim_Generic_f_3"
+		"GFX_Portrait_Rohirrim_Generic_f_4"
+		"GFX_Portrait_Rohirrim_Generic_f_5"
+	}
+	male = {
+		"GFX_Portrait_Rohirrim_Generic_m_1"
+		"GFX_Portrait_Rohirrim_Generic_m_2"
+		"GFX_Portrait_Rohirrim_Generic_m_3"
+		"GFX_Portrait_Rohirrim_Generic_m_4"
+		"GFX_Portrait_Rohirrim_Generic_m_5"
+	}
+	operative = {
+		female = {
+			"GFX_Portrait_Rohirrim_Generic_f_1"
+			"GFX_Portrait_Rohirrim_Generic_f_2"
+			"GFX_Portrait_Rohirrim_Generic_f_3"
+			"GFX_Portrait_Rohirrim_Generic_f_4"
+			"GFX_Portrait_Rohirrim_Generic_f_5"
+		}
+		male = {
+			"GFX_Portrait_Rohirrim_Generic_m_1"
+			"GFX_Portrait_Rohirrim_Generic_m_2"
+			"GFX_Portrait_Rohirrim_Generic_m_3"
+			"GFX_Portrait_Rohirrim_Generic_m_4"
+			"GFX_Portrait_Rohirrim_Generic_m_5"
+		}
+	}
+}
+####################################################################################
+				###ORCS
+continent = {
+	name = orcish_race
+	female = {
+		"GFX_Portrait_Orcs_Generic_f_1"
+		"GFX_Portrait_Orcs_Generic_f_2"
+		"GFX_Portrait_Orcs_Generic_f_3"
+		"GFX_Portrait_Orcs_Generic_f_4"
+		"GFX_Portrait_Orcs_Generic_f_5"
+	}
+	male = {
+		"GFX_Portrait_Orcs_Generic_m_1"
+		"GFX_Portrait_Orcs_Generic_m_2"
+		"GFX_Portrait_Orcs_Generic_m_3"
+		"GFX_Portrait_Orcs_Generic_m_4"
+		"GFX_Portrait_Orcs_Generic_m_5"
+	}
+	operative = {
+		female = {
+			"GFX_Portrait_Orcs_Generic_f_1"
+			"GFX_Portrait_Orcs_Generic_f_2"
+			"GFX_Portrait_Orcs_Generic_f_3"
+			"GFX_Portrait_Orcs_Generic_f_4"
+			"GFX_Portrait_Orcs_Generic_f_5"
+		}
+		male = {
+			"GFX_Portrait_Orcs_Generic_m_1"
+			"GFX_Portrait_Orcs_Generic_m_2"
+			"GFX_Portrait_Orcs_Generic_m_3"
+			"GFX_Portrait_Orcs_Generic_m_4"
+			"GFX_Portrait_Orcs_Generic_m_5"
+		}
+	}
+}
+ISN = {
+	female = {
+		"GFX_Portrait_Orcs_Generic_f_1"
+		"GFX_Portrait_Orcs_Generic_f_2"
+		"GFX_Portrait_Orcs_Generic_f_3"
+		"GFX_Portrait_Orcs_Generic_f_4"
+		"GFX_Portrait_Orcs_Generic_f_5"
+	}
+	male = {
+		"GFX_Portrait_Orcs_Generic_m_1"
+		"GFX_Portrait_Orcs_Generic_m_2"
+		"GFX_Portrait_Orcs_Generic_m_3"
+		"GFX_Portrait_Orcs_Generic_m_4"
+		"GFX_Portrait_Orcs_Generic_m_5"
+	}
+	operative = {
+		male = {
+			"GFX_Portrait_Crebain_Operative_m_1"
+		}
+		female = {
+			"GFX_Portrait_Crebain_Operative_f_1"
+		}
+	}
+
+}
+####################################################################################
+				###Southron (Unique in time)
+continent = {
+	name = southron_race
+	female = {
+		"GFX_Portrait_Southron_Generic_f_1"
+		"GFX_Portrait_Southron_Generic_f_2"
+		"GFX_Portrait_Southron_Generic_f_3"
+		"GFX_Portrait_Southron_Generic_f_4"
+		"GFX_Portrait_Southron_Generic_f_5"
+	}
+	male = {
+		"GFX_Portrait_Southron_Generic_m_1"
+		"GFX_Portrait_Southron_Generic_m_2"
+		"GFX_Portrait_Southron_Generic_m_3"
+		"GFX_Portrait_Southron_Generic_m_4"
+		"GFX_Portrait_Southron_Generic_m_5"
+	}
+	operative = {
+		female = {
+			"GFX_Portrait_Southron_Generic_f_1"
+			"GFX_Portrait_Southron_Generic_f_2"
+			"GFX_Portrait_Southron_Generic_f_3"
+			"GFX_Portrait_Southron_Generic_f_4"
+			"GFX_Portrait_Southron_Generic_f_5"
+		}
+		male = {
+			"GFX_Portrait_Southron_Generic_m_1"
+			"GFX_Portrait_Southron_Generic_m_2"
+			"GFX_Portrait_Southron_Generic_m_3"
+			"GFX_Portrait_Southron_Generic_m_4"
+			"GFX_Portrait_Southron_Generic_m_5"
+		}
+	}
+}
+
+####################################################################################
+				###WILDFOLK
+continent = {
+	name = wilding_race
+	female = {
+		"GFX_Portrait_Wild_Generic_f_1"
+		"GFX_Portrait_Wild_Generic_f_2"
+		"GFX_Portrait_Wild_Generic_f_3"
+		"GFX_Portrait_Wild_Generic_f_4"
+		"GFX_Portrait_Wild_Generic_f_5"
+	}
+	male = {
+		"GFX_Portrait_Wild_Generic_m_1"
+		"GFX_Portrait_Wild_Generic_m_2"
+		"GFX_Portrait_Wild_Generic_m_3"
+		"GFX_Portrait_Wild_Generic_m_4"
+		"GFX_Portrait_Wild_Generic_m_5"
+		"GFX_Portrait_Wild_Generic_m_6"
+	}
+	operative = {
+		male = {
+			"GFX_Portrait_Wild_Operative_m_1"
+			"GFX_Portrait_Wild_Operative_m_2"
+			"GFX_Portrait_Wild_Operative_m_3"
+			"GFX_Portrait_Wild_Operative_m_4"
+			"GFX_Portrait_Wild_Operative_m_5"
+		}
+		female = {
+			"GFX_Portrait_Wild_Operative_f_1"
+			"GFX_Portrait_Wild_Operative_f_2"
+			"GFX_Portrait_Wild_Operative_f_3"
+			"GFX_Portrait_Wild_Operative_f_4"
+			"GFX_Portrait_Wild_Operative_f_5"
+		}
+	}
+}

@@ -1,0 +1,11 @@
+continents = {
+	easterling_race
+	northron_race
+	numenorean_race
+	southron_race
+	wilding_race
+	elven_race
+	dwarven_race
+	orcish_race
+	other_race
+}

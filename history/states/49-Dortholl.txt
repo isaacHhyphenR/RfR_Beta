@@ -2,7 +2,7 @@ state = {
 	id = 49
 	name = "STATE_49" #Dortholl
 	state_category = pastoral
-	manpower = 507000	local_supplies=0.0
+	manpower = 507000
 	resources = {
 		iron = 4
 		monsters = 1
@@ -12,8 +12,8 @@ state = {
 	}
 
 	history = {
-		owner = RDR
-		add_core_of = RDR
+		owner = GDB
+		add_core_of = GDB
 		victory_points = {
 			5445 5
 		}
