@@ -18,6 +18,7 @@ state = {
 		owner = CAR
 		add_core_of = CAR
 		add_core_of = SAR
+		set_variable = { historical_capital_for_country = SAR }
 		victory_points = {
 			92 5
 		}

@@ -491,7 +491,7 @@ continent = {
 ####################################################################################
 				###WILDFOLK
 continent = {
-	name = wilding_race
+	name = wildling_race
 	female = {
 		"GFX_Portrait_Wild_Generic_f_1"
 		"GFX_Portrait_Wild_Generic_f_2"
