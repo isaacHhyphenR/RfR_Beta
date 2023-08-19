@@ -375,6 +375,28 @@ colonisation_category = {
 		}
 	}
 	
+	dominion_over_middle_earth = { ##complete your world conquest
+		icon = GFX_decision_generic_nationalism
+		ai_will_do = {
+			factor = 1
+		}
+		allowed = { NOT = { original_tag = FOR original_tag = WLD } }
+		visible = { num_of_controlled_states > 100 }
+		available = {
+			NOT = {
+				any_other_country = { OR = { original_tag = FOR original_tag = WLD } }
+			}
+		}
+		complete_effect = {
+			every_state = {
+				limit = {
+					NOT = { is_controlled_by = ROOT }
+				}
+				transfer_state_to = ROOT
+			}
+		}
+	}
+	
 	MOR_settle_wilderness = {
 		icon = GFX_decision_infiltrate_state
 		ai_will_do = {

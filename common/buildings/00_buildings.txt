@@ -13,7 +13,7 @@ buildings = {
 		show_modifier = yes
 
 		infrastructure_construction_effect = yes
-		wine_gain = 10
+		wine_gain = 5
 	}
 
 	infrastructure = {
