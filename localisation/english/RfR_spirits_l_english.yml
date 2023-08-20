@@ -409,4 +409,5 @@
  isen_trade_with_isenrun_desc: "$isen_trade_with_an_khorgan_desc$"
  druwaith_trade_with_isengard: "Trade with $ISN$"
  druwaith_trade_with_isengard_desc: "$isen_trade_with_an_khorgan_desc$"
- 
+ bergholda_hidden_trade_modifier: "$DOR_bergholda_aldiana$"
+ bergholda_hidden_trade_modifier_desc: ""

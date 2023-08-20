@@ -34,3 +34,4 @@
  crushed_colonial_incursion: "Crushed Incursion"
  destroy_colony_tooltip: "[WLD.GetFlag] §Y[WLD.GetNameDefCap]§! will reclaim §Y[FROM.GetName]§! and all progress towards a colony will be lost.\n"
  reset_colony_resources_tooltip: "All resource developments will be removed."
+ trade_theorist_modifier_tooltip: "Trade Cost: §G-25%§!"

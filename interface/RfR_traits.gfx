@@ -1,0 +1,131 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_trait_horde_commander"
+		texturefile = "gfx/interface/traits/trait_horde_commander.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_the_one_ring_mil"
+		texturefile = "gfx/interface/traits/trait_the_one_ring_mil.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_monarch_mil"
+		texturefile = "gfx/interface/traits/trait_monarch.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_heir_apparent_mil"
+		texturefile = "gfx/interface/traits/trait_heir_apparent.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_second_in_line_mil"
+		texturefile = "gfx/interface/traits/trait_second_in_line.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_guardian"
+		texturefile = "gfx/interface/traits/trait_guardian.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_captain_of_guard_mil"
+		texturefile = "gfx/interface/traits/trait_captain_of_guard.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_GON_trusted_advisor_mil"
+		texturefile = "gfx/interface/traits/trait_GON_trusted_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_ROH_noble_of_the_mark"
+		texturefile = "gfx/interface/traits/trait_ROH_noble_of_the_mark.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_monster_officer"
+		texturefile = "gfx/interface/traits/trait_monster_officer.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_monster_leader"
+		texturefile = "gfx/interface/traits/trait_monster_leader.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_nazgul"
+		texturefile = "gfx/interface/traits/trait_nazgul.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_administrator"
+		texturefile = "gfx/interface/traits/trait_administrator.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_extravagent"
+		texturefile = "gfx/interface/traits/trait_extravagent.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_garrison_commander"
+		texturefile = "gfx/interface/traits/trait_garrison_commander.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_raider"
+		texturefile = "gfx/interface/traits/trait_raider.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_gaurdian"
+		texturefile = "gfx/interface/traits/personal/trait_inflexible_strategist.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_ambitious"
+		texturefile = "gfx/interface/traits/personal/trait_career_officer.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_content"
+		texturefile = "gfx/interface/traits/trait_content.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_fair_leader"
+		texturefile = "gfx/interface/traits/trait_fair_leader.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_corrupt"
+		texturefile = "gfx/interface/traits/trait_corrupt.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_andrast_heritage_mil"
+		texturefile = "gfx/interface/traits/andrast_heritage.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_dunland_heritage_mil"
+		texturefile = "gfx/interface/traits/dunland_heritage.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_druwaith_iaur_heritage_mil"
+		texturefile = "gfx/interface/traits/druwaith_iaur_heritage.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_enedwaith_heritage_mil"
+		texturefile = "gfx/interface/traits/enedwaith_heritage.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_eregion_heritage_mil"
+		texturefile = "gfx/interface/traits/eregion_heritage.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_saralain_heritage_mil"
+		texturefile = "gfx/interface/traits/saralain_heritage.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_white_mountains_heritage_mil"
+		texturefile = "gfx/interface/traits/white_mountains_heritage.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_koldana_mil"
+		texturefile = "gfx/interface/traits/koldana.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_vierling_mil"
+		texturefile = "gfx/interface/traits/vierling.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_human_advisor_mil"
+		texturefile = "gfx/interface/traits/human_advisors.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_elven_advisor_mil"
+		texturefile = "gfx/interface/traits/elven_advisors.dds"
+	}
+	
+}

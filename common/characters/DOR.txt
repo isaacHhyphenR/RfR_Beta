@@ -1,0 +1,874 @@
+characters = {
+		#######KOLDANA
+	DOR_hawin_koldana = { #Realm master
+		name = DOR_hawin_koldana
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_1"
+				small = "GFX_Portrait_Northern_Generic_m_1_small"
+			}
+		}
+		country_leader = {
+			ideology = elective_monarchy_isolationism
+			traits = { temperate lost_the_northern_provinces }
+			desc = DOR_hawin_koldana_desc
+		}
+		country_leader = {
+			ideology = elective_monarchy_opportunism
+			traits = { temperate lost_the_northern_provinces }
+			desc = DOR_hawin_koldana_desc
+		}
+	}
+	DOR_bladorthin_koldana = { #heir
+		name = DOR_bladorthin_koldana
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_3"
+				small = "GFX_Portrait_Northern_Generic_m_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_bladorthin_koldana
+			allowed = { original_tag = DOR }
+			traits = { gregarious_advisor koldana_pol1 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { koldana_advisor_effect = yes }
+			on_remove = { koldana_advisor_effect_remove = yes }
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = DOR_bladorthin_koldana
+			allowed = { original_tag = DOR }
+			traits = { army_chief_organizational_1 koldana_pol1 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { koldana_advisor_effect = yes }
+			on_remove = { koldana_advisor_effect_remove = yes }
+		}
+		field_marshal = {
+			traits = { koldana_mil ambitious extravagent media_personality panzer_leader panzer_expert organisational_leader}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+	DOR_aril_logian = { #army chief
+		name = DOR_aril_logian
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_5"
+				small = "GFX_Portrait_Northern_Generic_f_5_small"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = DOR_aril_logian
+			allowed = { original_tag = DOR }
+			traits = { army_chief_planning_1 koldana_pol2 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { koldana_advisor_effect = yes }
+			on_remove = { koldana_advisor_effect_remove = yes }
+		}
+		field_marshal = {
+			traits = { koldana_mil old_guard inflexible_strategist infantry_leader organizer thorough_planner }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+	DOR_brenda_aldian = { #high command
+		name = DOR_brenda_aldian
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_2"
+				small = "GFX_Portrait_Northern_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DOR_aril_logian
+			allowed = { original_tag = DOR }
+			traits = { army_chief_planning_1 koldana_pol3 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { koldana_advisor_effect = yes }
+			on_remove = { koldana_advisor_effect_remove = yes }
+		}
+		corps_commander = {
+			traits = { koldana_mil administrator trait_engineer urban_assault_specialist trickster expert_improviser }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+		}
+	}
+	DOR_eroder_botner = { #general
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_5"
+				small = "GFX_Portrait_Northern_Generic_m_5_small"
+			}
+		}
+		corps_commander = {
+			traits = { koldana_mil trait_reckless infantry_officer infantry_leader ambusher hill_fighter }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	DOR_sisewyn_koldana = { #drift defence
+		name = DOR_sisewyn_koldana
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_4"
+				small = "GFX_Portrait_Northern_Generic_f_4_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_sisewyn_koldana
+			allowed = { original_tag = DOR }
+			traits = { lowborn_consort koldana_pol4 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { koldana_advisor_effect = yes }
+			on_remove = { koldana_advisor_effect_remove = yes }
+		}
+	}
+	DOR_biarn_ilian = { #military builder
+		name = DOR_biarn_ilian
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_4"
+				small = "GFX_Portrait_Northern_Generic_m_4_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_biarn_ilian
+			allowed = { original_tag = DOR }
+			traits = { war_industrialist koldana_pol5 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { koldana_advisor_effect = yes }
+			on_remove = { koldana_advisor_effect_remove = yes }
+		}
+	}
+	DOR_freja_barding = { #stability
+		name = DOR_freja_barding
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_1"
+				small = "GFX_Portrait_Northern_Generic_f_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_freja_barding
+			allowed = { original_tag = DOR }
+			traits = { princess_of_dale koldana_pol6 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { koldana_advisor_effect = yes }
+			on_remove = { koldana_advisor_effect_remove = yes }
+		}
+	}
+	DOR_thalas_raudbarad = { #wine production
+		name = DOR_thalas_raudbarad
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_3"
+				small = "GFX_Portrait_Northern_Generic_m_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_thalas_raudbarad
+			allowed = { original_tag = DOR }
+			traits = { master_vintner koldana_pol7 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { koldana_advisor_effect = yes }
+			on_remove = { koldana_advisor_effect_remove = yes }
+		}
+	}
+	
+		#######VIERLING
+	DOR_vidumarh_vierling = { #Realm master
+		name = DOR_vidumarh_vierling
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_4"
+				small = "GFX_Portrait_Northern_Generic_m_4_small"
+			}
+		}
+		country_leader = {
+			ideology = elective_monarchy_conquest
+			traits = { heroic_commander_leader cunning_manipulator army_chief_maneuver_2 }
+			desc = DOR_vidumarh_vierling_desc
+		}
+		country_leader = {
+			ideology = elective_monarchy_melkorite
+			traits = { heroic_commander_leader cunning_manipulator army_chief_maneuver_2 }
+			desc = DOR_vidumarh_vierling_desc
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_vidumarh_vierling
+			allowed = { original_tag = DOR }
+			traits = { heroic_commander_advisor vierling_pol1 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { vierling_advisor_effect = yes }
+			on_remove = { vierling_advisor_effect_remove = yes }
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = DOR_vidumarh_vierling
+			allowed = { original_tag = DOR }
+			traits = { army_chief_maneuver_2 vierling_pol1 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { vierling_advisor_effect = yes }
+			on_remove = { vierling_advisor_effect_remove = yes }
+		}
+		field_marshal = {
+			traits = { vierling_mil ambitious brilliant_strategist trickster panzer_leader aggressive_assaulter }
+			skill = 6
+			attack_skill = 6
+			defense_skill = 6
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+	DOR_ariberga_vierling = { #ideology drift
+		name = DOR_ariberga_vierling
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_2"
+				small = "GFX_Portrait_Northern_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_ariberga_vierling
+			allowed = { original_tag = DOR }
+			traits = { dreamer_of_greater_dorwinion_conquest vierling_pol8 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { vierling_advisor_effect = yes }
+			on_remove = { vierling_advisor_effect_remove = yes }
+		}
+	}
+	DOR_ingaberg_garmeniana = { #supply build speed
+		name = DOR_ingaberg_garmeniana
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_3"
+				small = "GFX_Portrait_Northern_Generic_f_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_ingaberg_garmeniana
+			allowed = { original_tag = DOR }
+			traits = { quartermaster_general vierling_pol2 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { vierling_advisor_effect = yes }
+			on_remove = { vierling_advisor_effect_remove = yes }
+		}
+	}
+	DOR_torwald_garmeniana = { #resource gain
+		name = DOR_torwald_garmeniana
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_2"
+				small = "GFX_Portrait_Northern_Generic_m_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_torwald_garmeniana
+			allowed = { original_tag = DOR }
+			traits = { administrator_pol vierling_pol3 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { vierling_advisor_effect = yes }
+			on_remove = { vierling_advisor_effect_remove = yes }
+		}
+	}
+	DOR_raganhildis_lugon = { #spys
+		name = DOR_raganhildis_lugon
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_2"
+				small = "GFX_Portrait_Northern_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_raganhildis_lugon
+			allowed = { original_tag = DOR has_dlc = "La Resistance" }
+			traits = { head_of_intelligence vierling_pol4 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { vierling_advisor_effect = yes }
+			on_remove = { vierling_advisor_effect_remove = yes }
+		}
+	}
+	DOR_vogirion_garmeniana = { #theory
+		name = DOR_vogirion_garmeniana
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_3"
+				small = "GFX_Portrait_Northern_Generic_m_3_small"
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = DOR_vogirion_garmeniana
+			allowed = { original_tag = DOR }
+			traits = { military_theorist vierling_pol5 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { vierling_advisor_effect = yes }
+			on_remove = { vierling_advisor_effect_remove = yes }
+		}
+	}
+	DOR_kelda_galen = { #Infantry command
+		name = DOR_kelda_galen
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_4"
+				small = "GFX_Portrait_Northern_Generic_f_4_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DOR_kelda_galen
+			allowed = { original_tag = DOR }
+			traits = { army_infantry_1 vierling_pol6 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { vierling_advisor_effect = yes }
+			on_remove = { vierling_advisor_effect_remove = yes }
+		}
+		corps_commander = {
+			traits = { vierling_mil trait_cautious engineer_officer skilled_staffer infantry_leader ambusher }
+			skill = 5
+			attack_skill = 3
+			defense_skill = 6
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+	DOR_viduquen_vierling = { #cavalry command
+		name = DOR_viduquen_vierling
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_5"
+				small = "GFX_Portrait_Northern_Generic_f_5_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DOR_viduquen_vierling
+			allowed = { original_tag = DOR }
+			traits = { army_armored_1 vierling_pol7 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { vierling_advisor_effect = yes }
+			on_remove = { vierling_advisor_effect_remove = yes }
+		}
+		corps_commander = {
+			traits = { vierling_mil harsh_leader trait_reckless panzer_leader panzer_expert }
+			skill = 4
+			attack_skill = 6
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+	DOR_symon_szeben = { #General
+		name = DOR_symon_szeben
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_5"
+				small = "GFX_Portrait_Northern_Generic_m_5_small"
+			}
+		}
+		corps_commander = {
+			traits = { vierling_mil content old_guard garrison_commander trait_engineer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+	DOR_thorald_galen = { #General
+		name = DOR_thorald_galen
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_5"
+				small = "GFX_Portrait_Northern_Generic_m_5_small"
+			}
+		}
+		corps_commander = {
+			traits = { vierling_mil harsh_leader corrupt armor_officer skilled_staffer }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+
+		#######HUMAN
+	DOR_bergholda_aldiana = { #Realm master
+		name = DOR_bergholda_aldiana
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_1"
+				small = "GFX_Portrait_Northern_Generic_f_1_small"
+			}
+		}
+		country_leader = {
+			ideology = elective_monarchy_isolationism
+			traits = { empathetic_negotiator_leader generous_gift_giver trade_theorist }
+			desc = DOR_bergholda_aldiana_desc
+		}
+		country_leader = {
+			ideology = elective_monarchy_freedom
+			traits = { empathetic_negotiator_leader generous_gift_giver trade_theorist }
+			desc = DOR_bergholda_aldiana_desc
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_bergholda_aldiana
+			allowed = { original_tag = DOR }
+			traits = { empathetic_negotiator_advisor human_advisor_pol1 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { human_advisor_effect = yes }
+			on_remove = { human_advisor_effect_remove = yes }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = DOR_bergholda_aldiana
+			allowed = { original_tag = DOR }
+			traits = { trade_theorist human_advisor_pol1 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { human_advisor_effect = yes bergholda_trade_effect = yes }
+			on_remove = { human_advisor_effect_remove = yes bergholda_trade_effect_remove = yes }
+		}
+	}
+	DOR_jauffre_jaufring = { #isolationism
+		name = DOR_jauffre_jaufring
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_2"
+				small = "GFX_Portrait_Northern_Generic_m_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_jauffre_jaufring
+			allowed = { original_tag = DOR }
+			traits = { anti_interventionist human_advisor_pol2 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { human_advisor_effect = yes }
+			on_remove = { human_advisor_effect_remove = yes }
+		}
+	}
+	DOR_fornagarth_barvadinian = { #trade opinion/improve relations
+		name = DOR_fornagarth_barvadinian
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_1"
+				small = "GFX_Portrait_Northern_Generic_m_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_fornagarth_barvadinian
+			allowed = { original_tag = DOR }
+			traits = { smooth_talking_charmer human_advisor_pol3 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { human_advisor_effect = yes }
+			on_remove = { human_advisor_effect_remove = yes }
+		}
+	}
+	DOR_thraear_barvadinian = { #consumer goods
+		name = DOR_thraear_barvadinian
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_1"
+				small = "GFX_Portrait_Northern_Generic_f_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_thraear_barvadinian
+			allowed = { original_tag = DOR }
+			traits = { financial_expert human_advisor_pol4 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { human_advisor_effect = yes }
+			on_remove = { human_advisor_effect_remove = yes }
+		}
+	}
+	DOR_tate_aldiana = { #building slots
+		name = DOR_thraear_barvadinian
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_1"
+				small = "GFX_Portrait_Northern_Generic_f_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_thraear_barvadinian
+			allowed = { original_tag = DOR }
+			traits = { urban_developer human_advisor_pol5 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { human_advisor_effect = yes }
+			on_remove = { human_advisor_effect_remove = yes }
+		}
+	}
+	DOR_sunngifa_illasarian = { #building slots
+		name = DOR_sunngifa_illasarian
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_2"
+				small = "GFX_Portrait_Northern_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_sunngifa_illasarian
+			allowed = { original_tag = DOR }
+			traits = { mercenary_theorist human_advisor_pol6 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { human_advisor_effect = yes }
+			on_remove = { human_advisor_effect_remove = yes }
+		}
+	}
+	DOR_godomar_taca = { #naval high command
+		name = DOR_godomar_taca
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_4"
+				small = "GFX_Portrait_Northern_Generic_m_4_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DOR_godomar_taca
+			allowed = { original_tag = DOR }
+			traits = { navy_screen_1 human_advisor_pol7 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { human_advisor_effect = yes }
+			on_remove = { human_advisor_effect_remove = yes }
+		}
+		navy_leader = {
+			traits = { human_advisor_mil navy_career_officer gentlemanly fleet_protector }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+	}
+	DOR_kelai_aldiana = { #General
+		name = DOR_kelai_aldiana
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_5"
+				small = "GFX_Portrait_Northern_Generic_f_5_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DOR_kelai_aldiana
+			allowed = { original_tag = DOR }
+			traits = { navy_screen_1 human_advisor_pol8 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { human_advisor_effect = yes }
+			on_remove = { human_advisor_effect_remove = yes }
+		}
+		corps_commander = {
+			traits = { human_advisor_mil administrator extravagent infantry_officer trait_engineer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+
+		#######ELVEN
+	DOR_olofel_nos_finarfin = { #freedom
+		name = DOR_olofel_nos_finarfin
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Elves_Generic_f_1"
+				small = "GFX_Portrait_Elves_Generic_f_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_olofel_nos_finarfin
+			allowed = { original_tag = DOR }
+			traits = { liberator_of_the_north elven_advisor_pol1 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { elven_advisor_effect = yes }
+			on_remove = { elven_advisor_effect_remove = yes }
+		}
+	}
+	DOR_ulgar_nos_ingwe = { #war support
+		name = DOR_ulgar_nos_ingwe
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Elves_Generic_m_1"
+				small = "GFX_Portrait_Elves_Generic_m_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_ulgar_nos_ingwe
+			allowed = { original_tag = DOR }
+			traits = { rallying_figurehead elven_advisor_pol2 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { elven_advisor_effect = yes }
+			on_remove = { elven_advisor_effect_remove = yes }
+		}
+	}
+	DOR_paros_nos_olwe = { #research speed
+		name = DOR_paros_nos_olwe
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Elves_Generic_m_2"
+				small = "GFX_Portrait_Elves_Generic_m_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_paros_nos_olwe
+			allowed = { original_tag = DOR }
+			traits = { polymath elven_advisor_pol3 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { elven_advisor_effect = yes }
+			on_remove = { elven_advisor_effect_remove = yes }
+		}
+	}
+	DOR_andrien_nos_sargon = { #civilian build speed
+		name = DOR_andrien_nos_sargon
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Elves_Generic_f_2"
+				small = "GFX_Portrait_Elves_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DOR_andrien_nos_sargon
+			allowed = { original_tag = DOR }
+			traits = { captain_of_industry elven_advisor_pol4 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { elven_advisor_effect = yes }
+			on_remove = { elven_advisor_effect_remove = yes }
+		}
+	}
+	DOR_arodor_aludor = { #naval theorist
+		name = DOR_arodor_aludor
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Elves_Generic_m_5"
+				small = "GFX_Portrait_Elves_Generic_m_5_small"
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = DOR_andrien_nos_sargon
+			allowed = { original_tag = DOR }
+			traits = { naval_theorist elven_advisor_pol5 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { elven_advisor_effect = yes }
+			on_remove = { elven_advisor_effect_remove = yes }
+		}
+	}
+	DOR_sur_nos_moriel = { #naval chief
+		name = DOR_sur_nos_moriel
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Elves_Generic_m_4"
+				small = "GFX_Portrait_Elves_Generic_m_4_small"
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = DOR_sur_nos_moriel
+			allowed = { original_tag = DOR }
+			traits = { navy_chief_maneuver_2 elven_advisor_pol6 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { elven_advisor_effect = yes }
+			on_remove = { elven_advisor_effect_remove = yes }
+		}
+		navy_leader = {
+			traits = { elven_advisor_mil bold ironside superior_tactician }
+			skill = 6
+			attack_skill = 4
+			defense_skill = 4
+			maneuvering_skill = 6
+			coordination_skill = 4
+		}
+	}
+	DOR_ienaskarina_nos_moriel = { #naval high command
+		name = DOR_ienaskarina_nos_moriel
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Elves_Generic_f_3"
+				small = "GFX_Portrait_Elves_Generic_f_3_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DOR_ienaskarina_nos_moriel
+			allowed = { original_tag = DOR }
+			traits = { navy_fleet_logistics_1 elven_advisor_pol7 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { elven_advisor_effect = yes }
+			on_remove = { elven_advisor_effect_remove = yes }
+		}
+		navy_leader = {
+			traits = { elven_advisor_mil chief_engineer spotter blockade_runner blue_water_expert }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 5
+		}
+	}
+	DOR_golodhlir_nos_sargon = { #army bow
+		name = DOR_golodhlir_nos_sargon
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Elves_Generic_f_3"
+				small = "GFX_Portrait_Elves_Generic_f_3_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DOR_golodhlir_nos_sargon
+			allowed = { original_tag = DOR }
+			traits = { army_artillery_1 elven_advisor_pol8 }
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = { elven_advisor_effect = yes }
+			on_remove = { elven_advisor_effect_remove = yes }
+		}
+		corps_commander = {
+			traits = { elven_advisor_mil fair_leader infantry_officer trait_engineer organizer fortress_buster }
+			skill = 5
+			attack_skill = 6
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+}

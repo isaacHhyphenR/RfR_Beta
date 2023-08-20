@@ -61,7 +61,6 @@
 # army_armored_1				panzer_leader
 # army_commando_1				commando
 # army_CombinedArms_1			combined_arms_expert
-#### army_concealment_1			camouflage_expert
 # navy_amphibious_assault_1		naval_invader
 # navy_screen_1					fleet_protector
 # navy_capital_ship_1			big_guns_expert
@@ -1908,8 +1907,6 @@ leader_traits = {
 			no_supply_grace = 120
 		}
 		
-		# enable_ability = glider_planes
-		
 		ai_will_do = {
 			factor = 1
 		}
@@ -1919,33 +1916,6 @@ leader_traits = {
 		
 		gui_row = 11
 	}
-	
-	
-	# camouflage_expert = { 
-		# type = corps_commander
-		# gain_xp = {
-			# always = no # not gainable
-		# }
-		# cost = 500
-		# modifier = {
-			# cas_damage_reduction = 0.5
-			# air_superiority_bonus_in_combat = -0.5
-		# }
-		
-		# ai_will_do = {
-			# factor = 0
-		# }
-		
-		# slot = high_command
-		# specialist_advisor_trait = army_concealment_1
-		# expert_advisor_trait = army_concealment_2
-		# genius_advisor_trait = army_concealment_3
-		
-		# trait_type = assignable_trait
-		# parent = commando
-		
-		# gui_row = 12
-	# }
 	
 	expert_improviser = { 
 		type = corps_commander
@@ -3671,5 +3641,54 @@ leader_traits = {
 			base = 0
 		}
 	}
-
+#############################################################################################DORWINION
+	koldana_mil = {
+		type = { land navy }
+		trait_type = personality_trait
+		
+		modifier = {
+			army_org_factor = 0.1
+		}
+		
+		new_commander_weight = {
+			base = 0
+		}
+	}
+	vierling_mil = {
+		type = { land navy }
+		trait_type = personality_trait
+		
+		modifier = {
+			planning_speed = 0.1
+		}
+		
+		new_commander_weight = {
+			base = 0
+		}
+	}
+	human_advisor_mil = {
+		type = { land navy }
+		trait_type = personality_trait
+		
+		modifier = {
+			no_supply_grace = 72
+		}
+		
+		new_commander_weight = {
+			base = 0
+		}
+	}
+	elven_advisor_mil = {
+		type = { land navy }
+		trait_type = personality_trait
+		
+		modifier = {
+			max_commander_army_size = 6
+			max_army_group_size = 1
+		}
+		
+		new_commander_weight = {
+			base = 0
+		}
+	}
 }

@@ -96,4 +96,11 @@ colony_growth_monthly_factor = {
 	category = country
 	postfix = none
 }
-	
+
+mercenary_cost = {
+	color_type = bad
+	value_type = percentage
+	precision = 2
+	category = country
+	postfix = none
+}

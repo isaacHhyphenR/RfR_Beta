@@ -14,7 +14,13 @@ ideologies = {
 			# }
 			stewardship_isolation = {
 				can_be_randomly_selected = no
-			}	
+			}
+			elective_monarchy_isolationism = { #dorwinion
+				can_be_randomly_selected = no
+			}
+			republic_isolationism = { #dorwinion
+				can_be_randomly_selected = no
+			}
 		}
 
 		dynamic_faction_names = {
@@ -68,7 +74,12 @@ ideologies = {
 			stewardship = {
 				can_be_randomly_selected = no
 			}
-
+			elective_monarchy_freedom = { #dorwinion
+				can_be_randomly_selected = no
+			}
+			republic_freedom = { #dorwinion
+				can_be_randomly_selected = no
+			}
 		}
 		
 		dynamic_faction_names = {
@@ -121,6 +132,12 @@ ideologies = {
 			}
 			petty_monarchy = {
 			}
+			elective_monarchy_opportunism = { #dorwinion
+				can_be_randomly_selected = no
+			}
+			corrupt_republic = {
+				can_be_randomly_selected = no
+			}
 		}
 		
 		dynamic_faction_names = {
@@ -168,6 +185,12 @@ ideologies = {
 			}
 			glorious_monarchy = {
 			}
+			elective_monarchy_conquest = { #dorwinion
+				can_be_randomly_selected = no
+			}
+			plutocracy = {
+				can_be_randomly_selected = no
+			}
 		}
 		
 		dynamic_faction_names = {
@@ -210,6 +233,9 @@ ideologies = {
 			shadow_worship = {
 			}
 			the_eye = {
+				can_be_randomly_selected = no
+			}
+			elective_monarchy_melkorite = { #dorwinion
 				can_be_randomly_selected = no
 			}
 

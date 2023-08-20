@@ -1,0 +1,15 @@
+ideas = {
+	hidden_ideas = {
+		bergholda_hidden_trade_modifier = { ##apply to all other countries when you get bergholda
+			picture = empty
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = DOR
+				trade_cost_for_target_factor = -0.25
+			}
+		}
+	}
+}

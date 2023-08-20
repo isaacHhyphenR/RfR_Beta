@@ -1,16 +1,10 @@
 ﻿capital = 116 #Riavod-Riavod
-	#86 VPs
-# if = {
-	# limit = { has_dlc = "No Step Back" }
-	# set_oob = "DOR_3015_nsb"
-	# else = {
-		set_oob = "DOR_3015"
-	# }
-# }
+	#98 VPs
+set_oob = "DOR_3015"
 
 set_research_slots = 3
-set_stability = .8
-set_war_support = 0.3
+set_stability = .7
+set_war_support = 0.35
 
 set_technology = {
 	northron_heritage_tech = 1
@@ -64,49 +58,6 @@ if = {
 		mtg_transport = 1
 	}
 }
-			###POLITICS
-set_politics = {
-	ruling_party = isolationism
-	last_election = "1933.3.5"
-	election_frequency = 48
-	elections_allowed = no
-}
-
-set_popularities = {
-	isolationism = 56
-	freedom = 27
-	opportunism = 17
-}
-add_ideas = {
-	free_trade
-}
-
-				####MIRVAN COMPLIANCE
-109 = {
-	set_compliance = 100
-    	set_resistance = 0
-}
-110 = {
-	set_compliance = 100
-    	set_resistance = 0
-}
-111 = {
-	set_compliance = 100
-    	set_resistance = 0
-}
-112 = {
-	set_compliance = 100
-    	set_resistance = 0
-}
-recruit_character = DOR_harina_vitter
-recruit_character = DOR_ealdhun
-recruit_character = DOR_judith
-recruit_character = DOR_cenred
-recruit_character = DOR_sigeberht
-recruit_character = DOR_ethelthryth
-recruit_character = DOR_wulfgyth
-recruit_character = DOR_balthild
-add_ideas = northern_heritage_idea
 			####ARMOR
 if = {
 	limit = {
@@ -127,6 +78,62 @@ if = {
 		}
 	}
 }
+			###POLITICS
+set_politics = {
+	ruling_party = isolationism
+	last_election = "2977.1.18"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 56
+	opportunism = 44
+}
+add_ideas = {
+	free_trade
+}
+
+recruit_character = DOR_hawin_koldana
+recruit_character = DOR_bladorthin_koldana
+recruit_character = DOR_aril_logian
+recruit_character = DOR_sisewyn_koldana
+recruit_character = DOR_biarn_ilian
+recruit_character = DOR_thalas_raudbarad
+recruit_character = DOR_brenda_aldian
+recruit_character = DOR_freja_barding
+recruit_character = DOR_eroder_botner
+recruit_character = DOR_ingaberg_garmeniana
+recruit_character = DOR_vidumarh_vierling
+recruit_character = DOR_ariberga_vierling
+recruit_character = DOR_raganhildis_lugon
+recruit_character = DOR_torwald_garmeniana
+recruit_character = DOR_vogirion_garmeniana
+recruit_character = DOR_kelda_galen
+recruit_character = DOR_viduquen_vierling
+recruit_character = DOR_symon_szeben
+recruit_character = DOR_thorald_galen
+recruit_character = DOR_jauffre_jaufring
+recruit_character = DOR_fornagarth_barvadinian
+recruit_character = DOR_thraear_barvadinian
+recruit_character = DOR_bergholda_aldiana
+recruit_character = DOR_tate_aldiana
+recruit_character = DOR_sunngifa_illasarian
+recruit_character = DOR_godomar_taca
+recruit_character = DOR_kelai_aldiana
+recruit_character = DOR_olofel_nos_finarfin
+recruit_character = DOR_ulgar_nos_ingwe
+recruit_character = DOR_paros_nos_olwe
+recruit_character = DOR_andrien_nos_sargon
+recruit_character = DOR_arodor_aludor
+recruit_character = DOR_sur_nos_moriel
+recruit_character = DOR_ienaskarina_nos_moriel
+recruit_character = DOR_golodhlir_nos_sargon
+add_ideas = northern_heritage_idea
+
+
+
+
 add_ideas = female_leader_chance_idea
 set_variable = { global.wine_exporter = THIS }
 #!&!&!

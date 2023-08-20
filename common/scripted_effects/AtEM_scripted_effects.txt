@@ -909,3 +909,47 @@ promote_wilderness_leader = { ##call in the leader of wilderness to promote to a
 	promote_character = autocracy
 	promote_character = shadow_worship
 }
+
+############################################################################################DORWINION
+koldana_advisor_effect = { ##adds BoP
+	
+}
+koldana_advisor_effect_remove = { ##removes BoP
+	
+}
+
+vierling_advisor_effect = { ##adds BoP
+	
+}
+vierling_advisor_effect_remove = { ##removes BoP
+	
+}
+
+human_advisor_effect = { ##adds BoP
+	
+}
+human_advisor_effect_remove = { ##removes BoP
+	
+}
+
+elven_advisor_effect = { ##adds BoP
+	
+}
+elven_advisor_effect_remove = { ##removes BoP
+	
+}
+
+bergholda_trade_effect = { ##reduces cost to trade
+	hidden_effect = {
+		every_possible_country = {
+			add_ideas = bergholda_hidden_trade_modifier
+		}
+	}
+}
+bergholda_trade_effect_remove = { ##increases cost to trade
+	hidden_effect = {
+		every_possible_country = {
+			remove_ideas = bergholda_hidden_trade_modifier
+		}
+	}
+}

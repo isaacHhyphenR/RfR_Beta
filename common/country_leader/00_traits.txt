@@ -1,21 +1,21 @@
 ##sprite strip:
 #1-  monster
-#2-  bomb
+#2-  Handshake
 #3-  anchor
-#4-  submarine
+#4-  ranger hood
 #5-  infantry helmet
-#6-  gas cannister
+#6-  rations
 #7-  sword
-#8-  tank
+#8-  horse head
 #9-  sheild
 #10- industry
 #11- blank
 #12- star
 #13- political
 #14- gears (theorist)
-#15- intelllligence
-#16- artillery
-#17- horse head
+#15- intelligence
+#16- bow
+#17- wagon wheel
 #18- Infantry salute
 
 
@@ -171,7 +171,7 @@ leader_traits = {
 	}
 	eager_collaborator = {
 		random = yes
-		sprite = 13
+		sprite = 2
 		send_volunteer_size = 2
 		improve_relations_maintain_cost_factor = -1
 		melkorite_acceptance = 75
@@ -203,7 +203,7 @@ leader_traits = {
 	}
 	compassionate_gentleman = {
 		random = yes
-		sprite = 13
+		sprite = 2
 		opinion_gain_monthly_factor = 0.15
 		resistance_damage_to_garrison = -0.15 
 		
@@ -212,7 +212,7 @@ leader_traits = {
 		}
 	}
 	backroom_backstabber = {
-		sprite = 13
+		sprite = 2
 		subversive_activites_upkeep = -0.25
 		drift_defence_factor = 0.25
 		
@@ -222,7 +222,7 @@ leader_traits = {
 	}
 	smooth_talking_charmer = {
 		random = yes
-		sprite = 13
+		sprite = 2
 		improve_relations_maintain_cost_factor = -0.5
 		trade_opinion_factor = 0.10
 		
@@ -550,7 +550,7 @@ leader_traits = {
 	
 	greedy_syncophant = {
 		random = yes
-		sprite = 10
+		sprite = 2
 		production_speed_arms_factory_factor = 0.075
 		production_speed_industrial_complex_factor = 0.075
 		autonomy_gain = -1
@@ -1385,7 +1385,7 @@ leader_traits = {
 		}
 	}
 	chancellor = {
-		sprite = 13
+		sprite = 2
 		random = yes
 		opinion_gain_monthly_factor = 0.3
 		subjects_autonomy_gain = -1
@@ -1395,7 +1395,7 @@ leader_traits = {
 		}
 	}
 	minor_chancellor = {
-		sprite = 13
+		sprite = 2
 		random = no
 		opinion_gain_monthly_factor = 0.15
 		subjects_autonomy_gain = -0.5
@@ -1455,7 +1455,7 @@ leader_traits = {
 	}
 	master_diplomat = {
 		random = yes
-		sprite = 13
+		sprite = 2
 		opinion_gain_monthly_factor = 0.15
 	}
 	technocrat = {
@@ -1916,13 +1916,13 @@ leader_traits = {
 	thrifty_inventor = { #Eribin-- Parth Iaur
 		sprite = 12
 		random = no
-		consumer_goods_factor = -0.2
+		consumer_goods_factor = -0.1
 		production_lack_of_resource_penalty_factor = -0.2
 	}
 	minor_thrifty_inventor = {
 		sprite = 12
 		random = no
-		consumer_goods_factor = -0.1
+		consumer_goods_factor = -0.05
 		production_lack_of_resource_penalty_factor = -0.1
 	}
 	maniacal_monologuer = { #Goned-- Rafinfalas
@@ -1991,13 +1991,13 @@ leader_traits = {
 	raging_unifier = { #Wulfgar-- Dunfells
 		sprite = 12
 		random = no
-		justify_war_goal_time = -0.75
+		justify_war_goal_time = -0.5
 		annex_cost_factor = -0.2
 	}
 	minor_raging_unifier = {
 		sprite = 12
 		random = no
-		justify_war_goal_time = -0.37
+		justify_war_goal_time = -0.25
 		annex_cost_factor = -0.1
 	}
 	defiant_dealmaker = { #Fridalda-- Carreglyn
@@ -2102,16 +2102,16 @@ leader_traits = {
 		tribal_trust_cost = -0.15
 		guarantee_cost = -0.15
 	}
-	ruin_explorer = { #Cus frerogh-- Glad Ereg
+	ruin_explorer = { #Cus Frerogh-- Glad Ereg
 		sprite = 12
 		random = no
-		research_speed_factor = 0.2
+		research_speed_factor = 0.1
 		global_building_slots_factor = 0.5
 	}
 	minor_ruin_explorer = {
 		sprite = 12
 		random = no
-		research_speed_factor = 0.1
+		research_speed_factor = 0.05
 		global_building_slots_factor = 0.25
 	}
 	orcish_mercenary_lord = { #Aldrid-- Hollin
@@ -2171,7 +2171,6 @@ leader_traits = {
 		random = no
 		production_speed_infrastructure_factor = 0.2
 		tribal_trust_cost = -0.5
-		
 	}
 	minor_dug_in_decreer = {
 		sprite = 12
@@ -2234,7 +2233,7 @@ leader_traits = {
 	}
 
 	tribal_ambassador = {
-		sprite = 13
+		sprite = 2
 		random = no
 		tribal_trust_cost = -0.5
 	}
@@ -2281,5 +2280,230 @@ leader_traits = {
 		enemy_justify_war_goal_time = 1000
 		supply_combat_penalties_on_core_factor = -100
 		drift_defence_factor = 1
+	}
+	koldana_pol1 = {
+		random = no
+	}
+	koldana_pol2 = {
+		random = no
+	}
+	koldana_pol3 = {
+		random = no
+	}
+	koldana_pol4 = {
+		random = no
+	}
+	koldana_pol5 = {
+		random = no
+	}
+	koldana_pol6 = {
+		random = no
+	}
+	koldana_pol7 = {
+		random = no
+	}
+	koldana_pol8= {
+		random = no
+	}
+	koldana_pol9 = {
+		random = no
+	}
+	vierling_pol1 = {
+		random = no
+	}
+	vierling_pol2 = {
+		random = no
+	}
+	vierling_pol3 = {
+		random = no
+	}
+	vierling_pol4 = {
+		random = no
+	}
+	vierling_pol5 = {
+		random = no
+	}
+	vierling_pol6 = {
+		random = no
+	}
+	vierling_pol7 = {
+		random = no
+	}
+	vierling_pol8 = {
+		random = no
+	}
+	vierling_pol9 = {
+		random = no
+	}
+	human_advisor_pol1 = {
+		random = no
+	}
+	human_advisor_pol2 = {
+		random = no
+	}
+	human_advisor_pol3 = {
+		random = no
+	}
+	human_advisor_pol4 = {
+		random = no
+	}
+	human_advisor_pol5 = {
+		random = no
+	}
+	human_advisor_pol6 = {
+		random = no
+	}
+	human_advisor_pol7 = {
+		random = no
+	}
+	human_advisor_pol8 = {
+		random = no
+	}
+	human_advisor_pol9 = {
+		random = no
+	}
+	elven_advisor_pol1 = {
+		random = no
+	}
+	elven_advisor_pol2 = {
+		random = no
+	}
+	elven_advisor_pol3 = {
+		random = no
+	}
+	elven_advisor_pol4 = {
+		random = no
+	}
+	elven_advisor_pol5 = {
+		random = no
+	}
+	elven_advisor_pol6 = {
+		random = no
+	}
+	elven_advisor_pol7 = {
+		random = no
+	}
+	elven_advisor_pol8 = {
+		random = no
+	}
+	elven_advisor_pol9 = {
+		random = no
+	}
+	temperate = { #Hawin Koldana
+		random = no
+		stability_factor = 0.1
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_infrastructure_factor = 0.1
+	}
+	lost_the_northern_provinces = { #Hawin Koldana
+		random = no
+		war_support_factor = -0.1
+		conscription_factor = -0.15
+	}
+	gregarious_advisor = { #Bladorthin Koldana
+		random = no
+		sprite = 13
+		political_power_factor = 0.25
+	}
+	gregarious_leader = { #Bladorthin Koldana
+		random = no
+		political_power_factor = 0.25
+	}
+	friends_with_the_people = { #Bladorthin Koldana
+		random = no
+		mobilization_speed = 0.5
+		conversion_cost_civ_to_mil_factor = -0.25
+	}
+	lowborn_consort = { #queen sisewyn
+		random = no
+		sprite = 12
+		drift_defence_factor = 0.2
+	}
+	princess_of_dale = { #freja barding
+		random = no
+		sprite = 13
+		stability_factor = 0.1
+	}
+	master_vintner = {
+		random = no
+		sprite = 10
+		wine_gain_factor = 0.1
+	}
+	heroic_commander_advisor = { #vidumarh vierling
+		random = no
+		sprite = 14
+		command_power_gain_mult = 0.25
+		max_command_power = 50
+	}
+	heroic_commander_leader = { #vidumarh vierling
+		random = no
+		command_power_gain_mult = 0.25
+		max_command_power = 50
+	}
+	cunning_manipulator = { #vidumarh vierling
+		random = no
+		political_advisor_cost_factor = -0.2
+		trade_laws_cost_factor = -0.2
+		mobilization_laws_cost_factor = -0.2
+		economy_cost_factor = -0.2
+	}
+	dreamer_of_greater_dorwinion_conquest = { #ariberga vierling
+		random = no
+		sprite = 12
+		conquest_drift = 0.1
+	}
+	dreamer_of_greater_dorwinion_melkorite = { #ariberga vierling
+		random = no
+		sprite = 12
+		melkorite_drift = 0.1
+	}
+	empathetic_negotiator_advisor = { #bergholda aldiana
+		random = no
+		sprite = 10
+		prosperity_gain_factor = 0.1
+	}
+	empathetic_negotiator_leader = { #bergholda aldiana
+		random = no
+		prosperity_gain_factor = 0.1
+	}
+	generous_gift_giver = { #bergholda aldiana
+		random = no
+		enemy_justify_war_goal_time = 0.5
+		trade_opinion_factor = 0.2
+	}
+	trade_theorist = { #bergholda aldiana
+		sprite = 2
+		random = no
+		custom_modifier_tooltip = trade_theorist_modifier_tooltip
+	}
+	anti_interventionist = {
+		random = no
+		sprite = 12
+		isolationism_drift = 0.1
+	}
+	urban_developer = {
+		random = no
+		sprite = 10
+		global_building_slots_factor = 0.15
+	}
+	mercenary_theorist = {
+		random = no
+		sprite = 5
+		mercenary_cost = -0.2
+	}
+	liberator_of_the_north = {
+		random = no
+		sprite = 12
+		freedom_drift = 0.1
+	}
+	rallying_figurehead = {
+		random = yes
+		sprite = 13
+		war_support_factor = 0.1
+	}
+	polymath = {
+		random = yes
+		sprite = 14
+		research_speed_factor = 0.075
 	}
 }
