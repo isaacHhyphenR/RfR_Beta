@@ -1,0 +1,99 @@
+characters = {
+		#######SUN
+	SUN_frani_glenbrook = { #leader
+		name = SUN_frani_glenbrook
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_1"
+				small = "GFX_Portrait_Northern_Generic_m_1_small"
+			}
+		}
+		country_leader = {
+			ideology = evil_monarchy
+			traits = { }
+			#desc = DOR_hawin_koldana_desc
+		}
+	}
+		#######YST
+	YST_silvio_telliore = { #leader
+		name = YST_silvio_telliore
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_2"
+				small = "GFX_Portrait_Northern_Generic_m_2_small"
+			}
+		}
+		country_leader = {
+			ideology = republic_isolationism
+			traits = { }
+			#desc = DOR_vidumarh_vierling_desc
+		}
+	}
+		#######RIN
+	RIN_thora_variana = { #leader
+		name = RIN_thora_variana
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_1"
+				small = "GFX_Portrait_Northern_Generic_f_1_small"
+			}
+		}
+		country_leader = {
+			ideology = glorious_monarchy
+			traits = {  }
+			#desc = DOR_vidumarh_vierling_desc
+		}
+	}
+		#######RUS
+	RUS_swain_montegian = { #leader
+		name = RIN_swain_montegian
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_m_4"
+				small = "GFX_Portrait_Northern_Generic_m_4_small"
+			}
+		}
+		country_leader = {
+			ideology = republic_isolationism
+			traits = {  }
+			#desc = DOR_vidumarh_vierling_desc
+		}
+	}
+		#######HEH
+	HEH_aethelburg_orming = { #leader
+		name = HEH_aethelburg_orming
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_2"
+				small = "GFX_Portrait_Northern_Generic_f_2_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			traits = {   }
+			#desc = DOR_vidumarh_vierling_desc
+		}
+	}
+		#######SEK
+	SEK_alethea_lucrecea = { #leader
+		name = SEK_alethea_lucrecea
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Northern_Generic_f_5"
+				small = "GFX_Portrait_Northern_Generic_f_5_small"
+			}
+		}
+		country_leader = {
+			ideology = tribalism
+			traits = {   }
+			#desc = DOR_vidumarh_vierling_desc
+		}
+	}
+
+}

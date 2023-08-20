@@ -1,0 +1,313 @@
+form_arnor_category = {
+	
+	form_arnor = {
+
+		icon = GFX_decision_arnor_flag
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		cost = 100
+		
+		available = {
+			is_subject = no
+			controls_state = 24 #Annuminas
+			controls_state = 43 #Fennas Druin
+			controls_state = 34 #Iach sarn
+		}
+		visible = {
+			NOT = { has_cosmetic_tag = reunited_kingdom_cosmetic }
+		}
+		complete_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = ART
+						is_core_of = CAR
+						is_core_of = RDR
+					}
+				}
+				add_core_of = ROOT
+			}
+			set_cosmetic_tag = arnor_cosmetic
+		}
+	}
+}
+
+form_reunited_kingdom_category = {
+	
+	form_reunited_kingdom = {
+
+		icon = GFX_decision_Reunited_Kingdom_flag
+
+		fire_only_once = yes
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		cost = 100
+		
+		available = {
+			is_subject = no
+			controls_state = 152 #Minas Tirith
+			controls_state = 163 #west osgiliath
+			controls_state = 164 #east osgiliath
+			controls_state = 150 #Pelargir
+			controls_state = 148 #Dol Amroth
+			controls_state = 24 #Annuminas
+			controls_state = 43 #Fennas Druin
+			controls_state = 34 #Iach sarn
+		}
+		complete_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = ART
+						is_core_of = CAR
+						is_core_of = RDR
+						is_core_of = GON
+					}
+				}
+				add_core_of = ROOT
+			}
+			#hidden_effect = { drop_cosmetic_tag = yes }
+			set_cosmetic_tag = reunited_kingdom_cosmetic
+		}
+	}
+}
+
+@formableCost = 50
+form_Andrast_category = {
+	form_Andrast = {
+		icon = GFX_decision_Andrast_flag
+		fire_only_once = yes
+		ai_will_do = {
+			base = 1000
+		}
+		cost = @formableCost
+		available = {
+			controls_majority_Andrast = yes
+			custom_trigger_tooltip = {
+				tooltip = Andrast_not_formed_tooltip
+				NOT = { any_country = { has_cosmetic_tag = Andrast } }
+			}
+		}
+		complete_effect = {
+			set_cosmetic_tag = Andrast
+			remove_minor_cores_greater_enedwaith = yes
+			increase_prestige_1 = yes
+		}
+	}
+}
+form_Druwaith_Iaur_category = {
+	form_Druwaith_Iaur = {
+		icon = GFX_decision_Druwaith_Iaur_flag
+		fire_only_once = yes
+		ai_will_do = {
+			base = 1000
+		}
+		cost = @formableCost
+		available = {
+			controls_majority_Druwaith_Iaur = yes
+			custom_trigger_tooltip = {
+				tooltip = Druwaith_Iaur_not_formed_tooltip
+				NOT = { any_country = { has_cosmetic_tag = Druwaith_Iaur } }
+			}
+		}
+		complete_effect = {
+			set_cosmetic_tag = Druwaith_Iaur
+			remove_minor_cores_greater_enedwaith = yes
+			increase_prestige_1 = yes
+		}
+	}
+}
+form_Dunland_category = {
+	form_Dunland = {
+		icon = GFX_decision_Dunland_flag
+		fire_only_once = yes
+		ai_will_do = {
+			base = 1000
+		}
+		cost = @formableCost
+		available = {
+			controls_majority_Dunland = yes
+			custom_trigger_tooltip = {
+				tooltip = Dunland_not_formed_tooltip
+				NOT = { any_country = { has_cosmetic_tag = Dunland } }
+			}
+		}
+		complete_effect = {
+			set_cosmetic_tag = Dunland
+			remove_minor_cores_greater_enedwaith = yes
+			increase_prestige_1 = yes
+		}
+	}
+}
+form_Enedwaith_category = {
+	form_Enedwaith = {
+		icon = GFX_decision_Enedwaith_flag
+		fire_only_once = yes
+		ai_will_do = {
+			base = 1000
+		}
+		cost = @formableCost
+		available = {
+			controls_majority_Enedwaith = yes
+			custom_trigger_tooltip = {
+				tooltip = Enedwaith_not_formed_tooltip
+				NOT = { any_country = { has_cosmetic_tag = Enedwaith } }
+			}
+		}
+		complete_effect = {
+			set_cosmetic_tag = Enedwaith
+			remove_minor_cores_greater_enedwaith = yes
+			increase_prestige_1 = yes
+		}
+	}
+}
+form_Eregion_category = {
+	form_Eregion = {
+		icon = GFX_decision_Eregion_flag
+		fire_only_once = yes
+		ai_will_do = {
+			base = 1000
+		}
+		cost = @formableCost
+		available = {
+			controls_majority_Eregion = yes
+			custom_trigger_tooltip = {
+				tooltip = Eregion_not_formed_tooltip
+				NOT = { any_country = { has_cosmetic_tag = Eregion } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = not_is_saralain_tooltip
+				NOT = { has_cosmetic_tag = SAR }
+			}
+		}
+		complete_effect = {
+			set_cosmetic_tag = Eregion
+			remove_minor_cores_greater_enedwaith = yes
+			increase_prestige_1 = yes
+		}
+	}
+}
+form_White_Mountains_category = {
+	form_White_Mountains = {
+		icon = GFX_decision_White_Mountains_flag
+		fire_only_once = yes
+		ai_will_do = {
+			base = 1000
+		}
+		cost = @formableCost
+		available = {
+			controls_majority_White_Mountains = yes
+			custom_trigger_tooltip = {
+				tooltip = White_Mountains_not_formed_tooltip
+				NOT = { any_country = { has_cosmetic_tag = White_Mountains } }
+			}
+		}
+		complete_effect = {
+			set_cosmetic_tag = White_Mountains
+			remove_minor_cores_greater_enedwaith = yes
+			increase_prestige_1 = yes
+		}
+	}
+}
+# form_Saralain_category = {
+	# form_greater_Saralain = {
+		# icon = GFX_decision_Saralain_flag
+		# fire_only_once = yes
+		# ai_will_do = {
+			# base = 1000
+		# }
+		# cost = @formableCost
+		# available = {
+			# can_form_saralain = yes
+		# }
+		# complete_effect = {
+			# set_cosmetic_tag = SAR
+			# increase_prestige_1 = yes
+			# add_state_core = 39 #Minhiriath
+		# }
+	# }
+# }
+form_Greater_Enedwaith_category = {
+	form_Greater_Enedwaith = {
+		icon = GFX_decision_Greater_Enedwaith_flag
+		fire_only_once = yes
+		ai_will_do = {
+			base = 1000
+		}
+		cost = @formableCost
+		available = {
+			count_triggers = {
+				amount = 5
+				custom_trigger_tooltip = {
+					tooltip = controls_or_subject_andrast_state_tooltip
+					any_state = { is_andrast_state = yes controls_or_subject_of = yes }
+				}
+				custom_trigger_tooltip = {
+					tooltip = controls_or_subject_druwaith_iaur_state_tooltip
+					any_state = { is_druwaith_iaur_state = yes controls_or_subject_of = yes }
+				}
+				custom_trigger_tooltip = {
+					tooltip = controls_or_subject_dunland_state_tooltip
+					any_state = { is_dunland_state = yes controls_or_subject_of = yes }
+				}
+				custom_trigger_tooltip = {
+					tooltip = controls_or_subject_enedwaith_state_tooltip
+					any_state = { is_enedwaith_state = yes controls_or_subject_of = yes }
+				}
+				custom_trigger_tooltip = {
+					tooltip = controls_or_subject_eregion_state_tooltip
+					any_state = { is_eregion_state = yes controls_or_subject_of = yes }
+				}
+				custom_trigger_tooltip = {
+					tooltip = controls_or_subject_white_mountains_state_tooltip
+					any_state = { is_white_mountains_state = yes controls_or_subject_of = yes }
+				}
+			}
+			is_greater_enedwaith_formable = yes
+			custom_trigger_tooltip = {
+				tooltip = Greater_Enedwaith_not_formed_tooltip
+				NOT = { any_country = { has_cosmetic_tag = Enedwaith } }
+			}
+		}
+		complete_effect = {
+			set_cosmetic_tag = Greater_Enedwaith
+			increase_prestige_2 = yes
+		}
+	}
+}
+
+form_rhovanion_category = {
+	form_rhovanion = {
+		#icon = GFX_decision_Greater_Enedwaith_flag
+		fire_only_once = yes
+		ai_will_do = {
+			base = 1000
+		}
+		cost = @formableCost
+		available = {
+			# count_triggers = {
+				# amount = 5
+				# controls_state = 
+			# }
+			# custom_trigger_tooltip = {
+				# tooltip = Greater_Enedwaith_not_formed_tooltip
+				# NOT = { any_country = { has_cosmetic_tag = Enedwaith } }
+			# }
+		}
+		complete_effect = {
+			set_cosmetic_tag = RVN
+			every_possible_country = {
+				limit = { is_rhovanion_tag = yes }
+				every_core_state = { add_core_of = ROOT }
+			}
+		}
+	}
+}

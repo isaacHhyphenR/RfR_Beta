@@ -1,0 +1,39 @@
+division_template = {
+	name = "Town Militia"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Rhovanorim Riders"
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+}
+units = {
+	division = {	
+		name = "Riders of Suvarinda"
+		location = 6540
+		division_template = "Rhovanorim Riders"
+	}
+	division = {	
+		name = "Riders of Sarema"
+		location = 221
+		division_template = "Rhovanorim Riders"
+	}
+	division = {	
+		name = "Riders of Ermonaritais"
+		location = 6606
+		division_template = "Rhovanorim Riders"
+	}
+}

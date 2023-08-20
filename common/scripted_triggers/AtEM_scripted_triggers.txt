@@ -26,3 +26,14 @@ calculate_trade_convoy_cost_negative = { #Call where THIS is buyer/seller and RO
 	calculate_trade_convoy_cost = yes
 	multiply_temp_variable = { route_convoy_cost = -1 }
 }
+
+is_rhovanion_tag = {
+	OR = {
+		original_tag = SUN
+		original_tag = YST
+		original_tag = RIN
+		original_tag = RUS
+		original_tag = HEH
+		original_tag = SEK
+	}
+}

@@ -1,0 +1,39 @@
+division_template = {
+	name = "Town Militia"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Rhovanorim Riders"
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+}
+units = {
+	division = {	
+		name = "Militia of Sant Rovalug"
+		location = 627
+		division_template = "Town Militia"
+	}
+	division = {	
+		name = "Miltia of Kardovan"
+		location = 6189
+		division_template = "Town Militia"
+	}
+	division = {	
+		name = "Frontier Patrol"
+		location = 6051
+		division_template = "Rhovanorim Riders"
+	}
+}

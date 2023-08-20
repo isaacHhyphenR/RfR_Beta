@@ -12,8 +12,9 @@ state = {
 		wood = 6
 	}
 	history = {
-		owner = MIR
-		add_core_of = MIR
+		owner = RUS
+		add_core_of = RUS
+		add_claim_by = DOR
 		victory_points = { #Sant Rovalug, 12
 			627 8
 		}

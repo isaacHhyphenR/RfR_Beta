@@ -642,4 +642,8 @@
  uprising_in_colony_desc: "A horde of orcs has gathered in the wilderness and swept away our garrison! We must quickly drive them out before they undo all of our hard work."
  dominion_over_middle_earth: "Secure Dominion of Middle Earth"
  dominion_over_middle_earth_desc: "All the people of Middle Earth kneel before us."
+ form_rhovanion_category: "Form Rhovanion"
+ form_rhovanion_category_desc: "Remind me to write something here later."
+ form_rhovanion: "Form Rhovanion"
+ form_rhovanion_desc: "$form_rhovanion_category_desc$"
  

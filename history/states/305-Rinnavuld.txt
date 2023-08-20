@@ -13,8 +13,9 @@ state = {
 
 
 	history = {
-		owner = MIR
-		add_core_of = MIR
+		owner = RIN
+		add_core_of = RIN
+		add_claim_by = DOR
 		victory_points = { #Rinnavod, 15
 			6151 10
 		}

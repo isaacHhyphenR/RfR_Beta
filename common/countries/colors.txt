@@ -1,12 +1,4 @@
 #reload countrycolors
-
-# ARN = {
-	# color = rgb { 255 255 255 }
-	# color_ui = rgb { 227 227 227 }
-# }
-
-
-
 ADB = {
 	color = rgb { 33 142 58 }
 	color_ui = rgb { 25 127 49 }
@@ -131,6 +123,10 @@ HAR = {
 	color = rgb { 255 0 0 }
 	color_ui = rgb { 225 4 4 }
 }
+HEH = {
+	color = rgb { 240 228 147 }
+	color_ui = rgb { 233 219 128 }
+}
 HIL = {
 	color = rgb { 52 179 88 }
 	color_ui = rgb { 63 147 87 }
@@ -211,10 +207,6 @@ MED = {
 	color = rgb { 42 54 76 }
 	color_ui = rgb { 32 42 60 }
 }
-MIR = {
-	color = rgb { 215 176 20 }
-	color_ui = rgb { 205 156 6 }
-}
 MOR = {
 	color = rgb { 40 40 40 }
 	color_ui = rgb { 20 20 20 }
@@ -255,6 +247,10 @@ REE = {
 	color = rgb { 120 162 43 }
 	color_ui = rgb { 109 149 36 }
 }
+RIN = {
+	color = rgb { 255 255 0 }
+	color_ui = rgb { 235 235 0 }
+}
 RIV = {
 	color = rgb { 37 181 111 }
 	color_ui = rgb { 28 128 85 }
@@ -267,6 +263,10 @@ ROH = {
 	color = rgb { 6 124 10 }
 	color_ui = rgb { 9 97 12 }
 }
+RUS = {
+	color = rgb { 221 230 112 }
+	color_ui = rgb { 204 212 102 }
+}
 SAG = {
 	color = rgb { 49 26 22 }
 	color_ui = rgb { 38 19 16 }
@@ -274,6 +274,10 @@ SAG = {
 SAR = {
 	color = rgb { 255 149 0 }
 	color_ui = rgb { 230 140 0 }
+}
+SEK = {
+	color = rgb { 210 185 20 }
+	color_ui = rgb { 194 170 13 }
 }
 SHI = {
 	color = rgb { 255 50 100 }
@@ -286,6 +290,10 @@ SRB = {
 STK = {
 	color = rgb { 252 224 113 }
 	color_ui = rgb { 229 194 57 }
+}
+SUN = {
+	color = rgb { 194 200 28 }
+	color_ui = rgb { 178 183 27 }
 }
 TAW = {
 	color = rgb { 27 170 221 }
@@ -314,4 +322,8 @@ WND = {
 WOD = {
 	color = rgb { 130 188 93 }
 	color_ui = rgb { 105 167 66 }
+}
+YST = {
+	color = rgb { 199 180 73 }
+	color_ui = rgb { 176 158 55 }
 }

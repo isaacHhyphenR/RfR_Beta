@@ -1,0 +1,152 @@
+bookmarks = {
+	bookmark = {
+		name = "GATHERING_STORM_NAME"
+		desc = "GATHERING_STORM_DESC"
+		date = 3015.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "MOR"
+		default = yes
+		
+		"MOR"={
+			history = "MORDOR_GATHERING_STORM_DESC"
+			ideas = {
+				orcish_heritage_idea
+				servants_of_sauron_spirit
+				generic_attack_gondor
+			}
+			focuses = {
+				MOR_do_not_stop_until_the_city_is_taken
+				MOR_the_lord_of_the_rings
+				MOR_form_ranks_you_maggots
+			}
+		}
+		"GON"={
+			history = "GONDOR_GATHERING_STORM_DESC"
+			ideas = {
+				numenorean_heritage_idea
+				GON_subsidized_swan_knights
+				stewards_authority_spirit
+			}
+			focuses = {
+				GON_light_the_beacons
+				GON_reunite_the_dunedain
+				GON_the_return_of_the_king
+			}
+		}
+		"ISN"={
+			history = "ISENGARD_GATHERING_STORM_DESC"
+			ideas = {
+				isengardian_heritage_spirit
+				ISN_pikes_bonus_spirit
+				mastered_palantir_offence_LAR
+			}
+			focuses = {
+				ISN_clear_the_ring_of_isengard
+				ISN_the_rotting_house_of_eorl
+				ISN_study_tribal_politics
+			}
+		}
+		"DOR"={
+			history = "DORWINION_GATHERING_STORM_DESC"
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+
+		"ROH"={
+			history = "ROHAN_GATHERING_STORM_DESC"
+			ideas = {
+				rohirric_heritage_idea_5
+				ROH_a_hall_divided
+				ROH_ride_for_ruin_spirit
+			}
+			focuses = {
+				ROH_a_new_leader
+				ROH_secure_the_country
+				ROH_reverse_grimas_damage
+			}
+		}
+
+		
+		#############################MINORS
+		"DUN"={
+			history = "DUNFELLS_GATHERING_STORM_DESC"
+			minor = yes
+			ideas = {
+				dunland_heritage_idea
+				prestigious_tribe_spirit
+				invoke_enedwaith_prowess_idea
+			}
+			focuses = {
+				ENE_rally_against_our_ancient_enemy
+				ENE_demand_the_adorn_vale
+				ENE_fealty_for_the_vale
+			}
+		}
+		
+		"AGR"={
+			history = "ANGRAST_GATHERING_STORM_DESC"
+			minor = yes
+			ideas = {
+				enedwaith_heritage_idea
+				prestigious_tribe_spirit
+				fanatical_shadow_cult
+			}
+			focuses = {
+				ENE_corsairs_of_the_north
+				ENE_reform_saralain
+				ENE_make_common_cause_with_the_northern_dunedain
+			}
+		}
+		"DRU"={
+			history = "DRULAD_GATHERING_STORM_DESC"
+			minor = yes
+			ideas = {
+				druwaith_iaur_heritage_idea
+				prestigious_tribe_spirit
+				enedwaith_unifier
+			}
+			focuses = {
+				ENE_the_keystone
+				ENE_erect_pukel_statues
+				ENE_boast_of_statecraft
+			}
+		}
+		"BYR"={
+			history = "DRUWAITH_IAUR_GATHERING_STORM_DESC"
+			minor = yes
+			ideas = {
+				druwaith_iaur_heritage_idea
+				prestigious_tribe_spirit
+				enedwaith_unifier
+			}
+			focuses = {
+				ENE_the_keystone
+				ENE_erect_pukel_statues
+				ENE_boast_of_statecraft
+			}
+		}
+		"TAW"={
+			history = "WHITE_MOUNTAINS_GATHERING_STORM_DESC"
+			minor = yes
+			ideas = {
+				white_mountain_heritage_idea
+				prestigious_tribe_spirit
+				troll_tamers_spirit
+			}
+			focuses = {
+				ENE_seek_guidance_from_the_white_wizard
+				ENE_foster_national_sentiment_in_the_white_mountains
+				ENE_path_of_the_oathbreakers
+			}
+		}
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

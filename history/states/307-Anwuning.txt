@@ -1,31 +1,33 @@
-state = {
-	id = 307
-	name = "STATE_307"
 
-	history = {
+state={
+	id=307
+	name="STATE_307"
+	resources={
+		food=1.000
+		cloth=1.000
+		mounts=1.000
+	}
+
+	history={
 		owner = WLD
 		add_core_of = WLD
 		buildings = {
-		}
-		victory_points = { #Waysendstede, 0
-			3479 0 #2
-		}
-		victory_points = { #Burh Scath
-			3619 0 #1
-		}
-	}
 
-	provinces = { #19
-		689 1030 1328 2128 2928 3479 3619 4469 4539 4745 4746 4860 6380 6404 6420 6423 6447 6454 6480 
-	}
-	manpower = 11426
-	state_category = Wasteland
-	resources = {
-		food = 1
-		cloth = 1
-		mounts = 1
+		}
+		victory_points = {
+			3479 0 
+		}
+		victory_points = {
+			3619 0 
+		}
 
 	}
+
+	provinces={
+		689 1030 1328 2128 2928 3479 3619 4469 4539 4745 4746 4860 5217 6380 6404 6420 6423 6447 6454 6480 
+	}
+	manpower=11426
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
 }
-
-

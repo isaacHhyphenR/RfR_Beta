@@ -1,15 +1,16 @@
-
 state = {
 	id = 112
 	name = "STATE_112"
+	manpower = 300091
+	state_category = Pastoral
 	resources = {
 		wood = 12
 		mounts = 6
 	}
 
 	history = {
-		add_core_of = MIR
-		owner = MIR
+		add_core_of = SEK
+		owner = SEK
 		victory_points = { #Sarema, 4
 			221 2 
 		}
@@ -24,10 +25,6 @@ state = {
 	provinces = { #27
 		221 279 404 589 657 1076 1492 1498 1507 1848 2258 2607 2922 3212 3935 3996 4092 4106 4444 4975 6440 6481 6526 6533 6559 8919 10797 
 	}
-	manpower = 300091
-	buildings_max_level_factor = 1.000
-	state_category = Pastoral
-	local_supplies = 0.000
 }
 
 

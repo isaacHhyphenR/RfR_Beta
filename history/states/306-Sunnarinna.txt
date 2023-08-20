@@ -8,8 +8,8 @@ state={
 		food = 17
 	}
 	history={
-		owner = MIR
-		add_core_of = MIR
+		owner = SUN
+		add_core_of = SUN
 		buildings = {
 			infrastructure = 2
 			market = 1

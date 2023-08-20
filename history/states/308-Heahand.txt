@@ -1,38 +1,38 @@
-state = {
-	id = 308
-	name = "STATE_308"
 
-	history = {
-		owner = MIR
-		add_core_of = MIR
+state={
+	id=308
+	name="STATE_308"
+	resources={
+		wood=4.000
+		iron=4.000
+		mounts=4.000
+	}
+
+	history={
+		owner = HEH
+		add_core_of = HEH
 		buildings = {
 			infrastructure = 1
 			industrial_complex = 1
-		}
-		victory_points = { #Srinagar, 6
-			2237 3
-		}
-		victory_points = { #Econiva
-			1503 2
-		}
-		victory_points = { #Burh Seath
-			2452 1
-		}
-	}
 
-	provinces = {#38
-		515 678 694 1503 1522 1666 1907 2008 2237 2290 2325 2452 3061 3080 3178 3304 3471 3999 4559 4775 5055 5183 5217 5242 5268 6177 6192 6218 6220 6249 6263 6288 6310 6329 6347 6365 6381 7822 
-	}
-	manpower = 551081
-	buildings_max_level_factor = 1.000
-	state_category = Rural
-	local_supplies = 0.000
-	resources = {
-		wood = 4
-		iron = 4
-		mounts = 4
+		}
+		victory_points = {
+			2237 3 
+		}
+		victory_points = {
+			1503 2 
+		}
+		victory_points = {
+			2452 1 
+		}
 
 	}
+
+	provinces={
+		515 678 694 1503 1522 1666 1907 2008 2237 2290 2325 2452 3061 3080 3178 3304 3471 3999 4559 4775 5055 5183 5242 5268 6177 6192 6218 6220 6249 6263 6288 6310 6329 6347 6365 6381 7822 
+	}
+	manpower=551081
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
 }
-
-

@@ -1,0 +1,96 @@
+form_arnor_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_generic_arnor
+	allowed = {
+		OR = {
+			original_tag = ART
+			original_tag = CAR
+			original_tag = RDR
+		}
+	}
+}
+
+form_reunited_kingdom_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_generic_reunited_kingdom
+	allowed = {
+		OR = {
+			original_tag = GON
+			original_tag = ART
+			original_tag = CAR
+			original_tag = RDR
+			original_tag = ANF
+			original_tag = PNG
+		}
+	}
+}
+
+form_Andrast_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_generic_Andrast
+	allowed = {
+		is_andrast_tag = yes
+	}
+}
+
+form_Druwaith_Iaur_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_generic_Druwaith_Iaur
+	allowed = {
+		is_druwaith_iaur_tag = yes
+	}
+}
+form_Dunland_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_generic_Dunland
+	allowed = {
+		is_dunland_tag = yes
+	}
+}
+
+form_Enedwaith_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_generic_Enedwaith
+	allowed = {
+		is_enedwaith_tag = yes
+	}
+}
+
+form_Eregion_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_generic_Eregion
+	allowed = {
+		is_eregion_tag = yes
+	}
+}
+
+form_Saralain_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_generic_Greater_Saralain
+	allowed = {
+		allowed_form_saralain = yes
+	}
+}
+
+form_White_Mountains_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_generic_White_Mountains
+	allowed = {
+		is_white_mountains_tag = yes
+	}
+}
+
+form_Greater_Enedwaith_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_generic_Greater_Enedwaith
+	allowed = {
+		is_greater_enedwaith_tag = yes
+	}
+}
+form_rhovanion_category = {
+	icon = generic_formable_nations
+	#picture = GFX_decision_cat_generic_Greater_Enedwaith
+	allowed = {
+		is_rhovanion_tag = yes
+	}
+}
