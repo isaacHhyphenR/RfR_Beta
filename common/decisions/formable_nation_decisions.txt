@@ -293,10 +293,15 @@ form_rhovanion_category = {
 		}
 		cost = @formableCost
 		available = {
-			# count_triggers = {
-				# amount = 5
-				# controls_state = 
-			# }
+			count_triggers = {
+				amount = 5
+				controls_state = 306
+				controls_state = 110
+				controls_state = 305
+				controls_state = 308
+				controls_state = 112
+				controls_state = 117
+			}
 			# custom_trigger_tooltip = {
 				# tooltip = Greater_Enedwaith_not_formed_tooltip
 				# NOT = { any_country = { has_cosmetic_tag = Enedwaith } }

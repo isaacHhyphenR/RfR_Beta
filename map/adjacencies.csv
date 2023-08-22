@@ -168,11 +168,11 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 4727;2640;sea;-1;-1;-1;-1;-1;;
 480;4811;sea;-1;3407;1372;3406;1380;;SRZEL KAIN
 1822;5372;sea;-1;3334;1381;3335;1390;;PADAVAN
-627;6094;sea;-1;3239;1424;-1;-1;;SANT ROVALUG
+627;6094;sea;-1;-1;-1;-1;-1;;SANT ROVALUG
 5849;4835;sea;-1;3150;1477;3150;1471;;Hamarsland
-5984;1041;sea;-1;-1;-1;-1;-1;;KAUPABORG
-4051;5860;sea;-1;-1;-1;-1;-1;;GRISSVOLL LANVAEG
+5984;1041;sea;12578;-1;-1;-1;-1;;Sunnarina
+4051;5860;sea;-1;-1;-1;-1;-1;;
 5720;3208;sea;-1;-1;-1;-1;-1;;south of laketown
 7804;5693;sea;-1;-1;-1;-1;-1;;LAKETOWN
-5693;5706;sea;-1;-1;-1;-1;-1;;ULGERSTAT
+5706;5693;sea;-1;-1;-1;-1;-1;;ULGERSTAT
 -1;-1;;-1;-1;-1;-1;-1;-1
