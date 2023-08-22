@@ -69,7 +69,7 @@ CAR = {
 		  "Elatanionath"  "Ardamirionath"  "Valandilionath"  "Ciryaturionath"  "Cuthalionath"  "Belecthorionath"  "Haldirionath"  "Narmenelionath"  "Belegundionath"  "Galadorionath"  "Mindacilionath"  "Orrosturionath"  "Calimonionath"  "Virinarionath"  "Feandurionath"  "Damrodionath"  "Atanamirionath"  "Telemnarionath"  "Thoronrovalionath"  "Rumilionath"  "Ranatarionath"  "Aravalionath"  "Arlongionath"  "Amandilionath"  "Beregondionath"  "Berenorionath"  "Borothorionath"  "Caranthirionath"  "Cemendilionath"  "Duinhirionath"  "Ecthelionionath"  "Eldacarionath"  "Emeryondoionath"  "Galionath"  "Hatholdirionath"  "Heruaryonionath"  "Laurendilionath"  "Manwendilionath"  "Miryaryonionath"  "Silmardilionath" 
 	}
 }
-gondor_continent = {
+numenorean_race = {
 	Male = {
 		Names = {
 		"Adrahil" "Aegion" "Aeglos" "Aerennel" "Agarwaen" "Agathor" "Ainundil" "Ainundur" "Alandur" "Alatar" "Alcarin" "Alcarnir" "Aldamir" "Aldarion" "Algund" "Almaryon" "Alphorn" "Alphros" "Alquandil" "Alquandur" "Alquantur" "Alquarosse" "Alquatir" "Amandil" "Amandur" "Amantur" "Amdir" "Amlach" "Amlaith" "Amroth" "Amrothor" "Amrothos" "Anaratan" "Anardil" "Anardur" "Anarion" "Anborn" "Ancalimon" "Androg" "Anducal" "Anduchil" "Andunar" "Andvir" "Angamaite" "Angbor" "Angelimir" "Annael" "Arachon" "Aradan" "Arador" "Araglas" "Aragorn" "Aragost" "Arahad" "Arahael" "Aramir" "Aranarth" "Arandur" "Aranel" "Arantar" "Aranuir" "Aranwe" "Araphant" "Araphor" "Arassuil" "Aratan" "Arathorn" "Araval" "Aravir" "Aravorn" "Arciryas" "Ardamin" "Ardamir" "Ardamire" "Argeleb" "Argonui" "Arlong" "Arminas" "Artamir" "Artanaro" "Arvedui" "Arvegil" "Arveleg" "Asgon" "Astandil" "Astandur" "Atanaher" "Atanalcar" "Atanamir" "Atanatar" "Aulendil" "Aulendur" "Ausir" "Autearyon" "Axantur" "Balan" "Baragond" "Baragund" "Barahir" "Baramir" "Baran" "Baranor" "Barthalion" "Belatar" "Beldir" "Belecthor" "Beleg" "Belegar" "Belegor" "Belegorn" "Belegund" "Belehir" "Belemir" "Belen" "Beor" "Bereg" "Beregar" "Beregond" "Beregund" "Berehir" "Berelach" "Beren" "Berenor" "Berethor" "Bergil" "Bor" "Borlach" "Borlad" "Borlas" "Borlong" "Borodir" "Boromir" "Boron" "Borondir" "Borothor" "Borthand" "Brandir" "Bregolas" "Bregor" "Cail" "Calimehtar" "Calimon" "Calion" "Calmacil" "Caramir" "Caranthir" "Castaher" "Castamaite" "Castamir" "Castarion" "Celdrahil" "Celeborn" "Celebrimbor" "Celebrindor" "Celepharn" "Cemendil" "Cemendur" "Círdan" "Cirion" "Ciryaher" "Ciryandil" "Ciryandur" "Ciryatan" "Ciryatur" "Ciryon" "Corintur" "Cunamir" "Cunendil" "Cunendur" "Curimardin" "Cuthalion" "Daeron" "Damrod" "Denethor" "Derufin" "Dervorin" "Dior" "Dirhael" "Dirhavel" "Dorlad" "Dorlas" "Duilin" "Duinhir" "Duranil" "Eadacil" "Eadil" "Eadur" "Eambar" "Earcil" "Earendacil" "Earendil" "Earendur" "Eargon" "Earnil" "Earnur" "Eartar" "Ebor" "Ecteleion" "Ecthelion" "Edhelion" "Edhelmir" "Egalmoth" "Elatan" "Elatar" "Eldacar" "Eldalote" "Eldamir" "Eldarion" "Elecar" "Electele" "Electhel" "Elegost" "Elemmacil" "Elenalcar" "Elendil" "Elendin" "Elendur" "Elentir" "Elentur" "Elessar" "Elladan" "Elphir" "Elrohir" "Elrond" "Elros" "Eluchil" "Elumir" "Elured" "Elurin" "Emeryondo" "Enthor" "Eradan" "Erchirion" "Eremir" "Eruaryon" "Erucolindo" "Estel" "Estelmo" "Falandil" "Falandur" "Falassion" "Falastur" "Falmandil" "Falmandur" "Faramir" "Farandil" "Farandur" "Farlong" "Feandil" "Feandur" "Feanor" "Feantur" "Filigod" "Findegil" "Findemir" "Forlong" "Forweg" "Fuinur" "Gaeraglar" "Gaerdon" "Galador" "Galdor" "Galion" "Gelmir" "Gethron" "Gil-galad" "Girion" "Glorfindel" "Glormagil" "Golasdan" "Golasgil" "Gorthol" "Grithnir" "Guilin" "Gundor" "Gunthor" "Gwaihir" "Gwathir" "Gwindor" "Hador" "Halbarad" "Halberen" "Halboron" "Haldad" "Haldan" "Haldar" "Haldir" "Hallacar" "Hallas" "Hallatan" "Halmir" "Handir" "Hanmir" "Harathor" "Hardang" "Hathol" "Hatholdir" "Hathor" "Henderch" "Herendil" "Herendur" "Herenion" "Herion" "Hermacil" "Heruaryon" "Herucalmo" "Herucar" "Herumor" "Herunumen" "Hirgon" "Hirilonde" "Hirluin" "Hostamir" "Hostandil" "Hundad" "Hundar" "Hunthor" "Huor" "Húrin" "Hyarmendacil" "Imlach" "Incandil" "Incandur" "Indor" "Ingold" "Ingoldo" "Iorlas" "Iorthor" "Irmondil" "Irmondur" "Isilatan" "Isildil" "Isildur" "Isilehtar" "Isilmo" "Ithilbor" "Ivrindil" "Ivrindur" "Labadal" "Laurefindil" "Lauremacil" "Laurendil" "Laurendur" "Lintoron" "Llotendil" "Lorindol" "Mablung" "Maeglin" "Maewhir" "Maglor" "Magor" "Maiandil" "Maiandur" "Maiendil" "Maiendur" "Mairon" "Malach" "Malandil" "Malbeth" "Mallor" "Malvegil" "Mamandil" "Mamandur" "Manthor" "Manwendil" "Manwendur" "Marach" "Maratar" "Mardil" "Marenar" "Marmacil" "Mavar" "Mellondir" "Meneldil" "Meneldur" "Minadir" "Minalcar" "Minardil" "Minardur" "Minastan" "Minastir" "Mindacil" "Minyatur" "Mireadur" "Mireatan" "Mirendil" "Mirendur" "Mirion" "Mirlong" "Miryaher" "Miryanar" "Miryaryon" "Mordulin" "Moreinion" "Morinehtar" "Morlaen" "Mormacil" "Mormegil" "Mornar" "Mornuru" "Morvegil" "Nahar" "Namondil" "Namondur" "Naramir" "Narendil" "Narendur" "Narmacil" "Narmenel" "Neithan" "Nendur" "Nildondil" "Nildondur" "Nolimon" "Nolondil" "Nolondur" "Nucumna" "Nucumnehtar" "Numellote" "Numemir" "Numendil" "Numendur" "Numentur" "Ohtar" "Olorendil" "Olorendur" "Oluchil" "Olumir" "Olured" "Olurin" "Ondoher" "Orchaldor" "Orleg" "Ornendil" "Ornendur" "Orodor" "Orodreth" "Oromendil" "Oromendur" "Orontor" "Oropher" "Orophin" "Orrostar" "Orrostur" "Orthalion" "Ortollote" "Ossendil" "Ossendur" "Ostoher" "Ostomir" "Ostonar" "Palantir" "Palarran" "Parmaite" "Peleg" "Pelendur" "Pelethanor" "Penlodh" "Ragnir" "Raimond" "Raion" "Ranatar" "Restimar" "Rodnor" "Rómetar" "Rómemir" "Rómendacil" "Rómendil" "Rómendur" "Romer" "Rómestamo" "Rumil" "Sador" "Saelon" "Saerod" "Saeros" "Salgant" "Salmandil" "Salmandur" "Sangahyandion" "Sangahyando" "Seregon" "Silmardil" "Silmardur" "Silmerano" "Singollo" "Siriondil" "Soronramar" "Sorontar" "Soronto" "Suldor" "Sulendil" "Sulendur" "Sulicar" "Sulimar" "Sulion" "Sulitar" "Sulmacil" "Surion" "Tarannon" "Tarcalar" "Tarcil" "Tarciryan" "Targon" "Tarion" "Tarmacil" "Tarondor" "Tarostar" "Telcontar" "Telemacil" "Telemmaite" "Telemnar" "Telicur" "Telumehtar" "Terendul" "Thalion" "Thingol" "Thorondir" "Thorondor" "Thorongil" "Thoronroval" "Thurin" "Tiliondil" "Tiliondur" "Tuor" "Turambar" "Turendil" "Turendur" "Turgon" "Túrin" "Turlong" "Turmacil" "Udalraph" "Uilomir" "Uinendil" "Uinendur" "Ulbar" "Uldor" "Ulfang" "Ulfast" "Ulmondil" "Ulmondur" "Ulrad" "Ulwarth" "Umarth" "Umbardacil" "Valacar" "Valamir" "Valandil" "Valandur" "Vardamir" "Vardil" "Vardur" "Veaher" "Veandil" "Vëandur" "Vëantur" "Vingidur" "Vingintur" "Vinyaher" "Vinyaran" "Vinyarion" "Virinar" "Virinehtar" "Voromir" "Vorommacil" "Vorommaite" "Vorondil" "Vorondur" "Voronwë" "Yulion"
@@ -137,9 +137,7 @@ RDR = {
 	}
 }
 
-###############################################################
-#" "Dwarves
-###############################################################
+###################################################################################################DWARVEN
 EDL = {
 	Male = {
 		Names = {
@@ -200,9 +198,42 @@ KZD = {
 		"Ironfist" "Loderr" "Lutgehr" "Rumnaheim" "Strakeln" "Torunn" "Ungart"
 	}
 }
-###############################################################
-#" "ELVES
-###############################################################
+ORI = {
+	Male = {
+		Names = {
+		"Adrik" "Alberich" "Baern" "Barendd" "Brottor" "Bruenor" "Dain" "Darrak" "Delg" "Eberk" "Einkil"
+		"Fargrim" "Flint" "Gardain" "Harbek" "Kildrak" "Morgran" "Orsik" "Oskar" "Rangrim" "Rurik" "Taklinn"
+		"Thoradin" "Thorin" "Tordek" "Traubon" "Travok" "Ulfgar" "Veit" "Vondal"
+		}
+	}
+	Female = {
+		Names = {
+		"Amber" "Artin" "Audhild" "Bardryn" "Dagnal" "Diesa" "Eldeth" "Falkrunn" "Finellen" "Gunnloda" "Gurdis"
+		"Helja" "Hlin" "Kathra" "Kristryd" "Ilde" "Liftrasa" "Mardred" "Riswynn" "Sannl" "Torbera" "Torgga"
+		"Vistra"
+		}
+	}
+	Surnames = {
+		"Balderk" "Battlehammer" "Brawnanvil" "Dankil" "Fireforge" "Frostbeard" "Gorunn" "Holderhek"
+		"Ironfist" "Loderr" "Lutgehr" "Rumnaheim" "Strakeln" "Torunn" "Ungart"
+	}
+}
+###################################################################################################ELVEN
+CUV = {
+	Male = {
+		Names = {
+		"Aicanáro" "Ailinwë" "Ailinwë" "Aldaron" "Galadhon" "Aldawë" "Aldawë" "Almasil" "Galathil" "Alqualírë" "Alqualír" "Alwë" "Alwë" "Ambanér" "Amdír" "Ambaráto" "Amrod" "Ambarondo" "Amroth" "Angamaitë" "Angamaitë" "Angaráto" "Angrod" "Angawë" "Angawë" "Aracáno" "Argon" "Aracórno" "Aragorn" "Aranel" "Aranel" "Arathinwë" "Finarfin" "Ardamírë" "Ardamir" "Atandil" "Atandil" "Artaher" "Arothir" "Artanáro" "Rodnor" "Artaresto" "Orodreth" "Artathinde" "Finrod" "Asëanér" "Atheadir" "Aulendil" "Aulendil" "Aulendur" "Aulendur" "Celepwë" "Celepwë" "Ciryatan" "Círdan" "Curwë"  "Curwë"  "Eärendil" "Eärendil" "Eärendur" "Eärendur" "Elatan" "Elladan" "Elemmacil" "Elemmacil" "Elemmírë" "Elemmírë" "Elendil" "Elendil" "Elendur" "Elendur" "Elerohér" "Elrohir" "Elerondo" "Elrond" "Elerossë" "Elros" "Elerussa" "Elross" "Elemwë" "Elmo" "Elenwë" "Elenwë" "Elehildë" "Eluchíl" "Elerána" "Eluréd" "Elerína" "Elurín" "Elwë" "Elu" "Eöl" "Eöl" "Hallassë" "Hallas" "Ilmandil" "Ilmandil" "Ilmandur" "Ilmandur" "Ilnalta" "Gil-galad" "Ilwë" "Ilwë" "Ingoldo" "Ingoldo" "Ingwë" "Ingwë" "Isilvoro" "Ithilbor" "Isilwë" "Isilwë" "Istawë" "Istawë" "Laiqalassë" "Legolas" "Laurefindil" "Glorfindel" "Lenwë" "Lenwë" "Lómion" "Lómion" "Löwë" "Löwë" "Lungumá" "Mablung" "Macalaurë" "Maglor" "Mahtan" "Mahtan" "Maicalintil" "Maeglin" "Maiwë" "Maiwë" "Malalata" "Malgalad" "Malawë" "Malawë" "Mírwë" "Mírwë" "Mírëatan" "Mírdan" "Morwë" "Morwë" "Nanirondo" "Deneroth" "Nanisáro" "Denethor" "Neuro" "Dior" "Nolothinwë" "Fingolfin" "Nowë" "Nurwë" "Nurwë" "Olwë" "Orofernë" "Oropher" "Palantir" "Palantir" "Quilwë" "Quilwë" "Rúmil" "Rúmil" "Rúwë" "Rúwë" "Sairon" "Daeron" "Sárarossë" "Saeros" "Singollo" "Thingol" "Tanwë" "Tanwë" "Tarantuilë" "Thranduil" "Thalawë" "Falawë" "Thárëmírë" "Faramir" "Tháwë" "Fáwë" "Thëawë" "Fëawë" "Thindaráto" "Finrod" "Thindecáno" "Fingon" "Thinwë" "Finwë" "Tucoro" "Tuor" "Turucáno"  "Turgon" "Tyeleporno" "Celeborn" "Umbarto" "Úmarth" "Urundil" "Urundil" "Urundur" "Urundur" "Urunwë" "Urunwë" "Voromírë" "Boromir" "Voronwë" "Voronwë"
+		}
+	}
+	Female = {
+		Names = {
+		"Alalmë" "Alalmë" "Altáriel" "Galadriel" "Aldalima" "Aldalima" "Amarië" "Amarië" "Ambawen" "Amwen" "Ambríanna" "Ambrían" "Anairë" "Anairë" "Aranwen" "Arwen" "Aranelda" "Aredhel" "Arien" "Eirien" "Artanis" "Artanis" "Eärien" "Eärien" "Eärwen" "Eärwen" "Eldalótë" "Edhellos" "Elemlótë" "Elmloth" "Elemore" "Elmor" "Eleniel" "Eleniel" "Elenlótë" "Elloth" "Elenwen" "Elenwen" "Elenwinga" "Elwing" "Elyë" "Elyë" "Iliniel" "Iliniel" "Ilmaien" "Ilmaien" "Indiel" "Indiel" "Indis" "Indis" "Írissë" "Írissë" "Isilien" "Isilien" "Isilwen" "Isilwen" "Istarnië" "Istarnië" "Itarillë" "Idril" "Laurëanna" "Glorian" "Laurië" "Laurië" "Lhúthien" "Lúthien" "Mellassë" "Mellas" "Melwen" "Melwen" "Melyanna" "Melian" "Míriel" "Míriel" "Mísrellassë" "Mithrellas" "Moriel" "Moriel" "Morien" "Morien" "Morwen" "Morwen" "Náriel" "Náriel" "Nellassë" "Nellas" "Néniel" "Neniel" "Nerdanel" "Nerdanel" "Nerwen" "Nerwen" "Ninquelótë" "Nimloth" "Ninrondoiel" "Nimrodel" "Ríanna" "Rían" "Sárawen" "Saerwen" "Serindë" "Serindë" "Silwen" "Silwen" "Thanya" "Fanya" "Thëawen" "Fëawen" "Thindëúlótë" "Finduiloth" "Tindómiel" "Tinúviel" "Tyelepríanna" "Celebrían" "Tyeleprintál" "Celebrindal" "Undómiel" "Undómiel" "Vírië" "Vírië"
+		}
+	}
+	Surnames = {
+		  "Aicanaro" "Galadhon" "Aldawe" "Alwe" "Ambaner" "Amroth" "Arathinwe" "Arothir" "Orodreth" "Aulendil" "Ciryatan" "Earendil" "Elemmire" "Elemwe" "Eol" "Ilmandur" "Maiwe" "Mireatan" "Oroferne" "Ruwe" "Sararosse" "Thawe" "Fingon" "Thinwe" "Turucano" "Umarth" "Urunwe" "Palantir" "Rumil" "Daeron" "Aseanér" "Celepwe"  
+	}
+}
 LIN = {
 	Male = {
 		Names = {
@@ -264,9 +295,8 @@ WOD = {
 	}
 }
 
-###############################################################
-# FALLEN (Each unique)
-###############################################################
+
+###################################################################################################FALLEN
 HAR = {
 	Male = {
 		Names = {
@@ -297,7 +327,7 @@ KND = {
 		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag" "Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag" 
 	}
 }
-MED = {
+easterling_continent = {
 	Male = {
 		Names = {
 		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
@@ -328,9 +358,8 @@ UMB = {
 	}
 }
 
-###############################################################
-#NORTHFOLK (Rohirrim for now)
-###############################################################
+
+###################################################################################################NORTHRON
 BER = {
 	Male = {
 		Names = {
@@ -346,6 +375,7 @@ BER = {
 		"Aldoringas" "Baldoring" "Celmunding" "Eoforing" "Eogaring" "Elfgaring" "Gamlingas" "Hardingas" "Wulfing" "Tordaging" "Hamordryht" "Scurdryht" "Byrnsweord" "Heorudrync" "Sweordbora" "Wundenmae" "Bogadryht" "Abugan" "Eomunding" "Cenlafing" "Griming" "Godwarding" "Hamaing" "Wulfhelming" "Swithelming" "Harolding" "Arngriming" "Werestaning" "Cytelbearning" "Faermeglin" "Fen" "Slaighreluath" "Stolesfrydin" "Uisgeduin" 
 	}
 }
+###############################################################BARDING
 DAL = {
 	Male = {
 		Names = {
@@ -358,25 +388,124 @@ DAL = {
 		}
 	}
 	Surnames = {
-		"Aldoringas" "Baldoring" "Celmunding" "Eoforing" "Eogaring" "Elfgaring" "Gamlingas" "Hardingas" "Wulfing" "Tordaging" "Hamordryht" "Scurdryht" "Byrnsweord" "Heorudrync" "Sweordbora" "Wundenmae" "Bogadryht" "Abugan" "Eomunding" "Cenlafing" "Griming" "Godwarding" "Hamaing" "Wulfhelming" "Swithelming" "Harolding" "Arngriming" "Werestaning" "Cytelbearning" "Faermeglin" "Fen" "Slaighreluath" "Stolesfrydin" "Uisgeduin" 
+		"Aivadiurion" "Girionsson" "Wolffort" "Glenbrook" "Falkes" "Telliore" "Hill"  "Arnstyr" "Foriking" "Oparyn" "Macher" "Freyya" "Mueller" "Aesfrost"
+		#shared with DOR
+		"Porse" "Glysing" "Sprakalegg" "Sturlung" "Svinfelling" "Vatnsfirding" "Galen" "Vogelius" "Brock" "Banner" "Thott" "Botner" "Darre" "Egge" "Kusse" "Grand" "Goye" "Gron" "Friis" "Daa" "Ryning" "Reventlow" "Ulfstand" "Hack" "Juul" "Ulfeldt" "Bang" "Toll" "Vognsen" "Juel" 
 	}
 }
+###############################################################DORWINRIM
 DOR = {
 	Male = {
 		Names = {
-			"Arncytel" "Balthere" "Beorhtfrith" "Beorhthelm" "Beorhtmær" "Beorhtnoth" "Beorhtric" "Beorhtsige" "Beorhtwine" "Beorn" "Beornræd" "Beornwulf" "Burgheard" "Byrhtnoth" "Cearl" "Cenfus" "Cenræd" "Cenwulf" "Ceolwulf" "Cerdic" "Copsige" "Cuthberht" "Cuthræd" "Cynehelm" "Cynewulf" "Cytelbearn" "Eadberht" "Eadfrith" "Eadgar" "Eadmund" "Eadmær" "Eadric" "Eadræd" "Eadsige" "Eadulf" "Eadweald" "Eadweard" "Eadwig" "Eadwine" "Eadwulf" "Ealdhun" "Ealdmund" "Ealdræd" "Ealdwine" "Ealdwulf" "Eanberht" "Eanfrith" "Eanhere" "Eardwulf" "Eastmund" "Ecgberht" "Ecgfrith" "Gamall" "Godwine" "Gospatric" "Guthfrith" "Guthmund" "Gyrth" "Hacon" "Harold" "Heahberht" "Hereberht" "Hereweald" "Hereweard" "Hlothere" "Hrodberht" "Inwær" "Leofheah" "Leofhelm" "Leofric" "Leofweald" "Leofwine" "Maccus" "Morcar" "Mærleswegn" "Offa" "Onlaf" "Ordgar" "Oscytel" "Oshere" "Osmund" "Osric" "Osræd" "Osulf" "Osweald" "Oswine" "Oswulf" "Petre" "Rædwulf" "Rægenweald" "Scule" "Sigeberht" "Sigehelm" "Sigeric" "Sigeræd" "Sighere" "Siweard" "Stigand" "Swegn" "Swithelm" "Swithræd" "Swæfræd" "Sæbert" "Sælræd" "Sæweald" "Sæxbald" "Sæxræd" "Thoræd" "Thurcytel" "Thurfrith" "Tostig" "Uhtræd" "Ulf" "Ulfcytel" "Waltheof" "Werestan" "Wiglaf" "Wihtræd" "Wistan" "Wulf" "Wulfgar" "Wulfgeat" "Wulfhelm" "Wulfhere" "Wulfmær" "Wulfnoth" "Wulfstan" "Ælfgar" "Ælfmær" "Ælfnoth" "Ælfric" "Ælfræd" "Ælfsige" "Ælfstan" "Ælfwald" "Ælfweard" "Ælfwig" "Ælfwine" "Ælle" "Æthelbald" "Æthelberht" "Æthelfrith" "Æthelhere" "Æthelmær" "Æthelric" "Æthelræd" "Æthelsige" "Æthelstan" "Æthelweald" "Æthelweard" "Æthelwine" "Æthelwold" "Æthelwulf" "Eormenred" "Eorcenberht" "Eormenric" "Eadbald" "Rædwald"
+			"Alwis" "Algar" "Ansovald" "Arnken" "Arnwin" "Arving" "Asabian" "Atagavia" "Athala" "Athalhere" "Athalward" "Athalwin" "Athanagild" "Athanaric" "Authari" "Augimund" "Baduila" "Bain" "Bard" "Bertram" "Biarn" "Bisinus" "Bladorthin" "Brathalwin" "Biravia" "Braegla" "Brand" "Brander" "Brego" "Breor" "Broehir" "Chararic" "Charibert" "Childebert" "Cormac" "Delling" "Dieraglir" "Dudannis" "Edwodyn" "Einar" "Eldacar" "Eoder" "Eodoric" "Ericavia" "Erland" "Eroder" "Euric" "Farman" "Fornagarth" "Frani" "Freagar" "Freahar" "Froedhir" "Forthwin" "Gangleren" "Gararic" "Garivald" "Gartila" "Girion" "Godomar" "Grimeric" "Gunderic" "Gus" "Gustaw" "Gustadolph" "Haed" "Hakon" "Hallam" "Halstein" "Halward" "Hamar" "Harald" "Harfast" "Hargast" "Harken" "Harkind" "Harward" "Hawin" "Herion" "Hengon" "Holden" "Holgeir" "Horsa" "Hross" "Ingar" "Ingemar" "Inwar" "Irkenwin" "Ivor" "Jeshan" "Jiord" "Kylroi" "Kynoden" "Landroi" "Lynodiv" "Lindenkind" "Lindor" "Lunt" "Marhere" "Marhold" "Marhwin" "Munderic" "Odagavia" "Odoacer" "Odovacer" "Odell" "Orduclax" "Priuth" "Raendoric" "Ragnachar" "Rathar" "Ranulf" "Ratahis" "Reccared" "Regna" "Ric" "Ricchar" "Roald" "Roland" "Rutleric" "Scyld" "Serenoa" "Shagelda" "Sichar" "Sigeric" "Silvio" "Sigibert" "Sigismund" "Sigiswulf" "Sigurd" "Sigurand" "Skaldir" "Stig" "Stormeriv" "Sutheric" "Swain" "Symon" "Tate" "Thain" "Thalas" "Thane" "Theoderic" "Theudebal" "Theoren" "Thiudakind" "Thiudamir" "Thorald" "Thorburn" "Thrain" "Thror" "Tor" "Tore" "Torwald" "Uirdriks" "Valacar" "Valamir" "Valemar" "Vandergast" "Vanderkind" "Vandermir" "Vandreren" "Vidugavia" "Vidugild" "Viduhar" "Vidureik" "Vidukind" "Vidumarh" "Vidusith" "Vidung" "Viloric" "Vinitharya" "Vogir" "Vogirion" "Widin" "Wuilaric" "Vogirion" "Widin" "Wuilaric"
 		}
 	}
 	Female = {
 		Names = {
-			"Agatha" "Balthild" "Beorhtflæd" "Beorhtgifu" "Beorhtgyth" "Beorhtwaru" "Beorhtwynn" "Beornflæd" "Beorngyth" "Blæja" "Burgflæd" "Ceolflæd" "Cristina" "Cuthburg" "Cwenburg" "Cyneburg" "Cynegyth" "Cynehild" "Cyneswith" "Cynethryth" "Eadburg" "Eadflæd" "Eadgifu" "Eadgyth" "Eadhburh" "Eadhild" "Ealdgyth" "Ealhflæd" "Ealhswith" "Eanswith" "Ecgfrida" "Ecgwyn" "Godgifu" "Gunhilda" "Gytha" "Helga" "Heregyth" "Hereswith" "Hextilda" "Hungifu" "Judith" "Leofflæd" "Leofgifu" "Leofrun" "Leofwaru" "Leofwynn" "Margaret" "Maud" "Mildrith" "Octreda" "Sifflæd" "Sigrid" "Sæthryth" "Wulfflæd" "Wulfgifu" "Wulfgyth" "Wulfhild" "Wulfrun" "Wulfthryth" "Wulfwaru" "Wulfwynn" "Wynnflæd" "Wærburg" "Æbba" "Ælfflæd" "Ælfgifu" "Ælfgyth" "Ælflæda" "Ælfrida" "Ælfswith" "Ælfthryth" "Ælfwynn" "Æthelburg" "Æthelflæd" "Æthelgifu" "Æthelhild" "Æthelræda" "Æthelswith" "Æthelthryth" "Æthelburh" "Seaxburh" "Wihtburh"
+			"Adela" "Aldeniphel" "Aelfgifu" "Amalasuintha" "Amalsuntha" "Ariberga" "Aregisel" "Arnegisel" "Arva" "Asta" "Astrid" "Athalsintha" "Beawyn" "Berga" "Bergholda" "Berglind" "Bergwin" "Brenda" "Brunhilde" "Cordelia" "Cornelia" "Edith" "Erika" "Elfreda" "Erminga" "Dagmira" "Dagna" "Dystra" "Freowyn" "Frederica" "Folcwin" "Frideswide" "Gerda" "Gurdrun" "Gunnhild" "Gerlind" "Harebell" "Helewidis" "Hilda" "Hildegardis" "Helga" "Hulda" "Inga" "Ingaberg" "Ingaborg" "Inge" "Inger" "Ingrid" "Kelai" "Kelda" "Kolona" "Liw" "Marhmavi" "Marhsintha" "Mathilda" "Raganhildis" "Rosmunda" "Raghild" "Ronalda" "Rolande" "Signy" "Sigrid" "Sigrun" "Sisewyn" "Solweig" "Sulwyn" "Sunngifu" "Sunnegisil" "Swanahilda" "Tardonu" "Thora" "Thorberta" "Thordis" "Thraear" "Vidugerd" "Vidumavi" "Viduquen" "Vidusintha" "Vidugild" "Vinimarvi" "Walda" "Widonu" "Woedwyn" "Yvonen"
 		}
 	}
 	Surnames = {
-		"Aldoringas" "Baldoring" "Celmunding" "Eoforing" "Eogaring" "Elfgaring" "Gamlingas" "Hardingas" "Wulfing" "Tordaging" "Hamordryht" "Scurdryht" "Byrnsweord" "Heorudrync" "Sweordbora" "Wundenmae" "Bogadryht" "Abugan" "Eomunding" "Cenlafing" "Griming" "Godwarding" "Hamaing" "Wulfhelming" "Swithelming" "Harolding" "Arngriming" "Werestaning" "Cytelbearning" "Faermeglin" "Fen" "Slaighreluath" "Stolesfrydin" "Uisgeduin" 
+		"Herian" "Ilasarian" "Capariana" "Garmeniana" "Ilian" "Maleniana" "Raudbarad" "Steining" "Aldian" "Variana" "Logian" "Barvadinian" "Aicathin" "Jauffre" "Jauffring" "Blorchid" "Tarkov"
+		#shared with DAL
+		"Porse" "Glysing" "Sprakalegg" "Sturlung" "Svinfelling" "Vatnsfirding" "Galen" "Vogelius" "Brock" "Banner" "Thott" "Botner" "Darre" "Egge" "Kusse" "Grand" "Goye" "Gron" "Friis" "Daa" "Ryning" "Reventlow" "Ulfstand" "Hack" "Juul" "Ulfeldt" "Bang" "Toll" "Vognsen" "Juel" 
 	}
 }
-MIR = {
+RUS = {
+	Male = {
+		Names = {
+			"Alwis" "Algar" "Ansovald" "Arnken" "Arnwin" "Arving" "Asabian" "Atagavia" "Athala" "Athalhere" "Athalward" "Athalwin" "Athanagild" "Athanaric" "Authari" "Augimund" "Baduila" "Bain" "Bard" "Bertram" "Biarn" "Bisinus" "Bladorthin" "Brathalwin" "Biravia" "Braegla" "Brand" "Brander" "Brego" "Breor" "Broehir" "Chararic" "Charibert" "Childebert" "Cormac" "Delling" "Dieraglir" "Dudannis" "Edwodyn" "Einar" "Eldacar" "Eoder" "Eodoric" "Ericavia" "Erland" "Eroder" "Euric" "Farman" "Fornagarth" "Frani" "Freagar" "Freahar" "Froedhir" "Forthwin" "Gangleren" "Gararic" "Garivald" "Gartila" "Girion" "Godomar" "Grimeric" "Gunderic" "Gus" "Gustaw" "Gustadolph" "Haed" "Hakon" "Hallam" "Halstein" "Halward" "Hamar" "Harald" "Harfast" "Hargast" "Harken" "Harkind" "Harward" "Hawin" "Herion" "Hengon" "Holden" "Holgeir" "Horsa" "Hross" "Ingar" "Ingemar" "Inwar" "Irkenwin" "Ivor" "Jeshan" "Jiord" "Kylroi" "Kynoden" "Landroi" "Lynodiv" "Lindenkind" "Lindor" "Lunt" "Marhere" "Marhold" "Marhwin" "Munderic" "Odagavia" "Odoacer" "Odovacer" "Odell" "Orduclax" "Priuth" "Raendoric" "Ragnachar" "Rathar" "Ranulf" "Ratahis" "Reccared" "Regna" "Ric" "Ricchar" "Roald" "Roland" "Rutleric" "Scyld" "Serenoa" "Shagelda" "Sichar" "Sigeric" "Silvio" "Sigibert" "Sigismund" "Sigiswulf" "Sigurd" "Sigurand" "Skaldir" "Stig" "Stormeriv" "Sutheric" "Swain" "Symon" "Tate" "Thain" "Thalas" "Thane" "Theoderic" "Theudebal" "Theoren" "Thiudakind" "Thiudamir" "Thorald" "Thorburn" "Thrain" "Thror" "Tor" "Tore" "Torwald" "Uirdriks" "Valacar" "Valamir" "Valemar" "Vandergast" "Vanderkind" "Vandermir" "Vandreren" "Vidugavia" "Vidugild" "Viduhar" "Vidureik" "Vidukind" "Vidumarh" "Vidusith" "Vidung" "Viloric" "Vinitharya" "Vogir" "Vogirion" "Widin" "Wuilaric" "Vogirion" "Widin" "Wuilaric"
+		}
+	}
+	Female = {
+		Names = {
+			"Adela" "Aldeniphel" "Aelfgifu" "Amalasuintha" "Amalsuntha" "Ariberga" "Aregisel" "Arnegisel" "Arva" "Asta" "Astrid" "Athalsintha" "Beawyn" "Berga" "Bergholda" "Berglind" "Bergwin" "Brenda" "Brunhilde" "Cordelia" "Cornelia" "Edith" "Erika" "Elfreda" "Erminga" "Dagmira" "Dagna" "Dystra" "Freowyn" "Frederica" "Folcwin" "Frideswide" "Gerda" "Gurdrun" "Gunnhild" "Gerlind" "Harebell" "Helewidis" "Hilda" "Hildegardis" "Helga" "Hulda" "Inga" "Ingaberg" "Ingaborg" "Inge" "Inger" "Ingrid" "Kelai" "Kelda" "Kolona" "Liw" "Marhmavi" "Marhsintha" "Mathilda" "Raganhildis" "Rosmunda" "Raghild" "Ronalda" "Rolande" "Signy" "Sigrid" "Sigrun" "Sisewyn" "Solweig" "Sulwyn" "Sunngifu" "Sunnegisil" "Swanahilda" "Tardonu" "Thora" "Thorberta" "Thordis" "Thraear" "Vidugerd" "Vidumavi" "Viduquen" "Vidusintha" "Vidugild" "Vinimarvi" "Walda" "Widonu" "Woedwyn" "Yvonen"
+		}
+	}
+	Surnames = {
+		"Herian" "Ilasarian" "Capariana" "Garmeniana" "Ilian" "Maleniana" "Raudbarad" "Steining" "Aldian" "Variana" "Logian" "Barvadinian" "Aicathin" "Jauffre" "Jauffring" "Blorchid" "Tarkov"
+		#shared with DAL
+		"Porse" "Glysing" "Sprakalegg" "Sturlung" "Svinfelling" "Vatnsfirding" "Galen" "Vogelius" "Brock" "Banner" "Thott" "Botner" "Darre" "Egge" "Kusse" "Grand" "Goye" "Gron" "Friis" "Daa" "Ryning" "Reventlow" "Ulfstand" "Hack" "Juul" "Ulfeldt" "Bang" "Toll" "Vognsen" "Juel" 
+	}
+}
+###############################################################RHOVANORIM
+SUN = {
+	Male = {
+		Names = {
+			"Adelfonso" "Adelgaster" "Agila" "Airmanagildo" "Alaricho" "Alatheo" "Aloito" "Amalaricho" "Amalmondo" "Ambroz" "Aoricho" "Ardo" "Arias" "Assur" "Atawulfo" "Athanagildo" "Athanaricho" "Aurelio" "Bego" "Bera" "Berengario" "Diaco" "Egica" "Ermengar" "Erwigio" "Euricho" "Fafila" "Fredol" "Friedenando" "Friednand" "Fruella" "GarC_i" "Gaton" "Gauzberto" "Geila" "Gesalecho" "GonC_alo" "Gundemar" "Guttier" "Johan" "Khindaswintho" "Khintila" "Leovigildo" "Liuva" "Liuvericho" "Lucidio" "Lupo" "Madrubal" "Matheo" "Mauregato" "Miron" "Monnio" "Nunno" "Obada" "Oddilon" "Odoario" "Oliba" "Olmondo" "Oppas" "Oersted" "Ordonno" "Pelagio" "Petro" "Radulfo" "Ranimiro" "Rekkaredo" "Rekkeswintho" "Ricimero" "Riculfo" "Rocesthes" "Rodericho" "Rostan" "Sans" "Savarico" "Silo" "Sisebuto" "Sisenando" "Streibough" "Suinthila" "Suneario" "Suniefredo" "Tello" "Theodefredo" "Theodemiro" "Theodoricho" "Theudigislo" "Theudis" "Thorismondo" "Tulga" "Veremondo" "Wifredo" "Wimarano" "Witiza" "Wittericho"
+		}
+	}
+	Female = {
+		Names = {
+			"Adelgundis" "Adosinda" "Agnes" "Alethea" "Aragonte" "Argilo" "Ariberga" "Ava" "Baddo" "Brunechildis" "Cixillo" "Creusa" "Egilona" "Eldonza" "Elduara" "Elvira" "Ercheswintha" "Ermeneberga" "Ermengardis" "Ermenierdis" "Ermenisinda" "Fafinia" "Flamula" "Froiliuva" "Fronilde" "Gado" "Gaudiosa" "Gonterote" "Gothina" "Gudilona" "Iberia" "Ingundis" "Leodegundis" "Liuvigothona" "Menenda" "Monnia" "Monniadomna" "Onecca" "Paterna" "Patruina" "Ralindis" "Riciberga" "Ricilo" "Sibilia" "Sisenanda" "Theodora" "Urraca" "Winidilda"
+		}
+	}
+	Surnames = {		
+		"Erwigiana" "Kindasuinthiana" "Athanagildid" "Athaulf" "Sigireik" "Gaisalaik" "Thiudis" "Liwa" "Guntimer" "Swinthila" "Tulga" "Hairwig" "Witiza" "Rotreik" "Lewigild" "Walja" "Witireik" "Sisibaud" "Kindila" "Wanbs" "Storr" "Borg" "Kraka" "Mikli" "Smidr" "Moring" "Gardske" "Trolli" "Kven" "Toki" "Harde" "Eyjing" "Orming" "Godi" "Austmadr" "Havi" "Rakki" "Skrauti" "Snarfari" "Strangi" "Snjalli" "Surr" "Skald" "Viss" "Trymr" "Tvari" "Olfuss" "Orn" "Hviti" "Sterki" "Audgi" "Raudi" "Spaki" "Svarti" "Rammi" "Mjovi" "Riki" "Lambi" "Skarfr" "Skal" "Sleggja" "Smjor" "Stjarna" "Strugr" "Salendingr" "Surr" "Salingr" "Trausti" "Vear" "Vamuli" "Vani" "Tistill" "Tjofi" "Tynning" "Eirikson" "Sognsdal" "Gunarrson" "Firdi" 
+	}
+}
+YST = {
+	Male = {
+		Names = {
+			"Adelfonso" "Adelgaster" "Agila" "Airmanagildo" "Alaricho" "Alatheo" "Aloito" "Amalaricho" "Amalmondo" "Ambroz" "Aoricho" "Ardo" "Arias" "Assur" "Atawulfo" "Athanagildo" "Athanaricho" "Aurelio" "Bego" "Bera" "Berengario" "Diaco" "Egica" "Ermengar" "Erwigio" "Euricho" "Fafila" "Fredol" "Friedenando" "Friednand" "Fruella" "GarC_i" "Gaton" "Gauzberto" "Geila" "Gesalecho" "GonC_alo" "Gundemar" "Guttier" "Johan" "Khindaswintho" "Khintila" "Leovigildo" "Liuva" "Liuvericho" "Lucidio" "Lupo" "Madrubal" "Matheo" "Mauregato" "Miron" "Monnio" "Nunno" "Obada" "Oddilon" "Odoario" "Oliba" "Olmondo" "Oppas" "Oersted" "Ordonno" "Pelagio" "Petro" "Radulfo" "Ranimiro" "Rekkaredo" "Rekkeswintho" "Ricimero" "Riculfo" "Rocesthes" "Rodericho" "Rostan" "Sans" "Savarico" "Silo" "Sisebuto" "Sisenando" "Streibough" "Suinthila" "Suneario" "Suniefredo" "Tello" "Theodefredo" "Theodemiro" "Theodoricho" "Theudigislo" "Theudis" "Thorismondo" "Tulga" "Veremondo" "Wifredo" "Wimarano" "Witiza" "Wittericho"
+		}
+	}
+	Female = {
+		Names = {
+			"Adelgundis" "Adosinda" "Agnes" "Alethea" "Aragonte" "Argilo" "Ariberga" "Ava" "Baddo" "Brunechildis" "Cixillo" "Creusa" "Egilona" "Eldonza" "Elduara" "Elvira" "Ercheswintha" "Ermeneberga" "Ermengardis" "Ermenierdis" "Ermenisinda" "Fafinia" "Flamula" "Froiliuva" "Fronilde" "Gado" "Gaudiosa" "Gonterote" "Gothina" "Gudilona" "Iberia" "Ingundis" "Leodegundis" "Liuvigothona" "Menenda" "Monnia" "Monniadomna" "Onecca" "Paterna" "Patruina" "Ralindis" "Riciberga" "Ricilo" "Sibilia" "Sisenanda" "Theodora" "Urraca" "Winidilda"
+		}
+	}
+	Surnames = {		
+		"Erwigiana" "Kindasuinthiana" "Athanagildid" "Athaulf" "Sigireik" "Gaisalaik" "Thiudis" "Liwa" "Guntimer" "Swinthila" "Tulga" "Hairwig" "Witiza" "Rotreik" "Lewigild" "Walja" "Witireik" "Sisibaud" "Kindila" "Wanbs" "Storr" "Borg" "Kraka" "Mikli" "Smidr" "Moring" "Gardske" "Trolli" "Kven" "Toki" "Harde" "Eyjing" "Orming" "Godi" "Austmadr" "Havi" "Rakki" "Skrauti" "Snarfari" "Strangi" "Snjalli" "Surr" "Skald" "Viss" "Trymr" "Tvari" "Olfuss" "Orn" "Hviti" "Sterki" "Audgi" "Raudi" "Spaki" "Svarti" "Rammi" "Mjovi" "Riki" "Lambi" "Skarfr" "Skal" "Sleggja" "Smjor" "Stjarna" "Strugr" "Salendingr" "Surr" "Salingr" "Trausti" "Vear" "Vamuli" "Vani" "Tistill" "Tjofi" "Tynning" "Eirikson" "Sognsdal" "Gunarrson" "Firdi" 
+	}
+}
+RIN = {
+	Male = {
+		Names = {
+			"Adelfonso" "Adelgaster" "Agila" "Airmanagildo" "Alaricho" "Alatheo" "Aloito" "Amalaricho" "Amalmondo" "Ambroz" "Aoricho" "Ardo" "Arias" "Assur" "Atawulfo" "Athanagildo" "Athanaricho" "Aurelio" "Bego" "Bera" "Berengario" "Diaco" "Egica" "Ermengar" "Erwigio" "Euricho" "Fafila" "Fredol" "Friedenando" "Friednand" "Fruella" "GarC_i" "Gaton" "Gauzberto" "Geila" "Gesalecho" "GonC_alo" "Gundemar" "Guttier" "Johan" "Khindaswintho" "Khintila" "Leovigildo" "Liuva" "Liuvericho" "Lucidio" "Lupo" "Madrubal" "Matheo" "Mauregato" "Miron" "Monnio" "Nunno" "Obada" "Oddilon" "Odoario" "Oliba" "Olmondo" "Oppas" "Oersted" "Ordonno" "Pelagio" "Petro" "Radulfo" "Ranimiro" "Rekkaredo" "Rekkeswintho" "Ricimero" "Riculfo" "Rocesthes" "Rodericho" "Rostan" "Sans" "Savarico" "Silo" "Sisebuto" "Sisenando" "Streibough" "Suinthila" "Suneario" "Suniefredo" "Tello" "Theodefredo" "Theodemiro" "Theodoricho" "Theudigislo" "Theudis" "Thorismondo" "Tulga" "Veremondo" "Wifredo" "Wimarano" "Witiza" "Wittericho"
+		}
+	}
+	Female = {
+		Names = {
+			"Adelgundis" "Adosinda" "Agnes" "Alethea" "Aragonte" "Argilo" "Ariberga" "Ava" "Baddo" "Brunechildis" "Cixillo" "Creusa" "Egilona" "Eldonza" "Elduara" "Elvira" "Ercheswintha" "Ermeneberga" "Ermengardis" "Ermenierdis" "Ermenisinda" "Fafinia" "Flamula" "Froiliuva" "Fronilde" "Gado" "Gaudiosa" "Gonterote" "Gothina" "Gudilona" "Iberia" "Ingundis" "Leodegundis" "Liuvigothona" "Menenda" "Monnia" "Monniadomna" "Onecca" "Paterna" "Patruina" "Ralindis" "Riciberga" "Ricilo" "Sibilia" "Sisenanda" "Theodora" "Urraca" "Winidilda"
+		}
+	}
+	Surnames = {		
+		"Erwigiana" "Kindasuinthiana" "Athanagildid" "Athaulf" "Sigireik" "Gaisalaik" "Thiudis" "Liwa" "Guntimer" "Swinthila" "Tulga" "Hairwig" "Witiza" "Rotreik" "Lewigild" "Walja" "Witireik" "Sisibaud" "Kindila" "Wanbs" "Storr" "Borg" "Kraka" "Mikli" "Smidr" "Moring" "Gardske" "Trolli" "Kven" "Toki" "Harde" "Eyjing" "Orming" "Godi" "Austmadr" "Havi" "Rakki" "Skrauti" "Snarfari" "Strangi" "Snjalli" "Surr" "Skald" "Viss" "Trymr" "Tvari" "Olfuss" "Orn" "Hviti" "Sterki" "Audgi" "Raudi" "Spaki" "Svarti" "Rammi" "Mjovi" "Riki" "Lambi" "Skarfr" "Skal" "Sleggja" "Smjor" "Stjarna" "Strugr" "Salendingr" "Surr" "Salingr" "Trausti" "Vear" "Vamuli" "Vani" "Tistill" "Tjofi" "Tynning" "Eirikson" "Sognsdal" "Gunarrson" "Firdi" 
+	}
+}
+HEH = {
+	Male = {
+		Names = {
+			"Adelfonso" "Adelgaster" "Agila" "Airmanagildo" "Alaricho" "Alatheo" "Aloito" "Amalaricho" "Amalmondo" "Ambroz" "Aoricho" "Ardo" "Arias" "Assur" "Atawulfo" "Athanagildo" "Athanaricho" "Aurelio" "Bego" "Bera" "Berengario" "Diaco" "Egica" "Ermengar" "Erwigio" "Euricho" "Fafila" "Fredol" "Friedenando" "Friednand" "Fruella" "GarC_i" "Gaton" "Gauzberto" "Geila" "Gesalecho" "GonC_alo" "Gundemar" "Guttier" "Johan" "Khindaswintho" "Khintila" "Leovigildo" "Liuva" "Liuvericho" "Lucidio" "Lupo" "Madrubal" "Matheo" "Mauregato" "Miron" "Monnio" "Nunno" "Obada" "Oddilon" "Odoario" "Oliba" "Olmondo" "Oppas" "Oersted" "Ordonno" "Pelagio" "Petro" "Radulfo" "Ranimiro" "Rekkaredo" "Rekkeswintho" "Ricimero" "Riculfo" "Rocesthes" "Rodericho" "Rostan" "Sans" "Savarico" "Silo" "Sisebuto" "Sisenando" "Streibough" "Suinthila" "Suneario" "Suniefredo" "Tello" "Theodefredo" "Theodemiro" "Theodoricho" "Theudigislo" "Theudis" "Thorismondo" "Tulga" "Veremondo" "Wifredo" "Wimarano" "Witiza" "Wittericho"
+		}
+	}
+	Female = {
+		Names = {
+			"Adelgundis" "Adosinda" "Agnes" "Alethea" "Aragonte" "Argilo" "Ariberga" "Ava" "Baddo" "Brunechildis" "Cixillo" "Creusa" "Egilona" "Eldonza" "Elduara" "Elvira" "Ercheswintha" "Ermeneberga" "Ermengardis" "Ermenierdis" "Ermenisinda" "Fafinia" "Flamula" "Froiliuva" "Fronilde" "Gado" "Gaudiosa" "Gonterote" "Gothina" "Gudilona" "Iberia" "Ingundis" "Leodegundis" "Liuvigothona" "Menenda" "Monnia" "Monniadomna" "Onecca" "Paterna" "Patruina" "Ralindis" "Riciberga" "Ricilo" "Sibilia" "Sisenanda" "Theodora" "Urraca" "Winidilda"
+		}
+	}
+	Surnames = {		
+		"Erwigiana" "Kindasuinthiana" "Athanagildid" "Athaulf" "Sigireik" "Gaisalaik" "Thiudis" "Liwa" "Guntimer" "Swinthila" "Tulga" "Hairwig" "Witiza" "Rotreik" "Lewigild" "Walja" "Witireik" "Sisibaud" "Kindila" "Wanbs" "Storr" "Borg" "Kraka" "Mikli" "Smidr" "Moring" "Gardske" "Trolli" "Kven" "Toki" "Harde" "Eyjing" "Orming" "Godi" "Austmadr" "Havi" "Rakki" "Skrauti" "Snarfari" "Strangi" "Snjalli" "Surr" "Skald" "Viss" "Trymr" "Tvari" "Olfuss" "Orn" "Hviti" "Sterki" "Audgi" "Raudi" "Spaki" "Svarti" "Rammi" "Mjovi" "Riki" "Lambi" "Skarfr" "Skal" "Sleggja" "Smjor" "Stjarna" "Strugr" "Salendingr" "Surr" "Salingr" "Trausti" "Vear" "Vamuli" "Vani" "Tistill" "Tjofi" "Tynning" "Eirikson" "Sognsdal" "Gunarrson" "Firdi" 
+	}
+}
+SEK = {
+	Male = {
+		Names = {
+			"Adelfonso" "Adelgaster" "Agila" "Airmanagildo" "Alaricho" "Alatheo" "Aloito" "Amalaricho" "Amalmondo" "Ambroz" "Aoricho" "Ardo" "Arias" "Assur" "Atawulfo" "Athanagildo" "Athanaricho" "Aurelio" "Bego" "Bera" "Berengario" "Diaco" "Egica" "Ermengar" "Erwigio" "Euricho" "Fafila" "Fredol" "Friedenando" "Friednand" "Fruella" "GarC_i" "Gaton" "Gauzberto" "Geila" "Gesalecho" "GonC_alo" "Gundemar" "Guttier" "Johan" "Khindaswintho" "Khintila" "Leovigildo" "Liuva" "Liuvericho" "Lucidio" "Lupo" "Madrubal" "Matheo" "Mauregato" "Miron" "Monnio" "Nunno" "Obada" "Oddilon" "Odoario" "Oliba" "Olmondo" "Oppas" "Oersted" "Ordonno" "Pelagio" "Petro" "Radulfo" "Ranimiro" "Rekkaredo" "Rekkeswintho" "Ricimero" "Riculfo" "Rocesthes" "Rodericho" "Rostan" "Sans" "Savarico" "Silo" "Sisebuto" "Sisenando" "Streibough" "Suinthila" "Suneario" "Suniefredo" "Tello" "Theodefredo" "Theodemiro" "Theodoricho" "Theudigislo" "Theudis" "Thorismondo" "Tulga" "Veremondo" "Wifredo" "Wimarano" "Witiza" "Wittericho"
+		}
+	}
+	Female = {
+		Names = {
+			"Adelgundis" "Adosinda" "Agnes" "Alethea" "Aragonte" "Argilo" "Ariberga" "Ava" "Baddo" "Brunechildis" "Cixillo" "Creusa" "Egilona" "Eldonza" "Elduara" "Elvira" "Ercheswintha" "Ermeneberga" "Ermengardis" "Ermenierdis" "Ermenisinda" "Fafinia" "Flamula" "Froiliuva" "Fronilde" "Gado" "Gaudiosa" "Gonterote" "Gothina" "Gudilona" "Iberia" "Ingundis" "Leodegundis" "Liuvigothona" "Menenda" "Monnia" "Monniadomna" "Onecca" "Paterna" "Patruina" "Ralindis" "Riciberga" "Ricilo" "Sibilia" "Sisenanda" "Theodora" "Urraca" "Winidilda"
+		}
+	}
+	Surnames = {		
+		"Erwigiana" "Kindasuinthiana" "Athanagildid" "Athaulf" "Sigireik" "Gaisalaik" "Thiudis" "Liwa" "Guntimer" "Swinthila" "Tulga" "Hairwig" "Witiza" "Rotreik" "Lewigild" "Walja" "Witireik" "Sisibaud" "Kindila" "Wanbs" "Storr" "Borg" "Kraka" "Mikli" "Smidr" "Moring" "Gardske" "Trolli" "Kven" "Toki" "Harde" "Eyjing" "Orming" "Godi" "Austmadr" "Havi" "Rakki" "Skrauti" "Snarfari" "Strangi" "Snjalli" "Surr" "Skald" "Viss" "Trymr" "Tvari" "Olfuss" "Orn" "Hviti" "Sterki" "Audgi" "Raudi" "Spaki" "Svarti" "Rammi" "Mjovi" "Riki" "Lambi" "Skarfr" "Skal" "Sleggja" "Smjor" "Stjarna" "Strugr" "Salendingr" "Surr" "Salingr" "Trausti" "Vear" "Vamuli" "Vani" "Tistill" "Tjofi" "Tynning" "Eirikson" "Sognsdal" "Gunarrson" "Firdi" 
+	}
+}
+###############################################################ROHIRRIM
+ROH = {
 	Male = {
 		Names = {
 			"Arncytel" "Balthere" "Beorhtfrith" "Beorhthelm" "Beorhtmær" "Beorhtnoth" "Beorhtric" "Beorhtsige" "Beorhtwine" "Beorn" "Beornræd" "Beornwulf" "Burgheard" "Byrhtnoth" "Cearl" "Cenfus" "Cenræd" "Cenwulf" "Ceolwulf" "Cerdic" "Copsige" "Cuthberht" "Cuthræd" "Cynehelm" "Cynewulf" "Cytelbearn" "Eadberht" "Eadfrith" "Eadgar" "Eadmund" "Eadmær" "Eadric" "Eadræd" "Eadsige" "Eadulf" "Eadweald" "Eadweard" "Eadwig" "Eadwine" "Eadwulf" "Ealdhun" "Ealdmund" "Ealdræd" "Ealdwine" "Ealdwulf" "Eanberht" "Eanfrith" "Eanhere" "Eardwulf" "Eastmund" "Ecgberht" "Ecgfrith" "Gamall" "Godwine" "Gospatric" "Guthfrith" "Guthmund" "Gyrth" "Hacon" "Harold" "Heahberht" "Hereberht" "Hereweald" "Hereweard" "Hlothere" "Hrodberht" "Inwær" "Leofheah" "Leofhelm" "Leofric" "Leofweald" "Leofwine" "Maccus" "Morcar" "Mærleswegn" "Offa" "Onlaf" "Ordgar" "Oscytel" "Oshere" "Osmund" "Osric" "Osræd" "Osulf" "Osweald" "Oswine" "Oswulf" "Petre" "Rædwulf" "Rægenweald" "Scule" "Sigeberht" "Sigehelm" "Sigeric" "Sigeræd" "Sighere" "Siweard" "Stigand" "Swegn" "Swithelm" "Swithræd" "Swæfræd" "Sæbert" "Sælræd" "Sæweald" "Sæxbald" "Sæxræd" "Thoræd" "Thurcytel" "Thurfrith" "Tostig" "Uhtræd" "Ulf" "Ulfcytel" "Waltheof" "Werestan" "Wiglaf" "Wihtræd" "Wistan" "Wulf" "Wulfgar" "Wulfgeat" "Wulfhelm" "Wulfhere" "Wulfmær" "Wulfnoth" "Wulfstan" "Ælfgar" "Ælfmær" "Ælfnoth" "Ælfric" "Ælfræd" "Ælfsige" "Ælfstan" "Ælfwald" "Ælfweard" "Ælfwig" "Ælfwine" "Ælle" "Æthelbald" "Æthelberht" "Æthelfrith" "Æthelhere" "Æthelmær" "Æthelric" "Æthelræd" "Æthelsige" "Æthelstan" "Æthelweald" "Æthelweard" "Æthelwine" "Æthelwold" "Æthelwulf" "Eormenred" "Eorcenberht" "Eormenric" "Eadbald" "Rædwald"
@@ -392,9 +521,8 @@ MIR = {
 	}
 }
 
-###############################################################
-# ORCS
-###############################################################
+
+###################################################################################################ORCS
 DAG = { #Same as MOR for now
 	Male = {
 		Names = {
@@ -492,77 +620,39 @@ MOR = {
 		"Búrz" "Lugûl" "Muzlúk" "Shaglúk" "Gazmog" "Gorbug" "Lûnlúk" "Nagdush" "Nagrad" "Gazûl" "Lagrad" "Muznag" "Litash" "Gorgûn" "Radhúr" "Shaglur" "Nûzu" "Muzdush" "Mazog" "Lûgnak" "Rûkdûg" "Shagluf" "Muzrat" "Boldog" "Gorgol" "Orcobal" "Othrod" "Balcmeg" "Maugor" "Nagrad" "Zagrad" "Shaglúk" "Muzlúk" "Molûg" "Gordmúl" 
 	}
 }
-###############################################################
-# ODDITIES (Druedain, Ents, Hobbits)
-###############################################################
-DAI = {
+WND = { #same as MOR for now
 	Male = {
 		Names = {
-			"Abrînu" "Abûmi" "Adêr" "Adrîm" "Aghan" "Âgu" "Ambûghi" "Andrû" "Âri" "Awâb" "Baghâd" "Bâmu" "Bôr" "Brâghor" "Brâmbu" "Brâwâ" "Brûdor" "Brûnu" "Bûri" "Dagâr" "Daghân" "Dêrdru" "Dî" "Dragôr" "Drûnu" "Êrghân" "Gâbu" "Gâr" "Gâzu" "Ghâmi" "Ghân" "Ghâwa" "Ghêrdu" "Ghôrdu" "Ghûm" "Gîmi" "Grâtam" "Grî" "Grîga" "Grûghu" "Gûbi" "Gughân" "Gûmi" "Gûza" "Îbu" "Izûn" "MadrÂn" "Môrghu" "Naghân" "Ogû" "Ôm" "Ordrûg" "Ôrgrin" "Pôn" "Râmi" "Rûbêr" "Rûghi" "Saghân" "Tîghân" "Wâ" "Waghân" "Zîghi" "Zûn"
+			"Azog" "Bolg" "Búrz" "Fimbul" "Gazbag" "Gazduf" "Gazdush" "Gazhúr" "Gazgash" "Gazbug" "Gazhorn" "Gazmog" "Gazmuz" "Gazrad" "Gazrat" "Gazthak" "Gazlag" "Gazlúk" "Gazlûn" "Gazlur" "Gaznag" "Gazuf" "Gazug" "Gazûl" "Ghash" "Golfimbul" "Gorbag" "Gorbug" "Gorduf" "Gordush" "Gorgash" "Gorgaz" "Gorhúr" "Gorlúk" "Gorlûn" "Gornag" "Gorshag" "Gorthak" "Gorûl" "Gorzag" "Gothmog" "Grishnákh" "Grond" "Lagbug" "Lagduf" "Lagdush" "Laghúr" "Laguf" "Laglúg" "Laglûn" "Lagrad" "Lagrat" "Lagthak" "Lug" "Lugbag" "Lugduf" "Lugdush" "Lughorn" "Lughúr" "Luglúk" "Luglûn" "Lugnag" "Lugthak" "Lugûl" "Lugzag" "Lûnbag" "Lûnbug" "Lûnduf" "Lûndush" "Lûngash" "Lûngaz" "Lûngor" "Lûnhúr" "Lûnlag" "Lûnlúk" "Lûnmaz" "Lûnrad" "Lûnrat" "Lûnshag" "Lûnthak" "Lûnuf" "Lûnug" "Lûnûl" "Lûnzag" "Lurtz" "Maubag" "Maubug" "Mauduf" "Maudush" "Maugash" "Maugaz" "Maugor" "Mauhúr" "Maulúk" "Maulur" "Maunag" "Mauthak" "Mauzag" "Muzbag" "Muzbug" "Muzduf" "Muzdush" "Muzgash" "Muzgaz" "Muzgor" "Muzhúr" "Muzlag" "Muzlug" "Muzlúk" "Muzlûn" "Muzlur" "Muznag" "Muzrad" "Muzrat" "Muzthak" "Muzug" "Muzûl" "Nagbug" "Nagduf" "Nagdush" "Naghúr" "Naglug" "Naglúk" "Naglur" "Nagmuz" "Nagug" "Nagrad" "Nagrat" "Nagthak" "Nagzag" "Nûzu" "Radbag" "Radbug" "Radgash" "Radgaz" "Radhúr" "Radlag" "Radlúk" "Radmuz" "Radnag" "Radrat" "Radthak" "Radug" "Radzag" "Shagbug" "Shagduf" "Shagdush" "Shaglúk" "Shaglur" "Shagrad" "Shagrat" "Shagthak" "Shaguf" "Shagug" "Shagûl" "Snaga" "Ufgaz" "Uflug" "Uflúk" "Ufthak" "Ufzag" "Ugbag" "Ugduf" "Ugdush" "Ughúr" "Uglag" "Uglúk" "Uglur" "Ugmuz" "Ugnag" "Ugrad" "Ugrat" "Ugslap" "Ugthak" "Ugzag" "Yagaz" "Yagbug" "Yabug" "Yagduf" "Yagdush" "Yaghúr" "Yaglug" "Yaglûn" "Yaglúk" "Yagmuz" "Yagor" "Yagrad" "Yagrat" "Yagthak" "Yaguf" "Yagug" "Yagûl" "Zagbug" "Zagduf" "Zagdush" "Zaghúr" "Zaglag" "Zaglug" "Zaglûn" "Zaglúk" "Zagmuz" "Zagrad" "Zagrat" "Zagthak" "Zaguf" "Zagug" "Gazhorn" "Gothmog" "Lughorn" "Murgash" "Âmbal" "Arhuan" "Ashgáya" "Barkh" "Botglim" "Bukot" "Dagam-Bûrz" "Dargum" "Dâl" "Dhâr" "Durzlip" "Farmak" "Fâsh" "Gazdush" "Gazthak" "Ghashanuz" "Gluthrak" "Gordush" "Gorhúr" "Greb" "Grimbosh" "Gudul" "Haian" "Illska" "Iorweth" "Karvag" "Lagûrz" "Lugdush" "Lugthak" "Lúrz" "Mauhúr" "Mauthak" "Mokrûk" "Móg" "Morflak" "Muzthak" "Naakhûrz" "Noglosh" "Nulak" "Oghûk" "Pok" "Sagrúrz" "Sharkû" "Talug" "Talûn-Karkû" "Thrugg" "Uglúk" "Urdan" "Warrung" "Wraskú" "Zerlúk" "Argdush" "Ârlok" "Bolingúl" "Flizbag" "Gazlûn" "Guriz" "Pugraft" "Radbug" "Yod" "Zog" "Takra" "Zuka" "Ratak" "Ratbag"
 		}
 	}
 	Female = {
 		Names = {
- 			"Abûmi" "Abrîna" "Adêr" "Adrîm" "Âgi" "Ambûgha" "Andrî" "Arîgha" "Arû" "Awâb" "Baghâd" "Bâmi" "Bî" "Brâmbi" "Brâwi" "Brîghor" "Brûdri" "Brûni" "Bûri" "Darîgha" "Dêrdri" "Digâr" "Dî" "Dragêr" "Drûna" "Êrrîgha" "Gâbi" "Gâr" "Gâzi" "Ghâmi" "Ghâwa" "Ghêrdu" "Ghîm" "Ghôrdri" "Gîma" "Grâtam" "Grî" "Grîga" "Grûghi" "Gûbi" "Gûma" "Gurîgha" "Gûza" "Îbi" "Izûn" "Madrîn" "Môrghi" "Narîgha" "Ôgi" "Ordrîg" "Ôrgrin" "Râma" "Rîgha" "Rûbêr" "Rûgha" "Sarîgha" "Tîrîgha" "Wâ" "Warîgha" "Zîgha" "Zîn"
+			"Azbed" "Azbet" "Barbrutta" "Berùnzia" "Bolbed" "Bolbet" "Búrzbed" "Búrzbet" "Dabrill" "Fimbed" "Fimbeget" "Fimbet" "Garghira" "Gazbed" "Gazbet" "Gazlaggi" "Gazmuzbed" "Ghashbet" "Ghibittah" "Gorgazza" "Gornagga" "Gothmogga" "Kibdurilla" "Lagbed" "Lagbet" "Laghúrra" "Laguffa" "Lugronka" "Lugthakki" "Lûnbed" "Lûnbet" "Maudbeg" "Maudbet" "Maugashha" "Maulúkbet" "Muranogil" "Muzlurra" "Muzratta" "Nagbed" "Nagbet" "Obirta" "Ognorta" "Orkamurra" "Prug" "Radbaggi" "Radhúrbet" "Radhúrga" "Radzaggi" "Rogashka" "Rogrogga" "Rugrulia" "Saggta" "Shagbed" "Shagbet" "Shagmoghi" "Toltukka" "Tormogga" "Ubrutta" "Ufbed" "Ufbet" "Ufgamoghi" "Ugbagga" "Ugbet" "Ulthugga" "Umagauria" "Ûrizbite" "Urzbet" "Uthca" "Warennia" "Yagbed" "Yagbet" "Yaghúrra" "Zagbed" "Zagbet" "Blan" "Keesh" "Sarf" "Wirg" "Thak" "Moog"
 		}
 	}
 	Surnames = {
-		"Buri Abûmi" "Ân Adêr" "Buri Aghân" "Ân Ambûghi" "Buri Baghâd" "Ân Brâmbu" "Buri Brûdor" "Ân Brûnu" "Buri Abûmi" "Ân Dagâr" "Buri Dêrdru" "Ân Dî" "Buri Drûnu" "Ân ÊrghÂn" "Buri Gâzu" "Ân Ghâwa" "Buri Ghôrdu" "Ân Ghûm" "Buri Grâtam" "Ân Grîga" "Ân Gûbi" "Buri Gûmi" "Ân Îbu" "Buri Madrân" "Ân Ogû" "Ân Ôrgrin" "Buri Râmi" "Ân Rûbêr" "Buri Rûghi" "Ân Saghân" "Ân Tîghân" "Buri Wâ" "Ân Waghân" "Buri Zîghi" "Ân Zûn"
+		"Búrz" "Lugûl" "Muzlúk" "Shaglúk" "Gazmog" "Gorbug" "Lûnlúk" "Nagdush" "Nagrad" "Gazûl" "Lagrad" "Muznag" "Litash" "Gorgûn" "Radhúr" "Shaglur" "Nûzu" "Muzdush" "Mazog" "Lûgnak" "Rûkdûg" "Shagluf" "Muzrat" "Boldog" "Gorgol" "Orcobal" "Othrod" "Balcmeg" "Maugor" "Nagrad" "Zagrad" "Shaglúk" "Muzlúk" "Molûg" "Gordmúl" 
 	}
 }
-FAN = {
+WLD = {
 	Male = {
 		Names = {
-		"Ashlimb" "Baillas" "Baldbark" "Barkmaster" "Beechbone" "Birchseed" "Caradhrian" "Elmlimb" "Fastroot" "Fimbrethil" "Fircomb" "Gnarlstomp" "Greenroot" "Leaflock" "Limbkeeper" "Lindenroot" "Loblolly" "Longroot" "Oldheart" "Palebirch" "Pincat" "Quickbeam" "Redcone" "Rootcouncil" "Sharpleaf" "Skinbark" "Stiffbranch" "Twiglate" "Wisewood"
+			"Azog" "Bolg" "Búrz" "Fimbul" "Gazbag" "Gazduf" "Gazdush" "Gazhúr" "Gazgash" "Gazbug" "Gazhorn" "Gazmog" "Gazmuz" "Gazrad" "Gazrat" "Gazthak" "Gazlag" "Gazlúk" "Gazlûn" "Gazlur" "Gaznag" "Gazuf" "Gazug" "Gazûl" "Ghash" "Golfimbul" "Gorbag" "Gorbug" "Gorduf" "Gordush" "Gorgash" "Gorgaz" "Gorhúr" "Gorlúk" "Gorlûn" "Gornag" "Gorshag" "Gorthak" "Gorûl" "Gorzag" "Gothmog" "Grishnákh" "Grond" "Lagbug" "Lagduf" "Lagdush" "Laghúr" "Laguf" "Laglúg" "Laglûn" "Lagrad" "Lagrat" "Lagthak" "Lug" "Lugbag" "Lugduf" "Lugdush" "Lughorn" "Lughúr" "Luglúk" "Luglûn" "Lugnag" "Lugthak" "Lugûl" "Lugzag" "Lûnbag" "Lûnbug" "Lûnduf" "Lûndush" "Lûngash" "Lûngaz" "Lûngor" "Lûnhúr" "Lûnlag" "Lûnlúk" "Lûnmaz" "Lûnrad" "Lûnrat" "Lûnshag" "Lûnthak" "Lûnuf" "Lûnug" "Lûnûl" "Lûnzag" "Lurtz" "Maubag" "Maubug" "Mauduf" "Maudush" "Maugash" "Maugaz" "Maugor" "Mauhúr" "Maulúk" "Maulur" "Maunag" "Mauthak" "Mauzag" "Muzbag" "Muzbug" "Muzduf" "Muzdush" "Muzgash" "Muzgaz" "Muzgor" "Muzhúr" "Muzlag" "Muzlug" "Muzlúk" "Muzlûn" "Muzlur" "Muznag" "Muzrad" "Muzrat" "Muzthak" "Muzug" "Muzûl" "Nagbug" "Nagduf" "Nagdush" "Naghúr" "Naglug" "Naglúk" "Naglur" "Nagmuz" "Nagug" "Nagrad" "Nagrat" "Nagthak" "Nagzag" "Nûzu" "Radbag" "Radbug" "Radgash" "Radgaz" "Radhúr" "Radlag" "Radlúk" "Radmuz" "Radnag" "Radrat" "Radthak" "Radug" "Radzag" "Shagbug" "Shagduf" "Shagdush" "Shaglúk" "Shaglur" "Shagrad" "Shagrat" "Shagthak" "Shaguf" "Shagug" "Shagûl" "Snaga" "Ufgaz" "Uflug" "Uflúk" "Ufthak" "Ufzag" "Ugbag" "Ugduf" "Ugdush" "Ughúr" "Uglag" "Uglúk" "Uglur" "Ugmuz" "Ugnag" "Ugrad" "Ugrat" "Ugslap" "Ugthak" "Ugzag" "Yagaz" "Yagbug" "Yabug" "Yagduf" "Yagdush" "Yaghúr" "Yaglug" "Yaglûn" "Yaglúk" "Yagmuz" "Yagor" "Yagrad" "Yagrat" "Yagthak" "Yaguf" "Yagug" "Yagûl" "Zagbug" "Zagduf" "Zagdush" "Zaghúr" "Zaglag" "Zaglug" "Zaglûn" "Zaglúk" "Zagmuz" "Zagrad" "Zagrat" "Zagthak" "Zaguf" "Zagug" "Gazhorn" "Gothmog" "Lughorn" "Murgash" "Âmbal" "Arhuan" "Ashgáya" "Barkh" "Botglim" "Bukot" "Dagam-Bûrz" "Dargum" "Dâl" "Dhâr" "Durzlip" "Farmak" "Fâsh" "Gazdush" "Gazthak" "Ghashanuz" "Gluthrak" "Gordush" "Gorhúr" "Greb" "Grimbosh" "Gudul" "Haian" "Illska" "Iorweth" "Karvag" "Lagûrz" "Lugdush" "Lugthak" "Lúrz" "Mauhúr" "Mauthak" "Mokrûk" "Móg" "Morflak" "Muzthak" "Naakhûrz" "Noglosh" "Nulak" "Oghûk" "Pok" "Sagrúrz" "Sharkû" "Talug" "Talûn-Karkû" "Thrugg" "Uglúk" "Urdan" "Warrung" "Wraskú" "Zerlúk" "Argdush" "Ârlok" "Bolingúl" "Flizbag" "Gazlûn" "Guriz" "Pugraft" "Radbug" "Yod" "Zog" "Takra" "Zuka" "Ratak" "Ratbag"
 		}
 	}
 	Female = {
 		Names = {
-		"Ashlimb" "Braiglad" "Caniruth" "Cordofoneth" "Dorollin" "Elmlimb" "Fimbrethil" "Firiel" "Lenhwest" "Loblolly" "Merillif" "Neldorlas" "Palebirch" "Rhosthorn" "Silloth" "Singalote"
+			"Azbed" "Azbet" "Barbrutta" "Berùnzia" "Bolbed" "Bolbet" "Búrzbed" "Búrzbet" "Dabrill" "Fimbed" "Fimbeget" "Fimbet" "Garghira" "Gazbed" "Gazbet" "Gazlaggi" "Gazmuzbed" "Ghashbet" "Ghibittah" "Gorgazza" "Gornagga" "Gothmogga" "Kibdurilla" "Lagbed" "Lagbet" "Laghúrra" "Laguffa" "Lugronka" "Lugthakki" "Lûnbed" "Lûnbet" "Maudbeg" "Maudbet" "Maugashha" "Maulúkbet" "Muranogil" "Muzlurra" "Muzratta" "Nagbed" "Nagbet" "Obirta" "Ognorta" "Orkamurra" "Prug" "Radbaggi" "Radhúrbet" "Radhúrga" "Radzaggi" "Rogashka" "Rogrogga" "Rugrulia" "Saggta" "Shagbed" "Shagbet" "Shagmoghi" "Toltukka" "Tormogga" "Ubrutta" "Ufbed" "Ufbet" "Ufgamoghi" "Ugbagga" "Ugbet" "Ulthugga" "Umagauria" "Ûrizbite" "Urzbet" "Uthca" "Warennia" "Yagbed" "Yagbet" "Yaghúrra" "Zagbed" "Zagbet" "Blan" "Keesh" "Sarf" "Wirg" "Thak" "Moog"
 		}
 	}
 	Surnames = {
-		""
-	}
-}
-SHI = {
-	Male = {
-		Names = {
-			"Adalbert" "Adalgar" "Adalgrim" "Adelard" "Andwise" "Asphodel" "Balbo" "Bandobras" "Basso" "Berilac" "Bilbo" "Bingo" "Blanco" "Bob" "Bodo" "Boffo" "Bowman" "Bucca" "Buffo" "Bungo" "Carl" "Coldomac" "Cotman" "Cottar" "Daisy" "Deagol" "Diamond" "Dina" "Dina" "Diggle" "Dinodas" "Doderick" "Dodinas" "Drogo" "Dudo" "Elfstan" "Erling" "Everard" "Falco" "Fastolph" "Fastred" "Ferdibrand" "Ferdinand" "Ferumbras" "Filibert" "Flambard" "Folco" "Fortinbras" "Fosco" "Fredegar" "Gam" "Gerontius" "Gorbadoc" "Gorbulas" "Gorhendad" "Gormadoc" "Griffo" "Gundabald" "Gundahad" "Gundolpho" "Hal" "Halfast" "Halfred" "Hamfast" "Hamson" "Hanna" "Harding" "Hending""Herugar" "Hildifons" "Hob" "Gammidge" "Hob" "Hayward" "Hobson" "Holman" "Holman" "Hugo" "Isembard" "Isembold" "Isengar" "Isengrim" "Isumbras" "Curl" "Largo" "Longo" "Lotho" "Marcho" "Marroc" "Meriadoc" "Merimac" "Milo" "Moro" "Mosco" "Mungo" "Odo" "Odovacar" "Otho" "Paladin" "Peregrin" "Polo" "Ponto" "Posco" "Reginard" "Robin" "Rorimac" "Rudibert" "Rudigar" "Rudolph" "Rufus" "Sadoc" "Samwise" "Sancho" "Seredic" "Sigismond" "Ted" "Theobald" "Tobold" "Togo" "Tolman" "Tom" "Trotter" "Wilibald" "Wilimar" "Willie"
-		}
-	}
-	Female = {
-		Names = {
-			"Adaldrida" "Adamantha" "Alfrida" "Amaranth" "Amethyst" "Angelica" "Belba" "Bell" "Belladonna" "Berylla" "Camellia" "Celandine" "Chica" "Cora" "Donnamira" "Dora" "Eglantine" "Elanor" "Esmeralda" "Estella" "Gundahar" "Firiel" "Gilly" "Goldilocks" "Heribald" "Hilda" "Hildibrand" "Hildigard" "Hildigrim" "Holfast" "Holly" "Ilberic" "Ivy" "Kocho" "Laura" "Lily" "Linda" "Lobelia" "Madoc" "Malva" "Marigold" "Marmadas" "Marmadoc" "May" "Melilot" "Menegilda" "Mentha" "Merimas" "Miller" "Mimosa" "Minto" "Mirabella" "Myrtle" "Nina" "Nob" "Nora" "Olo" "Orgulas" "Pansy" "Pearl" "Peony" "Pervinca" "Pimpernel" "Poppy" "Porto" "Primrose" "Primula" "Prisca" "Rosa" "Rosamunda" "Rose" "Rowan" "Ruby" "Salvia" "Saradas" "Saradoc" "Tanta" "Wilcome"
-		}
-	}
-	Surnames = {
-		"Boffin" "Baggins" "Bolger" "Gamgee" "Cotton" "Brandybuck" "Burrows" "Prodfoot" "Gardner" "Took" "Gamwich" "Overhill" "Sandheaver"
+		"Búrz" "Lugûl" "Muzlúk" "Shaglúk" "Gazmog" "Gorbug" "Lûnlúk" "Nagdush" "Nagrad" "Gazûl" "Lagrad" "Muznag" "Litash" "Gorgûn" "Radhúr" "Shaglur" "Nûzu" "Muzdush" "Mazog" "Lûgnak" "Rûkdûg" "Shagluf" "Muzrat" "Boldog" "Gorgol" "Orcobal" "Othrod" "Balcmeg" "Maugor" "Nagrad" "Zagrad" "Shaglúk" "Muzlúk" "Molûg" "Gordmúl" 
 	}
 }
 
-###############################################################
-#Rohirrim
-###############################################################
-ROH = {
-	Male = {
-		Names = {
-			"Arncytel" "Balthere" "Beorhtfrith" "Beorhthelm" "Beorhtmær" "Beorhtnoth" "Beorhtric" "Beorhtsige" "Beorhtwine" "Beorn" "Beornræd" "Beornwulf" "Burgheard" "Byrhtnoth" "Cearl" "Cenfus" "Cenræd" "Cenwulf" "Ceolwulf" "Cerdic" "Copsige" "Cuthberht" "Cuthræd" "Cynehelm" "Cynewulf" "Cytelbearn" "Eadberht" "Eadfrith" "Eadgar" "Eadmund" "Eadmær" "Eadric" "Eadræd" "Eadsige" "Eadulf" "Eadweald" "Eadweard" "Eadwig" "Eadwine" "Eadwulf" "Ealdhun" "Ealdmund" "Ealdræd" "Ealdwine" "Ealdwulf" "Eanberht" "Eanfrith" "Eanhere" "Eardwulf" "Eastmund" "Ecgberht" "Ecgfrith" "Gamall" "Godwine" "Gospatric" "Guthfrith" "Guthmund" "Gyrth" "Hacon" "Harold" "Heahberht" "Hereberht" "Hereweald" "Hereweard" "Hlothere" "Hrodberht" "Inwær" "Leofheah" "Leofhelm" "Leofric" "Leofweald" "Leofwine" "Maccus" "Morcar" "Mærleswegn" "Offa" "Onlaf" "Ordgar" "Oscytel" "Oshere" "Osmund" "Osric" "Osræd" "Osulf" "Osweald" "Oswine" "Oswulf" "Petre" "Rædwulf" "Rægenweald" "Scule" "Sigeberht" "Sigehelm" "Sigeric" "Sigeræd" "Sighere" "Siweard" "Stigand" "Swegn" "Swithelm" "Swithræd" "Swæfræd" "Sæbert" "Sælræd" "Sæweald" "Sæxbald" "Sæxræd" "Thoræd" "Thurcytel" "Thurfrith" "Tostig" "Uhtræd" "Ulf" "Ulfcytel" "Waltheof" "Werestan" "Wiglaf" "Wihtræd" "Wistan" "Wulf" "Wulfgar" "Wulfgeat" "Wulfhelm" "Wulfhere" "Wulfmær" "Wulfnoth" "Wulfstan" "Ælfgar" "Ælfmær" "Ælfnoth" "Ælfric" "Ælfræd" "Ælfsige" "Ælfstan" "Ælfwald" "Ælfweard" "Ælfwig" "Ælfwine" "Ælle" "Æthelbald" "Æthelberht" "Æthelfrith" "Æthelhere" "Æthelmær" "Æthelric" "Æthelræd" "Æthelsige" "Æthelstan" "Æthelweald" "Æthelweard" "Æthelwine" "Æthelwold" "Æthelwulf" "Eormenred" "Eorcenberht" "Eormenric" "Eadbald" "Rædwald"
-		}
-	}
-	Female = {
-		Names = {
-			"Agatha" "Balthild" "Beorhtflæd" "Beorhtgifu" "Beorhtgyth" "Beorhtwaru" "Beorhtwynn" "Beornflæd" "Beorngyth" "Blæja" "Burgflæd" "Ceolflæd" "Cristina" "Cuthburg" "Cwenburg" "Cyneburg" "Cynegyth" "Cynehild" "Cyneswith" "Cynethryth" "Eadburg" "Eadflæd" "Eadgifu" "Eadgyth" "Eadhburh" "Eadhild" "Ealdgyth" "Ealhflæd" "Ealhswith" "Eanswith" "Ecgfrida" "Ecgwyn" "Godgifu" "Gunhilda" "Gytha" "Helga" "Heregyth" "Hereswith" "Hextilda" "Hungifu" "Judith" "Leofflæd" "Leofgifu" "Leofrun" "Leofwaru" "Leofwynn" "Margaret" "Maud" "Mildrith" "Octreda" "Sifflæd" "Sigrid" "Sæthryth" "Wulfflæd" "Wulfgifu" "Wulfgyth" "Wulfhild" "Wulfrun" "Wulfthryth" "Wulfwaru" "Wulfwynn" "Wynnflæd" "Wærburg" "Æbba" "Ælfflæd" "Ælfgifu" "Ælfgyth" "Ælflæda" "Ælfrida" "Ælfswith" "Ælfthryth" "Ælfwynn" "Æthelburg" "Æthelflæd" "Æthelgifu" "Æthelhild" "Æthelræda" "Æthelswith" "Æthelthryth" "Æthelburh" "Seaxburh" "Wihtburh"
-		}
-	}
-	Surnames = {
-		"Aldoringas" "Baldoring" "Celmunding" "Eoforing" "Eogaring" "Elfgaring" "Gamlingas" "Hardingas" "Wulfing" "Tordaging" "Hamordryht" "Scurdryht" "Byrnsweord" "Heorudrync" "Sweordbora" "Wundenmae" "Bogadryht" "Abugan" "Eomunding" "Cenlafing" "Griming" "Godwarding" "Hamaing" "Wulfhelming" "Swithelming" "Harolding" "Arngriming" "Werestaning" "Cytelbearning" "Faermeglin" "Fen" "Slaighreluath" "Stolesfrydin" "Uisgeduin" 
-	}
-}
 
-##############################################################################################################################
-# GREATER ENEDWAITH
-##############################################################################################################################
+###################################################################################################WILDLINGS
 
 ###############################################################ANDRAST
 ADB = {
@@ -625,7 +715,6 @@ RAF = {
 		"Ishmalogim" "Zebeleizis" "Ziraxes" "Drilgisa" "Benabic" "Ishmalogim" "Ishmalogim" "Acco" "Vaelarion" "Wildebeorh" "Dor Cirith Iaur" "Nan i Feryth" "Rond Zandir" "Dor Girilsa" "Dor Mimel" "An-Corgozin" "Themion" "Frecasing" "Vulfosing" "Tundrezing" "Fergoning" "Tithaining" "Ceneling" "Falfarozing" "Cenasing" "Tothrening" "Einiring" "Fingolfosing" "Balfarozing" "Lengarozing" "Urengarozing" "Faldining" "Errasing" "Balfulfosing" "Falfasing" "Arfanozing" "Arfoning" "Arunozing" "Fulfosing" "Balfosing" "Lonozing" "Rholfosing" "Henning" "Cenfasing" "Cenfannaining" "Nienfeozing" "Hildfafosing" "Einfering" "Neniforozing" "Lengfealozing" "Nechfaeling" "Briniarozing" "Mifelfarozing" "Arundiarozing" "Lengfangarozing" "Erlaening" "Tethfarozing" "Erraigarozing" "Iffalozing" "Nelfaining" "Maelfosing" "Pafanozing" "Sondfealozing" "Gutharozing" "Bocaerning" "Vulfgarozing" "Rhoricing" "Branting" "Hedricing" "Daeglafosing" "Fudreiming" "Ilfcarozing" "Dranting" 
 	}
 }
-
 ###############################################################DUNLAND
 CGN = {
 	Male = {
@@ -748,7 +837,6 @@ IRN = {
 		"map Wynfawr" "map Inyr" "map Bain" "map Rioc" "map Boduan" "map Fraid" "map Cada" "map Bangar" "map Cadfan" "map Cynfawr" "map Pyr" "map Merfyn" "map Fragan" "map Cormac" "map Bran" "map Sean" "map Cennetig" "map Tadg" "map Tigernan" "map Asa" "map Adwyn" "map Matudan" "map Macsen" "map Gamon" "map Fyrsil" "map Urien" "map Gethen" "map Dein" "map Tref" "map Luarch" "map Lun" "map Dafrig" "map Lorcan" "map Morda" "Frecaling" "Wulfing" "Tundreding" "Fergoling" "Tithaining" "Ceneling" "Falfarding" "Cenasing" "Tothrening" "Einiring" "Fingolfing" "Balfarding" "Lengarding" "Urengarding" "Faldining" "Erraling" "Balfulfing" "Falfaling" "Arfanding" "Arfoling" "Arunding" "Fulfing" "Balfing" "Londing" "Rolfing" "Henning" "Cenfaling" "Cenfannaining" "Nienfeading" "Hildfafing" "Einferging" "Nenifording" "Lengfealding" "Nechfaeling" "Briniarding" "Mifelfarding" "Arundiarding" "Lengfangarding" "Erlaening" "Tethfarding" "Erraigarding" "Iffalding" "Nelfaining" "Maelfing" "Pafanding" "Sondfealding" "Gutharding" "Bocaerning" "Wulfgarding" "Roricing" "Branting" "Hedricing" "Daeglafing" "Ilfcarding" "Dranting"
 	}
 }
-
 ###############################################################ENEDWAITH
 AGR = {
 	Male = {
@@ -825,7 +913,6 @@ STK = {
 		"map Wynfawr" "map Inyr" "map Bain" "map Rioc" "map Boduan" "map Fraid" "map Cada" "map Bangar" "map Cadfan" "map Cynfawr" "map Pyr" "map Merfyn" "map Fragan" "map Cormac" "map Bran" "map Sean" "map Cennetig" "map Tadg" "map Tigernan" "map Asa" "map Adwyn" "map Matudan" "map Macsen" "map Gamon" "map Fyrsil" "map Urien" "map Gethen" "map Dein" "map Tref" "map Luarch" "map Lun" "map Dafrig" "map Lorcan" "map Morda" "Frecaling" "Wulfing" "Tundreding" "Fergoling" "Tithaining" "Ceneling" "Falfarding" "Cenasing" "Tothrening" "Einiring" "Fingolfing" "Balfarding" "Lengarding" "Urengarding" "Faldining" "Erraling" "Balfulfing" "Falfaling" "Arfanding" "Arfoling" "Arunding" "Fulfing" "Balfing" "Londing" "Rolfing" "Henning" "Cenfaling" "Cenfannaining" "Nienfeading" "Hildfafing" "Einferging" "Nenifording" "Lengfealding" "Nechfaeling" "Briniarding" "Mifelfarding" "Arundiarding" "Lengfangarding" "Erlaening" "Tethfarding" "Erraigarding" "Iffalding" "Nelfaining" "Maelfing" "Pafanding" "Sondfealding" "Gutharding" "Bocaerning" "Wulfgarding" "Roricing" "Branting" "Hedricing" "Daeglafing" "Ilfcarding" "Dranting"
 	}
 }
-
 ###############################################################EREGION
 ERG = {
 	Male = {
@@ -887,7 +974,6 @@ REE = {
 		"map Wynfawr" "map Inyr" "map Bain" "map Rioc" "map Boduan" "map Fraid" "map Cada" "map Bangar" "map Cadfan" "map Cynfawr" "map Pyr" "map Merfyn" "map Fragan" "map Cormac" "map Bran" "map Sean" "map Cennetig" "map Tadg" "map Tigernan" "map Asa" "map Adwyn" "map Matudan" "map Macsen" "map Gamon" "map Fyrsil" "map Urien" "map Gethen" "map Dein" "map Tref" "map Luarch" "map Lun" "map Dafrig" "map Lorcan" "map Morda" "Frecaling" "Wulfing" "Tundreding" "Fergoling" "Tithaining" "Ceneling" "Falfarding" "Cenasing" "Tothrening" "Einiring" "Fingolfing" "Balfarding" "Lengarding" "Urengarding" "Faldining" "Erraling" "Balfulfing" "Falfaling" "Arfanding" "Arfoling" "Arunding" "Fulfing" "Balfing" "Londing" "Rolfing" "Henning" "Cenfaling" "Cenfannaining" "Nienfeading" "Hildfafing" "Einferging" "Nenifording" "Lengfealding" "Nechfaeling" "Briniarding" "Mifelfarding" "Arundiarding" "Lengfangarding" "Erlaening" "Tethfarding" "Erraigarding" "Iffalding" "Nelfaining" "Maelfing" "Pafanding" "Sondfealding" "Gutharding" "Bocaerning" "Wulfgarding" "Roricing" "Branting" "Hedricing" "Daeglafing" "Ilfcarding" "Dranting"
 	}
 }
-
 ###############################################################WHITE MOUNTAINS
 ANU = {
 	Male = {
@@ -962,5 +1048,53 @@ WHT = {
 	}
 	Surnames = {
 		"Ishmalogim" "Zebeleizis" "Ziraxes" "Drilgisa" "Benabic" "Ishmalogim" "Ishmalogim" "Acco" "Vaelarion" "Wildebeorh" "Dor Cirith Iaur" "Nan i Feryth" "Rond Zandir" "Dor Girilsa" "Dor Mimel" "An-Corgozin" "Themion" "Frecasing" "Vulfosing" "Tundrezing" "Fergoning" "Tithaining" "Ceneling" "Falfarozing" "Cenasing" "Tothrening" "Einiring" "Fingolfosing" "Balfarozing" "Lengarozing" "Urengarozing" "Faldining" "Errasing" "Balfulfosing" "Falfasing" "Arfanozing" "Arfoning" "Arunozing" "Fulfosing" "Balfosing" "Lonozing" "Rholfosing" "Henning" "Cenfasing" "Cenfannaining" "Nienfeozing" "Hildfafosing" "Einfering" "Neniforozing" "Lengfealozing" "Nechfaeling" "Briniarozing" "Mifelfarozing" "Arundiarozing" "Lengfangarozing" "Erlaening" "Tethfarozing" "Erraigarozing" "Iffalozing" "Nelfaining" "Maelfosing" "Pafanozing" "Sondfealozing" "Gutharozing" "Bocaerning" "Vulfgarozing" "Rhoricing" "Branting" "Hedricing" "Daeglafosing" "Fudreiming" "Ilfcarozing" "Dranting" 
+	}
+}
+
+
+###################################################################################################OTHER
+DAI = {
+	Male = {
+		Names = {
+			"Abrînu" "Abûmi" "Adêr" "Adrîm" "Aghan" "Âgu" "Ambûghi" "Andrû" "Âri" "Awâb" "Baghâd" "Bâmu" "Bôr" "Brâghor" "Brâmbu" "Brâwâ" "Brûdor" "Brûnu" "Bûri" "Dagâr" "Daghân" "Dêrdru" "Dî" "Dragôr" "Drûnu" "Êrghân" "Gâbu" "Gâr" "Gâzu" "Ghâmi" "Ghân" "Ghâwa" "Ghêrdu" "Ghôrdu" "Ghûm" "Gîmi" "Grâtam" "Grî" "Grîga" "Grûghu" "Gûbi" "Gughân" "Gûmi" "Gûza" "Îbu" "Izûn" "MadrÂn" "Môrghu" "Naghân" "Ogû" "Ôm" "Ordrûg" "Ôrgrin" "Pôn" "Râmi" "Rûbêr" "Rûghi" "Saghân" "Tîghân" "Wâ" "Waghân" "Zîghi" "Zûn"
+		}
+	}
+	Female = {
+		Names = {
+ 			"Abûmi" "Abrîna" "Adêr" "Adrîm" "Âgi" "Ambûgha" "Andrî" "Arîgha" "Arû" "Awâb" "Baghâd" "Bâmi" "Bî" "Brâmbi" "Brâwi" "Brîghor" "Brûdri" "Brûni" "Bûri" "Darîgha" "Dêrdri" "Digâr" "Dî" "Dragêr" "Drûna" "Êrrîgha" "Gâbi" "Gâr" "Gâzi" "Ghâmi" "Ghâwa" "Ghêrdu" "Ghîm" "Ghôrdri" "Gîma" "Grâtam" "Grî" "Grîga" "Grûghi" "Gûbi" "Gûma" "Gurîgha" "Gûza" "Îbi" "Izûn" "Madrîn" "Môrghi" "Narîgha" "Ôgi" "Ordrîg" "Ôrgrin" "Râma" "Rîgha" "Rûbêr" "Rûgha" "Sarîgha" "Tîrîgha" "Wâ" "Warîgha" "Zîgha" "Zîn"
+		}
+	}
+	Surnames = {
+		"Buri Abûmi" "Ân Adêr" "Buri Aghân" "Ân Ambûghi" "Buri Baghâd" "Ân Brâmbu" "Buri Brûdor" "Ân Brûnu" "Buri Abûmi" "Ân Dagâr" "Buri Dêrdru" "Ân Dî" "Buri Drûnu" "Ân ÊrghÂn" "Buri Gâzu" "Ân Ghâwa" "Buri Ghôrdu" "Ân Ghûm" "Buri Grâtam" "Ân Grîga" "Ân Gûbi" "Buri Gûmi" "Ân Îbu" "Buri Madrân" "Ân Ogû" "Ân Ôrgrin" "Buri Râmi" "Ân Rûbêr" "Buri Rûghi" "Ân Saghân" "Ân Tîghân" "Buri Wâ" "Ân Waghân" "Buri Zîghi" "Ân Zûn"
+	}
+}
+FAN = {
+	Male = {
+		Names = {
+		"Ashlimb" "Baillas" "Baldbark" "Barkmaster" "Beechbone" "Birchseed" "Caradhrian" "Elmlimb" "Fastroot" "Fimbrethil" "Fircomb" "Gnarlstomp" "Greenroot" "Leaflock" "Limbkeeper" "Lindenroot" "Loblolly" "Longroot" "Oldheart" "Palebirch" "Pincat" "Quickbeam" "Redcone" "Rootcouncil" "Sharpleaf" "Skinbark" "Stiffbranch" "Twiglate" "Wisewood"
+		}
+	}
+	Female = {
+		Names = {
+		"Ashlimb" "Braiglad" "Caniruth" "Cordofoneth" "Dorollin" "Elmlimb" "Fimbrethil" "Firiel" "Lenhwest" "Loblolly" "Merillif" "Neldorlas" "Palebirch" "Rhosthorn" "Silloth" "Singalote"
+		}
+	}
+	Surnames = {
+		""
+	}
+}
+SHI = {
+	Male = {
+		Names = {
+			"Adalbert" "Adalgar" "Adalgrim" "Adelard" "Andwise" "Asphodel" "Balbo" "Bandobras" "Basso" "Berilac" "Bilbo" "Bingo" "Blanco" "Bob" "Bodo" "Boffo" "Bowman" "Bucca" "Buffo" "Bungo" "Carl" "Coldomac" "Cotman" "Cottar" "Daisy" "Deagol" "Diamond" "Dina" "Dina" "Diggle" "Dinodas" "Doderick" "Dodinas" "Drogo" "Dudo" "Elfstan" "Erling" "Everard" "Falco" "Fastolph" "Fastred" "Ferdibrand" "Ferdinand" "Ferumbras" "Filibert" "Flambard" "Folco" "Fortinbras" "Fosco" "Fredegar" "Gam" "Gerontius" "Gorbadoc" "Gorbulas" "Gorhendad" "Gormadoc" "Griffo" "Gundabald" "Gundahad" "Gundolpho" "Hal" "Halfast" "Halfred" "Hamfast" "Hamson" "Hanna" "Harding" "Hending""Herugar" "Hildifons" "Hob" "Gammidge" "Hob" "Hayward" "Hobson" "Holman" "Holman" "Hugo" "Isembard" "Isembold" "Isengar" "Isengrim" "Isumbras" "Curl" "Largo" "Longo" "Lotho" "Marcho" "Marroc" "Meriadoc" "Merimac" "Milo" "Moro" "Mosco" "Mungo" "Odo" "Odovacar" "Otho" "Paladin" "Peregrin" "Polo" "Ponto" "Posco" "Reginard" "Robin" "Rorimac" "Rudibert" "Rudigar" "Rudolph" "Rufus" "Sadoc" "Samwise" "Sancho" "Seredic" "Sigismond" "Ted" "Theobald" "Tobold" "Togo" "Tolman" "Tom" "Trotter" "Wilibald" "Wilimar" "Willie"
+		}
+	}
+	Female = {
+		Names = {
+			"Adaldrida" "Adamantha" "Alfrida" "Amaranth" "Amethyst" "Angelica" "Belba" "Bell" "Belladonna" "Berylla" "Camellia" "Celandine" "Chica" "Cora" "Donnamira" "Dora" "Eglantine" "Elanor" "Esmeralda" "Estella" "Gundahar" "Firiel" "Gilly" "Goldilocks" "Heribald" "Hilda" "Hildibrand" "Hildigard" "Hildigrim" "Holfast" "Holly" "Ilberic" "Ivy" "Kocho" "Laura" "Lily" "Linda" "Lobelia" "Madoc" "Malva" "Marigold" "Marmadas" "Marmadoc" "May" "Melilot" "Menegilda" "Mentha" "Merimas" "Miller" "Mimosa" "Minto" "Mirabella" "Myrtle" "Nina" "Nob" "Nora" "Olo" "Orgulas" "Pansy" "Pearl" "Peony" "Pervinca" "Pimpernel" "Poppy" "Porto" "Primrose" "Primula" "Prisca" "Rosa" "Rosamunda" "Rose" "Rowan" "Ruby" "Salvia" "Saradas" "Saradoc" "Tanta" "Wilcome"
+		}
+	}
+	Surnames = {
+		"Boffin" "Baggins" "Bolger" "Gamgee" "Cotton" "Brandybuck" "Burrows" "Prodfoot" "Gardner" "Took" "Gamwich" "Overhill" "Sandheaver"
 	}
 }

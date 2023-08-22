@@ -171,7 +171,7 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 627;6094;sea;12130;3239;1424;-1;-1;;SANT ROVALUG
 5849;4835;sea;12219;3150;1477;3150;1471;;Hamarsland
 5984;1041;sea;12578;-1;-1;-1;-1;;Sunnarina
-306;4051;sea;12578;-1;-1;-1;-1;;
+5860;4051;sea;12578;-1;-1;-1;-1;;
 5720;3208;sea;12968;-1;-1;-1;-1;;south of laketown
 7804;5693;sea;12968;-1;-1;-1;-1;;LAKETOWN
 5687;5712;sea;12283;-1;-1;-1;-1;;WESTLOFT
