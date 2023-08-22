@@ -1,6 +1,6 @@
 ﻿capital = 306 #Kornholm, Sunnarinna
 	#10 VPs
-OOB = "YST_3015"
+OOB = "SUN_3015"
 
 set_research_slots = 2
 set_stability = .8
