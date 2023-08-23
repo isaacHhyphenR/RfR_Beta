@@ -911,46 +911,154 @@ promote_wilderness_leader = { ##call in the leader of wilderness to promote to a
 }
 
 ############################################################################################DORWINION
+@advisorPowerLeft = -0.05
+@advisorPowerRight = 0.05
 koldana_advisor_effect = { ##adds BoP
-	
+	if = {
+		limit = { has_power_balance = { id = DOR_election_power_balance } }
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @advisorPowerRight
+			tooltip_side = DOR_winelords_side
+		}
+	}
+	else_if = {
+		limit = { has_power_balance = { id = DOR_winelords_power_balance } }
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @advisorPowerLeft
+			tooltip_side = DOR_koldana_side
+		}
+	}
 }
 koldana_advisor_effect_remove = { ##removes BoP
-	
+	if = {
+		limit = { has_power_balance = { id = DOR_election_power_balance } }
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @advisorPowerLeft
+			tooltip_side = DOR_great_merchants_side
+		}
+	}
+	else_if = {
+		limit = { has_power_balance = { id = DOR_winelords_power_balance } }
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @advisorPowerRight
+			tooltip_side = DOR_vierling_side
+		}
+	}
 }
 
 vierling_advisor_effect = { ##adds BoP
-	
+	if = {
+		limit = { has_power_balance = { id = DOR_election_power_balance } }
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @advisorPowerRight
+			tooltip_side = DOR_winelords_side
+		}
+	}
+	else_if = {
+		limit = { has_power_balance = { id = DOR_winelords_power_balance } }
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @advisorPowerRight
+			tooltip_side = DOR_vierling_side
+		}
+	}
 }
 vierling_advisor_effect_remove = { ##removes BoP
-	
-}
-
-human_advisor_effect = { ##adds BoP
-	
-}
-human_advisor_effect_remove = { ##removes BoP
-	
-}
-
-elven_advisor_effect = { ##adds BoP
-	
-}
-elven_advisor_effect_remove = { ##removes BoP
-	
+	if = {
+		limit = { has_power_balance = { id = DOR_election_power_balance } }
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @advisorPowerLeft
+			tooltip_side = DOR_great_merchants_side
+		}
+	}
+	else_if = {
+		limit = { has_power_balance = { id = DOR_winelords_power_balance } }
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @advisorPowerLeft
+			tooltip_side = DOR_koldana_side
+		}
+	}
 }
 
 merchant_house_advisor_effect = { ##adds BoP
-	
+	if = {
+		limit = { has_power_balance = { id = DOR_election_power_balance } }
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @advisorPowerLeft
+			tooltip_side = DOR_great_merchants_side
+		}
+	}
+	else_if = {
+		limit = { has_power_balance = { id = DOR_great_merchants_power_balance } }
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @advisorPowerRight
+			tooltip_side = DOR_merchant_houses_side
+		}
+	}
 }
 merchant_house_advisor_effect_remove = { ##removes BoP
-	
+	if = {
+		limit = { has_power_balance = { id = DOR_election_power_balance } }
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @advisorPowerRight
+			tooltip_side = DOR_winelords_side
+		}
+	}
+	else_if = {
+		limit = { has_power_balance = { id = DOR_great_merchants_power_balance } }
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @advisorPowerLeft
+			tooltip_side = DOR_burghers_side
+		}
+	}
 }
 
 burgher_advisor_effect = { ##adds BoP
-	
+	if = {
+		limit = { has_power_balance = { id = DOR_election_power_balance } }
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @advisorPowerLeft
+			tooltip_side = DOR_winelords_side
+		}
+	}
+	else_if = {
+		limit = { has_power_balance = { id = DOR_great_merchants_power_balance } }
+		add_power_balance_value = {
+			id = DOR_great_merchants_power_balance
+			value = @advisorPowerLeft
+			tooltip_side = DOR_merchant_houses_side
+		}
+	}
 }
 burgher_advisor_effect_remove = { ##removes BoP
-	
+	if = {
+		limit = { has_power_balance = { id = DOR_election_power_balance } }
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @advisorPowerRight
+			tooltip_side = DOR_great_merchants_side
+		}
+	}
+	else_if = {
+		limit = { has_power_balance = { id = DOR_great_merchants_power_balance } }
+		add_power_balance_value = {
+			id = DOR_great_merchants_power_balance
+			value = @advisorPowerRight
+			tooltip_side = DOR_burghers_side
+		}
+	}
 }
 
 
@@ -968,3 +1076,111 @@ bergholda_trade_effect_remove = { ##increases cost to trade
 		}
 	}
 }
+
+@focusPowerLeft = -0.05
+@focusPowerRight = 0.05
+@focusPowerLeftMed = -0.10
+@focusPowerRightMed = 0.10
+@focusPowerLeftBig = -0.20
+@focusPowerRightBig = 0.20
+great_merchants_focus_effect = {
+	if = {
+		limit = { has_power_balance = { id = DOR_election_power_balance } }
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @focusPowerLeft
+			tooltip_side = DOR_great_merchants_side
+		}
+	}
+}
+great_merchants_focus_effect_med = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_election_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @focusPowerLeftMed
+			tooltip_side = DOR_great_merchants_side
+		}
+	}
+}
+great_merchants_focus_effect_big = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_election_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @focusPowerLeftBig
+			tooltip_side = DOR_great_merchants_side
+		}
+	}
+}
+winelords_focus_effect = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_election_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @focusPowerRight
+			tooltip_side = DOR_winelords_side
+		}
+	}
+}
+winelords_focus_effect_med = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_election_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @focusPowerRightMed
+			tooltip_side = DOR_winelords_side
+		}
+	}
+}
+winelords_focus_effect_big = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_election_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @focusPowerRightBig
+			tooltip_side = DOR_winelords_side
+		}
+	}
+}
+
+accept_dorwinion_wine_effect = {
+	add_political_power = -50
+	add_equipment_to_stockpile = {
+		type = wine_equipment
+		amount = 1000
+		producer = FROM
+	}
+	FROM = {
+		add_political_power = 50
+	}
+	add_opinion_modifier = {
+		target = FROM
+		modifier = accepted_wine_gift
+	}
+	reverse_add_opinion_modifier = {
+		target = FROM
+		modifier = accepted_wine_gift
+	}
+}
+

@@ -1256,3 +1256,25 @@ news_event = { ##81## Wilderness incursion
 	}
 }
 
+news_event = { ##82## Exchanged wine gifts
+	id = rfr_news.82
+	title = rfr_news.82.t
+	desc = rfr_news.82.d
+	picture = GFX_news_feast2
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.82.a
+	}
+}
+news_event = { ##83## Refused wine gift exchange
+	id = rfr_news.83
+	title = rfr_news.83.t
+	desc = rfr_news.83.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.83.a
+	}
+}

@@ -1,0 +1,89 @@
+DOR_balance_of_power_category = {
+	distribute_generous_gifts = {
+		icon = GFX_decision_great_merchants
+		fire_only_once = no
+		ai_will_do = {
+			factor = 0
+		}
+		allowed = { tag = DOR }
+		visible = { has_power_balance = { id = DOR_election_power_balance } }
+		available = { has_completed_focus = DOR_give_generous_gifts }
+	}
+}
+@guildLoanCG = -0.05
+@guildLoanDays = 365
+DOR_guilds_category = {
+	improve_guild_marketing = {
+		icon = GFX_decision_eng_propaganda_campaigns
+		fire_only_once = no
+		ai_will_do = {
+			factor = 0
+		}
+		visible = { has_completed_focus = DOR_pillars_of_society }
+	}
+	take_smithing_guild_loan = {
+		icon = GFX_decision_smithing_guild_loan
+		ai_will_do = {
+			factor = 0
+		}
+		visible = { has_completed_focus = DOR_take_guild_loans }
+		days_remove = @guildLoanDays
+		modifier = {
+			consumer_goods_factor = @guildLoanCG
+		}
+		remove_effect = {
+			if = {
+				limit = { capital_scope = { industrial_complex > 0 } }
+				capital_scope = {
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+			else = {
+				random_controlled_state = {
+					limit = { industrial_complex > 0 }
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+DOR_foreign_loans_category = {
+	take_smithing_guild_loan_foreign = {
+		icon = GFX_decision_smithing_guild_loan
+		ai_will_do = {
+			factor = 0
+		}
+		days_remove = @guildLoanDays
+		modifier = {
+			consumer_goods_factor = @guildLoanCG
+		}
+		remove_effect = {
+			if = {
+				limit = { capital_scope = { industrial_complex > 0 } }
+				capital_scope = {
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+			else = {
+				random_controlled_state = {
+					limit = { industrial_complex > 0 }
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+		}
+	}
+}
+	

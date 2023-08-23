@@ -1,0 +1,55 @@
+add_namespace = atem
+country_event = { ##1## Dorwinion Great Merchants send wine gift
+	id = atem.1
+	title = atem.1.t
+	desc = atem.1.d
+	picture = GFX_offer_wine
+	
+	is_triggered_only = yes
+	option = { ##Accept
+		name = atem.1.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_government = FROM
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 25
+				}
+				factor = 2
+			}
+		}
+		accept_dorwinion_wine_effect = yes
+		hidden_effect = { FROM = { news_event = { id = rfr_news.82 hours = 1 } } }
+	}
+	option = { ##Reject
+		name = atem.1.b
+		ai_chance = {
+			factor = 1
+			modifier = { #we don't wanna be friendly with dorwinion
+				OR = {
+					has_government = conquest
+					has_government = melkorite
+				}
+				factor = 10
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 2
+			}
+			modifier = { #don't spend unessessarily
+				has_equipment = {
+					wine_equipment > 2000
+				}
+				factor = 2
+			}
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.83 hours = 1 } } }
+	}
+}

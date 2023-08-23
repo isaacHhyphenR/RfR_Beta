@@ -1,7 +1,7 @@
-DOR_power_balance = {
+DOR_election_power_balance = {
 	initial_value = 0.0
-	left_side = DOR_great_merchants_side	
-	right_side = DOR_winelords_side	
+	left_side = DOR_great_merchants_side
+	right_side = DOR_winelords_side
 	decision_category = DOR_balance_of_power_category
 
 	### Neutral status
@@ -58,6 +58,128 @@ DOR_power_balance = {
 			}
 		}
 	}
-
 }
 
+DOR_great_merchants_power_balance = {
+	initial_value = 0.0
+	left_side = DOR_burghers_side
+	right_side = DOR_merchant_houses_side
+	decision_category = DOR_balance_of_power_category
+
+	### Neutral status
+	range = {
+		id = DOR_great_merchants_balance_range
+		min = -0.10
+		max = 0.10
+		modifier = {
+		}
+		on_activate = {
+
+		}
+		on_deactivate = {
+			
+		}
+	}
+
+	###Burghers
+	side = {
+		id = DOR_burghers_side	
+		icon = GFX_burghers_bop
+
+		range = {
+			id = DOR_burghers_low_favoured_range
+			min = -1
+			max = -0.1
+			modifier = {
+				prosperity_gain_factor = 0.1
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+	}
+
+	###Merchant Houses
+	side = {
+		id = DOR_merchant_houses_side
+		icon = GFmerchant_houses_bop
+
+		range = {
+			id = DOR_merchant_houses_low_favoured_range
+			min = 0.1
+			max = 1
+			modifier = {
+				wine_gain_factor = 0.1
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+	}
+}
+
+DOR_winelords_power_balance = {
+	initial_value = 0.0
+	left_side = DOR_koldana_side
+	right_side = DOR_vierling_side
+	decision_category = DOR_balance_of_power_category
+
+	### Neutral status
+	range = {
+		id = DOR_winelords_balance_range
+		min = -0.10
+		max = 0.10
+		modifier = {
+		}
+		on_activate = {
+
+		}
+		on_deactivate = {
+			
+		}
+	}
+
+	###Koldana
+	side = {
+		id = DOR_koldana_side	
+		icon = GFX_koldana_bop
+
+		range = {
+			id = DOR_koldana_low_favoured_range
+			min = -1
+			max = -0.1
+			modifier = {
+				prosperity_gain_factor = 0.1
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+	}
+
+	###Vierling
+	side = {
+		id = DOR_vierling_side
+		icon = GFvierling_bop
+
+		range = {
+			id = DOR_vierling_low_favoured_range
+			min = 0.1
+			max = 1
+			modifier = {
+				wine_gain_factor = 0.1
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+	}
+}

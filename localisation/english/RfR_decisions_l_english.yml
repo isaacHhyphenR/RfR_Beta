@@ -646,4 +646,7 @@
  form_rhovanion_category_desc: "Remind me to write something here later."
  form_rhovanion: "Form Rhovanion"
  form_rhovanion_desc: "$form_rhovanion_category_desc$"
- 
+ DOR_balance_of_power_category: "Dorwin Politics"
+#DOR_balance_of_power_category_desc: ""
+ distribute_generous_gifts: "$DOR_give_generous_gifts$"
+ distribute_generous_gifts_desc: "$DOR_give_generous_gifts_desc$"

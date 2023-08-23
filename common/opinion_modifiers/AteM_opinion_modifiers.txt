@@ -1,0 +1,6 @@
+opinion_modifiers = {
+	
+	accepted_wine_gift = {
+		value = 20
+	}
+}

@@ -1,0 +1,274 @@
+@techBoostBonus = 0.75
+@doctrineBoostBonus = 0.5
+@techBoostUses = 2
+@factoryBonuses = 2
+focus_tree = {
+	id = dorwinion_focus_tree
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			original_tag = DOR 
+		}
+	}
+	default = no
+	#reset_on_civil_war = yes
+	initial_show_position = {
+		focus = DOR_support_the_great_merchants
+	}
+	continuous_focus_position = {
+		x = 200
+		y = 1500
+		# x = 
+		# y = 
+	}
+	
+############={} ={}
+######################################################################MERCHANTS BRANCH
+	focus = { #support the great merchants
+		id = DOR_support_the_great_merchants
+		icon = GFX_goal_support_great_merchants
+		x = 10
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 12
+		}
+		available = { great_merchants_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			great_merchants_focus_effect_big = yes
+			set_country_flag = supporting_great_merchants
+			custom_effect_tooltip = pp_if_great_merchants_win_tooltip
+		}
+	}
+#################################ELECT MERCHANTS
+	focus = { #Host guild events
+		id = DOR_host_guild_events
+		#icon = GFX_goal_the_deciever
+		x = 0
+		y = 1
+		relative_position_id = DOR_support_the_great_merchants
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_great_merchants
+		}
+		available = { great_merchants_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			great_merchants_focus_effect_big = yes
+		}
+	}
+	focus = { #give generous gifts
+		id = DOR_give_generous_gifts
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -2
+		y = 2
+		relative_position_id = DOR_host_guild_events
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_host_guild_events
+		}
+		available = { great_merchants_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			great_merchants_focus_effect = yes
+			unlock_decision_tooltip = distribute_generous_gifts
+		}
+	}
+	focus = { #pillars of society
+		id = DOR_pillars_of_society
+		#icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -1
+		y = 1
+		relative_position_id = DOR_host_guild_events
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_host_guild_events
+		}
+		available = { great_merchants_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			great_merchants_focus_effect = yes
+			unlock_decision_tooltip = improve_guild_marketing
+		}
+	}
+	focus = { #solicit guild funding
+		id = DOR_solicit_guild_funding
+		#icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 1
+		y = 1
+		relative_position_id = DOR_host_guild_events
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_host_guild_events
+		}
+		available = { great_merchants_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			great_merchants_focus_effect = yes
+			add_political_power = 150
+		}
+	}
+	focus = { #take guild loans
+		id = DOR_take_guild_loans
+		#icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 1
+		y = 1
+		relative_position_id = DOR_solicit_guild_funding
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_solicit_guild_funding
+		}
+		available = { great_merchants_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			great_merchants_focus_effect = yes
+			unlock_decision_tooltip = take_smithing_guild_loan
+		}
+	}
+	focus = { #loan to foreigners
+		id = DOR_loan_to_foreigners
+		#icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		relative_position_id = DOR_take_guild_loans
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_take_guild_loans
+		}
+		available = { great_merchants_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			great_merchants_focus_effect = yes
+			every_country = {
+				limit = { allowed_celduin_trade = yes market_capital = yes }
+				unlock_decision_tooltip = take_smithing_guild_loan_foreign
+			}
+		}
+	}
+	focus = { #celebrate city culture
+		id = DOR_celebtrate_city_culture
+		#icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 1
+		y = 1
+		relative_position_id = DOR_pillars_of_society
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_pillars_of_society
+			focus = DOR_solicit_guild_funding
+		}
+		available = { great_merchants_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			great_merchants_focus_effect_big = yes
+		}
+	}
+	focus = { #exchange gifts with foreign kings
+		id = DOR_exchange_gifts_with_foreign_kings
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = -2
+		y = 1
+		relative_position_id = DOR_celebtrate_city_culture
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_celebtrate_city_culture
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+			any_other_country = {
+				market_capital = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+				if = {
+					limit = { is_rhovanion_tag = yes }
+					has_cosmetic_tag = RVN
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			great_merchants_focus_effect = yes
+			every_other_country = {
+				limit = {
+					market_capital = yes
+					is_subject = no
+					NOT = { has_war_with = ROOT }
+					if = {
+						limit = { is_rhovanion_tag = yes }
+						has_cosmetic_tag = RVN
+					}
+				}
+				country_event = { id = atem.1 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = {
+					accept_dorwinion_wine_effect = yes
+				}
+			}
+		}
+	}
+	focus = { #remember who brings the wealth
+		id = DOR_remember_who_brings_the_wealth
+		#icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		relative_position_id = DOR_celebtrate_city_culture
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_celebtrate_city_culture
+		}
+		available = { great_merchants_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			great_merchants_focus_effect_big = yes
+		}
+	}
+	focus = { #bribes in pockets
+		id = DOR_bribes_in_pockets
+		icon = GFX_goal_bribery
+		x = 0
+		y = 1
+		relative_position_id = DOR_remember_who_brings_the_wealth
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_remember_who_brings_the_wealth
+		}
+		available = { great_merchants_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			great_merchants_focus_effect = yes
+			add_ideas = DOR_bribes_in_pockets_idea
+		}
+	}
+}

@@ -677,6 +677,10 @@
  #####################################################################################################################################################
  ###########################################################AteM
  #####################################################################################################################################################
+ atem.1.t: "[FROM.GetName] Offers an Exchange of Gifts"
+ atem.1.d: "Emissaries have arrived in [capital.GetCapitalVictoryPointName] with wagonloads of wine and other fine luxuries from [FROM.GetName]. They expressed a whish to present them to us, though made it clear they will not actually surrender the goods unless we give them something in return."
+ atem.1.a: "An excellent opporunity to strengthen ties with [FROM.GetName]"
+ atem.1.b: "We cannot afford this"
  rfr_news.77.t: "[FROM.GetName] Submits to our Rule"
  rfr_news.77.d: "[FROM.GetLeader] has heeded wisdom-- or perhaps fear-- and placed [FROM.leader.GetHerselfHimself] directly at our command."
  rfr_news.77.a: "The shadow spreads."
@@ -692,4 +696,10 @@
  rfr_news.81.t: "Incursion in [incursion_state.GetName]!"
  rfr_news.81.d: "Refugees pour into [?capital.GetCapitalVictoryPointName], bringing with them tales of a terrible orc host that has overtaken their new homes in [incursion_state.GetName]. The horde overwhelmed our frontier militia, and now our people demand that we drive these monsters back into the wilderness from whence they came."
  rfr_news.81.a: "We must restore order at once!"
+ rfr_news.82.t: "[FROM.GetName] Sends Gifts"
+ rfr_news.82.d: "[FROM.GetLeader] has accepted our generous gift of wine and sent back precious objects from [FROM.GetLeader.GetHerHis] own realm."
+ rfr_news.82.a: "We shall use these well."
+ rfr_news.83.t: "[FROM.GetName] Refuses Gift Exchange"
+ rfr_news.83.d: "[FROM.GetLeader] has declined our generous gift, citing [FROM.GetLeader.GetHerHis] inability to offer anything in exchange. Is [FROM.GetName] truly so impoverished, or is this a deliberate slight?"
+ rfr_news.83.a: "That miser!"
  

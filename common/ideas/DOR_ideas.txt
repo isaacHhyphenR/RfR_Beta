@@ -1,4 +1,17 @@
 ideas = {
+	country = {
+		DOR_bribes_in_pockets_idea = {
+			name = DOR_bribes_in_pockets
+			picture = tur_balkan_central_bank_wealthy_greece
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				political_advisor_cost_factor = -0.75
+			}
+		}
+	}
 	hidden_ideas = {
 		bergholda_hidden_trade_modifier = { ##apply to all other countries when you get bergholda
 			picture = empty

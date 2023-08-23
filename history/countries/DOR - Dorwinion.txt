@@ -146,7 +146,7 @@ add_ideas = northern_heritage_idea
 
 
 set_power_balance = {
-    id = DOR_power_balance
+    id = DOR_election_power_balance
     left_side = DOR_great_merchants_side
     right_side = DOR_winelords_side
 }
