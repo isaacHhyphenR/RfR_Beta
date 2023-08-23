@@ -44,7 +44,7 @@ characters = {
 			slot = army_chief
 			idea_token = DOR_bladorthin_koldana
 			allowed = { original_tag = DOR }
-			traits = { army_chief_organizational_1 koldana_pol1 }
+			traits = { army_chief_organizational_1 koldana_pol9 }
 			ai_will_do = {
 				factor = 1
 			}
@@ -255,7 +255,7 @@ characters = {
 			slot = army_chief
 			idea_token = DOR_vidumarh_vierling
 			allowed = { original_tag = DOR }
-			traits = { army_chief_maneuver_2 vierling_pol1 }
+			traits = { army_chief_maneuver_2 vierling_pol9 }
 			ai_will_do = {
 				factor = 1
 			}
@@ -471,7 +471,7 @@ characters = {
 		}
 	}
 
-		#######HUMAN
+		#######MERCHANT HOUSES
 	DOR_bergholda_aldiana = { #Realm master
 		name = DOR_bergholda_aldiana
 		gender = female
@@ -495,23 +495,23 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_bergholda_aldiana
 			allowed = { original_tag = DOR }
-			traits = { empathetic_negotiator_advisor human_advisor_pol1 }
+			traits = { empathetic_negotiator_advisor merchant_house_pol1 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { human_advisor_effect = yes }
-			on_remove = { human_advisor_effect_remove = yes }
+			on_add = { merchant_house_advisor_effect = yes }
+			on_remove = { merchant_house_advisor_effect_remove = yes }
 		}
 		advisor = {
 			slot = theorist
 			idea_token = DOR_bergholda_aldiana
 			allowed = { original_tag = DOR }
-			traits = { trade_theorist human_advisor_pol1 }
+			traits = { trade_theorist merchant_house_pol1 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { human_advisor_effect = yes bergholda_trade_effect = yes }
-			on_remove = { human_advisor_effect_remove = yes bergholda_trade_effect_remove = yes }
+			on_add = { merchant_house_advisor_effect = yes bergholda_trade_effect = yes }
+			on_remove = { merchant_house_advisor_effect_remove = yes bergholda_trade_effect_remove = yes }
 		}
 	}
 	DOR_jauffre_jaufring = { #isolationism
@@ -527,12 +527,12 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_jauffre_jaufring
 			allowed = { original_tag = DOR }
-			traits = { anti_interventionist human_advisor_pol2 }
+			traits = { anti_interventionist merchant_house_pol2 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { human_advisor_effect = yes }
-			on_remove = { human_advisor_effect_remove = yes }
+			on_add = { merchant_house_advisor_effect = yes }
+			on_remove = { merchant_house_advisor_effect_remove = yes }
 		}
 	}
 	DOR_fornagarth_barvadinian = { #trade opinion/improve relations
@@ -548,12 +548,12 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_fornagarth_barvadinian
 			allowed = { original_tag = DOR }
-			traits = { smooth_talking_charmer human_advisor_pol3 }
+			traits = { smooth_talking_charmer merchant_house_pol3 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { human_advisor_effect = yes }
-			on_remove = { human_advisor_effect_remove = yes }
+			on_add = { merchant_house_advisor_effect = yes }
+			on_remove = { merchant_house_advisor_effect_remove = yes }
 		}
 	}
 	DOR_thraear_barvadinian = { #consumer goods
@@ -569,12 +569,12 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_thraear_barvadinian
 			allowed = { original_tag = DOR }
-			traits = { financial_expert human_advisor_pol4 }
+			traits = { financial_expert merchant_house_pol4 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { human_advisor_effect = yes }
-			on_remove = { human_advisor_effect_remove = yes }
+			on_add = { merchant_house_advisor_effect = yes }
+			on_remove = { merchant_house_advisor_effect_remove = yes }
 		}
 	}
 	DOR_tate_aldiana = { #building slots
@@ -590,12 +590,12 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_thraear_barvadinian
 			allowed = { original_tag = DOR }
-			traits = { urban_developer human_advisor_pol5 }
+			traits = { urban_developer merchant_house_pol5 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { human_advisor_effect = yes }
-			on_remove = { human_advisor_effect_remove = yes }
+			on_add = { merchant_house_advisor_effect = yes }
+			on_remove = { merchant_house_advisor_effect_remove = yes }
 		}
 	}
 	DOR_sunngifa_illasarian = { #building slots
@@ -611,12 +611,12 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_sunngifa_illasarian
 			allowed = { original_tag = DOR }
-			traits = { mercenary_theorist human_advisor_pol6 }
+			traits = { mercenary_theorist merchant_house_pol6 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { human_advisor_effect = yes }
-			on_remove = { human_advisor_effect_remove = yes }
+			on_add = { merchant_house_advisor_effect = yes }
+			on_remove = { merchant_house_advisor_effect_remove = yes }
 		}
 	}
 	DOR_godomar_taca = { #naval high command
@@ -632,15 +632,15 @@ characters = {
 			slot = high_command
 			idea_token = DOR_godomar_taca
 			allowed = { original_tag = DOR }
-			traits = { navy_screen_1 human_advisor_pol7 }
+			traits = { navy_screen_1 merchant_house_pol7 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { human_advisor_effect = yes }
-			on_remove = { human_advisor_effect_remove = yes }
+			on_add = { merchant_house_advisor_effect = yes }
+			on_remove = { merchant_house_advisor_effect_remove = yes }
 		}
 		navy_leader = {
-			traits = { human_advisor_mil navy_career_officer gentlemanly fleet_protector }
+			traits = { merchant_house_mil navy_career_officer gentlemanly fleet_protector }
 			skill = 4
 			attack_skill = 3
 			defense_skill = 4
@@ -661,15 +661,15 @@ characters = {
 			slot = high_command
 			idea_token = DOR_kelai_aldiana
 			allowed = { original_tag = DOR }
-			traits = { navy_screen_1 human_advisor_pol8 }
+			traits = { navy_screen_1 merchant_house_pol8 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { human_advisor_effect = yes }
-			on_remove = { human_advisor_effect_remove = yes }
+			on_add = { merchant_house_advisor_effect = yes }
+			on_remove = { merchant_house_advisor_effect_remove = yes }
 		}
 		corps_commander = {
-			traits = { human_advisor_mil administrator extravagent infantry_officer trait_engineer }
+			traits = { merchant_house_mil administrator extravagent infantry_officer trait_engineer }
 			skill = 2
 			attack_skill = 1
 			defense_skill = 1
@@ -678,134 +678,134 @@ characters = {
 		}
 	}
 
-		#######ELVEN
-	DOR_olofel_nos_finarfin = { #freedom
-		name = DOR_olofel_nos_finarfin
+		#######BURGHERS
+	DOR_thodria_celebcaen = { #freedom
+		name = DOR_thodria_celebcaen
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Elves_Generic_f_1"
-				small = "GFX_Portrait_Elves_Generic_f_1_small"
+				large = "GFX_Portrait_Northern_Generic_f_1"
+				small = "GFX_Portrait_Northern_Generic_f_1_small"
 			}
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = DOR_olofel_nos_finarfin
+			idea_token = DOR_thodria_celebcaen
 			allowed = { original_tag = DOR }
-			traits = { liberator_of_the_north elven_advisor_pol1 }
+			traits = { liberator_of_the_north burgher_pol1 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { elven_advisor_effect = yes }
-			on_remove = { elven_advisor_effect_remove = yes }
+			on_add = { burgher_advisor_effect = yes }
+			on_remove = { burgher_advisor_effect_remove = yes }
 		}
 	}
-	DOR_ulgar_nos_ingwe = { #war support
-		name = DOR_ulgar_nos_ingwe
+	DOR_skaldir_lendembas = { #war support
+		name = DOR_skaldir_lendembas
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Elves_Generic_m_1"
-				small = "GFX_Portrait_Elves_Generic_m_1_small"
+				large = "GFX_Portrait_Northern_Generic_m_1"
+				small = "GFX_Portrait_Northern_Generic_m_1_small"
 			}
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = DOR_ulgar_nos_ingwe
+			idea_token = DOR_skaldir_lendembas
 			allowed = { original_tag = DOR }
-			traits = { rallying_figurehead elven_advisor_pol2 }
+			traits = { rallying_figurehead burgher_pol2 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { elven_advisor_effect = yes }
-			on_remove = { elven_advisor_effect_remove = yes }
+			on_add = { burgher_advisor_effect = yes }
+			on_remove = { burgher_advisor_effect_remove = yes }
 		}
 	}
-	DOR_paros_nos_olwe = { #research speed
-		name = DOR_paros_nos_olwe
+	DOR_ansovald_gwingalon = { #research speed
+		name = DOR_ansovald_gwingalon
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Elves_Generic_m_2"
-				small = "GFX_Portrait_Elves_Generic_m_2_small"
+				large = "GFX_Portrait_Northern_Generic_m_2"
+				small = "GFX_Portrait_Northern_Generic_m_2_small"
 			}
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = DOR_paros_nos_olwe
+			idea_token = DOR_ansovald_gwingalon
 			allowed = { original_tag = DOR }
-			traits = { polymath elven_advisor_pol3 }
+			traits = { polymath burgher_pol3 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { elven_advisor_effect = yes }
-			on_remove = { elven_advisor_effect_remove = yes }
+			on_add = { burgher_advisor_effect = yes }
+			on_remove = { burgher_advisor_effect_remove = yes }
 		}
 	}
-	DOR_andrien_nos_sargon = { #civilian build speed
-		name = DOR_andrien_nos_sargon
+	DOR_aregisel_hammdost = { #civilian build speed
+		name = DOR_aregisel_hammdost
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Elves_Generic_f_2"
-				small = "GFX_Portrait_Elves_Generic_f_2_small"
+				large = "GFX_Portrait_Northern_Generic_f_2"
+				small = "GFX_Portrait_Northern_Generic_f_2_small"
 			}
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = DOR_andrien_nos_sargon
+			idea_token = DOR_aregisel_hammdost
 			allowed = { original_tag = DOR }
-			traits = { captain_of_industry elven_advisor_pol4 }
+			traits = { captain_of_industry burgher_pol4 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { elven_advisor_effect = yes }
-			on_remove = { elven_advisor_effect_remove = yes }
+			on_add = { burgher_advisor_effect = yes }
+			on_remove = { burgher_advisor_effect_remove = yes }
 		}
 	}
-	DOR_arodor_aludor = { #naval theorist
-		name = DOR_arodor_aludor
+	DOR_vanderkind_szrelga = { #naval theorist
+		name = DOR_vanderkind_szrelga
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Elves_Generic_m_5"
-				small = "GFX_Portrait_Elves_Generic_m_5_small"
+				large = "GFX_Portrait_Northern_Generic_m_5"
+				small = "GFX_Portrait_Northern_Generic_m_5_small"
 			}
 		}
 		advisor = {
 			slot = theorist
-			idea_token = DOR_andrien_nos_sargon
+			idea_token = DOR_aregisel_hammdost
 			allowed = { original_tag = DOR }
-			traits = { naval_theorist elven_advisor_pol5 }
+			traits = { naval_theorist burgher_pol5 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { elven_advisor_effect = yes }
-			on_remove = { elven_advisor_effect_remove = yes }
+			on_add = { burgher_advisor_effect = yes }
+			on_remove = { burgher_advisor_effect_remove = yes }
 		}
 	}
-	DOR_sur_nos_moriel = { #naval chief
-		name = DOR_sur_nos_moriel
+	DOR_inwar_sant_maleryn = { #naval chief
+		name = DOR_inwar_sant_maleryn
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Elves_Generic_m_4"
-				small = "GFX_Portrait_Elves_Generic_m_4_small"
+				large = "GFX_Portrait_Northern_Generic_m_4"
+				small = "GFX_Portrait_Northern_Generic_m_4_small"
 			}
 		}
 		advisor = {
 			slot = navy_chief
-			idea_token = DOR_sur_nos_moriel
+			idea_token = DOR_inwar_sant_maleryn
 			allowed = { original_tag = DOR }
-			traits = { navy_chief_maneuver_2 elven_advisor_pol6 }
+			traits = { navy_chief_maneuver_2 burgher_pol6 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { elven_advisor_effect = yes }
-			on_remove = { elven_advisor_effect_remove = yes }
+			on_add = { burgher_advisor_effect = yes }
+			on_remove = { burgher_advisor_effect_remove = yes }
 		}
 		navy_leader = {
-			traits = { elven_advisor_mil bold ironside superior_tactician }
+			traits = { burgher_mil bold ironside superior_tactician }
 			skill = 6
 			attack_skill = 4
 			defense_skill = 4
@@ -813,28 +813,28 @@ characters = {
 			coordination_skill = 4
 		}
 	}
-	DOR_ienaskarina_nos_moriel = { #naval high command
-		name = DOR_ienaskarina_nos_moriel
+	DOR_beawyn_hack = { #naval high command
+		name = DOR_beawyn_hack
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Elves_Generic_f_3"
-				small = "GFX_Portrait_Elves_Generic_f_3_small"
+				large = "GFX_Portrait_Northern_Generic_f_3"
+				small = "GFX_Portrait_Northern_Generic_f_3_small"
 			}
 		}
 		advisor = {
 			slot = high_command
-			idea_token = DOR_ienaskarina_nos_moriel
+			idea_token = DOR_beawyn_hack
 			allowed = { original_tag = DOR }
-			traits = { navy_fleet_logistics_1 elven_advisor_pol7 }
+			traits = { navy_fleet_logistics_1 burgher_pol7 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { elven_advisor_effect = yes }
-			on_remove = { elven_advisor_effect_remove = yes }
+			on_add = { burgher_advisor_effect = yes }
+			on_remove = { burgher_advisor_effect_remove = yes }
 		}
 		navy_leader = {
-			traits = { elven_advisor_mil chief_engineer spotter blockade_runner blue_water_expert }
+			traits = { burgher_mil chief_engineer spotter blockade_runner blue_water_expert }
 			skill = 4
 			attack_skill = 2
 			defense_skill = 3
@@ -842,28 +842,28 @@ characters = {
 			coordination_skill = 5
 		}
 	}
-	DOR_golodhlir_nos_sargon = { #army bow
-		name = DOR_golodhlir_nos_sargon
+	DOR_theoren_gastwolk = { #army bow
+		name = DOR_theoren_gastwolk
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Elves_Generic_f_3"
-				small = "GFX_Portrait_Elves_Generic_f_3_small"
+				large = "GFX_Portrait_Northern_Generic_f_3"
+				small = "GFX_Portrait_Northern_Generic_f_3_small"
 			}
 		}
 		advisor = {
 			slot = high_command
-			idea_token = DOR_golodhlir_nos_sargon
+			idea_token = DOR_theoren_gastwolk
 			allowed = { original_tag = DOR }
-			traits = { army_artillery_1 elven_advisor_pol8 }
+			traits = { army_artillery_1 burgher_pol8 }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { elven_advisor_effect = yes }
-			on_remove = { elven_advisor_effect_remove = yes }
+			on_add = { burgher_advisor_effect = yes }
+			on_remove = { burgher_advisor_effect_remove = yes }
 		}
 		corps_commander = {
-			traits = { elven_advisor_mil fair_leader infantry_officer trait_engineer organizer fortress_buster }
+			traits = { burgher_mil fair_leader infantry_officer trait_engineer organizer fortress_buster }
 			skill = 5
 			attack_skill = 6
 			defense_skill = 4

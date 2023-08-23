@@ -1,0 +1,35 @@
+spriteTypes = {
+	##############DORWINION
+	spriteType = {
+		name = "GFX_winelords_bop"
+		texturefile = "gfx/interface/bop/winelords.dds"
+	}
+	spriteType = {
+		name = "GFX_great_merchants_bop"
+		texturefile = "gfx/interface/bop/great_merchants.dds"
+	}
+	spriteType = {
+		name = "GFX_merchant_houses_bop"
+		texturefile = "gfx/interface/bop/merchant_houses.dds"
+	}
+	spriteType = {
+		name = "GFX_burghers_bop"
+		texturefile = "gfx/interface/bop/burghers.dds"
+	}
+	spriteType = {
+		name = "GFX_human_advisors_bop"
+		texturefile = "gfx/interface/bop/human_advisors.dds"
+	}
+	spriteType = {
+		name = "GFX_elven_advisors_bop"
+		texturefile = "gfx/interface/bop/elven_advisors.dds"
+	}
+	spriteType = {
+		name = "GFX_vierling_bop"
+		texturefile = "gfx/interface/bop/vierling.dds"
+	}
+	spriteType = {
+		name = "GFX_koldana_bop"
+		texturefile = "gfx/interface/bop/koldana.dds"
+	}
+}

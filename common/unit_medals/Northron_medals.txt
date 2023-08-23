@@ -1,0 +1,100 @@
+# Valid unit modifiers are not exhaustive
+# Currently supported:
+# army_morale
+# army_morale_factor
+# army_org
+# army_org_factor
+# supply_consumption_factor
+# equipment_capture
+# equipment_capture_factor
+# army_fuel_capacity_factor
+# army_fuel_consumption_factor
+# recon_factor
+# recon_factor_while_entrenched
+# transport_capacity (?)
+# breakthrough_factor
+# armor_factor
+# army_strength_factor
+# experience_loss_factor
+# leader_modifier applies unit modifiers to all units under them as a general, similarly to traits.
+# army_attack_factor
+# army_defence_factor
+# max_dig_in
+# max_dig_in_factor
+
+@cost = 30
+@XP = 100
+
+unit_medals = {
+	###########################################DOR
+	DOR_green_grapes = {
+		available = {
+			should_have_DOR_medals_trigger = yes
+		}
+		frame = 1
+		icon = "GFX_medal_icon_DOR"
+	
+		cost = @cost
+		
+		unit_modifiers = {
+			supply_consumption_factor = -0.1
+			army_fuel_consumption_factor = -0.1
+		}
+		
+		one_time_effect = {
+			add_divisional_commander_xp = @XP
+		}
+	}
+	DOR_red_grapes = {
+		available = {
+			should_have_DOR_medals_trigger = yes
+		}
+		frame = 2
+		icon = "GFX_medal_icon_DOR"
+	
+		cost = @cost
+		
+		unit_modifiers = {
+			army_attack_factor = 0.05
+		}
+		
+		one_time_effect = {
+			add_divisional_commander_xp = @XP
+		}
+	}
+	DOR_purple_grapes = {
+		available = {
+			should_have_DOR_medals_trigger = yes
+		}
+		frame = 3
+		icon = "GFX_medal_icon_DOR"
+	
+		cost = @cost
+		
+		unit_modifiers = {
+			max_dig_in_factor = 0.1
+			army_morale_factor = 0.1
+		}
+		
+		one_time_effect = {
+			add_divisional_commander_xp = @XP
+		}
+	}
+	DOR_grape_leaf = {
+		available = {
+			should_have_DOR_medals_trigger = yes
+		}
+		frame = 4
+		icon = "GFX_medal_icon_DOR"
+	
+		cost = @cost
+		
+		unit_modifiers = {
+			equipment_capture_factor = 0.15
+		}
+		
+		one_time_effect = {
+			add_divisional_commander_xp = @XP
+		}
+	}
+}

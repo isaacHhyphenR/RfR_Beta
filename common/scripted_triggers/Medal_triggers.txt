@@ -1,0 +1,3 @@
+should_have_DOR_medals_trigger = {
+	original_tag = DOR
+}

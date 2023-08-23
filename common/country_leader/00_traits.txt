@@ -2389,6 +2389,60 @@ leader_traits = {
 	elven_advisor_pol9 = {
 		random = no
 	}
+	merchant_house_pol1 = {
+		random = no
+	}
+	merchant_house_pol2 = {
+		random = no
+	}
+	merchant_house_pol3 = {
+		random = no
+	}
+	merchant_house_pol4 = {
+		random = no
+	}
+	merchant_house_pol5 = {
+		random = no
+	}
+	merchant_house_pol6 = {
+		random = no
+	}
+	merchant_house_pol7 = {
+		random = no
+	}
+	merchant_house_pol8 = {
+		random = no
+	}
+	merchant_house_pol9 = {
+		random = no
+	}
+	burgher_pol1 = {
+		random = no
+	}
+	burgher_pol2 = {
+		random = no
+	}
+	burgher_pol3 = {
+		random = no
+	}
+	burgher_pol4 = {
+		random = no
+	}
+	burgher_pol5 = {
+		random = no
+	}
+	burgher_pol6 = {
+		random = no
+	}
+	burgher_pol7 = {
+		random = no
+	}
+	burgher_pol8 = {
+		random = no
+	}
+	burgher_pol9 = {
+		random = no
+	}
 	temperate = { #Hawin Koldana
 		random = no
 		stability_factor = 0.1

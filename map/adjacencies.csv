@@ -117,6 +117,18 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 6991;4431;impassable;-1;-1;-1;-1;-1;;
 6947;379;impassable;-1;-1;-1;-1;-1;;
 5262;3442;impassable;-1;-1;-1;-1;-1;;CIRITH UNGOL
+2325;845;impassable;-1;-1;-1;-1;-1;;DORWINION
+2258;845;impassable;-1;-1;-1;-1;-1;;
+6474;4867;impassable;-1;-1;-1;-1;-1;;
+3779;4867;impassable;-1;-1;-1;-1;-1;;
+1081;4867;impassable;-1;-1;-1;-1;-1;;
+1596;720;impassable;-1;-1;-1;-1;-1;;
+4376;720;impassable;-1;-1;-1;-1;-1;;
+1164;720;impassable;-1;-1;-1;-1;-1;;
+3993;720;impassable;-1;-1;-1;-1;-1;;
+3592;997;impassable;-1;-1;-1;-1;-1;;
+6455;6441;impassable;-1;-1;-1;-1;-1;;
+6401;6441;impassable;-1;-1;-1;-1;-1;;
 12500;12734;;-1;-1;-1;-1;-1;N_MOUTH_OF_ANDUIN;MOUTHS OF ANDUIN-NAVAL
 12734;12491;;-1;-1;-1;-1;-1;NC_MOUTH_OF_ANDUIN;
 12491;12929;;-1;-1;-1;-1;-1;C_MOUTH_OF_ANDUIN;

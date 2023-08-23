@@ -3691,4 +3691,28 @@ leader_traits = {
 			base = 0
 		}
 	}
+	merchant_house_mil = {
+		type = { land navy }
+		trait_type = personality_trait
+		
+		modifier = {
+			no_supply_grace = 72
+		}
+		
+		new_commander_weight = {
+			base = 0
+		}
+	}
+	burgher_mil = {
+		type = { land navy }
+		trait_type = personality_trait
+		
+		modifier = {
+			skill_bonus_factor = 0.1
+		}
+		
+		new_commander_weight = {
+			base = 0
+		}
+	}
 }

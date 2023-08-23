@@ -121,18 +121,35 @@ recruit_character = DOR_tate_aldiana
 recruit_character = DOR_sunngifa_illasarian
 recruit_character = DOR_godomar_taca
 recruit_character = DOR_kelai_aldiana
-recruit_character = DOR_olofel_nos_finarfin
-recruit_character = DOR_ulgar_nos_ingwe
-recruit_character = DOR_paros_nos_olwe
-recruit_character = DOR_andrien_nos_sargon
-recruit_character = DOR_arodor_aludor
-recruit_character = DOR_sur_nos_moriel
-recruit_character = DOR_ienaskarina_nos_moriel
-recruit_character = DOR_golodhlir_nos_sargon
+##burghers
+recruit_character = DOR_thodria_celebcaen
+recruit_character = DOR_skaldir_lendembas
+recruit_character = DOR_ansovald_gwingalon
+recruit_character = DOR_aregisel_hammdost
+recruit_character = DOR_vanderkind_szrelga
+recruit_character = DOR_inwar_sant_maleryn
+recruit_character = DOR_beawyn_hack
+recruit_character = DOR_theoren_gastwolk
+
+
+#elves
+# recruit_character = DOR_olofel_nos_finarfin
+# recruit_character = DOR_ulgar_nos_ingwe
+# recruit_character = DOR_paros_nos_olwe
+# recruit_character = DOR_andrien_nos_sargon
+# recruit_character = DOR_arodor_aludor
+# recruit_character = DOR_sur_nos_moriel
+# recruit_character = DOR_ienaskarina_nos_moriel
+# recruit_character = DOR_golodhlir_nos_sargon
+
 add_ideas = northern_heritage_idea
 
 
-
+set_power_balance = {
+    id = DOR_power_balance
+    left_side = DOR_great_merchants_side
+    right_side = DOR_winelords_side
+}
 
 add_ideas = female_leader_chance_idea
 set_variable = { global.wine_exporter = THIS }

@@ -1,0 +1,63 @@
+DOR_power_balance = {
+	initial_value = 0.0
+	left_side = DOR_great_merchants_side	
+	right_side = DOR_winelords_side	
+	decision_category = DOR_balance_of_power_category
+
+	### Neutral status
+	range = {
+		id = DOR_balance_range
+		min = -0.10
+		max = 0.10
+		modifier = {
+		}
+		on_activate = {
+
+		}
+		on_deactivate = {
+			
+		}
+	}
+
+	###Great Merchants
+	side = {
+		id = DOR_great_merchants_side	
+		icon = GFX_great_merchants_bop
+
+		range = {
+			id = DOR_great_merchants_low_favoured_range
+			min = -1
+			max = -0.1
+			modifier = {
+				prosperity_gain_factor = 0.1
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+	}
+
+	###Winelords
+	side = {
+		id = DOR_winelords_side	
+		icon = GFX_winelords_bop
+
+		range = {
+			id = DOR_winelords_low_favoured_range
+			min = 0.1
+			max = 1
+			modifier = {
+				wine_gain_factor = 0.1
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+	}
+
+}
+

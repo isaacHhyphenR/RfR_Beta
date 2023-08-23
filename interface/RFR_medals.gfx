@@ -1,0 +1,34 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_DED_medal_1"
+		texturefile = "gfx/interface/medals/DED_medal_1.dds"
+	}
+	spriteType = {
+		name = "GFX_medal_icon_DOR"
+		texturefile = "gfx/interface/medals/DOR_medal_strip.dds"
+		noOfFrames = 4
+    }
+	spriteType = {
+		name = "GFX_medal_icon_DOR_large"
+		texturefile = "gfx/interface/medals/DOR_medal_strip_large.dds"
+		noOfFrames = 4
+    }
+	spriteType = {
+		name = "GFX_DOR_green_grapes"
+		texturefile = "gfx/interface/medals/DOR_green_grapes.dds"
+	}
+	spriteType = {
+		name = "GFX_DOR_red_grapes"
+		texturefile = "gfx/interface/medals/DOR_red_grapes.dds"
+	}
+	spriteType = {
+		name = "GFX_DOR_purple_grapes"
+		texturefile = "gfx/interface/medals/DOR_purple_grapes.dds"
+	}
+	spriteType = {
+		name = "GFX_DOR_grape_leaf"
+		texturefile = "gfx/interface/medals/DOR_grape_leaf.dds"
+	}
+	
+}

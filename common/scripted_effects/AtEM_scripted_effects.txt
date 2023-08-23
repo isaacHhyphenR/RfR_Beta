@@ -939,6 +939,21 @@ elven_advisor_effect_remove = { ##removes BoP
 	
 }
 
+merchant_house_advisor_effect = { ##adds BoP
+	
+}
+merchant_house_advisor_effect_remove = { ##removes BoP
+	
+}
+
+burgher_advisor_effect = { ##adds BoP
+	
+}
+burgher_advisor_effect_remove = { ##removes BoP
+	
+}
+
+
 bergholda_trade_effect = { ##reduces cost to trade
 	hidden_effect = {
 		every_possible_country = {

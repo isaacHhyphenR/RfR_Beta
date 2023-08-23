@@ -121,11 +121,19 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_trait_human_advisor_mil"
-		texturefile = "gfx/interface/traits/human_advisors.dds"
+		texturefile = "gfx/interface/traits/human_advisor.dds"
 	}
 	spriteType = {
 		name = "GFX_trait_elven_advisor_mil"
-		texturefile = "gfx/interface/traits/elven_advisors.dds"
+		texturefile = "gfx/interface/traits/elven_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_merchant_house_mil"
+		texturefile = "gfx/interface/traits/merchant_house.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_burgher_mil"
+		texturefile = "gfx/interface/traits/burgher.dds"
 	}
 	
 }
