@@ -2518,7 +2518,18 @@ leader_traits = {
 	}
 	empathetic_negotiator_leader = { #bergholda aldiana
 		random = no
+		sprite = 10
 		prosperity_gain_factor = 0.1
+	}
+	improved_empathetic_negotiator_advisor = { #bergholda aldiana
+		random = no
+		sprite = 10
+		prosperity_gain_factor = 0.2
+	}
+	improved_empathetic_negotiator_leader = { #bergholda aldiana
+		random = no
+		sprite = 10
+		prosperity_gain_factor = 0.2
 	}
 	generous_gift_giver = { #bergholda aldiana
 		random = no

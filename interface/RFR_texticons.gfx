@@ -179,4 +179,44 @@ spriteTypes = {
 		texturefile = "gfx/texticons/bow_equipment.dds"
 		legacy_lazy_load = no
 	}
+	SpriteType = {
+		name = "GFX_winelords_texticon"
+		texturefile = "gfx/texticons/winelords.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_great_merchants_texticon"
+		texturefile = "gfx/texticons/great_merchants.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_burghers_texticon"
+		texturefile = "gfx/texticons/burghers.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_merchant_houses_texticon"
+		texturefile = "gfx/texticons/merchant_houses.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_koldana_texticon"
+		texturefile = "gfx/texticons/koldana.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_vierling_texticon"
+		texturefile = "gfx/texticons/vierling.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_human_advisors_texticon"
+		texturefile = "gfx/texticons/human_advisors.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_elven_advisors_texticon"
+		texturefile = "gfx/texticons/elven_advisors.dds"
+		legacy_lazy_load = no
+	}
 }

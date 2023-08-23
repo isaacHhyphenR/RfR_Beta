@@ -25,6 +25,7 @@ focus_tree = {
 	}
 	
 ############={} ={}
+
 ######################################################################MERCHANTS BRANCH
 	focus = { #support the great merchants
 		id = DOR_support_the_great_merchants
@@ -79,8 +80,8 @@ focus_tree = {
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			great_merchants_focus_effect = yes
 			unlock_decision_tooltip = distribute_generous_gifts
+			great_merchants_focus_effect = yes
 		}
 	}
 	focus = { #pillars of society
@@ -97,10 +98,10 @@ focus_tree = {
 			focus = DOR_host_guild_events
 		}
 		available = { great_merchants_focus_trigger = yes }
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_GUILDS }
 		completion_reward = {
-			great_merchants_focus_effect = yes
 			unlock_decision_tooltip = improve_guild_marketing
+			great_merchants_focus_effect = yes
 		}
 	}
 	focus = { #solicit guild funding
@@ -119,8 +120,8 @@ focus_tree = {
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			great_merchants_focus_effect = yes
 			add_political_power = 150
+			great_merchants_focus_effect = yes
 		}
 	}
 	focus = { #take guild loans
@@ -137,10 +138,10 @@ focus_tree = {
 			focus = DOR_solicit_guild_funding
 		}
 		available = { great_merchants_focus_trigger = yes }
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GUILDS }
 		completion_reward = {
-			great_merchants_focus_effect = yes
 			unlock_decision_tooltip = take_smithing_guild_loan
+			great_merchants_focus_effect = yes
 		}
 	}
 	focus = { #loan to foreigners
@@ -157,13 +158,24 @@ focus_tree = {
 			focus = DOR_take_guild_loans
 		}
 		available = { great_merchants_focus_trigger = yes }
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GUILDS FOCUS_FILTER_DIPLOMATIC }
 		completion_reward = {
-			great_merchants_focus_effect = yes
-			every_country = {
-				limit = { allowed_celduin_trade = yes market_capital = yes }
+			every_other_country = {
+				limit = {
+					allowed_celduin_trade = yes
+					market_capital = yes
+					NOT = {
+						OR = {
+							has_war_with = DOR
+							is_embargoing = DOR
+							is_embargoed_by = DOR
+						}
+					}
+				}
 				unlock_decision_tooltip = take_smithing_guild_loan_foreign
+				custom_effect_tooltip = gain_rhovanion_influence_from_loan
 			}
+			great_merchants_focus_effect = yes
 		}
 	}
 	focus = { #celebrate city culture
@@ -200,7 +212,6 @@ focus_tree = {
 			focus = DOR_celebtrate_city_culture
 		}
 		available = {
-			great_merchants_focus_trigger = yes
 			any_other_country = {
 				market_capital = yes
 				is_subject = no
@@ -210,10 +221,10 @@ focus_tree = {
 					has_cosmetic_tag = RVN
 				}
 			}
+			great_merchants_focus_trigger = yes
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_DIPLOMATIC }
 		completion_reward = {
-			great_merchants_focus_effect = yes
 			every_other_country = {
 				limit = {
 					market_capital = yes
@@ -230,6 +241,7 @@ focus_tree = {
 					accept_dorwinion_wine_effect = yes
 				}
 			}
+			great_merchants_focus_effect = yes
 		}
 	}
 	focus = { #remember who brings the wealth
@@ -267,8 +279,561 @@ focus_tree = {
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			great_merchants_focus_effect = yes
 			add_ideas = DOR_bribes_in_pockets_idea
+			great_merchants_focus_effect = yes
+		}
+	}
+#################################MERCHANT ECONOMY
+	focus = { #Sail by river and wave
+		id = DOR_sail_by_river_and_wave
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		x = -9
+		y = 1
+		relative_position_id = DOR_support_the_great_merchants
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_great_merchants
+		}
+		available = {
+			OR = { controls_state = 310 controls_state = 118 } #doraldena & folyavuld
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+		completion_reward = {
+			if = { #doraldena
+				limit = { controls_state = 310 }
+				310 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 1822 #padavan
+					}
+				}
+			}
+			if = { #folyavuld
+				limit = { controls_state = 118 }
+				118 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 1912 #caras sant
+					}
+				}
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #order a vast fleet
+		id = DOR_order_a_vast_fleet
+		icon = GFX_focus_generic_refit_civilian_ships
+		x = 2
+		y = 1
+		relative_position_id = DOR_sail_by_river_and_wave
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_sail_by_river_and_wave
+		}
+		available = {
+			DOR_can_interact_with_guilds = yes
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_GUILDS }
+		completion_reward = {
+			
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #traverse the sea as land
+		id = DOR_traverse_the_sea_as_land
+		icon = GFX_goal_generic_build_navy
+		x = 3
+		y = 1
+		relative_position_id = DOR_order_a_vast_fleet
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_order_a_vast_fleet
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				ahead_reduction = 2
+				category = cat_shipbuilding
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #as safe as the walls of riavod
+		id = DOR_as_safe_as_the_walls_of_riavod
+		icon = GFX_focus_generic_coastal_fort
+		x = 0
+		y = 2
+		relative_position_id = DOR_traverse_the_sea_as_land
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_traverse_the_sea_as_land
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				ahead_reduction = 2
+				category = naval_equipment
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #ship our goods
+		id = DOR_ship_our_goods
+		icon = GFX_goal_generic_merchant_ship
+		x = 1
+		y = 1
+		relative_position_id = DOR_order_a_vast_fleet
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_order_a_vast_fleet
+		}
+		mutually_exclusive = { focus = DOR_import_foreign_materials }
+		available = {
+			DOR_can_interact_with_guilds = yes
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					market_capital = yes
+					NOT = {
+						OR = {
+							has_war_with = DOR
+							is_embargoing = DOR
+							is_embargoed_by = DOR
+						}
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = convoy
+					amount = 30
+					producer = ROOT
+				}
+				hidden_effect = { news_event = { id = rfr_news.84 hours = 1 } }
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #charge for the service
+		id = DOR_charge_for_the_service
+		#icon = GFX_goal_generic_merchant_ship
+		x = -1
+		y = 1
+		relative_position_id = DOR_ship_our_goods
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_ship_our_goods
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = DOR_shipping_tax
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #court foreign vendors 
+		id = DOR_court_foreign_vendors
+		#icon = GFX_goal_generic_merchant_ship
+		x = 1
+		y = 1
+		relative_position_id = DOR_ship_our_goods
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_ship_our_goods
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+			has_character = DOR_bergholda_aldiana
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_PROSPERITY }
+		completion_reward = { #+10% prosperity gain on bergholda
+			DOR_bergholda_aldiana = {
+				swap_country_leader_traits = {
+					remove = empathetic_negotiator_leader
+					add = improved_empathetic_negotiator_leader
+					ideology = elective_monarchy_freedom
+				}
+				hidden_effect = {
+					swap_country_leader_traits = {
+						remove = empathetic_negotiator_leader
+						add = improved_empathetic_negotiator_leader
+						ideology = elective_monarchy_isolationism
+					}
+					remove_trait = {##so that the real trait doesn't have a weird blank space
+						slot = merchant_house_pol1
+						trait = empathetic_negotiator_advisor
+					}
+					remove_trait = {
+						slot = political_advisor
+						trait = empathetic_negotiator_advisor
+					}
+					add_trait = {
+						slot = political_advisor
+						trait = improved_empathetic_negotiator_advisor
+					}
+					add_trait = {##so that the real trait doesn't have a weird blank space
+						slot = merchant_house_pol1
+						trait = improved_empathetic_negotiator_advisor
+					}
+				}
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #import foreign materials
+		id = DOR_import_foreign_materials
+		#icon = GFX_goal_generic_merchant_ship
+		x = -1
+		y = 1
+		relative_position_id = DOR_order_a_vast_fleet
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_order_a_vast_fleet
+		}
+		mutually_exclusive = { focus = DOR_ship_our_goods }
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
+		completion_reward = { #+12 of resources on capital
+			@importResourceAmount = 12
+			capital_scope = {
+				add_resource = {
+					type = cloth
+					amount = @importResourceAmount
+				}
+				add_resource = {
+					type = wood
+					amount = @importResourceAmount
+				}
+				add_resource = {
+					type = iron
+					amount = @importResourceAmount
+				}
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #Jewels Upon the Sea
+		id = DOR_jewels_upon_the_sea
+		#icon = GFX_goal_the_deciever
+		x = -12
+		y = 1
+		relative_position_id = DOR_support_the_great_merchants
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_great_merchants
+		}
+		available = {
+			any_core_state = {
+				is_controlled_by = ROOT
+				market > 0
+			}
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+		completion_reward = {
+			every_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					market > 0
+				}
+				add_15_prosperity = yes
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #All wealth flows through riavod
+		id = DOR_all_wealth_flows_through_riavod
+		#icon = GFX_goal_the_deciever
+		x = -2
+		y = 1
+		relative_position_id = DOR_sail_by_river_and_wave
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_sail_by_river_and_wave
+		}
+		prerequisite = {
+			focus = DOR_jewels_upon_the_sea
+		}
+		available = {
+			controls_state = 116 #riavod
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			116 = { #riavod
+				upgrade_state_category = yes
+				add_15_prosperity = yes
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #Invest in alternate exports
+		id = DOR_invest_in_alternate_exports
+		#icon = GFX_goal_the_deciever
+		x = -1
+		y = 1
+		relative_position_id = DOR_all_wealth_flows_through_riavod
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_all_wealth_flows_through_riavod
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #2 random civs and slots
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #reap the wealth
+		id = DOR_reap_the_wealth
+		#icon = GFX_goal_the_deciever
+		x = 0
+		y = 2
+		relative_position_id = DOR_invest_in_alternate_exports
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_invest_in_alternate_exports
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #25 prosperty on all core markets
+			every_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					market > 0
+				}
+				add_25_prosperity = yes
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #city of guilds
+		id = DOR_city_of_guilds
+		#icon = GFX_goal_the_deciever
+		x = 1
+		y = 1
+		relative_position_id = DOR_all_wealth_flows_through_riavod
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_all_wealth_flows_through_riavod
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_GUILDS }
+		completion_reward = { #exp on carpentry, smithing, & tailors guild
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #driving innovation
+		id = DOR_driving_innovation
+		icon = GFX_goal_generic_production
+		x = -1
+		y = 1
+		relative_position_id = DOR_city_of_guilds
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_city_of_guilds
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #civilian research bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = cat_production
+			}
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = architecture
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #prosper from manufacturing
+		id = DOR_prosper_from_manufacturing
+		icon = GFX_focus_generic_industry_2
+		x = 1
+		y = 1
+		relative_position_id = DOR_city_of_guilds
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_city_of_guilds
+		}
+		prerequisite = {
+			focus = DOR_import_foreign_materials
+		}
+		available = {
+			controls_state = 116 #riavod
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #mil & civ on riavod
+			116 = { #riavod
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #expand shipbuilding
+		id = DOR_expand_shipbuilding
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		relative_position_id = DOR_prosper_from_manufacturing
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_prosper_from_manufacturing
+		}
+		available = {
+			OR = {
+				controls_state = 310 #doraldena
+				controls_state = 118 #folyavuld
+			}
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #dock & slot on doraledana & folyavuld
+			310 = { #doraldena
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			118 = { #folyavuld
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			great_merchants_focus_effect = yes
 		}
 	}
 }

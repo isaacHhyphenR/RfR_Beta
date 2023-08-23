@@ -38,6 +38,19 @@ celduin_trade_category = {
 			}
 			FROM = { clr_state_flag = constructing_market }
 			subtract_from_variable = { market_upgrading_cost = global.market_upgrade_cost }
+			random_other_country = { ##gain prosperity on their market from shipping tax
+				limit = {
+					has_idea = DOR_shipping_tax
+					can_trade_with_ROOT = yes		
+				}
+				random_controlled_state = {
+					limit = {
+						market > 0
+						check_variable = { prosperity < 100 }
+					}
+					add_5_prosperity = yes
+				}
+			}
 		}
 	}
 

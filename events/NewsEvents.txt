@@ -1260,7 +1260,7 @@ news_event = { ##82## Exchanged wine gifts
 	id = rfr_news.82
 	title = rfr_news.82.t
 	desc = rfr_news.82.d
-	picture = GFX_news_feast2
+	picture = GFX_news_offer_wine
 	is_triggered_only = yes
 	
 	option = {
@@ -1276,5 +1276,25 @@ news_event = { ##83## Refused wine gift exchange
 	
 	option = {
 		name = rfr_news.83.a
+	}
+}
+
+news_event = { ##84## Dorwin Merchants bring ships
+	id = rfr_news.84
+	title = rfr_news.84.t
+	desc = rfr_news.84.d
+	picture = GFX_news_ship_pulling_in
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.84.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 30
+				producer = FROM
+			}
+		}
 	}
 }

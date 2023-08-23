@@ -48,7 +48,6 @@
  merchants_house_formatted: "£GFX_merchant_houses_texticon §0Merchant Houses§!"
  koldanas_formatted: "£GFX_koldana_texticon §0Koldanas§!"
  vierlings_formatted: "£GFX_vierling_texticon §0Vierlings§!"
- 
  elected_winelord: "Elected a $winelord_formatted$ Realm Master"
  elected_great_merchant: "Elected a $great_merchant_formatted$ Realm Master"
  supporting_great_merchants: "Supporting the $burgher_formatted$"
@@ -57,6 +56,15 @@
  supporting_merchant_houses: "Supporting the $merchant_houses_formatted$"
  supporting_koldana: "Supporting §YHouse§! $koldana_formatted$"
  supporting_vierling: "Supporting §YHouse§! $vierling_formatted$"
- 
  pp_if_great_merchants_win_tooltip: "§G+100§! §YPolitical Power§! if the $great_merchants_formatted$ win the election"
  pp_if_winelords_win_tooltip: "§G+100§! §YPolitical Power§! if the $winelords_formatted$ win the election"
+ 
+ add_5_prosperity: "§G+5§! §YProsperity§!"
+ add_10_prosperity: "§G+10§! §YProsperity§!"
+ add_15_prosperity: "§G+15§! §YProsperity§!"
+ add_20_prosperity: "§G+20§! §YProsperity§!"
+ add_25_prosperity: "§G+25§! §YProsperity§!"
+ add_30_prosperity: "§G+30§! §YProsperity§!"
+ add_50_prosperity: "§G+50§! §YProsperity§!"
+ gain_prosperity_on_foreign_market_upgrade_tooltip: "Everytime a foreign, non-hostile country upgrades a §Y$market$§!, a random market we control gains §G+5§! §YProsperity§!"
+ 

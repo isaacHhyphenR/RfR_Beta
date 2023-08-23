@@ -64,6 +64,16 @@ DOR_foreign_loans_category = {
 		modifier = {
 			consumer_goods_factor = @guildLoanCG
 		}
+		complete_effect = {
+			add_opinion_modifier = {
+				modifier = banking_partners
+				target = DOR
+			}
+			reverse_add_opinion_modifier = {
+				modifier = banking_partners
+				target = DOR
+			}
+		}
 		remove_effect = {
 			if = {
 				limit = { capital_scope = { industrial_complex > 0 } }
@@ -81,6 +91,17 @@ DOR_foreign_loans_category = {
 						type = industrial_complex
 						level = 1
 					}
+				}
+			}
+			
+			remove_opinion_modifier = {
+				modifier = banking_partners
+				target = DOR
+			}
+			DOR = {
+				remove_opinion_modifier = {
+					modifier = banking_partners
+					target = ROOT
 				}
 			}
 		}

@@ -702,4 +702,7 @@
  rfr_news.83.t: "[FROM.GetName] Refuses Gift Exchange"
  rfr_news.83.d: "[FROM.GetLeader] has declined our generous gift, citing [FROM.GetLeader.GetHerHis] inability to offer anything in exchange. Is [FROM.GetName] truly so impoverished, or is this a deliberate slight?"
  rfr_news.83.a: "That miser!"
+ rfr_news.84.t: "[FROM.GetAdjectiveCap] Merchants Increase Activity"
+ rfr_news.84.d: "Ships from [FROM.GetNameDef] have paid more and more visits to our ports recently. They are such frequent visitors we could almost consider them extensions of our own merchant marine."
+ rfr_news.84.a: "That miser!"
  

@@ -335,6 +335,35 @@ set_ideology_index = { #call in a tag
 	}
 }
 
+add_5_prosperity = {
+	add_to_variable = { prosperity = 5 }
+	custom_effect_tooltip = add_5_prosperity
+}
+add_10_prosperity = {
+	add_to_variable = { prosperity = 10 }
+	custom_effect_tooltip = add_10_prosperity
+}
+add_15_prosperity = {
+	add_to_variable = { prosperity = 15 }
+	custom_effect_tooltip = add_15_prosperity
+}
+add_20_prosperity = {
+	add_to_variable = { prosperity = 20 }
+	custom_effect_tooltip = add_20_prosperity
+}
+add_25_prosperity = {
+	add_to_variable = { prosperity = 25 }
+	custom_effect_tooltip = add_25_prosperity
+}
+add_30_prosperity = {
+	add_to_variable = { prosperity = 30 }
+	custom_effect_tooltip = add_30_prosperity
+}
+add_50_prosperity = {
+	add_to_variable = { prosperity = 50 }
+	custom_effect_tooltip = add_50_prosperity
+}
+
 ############################################################################################COLONIES
 clear_undeveloped_colony_resources = { #call in a state to remove any 1 size resources
 	custom_effect_tooltip = clear_undeveloped_colony_resources_tooltip

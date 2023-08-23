@@ -56,5 +56,15 @@ winelords_focus_trigger = {
 	NOT = { has_country_flag = elected_great_merchant }
 }
 
+DOR_can_interact_with_guilds = {
+}
 
-
+can_trade_with_ROOT = {
+	NOT = {
+		OR = {
+			has_war_with = ROOT
+			is_embargoing = ROOT
+			is_embargoed_by = ROOT
+		}
+	}
+}

@@ -477,15 +477,31 @@ spriteTypes = {
 #######################################################################################################################
 	spriteType = {
 		name = "GFX_feast"
-		texturefile = "gfx/event_pictures/events/feast.dds"
+		texturefile = "gfx/event_pictures/feast.dds"
 	}
 	spriteType = {
 		name = "GFX_feast2"
-		texturefile = "gfx/event_pictures/events/feast2.dds"
+		texturefile = "gfx/event_pictures/feast2.dds"
 	}
 	spriteType = {
 		name = "GFX_offer_wine"
-		texturefile = "gfx/event_pictures/events/offer_wine.dds"
+		texturefile = "gfx/event_pictures/offer_wine.dds"
+	}
+	spriteType = {
+		name = "GFX_corsair_raid"
+		texturefile = "gfx/event_pictures/corsair_raid.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_in_port"
+		texturefile = "gfx/event_pictures/ship_in_port.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_sailing"
+		texturefile = "gfx/event_pictures/ship_sailing.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_pulling_in"
+		texturefile = "gfx/event_pictures/ship_pulling_in.dds"
 	}
 ##################################################################NEWS
 	spriteType = {
@@ -499,5 +515,21 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_offer_wine"
 		texturefile = "gfx/event_pictures/news_events/news_offer_wine.dds"
+	}
+	spriteType = {
+		name = "GFX_news_corsair_raid"
+		texturefile = "gfx/event_pictures/news_events/news_corsair_raid.dds"
+	}
+	spriteType = {
+		name = "GFX_news_ship_in_port"
+		texturefile = "gfx/event_pictures/news_events/news_ship_in_port.dds"
+	}
+	spriteType = {
+		name = "GFX_news_ship_sailing"
+		texturefile = "gfx/event_pictures/news_events/news_ship_sailing.dds"
+	}
+	spriteType = {
+		name = "GFX_news_ship_pulling_in"
+		texturefile = "gfx/event_pictures/news_events/news_ship_pulling_in.dds"
 	}
 }

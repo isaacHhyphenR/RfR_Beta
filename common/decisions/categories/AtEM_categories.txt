@@ -39,6 +39,13 @@ DOR_foreign_loans_category = {
 	}
 	visible = {
 		DOR = { has_completed_focus = DOR_loan_to_foreigners }
+		NOT = {
+			OR = {
+				has_war_with = DOR
+				is_embargoing = DOR
+				is_embargoed_by = DOR
+			}
+		}
 		market_capital = yes
 	}
 }
