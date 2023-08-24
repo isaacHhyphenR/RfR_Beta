@@ -1,0 +1,80 @@
+﻿division_template = {
+	name = "City Militia"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		anti_tank_brigade = { x = 2 y = 0 }
+		anti_tank_brigade = { x = 2 y = 1 }
+	}
+	support = {
+	}
+}
+division_template = {
+	name = "Noble Retinue"
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+		heavy_motorized = { x = 1 y = 0 }
+		heavy_motorized = { x = 1 y = 1 }
+		heavy_motorized = { x = 1 y = 2 }
+	}
+	support = {
+	}
+}
+units = {
+	division = {	
+		name = "Eldrast Militia"
+		location = 950
+		division_template = "City Militia"
+	}
+	division = {	
+		name = "Padavon Militia"
+		location = 1822
+		division_template = "City Militia"
+	}
+	division = {	
+		name = "Srzel-Kain Militia"
+		location = 480
+		division_template = "City Militia"
+	}
+	division = {	
+		name = "Riavod Militia"
+		location = 6260
+		division_template = "City Militia"
+	}
+	division = {	
+		name = "Mihrason Militia"
+		location = 4924
+		division_template = "City Militia"
+	}
+	division = {	
+		name = "Caras Sant Militia"
+		location = 1912
+		division_template = "City Militia"
+	}
+	division = {	
+		name = "Darcega Militia"
+		location = 6550
+		division_template = "City Militia"
+	}
+	division = {	
+		name = "House Vierling Retinue"
+		location = 6417
+		division_template = "Noble Retinue"
+	}
+	division = {	
+		name = "House Koldana Retinue"
+		location = 6260
+		division_template = "Noble Retinue"
+	}
+	division = {	
+		name = "House Aldiana Retinue"
+		location = 950
+		division_template = "Noble Retinue"
+	}
+}
