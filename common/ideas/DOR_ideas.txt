@@ -21,6 +21,148 @@ ideas = {
 				custom_modifier_tooltip = gain_prosperity_on_foreign_market_upgrade_tooltip
 			}
 		}
+		small_DOR_investment = {
+			picture = invest_in_dorwinion
+			removal_cost = -1
+			allowed_civil_war = {
+				is_dynamic_country = no
+			}
+			modifier = {
+				prosperity_gain_factor = 0.1
+			}
+		}
+		large_DOR_investment = {
+			picture = invest_in_dorwinion
+			removal_cost = -1
+			allowed_civil_war = {
+				is_dynamic_country = no
+			}
+			modifier = {
+				prosperity_gain_factor = 0.1
+				civilian_factory_use = 1
+			}
+		}
+		DOR_merchant_spies_idea = {
+			name = DOR_merchant_spies
+			picture = generic_spy_coup
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				decryption_factor = 0.25
+			}
+		}
+		DOR_merchant_spies_encryption = {
+			name = DOR_merchant_spies_idea
+			picture = generic_spy_coup
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				decryption_factor = 0.25
+				encryption_factor = 0.25
+			}
+		}
+		DOR_merchant_spies_intel = {
+			name = DOR_merchant_spies_idea
+			picture = generic_spy_coup
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				decryption_factor = 0.25
+				army_intel_factor = 0.1
+				navy_intel_factor = 0.20
+				civilian_intel_factor = 0.25
+			}
+		}
+		DOR_merchant_spies_intel_encryption = {
+			name = DOR_merchant_spies_idea
+			picture = generic_spy_coup
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				decryption_factor = 0.25
+				encryption_factor = 0.25
+				army_intel_factor = 0.1
+				navy_intel_factor = 0.20
+				civilian_intel_factor = 0.25
+			}
+		}
+		
+		@assasinChance = 10
+		DOR_merchant_spies_knife_guild_LAR = {
+			name = DOR_merchant_spies_idea
+			picture = generic_spy_coup
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				assassin_trait_chance_factor = @assasinChance
+			}
+		}
+		DOR_merchant_spies_intel_LAR = {
+			name = DOR_merchant_spies_idea
+			picture = generic_spy_coup
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				army_intel_factor = 0.1
+				navy_intel_factor = 0.20
+				civilian_intel_factor = 0.25
+			}
+		}
+		DOR_merchant_spies_slot_LAR = {
+			name = DOR_merchant_spies_idea
+			picture = generic_spy_coup
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				army_intel_factor = 0.1
+				navy_intel_factor = 0.20
+				civilian_intel_factor = 0.25
+				operative_slot = 1
+			}
+		}
+		DOR_merchant_spies_intel_knife_guild_LAR = {
+			name = DOR_merchant_spies_idea
+			picture = generic_spy_coup
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				army_intel_factor = 0.1
+				navy_intel_factor = 0.20
+				civilian_intel_factor = 0.25
+				assassin_trait_chance_factor = @assasinChance
+			}
+		}
+		DOR_merchant_spies_slot_knife_guild_LAR = {
+			name = DOR_merchant_spies_idea
+			picture = generic_spy_coup
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				army_intel_factor = 0.1
+				navy_intel_factor = 0.20
+				civilian_intel_factor = 0.25
+				operative_slot = 1
+				assassin_trait_chance_factor = @assasinChance
+			}
+		}
 	}
 	hidden_ideas = {
 		bergholda_hidden_trade_modifier = { ##apply to all other countries when you get bergholda

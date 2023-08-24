@@ -104,3 +104,11 @@ mercenary_cost = {
 	category = country
 	postfix = none
 }
+assassin_trait_chance_factor = {
+	color_type = good
+	value_type = percentage
+	precision = 2
+	category = country
+	postfix = none
+}
+	

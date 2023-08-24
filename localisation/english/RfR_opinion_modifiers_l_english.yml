@@ -31,3 +31,9 @@
  ################################AteM
  accepted_wine_gift: "Exchanged Gifts"
  banking_partners: "Banking Partners"
+ trade_delegation: "Trade Delegation"
+ small_investment: "Small Investment"
+ large_investment: "Large Investment"
+ reconciliation_opinion: "Reconciliation"
+ expelled_traders: "Expelled Traders"
+ suspicious: "Suspicious"

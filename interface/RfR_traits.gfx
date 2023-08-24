@@ -135,5 +135,9 @@ spriteTypes = {
 		name = "GFX_trait_burgher_mil"
 		texturefile = "gfx/interface/traits/burgher.dds"
 	}
+	spriteType = {
+		name = "GFX_trait_assassin"
+		texturefile = "gfx/interface/traits/trait_operative_commando.dds"
+	}
 	
 }

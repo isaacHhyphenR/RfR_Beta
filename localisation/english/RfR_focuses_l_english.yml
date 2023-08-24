@@ -1,7 +1,9 @@
 ﻿l_english:
  ##############################################################################################################################WULFING ROHAN
  dorwinion_focus: "$DOR_adj$ Focus Tree"
- DOR_givee_generous_gifts: "Give Generous Gifts"
+ DOR_give_generous_gifts: "Give Generous Gifts"
+ DOR_merchant_spies: "Merchant Spies"
+ DOR_merchant_spies_desc: "Our merchants call in ports near and far. It would be foolish not to use the information they collect."
  ##############################################################################################################################ENEDWAITH
  enedwaith_focus: "$greater_enedwaith_ADJ$ Focus Tree"
  ENE_fertile_banks_of_the_isen: "Fertile Banks of the Isen"

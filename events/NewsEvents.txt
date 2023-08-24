@@ -1298,3 +1298,130 @@ news_event = { ##84## Dorwin Merchants bring ships
 		}
 	}
 }
+
+news_event = { ##85## Accepted wine for wisdom
+	id = rfr_news.85
+	title = rfr_news.85.t
+	desc = rfr_news.85.d
+	picture = GFX_news_offer_wine
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.85.a
+	}
+}
+news_event = { ##86## Refused wine for wisdom
+	id = rfr_news.86
+	title = rfr_news.86.t
+	desc = rfr_news.86.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.86.a
+	}
+}
+
+news_event = { ##87## FROM invested fully in DOR
+	id = rfr_news.87
+	title = rfr_news.87.t
+	desc = rfr_news.87.d
+	picture = GFX_news_feast
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.87.a
+	}
+}
+news_event = { ##88## FROM invested partially in DOR
+	id = rfr_news.88
+	title = rfr_news.88.t
+	desc = rfr_news.88.d
+	picture = GFX_news_trade
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.88.a
+	}
+}
+news_event = { ##89## FROM refused investment in DOR
+	id = rfr_news.89
+	title = rfr_news.89.t
+	desc = rfr_news.89.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.89.a
+	}
+}
+
+news_event = { ##90## DOR reconciliates
+	id = rfr_news.90
+	title = rfr_news.90.t
+	desc = rfr_news.90.d
+	picture = GFX_news_offer_wine
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.90.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			if = { limit = { controls_state = 305 }
+				305 = { remove_claim_by = FROM }
+			}
+			if = { limit = { controls_state = 240 }
+				240 = { remove_claim_by = FROM }
+			}
+			add_opinion_modifier = {
+				target = FROM
+				modifier = reconciliation_opinion
+			}
+		}
+	}
+}
+
+news_event = { ##91## Accepted merchant offices
+	id = rfr_news.91
+	title = rfr_news.91.t
+	desc = rfr_news.91.d
+	picture = GFX_news_feast2
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.91.a
+	}
+}
+news_event = { ##92## rejected merchant offices
+	id = rfr_news.92
+	title = rfr_news.92.t
+	desc = rfr_news.92.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.92.a
+	}
+}
+
+news_event = { ##93## Accepted trade delegation
+	title = rfr_news.93.t
+	desc = rfr_news.93.d
+	picture = GFX_news_feast2
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.93.a
+	}
+}
+news_event = { ##94## rejected trade delegation
+	id = rfr_news.94
+	title = rfr_news.94.t
+	desc = rfr_news.94.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.94.a
+	}
+}

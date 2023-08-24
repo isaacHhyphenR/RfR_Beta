@@ -544,6 +544,10 @@ characters = {
 				small = "GFX_Portrait_Northern_Generic_m_1_small"
 			}
 		}
+		country_leader = { ##just so the tooltip on that focus works correctly
+			ideology = elective_monarchy_isolationism
+			traits = { smooth_talking_charmer }
+		}
 		advisor = {
 			slot = political_advisor
 			idea_token = DOR_fornagarth_barvadinian
@@ -598,7 +602,7 @@ characters = {
 			on_remove = { merchant_house_advisor_effect_remove = yes }
 		}
 	}
-	DOR_sunngifa_illasarian = { #building slots
+	DOR_sunngifa_illasarian = { #mercenary cost
 		name = DOR_sunngifa_illasarian
 		gender = female
 		portraits = {
@@ -608,7 +612,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = political_advisor
+			slot = theorist
 			idea_token = DOR_sunngifa_illasarian
 			allowed = { original_tag = DOR }
 			traits = { mercenary_theorist merchant_house_pol6 }

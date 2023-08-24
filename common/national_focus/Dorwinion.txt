@@ -80,6 +80,7 @@ focus_tree = {
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			custom_effect_tooltip = unimplemented
 			unlock_decision_tooltip = distribute_generous_gifts
 			great_merchants_focus_effect = yes
 		}
@@ -100,6 +101,7 @@ focus_tree = {
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_GUILDS }
 		completion_reward = {
+			custom_effect_tooltip = unimplemented
 			unlock_decision_tooltip = improve_guild_marketing
 			great_merchants_focus_effect = yes
 		}
@@ -347,7 +349,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_GUILDS }
 		completion_reward = {
-			
+			custom_effect_tooltip = unimplemented
 			great_merchants_focus_effect = yes
 		}
 	}
@@ -428,13 +430,7 @@ focus_tree = {
 			every_other_country = {
 				limit = {
 					market_capital = yes
-					NOT = {
-						OR = {
-							has_war_with = DOR
-							is_embargoing = DOR
-							is_embargoed_by = DOR
-						}
-					}
+					can_trade_with_ROOT = yes
 				}
 				add_equipment_to_stockpile = {
 					type = convoy
@@ -462,7 +458,7 @@ focus_tree = {
 		available = {
 			great_merchants_focus_trigger = yes
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_PROSPERITY }
 		completion_reward = {
 			add_ideas = DOR_shipping_tax
 			great_merchants_focus_effect = yes
@@ -500,8 +496,8 @@ focus_tree = {
 						ideology = elective_monarchy_isolationism
 					}
 					remove_trait = {##so that the real trait doesn't have a weird blank space
-						slot = merchant_house_pol1
-						trait = empathetic_negotiator_advisor
+						slot = political_advisor
+						trait = merchant_house_pol1
 					}
 					remove_trait = {
 						slot = political_advisor
@@ -512,8 +508,8 @@ focus_tree = {
 						trait = improved_empathetic_negotiator_advisor
 					}
 					add_trait = {##so that the real trait doesn't have a weird blank space
-						slot = merchant_house_pol1
-						trait = improved_empathetic_negotiator_advisor
+						slot = political_advisor
+						trait = merchant_house_pol1
 					}
 				}
 			}
@@ -577,7 +573,7 @@ focus_tree = {
 			}
 			great_merchants_focus_trigger = yes
 		}
-		search_filters = { FOCUS_FILTER_NAVY }
+		search_filters = { FOCUS_FILTER_PROSPERITY }
 		completion_reward = {
 			every_core_state = {
 				limit = {
@@ -609,7 +605,7 @@ focus_tree = {
 			controls_state = 116 #riavod
 			great_merchants_focus_trigger = yes
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_PROSPERITY }
 		completion_reward = {
 			116 = { #riavod
 				upgrade_state_category = yes
@@ -687,7 +683,7 @@ focus_tree = {
 		available = {
 			great_merchants_focus_trigger = yes
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_PROSPERITY }
 		completion_reward = { #25 prosperty on all core markets
 			every_core_state = {
 				limit = {
@@ -717,6 +713,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_GUILDS }
 		completion_reward = { #exp on carpentry, smithing, & tailors guild
+			custom_effect_tooltip = unimplemented
 			great_merchants_focus_effect = yes
 		}
 	}
@@ -833,6 +830,519 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 1
 				}
 			}
+			great_merchants_focus_effect = yes
+		}
+	}
+#################################MERCHANT DIPLOMACY
+	focus = { #seek the wisdom of elves
+		id = DOR_seek_the_wisdom_of_elves
+		icon = GFX_goal_generic_befriend_woodland_realm
+		x = 3
+		y = 1
+		relative_position_id = DOR_support_the_great_merchants
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_great_merchants
+		}
+		available = {
+			country_exists = WOD
+			NOT = { has_war_with = WOD }
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			WOD = {
+				country_event = { id = atem.2 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = {
+					DOR_seek_wisdom_of_elves_effect = yes
+				}
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #Dispatch celduin trade delegation
+		id = DOR_dispatch_celduin_trade_delegation
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 8
+		y = 1
+		relative_position_id = DOR_support_the_great_merchants
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_great_merchants
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		bypass = {
+			hidden_trigger = {
+				NOT = {
+					any_other_country = {
+						is_rhovanion_tag = yes
+						can_trade_with_ROOT = yes
+						market_capital = yes
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PROSPERITY }
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_rhovanion_tag = yes
+					can_trade_with_ROOT = yes
+					market_capital = yes
+				}
+				country_event = { id = atem.3 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = {
+					accept_DOR_trade_delegation_effect = yes
+				}
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #Solicit Foreign Investment
+		id = DOR_solicit_foreign_investment
+		icon = GFX_focus_ETH_adopt_the_lira
+		x = -4
+		y = 1
+		relative_position_id = DOR_dispatch_celduin_trade_delegation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_dispatch_celduin_trade_delegation
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PROSPERITY FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					market_capital = yes
+				}
+				country_event = { id = atem.4 hours = 1 }
+				custom_effect_tooltip = if_they_invest_fully
+				effect_tooltip = {
+					invest_fully_in_DOR_effect = yes
+				}
+				custom_effect_tooltip = if_they_invest_partially
+				effect_tooltip = {
+					invest_partially_in_DOR_effect = yes
+				}
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #open offers of economic cooperation
+		id = DOR_open_offers_of_economic_cooperation
+		#icon = GFX_focus_ETH_adopt_the_lira
+		x = -2
+		y = 1
+		relative_position_id = DOR_dispatch_celduin_trade_delegation
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_dispatch_celduin_trade_delegation
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #wealth is conviction
+		id = DOR_wealth_is_conviction
+		#icon = GFX_focus_ETH_adopt_the_lira
+		x = 0
+		y = 1
+		relative_position_id = DOR_dispatch_celduin_trade_delegation
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_dispatch_celduin_trade_delegation
+		}
+		bypass = { NOT = { has_character = DOR_fornagarth_barvadinian } }
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##subversive activites/boost ideology mission efficiency, depending on DLC
+			if = { #LAR
+				limit = { has_dlc = "La Resistance" }
+				DOR_fornagarth_barvadinian = {
+					effect_tooltip = {
+						swap_country_leader_traits = {
+							remove = smooth_talking_charmer
+							add = smooth_talking_charmer_ideology_lar
+							ideology = elective_monarchy_isolationism
+						}
+					}
+					hidden_effect = {
+						remove_trait = {##so that the real trait doesn't have a weird blank space
+							slot = political_advisor
+							trait = merchant_house_pol3
+						}
+						remove_trait = {
+							slot = political_advisor
+							trait = smooth_talking_charmer
+						}
+						add_trait = {
+							slot = political_advisor
+							trait = smooth_talking_charmer_ideology_lar
+						}
+						add_trait = {##so that the real trait doesn't have a weird blank space
+							slot = political_advisor
+							trait = merchant_house_pol3
+						}
+					}
+				}
+			}
+			else = { #VANILLA
+				DOR_fornagarth_barvadinian = {
+					effect_tooltip = {
+						swap_country_leader_traits = {
+							remove = smooth_talking_charmer
+							add = smooth_talking_charmer_ideology
+							ideology = elective_monarchy_isolationism
+						}
+					}
+					hidden_effect = {
+						remove_trait = {##so that the real trait doesn't have a weird blank space
+							slot = political_advisor
+							trait = merchant_house_pol3
+						}
+						remove_trait = {
+							slot = political_advisor
+							trait = smooth_talking_charmer
+						}
+						add_trait = {
+							slot = political_advisor
+							trait = smooth_talking_charmer_ideology
+						}
+						add_trait = {##so that the real trait doesn't have a weird blank space
+							slot = political_advisor
+							trait = merchant_house_pol3
+						}
+					}
+				}
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #reconciliate with breakway cities
+		id = DOR_reconciliate_with_breakaway_cities
+		icon = GFX_focus_befriend_RIN_RUS
+		x = 2
+		y = 1
+		relative_position_id = DOR_dispatch_celduin_trade_delegation
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_dispatch_celduin_trade_delegation
+		}
+		available = {
+			OR = {
+				AND = { country_exists = RIN NOT = { has_war_with = RIN } }
+				AND = { country_exists = RUS NOT = { has_war_with = RUS } }
+			}
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { ##RIN & RUS like you, lose your claims
+			if = {
+				limit = { country_exists = RIN NOT = { has_war_with = RIN } }
+				305 = { remove_claim_by = ROOT }
+				RIN = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = reconciliation_opinion
+					}
+					hidden_effect = { news_event = { id = rfr_news.90 hours = 1 } }
+				}
+			}
+			if = {
+				limit = { country_exists = RUS NOT = { has_war_with = RUS } }
+				240 = { remove_claim_by = ROOT }
+				RUS = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = reconciliation_opinion
+					}
+					hidden_effect = { news_event = { id = rfr_news.90 hours = 1 } }
+				}
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #leverage our wealth
+		id = DOR_leverage_our_wealth
+		#icon = GFX_focus_ETH_adopt_the_lira
+		x = -1
+		y = 1
+		relative_position_id = DOR_wealth_is_conviction
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_wealth_is_conviction
+		}
+		prerequisite = {
+			focus = DOR_open_offers_of_economic_cooperation
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { ##event allowing you to choose a RVN tag to gain influence on
+			custom_effect_tooltip = unimplemented
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #reestablish merchant offices
+		id = DOR_reestablish_merchant_offices
+		#icon = GFX_focus_ETH_adopt_the_lira
+		x = 1
+		y = 1
+		relative_position_id = DOR_wealth_is_conviction
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_wealth_is_conviction
+		}
+		prerequisite = {
+			focus = DOR_reconciliate_with_breakaway_cities
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { ##RIn & RUS can exchange ideology for prosperity
+			every_other_country = {
+				limit = { OR = { original_tag = RIN original_tag = RUS } }
+				country_event = { id = atem.5 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = { reestablish_merchant_offices_effect = yes }
+				custom_effect_tooltip = if_they_refuse_tooltip
+				effect_tooltip = { refuse_merchant_offices_effect = yes }
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+#################################MERCHANT ESPIONAGE
+	focus = { #Merchant Spies
+		id = DOR_merchant_spies
+		icon = GFX_focus_generic_secret_service_agency
+		x = 13
+		y = 1
+		relative_position_id = DOR_support_the_great_merchants
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_great_merchants
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		bypass = { #already have an agency
+			if = {
+				limit = { has_dlc = "La Resistance" }
+				has_intelligence_agency = yes
+			}
+		}
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "La Resistance" }
+				create_intelligence_agency = {
+					name = "Mercantile Agents"
+					icon = GFX_DOR_intel_agency
+				}
+			}
+			else = {
+				add_ideas = DOR_merchant_spies_idea
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #recruit foreign merchants
+		id = DOR_recruit_foreign_merchants
+		#icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 1
+		relative_position_id = DOR_merchant_spies
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_merchant_spies
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = {
+			if = { #vanilla, first upgrade
+				limit = { has_idea = DOR_merchant_spies_idea }
+				swap_ideas = {
+					remove_idea = DOR_merchant_spies_idea
+					add_idea = DOR_merchant_spies_intel
+				}
+			}
+			else_if = { #vanilla, second upgrade
+				limit = { NOT = { has_dlc = "La Resistance" } }
+				swap_ideas = {
+					remove_idea = DOR_merchant_spies_encryption
+					add_idea = DOR_merchant_spies_intel_encryption
+				}
+			}
+			
+			###LAR
+			if = {
+				limit = { has_idea = DOR_merchant_spies_knife_guild_LAR }
+				swap_ideas = {
+					remove_idea = DOR_merchant_spies_knife_guild_LAR
+					add_idea = DOR_merchant_spies_intel_knife_guild_LAR
+				}
+			}
+			else_if = {
+				limit = { has_dlc = "La Resistance" }
+				add_ideas = DOR_merchant_spies_intel_lar
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #operatives in every port
+		id = DOR_operatives_in_every_port
+		#icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = DOR_recruit_foreign_merchants
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_recruit_foreign_merchants
+		}
+		allow_branch = { has_dlc = "La Resistance" }
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = {
+			if = { #first upgrade
+				limit = { has_idea = DOR_merchant_spies_intel_lar }
+				swap_ideas = {
+					remove_idea = DOR_merchant_spies_intel_lar
+					add_idea = DOR_merchant_spies_slot_LAR
+				}
+			}
+			else = { #second upgrade
+				swap_ideas = {
+					remove_idea = DOR_merchant_spies_intel_knife_guild_LAR
+					add_idea = DOR_merchant_spies_slot_knife_guild_LAR
+				}
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #knife guild of caras sant
+		id = DOR_knife_guild_of_caras_sant
+		#icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 1
+		relative_position_id = DOR_merchant_spies
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_merchant_spies
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = {
+			if = { #vanilla, first upgrade
+				limit = { has_idea = DOR_merchant_spies_idea }
+				swap_ideas = {
+					remove_idea = DOR_merchant_spies_idea
+					add_idea = DOR_merchant_spies_encryption
+				}
+			}
+			else_if = { #vanilla, second upgrade
+				limit = { NOT = { has_dlc = "La Resistance" } }
+				swap_ideas = {
+					remove_idea = DOR_merchant_spies_intel
+					add_idea = DOR_merchant_spies_intel_encryption
+				}
+			}
+			##############LAR
+			if = { #LAR, first upgrade
+				limit = { has_idea = DOR_merchant_spies_intel_LAR }
+				swap_ideas = {
+					remove_idea = DOR_merchant_spies_intel_LAR
+					add_idea = DOR_merchant_spies_intel_knife_guild_LAR
+				}
+			}
+			else_if = { #LAR, second upgrade
+				limit = { has_idea = DOR_merchant_spies_slot_LAR }
+				swap_ideas = {
+					remove_idea = DOR_merchant_spies_slot_LAR
+					add_idea = DOR_merchant_spies_slot_knife_guild_LAR
+				}
+			}
+			else_if = { #LAR, first idea
+				limit = { has_dlc = "La Resistance" }
+				add_ideas = DOR_merchant_spies_knife_guild_LAR
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #dispatch the dottering fool
+		id = DOR_dispatch_the_dottering_fool
+		icon = GFX_goal_kill_hawin_koldana
+		x = 0
+		y = 1
+		relative_position_id = DOR_knife_guild_of_caras_sant
+		cost = 10
+		ai_will_do = {
+			factor = 0
+		}
+		prerequisite = {
+			focus = DOR_knife_guild_of_caras_sant
+		}
+		available = {
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			hawin_dies_effect = yes
 			great_merchants_focus_effect = yes
 		}
 	}

@@ -6,4 +6,22 @@ opinion_modifiers = {
 	banking_partners = {
 		value = 10
 	}
+	trade_delegation = {
+		value = 15
+	}
+	small_investment = {
+		value = 10
+	}
+	large_investment = {
+		value = 20
+	}
+	reconciliation_opinion = {
+		value = 20
+	}
+	expelled_traders = {
+		value = -15
+	}
+	suspicious = {
+		value = -5
+	}
 }

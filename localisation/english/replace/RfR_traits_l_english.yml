@@ -511,3 +511,7 @@ l_english:
  liberator_of_the_north: "Liberator of the North"
  rallying_figurehead: "Rallying Figurehead"
  polymath: "Polymath"
+ smooth_talking_charmer_ideology: "$smooth_talking_charmer$"
+ smooth_talking_charmer_ideology_LAR: "$smooth_talking_charmer_ideology$"
+ assassin: "Assassin"
+ assassin_desc: "This person excels at killing important people without being noticed."

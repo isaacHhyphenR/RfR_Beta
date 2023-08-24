@@ -35,6 +35,8 @@
  destroy_colony_tooltip: "[WLD.GetFlag] §Y[WLD.GetNameDefCap]§! will reclaim §Y[FROM.GetName]§! and all progress towards a colony will be lost.\n"
  reset_colony_resources_tooltip: "All resource developments will be removed."
  trade_theorist_modifier_tooltip: "Trade Cost: §G-25%§!"
+ if_they_invest_fully: "If they make a large investment:"
+ if_they_invest_partially: "\nIf they make a small investment:"
  
  winelord_formatted: "£GFX_winelords_texticon §0Winelord§!"
  great_merchant_formatted: "£GFX_great_merchants_texticon §0Great Merchant§!"
@@ -58,7 +60,7 @@
  supporting_vierling: "Supporting §YHouse§! $vierling_formatted$"
  pp_if_great_merchants_win_tooltip: "§G+100§! §YPolitical Power§! if the $great_merchants_formatted$ win the election"
  pp_if_winelords_win_tooltip: "§G+100§! §YPolitical Power§! if the $winelords_formatted$ win the election"
- 
+ DOR_knife_guild_of_caras_sant_tooltip: "Agents may spawn with the trait §Y$assassin$§!, which grants:\n    "
  add_5_prosperity: "§G+5§! §YProsperity§!"
  add_10_prosperity: "§G+10§! §YProsperity§!"
  add_15_prosperity: "§G+15§! §YProsperity§!"
@@ -67,4 +69,5 @@
  add_30_prosperity: "§G+30§! §YProsperity§!"
  add_50_prosperity: "§G+50§! §YProsperity§!"
  gain_prosperity_on_foreign_market_upgrade_tooltip: "Everytime a foreign, non-hostile country upgrades a §Y$market$§!, a random market we control gains §G+5§! §YProsperity§!"
- 
+ is_rhovanion_tag: "Is a city state native to §7$RVN$§!"
+ unimplemented: "§CUNIMPLEMENTED§!"

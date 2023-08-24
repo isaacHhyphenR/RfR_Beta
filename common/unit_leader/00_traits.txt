@@ -3532,6 +3532,37 @@ leader_traits = {
 		}
 	}
 	
+	assassin = {
+		type = operative
+		trait_type = personality_trait
+
+		new_commander_weight = {
+			base = 0.5
+			modifier = {
+				set_temp_variable = {
+					trait_chance = FROM.modifier@assassin_trait_chance_factor
+				}
+				# add_to_temp_variable = {
+					# var = trait_chance
+					# value = 1
+				# }
+				add = trait_chance
+			}
+		}
+
+		cost = 10000
+		gain_xp_leader = {
+			always = no
+		}
+
+		modifier = {
+			intelligence_agency_defense = 0.3
+			enemy_operative_harmed_time_factor = 0.3
+			target_sabotage_factor = 0.3
+			target_sabotage_cost = -0.3
+		}
+	}
+
 #############################################################################################heritage
 	@ENE_heritage_bonus_POS = 0.1
 	@ENE_heritage_bonus_NEG = -0.1

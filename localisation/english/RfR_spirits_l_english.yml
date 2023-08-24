@@ -412,4 +412,6 @@
  bergholda_hidden_trade_modifier: "$DOR_bergholda_aldiana$"
  bergholda_hidden_trade_modifier_desc: ""
  DOR_shipping_tax: "Shipping Tax"
- DOR_shipping_tax_desc: "DOR_charge_for_the_service_desc"
+ DOR_shipping_tax_desc: "$DOR_charge_for_the_service_desc$"
+ DOR_merchant_spies_idea: "$DOR_merchant_spies$"
+ DOR_merchant_spies_idea_desc: "$DOR_merchant_spies_desc$"

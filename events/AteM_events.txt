@@ -9,7 +9,7 @@ country_event = { ##1## Dorwinion Great Merchants send wine gift
 	option = { ##Accept
 		name = atem.1.a
 		ai_chance = {
-			factor = 1
+			factor = 1.5
 			modifier = {
 				has_government = FROM
 				factor = 2
@@ -53,3 +53,253 @@ country_event = { ##1## Dorwinion Great Merchants send wine gift
 		hidden_effect = { FROM = { news_event = { id = rfr_news.83 hours = 1 } } }
 	}
 }
+
+country_event = { ##2## Dorwinion askes elves for wisdom
+	id = atem.2
+	title = atem.2.t
+	desc = atem.2.d
+	picture = GFX_offer_wine
+	
+	is_triggered_only = yes
+	option = { ##Accept
+		name = atem.2.a
+		ai_chance = {
+			factor = 2
+			modifier = {
+				has_government = FROM
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 25
+				}
+				factor = 2
+			}
+		}
+		DOR_seek_wisdom_of_elves_effect = yes
+		hidden_effect = { FROM = { news_event = { id = rfr_news.85 hours = 1 } } }
+	}
+	option = { ##Reject
+		name = atem.2.b
+		ai_chance = {
+			factor = 1
+			modifier = { #we don't wanna be friendly with dorwinion
+				OR = {
+					has_government = conquest
+					has_government = melkorite
+				}
+				factor = 10
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 2
+			}
+			modifier = { #don't spend unessessarily
+				has_equipment = {
+					wine_equipment > 2000
+				}
+				factor = 1.5
+			}
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.86 hours = 1 } } }
+	}
+}
+
+country_event = { ##3## Dorwinion trade delegation
+	id = atem.3
+	title = atem.3.t
+	desc = atem.3.d
+	picture = GFX_offer_wine
+	
+	is_triggered_only = yes
+	option = { ##Accept
+		name = atem.3.a
+		ai_chance = {
+			factor = 2
+			modifier = {
+				has_government = FROM
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 25
+				}
+				factor = 2
+			}
+		}
+		DOR_seek_wisdom_of_elves_effect = yes
+		hidden_effect = { FROM = { news_event = { id = rfr_news.93 hours = 1 } } }
+	}
+	option = { ##Reject
+		name = atem.3.b
+		ai_chance = {
+			factor = 1
+			modifier = { #we don't wanna be friendly with dorwinion
+				OR = {
+					has_government = conquest
+					has_government = melkorite
+				}
+				factor = 10
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 2
+			}
+			modifier = { #don't spend unessessarily
+				has_equipment = {
+					wine_equipment > 2000
+				}
+				factor = 1.5
+			}
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.94 hours = 1 } } }
+	}
+}
+
+country_event = { ##4## Dorwinion requests investment
+	id = atem.4
+	title = atem.4.t
+	desc = atem.4.d
+	picture = GFX_feast
+	
+	is_triggered_only = yes
+	option = { ##large investment
+		name = atem.4.a
+		trigger = { num_of_civilian_factories_available_for_projects > 0 }
+		ai_chance = {
+			factor = 2
+			modifier = {
+				has_government = FROM
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 25
+				}
+				factor = 2
+			}
+		}
+		invest_fully_in_DOR_effect = yes
+		hidden_effect = { FROM = { news_event = { id = rfr_news.87 hours = 1 } } }
+	}
+	option = { ##small investment
+		name = atem.4.b
+		ai_chance = {
+			factor = 1
+			modifier = { #we don't wanna be friendly with dorwinion
+				OR = {
+					has_government = conquest
+					has_government = melkorite
+				}
+				factor = 10
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 2
+			}
+			modifier = { #don't spend unessessarily
+				has_equipment = {
+					wine_equipment > 2000
+				}
+				factor = 1.5
+			}
+		}
+		invest_partially_in_DOR_effect = yes
+		hidden_effect = { FROM = { news_event = { id = rfr_news.88 hours = 1 } } }
+	}
+	
+	option = { ##reject
+		name = atem.4.c
+		ai_chance = {
+			factor = 1
+			modifier = { #we don't wanna be friendly with dorwinion
+				OR = {
+					has_government = conquest
+					has_government = melkorite
+				}
+				factor = 10
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 2
+			}
+			modifier = { #don't spend unessessarily
+				has_equipment = {
+					wine_equipment > 2000
+				}
+				factor = 1.5
+			}
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.89 hours = 1 } } }
+	}
+}
+
+country_event = { ##5## Dorwinion wants to reestablish merchant offices
+	id = atem.5
+	title = atem.5.t
+	desc = atem.5.d
+	picture = GFX_offer_wine
+	
+	is_triggered_only = yes
+	option = { ##Accept
+		name = atem.5.a
+		ai_chance = {
+			factor = 2
+			modifier = {
+				is_subject_of = FROM
+				factor = 200
+			}
+			modifier = {
+				has_government = FROM
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 25
+				}
+				factor = 2
+			}
+		}
+		reestablish_merchant_offices_effect = yes
+		hidden_effect = { FROM = { news_event = { id = rfr_news.91 hours = 1 } } }
+	}
+	option = { ##Reject
+		name = atem.5.b
+		ai_chance = {
+			factor = 1
+			modifier = { #we don't wanna be friendly with dorwinion
+				OR = {
+					has_government = conquest
+					has_government = melkorite
+				}
+				factor = 10
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 2
+			}
+		}
+		refuse_merchant_offices_effect = yes
+		hidden_effect = { FROM = { news_event = { id = rfr_news.92 hours = 1 } } }
+	}
+}
+

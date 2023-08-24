@@ -230,6 +230,26 @@ leader_traits = {
 			factor = 1
 		}
 	}
+	smooth_talking_charmer_ideology = {
+		random = no
+		sprite = 2
+		improve_relations_maintain_cost_factor = -0.5
+		trade_opinion_factor = 0.10
+		subversive_activites_upkeep = -0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	smooth_talking_charmer_ideology_LAR = {
+		random = no
+		sprite = 2
+		improve_relations_maintain_cost_factor = -0.5
+		trade_opinion_factor = 0.10
+		boost_ideology_mission_factor = 0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	ideological_crusader = {
 		random = yes
 		sprite = 13

@@ -9,12 +9,17 @@ is_rhunnic_tag = {
 }
 
 is_rhovanion_tag = {
-	original_tag = YST
-	original_tag = SUN
-	original_tag = RIN
-	original_tag = RUS
-	original_tag = HEH
-	original_tag = SEK
+	custom_trigger_tooltip = {
+		tooltip = is_rhovanion_tag
+		OR = {
+			original_tag = YST
+			original_tag = SUN
+			original_tag = RIN
+			original_tag = RUS
+			original_tag = HEH
+			original_tag = SEK
+		}
+	}
 }
 
 can_celduin_trade = {
