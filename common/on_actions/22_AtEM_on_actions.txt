@@ -197,5 +197,117 @@ on_actions = {
 				}
 			}
 		}
+		effect = { #DOR demoralised army
+			if = {
+				limit = {
+					FROM = {
+						original_tag = DOR
+						has_any_level_demoralized_army = yes
+						has_war_with = ROOT #don't demoralise if at peace
+					}
+					FROM.FROM = { NOT = { is_core_of = FROM } }
+				}
+				#calculate chance to reduce morale
+				FROM.FROM = {
+					if = {
+						limit = { OR = { has_state_category = pastoral has_state_category = small_island } }
+						set_temp_variable = { demoralize_chance = 5 }
+					}
+					else_if = {
+						limit = { has_state_category = rural }
+						set_temp_variable = { demoralize_chance = 10 }
+					}
+					else_if = {
+						limit = { has_state_category = town }
+						set_temp_variable = { demoralize_chance = 20 }
+					}
+					else_if = {
+						limit = { has_state_category = large_town }
+						set_temp_variable = { demoralize_chance = 25 }
+					}
+					else_if = {
+						limit = { has_state_category = city }
+						set_temp_variable = { demoralize_chance = 30 }
+					}
+					else_if = {
+						limit = { has_state_category = large_city }
+						set_temp_variable = { demoralize_chance = 40 }
+					}
+					else_if = {
+						limit = { has_state_category = metropolis }
+						set_temp_variable = { demoralize_chance = 50 }
+					}
+					else_if = {
+						limit = { has_state_category = megalopolis }
+						set_temp_variable = { demoralize_chance = 60 }
+					}
+					save_global_event_target_as = demoralize_state
+					random = {
+						chance = var:demoralize_chance
+						FROM = {
+							DOR_decrease_army_morale = yes
+							news_event = rfr_news.95
+						}
+					}
+				}
+			}
+			else_if = { #increase army morale
+				limit = {
+					ROOT = {
+						original_tag = DOR
+						has_any_level_demoralized_army = yes
+						has_war_with = FROM #army doesn't get credit for peaceful aquisition
+					}
+					FROM.FROM = {
+						NOT = { has_state_flag = remoralized_DOR }
+						OR = {
+							has_state_flag = ring_victory_point
+							any_of_scopes = { #is major capital
+								array = global.majors
+								capital_scope = { state = PREV }
+							}
+						}
+					}
+				}
+				FROM.FROM = {
+					save_global_event_target_as = demoralize_state
+					set_state_flag = remoralized_DOR #can only benefit each state once
+					ROOT = {
+						DOR_increase_army_morale = yes
+						news_event = rfr_news.96
+					}
+				}
+			}
+		}
+	}
+
+	on_unit_leader_created = { # This uses the UNIT LEADER sub scope of a character, FROM == country
+		effect = { #vierling loyalist
+			character = {
+				if = { 
+					limit = {
+						is_army_leader = yes
+					}
+					if = {
+						limit = {#done here instead of the trait file to avoid some oddness with generating assignable traits under certain circumstances, makes it easier to control probabilities
+							FROM = {
+								has_completed_focus = DOR_cultivate_aggressive_officers
+								has_character = DOR_vidumarh_vierling
+							}
+						}
+						root = {
+							random_list = {
+								50 = { 
+								}
+								50 = { 
+									add_unit_leader_trait = vierling_mil
+									add_attack = 3
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

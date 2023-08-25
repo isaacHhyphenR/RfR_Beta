@@ -488,6 +488,8 @@ l_english:
  burgher_pol9: "$burgher_pol$"
  temperate: "Temperate"
  lost_the_northern_provinces: "Marred by Military Failure"
+ influencing_the_election: "Influential Voice"
+ improved_influencing_the_election: "$influencing_the_election$"
  gregarious_advisor: "Gregarious Partier"
  gregarious_leader: "Gregarious Partier"
  friends_with_the_people: "Friends with the People"
@@ -515,3 +517,5 @@ l_english:
  smooth_talking_charmer_ideology_LAR: "$smooth_talking_charmer_ideology$"
  assassin: "Assassin"
  assassin_desc: "This person excels at killing important people without being noticed."
+ demoralized_army_trait: ""
+ 

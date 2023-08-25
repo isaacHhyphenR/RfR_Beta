@@ -2528,6 +2528,16 @@ leader_traits = {
 		war_support_factor = -0.1
 		conscription_factor = -0.15
 	}
+	influencing_the_election = { #Hawin Koldana (focus)
+		random = no
+		low_stability_risk = -0.15
+	}
+	improved_influencing_the_election = { #Hawin Koldana (focus)
+		random = no
+		low_stability_risk = -0.15
+		power_balance_weekly = 0.02
+		political_power_cost = 0.01
+	}
 	gregarious_advisor = { #Bladorthin Koldana
 		random = no
 		sprite = 13
@@ -2655,5 +2665,8 @@ leader_traits = {
 		random = yes
 		sprite = 14
 		research_speed_factor = 0.075
+	}
+	demoralized_army_trait = {
+		random = no
 	}
 }

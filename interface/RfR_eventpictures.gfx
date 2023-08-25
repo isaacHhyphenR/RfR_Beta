@@ -503,7 +503,23 @@ spriteTypes = {
 		name = "GFX_ship_pulling_in"
 		texturefile = "gfx/event_pictures/ship_pulling_in.dds"
 	}
+	spriteType = {
+		name = "GFX_retreat"
+		texturefile = "gfx/event_pictures/retreat.dds"
+	}
+	spriteType = {
+		name = "GFX_ranger_retreat"
+		texturefile = "gfx/event_pictures/ranger_retreat.dds"
+	}
 ##################################################################NEWS
+	spriteType = {
+		name = "GFX_news_retreat"
+		texturefile = "gfx/event_pictures/news_events/news_retreat.dds"
+	}
+	spriteType = {
+		name = "GFX_news_ranger_retreat"
+		texturefile = "gfx/event_pictures/news_events/news_ranger_retreat.dds"
+	}
 	spriteType = {
 		name = "GFX_news_feast"
 		texturefile = "gfx/event_pictures/news_events/news_feast.dds"

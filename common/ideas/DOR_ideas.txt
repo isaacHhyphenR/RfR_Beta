@@ -163,6 +163,120 @@ ideas = {
 				assassin_trait_chance_factor = @assasinChance
 			}
 		}
+		@demoralizedArmy1 = -0.075
+		@demoralizedArmy1pos = 0.075
+		@demoralizedArmy2 = -0.15
+		@demoralizedArmy2pos = 0.15
+		@demoralizedArmy3 = -0.225
+		@demoralizedArmy3pos = 0.225
+		@demoralizedArmy4 = -0.3
+		@demoralizedArmy4pos = 0.3
+		@demoralizedArmy5 = -0.375
+		@demoralizedArmy5pos = 0.375
+		@demoralizedArmy6 = -0.45
+		@demoralizedArmy6pos = 0.45
+		DOR_demoralized_army1 = {
+			name = DOR_demoralized_army
+			picture = DOR_demoralized_army
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			traits = { demoralized_army_trait }
+			modifier = {
+				custom_modifier_tooltip = demoralized_army_level_1
+				army_attack_factor = @demoralizedArmy1
+				planning_speed = @demoralizedArmy1
+				org_loss_when_moving = @demoralizedArmy1pos
+				army_leader_cost_factor = @demoralizedArmy1pos
+				custom_modifier_tooltip = DOR_demoralized_army_tooltip
+			}
+		}
+		DOR_demoralized_army2 = {
+			name = DOR_demoralized_army
+			picture = DOR_demoralized_army
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			traits = { demoralized_army_trait }
+			modifier = {
+				custom_modifier_tooltip = demoralized_army_level_2
+				army_attack_factor = @demoralizedArmy2
+				planning_speed = @demoralizedArmy2
+				org_loss_when_moving = @demoralizedArmy2pos
+				army_leader_cost_factor = @demoralizedArmy2pos
+				custom_modifier_tooltip = DOR_demoralized_army_tooltip
+			}
+		}
+		DOR_demoralized_army3 = {
+			name = DOR_demoralized_army
+			picture = DOR_demoralized_army
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			traits = { demoralized_army_trait }
+			modifier = {
+				custom_modifier_tooltip = demoralized_army_level_3
+				army_attack_factor = @demoralizedArmy3
+				planning_speed = @demoralizedArmy3
+				org_loss_when_moving = @demoralizedArmy3pos
+				army_leader_cost_factor = @demoralizedArmy3pos
+				custom_modifier_tooltip = DOR_demoralized_army_tooltip
+			}
+		}
+		DOR_demoralized_army4 = {
+			name = DOR_demoralized_army
+			picture = DOR_demoralized_army
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			traits = { demoralized_army_trait }
+			modifier = {
+				custom_modifier_tooltip = demoralized_army_level_4
+				army_attack_factor = @demoralizedArmy4
+				planning_speed = @demoralizedArmy4
+				org_loss_when_moving = @demoralizedArmy4pos
+				army_leader_cost_factor = @demoralizedArmy4pos
+				custom_modifier_tooltip = DOR_demoralized_army_tooltip
+			}
+		}
+		DOR_demoralized_army5 = {
+			name = DOR_demoralized_army
+			picture = DOR_demoralized_army
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			traits = { demoralized_army_trait }
+			modifier = {
+				custom_modifier_tooltip = demoralized_army_level_5
+				army_attack_factor = @demoralizedArmy5
+				planning_speed = @demoralizedArmy5
+				org_loss_when_moving = @demoralizedArmy5pos
+				army_leader_cost_factor = @demoralizedArmy5pos
+				custom_modifier_tooltip = DOR_demoralized_army_tooltip
+			}
+		}
+		DOR_demoralized_army6 = {
+			name = DOR_demoralized_army
+			picture = DOR_demoralized_army
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			traits = { demoralized_army_trait }
+			modifier = {
+				custom_modifier_tooltip = demoralized_army_level_6
+				army_attack_factor = @demoralizedArmy6
+				planning_speed = @demoralizedArmy6
+				org_loss_when_moving = @demoralizedArmy6pos
+				army_leader_cost_factor = @demoralizedArmy6pos
+				custom_modifier_tooltip = DOR_demoralized_army_tooltip
+			}
+		}
 	}
 	hidden_ideas = {
 		bergholda_hidden_trade_modifier = { ##apply to all other countries when you get bergholda

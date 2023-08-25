@@ -111,4 +111,19 @@ assassin_trait_chance_factor = {
 	category = country
 	postfix = none
 }
-	
+
+low_stability_risk = {
+	color_type = bad
+	value_type = percentage
+	precision = 2
+	category = country
+	postfix = none
+}
+
+civil_war_ideology_threshold = {
+	color_type = good
+	value_type = percentage
+	precision = 2
+	category = country
+	postfix = none
+}

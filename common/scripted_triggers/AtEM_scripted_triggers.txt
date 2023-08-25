@@ -90,6 +90,12 @@ has_100_convoys = {
 		convoy_1 > 99
 	}
 }
+has_any_level_demoralized_army = {
+	custom_trigger_tooltip = {
+		tooltip = has_any_level_demoralized_army
+		has_idea_with_trait = demoralized_army_trait
+	}
+}
 
 
 can_trade_with_ROOT = {

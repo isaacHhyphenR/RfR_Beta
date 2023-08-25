@@ -1208,7 +1208,7 @@ winelords_focus_effect_big = {
 		}
 	}
 }
-winelords_focus_effect_huge = {
+winelords_focus_effect_large = {
 	if = {
 		limit = {
 			has_power_balance = {
@@ -1371,5 +1371,82 @@ hawin_dies_effect = {
 	custom_effect_tooltip = unimplemented
 }
 
-
+DOR_increase_army_morale = {#reduces level of demoralised army
+	if = {
+		limit = { has_idea = DOR_demoralized_army1 }
+		remove_ideas = DOR_demoralized_army1
+	}
+	else_if = {
+		limit = { has_idea = DOR_demoralized_army2 }
+		swap_ideas = {
+			remove_idea = DOR_demoralized_army2
+			add_idea = DOR_demoralized_army1
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_demoralized_army3 }
+		swap_ideas = {
+			remove_idea = DOR_demoralized_army3
+			add_idea = DOR_demoralized_army2
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_demoralized_army4 }
+		swap_ideas = {
+			remove_idea = DOR_demoralized_army4
+			add_idea = DOR_demoralized_army3
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_demoralized_army5 }
+		swap_ideas = {
+			remove_idea = DOR_demoralized_army5
+			add_idea = DOR_demoralized_army4
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_demoralized_army6 }
+		swap_ideas = {
+			remove_idea = DOR_demoralized_army6
+			add_idea = DOR_demoralized_army5
+		}
+	}
+}
+DOR_decrease_army_morale = {#increases level of demoralised army
+	if = {
+		limit = { has_idea = DOR_demoralized_army1 }
+		swap_ideas = {
+			remove_idea = DOR_demoralized_army1
+			add_idea = DOR_demoralized_army2
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_demoralized_army2 }
+		swap_ideas = {
+			remove_idea = DOR_demoralized_army2
+			add_idea = DOR_demoralized_army3
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_demoralized_army3 }
+		swap_ideas = {
+			remove_idea = DOR_demoralized_army3
+			add_idea = DOR_demoralized_army4
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_demoralized_army4 }
+		swap_ideas = {
+			remove_idea = DOR_demoralized_army4
+			add_idea = DOR_demoralized_army5
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_demoralized_army5 }
+		swap_ideas = {
+			remove_idea = DOR_demoralized_army5
+			add_idea = DOR_demoralized_army6
+		}
+	}
+}
 

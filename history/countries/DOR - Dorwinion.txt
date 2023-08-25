@@ -143,7 +143,7 @@ recruit_character = DOR_theoren_gastwolk
 # recruit_character = DOR_golodhlir_nos_sargon
 
 add_ideas = northern_heritage_idea
-
+add_ideas = DOR_demoralized_army3
 
 set_power_balance = {
     id = DOR_election_power_balance

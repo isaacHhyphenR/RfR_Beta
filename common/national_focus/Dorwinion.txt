@@ -1443,7 +1443,7 @@ focus_tree = {
 	}
 	focus = { #Proven aptitude
 		id = DOR_proven_aptitude
-		icon = GFX_goal_support_house_koldana
+		#icon = GFX_goal_support_house_koldana
 		x = 0
 		y = 2
 		relative_position_id = DOR_rally_support_for_bladorthin
@@ -1467,11 +1467,96 @@ focus_tree = {
 			winelords_focus_effect = yes
 		}
 	}
-
+	focus = { #The realm masters support
+		id = DOR_the_realm_masters_support
+		#icon = GFX_goal_support_house_koldana
+		x = -1
+		y = 1
+		relative_position_id = DOR_proven_aptitude
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_proven_aptitude
+		}
+		mutually_exclusive = { focus = DOR_remain_uninvolved }
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			DOR_hawin_koldana = {
+				add_country_leader_trait = {
+					ideology = elective_monarchy_isolationism
+					trait = influencing_the_election
+				}
+				hidden_effect = {
+					add_country_leader_trait = {
+						ideology = elective_monarchy_opportunism
+						trait = influencing_the_election
+					}
+				}
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Campaign for our son
+		id = DOR_campaign_for_our_son
+		#icon = GFX_goal_support_house_koldana
+		x = 0
+		y = 1
+		relative_position_id = DOR_the_realm_masters_support
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_the_realm_masters_support
+		}
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			DOR_hawin_koldana = {
+				swap_country_leader_traits = {
+					ideology = elective_monarchy_isolationism
+					remove = influencing_the_election
+					add = improved_influencing_the_election
+				}
+				hidden_effect = {
+					swap_country_leader_traits = {
+						ideology = elective_monarchy_opportunism
+						remove = influencing_the_election
+						add = improved_influencing_the_election
+					}
+				}
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Remain uninvolved
+		id = DOR_remain_uninvolved
+		icon = GFX_goal_generic_neutrality_focus
+		x = 1
+		y = 1
+		relative_position_id = DOR_proven_aptitude
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_proven_aptitude
+		}
+		mutually_exclusive = { focus = DOR_the_realm_masters_support }
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			winelords_focus_effect = yes
+		}
+	}
 #################################SUPPORT VIDUMARH
 	focus = { #Rally support for vidumarh
 		id = DOR_rally_support_for_vidumarh
-		icon = GFX_goal_support_house_koldana
+		icon = GFX_goal_support_house_vierling
 		x = 2
 		y = 1
 		relative_position_id = DOR_support_the_winelords
@@ -1490,4 +1575,159 @@ focus_tree = {
 			winelords_focus_effect_med = yes
 		}
 	}
+	focus = { #cultivate aggressive officers
+		id = DOR_cultivate_aggressive_officers
+		#icon = GFX_goal_support_house_koldana
+		x = 0
+		y = 1
+		relative_position_id = DOR_rally_support_for_vidumarh
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_rally_support_for_vidumarh
+		}
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
+		completion_reward = {
+			custom_effect_tooltip = DOR_cultivate_aggressive_officers_tooltip
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #praise northron victories
+		id = DOR_praise_northron_victories
+		#icon = GFX_goal_support_house_koldana
+		x = -1
+		y = 2
+		relative_position_id = DOR_rally_support_for_vidumarh
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_rally_support_for_vidumarh
+		}
+		mutually_exclusive = { focus = DOR_study_easterling_might }
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = conquest
+				popularity = 0.1
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #study easterling might
+		id = DOR_study_easterling_might
+		#icon = GFX_goal_support_house_koldana
+		x = 1
+		y = 2
+		relative_position_id = DOR_rally_support_for_vidumarh
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_rally_support_for_vidumarh
+		}
+		mutually_exclusive = { focus = DOR_praise_northron_victories }
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = melkorite
+				popularity = 0.1
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #a nation Surrounded by the flames of war
+		id = DOR_a_nation_surrounded_by_the_flames_of_war
+		icon = GFX_goal_generic_army_doctrines
+		x = 1
+		y = 1
+		relative_position_id = DOR_praise_northron_victories
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_study_easterling_might
+		}
+		prerequisite = {
+			focus = DOR_praise_northron_victories
+		}
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 100
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #must light a torch of it's own
+		id = DOR_must_light_a_torch_of_its_own
+		icon = GFX_goal_DOR_army_morale
+		x = 0
+		y = 1
+		relative_position_id = DOR_a_nation_surrounded_by_the_flames_of_war
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_a_nation_surrounded_by_the_flames_of_war
+		}
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			DOR_increase_army_morale = yes
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #common front against upstarts
+		id = DOR_common_front_against_upstarts
+		icon = GFX_goal_generic_political_deal
+		x = 2
+		y = 1
+		relative_position_id = DOR_rally_support_for_bladorthin
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_rally_support_for_bladorthin
+		}
+		prerequisite = {
+			focus = DOR_rally_support_for_vidumarh
+		}
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			winelords_focus_effect_large = yes
+		}
+	}
 }
+
+ # FOCUS_FILTER_POLITICAL:0 "Political"
+ # FOCUS_FILTER_RESEARCH:0 "Research"
+ # FOCUS_FILTER_INDUSTRY:0 "Industry"
+ # FOCUS_FILTER_STABILITY:0 "Stability"
+ # FOCUS_FILTER_WAR_SUPPORT:0 "War Support"
+ # FOCUS_FILTER_MANPOWER:0 "Manpower"
+ # FOCUS_FILTER_ANNEXATION:0 "Territorial Expansion"
+ # FOCUS_FILTER_INTERNAL_AFFAIRS:0 "Internal Affairs"
+ # FOCUS_FILTER_PROPAGANDA:0 "Propaganda"
+ # FOCUS_FILTER_ARMY_XP:0 "Army Experience"
+ # FOCUS_FILTER_NAVY_XP:0 "Navy Experience"
+ # FOCUS_FILTER_AIR_XP: "$AIR_EXPERIENCE$"
+ 
+ # FOCUS_FILTER_NAVY: "Navy"
+ # FOCUS_FILTER_ARMY: "Army"
+ # FOCUS_FILTER_FORTIFICATION: "Fortifications"
+ # FOCUS_FILTER_RESOURCES: "Resources"
+ # FOCUS_FILTER_LOGISTICS: "Logistics"
+ # FOCUS_FILTER_DIPLOMATIC: "Diplomacy"
+ # FOCUS_FILTER_ESPIONAGE: "Espionage"
+ # FOCUS_FILTER_PRESTIGE: "Tribal Autonomy"

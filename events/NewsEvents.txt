@@ -1425,3 +1425,36 @@ news_event = { ##94## rejected trade delegation
 		name = rfr_news.94.a
 	}
 }
+
+news_event = { ##95## State's fall demoralized army
+	id = rfr_news.95
+	title = rfr_news.95.t
+	desc = rfr_news.95.d
+	picture = GFX_news_retreat
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.95.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			DOR_decrease_army_morale = yes
+		}
+	}
+}
+news_event = { ##96## State's capture remoralized army
+	id = rfr_news.96
+	title = rfr_news.96.t
+	desc = rfr_news.96.d
+	picture = GFX_news_boromir_victorious
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.96.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			DOR_increase_army_morale = yes
+		}
+	}
+}
+
+
