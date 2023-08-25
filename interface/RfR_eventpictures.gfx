@@ -511,6 +511,50 @@ spriteTypes = {
 		name = "GFX_ranger_retreat"
 		texturefile = "gfx/event_pictures/ranger_retreat.dds"
 	}
+	spriteType = {
+		name = "GFX_gondor_ride_forth"
+		texturefile = "gfx/event_pictures/gondor_ride_forth.dds"
+	}
+	spriteType = {
+		name = "GFX_muster_of_rohan"
+		texturefile = "gfx/event_pictures/muster_of_rohan.dds"
+	}
+	spriteType = {
+		name = "GFX_army_camp"
+		texturefile = "gfx/event_pictures/army_camp.dds"
+	}
+	spriteType = {
+		name = "GFX_rohan_ride_forth"
+		texturefile = "gfx/event_pictures/rohan_ride_forth.dds"
+	}
+	spriteType = {
+		name = "GFX_doomed_march"
+		texturefile = "gfx/event_pictures/doomed_march.dds"
+	}
+	spriteType = {
+		name = "GFX_gondor_marching_forth"
+		texturefile = "gfx/event_pictures/gondor_marching_forth.dds"
+	}
+	spriteType = {
+		name = "GFX_trolls"
+		texturefile = "gfx/event_pictures/trolls.dds"
+	}
+	spriteType = {
+		name = "GFX_siege"
+		texturefile = "gfx/event_pictures/siege.dds"
+	}
+	spriteType = {
+		name = "GFX_besieged"
+		texturefile = "gfx/event_pictures/besieged.dds"
+	}
+	spriteType = {
+		name = "GFX_gondor_defending"
+		texturefile = "gfx/event_pictures/gondor_defending.dds"
+	}
+	spriteType = {
+		name = "GFX_soldiers_on_the_walls"
+		texturefile = "gfx/event_pictures/soldiers_on_the_walls.dds"
+	}
 ##################################################################NEWS
 	spriteType = {
 		name = "GFX_news_retreat"
@@ -547,5 +591,49 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_ship_pulling_in"
 		texturefile = "gfx/event_pictures/news_events/news_ship_pulling_in.dds"
+	}
+	spriteType = {
+		name = "GFX_news_gondor_ride_forth"
+		texturefile = "gfx/event_pictures/news_events/news_gondor_ride_forth.dds"
+	}
+	spriteType = {
+		name = "GFX_news_muster_of_rohan"
+		texturefile = "gfx/event_pictures/news_events/news_muster_of_rohan.dds"
+	}
+	spriteType = {
+		name = "GFX_news_army_camp"
+		texturefile = "gfx/event_pictures/news_events/news_army_camp.dds"
+	}
+	spriteType = {
+		name = "GFX_news_rohan_ride_forth"
+		texturefile = "gfx/event_pictures/news_events/news_rohan_ride_forth.dds"
+	}
+	spriteType = {
+		name = "GFX_news_doomed_march"
+		texturefile = "gfx/event_pictures/news_events/news_doomed_march.dds"
+	}
+	spriteType = {
+		name = "GFX_news_gondor_marching_forth"
+		texturefile = "gfx/event_pictures/news_events/news_gondor_marching_forth.dds"
+	}
+	spriteType = {
+		name = "GFX_news_trolls"
+		texturefile = "gfx/event_pictures/news_events/news_trolls.dds"
+	}
+	spriteType = {
+		name = "GFX_news_siege"
+		texturefile = "gfx/event_pictures/news_events/news_siege.dds"
+	}
+	spriteType = {
+		name = "GFX_news_besieged"
+		texturefile = "gfx/event_pictures/news_events/news_besieged.dds"
+	}
+	spriteType = {
+		name = "GFX_news_gondor_defending"
+		texturefile = "gfx/event_pictures/news_events/news_gondor_defending.dds"
+	}
+	spriteType = {
+		name = "GFX_news_soldiers_on_the_walls"
+		texturefile = "gfx/event_pictures/news_events/news_soldiers_on_the_walls.dds"
 	}
 }

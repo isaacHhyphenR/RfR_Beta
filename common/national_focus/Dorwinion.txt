@@ -1354,7 +1354,7 @@ focus_tree = {
 	focus = { #support the winelords
 		id = DOR_support_the_winelords
 		icon = GFX_goal_support_winelords
-		x = 20
+		x = 40
 		y = 0
 		relative_position_id = DOR_support_the_great_merchants
 		cost = 5
@@ -1686,7 +1686,7 @@ focus_tree = {
 	}
 	focus = { #common front against upstarts
 		id = DOR_common_front_against_upstarts
-		icon = GFX_goal_generic_political_deal
+		icon = GFX_goal_generic_improve_relations
 		x = 2
 		y = 1
 		relative_position_id = DOR_rally_support_for_bladorthin
@@ -1704,6 +1704,214 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			winelords_focus_effect_large = yes
+		}
+	}
+#################################RECONQUER THE REBELS
+	focus = { #Reclaim rightful fiefs
+		id = DOR_reclaim_rightful_fiefs
+		icon = GFX_focus_attack_RIN_RUS
+		x = -6
+		y = 1
+		relative_position_id = DOR_support_the_winelords
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_winelords
+		}
+		available = {
+			winelords_focus_trigger = yes
+			has_war_support > 0.74
+			OR = {
+				RIN = { can_ROOT_get_wargoal_on_THIS = yes }
+				RUS = { can_ROOT_get_wargoal_on_THIS = yes }
+			}
+		}
+		bypass = { controls_state = 240 controls_state = 305 }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		will_lead_to_war_with = RIN
+		will_lead_to_war_with = RUS
+		completion_reward = {
+			if = { limit = { RIN = { can_ROOT_get_wargoal_on_THIS = yes } }
+				create_wargoal = {
+					type = take_claimed_state
+					generator = { 305 }
+					target = RIN
+				}
+			}
+			if = { limit = { RUS = { can_ROOT_get_wargoal_on_THIS = yes } }
+				create_wargoal = {
+					type = take_claimed_state
+					generator = { 240 }
+					target = RUS
+				}
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Rinnavod avenged
+		id = DOR_rinnavod_avenged
+		icon = GFX_goal_DOR_army_morale
+		x = 0
+		y = 1
+		relative_position_id = DOR_reclaim_rightful_fiefs
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_reclaim_rightful_fiefs
+		}
+		available = {
+			winelords_focus_trigger = yes
+			has_country_flag = declared_on_rebels
+			controls_state = 240
+			controls_state = 305
+		}
+		bypass = { controls_state = 240 controls_state = 305 }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			DOR_increase_army_morale = yes
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Preserve local rulers
+		id = DOR_preserve_local_rulers
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = -1
+		y = 2
+		relative_position_id = DOR_reclaim_rightful_fiefs
+		cost = 5
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					has_government = isolationism
+					has_government = freedom
+				}
+				factor = 5
+			}
+		}
+		prerequisite = {
+			focus = DOR_reclaim_rightful_fiefs
+		}
+		mutually_exclusive = {
+			focus = DOR_emplace_loyal_lords
+		}
+		available = {
+			winelords_focus_trigger = yes
+			OR = {
+				controls_state = 240
+				controls_state = 305
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			custom_effect_tooltip = DOR_preserve_local_rulers_tooltip
+			custom_effect_tooltip = unimplemented ###GET CHARACTER FROM EACH
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Emplace loyal lords
+		id = DOR_emplace_loyal_lords
+		icon = GFX_goal_generic_political_pressure
+		x = 1
+		y = 2
+		relative_position_id = DOR_reclaim_rightful_fiefs
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					has_government = conquest
+					has_government = melkorite
+				}
+				factor = 5
+			}
+		}
+		prerequisite = {
+			focus = DOR_reclaim_rightful_fiefs
+		}
+		mutually_exclusive = {
+			focus = DOR_preserve_local_rulers
+		}
+		available = {
+			winelords_focus_trigger = yes
+			OR = {
+				controls_state = 240
+				controls_state = 305
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			@loyalLordsCompliance = 25
+			effect_tooltip = { ##so there's a tooltip before you conquer them
+				240 = { add_compliance = @loyalLordsCompliance }
+				305 = { add_compliance = @loyalLordsCompliance }
+			}
+			if = { limit = { controls_state = 240 }
+				240 = { add_compliance = @loyalLordsCompliance }
+			}
+			if = { limit = { controls_state = 305 }
+				305 = { add_compliance = @loyalLordsCompliance }
+			}
+			custom_effect_tooltip = unimplemented ###CHOSE DUCAL FAMILY
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Preserve the county palatine
+		id = DOR_preserve_the_county_palatine
+		icon = GFX_goal_county_of_rinnavod
+		x = 0
+		y = 1
+		relative_position_id = DOR_preserve_local_rulers
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_preserve_local_rulers
+			focus = DOR_emplace_loyal_lords
+		}
+		mutually_exclusive = {
+			focus = DOR_unite_the_duchy
+		}
+		available = {
+			winelords_focus_trigger = yes
+			controls_state = 305
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			add_state_core = 305
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Unite the Duchy
+		id = DOR_unite_the_duchy
+		icon = GFX_goal_duchy_of_ruscovuld
+		x = 0
+		y = 1
+		relative_position_id = DOR_emplace_loyal_lords
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_preserve_local_rulers
+			focus = DOR_emplace_loyal_lords
+		}
+		mutually_exclusive = {
+			focus = DOR_preserve_the_county_palatine
+		}
+		available = {
+			winelords_focus_trigger = yes
+			controls_state = 240
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			add_state_core = 240
+			winelords_focus_effect = yes
 		}
 	}
 }
@@ -1729,3 +1937,5 @@ focus_tree = {
  # FOCUS_FILTER_DIPLOMATIC: "Diplomacy"
  # FOCUS_FILTER_ESPIONAGE: "Espionage"
  # FOCUS_FILTER_PRESTIGE: "Tribal Autonomy"
+ # FOCUS_FILTER_PROSPERITY: "Celduin Trade"
+ # FOCUS_FILTER_GUILDS: "Guilds"

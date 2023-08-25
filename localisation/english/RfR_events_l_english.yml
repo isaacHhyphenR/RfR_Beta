@@ -758,3 +758,6 @@
  rfr_news.96.t: "Army Achieves Great Victory"
  rfr_news.96.d: "Our successful capture of [remoralize_state.GetCapitalVictoryPointName] has given our army a much needed morale boost. They advance into battle with new confidence, no longer trembling at the prospect of death because they have proved they can emerge victorious."
  rfr_news.96.a: "A glorious day!"
+ rfr_news.97.t: "Avenge Rinnavod"
+ rfr_news.97.d: "In T.A. 3002, the treacherous northern fiefdoms banded together to rebel against our just and fair rule. The garrison of Rinnavod sallied out and, assisted by reinforcements from Ruscovuld who had concealed their approach in a snowstorm, routed out besiegeing army. We have bided our time but never forgotten this embarrassment. Now, finally, we will have vengeance. March forth, brave soldiers of Dorwinion, in the name of lord and land!"
+ rfr_news.97.a: "The Realm shall be made whole!"

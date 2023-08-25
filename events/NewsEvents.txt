@@ -1457,4 +1457,17 @@ news_event = { ##96## State's capture remoralized army
 	}
 }
 
+news_event = { ##97## We're gonna reconquer RIN/RUS
+	id = rfr_news.97
+	title = rfr_news.97.t
+	desc = rfr_news.97.d
+	picture = GFX_news_siege
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.97.a
+	}
+}
+
 

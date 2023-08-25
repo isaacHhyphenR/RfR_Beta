@@ -157,6 +157,42 @@ ISN_tribal_occupation_law = {
 	}
 }
 
+DOR_preserve_local_rulers_law = {
+	icon = 2
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	visible = {
+		original_tag = DOR
+		FROM = { OR = { tag = RIN tag = RUS } }
+	}
+	available = {
+		has_completed_focus = DOR_preserve_local_rulers
+	}
+
+	state_modifier = {
+		resistance_target 				= -0.25
+		compliance_gain 				= 0.02
+		required_garrison_factor 		= -0.50
+		resistance_damage_to_garrison 	= -0.50
+		local_factories 				= -0.10
+		local_resources 				= -0.10
+	}
+
+	ai_will_do = {
+		base = 400
+
+		modifier = {
+			set_temp_variable = { resistance_limit = 30 }
+			if = {
+				limit = { occupation_law = martial_law_occupation }
+				set_temp_variable = { resistance_limit = 35 }
+			}
+			resistance < autonomous_occupation # if we are under base resistance try to build compliance instead
+			add = 500
+		}
+	}
+}
+
 autonomous_occupation = {
 	icon = 2
 	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"

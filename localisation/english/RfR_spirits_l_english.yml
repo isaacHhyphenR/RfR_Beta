@@ -395,6 +395,7 @@
  white_mountain_army_desc: "We are not afraid of our enemies; we will die with sword in hand."
  ENE_tribal_occupation_law: "Impress Local Tribes"
  ISN_tribal_occupation_law: "Rally Local Warriors"
+ DOR_preserve_local_rulers_law: "Preserve Local Rulers"
  prestigious_tribe_spirit: "$ENE_prestige_spirit$"
  prestigious_tribe_spirit_desc: "$ENE_prestige_spirit_desc$"
  repaired_eregion_forges: "The Forges of Eregion"
