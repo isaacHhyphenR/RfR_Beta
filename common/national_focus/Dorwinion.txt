@@ -2,6 +2,7 @@
 @doctrineBoostBonus = 0.5
 @techBoostUses = 2
 @factoryBonuses = 2
+@bigBoPCost = 5
 focus_tree = {
 	id = dorwinion_focus_tree
 	
@@ -42,6 +43,7 @@ focus_tree = {
 			great_merchants_focus_effect_big = yes
 			set_country_flag = supporting_great_merchants
 			custom_effect_tooltip = pp_if_great_merchants_win_tooltip
+			unlock_national_focus = DOR_support_the_winelords
 		}
 	}
 #################################ELECT MERCHANTS
@@ -51,7 +53,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DOR_support_the_great_merchants
-		cost = 10
+		cost = @bigBoPCost
 		ai_will_do = {
 			factor = 1
 		}
@@ -186,7 +188,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DOR_pillars_of_society
-		cost = 10
+		cost = @bigBoPCost
 		ai_will_do = {
 			factor = 1
 		}
@@ -252,7 +254,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DOR_celebtrate_city_culture
-		cost = 10
+		cost = @bigBoPCost
 		ai_will_do = {
 			factor = 1
 		}
@@ -1344,6 +1346,148 @@ focus_tree = {
 		completion_reward = {
 			hawin_dies_effect = yes
 			great_merchants_focus_effect = yes
+		}
+	}
+
+
+######################################################################WINELORDS BRANCH
+	focus = { #support the winelords
+		id = DOR_support_the_winelords
+		icon = GFX_goal_support_winelords
+		x = 20
+		y = 0
+		relative_position_id = DOR_support_the_great_merchants
+		cost = 5
+		ai_will_do = {
+			factor = 12
+		}
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			winelords_focus_effect_big = yes
+			set_country_flag = supporting_winelords
+			custom_effect_tooltip = pp_if_winelords_win_tooltip
+			unlock_national_focus = DOR_support_the_great_merchants
+		}
+	}
+#################################SUPPORT BLADORTHIN
+	focus = { #Rally support for bladorthin
+		id = DOR_rally_support_for_bladorthin
+		icon = GFX_goal_support_house_koldana
+		x = -2
+		y = 1
+		relative_position_id = DOR_support_the_winelords
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_winelords
+		}
+		mutually_exclusive = { focus = DOR_rally_support_for_vidumarh }
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = ten_koldana_bop_on_win_tooltip
+			winelords_focus_effect_med = yes
+		}
+	}
+	focus = { #Unifying presense
+		id = DOR_unifying_presense
+		#icon = GFX_goal_support_house_koldana
+		x = -1
+		y = 1
+		relative_position_id = DOR_rally_support_for_bladorthin
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_rally_support_for_bladorthin
+		}
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #noble houses xp gain on bladorthin
+			DOR_bergholda_aldiana = {
+				swap_country_leader_traits = {
+					remove = gregarious_leader
+					add = improved_gregarious_leader
+					ideology = elective_monarchy_opportunism
+				}
+				hidden_effect = {
+					swap_country_leader_traits = {
+						remove = gregarious_leader
+						add = improved_gregarious_leader
+						ideology = elective_monarchy_conquest
+					}
+					remove_trait = {##so that the real trait doesn't have a weird blank space
+						slot = political_advisor
+						trait = koldana_pol1
+					}
+					remove_trait = {
+						slot = political_advisor
+						trait = gregarious_advisor
+					}
+					add_trait = {
+						slot = political_advisor
+						trait = improved_gregarious_advisor
+					}
+					add_trait = {##so that the real trait doesn't have a weird blank space
+						slot = political_advisor
+						trait = koldana_pol1
+					}
+				}
+			}
+			winelords_focus_effect_med = yes
+		}
+	}
+	focus = { #Proven aptitude
+		id = DOR_proven_aptitude
+		icon = GFX_goal_support_house_koldana
+		x = 0
+		y = 2
+		relative_position_id = DOR_rally_support_for_bladorthin
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_rally_support_for_bladorthin
+		}
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = unlock_koldana_aptitude_missions_tooltip
+			activate_mission = aptitude_mission_civs
+			activate_mission = aptitude_mission_infrastructure
+			activate_mission = aptitude_mission_markets
+			activate_mission = aptitude_mission_stability
+			activate_mission = aptitude_mission_manpower
+			activate_mission = aptitude_mission_convoys 
+			winelords_focus_effect = yes
+		}
+	}
+
+#################################SUPPORT VIDUMARH
+	focus = { #Rally support for vidumarh
+		id = DOR_rally_support_for_vidumarh
+		icon = GFX_goal_support_house_koldana
+		x = 2
+		y = 1
+		relative_position_id = DOR_support_the_winelords
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_winelords
+		}
+		mutually_exclusive = { focus = DOR_rally_support_for_bladorthin }
+		available = { winelords_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = ten_vierling_bop_on_win_tooltip
+			winelords_focus_effect_med = yes
 		}
 	}
 }

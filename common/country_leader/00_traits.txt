@@ -2302,165 +2302,219 @@ leader_traits = {
 		drift_defence_factor = 1
 	}
 	koldana_pol1 = {
+		sprite = 12
 		random = no
 	}
 	koldana_pol2 = {
+		sprite = 12
 		random = no
 	}
 	koldana_pol3 = {
+		sprite = 12
 		random = no
 	}
 	koldana_pol4 = {
+		sprite = 12
 		random = no
 	}
 	koldana_pol5 = {
+		sprite = 12
 		random = no
 	}
 	koldana_pol6 = {
+		sprite = 12
 		random = no
 	}
 	koldana_pol7 = {
+		sprite = 12
 		random = no
 	}
-	koldana_pol8= {
+	koldana_pol8 = {
+		sprite = 12
 		random = no
 	}
 	koldana_pol9 = {
+		sprite = 12
 		random = no
 	}
 	vierling_pol1 = {
+		sprite = 12
 		random = no
 	}
 	vierling_pol2 = {
+		sprite = 12
 		random = no
 	}
 	vierling_pol3 = {
+		sprite = 12
 		random = no
 	}
 	vierling_pol4 = {
+		sprite = 12
 		random = no
 	}
 	vierling_pol5 = {
+		sprite = 12
 		random = no
 	}
 	vierling_pol6 = {
+		sprite = 12
 		random = no
 	}
 	vierling_pol7 = {
+		sprite = 12
 		random = no
 	}
 	vierling_pol8 = {
+		sprite = 12
 		random = no
 	}
 	vierling_pol9 = {
+		sprite = 12
 		random = no
 	}
 	human_advisor_pol1 = {
+		sprite = 12
 		random = no
 	}
 	human_advisor_pol2 = {
+		sprite = 12
 		random = no
 	}
 	human_advisor_pol3 = {
+		sprite = 12
 		random = no
 	}
 	human_advisor_pol4 = {
+		sprite = 12
 		random = no
 	}
 	human_advisor_pol5 = {
+		sprite = 12
 		random = no
 	}
 	human_advisor_pol6 = {
+		sprite = 12
 		random = no
 	}
 	human_advisor_pol7 = {
+		sprite = 12
 		random = no
 	}
 	human_advisor_pol8 = {
+		sprite = 12
 		random = no
 	}
 	human_advisor_pol9 = {
+		sprite = 12
 		random = no
 	}
 	elven_advisor_pol1 = {
+		sprite = 12
 		random = no
 	}
 	elven_advisor_pol2 = {
+		sprite = 12
 		random = no
 	}
 	elven_advisor_pol3 = {
+		sprite = 12
 		random = no
 	}
 	elven_advisor_pol4 = {
+		sprite = 12
 		random = no
 	}
 	elven_advisor_pol5 = {
+		sprite = 12
 		random = no
 	}
 	elven_advisor_pol6 = {
+		sprite = 12
 		random = no
 	}
 	elven_advisor_pol7 = {
+		sprite = 12
 		random = no
 	}
 	elven_advisor_pol8 = {
+		sprite = 12
 		random = no
 	}
 	elven_advisor_pol9 = {
+		sprite = 12
 		random = no
 	}
 	merchant_house_pol1 = {
+		sprite = 12
 		random = no
 	}
 	merchant_house_pol2 = {
+		sprite = 12
 		random = no
 	}
 	merchant_house_pol3 = {
+		sprite = 12
 		random = no
 	}
 	merchant_house_pol4 = {
+		sprite = 12
 		random = no
 	}
 	merchant_house_pol5 = {
+		sprite = 12
 		random = no
 	}
 	merchant_house_pol6 = {
+		sprite = 12
 		random = no
 	}
 	merchant_house_pol7 = {
+		sprite = 12
 		random = no
 	}
 	merchant_house_pol8 = {
+		sprite = 12
 		random = no
 	}
 	merchant_house_pol9 = {
+		sprite = 12
 		random = no
 	}
 	burgher_pol1 = {
+		sprite = 12
 		random = no
 	}
 	burgher_pol2 = {
+		sprite = 12
 		random = no
 	}
 	burgher_pol3 = {
+		sprite = 12
 		random = no
 	}
 	burgher_pol4 = {
+		sprite = 12
 		random = no
 	}
 	burgher_pol5 = {
+		sprite = 12
 		random = no
 	}
 	burgher_pol6 = {
+		sprite = 12
 		random = no
 	}
 	burgher_pol7 = {
+		sprite = 12
 		random = no
 	}
 	burgher_pol8 = {
 		random = no
+		sprite = 12
 	}
 	burgher_pol9 = {
+		sprite = 12
 		random = no
 	}
 	temperate = { #Hawin Koldana
@@ -2479,9 +2533,20 @@ leader_traits = {
 		sprite = 13
 		political_power_factor = 0.25
 	}
+	improved_gregarious_advisor = { #Bladorthin Koldana
+		random = no
+		sprite = 13
+		political_power_factor = 0.25
+		custom_modifier_tooltip = unimplemented
+	}
 	gregarious_leader = { #Bladorthin Koldana
 		random = no
 		political_power_factor = 0.25
+	}
+	improved_gregarious_leader = { #Bladorthin Koldana
+		random = no
+		political_power_factor = 0.25
+		custom_modifier_tooltip = unimplemented
 	}
 	friends_with_the_people = { #Bladorthin Koldana
 		random = no

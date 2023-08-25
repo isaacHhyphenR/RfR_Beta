@@ -64,6 +64,34 @@ winelords_focus_trigger = {
 DOR_can_interact_with_guilds = {
 }
 
+koldana_aptitude_mission_cancel = {
+	NOT = { 
+		has_country_leader = {
+			character = DOR_hawin_koldana
+			ruling_only = yes
+		}
+	}
+}
+has_20_core_infrastructure = {
+	set_temp_variable = { core_inf = 0 }
+	custom_trigger_tooltip = {
+		tooltip = has_20_core_infrastructure
+		all_core_state = {
+			if = {
+				limit = { is_controlled_by = ROOT }
+				add_to_temp_variable = { core_inf = building_level@infrastructure }
+			}
+		}
+		check_variable = { core_inf > 19 }
+	}
+}
+has_100_convoys = {
+	has_equipment = {
+		convoy_1 > 99
+	}
+}
+
+
 can_trade_with_ROOT = {
 	NOT = {
 		OR = {

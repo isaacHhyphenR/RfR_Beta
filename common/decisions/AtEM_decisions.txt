@@ -21,7 +21,7 @@ celduin_trade_category = {
 			NOT = { controls_state = FROM }
 		}
 		allowed = { always = no }
-		available = { always = no }
+		available = { hidden_trigger = { always = no } }
 		cancel_effect = {
 			FROM = { clr_state_flag = constructing_market }
 			subtract_from_variable = { market_upgrading_cost = global.market_upgrade_cost }
@@ -88,13 +88,14 @@ celduin_trade_category = {
 				factor = 0
 			}
 		}
+		#allowed = { NOT = { original_tag = DOR } } ##they get special version
 		custom_cost_trigger = {
 			has_equipment = { wine_equipment > @luxury_cost }
 		}
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
 		modifier = {
-			stability_weekly = 0.005
+			stability_factor = 0.1
 		}
 		complete_effect = { #cost
 			hidden_effect = {
@@ -116,6 +117,52 @@ celduin_trade_category = {
 			}
 		}
 	}
+	# wine_for_stability_DOR = {
+		# icon = GFX_decision_generic_stability
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# has_stability < 0.75
+				# factor = 2
+			# }
+			# modifier = {
+				# has_stability < 0.5
+				# factor = 10
+			# }
+			# modifier = { #don't do if enough stability
+				# has_stability > 0.95
+				# factor = 0
+			# }
+		# }
+		# allowed = { original_tag = DOR } ##they get special version
+		# custom_cost_trigger = {
+			# has_equipment = { wine_equipment > @luxury_cost }
+		# }
+		# custom_cost_text = wine_decision_cost
+		# days_remove = @wine_decision_days
+		# modifier = {
+			# stability_factor = 0.1
+		# }
+		# complete_effect = { #cost
+			# hidden_effect = {
+				# add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
+			# }
+		# }
+		# remove_effect = {
+			# hidden_effect = { #renews if possible
+				# if = { #try to renew
+					# limit = { has_country_flag = renew_luxury_decisions }
+					# if = { #renew if can afford
+						# limit = { has_equipment = { wine_equipment > @luxury_cost } }
+						# activate_decision = wine_for_stability
+					# }
+					# else = { #let the player know they can't renew
+						# news_event = rfr_news.79
+					# }
+				# }
+			# }
+		# }
+	# }
 	
 	wine_for_war_support = {
 		icon = GFX_decision_generic_war_support
@@ -148,13 +195,14 @@ celduin_trade_category = {
 				factor = 0
 			}
 		}
+		#allowed = { NOT = { original_tag = DOR } } ##they get special version
 		custom_cost_trigger = {
 			has_equipment = { wine_equipment > @luxury_cost }
 		}
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
 		modifier = {
-			war_support_weekly = 0.005
+			war_support_factor = 0.1
 		}
 		complete_effect = { #cost
 			hidden_effect = {
@@ -176,7 +224,67 @@ celduin_trade_category = {
 			}
 		}
 	}
-	
+	# wine_for_war_support_DOR = {
+		# icon = GFX_decision_generic_war_support
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# has_war_support < 0.75
+				# OR = {
+					# has_war = yes
+					# has_government = melkorite
+					# has_government = conquest
+				# }
+				# factor = 2
+			# }
+			# modifier = {
+				# has_war_support < 0.5
+				# OR = {
+					# has_war = yes
+					# is_evil = yes
+				# }
+				# factor = 10
+			# }
+			# modifier = { #peaceful people don't really care
+				# has_war = no
+				# is_good = yes
+				# factor = 0
+			# }
+			# modifier = { #don't do if enough stability
+				# has_war_support > 0.95
+				# factor = 0
+			# }
+		# }
+		# allowed = { original_tag = DOR } ##they get special version
+		# custom_cost_trigger = {
+			# has_equipment = { wine_equipment > @luxury_cost }
+		# }
+		# custom_cost_text = wine_decision_cost
+		# days_remove = @wine_decision_days
+		# modifier = {
+			# war_support_factor = 0.1
+		# }
+		# complete_effect = { #cost
+			# hidden_effect = {
+				# add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
+			# }
+		# }
+		# remove_effect = {
+			# hidden_effect = { #renews if possible
+				# if = { #try to renew
+					# limit = { has_country_flag = renew_luxury_decisions }
+					# if = { #renew if can afford
+						# limit = { has_equipment = { wine_equipment > @luxury_cost } }
+						# activate_decision = wine_for_war_support
+					# }
+					# else = { #let the player know they can't renew
+						# news_event = rfr_news.79
+					# }
+				# }
+			# }
+		# }
+	# }
+
 	wine_for_consumer_goods = {
 		icon = GFX_decision_generic_consumer_goods
 		ai_will_do = {

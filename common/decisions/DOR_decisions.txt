@@ -9,6 +9,119 @@ DOR_balance_of_power_category = {
 		visible = { has_power_balance = { id = DOR_election_power_balance } }
 		available = { has_completed_focus = DOR_give_generous_gifts }
 	}
+	@aptitudeDays = 1000
+	aptitude_mission_civs = {
+		icon = GFX_decision_eng_ally_imperialist_coup
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = 100#@aptitudeDays
+		is_good = no
+		allowed = { always = no }
+		available = { industrial_complex > 14 }
+		cancel_trigger = { ##Cancel when election happens
+			koldana_aptitude_mission_cancel = yes
+		}
+		cancel_effect = { koldana_aptitude_mission_cancel_effect = yes }
+		complete_effect = { koldana_aptitude_mission_reward = yes }
+		timeout_effect = { koldana_aptitude_mission_timeout_effect = yes }
+	}
+	aptitude_mission_infrastructure = {
+		icon = GFX_decision_eng_ally_imperialist_coup
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = 100#@aptitudeDays
+		is_good = no
+		allowed = { always = no }
+		available = {
+			has_20_core_infrastructure = yes
+		}
+		cancel_trigger = { ##Cancel when election happens
+			koldana_aptitude_mission_cancel = yes
+		}
+		cancel_effect = { koldana_aptitude_mission_cancel_effect = yes }
+		complete_effect = { koldana_aptitude_mission_reward = yes }
+		timeout_effect = { koldana_aptitude_mission_timeout_effect = yes }
+	}
+	aptitude_mission_markets = {
+		icon = GFX_decision_eng_ally_imperialist_coup
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = 100#@aptitudeDays
+		is_good = no
+		allowed = { always = no }
+		available = {
+			market > 5
+		}
+		cancel_trigger = { ##Cancel when election happens
+			koldana_aptitude_mission_cancel = yes
+		}
+		cancel_effect = { koldana_aptitude_mission_cancel_effect = yes }
+		complete_effect = { koldana_aptitude_mission_reward = yes }
+		timeout_effect = { koldana_aptitude_mission_timeout_effect = yes }
+	}
+	aptitude_mission_stability = {
+		icon = GFX_decision_eng_ally_imperialist_coup
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = 100#@aptitudeDays
+		is_good = no
+		allowed = { always = no }
+		available = {
+			has_stability > 0.99
+		}
+		cancel_trigger = { ##Cancel when election happens
+			koldana_aptitude_mission_cancel = yes
+		}
+		cancel_effect = { koldana_aptitude_mission_cancel_effect = yes }
+		complete_effect = { koldana_aptitude_mission_reward = yes }
+		timeout_effect = { koldana_aptitude_mission_timeout_effect = yes }
+	}
+	aptitude_mission_manpower = {
+		icon = GFX_decision_eng_ally_imperialist_coup
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = 100#@aptitudeDays
+		is_good = no
+		allowed = { always = no }
+		available = {
+			has_army_manpower = { size > 199999 }
+		}
+		cancel_trigger = { ##Cancel when election happens
+			koldana_aptitude_mission_cancel = yes
+		}
+		cancel_effect = { koldana_aptitude_mission_cancel_effect = yes }
+		complete_effect = { koldana_aptitude_mission_reward = yes }
+		timeout_effect = { koldana_aptitude_mission_timeout_effect = yes }
+	}
+	aptitude_mission_convoys = {
+		icon = GFX_decision_eng_ally_imperialist_coup
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = 100#@aptitudeDays
+		is_good = no
+		allowed = { always = no }
+		available = {
+			has_100_convoys = yes
+		}
+		cancel_trigger = { ##Cancel when election happens
+			koldana_aptitude_mission_cancel = yes
+		}
+		cancel_effect = { koldana_aptitude_mission_cancel_effect = yes }
+		complete_effect = { koldana_aptitude_mission_reward = yes }
+		timeout_effect = { koldana_aptitude_mission_timeout_effect = yes }
+	}
 }
 @guildLoanCG = -0.05
 @guildLoanDays = 365

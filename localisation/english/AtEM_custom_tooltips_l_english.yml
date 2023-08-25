@@ -61,6 +61,11 @@
  pp_if_great_merchants_win_tooltip: "§G+100§! §YPolitical Power§! if the $great_merchants_formatted$ win the election"
  pp_if_winelords_win_tooltip: "§G+100§! §YPolitical Power§! if the $winelords_formatted$ win the election"
  DOR_knife_guild_of_caras_sant_tooltip: "Agents may spawn with the trait §Y$assassin$§!, which grants:\n    "
+ ten_koldana_bop_on_win_tooltip: "§Y$DOR_winelords_power_balance$§! will start §Y10%§! further towards §0$DOR_koldana_side$§! if the §0$DOR_winelords_side$§! win the §Y$DOR_election_power_balance$§!."
+ ten_vierling_bop_on_win_tooltip: "§Y$DOR_winelords_power_balance$§! will start §Y10%§! further towards §0$DOR_vierling_side$§! if the §0$DOR_winelords_side$§! win the §Y$DOR_election_power_balance$§!."
+ unlock_koldana_aptitude_missions_tooltip: "Activates 6 missions. Each mission moves the §Y$DOR_election_power_balance$§! £GFX_BoP_right_texticon §Y5.0%§! towards the side of §Y$DOR_winelords_side$§! upon completion.\n\n" 
+ has_20_core_infrastructure: "At least §Y20 $infrastructure$§! in controlled core states"
+ 
  add_5_prosperity: "§G+5§! §YProsperity§!"
  add_10_prosperity: "§G+10§! §YProsperity§!"
  add_15_prosperity: "§G+15§! §YProsperity§!"

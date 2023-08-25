@@ -1112,6 +1112,8 @@ bergholda_trade_effect_remove = { ##increases cost to trade
 @focusPowerRightMed = 0.10
 @focusPowerLeftBig = -0.20
 @focusPowerRightBig = 0.20
+@focusPowerLeftLarge = -0.30
+@focusPowerRightLarge = 0.30
 great_merchants_focus_effect = {
 	if = {
 		limit = { has_power_balance = { id = DOR_election_power_balance } }
@@ -1146,6 +1148,20 @@ great_merchants_focus_effect_big = {
 		add_power_balance_value = {
 			id = DOR_election_power_balance
 			value = @focusPowerLeftBig
+			tooltip_side = DOR_great_merchants_side
+		}
+	}
+}
+great_merchants_focus_effect_large = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_election_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @focusPowerLeftLarge
 			tooltip_side = DOR_great_merchants_side
 		}
 	}
@@ -1192,6 +1208,30 @@ winelords_focus_effect_big = {
 		}
 	}
 }
+winelords_focus_effect_huge = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_election_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = @focusPowerRightLarge
+			tooltip_side = DOR_winelords_side
+		}
+	}
+}
+
+koldana_aptitude_mission_reward = {
+	add_power_balance_value = {
+		id = DOR_election_power_balance
+		value = @focusPowerRight
+		tooltip_side = DOR_winelords_side
+	}
+}
+koldana_aptitude_mission_timeout_effect = {} #nothing
+koldana_aptitude_mission_cancel_effect = {} #nothing
 
 accept_dorwinion_wine_effect = {
 	add_political_power = -50

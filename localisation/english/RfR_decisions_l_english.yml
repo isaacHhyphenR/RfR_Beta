@@ -650,3 +650,18 @@
 #DOR_balance_of_power_category_desc: ""
  distribute_generous_gifts: "$DOR_give_generous_gifts$"
  distribute_generous_gifts_desc: "$DOR_give_generous_gifts_desc$"
+ aptitude_mission_civs: "Have 15 $industrial_complex$s"
+ aptitude_mission_civs_desc: "A strong economy ensures a comfortable lifestyle for our powerful supporters."
+ aptitude_mission_infrastructure: "Have 20 Core $infrastructure$"
+ aptitude_mission_infrastructure_desc: "A well developed interior brings the realm closer to us."
+ aptitude_mission_markets: "Have 6 $market$s"
+ aptitude_mission_markets_desc: "Large and prosperous markets ensure wealth, and thus pleasure with the establishment, for all."
+ aptitude_mission_stability: "Have 100% Stability"
+ aptitude_mission_stability_desc: "A peaceful and prosperous realm has never failed a ruler."
+ aptitude_mission_manpower: "Have 200,000 Soldiers"
+ aptitude_mission_manpower_desc: "A strong army will show we are capable of defending the realm."
+ aptitude_mission_convoys: "Have 100 Convoys"
+ aptitude_mission_convoys_desc: "Trade is the backbone of Dorwinion's prosperity. A strong merchant fleet will boost our popularity."
+ 
+ 
+ 

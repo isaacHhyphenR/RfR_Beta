@@ -29,6 +29,16 @@ characters = {
 				small = "GFX_Portrait_Northern_Generic_m_3_small"
 			}
 		}
+		country_leader = {
+			ideology = elective_monarchy_opportunism
+			traits = { gregarious_leader army_chief_organizational_1 friends_with_the_people }
+			desc = DOR_bladorthin_koldana_desc
+		}
+		# country_leader = {
+			# ideology = elective_monarchy_conquest
+			# traits = { gregarious_leader army_chief_organizational_1 friends_with_the_people }
+			# desc = DOR_bladorthin_koldana_desc
+		# }
 		advisor = {
 			slot = political_advisor
 			idea_token = DOR_bladorthin_koldana
