@@ -84,3 +84,4 @@
  demoralized_army_level_6: "§RLevel 6/6§!"
  DOR_demoralized_army_tooltip: "As long as $DOR_demoralized_army$ is present, it has a chance to increase in severity every time we lose control of a non-core state to the enemy. The chance is based on the state's category, ranging from §R5%§! for a §Y$pastoral$§! to §R60%§! for a §Ymegalopolis§!.\nEverytime you capture a Ring Victory Point or a major countrie's capital, the idea will decrease in severity, eventually being removed altogether."
  has_any_level_demoralized_army: "Has idea §Y$DOR_demoralized_army$§!"
+ cannot_join_gwaithurium_faction_tooltip: "Countries outside of $greater_enedwaith_format$ cannot join factions led by $Greater_Enedwaith_ADJ$ tribes"

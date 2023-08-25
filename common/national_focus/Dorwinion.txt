@@ -1654,10 +1654,8 @@ focus_tree = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = DOR_study_easterling_might
-		}
-		prerequisite = {
 			focus = DOR_praise_northron_victories
+			focus = DOR_study_easterling_might
 		}
 		available = { winelords_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_ARMY_XP }

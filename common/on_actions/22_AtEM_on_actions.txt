@@ -204,9 +204,10 @@ on_actions = {
 						original_tag = DOR
 						has_any_level_demoralized_army = yes
 						has_war_with = ROOT #don't demoralise if at peace
+						FROM.FROM = { NOT = { is_core_of = PREV } }
 					}
-					FROM.FROM = { NOT = { is_core_of = FROM } }
 				}
+				log = "Demoralize"
 				#calculate chance to reduce morale
 				FROM.FROM = {
 					if = {
@@ -242,12 +243,12 @@ on_actions = {
 						set_temp_variable = { demoralize_chance = 60 }
 					}
 					save_global_event_target_as = demoralize_state
-					random = {
-						chance = var:demoralize_chance
-						FROM = {
-							DOR_decrease_army_morale = yes
-							news_event = rfr_news.95
-						}
+				}
+				random = {
+					chance = var:demoralize_chance
+					FROM = {
+						DOR_decrease_army_morale = yes
+						news_event = rfr_news.95
 					}
 				}
 			}
@@ -260,6 +261,7 @@ on_actions = {
 					}
 					FROM.FROM = {
 						NOT = { has_state_flag = remoralized_DOR }
+						NOT = { is_owned_by = ROOT } #can't get morale boost from recapturing territory you lost
 						OR = {
 							has_state_flag = ring_victory_point
 							any_of_scopes = { #is major capital
@@ -270,7 +272,7 @@ on_actions = {
 					}
 				}
 				FROM.FROM = {
-					save_global_event_target_as = demoralize_state
+					save_global_event_target_as = remoralize_state
 					set_state_flag = remoralized_DOR #can only benefit each state once
 					ROOT = {
 						DOR_increase_army_morale = yes

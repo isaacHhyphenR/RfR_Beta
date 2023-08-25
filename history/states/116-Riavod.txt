@@ -19,6 +19,7 @@ state = {
 		set_variable = {
 			historical_capital_for_country = DOR
 		}
+		set_state_flag = remoralized_DOR #don't want a morale boost just from reclaiming your capital, that's cheesy
 		victory_points = { #riavod, 35
 			6260 20 
 		}
