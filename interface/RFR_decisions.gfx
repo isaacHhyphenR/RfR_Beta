@@ -720,6 +720,30 @@ spriteTypes = {
 		name = "GFX_decision_upgrade_market"
 		texturefile = "gfx/interface/decisions/upgrade_market_decision.dds"
 	}
+	spriteType = {
+		name = "GFX_decision_winelords"
+		texturefile = "gfx/interface/decisions/winelords.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_great_merchants"
+		texturefile = "gfx/interface/decisions/great_merchants.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_koldana"
+		texturefile = "gfx/interface/decisions/koldana.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_vierling"
+		texturefile = "gfx/interface/decisions/vierling.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_merchant_houses"
+		texturefile = "gfx/interface/decisions/merchant_houses.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_burghers"
+		texturefile = "gfx/interface/decisions/burghers.dds"
+	}
 ################################################CATEGORY ICONS
 	spriteType = {
 		name = "GFX_decision_category_explosion"

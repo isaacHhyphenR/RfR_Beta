@@ -4,7 +4,7 @@ set_oob = "DOR_3015"
 
 set_research_slots = 3
 set_stability = .7
-set_war_support = 0.35
+set_war_support = 0.40 #-10 from isolationism & -10 from Hawin
 
 set_technology = {
 	northron_heritage_tech = 1
@@ -87,8 +87,8 @@ set_politics = {
 }
 
 set_popularities = {
-	isolationism = 56
-	opportunism = 44
+	isolationism = 61
+	opportunism = 39
 }
 add_ideas = {
 	free_trade

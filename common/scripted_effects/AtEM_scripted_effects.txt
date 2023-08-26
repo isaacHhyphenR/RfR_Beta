@@ -959,6 +959,7 @@ koldana_advisor_effect = { ##adds BoP
 			tooltip_side = DOR_koldana_side
 		}
 	}
+	add_to_variable = { koldana_advisors = 1 }
 }
 koldana_advisor_effect_remove = { ##removes BoP
 	if = {
@@ -977,6 +978,7 @@ koldana_advisor_effect_remove = { ##removes BoP
 			tooltip_side = DOR_vierling_side
 		}
 	}
+	add_to_variable = { koldana_advisors = -1 }
 }
 
 vierling_advisor_effect = { ##adds BoP
@@ -996,6 +998,7 @@ vierling_advisor_effect = { ##adds BoP
 			tooltip_side = DOR_vierling_side
 		}
 	}
+	add_to_variable = { vierling_advisors = 1 }
 }
 vierling_advisor_effect_remove = { ##removes BoP
 	if = {
@@ -1014,6 +1017,7 @@ vierling_advisor_effect_remove = { ##removes BoP
 			tooltip_side = DOR_koldana_side
 		}
 	}
+	add_to_variable = { vierling_advisors = -1 }
 }
 
 merchant_house_advisor_effect = { ##adds BoP
@@ -1033,6 +1037,7 @@ merchant_house_advisor_effect = { ##adds BoP
 			tooltip_side = DOR_merchant_houses_side
 		}
 	}
+	add_to_variable = { merchant_house_advisors = 1 }
 }
 merchant_house_advisor_effect_remove = { ##removes BoP
 	if = {
@@ -1051,6 +1056,7 @@ merchant_house_advisor_effect_remove = { ##removes BoP
 			tooltip_side = DOR_burghers_side
 		}
 	}
+	add_to_variable = { merchant_house_advisors = -1 }
 }
 
 burgher_advisor_effect = { ##adds BoP
@@ -1070,6 +1076,7 @@ burgher_advisor_effect = { ##adds BoP
 			tooltip_side = DOR_merchant_houses_side
 		}
 	}
+	add_to_variable = { burgher_advisors = 1 }
 }
 burgher_advisor_effect_remove = { ##removes BoP
 	if = {
@@ -1088,6 +1095,7 @@ burgher_advisor_effect_remove = { ##removes BoP
 			tooltip_side = DOR_burghers_side
 		}
 	}
+	add_to_variable = { burgher_advisors = -1 }
 }
 
 

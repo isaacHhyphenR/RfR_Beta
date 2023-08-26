@@ -1,4 +1,10 @@
 ideas = {
+	#GFX:
+	#generic_light_cavalry
+	#generic_heavy_cavalry
+	#invest_in_dorwinion
+	#DOR_demoralized_army
+	
 	country = {
 		DOR_bribes_in_pockets_idea = {
 			name = DOR_bribes_in_pockets
@@ -275,6 +281,52 @@ ideas = {
 				org_loss_when_moving = @demoralizedArmy6pos
 				army_leader_cost_factor = @demoralizedArmy6pos
 				custom_modifier_tooltip = DOR_demoralized_army_tooltip
+			}
+		}
+		@DORRidersBuff = 0.1
+		@DORRidersNerf = -0.05
+		DOR_swift_rhovanorim_riders_idea = {
+			name = DOR_swift_rhovanorim_riders
+			picture = generic_light_cavalry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				light_tank_chassis = {
+					maximum_speed = @DORRidersBuff
+					soft_attack = @DORRidersBuff
+					breakthrough = @DORRidersNerf
+					armor_value = @DORRidersNerf
+					instant = yes
+				}
+			}
+		}
+		DOR_resplendant_feudal_knights_idea = {
+			name = DOR_resplendent_feudal_knights
+			picture = generic_heavy_cavalry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				medium_tank_chassis = {
+					maximum_speed = @DORRidersNerf
+					soft_attack = @DORRidersNerf
+					breakthrough = @DORRidersBuff
+					armor_value = @DORRidersBuff
+					instant = yes
+				}
+			}
+		}
+		DOR_modernised_agriculture = {
+			picture = generic_agrarian_reform #upgrade
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				conscription = 0.0075
 			}
 		}
 	}

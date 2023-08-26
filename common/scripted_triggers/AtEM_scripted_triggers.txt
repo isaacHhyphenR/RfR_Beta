@@ -90,6 +90,23 @@ has_100_convoys = {
 		convoy_1 > 99
 	}
 }
+has_50_evil_support = {
+	custom_trigger_tooltip = {
+		tooltip = has_50_evil_support
+		add_to_temp_variable = { evil = party_popularity@opportunism }
+		add_to_temp_variable = { evil = party_popularity@conquest }
+		add_to_temp_variable = { evil = party_popularity@melkorite }
+		check_variable = { evil > 0.5 }
+	}
+}
+has_50_good_support = {
+	custom_trigger_tooltip = {
+		tooltip = has_50_good_support
+		add_to_temp_variable = { good = party_popularity@isolationism }
+		add_to_temp_variable = { good = party_popularity@freedom }
+		check_variable = { good > 0.5 }
+	}
+}
 has_any_level_demoralized_army = {
 	custom_trigger_tooltip = {
 		tooltip = has_any_level_demoralized_army

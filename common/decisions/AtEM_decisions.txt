@@ -71,6 +71,43 @@ celduin_trade_category = {
 	}
 	
 	#############SPEND WINE
+	wine_for_winelords = {
+		icon = GFX_decision_winelords
+		ai_will_do = {
+			factor = 0
+		}
+		allowed = { original_tag = DOR }
+		visible = { has_completed_focus = DOR_campaign_of_cordiality has_power_balance = { id = DOR_election_power_balance } }
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost }
+		}
+		custom_cost_text = wine_decision_cost
+		days_remove = @wine_decision_days
+		modifier = {
+			power_balance_daily = 0.001
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost } }
+						activate_decision = wine_for_stability
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+	
+	@weeklyStab = 0.007
 	wine_for_stability = {
 		icon = GFX_decision_generic_stability
 		ai_will_do = {
@@ -95,7 +132,8 @@ celduin_trade_category = {
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
 		modifier = {
-			stability_factor = 0.1
+			#stability_factor = 0.1
+			stability_weekly = @weeklyStab
 		}
 		complete_effect = { #cost
 			hidden_effect = {
@@ -202,7 +240,8 @@ celduin_trade_category = {
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
 		modifier = {
-			war_support_factor = 0.1
+			#war_support_factor = 0.1
+			war_support_weekly = @weeklyStab
 		}
 		complete_effect = { #cost
 			hidden_effect = {

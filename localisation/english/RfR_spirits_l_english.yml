@@ -418,3 +418,7 @@
  DOR_merchant_spies_idea_desc: "$DOR_merchant_spies_desc$"
  DOR_demoralized_army: "Demoralized Army"
  DOR_demoralized_army_desc: " The Dorwin army has suffered ever since the rebels humiliated it at the Seige of Rinnavod. Not only did the defeat at such a supposedly inferior foe leave a black mark on the military's pride, the deaths of so many fine soldiers instilled an aversion towards conflict. Many soldiers and lower officers wonder, 'Why should we die on foreign soil for the ambitions of great lords?' Though the desire to protect home and family remains strong, the lack of attenion and funding the army has recieved since T.A. 3002 has turned it into a complacent, unmotivated force."
+ DOR_modernised_agriculture: "Modernised Agriculture"
+ DOR_modernised_agriculture_desc: "$DOR_free_up_labour_from_the_fields_desc$"
+ 
+ 

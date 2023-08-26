@@ -3,6 +3,13 @@
 @techBoostUses = 2
 @factoryBonuses = 2
 @bigBoPCost = 5
+#GFX:
+#GFX_goal_wine_propoganda
+#GFX_goal_support_great_merchants
+#GFX_goal_DOR_army_morale
+#GFX_goal_dorwin_nationalism
+#GFX_goal_grapes
+
 focus_tree = {
 	id = dorwinion_focus_tree
 	
@@ -1374,7 +1381,7 @@ focus_tree = {
 	focus = { #Rally support for bladorthin
 		id = DOR_rally_support_for_bladorthin
 		icon = GFX_goal_support_house_koldana
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = DOR_support_the_winelords
 		cost = 5
@@ -1557,7 +1564,7 @@ focus_tree = {
 	focus = { #Rally support for vidumarh
 		id = DOR_rally_support_for_vidumarh
 		icon = GFX_goal_support_house_vierling
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = DOR_support_the_winelords
 		cost = 5
@@ -1696,8 +1703,6 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = DOR_rally_support_for_bladorthin
-		}
-		prerequisite = {
 			focus = DOR_rally_support_for_vidumarh
 		}
 		available = { winelords_focus_trigger = yes }
@@ -1706,13 +1711,39 @@ focus_tree = {
 			winelords_focus_effect_large = yes
 		}
 	}
+	focus = { #Adpot a more active foreign stance
+		id = DOR_adopt_a_more_active_foreign_stance
+		icon = GFX_focus_generic_support_the_left_right
+		x = 4
+		y = 1
+		relative_position_id = DOR_rally_support_for_bladorthin
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_rally_support_for_bladorthin
+			focus = DOR_rally_support_for_vidumarh
+		}
+		available = {
+			winelords_focus_trigger = yes 
+			has_50_evil_support = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			winelords_focus_effect = yes
+			set_politics = {
+				ruling_party = opportunism
+			}
+		}
+	}
 #################################RECONQUER THE REBELS
 	focus = { #Reclaim rightful fiefs
 		id = DOR_reclaim_rightful_fiefs
 		icon = GFX_focus_attack_RIN_RUS
-		x = -6
-		y = 1
-		relative_position_id = DOR_support_the_winelords
+		x = -4
+		y = 0
+		relative_position_id = DOR_rally_support_for_bladorthin
 		cost = 5
 		ai_will_do = {
 			factor = 1
@@ -1911,6 +1942,886 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_core = 240
+			winelords_focus_effect = yes
+		}
+	}
+#################################FEAST WITH NOBLES
+	focus = { #Feast with the great houses
+		id = DOR_feast_with_the_great_houses
+		icon = GFX_goal_wine_glass
+		x = 6
+		y = 0
+		relative_position_id = DOR_rally_support_for_vidumarh
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_winelords
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 150
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Rally them with promises of land
+		id = DOR_rally_them_with_promises_of_land
+		icon = GFX_goal_generic_position_armies
+		x = -2
+		y = 1
+		relative_position_id = DOR_feast_with_the_great_houses
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_feast_with_the_great_houses
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.1
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Ties of Blood and Gold
+		id = DOR_ties_of_blood_and_gold
+		icon = GFX_goal_DOR_nobility
+		x = 2
+		y = 1
+		relative_position_id = DOR_feast_with_the_great_houses
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_feast_with_the_great_houses
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Land of Chivalry
+		id = DOR_land_of_chivalry
+		icon = GFX_goal_generic_nobility
+		x = 0
+		y = 1
+		relative_position_id = DOR_feast_with_the_great_houses
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_feast_with_the_great_houses
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 70
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Power on horseback
+		id = DOR_power_on_horseback
+		icon = GFX_goal_generic_army_tanks
+		x = -2
+		y = 1
+		relative_position_id = DOR_land_of_chivalry
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_land_of_chivalry
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = armor
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Swift rhovanorim riders
+		id = DOR_swift_rhovanorim_riders
+		icon = GFX_focus_generic_horse_studs
+		x = -1
+		y = 1
+		relative_position_id = DOR_power_on_horseback
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_power_on_horseback
+		}
+		mutually_exclusive = {
+			focus = DOR_resplendant_feudal_knights
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_ideas = DOR_swift_rhovanorim_riders_idea
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Resplendant feudal knights
+		id = DOR_resplendant_feudal_knights
+		icon = GFX_focus_generic_army_tanks2
+		x = 1
+		y = 1
+		relative_position_id = DOR_power_on_horseback
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_power_on_horseback
+		}
+		mutually_exclusive = {
+			focus = DOR_swift_rhovanorim_riders
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_ideas = DOR_resplendant_feudal_knights_idea
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Mounted core of the army
+		id = DOR_mounted_core_of_the_army
+		icon = GFX_goal_generic_cavalry
+		x = 1
+		y = 1
+		relative_position_id = DOR_swift_rhovanorim_riders
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_swift_rhovanorim_riders
+			focus = DOR_resplendant_feudal_knights
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			random_army_leader = {
+				limit = { NOT = { has_trait = panzer_leader } }
+				add_unit_leader_trait = panzer_leader
+			}
+			random_army_leader = {
+				limit = { NOT = { has_trait = panzer_leader } }
+				add_unit_leader_trait = panzer_leader
+			}
+			random_army_leader = {
+				limit = { NOT = { has_trait = panzer_leader } }
+				add_unit_leader_trait = panzer_leader
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = @doctrineBoostBonus
+				uses = @techBoostUses
+				category = cat_mobile_warfare
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Power in opulence
+		id = DOR_power_in_opulence
+		icon = GFX_goal_grapes
+		x = 2
+		y = 1
+		relative_position_id = DOR_land_of_chivalry
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_land_of_chivalry
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_PROSPERITY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = wine_tech_category
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Uniforms of purple and gold
+		id = DOR_uniforms_of_purple_and_gold
+		icon = GFX_goal_DOR_army_morale
+		x = -1
+		y = 1
+		relative_position_id = DOR_power_in_opulence
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_power_in_opulence
+		}
+		available = {
+			winelords_focus_trigger = yes
+			arms_factory > 4
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			DOR_increase_army_morale = yes
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Campaign of cordiality
+		id = DOR_campaign_of_cordiality
+		icon = GFX_goal_wine_propoganda
+		x = 1
+		y = 1
+		relative_position_id = DOR_power_in_opulence
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_power_in_opulence
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			unlock_decision_tooltip = wine_for_winelords
+			custom_effect_tooltip = DOR_campaign_of_cordiality_tooltip
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #A life of silk and satin
+		id = DOR_a_life_of_silk_and_satin
+		icon = GFX_focus_generic_industry_1
+		x = 0
+		y = 2
+		relative_position_id = DOR_power_in_opulence
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_power_in_opulence
+		}
+		available = {
+			winelords_focus_trigger = yes
+			has_resources_in_country = {
+				resource = cloth
+				amount > 7
+				extracted = yes
+			}
+			any_core_state = {
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #1 civ and slot
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			winelords_focus_effect = yes
+		}
+	}
+#################################FEAST WITH COMMONERS
+	focus = { #Feast with the people
+		id = DOR_feast_with_the_people
+		icon = GFX_goal_ale_mug
+		x = 15
+		y = 0
+		relative_position_id = DOR_rally_support_for_vidumarh
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_winelords
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			winelords_focus_effect_med = yes
+		}
+	}
+	focus = { #Rally them with promises of superiority
+		id = DOR_rally_them_with_promises_of_superiority
+		icon = GFX_goal_dorwin_nationalism
+		x = -2
+		y = 1
+		relative_position_id = DOR_feast_with_the_people
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_feast_with_the_people
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = isolationism
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = freedom
+				popularity = -0.1
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Improve access to inland communities
+		id = DOR_improve_access_to_inland_communities
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = DOR_feast_with_the_people
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_feast_with_the_people
+		}
+		available = {
+			winelords_focus_trigger = yes
+			any_core_state = {
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = infrastructure
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #3 random infrastructure
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT 
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT 
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT 
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Idyllic rolling fields
+		id = DOR_idyllic_rolling_fields
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		x = -3
+		y = 1
+		relative_position_id = DOR_improve_access_to_inland_communities
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_improve_access_to_inland_communities
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #3 farming bonuses
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 3
+				category = farming
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Vintners by blood
+		id = DOR_vintners_by_blood
+		icon = GFX_goal_grapes
+		x = -1
+		y = 1
+		relative_position_id = DOR_idyllic_rolling_fields
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_idyllic_rolling_fields
+		}
+		available = {
+			winelords_focus_trigger = yes
+			any_controlled_state = {
+				has_dynamic_modifier = { modifier = wine_country }
+				free_building_slots = {
+					building = vineyard
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_PROSPERITY }
+		completion_reward = { #2 vineyards
+			random_controlled_state = {
+				limit = {
+					has_dynamic_modifier = { modifier = wine_country }
+					free_building_slots = {
+						building = vineyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = vineyard
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_controlled_state = {
+				limit = {
+					has_dynamic_modifier = { modifier = wine_country }
+					free_building_slots = {
+						building = vineyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = vineyard
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Modernise our agriculture
+		id = DOR_modernise_our_agriculture
+		icon = GFX_goal_generic_construct_synth_refinery
+		x = 1
+		y = 1
+		relative_position_id = DOR_idyllic_rolling_fields
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_idyllic_rolling_fields
+		}
+		available = {
+			winelords_focus_trigger = yes
+			has_tech = synth_oil_experiments
+			any_core_state = {
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #2 vineyards
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = synthetic_refinery
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = synthetic_refinery
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #All Hands on the harvest
+		id = DOR_all_hands_on_the_harvest
+		icon = GFX_focus_generic_food
+		x = -1
+		y = 1
+		relative_position_id = DOR_modernise_our_agriculture
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_modernise_our_agriculture
+		}
+		mutually_exclusive = {
+			focus = DOR_free_up_labour_from_the_fields
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #24 food
+			@harvestAmount = 8
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				add_resource = {
+					type = food
+					amount = @harvestAmount
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				add_resource = {
+					type = food
+					amount = @harvestAmount
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				add_resource = {
+					type = food
+					amount = @harvestAmount
+				}
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Free up labour from the fields
+		id = DOR_free_up_labour_from_the_fields
+		icon = GFX_focus_ITA_peasants_rise
+		x = 1
+		y = 1
+		relative_position_id = DOR_modernise_our_agriculture
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_modernise_our_agriculture
+		}
+		mutually_exclusive = {
+			focus = DOR_all_hands_on_the_harvest
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #0.75% conscription
+			add_ideas = DOR_modernised_agriculture
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Expand mining operations
+		id = DOR_expand_mining_operations
+		icon = GFX_focus_generic_iron
+		x = 0
+		y = 1
+		relative_position_id = DOR_improve_access_to_inland_communities
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_improve_access_to_inland_communities
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #10 iron
+			if = {
+				limit = { controls_state = 311 } #uldonovuld
+				311 = {
+					add_resource = {
+						type = iron
+						amount = 10
+					}
+				}
+			}
+			else = {
+				random_core_state = {
+					limit = { is_core_of = ROOT }
+					add_resource = {
+						type = iron
+						amount = 10
+					}
+				}
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Encourage love of lord and land
+		id = DOR_encourage_love_of_lord_and_land
+		icon = GFX_goal_generic_propaganda
+		x = 3
+		y = 1
+		relative_position_id = DOR_improve_access_to_inland_communities
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_improve_access_to_inland_communities
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = { #10 iron
+			add_war_support = 0.1
+			winelords_focus_effect_med = yes
+		}
+	}
+	focus = { #Support village smithies
+		id = DOR_support_village_smithies
+		icon = GFX_goal_generic_production2
+		x = -1
+		y = 1
+		relative_position_id = DOR_encourage_love_of_lord_and_land
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_encourage_love_of_lord_and_land
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = industry #smithing
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Tradition better than any guild
+		id = DOR_tradition_better_than_any_guild
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -1
+		y = 1
+		relative_position_id = DOR_support_village_smithies
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_expand_mining_operations
+		}
+		prerequisite = {
+			focus = DOR_support_village_smithies
+		}
+		available = {
+			winelords_focus_trigger = yes
+			any_core_state = {
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Review feudal obligations
+		id = DOR_review_feudal_obligations
+		icon = GFX_goal_generic_small_arms
+		x = 1
+		y = 1
+		relative_position_id = DOR_encourage_love_of_lord_and_land
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_encourage_love_of_lord_and_land
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 2
+				category = infantry_tech
+			}
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #All levies ready at a moments notice
+		id = DOR_all_levies_ready_at_a_moments_notice
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 1
+		relative_position_id = DOR_review_feudal_obligations
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_review_feudal_obligations
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #
+			add_doctrine_cost_reduction = {
+				cost_reduction = @doctrineBoostBonus
+				uses = @techBoostUses
+				category = land_doctrine
+			}
 			winelords_focus_effect = yes
 		}
 	}
