@@ -96,7 +96,10 @@
  DOR_expand_the_university_tooltip: "$unlocks_decision_tooltip$ to upgrade the individual colleges of §YThe $DOR_royal_university$§!. Each decision costs £GFX_pol_power §R50§! and increases that college's bonus by §G+2.5%§!, up to a maximum of 4 times."
  has_level_10_university: "§YThe $DOR_royal_university$§! is at least level 10"
  upgrading_university: " Currently upgrading §YThe $DOR_royal_university$§!"
- 
+ great_merchants_action_activated: "§RLow stability events may involve the $great_merchants_formatted$ attempting to assert political influence.§!"
+ great_merchants_will_win: "§Y$DOR_bergholda_aldiana$§! will become Realm Master upon §Y$DOR_hawin_koldana$'s§! death."
+ winelords_action_activated: "§RLow stability events may involve the $winelords_formatted$ attempting to assert political influence.§!"
+ winelords_will_win: "§Y$DOR_bladorthin_koldana$§! will become Realm Master upon §Y$DOR_hawin_koldana$'s§! death."
  
  
  

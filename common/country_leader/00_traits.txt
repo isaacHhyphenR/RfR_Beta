@@ -2301,219 +2301,219 @@ leader_traits = {
 		supply_combat_penalties_on_core_factor = -100
 		drift_defence_factor = 1
 	}
-	koldana_pol1 = {
+	koldana_pol_first = {
 		sprite = 12
 		random = no
 	}
-	koldana_pol2 = {
+	koldana_pol_second = {
 		sprite = 12
 		random = no
 	}
-	koldana_pol3 = {
+	koldana_pol_third = {
 		sprite = 12
 		random = no
 	}
-	koldana_pol4 = {
+	koldana_pol_fourth = {
 		sprite = 12
 		random = no
 	}
-	koldana_pol5 = {
+	koldana_pol_fifth = {
 		sprite = 12
 		random = no
 	}
-	koldana_pol6 = {
+	koldana_pol_sixth = {
 		sprite = 12
 		random = no
 	}
-	koldana_pol7 = {
+	koldana_pol_seventh = {
 		sprite = 12
 		random = no
 	}
-	koldana_pol8 = {
+	koldana_pol_eigth = {
 		sprite = 12
 		random = no
 	}
-	koldana_pol9 = {
+	koldana_pol_ninth = {
 		sprite = 12
 		random = no
 	}
-	vierling_pol1 = {
+	vierling_pol_first = {
 		sprite = 12
 		random = no
 	}
-	vierling_pol2 = {
+	vierling_pol_second = {
 		sprite = 12
 		random = no
 	}
-	vierling_pol3 = {
+	vierling_pol_third = {
 		sprite = 12
 		random = no
 	}
-	vierling_pol4 = {
+	vierling_pol_fourth = {
 		sprite = 12
 		random = no
 	}
-	vierling_pol5 = {
+	vierling_pol_fifth = {
 		sprite = 12
 		random = no
 	}
-	vierling_pol6 = {
+	vierling_pol_sixth = {
 		sprite = 12
 		random = no
 	}
-	vierling_pol7 = {
+	vierling_pol_seventh = {
 		sprite = 12
 		random = no
 	}
-	vierling_pol8 = {
+	vierling_pol_eigth = {
 		sprite = 12
 		random = no
 	}
-	vierling_pol9 = {
+	vierling_pol_ninth = {
 		sprite = 12
 		random = no
 	}
-	human_advisor_pol1 = {
+	human_advisor_pol_first = {
 		sprite = 12
 		random = no
 	}
-	human_advisor_pol2 = {
+	human_advisor_pol_second = {
 		sprite = 12
 		random = no
 	}
-	human_advisor_pol3 = {
+	human_advisor_pol_third = {
 		sprite = 12
 		random = no
 	}
-	human_advisor_pol4 = {
+	human_advisor_pol_fourth = {
 		sprite = 12
 		random = no
 	}
-	human_advisor_pol5 = {
+	human_advisor_pol_fifth = {
 		sprite = 12
 		random = no
 	}
-	human_advisor_pol6 = {
+	human_advisor_pol_sixth = {
 		sprite = 12
 		random = no
 	}
-	human_advisor_pol7 = {
+	human_advisor_pol_seventh = {
 		sprite = 12
 		random = no
 	}
-	human_advisor_pol8 = {
+	human_advisor_pol_eigth = {
 		sprite = 12
 		random = no
 	}
-	human_advisor_pol9 = {
+	human_advisor_pol_ninth = {
 		sprite = 12
 		random = no
 	}
-	elven_advisor_pol1 = {
+	elven_advisor_pol_first = {
 		sprite = 12
 		random = no
 	}
-	elven_advisor_pol2 = {
+	elven_advisor_pol_second = {
 		sprite = 12
 		random = no
 	}
-	elven_advisor_pol3 = {
+	elven_advisor_pol_third = {
 		sprite = 12
 		random = no
 	}
-	elven_advisor_pol4 = {
+	elven_advisor_pol_fourth = {
 		sprite = 12
 		random = no
 	}
-	elven_advisor_pol5 = {
+	elven_advisor_pol_fifth = {
 		sprite = 12
 		random = no
 	}
-	elven_advisor_pol6 = {
+	elven_advisor_pol_sixth = {
 		sprite = 12
 		random = no
 	}
-	elven_advisor_pol7 = {
+	elven_advisor_pol_seventh = {
 		sprite = 12
 		random = no
 	}
-	elven_advisor_pol8 = {
+	elven_advisor_pol_eigth = {
 		sprite = 12
 		random = no
 	}
-	elven_advisor_pol9 = {
+	elven_advisor_pol_ninth = {
 		sprite = 12
 		random = no
 	}
-	merchant_house_pol1 = {
+	merchant_house_pol_first = {
 		sprite = 12
 		random = no
 	}
-	merchant_house_pol2 = {
+	merchant_house_pol_second = {
 		sprite = 12
 		random = no
 	}
-	merchant_house_pol3 = {
+	merchant_house_pol_third = {
 		sprite = 12
 		random = no
 	}
-	merchant_house_pol4 = {
+	merchant_house_pol_fourth = {
 		sprite = 12
 		random = no
 	}
-	merchant_house_pol5 = {
+	merchant_house_pol_fifth = {
 		sprite = 12
 		random = no
 	}
-	merchant_house_pol6 = {
+	merchant_house_pol_sixth = {
 		sprite = 12
 		random = no
 	}
-	merchant_house_pol7 = {
+	merchant_house_pol_seventh = {
 		sprite = 12
 		random = no
 	}
-	merchant_house_pol8 = {
+	merchant_house_pol_eigth = {
 		sprite = 12
 		random = no
 	}
-	merchant_house_pol9 = {
+	merchant_house_pol_ninth = {
 		sprite = 12
 		random = no
 	}
-	burgher_pol1 = {
+	burgher_pol_first = {
 		sprite = 12
 		random = no
 	}
-	burgher_pol2 = {
+	burgher_pol_second = {
 		sprite = 12
 		random = no
 	}
-	burgher_pol3 = {
+	burgher_pol_third = {
 		sprite = 12
 		random = no
 	}
-	burgher_pol4 = {
+	burgher_pol_fourth = {
 		sprite = 12
 		random = no
 	}
-	burgher_pol5 = {
+	burgher_pol_fifth = {
 		sprite = 12
 		random = no
 	}
-	burgher_pol6 = {
+	burgher_pol_sixth = {
 		sprite = 12
 		random = no
 	}
-	burgher_pol7 = {
+	burgher_pol_seventh = {
 		sprite = 12
 		random = no
 	}
-	burgher_pol8 = {
+	burgher_pol_eigth = {
 		random = no
 		sprite = 12
 	}
-	burgher_pol9 = {
+	burgher_pol_ninth = {
 		sprite = 12
 		random = no
 	}

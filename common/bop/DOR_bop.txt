@@ -4,32 +4,107 @@ DOR_election_power_balance = {
 	right_side = DOR_winelords_side
 	decision_category = DOR_balance_of_power_category
 
-	### Neutral status
-	range = {
-		id = DOR_balance_range
-		min = -0.10
-		max = 0.10
-		modifier = {
-		}
-		on_activate = {
-
-		}
-		on_deactivate = {
-			
-		}
-	}
-
 	###Great Merchants
 	side = {
 		id = DOR_great_merchants_side	
 		icon = GFX_great_merchants_bop
 
-		range = {
-			id = DOR_great_merchants_low_favoured_range
-			min = -1
+		range = { #0
+			id = DOR_great_merchants_range0
+			min = -0.1
+			max = -0.0
+			modifier = {
+				custom_modifier_tooltip = great_merchants_will_win
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #1
+			id = DOR_great_merchants_range1
+			min = -0.25
 			max = -0.1
 			modifier = {
+				prosperity_gain_factor = 0.02
+				low_stability_risk = 0.1
+				isolationism_drift = 0.025
+				custom_modifier_tooltip = winelords_action_activated
+				custom_modifier_tooltip = great_merchants_will_win
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #2
+			id = DOR_great_merchants_range2
+			min = -0.4
+			max = -0.25
+			modifier = {
+				prosperity_gain_factor = 0.04
+				low_stability_risk = 0.25
+				isolationism_drift = 0.05
+				custom_modifier_tooltip = winelords_action_activated
+				custom_modifier_tooltip = great_merchants_will_win
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #3
+			id = DOR_great_merchants_range3
+			min = -0.6
+			max = -0.4
+			modifier = {
+				prosperity_gain_factor = 0.06
+				low_stability_risk = 0.4
+				isolationism_drift = 0.1
+				custom_modifier_tooltip = winelords_action_activated
+				custom_modifier_tooltip = great_merchants_will_win
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #4
+			id = DOR_great_merchants_range4
+			min = -0.8
+			max = -0.6
+			modifier = {
+				prosperity_gain_factor = 0.08
+				low_stability_risk = 0.5
+				isolationism_drift = 0.15
+				custom_modifier_tooltip = winelords_action_activated
+				custom_modifier_tooltip = great_merchants_will_win
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #5
+			id = DOR_great_merchants_range5
+			min = -1
+			max = -0.8
+			modifier = {
 				prosperity_gain_factor = 0.1
+				low_stability_risk = 0.65
+				isolationism_drift = 0.2
+				custom_modifier_tooltip = winelords_action_activated
+				custom_modifier_tooltip = great_merchants_will_win
 			}
 			on_activate = {
 				
@@ -45,16 +120,108 @@ DOR_election_power_balance = {
 		id = DOR_winelords_side	
 		icon = GFX_winelords_bop
 
-		range = {
-			id = DOR_winelords_low_favoured_range
-			min = 0.1
-			max = 1
+		range = { #0
+			id = DOR_winelords_range0
+			min = 0.0
+			max = 0.1
 			modifier = {
-				wine_gain_factor = 0.1
+				custom_modifier_tooltip = winelords_will_win
 			}
 			on_activate = {
+				
 			}
 			on_deactivate = {
+				
+			}
+		}
+		range = { #1
+			id = DOR_winelords_range1
+			min = 0.1
+			max = 0.25
+			modifier = {
+				wine_gain_factor = 0.04
+				low_stability_risk = 0.1
+				opportunism_drift = 0.025
+				custom_modifier_tooltip = great_merchants_action_activated
+				custom_modifier_tooltip = winelords_will_win
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #2
+			id = DOR_winelords_range2
+			min = 0.25
+			max = 0.4
+			modifier = {
+				wine_gain_factor = 0.08
+				low_stability_risk = 0.25
+				opportunism_drift = 0.05
+				custom_modifier_tooltip = great_merchants_action_activated
+				custom_modifier_tooltip = winelords_will_win
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #3
+			id = DOR_winelords_range3
+			min = 0.4
+			max = 0.6
+			modifier = {
+				wine_gain_factor = 0.12
+				low_stability_risk = 0.4
+				opportunism_drift = 0.1
+				custom_modifier_tooltip = great_merchants_action_activated
+				custom_modifier_tooltip = winelords_will_win
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #4
+			id = DOR_winelords_range4
+			min = 0.6
+			max = 0.8
+			modifier = {
+				wine_gain_factor = 0.16
+				low_stability_risk = 0.5
+				opportunism_drift = 0.15
+				custom_modifier_tooltip = great_merchants_action_activated
+				custom_modifier_tooltip = winelords_will_win
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #5
+			id = DOR_winelords_range5
+			min = 0.8
+			max = 1
+			modifier = {
+				wine_gain_factor = 0.2
+				low_stability_risk = 0.65
+				opportunism_drift = 0.2
+				custom_modifier_tooltip = great_merchants_action_activated
+				custom_modifier_tooltip = winelords_will_win
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
 			}
 		}
 	}

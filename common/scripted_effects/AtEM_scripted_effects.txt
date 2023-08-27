@@ -75,7 +75,7 @@ daily_prosperity_gain = { #call in a state to gain it prosperity
 	
 	#multiply by factors
 	set_temp_variable = { factor = modifier@prosperity_gain_factor }
-	add_to_temp_variable = { factor = controller.modifier@prosperity_gain_factor }
+	add_to_temp_variable = { factor = controller:modifier@prosperity_gain_factor }
 	add_to_temp_variable = { factor = 1 } #so it's not 0
 	set_variable = { total_prosperity_gain = base_prosperity_gain }
 	multiply_variable = { total_prosperity_gain = factor }

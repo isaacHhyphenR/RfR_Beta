@@ -6,8 +6,11 @@ DOR_balance_of_power_category = {
 			factor = 0
 		}
 		allowed = { tag = DOR }
-		visible = { has_power_balance = { id = DOR_election_power_balance } }
-		available = { has_completed_focus = DOR_give_generous_gifts }
+		visible = {
+			has_power_balance = { id = DOR_election_power_balance }
+			has_completed_focus = DOR_give_generous_gifts
+		}
+		available = {  }
 	}
 	@aptitudeDays = 1000
 	aptitude_mission_civs = {

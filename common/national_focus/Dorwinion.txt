@@ -1812,7 +1812,6 @@ focus_tree = {
 			controls_state = 240
 			controls_state = 305
 		}
-		bypass = { controls_state = 240 controls_state = 305 }
 		search_filters = { FOCUS_FILTER_ARMY }
 		completion_reward = {
 			DOR_increase_army_morale = yes
@@ -2164,7 +2163,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_war_support = 0.1
+			add_war_support = 0.15
 			winelords_focus_effect = yes
 		}
 	}

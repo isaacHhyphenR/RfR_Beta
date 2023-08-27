@@ -43,7 +43,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_bladorthin_koldana
 			allowed = { original_tag = DOR }
-			traits = { gregarious_advisor koldana_pol1 }
+			traits = { gregarious_advisor koldana_pol_first }
 			ai_will_do = {
 				factor = 1
 			}
@@ -54,7 +54,7 @@ characters = {
 			slot = army_chief
 			idea_token = DOR_bladorthin_koldana
 			allowed = { original_tag = DOR }
-			traits = { army_chief_organizational_1 koldana_pol9 }
+			traits = { army_chief_organizational_1 koldana_pol_ninth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -83,7 +83,7 @@ characters = {
 			slot = army_chief
 			idea_token = DOR_aril_logian
 			allowed = { original_tag = DOR }
-			traits = { army_chief_planning_1 koldana_pol2 }
+			traits = { army_chief_planning_1 koldana_pol_second }
 			ai_will_do = {
 				factor = 1
 			}
@@ -112,7 +112,7 @@ characters = {
 			slot = high_command
 			idea_token = DOR_aril_logian
 			allowed = { original_tag = DOR }
-			traits = { army_chief_planning_1 koldana_pol3 }
+			traits = { army_chief_planning_1 koldana_pol_third }
 			ai_will_do = {
 				factor = 1
 			}
@@ -158,7 +158,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_sisewyn_koldana
 			allowed = { original_tag = DOR }
-			traits = { lowborn_consort koldana_pol4 }
+			traits = { lowborn_consort koldana_pol_fourth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -179,7 +179,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_biarn_ilian
 			allowed = { original_tag = DOR }
-			traits = { war_industrialist koldana_pol5 }
+			traits = { war_industrialist koldana_pol_fifth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -200,7 +200,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_freja_barding
 			allowed = { original_tag = DOR }
-			traits = { princess_of_dale koldana_pol6 }
+			traits = { princess_of_dale koldana_pol_sixth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -221,7 +221,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_thalas_raudbarad
 			allowed = { original_tag = DOR }
-			traits = { master_vintner koldana_pol7 }
+			traits = { master_vintner koldana_pol_seventh }
 			ai_will_do = {
 				factor = 1
 			}
@@ -254,7 +254,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_vidumarh_vierling
 			allowed = { original_tag = DOR }
-			traits = { heroic_commander_advisor vierling_pol1 }
+			traits = { heroic_commander_advisor vierling_pol_first }
 			ai_will_do = {
 				factor = 1
 			}
@@ -265,7 +265,7 @@ characters = {
 			slot = army_chief
 			idea_token = DOR_vidumarh_vierling
 			allowed = { original_tag = DOR }
-			traits = { army_chief_maneuver_2 vierling_pol9 }
+			traits = { army_chief_maneuver_2 vierling_pol_ninth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -294,7 +294,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_ariberga_vierling
 			allowed = { original_tag = DOR }
-			traits = { dreamer_of_greater_dorwinion_conquest vierling_pol8 }
+			traits = { dreamer_of_greater_dorwinion_conquest vierling_pol_eigth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -315,7 +315,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_ingaberg_garmeniana
 			allowed = { original_tag = DOR }
-			traits = { quartermaster_general vierling_pol2 }
+			traits = { quartermaster_general vierling_pol_second }
 			ai_will_do = {
 				factor = 1
 			}
@@ -336,7 +336,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_torwald_garmeniana
 			allowed = { original_tag = DOR }
-			traits = { administrator_pol vierling_pol3 }
+			traits = { administrator_pol vierling_pol_third }
 			ai_will_do = {
 				factor = 1
 			}
@@ -357,7 +357,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_raganhildis_lugon
 			allowed = { original_tag = DOR has_dlc = "La Resistance" }
-			traits = { head_of_intelligence vierling_pol4 }
+			traits = { head_of_intelligence vierling_pol_fourth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -378,7 +378,7 @@ characters = {
 			slot = theorist
 			idea_token = DOR_vogirion_garmeniana
 			allowed = { original_tag = DOR }
-			traits = { military_theorist vierling_pol5 }
+			traits = { military_theorist vierling_pol_fifth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -399,7 +399,7 @@ characters = {
 			slot = high_command
 			idea_token = DOR_kelda_galen
 			allowed = { original_tag = DOR }
-			traits = { army_infantry_1 vierling_pol6 }
+			traits = { army_infantry_1 vierling_pol_sixth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -428,7 +428,7 @@ characters = {
 			slot = high_command
 			idea_token = DOR_viduquen_vierling
 			allowed = { original_tag = DOR }
-			traits = { army_armored_1 vierling_pol7 }
+			traits = { army_armored_1 vierling_pol_seventh }
 			ai_will_do = {
 				factor = 1
 			}
@@ -505,7 +505,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_bergholda_aldiana
 			allowed = { original_tag = DOR }
-			traits = { empathetic_negotiator_advisor merchant_house_pol1 }
+			traits = { empathetic_negotiator_advisor merchant_house_pol_first }
 			ai_will_do = {
 				factor = 1
 			}
@@ -516,7 +516,7 @@ characters = {
 			slot = theorist
 			idea_token = DOR_bergholda_aldiana
 			allowed = { original_tag = DOR }
-			traits = { trade_theorist merchant_house_pol1 }
+			traits = { trade_theorist merchant_house_pol_first }
 			ai_will_do = {
 				factor = 1
 			}
@@ -537,7 +537,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_jauffre_jaufring
 			allowed = { original_tag = DOR }
-			traits = { anti_interventionist merchant_house_pol2 }
+			traits = { anti_interventionist merchant_house_pol_second }
 			ai_will_do = {
 				factor = 1
 			}
@@ -562,7 +562,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_fornagarth_barvadinian
 			allowed = { original_tag = DOR }
-			traits = { smooth_talking_charmer merchant_house_pol3 }
+			traits = { smooth_talking_charmer merchant_house_pol_third }
 			ai_will_do = {
 				factor = 1
 			}
@@ -583,7 +583,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_thraear_barvadinian
 			allowed = { original_tag = DOR }
-			traits = { financial_expert merchant_house_pol4 }
+			traits = { financial_expert merchant_house_pol_fourth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -604,7 +604,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_thraear_barvadinian
 			allowed = { original_tag = DOR }
-			traits = { urban_developer merchant_house_pol5 }
+			traits = { urban_developer merchant_house_pol_fifth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -625,7 +625,7 @@ characters = {
 			slot = theorist
 			idea_token = DOR_sunngifa_illasarian
 			allowed = { original_tag = DOR }
-			traits = { mercenary_theorist merchant_house_pol6 }
+			traits = { mercenary_theorist merchant_house_pol_sixth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -646,7 +646,7 @@ characters = {
 			slot = high_command
 			idea_token = DOR_godomar_taca
 			allowed = { original_tag = DOR }
-			traits = { navy_screen_1 merchant_house_pol7 }
+			traits = { navy_screen_1 merchant_house_pol_seventh }
 			ai_will_do = {
 				factor = 1
 			}
@@ -675,7 +675,7 @@ characters = {
 			slot = high_command
 			idea_token = DOR_kelai_aldiana
 			allowed = { original_tag = DOR }
-			traits = { navy_screen_1 merchant_house_pol8 }
+			traits = { navy_screen_1 merchant_house_pol_eigth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -706,7 +706,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_thodria_celebcaen
 			allowed = { original_tag = DOR }
-			traits = { liberator_of_the_north burgher_pol1 }
+			traits = { liberator_of_the_north burgher_pol_first }
 			ai_will_do = {
 				factor = 1
 			}
@@ -727,7 +727,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_skaldir_lendembas
 			allowed = { original_tag = DOR }
-			traits = { rallying_figurehead burgher_pol2 }
+			traits = { rallying_figurehead burgher_pol_second }
 			ai_will_do = {
 				factor = 1
 			}
@@ -748,7 +748,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_ansovald_gwingalon
 			allowed = { original_tag = DOR }
-			traits = { polymath burgher_pol3 }
+			traits = { pol_ymath burgher_pol_third }
 			ai_will_do = {
 				factor = 1
 			}
@@ -769,7 +769,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_aregisel_hammdost
 			allowed = { original_tag = DOR }
-			traits = { captain_of_industry burgher_pol4 }
+			traits = { captain_of_industry burgher_pol_fourth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -790,7 +790,7 @@ characters = {
 			slot = theorist
 			idea_token = DOR_aregisel_hammdost
 			allowed = { original_tag = DOR }
-			traits = { naval_theorist burgher_pol5 }
+			traits = { naval_theorist burgher_pol_fifth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -811,7 +811,7 @@ characters = {
 			slot = navy_chief
 			idea_token = DOR_inwar_sant_maleryn
 			allowed = { original_tag = DOR }
-			traits = { navy_chief_maneuver_2 burgher_pol6 }
+			traits = { navy_chief_maneuver_2 burgher_pol_sixth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -840,7 +840,7 @@ characters = {
 			slot = high_command
 			idea_token = DOR_beawyn_hack
 			allowed = { original_tag = DOR }
-			traits = { navy_fleet_logistics_1 burgher_pol7 }
+			traits = { navy_fleet_logistics_1 burgher_pol_seventh }
 			ai_will_do = {
 				factor = 1
 			}
@@ -869,7 +869,7 @@ characters = {
 			slot = high_command
 			idea_token = DOR_theoren_gastwolk
 			allowed = { original_tag = DOR }
-			traits = { army_artillery_1 burgher_pol8 }
+			traits = { army_artillery_1 burgher_pol_eigth }
 			ai_will_do = {
 				factor = 1
 			}

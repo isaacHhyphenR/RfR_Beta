@@ -132,8 +132,8 @@ celduin_trade_category = {
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
 		modifier = {
-			#stability_factor = 0.1
-			stability_weekly = @weeklyStab
+			stability_factor = 0.1
+			#stability_weekly = @weeklyStab
 		}
 		complete_effect = { #cost
 			hidden_effect = {
@@ -240,8 +240,8 @@ celduin_trade_category = {
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
 		modifier = {
-			#war_support_factor = 0.1
-			war_support_weekly = @weeklyStab
+			war_support_factor = 0.1
+			#war_support_weekly = @weeklyStab
 		}
 		complete_effect = { #cost
 			hidden_effect = {
