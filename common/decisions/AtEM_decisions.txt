@@ -590,7 +590,7 @@ colonisation_category = {
 		custom_cost_trigger = { has_manpower > var:dagorlad_settlement_cost }
 		days_remove = 7
 		state_target = yes
-		target_array = WLD:core_states
+		target_array = WLD:owned_states
 		complete_effect = { #cost
 			hidden_effect = {
 				set_temp_variable = { MPcost = dagorlad_settlement_cost }
@@ -658,7 +658,7 @@ colonisation_category = {
 		allowed = { NOT = { original_tag = FOR original_tag = WLD } } #wastelands can't colonise
 		days_remove = 105
 		state_target = yes
-		target_array = WLD:core_states
+		target_array = WLD:owned_states
 		#targets = { 94 109 111 119 120 121 122  124 307 333 334 335  336 } #123 emyn muil
 		highlight_states = {
 			highlight_state_targets = {

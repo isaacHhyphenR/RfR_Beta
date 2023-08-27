@@ -35,6 +35,10 @@ script_enum_equipment_bonus_type = {
 	
 	support_equipment
 	maintenence_equipment
+	medical_equipment
+	engineering_equipment
+	signals_equipment
+	suppression_equipment
 
 	## Sea
 	ship_hull_light

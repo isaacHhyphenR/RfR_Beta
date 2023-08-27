@@ -19,7 +19,7 @@ wilderness_state = {
 	icon = GFX_wilderness_state
 	custom_modifier_tooltip = wilderness_state_tooltip
 	starting_compliance = 0.25
-	resistance_target = 1.25
+	resistance_target = 1
 	resistance_growth = 0.5
 	required_garrison_factor = 1
 }

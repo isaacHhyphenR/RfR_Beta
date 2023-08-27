@@ -124,3 +124,10 @@ can_trade_with_ROOT = {
 		}
 	}
 }
+
+has_level_10_university = {
+	custom_trigger_tooltip = {
+		tooltip = has_level_10_university
+		check_variable = { university_size > 9 }
+	}
+}

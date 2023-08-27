@@ -9,6 +9,11 @@
 #GFX_goal_DOR_army_morale
 #GFX_goal_dorwin_nationalism
 #GFX_goal_grapes
+#GFX_goal_university_research
+#GFX_goal_university_medicine
+#GFX_goal_university_diplomacy
+#GFX_goal_university_tactics
+#GFX_goal_support_hawin_koldana
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -1342,12 +1347,19 @@ focus_tree = {
 		cost = 10
 		ai_will_do = {
 			factor = 0
+			modifier = {
+				has_completed_focus = DOR_attend_to_our_beloved_realm_master
+				factor = 0
+			}
 		}
 		prerequisite = {
 			focus = DOR_knife_guild_of_caras_sant
 		}
 		available = {
-			great_merchants_focus_trigger = yes
+			has_country_leader = {
+				character = DOR_hawin_koldana
+				ruling_only = yes
+			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -1942,6 +1954,172 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_core = 240
+			winelords_focus_effect = yes
+		}
+	}
+#################################ROYAL UNIVERSITY
+	focus = { #Renovate the Royal University of Szrel-Kain
+		id = DOR_renovate_the_royal_university_of_srzel_kain
+		dynamic = yes #might need to drop the 'royal'
+		icon = GFX_goal_university_research
+		x = -5
+		y = 0
+		relative_position_id = DOR_reclaim_rightful_fiefs
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_winelords
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas = DOR_college_of_philosophy_1
+			DOR_increase_university_level_2 = yes
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Found the college of medicine
+		id = DOR_found_the_college_of_medicine
+		icon = GFX_goal_university_medicine
+		x = -2
+		y = 1
+		relative_position_id = DOR_renovate_the_royal_university_of_srzel_kain
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_renovate_the_royal_university_of_srzel_kain
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_ideas = DOR_college_of_medicine_1
+			DOR_increase_university_level_2 = yes
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Found the College of Manners
+		id = DOR_found_the_college_of_manners
+		icon = GFX_goal_university_diplomacy
+		x = 0
+		y = 1
+		relative_position_id = DOR_renovate_the_royal_university_of_srzel_kain
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_renovate_the_royal_university_of_srzel_kain
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			add_ideas = DOR_college_of_manners_1
+			DOR_increase_university_level_2 = yes
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Found the College of Tactics
+		id = DOR_found_the_college_of_tactics
+		icon = GFX_goal_university_tactics
+		x = 2
+		y = 1
+		relative_position_id = DOR_renovate_the_royal_university_of_srzel_kain
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_renovate_the_royal_university_of_srzel_kain
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_ideas = DOR_college_of_tactics_1
+			DOR_increase_university_level_2 = yes
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Expand the University
+		id = DOR_expand_the_university
+		icon = GFX_focus_generic_military_academy
+		x = 0
+		y = 1
+		relative_position_id = DOR_found_the_college_of_manners
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_found_the_college_of_medicine
+			focus = DOR_found_the_college_of_manners
+			focus = DOR_found_the_college_of_tactics
+		}
+		available = {
+			winelords_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			custom_effect_tooltip = DOR_expand_the_university_tooltip
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Grandest Univeristy of the North
+		id = DOR_grandest_university_of_the_north
+		icon = GFX_focus_research
+		x = 0
+		y = 1
+		relative_position_id = DOR_expand_the_university
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_expand_the_university
+		}
+		available = {
+			winelords_focus_trigger = yes
+			has_level_10_university = yes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+			winelords_focus_effect = yes
+		}
+	}
+	focus = { #Attend to Our Beloved Realm Master
+		id = DOR_attend_to_our_beloved_realm_master
+		icon = GFX_goal_support_hawin_koldana
+		x = 0
+		y = 1
+		relative_position_id = DOR_found_the_college_of_medicine
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_found_the_college_of_medicine
+		}
+		available = {
+			has_country_leader = {
+				character = DOR_hawin_koldana
+				ruling_only = yes
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
 			winelords_focus_effect = yes
 		}
 	}
@@ -2547,7 +2725,7 @@ focus_tree = {
 	}
 	focus = { #All Hands on the harvest
 		id = DOR_all_hands_on_the_harvest
-		icon = GFX_focus_generic_food
+		icon = GFX_goal_generic_food
 		x = -1
 		y = 1
 		relative_position_id = DOR_modernise_our_agriculture
@@ -2624,7 +2802,7 @@ focus_tree = {
 	}
 	focus = { #Expand mining operations
 		id = DOR_expand_mining_operations
-		icon = GFX_focus_generic_iron
+		icon = GFX_goal_generic_iron
 		x = 0
 		y = 1
 		relative_position_id = DOR_improve_access_to_inland_communities

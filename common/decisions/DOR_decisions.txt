@@ -220,4 +220,121 @@ DOR_foreign_loans_category = {
 		}
 	}
 }
+
+DOR_college_category = {
+	@DORCollegeCost = 30
+	@DORCollegeDays = 30
 	
+	upgrade_college_of_philosophy = {
+		icon = GFX_decision_SOV_academy_of_sciences
+		fire_only_once = no
+		cost = @DORCollegeCost
+		days_remove = @DORCollegeDays
+		visible = {
+			OR = {
+				has_idea = DOR_college_of_philosophy_1
+				has_idea = DOR_college_of_philosophy_2
+				has_idea = DOR_college_of_philosophy_3
+				has_idea = DOR_college_of_philosophy_4
+			}
+			has_completed_focus = DOR_expand_the_university
+		}
+		available = {
+			NOT = { has_country_flag = upgrading_university }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = upgrading_university
+		}
+		remove_effect = {
+			DOR_upgrade_college_of_philosophy = yes
+			clr_country_flag = upgrading_university
+		}
+	}
+	upgrade_college_of_manners = {
+		icon = GFX_decision_SOV_academy_of_sciences
+		fire_only_once = no
+		cost = @DORCollegeCost
+		days_remove = @DORCollegeDays
+		visible = {
+			OR = {
+				has_idea = DOR_college_of_manners_1
+				has_idea = DOR_college_of_manners_2
+				has_idea = DOR_college_of_manners_3
+				has_idea = DOR_college_of_manners_4
+			}
+			has_completed_focus = DOR_expand_the_university
+		}
+		available = {
+			NOT = { has_country_flag = upgrading_university }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = upgrading_university
+		}
+		remove_effect = {
+			DOR_upgrade_college_of_manners = yes
+			clr_country_flag = upgrading_university
+		}
+	}
+	upgrade_college_of_medicine = {
+		icon = GFX_decision_SOV_academy_of_sciences
+		fire_only_once = no
+		cost = @DORCollegeCost
+		days_remove = @DORCollegeDays
+		visible = {
+			OR = {
+				has_idea = DOR_college_of_medicine_1
+				has_idea = DOR_college_of_medicine_2
+				has_idea = DOR_college_of_medicine_3
+				has_idea = DOR_college_of_medicine_4
+			}
+			has_completed_focus = DOR_expand_the_university
+		}
+		available = {
+			NOT = { has_country_flag = upgrading_university }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = upgrading_university
+		}
+		remove_effect = {
+			DOR_upgrade_college_of_medicine = yes
+			clr_country_flag = upgrading_university
+		}
+	}
+	upgrade_college_of_tactics = {
+		icon = GFX_decision_SOV_academy_of_sciences
+		fire_only_once = no
+		cost = @DORCollegeCost
+		days_remove = @DORCollegeDays
+		visible = {
+			OR = {
+				has_idea = DOR_college_of_tactics_1
+				has_idea = DOR_college_of_tactics_2
+				has_idea = DOR_college_of_tactics_3
+				has_idea = DOR_college_of_tactics_4
+			}
+			has_completed_focus = DOR_expand_the_university
+		}
+		available = {
+			NOT = { has_country_flag = upgrading_university }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = upgrading_university
+		}
+		remove_effect = {
+			DOR_upgrade_college_of_tactics = yes
+			clr_country_flag = upgrading_university
+		}
+	}
+}

@@ -16,6 +16,10 @@ spriteTypes = {
 		name = "GFX_decision_cat_generic_middle_earth_mts"
 		texturefile = "gfx/interface/decisions/cat_pictures/decision_cat_generic_middle_earth_mts.dds"
 	}
+	spriteType = {
+		name = "GFX_decision_cat_college_decision_background"
+		texturefile = "gfx/interface/decisions/cat_pictures/college_decision_background.dds"
+	}
 ################################################CATEGORIES
 	spriteType = {
 		name = "GFX_decision_category_steward_authority"

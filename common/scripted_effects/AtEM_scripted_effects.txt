@@ -1458,3 +1458,137 @@ DOR_decrease_army_morale = {#increases level of demoralised army
 	}
 }
 
+DOR_upgrade_college_of_philosophy = {
+	if = {
+		limit = { has_idea = DOR_college_of_philosophy_1 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_philosophy_1
+			add_idea = DOR_college_of_philosophy_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_philosophy_2 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_philosophy_2
+			add_idea = DOR_college_of_philosophy_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_philosophy_3 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_philosophy_3
+			add_idea = DOR_college_of_philosophy_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_philosophy_4 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_philosophy_4
+			add_idea = DOR_college_of_philosophy_5
+		}
+	}
+	DOR_increase_university_level_1 = yes
+}
+DOR_upgrade_college_of_manners = {
+	if = {
+		limit = { has_idea = DOR_college_of_manners_1 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_manners_1
+			add_idea = DOR_college_of_manners_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_manners_2 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_manners_2
+			add_idea = DOR_college_of_manners_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_manners_3 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_manners_3
+			add_idea = DOR_college_of_manners_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_manners_4 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_manners_4
+			add_idea = DOR_college_of_manners_5
+		}
+	}
+	DOR_increase_university_level_1 = yes
+}
+DOR_upgrade_college_of_medicine = {
+	if = {
+		limit = { has_idea = DOR_college_of_medicine_1 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_medicine_1
+			add_idea = DOR_college_of_medicine_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_medicine_2 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_medicine_2
+			add_idea = DOR_college_of_medicine_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_medicine_3 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_medicine_3
+			add_idea = DOR_college_of_medicine_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_medicine_4 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_medicine_4
+			add_idea = DOR_college_of_medicine_5
+		}
+	}
+	DOR_increase_university_level_1 = yes
+}
+DOR_upgrade_college_of_tactics = {
+	if = {
+		limit = { has_idea = DOR_college_of_tactics_1 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_tactics_1
+			add_idea = DOR_college_of_tactics_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_tactics_2 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_tactics_2
+			add_idea = DOR_college_of_tactics_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_tactics_3 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_tactics_3
+			add_idea = DOR_college_of_tactics_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_tactics_4 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_tactics_4
+			add_idea = DOR_college_of_tactics_5
+		}
+	}
+	DOR_increase_university_level_1 = yes
+}
+
+DOR_increase_university_level_1 = {
+	add_to_variable = { university_size = 1 }
+	custom_effect_tooltip = DOR_increase_university_level_1
+}
+DOR_increase_university_level_2 = {
+	add_to_variable = { university_size = 2 }
+	custom_effect_tooltip = DOR_increase_university_level_2
+}
+	
