@@ -131,6 +131,25 @@ recruit_character = DOR_inwar_sant_maleryn
 recruit_character = DOR_beawyn_hack
 recruit_character = DOR_theoren_gastwolk
 
+every_character = { #assign everyone character_flags of their faction
+	if = {
+		limit = { OR = { has_trait = koldana_pol_first has_trait = koldana_pol_second has_trait = koldana_pol_third has_trait = koldana_pol_fourth has_trait = koldana_pol_fifth has_trait = koldana_pol_sixth has_trait = koldana_pol_seventh has_trait = koldana_pol_eighth has_trait = koldana_pol_ninth } }
+		set_character_flag = koldana_supporter
+	}
+	else_if = {
+		limit = { OR = { has_trait = vierling_pol_first has_trait = vierling_pol_second has_trait = vierling_pol_third has_trait = vierling_pol_fourth has_trait = vierling_pol_fifth has_trait = vierling_pol_sixth has_trait = vierling_pol_seventh has_trait = vierling_pol_eighth has_trait = vierling_pol_ninth } }
+		set_character_flag = vierling_supporter
+	}
+	else_if = {
+		limit = { OR = { has_trait = merchant_house_pol_first has_trait = merchant_house_pol_second has_trait = merchant_house_pol_third has_trait = merchant_house_pol_fourth has_trait = merchant_house_pol_fifth has_trait = merchant_house_pol_sixth has_trait = merchant_house_pol_seventh has_trait = merchant_house_pol_eighth has_trait = merchant_house_pol_ninth } }
+		set_character_flag = merchant_houses_supporter
+	}
+	else_if = {
+		limit = { OR = { has_trait = burgher_pol_first has_trait = burgher_pol_second has_trait = burgher_pol_third has_trait = burgher_pol_fourth has_trait = burgher_pol_fifth has_trait = burgher_pol_sixth has_trait = burgher_pol_seventh has_trait = burgher_pol_eighth has_trait = burgher_pol_ninth } }
+		set_character_flag = burghers_supporter
+	}
+}
+
 
 #elves
 # recruit_character = DOR_olofel_nos_finarfin

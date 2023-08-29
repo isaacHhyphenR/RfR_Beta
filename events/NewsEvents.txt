@@ -1470,4 +1470,41 @@ news_event = { ##97## We're gonna reconquer RIN/RUS
 	}
 }
 
+news_event = { ##98## Hawin dead, New realm master elected
+	id = rfr_news.98
+	title = rfr_news.98.t
+	desc = {
+		text = rfr_news.98.d.a
+		trigger = {
+			DOR = {
+				has_country_leader = {
+					character = DOR_bergholda_aldiana
+					ruling_only = yes
+				}
+			}
+		}
+	}
+	desc = {
+		text = rfr_news.98.d.b
+	}
+	picture = GFX_news_aragorn_coronation
+	
+	is_triggered_only = yes
+	major = yes
+	fire_for_sender = no
+	##four options for RP purposes
+	option = {
+		name = rfr_news.98.a
+	}
+	option = {
+		name = rfr_news.98.b
+	}
+	option = {
+		name = rfr_news.98.c
+	}
+	option = {
+		name = rfr_news.98.d
+	}
+}
+
 

@@ -131,3 +131,14 @@ has_level_10_university = {
 		check_variable = { university_size > 9 }
 	}
 }
+
+
+is_activated_advisor = { #call in character to check if they have an active role in government
+	OR = {
+		is_political_advisor = yes
+		is_high_command = yes
+		is_army_chief = yes
+		is_navy_chief = yes
+		is_theorist = yes
+	}
+}

@@ -303,3 +303,250 @@ country_event = { ##5## Dorwinion wants to reestablish merchant offices
 	}
 }
 
+country_event = { ##6## Hawin Koldana Falls ill
+	id = atem.6
+	title = atem.6.t
+	desc = atem.6.d
+	picture = GFX_theodred_wounded
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			DOR_hawin_koldana = {
+				add_country_leader_trait = {
+					ideology = elective_monarchy_isolationism
+					trait = deathly_ill
+				}
+				add_country_leader_trait = {
+					ideology = elective_monarchy_opportunism
+					trait = deathly_ill
+				}
+			}
+			country_event = { id = atem.7 days = 14 } #the event that actually kills him
+		}
+	}
+	
+	option = { ##Oh no
+		name = atem.6.a
+		ai_chance = {
+			factor = 1
+		}
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			DOR_hawin_koldana = {
+				add_country_leader_trait = {
+					ideology = elective_monarchy_isolationism
+					trait = deathly_ill
+				}
+			}
+		}
+	}
+}
+
+country_event = { ##7## Hawin Koldana Dies, election happens
+	id = atem.7
+	title = {
+		text = atem.t.d.a
+		trigger = {
+			DOR = {
+				has_country_leader = {
+					character = DOR_bergholda_aldiana
+					ruling_only = yes
+				}
+			}
+		}
+	}
+	title = {
+		text = atem.7.t.b
+	}
+	desc = {
+		text = atem.7.d.a
+		trigger = {
+			DOR = {
+				has_country_leader = {
+					character = DOR_bergholda_aldiana
+					ruling_only = yes
+				}
+			}
+		}
+	}
+	desc = {
+		text = atem.7.d.b
+	}
+	picture = GFX_aragorn_coronation_event
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			retire_character = DOR_hawin_koldana
+			promote_character = {
+				character = DOR_bergholda_aldiana
+				ideology = elective_monarchy_isolationism
+			}
+			promote_character = {
+				character = DOR_bladorthin_koldana
+				ideology = elective_monarchy_opportunism
+			}
+			if = {
+				limit = {
+					is_power_balance_side_active = {
+						id = DOR_election_power_balance
+						side = DOR_winelords_side
+					}
+				}
+				DOR_bladorthin_koldana = {
+					if = { ##in case you leveled him up, upgrade his ruler trait
+						limit = { has_trait = army_chief_organizational_2 }
+						swap_country_leader_traits = {
+							remove = army_chief_organizational_1
+							add = army_chief_organizational_2
+							ideology = elective_monarchy_opportunism
+						}
+					}
+					else_if = { ##in case you leveled him up, upgrade his ruler trait
+						limit = { has_trait = army_chief_organizational_3 }
+						swap_country_leader_traits = {
+							remove = army_chief_organizational_1
+							add = army_chief_organizational_3
+							ideology = elective_monarchy_opportunism
+						}
+					}
+					remove_advisor_role = {
+					  slot = political_advisor
+					}
+					remove_advisor_role = {
+					  slot = army_chief
+					}
+				}
+				set_politics = {
+					ruling_party = opportunism
+				}
+				add_popularity = {
+					ideology = opportunism
+					popularity = 0.1
+				}
+				if = { #reward PP
+					limit = { has_country_flag = supporting_winelords }
+					add_political_power = 100
+				}
+				set_country_flag = elected_winelord
+				remove_power_balance = {
+					id = DOR_election_power_balance
+				}
+
+				set_power_balance = {
+					id = DOR_winelords_power_balance
+					left_side = DOR_koldana_side
+					right_side = DOR_vierling_side
+					set_default = yes
+				}
+				if = { ##BoP from focuses
+					limit = { has_completed_focus = DOR_rally_support_for_bladorthin }
+					add_power_balance_value = {
+						id = DOR_winelords_power_balance
+						value = -0.1
+					}
+				}
+				else_if = {
+					limit = { has_completed_focus = DOR_rally_support_for_vidumarh }
+					add_power_balance_value = {
+						id = DOR_winelords_power_balance
+						value = 0.1
+					}
+				}
+				#figure out how much BoP from advisors
+				DOR_winelords_BOP_initial_advisors = yes
+			}
+			else = {
+				DOR_bergholda_aldiana = {
+					remove_advisor_role = {
+					  slot = political_advisor
+					}
+					remove_advisor_role = {
+					  slot = theorist
+					}
+				}
+				add_popularity = {
+					ideology = isolationism
+					popularity = 0.1
+				}
+				if = { #reward PP
+					limit = { has_country_flag = supporting_great_merchants }
+					add_political_power = 100
+				}
+				set_country_flag = elected_great_merchant
+				remove_power_balance = {
+					id = DOR_election_power_balance
+				}
+				set_power_balance = {
+					id = DOR_great_merchants_power_balance
+					left_side = DOR_burghers_side
+					right_side = DOR_merchant_houses_side
+					set_default = yes
+				}
+				#figure out how much BoP from advisors
+				set_temp_variable = { advisor_bop = merchant_house_advisors }
+				subtract_from_temp_variable = { advisor_bop = burgher_advisors }
+				multiply_temp_variable = { advisor_bop = 0.05 }
+				meta_effect = {
+					text = {
+						add_power_balance_value = {
+							id = DOR_great_merchants_power_balance
+							value = BOP
+						}
+					}
+					BOP = "[?advisor_bop]"
+				}
+			}
+			news_event = { id = rfr_news.98 hours = 1 } #tell everyone else
+		}
+	}
+	
+	option = { ##Long live the realm master
+		name = atem.7.a
+		ai_chance = {
+			factor = 1
+		}
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			custom_effect_tooltip = hawin_koldana_dies
+			if = {
+				limit = { has_government = opportunism }
+				custom_effect_tooltip = bladorthin_koldana_ascends
+				custom_effect_tooltip = activate_winelords_bop
+				add_popularity = {
+					ideology = opportunism
+					popularity = 0.1
+				}
+				set_power_balance = {
+					id = DOR_winelords_power_balance
+					left_side = DOR_koldana_side
+					right_side = DOR_vierling_side
+				}
+				if = { #reward PP
+					limit = { has_country_flag = supporting_winelords }
+					add_political_power = 100
+				}
+			}
+			else = {
+				custom_effect_tooltip = aldiana_bergholda_ascends
+				custom_effect_tooltip = activate_great_merchants_bop
+				add_popularity = {
+					ideology = isolationism
+					popularity = 0.1
+				}
+				set_power_balance = {
+					id = DOR_great_merchants_power_balance
+					left_side = DOR_burghers_side
+					right_side = DOR_merchant_houses_side
+				}
+				if = { #reward PP
+					limit = { has_country_flag = supporting_great_merchants }
+					add_political_power = 100
+				}
+			}
+		}
+	}
+}

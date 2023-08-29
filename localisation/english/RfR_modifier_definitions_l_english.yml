@@ -37,5 +37,6 @@
  colony_growth_monthly_factor: "Monthly Colony Population"
  mercenary_cost: "Mercenary Cost"
  assassin_trait_chance_factor: "Chance of recruiting an operative with the §Y$assassin$§! trait"
- low_stability_risk: "Risk of Low Stability Events Each Month"
+ low_stability_risk: "Risk of Low Stability Crisis Each Month"
+ low_war_support_risk: "Risk of Low War Support Crisis Each Month"
  civil_war_ideology_threshold: "Ideology Support Necessary for Rebellion"

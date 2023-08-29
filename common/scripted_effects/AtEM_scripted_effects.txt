@@ -1098,6 +1098,42 @@ burgher_advisor_effect_remove = { ##removes BoP
 	add_to_variable = { burgher_advisors = -1 }
 }
 
+DOR_winelords_BOP_initial_advisors = { ##variables in the event don't work :/
+	every_character = {
+		if = {
+			limit = {
+				has_character_flag = koldana_supporter
+				is_activated_advisor = yes
+			}
+			ROOT = { koldana_advisor_effect = yes }
+		}
+		else_if = {
+			limit = {
+				has_character_flag = vierling_supporter
+				is_activated_advisor = yes
+			}
+			ROOT = { vierling_advisor_effect = yes }
+		}
+	}
+}
+DOR_great_merchabts_BOP_initial_advisors = { ##variables in the event don't work :/
+	every_character = {
+		if = {
+			limit = {
+				has_character_flag = burghers_supporter
+				is_activated_advisor = yes
+			}
+			ROOT = { burgher_advisor_effect = yes }
+		}
+		else_if = {
+			limit = {
+				has_character_flag = merchant_houses_supporter
+				is_activated_advisor = yes
+			}
+			ROOT = { merchant_house_advisor_effect = yes }
+		}
+	}
+}
 
 bergholda_trade_effect = { ##reduces cost to trade
 	hidden_effect = {
@@ -1591,4 +1627,3 @@ DOR_increase_university_level_2 = {
 	add_to_variable = { university_size = 2 }
 	custom_effect_tooltip = DOR_increase_university_level_2
 }
-	

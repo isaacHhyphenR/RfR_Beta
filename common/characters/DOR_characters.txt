@@ -44,6 +44,7 @@ characters = {
 			idea_token = DOR_bladorthin_koldana
 			allowed = { original_tag = DOR }
 			traits = { gregarious_advisor koldana_pol_first }
+			visible = { is_country_leader = no }
 			ai_will_do = {
 				factor = 1
 			}
@@ -55,6 +56,7 @@ characters = {
 			idea_token = DOR_bladorthin_koldana
 			allowed = { original_tag = DOR }
 			traits = { army_chief_organizational_1 koldana_pol_ninth }
+			visible = { is_country_leader = no }
 			ai_will_do = {
 				factor = 1
 			}
@@ -255,6 +257,7 @@ characters = {
 			idea_token = DOR_vidumarh_vierling
 			allowed = { original_tag = DOR }
 			traits = { heroic_commander_advisor vierling_pol_first }
+			visible = { is_country_leader = no }
 			ai_will_do = {
 				factor = 1
 			}
@@ -266,6 +269,7 @@ characters = {
 			idea_token = DOR_vidumarh_vierling
 			allowed = { original_tag = DOR }
 			traits = { army_chief_maneuver_2 vierling_pol_ninth }
+			visible = { is_country_leader = no }
 			ai_will_do = {
 				factor = 1
 			}
@@ -506,6 +510,7 @@ characters = {
 			idea_token = DOR_bergholda_aldiana
 			allowed = { original_tag = DOR }
 			traits = { empathetic_negotiator_advisor merchant_house_pol_first }
+			visible = { is_country_leader = no }
 			ai_will_do = {
 				factor = 1
 			}
@@ -517,6 +522,7 @@ characters = {
 			idea_token = DOR_bergholda_aldiana
 			allowed = { original_tag = DOR }
 			traits = { trade_theorist merchant_house_pol_first }
+			visible = { is_country_leader = no }
 			ai_will_do = {
 				factor = 1
 			}
@@ -748,7 +754,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_ansovald_gwingalon
 			allowed = { original_tag = DOR }
-			traits = { pol_ymath burgher_pol_third }
+			traits = { polymath burgher_pol_third }
 			ai_will_do = {
 				factor = 1
 			}

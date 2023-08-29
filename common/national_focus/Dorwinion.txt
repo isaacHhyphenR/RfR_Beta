@@ -59,8 +59,8 @@ focus_tree = {
 		}
 	}
 #################################ELECT MERCHANTS
-	focus = { #Host guild events
-		id = DOR_host_guild_events
+	focus = { #Sponsor guild activities
+		id = DOR_sponsor_guild_activites
 		#icon = GFX_goal_the_deciever
 		x = 0
 		y = 1
@@ -73,9 +73,24 @@ focus_tree = {
 			focus = DOR_support_the_great_merchants
 		}
 		available = { great_merchants_focus_trigger = yes }
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			great_merchants_focus_effect_big = yes
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			great_merchants_focus_effect = yes
 		}
 	}
 	focus = { #give generous gifts
@@ -83,13 +98,13 @@ focus_tree = {
 		icon = GFX_focus_usa_reestablish_the_gold_standard
 		x = -2
 		y = 2
-		relative_position_id = DOR_host_guild_events
+		relative_position_id = DOR_sponsor_guild_activites
 		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = DOR_host_guild_events
+			focus = DOR_sponsor_guild_activites
 		}
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -104,13 +119,13 @@ focus_tree = {
 		#icon = GFX_focus_usa_reestablish_the_gold_standard
 		x = -1
 		y = 1
-		relative_position_id = DOR_host_guild_events
+		relative_position_id = DOR_sponsor_guild_activites
 		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = DOR_host_guild_events
+			focus = DOR_sponsor_guild_activites
 		}
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_GUILDS }
@@ -125,13 +140,13 @@ focus_tree = {
 		#icon = GFX_focus_usa_reestablish_the_gold_standard
 		x = 1
 		y = 1
-		relative_position_id = DOR_host_guild_events
+		relative_position_id = DOR_sponsor_guild_activites
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = DOR_host_guild_events
+			focus = DOR_sponsor_guild_activites
 		}
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -323,7 +338,7 @@ focus_tree = {
 				limit = { controls_state = 310 }
 				310 = {
 					add_building_construction = {
-						type = bunker
+						type = naval_base
 						level = 2
 						instant_build = yes
 						province = 1822 #padavan
@@ -334,7 +349,7 @@ focus_tree = {
 				limit = { controls_state = 118 }
 				118 = {
 					add_building_construction = {
-						type = bunker
+						type = naval_base
 						level = 2
 						instant_build = yes
 						province = 1912 #caras sant
@@ -884,7 +899,7 @@ focus_tree = {
 		x = 8
 		y = 1
 		relative_position_id = DOR_support_the_great_merchants
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -928,7 +943,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = DOR_dispatch_celduin_trade_delegation
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -1815,6 +1830,21 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY }
 		completion_reward = {
 			DOR_increase_army_morale = yes
+			if = {
+				limit = { has_character = DOR_hawin_koldana }
+				DOR_hawin_koldana = {
+					remove_country_leader_trait = {
+						ideology = elective_monarchy_opportunism
+						trait = lost_the_northern_provinces
+					}
+					hidden_effect = {
+						remove_country_leader_trait = {
+							ideology = elective_monarchy_isolationism
+							trait = lost_the_northern_provinces
+						}
+					}
+				}
+			}
 			winelords_focus_effect = yes
 		}
 	}

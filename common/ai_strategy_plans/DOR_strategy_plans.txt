@@ -1,0 +1,53 @@
+Dorwinion_historical = {
+	name = "Dorwin historical plan"
+	desc = "Essentially historical behaviour for Dorwinion"
+
+	allowed = {
+		original_tag = DOR
+	}
+	enable = {
+		always = yes
+	}
+	abort = {
+	}
+
+	ai_national_focuses = {
+		#3015
+		DOR_support_the_great_merchants #70 G
+		DOR_jewels_upon_the_sea #70 G
+		DOR_sail_by_river_and_wave #35 G
+		DOR_all_wealth_flows_through_riavod #35 G
+		DOR_invest_in_alternate_exports #70 G
+		DOR_renovate_the_royal_university_of_srzel_kain #70 W
+		#3016
+		DOR_found_the_college_of_manners #35 W
+		DOR_expand_the_university #35 W
+		DOR_dispatch_celduin_trade_delegation #35 G
+		DOR_solicit_foreign_investment #35 G
+		DOR_feast_with_the_people #35 W
+		DOR_improve_access_to_inland_communities #70 W
+		DOR_sponsor_guild_activites #35 G
+		DOR_solicit_guild_funding #70 G
+		#3017 (hawin dies here)
+		DOR_take_guild_loans #35 G
+		DOR_loan_to_foreigners #35 G
+	}
+
+	research = {
+	}
+
+	ideas = {
+	}
+
+	traits = {
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}

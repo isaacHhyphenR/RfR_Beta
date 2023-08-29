@@ -9,7 +9,6 @@ division_template = {
 		infantry = { x = 1 y = 1 }
 	}
 	support = {
-		artillery = { x = 0 y = 0 }
 	}
 }
 division_template = {
@@ -18,87 +17,56 @@ division_template = {
 	regiments = {
 		light_armor = { x = 0 y = 0 }
 		light_armor = { x = 0 y = 1 }
-		light_armor = { x = 1 y = 0 }
-		light_armor = { x = 1 y = 1 }
-	}
-	support = {
-	}
-}
-division_template = {
-	name = "Wainriders"
-
-	regiments = {
-		mechanized = { x = 0 y = 0 }
-		mechanized = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
 		mechanized = { x = 1 y = 0 }
 		mechanized = { x = 1 y = 1 }
+		mechanized = { x = 1 y = 2 }
 	}
 	support = {
-		mot_recon = { x = 0 y = 0 }
+		light_tank_recon = { x = 0 y = 0 }
 	}
 }
 units = {
 			##LOKE-NAR (INFANTRY)
 	division = {	
 		name = "1st Lôke-Nar Rim"
-		location = 1645
+		location = 4688 #medloshad
 		division_template = "Lôke-Nar"
 	}
 	division = {	
 		name = "2nd Lôke-Nar Rim"
-		location = 627
+		location = 4499 #market
 		division_template = "Lôke-Nar"
 	}
 	division = {	
 		name = "3rd Lôke-Nar Rim"
-		location = 6189
+		location = 6487 #penninsula
 		division_template = "Lôke-Nar"
 	}
 	division = {	
 		name = "4th Lôke-Nar Rim"
-		location = 4924
-		division_template = "Lôke-Nar"
-	}
-	division = {	
-		name = "5th Lôke-Nar Rim"
-		location = 6222
-		division_template = "Lôke-Nar"
-	}
-	division = {	
-		name = "6th Lôke-Nar Rim"
-		location = 3106
+		location = 5143 #neburkah
 		division_template = "Lôke-Nar"
 	}
 	##LOKE-INNAS (CAV)
 	division = {	
 		name = "1st Lôke-Innas Rim"
-		location = 3667
+		location = 4688 #medloshad
 		division_template = "Lôke-Innas"
 	}
 	division = {	
 		name = "2nd Lôke-Innas Rim"
-		location = 4688
+		location = 3129
 		division_template = "Lôke-Innas"
 	}
 	division = {	
 		name = "3rd Lôke-Innas Rim"
-		location = 284
+		location = 4405
 		division_template = "Lôke-Innas"
 	}
-	##WAINRIDERS (CHARIOTS)
 	division = {	
-		name = "1st Wain"
-		location = 4965
-		division_template = "Wainriders"
-	}
-	division = {	
-		name = "2nd Wain"
-		location = 6804
-		division_template = "Wainriders"
-	}
-	division = {	
-		name = "3rd Wain"
-		location = 794
-		division_template = "Wainriders"
+		name = "4th Lôke-Innas Rim"
+		location = 646
+		division_template = "Lôke-Innas"
 	}
 }

@@ -81,6 +81,11 @@ on_actions = {
 				daily_prosperity_gain = yes
 			}
 		}
+		effect = { #timed events
+			DOR = { #hawin falls ill
+				country_event = { id = atem.6 days = 687 } #time for 10 70 day focuses before death
+			}
+		}
 	}
 	
 	on_daily_FOR = { #wine & precious metals gain, prosperity

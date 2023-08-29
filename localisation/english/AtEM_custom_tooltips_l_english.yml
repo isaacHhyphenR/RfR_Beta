@@ -100,6 +100,10 @@
  great_merchants_will_win: "§Y$DOR_bergholda_aldiana$§! will become Realm Master upon §Y$DOR_hawin_koldana$'s§! death."
  winelords_action_activated: "§RLow stability events may involve the $winelords_formatted$ attempting to assert political influence.§!"
  winelords_will_win: "§Y$DOR_bladorthin_koldana$§! will become Realm Master upon §Y$DOR_hawin_koldana$'s§! death."
- 
+ hawin_koldana_dies: "§R$DOR_hawin_koldana$ dies!§!"
+ aldiana_bergholda_ascends: "§G$DOR_aldiana_bergholda$ becomes ruler.§!"
+ bladorthin_koldana_ascends: "§G$DOR_bladorthin_koldana$ becomes ruler.§!"
+ activate_great_merchants_bop: "Activate $DOR_great_merchants_power_balance$"
+ activate_winelords_bop: "Activate $DOR_winelords_power_balance$"
  
  

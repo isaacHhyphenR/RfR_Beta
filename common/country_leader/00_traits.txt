@@ -2669,4 +2669,10 @@ leader_traits = {
 	demoralized_army_trait = {
 		random = no
 	}
+
+	deathly_ill = {
+		random = no
+		sprite = 12
+		political_power_factor = -0.5
+	}
 }
