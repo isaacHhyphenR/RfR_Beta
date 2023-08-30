@@ -83,7 +83,7 @@ on_actions = {
 		}
 		effect = { #timed events
 			DOR = { #hawin falls ill
-				country_event = { id = atem.6 days = 687 } #time for 10 70 day focuses before death
+				country_event = { id = atem.8 days = 687 } #time for 10 70 day focuses before death
 			}
 		}
 	}

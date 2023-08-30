@@ -698,7 +698,7 @@
  atem.5.d: "[FROM.GetLeader.GetName] has made clear [FROM.GetLeader.GetHerHis] desire to restore Dorwinion's old trading offices in [capital.GetCapitalVictoryPointName]. [FROM.GetNameDefCap]'s extensive resources would allow it to manage trade far more efficiently than we can, but placing it's merchants in such prominent positions could tip the scales of power in uncomfortable ways."
  atem.5.a: "Perhaps we cut too many ties after Rinnavod"
  atem.5.b: "This is a poorly disguised plot to reconquer us form the inside!"
- atem.6.t: "$DOR_hawin_koldana$" Falls Ill"
+ atem.6.t: "$DOR_hawin_koldana$ Falls Ill"
  atem.6.d: "Master Hawin has been growing weaker over the last weeks-- eating less, walking slower, coughing frequently. He collapsed today while climbing the palace stairs and has flitted back and forth across the line of consciousness since. We have sent for the best doctors and healers in Dorwinion, but those on hand are not hopeful he will survive more than two weeks."
  atem.6.a: "Summon the noble houses; an election is upon us."
  atem.7.t.a: "$DOR_bergholda_aldiana$ is Elected Realm Master"

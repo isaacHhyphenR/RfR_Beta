@@ -272,7 +272,7 @@ DOR_great_merchants_power_balance = {
 	###Merchant Houses
 	side = {
 		id = DOR_merchant_houses_side
-		icon = GFmerchant_houses_bop
+		icon = GFX_merchant_houses_bop
 
 		range = {
 			id = DOR_merchant_houses_low_favoured_range
@@ -334,7 +334,7 @@ DOR_winelords_power_balance = {
 	###Vierling
 	side = {
 		id = DOR_vierling_side
-		icon = GFvierling_bop
+		icon = GFX_vierling_bop
 
 		range = {
 			id = DOR_vierling_low_favoured_range

@@ -1135,6 +1135,112 @@ DOR_great_merchabts_BOP_initial_advisors = { ##variables in the event don't work
 	}
 }
 
+winelords_win_election_effect = {
+	DOR_bladorthin_koldana = {
+		if = { ##in case you leveled him up, upgrade his ruler trait
+			limit = { has_trait = army_chief_organizational_2 }
+			swap_country_leader_traits = {
+				remove = army_chief_organizational_1
+				add = army_chief_organizational_2
+				ideology = elective_monarchy_opportunism
+			}
+		}
+		else_if = { ##in case you leveled him up, upgrade his ruler trait
+			limit = { has_trait = army_chief_organizational_3 }
+			swap_country_leader_traits = {
+				remove = army_chief_organizational_1
+				add = army_chief_organizational_3
+				ideology = elective_monarchy_opportunism
+			}
+		}
+		remove_advisor_role = {
+		  slot = political_advisor
+		}
+		remove_advisor_role = {
+		  slot = army_chief
+		}
+	}
+	set_politics = {
+		ruling_party = opportunism
+	}
+	add_popularity = {
+		ideology = opportunism
+		popularity = 0.1
+	}
+	if = { #reward PP
+		limit = { has_country_flag = supporting_winelords }
+		add_political_power = 100
+	}
+	set_country_flag = elected_winelord
+	remove_power_balance = {
+		id = DOR_election_power_balance
+	}
+
+	set_power_balance = {
+		id = DOR_winelords_power_balance
+		left_side = DOR_koldana_side
+		right_side = DOR_vierling_side
+		set_default = yes
+	}
+	if = { ##BoP from focuses
+		limit = { has_completed_focus = DOR_rally_support_for_bladorthin }
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = -0.1
+		}
+	}
+	else_if = {
+		limit = { has_completed_focus = DOR_rally_support_for_vidumarh }
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = 0.1
+		}
+	}
+	#figure out how much BoP from advisors
+	DOR_winelords_BOP_initial_advisors = yes
+}
+great_merchants_win_election_effect = {
+	DOR_bergholda_aldiana = {
+		remove_advisor_role = {
+		  slot = political_advisor
+		}
+		remove_advisor_role = {
+		  slot = theorist
+		}
+	}
+	add_popularity = {
+		ideology = isolationism
+		popularity = 0.1
+	}
+	if = { #reward PP
+		limit = { has_country_flag = supporting_great_merchants }
+		add_political_power = 100
+	}
+	set_country_flag = elected_great_merchant
+	remove_power_balance = {
+		id = DOR_election_power_balance
+	}
+	set_power_balance = {
+		id = DOR_great_merchants_power_balance
+		left_side = DOR_burghers_side
+		right_side = DOR_merchant_houses_side
+		set_default = yes
+	}
+	#figure out how much BoP from advisors
+	set_temp_variable = { advisor_bop = merchant_house_advisors }
+	subtract_from_temp_variable = { advisor_bop = burgher_advisors }
+	multiply_temp_variable = { advisor_bop = 0.05 }
+	meta_effect = {
+		text = {
+			add_power_balance_value = {
+				id = DOR_great_merchants_power_balance
+				value = BOP
+			}
+		}
+		BOP = "[?advisor_bop]"
+	}
+}
+
 bergholda_trade_effect = { ##reduces cost to trade
 	hidden_effect = {
 		every_possible_country = {
