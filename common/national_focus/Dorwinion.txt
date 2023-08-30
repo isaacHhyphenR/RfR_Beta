@@ -2145,6 +2145,7 @@ focus_tree = {
 				character = DOR_hawin_koldana
 				ruling_only = yes
 			}
+			DOR_hawin_koldana = { NOT = { has_trait = deathly_ill } }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {

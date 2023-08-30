@@ -73,10 +73,10 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		enable_building = {
-			building = fuel_silo
-			level = 3
-		}
+		# enable_building = {
+			# building = fuel_silo
+			# level = 3
+		# }
 		
 		categories = {
 			agriculture
@@ -117,7 +117,6 @@ technologies = {
 			leads_to_tech = agriculture2
 			research_cost_coeff = 1
 		}
-		
 		categories = {
 			agriculture
 			true_agriculture
@@ -808,7 +807,10 @@ technologies = {
 			leads_to_tech = harvest1 
 			research_cost_coeff = 1
 		}
-		
+		enable_building = {
+			building = fuel_silo
+			level = 1
+		}
 		research_cost = 3
 		start_year = 3015
 		folder = {
@@ -876,7 +878,10 @@ technologies = {
 			leads_to_tech = fuel_refining3 
 			research_cost_coeff = 1
 		}
-		
+		enable_building = {
+			building = fuel_silo
+			level = 2
+		}
 		research_cost = 3
 		start_year = 3016
 		folder = {
@@ -931,7 +936,10 @@ technologies = {
 		
 		fuel_gain_factor = 0.2
 		fuel_gain_factor_from_states = 0.1
-
+		enable_building = {
+			building = fuel_silo
+			level = 3
+		}
 		path = {
 			leads_to_tech = fuel_refining4 
 			research_cost_coeff = 1

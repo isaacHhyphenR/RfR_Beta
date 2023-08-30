@@ -1,17 +1,61 @@
-DOR_balance_of_power_category = {
+DOR_election_category = {
+	DOR_campaign_for_the_great_merchants = {
+		icon = GFX_decision_great_merchants
+		fire_only_once = yes
+		days_remove = 100
+		cost = 50
+		cancel_if_not_visible = yes
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+			power_balance_weekly = -0.005
+		}
+	}
+	DOR_campaign_for_the_winelords = {
+		icon = GFX_decision_winelords
+		fire_only_once = yes
+		days_remove = 100
+		cost = 50
+		cancel_if_not_visible = yes
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+			power_balance_weekly = 0.005
+		}
+	}
 	distribute_generous_gifts = {
 		icon = GFX_decision_great_merchants
 		fire_only_once = no
 		ai_will_do = {
 			factor = 0
 		}
-		allowed = { tag = DOR }
 		visible = {
-			has_power_balance = { id = DOR_election_power_balance }
 			has_completed_focus = DOR_give_generous_gifts
 		}
 		available = {  }
 	}
+	DOR_rally_for_lost_provinces = {
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		cost = 100
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+			NOT = { has_completed_focus = DOR_reconciliate_with_breakaway_cities }
+		}
+		available = {
+			power_balance_value = {
+				id = DOR_election_power_balance
+				value > 0.15
+			}
+		}
+		complete_effect = { add_war_support = 0.1 }
+	}
+	
+	##APTITUDE MISSSIONS
 	@aptitudeDays = 1000
 	aptitude_mission_civs = {
 		icon = GFX_decision_eng_ally_imperialist_coup

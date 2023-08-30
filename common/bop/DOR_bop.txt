@@ -2,7 +2,7 @@ DOR_election_power_balance = {
 	initial_value = 0.0
 	left_side = DOR_great_merchants_side
 	right_side = DOR_winelords_side
-	decision_category = DOR_balance_of_power_category
+	decision_category = DOR_election_category
 
 	###Great Merchants
 	side = {
@@ -231,7 +231,7 @@ DOR_great_merchants_power_balance = {
 	initial_value = 0.15
 	left_side = DOR_burghers_side
 	right_side = DOR_merchant_houses_side
-	decision_category = DOR_balance_of_power_category
+	decision_category = DOR_great_merchants_category
 
 	### Neutral status
 	range = {
@@ -293,7 +293,7 @@ DOR_winelords_power_balance = {
 	initial_value = -0.15
 	left_side = DOR_koldana_side
 	right_side = DOR_vierling_side
-	decision_category = DOR_balance_of_power_category
+	decision_category = DOR_winelords_category
 
 	### Neutral status
 	range = {

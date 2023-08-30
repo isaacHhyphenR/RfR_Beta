@@ -20,10 +20,23 @@ colonisation_category = {
 	}
 }
 ########################################DORWINION########################################
-DOR_balance_of_power_category = {
+DOR_election_category = {
+	icon = GFX_decision_category_power_struggle
+	priority = 99
+	allowed = { tag = DOR }
+	visible = { has_power_balance = { id = DOR_election_power_balance } }
+}
+DOR_winelords_category = {
 	icon = GFX_decision_category_power_struggle
 	priority = 99
 	allowed = { original_tag = DOR }
+	visible = { has_power_balance = { id = DOR_winelords_power_balance } }
+}
+DOR_great_merchants_category = {
+	icon = GFX_decision_category_power_struggle
+	priority = 99
+	allowed = { original_tag = DOR }
+	visible = { has_power_balance = { id = DOR_great_merchants_power_balance } }
 }
 DOR_guilds_category = {
 	icon = GFX_decision_category_guilds

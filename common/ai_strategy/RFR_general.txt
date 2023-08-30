@@ -1,0 +1,16 @@
+stop_spamming_granaries = {
+    allowed = {
+        always = yes
+    }
+    enable = {
+        always = yes
+    }
+	abort = {
+		always = no
+	}
+	ai_strategy = {
+		type = building_target
+		id = fuel_silo
+		value = -100
+	}
+}
