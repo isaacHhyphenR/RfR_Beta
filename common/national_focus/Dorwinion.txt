@@ -1378,7 +1378,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			hawin_dies_effect = yes
+			country_event = atem.6
 			great_merchants_focus_effect = yes
 		}
 	}

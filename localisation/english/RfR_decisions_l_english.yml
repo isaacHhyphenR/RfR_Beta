@@ -370,7 +370,7 @@
  FAN_declare_on_ISN_desc: "Saruman the treacherous has wreaked too much destruction upon our beloved forest to go unpunished. To war! To Isengard!"
  information_category: "Information"
  timeline_decision: "Major Event Dates in Historical Play"
- timeline_decision_desc: "Without player interference, the following events will happen around the following times:§W\n   January 3017:     Grima Arrests Éomer\n   October 3017:     First Battle of the Fords of Isen\n   March 3018:        Gandalf cures Théoden\n   November 3018: The Ents attack Isengard\n   January 3019:     Sauron unleashes his darkness\n   December 3019: Aragorn arrives with the Dead\n   March 3020:       The ring arrives at Mount Doom§!"
+ timeline_decision_desc: "Without player interference, the following events will happen around the following times:§W\n   December 3016:   Hawin of Dorwinion dies\n   January 3017:     Grima Arrests Éomer\n   October 3017:     First Battle of the Fords of Isen\n   March 3018:        Gandalf cures Théoden\n   November 3018: The Ents attack Isengard\n   January 3019:     Sauron unleashes his darkness\n   December 3019: Aragorn arrives with the Dead\n   March 3020:       The ring arrives at Mount Doom§!"
  country_info_decision: "Country Background"
  country_info_decision_desc: "Select for background infomation about your country's campaign."
  #####################################################################################################################################################
