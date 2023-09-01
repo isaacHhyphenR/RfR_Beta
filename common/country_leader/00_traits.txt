@@ -1969,7 +1969,7 @@ leader_traits = {
 		political_advisor_cost_factor = -0.12
 		stability_weekly = 0.002
 	}
-	clockwork_conqueror = { #Dera-- Byrig
+	clockwork_conquerer = { #Dera-- Byrig
 		sprite = 12
 		random = no
 		army_org_regain = 0.25
