@@ -428,5 +428,7 @@
  DOR_college_of_tactics_idea_desc: "$DOR_found_the_college_of_tactics_idea$"
  DOR_college_of_medicine_idea: "College of Medicine"
  DOR_college_of_medicine_idea_desc: "$DOR_found_the_college_of_medicine_idea$"
- 
- 
+ DOR_liberators_idea: "Liberators of the People"
+ DOR_liberators_idea_desc: "$DOR_march_forth_as_liberators_desc$"
+ DOR_meritocratic_army: "Meritocratic Army"
+ DOR_meritocratic_army_desc: "$DOR_implement_meritocratic_reforms_desc$"

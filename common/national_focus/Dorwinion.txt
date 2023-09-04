@@ -14,6 +14,7 @@
 #GFX_goal_university_diplomacy
 #GFX_goal_university_tactics
 #GFX_goal_support_hawin_koldana
+#GFX_goal_defend_against_melkorite
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -32,7 +33,7 @@ focus_tree = {
 	}
 	continuous_focus_position = {
 		x = 200
-		y = 1500
+		y = 2500
 		# x = 
 		# y = 
 	}
@@ -1025,7 +1026,7 @@ focus_tree = {
 					hidden_effect = {
 						remove_trait = {##so that the real trait doesn't have a weird blank space
 							slot = political_advisor
-							trait = merchant_house_pol3
+							trait = merchant_house_pol_third
 						}
 						remove_trait = {
 							slot = political_advisor
@@ -1037,7 +1038,7 @@ focus_tree = {
 						}
 						add_trait = {##so that the real trait doesn't have a weird blank space
 							slot = political_advisor
-							trait = merchant_house_pol3
+							trait = merchant_house_pol_third
 						}
 					}
 				}
@@ -1054,7 +1055,7 @@ focus_tree = {
 					hidden_effect = {
 						remove_trait = {##so that the real trait doesn't have a weird blank space
 							slot = political_advisor
-							trait = merchant_house_pol3
+							trait = merchant_house_pol_third
 						}
 						remove_trait = {
 							slot = political_advisor
@@ -1066,7 +1067,7 @@ focus_tree = {
 						}
 						add_trait = {##so that the real trait doesn't have a weird blank space
 							slot = political_advisor
-							trait = merchant_house_pol3
+							trait = merchant_house_pol_third
 						}
 					}
 				}
@@ -1456,7 +1457,7 @@ focus_tree = {
 					}
 					remove_trait = {##so that the real trait doesn't have a weird blank space
 						slot = political_advisor
-						trait = koldana_pol1
+						trait = koldana_pol_first
 					}
 					remove_trait = {
 						slot = political_advisor
@@ -1468,7 +1469,7 @@ focus_tree = {
 					}
 					add_trait = {##so that the real trait doesn't have a weird blank space
 						slot = political_advisor
-						trait = koldana_pol1
+						trait = koldana_pol_first
 					}
 				}
 			}
@@ -3046,6 +3047,664 @@ focus_tree = {
 				category = land_doctrine
 			}
 			winelords_focus_effect = yes
+		}
+	}
+
+
+######################################################################BURGHERS BRANCH
+	focus = { #support the burghers
+		id = DOR_support_the_burghers
+		icon = GFX_goal_support_burghers
+		x = -20
+		y = 8
+		relative_position_id = DOR_support_the_great_merchants
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		available = { burghers_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			burghers_focus_effect_big = yes
+			set_country_flag = supporting_burghers
+			#unlock_national_focus = DOR_support_the_merchant_houses
+		}
+	}
+#################################FOUND THE REPUBLIC
+	focus = { #theres good in this world
+		id = DOR_theres_good_in_this_world
+		icon = GFX_goal_support_democracy
+		x = -1
+		y = 1
+		relative_position_id = DOR_support_the_burghers
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_support_the_burghers
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			convert_half_isolationism_to_freedom = yes
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Fight for our friends
+		id = DOR_fight_for_our_friends
+		#icon = GFX_goal_generic_major_alliance
+		x = 1
+		y = 1
+		relative_position_id = DOR_bulwark_of_the_celduin
+		cost = 5
+		ai_will_do = {
+			factor = 0
+		}
+		prerequisite = {
+			focus = DOR_bulwark_of_the_celduin
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_government = freedom
+			any_other_country = {
+				is_rhovanion_tag = yes
+				is_guaranteed_by = ROOT
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = freedom
+				popularity = 0.1
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Reform the legal code
+		id = DOR_reform_the_legal_code
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 1
+		relative_position_id = DOR_theres_good_in_this_world
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_theres_good_in_this_world
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = freedom
+				popularity = 0.1
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #power to the people
+		id = DOR_power_to_the_people
+		icon = GFX_focus_generic_support_the_left_right
+		x = 1
+		y = 1
+		relative_position_id = DOR_support_the_burghers
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_support_the_burghers
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			burghers_focus_effect_med = yes
+		}
+	}
+	focus = { #take control of local affairs
+		id = DOR_take_control_of_local_affairs
+		icon = GFX_focus_generic_self_management
+		x = 0
+		y = 1
+		relative_position_id = DOR_power_to_the_people
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_power_to_the_people
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 90
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Expand citizenship rights
+		id = DOR_expand_citizenship_rights
+		icon = GFX_focus_generic_population_growth
+		x = 0
+		y = 1
+		relative_position_id = DOR_take_control_of_local_affairs
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_take_control_of_local_affairs
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_GUILDS }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #march forth as liberators
+		id = DOR_march_forth_as_liberators
+		icon = GFX_focus_focus_fra_revolution_utmost
+		x = 2
+		y = 1
+		relative_position_id = DOR_power_to_the_people
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_power_to_the_people
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_government = freedom
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			add_ideas = DOR_liberators_idea
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Establish Sister Republics
+		id = DOR_establish_sister_republics
+		icon = GFX_focus_ITA_corpo_volontari_della_liberta
+		x = 0
+		y = 1
+		relative_position_id = DOR_march_forth_as_liberators
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_march_forth_as_liberators
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_government = freedom
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #A cause worth spreading
+		id = DOR_a_cause_worth_spreading
+		icon = GFX_goal_DOR_army_morale
+		x = 1
+		y = 1
+		relative_position_id = DOR_establish_sister_republics
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_establish_sister_republics
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_war_support > 0.74
+			has_any_level_demoralized_army = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			DOR_increase_army_morale = yes
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Establish the Celduinic Republic
+		id = DOR_establish_the_celduinic_republic
+		#icon = GFX_focus_focus_fra_revolution_utmost
+		x = 1
+		y = 1
+		relative_position_id = DOR_expand_citizenship_rights
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_expand_citizenship_rights
+		}
+		prerequisite = {
+			focus = DOR_establish_sister_republics
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Limit the power of the nobility
+		id = DOR_limit_the_power_of_the_nobility
+		#icon = GFX_focus_focus_fra_revolution_utmost
+		x = -1
+		y = 1
+		relative_position_id = DOR_expand_citizenship_rights
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_expand_citizenship_rights
+		}
+		prerequisite = {
+			focus = DOR_reform_the_legal_code
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			burghers_focus_effect_big = yes
+		}
+	}
+	focus = { #Investigate reactionary plot
+		id = DOR_investigate_reactionary_plot
+		#icon = GFX_focus_focus_fra_revolution_utmost
+		x = 2
+		y = 1
+		relative_position_id = DOR_limit_the_power_of_the_nobility
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_limit_the_power_of_the_nobility
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Establish Senate of the People
+		id = DOR_establish_senate_of_the_people
+		#icon = GFX_focus_focus_fra_revolution_utmost
+		x = 0
+		y = 1
+		relative_position_id = DOR_limit_the_power_of_the_nobility
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_limit_the_power_of_the_nobility
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Implement Meritocratic Reforms
+		id = DOR_implement_meritocratic_reforms
+		icon = GFX_focus_chi_army_reform
+		x = -2
+		y = 1
+		relative_position_id = DOR_establish_senate_of_the_people
+		cost = 10
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_war = yes
+				factor = 15
+			}
+		}
+		prerequisite = {
+			focus = DOR_establish_senate_of_the_people
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_ideas = DOR_meritocratic_army
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #The Peoples Army
+		id = DOR_the_peoples_army
+		icon = GFX_goal_DOR_army_morale
+		x = 0
+		y = 1
+		relative_position_id = DOR_implement_meritocratic_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_war = yes
+				factor = 15
+			}
+		}
+		prerequisite = {
+			focus = DOR_implement_meritocratic_reforms
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_any_level_demoralized_army = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			activate_mission = DOR_the_peoples_army_mission
+			custom_effect_tooltip = DOR_the_peoples_army_tooltip
+			effect_tooltip = {
+				DOR_increase_army_morale = yes
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Institutions of democracy
+		id = DOR_institutions_of_democracy
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 1
+		relative_position_id = DOR_establish_senate_of_the_people
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_establish_senate_of_the_people
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = freedom
+				popularity = 0.1
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Purge nepotism
+		id = DOR_purge_nepotism
+		icon = GFX_focus_generic_court
+		x = 2
+		y = 1
+		relative_position_id = DOR_establish_senate_of_the_people
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_establish_senate_of_the_people
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##+10% pp gain on civ advisor
+			DOR_aregisel_hammdost = {
+				effect_tooltip = { ##for the tooltip
+					swap_country_leader_traits = {
+						remove = captain_of_industry
+						add = political_captain_of_industry
+						ideology = republic_isolatoinism
+					}
+				}
+				hidden_effect = {
+					remove_trait = {##so that the real trait doesn't have a weird blank space
+						slot = political_advisor
+						trait = burgher_pol_fourth
+					}
+					remove_trait = {
+						slot = political_advisor
+						trait = captain_of_industry
+					}
+					add_trait = {
+						slot = political_advisor
+						trait = political_captain_of_industry
+					}
+					add_trait = {##so that the real trait doesn't have a weird blank space
+						slot = political_advisor
+						trait = burgher_pol_fourth
+					}
+					remove_country_leader_role = { ##don't need this anymore
+						ideology = republic_isolationism
+					}
+				}
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Support a Dorwin Republic
+		id = DOR_support_a_dorwin_republic
+		#icon = GFX_focus_generic_treaty
+		x = 0
+		y = 1
+		relative_position_id = DOR_institutions_of_democracy
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_implement_meritocratic_reforms
+			focus = DOR_institutions_of_democracy
+			focus = DOR_purge_nepotism
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			burghers_focus_effect_big = yes
+		}
+	}
+#################################BULWARK OF THE CELDUIN
+	focus = { #Warn against the shadow
+		id = DOR_warn_against_the_shadow
+		icon = GFX_goal_defend_against_melkorite
+		x = -2
+		y = 1
+		relative_position_id = DOR_theres_good_in_this_world
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_theres_good_in_this_world
+		}
+		available = {
+			burghers_focus_trigger = yes
+			threat > 0.15
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.1
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Bulwark of the Celduin
+		id = DOR_bulwark_of_the_celduin
+		icon = GFX_focus_generic_coastal_fort
+		x = 0
+		y = 1
+		relative_position_id = DOR_warn_against_the_shadow
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_warn_against_the_shadow
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_government = freedom
+			any_other_country = {
+				is_rhovanion_tag = yes
+				NOT = { has_war_with = ROOT }
+				NOT = {
+					OR = {
+						has_government = conquest
+						has_government = melkorite
+					}
+				}
+			}
+		}
+		bypass = { ##bypass if you've already guaranteed them all
+			hidden_trigger = {
+				all_other_country = {
+					if = {
+						limit = {
+							is_rhovanion_tag = yes
+							NOT = { has_war_with = ROOT }
+							NOT = {
+								OR = {
+									has_government = conquest
+									has_government = melkorite
+								}
+							}
+						}
+						is_guaranteed_by = ROOT
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { ##offer to guarantee all the RVN tags for influence
+			every_other_country = {
+				limit = {
+					is_rhovanion_tag = yes
+					NOT = { has_war_with = ROOT }
+					NOT = { is_guaranteed_by = ROOT }
+					NOT = {
+						OR = {
+							has_government = conquest
+							has_government = melkorite
+						}
+					}
+				}
+				country_event = { id = atem.9 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = {
+					ROOT = { give_guarantee = PREV }
+					custom_effect_tooltip = unimplemented
+				}
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Rally the free cities
+		id = DOR_rally_the_free_cities
+		icon = GFX_goal_generic_major_alliance
+		x = -1
+		y = 1
+		relative_position_id = DOR_bulwark_of_the_celduin
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_bulwark_of_the_celduin
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_government = freedom
+			any_other_country = {
+				is_rhovanion_tag = yes
+				is_guaranteed_by = ROOT
+			}
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { ##offer to guarantee all the RVN tags for influence
+			if = { ##tooltip if no valid target
+				limit = {
+					NOT = {
+						any_other_country = {
+							is_rhovanion_tag = yes
+							is_guaranteed_by = ROOT
+						}
+					}
+				}
+				custom_effect_tooltip = every_guaranteed_rhovanion_tag_tooltip
+				effect_tooltip = {
+					add_popularity = {
+						ideology = freedom
+						popularity = 0.1
+					}
+				}
+			}		
+			every_other_country = { ##actual effect
+				limit = {
+					is_rhovanion_tag = yes
+					is_guaranteed_by = ROOT
+				}
+				add_popularity = {
+					ideology = freedom
+					popularity = 0.1
+				}
+				hidden_effect = { news_event = { id = rfr_news.101 hours = 1 } } ##tell them about it
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Establish a Rhovan Republic
+		id = DOR_establish_a_rhovan_republic
+		#icon = GFX_goal_generic_major_alliance
+		x = 0
+		y = 2
+		relative_position_id = DOR_bulwark_of_the_celduin
+		cost = 5
+		ai_will_do = {
+			factor = 0
+		}
+		prerequisite = {
+			focus = DOR_bulwark_of_the_celduin
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_government = freedom
+			any_other_country = {
+				is_rhovanion_tag = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			burghers_focus_effect = yes
 		}
 	}
 }

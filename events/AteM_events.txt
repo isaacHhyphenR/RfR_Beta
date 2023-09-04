@@ -349,9 +349,15 @@ country_event = { ##7## Hawin Koldana Dies, election happens
 	title = {
 		text = atem.7.t.a
 		trigger = {
-			power_balance_value = {
-				id = DOR_election_power_balance
-				value < 0.0
+			OR = {
+				power_balance_value = {
+					id = DOR_election_power_balance
+					value < 0.0
+				}
+				has_country_leader = {
+					character = DOR_bergholda_aldiana
+					ruling_only = yes
+				}
 			}
 		}
 	}
@@ -361,9 +367,15 @@ country_event = { ##7## Hawin Koldana Dies, election happens
 	desc = {
 		text = atem.7.d.a
 		trigger = {
-			power_balance_value = {
-				id = DOR_election_power_balance
-				value < 0.0
+			OR = {
+				power_balance_value = {
+					id = DOR_election_power_balance
+					value < 0.0
+				}
+				has_country_leader = {
+					character = DOR_bergholda_aldiana
+					ruling_only = yes
+				}
 			}
 		}
 	}
@@ -448,7 +460,6 @@ country_event = { ##7## Hawin Koldana Dies, election happens
 	}
 }
 
-
 country_event = { ##8## Hidden hawin killer
 	id = atem.8
 	
@@ -459,3 +470,40 @@ country_event = { ##8## Hidden hawin killer
 		country_event = { id = atem.6 days = var:hawin_extension }
 	}
 }
+
+country_event = { ##9## Dorwinion offers guarantee for influence
+	id = atem.9
+	title = atem.9.t
+	desc = atem.9.d
+	picture = GFX_gondor_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.9.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_government = freedom
+				factor = 20
+			}
+		}
+		FROM = { give_guarantee = ROOT }
+		custom_effect_tooltip = unimplemented
+		hidden_effect = { FROM = { news_event = { id = 99 hours = 1 } } }
+	}
+	option = { ##no
+		name = atem.9.b
+		ai_chance = {
+			factor = 1
+		}
+		FROM = { give_guarantee = ROOT }
+		custom_effect_tooltip = unimplemented
+		hidden_effect = { FROM = { news_event = { id = 100 hours = 1 } } }
+	}
+}
+
+
+
+
+

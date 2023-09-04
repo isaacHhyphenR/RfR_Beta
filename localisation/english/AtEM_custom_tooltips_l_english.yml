@@ -106,4 +106,11 @@
  activate_great_merchants_bop: "Activate $DOR_great_merchants_power_balance$"
  activate_winelords_bop: "Activate $DOR_winelords_power_balance$"
  DOR_attend_to_our_beloved_realm_master_tooltip: "Extends §Y$DOR_hawin_koldana$'s§! life by §Y70§! days, plus §Y70§! days per completed upgrade to the §Y$DOR_college_of_medicine_idea$§!"
+ convert_half_isolationism_to_freedom: "Converts half of our §Y$isolationism_noun$§! support into §Y$freedom_noun$§! support"
+ every_guaranteed_rhovanion_tag_tooltip: "Every §Y$RVN$§! country that we have §Yguaranteed§!:\n"
+ DOR_liberators_idea_conference_modifiers: "Peace Conference Modifiers:$new_line_tab$Take State cost: §R+100%§!$new_line_tab$Puppet State cost: §R+50%§!$new_line_tab$Force Governement cost: §G-25%§!$new_line_tab$Liberate country cost: §G-25%§!"
+ DOR_the_peoples_army_tooltip: "Every 180 days:"
+ 
+ 
+ 
  

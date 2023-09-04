@@ -771,6 +771,10 @@ characters = {
 				small = "GFX_Portrait_Northern_Generic_f_2_small"
 			}
 		}
+		country_leader = { ##so that I can swap traits in a tooltip
+			ideology = republic_isolationism
+			traits = { captain_of_industry }
+		}
 		advisor = {
 			slot = political_advisor
 			idea_token = DOR_aregisel_hammdost

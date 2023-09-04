@@ -60,6 +60,18 @@ great_merchants_focus_trigger = {
 winelords_focus_trigger = {
 	NOT = { has_country_flag = elected_great_merchant }
 }
+burghers_focus_trigger = {
+	has_country_flag = elected_great_merchant
+}
+merchant_houses_focus_trigger = {
+	has_country_flag = elected_great_merchant
+}
+koldana_focus_trigger = {
+	has_country_flag = elected_winelord
+}
+vierling_focus_trigger = {
+	has_country_flag = elected_winelord
+}
 
 DOR_can_interact_with_guilds = {
 }

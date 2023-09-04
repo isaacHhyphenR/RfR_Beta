@@ -211,6 +211,7 @@ l_english:
  expert_war_industrialist: "$expert$ $war_industrialist$"
  minor_war_industrialist: "$minor$ $war_industrialist$"
  captain_of_industry: "Civilian Architect"
+ political_captain_of_industry: "$captain_of_industry$"
  expert_captain_of_industry: "$expert$ $captain_of_industry$"
  minor_captain_of_industry: "$minor$ $captain_of_industry$"
  wandering_storyteller: "Wandering Storyteller"

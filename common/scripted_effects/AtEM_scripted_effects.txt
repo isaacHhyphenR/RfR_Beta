@@ -1372,6 +1372,223 @@ winelords_focus_effect_large = {
 		}
 	}
 }
+burghers_focus_effect = {
+	if = {
+		limit = { has_power_balance = { id = DOR_great_merchants_power_balance } }
+		add_power_balance_value = {
+			id = DOR_great_merchants_power_balance
+			value = @focusPowerLeft
+			tooltip_side = DOR_burghers_side
+		}
+	}
+}
+burghers_focus_effect_med = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_great_merchants_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_great_merchants_power_balance
+			value = @focusPowerLeftMed
+			tooltip_side = DOR_burghers_side
+		}
+	}
+}
+burghers_focus_effect_big = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_great_merchants_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_great_merchants_power_balance
+			value = @focusPowerLeftBig
+			tooltip_side = DOR_burghers_side
+		}
+	}
+}
+burghers_focus_effect_large = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_great_merchants_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_great_merchants_power_balance
+			value = @focusPowerLeftLarge
+			tooltip_side = DOR_burghers_side
+		}
+	}
+}
+merchant_houses_focus_effect = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_great_merchants_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_great_merchants_power_balance
+			value = @focusPowerRight
+			tooltip_side = DOR_merchant_houses_side
+		}
+	}
+}
+merchant_houses_focus_effect_med = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_great_merchants_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_great_merchants_power_balance
+			value = @focusPowerRightMed
+			tooltip_side = DOR_merchant_houses_side
+		}
+	}
+}
+merchant_houses_focus_effect_big = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_great_merchants_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_great_merchants_power_balance
+			value = @focusPowerRightBig
+			tooltip_side = DOR_merchant_houses_side
+		}
+	}
+}
+merchant_houses_focus_effect_large = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_great_merchants_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_great_merchants_power_balance
+			value = @focusPowerRightLarge
+			tooltip_side = DOR_merchant_houses_side
+		}
+	}
+}
+koldana_focus_effect = {
+	if = {
+		limit = { has_power_balance = { id = DOR_winelords_power_balance } }
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @focusPowerLeft
+			tooltip_side = DOR_koldana_side
+		}
+	}
+}
+koldana_focus_effect_med = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_winelords_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @focusPowerLeftMed
+			tooltip_side = DOR_koldana_side
+		}
+	}
+}
+koldana_focus_effect_big = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_winelords_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @focusPowerLeftBig
+			tooltip_side = DOR_koldana_side
+		}
+	}
+}
+koldana_focus_effect_large = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_winelords_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @focusPowerLeftLarge
+			tooltip_side = DOR_koldana_side
+		}
+	}
+}
+vierling_focus_effect = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_winelords_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @focusPowerRight
+			tooltip_side = DOR_vierling_side
+		}
+	}
+}
+vierling_focus_effect_med = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_winelords_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @focusPowerRightMed
+			tooltip_side = DOR_vierling_side
+		}
+	}
+}
+vierling_focus_effect_big = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_winelords_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @focusPowerRightBig
+			tooltip_side = DOR_vierling_side
+		}
+	}
+}
+vierling_focus_effect_large = {
+	if = {
+		limit = {
+			has_power_balance = {
+				id = DOR_winelords_power_balance
+			}
+		}
+		add_power_balance_value = {
+			id = DOR_winelords_power_balance
+			value = @focusPowerRightLarge
+			tooltip_side = DOR_vierling_side
+		}
+	}
+}
+
 
 koldana_aptitude_mission_reward = {
 	add_power_balance_value = {
@@ -1732,4 +1949,18 @@ DOR_increase_university_level_1 = {
 DOR_increase_university_level_2 = {
 	add_to_variable = { university_size = 2 }
 	custom_effect_tooltip = DOR_increase_university_level_2
+}
+
+
+convert_half_isolationism_to_freedom = {
+	custom_effect_tooltip = convert_half_isolationism_to_freedom
+	hidden_effect = {
+		save_current_politics = yes
+		set_temp_variable = { conversion = savedIsolationism }
+		divide_temp_variable = { conversion = 2 }
+		add_to_variable = { savedFreedom = conversion }
+		subtract_from_variable = { savedIsolationism = conversion }
+		load_saved_politics = yes
+		clear_saved_politics = yes
+	}
 }

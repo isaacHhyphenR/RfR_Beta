@@ -1508,3 +1508,51 @@ news_event = { ##98## Hawin dead, New realm master elected
 }
 
 
+news_event = { ##99## RVN accepted guarantee for influence
+	id = rfr_news.99
+	title = rfr_news.99.t
+	desc = rfr_news.99.d
+	picture = GFX_news_gondor_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.99.a
+	}
+}
+news_event = { ##100## RVN rejects guarantee for influence
+	id = rfr_news.100
+	title = rfr_news.100.t
+	desc = rfr_news.100.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.100.a
+	}
+}
+
+news_event = { ##101## DOR rallied us
+	id = rfr_news.101
+	title = rfr_news.101.t
+	desc = rfr_news.101.d
+	picture = GFX_news_boromir_victorious
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.101.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			add_popularity = {
+				ideology = freedom
+				popularity = 0.1
+			}
+		}
+	}
+}
+
+
+
+

@@ -100,7 +100,6 @@ ideas = {
 				civilian_intel_factor = 0.25
 			}
 		}
-		
 		@assasinChance = 10
 		DOR_merchant_spies_knife_guild_LAR = {
 			name = DOR_merchant_spies_idea
@@ -329,7 +328,33 @@ ideas = {
 				conscription = 0.0075
 			}
 		}
-	
+		
+		DOR_liberators_idea = {
+			picture = generic_victors_of_ww1
+			removal_cost = -1
+			allowed_civil_war = {
+				has_government = freedom
+			}
+			modifier = {
+				resistance_target = -0.15
+				starting_compliance = 0.15
+				custom_modifier_tooltip = DOR_liberators_idea_conference_modifiers
+			}
+		}
+		DOR_meritocratic_army = {
+			picture = FRA_national_mobilization_focus
+			removal_cost = -1
+			allowed_civil_war = {
+				has_government = freedom
+			}
+			modifier = {
+				experience_gain_army_unit_factor = 0.1
+				field_officer_promotion_penalty = -0.25
+				grant_medal_cost_factor = -0.25
+			}
+		}
+		
+		
 	}
 	hidden_ideas = {
 		bergholda_hidden_trade_modifier = { ##apply to all other countries when you get bergholda

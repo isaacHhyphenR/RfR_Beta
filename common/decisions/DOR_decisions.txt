@@ -170,6 +170,33 @@ DOR_election_category = {
 		timeout_effect = { koldana_aptitude_mission_timeout_effect = yes }
 	}
 }
+
+DOR_great_merchants_category = {
+	DOR_the_peoples_army_mission = {
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = 180
+		is_good = yes
+		allowed = { always = no }
+		available = {
+			hidden_trigger = { always = no }
+		}
+		cancel_trigger = {
+			has_any_level_demoralized_army = no
+		}
+		timeout_effect = {
+			DOR_increase_army_morale = yes
+			if = {
+				limit = { has_any_level_demoralized_army = yes }
+				activate_mission = DOR_the_peoples_army_mission
+			}
+		}
+	}
+}
+
 @guildLoanCG = -0.05
 @guildLoanDays = 365
 DOR_guilds_category = {

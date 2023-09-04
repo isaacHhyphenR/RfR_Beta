@@ -1,0 +1,742 @@
+spriteTypes = {
+		#######GONDOR
+	SpriteType = {
+		name = "GFX_idea_steward_authority"
+		texturefile = "gfx/interface/ideas/steward_authority_idea.dds"		
+	}
+	SpriteType = {
+		name = "GFX_idea_gon_anorien_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/gon_anorien_designer.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_gon_anfalas_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/gon_anfalas_designer.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_gon_belfalas_designers"
+		texturefile = "gfx/interface/designers/00_Dunedain/gon_belfalas_designer.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_gon_ithilien_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/gon_ithilien_designer.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_gon_lamedon_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/gon_lamedon_designer.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_gon_lebennin_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/gon_lebennin_designer.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_gon_lossarnach_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/gon_lossarnach_designer.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_gon_pinnath_gelin_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/GON_pinnath_gelin_designer.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_gon_swan_knights"
+		texturefile = "gfx/interface/ideas/gon_swan_knights_idea.dds"			
+	}
+		#######MORDOR
+	SpriteType = {
+		name = "GFX_idea_the_one_ring_destroyed"
+		texturefile = "gfx/interface/ideas/the_one_ring_destroyed_idea.dds"		
+	}
+	SpriteType = {
+		name = "GFX_idea_the_one_ring"
+		texturefile = "gfx/interface/ideas/the_one_ring_idea.dds"		
+	}
+	SpriteType = {
+		name = "GFX_idea_spurned_sauron_icon"
+		texturefile = "gfx/interface/ideas/spurned_sauron_icon.dds"		
+	}
+	SpriteType = {
+		name = "GFX_idea_saurons_prize_icon"
+		texturefile = "gfx/interface/ideas/saurons_prize_icon.dds"		
+	}
+	SpriteType = {
+		name = "GFX_idea_saurons_slaves_icon"
+		texturefile = "gfx/interface/ideas/saurons_slaves_icon.dds"		
+	}
+	SpriteType = {
+		name = "GFX_idea_logistics_lieutenants_spirit"
+		texturefile = "gfx/interface/officer_corp/spirits/spirit_idea_meticulous_preparation.dds"		
+	}
+	SpriteType = {
+		name = "GFX_idea_promote_the_meanest_spirit"
+		texturefile = "gfx/interface/officer_corp/spirits/spirit_idea_victory_or_death.dds"			
+	}
+		#######ROHAN
+	SpriteType = {
+		name = "GFX_idea_roh_meduseld"
+		texturefile = "gfx/interface/ideas/roh_meduseld_idea.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_roh_the_hornburg"
+		texturefile = "gfx/interface/ideas/roh_the_hornburg_idea.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_roh_rohan_imprisoned"
+		texturefile = "gfx/interface/ideas/ROH_rohan_imprisoned.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_roh_secure_the_country"
+		texturefile = "gfx/interface/ideas/ROH_secure_the_country.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_roh_a_hall_divided"
+		texturefile = "gfx/interface/ideas/roh_a_hall_divided.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_roh_hail_the_victorious_dead"
+		texturefile = "gfx/interface/ideas/roh_hail_the_victorious_dead.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_roh_riding_for_ruin"
+		texturefile = "gfx/interface/ideas/roh_riding_for_ruin.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_merchant_ship"
+		texturefile = "gfx/interface/ideas/generic_merchant_ship_idea.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_flowers"
+		texturefile = "gfx/interface/ideas/generic_flowers_idea.dds"			
+	}
+		#######HERITAGE TRAITS
+	SpriteType = {
+		name = "GFX_idea_arnor_heritage"
+		texturefile = "gfx/interface/ideas/heritage/arnor_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_beorning_heritage"
+		texturefile = "gfx/interface/ideas/heritage/beorning_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_dale_heritage"
+		texturefile = "gfx/interface/ideas/heritage/dale_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_dol_guldur_heritage"
+		texturefile = "gfx/interface/ideas/heritage/dol_guldur_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_dorwinion_heritage"
+		texturefile = "gfx/interface/ideas/heritage/dorwinion_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_dunland_heritage"
+		texturefile = "gfx/interface/ideas/heritage/dunland_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_dunland_saruman_heritage"
+		texturefile = "gfx/interface/ideas/heritage/dunland_saruman_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_erebor_heritage"
+		texturefile = "gfx/interface/ideas/heritage/erebor_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_ered_luin_heritage"
+		texturefile = "gfx/interface/ideas/heritage/ered_luin_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_enedwaith_heritage"
+		texturefile = "gfx/interface/ideas/heritage/enedwaith_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_gondor_heritage"
+		texturefile = "gfx/interface/ideas/heritage/gondor_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_gundabad_heritage"
+		texturefile = "gfx/interface/ideas/heritage/gundabad_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_khazad_dum_heritage"
+		texturefile = "gfx/interface/ideas/heritage/khazad_dum_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_lorien_heritage"
+		texturefile = "gfx/interface/ideas/heritage/lorien_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_heritage"
+		texturefile = "gfx/interface/ideas/heritage/mordor_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_rivendell_heritage"
+		texturefile = "gfx/interface/ideas/heritage/rivendell_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_umbar_heritage"
+		texturefile = "gfx/interface/ideas/heritage/umbar_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_lindon_heritage"
+		texturefile = "gfx/interface/ideas/heritage/lindon_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_woodland_realm_heritage"
+		texturefile = "gfx/interface/ideas/heritage/woodland_realm_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_dwarven_heritage"
+		texturefile = "gfx/interface/ideas/heritage/dwarven_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_easterling_heritage"
+		texturefile = "gfx/interface/ideas/heritage/easterling_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_elven_heritage"
+		texturefile = "gfx/interface/ideas/heritage/elven_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_entish_heritage"
+		texturefile = "gfx/interface/ideas/heritage/entish_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_isengardian_heritage"
+		texturefile = "gfx/interface/ideas/heritage/isengardian_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_hobbit_heritage"
+		texturefile = "gfx/interface/ideas/heritage/hobbit_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_northern_heritage"
+		texturefile = "gfx/interface/ideas/heritage/northern_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_numenorean_heritage"
+		texturefile = "gfx/interface/ideas/heritage/numenorean_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_orcish_heritage"
+		texturefile = "gfx/interface/ideas/heritage/orcish_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_rohirric_heritage"
+		texturefile = "gfx/interface/ideas/heritage/rohirric_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_southron_heritage"
+		texturefile = "gfx/interface/ideas/heritage/southron_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_harad_heritage"
+		texturefile = "gfx/interface/ideas/heritage/harad_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_khand_heritage"
+		texturefile = "gfx/interface/ideas/heritage/khand_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_misty_mountains_heritage"
+		texturefile = "gfx/interface/ideas/heritage/misty_mountains_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_wildling_heritage"
+		texturefile = "gfx/interface/ideas/heritage/wildling_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_adaraba_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/adaraba_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_nan_engui_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/nan_engui_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_parth_iaur_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/parth_iaur_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_rafinfalas_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/rafinfalas_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_carreglyn_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/carreglyn_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_dunfearn_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/dunfearn_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_dunfells_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/dunfells_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_dathabha_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/dathabha_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_angrast_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/angrast_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_colgrin_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/colgrin_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_harestolad_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/harestolad_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_starkmoors_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/starkmoors_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_byrig_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/byrig_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_isenrun_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/isenrun_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_an_khorgan_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/an_khorgan_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_drulad_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/drulad_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mirobel_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/mirobel_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_reedwater_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/reedwater_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_glad_ereg_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/glad_ereg_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_hollin_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/hollin_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_annulefnui_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/annulefnui_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_tawarteleh_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/tawarteleh_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_hairaverkien_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/hairaverkien_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_nan_i_feryth_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/nan_i_feryth_heritage.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_white_mountain_uprising_heritage"
+		texturefile = "gfx/interface/ideas/heritage/greater_enedwaith_tags/white_mountain_uprising_heritage.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_troll_tamers"
+		texturefile = "gfx/interface/ideas/troll_tamers.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_mumakil_tamers"
+		texturefile = "gfx/interface/ideas/mumakil_tamers.dds"			
+	}
+		#######DIPLOMATIC
+	SpriteType = {
+		name = "GFX_idea_generic_attack_arnor"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_arnor.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_arthedain"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_arthedain.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_beornings"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_beornings.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_cardolan"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_cardolan.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_dagorland"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_dagorland.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_dale"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_dale.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_dol_guldur"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_dol_guldur.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_dorwinion"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_dorwinion.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_druedain"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_druedain.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_Dunland"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_Dunland.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_Enedwaith"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_Enedwaith.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_erebor"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_erebor.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_ered_luin"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_ered_luin.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_fangorn"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_fangorn.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_gondor"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_gondor.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_gundabad"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_gundabad.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_harad"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_harad.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_harondor"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_harondor.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_isengard"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_isengard.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_khand"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_khand.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_khazad_dum"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_khazad_dum.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_lindon"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_lindon.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_lorien"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_lorien.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_mirvan"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_mirvan.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_misty_mountains"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_misty_mountains.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_mordor"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_mordor.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_reunited_kingdom"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_reunited_kingdom.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_rhudaur"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_rhudaur.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_rhun"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_rhun.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_rivendell"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_rivendell.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_rohan"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_rohan.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_shire"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_shire.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_woodland_realm"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_woodland_realm.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_umbar"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_umbar.dds"
+	}
+		#######GENERIC
+	SpriteType = {
+		name = "GFX_idea_generic_palantir"
+		texturefile = "gfx/interface/ideas/palantir.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_melkorite_drift_bonus"
+		texturefile = "gfx/interface/ideas/melkorite_drift.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_isolationism_drift_bonus"
+		texturefile = "gfx/interface/ideas/isolationism_drift.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_pikes_bonus"
+		texturefile = "gfx/interface/ideas/generic_pikes_bonus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_birds_and_beasts"
+		texturefile = "gfx/interface/ideas/birds_and_beasts.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_crebain"
+		texturefile = "gfx/interface/ideas/crebain.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_generic_light_cavalry"
+		texturefile = "gfx/interface/ideas/idea_porsche.dds"
+	}
+		#######LAWS
+	SpriteType = {
+		name = "GFX_idea_tree_law"
+		texturefile = "gfx/interface/ideas/treeLaw.dds"			
+	}
+################################################################################################################################################
+#########################################################VorV
+################################################################################################################################################
+	SpriteType = {
+		name = "GFX_idea_generic_attack_Andrast"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_Andrast.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_Druwaith_Iaur"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_Druwaith_Iaur.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_Eregion"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_Eregion.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_Greater_Enedwaith"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_Greater_Enedwaith.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_Saralain"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_saralain.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_attack_White_Mountains"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_White_Mountains.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_Andrast_attack_neighbors"
+		texturefile = "gfx/interface/ideas/diplomatic/Andrast_attack_neighbors.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_Druwaith_Iaur_attack_neighbors"
+		texturefile = "gfx/interface/ideas/diplomatic/Druwaith_Iaur_attack_neighbors.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_Dunland_attack_neighbors"
+		texturefile = "gfx/interface/ideas/diplomatic/Dunland_attack_neighbors.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_Enedwaith_attack_neighbors"
+		texturefile = "gfx/interface/ideas/diplomatic/Enedwaith_attack_neighbors.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_Eregion_attack_neighbors"
+		texturefile = "gfx/interface/ideas/diplomatic/Eregion_attack_neighbors.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_White_Mountains_attack_neighbors"
+		texturefile = "gfx/interface/ideas/diplomatic/White_Mountains_attack_neighbors.dds"
+	}
+		#######TRADE
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_Andrast"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_Andrast.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_Druwaith_Iaur"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_Druwaith_Iaur.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_Dunland"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_Dunland.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_Enedwaith"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_Enedwaith.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_Eregion"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_Eregion.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_gondor"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_gondor.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_Greater_Enedwaith"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_Greater_Enedwaith.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_isengard"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_isengard.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_mordor"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_mordor.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_Saralain"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_Saralain.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_shire"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_shire.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_rohan"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_rohan.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_trade_with_White_Mountains"
+		texturefile = "gfx/interface/ideas/diplomatic/trade_with_White_Mountains.dds"
+	}
+		#######MERCENARIES
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Andrast"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Andrast.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Beorning"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Beorning.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Druwaith_Iaur"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Druwaith_Iaur.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Dunland"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Dunland.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Enedwaith"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Enedwaith.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Eregion"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Eregion.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Gondor"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Gondor.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Greater_Enedwaith"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Greater_Enedwaith.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Isengard"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Isengard.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Mordor"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Mordor.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Misty_Mountains"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Misty_Mountains.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Saralain"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Saralain.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_Rohan"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_Rohan.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mercenaries_White_Mountains"
+		texturefile = "gfx/interface/ideas/diplomatic/mercenaries_White_Mountains.dds"
+	}
+		#######HERITAGE
+	SpriteType = {
+		name = "GFX_idea_andrast_heritage"
+		texturefile = "gfx/interface/ideas/heritage/Andrast_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_druwaith_iaur_heritage"
+		texturefile = "gfx/interface/ideas/heritage/druwaith_iaur_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_eregion_heritage"
+		texturefile = "gfx/interface/ideas/heritage/eregion_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_saralain_heritage"
+		texturefile = "gfx/interface/ideas/heritage/Saralain_heritage.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_white_mountains_heritage"
+		texturefile = "gfx/interface/ideas/heritage/White_Mountains_heritage.dds"			
+	}
+	
+	
+	SpriteType = {
+		name = "GFX_idea_tribal_throne"
+		texturefile = "gfx/interface/ideas/tribal_throne_idea.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_tribal_crown"
+		texturefile = "gfx/interface/ideas/tribal_crown_idea.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_unite_greater_enedwaith"
+		texturefile = "gfx/interface/ideas/unite_greater_enedwaith_idea.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_gondorian_protectorate"
+		texturefile = "gfx/interface/ideas/gondorian_protectorate.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_rohirric_protectorate"
+		texturefile = "gfx/interface/ideas/rohirric_protectorate.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_swear_fealty"
+		texturefile = "gfx/interface/ideas/generic_swear_fealty.dds"			
+	}
+	SpriteType = {
+		name = "GFX_idea_white_mountain_rebels"
+		texturefile = "gfx/interface/ideas/white_mountain_rebels.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_greater_enedwaith_prowess"
+		texturefile = "gfx/interface/ideas/greater_enedwaith_prowess.dds"
+	}
+}

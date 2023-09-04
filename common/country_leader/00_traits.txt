@@ -1812,6 +1812,19 @@ leader_traits = {
 			factor = 1
 		}
 	}
+	political_captain_of_industry = {
+		sprite = 10
+		random = yes
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_infrastructure_factor = 0.1
+		production_speed_rail_way_factor = 0.1
+		production_speed_synthetic_refinery_factor = 0.1
+		political_power_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	minor_captain_of_industry = { #-50%
 		sprite = 10
 		random = no
