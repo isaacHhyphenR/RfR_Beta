@@ -353,8 +353,131 @@ ideas = {
 				grant_medal_cost_factor = -0.25
 			}
 		}
+		DOR_never_submit = {
+			picture = POL_ideology_drift_defence
+			removal_cost = -1
+			allowed_civil_war = {
+				has_government = freedom
+			}
+			modifier = {
+				resistance_growth_on_our_occupied_states = 0.1
+				resistance_target_on_our_occupied_states = 0.1
+			}
+		}
+		@guildsSupportCost = -0.15
+		DOR_supplied_by_guild_tithes_idea = {
+			picture = MEX_callistas
+			removal_cost = -1
+			allowed_civil_war = {
+				has_government = freedom
+			}
+			equipment_bonus = {
+				maintenance_equipment = {
+					build_cost_ic = @guildsSupportCost
+				}
+				engineering_equipment = {
+					build_cost_ic = @guildsSupportCost
+				}
+				medical_equipment = {
+					build_cost_ic = @guildsSupportCost
+				}
+				signals_equipment = {
+					build_cost_ic = @guildsSupportCost
+				}
+				suppression_equipment = {
+					build_cost_ic = @guildsSupportCost
+				}
+			}
+		}
+		DOR_barding_training = {
+			picture = MEX_callistas
+			removal_cost = -1
+			allowed_civil_war = {
+				has_government = freedom
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					hard_attack = 0.25
+				}
+			}
+		}
+			
 		
-		
+		DOR_professional_militias = {
+			name = DOR_professional_militias
+			picture = YUG_federal_defense_council
+			removal_cost = -1
+			allowed_civil_war = {
+				has_government = freedom
+			}
+			modifier = {
+				custom_modifier_tooltip = DOR_professional_militias_terrain_tooltip
+			}
+			on_add = {
+				hidden_effect = {
+					set_technology = {
+						DOR_militia_urban_defence_tech = 1
+						popup = no
+					}
+				}
+			}
+		}
+		DOR_professional_militias_cost = {
+			name = DOR_professional_militias
+			picture = YUG_federal_defense_council
+			removal_cost = -1
+			allowed_civil_war = {
+				has_government = freedom
+			}
+			modifier = {
+				custom_modifier_tooltip = DOR_professional_militias_terrain_tooltip
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		DOR_professional_militias_training_time = {
+			name = DOR_professional_militias
+			picture = YUG_federal_defense_council
+			removal_cost = -1
+			allowed_civil_war = {
+				has_government = freedom
+			}
+			modifier = {
+				custom_modifier_tooltip = DOR_professional_militias_terrain_tooltip
+				training_time_army_factor = -0.2
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		DOR_professional_militias_xp = {
+			name = DOR_professional_militias
+			picture = YUG_federal_defense_council
+			removal_cost = -1
+			allowed_civil_war = {
+				has_government = freedom
+			}
+			modifier = {
+				custom_modifier_tooltip = DOR_professional_militias_terrain_tooltip
+				experience_gain_army_unit_factor = 0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+				}
+			}
+		}
+	
+	
+	
+	
+	
+	
 	}
 	hidden_ideas = {
 		bergholda_hidden_trade_modifier = { ##apply to all other countries when you get bergholda

@@ -1452,8 +1452,8 @@ technologies = {
 		}
 
 		research_cost = 1
-		infantry = {
-			combat_width = -0.4
+		category_all_infantry = {
+			soft_attack = 0.05
 		}
 	}
 }

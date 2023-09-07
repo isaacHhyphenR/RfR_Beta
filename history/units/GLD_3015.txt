@@ -1,0 +1,94 @@
+﻿division_template = {
+	name = "Snagas"
+	division_names_group = SNAGA_NAMES_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+		military_police = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Orc Raiders"
+	division_names_group = ORC_NAMES_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		artillery_brigade = { x = 2 y = 0 }
+		artillery_brigade = { x = 2 y = 1 }
+	}
+	support = {
+	}
+}
+division_template = {
+	name = "Spiders"
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+	}
+	support = {
+	}
+}
+units = {
+		##SNAGAS
+	division = {
+		location = 2183
+		division_template = "Snagas"
+	}
+	division = {
+		location = 6073
+		division_template = "Snagas"
+	}
+	division = {
+		location = 929
+		division_template = "Snagas"
+	}
+	division = {
+		location = 704
+		division_template = "Snagas"
+	}
+	division = {
+		location = 2201
+		division_template = "Snagas"
+	}
+	division = {
+		location = 2830
+		division_template = "Snagas"
+	}
+		##RAIDERS
+	division = {
+		name = "1st Branchbreakers"
+		location = 6354
+		division_template = "Orc Raiders"
+	}
+	division = {
+		name = "2nd Treefellers"
+		location = 3272
+		division_template = "Orc Raiders"
+	}
+	division = {
+		name = "3rd Leafburners"
+		location = 3390
+		division_template = "Orc Raiders"
+	}
+		##SPIDERS
+	division = {
+		name = "1st Webmasters"
+		location = 3669
+		division_template = "Spiders"
+	}
+	division = {
+		name = "2nd Silkspinners"
+		location = 3277
+		division_template = "Spiders"
+	}
+}

@@ -432,3 +432,15 @@
  DOR_liberators_idea_desc: "$DOR_march_forth_as_liberators_desc$"
  DOR_meritocratic_army: "Meritocratic Army"
  DOR_meritocratic_army_desc: "$DOR_implement_meritocratic_reforms_desc$"
+ DOR_professional_militias: "Professional Militias"
+ DOR_professional_militias_desc: "Every citizen of a chartered city must serve in the city's militia upon reaching adulthood. This creates a large pool of trained, equiped, and motivated soldiers we can draw from."
+ DOR_never_submit: "Fight Even Once Lost"
+ DOR_never_submit_desc: "$DOR_fight_even_once_lost_desc$"
+ DOR_supplied_by_guild_tithes_idea: "Guild Tithes"
+ DOR_supplied_by_guild_tithes_idea_desc: "$DOR_leverage_guild_tithes_desc$"
+ DOR_barding_training: "Barding Training"
+ DOR_barding_training_desc: "$DOR_seek_training_from_the_bardings_desc$"
+ DOR_militia_urban_defence_tech: "$DOR_professional_militias$"
+ 
+ 
+ 

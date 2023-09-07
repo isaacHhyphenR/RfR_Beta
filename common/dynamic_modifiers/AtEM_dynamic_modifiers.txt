@@ -23,3 +23,8 @@ wilderness_state = {
 	resistance_growth = 0.5
 	required_garrison_factor = 1
 }
+
+every_citizen_a_defender = {
+	icon = GFX_manpower_icon
+	local_manpower = 0.25
+}

@@ -1477,9 +1477,15 @@ news_event = { ##98## Hawin dead, New realm master elected
 		text = rfr_news.98.d.a
 		trigger = {
 			DOR = {
-				has_country_leader = {
-					character = DOR_bergholda_aldiana
-					ruling_only = yes
+				OR = {
+					power_balance_value = {
+						id = DOR_election_power_balance
+						value < 0.0
+					}
+					has_country_leader = {
+						character = DOR_bergholda_aldiana
+						ruling_only = yes
+					}
 				}
 			}
 		}
@@ -1506,7 +1512,6 @@ news_event = { ##98## Hawin dead, New realm master elected
 		name = rfr_news.98.d
 	}
 }
-
 
 news_event = { ##99## RVN accepted guarantee for influence
 	id = rfr_news.99
@@ -1553,6 +1558,29 @@ news_event = { ##101## DOR rallied us
 	}
 }
 
-
+news_event = { ##102## DAL gave us barding training
+	id = rfr_news.102
+	title = rfr_news.102.t
+	desc = rfr_news.102.d
+	picture = GFX_news_gondor_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.102.a
+	}
+}
+news_event = { ##103## DAL refused us barding training
+	id = rfr_news.103
+	title = rfr_news.103.t
+	desc = rfr_news.103.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.103.a
+	}
+}
 
 

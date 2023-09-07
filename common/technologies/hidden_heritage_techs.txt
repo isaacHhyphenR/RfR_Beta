@@ -295,5 +295,23 @@ technologies = {
 			}
 		}
 	}
+	
+	######DOR militias boost
+	DOR_militia_urban_defence_tech = {
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		category_army = {
+			urban = {
+				defence = 0.2
+			}
+			fort = {
+				defence = 0.1
+			}
+		}
+	}
+
 }
 

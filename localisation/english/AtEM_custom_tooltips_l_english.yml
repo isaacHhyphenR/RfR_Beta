@@ -110,6 +110,7 @@
  every_guaranteed_rhovanion_tag_tooltip: "Every §Y$RVN$§! country that we have §Yguaranteed§!:\n"
  DOR_liberators_idea_conference_modifiers: "Peace Conference Modifiers:$new_line_tab$Take State cost: §R+100%§!$new_line_tab$Puppet State cost: §R+50%§!$new_line_tab$Force Governement cost: §G-25%§!$new_line_tab$Liberate country cost: §G-25%§!"
  DOR_the_peoples_army_tooltip: "Every 180 days:"
+ DOR_professional_militias_terrain_tooltip: "§YUrban:§!$new_line_tab$Defense: §G+20%§!\n§YFort:§!$new_line_tab$Defense: §G+10%§!"
  
  
  

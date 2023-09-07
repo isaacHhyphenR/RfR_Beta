@@ -1,0 +1,1472 @@
+@attackBonus = 0.15
+@defenseBonus = 0.15
+
+ideas = {
+	country = {
+		generic_defend_against_arthedain = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = ART }
+			}
+			removal_cost = -1
+			picture = generic_attack_arthedain
+			targeted_modifier = {
+				tag = ART
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_beornings = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = BER }
+			}
+			removal_cost = -1
+			picture = generic_attack_beornings
+			targeted_modifier = {
+				tag = BER
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_cardolan = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = CAR }
+			}
+			removal_cost = -1
+			picture = generic_attack_cardolan
+			targeted_modifier = {
+				tag = CAR
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_dagorland = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = DAG }
+			}
+			removal_cost = -1
+			picture = generic_attack_dagorland
+			targeted_modifier = {
+				tag = DAG
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_dale = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = DAL }
+			}
+			removal_cost = -1
+			picture = generic_attack_dale
+			targeted_modifier = {
+				tag = DAL
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_dol_guldur = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = GDL }
+			}
+			removal_cost = -1
+			picture = generic_attack_dol_guldur
+			targeted_modifier = {
+				tag = GDL
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_dorwinion = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = DOR }
+			}
+			removal_cost = -1
+			picture = generic_attack_dorwinion
+			targeted_modifier = {
+				tag = DOR
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_druedain = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = DAI }
+			}
+			removal_cost = -1
+			picture = generic_attack_druedain
+			targeted_modifier = {
+				tag = DAI
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_erebor = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = ERE }
+			}
+			removal_cost = -1
+			picture = generic_attack_erebor
+			targeted_modifier = {
+				tag = ERE
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_ered_luin = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = EDL }
+			}
+			removal_cost = -1
+			picture = generic_attack_ered_luin
+			targeted_modifier = {
+				tag = EDL
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_fangorn = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = FAN }
+			}
+			removal_cost = -1
+			picture = generic_attack_fangorn
+			targeted_modifier = {
+				tag = FAN
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_gondor = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = GON }
+			}
+			removal_cost = -1
+			picture = generic_attack_gondor
+			targeted_modifier = {
+				tag = GON
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_gundabad = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = GUN }
+			}
+			removal_cost = -1
+			picture = generic_attack_gundabad
+			targeted_modifier = {
+				tag = GUN
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_harad = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = HAR }
+			}
+			removal_cost = -1
+			picture = generic_attack_harad
+			targeted_modifier = {
+				tag = HAR
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_harondor = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = HRN }
+			}
+			removal_cost = -1
+			picture = generic_attack_harondor
+			targeted_modifier = {
+				tag = HRN
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_isengard = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = ISN }
+			}
+			removal_cost = -1
+			picture = generic_attack_isengard
+			targeted_modifier = {
+				tag = ISN
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_khand = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = KND }
+			}
+			removal_cost = -1
+			picture = generic_attack_khand
+			targeted_modifier = {
+				tag = KND
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_khazad_dum = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = KZD }
+			}
+			removal_cost = -1
+			picture = generic_attack_khazad_dum
+			targeted_modifier = {
+				tag = KZD
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_lindon = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = LIN }
+			}
+			removal_cost = -1
+			picture = generic_attack_lindon
+			targeted_modifier = {
+				tag = LIN
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_lorien = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = LOR }
+			}
+			removal_cost = -1
+			picture = generic_attack_lorien
+			targeted_modifier = {
+				tag = LOR
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_mirvan = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = MIR }
+			}
+			removal_cost = -1
+			picture = generic_attack_mirvan
+			targeted_modifier = {
+				tag = MIR
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_misty_mountains = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = MST }
+			}
+			removal_cost = -1
+			picture = generic_attack_misty_mountains
+			targeted_modifier = {
+				tag = MST
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_mordor = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = MOR }
+			}
+			removal_cost = -1
+			picture = generic_attack_mordor
+			targeted_modifier = {
+				tag = MOR
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_rhudaur = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = RDR }
+			}
+			removal_cost = -1
+			picture = generic_attack_rhudaur
+			targeted_modifier = {
+				tag = RDR
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_rhun = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = RHU }
+			}
+			removal_cost = -1
+			picture = generic_attack_rhun
+			targeted_modifier = {
+				tag = MED
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = SAG
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = LGA
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = SRB
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = ULG
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_rivendell = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = RIV }
+			}
+			removal_cost = -1
+			picture = generic_attack_rivendell
+			targeted_modifier = {
+				tag = RIV
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_rohan = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = ROH }
+			}
+			removal_cost = -1
+			picture = generic_attack_rohan
+			targeted_modifier = {
+				tag = ROH
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = EOM
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_shire = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = SHI }
+			}
+			removal_cost = -1
+			picture = generic_attack_shire
+			targeted_modifier = {
+				tag = SHI
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_woodland_realm = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = WOD }
+			}
+			removal_cost = -1
+			picture = generic_attack_woodland_realm
+			targeted_modifier = {
+				tag = WOD
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_umbar = {
+			allowed = { always = no }
+			cancel = {
+				#NOT = { has_war_with = UMB }
+			}
+			removal_cost = -1
+			picture = generic_attack_umbar
+			targeted_modifier = {
+				tag = UMB
+				defense_bonus_against = @defenseBonus
+			}
+		}
+#############################################################################################################ATTACK
+		generic_attack_arthedain = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = ART
+			}
+			cancel = {
+				#NOT = { has_war_with = ART }
+			}
+			removal_cost = -1
+			picture = generic_attack_arthedain
+			targeted_modifier = {
+				tag = ART
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_beornings = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = BER
+			}
+			cancel = {
+				#NOT = { has_war_with = BER }
+			}
+			removal_cost = -1
+			picture = generic_attack_beornings
+			targeted_modifier = {
+				tag = BER
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_cardolan = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = CAR
+			}
+			cancel = {
+				#NOT = { has_war_with = CAR }
+			}
+			removal_cost = -1
+			picture = generic_attack_cardolan
+			targeted_modifier = {
+				tag = CAR
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_dagorland = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = DAG
+			}
+			cancel = {
+				#NOT = { has_war_with = DAG }
+			}
+			removal_cost = -1
+			picture = generic_attack_dagorland
+			targeted_modifier = {
+				tag = DAG
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_dale = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = DAL
+			}
+			cancel = {
+				#NOT = { has_war_with = DAL }
+			}
+			removal_cost = -1
+			picture = generic_attack_dale
+			targeted_modifier = {
+				tag = DAL
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_dol_guldur = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = GDL
+			}
+			cancel = {
+				#NOT = { has_war_with = GDL }
+			}
+			removal_cost = -1
+			picture = generic_attack_dol_guldur
+			targeted_modifier = {
+				tag = GDL
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_dorwinion = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = DOR
+			}
+			cancel = {
+				#NOT = { has_war_with = DOR }
+			}
+			removal_cost = -1
+			picture = generic_attack_dorwinion
+			targeted_modifier = {
+				tag = DOR
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_druedain = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = DAI
+			}
+			cancel = {
+				#NOT = { has_war_with = DAI }
+			}
+			removal_cost = -1
+			picture = generic_attack_druedain
+			targeted_modifier = {
+				tag = DAI
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_erebor = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = ERE
+			}
+			cancel = {
+				#NOT = { has_war_with = ERE }
+			}
+			removal_cost = -1
+			picture = generic_attack_erebor
+			targeted_modifier = {
+				tag = ERE
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_ered_luin = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = EDL
+			}
+			cancel = {
+				#NOT = { has_war_with = EDL }
+			}
+			removal_cost = -1
+			picture = generic_attack_ered_luin
+			targeted_modifier = {
+				tag = EDL
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_fangorn = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = FAN
+			}
+			cancel = {
+				#NOT = { has_war_with = FAN }
+			}
+			removal_cost = -1
+			picture = generic_attack_fangorn
+			targeted_modifier = {
+				tag = FAN
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_gondor = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = GON
+			}
+			cancel = {
+				#NOT = { has_war_with = GON }
+			}
+			removal_cost = -1
+			picture = generic_attack_gondor
+			targeted_modifier = {
+				tag = GON
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_gundabad = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = GUN
+			}
+			cancel = {
+				#NOT = { has_war_with = GUN }
+			}
+			removal_cost = -1
+			picture = generic_attack_gundabad
+			targeted_modifier = {
+				tag = GUN
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_harad = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = HAR
+			}
+			cancel = {
+				#NOT = { has_war_with = HAR }
+			}
+			removal_cost = -1
+			picture = generic_attack_harad
+			targeted_modifier = {
+				tag = HAR
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_harondor = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = HRN
+			}
+			cancel = {
+				#NOT = { has_war_with = HRN }
+			}
+			removal_cost = -1
+			picture = generic_attack_harondor
+			targeted_modifier = {
+				tag = HRN
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_isengard = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = ISN
+			}
+			cancel = {
+				#NOT = { has_war_with = ISN }
+			}
+			removal_cost = -1
+			picture = generic_attack_isengard
+			targeted_modifier = {
+				tag = ISN
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_khand = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = KND
+			}
+			cancel = {
+				#NOT = { has_war_with = KND }
+			}
+			removal_cost = -1
+			picture = generic_attack_khand
+			targeted_modifier = {
+				tag = KND
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_khazad_dum = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = KZD
+			}
+			cancel = {
+				#NOT = { has_war_with = KZD }
+			}
+			removal_cost = -1
+			picture = generic_attack_khazad_dum
+			targeted_modifier = {
+				tag = KZD
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_lindon = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = LIN
+			}
+			cancel = {
+				#NOT = { has_war_with = LIN }
+			}
+			removal_cost = -1
+			picture = generic_attack_lindon
+			targeted_modifier = {
+				tag = LIN
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_lorien = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = LOR
+			}
+			cancel = {
+				#NOT = { has_war_with = LOR }
+			}
+			removal_cost = -1
+			picture = generic_attack_lorien
+			targeted_modifier = {
+				tag = LOR
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_mirvan = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = MIR
+			}
+			cancel = {
+				#NOT = { has_war_with = MIR }
+			}
+			removal_cost = -1
+			picture = generic_attack_mirvan
+			targeted_modifier = {
+				tag = MIR
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_misty_mountains = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = MST
+			}
+			cancel = {
+				#NOT = { has_war_with = MST }
+			}
+			removal_cost = -1
+			picture = generic_attack_misty_mountains
+			targeted_modifier = {
+				tag = MST
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_mordor = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = MOR
+			}
+			cancel = {
+				#NOT = { has_war_with = MOR }
+			}
+			removal_cost = -1
+			picture = generic_attack_mordor
+			targeted_modifier = {
+				tag = MOR
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_rhudaur = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = RDR
+			}
+			cancel = {
+				#NOT = { has_war_with = RDR }
+			}
+			removal_cost = -1
+			picture = generic_attack_rhudaur
+			targeted_modifier = {
+				tag = RDR
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_rhun = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = RHU
+			}
+			cancel = {
+				#NOT = { has_war_with = RHU }
+			}
+			removal_cost = -1
+			picture = generic_attack_rhun
+			targeted_modifier = {
+				tag = RHU
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_rivendell = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = RIV
+			}
+			cancel = {
+				#NOT = { has_war_with = RIV }
+			}
+			removal_cost = -1
+			picture = generic_attack_rivendell
+			targeted_modifier = {
+				tag = RIV
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_rohan = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = ROH
+			}
+			cancel = {
+				#NOT = { has_war_with = ROH }
+			}
+			removal_cost = -1
+			picture = generic_attack_rohan
+			targeted_modifier = {
+				tag = ROH
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = EOM
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_shire = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = SHI
+			}
+			cancel = {
+				#NOT = { has_war_with = SHI }
+			}
+			removal_cost = -1
+			picture = generic_attack_shire
+			targeted_modifier = {
+				tag = SHI
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_woodland_realm = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = WOD
+			}
+			cancel = {
+				#NOT = { has_war_with = WOD }
+			}
+			removal_cost = -1
+			picture = generic_attack_woodland_realm
+			targeted_modifier = {
+				tag = WOD
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_umbar = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_war_with = UMB
+			}
+			cancel = {
+				#NOT = { has_war_with = UMB }
+			}
+			removal_cost = -1
+			picture = generic_attack_umbar
+			targeted_modifier = {
+				tag = UMB
+				attack_bonus_against = @attackBonus
+			}
+		}
+#############################################################################################################################################
+#####################################################VorV
+#############################################################################################################################################
+		generic_defend_against_Andrast = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_Andrast
+			targeted_modifier = {
+				tag = ADB
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = AND
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = NEN
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = PRI
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_Druwaith_Iaur = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_Druwaith_Iaur
+			targeted_modifier = {
+				tag = AKN
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = DRU
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = DWI
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = IRN
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_Dunland = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_Dunland
+			targeted_modifier = {
+				tag = CGN
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = DFN
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = DTH
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = DUN
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_Enedwaith = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_Enedwaith
+			targeted_modifier = {
+				tag = AGR
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = COL
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = HST
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = STK
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_Eregion = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_Eregion
+			targeted_modifier = {
+				tag = ERG
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = HOL
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = MBL
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = REE
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_Saralain = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_saralain
+			targeted_modifier = {
+				tag = SAR
+				defense_bonus_against = @defenseBonus
+			}
+		}
+		generic_defend_against_White_Mountains = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_White_Mountains
+			targeted_modifier = {
+				tag = ANU
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = HVK
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = NIF
+				defense_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = TAW
+				defense_bonus_against = @defenseBonus
+			}
+		}
+#############################################################################################################ATTACK
+		generic_attack_Andrast = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_Andrast
+			targeted_modifier = {
+				tag = ADB
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = AND
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = NEN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = PRI
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_Druwaith_Iaur = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_Druwaith_Iaur
+			targeted_modifier = {
+				tag = AKN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DRU
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DWI
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = IRN
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_Dunland = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_Dunland
+			targeted_modifier = {
+				tag = CGN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DFN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DTH
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DUN
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_Enedwaith = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_Enedwaith
+			targeted_modifier = {
+				tag = AGR
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = COL
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = HST
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = STK
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_Eregion = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_Eregion
+			targeted_modifier = {
+				tag = ERG
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = HOL
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = MBL
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = REE
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_Saralain = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_saralain
+			targeted_modifier = {
+				tag = SAR
+				attack_bonus_against = @defenseBonus
+			}
+		}
+		generic_attack_White_Mountains = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_White_Mountains
+			targeted_modifier = {
+				tag = ANU
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = HVK
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = NIF
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = TAW
+				attack_bonus_against = @attackBonus
+			}
+		}
+		generic_attack_greater_enedwaith = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_attack_Greater_Enedwaith
+			modifier = {
+				custom_modifier_tooltip = generic_attack_greater_enedwaith_tooltip
+			}
+			on_add = {
+				add_ideas = hidden_generic_attack_greater_enedwaith
+			}
+			on_remove = {
+				remove_ideas = hidden_generic_attack_greater_enedwaith
+			}
+		}
+	}
+	
+	hidden_ideas = {
+		hidden_attack_Andrast = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = ADB
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = AND
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = NEN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = PRI
+				attack_bonus_against = @attackBonus
+			}
+		}
+		hidden_attack_Druwaith_Iaur = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = AKN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DRU
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DWI
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = IRN
+				attack_bonus_against = @attackBonus
+			}
+		}
+		hidden_attack_Dunland = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = CGN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DFN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DTH
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DUN
+				attack_bonus_against = @attackBonus
+			}
+		}
+		hidden_attack_Enedwaith = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = AGR
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = COL
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = HST
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = STK
+				attack_bonus_against = @attackBonus
+			}
+		}
+		hidden_attack_Eregion = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = ERG
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = HOL
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = MBL
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = REE
+				attack_bonus_against = @attackBonus
+			}
+		}
+		hidden_attack_Saralain = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = SAR
+				attack_bonus_against = @defenseBonus
+			}
+		}
+		hidden_attack_White_Mountains = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = ANU
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = HVK
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = NIF
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = TAW
+				attack_bonus_against = @attackBonus
+			}
+		}
+		
+		hidden_generic_attack_greater_enedwaith = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = ADB
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = AND
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = NEN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = PRI
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = AKN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DRU
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DWI
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = IRN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = CGN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DFN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DTH
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = DUN
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = AGR
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = COL
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = HST
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = STK
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = ERG
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = HOL
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = MBL
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = REE
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = SAR
+				attack_bonus_against = @defenseBonus
+			}
+			targeted_modifier = {
+				tag = ANU
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = HVK
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = NIF
+				attack_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = TAW
+				attack_bonus_against = @attackBonus
+			}
+		}
+	}
+}

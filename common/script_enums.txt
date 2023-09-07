@@ -34,7 +34,7 @@ script_enum_equipment_bonus_type = {
 	heavy_tank_destroyer_chassis
 	
 	support_equipment
-	maintenence_equipment
+	maintenance_equipment
 	medical_equipment
 	engineering_equipment
 	signals_equipment

@@ -497,9 +497,42 @@ country_event = { ##9## Dorwinion offers guarantee for influence
 		ai_chance = {
 			factor = 1
 		}
-		FROM = { give_guarantee = ROOT }
-		custom_effect_tooltip = unimplemented
 		hidden_effect = { FROM = { news_event = { id = 100 hours = 1 } } }
+	}
+}
+
+country_event = { ##10## Dorwinion asks for Barding training
+	id = atem.10
+	title = atem.10.t
+	desc = atem.10.d
+	picture = GFX_gondor_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.10.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = no }
+				factor = 10
+			}
+			modifier = {
+				is_in_faction_with = FROM
+				factor = 10
+			}
+		}
+		FROM = { add_ideas = DOR_barding_training }
+		army_experience = 15
+		hidden_effect = { FROM = { news_event = { id = rfr_news.102 hours = 1 } } }
+	}
+	option = { ##no
+		name = atem.10.b
+		trigger = { NOT = { is_subject_of = FROM } }
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.103 hours = 1 } } }
 	}
 }
 

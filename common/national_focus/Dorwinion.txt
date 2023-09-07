@@ -3093,36 +3093,6 @@ focus_tree = {
 			burghers_focus_effect = yes
 		}
 	}
-	focus = { #Fight for our friends
-		id = DOR_fight_for_our_friends
-		#icon = GFX_goal_generic_major_alliance
-		x = 1
-		y = 1
-		relative_position_id = DOR_bulwark_of_the_celduin
-		cost = 5
-		ai_will_do = {
-			factor = 0
-		}
-		prerequisite = {
-			focus = DOR_bulwark_of_the_celduin
-		}
-		available = {
-			burghers_focus_trigger = yes
-			has_government = freedom
-			any_other_country = {
-				is_rhovanion_tag = yes
-				is_guaranteed_by = ROOT
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			add_popularity = {
-				ideology = freedom
-				popularity = 0.1
-			}
-			burghers_focus_effect = yes
-		}
-	}
 	focus = { #Reform the legal code
 		id = DOR_reform_the_legal_code
 		icon = GFX_focus_hol_the_foundations_of_defense
@@ -3704,6 +3674,454 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_DIPLOMATIC }
 		completion_reward = {
 			custom_effect_tooltip = unimplemented
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Fight for our friends
+		id = DOR_fight_for_our_friends
+		#icon = GFX_goal_generic_major_alliance
+		x = 1
+		y = 1
+		relative_position_id = DOR_bulwark_of_the_celduin
+		cost = 5
+		ai_will_do = {
+			factor = 0
+		}
+		prerequisite = {
+			focus = DOR_bulwark_of_the_celduin
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_government = freedom
+			any_other_country = {
+				is_rhovanion_tag = yes
+				is_guaranteed_by = ROOT
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = freedom
+				popularity = 0.1
+			}
+			burghers_focus_effect = yes
+		}
+	}
+#################################MILITIA ARMY
+	focus = { #Rely on Urban Militias
+		id = DOR_rely_on_urban_militias
+		icon = GFX_focus_secret_rearmament
+		x = 11
+		y = 1
+		relative_position_id = DOR_support_the_burghers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_support_the_burghers
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_ideas = DOR_professional_militias
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Fight Even Once Lost
+		id = DOR_fight_even_once_lost
+		icon = GFX_focus_POL_riot_of_37
+		x = 2
+		y = 1
+		relative_position_id = DOR_rely_on_urban_militias
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_rely_on_urban_militias
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas = DOR_never_submit
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Prepare them for Combat
+		id = DOR_prepare_them_for_combat
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 1
+		relative_position_id = DOR_rely_on_urban_militias
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_rely_on_urban_militias
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = infantry_tech
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Prepare them for the Easterling Cataphracts
+		id = DOR_prepare_them_for_the_easterling_cataphracts
+		icon = GFX_goal_generic_army_artillery2
+		x = 3
+		y = 1
+		relative_position_id = DOR_prepare_them_for_combat
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_prepare_them_for_combat
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = cat_anti_tank
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Stand Fast Against Charging Hordes
+		id = DOR_stand_fast_against_charging_hordes
+		icon = GFX_goal_generic_attack_rhun
+		x = 0
+		y = 1
+		relative_position_id = DOR_prepare_them_for_the_easterling_cataphracts
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_prepare_them_for_the_easterling_cataphracts
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_ideas = generic_defend_against_rhun
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Mandate Weapon Ownership
+		id = DOR_mandate_weapon_ownership
+		icon = GFX_goal_generic_small_arms
+		x = 1
+		y = 1
+		relative_position_id = DOR_prepare_them_for_combat
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_prepare_them_for_combat
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DOR_professional_militias
+				add_idea = DOR_professional_militias_cost
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Every Citizen a Defender
+		id = DOR_every_citizen_a_defender
+		icon = GFX_goal_panzerwaffe
+		x = 0
+		y = 1
+		relative_position_id = DOR_mandate_weapon_ownership
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_mandate_weapon_ownership
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		bypass = {
+			NOT = { controls_state = 116 }
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			116 = { #riavod
+				add_dynamic_modifier = { modifier = every_citizen_a_defender }
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Strengthen universal Training Obligations
+		id = DOR_strengthen_universal_training_obligations
+		icon = GFX_goal_panzerwaffe
+		x = -1
+		y = 1
+		relative_position_id = DOR_every_citizen_a_defender
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_every_citizen_a_defender
+		}
+		mutually_exclusive = {
+			focus = DOR_offer_specialized_training
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DOR_professional_militias_cost
+				add_idea = DOR_professional_militias_training_time
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Offer Specialized Training
+		id = DOR_offer_specialized_training
+		icon = GFX_goal_panzerwaffe
+		x = 1
+		y = 1
+		relative_position_id = DOR_every_citizen_a_defender
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_every_citizen_a_defender
+		}
+		mutually_exclusive = {
+			focus = DOR_strengthen_universal_training_obligations
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DOR_professional_militias_cost
+				add_idea = DOR_professional_militias_xp
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Hold Large Scale Drills
+		id = DOR_hold_large_scale_drills
+		icon = GFX_goal_generic_army_doctrines
+		x = -1
+		y = 1
+		relative_position_id = DOR_prepare_them_for_combat
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_prepare_them_for_combat
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = @doctrineBoostBonus
+				uses = 1
+				category = land_doctrine
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Hold Fast in our Citadel Homes
+		id = DOR_hold_fast_in_our_citadel_homes
+		icon = GFX_goal_generic_fortify_city
+		x = 0
+		y = 1
+		relative_position_id = DOR_hold_large_scale_drills
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_hold_large_scale_drills
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			random_army_leader = {
+				limit = { NOT = { has_trait = urban_assault_specialist } }
+				add_unit_leader_trait = urban_assault_specialist
+			}
+			random_army_leader = {
+				limit = { NOT = { has_trait = urban_assault_specialist } }
+				add_unit_leader_trait = urban_assault_specialist
+			}
+			random_army_leader = {
+				limit = { NOT = { has_trait = urban_assault_specialist } }
+				add_unit_leader_trait = urban_assault_specialist
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Rain Death from Afar
+		id = DOR_rain_death_from_afar
+		icon = GFX_goal_generic_army_artillery
+		x = -3
+		y = 1
+		relative_position_id = DOR_prepare_them_for_combat
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_prepare_them_for_combat
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = artillery
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Put Civilian Skills to Use
+		id = DOR_put_civilian_skills_to_use
+		#icon = GFX_goal_generic_fortify_city
+		x = -5
+		y = 1
+		relative_position_id = DOR_rely_on_urban_militias
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_rely_on_urban_militias
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = support_tech
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Leverage guild Tithes
+		id = DOR_leverage_guild_tithes
+		#icon = GFX_goal_generic_fortify_city
+		x = 0
+		y = 1
+		relative_position_id = DOR_put_civilian_skills_to_use
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_put_civilian_skills_to_use
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			add_ideas = DOR_supplied_by_guild_tithes_idea
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Victory Through Artisanship
+		id = DOR_victory_through_artisanship
+		icon = GFX_goal_generic_air_production
+		x = -1
+		y = 1
+		relative_position_id = DOR_rain_death_from_afar
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_rain_death_from_afar
+			focus = DOR_leverage_guild_tithes
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = @doctrineBoostBonus
+				uses = 2
+				category = cat_superior_firepower
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Seek Training from the Bardings
+		id = DOR_seek_training_from_the_bardings
+		icon = GFX_goal_generic_befriend_dale
+		x = 0
+		y = 2
+		relative_position_id = DOR_rain_death_from_afar
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_rain_death_from_afar
+		}
+		available = {
+			burghers_focus_trigger = yes
+			country_exists = DAL
+			NOT = { has_war_with = DAL }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			DAL = {
+				country_event = { id = atem.10 hours = 1 }
+			}
+			custom_effect_tooltip = if_they_accept_tooltip
+			effect_tooltip = {
+				add_ideas = DOR_barding_training
+				DAL = { army_experience = 15 }
+			}
 			burghers_focus_effect = yes
 		}
 	}

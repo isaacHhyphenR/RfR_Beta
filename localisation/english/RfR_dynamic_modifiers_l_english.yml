@@ -135,3 +135,15 @@
  market_upgrade_cost_modifier_desc: "$upgrade_market_desc$"
  wilderness_state: "Wilderness"
  wilderness_state_desc: "This region's only inhabitants are scattered bands of orcs and bandits. Establishing civilisation will require significant investment."
+ every_citizen_a_defender: "Every Citizen a Defender"
+ every_citizen_a_defender_desc: "$DOR_every_citizen_a_defender_desc$"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
