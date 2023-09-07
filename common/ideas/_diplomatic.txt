@@ -805,8 +805,24 @@ ideas = {
 			removal_cost = -1
 			picture = generic_attack_rhun
 			targeted_modifier = {
-				tag = RHU
-				attack_bonus_against = @attackBonus
+				tag = MED
+				defense_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = SAG
+				defense_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = LGA
+				defense_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = SRB
+				defense_bonus_against = @attackBonus
+			}
+			targeted_modifier = {
+				tag = ULG
+				defense_bonus_against = @attackBonus
 			}
 		}
 		generic_attack_rivendell = {

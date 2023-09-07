@@ -4125,6 +4125,432 @@ focus_tree = {
 			burghers_focus_effect = yes
 		}
 	}
+#################################GUILD ECONOMY
+	focus = { #Nation of Artisans
+		id = DOR_nation_of_artisans
+		icon = GFX_focus_generic_industry_2
+		x = 18
+		y = 1
+		relative_position_id = DOR_support_the_burghers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_support_the_burghers
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				ahead_reduction = 1
+				category = industry
+				category = construction_tech
+				category = farming
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Invest in the Carpenters
+		id = DOR_invest_in_the_carpenters
+		icon = GFX_goal_DOR_carpentry_guild
+		x = -2
+		y = 1
+		relative_position_id = DOR_nation_of_artisans
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_nation_of_artisans
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GUILDS }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Invest in the Smiths
+		id = DOR_invest_in_the_smiths
+		icon = GFX_goal_DOR_smithing_guild
+		x = 0
+		y = 1
+		relative_position_id = DOR_nation_of_artisans
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_nation_of_artisans
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GUILDS }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Invest in the Bakers
+		id = DOR_invest_in_the_bakers
+		icon = GFX_goal_DOR_bakers_guild
+		x = 2
+		y = 1
+		relative_position_id = DOR_nation_of_artisans
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_nation_of_artisans
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GUILDS }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Encourage Discourse Between Guilds
+		id = DOR_encourage_discourse_between_guilds
+		icon = GFX_focus_research2
+		x = 1
+		y = 1
+		relative_position_id = DOR_invest_in_the_carpenters
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_invest_in_the_carpenters
+		}
+		prerequisite = {
+			focus = DOR_invest_in_the_smiths
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Gleaming Coastal Cities
+		id = DOR_gleaming_coastal_cities
+		icon = GFX_goal_generic_construction
+		x = 0
+		y = 2
+		relative_position_id = DOR_invest_in_the_carpenters
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_invest_in_the_carpenters
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = construction_tech
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Artisans on the Seashore
+		id = DOR_artisans_on_the_seashore
+		icon = GFX_goal_generic_production2
+		x = 0
+		y = 2
+		relative_position_id = DOR_invest_in_the_smiths
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_invest_in_the_smiths
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = industry
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Reinvest in our Communities
+		id = DOR_reinvest_in_our_communities
+		icon = GFX_focus_generic_industry_3
+		x = 1
+		y = 1
+		relative_position_id = DOR_gleaming_coastal_cities
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_gleaming_coastal_cities
+		}
+		prerequisite = {
+			focus = DOR_artisans_on_the_seashore
+		}
+		available = {
+			burghers_focus_trigger = yes
+			any_core_state = {
+				is_controlled_by = ROOT
+				at_least_five_factories_trigger = yes
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = DOR_reinvest_in_our_communities_tooltip
+			# effect_tooltip = {
+				# random_list = {
+					# 1 = {
+						# add_building_construction = {
+							# type = industrial_complex
+							# level = 1
+							# instant_build = yes
+						# }
+					# }
+					# 1 = {
+						# add_building_construction = {
+							# type = arms_factory
+							# level = 1
+							# instant_build = yes
+						# }
+					# }
+				# }
+				# add_extra_state_shared_building_slots = 1
+			# }
+			every_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					at_least_five_factories_trigger = yes
+				}
+				random_list = {
+					1 = {
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+					1 = {
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Profit from Peace
+		id = DOR_profit_from_peace
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 2
+		relative_position_id = DOR_gleaming_coastal_cities
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_gleaming_coastal_cities
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_war = no
+			any_core_state = {
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Profit from War
+		id = DOR_profit_from_war
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 2
+		relative_position_id = DOR_artisans_on_the_seashore
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_artisans_on_the_seashore
+		}
+		available = {
+			burghers_focus_trigger = yes
+			any_core_state = {
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+			}
+			has_war = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Beyond our Walls, but not our Hearts
+		id = DOR_beyond_our_walls_but_not_our_hearts
+		#icon = GFX_focus_SOV_breadbasket_of_the_union
+		x = 0
+		y = 1
+		relative_position_id = DOR_invest_in_the_bakers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_invest_in_the_bakers
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = farming
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Well Fed Workers
+		id = DOR_well_fed_workers
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		x = 0
+		y = 1
+		relative_position_id = DOR_beyond_our_walls_but_not_our_hearts
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_beyond_our_walls_but_not_our_hearts
+		}
+		available = {
+			burghers_focus_trigger = yes
+			any_core_state = {
+				is_core_of = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				has_resources_amount = {
+					resource = food
+					amount > 14
+					delivered = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = DOR_well_fed_workers_tooltip
+			# effect_tooltip = {
+				# add_building_construction = {
+					# type = industrial_complex
+					# level = 1
+					# instant_build = yes
+				# }
+				# add_extra_state_shared_building_slots = 1
+			# }
+			every_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					has_resources_amount = {
+						resource = food
+						amount > 14
+						delivered = yes
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			burghers_focus_effect = yes
+		}
+	}
 }
 
  # FOCUS_FILTER_POLITICAL:0 "Political"

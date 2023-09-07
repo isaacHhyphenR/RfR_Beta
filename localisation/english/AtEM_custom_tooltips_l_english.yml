@@ -111,7 +111,9 @@
  DOR_liberators_idea_conference_modifiers: "Peace Conference Modifiers:$new_line_tab$Take State cost: §R+100%§!$new_line_tab$Puppet State cost: §R+50%§!$new_line_tab$Force Governement cost: §G-25%§!$new_line_tab$Liberate country cost: §G-25%§!"
  DOR_the_peoples_army_tooltip: "Every 180 days:"
  DOR_professional_militias_terrain_tooltip: "§YUrban:§!$new_line_tab$Defense: §G+20%§!\n§YFort:§!$new_line_tab$Defense: §G+10%§!"
- 
- 
- 
+ every_controlled_core_state_with_five_factories: "Every controlled core state with at least §Y5§! total §Y$industrial_complex$s§! and §Y$arms_factory$s§!"
+ DOR_reinvest_in_our_communities_tooltip: "$every_controlled_core_state_with_five_factories$:$new_line_tab$Add §G1§! §Y$industrial_complex$§! or §G1§! §Y$arms_factory$§!"
+ at_least_five_factories_trigger: "At least §Y5§! total §Y$industrial_complex$s§! and §Y$arms_factory$s§!"
+ every_controlled_core_state_with_15_food: "Every controlled core state with at least §Y15§! £GFX_food_texticon:"
+ DOR_well_fed_workers_tooltip: "$every_controlled_core_state_with_15_food$:$new_line_tab$Add §G1§! §Y$industrial_complex$§!"
  

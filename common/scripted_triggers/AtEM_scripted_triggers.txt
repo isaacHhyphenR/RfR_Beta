@@ -126,7 +126,6 @@ has_any_level_demoralized_army = {
 	}
 }
 
-
 can_trade_with_ROOT = {
 	NOT = {
 		OR = {
@@ -144,7 +143,6 @@ has_level_10_university = {
 	}
 }
 
-
 is_activated_advisor = { #call in character to check if they have an active role in government
 	OR = {
 		is_political_advisor = yes
@@ -154,3 +152,25 @@ is_activated_advisor = { #call in character to check if they have an active role
 		is_theorist = yes
 	}
 }
+
+at_least_five_factories_trigger = { #returns true if state has at least 5 civs/mils
+	custom_trigger_tooltip = {
+		tooltip = at_least_five_factories_trigger
+		set_temp_variable = { factories = building_level@arms_factory }
+		add_to_temp_variable = { factories = building_level@industrial_complex }
+		check_variable = { factories > 4 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
