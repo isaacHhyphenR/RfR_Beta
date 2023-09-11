@@ -92,7 +92,7 @@ set_popularities = {
 	# }
 # }
 
-set_cosmetic_tag = RUN_khaganate
+set_cosmetic_tag = RUN
 
 recruit_character = MED_Khirun_Zhamian
 recruit_character = RUN_bulga

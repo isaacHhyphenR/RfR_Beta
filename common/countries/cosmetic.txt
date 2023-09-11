@@ -50,9 +50,9 @@ Greater_Enedwaith = {
 	color_ui = rgb { 70 113 93 }
 }
 ############################################################Khaganate
-RUN_khaganate = {
-	color = rgb { 176 105 43 }
-	color_ui = rgb { 213 136 2 }
+RUN = {
+	color = rgb { 136 75 23 }
+	color_ui = rgb { 128 71 22 }
 }
 LGA_khanate = {
 	color = rgb { 205 145 87 }
