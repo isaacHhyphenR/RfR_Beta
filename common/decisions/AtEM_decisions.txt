@@ -501,7 +501,6 @@ celduin_trade_category = {
 	}
 }
 
-
 colonisation_category = {
 	uprising_in_colony = {
 		icon = GFX_decision_revolt
@@ -1470,3 +1469,62 @@ colonisation_category = {
 		# modifier = { colony_growth_monthly = 100000 }
 	# }
 }
+
+debug_decisions = {
+	debug_convert_all_republics = { ##gives all the 'base' nations their republican cosmetic tags
+		complete_effect = {
+			ART = {
+				set_cosmetic_tag = arnor_republic
+			}
+			BER = {
+				set_cosmetic_tag = BER_republic
+			}
+			DAI = {
+				set_cosmetic_tag = DAI_republic
+			}
+			DAL = {
+				set_cosmetic_tag = DAL_republic
+			}
+			DOR = {
+				set_cosmetic_tag = DOR_republic
+			}
+			RUN = {
+				set_cosmetic_tag = RUN_republic
+			}
+			RLM = {
+				set_cosmetic_tag = steppe_republic
+			}
+			DUN = {
+				set_cosmetic_tag = gwaithurium_republic
+			}
+			GON = {
+				set_cosmetic_tag = GON_republic
+			}
+			HAR = {
+				set_cosmetic_tag = HAR_republic
+			}
+			KND = {
+				set_cosmetic_tag = KND_republic
+			}
+			UMB = {
+				set_cosmetic_tag = UMB_republic
+			}
+			ROH = {
+				set_cosmetic_tag = ROH_republic
+			}
+			RIN = {
+				set_cosmetic_tag = RVN_republic
+			}
+			HTH = {
+				set_cosmetic_tag = HTH_republic
+			}
+			HIL = {
+				set_cosmetic_tag = HIL_republic
+			}
+		}
+	}
+}
+
+
+
+
