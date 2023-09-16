@@ -510,7 +510,7 @@ characters = {
 			idea_token = DOR_bergholda_aldiana
 			allowed = { original_tag = DOR }
 			traits = { empathetic_negotiator_advisor merchant_house_pol_first }
-			visible = { is_country_leader = no }
+			#visible = { is_country_leader = no } #removed manually for performance
 			ai_will_do = {
 				factor = 1
 			}
@@ -522,7 +522,7 @@ characters = {
 			idea_token = DOR_bergholda_aldiana
 			allowed = { original_tag = DOR }
 			traits = { trade_theorist merchant_house_pol_first }
-			visible = { is_country_leader = no }
+			#visible = { is_country_leader = no } #removed manually for performance
 			ai_will_do = {
 				factor = 1
 			}
@@ -598,17 +598,17 @@ characters = {
 		}
 	}
 	DOR_tate_aldiana = { #building slots
-		name = DOR_thraear_barvadinian
-		gender = female
+		name = DOR_tate_aldiana
+		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_1"
-				small = "GFX_Portrait_Northern_Generic_f_1_small"
+				large = "GFX_Portrait_Northern_Generic_m_2"
+				small = "GFX_Portrait_Northern_Generic_m_2_small"
 			}
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = DOR_thraear_barvadinian
+			idea_token = DOR_tate_aldiana
 			allowed = { original_tag = DOR }
 			traits = { urban_developer merchant_house_pol_fifth }
 			ai_will_do = {
@@ -708,10 +708,26 @@ characters = {
 				small = "GFX_Portrait_Northern_Generic_f_1_small"
 			}
 		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_isolationism
+			traits = { liberator_of_the_north unifying_diplomat revolutionary }
+			desc = DOR_thodria_celebcaen_desc
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_freedom
+			traits = { liberator_of_the_north unifying_diplomat revolutionary }
+			desc = DOR_thodria_celebcaen_desc
+		}
+		country_leader = { ##Presidential candidate
+			ideology = corrupt_republic
+			traits = { liberator_of_the_north unifying_diplomat revolutionary }
+			desc = DOR_thodria_celebcaen_desc
+		}
 		advisor = {
 			slot = political_advisor
 			idea_token = DOR_thodria_celebcaen
 			allowed = { original_tag = DOR }
+			visible = { is_country_leader = no }
 			traits = { liberator_of_the_north burgher_pol_first }
 			ai_will_do = {
 				factor = 1
@@ -729,10 +745,26 @@ characters = {
 				small = "GFX_Portrait_Northern_Generic_m_1_small"
 			}
 		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_isolationism
+			traits = { rallying_figurehead reassuring revolutionary }
+			desc = DOR_skaldir_lendembas_desc
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_freedom
+			traits = { rallying_figurehead reassuring revolutionary }
+			desc = DOR_skaldir_lendembas_desc
+		}
+		country_leader = { ##Presidential candidate
+			ideology = corrupt_republic
+			traits = { rallying_figurehead reassuring revolutionary }
+			desc = DOR_skaldir_lendembas_desc
+		}
 		advisor = {
 			slot = political_advisor
 			idea_token = DOR_skaldir_lendembas
 			allowed = { original_tag = DOR }
+			visible = { is_country_leader = no }
 			traits = { rallying_figurehead burgher_pol_second }
 			ai_will_do = {
 				factor = 1
@@ -750,10 +782,26 @@ characters = {
 				small = "GFX_Portrait_Northern_Generic_m_2_small"
 			}
 		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_isolationism
+			traits = { polymath innovative guild_coordinator }
+			desc = DOR_ansovald_gwingalon_desc
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_freedom
+			traits = { polymath innovative guild_coordinator }
+			desc = DOR_ansovald_gwingalon_desc
+		}
+		country_leader = { ##Presidential candidate
+			ideology = corrupt_republic
+			traits = { polymath innovative guild_coordinator }
+			desc = DOR_ansovald_gwingalon_desc
+		}
 		advisor = {
 			slot = political_advisor
 			idea_token = DOR_ansovald_gwingalon
 			allowed = { original_tag = DOR }
+			visible = { is_country_leader = no }
 			traits = { polymath burgher_pol_third }
 			ai_will_do = {
 				factor = 1
@@ -771,14 +819,26 @@ characters = {
 				small = "GFX_Portrait_Northern_Generic_f_2_small"
 			}
 		}
-		country_leader = { ##so that I can swap traits in a tooltip
+		country_leader = { ##Presidential candidate
 			ideology = republic_isolationism
-			traits = { captain_of_industry }
+			traits = { captain_of_industry land_reformer }
+			desc = DOR_aregisel_hammdost_desc
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_freedom
+			traits = { captain_of_industry land_reformer }
+			desc = DOR_aregisel_hammdost_desc
+		}
+		country_leader = { ##Presidential candidate
+			ideology = corrupt_republic
+			traits = { captain_of_industry land_reformer }
+			desc = DOR_aregisel_hammdost_desc
 		}
 		advisor = {
 			slot = political_advisor
 			idea_token = DOR_aregisel_hammdost
 			allowed = { original_tag = DOR }
+			visible = { is_country_leader = no }
 			traits = { captain_of_industry burgher_pol_fourth }
 			ai_will_do = {
 				factor = 1

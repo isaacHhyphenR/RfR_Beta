@@ -555,6 +555,22 @@ spriteTypes = {
 		name = "GFX_soldiers_on_the_walls"
 		texturefile = "gfx/event_pictures/soldiers_on_the_walls.dds"
 	}
+	spriteType = {
+		name = "GFX_election"
+		texturefile = "gfx/event_pictures/election.dds"
+	}
+	spriteType = {
+		name = "GFX_debate"
+		texturefile = "gfx/event_pictures/debate.dds"
+	}
+	spriteType = {
+		name = "GFX_debate_2"
+		texturefile = "gfx/event_pictures/debate_2.dds"
+	}
+	spriteType = {
+		name = "GFX_popular_reaction"
+		texturefile = "gfx/event_pictures/popular_reaction.dds"
+	}
 ##################################################################NEWS
 	spriteType = {
 		name = "GFX_news_retreat"
@@ -635,5 +651,21 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_soldiers_on_the_walls"
 		texturefile = "gfx/event_pictures/news_events/news_soldiers_on_the_walls.dds"
+	}
+	spriteType = {
+		name = "GFX_news_election"
+		texturefile = "gfx/event_pictures/news_events/news_election.dds"
+	}
+	spriteType = {
+		name = "GFX_news_debate"
+		texturefile = "gfx/event_pictures/news_events/news_debate.dds"
+	}
+	spriteType = {
+		name = "GFX_news_debate_2"
+		texturefile = "gfx/event_pictures/news_events/news_debate_2.dds"
+	}
+	spriteType = {
+		name = "GFX_news_popular_reaction"
+		texturefile = "gfx/event_pictures/news_events/news_popular_reaction.dds"
 	}
 }

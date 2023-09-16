@@ -3221,11 +3221,12 @@ focus_tree = {
 		}
 		available = {
 			burghers_focus_trigger = yes
-			has_government = freedom
+			has_country_leader_with_trait = revolutionary
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			custom_effect_tooltip = unimplemented
+			custom_effect_tooltip = unlocks_spread_revolution_war_goal
 			burghers_focus_effect = yes
 		}
 	}
@@ -3445,14 +3446,12 @@ focus_tree = {
 			burghers_focus_trigger = yes
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = { ##+10% pp gain on civ advisor
+		completion_reward = { ##+10% pp gain on civ advisor/leader
 			DOR_aregisel_hammdost = {
-				effect_tooltip = { ##for the tooltip
-					swap_country_leader_traits = {
-						remove = captain_of_industry
-						add = political_captain_of_industry
-						ideology = republic_isolatoinism
-					}
+				swap_country_leader_traits = {
+					remove = captain_of_industry
+					add = political_captain_of_industry
+					ideology = republic_isolatoinism
 				}
 				hidden_effect = {
 					remove_trait = {##so that the real trait doesn't have a weird blank space
@@ -3471,8 +3470,16 @@ focus_tree = {
 						slot = political_advisor
 						trait = burgher_pol_fourth
 					}
-					remove_country_leader_role = { ##don't need this anymore
-						ideology = republic_isolationism
+					##switch the other two leader ideologies
+					swap_country_leader_traits = {
+						remove = captain_of_industry
+						add = political_captain_of_industry
+						ideology = republic_freedom
+					}
+					swap_country_leader_traits = {
+						remove = captain_of_industry
+						add = political_captain_of_industry
+						ideology = republic_opportunism
 					}
 				}
 			}

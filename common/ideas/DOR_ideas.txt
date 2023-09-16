@@ -473,13 +473,41 @@ ideas = {
 			}
 		}
 	
-	
-	
+		DOR_republic_idea = { ##preserves the modifiers of the burghers BoP after republic deactivates it
+			picture = DOR_republic
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_thordia_celebcaen #one of the burghers
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		DOR_republic_idea2 = {
+			picture = DOR_republic
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_thordia_celebcaen #one of the burghers
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				political_power_gain = 0.025
+			}
+		}
+		
 	
 	
 	
 	}
 	hidden_ideas = {
+		DOR_revolutionary_leader_idea = {
+			allowed_civil_war = {
+				has_country_leader_with_trait = revolutionary
+			}
+			rule = {
+				can_only_justify_war_on_threat_country = no
+			}
+		}
 		bergholda_hidden_trade_modifier = { ##apply to all other countries when you get bergholda
 			picture = empty
 			removal_cost = -1

@@ -1116,7 +1116,7 @@ DOR_winelords_BOP_initial_advisors = { ##variables in the event don't work :/
 		}
 	}
 }
-DOR_great_merchabts_BOP_initial_advisors = { ##variables in the event don't work :/
+DOR_great_merchants_BOP_initial_advisors = { ##variables in the event don't work :/
 	every_character = {
 		if = {
 			limit = {
@@ -1227,9 +1227,7 @@ great_merchants_win_election_effect = {
 		set_default = yes
 	}
 	#figure out how much BoP from advisors
-	set_temp_variable = { advisor_bop = merchant_house_advisors }
-	subtract_from_temp_variable = { advisor_bop = burgher_advisors }
-	multiply_temp_variable = { advisor_bop = 0.05 }
+	DOR_great_merchants_BOP_initial_advisors = yes
 	meta_effect = {
 		text = {
 			add_power_balance_value = {
@@ -1239,6 +1237,7 @@ great_merchants_win_election_effect = {
 		}
 		BOP = "[?advisor_bop]"
 	}
+	bergholda_trade_effect = yes
 }
 
 bergholda_trade_effect = { ##reduces cost to trade
@@ -1951,7 +1950,6 @@ DOR_increase_university_level_2 = {
 	custom_effect_tooltip = DOR_increase_university_level_2
 }
 
-
 convert_half_isolationism_to_freedom = {
 	custom_effect_tooltip = convert_half_isolationism_to_freedom
 	hidden_effect = {
@@ -1962,5 +1960,70 @@ convert_half_isolationism_to_freedom = {
 		subtract_from_variable = { savedIsolationism = conversion }
 		load_saved_politics = yes
 		clear_saved_politics = yes
+	}
+}
+
+DOR_become_republic = {
+	set_cosmetic_tag = DOR_republic
+	#yearly elections
+	hold_election = THIS
+	set_politics = {
+		elections_allowed = yes
+		election_frequency = 12
+	}
+	remove_power_balance = {
+		id = DOR_great_merchants_power_balance
+	}
+	#bergholda isn't the leader anymore, so she can be an advisor
+	hidden_effect = {
+		bergholda_trade_effect_remove = yes
+		DOR_bergholda_aldiana = {
+			add_advisor_role = {
+				advisor = {
+					slot = political_advisor
+					idea_token = DOR_bergholda_aldiana
+					allowed = { original_tag = DOR }
+					traits = { empathetic_negotiator_advisor merchant_house_pol_first }
+					ai_will_do = {
+						factor = 1
+					}
+					on_add = { merchant_house_advisor_effect = yes }
+					on_remove = { merchant_house_advisor_effect_remove = yes }
+				}
+			}
+			add_advisor_role = {
+				advisor = {
+					slot = theorist
+					idea_token = DOR_bergholda_aldiana
+					allowed = { original_tag = DOR }
+					traits = { trade_theorist merchant_house_pol_first }
+					ai_will_do = {
+						factor = 1
+					}
+					on_add = { merchant_house_advisor_effect = yes bergholda_trade_effect = yes }
+					on_remove = { merchant_house_advisor_effect_remove = yes bergholda_trade_effect_remove = yes }
+				}
+			}
+		}
+		###fire the event in 15 days to make sure the election resolves first so that the event displays the leader
+		news_event = { id = rfr_news.104 days = 15 }
+		##ID preserves the modifiers of winning the BoP
+		add_ideas = DOR_republic_idea
+		set_country_flag = revolutionary_republic
+	}
+}
+DOR_elect_different_leader_opportunism = {
+	add_political_power = -100
+	add_popularity = {
+		ideology = freedom
+		popularity = 0.1
+	}
+	if = {
+		limit = {
+			freedom > 0.4 #flips if is >50% after adding 10%
+		}
+		set_politics = {
+			ruling_party = freedom
+		}
 	}
 }

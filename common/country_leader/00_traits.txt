@@ -2664,21 +2664,55 @@ leader_traits = {
 		sprite = 5
 		mercenary_cost = -0.2
 	}
-	liberator_of_the_north = {
+	liberator_of_the_north = { #thodria celebcaen
 		random = no
 		sprite = 12
 		freedom_drift = 0.1
 	}
-	rallying_figurehead = {
+	unifying_diplomat = { #thodria celebcaen
+		random = no
+		non_core_manpower = 0.02
+		improve_relations_maintain_cost_factor = -0.2
+		subjects_autonomy_gain = -0.5
+	}
+	rallying_figurehead = { #skaldir lendembas
 		random = yes
 		sprite = 13
 		war_support_factor = 0.1
 	}
-	polymath = {
+	reassuring = { #skaldir lendembas
+		random = no
+		sprite = 13
+		defensive_war_stability_factor = 0.1
+		offensive_war_stability_factor = 0.1
+		mobilization_speed = 0.2
+	}
+	revolutionary = {
+		random = no
+		generate_wargoal_tension = -1
+		custom_modifier_tooltip = can_declare_war_on_countries_that_have_generated_no_threat
+	}
+	polymath = { #Ansovald Gwingalon
 		random = yes
 		sprite = 14
 		research_speed_factor = 0.075
 	}
+	innovative = { #Ansovald Gwingalon
+		random = no
+		production_factory_start_efficiency_factor = 0.1
+		production_lack_of_resource_penalty_factor = -0.1
+	}
+	guild_coordinator = { #Ansovald Gwingalon
+		random = no
+		custom_modifier_tooltip = unimplemented
+	}
+	land_reformer = { #Arigesel Hammdost
+		random = no
+		local_resources_factor = 0.1
+		global_building_slots_factor = 0.1
+	}
+	
+
 	demoralized_army_trait = {
 		random = no
 	}

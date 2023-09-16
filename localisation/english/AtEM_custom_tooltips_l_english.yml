@@ -116,4 +116,7 @@
  at_least_five_factories_trigger: "At least §Y5§! total §Y$industrial_complex$s§! and §Y$arms_factory$s§!"
  every_controlled_core_state_with_15_food: "Every controlled core state with at least §Y15§! £GFX_food_texticon:"
  DOR_well_fed_workers_tooltip: "$every_controlled_core_state_with_15_food$:$new_line_tab$Add §G1§! §Y$industrial_complex$§!"
- 
+ can_declare_war_on_countries_that_have_generated_no_threat: "    £GFX_trigger_yes Can justify war goals against countries that have not generated world tension."
+ unlocks_spread_revolution_war_goal: "Unlocks a cheaper wargoal to Spread the Revolution"
+ republic_leader: "president"
+ republic_leader_cap: "President"

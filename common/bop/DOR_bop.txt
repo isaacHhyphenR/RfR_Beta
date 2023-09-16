@@ -236,9 +236,10 @@ DOR_great_merchants_power_balance = {
 	### Neutral status
 	range = {
 		id = DOR_great_merchants_balance_range
-		min = -0.10
-		max = 0.10
+		min = -0.25
+		max = 0.25
 		modifier = {
+			prosperity_gain_factor = 0.2
 		}
 		on_activate = {
 
@@ -254,17 +255,43 @@ DOR_great_merchants_power_balance = {
 		icon = GFX_burghers_bop
 
 		range = {
-			id = DOR_burghers_low_favoured_range
-			min = -1
-			max = -0.1
+			id = DOR_burghers_range1
+			min = -0.25
+			max = -0.5
 			modifier = {
 				prosperity_gain_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.04
+			}
+		}
+		range = {
+			id = DOR_burghers_range2
+			min = -0.5
+			max = -0.75
+			modifier = {
+				prosperity_gain_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.07
 			}
 			on_activate = {
-				
+				establish_dorwin_senate = yes
 			}
-			on_deactivate = {
-				
+		}
+		range = {
+			id = DOR_burghers_range3
+			min = -0.75
+			max = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.09
+			}
+		}
+		range = {
+			id = DOR_burghers_range4
+			min = -1
+			max = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+			}
+			on_activate = {
+				DOR_become_republic = yes
 			}
 		}
 	}
@@ -273,17 +300,74 @@ DOR_great_merchants_power_balance = {
 	side = {
 		id = DOR_merchant_houses_side
 		icon = GFX_merchant_houses_bop
-
+		
+		@housesPowerActivation = 50 #gain pp first time you activate a merchant house tier
 		range = {
-			id = DOR_merchant_houses_low_favoured_range
-			min = 0.1
-			max = 1
+			id = DOR_merchant_houses_range1
+			min = 0.25
+			max = 0.5
 			modifier = {
-				wine_gain_factor = 0.1
+				prosperity_gain_factor = 0.175
+				local_resources_factor = 0.04
+				trade_opinion_factor = 0.08
 			}
 			on_activate = {
+				if = {
+					limit = { NOT = { has_country_flag = activated_houses_1 } }
+					set_country_flag = activated_houses_1
+					add_political_power = @housesPowerActivation
+				}
 			}
-			on_deactivate = {
+		}
+		range = {
+			id = DOR_merchant_houses_range2
+			min = 0.5
+			max = 0.75
+			modifier = {
+				prosperity_gain_factor = 0.15
+				local_resources_factor = 0.07
+				trade_opinion_factor = 0.14
+			}
+			on_activate = {
+				if = {
+					limit = { NOT = { has_country_flag = activated_houses_2 } }
+					set_country_flag = activated_houses_2
+					add_political_power = @housesPowerActivation
+				}
+			}
+		}
+		range = {
+			id = DOR_merchant_houses_range3
+			min = 0.75
+			max = 1
+			modifier = {
+				prosperity_gain_factor = 0.125
+				local_resources_factor = 0.09
+				trade_opinion_factor = 0.18
+			}
+			on_activate = {
+				if = {
+					limit = { NOT = { has_country_flag = activated_houses_3 } }
+					set_country_flag = activated_houses_3
+					add_political_power = @housesPowerActivation
+				}
+			}
+		}
+		range = {
+			id = DOR_merchant_houses_range4
+			min = 1
+			max = 1
+			modifier = {
+				prosperity_gain_factor = 0.1
+				local_resources_factor = 0.1
+				trade_opinion_factor = 0.2
+			}
+			on_activate = {
+				if = {
+					limit = { NOT = { has_country_flag = activated_houses_4 } }
+					set_country_flag = activated_houses_4
+					add_political_power = @housesPowerActivation
+				}
 			}
 		}
 	}

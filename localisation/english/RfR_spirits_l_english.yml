@@ -441,6 +441,7 @@
  DOR_barding_training: "Barding Training"
  DOR_barding_training_desc: "$DOR_seek_training_from_the_bardings_desc$"
  DOR_militia_urban_defence_tech: "$DOR_professional_militias$"
- 
+ DOR_republic_idea: "Republican Spirit"
+ DOR_republic_idea_desc: "The people of Dorwinion stand proudly behind their hard won democracy and the guilds that spearheaded the reforms."
  
  

@@ -1,0 +1,39 @@
+spriteTypes = {	
+
+	SpriteType = {
+		name = "GFX_ideology_isolationism_group"
+		texturefile = "gfx/interface/ideologies/isolationism_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_freedom_group"
+		texturefile = "gfx/interface/ideologies/democratic_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_opportunism_group"
+		texturefile = "gfx/interface/ideologies/neutrality_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_conquest_group"
+		texturefile = "gfx/interface/ideologies/fascism_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_melkorite_group"
+		texturefile = "gfx/interface/ideologies/melkorite_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_republic_isolationism"
+		texturefile = "gfx/interface/ideologies/republic_isolationism.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_republic_freedom"
+		texturefile = "gfx/interface/ideologies/republic_freedom.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_corrupt_republic"
+		texturefile = "gfx/interface/ideologies/corrupt_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_plutocracy"
+		texturefile = "gfx/interface/ideologies/plutocracy.dds"
+	}
+}

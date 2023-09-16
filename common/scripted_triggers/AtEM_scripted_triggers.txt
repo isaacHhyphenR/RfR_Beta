@@ -162,6 +162,9 @@ at_least_five_factories_trigger = { #returns true if state has at least 5 civs/m
 	}
 }
 
+is_republic = { #returns true if the country is one of the revolutionary republics DOR can found
+	has_country_flag = revolutionary_republic
+}
 
 
 

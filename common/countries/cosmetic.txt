@@ -87,6 +87,10 @@ RVN = {
 	color = rgb { 215 176 20 }
 	color_ui = rgb { 205 156 6 }
 }
+VIR = {
+	color = rgb { 61 36 51 }
+	color_ui = rgb { 48 26 39 }
+}
 ############################################################REPUBLIC
 arnor_republic = {
 	color = rgb { 220 220 220 }

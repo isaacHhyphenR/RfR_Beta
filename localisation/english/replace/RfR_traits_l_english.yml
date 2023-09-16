@@ -1,8 +1,8 @@
 ﻿l_english:
-l_english:
  expert: "Expert"
  minor: "Aspiring"
  king: "King"
+ president: "President"
  king_of_the_west: "King of the West"
  ruling_steward: "Ruling Steward"
  haughty: "Haughty"
@@ -520,3 +520,9 @@ l_english:
  assassin_desc: "This person excels at killing important people without being noticed."
  demoralized_army_trait: ""
  deathly_ill: "Deathly Ill"
+ unifying_diplomat: "Unifying Diplomat"
+ reassuring: "Reassuring"
+ revolutionary: "Revolutionary"
+ land_reformer: "Land Reformer"
+ innovative: "Innovative"
+ guild_coordinator: "Guild Coordinator"

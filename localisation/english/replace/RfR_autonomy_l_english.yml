@@ -1,0 +1,22 @@
+﻿l_english:
+ autonomy_annex: "Annexed"
+ autonomy_collaboration_government: "Collaboration Government"
+ autonomy_colony: "Colony"
+ autonomy_councils_partner: "Partner of the Council"
+ autonomy_councils_ward: "Ward of the Council"
+ autonomy_councils_servant: "Servant of the Council"
+ autonomy_councils_slave: "Slave of the Council"
+ autonomy_dominion: "Dominion"
+ autonomy_free: "Free"
+ autonomy_integrated_puppet: "Integrated Puppet"
+ autonomy_puppet: "Puppet"
+ autonomy_reichskommissariat: "Commissariat"
+ autonomy_reichsprotectorate: "Protectorate"
+ autonomy_satellite: "Satellite"
+ autonomy_supervised_state: "Supervised State"
+ ###############################VorV
+ autonomy_blood_oath: "Blood Oath"
+ autonomy_tribal_free: "$autonomy_free$"
+ ###############################AtEM
+ autonomy_sister_republic: "Sister Republic"
+ autonomy_constituent_republic: "Constituent Republic"

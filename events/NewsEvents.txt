@@ -1583,4 +1583,74 @@ news_event = { ##103## DAL refused us barding training
 	}
 }
 
-
+news_event = { ##104## DOR founded republic
+	id = rfr_news.104
+	title = rfr_news.104.t
+	desc = rfr_news.104.d
+	picture = GFX_news_election
+	
+	is_triggered_only = yes
+	major = yes
+	fire_for_sender = no
+	
+	##4 options (mostly) for RP purposes
+	option = { #cool
+		name = rfr_news.104.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					has_government = freedom
+					has_government = isolationism
+				}
+				add = 100
+			}
+		}
+		add_popularity = {
+			ideology = freedom
+			popularity = 0.01
+		}
+	}
+	option = { #noble but flawed
+		name = rfr_news.104.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					has_government = freedom
+					has_government = isolationism
+				}
+				add = 90
+			}
+		}
+		add_stability = 0.01
+	}
+	option = { #crush them
+		name = rfr_news.104.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					has_government = opportunism
+					has_government = conquest
+				}
+				add = 100
+			}
+		}
+		add_war_support = 0.01
+	}
+	option = { #shadow gonna win
+		name = rfr_news.104.dd
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_government = melkorite
+				add = 100
+			}
+		}
+		add_popularity = {
+			ideology = melkorite
+			popularity = 0.01
+		}
+	}
+}

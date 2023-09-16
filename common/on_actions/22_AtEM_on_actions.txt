@@ -122,6 +122,21 @@ on_actions = {
 		effect = {
 			set_ideology_index = yes
 		}
+		effect = { #prevent bergholda from reducing trade cost when not in power
+			if = {
+				limit = {
+					tag = DOR
+					any_other_country = {
+						has_idea = bergholda_hidden_trade_modifier
+					}
+					DOR_bergholda_aldiana = { #she must not be in power
+						is_country_leader = no
+						is_theorist = no
+					}
+				}
+				bergholda_trade_effect_remove = yes
+			}
+		}
 	}
 	
 	on_state_control_changed = {
@@ -342,6 +357,22 @@ on_actions = {
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+
+	on_new_term_election = { #elections!
+		effect = {
+			if = { #Dorwin elections
+				limit = { original_tag = DOR }
+				if = { #free & fair election
+					limit = { OR = { has_government = isolationism has_government = freedom } }
+					country_event = rfr_election.1
+				}
+				else_if = { #slightly corrupt election
+					limit = { has_government = opportunism }
+					country_event = rfr_election.2
 				}
 			}
 		}

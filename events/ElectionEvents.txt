@@ -1,0 +1,381 @@
+﻿add_namespace = rfr_election
+
+
+country_event = { #Dorwin republic election
+	id = rfr_election.1
+	title = rfr_election.1.t
+	desc = rfr_election.1.d
+	picture = GFX_election
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_election.1.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				num_subjects > 0
+				factor = 1.5
+			}
+			modifier = {
+				any_controlled_state = {
+					NOT = { is_core_of = ROOT }
+				}
+				factor = 1.5
+			}
+		}
+		DOR_thodria_celebcaen = {
+			if = {
+				limit = { ROOT = { has_government = isolationism } }
+				promote_character = republic_isolationism
+				hidden_effect = {
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_government = freedom } }
+				promote_character = republic_freedom
+				hidden_effect = {
+					promote_character = republic_isolationism
+					promote_character = corrupt_republic
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_idea = DOR_revolutionary_leader_idea } }
+				add_ideas = DOR_revolutionary_leader_idea
+			}
+		}
+	}
+	option = {
+		name = rfr_election.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_war = yes
+				factor = 1.5
+			}
+			modifier = {
+				surrender_progress > 0.1
+				factor = 2
+			}
+		}
+		DOR_skaldir_lendembas = {
+			if = {
+				limit = { ROOT = { has_government = isolationism } }
+				promote_character = republic_isolationism
+				hidden_effect = {
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_government = freedom } }
+				promote_character = republic_freedom
+				hidden_effect = {
+					promote_character = republic_isolationism
+					promote_character = corrupt_republic
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_idea = DOR_revolutionary_leader_idea } }
+				add_ideas = DOR_revolutionary_leader_idea
+			}
+		}
+	}
+	option = {
+		name = rfr_election.1.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				any_neighbor_country = {
+					THIS_and_PREV_good_vs_evil = yes
+					ic_ratio = {
+						tag = ROOT
+						ratio > 1.1
+					}
+				}
+				factor = 1.5
+			}
+		}
+		DOR_ansovald_gwingalon = {
+			if = {
+				limit = { ROOT = { has_government = isolationism } }
+				promote_character = republic_isolationism
+				hidden_effect = {
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_government = freedom } }
+				promote_character = republic_freedom
+				hidden_effect = {
+					promote_character = republic_isolationism
+					promote_character = corrupt_republic
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { has_idea = DOR_revolutionary_leader_idea }
+				remove_ideas = DOR_revolutionary_leader_idea
+			}
+		}
+	}
+	option = {
+		name = rfr_election.1.dd
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_war = no
+				factor = 1.75
+			}
+		}
+		DOR_aregisel_hammdost = {
+			if = {
+				limit = { ROOT = { has_government = isolationism } }
+				promote_character = republic_isolationism
+				hidden_effect = {
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_government = freedom } }
+				promote_character = republic_freedom
+				hidden_effect = {
+					promote_character = republic_isolationism
+					promote_character = corrupt_republic
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { has_idea = DOR_revolutionary_leader_idea }
+				remove_ideas = DOR_revolutionary_leader_idea
+			}
+		}
+	}
+}
+country_event = { #Dorwin republic election opportunism
+	id = rfr_election.2
+	title = rfr_election.2.t
+	desc = rfr_election.2.d
+	picture = GFX_election
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_election.2.a
+		ai_chance = {
+			base = 1
+			modifier = { #likely to keep leader
+				DOR_thodria_celebcaen = {
+					is_country_leader = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				num_subjects > 0
+				factor = 1.5
+			}
+			modifier = {
+				any_controlled_state = {
+					NOT = { is_core_of = ROOT }
+				}
+				factor = 1.5
+			}
+		}
+		if = { ##costs 100 to change leader, boosts freedom
+			limit = {
+				DOR_thodria_celebcaen = {
+					is_country_leader = no
+				}
+			}
+			DOR_elect_different_leader_opportunism = yes
+		}
+		DOR_thodria_celebcaen = {
+			if = {
+				limit = { ROOT = { has_government = isolationism } }
+				promote_character = republic_isolationism
+				hidden_effect = {
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_government = freedom } }
+				promote_character = republic_freedom
+				hidden_effect = {
+					promote_character = republic_isolationism
+					promote_character = corrupt_republic
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_idea = DOR_revolutionary_leader_idea } }
+				add_ideas = DOR_revolutionary_leader_idea
+			}
+		}
+	}
+	option = {
+		name = rfr_election.2.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				DOR_skaldir_lendembas = {
+					is_country_leader = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				has_war = yes
+				factor = 1.5
+			}
+			modifier = {
+				surrender_progress > 0.1
+				factor = 2
+			}
+		}
+		if = { ##costs 100 to change leader
+			limit = {
+				DOR_skaldir_lendembas = {
+					is_country_leader = no
+				}
+			}
+			DOR_elect_different_leader_opportunism = yes
+		}
+		DOR_skaldir_lendembas = {
+			if = {
+				limit = { ROOT = { has_government = isolationism } }
+				promote_character = republic_isolationism
+				hidden_effect = {
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_government = freedom } }
+				promote_character = republic_freedom
+				hidden_effect = {
+					promote_character = republic_isolationism
+					promote_character = corrupt_republic
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_idea = DOR_revolutionary_leader_idea } }
+				add_ideas = DOR_revolutionary_leader_idea
+			}
+		}
+	}
+	option = {
+		name = rfr_election.2.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				DOR_ansovald_gwingalon = {
+					is_country_leader = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				any_neighbor_country = {
+					THIS_and_PREV_good_vs_evil = yes
+					ic_ratio = {
+						tag = ROOT
+						ratio > 1.1
+					}
+				}
+				factor = 1.5
+			}
+		}
+		if = { ##costs 100 to change leader
+			limit = {
+				DOR_ansovald_gwingalon = {
+					is_country_leader = no
+				}
+			}
+			DOR_elect_different_leader_opportunism = yes
+		}
+		DOR_ansovald_gwingalon = {
+			if = {
+				limit = { ROOT = { has_government = isolationism } }
+				promote_character = republic_isolationism
+				hidden_effect = {
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_government = freedom } }
+				promote_character = republic_freedom
+				hidden_effect = {
+					promote_character = republic_isolationism
+					promote_character = corrupt_republic
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { has_idea = DOR_revolutionary_leader_idea }
+				remove_ideas = DOR_revolutionary_leader_idea
+			}
+		}
+	}
+	option = {
+		name = rfr_election.2.dd
+		ai_chance = {
+			base = 1
+			modifier = {
+				DOR_aregisel_hammdost = {
+					is_country_leader = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				has_war = no
+				factor = 1.75
+			}
+		}
+		if = { ##costs 100 to change leader
+			limit = {
+				DOR_aregisel_hammdost = {
+					is_country_leader = no
+				}
+			}
+			DOR_elect_different_leader_opportunism = yes
+		}
+		DOR_aregisel_hammdost = {
+			if = {
+				limit = { ROOT = { has_government = isolationism } }
+				promote_character = republic_isolationism
+				hidden_effect = {
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_government = freedom } }
+				promote_character = republic_freedom
+				hidden_effect = {
+					promote_character = republic_isolationism
+					promote_character = corrupt_republic
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { has_idea = DOR_revolutionary_leader_idea }
+				remove_ideas = DOR_revolutionary_leader_idea
+			}
+		}
+	}
+}
