@@ -1032,7 +1032,7 @@ merchant_house_advisor_effect = { ##adds BoP
 	else_if = {
 		limit = { has_power_balance = { id = DOR_great_merchants_power_balance } }
 		add_power_balance_value = {
-			id = DOR_election_power_balance
+			id = DOR_great_merchants_power_balance
 			value = @advisorPowerRight
 			tooltip_side = DOR_merchant_houses_side
 		}
@@ -1051,7 +1051,7 @@ merchant_house_advisor_effect_remove = { ##removes BoP
 	else_if = {
 		limit = { has_power_balance = { id = DOR_great_merchants_power_balance } }
 		add_power_balance_value = {
-			id = DOR_election_power_balance
+			id = DOR_great_merchants_power_balance
 			value = @advisorPowerLeft
 			tooltip_side = DOR_burghers_side
 		}
@@ -1073,7 +1073,7 @@ burgher_advisor_effect = { ##adds BoP
 		add_power_balance_value = {
 			id = DOR_great_merchants_power_balance
 			value = @advisorPowerLeft
-			tooltip_side = DOR_merchant_houses_side
+			tooltip_side = DOR_burghers_side
 		}
 	}
 	add_to_variable = { burgher_advisors = 1 }
@@ -1092,7 +1092,7 @@ burgher_advisor_effect_remove = { ##removes BoP
 		add_power_balance_value = {
 			id = DOR_great_merchants_power_balance
 			value = @advisorPowerRight
-			tooltip_side = DOR_burghers_side
+			tooltip_side = DOR_merchant_houses_side
 		}
 	}
 	add_to_variable = { burgher_advisors = -1 }
@@ -1200,14 +1200,6 @@ winelords_win_election_effect = {
 	DOR_winelords_BOP_initial_advisors = yes
 }
 great_merchants_win_election_effect = {
-	DOR_bergholda_aldiana = {
-		remove_advisor_role = {
-		  slot = political_advisor
-		}
-		remove_advisor_role = {
-		  slot = theorist
-		}
-	}
 	add_popularity = {
 		ideology = isolationism
 		popularity = 0.1
@@ -1228,15 +1220,15 @@ great_merchants_win_election_effect = {
 	}
 	#figure out how much BoP from advisors
 	DOR_great_merchants_BOP_initial_advisors = yes
-	meta_effect = {
-		text = {
-			add_power_balance_value = {
-				id = DOR_great_merchants_power_balance
-				value = BOP
-			}
-		}
-		BOP = "[?advisor_bop]"
-	}
+	# meta_effect = {
+		# text = {
+			# add_power_balance_value = {
+				# id = DOR_great_merchants_power_balance
+				# value = BOP
+			# }
+		# }
+		# BOP = "[?advisor_bop]"
+	# }
 	bergholda_trade_effect = yes
 }
 
@@ -1964,47 +1956,28 @@ convert_half_isolationism_to_freedom = {
 }
 
 DOR_become_republic = {
+	if = {#make sure she doesn't continue applying her trade modifier
+		limit = { has_country_leader = { character = DOR_bergholda_aldiana ruling_only = yes } }
+		bergholda_trade_effect_remove = yes
+	}
 	set_cosmetic_tag = DOR_republic
 	#yearly elections
-	hold_election = THIS
-	set_politics = {
-		elections_allowed = yes
-		election_frequency = 12
+	meta_effect = {
+		text = {
+			set_politics = {
+				ruling_party = freedom
+				elections_allowed = yes
+				last_election = [DATE]
+				election_frequency = 12
+			}
+		}
+		DATE = "\"[GetDate]\""
 	}
+	hold_election = THIS
 	remove_power_balance = {
 		id = DOR_great_merchants_power_balance
 	}
-	#bergholda isn't the leader anymore, so she can be an advisor
 	hidden_effect = {
-		bergholda_trade_effect_remove = yes
-		DOR_bergholda_aldiana = {
-			add_advisor_role = {
-				advisor = {
-					slot = political_advisor
-					idea_token = DOR_bergholda_aldiana
-					allowed = { original_tag = DOR }
-					traits = { empathetic_negotiator_advisor merchant_house_pol_first }
-					ai_will_do = {
-						factor = 1
-					}
-					on_add = { merchant_house_advisor_effect = yes }
-					on_remove = { merchant_house_advisor_effect_remove = yes }
-				}
-			}
-			add_advisor_role = {
-				advisor = {
-					slot = theorist
-					idea_token = DOR_bergholda_aldiana
-					allowed = { original_tag = DOR }
-					traits = { trade_theorist merchant_house_pol_first }
-					ai_will_do = {
-						factor = 1
-					}
-					on_add = { merchant_house_advisor_effect = yes bergholda_trade_effect = yes }
-					on_remove = { merchant_house_advisor_effect_remove = yes bergholda_trade_effect_remove = yes }
-				}
-			}
-		}
 		###fire the event in 15 days to make sure the election resolves first so that the event displays the leader
 		news_event = { id = rfr_news.104 days = 15 }
 		##ID preserves the modifiers of winning the BoP
@@ -2012,6 +1985,10 @@ DOR_become_republic = {
 		set_country_flag = revolutionary_republic
 	}
 }
+
+DOR_establish_senate = {
+}
+
 DOR_elect_different_leader_opportunism = {
 	add_political_power = -100
 	add_popularity = {

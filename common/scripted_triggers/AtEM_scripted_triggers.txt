@@ -163,7 +163,13 @@ at_least_five_factories_trigger = { #returns true if state has at least 5 civs/m
 }
 
 is_republic = { #returns true if the country is one of the revolutionary republics DOR can found
-	has_country_flag = revolutionary_republic
+	#has_country_flag = revolutionary_republic
+	OR = {
+		has_country_leader_ideology = republic_isolationism
+		has_country_leader_ideology = republic_freedom
+		has_country_leader_ideology = corrupt_republic
+		has_country_leader_ideology = plutocracy
+	}
 }
 
 

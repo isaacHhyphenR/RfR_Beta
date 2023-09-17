@@ -236,8 +236,8 @@ DOR_great_merchants_power_balance = {
 	### Neutral status
 	range = {
 		id = DOR_great_merchants_balance_range
-		min = -0.25
 		max = 0.25
+		min = -0.25
 		modifier = {
 			prosperity_gain_factor = 0.2
 		}
@@ -256,8 +256,8 @@ DOR_great_merchants_power_balance = {
 
 		range = {
 			id = DOR_burghers_range1
-			min = -0.25
-			max = -0.5
+			max = -0.25
+			min = -0.5
 			modifier = {
 				prosperity_gain_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.04
@@ -265,28 +265,28 @@ DOR_great_merchants_power_balance = {
 		}
 		range = {
 			id = DOR_burghers_range2
-			min = -0.5
-			max = -0.75
+			max = -0.5
+			min = -0.75
 			modifier = {
 				prosperity_gain_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.07
 			}
 			on_activate = {
-				establish_dorwin_senate = yes
+				DOR_establish_senate = yes
 			}
 		}
 		range = {
 			id = DOR_burghers_range3
-			min = -0.75
-			max = -1
+			max = -0.75
+			min = -0.99
 			modifier = {
 				production_factory_efficiency_gain_factor = 0.09
 			}
 		}
 		range = {
 			id = DOR_burghers_range4
+			max = -0.99
 			min = -1
-			max = -1
 			modifier = {
 				production_factory_efficiency_gain_factor = 0.1
 			}
@@ -339,7 +339,7 @@ DOR_great_merchants_power_balance = {
 		range = {
 			id = DOR_merchant_houses_range3
 			min = 0.75
-			max = 1
+			max = 0.99
 			modifier = {
 				prosperity_gain_factor = 0.125
 				local_resources_factor = 0.09
@@ -355,7 +355,7 @@ DOR_great_merchants_power_balance = {
 		}
 		range = {
 			id = DOR_merchant_houses_range4
-			min = 1
+			min = 0.99
 			max = 1
 			modifier = {
 				prosperity_gain_factor = 0.1

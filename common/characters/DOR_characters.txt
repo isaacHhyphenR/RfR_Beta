@@ -510,7 +510,7 @@ characters = {
 			idea_token = DOR_bergholda_aldiana
 			allowed = { original_tag = DOR }
 			traits = { empathetic_negotiator_advisor merchant_house_pol_first }
-			#visible = { is_country_leader = no } #removed manually for performance
+			visible = { is_country_leader = no } #advisors created outside of databse cannot have effects or triggers
 			ai_will_do = {
 				factor = 1
 			}
@@ -522,7 +522,7 @@ characters = {
 			idea_token = DOR_bergholda_aldiana
 			allowed = { original_tag = DOR }
 			traits = { trade_theorist merchant_house_pol_first }
-			#visible = { is_country_leader = no } #removed manually for performance
+			visible = { is_country_leader = no } #advisors created outside of databse cannot have effects or triggers
 			ai_will_do = {
 				factor = 1
 			}

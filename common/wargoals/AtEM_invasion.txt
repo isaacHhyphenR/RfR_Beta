@@ -1,0 +1,22 @@
+wargoal_types = {
+
+	spread_the_revolution = {
+		# PREV = original target country
+		# ROOT = goal owner country
+		war_name = REVOLUTIONARY_WAR_
+		allowed = {
+			ROOT = { original_tag = DOR }
+		}
+
+		available = {
+			ROOT = { has_completed_focus = DOR_establish_sister_republics }
+			PREV = { is_republic = no }
+		}
+
+		generate_base_cost = 100
+		
+		expire = 120
+
+		threat = 1
+	}
+}
