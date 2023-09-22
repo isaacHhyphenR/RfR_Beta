@@ -2608,6 +2608,7 @@ technologies = {
 			motorized_equipment
 			armor
 			agriculture
+			support_tech
 		}
 		ai_will_do = {
 			factor = 1
@@ -2649,6 +2650,7 @@ technologies = {
 			armor
 			agriculture
 			agriculture_basic
+			support_tech
 		}
 		
 		ai_will_do = {
@@ -2723,6 +2725,7 @@ technologies = {
 			armor
 			agriculture
 			agriculture_early
+			support_tech
 		}
 		
 		ai_will_do = {

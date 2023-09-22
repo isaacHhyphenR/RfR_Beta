@@ -1,0 +1,199 @@
+spriteTypes = {
+
+##################################################################################################
+		####ROHAN
+##################################################################################################
+	spriteType = { ##Horse Breeder
+		name = "GFX_idea_rohan_woldish_breeders"
+		texturefile = "gfx/interface/designers/00_Rohirrim/Woldish_Breeders.dds"
+	}
+	spriteType = { ##Horse Breeder
+		name = "GFX_idea_rohan_foldish_breeders"
+		texturefile = "gfx/interface/designers/00_Rohirrim/Foldish_Breeders.dds"
+	}
+	spriteType = { ##Horse Breeder
+		name = "GFX_idea_rohan_westmarker_breeders"
+		texturefile = "gfx/interface/designers/00_Rohirrim/Westmarker_Breeders.dds"
+	}
+	spriteType = { ##Horse Breeder
+		name = "GFX_idea_rohan_eastmarker_breeders"
+		texturefile = "gfx/interface/designers/00_Rohirrim/Eastmarker_Breeders.dds"
+	}
+	spriteType = { ##Material Manufacturer
+		name = "GFX_idea_rohan_house_bregdanings"
+		texturefile = "gfx/interface/designers/00_Rohirrim/House_Bregdanings.dds"
+	}
+	spriteType = { ##Material Manufacturer
+		name = "GFX_idea_rohan_house_rungarings"
+		texturefile = "gfx/interface/designers/00_Rohirrim/House_Rungarings.dds"
+	}
+	spriteType = {##Material Manufacturer
+		name = "GFX_idea_rohan_house_wulfings"
+		texturefile = "gfx/interface/designers/00_Rohirrim/House_Wulfings.dds"
+	}
+	spriteType = {##Material Manufacturer
+		name = "GFX_idea_rohan_smithing_guild"
+		texturefile = "gfx/interface/designers/00_Rohirrim/Smithing_Guild.dds"
+	}
+	spriteType = {##Material Manufacturer
+		name = "GFX_idea_rohan_house_ordgarings"
+		texturefile = "gfx/interface/designers/00_Rohirrim/House_Ordgarings.dds"
+	}
+	spriteType = {##Shipwright
+		name = "GFX_idea_rohan_house_wadelingas"
+		texturefile = "gfx/interface/designers/00_Rohirrim/House_Wadelingas.dds"
+	}
+	spriteType = {##Shipwright
+		name = "GFX_idea_rohan_house_eogarings"
+		texturefile = "gfx/interface/designers/00_Rohirrim/House_Eogarings.dds"
+	}
+	spriteType = {##Industrial Concern
+		name = "GFX_idea_rohan_house_felandings"
+		texturefile = "gfx/interface/designers/00_Rohirrim/House_Felándings.dds"
+	}
+	spriteType = {##Industrial Concern
+		name = "GFX_idea_rohan_house_stangard"
+		texturefile = "gfx/interface/designers/00_Rohirrim/House_Stangard.dds"
+	}
+	spriteType = {##Industrial Concern
+		name = "GFX_idea_rohan_eorling_enforcers"
+		texturefile = "gfx/interface/designers/00_Rohirrim/Eorling_Enforcers.dds"
+	}
+	spriteType = {##Industrial Concern
+		name = "GFX_idea_rohan_house_halethring"
+		texturefile = "gfx/interface/designers/00_Rohirrim/House_Halethrings.dds"
+	}
+	spriteType = {##Material Manufacturer
+		name = "GFX_idea_rohan_house_hunthelming"
+		texturefile = "gfx/interface/designers/00_Rohirrim/House_Hunthelmings.dds"
+	}
+	spriteType = {##Industrial Concern
+		name = "GFX_idea_rohan_house_grimmoding"
+		texturefile = "gfx/interface/designers/00_Rohirrim/House_Grimmoding.dds"
+	}
+	spriteType = {##Material Manufacturer
+		name = "GFX_idea_rohan_carpentry_guild"
+		texturefile = "gfx/interface/designers/00_Rohirrim/Carpentry_Guild.dds"
+	}
+##################################################################################################
+		####GONDOR
+##################################################################################################
+	spriteType = {
+		name = "GFX_idea_gondor_anfalas_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/GON_anfalas_designer.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_gondor_anorien_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/GON_anorien_designer.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_gondor_belfalas_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/GON_belfalas_designer.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_gondor_ithilien_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/GON_ithilien_designer.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_gondor_lamedon_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/GON_lamedon_designer.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_gondor_lebennin_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/GON_lebennin_designer.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_gondor_lossarnach_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/GON_lossarnach_designer.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_gondor_pinnath_gelin_designer"
+		texturefile = "gfx/interface/designers/00_Dunedain/GON_pinneth_gelin_designer.dds"
+	}
+##################################################################################################
+		####MORDOR
+##################################################################################################
+	SpriteType = {
+		name = "GFX_idea_mordor_flagship_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_flagship_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_escort_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_escort_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_convoy_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_convoy_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_raiding_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_raiding_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_infantry_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_infantry_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_support_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_support_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_ranged_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_ranged_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_wagon_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_wagon_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_heavy_tank_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_heavy_tank_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_medium_tank_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_medium_tank_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_infantry_tank_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_infantry_tank_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_light_tank_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_light_tank_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_agricultural_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_agricultural_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_industrial_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_industrial_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_mathematics_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_mathematics_designer.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_mordor_construction_designer"
+		texturefile = "gfx/interface/designers/00_Mordor/mordor_construction_designer.dds"
+	}
+##################################################################################################
+		####DORWINION
+##################################################################################################
+	SpriteType = {
+		name = "GFX_idea_dorwinion_baking_guild"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_baking_guild.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_dorwinion_carpentry_guild"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_carpentry_guild.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_dorwinion_smithing_guild"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_smithing_guild.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_dorwinion_tailory_guild"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_tailory_guild.dds"
+	}
+}

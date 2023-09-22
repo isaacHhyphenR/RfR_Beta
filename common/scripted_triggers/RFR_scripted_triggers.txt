@@ -297,6 +297,7 @@ has_unique_designers = {
 		original_tag = ISN
 		original_tag = MOR
 		is_greater_enedwaith_tag = yes
+		original_tag = DOR
 	}
 }
 

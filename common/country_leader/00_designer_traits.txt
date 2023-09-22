@@ -584,7 +584,19 @@ leader_traits = {
 			factor = 1
 		}
 		equipment_bonus = {
-			support_equipment = {
+			maintenance_equipment = {
+				reliability = 0.05
+			}
+			engineering_equipment = {
+				reliability = 0.05
+			}
+			medical_equipment = {
+				reliability = 0.05
+			}
+			signals_equipment = {
+				reliability = 0.05
+			}
+			suppression_equipment = {
 				reliability = 0.05
 			}
 		}
