@@ -1198,6 +1198,10 @@ winelords_win_election_effect = {
 	}
 	#figure out how much BoP from advisors
 	DOR_winelords_BOP_initial_advisors = yes
+	if = {#removes bladorthing if he's an advisor
+		limit = { DOR_bladorthin_koldana = { OR = { is_political_advisor = yes is_army_chief = yes } } }
+		deactivate_advisor = DOR_bladorthin_koldana
+	}
 }
 great_merchants_win_election_effect = {
 	add_popularity = {
@@ -1220,15 +1224,10 @@ great_merchants_win_election_effect = {
 	}
 	#figure out how much BoP from advisors
 	DOR_great_merchants_BOP_initial_advisors = yes
-	# meta_effect = {
-		# text = {
-			# add_power_balance_value = {
-				# id = DOR_great_merchants_power_balance
-				# value = BOP
-			# }
-		# }
-		# BOP = "[?advisor_bop]"
-	# }
+	if = {#removes bergholda if she's an advisor
+		limit = { DOR_bergholda_aldiana = { OR = { is_political_advisor = yes is_theorist = yes } } }
+		deactivate_advisor = DOR_bergholda_aldiana
+	}
 	bergholda_trade_effect = yes
 }
 
@@ -2001,6 +2000,159 @@ DOR_elect_different_leader_opportunism = {
 		}
 		set_politics = {
 			ruling_party = freedom
+		}
+	}
+}
+
+elect_DOR_thodria_celebcaen = { #promotes leader, removes as advisor
+	DOR_thodria_celebcaen = {
+		if = {
+			limit = { ROOT = { has_government = isolationism } }
+			promote_character = republic_isolationism
+			hidden_effect = {
+				promote_character = republic_freedom
+				promote_character = corrupt_republic
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_government = freedom } }
+			promote_character = republic_freedom
+			hidden_effect = {
+				promote_character = republic_isolationism
+				promote_character = corrupt_republic
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_government = opportunism } }
+			promote_character = corrupt_republic
+			hidden_effect = {
+				promote_character = republic_isolationism
+				promote_character = republic_freedom
+			}
+		}
+	}
+	hidden_effect = {
+		if = { #adds idea simulating revolutionary trait
+			limit = { NOT = { has_idea = DOR_revolutionary_leader_idea } }
+			add_ideas = DOR_revolutionary_leader_idea
+		}
+		if = { ##removes from advisor role
+			limit = { DOR_thodria_celebcaen = { is_political_advisor = yes } }
+			deactivate_advisor = DOR_thodria_celebcaen
+		}
+	}
+}
+elect_DOR_skaldir_lendembas = { #promotes leader, removes as advisor
+	DOR_skaldir_lendembas = {
+		if = {
+			limit = { ROOT = { has_government = isolationism } }
+			promote_character = republic_isolationism
+			hidden_effect = {
+				promote_character = republic_freedom
+				promote_character = corrupt_republic
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_government = freedom } }
+			promote_character = republic_freedom
+			hidden_effect = {
+				promote_character = republic_isolationism
+				promote_character = corrupt_republic
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_government = opportunism } }
+			promote_character = corrupt_republic
+			hidden_effect = {
+				promote_character = republic_isolationism
+				promote_character = republic_freedom
+			}
+		}
+	}
+	hidden_effect = {
+		if = { #adds idea simulating revolutionary trait
+			limit = { NOT = { has_idea = DOR_revolutionary_leader_idea } }
+			add_ideas = DOR_revolutionary_leader_idea
+		}
+		if = { ##removes from advisor role
+			limit = { DOR_skaldir_lendembas = { is_political_advisor = yes } }
+			deactivate_advisor = DOR_skaldir_lendembas
+		}
+	}
+}
+elect_DOR_ansovald_gwingalon = { #promotes leader, removes as advisor
+	DOR_ansovald_gwingalon = {
+		if = {
+			limit = { ROOT = { has_government = isolationism } }
+			promote_character = republic_isolationism
+			hidden_effect = {
+				promote_character = republic_freedom
+				promote_character = corrupt_republic
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_government = freedom } }
+			promote_character = republic_freedom
+			hidden_effect = {
+				promote_character = republic_isolationism
+				promote_character = corrupt_republic
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_government = opportunism } }
+			promote_character = corrupt_republic
+			hidden_effect = {
+				promote_character = republic_isolationism
+				promote_character = republic_freedom
+			}
+		}
+	}
+	hidden_effect = {
+		if = { #Removes idea simulating revolutionary trait
+			limit = { has_idea = DOR_revolutionary_leader_idea }
+			remove_ideas = DOR_revolutionary_leader_idea
+		}
+		if = { ##removes from advisor role
+			limit = { DOR_ansovald_gwingalon = { is_political_advisor = yes } }
+			deactivate_advisor = DOR_ansovald_gwingalon
+		}
+	}
+}
+elect_DOR_aregisel_hammdost = { #promotes leader, removes as advisor
+	DOR_aregisel_hammdost = {
+		if = {
+			limit = { ROOT = { has_government = isolationism } }
+			promote_character = republic_isolationism
+			hidden_effect = {
+				promote_character = republic_freedom
+				promote_character = corrupt_republic
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_government = freedom } }
+			promote_character = republic_freedom
+			hidden_effect = {
+				promote_character = republic_isolationism
+				promote_character = corrupt_republic
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_government = opportunism } }
+			promote_character = corrupt_republic
+			hidden_effect = {
+				promote_character = republic_isolationism
+				promote_character = republic_freedom
+			}
+		}
+	}
+	hidden_effect = {
+		if = { #Removes idea simulating revolutionary trait
+			limit = { has_idea = DOR_revolutionary_leader_idea }
+			remove_ideas = DOR_revolutionary_leader_idea
+		}
+		if = { ##removes from advisor role
+			limit = { DOR_aregisel_hammdost = { is_political_advisor = yes } }
+			deactivate_advisor = DOR_aregisel_hammdost
 		}
 	}
 }

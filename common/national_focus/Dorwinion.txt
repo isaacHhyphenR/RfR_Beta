@@ -3479,7 +3479,7 @@ focus_tree = {
 					swap_country_leader_traits = {
 						remove = captain_of_industry
 						add = political_captain_of_industry
-						ideology = republic_opportunism
+						ideology = corrupt_republic
 					}
 				}
 			}

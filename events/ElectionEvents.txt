@@ -24,30 +24,7 @@ country_event = { #Dorwin republic election
 				factor = 1.5
 			}
 		}
-		DOR_thodria_celebcaen = {
-			if = {
-				limit = { ROOT = { has_government = isolationism } }
-				promote_character = republic_isolationism
-				hidden_effect = {
-					promote_character = republic_freedom
-					promote_character = corrupt_republic
-				}
-			}
-			else_if = {
-				limit = { ROOT = { has_government = freedom } }
-				promote_character = republic_freedom
-				hidden_effect = {
-					promote_character = republic_isolationism
-					promote_character = corrupt_republic
-				}
-			}
-		}
-		hidden_effect = {
-			if = {
-				limit = { NOT = { has_idea = DOR_revolutionary_leader_idea } }
-				add_ideas = DOR_revolutionary_leader_idea
-			}
-		}
+		elect_DOR_thodria_celebcaen = yes
 	}
 	option = {
 		name = rfr_election.1.b
@@ -62,30 +39,7 @@ country_event = { #Dorwin republic election
 				factor = 2
 			}
 		}
-		DOR_skaldir_lendembas = {
-			if = {
-				limit = { ROOT = { has_government = isolationism } }
-				promote_character = republic_isolationism
-				hidden_effect = {
-					promote_character = republic_freedom
-					promote_character = corrupt_republic
-				}
-			}
-			else_if = {
-				limit = { ROOT = { has_government = freedom } }
-				promote_character = republic_freedom
-				hidden_effect = {
-					promote_character = republic_isolationism
-					promote_character = corrupt_republic
-				}
-			}
-		}
-		hidden_effect = {
-			if = {
-				limit = { NOT = { has_idea = DOR_revolutionary_leader_idea } }
-				add_ideas = DOR_revolutionary_leader_idea
-			}
-		}
+		elect_DOR_skaldir_lendembas = yes
 	}
 	option = {
 		name = rfr_election.1.c
@@ -102,30 +56,7 @@ country_event = { #Dorwin republic election
 				factor = 1.5
 			}
 		}
-		DOR_ansovald_gwingalon = {
-			if = {
-				limit = { ROOT = { has_government = isolationism } }
-				promote_character = republic_isolationism
-				hidden_effect = {
-					promote_character = republic_freedom
-					promote_character = corrupt_republic
-				}
-			}
-			else_if = {
-				limit = { ROOT = { has_government = freedom } }
-				promote_character = republic_freedom
-				hidden_effect = {
-					promote_character = republic_isolationism
-					promote_character = corrupt_republic
-				}
-			}
-		}
-		hidden_effect = {
-			if = {
-				limit = { has_idea = DOR_revolutionary_leader_idea }
-				remove_ideas = DOR_revolutionary_leader_idea
-			}
-		}
+		elect_DOR_ansovald_gwingalon = yes
 	}
 	option = {
 		name = rfr_election.1.dd
@@ -136,30 +67,7 @@ country_event = { #Dorwin republic election
 				factor = 1.75
 			}
 		}
-		DOR_aregisel_hammdost = {
-			if = {
-				limit = { ROOT = { has_government = isolationism } }
-				promote_character = republic_isolationism
-				hidden_effect = {
-					promote_character = republic_freedom
-					promote_character = corrupt_republic
-				}
-			}
-			else_if = {
-				limit = { ROOT = { has_government = freedom } }
-				promote_character = republic_freedom
-				hidden_effect = {
-					promote_character = republic_isolationism
-					promote_character = corrupt_republic
-				}
-			}
-		}
-		hidden_effect = {
-			if = {
-				limit = { has_idea = DOR_revolutionary_leader_idea }
-				remove_ideas = DOR_revolutionary_leader_idea
-			}
-		}
+		elect_DOR_aregisel_hammdost = yes
 	}
 }
 country_event = { #Dorwin republic election opportunism
@@ -199,30 +107,7 @@ country_event = { #Dorwin republic election opportunism
 			}
 			DOR_elect_different_leader_opportunism = yes
 		}
-		DOR_thodria_celebcaen = {
-			if = {
-				limit = { ROOT = { has_government = isolationism } }
-				promote_character = republic_isolationism
-				hidden_effect = {
-					promote_character = republic_freedom
-					promote_character = corrupt_republic
-				}
-			}
-			else_if = {
-				limit = { ROOT = { has_government = freedom } }
-				promote_character = republic_freedom
-				hidden_effect = {
-					promote_character = republic_isolationism
-					promote_character = corrupt_republic
-				}
-			}
-		}
-		hidden_effect = {
-			if = {
-				limit = { NOT = { has_idea = DOR_revolutionary_leader_idea } }
-				add_ideas = DOR_revolutionary_leader_idea
-			}
-		}
+		elect_DOR_thodria_celebcaen = yes
 	}
 	option = {
 		name = rfr_election.2.b
@@ -251,30 +136,7 @@ country_event = { #Dorwin republic election opportunism
 			}
 			DOR_elect_different_leader_opportunism = yes
 		}
-		DOR_skaldir_lendembas = {
-			if = {
-				limit = { ROOT = { has_government = isolationism } }
-				promote_character = republic_isolationism
-				hidden_effect = {
-					promote_character = republic_freedom
-					promote_character = corrupt_republic
-				}
-			}
-			else_if = {
-				limit = { ROOT = { has_government = freedom } }
-				promote_character = republic_freedom
-				hidden_effect = {
-					promote_character = republic_isolationism
-					promote_character = corrupt_republic
-				}
-			}
-		}
-		hidden_effect = {
-			if = {
-				limit = { NOT = { has_idea = DOR_revolutionary_leader_idea } }
-				add_ideas = DOR_revolutionary_leader_idea
-			}
-		}
+		elect_DOR_skaldir_lendembas = yes
 	}
 	option = {
 		name = rfr_election.2.c
@@ -305,30 +167,7 @@ country_event = { #Dorwin republic election opportunism
 			}
 			DOR_elect_different_leader_opportunism = yes
 		}
-		DOR_ansovald_gwingalon = {
-			if = {
-				limit = { ROOT = { has_government = isolationism } }
-				promote_character = republic_isolationism
-				hidden_effect = {
-					promote_character = republic_freedom
-					promote_character = corrupt_republic
-				}
-			}
-			else_if = {
-				limit = { ROOT = { has_government = freedom } }
-				promote_character = republic_freedom
-				hidden_effect = {
-					promote_character = republic_isolationism
-					promote_character = corrupt_republic
-				}
-			}
-		}
-		hidden_effect = {
-			if = {
-				limit = { has_idea = DOR_revolutionary_leader_idea }
-				remove_ideas = DOR_revolutionary_leader_idea
-			}
-		}
+		elect_DOR_ansovald_gwingalon = yes
 	}
 	option = {
 		name = rfr_election.2.dd
@@ -353,29 +192,6 @@ country_event = { #Dorwin republic election opportunism
 			}
 			DOR_elect_different_leader_opportunism = yes
 		}
-		DOR_aregisel_hammdost = {
-			if = {
-				limit = { ROOT = { has_government = isolationism } }
-				promote_character = republic_isolationism
-				hidden_effect = {
-					promote_character = republic_freedom
-					promote_character = corrupt_republic
-				}
-			}
-			else_if = {
-				limit = { ROOT = { has_government = freedom } }
-				promote_character = republic_freedom
-				hidden_effect = {
-					promote_character = republic_isolationism
-					promote_character = corrupt_republic
-				}
-			}
-		}
-		hidden_effect = {
-			if = {
-				limit = { has_idea = DOR_revolutionary_leader_idea }
-				remove_ideas = DOR_revolutionary_leader_idea
-			}
-		}
+		elect_DOR_aregisel_hammdost = yes
 	}
 }
