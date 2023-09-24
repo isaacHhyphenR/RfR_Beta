@@ -194,8 +194,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_1"
-				small = "GFX_Portrait_Northern_Generic_f_1_small"
+				large = "GFX_Portrait_Freja_Barding"
+				small = "GFX_Portrait_Freja_Barding_small"
 			}
 		}
 		advisor = {
@@ -704,8 +704,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_1"
-				small = "GFX_Portrait_Northern_Generic_f_1_small"
+				large = "GFX_Portrait_Thodria_Celebcaen"
+				small = "GFX_Portrait_Thodria_Celebcaen_small"
 			}
 		}
 		country_leader = { ##Presidential candidate
@@ -741,8 +741,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_1"
-				small = "GFX_Portrait_Northern_Generic_m_1_small"
+				large = "GFX_Portrait_Skaldir_Lendembas"
+				small = "GFX_Portrait_Skaldir_Lendembas_small"
 			}
 		}
 		country_leader = { ##Presidential candidate
@@ -778,8 +778,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_2"
-				small = "GFX_Portrait_Northern_Generic_m_2_small"
+				large = "GFX_Portrait_Ansovald_Gwingalon"
+				small = "GFX_Portrait_Ansovald_Gwingalon_small"
 			}
 		}
 		country_leader = { ##Presidential candidate
@@ -815,8 +815,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_2"
-				small = "GFX_Portrait_Northern_Generic_f_2_small"
+				large = "GFX_Portrait_Aregisel_Hammdost"
+				small = "GFX_Portrait_Aregisel_Hammdost_small"
 			}
 		}
 		country_leader = { ##Presidential candidate

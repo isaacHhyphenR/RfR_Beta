@@ -410,7 +410,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_Portrait_Hawin_Koldana_small"
-		texturefile = "gfx/advisors/DOR/DOR_Hawin_Koldana_small.dds"
+		texturefile = "gfx/advisors/DOR/DOR_Hawin_Koldana.dds"
 	}
 	spriteType = {
 		name = "GFX_Portrait_Bladorthin_Koldana"
@@ -418,7 +418,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_Portrait_Bladorthin_Koldana_small"
-		texturefile = "gfx/advisors/DOR/DOR_Bladorthin_Koldana_small.dds"
+		texturefile = "gfx/advisors/DOR/DOR_Bladorthin_Koldana.dds"
 	}
 	spriteType = {
 		name = "GFX_Portrait_Bergholda_Aldiana"
@@ -426,7 +426,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_Portrait_Bergholda_Aldiana_small"
-		texturefile = "gfx/advisors/DOR/DOR_Bergholda_Aldiana_small.dds"
+		texturefile = "gfx/advisors/DOR/DOR_Bergholda_Aldiana.dds"
 	}
 	spriteType = {
 		name = "GFX_Portrait_Vidumarh_Vierling"
@@ -434,6 +434,46 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_Portrait_Vidumarh_Vierling_small"
-		texturefile = "gfx/advisors/DOR/DOR_Vidumarh_Vierling_small.dds"
+		texturefile = "gfx/advisors/DOR/DOR_Vidumarh_Vierling.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Freja_Barding"
+		texturefile = "gfx/leaders/DOR/DOR_Freja_Barding.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Freja_Barding_small"
+		texturefile = "gfx/advisors/DOR/DOR_Freja_Barding.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Thodria_Celebcaen"
+		texturefile = "gfx/leaders/DOR/DOR_Thodria_Celebcaen.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Thodria_Celebcaen_small"
+		texturefile = "gfx/advisors/DOR/DOR_Thodria_Celebcaen.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Skaldir_Lendembas"
+		texturefile = "gfx/leaders/DOR/DOR_Skaldir_Lendembas.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Skaldir_Lendembas_small"
+		texturefile = "gfx/advisors/DOR/DOR_Skaldir_Lendembas.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Ansovald_Gwingalon"
+		texturefile = "gfx/leaders/DOR/DOR_Ansovald_Gwingalon.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Ansovald_Gwingalon_small"
+		texturefile = "gfx/advisors/DOR/DOR_Ansovald_Gwingalon.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Aregisel_Hammdost"
+		texturefile = "gfx/leaders/DOR/DOR_Aregisel_Hammdost.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Aregisel_Hammdost_small"
+		texturefile = "gfx/advisors/DOR/DOR_Aregisel_Hammdost.dds"
 	}
 }
