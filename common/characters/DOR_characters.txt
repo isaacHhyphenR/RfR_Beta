@@ -5,8 +5,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_1"
-				small = "GFX_Portrait_Northern_Generic_m_1_small"
+				large = "GFX_Portrait_Hawin_Koldana"
+				small = "GFX_Portrait_Hawin_Koldana_small"
 			}
 		}
 		country_leader = {
@@ -25,8 +25,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_3"
-				small = "GFX_Portrait_Northern_Generic_m_3_small"
+				large = "GFX_Portrait_Bladorthin_Koldana"
+				small = "GFX_Portrait_Bladorthin_Koldana_small"
 			}
 		}
 		country_leader = {
@@ -238,8 +238,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_4"
-				small = "GFX_Portrait_Northern_Generic_m_4_small"
+				large = "GFX_Portrait_Vidumarh_Vierling"
+				small = "GFX_Portrait_Vidumarh_Vierling_small"
 			}
 		}
 		country_leader = {
@@ -491,8 +491,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_1"
-				small = "GFX_Portrait_Northern_Generic_f_1_small"
+				large = "GFX_Portrait_Bergholda_Aldiana"
+				small = "GFX_Portrait_Bergholda_Aldiana_small"
 			}
 		}
 		country_leader = {

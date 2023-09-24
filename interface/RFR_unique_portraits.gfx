@@ -403,4 +403,37 @@ spriteTypes = {
 		name = "GFX_Portrait_Glenis_Hedricing_small"
 		texturefile = "gfx/advisors/Greater_Enedwaith/DRU_Glenis_Hedricing_small.dds"
 	}
+############################################DOR
+	spriteType = {
+		name = "GFX_Portrait_Hawin_Koldana"
+		texturefile = "gfx/leaders/DOR/DOR_Hawin_Koldana.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hawin_Koldana_small"
+		texturefile = "gfx/advisors/DOR/DOR_Hawin_Koldana_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Bladorthin_Koldana"
+		texturefile = "gfx/leaders/DOR/DOR_Bladorthin_Koldana.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Bladorthin_Koldana_small"
+		texturefile = "gfx/advisors/DOR/DOR_Bladorthin_Koldana_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Bergholda_Aldiana"
+		texturefile = "gfx/leaders/DOR/DOR_Bergholda_Aldiana.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Bergholda_Aldiana_small"
+		texturefile = "gfx/advisors/DOR/DOR_Bergholda_Aldiana_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Vidumarh_Vierling"
+		texturefile = "gfx/leaders/DOR/DOR_Vidumarh_Vierling.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Vidumarh_Vierling_small"
+		texturefile = "gfx/advisors/DOR/DOR_Vidumarh_Vierling_small.dds"
+	}
 }
