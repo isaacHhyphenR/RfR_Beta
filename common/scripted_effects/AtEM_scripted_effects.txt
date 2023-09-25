@@ -1954,6 +1954,9 @@ convert_half_isolationism_to_freedom = {
 	}
 }
 
+DOR_establish_senate = {
+}
+
 DOR_become_republic = {
 	if = {#make sure she doesn't continue applying her trade modifier
 		limit = { has_country_leader = { character = DOR_bergholda_aldiana ruling_only = yes } }
@@ -1977,16 +1980,20 @@ DOR_become_republic = {
 		id = DOR_great_merchants_power_balance
 	}
 	hidden_effect = {
-		###fire the event in 15 days to make sure the election resolves first so that the event displays the leader
-		news_event = { id = rfr_news.104 days = 15 }
 		##ID preserves the modifiers of winning the BoP
 		add_ideas = DOR_republic_idea
 		set_country_flag = revolutionary_republic
 	}
 }
 
-DOR_establish_senate = {
+
+DOR_first_election_effect = {
+	set_country_flag = has_had_elections #so that oyu get different events in the future
+	hidden_effect = {
+		news_event = { id = rfr_news.104 hours = 1 } #tell everyone
+	}
 }
+	
 
 DOR_elect_different_leader_opportunism = {
 	add_political_power = -100

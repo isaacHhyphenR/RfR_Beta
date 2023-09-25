@@ -350,6 +350,7 @@ country_event = { ##7## Hawin Koldana Dies, election happens
 		text = atem.7.t.a
 		trigger = {
 			OR = {
+				has_country_flag = elected_great_merchant
 				power_balance_value = {
 					id = DOR_election_power_balance
 					value < 0.0
@@ -366,14 +367,36 @@ country_event = { ##7## Hawin Koldana Dies, election happens
 	}
 	title = {
 		text = atem.7.t.b
+		trigger = {
+			NOT = {
+				OR = {
+					has_country_flag = elected_great_merchant
+					power_balance_value = {
+						id = DOR_election_power_balance
+						value < 0.0
+					}
+					has_power_balance = {
+						id = DOR_great_merchants_power_balance
+					}
+					has_country_leader = {
+						character = DOR_bergholda_aldiana
+						ruling_only = yes
+					}
+				}
+			}
+		}
 	}
 	desc = {
 		text = atem.7.d.a
 		trigger = {
 			OR = {
+				has_country_flag = elected_great_merchant
 				power_balance_value = {
 					id = DOR_election_power_balance
 					value < 0.0
+				}
+				has_power_balance = {
+					id = DOR_great_merchants_power_balance
 				}
 				has_country_leader = {
 					character = DOR_bergholda_aldiana
@@ -384,6 +407,24 @@ country_event = { ##7## Hawin Koldana Dies, election happens
 	}
 	desc = {
 		text = atem.7.d.b
+		trigger = {
+			NOT = {
+				OR = {
+					has_country_flag = elected_great_merchant
+					power_balance_value = {
+						id = DOR_election_power_balance
+						value < 0.0
+					}
+					has_power_balance = {
+						id = DOR_great_merchants_power_balance
+					}
+					has_country_leader = {
+						character = DOR_bergholda_aldiana
+						ruling_only = yes
+					}
+				}
+			}
+		}
 	}
 	picture = GFX_aragorn_coronation_event
 	

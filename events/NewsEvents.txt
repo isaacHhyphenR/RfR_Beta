@@ -1478,6 +1478,7 @@ news_event = { ##98## Hawin dead, New realm master elected
 		trigger = {
 			DOR = {
 				OR = {
+					has_country_flag = elected_great_merchant
 					power_balance_value = {
 						id = DOR_election_power_balance
 						value < 0.0

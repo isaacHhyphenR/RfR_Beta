@@ -1,7 +1,6 @@
 ﻿add_namespace = rfr_election
 
-
-country_event = { #Dorwin republic election
+country_event = { ##1## Dorwin republic first election
 	id = rfr_election.1
 	title = rfr_election.1.t
 	desc = rfr_election.1.d
@@ -25,6 +24,7 @@ country_event = { #Dorwin republic election
 			}
 		}
 		elect_DOR_thodria_celebcaen = yes
+		DOR_first_election_effect = yes
 	}
 	option = {
 		name = rfr_election.1.b
@@ -40,6 +40,7 @@ country_event = { #Dorwin republic election
 			}
 		}
 		elect_DOR_skaldir_lendembas = yes
+		DOR_first_election_effect = yes
 	}
 	option = {
 		name = rfr_election.1.c
@@ -57,6 +58,7 @@ country_event = { #Dorwin republic election
 			}
 		}
 		elect_DOR_ansovald_gwingalon = yes
+		DOR_first_election_effect = yes
 	}
 	option = {
 		name = rfr_election.1.dd
@@ -68,9 +70,11 @@ country_event = { #Dorwin republic election
 			}
 		}
 		elect_DOR_aregisel_hammdost = yes
+		DOR_first_election_effect = yes
 	}
 }
-country_event = { #Dorwin republic election opportunism
+
+country_event = { ##2## Dorwin republic election isolationism/freedom
 	id = rfr_election.2
 	title = rfr_election.2.t
 	desc = rfr_election.2.d
@@ -80,6 +84,76 @@ country_event = { #Dorwin republic election opportunism
 	
 	option = {
 		name = rfr_election.2.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				num_subjects > 0
+				factor = 1.5
+			}
+			modifier = {
+				any_controlled_state = {
+					NOT = { is_core_of = ROOT }
+				}
+				factor = 1.5
+			}
+		}
+		elect_DOR_thodria_celebcaen = yes
+	}
+	option = {
+		name = rfr_election.2.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_war = yes
+				factor = 1.5
+			}
+			modifier = {
+				surrender_progress > 0.1
+				factor = 2
+			}
+		}
+		elect_DOR_skaldir_lendembas = yes
+	}
+	option = {
+		name = rfr_election.2.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				any_neighbor_country = {
+					THIS_and_PREV_good_vs_evil = yes
+					ic_ratio = {
+						tag = ROOT
+						ratio > 1.1
+					}
+				}
+				factor = 1.5
+			}
+		}
+		elect_DOR_ansovald_gwingalon = yes
+	}
+	option = {
+		name = rfr_election.2.dd
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_war = no
+				factor = 1.75
+			}
+		}
+		elect_DOR_aregisel_hammdost = yes
+	}
+}
+
+country_event = { ##3## Dorwin republic election opportunism
+	id = rfr_election.3
+	title = rfr_election.3.t
+	desc = rfr_election.3.d
+	picture = GFX_election
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_election.3.a
 		ai_chance = {
 			base = 1
 			modifier = { #likely to keep leader
@@ -110,7 +184,7 @@ country_event = { #Dorwin republic election opportunism
 		elect_DOR_thodria_celebcaen = yes
 	}
 	option = {
-		name = rfr_election.2.b
+		name = rfr_election.3.b
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -139,7 +213,7 @@ country_event = { #Dorwin republic election opportunism
 		elect_DOR_skaldir_lendembas = yes
 	}
 	option = {
-		name = rfr_election.2.c
+		name = rfr_election.3.c
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -170,7 +244,7 @@ country_event = { #Dorwin republic election opportunism
 		elect_DOR_ansovald_gwingalon = yes
 	}
 	option = {
-		name = rfr_election.2.dd
+		name = rfr_election.3.dd
 		ai_chance = {
 			base = 1
 			modifier = {

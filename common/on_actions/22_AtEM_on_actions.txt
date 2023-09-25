@@ -366,13 +366,16 @@ on_actions = {
 		effect = {
 			if = { #Dorwin elections
 				limit = { original_tag = DOR }
-				if = { #free & fair election
-					limit = { OR = { has_government = isolationism has_government = freedom } }
+				if = { #first election has differnet text + fires news event to whole world
+					limit = { NOT = { has_country_flag = has_had_elections } }
 					country_event = rfr_election.1
+				else_if = { #free & fair election
+					limit = { OR = { has_government = isolationism has_government = freedom } }
+					country_event = rfr_election.2
 				}
 				else_if = { #slightly corrupt election
 					limit = { has_government = opportunism }
-					country_event = rfr_election.2
+					country_event = rfr_election.3
 				}
 			}
 		}
