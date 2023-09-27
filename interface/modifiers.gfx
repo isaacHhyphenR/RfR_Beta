@@ -155,4 +155,8 @@ spriteTypes = {
 		name = "GFX_wilderness_state"
 		texturefile = "gfx/interface/modifiers/wilderness.dds"
 	}
+	spriteType = {
+		name = "GFX_state_coins"
+		texturefile = "gfx/interface/modifiers/coins.dds"
+	}
 }

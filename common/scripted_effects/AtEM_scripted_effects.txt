@@ -1955,6 +1955,23 @@ convert_half_isolationism_to_freedom = {
 }
 
 DOR_establish_senate = {
+	if = {
+		limit = {
+			NOT = {
+				OR = { has_idea = DOR_senate_idea has_idea = DOR_senate_idea_republic }
+			}
+		}
+		add_ideas = DOR_senate_idea
+		custom_effect_tooltip = DOR_establish_senate_tooltip
+		hidden_effect = {
+			news_event = rfr_news.110
+			country_event = { #fires the first senate event in 1-2 months
+				id = senate.0
+				days = 30
+				random_days = 30
+			}
+		}
+	}
 }
 
 DOR_become_republic = {
@@ -1981,8 +1998,12 @@ DOR_become_republic = {
 	}
 	hidden_effect = {
 		##ID preserves the modifiers of winning the BoP
-		add_ideas = DOR_republic_idea
+		add_ideas = DOR_republic_idea #not represented by senate because you can upgrade
 		set_country_flag = revolutionary_republic
+		swap_ideas = { #cosmetically different
+			remove_idea = DOR_senate_idea
+			add_idea = DOR_senate_republic_idea
+		}
 	}
 }
 
@@ -2161,5 +2182,333 @@ elect_DOR_aregisel_hammdost = { #promotes leader, removes as advisor
 			limit = { DOR_aregisel_hammdost = { is_political_advisor = yes } }
 			deactivate_advisor = DOR_aregisel_hammdost
 		}
+	}
+}
+
+DOR_add_cloth_contract = {
+	if = {
+		limit = { has_idea = DOR_contract_food_iron }
+		swap_ideas = {
+			remove_idea = DOR_contract_food_iron
+			add_idea = DOR_contract_cloth_food_iron
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_contract_food }
+		swap_ideas = {
+			remove_idea = DOR_contract_food
+			add_idea = DOR_contract_cloth_food
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_contract_iron }
+		swap_ideas = {
+			remove_idea = DOR_contract_iron
+			add_idea = DOR_contract_cloth_iron
+		}
+	}
+	else = {
+		add_ideas = DOR_contract_cloth
+	}
+}
+DOR_add_food_contract = {
+	if = {
+		limit = { has_idea = DOR_contract_cloth_iron }
+		swap_ideas = {
+			remove_idea = DOR_contract_cloth_iron
+			add_idea = DOR_contract_cloth_food_iron
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_contract_cloth }
+		swap_ideas = {
+			remove_idea = DOR_contract_cloth
+			add_idea = DOR_contract_cloth_food
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_contract_iron }
+		swap_ideas = {
+			remove_idea = DOR_contract_iron
+			add_idea = DOR_contract_food_iron
+		}
+	}
+	else = {
+		add_ideas = DOR_contract_food
+	}
+}
+DOR_add_iron_contract = {
+	if = {
+		limit = { has_idea = DOR_contract_cloth_food }
+		swap_ideas = {
+			remove_idea = DOR_contract_cloth_food
+			add_idea = DOR_contract_cloth_food_iron
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_contract_cloth }
+		swap_ideas = {
+			remove_idea = DOR_contract_cloth
+			add_idea = DOR_contract_cloth_iron
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_contract_fod }
+		swap_ideas = {
+			remove_idea = DOR_contract_food
+			add_idea = DOR_contract_food_iron
+		}
+	}
+	else = {
+		add_ideas = DOR_contract_iron
+	}
+}
+
+DOR_fire_senate_event = {
+	random_list = { #fires a random senate dilemma
+		1 = { #1# Close election race
+			modifier = { #can only fire once
+				has_country_flag = senate_close_election_event
+				factor = 0
+			}
+			set_country_flag = senate_close_election_event
+			random_core_state = {
+				limit = { is_controlled_by = ROOT }
+				save_event_target_as = senate_state
+			}
+			country_event = senate.1
+		}
+		1 = { #2# patriotic fervor
+			modifier = { #can only fire once
+				has_country_flag = senate_patriotic_fervor_event
+				factor = 0
+			}
+			set_country_flag = senate_patriotic_fervor_event
+			country_event = senate.2
+		}
+		1 = { #3# Investment opportunity
+			modifier = { #unlikely to fire mulitple times
+				has_country_flag = senate_investment_opportunity_event
+				factor = 0.1
+			}
+			modifier = { #must have valid state
+				NOT = {
+					any_controlled_state = {
+						is_core_of = ROOT
+						has_dynamic_modifier = { modifier = wine_country }
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						free_building_slots = {
+							building = vineyard
+							size > 0
+							include_locked = yes
+						}
+						NOT = { has_state_flag = senate_investment }
+					}
+				}
+				factor = 0
+			}
+			set_country_flag = senate_investment_opportunity_event
+			random_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					has_dynamic_modifier = { modifier = wine_country }
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					free_building_slots = {
+						building = vineyard
+						size > 0
+						include_locked = yes
+					}
+					NOT = { has_state_flag = senate_investment }
+				}
+				save_event_target_as = senate_state
+				set_state_flag = senate_investment #each state gets the opportunity once
+			}
+			country_event = senate.3
+		}
+		1 = { #4# Prosperous market
+			modifier = { #unlikely to fire mulitple times
+				has_country_flag = senate_market_town_event
+				factor = 0.1
+			}
+			modifier = { #must have valid state
+				NOT = {
+					any_controlled_state = {
+						is_core_of = ROOT
+						market > 2
+						free_building_slots = {
+							building = dockyard
+							size > 0
+							include_locked = yes
+						}
+						NOT = { has_state_flag = senate_market_town }
+					}
+				}
+				factor = 0
+			}
+			set_country_flag = senate_market_town_event
+			random_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					market > 2
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+					NOT = { has_state_flag = senate_market_town }
+				}
+				save_event_target_as = senate_state
+				set_state_flag = senate_market_town #each state gets the opportunity once
+			}
+			country_event = senate.4
+		}
+		1 = { #5# Guild contract
+			modifier = { #unlikely to fire mulitple times
+				has_country_flag = senate_guild_contract_event
+				factor = 0.1
+			}
+			modifier = { #must have valid guild
+				NOT = {
+					has_country_flag = senate_bakery_contract
+					has_country_flag = senate_carpentry_contract
+					has_country_flag = senate_smithing_contract
+					has_country_flag = senate_tailory_contract
+				}
+				factor = 0
+			}
+			random_list = { #random guild
+				1 = {
+					modifier = { has_country_flag = senate_bakery_contract }
+					set_country_flag = senate_bakery_contract
+					country_event = senate.51
+				}
+				1 = {
+					modifier = { has_country_flag = senate_carpentry_contract }
+					set_country_flag = senate_carpentry_contract
+					country_event = senate.52
+				}
+				1 = {
+					modifier = { has_country_flag = senate_smithing_contract }
+					set_country_flag = senate_smithing_contract
+					country_event = senate.53
+				}
+				1 = {
+					modifier = { has_country_flag = senate_tailory_contract }
+					set_country_flag = senate_tailory_contract
+					country_event = senate.54
+				}
+			}
+		}
+		1 = { #6# Puppet policy
+			modifier = { #unlikely to fire mulitple times
+				has_country_flag = senate_puppet_event
+				factor = 0.1
+			}
+			modifier = { #must have valid puppet
+				OR = {
+					num_subjects < 1
+					all_subject_countries = {
+						has_country_flag = DOR_senate_puppet_policy
+					}
+				}
+				factor = 0
+			}
+			random_subject_country = {
+				save_event_target_as = senate_country
+				set_country_flag = DOR_senate_puppet_policy
+			}
+			set_country_flag = senate_puppet_event
+			country_event = senate.6
+		}
+		1 = { #7# University budget
+			modifier = { #an only fire once
+				has_country_flag = senate_university_event
+				factor = 0
+			}
+			modifier = { #must have the university
+				NOT = {
+					has_completed_focus = DOR_renovate_the_royal_university_of_srzel_kain
+				}
+				factor = 0
+			}
+			set_country_flag = senate_university_event
+			country_event = senate.7
+		}
+		1 = { #8# Merchant contract
+			modifier = { #unlikely to fire mulitple times
+				has_country_flag = senate_merchant_contract_event
+				factor = 0.1
+			}
+			modifier = { #must have valid state
+				NOT = { #must have valid trading partner
+					OR = {
+						AND = { #can buy from Dale
+							country_exists = DAL
+							NOT = { has_war_with = DAL }
+							NOT = { has_country_flag = cloth_contract }
+						}
+						AND = { #can buy from Rhun
+							country_exists = RUN
+							NOT = { has_war_with = RUN }
+							NOT = { has_country_flag = food_contract }
+						}
+						AND = { #can buy from Erebor
+							country_exists = ERE
+							NOT = { has_war_with = ERE }
+							NOT = { has_country_flag = iron_contract }
+						}
+					}
+				}
+				factor = 0
+			}
+			set_country_flag = senate_merchant_contract_event
+			country_event = senate.8
+		}
+		1 = { #9# Fund a Playwright
+			modifier = { #unlikely to fire mulitple times
+				has_country_flag = senate_playwright_event
+				factor = 0.1
+			}
+			set_country_flag = senate_playwright_event
+			country_event = senate.9
+		}
+		1 = { #10# Population boom
+			modifier = { #unlikely to fire mulitple times
+				has_country_flag = senate_population_event
+				factor = 0.1
+			}
+			modifier = {
+				all_core_state = {
+					OR = {
+						NOT = { is_controlled_by = ROOT }
+						has_state_flag = senate_population_boom
+					}
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					NOT = { has_state_flag = senate_population_boom }
+				}
+				save_event_target_as = senate_state
+				set_state_flag = senate_population_boom
+			}
+			set_country_flag = senate_population_event
+			country_event = senate.10
+		}
+	}
+	##Sets the next senate event to happen in 5-7 months
+	country_event = { 
+		id = senate.0
+		days = 150
+		random_days = 60
 	}
 }

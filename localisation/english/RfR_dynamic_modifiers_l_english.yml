@@ -137,7 +137,10 @@
  wilderness_state_desc: "This region's only inhabitants are scattered bands of orcs and bandits. Establishing civilisation will require significant investment."
  every_citizen_a_defender: "Every Citizen a Defender"
  every_citizen_a_defender_desc: "$DOR_every_citizen_a_defender_desc$"
- 
+ DOR_artisan_burgomeister: "Artisan Burgomeister"
+ DOR_artisan_burgomeister_desc: "The local leadership was installed with significant support from the Senate. In thanks, the guild is working twice as hard for the national benefit."
+ DOR_merchant_burgomeister: "Merchant Burgomeister"
+ DOR_merchant_burgomeister_desc: "The local leadership was installed with significant support from the Senate. In thanks, their trading company is offering significant discounts on their goods."
  
  
  

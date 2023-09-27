@@ -580,7 +580,990 @@ country_event = { ##10## Dorwinion asks for Barding training
 	}
 }
 
+country_event = { ##11## Dorwinion asks to inrease trade
+	id = atem.11
+	title = atem.11.t
+	desc = atem.11.d
+	picture = GFX_event_trade
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.11.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = no }
+				factor = 10
+			}
+			modifier = {
+				is_in_faction_with = FROM
+				factor = 10
+			}
+		}
+		add_political_power = 40
+		if = {
+			limit = { original_tag = DAL }
+			FROM = {
+				DOR_add_cloth_contract = yes
+			}
+		}
+		else_if = {
+			limit = { original_tag = ERE }
+			FROM = {
+				DOR_add_iron_contract = yes
+			}
+		}
+		else = {
+			FROM = {
+				DOR_add_food_contract = yes
+			}
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.108 hours = 1 } } }
+	}
+	option = { ##no
+		name = atem.11.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				factor = 2
+			}
+			modifier = {
+				has_wargoal_against = FROM
+				factor = 2
+			}
+			modifier = {
+				THIS_and_PREV_good_vs_evil = yes
+				factor = 2
+			}
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.109 hours = 1 } } }
+	}
+}
 
+################################################################SENATE EVENTS
+add_namespace = senate
+country_event = { ##0## Select senate event
+	id = senate.0
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		DOR_fire_senate_event = yes
+	}
+}
+country_event = { ##1## Disputed election in <state>
+	id = senate.1
+	title = senate.1.t
+	desc = senate.1.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##Artisan candidate (local build speed)
+		name = senate.1.a
+		ai_chance = {
+			factor = 2
+			modifier = { #AI will never go into PP debt for senate
+				has_political_power < 25
+				factor = 0
+			}
+			modifier = { #no point if no slots
+				event_target:senate_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 2
+						include_locked = no
+					}
+				}
+				factor = 0
+			}
+		}
+		add_political_power = -25
+		event_target:senate_state = {
+			add_dynamic_modifier = {
+				modifier = DOR_artisan_burgomeister
+			}
+		}
+	}
+	option = { ##Merchant Canidate (local resources)
+		name = senate.1.b
+		ai_chance = {
+			factor = 2
+			modifier = { #AI will never go into PP debt for senate
+				has_political_power < 25
+				factor = 0
+			}
+			modifier = { #no point if no resources
+				event_target:senate_state = {
+					NOT = { ##checks whether you have at least 7 of any resource
+						OR = {
+							has_resources_amount = {
+								resource = food
+								amount > 6
+								delivered = no
+							}
+							has_resources_amount = {
+								resource = cloth
+								amount > 6
+								delivered = no
+							}
+							has_resources_amount = {
+								resource = wood
+								amount > 6
+								delivered = no
+							}
+							has_resources_amount = {
+								resource = iron
+								amount > 6
+								delivered = no
+							}
+							has_resources_amount = {
+								resource = mounts
+								amount > 6
+								delivered = no
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+		add_political_power = -25
+		event_target:senate_state = {
+			add_dynamic_modifier = {
+				modifier = DOR_merchant_burgomeister
+			}
+		}
+	}
+	option = { ##Abstain
+		name = senate.1.c
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+
+country_event = { ##2## Patriotic fervor
+	id = senate.2
+	title = senate.2.t
+	desc = senate.2.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##Upgrade manpower law
+		name = senate.2.a
+		trigger = { NOT = { has_idea = scraping_the_barrel } }
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 75
+				factor = 0
+			}
+			modifier = { #Don't upgrade too far
+				OR = {
+					has_idea = service_by_requirement
+					has_idea = all_adults_serve
+				}
+				factor = 0
+			}
+		}
+		add_political_power = -75
+		increase_manpower_law = yes
+	}
+	option = { ##Merchant Canidate (local resources)
+		name = senate.2.b
+		trigger = { NOT = { has_idea = tot_economic_mobilisation } }
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 75
+				factor = 0
+			}
+			modifier = { #Don't upgrade too far
+				has_idea = war_economy
+				factor = 0
+			}
+		}
+		add_political_power = -75
+		increase_economic_law = yes
+	}
+	option = { ##Abstain
+		name = senate.2.c
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+
+country_event = { ##3## Investment Opportunities
+	id = senate.3
+	title = senate.3.t
+	desc = senate.3.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##vineyard
+		name = senate.3.a
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 75
+				factor = 0
+			}
+			modifier = { #Don't waste on a non-wine state
+				event_target:senate_state = {
+					NOT = { has_dynamic_modifier = { modifier = wine_country } }
+				}
+				factor = 0
+			}
+		}
+		add_political_power = -75
+		event_target:senate_state = {
+			add_building_construction = {
+				type = vineyard
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = { ##Civ
+		name = senate.3.b
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 100
+				factor = 0
+			}
+		}
+		add_political_power = -100
+		event_target:senate_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = { ##vineyard
+		name = senate.3.c
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 200
+				factor = 0
+			}
+			modifier = { #Don't waste on a non-wine state
+				event_target:senate_state = {
+					NOT = { has_dynamic_modifier = { modifier = wine_country } }
+				}
+				factor = 0
+			}
+		}
+		add_political_power = -200
+		event_target:senate_state = {
+			add_building_construction = {
+				type = vineyard
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = { ##Abstain
+		name = senate.3.dd
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+
+country_event = { ##4## Prosperous Market Town
+	id = senate.4
+	title = senate.4.t
+	desc = senate.4.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##Guild trainees
+		name = senate.4.a
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 65
+				factor = 0
+			}
+		}
+		add_political_power = -65
+		add_tech_bonus = {
+			uses = 1
+			ahead_reduction = 2
+			category = industry
+			name = senate.4.a
+		}
+		add_tech_bonus = {
+			uses = 1
+			ahead_reduction = 2
+			category = construction_tech
+			name = senate.4.a
+		}
+		add_tech_bonus = {
+			uses = 1
+			ahead_reduction = 2
+			category = farming
+			name = senate.4.a
+		}
+	}
+	option = { ##port
+		name = senate.4.b
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 65
+				factor = 0
+			}
+		}
+		add_political_power = -65
+		event_target:senate_state = {
+			add_building_construction = {
+				type = dockyard
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = { ##Militia
+		name = senate.4.c
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 65
+				factor = 0
+			}
+		}
+		add_political_power = -65
+		add_manpower = 10000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1000
+		}
+	}
+	option = { ##Abstain
+		name = senate.4.dd
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+
+country_event = { ##51A## Renegotiate Carpentry guild contract
+	id = senate.51
+	title = senate.5A.t
+	desc = senate.5A.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##Significant contracts
+		name = senate.5A.a
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 80
+				factor = 0
+			}
+		}
+		add_political_power = -80
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##medium contracts
+		name = senate.5A.b
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 40
+				factor = 0
+			}
+		}
+		add_political_power = -40
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##Small contracts
+		name = senate.5A.c
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 20
+				factor = 0
+			}
+		}
+		add_political_power = -20
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##Abstain
+		name = senate.5A.dd
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+country_event = { ##52B## Renegotiate Baking guild contract
+	id = senate.52
+	title = senate.5B.t
+	desc = senate.5B.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##Significant contracts
+		name = senate.5B.a
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 80
+				factor = 0
+			}
+		}
+		add_political_power = -80
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##medium contracts
+		name = senate.5B.b
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 40
+				factor = 0
+			}
+		}
+		add_political_power = -40
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##Small contracts
+		name = senate.5B.c
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 20
+				factor = 0
+			}
+		}
+		add_political_power = -20
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##Abstain
+		name = senate.5B.dd
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+country_event = { ##53c## Renegotiate Smithing guild contract
+	id = senate.53
+	title = senate.5C.t
+	desc = senate.5C.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##Significant contracts
+		name = senate.5C.a
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 80
+				factor = 0
+			}
+		}
+		add_political_power = -80
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##medium contracts
+		name = senate.5C.b
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 40
+				factor = 0
+			}
+		}
+		add_political_power = -40
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##Small contracts
+		name = senate.5C.c
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 20
+				factor = 0
+			}
+		}
+		add_political_power = -20
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##Abstain
+		name = senate.5C.dd
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+country_event = { ##54D## Renegotiate Tailory guild contract
+	id = senate.54
+	title = senate.5D.t
+	desc = senate.5D.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##Significant contracts
+		name = senate.5D.a
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 80
+				factor = 0
+			}
+		}
+		add_political_power = -80
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##medium contracts
+		name = senate.5D.b
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 40
+				factor = 0
+			}
+		}
+		add_political_power = -40
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##Small contracts
+		name = senate.5D.c
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 20
+				factor = 0
+			}
+		}
+		add_political_power = -20
+		custom_effect_tooltip = UNIMPLEMENTED
+	}
+	option = { ##Abstain
+		name = senate.5D.dd
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+
+country_event = { ##6## Policy towards puppet
+	id = senate.6
+	title = senate.6.t
+	desc = senate.6.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##integration
+		name = senate.6.a
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 100
+				factor = 0
+			}
+		}
+		add_political_power = -100
+		event_target:senate_country = {
+			add_autonomy_score = {
+				value = -250
+				localization = senate_autonomy_reduction_tooltip
+			}
+			hidden_effect = {
+				news_event = { id = rfr_news.105 hours = 1 }
+			}
+		}
+	}
+	option = { ##March
+		name = senate.6.b
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 70
+				factor = 0
+			}
+		}
+		add_political_power = -70
+		event_target:senate_country = {
+			add_ideas = DOR_puppet_march #manpower
+			hidden_effect = {
+				news_event = { id = rfr_news.106 hours = 1 }
+			}
+		}
+	}
+	option = { ##Investment
+		name = senate.6.c
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 40
+				factor = 0
+			}
+		}
+		add_political_power = -40
+		event_target:senate_country = {
+			random_controlled_state = {
+				save_event_target_as = slot_state_1
+				add_extra_state_shared_building_slots = 1
+			}
+			random_controlled_state = {
+				save_event_target_as = slot_state_2
+				add_extra_state_shared_building_slots = 1
+			}
+			random_controlled_state = {
+				save_event_target_as = slot_state_3
+				add_extra_state_shared_building_slots = 1
+			}
+			hidden_effect = {
+				news_event = { id = rfr_news.107 hours = 1 }
+			}
+		}
+	}
+	option = { ##Abstain
+		name = senate.6.dd
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+
+country_event = { ##7## University budget
+	id = senate.7
+	title = senate.7.t
+	desc = senate.7.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##Philosophy
+		name = senate.7.a
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 35
+				factor = 0
+			}
+		}
+		add_political_power = -35
+		add_tech_bonus = {
+			bonus = 0.75
+			uses = 1
+			ahead_reduction = 1
+			category = cat_bureaucracy
+			name = senate.7.a
+		}
+	}
+	option = { ##Tactics
+		name = senate.7.b
+		trigger = {
+			has_completed_focus = DOR_found_the_college_of_tactics
+		}
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 35
+				factor = 0
+			}
+		}
+		add_political_power = -70
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.75
+			uses = 1
+			category = land_doctrine
+			name = senate.7.b
+		}
+	}
+	option = { ##Medicine
+		name = senate.7.c
+		trigger = {
+			has_completed_focus = DOR_found_the_college_of_medicine
+		}
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 35
+				factor = 0
+			}
+		}
+		add_political_power = -35
+		add_tech_bonus = {
+			bonus = 0.75
+			uses = 1
+			ahead_reduction = 1
+			category = agriculture
+			name = senate.7.c
+		}
+	}
+	option = { ##Abstain
+		name = senate.7.dd
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+
+country_event = { ##8## Merchant contracts
+	id = senate.8
+	title = senate.8.t
+	desc = senate.8.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##Food
+		name = senate.8.a
+		trigger = {
+			NOT = { has_country_flag = food_contract } #can only select this option once
+			country_exists = RUN
+			NOT = { has_war_with = RUN }
+		}
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 40
+				factor = 0
+			}
+			modifier = { #more likely if few resources
+				has_resources_in_country = {
+					resource = food
+					amount < 10
+				}
+				factor = 2
+			}
+		}
+		set_country_flag = food_contract
+		add_political_power = -40
+		RUN = {
+			country_event = { id = atem.11 hours = 1 }
+		}
+		custom_effect_tooltip = if_they_accept_tooltip
+		effect_tooltip = {
+			DOR_add_food_contract = yes
+			RUN = { add_political_power = 40 }
+		}
+	}
+	option = { ##Cloth
+		name = senate.8.b
+		trigger = {
+			NOT = { has_country_flag = cloth_contract } #can only select this option once
+			country_exists = DAL
+			NOT = { has_war_with = DAL }
+		}
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 40
+				factor = 0
+			}
+			modifier = { #more likely if few resources
+				has_resources_in_country = {
+					resource = cloth
+					amount < 10
+				}
+				factor = 2
+			}
+		}
+		set_country_flag = cloth_contract
+		add_political_power = -40
+		DAL = {
+			country_event = { id = atem.11 hours = 1 }
+		}
+		custom_effect_tooltip = if_they_accept_tooltip
+		effect_tooltip = {
+			DOR_add_cloth_contract = yes
+			DAL = { add_political_power = 40 }
+		}
+	}
+	option = { ##Iron
+		name = senate.8.c
+		trigger = {
+			NOT = { has_country_flag = iron_contract } #can only select this option once
+			country_exists = ERE
+			NOT = { has_war_with = ERE }
+		}
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 40
+				factor = 0
+			}
+			modifier = { #more likely if few resources
+				has_resources_in_country = {
+					resource = iron
+					amount < 10
+				}
+				factor = 2
+			}
+		}
+		set_country_flag = iron_contract
+		add_political_power = -40
+		ERE = {
+			country_event = { id = atem.11 hours = 1 }
+		}
+		custom_effect_tooltip = if_they_accept_tooltip
+		effect_tooltip = {
+			DOR_add_iron_contract = yes
+			ERE = { add_political_power = 40 }
+		}
+	}
+	option = { ##Abstain
+		name = senate.8.dd
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+
+country_event = { ##9## Fund a Playwright
+	id = senate.9
+	title = senate.9.t
+	desc = senate.9.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##Alliance
+		name = senate.9.a
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 30
+				factor = 0
+			}
+			modifier = {
+				freedom > 75
+				factor = 0.5
+			}
+			modifier = {
+				freedom > 90
+				factor = 0
+			}
+		}
+		add_political_power = -30
+		add_popularity = {
+			ideology = freedom
+			popularity = 0.05
+		}
+	}
+	option = { ##History
+		name = senate.9.b
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 30
+				factor = 0
+			}
+			modifier = {
+				has_stability > 75
+				factor = 0.5
+			}
+			modifier = {
+				has_stability > 95
+				factor = 0
+			}
+		}
+		add_political_power = -30
+		add_stability = 0.05
+	}
+	option = { ##Heroes
+		name = senate.9.ac
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 30
+				factor = 0
+			}
+			modifier = {
+				has_war_support > 75
+				factor = 0.5
+			}
+			modifier = {
+				has_war_support > 95
+				factor = 0
+			}
+		}
+		add_political_power = -30
+		add_war_support = 0.05
+	}
+	option = { ##Abstain
+		name = senate.9.dd
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+
+country_event = { ##10## Population Boom
+	id = senate.10
+	title = senate.10.t
+	desc = senate.10.d
+	picture = GFX_debate_2
+	
+	is_triggered_only = yes
+	option = { ##Fields
+		name = senate.10.a
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 30
+				factor = 0
+			}
+		}
+		add_political_power = -30
+		event_target:senate_state = {
+			add_resource = {
+				type = food
+				amount = 8
+			}
+		}
+	}
+	option = { ##clear land
+		name = senate.10.b
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 30
+				factor = 0
+			}
+		}
+		add_political_power = -30
+		event_target:senate_state = {
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+	option = { ##army
+		name = senate.10.ac
+		ai_chance = {
+			factor = 2
+			modifier = { #AI won't go into debt
+				has_political_power < 30
+				factor = 0
+			}
+		}
+		add_political_power = -30
+		add_manpower = 10000
+	}
+	option = { ##Abstain
+		name = senate.10.dd
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
 
 
 

@@ -494,10 +494,104 @@ ideas = {
 				political_power_gain = 0.025
 			}
 		}
+		DOR_senate_idea = {
+			picture = DOR_senate
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_thordia_celebcaen #one of the burghers
+			}
+			modifier = {
+				custom_modifier_tooltip = senate_events_modifier_tooltip
+				drift_defence_factor = 0.1
+				freedom_acceptance = 10
+			}
+		}
+		DOR_senate_republic_idea = { #same thing but with republican flag in the picture & slightly different desc
+			picture = DOR_senate_republic
+			removal_cost = -1
+			allowed_civil_war = {
+				has_character = DOR_thordia_celebcaen #one of the burghers
+			}
+			modifier = {
+				custom_modifier_tooltip = senate_events_modifier_tooltip
+				drift_defence_factor = 0.1
+				freedom_acceptance = 10
+			}
+		}
 		
-	
-	
-	
+		DOR_puppet_march = {
+			picture = generic_reserve_divisions
+			removal_cost = -1
+			modifier = {
+				conscription = 0.01
+			}
+			cancel = {
+				NOT = { is_subject_of = DOR }
+			}
+		}
+		
+		@merchant_contract_size = 10
+		DOR_contract_cloth = {
+			picture = generic_resource_trade
+			name = DOR_merchant_contracts
+			removal_cost = -1
+			modifier = {
+				country_resource_cloth = @merchant_contract_size
+			}
+		}
+		DOR_contract_food = {
+			picture = generic_resource_trade
+			name = DOR_merchant_contracts
+			removal_cost = -1
+			modifier = {
+				country_resource_food = @merchant_contract_size
+			}
+		}
+		DOR_contract_cloth_food = {
+			picture = generic_resource_trade
+			name = DOR_merchant_contracts
+			removal_cost = -1
+			modifier = {
+				country_resource_cloth = @merchant_contract_size
+				country_resource_food = @merchant_contract_size
+			}
+		}
+		DOR_contract_iron = {
+			picture = generic_resource_trade
+			name = DOR_merchant_contracts
+			removal_cost = -1
+			modifier = {
+				country_resource_iron = @merchant_contract_size
+			}
+		}
+		DOR_contract_cloth_iron = {
+			picture = generic_resource_trade
+			name = DOR_merchant_contracts
+			removal_cost = -1
+			modifier = {
+				country_resource_cloth = @merchant_contract_size
+				country_resource_iron = @merchant_contract_size
+			}
+		}
+		DOR_contract_food_iron = {
+			picture = generic_resource_trade
+			name = DOR_merchant_contracts
+			removal_cost = -1
+			modifier = {
+				country_resource_food = @merchant_contract_size
+				country_resource_iron = @merchant_contract_size
+			}
+		}
+		DOR_contract_cloth_food_iron = {
+			picture = generic_resource_trade
+			name = DOR_merchant_contracts
+			removal_cost = -1
+			modifier = {
+				country_resource_cloth = @merchant_contract_size
+				country_resource_food = @merchant_contract_size
+				country_resource_iron = @merchant_contract_size
+			}
+		}
 	}
 	
 	hidden_ideas = {

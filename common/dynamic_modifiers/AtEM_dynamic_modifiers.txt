@@ -28,3 +28,12 @@ every_citizen_a_defender = {
 	icon = GFX_manpower_icon
 	local_manpower = 0.25
 }
+
+DOR_artisan_burgomeister = {
+	icon = GFX_occupation_resources_icon
+	production_speed_buildings_factor = 0.15
+}
+DOR_merchant_burgomeister = {
+	icon = GFX_state_coins
+	local_resources_factor = 0.15
+}

@@ -406,6 +406,7 @@ focus_tree = {
 				uses = 2
 				ahead_reduction = 2
 				category = cat_shipbuilding
+				name = DOR_traverse_the_sea_as_land
 			}
 			great_merchants_focus_effect = yes
 		}
@@ -433,6 +434,7 @@ focus_tree = {
 				uses = @techBoostUses
 				ahead_reduction = 2
 				category = naval_equipment
+				name = DOR_as_safe_as_the_walls_of_riavod
 			}
 			great_merchants_focus_effect = yes
 		}
@@ -769,11 +771,13 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = 1
 				category = cat_production
+				name = DOR_driving_innovation
 			}
 			add_tech_bonus = {
 				bonus = @techBoostBonus
 				uses = 1
 				category = architecture
+				name = DOR_driving_innovation
 			}
 			great_merchants_focus_effect = yes
 		}
@@ -2280,6 +2284,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = @techBoostUses
 				category = armor
+				name = DOR_power_on_horseback
 			}
 			winelords_focus_effect = yes
 		}
@@ -2369,6 +2374,7 @@ focus_tree = {
 				cost_reduction = @doctrineBoostBonus
 				uses = @techBoostUses
 				category = cat_mobile_warfare
+				name = DOR_mounted_core_of_the_army
 			}
 			winelords_focus_effect = yes
 		}
@@ -2395,6 +2401,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = @techBoostUses
 				category = wine_tech_category
+				name = DOR_power_in_opulence
 			}
 			winelords_focus_effect = yes
 		}
@@ -2642,6 +2649,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = 3
 				category = farming
+				name = DOR_idyllic_rolling_fields
 			}
 			winelords_focus_effect = yes
 		}
@@ -2929,6 +2937,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = 2
 				category = industry #smithing
+				name = DOR_support_village_smithies
 			}
 			winelords_focus_effect = yes
 		}
@@ -3019,6 +3028,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = 2
 				category = infantry_tech
+				name = DOR_review_feudal_obligations
 			}
 			winelords_focus_effect = yes
 		}
@@ -3045,6 +3055,7 @@ focus_tree = {
 				cost_reduction = @doctrineBoostBonus
 				uses = @techBoostUses
 				category = land_doctrine
+				name = DOR_all_levies_ready_at_a_moments_notice
 			}
 			winelords_focus_effect = yes
 		}
@@ -3781,6 +3792,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = 1
 				category = infantry_tech
+				name = DOR_prepare_them_for_combat
 			}
 			burghers_focus_effect = yes
 		}
@@ -3807,6 +3819,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = @techBoostUses
 				category = cat_anti_tank
+				name = DOR_prepare_them_for_the_easterling_cataphracts
 			}
 			burghers_focus_effect = yes
 		}
@@ -3963,6 +3976,7 @@ focus_tree = {
 				cost_reduction = @doctrineBoostBonus
 				uses = 1
 				category = land_doctrine
+				name = DOR_hold_large_scale_drills
 			}
 			burghers_focus_effect = yes
 		}
@@ -4022,6 +4036,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = @techBoostUses
 				category = artillery
+				name = DOR_rain_death_from_afar
 			}
 			burghers_focus_effect = yes
 		}
@@ -4048,6 +4063,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = @techBoostUses
 				category = support_tech
+				name = DOR_put_civilian_skills_to_use
 			}
 			burghers_focus_effect = yes
 		}
@@ -4097,6 +4113,7 @@ focus_tree = {
 				cost_reduction = @doctrineBoostBonus
 				uses = 2
 				category = cat_superior_firepower
+				name = DOR_victory_through_artisanship
 			}
 			burghers_focus_effect = yes
 		}
@@ -4158,6 +4175,7 @@ focus_tree = {
 				category = industry
 				category = construction_tech
 				category = farming
+				name = DOR_nation_of_artisans
 			}
 			burghers_focus_effect = yes
 		}
@@ -4275,6 +4293,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = @techBoostUses
 				category = construction_tech
+				name = DOR_gleaming_coastal_cities
 			}
 			burghers_focus_effect = yes
 		}
@@ -4301,6 +4320,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = @techBoostUses
 				category = industry
+				name = DOR_artisans_on_the_seashore
 			}
 			burghers_focus_effect = yes
 		}
@@ -4490,6 +4510,7 @@ focus_tree = {
 				bonus = @techBoostBonus
 				uses = @techBoostUses
 				category = farming
+				name = DOR_beyond_our_walls_but_not_our_hearts
 			}
 			burghers_focus_effect = yes
 		}

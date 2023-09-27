@@ -1655,3 +1655,102 @@ news_event = { ##104## DOR founded republic
 		}
 	}
 }
+
+news_event = { ##105## DOR senate decreased our autonomy
+	id = rfr_news.105
+	title = rfr_news.105.t
+	desc = rfr_news.105.d
+	picture = GFX_news_debate_2
+	
+	is_triggered_only = yes
+	
+	option = { #cool
+		name = rfr_news.105.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			add_autonomy_score = {
+				value = -250
+				localization = senate_autonomy_reduction_tooltip
+			}
+		}
+	}
+}
+news_event = { ##106## DOR senate made us a march
+	id = rfr_news.106
+	title = rfr_news.106.t
+	desc = rfr_news.106.d
+	picture = GFX_news_debate_2
+	
+	is_triggered_only = yes
+	
+	option = { #cool
+		name = rfr_news.106.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			add_ideas = DOR_puppet_march
+		}
+	}
+}
+news_event = { ##107## DOR senate invested in economy
+	id = rfr_news.107
+	title = rfr_news.107.t
+	desc = rfr_news.107.d
+	picture = GFX_news_debate_2
+	
+	is_triggered_only = yes
+	
+	option = { #cool
+		name = rfr_news.107.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			event_target:slot_state_1 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			event_target:slot_state_2 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			event_target:slot_state_3 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+}
+
+news_event = { ##108## Foreigner accepted senate trade
+	id = rfr_news.108
+	title = rfr_news.108.t
+	desc = rfr_news.108.d
+	picture = GFX_news_gondor_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #cool
+		name = rfr_news.108.a
+	}
+}
+news_event = { ##109## Foreigner rejected senate trade
+	id = rfr_news.109
+	title = rfr_news.109.t
+	desc = rfr_news.109.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #oh well
+		name = rfr_news.109.a
+	}
+}
+
+
+news_event = { ##110## Established Senate
+	id = rfr_news.110
+	title = rfr_news.110.t
+	desc = rfr_news.110.d
+	picture = GFX_news_election
+	
+	is_triggered_only = yes
+	
+	option = { #oh well
+		name = rfr_news.110.a
+	}
+}

@@ -739,4 +739,23 @@ spriteTypes = {
 		name = "GFX_idea_greater_enedwaith_prowess"
 		texturefile = "gfx/interface/ideas/greater_enedwaith_prowess.dds"
 	}
+	
+	
+	
+	SpriteType = {
+		name = "GFX_idea_generic_senate"
+		texturefile = "gfx/interface/ideas/generic_senate.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_senate"
+		texturefile = "gfx/interface/ideas/DOR_senate.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_senate_republic"
+		texturefile = "gfx/interface/ideas/DOR_senate_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_resource_trade"
+		texturefile = "gfx/interface/ideas/generic_resource_trade.dds"
+	}
 }

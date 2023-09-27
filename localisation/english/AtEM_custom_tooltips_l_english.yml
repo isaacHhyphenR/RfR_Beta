@@ -120,3 +120,6 @@
  unlocks_spread_revolution_war_goal: "Unlocks a cheaper wargoal to §Y$spread_the_revolution$§!"
  republic_leader: "president"
  republic_leader_cap: "President"
+ senate_autonomy_reduction_tooltip: "Master's Senate Event"
+ senate_events_modifier_tooltip: "Triggers a random event approximately twice a year allowing you to spend political power for various benefits."
+ DOR_establish_senate_tooltip: ""
