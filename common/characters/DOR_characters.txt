@@ -77,8 +77,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_5"
-				small = "GFX_Portrait_Northern_Generic_f_5_small"
+				large = "GFX_Portrait_Northern_Generic_f_3"
+				small = "GFX_Portrait_Northern_Generic_f_3_small"
 			}
 		}
 		advisor = {
@@ -106,8 +106,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_2"
-				small = "GFX_Portrait_Northern_Generic_f_2_small"
+				large = "GFX_Portrait_Northern_Generic_f_4"
+				small = "GFX_Portrait_Northern_Generic_f_4_small"
 			}
 		}
 		advisor = {
@@ -134,8 +134,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_5"
-				small = "GFX_Portrait_Northern_Generic_m_5_small"
+				large = "GFX_Portrait_Northern_Generic_m_2"
+				small = "GFX_Portrait_Northern_Generic_m_2_small"
 			}
 		}
 		corps_commander = {
@@ -152,8 +152,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_4"
-				small = "GFX_Portrait_Northern_Generic_f_4_small"
+				large = "GFX_Portrait_Northern_Generic_f_1"
+				small = "GFX_Portrait_Northern_Generic_f_1_small"
 			}
 		}
 		advisor = {
@@ -173,8 +173,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_4"
-				small = "GFX_Portrait_Northern_Generic_m_4_small"
+				large = "GFX_Portrait_Northern_Generic_m_5"
+				small = "GFX_Portrait_Northern_Generic_m_5_small"
 			}
 		}
 		advisor = {
@@ -215,8 +215,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_3"
-				small = "GFX_Portrait_Northern_Generic_m_3_small"
+				large = "GFX_Portrait_Northern_Generic_m_4"
+				small = "GFX_Portrait_Northern_Generic_m_4_small"
 			}
 		}
 		advisor = {
@@ -311,8 +311,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_3"
-				small = "GFX_Portrait_Northern_Generic_f_3_small"
+				large = "GFX_Portrait_Northern_Generic_f_4"
+				small = "GFX_Portrait_Northern_Generic_f_4_small"
 			}
 		}
 		advisor = {
@@ -353,8 +353,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_2"
-				small = "GFX_Portrait_Northern_Generic_f_2_small"
+				large = "GFX_Portrait_Northern_Generic_f_1"
+				small = "GFX_Portrait_Northern_Generic_f_1_small"
 			}
 		}
 		advisor = {
@@ -374,8 +374,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_3"
-				small = "GFX_Portrait_Northern_Generic_m_3_small"
+				large = "GFX_Portrait_Northern_Generic_m_5"
+				small = "GFX_Portrait_Northern_Generic_m_5_small"
 			}
 		}
 		advisor = {
@@ -395,8 +395,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_4"
-				small = "GFX_Portrait_Northern_Generic_f_4_small"
+				large = "GFX_Portrait_Northern_Generic_f_5"
+				small = "GFX_Portrait_Northern_Generic_f_5_small"
 			}
 		}
 		advisor = {
@@ -424,8 +424,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_5"
-				small = "GFX_Portrait_Northern_Generic_f_5_small"
+				large = "GFX_Portrait_Northern_Generic_f_4"
+				small = "GFX_Portrait_Northern_Generic_f_4_small"
 			}
 		}
 		advisor = {
@@ -453,8 +453,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_5"
-				small = "GFX_Portrait_Northern_Generic_m_5_small"
+				large = "GFX_Portrait_Northern_Generic_m_1"
+				small = "GFX_Portrait_Northern_Generic_m_1_small"
 			}
 		}
 		corps_commander = {
@@ -471,8 +471,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_5"
-				small = "GFX_Portrait_Northern_Generic_m_5_small"
+				large = "GFX_Portrait_Northern_Generic_m_3"
+				small = "GFX_Portrait_Northern_Generic_m_3_small"
 			}
 		}
 		corps_commander = {
@@ -535,8 +535,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_2"
-				small = "GFX_Portrait_Northern_Generic_m_2_small"
+				large = "GFX_Portrait_Northern_Generic_m_4"
+				small = "GFX_Portrait_Northern_Generic_m_4_small"
 			}
 		}
 		advisor = {
@@ -556,8 +556,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_1"
-				small = "GFX_Portrait_Northern_Generic_m_1_small"
+				large = "GFX_Portrait_Northern_Generic_m_2"
+				small = "GFX_Portrait_Northern_Generic_m_2_small"
 			}
 		}
 		country_leader = { ##just so the tooltip on that focus works correctly
@@ -581,8 +581,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_1"
-				small = "GFX_Portrait_Northern_Generic_f_1_small"
+				large = "GFX_Portrait_Northern_Generic_f_5"
+				small = "GFX_Portrait_Northern_Generic_f_5_small"
 			}
 		}
 		advisor = {
@@ -602,8 +602,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_2"
-				small = "GFX_Portrait_Northern_Generic_m_2_small"
+				large = "GFX_Portrait_Northern_Generic_m_5"
+				small = "GFX_Portrait_Northern_Generic_m_5_small"
 			}
 		}
 		advisor = {
@@ -623,8 +623,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_2"
-				small = "GFX_Portrait_Northern_Generic_f_2_small"
+				large = "GFX_Portrait_Northern_Generic_f_3"
+				small = "GFX_Portrait_Northern_Generic_f_3_small"
 			}
 		}
 		advisor = {
@@ -644,8 +644,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_4"
-				small = "GFX_Portrait_Northern_Generic_m_4_small"
+				large = "GFX_Portrait_Northern_Generic_m_3"
+				small = "GFX_Portrait_Northern_Generic_m_3_small"
 			}
 		}
 		advisor = {
@@ -673,8 +673,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_5"
-				small = "GFX_Portrait_Northern_Generic_f_5_small"
+				large = "GFX_Portrait_Northern_Generic_f_2"
+				small = "GFX_Portrait_Northern_Generic_f_2_small"
 			}
 		}
 		advisor = {
@@ -873,8 +873,8 @@ characters = {
 		gender = male
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_m_4"
-				small = "GFX_Portrait_Northern_Generic_m_4_small"
+				large = "GFX_Portrait_Northern_Generic_m_2"
+				small = "GFX_Portrait_Northern_Generic_m_2_small"
 			}
 		}
 		advisor = {
@@ -902,8 +902,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_3"
-				small = "GFX_Portrait_Northern_Generic_f_3_small"
+				large = "GFX_Portrait_Northern_Generic_f_4"
+				small = "GFX_Portrait_Northern_Generic_f_4_small"
 			}
 		}
 		advisor = {
