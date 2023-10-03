@@ -37,3 +37,14 @@ DOR_merchant_burgomeister = {
 	icon = GFX_state_coins
 	local_resources_factor = 0.15
 }
+
+
+DOR_home_of_the_revolution_modifier = {
+	icon = GFX_idea_home_of_the_revolution
+	custom_modifier_tooltip = home_of_the_revolution_update_tooltip
+	compliance_gain = var:global.republics_compliance_bonus #0.005 per
+	freedom_drift = var:global.republics_freedom_bonus #0.001 per
+	war_support_factor = var:global.republics_war_support_bonus #1 per
+	subjects_autonomy_gain = var:global.republics_autonomy_bonus #-0.005 per
+	custom_modifier_tooltip = DOR_home_of_the_revolution_stealable
+}

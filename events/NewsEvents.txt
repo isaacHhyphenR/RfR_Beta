@@ -1750,7 +1750,7 @@ news_event = { ##110## Established Senate
 	
 	is_triggered_only = yes
 	
-	option = { #oh well
+	option = { #neat
 		name = rfr_news.110.a
 	}
 }

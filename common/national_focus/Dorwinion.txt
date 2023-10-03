@@ -15,6 +15,7 @@
 #GFX_goal_university_tactics
 #GFX_goal_support_hawin_koldana
 #GFX_goal_defend_against_melkorite
+#GFX_focus_DOR_home_of_the_revolution
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -3241,6 +3242,31 @@ focus_tree = {
 			burghers_focus_effect = yes
 		}
 	}
+	focus = { #Home of the Revolution
+		id = DOR_home_of_the_revolution
+		icon = GFX_focus_DOR_home_of_the_revolution
+		x = 0
+		y = 2
+		relative_position_id = DOR_establish_sister_republics
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_establish_sister_republics
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_country_leader_with_trait = revolutionary
+			has_country_flag = established_sister_republic
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_dynamic_modifier = { modifier = DOR_home_of_the_revolution_modifier }
+			custom_effect_tooltip = DOR_home_of_the_revolution_focus_tooltip
+			burghers_focus_effect = yes
+		}
+	}
 	focus = { #A cause worth spreading
 		id = DOR_a_cause_worth_spreading
 		icon = GFX_goal_DOR_army_morale
@@ -3317,7 +3343,7 @@ focus_tree = {
 	focus = { #Investigate reactionary plot
 		id = DOR_investigate_reactionary_plot
 		#icon = GFX_focus_focus_fra_revolution_utmost
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = DOR_limit_the_power_of_the_nobility
 		cost = 10
@@ -3336,11 +3362,11 @@ focus_tree = {
 			burghers_focus_effect = yes
 		}
 	}
-	focus = { #Establish Senate of the People
-		id = DOR_establish_senate_of_the_people
+	focus = { #Expand the Powers of the Senate
+		id = DOR_expand_the_powers_of_the_senate
 		#icon = GFX_focus_focus_fra_revolution_utmost
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = DOR_limit_the_power_of_the_nobility
 		cost = 10
 		ai_will_do = {
@@ -3351,10 +3377,11 @@ focus_tree = {
 		}
 		available = {
 			burghers_focus_trigger = yes
+			DOR_has_senate = yes
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			custom_effect_tooltip = unimplemented
+			add_political_power = 150
 			burghers_focus_effect = yes
 		}
 	}
@@ -3363,7 +3390,7 @@ focus_tree = {
 		icon = GFX_focus_chi_army_reform
 		x = -2
 		y = 1
-		relative_position_id = DOR_establish_senate_of_the_people
+		relative_position_id = DOR_expand_the_powers_of_the_senate
 		cost = 10
 		ai_will_do = {
 			factor = 2
@@ -3373,7 +3400,7 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-			focus = DOR_establish_senate_of_the_people
+			focus = DOR_expand_the_powers_of_the_senate
 		}
 		available = {
 			burghers_focus_trigger = yes
@@ -3420,13 +3447,13 @@ focus_tree = {
 		icon = GFX_focus_generic_treaty
 		x = 0
 		y = 1
-		relative_position_id = DOR_establish_senate_of_the_people
+		relative_position_id = DOR_expand_the_powers_of_the_senate
 		cost = 5
 		ai_will_do = {
 			factor = 2
 		}
 		prerequisite = {
-			focus = DOR_establish_senate_of_the_people
+			focus = DOR_expand_the_powers_of_the_senate
 		}
 		available = {
 			burghers_focus_trigger = yes
@@ -3445,13 +3472,13 @@ focus_tree = {
 		icon = GFX_focus_generic_court
 		x = 2
 		y = 1
-		relative_position_id = DOR_establish_senate_of_the_people
+		relative_position_id = DOR_expand_the_powers_of_the_senate
 		cost = 5
 		ai_will_do = {
 			factor = 2
 		}
 		prerequisite = {
-			focus = DOR_establish_senate_of_the_people
+			focus = DOR_expand_the_powers_of_the_senate
 		}
 		available = {
 			burghers_focus_trigger = yes

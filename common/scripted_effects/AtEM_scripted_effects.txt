@@ -2512,3 +2512,25 @@ DOR_fire_senate_event = {
 		random_days = 60
 	}
 }
+
+calculate_num_republics = {
+	set_variable = { global.num_republics = 0 }
+	every_country = {
+		limit = { is_republic = yes }
+		add_to_variable = { global.num_republics = 1 }
+	}
+	#sets the variables that Dorwinion's 'Home of the Revolution' modifier uses
+	set_variable = { global.republics_war_support_bonus = 0.01 }
+	multiply_variable = { global.republics_war_support_bonus = global.num_republics }
+	set_variable = { global.republics_autonomy_bonus = -0.01 }
+	multiply_variable = { global.republics_autonomy_bonus = global.num_republics }
+	set_variable = { global.republics_compliance_bonus = 0.005 }
+	multiply_variable = { global.republics_compliance_bonus = global.num_republics }
+	set_variable = { global.republics_freedom_bonus = 0.01 }
+	multiply_variable = { global.republics_freedom_bonus = global.num_republics }
+}
+
+establish_sister_republic = {
+	calculate_num_republics = yes
+	set_country_flag = established_sister_republic
+}

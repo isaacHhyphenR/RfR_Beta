@@ -1471,7 +1471,7 @@ colonisation_category = {
 }
 
 DOR_spread_revolution_category = {
-	@complianceForRepublic = 0.5
+	@complianceForRepublic = 50
 	establish_DAL_republic = {
 		icon = GFX_decision_DAL_republic
 		ai_will_do = {
@@ -1527,6 +1527,8 @@ DOR_spread_revolution_category = {
 					}
 				}
 			}
+			#so we know we did it, update home of the revolution modifiers
+			establish_sister_republic = yes
 		}
 	}
 	debug_convert_all_republics = { ##gives all the 'base' nations their republican cosmetic tags

@@ -172,6 +172,15 @@ is_republic = { #returns true if the country is one of the revolutionary republi
 	}
 }
 
+DOR_has_senate = {
+	custom_trigger_tooltip = {
+		tooltip = DOR_has_senate
+		OR = {
+			has_idea = DOR_senate_idea
+			has_idea = DOR_senate_republic_idea
+		}
+	}
+}
 
 
 
