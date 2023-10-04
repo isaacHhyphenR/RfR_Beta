@@ -1,0 +1,819 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_Portrait_Beornings_Generic_f_1"
+		texturefile = "gfx/leaders/00_Beornings/beorning_generic_political_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Beornings_Generic_f_1_small"
+		texturefile = "gfx/advisors/00_Beornings/beorning_advisor_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Beornings_Generic_m_1"
+		texturefile = "gfx/leaders/00_Beornings/beorning_generic_political_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Beornings_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Beornings/beorning_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_1"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_1_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_2"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_2_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_3"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_3_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_4"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_4_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_5"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_5_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_6"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_f_6.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_f_6_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_f_6.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_1"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_2"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_2_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_3"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_3_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_4"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_4_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_5"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_5_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_6"
+		texturefile = "gfx/leaders/00_Dunedain/dunedain_generic_political_m_6.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dunedain_Generic_m_6_small"
+		texturefile = "gfx/advisors/00_Dunedain/dunedain_advisor_m_6.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_f_1"
+		texturefile = "gfx/leaders/00_Dwarves/dwarf_generic_political_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_f_1_small"
+		texturefile = "gfx/advisors/00_Dwarves/dwarf_advisor_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_f_2"
+		texturefile = "gfx/leaders/00_Dwarves/dwarf_generic_political_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_f_2_small"
+		texturefile = "gfx/advisors/00_Dwarves/dwarf_advisor_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_f_3"
+		texturefile = "gfx/leaders/00_Dwarves/dwarf_generic_political_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_f_3_small"
+		texturefile = "gfx/advisors/00_Dwarves/dwarf_advisor_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_f_4"
+		texturefile = "gfx/leaders/00_Dwarves/dwarf_generic_political_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_f_4_small"
+		texturefile = "gfx/advisors/00_Dwarves/dwarf_advisor_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_f_5"
+		texturefile = "gfx/leaders/00_Dwarves/dwarf_generic_political_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_f_5_small"
+		texturefile = "gfx/advisors/00_Dwarves/dwarf_advisor_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_m_1"
+		texturefile = "gfx/leaders/00_Dwarves/dwarf_generic_political_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Dwarves/dwarf_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_m_2"
+		texturefile = "gfx/leaders/00_Dwarves/dwarf_generic_political_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_m_2_small"
+		texturefile = "gfx/advisors/00_Dwarves/dwarf_advisor_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_m_3"
+		texturefile = "gfx/leaders/00_Dwarves/dwarf_generic_political_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_m_3_small"
+		texturefile = "gfx/advisors/00_Dwarves/dwarf_advisor_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_m_4"
+		texturefile = "gfx/leaders/00_Dwarves/dwarf_generic_political_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_m_4_small"
+		texturefile = "gfx/advisors/00_Dwarves/dwarf_advisor_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_m_5"
+		texturefile = "gfx/leaders/00_Dwarves/dwarf_generic_political_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Dwarves_Generic_m_5_small"
+		texturefile = "gfx/advisors/00_Dwarves/dwarf_advisor_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_f_1"
+		texturefile = "gfx/leaders/00_Easterling/easterling_generic_political_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_f_1_small"
+		texturefile = "gfx/advisors/00_Easterling/easterling_advisor_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_f_2"
+		texturefile = "gfx/leaders/00_Easterling/easterling_generic_political_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_f_2_small"
+		texturefile = "gfx/advisors/00_Easterling/easterling_advisor_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_f_3"
+		texturefile = "gfx/leaders/00_Easterling/easterling_generic_political_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_f_3_small"
+		texturefile = "gfx/advisors/00_Easterling/easterling_advisor_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_f_4"
+		texturefile = "gfx/leaders/00_Easterling/easterling_generic_political_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_f_4_small"
+		texturefile = "gfx/advisors/00_Easterling/easterling_advisor_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_f_5"
+		texturefile = "gfx/leaders/00_Easterling/easterling_generic_political_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_f_5_small"
+		texturefile = "gfx/advisors/00_Easterling/easterling_advisor_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_m_1"
+		texturefile = "gfx/leaders/00_Easterling/easterling_generic_political_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Easterling/easterling_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_m_2"
+		texturefile = "gfx/leaders/00_Easterling/easterling_generic_political_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_m_2_small"
+		texturefile = "gfx/advisors/00_Easterling/easterling_advisor_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_m_3"
+		texturefile = "gfx/leaders/00_Easterling/easterling_generic_political_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_m_3_small"
+		texturefile = "gfx/advisors/00_Easterling/easterling_advisor_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_m_4"
+		texturefile = "gfx/leaders/00_Easterling/easterling_generic_political_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_m_4_small"
+		texturefile = "gfx/advisors/00_Easterling/easterling_advisor_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_m_5"
+		texturefile = "gfx/leaders/00_Easterling/easterling_generic_political_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Easterling_Generic_m_5_small"
+		texturefile = "gfx/advisors/00_Easterling/easterling_advisor_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_f_1"
+		texturefile = "gfx/leaders/00_Elves/elf_generic_political_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_f_1_small"
+		texturefile = "gfx/advisors/00_Elves/elf_advisor_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_f_2"
+		texturefile = "gfx/leaders/00_Elves/elf_generic_political_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_f_2_small"
+		texturefile = "gfx/advisors/00_Elves/elf_advisor_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_f_3"
+		texturefile = "gfx/leaders/00_Elves/elf_generic_political_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_f_3_small"
+		texturefile = "gfx/advisors/00_Elves/elf_advisor_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_f_4"
+		texturefile = "gfx/leaders/00_Elves/elf_generic_political_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_f_4_small"
+		texturefile = "gfx/advisors/00_Elves/elf_advisor_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_f_5"
+		texturefile = "gfx/leaders/00_Elves/elf_generic_political_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_f_5_small"
+		texturefile = "gfx/advisors/00_Elves/elf_advisor_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_m_1"
+		texturefile = "gfx/leaders/00_Elves/elf_generic_political_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Elves/elf_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_m_2"
+		texturefile = "gfx/leaders/00_Elves/elf_generic_political_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_m_2_small"
+		texturefile = "gfx/advisors/00_Elves/elf_advisor_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_m_3"
+		texturefile = "gfx/leaders/00_Elves/elf_generic_political_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_m_3_small"
+		texturefile = "gfx/advisors/00_Elves/elf_advisor_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_m_4"
+		texturefile = "gfx/leaders/00_Elves/elf_generic_political_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_m_4_small"
+		texturefile = "gfx/advisors/00_Elves/elf_advisor_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_m_5"
+		texturefile = "gfx/leaders/00_Elves/elf_generic_political_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Elves_Generic_m_5_small"
+		texturefile = "gfx/advisors/00_Elves/elf_advisor_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Ents_Generic_m_1"
+		texturefile = "gfx/leaders/FAN/Quickbeam.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Ents_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Ents/ent_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_f_1"
+		texturefile = "gfx/leaders/00_Hobbits/hobbit_generic_political_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_f_1_small"
+		texturefile = "gfx/advisors/00_Hobbits/hobbit_advisor_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_f_2"
+		texturefile = "gfx/leaders/00_Hobbits/hobbit_generic_political_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_f_2_small"
+		texturefile = "gfx/advisors/00_Hobbits/hobbit_advisor_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_f_3"
+		texturefile = "gfx/leaders/00_Hobbits/hobbit_generic_political_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_f_3_small"
+		texturefile = "gfx/advisors/00_Hobbits/hobbit_advisor_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_m_1"
+		texturefile = "gfx/leaders/00_Hobbits/hobbit_generic_political_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Hobbits/hobbit_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_m_2"
+		texturefile = "gfx/leaders/00_Hobbits/hobbit_generic_political_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_m_2_small"
+		texturefile = "gfx/advisors/00_Hobbits/hobbit_advisor_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_m_3"
+		texturefile = "gfx/leaders/00_Hobbits/hobbit_generic_political_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Hobbits_Generic_m_3_small"
+		texturefile = "gfx/advisors/00_Hobbits/hobbit_advisor_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_f_1"
+		texturefile = "gfx/leaders/00_Northern/north_generic_political_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_f_1_small"
+		texturefile = "gfx/advisors/00_Northern/north_advisor_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_f_2"
+		texturefile = "gfx/leaders/00_Northern/north_generic_political_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_f_2_small"
+		texturefile = "gfx/advisors/00_Northern/north_advisor_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_f_3"
+		texturefile = "gfx/leaders/00_Northern/north_generic_political_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_f_3_small"
+		texturefile = "gfx/advisors/00_Northern/north_advisor_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_f_4"
+		texturefile = "gfx/leaders/00_Northern/north_generic_political_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_f_4_small"
+		texturefile = "gfx/advisors/00_Northern/north_advisor_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_f_5"
+		texturefile = "gfx/leaders/00_Northern/north_generic_political_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_f_5_small"
+		texturefile = "gfx/advisors/00_Northern/north_advisor_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_m_1"
+		texturefile = "gfx/leaders/00_Northern/north_generic_political_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Northern/north_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_m_2"
+		texturefile = "gfx/leaders/00_Northern/north_generic_political_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_m_2_small"
+		texturefile = "gfx/advisors/00_Northern/north_advisor_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_m_3"
+		texturefile = "gfx/leaders/00_Northern/north_generic_political_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_m_3_small"
+		texturefile = "gfx/advisors/00_Northern/north_advisor_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_m_4"
+		texturefile = "gfx/leaders/00_Northern/north_generic_political_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_m_4_small"
+		texturefile = "gfx/advisors/00_Northern/north_advisor_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_m_5"
+		texturefile = "gfx/leaders/00_Northern/north_generic_political_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Northern_Generic_m_5_small"
+		texturefile = "gfx/advisors/00_Northern/north_advisor_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_f_1"
+		texturefile = "gfx/leaders/00_Orcs/orc_generic_political_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_f_1_small"
+		texturefile = "gfx/advisors/00_Orcs/orc_advisor_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_f_2"
+		texturefile = "gfx/leaders/00_Orcs/orc_generic_political_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_f_2_small"
+		texturefile = "gfx/advisors/00_Orcs/orc_advisor_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_f_3"
+		texturefile = "gfx/leaders/00_Orcs/orc_generic_political_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_f_3_small"
+		texturefile = "gfx/advisors/00_Orcs/orc_advisor_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_f_4"
+		texturefile = "gfx/leaders/00_Orcs/orc_generic_political_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_f_4_small"
+		texturefile = "gfx/advisors/00_Orcs/orc_advisor_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_f_5"
+		texturefile = "gfx/leaders/00_Orcs/orc_generic_political_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_f_5_small"
+		texturefile = "gfx/advisors/00_Orcs/orc_advisor_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_m_1"
+		texturefile = "gfx/leaders/00_Orcs/orc_generic_political_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Orcs/orc_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_m_2"
+		texturefile = "gfx/leaders/00_Orcs/orc_generic_political_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_m_2_small"
+		texturefile = "gfx/advisors/00_Orcs/orc_advisor_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_m_3"
+		texturefile = "gfx/leaders/00_Orcs/orc_generic_political_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_m_3_small"
+		texturefile = "gfx/advisors/00_Orcs/orc_advisor_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_m_4"
+		texturefile = "gfx/leaders/00_Orcs/orc_generic_political_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_m_4_small"
+		texturefile = "gfx/advisors/00_Orcs/orc_advisor_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_m_5"
+		texturefile = "gfx/leaders/00_Orcs/orc_generic_political_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Orcs_Generic_m_5_small"
+		texturefile = "gfx/advisors/00_Orcs/orc_advisor_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_f_1"
+		texturefile = "gfx/leaders/00_Rohirrim/rohan_generic_political_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_f_1_small"
+		texturefile = "gfx/advisors/00_Rohirrim/rohan_advisor_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_f_2"
+		texturefile = "gfx/leaders/00_Rohirrim/rohan_generic_political_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_f_2_small"
+		texturefile = "gfx/advisors/00_Rohirrim/rohan_advisor_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_f_3"
+		texturefile = "gfx/leaders/00_Rohirrim/rohan_generic_political_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_f_3_small"
+		texturefile = "gfx/advisors/00_Rohirrim/rohan_advisor_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_f_4"
+		texturefile = "gfx/leaders/00_Rohirrim/rohan_generic_political_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_f_4_small"
+		texturefile = "gfx/advisors/00_Rohirrim/rohan_advisor_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_f_5"
+		texturefile = "gfx/leaders/00_Rohirrim/rohan_generic_political_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_f_5_small"
+		texturefile = "gfx/advisors/00_Rohirrim/rohan_advisor_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_m_1"
+		texturefile = "gfx/leaders/00_Rohirrim/rohan_generic_political_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Rohirrim/rohan_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_m_2"
+		texturefile = "gfx/leaders/00_Rohirrim/rohan_generic_political_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_m_2_small"
+		texturefile = "gfx/advisors/00_Rohirrim/rohan_advisor_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_m_3"
+		texturefile = "gfx/leaders/00_Rohirrim/rohan_generic_political_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_m_3_small"
+		texturefile = "gfx/advisors/00_Rohirrim/rohan_advisor_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_m_4"
+		texturefile = "gfx/leaders/00_Rohirrim/rohan_generic_political_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_m_4_small"
+		texturefile = "gfx/advisors/00_Rohirrim/rohan_advisor_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_m_5"
+		texturefile = "gfx/leaders/00_Rohirrim/rohan_generic_political_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Rohirrim_Generic_m_5_small"
+		texturefile = "gfx/advisors/00_Rohirrim/rohan_advisor_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_f_1"
+		texturefile = "gfx/leaders/00_Southron/southron_generic_political_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_f_1_small"
+		texturefile = "gfx/advisors/00_Southron/southron_advisor_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_f_2"
+		texturefile = "gfx/leaders/00_Southron/southron_generic_political_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_f_2_small"
+		texturefile = "gfx/advisors/00_Southron/southron_advisor_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_f_3"
+		texturefile = "gfx/leaders/00_Southron/southron_generic_political_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_f_3_small"
+		texturefile = "gfx/advisors/00_Southron/southron_advisor_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_f_4"
+		texturefile = "gfx/leaders/00_Southron/southron_generic_political_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_f_4_small"
+		texturefile = "gfx/advisors/00_Southron/southron_advisor_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_f_5"
+		texturefile = "gfx/leaders/00_Southron/southron_generic_political_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_f_5_small"
+		texturefile = "gfx/advisors/00_Southron/southron_advisor_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_m_1"
+		texturefile = "gfx/leaders/00_Southron/southron_generic_political_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Southron/southron_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_m_2"
+		texturefile = "gfx/leaders/00_Southron/southron_generic_political_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_m_2_small"
+		texturefile = "gfx/advisors/00_Southron/southron_advisor_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_m_3"
+		texturefile = "gfx/leaders/00_Southron/southron_generic_political_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_m_3_small"
+		texturefile = "gfx/advisors/00_Southron/southron_advisor_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_m_4"
+		texturefile = "gfx/leaders/00_Southron/southron_generic_political_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_m_4_small"
+		texturefile = "gfx/advisors/00_Southron/southron_advisor_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_m_5"
+		texturefile = "gfx/leaders/00_Southron/southron_generic_political_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Southron_Generic_m_5_small"
+		texturefile = "gfx/advisors/00_Southron/southron_advisor_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_f_1"
+		texturefile = "gfx/leaders/00_Wild/wild_generic_political_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_f_1_small"
+		texturefile = "gfx/advisors/00_Wild/wild_advisor_f_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_f_2"
+		texturefile = "gfx/leaders/00_Wild/wild_generic_political_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_f_2_small"
+		texturefile = "gfx/advisors/00_Wild/wild_advisor_f_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_f_3"
+		texturefile = "gfx/leaders/00_Wild/wild_generic_political_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_f_3_small"
+		texturefile = "gfx/advisors/00_Wild/wild_advisor_f_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_f_4"
+		texturefile = "gfx/leaders/00_Wild/wild_generic_political_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_f_4_small"
+		texturefile = "gfx/advisors/00_Wild/wild_advisor_f_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_f_5"
+		texturefile = "gfx/leaders/00_Wild/wild_generic_political_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_f_5_small"
+		texturefile = "gfx/advisors/00_Wild/wild_advisor_f_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_1"
+		texturefile = "gfx/leaders/00_Wild/wild_generic_political_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_1_small"
+		texturefile = "gfx/advisors/00_Wild/wild_advisor_m_1.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_2"
+		texturefile = "gfx/leaders/00_Wild/wild_generic_political_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_2_small"
+		texturefile = "gfx/advisors/00_Wild/wild_advisor_m_2.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_3"
+		texturefile = "gfx/leaders/00_Wild/wild_generic_political_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_3_small"
+		texturefile = "gfx/advisors/00_Wild/wild_advisor_m_3.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_4"
+		texturefile = "gfx/leaders/00_Wild/wild_generic_political_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_4_small"
+		texturefile = "gfx/advisors/00_Wild/wild_advisor_m_4.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_5"
+		texturefile = "gfx/leaders/00_Wild/wild_generic_political_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_5_small"
+		texturefile = "gfx/advisors/00_Wild/wild_advisor_m_5.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_6"
+		texturefile = "gfx/leaders/00_Wild/wild_generic_political_m_6.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Wild_Generic_m_6_small"
+		texturefile = "gfx/advisors/00_Wild/wild_advisor_m_6.dds"
+	}
+}

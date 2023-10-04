@@ -130,3 +130,4 @@
  DOR_has_senate: "Has national spirit §Y$DOR_senate_idea$§!"
  DOR_monarchist_plot_available_tooltip: "Less than §R5%§! combined support for §Y$opportunism_noun$§!, §Y$conquest_noun$§!, and §Y$melkorite_noun$§!"
  DOR_monarchist_plot_tooltip: "The §Y$opportunism_noun$§!, §Y$conquest_noun$§!, and §Y$melkorite_noun$§! supporters will start a §Rcivil war!§!\n"
+ DOR_investigate_reactionary_plot_tooltip: "$unlocks_decision_tooltip$ to delay the §Y$DOR_monarchist_plot$§! and reduce its support."

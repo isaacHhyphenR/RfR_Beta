@@ -43,7 +43,10 @@ DOR_monarchist_plot_category = {
 	icon = GFX_decision_category_tribal_crown
 	priority = 99
 	allowed = { original_tag = DOR }
-	visible = { has_completed_focus = DOR_investigate_reactionary_plot }
+	visible = {
+		has_completed_focus = DOR_investigate_reactionary_plot
+		has_active_mission = DOR_monarchist_plot
+	}
 }
 
 DOR_spread_revolution_category = {

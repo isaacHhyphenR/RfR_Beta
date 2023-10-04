@@ -3359,7 +3359,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			custom_effect_tooltip = unimplemented
+			custom_effect_tooltip = DOR_investigate_reactionary_plot_tooltip
 			burghers_focus_effect = yes
 		}
 	}
