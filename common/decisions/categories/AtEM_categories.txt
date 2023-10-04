@@ -38,18 +38,24 @@ DOR_great_merchants_category = {
 	allowed = { original_tag = DOR }
 	visible = { has_power_balance = { id = DOR_great_merchants_power_balance } }
 }
+
+DOR_monarchist_plot_category = {
+	icon = GFX_decision_category_tribal_crown
+	priority = 99
+	allowed = { original_tag = DOR }
+	visible = { has_completed_focus = DOR_investigate_reactionary_plot }
+}
+
+DOR_spread_revolution_category = {
+	icon = GFX_decision_category_generic_democracy
+	priority = 85
+	allowed = { original_tag = DOR }
+	visible = { has_completed_focus = DOR_establish_sister_republics }
+}
 DOR_guilds_category = {
 	icon = GFX_decision_category_guilds
 	priority = 80
 	allowed = { original_tag = DOR }
-}
-DOR_college_category = {
-	icon = GFX_decision_category_usa_congress
-	picture = GFX_decision_cat_college_decision_background
-	visible_when_empty = yes
-	priority = 79
-	allowed = { original_tag = DOR }
-	visible = { has_completed_focus = DOR_renovate_the_royal_university_of_srzel_kain }
 }
 DOR_foreign_loans_category = {
 	icon = GFX_decision_category_guilds
@@ -71,9 +77,11 @@ DOR_foreign_loans_category = {
 	}
 }
 
-DOR_spread_revolution_category = {
-	icon = GFX_decision_category_generic_democracy
-	priority = 85
+DOR_college_category = {
+	icon = GFX_decision_category_usa_congress
+	picture = GFX_decision_cat_college_decision_background
+	visible_when_empty = yes
+	priority = 79
 	allowed = { original_tag = DOR }
-	visible = { has_completed_focus = DOR_establish_sister_republics }
+	visible = { has_completed_focus = DOR_renovate_the_royal_university_of_srzel_kain }
 }

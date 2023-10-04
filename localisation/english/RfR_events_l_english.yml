@@ -821,7 +821,7 @@
  rfr_news.109.d: "Our ambassador returns emptyhanded from [FROM.capital.GetCapitalVictoryPointName]; they will not grant us any special trade privileges."
  rfr_news.109.a: "Why would they refuse our money?"
  rfr_news.110.t: "The Dorwin Senate"
- rfr_news.110.d: "Crowds lined the streets of [FROM.capital.GetCapitalVictoryPointName] to cheer the senators arriving at the first ever session of the Dorwin Senate. These representatives, elected from all across the realm, grant the people a voice in their governance. Though [FROM.GetLeader] continues to rule as [get_king_queen_cap], [FROM.GetLeader.GetSheHe] must now cooperate with or even concede to the Senate on several key matters. [FROM.GetLeader.GetSheHeCap] fought to maintain [FROM.GetLeader.GetHerHis] power, but in the end had to concede or risk alienating all [FROM.GetLeader.GetHerHis] supporters and losing everything. Many wonder if [FROM.GetLeader.GetSheHe] has only delayed the inevitable..."
+ rfr_news.110.d: "Crowds lined the streets of [FROM.capital.GetCapitalVictoryPointName] to cheer the senators arriving at the first ever session of the Dorwin Senate. These representatives, elected from all across the realm, grant the people a voice in their governance. Though [FROM.GetLeader] continues to rule as Realm Master, [FROM.GetLeader.GetSheHe] must now cooperate with or even concede to the Senate on several key matters. [FROM.GetLeader.GetSheHeCap] fought to maintain [FROM.GetLeader.GetHerHis] power, but in the end had to concede or risk alienating all [FROM.GetLeader.GetHerHis] supporters and losing everything. Many wonder if [FROM.GetLeader.GetSheHe] has only delayed the inevitable..."
  rfr_news.110.a: "The first step on the path to a Republic!"
  
  rfr_election.1.t: "The Dorwin Republic!"

@@ -126,5 +126,7 @@
  established_sister_republic: "Has established at least one §YSister Republic§!"
  home_of_the_revolution_update_tooltip: ""
  DOR_home_of_the_revolution_stealable: "§RIf another republic assumes control of our faction, they will take this spirit from us.§!"
- DOR_home_of_the_revolution_focus_tooltip: "Per §YSister Republic§!:$new_line_tab$War Support: [?global.republics_war_support_bonus|G%=]$new_line_tab$Daily Subject Autonomy Gain: [?global.republics_autonomy_bonus|G=]$new_line_tab$Daily Compliance Gain: [?global.republics_compliance_bonus|G%%=]$new_line_tab$Daily Freedom Support: [?global.republics_freedom_bonus|G=]"
+ DOR_home_of_the_revolution_focus_tooltip: "Per §YSister Republic§!:$new_line_tab$War Support: [?global.republics_war_support_bonus_base|G%=]$new_line_tab$Daily Subject Autonomy Gain: [?global.republics_autonomy_bonus_base|G=]$new_line_tab$Daily Compliance Gain: [?global.republics_compliance_bonus_base|G%%=]$new_line_tab$Daily Freedom Support: [?global.republics_freedom_bonus_base|G=]"
  DOR_has_senate: "Has national spirit §Y$DOR_senate_idea$§!"
+ DOR_monarchist_plot_available_tooltip: "Less than §R5%§! combined support for §Y$opportunism_noun$§!, §Y$conquest_noun$§!, and §Y$melkorite_noun$§!"
+ DOR_monarchist_plot_tooltip: "The §Y$opportunism_noun$§!, §Y$conquest_noun$§!, and §Y$melkorite_noun$§! supporters will start a §Rcivil war!§!\n"

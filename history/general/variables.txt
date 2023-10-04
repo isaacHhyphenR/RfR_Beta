@@ -4,4 +4,8 @@ FOR = {
 	set_variable = { global.prosperity_per_import = 0.08 }
 	set_variable = { global.prosperity_per_export = 0.05 }
 	set_variable = { global.market_upgrade_cost = 3 }
+	set_variable = { global.republics_war_support_bonus_base = 0.01 }
+	set_variable = { global.republics_autonomy_bonus_base = -0.01 }
+	set_variable = { global.republics_compliance_bonus_base = 0.005 }
+	set_variable = { global.republics_freedom_bonus_base = 0.01 }
 }

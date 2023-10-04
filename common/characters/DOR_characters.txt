@@ -298,7 +298,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_ariberga_vierling
 			allowed = { original_tag = DOR }
-			traits = { dreamer_of_greater_dorwinion_conquest vierling_pol_eigth }
+			traits = { dreamer_of_greater_dorwinion_conquest vierling_pol_eighth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -681,7 +681,7 @@ characters = {
 			slot = high_command
 			idea_token = DOR_kelai_aldiana
 			allowed = { original_tag = DOR }
-			traits = { navy_screen_1 merchant_house_pol_eigth }
+			traits = { navy_screen_1 merchant_house_pol_eighth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -939,7 +939,7 @@ characters = {
 			slot = high_command
 			idea_token = DOR_theoren_gastwolk
 			allowed = { original_tag = DOR }
-			traits = { army_artillery_1 burgher_pol_eigth }
+			traits = { army_artillery_1 burgher_pol_eighth }
 			ai_will_do = {
 				factor = 1
 			}

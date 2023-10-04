@@ -687,3 +687,7 @@
  DOR_great_merchants_category_desc: "$DOR_great_merchants_balance_desc$"
  DOR_the_peoples_army_mission: "The People's Army"
  DOR_the_peoples_army_mission_desc: "$DOR_the_peoples_army_desc$"
+ DOR_monarchist_plot_category: "Monarchist Plot"
+ #DOR_monarchist_plot_category_desc: "$DOR_monarchist_plot_desc$"
+ DOR_monarchist_plot: "Monarchist Plot"
+ DOR_monarchist_plot_desc: "Reactionary elements in our country, led by $DOR_vidumarh_vierling$, are planning on violently undoing all the progress we've made and reestablishing the authority of the nobility."

@@ -2520,13 +2520,13 @@ calculate_num_republics = {
 		add_to_variable = { global.num_republics = 1 }
 	}
 	#sets the variables that Dorwinion's 'Home of the Revolution' modifier uses
-	set_variable = { global.republics_war_support_bonus = 0.01 }
+	set_variable = { global.republics_war_support_bonus = global.republics_war_support_bonus_base } #0.01
 	multiply_variable = { global.republics_war_support_bonus = global.num_republics }
-	set_variable = { global.republics_autonomy_bonus = -0.01 }
+	set_variable = { global.republics_autonomy_bonus = global.republics_autonomy_bonus_base } #-0.01
 	multiply_variable = { global.republics_autonomy_bonus = global.num_republics }
-	set_variable = { global.republics_compliance_bonus = 0.005 }
+	set_variable = { global.republics_compliance_bonus = global.republics_compliance_bonus_base } #0.005
 	multiply_variable = { global.republics_compliance_bonus = global.num_republics }
-	set_variable = { global.republics_freedom_bonus = 0.01 }
+	set_variable = { global.republics_freedom_bonus = global.republics_freedom_bonus_base } #0.01
 	multiply_variable = { global.republics_freedom_bonus = global.num_republics }
 }
 

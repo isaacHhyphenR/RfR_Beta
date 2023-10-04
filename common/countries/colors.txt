@@ -64,7 +64,7 @@ DFN = {
 	color_ui = rgb { 95 75 6 }
 }
 DOR = {
-	color = rgb { 135 63 163 }
+	color = rgb { 126 49 173 }
 	color_ui = rgb { 98 10 145 }
 }
 DPG = {

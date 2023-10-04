@@ -1586,6 +1586,80 @@ DOR_spread_revolution_category = {
 	}
 }
 
-
-
+DOR_monarchist_plot_category = {
+	DOR_monarchist_plot = {
+		icon = GFX_decision_revolt
+		days_mission_timeout = 100
+		is_good = no
+		allowed = { always = no }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DOR_monarchist_plot_available_tooltip
+				set_temp_variable = { vierling_size = party_popularity@opportunism }
+				add_to_temp_variable = { vierling_size = party_popularity@conquest }
+				add_to_temp_variable = { vierling_size = party_popularity@melkorite }
+				check_variable = { vierling_size < 0.05 }
+			}
+		}
+		complete_effect = {
+			retire_character = DOR_vidumarh_vierling
+			set_country_flag = defeated_monarchist_plot
+		}
+		timeout_effect = {
+			custom_effect_tooltip = DOR_monarchist_plot_tooltip
+			hidden_effect = { ##the tooltip is an absolute mess
+				set_temp_variable = { vierling_size = party_popularity@opportunism }
+				add_to_temp_variable = { vierling_size = party_popularity@conquest }
+				add_to_temp_variable = { vierling_size = party_popularity@melkorite }
+				start_civil_war = {
+					ideology = conquest
+					size = var:vierling_size
+					keep_all_characters = yes
+					hidden_effect = {
+						if = { #Uldonavuld
+							limit = { ROOT = { owns_state = 311 } }
+							transfer_state = 311
+						}
+						set_cosmetic_tag = VIR
+						save_event_target_as = VIR_revolution
+						set_country_flag = elected_winelord #so it can do the correct focuses
+						every_character = { #get rid of the genericish folks who pop up
+							retire = yes
+						}
+						#makes vidumarh leader
+						ROOT = {
+							DOR_vidumarh_vierling = { set_nationality = PREV.PREV }
+						}
+						DOR_vidumarh_vierling = {
+							promote_character = elective_monarchy_conquest
+							promote_character = elective_monarchy_melkorite
+						}
+					}
+				}
+				##transfers all Vierling supports & ~half of Koldana supporters
+				every_character = {
+					if = {
+						limit = { has_character_flag = vierling_supporter }
+						set_nationality = event_target:VIR_revolution
+					}
+					else_if = {
+						limit = { has_character_flag = koldana_supporter }
+						random = {
+							chance = 50
+							set_nationality = event_target:VIR_revolution
+						}
+					}
+				}
+				####Civil war cancels elections for some reason
+				if = {
+					limit = { is_republic = yes }
+					set_politics = {
+						ruling_party = DOR
+						elections_allowed = yes
+					}
+				}
+			}
+		}
+	}
+}
 

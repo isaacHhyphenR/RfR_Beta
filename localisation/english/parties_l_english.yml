@@ -82,3 +82,13 @@
  MOR_melkorite_party: "The Eye"
  MOR_melkorite_party_long: "The Eye of Sauron"
 
+ DOR_isolationism_party: "Merchant Houses"
+ DOR_isolationism_party_long: "Merchant Houses"
+ DOR_freedom_party: "Burghers"
+ DOR_freedom_party_long: "Burghers"
+ DOR_opportunism_party: "House Koldana"
+ DOR_opportunism_party_long: "House Koldana"
+ DOR_conquest_party: "House Vierling"
+ DOR_conquest_party_long: "House Vierling"
+ #DOR_melkorite_party: "The Eye"
+ #DOR_melkorite_party_long: "The Eye of Sauron"

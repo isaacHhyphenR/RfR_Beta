@@ -367,6 +367,13 @@ on_actions = {
 
 	on_new_term_election = { #elections!
 		effect = {
+			##save the date in case we need it later
+			meta_effect = {
+				text = {
+					set_variable = { last_election = DATE }
+				}
+				DATE = "\"[GetDate]\""
+			}
 			if = { #Dorwin elections
 				limit = { original_tag = DOR }
 				if = { #first election has differnet text + fires news event to whole world

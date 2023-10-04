@@ -2342,7 +2342,7 @@ leader_traits = {
 		sprite = 12
 		random = no
 	}
-	koldana_pol_eigth = {
+	koldana_pol_eighth = {
 		sprite = 12
 		random = no
 	}
@@ -2378,7 +2378,7 @@ leader_traits = {
 		sprite = 12
 		random = no
 	}
-	vierling_pol_eigth = {
+	vierling_pol_eighth = {
 		sprite = 12
 		random = no
 	}
@@ -2414,7 +2414,7 @@ leader_traits = {
 		sprite = 12
 		random = no
 	}
-	human_advisor_pol_eigth = {
+	human_advisor_pol_eighth = {
 		sprite = 12
 		random = no
 	}
@@ -2450,7 +2450,7 @@ leader_traits = {
 		sprite = 12
 		random = no
 	}
-	elven_advisor_pol_eigth = {
+	elven_advisor_pol_eighth = {
 		sprite = 12
 		random = no
 	}
@@ -2486,7 +2486,7 @@ leader_traits = {
 		sprite = 12
 		random = no
 	}
-	merchant_house_pol_eigth = {
+	merchant_house_pol_eighth = {
 		sprite = 12
 		random = no
 	}
@@ -2522,7 +2522,7 @@ leader_traits = {
 		sprite = 12
 		random = no
 	}
-	burgher_pol_eigth = {
+	burgher_pol_eighth = {
 		random = no
 		sprite = 12
 	}

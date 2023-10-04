@@ -1,0 +1,288 @@
+is_enemy_ideology = {
+	OR = {
+		AND = {
+			has_government = conquest
+			ROOT = {
+				OR = {
+					has_government = freedom
+				}
+			}
+		}
+		AND = {
+			has_government = freedom
+			ROOT = {
+				OR = {
+					has_government = conquest
+					has_government = melkorite
+				}
+			}
+		}
+		AND = {
+			has_government = melkorite
+			ROOT = {
+				OR = {
+					has_government = freedom
+				}
+			}
+		}
+	}
+}
+
+allowed_to_ideology_switch = {
+	NOT = {
+		OR = {
+			original_tag = ISN
+			original_tag = GON
+			original_tag = MOR
+			original_tag = ROH
+			original_tag = DOR
+		}
+	}
+}
+
+NOT_ruled_by_highest_party = {
+	NOT = { check_variable = { highest_party_ideology = current_party_ideology_group } }
+	check_variable = { highest_party_popularity > 0.5 }
+}
+
+can_boost_isolationism_decision = {
+	OR = {
+		isolationism < 0.51
+		AND = {
+			isolationism < 0.66
+			has_government = isolationism
+		}
+	}
+	# if = { limit = { is_greater_enedwaith_tag = yes }
+		# has_country_flag = can_boost_isolationism
+	# }
+	if = { limit = { tag = FAN }
+		has_war = yes
+	}
+}
+can_boost_freedom_decision = {
+	OR = {
+		freedom < 0.51
+		AND = {
+			freedom < 0.66
+			has_government = freedom
+		}
+	}
+	if = { limit = { is_greater_enedwaith_tag = yes }
+		has_completed_focus = ENE_commision_songs_of_triumph_against_evil
+	}
+	if = { limit = { tag = FAN }
+		has_war = yes
+	}
+}
+can_boost_opportunism_decision = {
+	OR = {
+		opportunism < 0.51
+		AND = {
+			opportunism < 0.66
+			has_government = opportunism
+		}
+	}
+	# if = { limit = { is_greater_enedwaith_tag = yes }
+		# has_country_flag = can_boost_opportunism
+	# }
+	if = { limit = { is_greater_enedwaith_tag = yes }
+		has_completed_focus = ENE_invoke_unifying_kings_of_old
+	}
+	if = { limit = { tag = FAN }
+		has_war = yes
+	}
+}
+can_boost_conquest_decision = {
+	OR = {
+		conquest < 0.51
+		AND = {
+			conquest < 0.66
+			has_government = conquest
+		}
+	}
+	if = { limit = { is_greater_enedwaith_tag = yes }
+		has_completed_focus = ENE_commission_songs_of_ancient_conquests
+	}
+	if = { limit = { tag = FAN }
+		has_war = yes
+	}
+}
+can_boost_melkorite_decision = {
+	OR = {
+		melkorite < 0.51
+		AND = {
+			melkorite < 0.66
+			has_government = melkorite
+		}
+	}
+	if = { limit = { is_greater_enedwaith_tag = yes }
+		has_completed_focus = ENE_commission_songs_of_the_power_of_evil_things
+	}
+	if = { limit = { tag = FAN }
+		has_war = yes
+	}
+}
+
+
+is_assertive = {
+	OR = {
+		has_government = melkorite
+		has_government = conquest
+		has_government = freedom
+	}
+}
+is_evil = {
+	OR = {
+		has_government = opportunism
+		has_government = conquest
+		has_government = melkorite
+	}
+}
+is_good = {
+	OR = {
+		has_government = isolationism
+		has_government = freedom
+	}
+}
+THIS_and_PREV_good_vs_evil = { #evaluates wether THIS and PREV have opposing ideologies
+	OR = {
+		AND = { PREV = { is_good = yes } THIS = { is_evil = yes } }
+		AND = { PREV = { is_evil = yes } THIS = { is_good = yes } }
+	}
+}
+THIS_and_PREV_same_ideology = {
+	custom_trigger_tooltip = {
+		tooltip = has_same_ideology_tt
+		OR = {
+			AND = { THIS = { has_government = isolationism } PREV = { has_government = isolationism } }
+			AND = { THIS = { has_government = freedom } PREV = { has_government = freedom } }
+			AND = { THIS = { has_government = opportunism } PREV = { has_government = opportunism } }
+			AND = { THIS = { has_government = conquest } PREV = { has_government = conquest } }
+			AND = { THIS = { has_government = melkorite } PREV = { has_government = melkorite } }
+		}
+	}
+}
+is_true_evil = { #conquest/melkorite
+	OR = { has_government = conquest has_government = melkorite }
+}
+
+better_faction_event_option = {
+	OR = {
+		AND = {
+			FROM = {
+				is_good = yes
+			}
+			is_good = yes
+		}
+		AND = {
+			FROM = {
+				has_government = melkorite
+			}
+			has_government = melkorite
+		}
+		AND = {
+			FROM = {
+				is_evil = yes
+			}
+			is_evil = yes
+		}
+	}
+}
+both_melkorite = {
+	FROM = {
+		has_government = melkorite
+	}
+	has_government = melkorite
+}
+both_evil_not_melkorite = {
+	FROM = {
+		is_evil = yes
+	}
+	is_evil = yes
+	NOT = {
+		both_melkorite = yes
+	}
+}
+
+
+wants_to_be_isolationism = {
+	OR = {
+		has_country_flag = isolationism_flag
+		AND = {
+			has_government = isolationism
+			NOT = {
+				OR = {
+					has_country_flag = freedom_flag
+					has_country_flag = opportunism_flag
+					has_country_flag = conquest_flag
+					has_country_flag = melkorite_flag
+				}
+			}
+		}
+	}
+}
+wants_to_be_freedom = {
+	OR = {
+		has_country_flag = freedom_flag
+		AND = {
+			has_government = freedom
+			NOT = {
+				OR = {
+					has_country_flag = isolationism_flag
+					has_country_flag = opportunism_flag
+					has_country_flag = conquest_flag
+					has_country_flag = melkorite_flag
+				}
+			}
+		}
+	}
+}
+wants_to_be_opportunism = {
+	OR = {
+		has_country_flag = opportunism_flag
+		AND = {
+			has_government = opportunism
+			NOT = {
+				OR = {
+					has_country_flag = isolationism_flag
+					has_country_flag = freedom_flag
+					has_country_flag = conquest_flag
+					has_country_flag = melkorite_flag
+				}
+			}
+		}
+	}
+}
+wants_to_be_conquest = {
+	OR = {
+		has_country_flag = conquest_flag
+		AND = {
+			has_government = conquest
+			NOT = {
+				OR = {
+					has_country_flag = isolationism_flag
+					has_country_flag = freedom_flag
+					has_country_flag = opportunism_flag
+					has_country_flag = melkorite_flag
+				}
+			}
+		}
+	}
+}
+wants_to_be_melkorite = {
+	OR = {
+		has_country_flag = melkorite_flag
+		AND = {
+			has_government = melkorite
+			NOT = {
+				OR = {
+					has_country_flag = isolationism_flag
+					has_country_flag = freedom_flag
+					has_country_flag = opportunism_flag
+					has_country_flag = conquest_flag
+				}
+			}
+		}
+	}
+}
