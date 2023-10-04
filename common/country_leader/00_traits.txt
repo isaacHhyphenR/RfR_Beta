@@ -2722,4 +2722,10 @@ leader_traits = {
 		sprite = 12
 		political_power_factor = -0.5
 	}
+	republic_advisor = { #used to transfer character on sister republic creation
+		random = no
+	}
+	republic_candidate = {
+		random = no
+	}
 }

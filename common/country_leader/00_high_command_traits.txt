@@ -31,7 +31,7 @@
 
 
 leader_traits = {
-######################################################################################HIGH COMMAND
+######################################################################################ARMY CHIEF
 	# 1 is worst, 3 is best
 	army_chief_defensive_1 = { # +5% Defensive efficiency
 		sprite = 9
@@ -353,7 +353,7 @@ leader_traits = {
 	}
 
 
-
+######################################################################################ARMY HIGH COMMAND
 	army_entrenchment_1 = { # Ground units entrench 8% faster
 		sprite = 9
 		dig_in_speed_factor = 0.08
@@ -729,6 +729,7 @@ leader_traits = {
 
 
 
+######################################################################################NAVY CHIEF
 	navy_chief_decisive_battle_1 = {
 		sprite = 3
 		navy_capital_ship_attack_factor = 0.05
@@ -885,6 +886,7 @@ leader_traits = {
 		}
 	}
 
+######################################################################################NAVY HIGH COMMAND
 	navy_fleet_logistics_1 = {
 		sprite = 6
 		navy_max_range_factor = 0.05
@@ -1028,7 +1030,7 @@ leader_traits = {
 	}
 
 
-			### THEORISTS
+######################################################################################THEORISTS
 	chivalrous = { ##GON
 		sprite = 8
 		cat_mobile_warfare_cost_factor = -0.15

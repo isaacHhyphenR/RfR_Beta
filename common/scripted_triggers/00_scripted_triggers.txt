@@ -13,11 +13,9 @@
 #	}
 #
 
-is_unlikely_country_tag = {
+is_unlikely_country_tag = { #less likely ot be released in peace conferences
 	OR = {
-	    tag = DAG
 	    tag = HRN
-	    tag = MIR
 	}
 }
 can_ROOT_get_wargoal_on_THIS = {

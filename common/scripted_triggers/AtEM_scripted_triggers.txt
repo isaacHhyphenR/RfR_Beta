@@ -22,6 +22,34 @@ is_rhovanion_tag = {
 	}
 }
 
+is_steppe_tag = {
+	OR = {
+		original_tag = DLP
+		original_tag = DYR
+		original_tag = KRG
+		original_tag = KST
+		original_tag = LGR
+		original_tag = MAG
+		original_tag = RLM
+	}
+}
+
+is_arnor_tag = {
+	OR = {
+		original_tag = ART
+		original_tag = CAR
+		original_tag = RDR
+	}
+}
+is_gondor_tag = {
+	OR = {
+		original_tag = ANF
+		original_tag = GON
+		original_tag = ITH
+		original_tag = PNG
+	}
+}
+
 can_celduin_trade = {
 	market_capital = yes
 }
@@ -182,9 +210,25 @@ DOR_has_senate = {
 	}
 }
 
-
-
-
+can_form_sister_republic = { #whether DOR can found a unique sister republic on this country's cores
+	OR = {
+		original_tag = BER
+		original_tag = DAI
+		original_tag = DAL
+		original_tag = HAR
+		original_tag = HIL
+		original_tag = HTH
+		original_tag = KND
+		original_tag = ROH
+		original_tag = UMB
+		is_arnor_tag = yes
+		is_gondor_tag = yes
+		is_greater_enedwaith_tag = yes
+		is_rhovanion_tag = yes
+		is_rhunnic_tag = yes
+		is_steppe_tag = yes
+	}
+}
 
 
 

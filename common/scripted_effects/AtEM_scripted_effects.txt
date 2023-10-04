@@ -1958,7 +1958,7 @@ DOR_establish_senate = {
 	if = {
 		limit = {
 			NOT = {
-				OR = { has_idea = DOR_senate_idea has_idea = DOR_senate_idea_republic }
+				OR = { has_idea = DOR_senate_idea has_idea = DOR_senate_republic_idea }
 			}
 		}
 		add_ideas = DOR_senate_idea
@@ -2533,4 +2533,70 @@ calculate_num_republics = {
 establish_sister_republic = {
 	calculate_num_republics = yes
 	set_country_flag = established_sister_republic
+}
+
+found_THIS_revolutionary_republic = {
+	set_country_flag = revolutionary_republic
+	save_event_target_as = REV_republic
+	if = {
+		limit = { has_war_support < 0.5 }
+		add_war_support = 0.1
+	}
+	if = {
+		limit = { has_stability < 0.5 }
+		add_stability = 0.1
+	}
+	#DOR gives you any of your states that they own
+	every_core_state = {
+		if = {
+			limit = { is_controlled_by = ROOT }
+			set_state_owner_to = PREV
+		}
+		set_state_province_controller = {
+			limit = {
+				OR = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+			controller = PREV
+		}
+	}
+	##DOR puppets this
+	ROOT = {
+		set_autonomy = { #sister republic
+			target = PREV
+			autonomy_state = autonomy_sister_republic
+			end_wars = no
+			end_civil_wars = no
+		}
+	}
+	##Transfers all the relevant characters
+	var:republic_root = {
+		every_character = {
+			limit = { has_trait = republic_advisor }
+			#removes the trait to avoid causing issues
+			if = {
+				limit = { is_character_slot = political_advisor }
+				remove_trait = {
+					slot = political_advisor
+					trait = republic_advisor
+				}
+			}
+			#transfers
+			set_nationality = event_target:REV_republic
+		}
+	}
+	##start with random candidate in charge
+	random_character = {
+		limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+		promote_character = republic_isolationism
+		promote_character = republic_freedom
+		promote_character = corrupt_republic
+		remove_trait = { #no longer needs to be marked
+			ideology = republic_isolationism
+			trait = republic_candidate
+		}
+	}
 }

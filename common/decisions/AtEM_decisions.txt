@@ -1485,47 +1485,16 @@ DOR_spread_revolution_category = {
 		}
 		fire_only_once = yes
 		complete_effect = {
+			set_temp_variable = { republic_root = DAL } #used in the scripted effect to transfer characters
 			create_dynamic_country = {
 				original_tag = DAL
 				set_cosmetic_tag = DAL_republic
 				set_variable = { ROOT.DAL_republic_var = THIS }
-				set_country_flag = revolutionary_republic
 				every_country_with_original_tag = { ##this is civil war yall
 					original_tag_to_check = DAL
 					add_civil_war_target = PREV
 				}
-				if = {
-					limit = { has_war_support < 0.5 }
-					add_war_support = 0.1
-				}
-				if = {
-					limit = { has_stability < 0.5 }
-					add_stability = 0.1
-				}
-			}
-			set_autonomy = { #sister republic
-				target = var:DAL_republic_var
-				autonomy_state = autonomy_sister_republic
-				end_wars = no
-				end_civil_wars = no
-			}
-			var:DAL_republic_var = { #transfers states
-				every_core_state = {
-					if = {
-						limit = { is_controlled_by = ROOT }
-						set_state_owner_to = PREV
-					}
-					set_state_province_controller = {
-						limit = {
-							OR = {
-								tag = ROOT
-								is_subject_of = ROOT
-								is_in_faction_with = ROOT
-							}
-						}
-						controller = PREV
-					}
-				}
+				found_THIS_revolutionary_republic = yes
 			}
 			#so we know we did it, update home of the revolution modifiers
 			establish_sister_republic = yes

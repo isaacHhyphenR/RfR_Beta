@@ -1,0 +1,43 @@
+every_possible_country = {
+	limit = {
+		can_form_sister_republic = yes
+	}
+	
+	generate_character = {
+		token_base = REPUBLIC_civ_candidate
+		gender = male
+		advisor = {
+			idea_token = REPUBLIC_civ_candidate3
+			slot = political_advisor
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			visible = { is_country_leader = no }
+			traits = { captain_of_industry republic_advisor }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_isolationism
+			traits = { captain_of_industry administrator_pol republic_candidate }
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_freedom
+			traits = { captain_of_industry administrator_pol }
+		}
+		country_leader = { ##Presidential candidate
+			ideology = corrupt_republic
+			traits = { captain_of_industry administrator_pol }
+		}
+		# corps_commander = {
+			# skill = 3
+			# attack_skill = 2
+			# defense_skill = 2
+			# planning_skill = 3
+			# logistics_skill = 3
+			# traits = { infantry_officer }
+			# visible = { has_completed_focus = CHI_give_falkenhausen_citizenship }
+		# }
+	}
+}
