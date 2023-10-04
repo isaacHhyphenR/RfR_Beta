@@ -2576,11 +2576,39 @@ found_THIS_revolutionary_republic = {
 	var:republic_root = {
 		every_character = {
 			limit = { has_trait = republic_advisor }
-			#removes the trait to avoid causing issues
+			#removes the republic_advisor trait (used to mark characters for the republic) to avoid causing issues
 			if = {
 				limit = { is_character_slot = political_advisor }
 				remove_trait = {
 					slot = political_advisor
+					trait = republic_advisor
+				}
+			}
+			else_if = {
+				limit = { is_character_slot = theorist }
+				remove_trait = {
+					slot = theorist
+					trait = republic_advisor
+				}
+			}
+			else_if = {
+				limit = { is_character_slot = army_chief }
+				remove_trait = {
+					slot = army_chief
+					trait = republic_advisor
+				}
+			}
+			else_if = {
+				limit = { is_character_slot = navy_chief }
+				remove_trait = {
+					slot = navy_chief
+					trait = republic_advisor
+				}
+			}
+			else_if = {
+				limit = { is_character_slot = high_command }
+				remove_trait = {
+					slot = high_command
 					trait = republic_advisor
 				}
 			}

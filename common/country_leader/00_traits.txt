@@ -2728,4 +2728,10 @@ leader_traits = {
 	republic_candidate = {
 		random = no
 	}
+	nation_builder = {
+		random = no
+		sprite = 13
+		autonomy_gain = 0.05
+		min_export = -0.2
+	}
 }

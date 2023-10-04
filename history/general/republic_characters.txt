@@ -3,11 +3,11 @@ every_possible_country = {
 		can_form_sister_republic = yes
 	}
 	
-	generate_character = {
+	generate_character = { #civ candidate
 		token_base = REPUBLIC_civ_candidate
 		gender = male
 		advisor = {
-			idea_token = REPUBLIC_civ_candidate3
+			idea_token = REPUBLIC_civ_candidate
 			slot = political_advisor
 			allowed = {
 				has_country_flag = revolutionary_republic
@@ -30,14 +30,253 @@ every_possible_country = {
 			ideology = corrupt_republic
 			traits = { captain_of_industry administrator_pol }
 		}
-		# corps_commander = {
-			# skill = 3
-			# attack_skill = 2
-			# defense_skill = 2
-			# planning_skill = 3
-			# logistics_skill = 3
-			# traits = { infantry_officer }
-			# visible = { has_completed_focus = CHI_give_falkenhausen_citizenship }
-		# }
+	}
+	generate_character = { #economic candidate
+		token_base = REPUBLIC_economic_candidate
+		gender = female
+		advisor = {
+			idea_token = REPUBLIC_economic_candidate
+			slot = political_advisor
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			visible = { is_country_leader = no }
+			traits = { financial_expert republic_advisor }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_isolationism
+			traits = { financial_expert economist republic_candidate }
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_freedom
+			traits = { financial_expert economist }
+		}
+		country_leader = { ##Presidential candidate
+			ideology = corrupt_republic
+			traits = { financial_expert economist }
+		}
+	}
+	generate_character = { #Political candidate
+		token_base = REPUBLIC_political_candidate
+		gender = male
+		advisor = {
+			idea_token = REPUBLIC_political_candidate
+			slot = political_advisor
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			visible = { is_country_leader = no }
+			traits = { silent_workhorse republic_advisor }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_isolationism
+			traits = { silent_workhorse loremaster republic_candidate }
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_freedom
+			traits = { silent_workhorse loremaster }
+		}
+		country_leader = { ##Presidential candidate
+			ideology = corrupt_republic
+			traits = { silent_workhorse loremaster }
+		}
+	}
+	generate_character = { #Independence advisor
+		token_base = REPUBLIC_independence_advisor
+		gender = female
+		advisor = {
+			idea_token = REPUBLIC_independence_advisor
+			slot = political_advisor
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			#visible = { is_country_leader = no }
+			traits = { nation_builder republic_advisor }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	generate_character = { #Mil advisor
+		token_base = REPUBLIC_mil_advisor
+		gender = female
+		advisor = {
+			idea_token = REPUBLIC_mil_advisor
+			slot = political_advisor
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			#visible = { is_country_leader = no }
+			traits = { war_industrialist republic_advisor }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+	}
+	generate_character = { #Non Core advisor
+		token_base = REPUBLIC_non_core_advisor
+		gender = male
+		advisor = {
+			idea_token = REPUBLIC_non_core_advisor
+			slot = political_advisor
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			#visible = { is_country_leader = no }
+			traits = { compassionate_gentleman republic_advisor }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+	}
+	generate_character = { #naval theorist
+		token_base = REPUBLIC_naval_theorist
+		gender = female
+		advisor = {
+			idea_token = REPUBLIC_naval_theorist
+			slot = theorist
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			#visible = { is_country_leader = no }
+			traits = { naval_theorist republic_advisor }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+	}
+	generate_character = { #military theorist
+		token_base = REPUBLIC_military_theorist
+		gender = male
+		advisor = {
+			idea_token = REPUBLIC_military_theorist
+			slot = theorist
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			#visible = { is_country_leader = no }
+			traits = { military_theorist republic_advisor }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+	}
+	generate_character = { #navy chief
+		token_base = REPUBLIC_navy_chief
+		gender = male
+		advisor = {
+			idea_token = REPUBLIC_navy_chief
+			slot = navy_chief
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			#visible = { is_country_leader = no }
+			traits = { navy_chief_reform_1 republic_advisor }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		navy_leader = {
+			visible = { has_country_flag = revolutionary_republic }
+			traits = { safety_first ironside superior_tactician }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 4
+		}
+	}
+	generate_character = { #army candidate
+		token_base = REPUBLIC_army_candidate
+		gender = female
+		advisor = {
+			idea_token = REPUBLIC_army_candidate
+			slot = army_chief
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			visible = { is_country_leader = no }
+			traits = { army_chief_reform_1 republic_advisor }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		field_marshal = {
+			visible = { has_country_flag = revolutionary_republic }
+			traits = { brilliant_strategist trait_reckless infantry_leader organizer fast_planner inspirational_leader }
+			skill = 5
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 4
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_isolationism
+			traits = { army_chief_reform_1 rallying_figurehead republic_candidate }
+		}
+		country_leader = { ##Presidential candidate
+			ideology = republic_freedom
+			traits = { army_chief_reform_1 rallying_figurehead }
+		}
+		country_leader = { ##Presidential candidate
+			ideology = corrupt_republic
+			traits = { army_chief_reform_1 rallying_figurehead }
+		}
+	}
+	generate_character = { #infantry command
+		token_base = REPUBLIC_infantry_command
+		gender = male
+		advisor = {
+			idea_token = REPUBLIC_infantry_command
+			slot = high_command
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			#visible = { is_country_leader = no }
+			traits = { army_infantry_1 republic_advisor }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		corps_commander = {
+			visible = { has_country_flag = revolutionary_republic }
+			traits = { guardian trait_cautious infantry_leader infantry_officer urban_assault_specialist }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 2
+		}
+	}
+	generate_character = { #regrouping command
+		token_base = REPUBLIC_regrouping_command
+		gender = male
+		advisor = {
+			idea_token = REPUBLIC_regrouping_command
+			slot = high_command
+			allowed = {
+				has_country_flag = revolutionary_republic
+			}
+			#visible = { is_country_leader = no }
+			traits = { army_regrouping_1 republic_advisor }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		corps_commander = {
+			visible = { has_country_flag = revolutionary_republic }
+			traits = { fair_leader engineer_officer organizer }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
 	}
 }
