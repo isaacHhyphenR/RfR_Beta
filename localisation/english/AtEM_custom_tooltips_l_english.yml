@@ -131,3 +131,16 @@
  DOR_monarchist_plot_available_tooltip: "Less than §R5%§! combined support for §Y$opportunism_noun$§!, §Y$conquest_noun$§!, and §Y$melkorite_noun$§!"
  DOR_monarchist_plot_tooltip: "The §Y$opportunism_noun$§!, §Y$conquest_noun$§!, and §Y$melkorite_noun$§! supporters will start a §Rcivil war!§!\n"
  DOR_investigate_reactionary_plot_tooltip: "$unlocks_decision_tooltip$ to delay the §Y$DOR_monarchist_plot$§! and reduce its support."
+ DOR_become_republic_tooltip: "Implement annual elections. Prominent $burgher_formatted$ politicians will run for the office of president./n"
+ establish_this_sister_republic_tooltip: "We transfer each of §Y[THIS.GetNameDef]'s§! cores that we control & are not our cores to a new §Y$autonomy_sister_republic$§!. This §Y$autonomy_sister_republic$§! will inherit all of §Y[THIS.GetNameDef]'s§! cores. It will act as our puppet and join our wars, but hold annual public elections."
+ establish_rhovanion_sister_republic_tooltip: "We transfer every core of any §Y$RVN_ADJ$§! country that we control & are not our cores to a new §Y$autonomy_sister_republic$§!. This §Y$autonomy_sister_republic$§! will inherit all §Y$RVN_ADJ$§! cores. It will act as our puppet and join our wars, but hold annual public elections."
+ annexed_DAL_republic: "Diplomatically annexed §Y$DAL_republic_DEF$§!"
+ annexed_RVN_republic: "Diplomatically annexed §Y$RVN_republic_DEF$§!"
+ gain_all_of_DAL_republic_cores_on_annex_tooltip: "We will inherit all of §Y$DAL_republic_DEF$'s§! cores upon diplomatically annexing it."
+ gain_all_of_RVN_republic_cores_on_annex_tooltip: "We will inherit all of §Y$RVN_republic_DEF$'s§! cores upon diplomatically annexing it."
+ 
+ 
+ 
+ 
+ 
+ 

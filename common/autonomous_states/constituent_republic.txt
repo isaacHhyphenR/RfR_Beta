@@ -35,15 +35,6 @@ autonomy_state = {
 	}
 
 	allowed = {
-		overlord = { is_republic = yes }
-		is_republic = yes
-	}
-	
-	can_take_level = {
-		#trigger here
-	}
-
-	can_lose_level = {
-		#trigger here
+		republican_puppet_trigger = yes
 	}
 }

@@ -389,6 +389,10 @@ on_actions = {
 					country_event = rfr_election.3
 				}
 			}
+			else_if = { #sister republic elections
+				limit = { can_form_sister_republic = yes }
+				country_event = rfr_election.4
+			}
 		}
 	}
 	
@@ -401,6 +405,43 @@ on_actions = {
 				}
 				FROM = { remove_dynamic_modifier = { modifier = DOR_home_of_the_revolution_modifier } }
 				ROOT = { add_dynamic_modifier = { modifier = DOR_home_of_the_revolution_modifier } }
+			}
+		}
+	}
+
+	on_subject_annexed = { ##DOR celduinic republic
+		effect = {
+			if = { #Republic of dale
+				limit = {
+					ROOT = { has_cosmetic_tag = DAL_republic }
+				}
+				FROM = {
+					set_country_flag = annexed_DAL_republic
+					if = { #get cores if we've already taken the focus
+						limit = { has_cosmetic_tag = celduin_republic }
+						ROOT = {
+							every_core_state = {
+								add_core_of = FROM
+							}
+						}
+					}
+				}
+			}
+			else_if = { #Republic of Rhovanion
+				limit = {
+					ROOT = { has_cosmetic_tag = RVN_republic }
+				}
+				FROM = {
+					set_country_flag = annexed_RVN_republic
+					if = { #get cores if we've already taken the focus
+						limit = { has_cosmetic_tag = celduin_republic }
+						ROOT = {
+							every_core_state = {
+								add_core_of = FROM
+							}
+						}
+					}
+				}
 			}
 		}
 	}

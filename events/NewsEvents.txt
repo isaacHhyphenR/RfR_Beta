@@ -1741,7 +1741,6 @@ news_event = { ##109## Foreigner rejected senate trade
 	}
 }
 
-
 news_event = { ##110## Established Senate
 	id = rfr_news.110
 	title = rfr_news.110.t
@@ -1752,5 +1751,18 @@ news_event = { ##110## Established Senate
 	
 	option = { #neat
 		name = rfr_news.110.a
+	}
+}
+
+news_event = { ##111## Monarchist plot begins
+	id = rfr_news.111
+	title = rfr_news.111.t
+	desc = rfr_news.111.d
+	picture = GFX_news_dunlendings_rally
+	
+	is_triggered_only = yes
+	
+	option = { #Aaaaah
+		name = rfr_news.111.a
 	}
 }

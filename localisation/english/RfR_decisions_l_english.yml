@@ -699,3 +699,5 @@
  DOR_arrest_shadow_worshippers_desc: "The monarchists have made league with the followers of Sauron to crush our newfound freedom. The latter group is more widely frowned upon in our society and thus more easily eliminated."
  DOR_raid_rebel_depots: "Raid Rebel Depots"
  DOR_raid_rebel_depots_desc: "If we strike their supply depots fast enough, the rebels will have little time to react."
+ establish_DAL_republic: "Establish $DAL_republic_DEF$"
+ establish_RVN_republic: "Establish $RVN_republic_DEF$"

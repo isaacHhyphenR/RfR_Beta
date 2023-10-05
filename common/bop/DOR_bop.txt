@@ -263,7 +263,7 @@ DOR_great_merchants_power_balance = {
 				production_factory_efficiency_gain_factor = 0.04
 			}
 		}
-		range = {
+		range = { #senate
 			id = DOR_burghers_range2
 			max = -0.5
 			min = -0.75
@@ -275,7 +275,7 @@ DOR_great_merchants_power_balance = {
 				DOR_establish_senate = yes
 			}
 		}
-		range = {
+		range = { #plot
 			id = DOR_burghers_range3
 			max = -0.75
 			min = -0.99
@@ -287,10 +287,13 @@ DOR_great_merchants_power_balance = {
 					limit = { NOT = { has_country_flag = started_monarchist_plot } }
 					activate_mission = DOR_monarchist_plot
 					set_country_flag = started_monarchist_plot
+					hidden_effect = {
+						news_event = rfr_news.111
+					}
 				}
 			}
 		}
-		range = {
+		range = { #republic
 			id = DOR_burghers_range4
 			max = -0.99
 			min = -1

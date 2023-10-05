@@ -37,15 +37,19 @@ autonomy_state = {
 	}
 
 	allowed = {
-		overlord = { is_republic = yes }
-		is_republic = yes
+		republican_puppet_trigger = yes
 	}
-	
-	can_take_level = {
-		#trigger here
-	}
-
-	can_lose_level = {
-		#trigger here
+	#ROOT is puppet - FROM is potential OVERLORD
+	use_for_peace_conference_weight = {
+		base = 0
+		modifier = {
+			add = 10
+			FROM = {
+				is_republic = yes
+			}
+			ROOT = {
+				can_form_sister_republic = yes
+			}
+		}
 	}
 }

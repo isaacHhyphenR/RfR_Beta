@@ -230,8 +230,10 @@ can_form_sister_republic = { #whether DOR can found a unique sister republic on 
 	}
 }
 
-
-
+republican_puppet_trigger = {
+	overlord = { is_republic = yes }
+	is_republic = yes
+}
 
 
 

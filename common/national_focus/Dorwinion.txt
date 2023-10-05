@@ -3307,11 +3307,42 @@ focus_tree = {
 		prerequisite = {
 			focus = DOR_establish_sister_republics
 		}
-		available = {
+		available = { #must have annexed one of the two that you get cores on
 			burghers_focus_trigger = yes
+			OR = {
+				has_country_flag = annexed_DAL_republic
+				has_country_flag = annexed_RVN_republic
+			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
-		completion_reward = {
+		completion_reward = { #if we've annexed them already, we gain cores. If not, we gain core when we do annex them
+			if = { #dale
+				limit = { has_country_flag = annexed_DAL_republic }
+				every_possible_country = {
+					limit = { has_cosmetic_tag = DAL_republic }
+					every_core_state = {
+						add_core_of = ROOT
+						remove_core_of = PREV
+					}
+				}
+			}
+			else = {
+				custom_effect_tooltip = gain_all_of_DAL_republic_cores_on_annex_tooltip
+			}
+			if = { #rhovanion
+				limit = { has_country_flag = annexed_RVN_republic }
+				every_possible_country = {
+					limit = { has_cosmetic_tag = RVN_republic }
+					every_core_state = {
+						add_core_of = ROOT
+						remove_core_of = PREV
+					}
+				}
+			}
+			else = {
+				custom_effect_tooltip = gain_all_of_RVN_republic_cores_on_annex_tooltip
+			}
+			set_cosmetic_tag = celduin_republic
 			burghers_focus_effect = yes
 		}
 	}
@@ -3564,11 +3595,23 @@ focus_tree = {
 		}
 		available = {
 			burghers_focus_trigger = yes
-			threat > 0.15
+			freedom > 0.45
 		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_war_support = 0.1
+			if = {
+				limit = { has_cosmetic_tag = DOR_republic }
+				set_politics = {
+					ruling_party = freedom
+					elections_allowed = yes
+				}
+			}
+			else = {
+				set_politics = {
+					ruling_party = freedom
+					elections_allowed = no
+				}
+			}
 			burghers_focus_effect = yes
 		}
 	}
@@ -3645,7 +3688,7 @@ focus_tree = {
 	focus = { #Rally the free cities
 		id = DOR_rally_the_free_cities
 		icon = GFX_goal_generic_major_alliance
-		x = -1
+		x = 1
 		y = 1
 		relative_position_id = DOR_bulwark_of_the_celduin
 		cost = 5
@@ -3726,7 +3769,7 @@ focus_tree = {
 	focus = { #Fight for our friends
 		id = DOR_fight_for_our_friends
 		#icon = GFX_goal_generic_major_alliance
-		x = 1
+		x = -1
 		y = 1
 		relative_position_id = DOR_bulwark_of_the_celduin
 		cost = 5
@@ -3744,12 +3787,9 @@ focus_tree = {
 				is_guaranteed_by = ROOT
 			}
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_popularity = {
-				ideology = freedom
-				popularity = 0.1
-			}
+			add_war_support = 0.1
 			burghers_focus_effect = yes
 		}
 	}
