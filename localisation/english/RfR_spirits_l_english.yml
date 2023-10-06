@@ -453,3 +453,11 @@
  DOR_merchant_contracts_desc: "Our merchants carry many goods up and down the Celduin."
  DOR_home_of_the_revolution_modifier: "Home of the Revolution"
  DOR_home_of_the_revolution_modifier_desc: "We founded the Republic, nurtured it, and spread it all across Middle-Earth via pen and sword. Common folk far and wide sing our praises. Democratic politicians look to us for guidance. Freedom loving armies flock to our banner. Under our leadership, the Revolution knows no bounds!"
+ small_DOR_investment: "Investing in [DOR.GetNameDef]"
+ small_DOR_investment_desc: "Our economic cooperation with Dorwinion is paying off wonderfully."
+ large_DOR_investment: "Investing Heavily in [DOR.GetNameDef]"
+ large_DOR_investment_desc: "Our economic cooperation with Dorwinion is paying off wonderfully."
+ DOR_bribes_in_pockets_idea: "Bribed Noble Advisors"
+ DOR_bribes_in_pockets_idea_desc: "$DOR_bribes_in_pockets_desc$"
+ 
+ 

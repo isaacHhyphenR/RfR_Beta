@@ -1,13 +1,9 @@
 ideas = {
 	#GFX:
-	#generic_light_cavalry
 	#generic_heavy_cavalry
-	#invest_in_dorwinion
-	#DOR_demoralized_army
 	
 	country = {
 		DOR_bribes_in_pockets_idea = {
-			name = DOR_bribes_in_pockets
 			picture = tur_balkan_central_bank_wealthy_greece
 			removal_cost = -1
 			allowed_civil_war = {
@@ -182,7 +178,7 @@ ideas = {
 		@demoralizedArmy6pos = 0.45
 		DOR_demoralized_army1 = {
 			name = DOR_demoralized_army
-			picture = DOR_demoralized_army
+			picture = DOR_demoralized_army1
 			removal_cost = -1
 			allowed_civil_war = {
 				always = yes
@@ -199,7 +195,7 @@ ideas = {
 		}
 		DOR_demoralized_army2 = {
 			name = DOR_demoralized_army
-			picture = DOR_demoralized_army
+			picture = DOR_demoralized_army2
 			removal_cost = -1
 			allowed_civil_war = {
 				always = yes
@@ -216,7 +212,7 @@ ideas = {
 		}
 		DOR_demoralized_army3 = {
 			name = DOR_demoralized_army
-			picture = DOR_demoralized_army
+			picture = DOR_demoralized_army3
 			removal_cost = -1
 			allowed_civil_war = {
 				always = yes
@@ -233,7 +229,7 @@ ideas = {
 		}
 		DOR_demoralized_army4 = {
 			name = DOR_demoralized_army
-			picture = DOR_demoralized_army
+			picture = DOR_demoralized_army4
 			removal_cost = -1
 			allowed_civil_war = {
 				always = yes
@@ -250,7 +246,7 @@ ideas = {
 		}
 		DOR_demoralized_army5 = {
 			name = DOR_demoralized_army
-			picture = DOR_demoralized_army
+			picture = DOR_demoralized_army5
 			removal_cost = -1
 			allowed_civil_war = {
 				always = yes
@@ -267,7 +263,7 @@ ideas = {
 		}
 		DOR_demoralized_army6 = {
 			name = DOR_demoralized_army
-			picture = DOR_demoralized_army
+			picture = DOR_demoralized_army6
 			removal_cost = -1
 			allowed_civil_war = {
 				always = yes
@@ -390,7 +386,7 @@ ideas = {
 			}
 		}
 		DOR_barding_training = {
-			picture = MEX_callistas
+			picture = barding_archery
 			removal_cost = -1
 			allowed_civil_war = {
 				has_government = freedom

@@ -758,4 +758,52 @@ spriteTypes = {
 		name = "GFX_idea_generic_resource_trade"
 		texturefile = "gfx/interface/ideas/generic_resource_trade.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_DOR_demoralized_army1"
+		texturefile = "gfx/interface/ideas/DOR_demoralized_army1.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_demoralized_army2"
+		texturefile = "gfx/interface/ideas/DOR_demoralized_army2.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_demoralized_army3"
+		texturefile = "gfx/interface/ideas/DOR_demoralized_army3.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_demoralized_army4"
+		texturefile = "gfx/interface/ideas/DOR_demoralized_army4.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_demoralized_army5"
+		texturefile = "gfx/interface/ideas/DOR_demoralized_army5.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_demoralized_army6"
+		texturefile = "gfx/interface/ideas/DOR_demoralized_army6.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_barding_archery"
+		texturefile = "gfx/interface/ideas/barding_archery.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_home_of_the_revolution"
+		texturefile = "gfx/interface/ideas/home_of_the_revolution.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_generic_heavy_cavalry"
+		texturefile = "gfx/interface/ideas/generic_heavy_cavalry.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_invest_in_dorwinion"
+		texturefile = "gfx/interface/ideas/invest_in_dorwinion.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_republic"
+		texturefile = "gfx/interface/ideas/DOR_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_barding_archery"
+		texturefile = "gfx/interface/ideas/barding_archery.dds"
+	}
 }
