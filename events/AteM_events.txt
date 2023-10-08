@@ -1547,7 +1547,7 @@ country_event = { ##10## Population Boom
 		}
 	}
 	option = { ##army
-		name = senate.10.ac
+		name = senate.10.c
 		ai_chance = {
 			factor = 2
 			modifier = { #AI won't go into debt

@@ -4,18 +4,11 @@
 @factoryBonuses = 2
 @bigBoPCost = 5
 #GFX:
-#GFX_goal_wine_propoganda
-#GFX_goal_support_great_merchants
-#GFX_goal_DOR_army_morale
-#GFX_goal_dorwin_nationalism
-#GFX_goal_grapes
 #GFX_goal_university_research
 #GFX_goal_university_medicine
 #GFX_goal_university_diplomacy
 #GFX_goal_university_tactics
 #GFX_goal_support_hawin_koldana
-#GFX_goal_defend_against_melkorite
-#GFX_focus_DOR_home_of_the_revolution
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -44,7 +37,7 @@ focus_tree = {
 ######################################################################MERCHANTS BRANCH
 	focus = { #support the great merchants
 		id = DOR_support_the_great_merchants
-		icon = GFX_goal_support_great_merchants
+		icon = GFX_goal_DOR_support_great_merchants
 		x = 10
 		y = 0
 		cost = 5
@@ -1393,7 +1386,7 @@ focus_tree = {
 ######################################################################WINELORDS BRANCH
 	focus = { #support the winelords
 		id = DOR_support_the_winelords
-		icon = GFX_goal_support_winelords
+		icon = GFX_goal_DOR_support_winelords
 		x = 40
 		y = 0
 		relative_position_id = DOR_support_the_great_merchants
@@ -1413,7 +1406,7 @@ focus_tree = {
 #################################SUPPORT BLADORTHIN
 	focus = { #Rally support for bladorthin
 		id = DOR_rally_support_for_bladorthin
-		icon = GFX_goal_support_house_koldana
+		icon = GFX_goal_DOR_support_house_koldana
 		x = -3
 		y = 1
 		relative_position_id = DOR_support_the_winelords
@@ -1596,7 +1589,7 @@ focus_tree = {
 #################################SUPPORT VIDUMARH
 	focus = { #Rally support for vidumarh
 		id = DOR_rally_support_for_vidumarh
-		icon = GFX_goal_support_house_vierling
+		icon = GFX_goal_DOR_support_house_vierling
 		x = 3
 		y = 1
 		relative_position_id = DOR_support_the_winelords
@@ -2432,7 +2425,7 @@ focus_tree = {
 	}
 	focus = { #Campaign of cordiality
 		id = DOR_campaign_of_cordiality
-		icon = GFX_goal_wine_propoganda
+		icon = GFX_goal_wine_propaganda
 		x = 1
 		y = 1
 		relative_position_id = DOR_power_in_opulence
@@ -3066,7 +3059,7 @@ focus_tree = {
 ######################################################################BURGHERS BRANCH
 	focus = { #support the burghers
 		id = DOR_support_the_burghers
-		icon = GFX_goal_support_burghers
+		icon = GFX_goal_DOR_support_burghers
 		x = -20
 		y = 8
 		relative_position_id = DOR_support_the_great_merchants
@@ -3244,7 +3237,7 @@ focus_tree = {
 	}
 	focus = { #Home of the Revolution
 		id = DOR_home_of_the_revolution
-		icon = GFX_focus_DOR_home_of_the_revolution
+		icon = GFX_goal_DOR_home_of_the_revolution
 		x = 0
 		y = 2
 		relative_position_id = DOR_establish_sister_republics

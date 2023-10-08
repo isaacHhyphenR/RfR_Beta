@@ -1,0 +1,1280 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_goal_generic_axe"
+		texturefile = "gfx/interface/goals/goal_generic_axe.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_fir_tree"
+		texturefile = "gfx/interface/goals/goal_generic_fir_tree.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_nazgul"
+		texturefile = "gfx/interface/goals/goal_nazgul.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_fish"
+		texturefile = "gfx/interface/goals/goal_generic_fish.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_mining"
+		texturefile = "gfx/interface/goals/goal_generic_mining.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_harness_fire"
+		texturefile = "gfx/interface/goals/events/goal_harness_fire.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_dunland"
+		texturefile = "gfx/interface/goals/regions/goal_dunland.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_province_of_dunland"
+		texturefile = "gfx/interface/goals/regions/goal_province_of_dunland.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_attack_andrast_white_mountains"
+		texturefile = "gfx/interface/goals/diplomatic/focus_attack_andrast_white_mountains.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_attack_enedwaith_druwaith_iaur"
+		texturefile = "gfx/interface/goals/diplomatic/focus_attack_enedwaith_druwaith_iaur.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_corsairs"
+		texturefile = "gfx/interface/goals/goal_corsairs.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_isn_white_hand"
+		texturefile = "gfx/interface/goals/isn_white_hand_focus.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_mor_red_eye"
+		texturefile = "gfx/interface/goals/mor_red_eye_focus.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_send_forth_all_legions"
+		texturefile = "gfx/interface/goals/events/goal_send_forth_all_legions.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_do_not_stop_until_the_city_is_taken"
+		texturefile = "gfx/interface/goals/events/goal_do_not_stop_until_the_city_is_taken.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_barad_dur"
+		texturefile = "gfx/interface/goals/monuments/goal_barad_dur.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_mount_doom"
+		texturefile = "gfx/interface/goals/monuments/goal_mount_doom.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_fire"
+		texturefile = "gfx/interface/goals/goal_generic_fire.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_fangorn_devastated"
+		texturefile = "gfx/interface/goals/events/goal_fangorn_devastated.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_clear_the_ring_of_isengard"
+		texturefile = "gfx/interface/goals/events/goal_clear_the_ring_of_isengard.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_forest_burning"
+		texturefile = "gfx/interface/goals/goal_generic_forest_burning.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_palantir"
+		texturefile = "gfx/interface/goals/goal_generic_palantir.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_sauron_palantir"
+		texturefile = "gfx/interface/goals/goal_sauron_palantir.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_military_palantir"
+		texturefile = "gfx/interface/goals/goal_military_palantir.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_claim_palantir"
+		texturefile = "gfx/interface/goals/goal_claim_palantir.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_economic_palantir"
+		texturefile = "gfx/interface/goals/goal_economic_palantir.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_tech_palantir"
+		texturefile = "gfx/interface/goals/goal_tech_palantir.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_gon_reveal_aragorn_in_the_palantir"
+		texturefile = "gfx/interface/goals/events/goal_gon_reveal_aragorn_in_the_palantir.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_form_ranks_you_maggots"
+		texturefile = "gfx/interface/goals/events/goal_form_ranks_you_maggots.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_dispersed_industry"
+		texturefile = "gfx/interface/goals/goal_generic_dispersed_industry.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_concentrated_industry"
+		texturefile = "gfx/interface/goals/goal_generic_concentrated_industry.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_giant_spiders_focus"
+		texturefile = "gfx/interface/goals/goal_generic_giant_spiders_focus.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_mumakil_focus"
+		texturefile = "gfx/interface/goals/goal_generic_mumakil_focus.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_orcish_hordes"
+		texturefile = "gfx/interface/goals/goal_orcish_hordes.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_orcish_legions"
+		texturefile = "gfx/interface/goals/goal_orcish_legions.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_boot"
+		texturefile = "gfx/interface/goals/goal_generic_boot.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_crossing_anduin_west"
+		texturefile = "gfx/interface/goals/goal_generic_crossing_anduin_west.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_crossing_anduin_east"
+		texturefile = "gfx/interface/goals/goal_generic_crossing_anduin_east.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_siege_artillery"
+		texturefile = "gfx/interface/goals/goal_generic_siege_artillery.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_mordor_grond"
+		texturefile = "gfx/interface/goals/goal_mordor_grond.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_minas_tirith"
+		texturefile = "gfx/interface/goals/monuments/goal_minas_tirith.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_dol_guldur"
+		texturefile = "gfx/interface/goals/monuments/goal_dol_guldur.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_reunited_kingdom"
+		texturefile = "gfx/interface/goals/regions/goal_reunited_kingdom.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_reunited_kingdom_burning"
+		texturefile = "gfx/interface/goals/regions/goal_reunited_kingdom_burning.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_fires_of_industry"
+		texturefile = "gfx/interface/goals/goal_fires_of_industry.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_fires_of_war"
+		texturefile = "gfx/interface/goals/goal_fires_of_war.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_the_mouth_of_sauron"
+		texturefile = "gfx/interface/goals/portraits/goal_the_mouth_of_sauron.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_the_one_ring"
+		texturefile = "gfx/interface/goals/goal_the_one_ring.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_the_deciever"
+		texturefile = "gfx/interface/goals/goal_the_deciever.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_the_necromancer"
+		texturefile = "gfx/interface/goals/goal_the_necromancer.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_the_dark_lord"
+		texturefile = "gfx/interface/goals/goal_the_dark_lord.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_the_black_hand"
+		texturefile = "gfx/interface/goals/goal_the_black_hand.dds"
+	}
+
+		##GENERIC
+	SpriteType = {
+		name = "GFX_goal_generic_party"
+		texturefile = "gfx/interface/goals/goal_generic_party.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_gon_white_tree_blooming"
+		texturefile = "gfx/interface/goals/events/goal_gon_white_tree_blooming.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_crown_of_gondor"
+		texturefile = "gfx/interface/goals/goal_crown_of_gondor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_aragorn_coronation"
+		texturefile = "gfx/interface/goals/events/goal_aragorn_coronation.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_forest"
+		texturefile = "gfx/interface/goals/goal_generic_forest.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_grazing"
+		texturefile = "gfx/interface/goals/goal_generic_grazing.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_fishing_boat"
+		texturefile = "gfx/interface/goals/goal_generic_fishing_boat.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_merchant_ship"
+		texturefile = "gfx/interface/goals/goal_generic_merchant_ship.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_construct_synth_refinery"
+		texturefile = "gfx/interface/goals/goal_generic_construct_synth_refinery.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_flowers"
+		texturefile = "gfx/interface/goals/goal_generic_flowers.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_warg_focus"
+		texturefile = "gfx/interface/goals/generic_warg_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_raven_focus"
+		texturefile = "gfx/interface/goals/generic_raven_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_troll_focus"
+		texturefile = "gfx/interface/goals/generic_troll_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_construct_supply_node"
+		texturefile = "gfx/interface/goals/generic_construct_supply_node.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_bribery"
+		texturefile = "gfx/interface/goals/goal_bribery.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_middle_earth"
+		texturefile = "gfx/interface/goals/regions/goal_middle_earth.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_middle_earth_on_fire"
+		texturefile = "gfx/interface/goals/regions/goal_middle_earth_on_fire.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_mercenaries"
+		texturefile = "gfx/interface/goals/goal_generic_mercenaries.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_arthedain"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_arthedain.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_cardolan"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_cardolan.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_dol_guldur"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_dol_guldur.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_dorwinion"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_dorwinion.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_erebor"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_erebor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_ered_luin"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_ered_luin.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_harondor"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_harondor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_khand"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_khand.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_khazad_dum"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_khazad_dum.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_lindon"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_lindon.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_mirvan"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_mirvan.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_rhudaur"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_rhudaur.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_rhun"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_rhun.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_rivendell"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_rivendell.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_woodland_realm"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_woodland_realm.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_umbar"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_umbar.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_beornings"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_beornings.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_dale"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_dale.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_druedain"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_druedain.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_dunland"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_dunland.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_enedwaith"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_enedwaith.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_gondor"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_gondor.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_gundabad"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_gundabad.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_harad"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_harad.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_isengard"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_isengard.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_lorien"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_lorien.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_misty_mountains"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_misty_mountains.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_mordor"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_mordor.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_rohan"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_rohan.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_shire"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_shire.dds"			
+	}
+		SpriteType = {
+		name = "GFX_goal_generic_befriend_arthedain"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_arthedain.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_cardolan"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_cardolan.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_dol_guldur"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_dol_guldur.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_dorwinion"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_dorwinion.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_erebor"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_erebor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_ered_luin"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_ered_luin.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_harondor"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_harondor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_khand"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_khand.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_khazad_dum"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_khazad_dum.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_lindon"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_lindon.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_mirvan"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_mirvan.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_rhudaur"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_rhudaur.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_rhun"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_rhun.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_rivendell"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_rivendell.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_woodland_realm"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_woodland_realm.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_umbar"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_umbar.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_beornings"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_beornings.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_dale"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_dale.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_druedain"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_druedain.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_dunland"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_dunland.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_enedwaith"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_enedwaith.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_gondor"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_gondor.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_gundabad"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_gundabad.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_harad"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_harad.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_isengard"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_isengard.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_lorien"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_lorien.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_misty_mountains"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_misty_mountains.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_mordor"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_mordor.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_rohan"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_rohan.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_shire"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_shire.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_food"
+		texturefile = "gfx/interface/goals/generic_food_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_cloth"
+		texturefile = "gfx/interface/goals/generic_cloth_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_wood"
+		texturefile = "gfx/interface/goals/generic_wood_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_iron"
+		texturefile = "gfx/interface/goals/generic_iron_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_mounts"
+		texturefile = "gfx/interface/goals/generic_mounts_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_monsters"
+		texturefile = "gfx/interface/goals/generic_monsters_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_nobility"
+		texturefile = "gfx/interface/goals/generic_nobility_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_forwards"
+		texturefile = "gfx/interface/goals/generic_forwards.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_backwards"
+		texturefile = "gfx/interface/goals/generic_backwards.dds"			
+	}
+#############################################################################################################GONDOR
+	SpriteType = {
+		name = "GFX_goal_gon_stewards_authority"
+		texturefile = "gfx/interface/goals/goal_gon_stewards_authority.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_gon_pelargir_marine_helmet"
+		texturefile = "gfx/interface/goals/goal_gon_pelargir_marine_helmet.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_gon_pelargir_marine_helmet"
+		texturefile = "gfx/interface/goals/goal_gon_pelargir_marine_helmet.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_gon_hurin"
+		texturefile = "gfx/interface/goals/portraits/goal_gon_hurin.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_numenor"
+		texturefile = "gfx/interface/goals/regions/goal_generic_numenor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_minas_morgul"
+		texturefile = "gfx/interface/goals/monuments/goal_minas_morgul.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_minas_ithil"
+		texturefile = "gfx/interface/goals/monuments/goal_minas_ithil.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_osgiliath_ruined"
+		texturefile = "gfx/interface/goals/monuments/goal_osgiliath_ruined.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_osgiliath_rebuilt"
+		texturefile = "gfx/interface/goals/monuments/goal_osgiliath_rebuilt.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_dome_of_stars"
+		texturefile = "gfx/interface/goals/monuments/goal_dome_of_stars.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_gon_warning_beacons"
+		texturefile = "gfx/interface/goals/events/goal_gon_warning_beacons.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_the_passing_of_denethor"
+		texturefile = "gfx/interface/goals/events/goal_the_passing_of_denethor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_sauron_defeated"
+		texturefile = "gfx/interface/goals/events/goal_sauron_defeated.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_claim_arnor"
+		texturefile = "gfx/interface/goals/regions/goal_claim_arnor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_claim_enedwaith"
+		texturefile = "gfx/interface/goals/regions/goal_claim_enedwaith.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_claim_harondor"
+		texturefile = "gfx/interface/goals/regions/goal_claim_harondor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_claim_umbar"
+		texturefile = "gfx/interface/goals/regions/goal_claim_umbar.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_claim_the_west"
+		texturefile = "gfx/interface/goals/regions/goal_claim_the_west.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_protect_the_west"
+		texturefile = "gfx/interface/goals/regions/goal_protect_the_west.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_white_tree"
+		texturefile = "gfx/interface/goals/gon_white_tree_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_swan_knights"
+		texturefile = "gfx/interface/goals/gon_swan_knights_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_angbor"
+		texturefile = "gfx/interface/goals/portraits/gon_angbor_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_ciryandur"
+		texturefile = "gfx/interface/goals/portraits/gon_ciryandur_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_edhetariel"
+		texturefile = "gfx/interface/goals/portraits/gon_edhetariel_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_forlong"
+		texturefile = "gfx/interface/goals/portraits/gon_forlong_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_golasgil"
+		texturefile = "gfx/interface/goals/portraits/gon_golasgil_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_hirluin"
+		texturefile = "gfx/interface/goals/portraits/gon_hirluin_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_imrahil"
+		texturefile = "gfx/interface/goals/portraits/gon_imrahil_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_istion"
+		texturefile = "gfx/interface/goals/portraits/gon_istion_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_anfalas"
+		texturefile = "gfx/interface/goals/regions/gon_anfalas_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_anorien"
+		texturefile = "gfx/interface/goals/regions/gon_anorien_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_belfalas"
+		texturefile = "gfx/interface/goals/regions/gon_belfalas_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_ithilien"
+		texturefile = "gfx/interface/goals/regions/gon_ithilien_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_ithilien_defend"
+		texturefile = "gfx/interface/goals/regions/gon_ithilien_defend_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_ithilien_resist"
+		texturefile = "gfx/interface/goals/regions/gon_ithilien_resist_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_lamedon"
+		texturefile = "gfx/interface/goals/regions/gon_lamedon_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_lebennin"
+		texturefile = "gfx/interface/goals/regions/gon_lebennin_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_lossarnach"
+		texturefile = "gfx/interface/goals/regions/gon_lossarnach_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_pinnath_gelin"
+		texturefile = "gfx/interface/goals/regions/gon_pinnath_gelin_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_anfalas_designer"
+		texturefile = "gfx/interface/goals/designers/gon_anfalas_designer_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_anorien_designer"
+		texturefile = "gfx/interface/goals/designers/gon_anorien_designer_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_belfalas_designer"
+		texturefile = "gfx/interface/goals/designers/gon_belfalas_designer_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_ithilien_designer"
+		texturefile = "gfx/interface/goals/designers/gon_ithilien_designer_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_lamedon_designer"
+		texturefile = "gfx/interface/goals/designers/gon_lamedon_designer_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_lebennin_designer"
+		texturefile = "gfx/interface/goals/designers/gon_lebennin_designer_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_lossarnach_designer"
+		texturefile = "gfx/interface/goals/designers/gon_lossarnach_designer_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_pinnath_gelin_designer"
+		texturefile = "gfx/interface/goals/designers/gon_pinnath_gelin_designer_focus.dds"			
+	}
+		###ISENGARD
+	SpriteType = {
+		name = "GFX_goal_orthanc"
+		texturefile = "gfx/interface/goals/monuments/isn_orthanc_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_orthanc_pikes"
+		texturefile = "gfx/interface/goals/monuments/isn_orthanc_pikes_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_saruman"
+		texturefile = "gfx/interface/goals/portraits/isn_saruman_focus.dds"			
+	}
+		###MORDOR
+	SpriteType = {
+		name = "GFX_goal_gorgoroth"
+		texturefile = "gfx/interface/goals/regions/mor_gorgoroth_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_gorgoroth_slum"
+		texturefile = "gfx/interface/goals/regions/mor_gorgoroth_slum_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_nurn"
+		texturefile = "gfx/interface/goals/regions/mor_nurn_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_nurn_desert"
+		texturefile = "gfx/interface/goals/regions/mor_nurn_desert_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_the_eye_looks_west"
+		texturefile = "gfx/interface/goals/the_eye_looks_west_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_the_eye_looks_south"
+		texturefile = "gfx/interface/goals/the_eye_looks_south_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_the_eye_looks_east"
+		texturefile = "gfx/interface/goals/the_eye_looks_east_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_the_eye_looks_north"
+		texturefile = "gfx/interface/goals/the_eye_looks_north_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_the_eye_of_sauron"
+		texturefile = "gfx/interface/goals/the_eye_of_sauron_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_witch_king"
+		texturefile = "gfx/interface/goals/portraits/mor_witch_king_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_witch_king_kill"
+		texturefile = "gfx/interface/goals/portraits/mor_witch_king_kill_focus.dds"			
+	}
+		###ROHAN
+	SpriteType = {
+		name = "GFX_goal_calenardhon"
+		texturefile = "gfx/interface/goals/regions/roh_calenardhon_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_wold"
+		texturefile = "gfx/interface/goals/regions/roh_wold_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_folde"
+		texturefile = "gfx/interface/goals/regions/roh_folde_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_eastmark"
+		texturefile = "gfx/interface/goals/regions/roh_eastmark_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_westmark"
+		texturefile = "gfx/interface/goals/regions/roh_westmark_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_adorn_vale"
+		texturefile = "gfx/interface/goals/regions/roh_adorn_vale_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_herugrim"
+		texturefile = "gfx/interface/goals/roh_herugrim_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_roh_royal_standard"
+		texturefile = "gfx/interface/goals/roh_royal_standard_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_roh_hornburg"
+		texturefile = "gfx/interface/goals/monuments/roh_hornburg_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_roh_meduseld"
+		texturefile = "gfx/interface/goals/monuments/roh_meduseld_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_roh_meduseld_burning"
+		texturefile = "gfx/interface/goals/monuments/roh_meduseld_burning_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_roh_charge"
+		texturefile = "gfx/interface/goals/events/roh_charge_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_roh_hail_the_victorious_dead"
+		texturefile = "gfx/interface/goals/events/roh_hail_the_victorious_dead_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_a_peasants_cause"
+		texturefile = "gfx/interface/goals/roh_a_peasants_cause_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_eorling_horse"
+		texturefile = "gfx/interface/goals/roh_eorling_horse_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_house_bregdanings"
+		texturefile = "gfx/interface/goals/designers/roh_house_bregdanings_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_house_eogarings"
+		texturefile = "gfx/interface/goals/designers/roh_house_eogarings_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_house_felandings"
+		texturefile = "gfx/interface/goals/designers/roh_house_felandings_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_house_ordgarings"
+		texturefile = "gfx/interface/goals/designers/roh_house_ordgarings_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_house_rungaring"
+		texturefile = "gfx/interface/goals/designers/roh_house_rungaring_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_house_stangard"
+		texturefile = "gfx/interface/goals/designers/roh_house_stangard_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_house_wadelingas"
+		texturefile = "gfx/interface/goals/designers/roh_house_wadelingas_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_house_wulfings"
+		texturefile = "gfx/interface/goals/designers/roh_house_wulfings_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_house_halethring"
+		texturefile = "gfx/interface/goals/designers/roh_house_halethring_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_house_hunthelming"
+		texturefile = "gfx/interface/goals/designers/roh_house_hunthelming_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_house_grimmodings"
+		texturefile = "gfx/interface/goals/designers/roh_house_grimmoding_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_carpentry_guild"
+		texturefile = "gfx/interface/goals/designers/roh_carpentry_guild_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_smithing_guild"
+		texturefile = "gfx/interface/goals/designers/roh_smithing_guild_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_hama"
+		texturefile = "gfx/interface/goals/portraits/roh_hama_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_eomer_married"
+		texturefile = "gfx/interface/goals/portraits/roh_eomer_married_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_eomer"
+		texturefile = "gfx/interface/goals/portraits/roh_eomer_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_eowyn"
+		texturefile = "gfx/interface/goals/portraits/roh_eowyn_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_eowyn"
+		texturefile = "gfx/interface/goals/portraits/roh_eowyn_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_eowyn_married"
+		texturefile = "gfx/interface/goals/portraits/roh_eowyn_married_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_erkenbrand"
+		texturefile = "gfx/interface/goals/portraits/roh_erkenbrand_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_grima"
+		texturefile = "gfx/interface/goals/portraits/roh_grima_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_grima_king"
+		texturefile = "gfx/interface/goals/portraits/roh_grima_king_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_theoden"
+		texturefile = "gfx/interface/goals/portraits/roh_theoden_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_theoden_old"
+		texturefile = "gfx/interface/goals/portraits/roh_theoden_old_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_theodred"
+		texturefile = "gfx/interface/goals/portraits/roh_theodred_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_theodred_imprison"
+		texturefile = "gfx/interface/goals/portraits/roh_theodred_imprison_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_theodred_kill"
+		texturefile = "gfx/interface/goals/portraits/roh_theodred_kill_focus.dds"			
+	}
+		###SHIRE
+	SpriteType = {
+		name = "GFX_goal_lotho"
+		texturefile = "gfx/interface/goals/portraits/shi_lotho_focus.dds"			
+	}
+	SpriteType = {
+		name = "GFX_goal_lotho_kill"
+		texturefile = "gfx/interface/goals/portraits/shi_lotho_kill_focus.dds"			
+	}
+##################################################################################################################################
+#####################################################VorV
+##################################################################################################################################
+	SpriteType = {
+		name = "GFX_goal_generic_attack_Andrast"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_Andrast.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_Arnor"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_Arnor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_Druwaith_Iaur"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_Druwaith_Iaur.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_Eomer"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_Eomer.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_Eregion"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_Eregion.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_Saralain"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_Saralain.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_White_Mountains"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_White_Mountains.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_Greater_Enedwaith"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_Greater_Enedwaith.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_Greater_Enedwaith"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_Greater_Enedwaith.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_Andrast"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_Andrast.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_Arnor"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_Arnor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_Druwaith_Iaur"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_Druwaith_Iaur.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_Eomer"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_Eomer.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_Eregion"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_Eregion.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_Saralain"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_Saralain.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_White_Mountains"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_White_Mountains.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_support_isolationism"
+		texturefile = "gfx/interface/goals/goal_generic_support_isolationism.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_support_melkorite"
+		texturefile = "gfx/interface/goals/goal_generic_support_melkorite.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_support_opportunism"
+		texturefile = "gfx/interface/goals/goal_generic_support_opportunism.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_construct_infrastructure_2"
+		texturefile = "gfx/interface/goals/goal_generic_construct_infrastructure_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_greater_enedwaith_crowned"
+		texturefile = "gfx/interface/goals/goal_greater_enedwaith_crowned.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_tribal_throne"
+		texturefile = "gfx/interface/goals/goal_tribal_throne.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_tribal_throne_crowned"
+		texturefile = "gfx/interface/goals/goal_tribal_throne_crowned.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_tribal_crown"
+		texturefile = "gfx/interface/goals/goal_tribal_crown.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_river"
+		texturefile = "gfx/interface/goals/goal_generic_river.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_tribal_village"
+		texturefile = "gfx/interface/goals/goal_tribal_village.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_soldiers_marching"
+		texturefile = "gfx/interface/goals/goal_generic_soldiers_marching.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_study_tribal_politics"
+		texturefile = "gfx/interface/goals/goal_study_tribal_politics.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_blood_oath"
+		texturefile = "gfx/interface/goals/goal_blood_oath.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_wulf_and_saruman"
+		texturefile = "gfx/interface/goals/goal_wulf_and_saruman.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_saruman_rallies_dunlendings"
+		texturefile = "gfx/interface/goals/events/goal_saruman_rallies_dunlendings.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_wisdom_of_saruman"
+		texturefile = "gfx/interface/goals/goal_wisdom_of_saruman.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_saralain"
+		texturefile = "gfx/interface/goals/regions/goal_saralain.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_claim_saralain"
+		texturefile = "gfx/interface/goals/regions/goal_claim_saralain.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_tribal_adorn_vale"
+		texturefile = "gfx/interface/goals/regions/goal_tribal_adorn_vale.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_sarumans_staff"
+		texturefile = "gfx/interface/goals/goal_sarumans_staff.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_ENE_three_cultures"
+		texturefile = "gfx/interface/goals/goal_ENE_three_cultures.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_gondorian_protectorate"
+		texturefile = "gfx/interface/goals/goal_gondorian_protectorate.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_rohirric_protectorate"
+		texturefile = "gfx/interface/goals/goal_rohirric_protectorate.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_expand_pinnath_gelin_west"
+		texturefile = "gfx/interface/goals/regions/goal_expand_pinnath_gelin_west.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_honey_and_poison"
+		texturefile = "gfx/interface/goals/goal_honey_and_poison.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_armor"
+		texturefile = "gfx/interface/goals/goal_generic_armor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_swear_fealty"
+		texturefile = "gfx/interface/goals/goal_generic_swear_fealty.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_white_mountain_rebellion"
+		texturefile = "gfx/interface/goals/goal_white_mountain_rebellion.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_hunting"
+		texturefile = "gfx/interface/goals/goal_generic_hunting.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_burn_the_westfold"
+		texturefile = "gfx/interface/goals/events/goal_burn_the_westfold.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_military_research"
+		texturefile = "gfx/interface/goals/goal_generic_military_research.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_anti_cavalry"
+		texturefile = "gfx/interface/goals/goal_generic_anti_cavalry.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_ost_in_edhil_restored"
+		texturefile = "gfx/interface/goals/monuments/goal_ost_in_edhil_restored.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_ost_in_edhil_ruined"
+		texturefile = "gfx/interface/goals/goal_ost_in_edhil_ruined.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_elves"
+		texturefile = "gfx/interface/goals/goal_generic_elves.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_anti_elves"
+		texturefile = "gfx/interface/goals/goal_generic_anti_elves.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_forge"
+		texturefile = "gfx/interface/goals/goal_generic_forge.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_calenardhon_dunland"
+		texturefile = "gfx/interface/goals/regions/goal_calenardhon_dunland.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_saralain_lineage"
+		texturefile = "gfx/interface/goals/goal_saralain_lineage.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_dunlendings_attack_rohan"
+		texturefile = "gfx/interface/goals/events/goal_dunlendings_attack_rohan.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_king_of_the_dead"
+		texturefile = "gfx/interface/goals/portraits/goal_king_of_the_dead.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_mountain_agreement"
+		texturefile = "gfx/interface/goals/goal_mountain_agreement.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_druwaith_iaur"
+		texturefile = "gfx/interface/goals/regions/goal_druwaith_iaur.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_druwaith_iaur_keys"
+		texturefile = "gfx/interface/goals/regions/goal_druwaith_iaur_keys.dds"
+	}
+		SpriteType = {
+		name = "GFX_goal_defend_against_melkorite"
+		texturefile = "gfx/interface/goals/goal_defend_against_melkorite.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_home_of_the_revolution"
+		texturefile = "gfx/interface/goals/goal_DOR_home_of_the_revolution.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_wine_propaganda"
+		texturefile = "gfx/interface/goals/goal_wine_propaganda.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_wine"
+		texturefile = "gfx/interface/goals/goal_wine.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_grapes"
+		texturefile = "gfx/interface/goals/goal_grapes.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_dorwin_nationalism"
+		texturefile = "gfx/interface/goals/goal_dorwin_nationalism.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_army_morale"
+		texturefile = "gfx/interface/goals/goal_DOR_army_morale.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_support_great_merchants"
+		texturefile = "gfx/interface/goals/goal_DOR_support_great_merchants.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_support_merchant_houses"
+		texturefile = "gfx/interface/goals/goal_DOR_support_merchant_houses.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_support_burghers"
+		texturefile = "gfx/interface/goals/goal_DOR_support_burghers.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_support_winelords"
+		texturefile = "gfx/interface/goals/goal_DOR_support_winelords.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_support_koldana"
+		texturefile = "gfx/interface/goals/goal_DOR_support_koldana.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_support_vierling"
+		texturefile = "gfx/interface/goals/goal_DOR_support_vierling.dds"
+	}
+}

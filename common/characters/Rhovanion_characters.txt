@@ -49,7 +49,7 @@ characters = {
 	}
 		#######RUS
 	RUS_swain_montegian = { #leader
-		name = RIN_swain_montegian
+		name = RUS_swain_montegian
 		gender = male
 		portraits = {
 			army = {
