@@ -124,6 +124,20 @@ technology_categories = {
 	para_tech
 	marine_tech
 	mountaineers_tech
+	
+	
+	mio_cat_all_artillery_equipment #Includes Artillery, AT, AA and Rocket Artillery
+	mio_cat_tech_all_motorized_mechanized #Includes all Motorized (incl. Motorized Rocket Artillery) and Mechanized Equipment. (DOES NOT INCLUDE ARMORED CARS)
+	
+	mio_cat_tech_all_armor_and_modules #Includes modules and chassis (DOES NOT INCLUDE ARMORED CARS)
+	mio_cat_tech_light_armor_and_modules #Includes modules and stand-alone Amphibious Chassis
+	mio_cat_tech_medium_armor_and_modules #Includes modules and Modern Tank
+	mio_cat_tech_heavy_armor_and_modules #Includes modules and Super-Heavy Tank
+	
+	mio_cat_tech_all_capital_ship_and_modules #Includes all BB (+ BC, SHBB, etc.), all CA (+ Coastal etc.) and all related modules
+	mio_cat_tech_all_screen_ship_and_modules #Includes all DD, all CL (Torpedo Cruiser) and all related modules
+	mio_cat_tech_all_cruiser_and_modules #Includes all CA (+ Coastal etc.), CL (Torpedo Cruiser) and all related modules
+	mio_cat_tech_all_destroyer_and_modules #Includes all DD and all related modules
 }
 
 technology_folders = {

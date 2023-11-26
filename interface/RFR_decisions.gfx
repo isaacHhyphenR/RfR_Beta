@@ -748,6 +748,14 @@ spriteTypes = {
 		name = "GFX_decision_burghers"
 		texturefile = "gfx/interface/decisions/burghers.dds"
 	}
+	spriteType = {
+		name = "GFX_decision_republic"
+		texturefile = "gfx/interface/decisions/republic.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_voting"
+		texturefile = "gfx/interface/decisions/voting.dds"
+	}
 ################################################CATEGORY ICONS
 	spriteType = {
 		name = "GFX_decision_category_explosion"
@@ -784,6 +792,14 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_decision_category_espionage"
 		texturefile = "gfx/interface/decisions/categories/decision_category_espionage.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_republic"
+		texturefile = "gfx/interface/decisions/categories/decision_category_republic.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_republic_swords"
+		texturefile = "gfx/interface/decisions/categories/decision_category_republic_swords.dds"
 	}
 ################################################CATEGORY PICTURES
 	spriteType = {

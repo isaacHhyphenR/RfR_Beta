@@ -1472,6 +1472,15 @@ colonisation_category = {
 
 DOR_spread_revolution_category = {
 	@complianceForRepublic = 50
+	targeted_dal = {
+		icon = GFX_decision_republic
+		target_trigger = {
+			FROM = { tag = DAL }
+		}
+		available = {
+			always = yes
+		}
+	}
 	establish_DAL_republic = { #DALE
 		icon = GFX_decision_DAL_republic
 		ai_will_do = {

@@ -61,6 +61,8 @@ script_enum_equipment_bonus_type = {
 	floating_harbor_equipment
 	
 	infantry_armor
+	
+	black_powder_equipment
 }
 
 script_enum_operative_mission_type = {
