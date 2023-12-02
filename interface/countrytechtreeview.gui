@@ -2808,6 +2808,29 @@ guiTypes = {
 			shortcut = "RETURN"
 		}
 		
+		containerWindowType = {
+			name = "research_MIO"
+			position = { x=365 y=55 }
+		
+			buttonType = {
+				name = "research_has_MIO"
+				position = { x = 0 y = 0 }
+				size = { x=200 y=40}
+				text = "RESEARCH"
+				quadTextureSprite = "GFX_government_button"
+				buttonFont = "hoi_16mbs"
+				Orientation = "UPPER_RIGHT"
+				shortcut = "RETURN"
+			}
+		
+			iconType = {
+				name = "MIO_icon"
+				spriteType = "GFX_design_team_icon"
+				position = { x = 8 y = 5 }
+				alwaystransparent = yes
+				Orientation = "CENTER"
+			}
+		}		
 		buttonType = {
 			name = "research_with_xp"
 			quadTextureSprite = "GFX_button_123x34"
@@ -2905,6 +2928,11 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 
 	containerWindowType = {
@@ -2957,6 +2985,11 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 
 	containerWindowType = {
@@ -3007,6 +3040,11 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	
 	containerWindowType = {
@@ -3040,6 +3078,11 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 	
@@ -3091,6 +3134,11 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	
 	containerWindowType = {
@@ -3124,6 +3172,11 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 	
@@ -3175,6 +3228,11 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	
 	containerWindowType = {
@@ -3208,6 +3266,11 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 	containerWindowType = {
@@ -3297,6 +3360,11 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 
 	containerWindowType = {
@@ -3332,6 +3400,11 @@ guiTypes = {
 			maxHeight = 20
 			format = right
 		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 
 	containerWindowType = {
@@ -3366,6 +3439,11 @@ guiTypes = {
 			maxWidth = 50
 			maxHeight = 20
 			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 
@@ -3418,6 +3496,11 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 
 
@@ -3454,6 +3537,11 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 	
@@ -3506,6 +3594,11 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	containerWindowType = {
 		name = "techtree_mtgnavalfolder_small_item" 
@@ -3540,6 +3633,11 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 	
@@ -3608,6 +3706,11 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	
 	containerWindowType = {
@@ -3645,6 +3748,11 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
 	}
 	
 	containerWindowType = {
@@ -3678,6 +3786,11 @@ guiTypes = {
 			maxWidth = 80
 			maxHeight = 20
 			format = center
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
 		}
 	}
 
@@ -3749,17 +3862,14 @@ guiTypes = {
 		name = "technology_unit_statlist_item_equipment"
 		position = { x=0 y=0 }
 		clipping = no
-		
-		gridboxtype = {
-			name = "research_groups_grid"
-			position = { x = 422 y = 25 }
-			size = { width = 120 height = 60 }
-			slotsize = { width = 60 height = 60 }
-			max_slots_horizontal = 2
-			max_slots_vertical = 1
-			format = "UPPER_LEFT"
+
+		iconType = {
+			name = "design_team_icon"
+			position = { x = 462 y = 55 }
+			spriteType = "GFX_add_pol_idea_button"
+			centerposition = yes
 		}
-		
+
 		iconType = {
 			name = "unit_icon"
 			position = { x = 240 y = 40 }
@@ -3777,14 +3887,20 @@ guiTypes = {
 			pdx_tooltip = "PRODUCTION_RESOURCE_DESC"
 			format = left
 		}
-		
+
 		iconType = {
 			name = "equipment_icon"
 			position = { x = 140 y = 27 }
 			spriteType = "GFX_land_equipment_role_icons"
 			frame = 1
 		}
-		
+
+		iconType = {
+			name = "carrier_fighter_icon"
+			position = { x = 157 y = 6 }
+			spriteType = "GFX_airwing_carrier_icon"
+		}
+
 		gridboxtype = {
 			name = "stats_grid"
 			position = { x = 25 y = 95 }
@@ -3793,20 +3909,38 @@ guiTypes = {
 			max_slots_horizontal = 2
 			format = "UPPER_LEFT"
 		}
-		
+
+		gridboxtype = {
+			name = "air_missions_grid"
+			position = { x = 15 y = 40 }
+			size = { width = 400 height = 70 }
+			slotsize = { width = 45 height = 60 }
+			max_slots_horizontal = 10
+			format = "UPPER_LEFT"
+		}
+
+		gridboxtype = {
+			name = "terrain_modifiers_grid"
+			position = { x = 35 y = 65 } # Y set in code
+			size = { width = 400 height = 400 }
+			slotsize = { width = 82 height = 70 }
+			max_slots_horizontal = 5
+			format = "UPPER_LEFT"
+		}
+
 		containerWindowType = {
 			name = "3d_container"
 			position = { x=0 y=0 }
 			clipping = no
-			
+
 			containerWindowType = {
 				name = "border_container"
 				position = { x=0 y=5 }
 				size = { width = 487 height = 276 }
-				
+
 				background = {
 					name ="bg_tech_button"
-					spriteType = "GFX_division_3d_bg"	
+					spriteType = "GFX_division_3d_bg"
 					position = { x=0 y=0 }
 					size = { x=100%% y=100%%}
 				}
@@ -3818,21 +3952,21 @@ guiTypes = {
 				position = { x= 5 y = 10 }
 				##size = { width=300 height=80 }
 			}
-			
+
 			buttonType = {
 				name = "prev_model"
 				position = { x=367 y=12 }
 				quadTextureSprite = "GFX_arrow_up_small"
 				clicksound = click_default
 			}
-			
+
 			buttonType = {
 				name = "next_model"
 				position = { x=367 y=38	 }
 				quadTextureSprite = "GFX_arrow_down_small"
 				clicksound = click_default
 			}
-			
+
 			iconType = {
 				name ="3d_switch"
 				quadTextureSprite = "GFX_2d_3d_switch"
@@ -3845,8 +3979,8 @@ guiTypes = {
 	containerWindowType = {
 		name = "technology_unit_statlist_item_module"
 		position = { x=0 y=0 }
-		clipping = no		
-		
+		clipping = no
+
 		instantTextboxType = {
 			name = "production_resources"
 			position = { x= 5 y= 12 }
@@ -3856,7 +3990,7 @@ guiTypes = {
 			pdx_tooltip = "PRODUCTION_RESOURCE_DESC"
 			format = left
 		}
-		
+
 		iconType = {
 			name = "equipment_icon"
 			position = { x = 240 y = 40 }
@@ -3864,13 +3998,22 @@ guiTypes = {
 			centerposition = yes
 			frame = 1
 		}
-		
+
 		gridboxtype = {
 			name = "stats_grid"
 			position = { x = 25 y = 95 }
 			size = { width = 400 height = 400 }
 			slotsize = { width = 224 height = 30 }
 			max_slots_horizontal = 2
+			format = "UPPER_LEFT"
+		}
+
+		gridboxtype = {
+			name = "air_missions_grid"
+			position = { x = 15 y = 40 }
+			size = { width = 400 height = 70 }
+			slotsize = { width = 45 height = 60 }
+			max_slots_horizontal = 10
 			format = "UPPER_LEFT"
 		}
 	}
