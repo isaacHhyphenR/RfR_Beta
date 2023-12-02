@@ -1099,11 +1099,13 @@ mountaineers_generic = {
 		allowed_types = {
 			mountaineers
 			artillery
+			artillery_brigade
 			recon
 			signal_company
 			field_hospital
 			logistics_company
 			anti_tank
+			engineer
 		}
 	}
 }
@@ -1201,6 +1203,7 @@ marines_generic = {
 			marine
 			engineer
 			logistics_company
+			recon
 		}
 	}
 }

@@ -1,4 +1,39 @@
 equipments = {
+	
+	black_powder_equipment = {
+		year = 3000
+
+		is_archetype = yes
+		type = { 
+			anti_air
+			infantry #adding infantry type
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		active = no
+		#sprite = train
+
+		interface_category = interface_category_land
+
+		armor_value = 0
+
+		build_cost_ic = 2
+		resources = {
+			iron = 1
+			wood = 1
+		}
+	}
+	black_powder_equipment_0 = {
+
+		year = 3000
+	
+		archetype = black_powder_equipment
+		active = no
+		priority = 05
+		visual_level = 0
+	}
 
 	wine_equipment = {
 		year = 3000

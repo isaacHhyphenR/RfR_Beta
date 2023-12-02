@@ -19,14 +19,6 @@ duplicate_archetypes = {
 			variant_name = { find_and_replace = { "chassis" "equipment" } }
 		}
 	}
-	light_tank_amphibious_chassis = {
-		archetype = light_tank_chassis
-		type = { armor amphibious }
-		for_each = {
-			variant_name = { find_and_replace = { "chassis" "equipment" } }
-			hardness = { set = 0.55 }
-		}
-	}
 
 	# medium_tank
 	medium_tank_artillery_chassis = {
@@ -42,14 +34,6 @@ duplicate_archetypes = {
 		type = { armor anti_tank }
 		for_each = {
 			variant_name = { find_and_replace = { "chassis" "equipment" } }
-		}
-	}
-	medium_tank_amphibious_chassis = {
-		archetype = medium_tank_chassis
-		type = { armor amphibious }
-		for_each = {
-			variant_name = { find_and_replace = { "chassis" "equipment" } }
-			hardness = { set = 0.7 }
 		}
 	}
 
@@ -86,14 +70,6 @@ duplicate_archetypes = {
 			variant_name = { find_and_replace = { "chassis" "equipment" } }
 		}
 	}
-	heavy_tank_amphibious_chassis = {
-		archetype = heavy_tank_chassis
-		type = { armor amphibious }
-		for_each = {
-			variant_name = { find_and_replace = { "chassis" "equipment" } }
-			hardness = { set = 0.8 }
-		}
-	}
 
 	# superheavy tank
 	super_heavy_tank_artillery_chassis = {
@@ -104,13 +80,7 @@ duplicate_archetypes = {
 			hardness = { set = 0.9 }
 		}
 	}
-	super_heavy_tank_destroyer_chassis = {
-		archetype = super_heavy_tank_chassis
-		type = { armor anti_tank }
-		for_each = {
-			variant_name = { find_and_replace = { "chassis" "equipment" } }
-		}
-	}
+
 
 }
 
@@ -1612,82 +1582,4 @@ equipments = {
 	}
 
 
-
-	amphibious_tank_equipment_1 = {
-		#year = 3013
-		
-		archetype = amphibious_tank_chassis
-		priority = 10
-		visual_level = 0
-		is_convertable = yes
-		can_convert_from = { 
-			light_tank_equipment_2
-		}
-
-		upgrades = {
-			tank_reliability_upgrade
-			tank_engine_upgrade
-			tank_armor_upgrade
-			tank_gun_upgrade
-		}
-
-		#Misc Abilities
-		maximum_speed = 7
-		reliability = 0.8
-
-		#Defensive Abilities
-		defense = 4
-		breakthrough = 26
-		hardness = 0.8
-		armor_value = 20
-
-		#Offensive Abilities
-		soft_attack = 13
-		hard_attack = 4
-		ap_attack = 10
-		air_attack = 0
-
-		#Space taken in convoy
-		lend_lease_cost = 10
-		
-		build_cost_ic = 10
-		resources = {
-			mounts = 2
-		}
-
-		fuel_consumption = 4
-	}
-	amphibious_tank_equipment_2 = {
-		#year = 3018
-		
-		archetype = amphibious_tank_chassis
-		parent = amphibious_tank_equipment_1
-		priority = 10
-		visual_level = 1
-		is_convertable = yes
-		can_convert_from = { 
-			medium_tank_equipment_1 
-		}
-
-		#Misc Abilities
-		maximum_speed = 8
-		reliability = 0.8
-		#Defensive Abilities
-		defense = 5
-		breakthrough = 36
-		hardness = 0.9
-		armor_value = 80
-
-		#Offensive Abilities
-		soft_attack = 19
-		hard_attack = 14
-		ap_attack = 61
-		air_attack = 0	
-		fuel_consumption = 4
-		build_cost_ic = 13
-		resources = {
-			mounts = 2
-			iron = 2
-		}
-	}
 }
