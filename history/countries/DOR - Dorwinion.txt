@@ -169,6 +169,12 @@ set_power_balance = {
     left_side = DOR_great_merchants_side
     right_side = DOR_winelords_side
 }
+#So it can upgrade them properly
+set_country_flag = dorwinion_baking_guild
+set_country_flag = dorwinion_carpentry_guild
+set_country_flag = dorwinion_smithing_guild
+set_country_flag = dorwinion_tailory_guild
+
 
 add_ideas = female_leader_chance_idea
 set_variable = { global.wine_exporter = THIS }

@@ -1,14 +1,8 @@
 #####################################################################BAKING
-upgrade_to_dorwinion_baking_guild_fuel = { #################
+upgrade_to_dorwinion_baking_guild_fuel = {
 	if = {
 		limit = {
 			has_idea = dorwinion_baking_guild
-			amount_taken_ideas = {
-				amount < 1
-				slots = {
-					industrial_concern
-				}
-			}
 		}
 		swap_ideas = {
 			remove_idea = dorwinion_baking_guild
@@ -22,24 +16,15 @@ upgrade_to_dorwinion_baking_guild_fuel = { #################
 				add_idea = dorwinion_baking_guild_fuel
 			}
 		}
-		hidden_effect = {
-			remove_ideas = dorwinion_baking_guild
-		}
 	}
 	###
 	clr_country_flag = dorwinion_baking_guild
 	set_country_flag = dorwinion_baking_guild_fuel
 }
-upgrade_to_dorwinion_baking_guild_fuel_manpower = { ########
+upgrade_to_dorwinion_baking_guild_fuel_manpower = {
 	if = {
 		limit = {
 			has_idea = dorwinion_baking_guild_fuel
-			amount_taken_ideas = {
-				amount < 1
-				slots = {
-					industrial_concern
-				}
-			}
 		}
 		swap_ideas = {
 			remove_idea = dorwinion_baking_guild_fuel
@@ -53,24 +38,15 @@ upgrade_to_dorwinion_baking_guild_fuel_manpower = { ########
 				add_idea = dorwinion_baking_guild_fuel_manpower
 			}
 		}
-		hidden_effect = {
-			remove_ideas = dorwinion_baking_guild_fuel
-		}
 	}
 	###
 	clr_country_flag = dorwinion_baking_guild_fuel
 	set_country_flag = dorwinion_baking_guild_fuel_manpower
 }
-upgrade_to_dorwinion_baking_guild_fuel_manpower_tech = { ###
+upgrade_to_dorwinion_baking_guild_fuel_manpower_tech = {
 	if = {
 		limit = {
 			has_idea = dorwinion_baking_guild_fuel_manpower
-			amount_taken_ideas = {
-				amount < 1
-				slots = {
-					industrial_concern
-				}
-			}
 		}
 		swap_ideas = {
 			remove_idea = dorwinion_baking_guild_fuel_manpower
@@ -84,25 +60,15 @@ upgrade_to_dorwinion_baking_guild_fuel_manpower_tech = { ###
 				add_idea = dorwinion_baking_guild_fuel_manpower_tech
 			}
 		}
-		hidden_effect = {
-			remove_ideas = dorwinion_baking_guild_fuel_manpower
-		}
 	}
 	###
 	clr_country_flag = dorwinion_baking_guild_fuel_manpower
 	set_country_flag = dorwinion_baking_guild_fuel_manpower_tech
 }
-#####################################################################
-upgrade_to_dorwinion_baking_guild_supply = { ###############
+upgrade_to_dorwinion_baking_guild_supply = {
 	if = {
 		limit = {
 			has_idea = dorwinion_baking_guild
-			amount_taken_ideas = {
-				amount < 1
-				slots = {
-					industrial_concern
-				}
-			}
 		}
 		swap_ideas = {
 			remove_idea = dorwinion_baking_guild
@@ -116,24 +82,15 @@ upgrade_to_dorwinion_baking_guild_supply = { ###############
 				add_idea = dorwinion_baking_guild_supply
 			}
 		}
-		hidden_effect = {
-			remove_ideas = dorwinion_baking_guild
-		}
 	}
 	###
 	clr_country_flag = dorwinion_baking_guild
 	set_country_flag = dorwinion_baking_guild_supply
 }
-upgrade_to_dorwinion_baking_guild_supply_colony = { ########
+upgrade_to_dorwinion_baking_guild_supply_colony = {
 	if = {
 		limit = {
 			has_idea = dorwinion_baking_guild_supply
-			amount_taken_ideas = {
-				amount < 1
-				slots = {
-					industrial_concern
-				}
-			}
 		}
 		swap_ideas = {
 			remove_idea = dorwinion_baking_guild_supply
@@ -147,24 +104,15 @@ upgrade_to_dorwinion_baking_guild_supply_colony = { ########
 				add_idea = dorwinion_baking_guild_supply_colony
 			}
 		}
-		hidden_effect = {
-			remove_ideas = dorwinion_baking_guild_supply
-		}
 	}
 	###
 	clr_country_flag = dorwinion_baking_guild_supply
 	set_country_flag = dorwinion_baking_guild_supply_colony
 }
-upgrade_to_dorwinion_baking_guild_supply_colony_tech = { ###
+upgrade_to_dorwinion_baking_guild_supply_colony_tech = {
 	if = {
 		limit = {
 			has_idea = dorwinion_baking_guild_supply_colony
-			amount_taken_ideas = {
-				amount < 1
-				slots = {
-					industrial_concern
-				}
-			}
 		}
 		swap_ideas = {
 			remove_idea = dorwinion_baking_guild_supply_colony
@@ -178,13 +126,421 @@ upgrade_to_dorwinion_baking_guild_supply_colony_tech = { ###
 				add_idea = dorwinion_baking_guild_supply_colony_tech
 			}
 		}
-		hidden_effect = {
-			remove_ideas = dorwinion_baking_guild_supply_colony
-		}
 	}
 	###
 	clr_country_flag = dorwinion_baking_guild_supply_colony
 	set_country_flag = dorwinion_baking_guild_supply_colony_tech
 }
 
+upgrade_dorwinion_baking_guild = {
+	if = {
+		limit = { has_country_flag = dorwinion_baking_guild_supply_colony }
+		upgrade_to_dorwinion_baking_guild_supply_colony_tech = yes
+	}
+	else_if = {
+		limit = { has_country_flag = dorwinion_baking_guild_supply }
+		upgrade_to_dorwinion_baking_guild_supply_colony = yes
+	}
+	else_if = {
+		limit = { has_country_flag = dorwinion_baking_guild_fuel_manpower }
+		upgrade_to_dorwinion_baking_guild_fuel_manpower_tech = yes
+	}
+	else_if = {
+		limit = { has_country_flag = dorwinion_baking_guild_fuel }
+		upgrade_to_dorwinion_baking_guild_fuel_manpower = yes
+	}
+	else = {
+		upgrade_to_dorwinion_baking_guild_supply = yes
+	}
+}
+
+#####################################################################CARPENTRY
+upgrade_to_dorwinion_carpentry_guild_construction = {
+	if = {
+		limit = {
+			has_idea = dorwinion_carpentry_guild
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_carpentry_guild
+			add_idea = dorwinion_carpentry_guild_construction
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_carpentry_guild
+				add_idea = dorwinion_carpentry_guild_construction
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_carpentry_guild
+	set_country_flag = dorwinion_carpentry_guild_construction
+}
+upgrade_to_dorwinion_carpentry_guild_construction_factory = {
+	if = {
+		limit = {
+			has_idea = dorwinion_carpentry_guild_construction
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_carpentry_guild_construction
+			add_idea = dorwinion_carpentry_guild_construction_factory
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_carpentry_guild_construction
+				add_idea = dorwinion_carpentry_guild_construction_factory
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_carpentry_guild_construction
+	set_country_flag = dorwinion_carpentry_guild_construction_factory
+}
+upgrade_to_dorwinion_carpentry_guild_construction_factory_slots = {
+	if = {
+		limit = {
+			has_idea = dorwinion_carpentry_guild_construction_factory
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_carpentry_guild_construction_factory
+			add_idea = dorwinion_carpentry_guild_construction_factory_slots
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_carpentry_guild_construction_factory
+				add_idea = dorwinion_carpentry_guild_construction_factory_slots
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_carpentry_guild_construction_factory
+	set_country_flag = dorwinion_carpentry_guild_construction_factory_slots
+}
+upgrade_to_dorwinion_carpentry_guild_construction_infrastructure = {
+	if = {
+		limit = {
+			has_idea = dorwinion_carpentry_guild_construction
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_carpentry_guild_construction
+			add_idea = dorwinion_carpentry_guild_construction_infrastructure
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_carpentry_guild_construction
+				add_idea = dorwinion_carpentry_guild_construction_infrastructure
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_carpentry_guild_construction
+	set_country_flag = dorwinion_carpentry_guild_construction_infrastructure
+}
+upgrade_to_dorwinion_carpentry_guild_construction_infrastructure_tech = {
+	if = {
+		limit = {
+			has_idea = dorwinion_carpentry_guild_construction_infrastructure
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_carpentry_guild_construction_infrastructure
+			add_idea = dorwinion_carpentry_guild_construction_infrastructure_tech
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_carpentry_guild_construction_infrastructure
+				add_idea = dorwinion_carpentry_guild_construction_infrastructure_tech
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_carpentry_guild_construction_infrastructure
+	set_country_flag = dorwinion_carpentry_guild_construction_infrastructure_tech
+}
+
+upgrade_dorwinion_carpentry_guild = {
+	if = {
+		limit = { has_country_flag = dorwinion_carpentry_guild_construction_infrastructure }
+		upgrade_to_dorwinion_carpentry_guild_construction_infrastructure_tech = yes
+	}
+	else_if = {
+		limit = { has_country_flag = dorwinion_carpentry_guild_construction_factory }
+		upgrade_to_dorwinion_carpentry_guild_construction_factory_slots = yes
+	}
+	else_if = {
+		limit = { has_country_flag = dorwinion_carpentry_guild_construction }
+		upgrade_to_dorwinion_carpentry_guild_construction_factory = yes
+	}
+	else = {
+		upgrade_to_dorwinion_carpentry_guild_construction = yes
+	}
+}
+
+#####################################################################SMITHING
+upgrade_to_dorwinion_smithing_guild_efficiency = {
+	if = {
+		limit = {
+			has_idea = dorwinion_smithing_guild
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_smithing_guild
+			add_idea = dorwinion_smithing_guild_efficiency
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_smithing_guild
+				add_idea = dorwinion_smithing_guild_efficiency
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_smithing_guild
+	set_country_flag = dorwinion_smithing_guild_efficiency
+}
+upgrade_to_dorwinion_smithing_guild_efficiency_build = {
+	if = {
+		limit = {
+			has_idea = dorwinion_smithing_guild_efficiency
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_smithing_guild_efficiency
+			add_idea = dorwinion_smithing_guild_efficiency_build
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_smithing_guild_efficiency
+				add_idea = dorwinion_smithing_guild_efficiency_build
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_smithing_guild_efficiency
+	set_country_flag = dorwinion_smithing_guild_efficiency_build
+}
+upgrade_to_dorwinion_smithing_guild_efficiency_build_tech = {
+	if = {
+		limit = {
+			has_idea = dorwinion_smithing_guild_efficiency_build
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_smithing_guild_efficiency_build
+			add_idea = dorwinion_smithing_guild_efficiency_build_tech
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_smithing_guild_efficiency_build
+				add_idea = dorwinion_smithing_guild_efficiency_build_tech
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_smithing_guild_efficiency_build
+	set_country_flag = dorwinion_smithing_guild_efficiency_build_tech
+}
+upgrade_to_dorwinion_smithing_guild_efficiency_capacity = {
+	if = {
+		limit = {
+			has_idea = dorwinion_smithing_guild_efficiency
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_smithing_guild_efficiency
+			add_idea = dorwinion_smithing_guild_efficiency_capacity
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_smithing_guild_efficiency
+				add_idea = dorwinion_smithing_guild_efficiency_capacity
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_smithing_guild_efficiency
+	set_country_flag = dorwinion_smithing_guild_efficiency_capacity
+}
+upgrade_to_dorwinion_smithing_guild_efficiency_capacity_tech = {
+	if = {
+		limit = {
+			has_idea = dorwinion_smithing_guild_efficiency_capacity
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_smithing_guild_efficiency_capacity
+			add_idea = dorwinion_smithing_guild_efficiency_capacity_tech
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_smithing_guild_efficiency_capacity
+				add_idea = dorwinion_smithing_guild_efficiency_capacity_tech
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_smithing_guild_efficiency_capacity
+	set_country_flag = dorwinion_smithing_guild_efficiency_capacity_tech
+}
+
+upgrade_dorwinion_smithing_guild = {
+	if = {
+		limit = { has_country_flag = dorwinion_smithing_guild_efficiency_build }
+		upgrade_to_dorwinion_smithing_guild_efficiency_build_tech = yes
+	}
+	else_if = {
+		limit = { has_country_flag = dorwinion_smithing_guild_efficiency_capacity }
+		upgrade_to_dorwinion_smithing_guild_efficiency_capacity_tech = yes
+	}
+	else_if = {
+		limit = { has_country_flag = dorwinion_smithing_guild_efficiency }
+		upgrade_to_dorwinion_smithing_guild_efficiency_capacity = yes
+	}
+	else = {
+		upgrade_to_dorwinion_smithing_guild_efficiency = yes
+	}
+}
+
+#####################################################################TAILORY
+upgrade_to_dorwinion_tailory_guild_training = {
+	if = {
+		limit = {
+			has_idea = dorwinion_tailory_guild
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_tailory_guild
+			add_idea = dorwinion_tailory_guild_training
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_tailory_guild
+				add_idea = dorwinion_tailory_guild_training
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_tailory_guild
+	set_country_flag = dorwinion_tailory_guild_training
+}
+upgrade_to_dorwinion_tailory_guild_training_pp = {
+	if = {
+		limit = {
+			has_idea = dorwinion_tailory_guild_training
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_tailory_guild_training
+			add_idea = dorwinion_tailory_guild_training_pp
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_tailory_guild_training
+				add_idea = dorwinion_tailory_guild_training_pp
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_tailory_guild_training
+	set_country_flag = dorwinion_tailory_guild_training_pp
+}
+upgrade_to_dorwinion_tailory_guild_training_pp_cg = {
+	if = {
+		limit = {
+			has_idea = dorwinion_tailory_guild_training_pp
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_tailory_guild_training_pp
+			add_idea = dorwinion_tailory_guild_training_pp_cg
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_tailory_guild_training_pp
+				add_idea = dorwinion_tailory_guild_training_pp_cg
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_tailory_guild_training_pp
+	set_country_flag = dorwinion_tailory_guild_training_pp_cg
+}
+upgrade_to_dorwinion_tailory_guild_training_cold = {
+	if = {
+		limit = {
+			has_idea = dorwinion_tailory_guild_training
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_tailory_guild_training
+			add_idea = dorwinion_tailory_guild_training_cold
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_tailory_guild_training
+				add_idea = dorwinion_tailory_guild_training_cold
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_tailory_guild_training
+	set_country_flag = dorwinion_tailory_guild_training_cold
+}
+upgrade_to_dorwinion_tailory_guild_training_cold_attrition = {
+	if = {
+		limit = {
+			has_idea = dorwinion_tailory_guild_training_cold
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_tailory_guild_training_cold
+			add_idea = dorwinion_tailory_guild_training_cold_attrition
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_tailory_guild_training_cold
+				add_idea = dorwinion_tailory_guild_training_cold_attrition
+			}
+		}
+	}
+	###
+	clr_country_flag = dorwinion_tailory_guild_training_cold
+	set_country_flag = dorwinion_tailory_guild_training_cold_attrition
+}
+
+upgrade_dorwinion_tailory_guild = {
+	if = {
+		limit = { has_country_flag = dorwinion_tailory_guild_training_pp }
+		upgrade_to_dorwinion_tailory_guild_training_pp_cg = yes
+	}
+	else_if = {
+		limit = { has_country_flag = dorwinion_tailory_guild_training_cold }
+		upgrade_to_dorwinion_tailory_guild_training_cold_attrition = yes
+	}
+	else_if = {
+		limit = { has_country_flag = dorwinion_tailory_guild_training }
+		upgrade_to_dorwinion_tailory_guild_training_cold = yes
+	}
+	else = {
+		upgrade_to_dorwinion_tailory_guild_training = yes
+	}
+}
 

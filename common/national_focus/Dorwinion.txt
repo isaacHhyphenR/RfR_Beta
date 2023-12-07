@@ -4,7 +4,7 @@
 @factoryBonuses = 2
 @bigBoPCost = 5
 
-@guildFocusSizeBonus = 2
+@guildFocusSizeBonus = 1
 #GFX:
 #GFX_goal_university_research
 #GFX_goal_university_medicine
@@ -375,7 +375,15 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_GUILDS }
 		completion_reward = {
-			custom_effect_tooltip = unimplemented
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_carpentry_guild_MIO = {
+					unlock_mio_trait_tooltip = generic_mio_trait_foam_fire_extinguishers
+				}
+			}
+			else = {
+				custom_effect_tooltip = unimplemented
+			}
 			great_merchants_focus_effect = yes
 		}
 	}
@@ -740,8 +748,28 @@ focus_tree = {
 			great_merchants_focus_trigger = yes
 		}
 		search_filters = { FOCUS_FILTER_GUILDS }
-		completion_reward = { #exp on carpentry, smithing, & tailors guild
-			custom_effect_tooltip = unimplemented
+		completion_reward = { #1 size on guild MIOs (1 upgrade without AAT)
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_baking_guild_MIO = {
+					add_mio_size = @guildFocusSizeBonus
+				}
+				mio:DOR_carpentry_guild_MIO = {
+					add_mio_size = @guildFocusSizeBonus
+				}
+				mio:DOR_smithing_guild_MIO = {
+					add_mio_size = @guildFocusSizeBonus
+				}
+				mio:DOR_tailory_guild_MIO = {
+					add_mio_size = @guildFocusSizeBonus
+				}
+			}
+			else = {
+				upgrade_dorwinion_baking_guild = yes
+				upgrade_dorwinion_carpentry_guild = yes
+				upgrade_dorwinion_smithing_guild = yes
+				upgrade_dorwinion_tailory_guild = yes
+			}
 			great_merchants_focus_effect = yes
 		}
 	}

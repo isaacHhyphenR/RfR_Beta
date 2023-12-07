@@ -1,6 +1,5 @@
-
 ##############################################################################################################################
-# Artillery Equipment; Escort ships unlocked through focus
+# BAKING GUILD
 ##############################################################################################################################
 DOR_baking_guild_MIO = {
 	name = dorwinion_baking_guild
@@ -9,7 +8,7 @@ DOR_baking_guild_MIO = {
 	allowed = {
 		original_tag = DOR
 	}
-	#available = { always = yes }
+	available = { always = yes }
 	
 	equipment_type = {
 		motorized_equipment
@@ -36,7 +35,7 @@ DOR_baking_guild_MIO = {
 			military_industrial_organization_research_bonus = 0.05
 		}
 		equipment_bonus = {
-			fuel_capacity = 100
+			fuel_capacity = 1
 		}
 	}
 
@@ -55,7 +54,6 @@ DOR_baking_guild_MIO = {
 		on_complete = {
 			FROM = { upgrade_to_dorwinion_baking_guild_fuel = yes }
 		}
-		organization_modifier = { }
 	}
 	trait = {
 		token = dorwinion_trait_efficient_harvesting
@@ -70,7 +68,6 @@ DOR_baking_guild_MIO = {
 		on_complete = {
 			FROM = { upgrade_to_dorwinion_baking_guild_fuel_manpower = yes }
 		}
-		organization_modifier = { }
 	}
 	trait = {
 		token = dorwinion_trait_imperishable_recipes
@@ -85,7 +82,6 @@ DOR_baking_guild_MIO = {
 		on_complete = {
 			FROM = { upgrade_to_dorwinion_baking_guild_supply = yes }
 		}
-		organization_modifier = { }
 	}
 	trait = {
 		token = dorwinion_trait_hardy_rations
@@ -100,7 +96,6 @@ DOR_baking_guild_MIO = {
 		on_complete = {
 			FROM = { upgrade_to_dorwinion_baking_guild_supply_colony = yes }
 		}
-		organization_modifier = { }
 	}
 	trait = {
 		token = dorwinion_trait_innovation_of_artisans
@@ -123,7 +118,6 @@ DOR_baking_guild_MIO = {
 				}
 			}
 		}
-		organization_modifier = { }
 	}
 ####################################################
 #######################################################WAGONS
@@ -167,6 +161,314 @@ DOR_baking_guild_MIO = {
 		
 		equipment_bonus = {
 			build_cost_ic = -0.05
+		}
+	}
+}
+
+
+##############################################################################################################################
+# CARPENTRY GUILD
+##############################################################################################################################
+DOR_carpentry_guild_MIO = {
+	name = dorwinion_carpentry_guild
+	icon = GFX_idea_dorwinion_carpentry_guild
+
+	allowed = {
+		original_tag = DOR
+	}
+	available = { always = yes }
+	
+	equipment_type = {
+		artillery_equipment
+		#railway_gun_equipment
+		capital_ship
+		screen_ship
+		convoy_1
+	}
+	research_categories = {
+		artillery
+		naval_equipment
+	}
+	
+	
+	tree_header_text = {
+		text = mio_header_commercial
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_bows
+		x = 5
+	}
+	tree_header_text = {
+		text = mio_header_ships
+		x = 8
+	}
+
+	initial_trait = {
+		name = carpenter
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = -0.05
+		}
+	}
+
+####################################################
+#######################################################COMMERCIAL
+####################################################
+	trait = {
+		token = dorwinion_trait_better_tools
+		name = dorwinion_trait_better_tools
+		icon = GFX_generic_mio_trait_icon_entrenchment
+
+		position = { x=1 y=0 }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_carpentry_guild_construction = yes }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_elite_workers
+		name = dorwinion_trait_elite_workers
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=-1 y=2 }
+		relative_position_id = dorwinion_trait_better_tools
+
+		any_parent = { dorwinion_trait_better_tools }
+		mutually_exclusive = { dorwinion_trait_extensive_logistics }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_carpentry_guild_construction_factory = yes }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_efficient_planning
+		name = dorwinion_trait_efficient_planning
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_elite_workers
+		
+		any_parent = { dorwinion_trait_elite_workers }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_carpentry_guild_construction_factory_slots = yes }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_extensive_logistics
+		name = dorwinion_trait_extensive_logistics
+		icon = GFX_generic_mio_trait_icon_supply_consumption
+
+		position = { x=1 y=2 }
+		relative_position_id = dorwinion_trait_better_tools
+		
+		any_parent = { dorwinion_trait_better_tools }
+		mutually_exclusive = { dorwinion_trait_elite_workers }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_carpentry_guild_construction_infrastructure = yes }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_innovation_of_artisans
+		name = dorwinion_trait_innovation_of_artisans
+		icon = GFX_generic_mio_trait_icon_book
+
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_extensive_logistics
+
+		any_parent = { dorwinion_trait_extensive_logistics }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_carpentry_guild_construction_infrastructure_tech = yes  }
+		}
+	}
+####################################################
+#######################################################BOWS
+####################################################
+	trait = {
+		token = generic_mio_trait_advanced_barrel_forging
+		name = generic_mio_trait_advanced_barrel_forging
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=3 y=0 }
+		relative_position_id = dorwinion_trait_better_tools
+		
+		limit_to_equipment_type = { artillery_equipment } #railway_gun_equipment }
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_lighter_and_cheaper
+		name = generic_mio_trait_lighter_and_cheaper
+		icon = GFX_generic_mio_department_icon_artillery_production
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_advanced_barrel_forging
+
+		available = { FROM = { has_completed_focus = GON_anfalas_materiel_designers } }
+		
+		limit_to_equipment_type = { artillery_equipment } #railway_gun_equipment }
+		equipment_bonus = {
+			soft_attack = -0.02
+			build_cost_ic = -0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_gun_mass_production
+		name = generic_mio_trait_gun_mass_production
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_advanced_barrel_forging
+
+		all_parents = {	generic_mio_trait_advanced_barrel_forging }
+
+		limit_to_equipment_type = { artillery_equipment } #railway_gun_equipment }
+		production_bonus = {
+			production_efficiency_gain_factor = 0.03
+			production_efficiency_cap_factor = 0.03
+		}
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.15
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_simpler_models
+		name = generic_mio_trait_simpler_models
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_lighter_and_cheaper
+
+		all_parents = {	generic_mio_trait_lighter_and_cheaper }
+
+		limit_to_equipment_type = { artillery_equipment } #railway_gun_equipment }
+		equipment_bonus = {
+			reliability = 0.07
+			ap_attack = -0.07
+		}
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.15
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_light_weight_barrels
+		name = generic_mio_trait_light_weight_barrels
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_gun_mass_production
+
+		all_parents = {
+			generic_mio_trait_simpler_models
+			generic_mio_trait_gun_mass_production
+
+		}
+
+		limit_to_equipment_type = { artillery_equipment } #railway_gun_equipment }
+		production_bonus = {
+			production_cost_factor = -0.03
+		}
+
+		equipment_bonus = {
+			breakthrough = 0.06
+			defense = 0.1
+		}
+	}
+####################################################
+#######################################################SHIPS
+####################################################
+	trait = {
+		token = generic_mio_trait_foam_fire_extinguishers
+		name = generic_mio_trait_foam_fire_extinguishers
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=4 y=0 }
+		relative_position_id = generic_mio_trait_advanced_barrel_forging
+		
+		available = { FROM = { has_completed_focus = DOR_order_a_vast_fleet } }
+		
+		limit_to_equipment_type = { capital_ship screen_ship convoy_1 }
+		equipment_bonus = {
+			reliability = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_bulkhead_shoring_procedure
+		name = generic_mio_trait_bulkhead_shoring_procedure
+		icon = GFX_generic_mio_department_icon_ship_capital_screen_armor
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_foam_fire_extinguishers
+		
+		all_parents = { generic_mio_trait_foam_fire_extinguishers }
+		
+		limit_to_equipment_type = { capital_ship screen_ship convoy_1 }
+		equipment_bonus = {
+			reliability = 0.01
+			armor_value = 0.02
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_flooding_boundries
+		name = generic_mio_trait_flooding_boundries
+		icon = GFX_generic_mio_trait_icon_max_strength
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_bulkhead_shoring_procedure
+		
+		all_parents = { generic_mio_trait_bulkhead_shoring_procedure }
+		
+		limit_to_equipment_type = { capital_ship screen_ship convoy_1 }
+		equipment_bonus = {
+			max_strength = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_protected_pumps
+		name = generic_mio_trait_protected_pumps
+		icon = GFX_generic_mio_trait_icon_max_strength
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_flooding_boundries
+		
+		all_parents = { generic_mio_trait_flooding_boundries }
+		
+		limit_to_equipment_type = { capital_ship screen_ship convoy_1 }
+		equipment_bonus = {
+			max_strength = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_high_powered_steering
+		name = generic_mio_trait_high_powered_steering
+		icon = GFX_generic_mio_department_icon_ship_capital_screen_armor
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_bulkhead_shoring_procedure
+		
+		all_parents = { generic_mio_trait_bulkhead_shoring_procedure }
+		
+		limit_to_equipment_type = { capital_ship screen_ship convoy_1 }
+		equipment_bonus = {
+			reliability = 0.01
+			armor_value = 0.02
 		}
 	}
 }

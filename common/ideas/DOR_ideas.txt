@@ -885,6 +885,9 @@ ideas = {
 			allowed = {
 				original_tag = DOR
 			}
+			visible = {
+				has_country_flag = dorwinion_baking_guild
+			}
 			cost = 150
 			removal_cost = 10
 			research_bonus = {
@@ -951,7 +954,6 @@ ideas = {
 			}
 			traits = { baker }
 		}
-		#################################
 		dorwinion_baking_guild_supply = {
 			name = dorwinion_baking_guild
 			picture = dorwinion_baking_guild
@@ -1016,20 +1018,142 @@ ideas = {
 			allowed = {
 				original_tag = DOR
 			}
+			visible = {
+				has_country_flag = dorwinion_carpentry_guild
+			}
 			cost = 150
 			removal_cost = 10
 			research_bonus = {
-				carpentry = @guildResearchBonus
+				construction_tech = @guildResearchBonus
+			}
+			traits = { carpenter }
+		}
+		dorwinion_carpentry_guild_construction = {
+			name = dorwinion_carpentry_guild
+			picture = dorwinion_carpentry_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_carpentry_guild_construction
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				construction_tech = @guildResearchBonus
 			}
 			modifier = {
 				production_speed_buildings_factor = 0.05
 			}
 			traits = { carpenter }
 		}
+		dorwinion_carpentry_guild_construction_factory = {
+			name = dorwinion_carpentry_guild
+			picture = dorwinion_carpentry_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_carpentry_guild_construction_factory
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				construction_tech = @guildResearchBonus
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+			}
+			traits = { carpenter }
+		}
+		dorwinion_carpentry_guild_construction_factory_slots = {
+			name = dorwinion_carpentry_guild
+			picture = dorwinion_carpentry_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_carpentry_guild_construction_factory_slots
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				construction_tech = @guildResearchBonus
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				global_building_slots = 1
+			}
+			traits = { carpenter }
+		}
+		dorwinion_carpentry_guild_construction_infrastructure = {
+			name = dorwinion_carpentry_guild
+			picture = dorwinion_carpentry_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_carpentry_guild_construction_infrastructure
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				construction_tech = @guildResearchBonus
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				production_speed_infrastructure_factor = 0.1
+			}
+			traits = { carpenter }
+		}
+		dorwinion_carpentry_guild_construction_infrastructure_tech = {
+			name = dorwinion_carpentry_guild
+			picture = dorwinion_carpentry_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_carpentry_guild_construction_infrastructure_tech
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				construction_tech = @guildResearchBonusBoosted
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				production_speed_infrastructure_factor = 0.1
+			}
+			traits = { carpenter }
+		}
 		################################################################SMITHING
+		@smithingGuildEfficiencyCap = 0.05
 		dorwinion_smithing_guild = {
 			allowed = {
 				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_smithing_guild
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				industry = @guildResearchBonus
+			}
+			traits = { blacksmith }
+		}
+		dorwinion_smithing_guild_efficiency = {
+			name = dorwinion_smithing_guild
+			picture = dorwinion_smithing_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_smithing_guild_efficiency
 			}
 			cost = 150
 			removal_cost = 10
@@ -1037,19 +1161,204 @@ ideas = {
 				industry = @guildResearchBonus
 			}
 			modifier = {
-				industrial_capacity_factory = 0.05
+				production_factory_max_efficiency_factor = @smithingGuildEfficiencyCap
+			}
+			traits = { blacksmith }
+		}
+		dorwinion_smithing_guild_efficiency_build = {
+			name = dorwinion_smithing_guild
+			picture = dorwinion_smithing_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_smithing_guild_efficiency_build
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				industry = @guildResearchBonus
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = @smithingGuildEfficiencyCap
+				production_speed_arms_factory_factor = 0.05
+			}
+			traits = { blacksmith }
+		}
+		dorwinion_smithing_guild_efficiency_build_tech = {
+			name = dorwinion_smithing_guild
+			picture = dorwinion_smithing_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_smithing_guild_efficiency_build_tech
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				industry = @guildResearchBonusBoosted
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = @smithingGuildEfficiencyCap
+				production_speed_arms_factory_factor = 0.05
+			}
+			traits = { blacksmith }
+		}
+		dorwinion_smithing_guild_efficiency_capacity = {
+			name = dorwinion_smithing_guild
+			picture = dorwinion_smithing_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_smithing_guild_efficiency_capacity
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				industry = @guildResearchBonus
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = @smithingGuildEfficiencyCap
+				industrial_capacity_factory = 0.07
+			}
+			traits = { blacksmith }
+		}
+		dorwinion_smithing_guild_efficiency_capacity_tech = {
+			name = dorwinion_smithing_guild
+			picture = dorwinion_smithing_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_smithing_guild_efficiency_capacity_tech
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				industry = @guildResearchBonusBoosted
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = @smithingGuildEfficiencyCap
+				industrial_capacity_factory = 0.07
 			}
 			traits = { blacksmith }
 		}
 		################################################################TAILORY
+		@tailoryGuildTrainingTime = -0.1
 		dorwinion_tailory_guild = {
 			allowed = {
 				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_tailory_guild
 			}
 			cost = 150
 			removal_cost = 10
 			research_bonus = {
 				support_tech = @guildResearchBonus
+			}
+			traits = { tailor }
+		}
+		dorwinion_tailory_guild_training = {
+			name = dorwinion_tailory_guild
+			picture = dorwinion_tailory_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_tailory_guild_training
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				support_tech = @guildResearchBonus
+			}
+			modifier = {
+				training_time_factor = @tailoryGuildTrainingTime
+			}
+			traits = { tailor }
+		}
+		dorwinion_tailory_guild_training_pp = {
+			name = dorwinion_tailory_guild
+			picture = dorwinion_tailory_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_tailory_guild_training_pp
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				support_tech = @guildResearchBonus
+			}
+			modifier = {
+				training_time_factor = @tailoryGuildTrainingTime
+				political_power_gain = 0.1
+			}
+			traits = { tailor }
+		}
+		dorwinion_tailory_guild_training_pp_cg = {
+			name = dorwinion_tailory_guild
+			picture = dorwinion_tailory_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_tailory_guild_training_pp_cg
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				support_tech = @guildResearchBonus
+			}
+			modifier = {
+				training_time_factor = @tailoryGuildTrainingTime
+				political_power_gain = 0.1
+				consumer_goods_factor = -0.1
+			}
+			traits = { tailor }
+		}
+		dorwinion_tailory_guild_training_cold = {
+			name = dorwinion_tailory_guild
+			picture = dorwinion_tailory_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_tailory_guild_training_cold
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				support_tech = @guildResearchBonus
+			}
+			modifier = {
+				training_time_factor = @tailoryGuildTrainingTime
+				acclimatization_cold_climate_gain_factor = 0.25
+			}
+			traits = { tailor }
+		}
+		dorwinion_tailory_guild_training_cold_attrition = {
+			name = dorwinion_tailory_guild
+			picture = dorwinion_tailory_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_tailory_guild_training_cold_attrition
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				support_tech = @guildResearchBonus
+			}
+			modifier = {
+				training_time_factor = @tailoryGuildTrainingTime
+				acclimatization_cold_climate_gain_factor = 0.25
+				attrition = -0.05
 			}
 			traits = { tailor }
 		}
