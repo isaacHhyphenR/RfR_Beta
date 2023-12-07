@@ -1,0 +1,158 @@
+﻿l_english:
+ mio_cat_tech_all_armor_and_modules: "All Cavalry Technologies"
+ mio_cat_tech_light_armor_and_modules: "Light Cavalry Technologies" #Cannot talk about modules because of DLC lock tack
+ mio_cat_tech_medium_armor_and_modules: "Heavy Cavalry Technologies" #Cannot talk about modules because of DLC lock tack
+ mio_cat_tech_heavy_armor_and_modules: "Monster Technologies" #Cannot talk about modules because of DLC lock tack
+ mio_cat_all_artillery_equipment: "All Ranged Technologies"
+ mio_cat_tech_all_capital_ship_and_modules: "All Capital Ship Technologies" #Cannot talk about modules because of DLC lock tack
+ mio_cat_tech_all_screen_ship_and_modules: "All Screen Ship Technologies" #Cannot talk about modules because of DLC lock tack
+ mio_cat_tech_all_cruiser_and_modules: "All Cruiser Technologies" #Cannot talk about modules because of DLC lock tack
+ mio_cat_tech_all_destroyer_and_modules: "All Destroyer Technologies" #Cannot talk about modules because of DLC lock tack
+ mio_cat_tech_all_motorized_mechanized: "All Wagon Technologies"
+ 
+ 
+mio_cat_eq_all_light_tank: "All Light Cavalry Equipment"
+mio_cat_eq_all_medium_tank: "All Heavy Cavalry Equipment"
+mio_cat_eq_all_heavy_tank: "All Monster Equipment"
+mio_cat_eq_all_tank_destroyers: "All Lancer Equipment"
+mio_cat_eq_all_cruiser: "All Cruiser Ships"
+mio_cat_eq_all_destroyer: "All Destroyer Ship"
+mio_cat_eq_all_battleship: "All Battleship"
+
+
+##     ## ########    ###    ########  ######## ########   ######  
+##     ## ##         ## ##   ##     ## ##       ##     ## ##    ## 
+##     ## ##        ##   ##  ##     ## ##       ##     ## ##       
+######### ######   ##     ## ##     ## ######   ########   ######  
+##     ## ##       ######### ##     ## ##       ##   ##         ## 
+##     ## ##       ##     ## ##     ## ##       ##    ##  ##    ## 
+##     ## ######## ##     ## ########  ######## ##     ##  ######  
+
+#######################
+##### MIO HEADERS #####
+#######################
+mio_header_light_tank_department: "Light Cavalry Department"
+mio_header_medium_tank_department: "Heavy Cavalry Department"
+mio_header_heavy_tank_department: "Monster Department"
+mio_header_engines_department: "Shoes Department"
+mio_header_mechanical_design: "Mechanical Design"
+mio_header_armament_and_ammunition: "Armament and Ammunition"
+mio_header_engine_and_suspension: "Tack"
+mio_header_armor_and_armaments: "Armor and Armaments"
+mio_header_engine_and_drive_system: "Shoes"
+mio_header_guns_and_turret: "Armament"
+mio_header_tank_construction: "Cavalry Breeding"
+mio_header_equipment_and_specialization: "Equipment and Specialization"
+mio_header_trains: "Wagons"
+mio_header_motorized: "Wagons"
+mio_header_mechanized: "Chariots"
+mio_header_anti_tank: "Anti-Cavalry"
+
+mio_header_cavalry: "Cavalry"
+mio_header_wagons: "Wagons"
+
+mio_header_belfalas_cavalry: "Heavy Cavalry"
+mio_header_lossarnach_cavalry: "Light Cav->"
+mio_header_belfalas_cavalry_improved: "Improved Heavy Cavalry"
+mio_header_belfalas_naval: "Capital Ships"
+mio_header_escorts: "Escort Ships"
+mio_header_convoys: "Convoys"
+mio_header_industrial_capacity: "Industrial Capacity"
+mio_header_gondor_nobility: "Nobility"
+
+mio_header_bows: "Bows"
+mio_header_fletching: "Fletching"
+mio_header_fishing_ships: "Fishing Ships"
+
+mio_header_commercial: "Commercial"
+
+
+
+########   #######  ##       ####  ######  #### ########  ######  
+##     ## ##     ## ##        ##  ##    ##  ##  ##       ##    ## 
+##     ## ##     ## ##        ##  ##        ##  ##       ##       
+########  ##     ## ##        ##  ##        ##  ######    ######  
+##        ##     ## ##        ##  ##        ##  ##             ## 
+##        ##     ## ##        ##  ##    ##  ##  ##       ##    ## 
+##         #######  ######## ####  ######  #### ########  ######  
+
+
+mio_policy_general_ruthless_contracts: "Ruthless Contracts"
+mio_policy_general_assembly_line_optimisers: "Assembly Line Optimisers"
+mio_policy_general_vertical_integration: "Vertical Integration"
+mio_policy_general_mechanical_genius: "Mechanical genius"
+mio_policy_general_experimental_development_teams: "Experimental Development Teams"
+
+mio_policy_land_armor_welding_specialists: "Armor Welding Specialists"
+mio_policy_land_casting_specialists: "Casting Specialists"
+mio_policy_land_heavy_gantry_cranes: "Heavy Gantry Cranes"
+mio_policy_land_factory_applied_camouflage: "Factory Applied Camouflage"
+mio_policy_land_cutting_corners: "Cutting Corners"
+
+mio_policy_air_perfect_finish: "Perfect Finish"
+mio_policy_air_heavy_gantry_cranes: "Heavy Gantry Cranes"
+mio_policy_air_propulsion_experimenters: "Propulsion Experimenters"
+mio_policy_air_wind_tunnel_pioneers: "Wind Tunnel Pioneers"
+mio_policy_air_modular_assembly: "Modular Assembly"
+
+mio_policy_navy_welding_specialists: "Welding Specialists"
+mio_policy_navy_space_efficient_design: "Space Efficient Design"
+mio_policy_navy_stable_platforms: "Stable Gunnery Platforms"
+mio_policy_navy_great_sea_keeping: "Great Sea Keeping"
+mio_policy_navy_coastal_battlefleet: "Coastal Battlefleet"
+
+
+
+###########TRAITS
+gondor_mio_trait_noble_connections: "Noble Connections"
+gondor_mio_trait_feudal_loyalty: "Feudal Loyalty"
+gondor_mio_trait_dynastic_expertise: "Dynastic Expertise"
+gondor_mio_trait_manor_economy: "Manor Economy"
+gondor_mio_trait_numenorean_artisanship: "Numenorean Artisanship"
+
+generic_mio_trait_convoy_production: "Convoy Production"
+generic_mio_trait_swift_convoys: "Swift Convoys"
+generic_mio_trait_defensive_convoys: "Defensive Convoys"
+generic_mio_trait_boarding_parties: "Boarding Parties"
+generic_mio_trait_mass_produced_convoys: "Mass Produced Convoys"
+generic_mio_trait_low_grade_wood: "Low Grade Wood"
+
+generic_mio_initial_trait_western_forests: "Timber Supplier"
+generic_mio_trait_abundant_lumber: "Abundant Lumber"
+generic_mio_trait_every_available_tree: "Every Available Tree"
+generic_mio_trait_oldest_oaks: "Oldest Oaks"
+generic_mio_trait_adaptable: "Adaptable"
+generic_mio_trait_shipyards: "Experienced Shipyards"
+generic_mio_trait_warehouses: "Fully Stocked Warehouses"
+
+generic_mio_trait_fleet_minesweepers: "Fishing Experience"
+generic_mio_trait_minelayers: "Floating Traps"
+generic_mio_trait_catch_rations: "Catch Rations"
+generic_mio_trait_trap_capacity: "Trap Capacity"
+generic_mio_trait_net_capacity: "Net Capacity"
+generic_mio_trait_seaworthy_bows: "Seaworthy Bows"
+generic_mio_trait_seaworthy_archers: "Seaworthy Archers"
+
+generic_mio_initial_trait_fishing_shipwright: "Fishing Shipwright"
+generic_mio_initial_trait_convoy_manufacturer: "Convoy Shipwright"
+generic_mio_initial_trait_artillery_manufacturer: "Bowyer"
+generic_mio_initial_trait_motorized_mechanized_manufacturer: "Wagon Carpenter"
+generic_mio_initial_trait_fast_tanks_designer: "Mobile Cavalry Breeder"
+generic_mio_initial_trait_medium_tanks_designer: "Heavy Cavalry Breeder"
+generic_mio_initial_trait_heavy_tank_designer: "Monster Breeder"
+generic_mio_initial_trait_infantry_tanks_designer: "Support Cavalry Breeder"
+generic_mio_initial_trait_armored_cavalry_designer: "Armored Cavalry Breeder"
+generic_mio_initial_trait_blacksmith: "$blacksmith$"
+generic_mio_initial_trait_pike_manufacturer: "$pike_manufacturer$"
+
+generic_mio_trait_unlock_mumakil: "$mumakil$"
+
+generic_mio_initial_trait_wagon_provisioner: "Wagon Provisioner"
+dorwinion_trait_efficient_recipes: "Efficient Recipes"
+dorwinion_trait_efficient_harvesting: "Efficient Harvesting"
+dorwinion_trait_imperishable_recipes: "Imperishable Recipes"
+dorwinion_trait_hardy_rations: "Hardy Rations"
+dorwinion_trait_innovation_of_artisans: "Innovation of Artisans"
+dorwinion_trait_merchant_caravans: "Merchant Caravans"
+dorwinion_trait_as_long_as_any_goods_get_through: "As Long as Any Goods Get Through"
+dorwinion_trait_built_for_tough_roads: "Built for Tough Roads"

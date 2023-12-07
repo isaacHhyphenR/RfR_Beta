@@ -1,0 +1,16 @@
+mio_cat_eq_all_support = { #All support type equipment
+	equipment_type = {
+		maintenance_equipment
+		engineering_equipment
+		medical_equipment
+		signals_equipment
+		suppression_equipment
+	}
+}
+mio_cat_eq_all_support_and_wagons = { #All support type equipment + trucks/trains
+	equipment_type = {
+		mio_cat_eq_all_support
+		motorized_equipment
+		train_equipment
+	}
+}

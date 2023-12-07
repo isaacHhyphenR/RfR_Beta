@@ -1,0 +1,190 @@
+#####################################################################BAKING
+upgrade_to_dorwinion_baking_guild_fuel = { #################
+	if = {
+		limit = {
+			has_idea = dorwinion_baking_guild
+			amount_taken_ideas = {
+				amount < 1
+				slots = {
+					industrial_concern
+				}
+			}
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_baking_guild
+			add_idea = dorwinion_baking_guild_fuel
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_baking_guild
+				add_idea = dorwinion_baking_guild_fuel
+			}
+		}
+		hidden_effect = {
+			remove_ideas = dorwinion_baking_guild
+		}
+	}
+	###
+	clr_country_flag = dorwinion_baking_guild
+	set_country_flag = dorwinion_baking_guild_fuel
+}
+upgrade_to_dorwinion_baking_guild_fuel_manpower = { ########
+	if = {
+		limit = {
+			has_idea = dorwinion_baking_guild_fuel
+			amount_taken_ideas = {
+				amount < 1
+				slots = {
+					industrial_concern
+				}
+			}
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_baking_guild_fuel
+			add_idea = dorwinion_baking_guild_fuel_manpower
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_baking_guild_fuel
+				add_idea = dorwinion_baking_guild_fuel_manpower
+			}
+		}
+		hidden_effect = {
+			remove_ideas = dorwinion_baking_guild_fuel
+		}
+	}
+	###
+	clr_country_flag = dorwinion_baking_guild_fuel
+	set_country_flag = dorwinion_baking_guild_fuel_manpower
+}
+upgrade_to_dorwinion_baking_guild_fuel_manpower_tech = { ###
+	if = {
+		limit = {
+			has_idea = dorwinion_baking_guild_fuel_manpower
+			amount_taken_ideas = {
+				amount < 1
+				slots = {
+					industrial_concern
+				}
+			}
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_baking_guild_fuel_manpower
+			add_idea = dorwinion_baking_guild_fuel_manpower_tech
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_baking_guild_fuel_manpower
+				add_idea = dorwinion_baking_guild_fuel_manpower_tech
+			}
+		}
+		hidden_effect = {
+			remove_ideas = dorwinion_baking_guild_fuel_manpower
+		}
+	}
+	###
+	clr_country_flag = dorwinion_baking_guild_fuel_manpower
+	set_country_flag = dorwinion_baking_guild_fuel_manpower_tech
+}
+#####################################################################
+upgrade_to_dorwinion_baking_guild_supply = { ###############
+	if = {
+		limit = {
+			has_idea = dorwinion_baking_guild
+			amount_taken_ideas = {
+				amount < 1
+				slots = {
+					industrial_concern
+				}
+			}
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_baking_guild
+			add_idea = dorwinion_baking_guild_supply
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_baking_guild
+				add_idea = dorwinion_baking_guild_supply
+			}
+		}
+		hidden_effect = {
+			remove_ideas = dorwinion_baking_guild
+		}
+	}
+	###
+	clr_country_flag = dorwinion_baking_guild
+	set_country_flag = dorwinion_baking_guild_supply
+}
+upgrade_to_dorwinion_baking_guild_supply_colony = { ########
+	if = {
+		limit = {
+			has_idea = dorwinion_baking_guild_supply
+			amount_taken_ideas = {
+				amount < 1
+				slots = {
+					industrial_concern
+				}
+			}
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_baking_guild_supply
+			add_idea = dorwinion_baking_guild_supply_colony
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_baking_guild_supply
+				add_idea = dorwinion_baking_guild_supply_colony
+			}
+		}
+		hidden_effect = {
+			remove_ideas = dorwinion_baking_guild_supply
+		}
+	}
+	###
+	clr_country_flag = dorwinion_baking_guild_supply
+	set_country_flag = dorwinion_baking_guild_supply_colony
+}
+upgrade_to_dorwinion_baking_guild_supply_colony_tech = { ###
+	if = {
+		limit = {
+			has_idea = dorwinion_baking_guild_supply_colony
+			amount_taken_ideas = {
+				amount < 1
+				slots = {
+					industrial_concern
+				}
+			}
+		}
+		swap_ideas = {
+			remove_idea = dorwinion_baking_guild_supply_colony
+			add_idea = dorwinion_baking_guild_supply_colony_tech
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = dorwinion_baking_guild_supply_colony
+				add_idea = dorwinion_baking_guild_supply_colony_tech
+			}
+		}
+		hidden_effect = {
+			remove_ideas = dorwinion_baking_guild_supply_colony
+		}
+	}
+	###
+	clr_country_flag = dorwinion_baking_guild_supply_colony
+	set_country_flag = dorwinion_baking_guild_supply_colony_tech
+}
+
+

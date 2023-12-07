@@ -3,6 +3,8 @@
 @techBoostUses = 2
 @factoryBonuses = 2
 @bigBoPCost = 5
+
+@guildFocusSizeBonus = 2
 #GFX:
 #GFX_goal_university_research
 #GFX_goal_university_medicine

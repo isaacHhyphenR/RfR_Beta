@@ -1,0 +1,172 @@
+
+##############################################################################################################################
+# Artillery Equipment; Escort ships unlocked through focus
+##############################################################################################################################
+DOR_baking_guild_MIO = {
+	name = dorwinion_baking_guild
+	icon = GFX_idea_dorwinion_baking_guild
+
+	allowed = {
+		original_tag = DOR
+	}
+	#available = { always = yes }
+	
+	equipment_type = {
+		motorized_equipment
+	}
+	research_categories = {
+		motorized_equipment
+		farming
+	}
+	
+	
+	tree_header_text = {
+		text = mio_header_commercial
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_motorized
+		x = 4
+	}
+
+	initial_trait = {
+		name = generic_mio_initial_trait_wagon_provisioner
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		equipment_bonus = {
+			fuel_capacity = 100
+		}
+	}
+
+####################################################
+#######################################################COMMERCIAL
+####################################################
+	trait = {
+		token = dorwinion_trait_efficient_recipes
+		name = dorwinion_trait_efficient_recipes
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x=0 y=0 }
+		
+		mutually_exclusive = { dorwinion_trait_imperishable_recipes }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_baking_guild_fuel = yes }
+		}
+		organization_modifier = { }
+	}
+	trait = {
+		token = dorwinion_trait_efficient_harvesting
+		name = dorwinion_trait_efficient_harvesting
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_efficient_recipes
+
+		any_parent = { dorwinion_trait_efficient_recipes }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_baking_guild_fuel_manpower = yes }
+		}
+		organization_modifier = { }
+	}
+	trait = {
+		token = dorwinion_trait_imperishable_recipes
+		name = dorwinion_trait_imperishable_recipes
+		icon = GFX_generic_mio_trait_icon_supply_consumption
+
+		position = { x=2 y=0 }
+		relative_position_id = dorwinion_trait_efficient_recipes
+		
+		mutually_exclusive = { dorwinion_trait_efficient_recipes }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_baking_guild_supply = yes }
+		}
+		organization_modifier = { }
+	}
+	trait = {
+		token = dorwinion_trait_hardy_rations
+		name = dorwinion_trait_hardy_rations
+		icon = GFX_generic_mio_trait_icon_entrenchment
+
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_imperishable_recipes
+		
+		any_parent = { dorwinion_trait_imperishable_recipes }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_baking_guild_supply_colony = yes }
+		}
+		organization_modifier = { }
+	}
+	trait = {
+		token = dorwinion_trait_innovation_of_artisans
+		name = dorwinion_trait_innovation_of_artisans
+		icon = GFX_generic_mio_trait_icon_book
+
+		position = { x=1 y=2 }
+		relative_position_id = dorwinion_trait_efficient_harvesting
+
+		any_parent = { dorwinion_trait_efficient_harvesting dorwinion_trait_hardy_rations }
+		
+		on_complete = {
+			FROM = {
+				if = {
+					limit = { has_country_flag = dorwinion_baking_guild_fuel_manpower }
+					upgrade_to_dorwinion_baking_guild_fuel_manpower = yes
+				}
+				else = {
+					upgrade_to_dorwinion_baking_guild_supply_colony_tech = yes
+				}
+			}
+		}
+		organization_modifier = { }
+	}
+####################################################
+#######################################################WAGONS
+####################################################
+	trait = {
+		token = dorwinion_trait_merchant_caravans
+		name = dorwinion_trait_merchant_caravans
+		icon = GFX_generic_mio_trait_icon_money
+
+		position = { x=2 y=0 }
+		relative_position_id = dorwinion_trait_imperishable_recipes
+
+		
+		equipment_bonus = {
+			supply_consumption = -0.1
+		}
+	}
+	trait = {
+		token = dorwinion_trait_built_for_tough_roads
+		name = dorwinion_trait_built_for_tough_roads
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_merchant_caravans
+
+		any_parent = { dorwinion_trait_merchant_caravans }
+		
+		equipment_bonus = {
+			reliability = 0.15
+		}
+	}
+	trait = {
+		token = dorwinion_trait_as_long_as_any_goods_get_through
+		name = dorwinion_trait_as_long_as_any_goods_get_through
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_built_for_tough_roads
+
+		any_parent = { dorwinion_trait_built_for_tough_roads }
+		
+		equipment_bonus = {
+			build_cost_ic = -0.05
+		}
+	}
+}

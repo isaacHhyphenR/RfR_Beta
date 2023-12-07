@@ -1,0 +1,698 @@
+ideas = {
+	@base = 150
+	@grima = 113
+	
+		######################################## TECHNOLOGY
+				##ARMOR
+	tank_manufacturer = { 
+		designer = yes
+		rohan_woldish_breeders = { #fast cav
+			allowed = {
+				original_tag = ROH
+			}
+			available = {
+				controls_state = 75 #Norwold
+				if = { limit = { tag = WLF }
+					has_country_flag = WLF_integrate_the_wold_flag
+				}
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				armor = 0.25 #Horselords baby
+			}
+			traits = { fast_tank_manufacturer }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		rohan_foldish_breeders = { #heavy cav
+			allowed = {
+				original_tag = ROH
+			}
+			available = {
+				controls_state = 157 #The Folde
+				if = { limit = { tag = WLF }
+					has_country_flag = WLF_integrate_the_folde_flag
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				armor = 0.25 #Horselords baby
+			}
+			traits = { heavy_tank_manufacturer }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		rohan_westmarker_breeders = { #infantry cav
+			allowed = {
+				original_tag = ROH
+			}
+			available = {
+				controls_state = 202 #Westmark
+				if = { limit = { tag = WLF }
+					has_country_flag = WLF_integrate_the_westmark_flag
+				}
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				armor = 0.25 #Horselords baby
+			}
+			traits = { infantry_tank_manufacturer }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		rohan_eastmarker_breeders = { #medium cav
+			allowed = {
+				original_tag = ROH
+			}
+			available = {
+				controls_state = 204 #Eastmark
+				if = { limit = { tag = WLF }
+					has_country_flag = WLF_integrate_the_eastmark_flag
+				}
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				armor = 0.25 #Horselords baby
+			}
+			traits = { medium_tank_manufacturer }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+				##NAVAL
+	naval_manufacturer = { 
+		designer = yes
+		rohan_house_eogarings = { #destroyer/cruiser
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				hidden_trigger = {
+					has_country_flag = has_eogarings
+					NOT = { has_country_flag = eogarings_imprisoned }
+				}
+			}
+			available = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				# hidden_trigger = {
+					# has_country_flag = has_eogarings
+					# NOT = { has_country_flag = eogarings_imprisoned }
+				# }
+				if = { limit = { tag = WLF } has_country_flag = WLF_consort_with_house_eogarings_flag }
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				naval_equipment = 0.10 #subpar navy for the horselords
+			}
+			equipment_bonus = {
+				ship_hull_light = {
+					lg_attack = 0.1
+					naval_range = -0.5
+				}
+				ship_hull_cruiser = {
+					lg_attack = 0.1
+					naval_range = -0.5
+				}
+			}
+			traits = { naval_manufacturer }
+			ai_will_do = {
+				factor = 0.3
+			}
+		}	
+		rohan_house_wadelingas = {
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				hidden_trigger = {
+					has_country_flag = has_wadelingas
+					NOT = { has_country_flag = wadelingas_imprisoned }
+				}
+			}
+			available = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				# hidden_trigger = {
+					# has_country_flag = has_wadelingas
+					# NOT = { has_country_flag = wadelingas_imprisoned }
+				# }
+				if = { limit = { tag = WLF } has_country_flag = WLF_consort_with_house_wadelingas_flag }
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				naval_equipment = 0.10 #subpar navy for the horselords
+			}
+			traits = { convoy_manufacturer }
+			ai_will_do = {
+				factor = 0.6
+			}
+		}
+	}
+				##INDUSTRIAL
+	industrial_concern = {
+		rohan_house_grimmoding = { ##Industrial Concern
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Can only recruit if has grima & promoted the family
+				has_completed_focus = ROH_promote_house_grimmoding
+				has_character = ROH_grima
+			}
+			available = { #Can only recruit if has grima & promoted the family
+				hidden_trigger = {
+					has_completed_focus = ROH_promote_house_grimmoding
+					has_character = ROH_grima
+				}
+			}
+			cost = 150
+			removal_cost = 10
+			
+			traits = { industrial_concern }
+			research_bonus = {
+				industry = 0.05
+				construction_tech = 0.05
+				farming = 0.05
+			}
+			modifier = { local_resources_factor = 0.05 }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		rohan_house_felandings = { ##Industrial Concern
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				hidden_trigger = {
+					has_country_flag = has_felandings
+					NOT = { has_country_flag = felandings_imprisoned }
+				}
+			}
+			available = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				# hidden_trigger = {
+					# has_country_flag = has_felandings
+					# NOT = { has_country_flag = felandings_imprisoned }
+				# }
+				if = { limit = { tag = WLF } has_country_flag = WLF_consort_with_house_felandings_flag }
+			}
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			traits = { industrial_concern }
+			ai_will_do = {
+				factor = 4
+			}
+		}
+		rohan_house_stangard = { ##Mathematics Concern
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				hidden_trigger = {
+					has_country_flag = has_stangard
+					NOT = { has_country_flag = stangard_imprisoned }
+				}
+			}
+			available = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				# hidden_trigger = {
+					# has_country_flag = has_stangard
+					# NOT = { has_country_flag = stangard_imprisoned }
+				# }
+				if = { limit = { tag = WLF } has_country_flag = WLF_consort_with_house_stangard_flag }
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				cat_bureaucracy = 0.15
+			}
+			traits = { electronics_concern }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		rohan_house_halethring = { ##Agricultural Concern
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Unlocked via focus
+				has_completed_focus = ROH_support_house_halethring
+			}
+			available = { #Unlocked via focus
+				hidden_trigger = {
+					has_completed_focus = ROH_support_house_halethring
+				}
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				agriculture = 0.15
+			}
+			traits = { agricultural_concern }
+			ai_will_do = {
+				factor = 3
+			}
+		}		
+		rohan_carpentry_guild = {##Carpenter
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Unlocked via focus
+				has_completed_focus = ROH_favor_the_carpentry_guild
+			}
+			available = { #Unlocked via focus
+				hidden_trigger = {
+					has_completed_focus = ROH_favor_the_carpentry_guild
+				}
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				carpentry = 0.05
+			}
+			traits = { carpenter }
+		}
+	}
+				###MATERIEL
+	materiel_manufacturer = {
+		designer = yes
+		rohan_house_bregdanings = { ##Wagon carpenter
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				hidden_trigger = {
+					has_country_flag = has_bregdanings
+					NOT = { has_country_flag = bregdanings_imprisoned }
+				}
+			}
+			available = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				# hidden_trigger = {
+					# has_country_flag = has_bregdanings
+					# NOT = { has_country_flag = bregdanings_imprisoned }
+				# }
+				if = { limit = { tag = WLF } has_country_flag = WLF_consort_with_house_bregdanings_flag }
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				motorized_equipment = 0.25 #Horselords baby
+			}
+			traits = { medium_motorized_equipment_manufacturer }
+		}	
+		rohan_house_rungarings = { ##Wagon carpenter
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				hidden_trigger = {
+					has_country_flag = has_rungarings
+					NOT = { has_country_flag = rungarings_imprisoned }
+				}
+			}
+			available = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				# hidden_trigger = {
+					# has_country_flag = has_rungarings
+					# NOT = { has_country_flag = rungarings_imprisoned }
+				# }
+				if = { limit = { tag = WLF } has_country_flag = WLF_consort_with_house_rungarings_flag }
+			}
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				motorized_equipment = 0.25 #Horselords baby
+			}
+			traits = { fast_motorized_equipment_manufacturer }
+		}
+				##EQUIPMENT
+		rohan_house_wulfings = { ##Infantry equipment
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				hidden_trigger = {
+					has_country_flag = has_wulfings
+					NOT = { has_country_flag = wulfings_imprisoned }
+				}
+			}
+			available = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				# hidden_trigger = {
+					# has_country_flag = has_wulfings
+					# NOT = { has_country_flag = wulfings_imprisoned }
+				# }
+				if = { limit = { tag = WLF } has_country_flag = WLF_consort_with_house_wulfings_flag }
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				infantry_tech = 0.10 #subpar infantry for the horselords
+			}
+			traits = { infantry_equipment_manufacturer }
+			ai_will_do = {
+				factor = 3
+			}
+		}
+		
+		rohan_house_ordgarings = { ##Bowyer
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				hidden_trigger = {
+					has_country_flag = has_ordgarings
+					NOT = { has_country_flag = ordgarings_imprisoned }
+				}
+			}
+			available = { #Grima can't recruit if sided with Eomer, Eomer can't recruit if not swayed
+				# hidden_trigger = {
+					# has_country_flag = has_ordgarings
+					# NOT = { has_country_flag = ordgarings_imprisoned }
+				# }
+				if = { limit = { tag = WLF } has_country_flag = WLF_consort_with_house_ordgarings_flag }
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				artillery = 0.10 #subpar infantry for the horselords
+			}
+			traits = { artillery_manufacturer }
+		}
+		
+		rohan_smithing_guild = { ##Blacksmith
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Unlocked via focus
+				has_completed_focus = ROH_favor_the_smithing_guild
+			}
+			available = { #Unlocked via focus
+				hidden_trigger = {
+					has_completed_focus = ROH_favor_the_smithing_guild
+				}
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				industry = 0.05
+			}
+			traits = { blacksmith }
+		}
+		rohan_house_hunthelming = { ##infantry equipment manufacturer
+			allowed = {
+				OR = { original_tag = ROH }
+			}
+			visible = { #Unlocked via focus
+				has_completed_focus = ROH_support_house_hunthelming
+			}
+			available = { #Unlocked via focus
+				hidden_trigger = {
+					has_completed_focus = ROH_support_house_hunthelming
+				}
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				infantry_support_weapons = 0.15
+			}
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+	}
+		######################################## SPIRITS
+	country = {
+		ROH_heal_theodred_spirit = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = prc_permit_opium_trade
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		ROH_defend_edoras_spirit = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = roh_meduseld
+			modifier = {
+				training_time_army_factor = -0.15
+			}
+		}
+		ROH_defend_the_hornburg_spirit = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = roh_the_hornburg
+			modifier = {
+				army_core_defence_factor = 0.25
+			}
+		}
+		ROH_traditional_economy_spirit = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+		ROH_march_on_the_morannon_spirit = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = roh_riding_for_ruin
+			modifier = {
+				army_defence_factor = 0.25
+				army_org_factor = 0.25
+			}
+		}	
+		ROH_ride_through_the_night = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = roh_riding_for_ruin
+			modifier = {
+				army_speed_factor = 0.25
+			}
+		}
+		ROH_ride_for_ruin_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = roh_riding_for_ruin
+			modifier = {
+				army_attack_factor = 0.25
+				army_breakthrough_against_major_factor = 0.25
+				army_breakthrough_against_minor_factor = 0.25
+			}
+		}
+		ROH_hail_the_victorious_dead_spirit = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = roh_hail_the_victorious_dead
+			modifier = {
+				conscription_factor = 0.5
+			}
+		}	
+		ROH_soothed_economy = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = SOV_third_five_year_plan_civilian
+			modifier = {
+				custom_modifier_tooltip = ROH_soothed_economy_idea_tooltip
+			}
+			on_add = { add_offsite_building = { type = industrial_complex level = 4 } } ##adds the buildings
+			on_remove = { add_offsite_building = { type = industrial_complex level = -4 } } ##removes the offsite buildings
+		}
+		prosperity = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_foreign_capital
+			modifier = {
+				consumer_goods_factor = -0.075
+			}
+		}
+		attention_diverted = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = ROM_king_carol_ii_hedonist
+			modifier = {
+				freedom_drift = -0.01
+			}
+		}
+		royal_concessions = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_foreign_capital
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+		ROH_a_hall_divided = {
+			removal_cost = -1
+			picture = roh_a_hall_divided
+			modifier = {
+				custom_modifier_tooltip = ROH_unit_template_locked_tooltip
+				political_power_factor = -0.25
+				command_power_gain_mult = -0.75
+				military_leader_cost_factor = 100
+				defensive_war_stability_factor = 0.2
+				offensive_war_stability_factor = 0.2
+			}
+			on_remove = {
+				country_lock_all_division_template = no
+				set_division_template_lock = {
+					division_template = "Fyrd" ##if you edit the fyrd template the raised fyrd spawn with that template 
+					is_locked = yes
+				}
+			}
+		}
+		ROH_imprisoned_traitors = {
+			removal_cost = -1
+			allowed = { always = no }
+			picture = roh_rohan_imprisoned
+			on_remove = { ##frees imprisoned houses
+				if = { limit = { has_country_flag = bregdanings_imprisoned }
+					clr_country_flag = bregdanings_imprisoned
+				}
+				if = { limit = { has_country_flag = eogarings_imprisoned }
+					clr_country_flag = eogarings_imprisoned
+				}
+				if = { limit = { has_country_flag = felandings_imprisoned }
+					clr_country_flag = felandings_imprisoned
+				}
+				if = { limit = { has_country_flag = ordgarings_imprisoned }
+					clr_country_flag = ordgarings_imprisoned
+				}
+				if = { limit = { has_country_flag = rungarings_imprisoned }
+					clr_country_flag = rungarings_imprisoned
+				}
+				if = { limit = { has_country_flag = stangard_imprisoned }
+					clr_country_flag = stangard_imprisoned
+				}
+				if = { limit = { has_country_flag = wadelingas_imprisoned }
+					clr_country_flag = wadelingas_imprisoned
+				}
+				if = { limit = { has_country_flag = wulfings_imprisoned }
+					clr_country_flag = wulfings_imprisoned
+				}
+			}
+		}
+		ROH_distrustful_military = {
+			removal_cost = -1
+			picture = roh_a_hall_divided
+			allowed_civil_war = { always = no }
+			modifier = {
+				custom_modifier_tooltip = ROH_unit_template_locked_tooltip
+				command_power_gain_mult = -0.5
+				military_leader_cost_factor = 100
+			}
+			on_add = {
+				country_lock_all_division_template = yes
+			}
+			on_remove = {
+				country_lock_all_division_template = no
+				set_division_template_lock = {
+					division_template = "Fyrd" ##if you edit the fyrd template the raised fyrd spawn with that template 
+					is_locked = yes
+				}
+			}
+		}
+		the_peasants_duty = {
+			allowed = { always = no }
+			picture = tur_etatism
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.15
+				production_speed_buildings_factor = 0.15
+				custom_modifier_tooltip = removed_on_civil_war_end_tooltip
+			}
+		}
+		ROH_emergency_tythes = {
+			allowed = { always = no }
+			picture = EST_exploit_the_banks
+			removal_cost = -1
+			modifier = {
+				custom_modifier_tooltip = ROH_emergency_tythes_idea_tooltip
+				custom_modifier_tooltip = removed_on_civil_war_end_tooltip
+			}
+		}	
+		securing_the_country = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = roh_secure_the_country
+			modifier = {
+				army_core_attack_factor = 0.15
+				custom_modifier_tooltip = removed_on_civil_war_end_tooltip
+			}
+		}
+		streamlined_taxation = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = SOV_second_five_year_plan
+			modifier = {
+				local_resources_factor = 0.1
+			}
+		}
+		streamlined_recruitment = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = SOV_second_five_year_plan
+			modifier = {
+				#-10% fyrd reruitment cost
+			}
+		}
+	}
+	hidden_ideas = {
+		EOM_ai_buff = {
+			allowed = {
+				always = no
+			}
+			picture = roh_secure_the_country
+			removal_cost = -1
+			modifier = {
+				conscription = 1
+				mobilization_speed = 1
+				army_fuel_consumption_factor = -0.5
+				supply_combat_penalties_on_core_factor = -0.5
+				industrial_capacity_factory = 1
+				army_attack_factor = 1
+				army_defence_factor = 0.5
+				breakthrough_factor = 1
+				army_speed_factor = 0.5
+			}
+		}
+	}
+}

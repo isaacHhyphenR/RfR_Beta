@@ -1,42 +1,5 @@
 equipments = {
 
-	# support_equipment = {
-		# year = 3000
-
-		# is_archetype = yes
-		# picture = archetype_support_equipment
-		# is_buildable = no
-		# type = {
-			# infantry
-			# motorized
-		# }
-		# group_by = archetype
-		
-		# interface_category = interface_category_land
-		
-		# #Space taken in convoy
-		# lend_lease_cost = 1
-
-		# build_cost_ic = 4
-		# resources = {
-			# cloth = 2
-			# wood = 1
-		# }
-	# }
-	# support_equipment_1 = {
-		# year = 3000
-
-		# archetype = support_equipment
-		# priority = 20	
-	# }
-	# support_equipment_2 = {
-		# year = 3000
-		# parent = support_equipment_1
-
-		# archetype = support_equipment
-		# priority = 20	
-	# }
-
 ########################################Maintenance	
 	maintenance_equipment = {
 		year = 3000

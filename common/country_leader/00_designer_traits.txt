@@ -53,6 +53,18 @@ leader_traits = {
 			factor = 1
 		}
 	}
+	baker = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tailor = {
+		random = no
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	agricultural_concern = {
 		random = no
 		
@@ -159,6 +171,19 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
+	}
+	
+	DOR_smithing_guild = {
+		random = no
+	}
+	DOR_carpentry_guild = {
+		random = no
+	}
+	DOR_baking_guild = {
+		random = no
+	}
+	DOR_tailory_guild = {
+		random = no
 	}
 	
 			###HORSE BREEDERS

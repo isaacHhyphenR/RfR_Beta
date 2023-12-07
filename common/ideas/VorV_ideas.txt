@@ -1,0 +1,1044 @@
+ideas = {
+	@tagResearchBonus = 0.15
+	@tagDesignerCost = 150
+		######################################## TECHNOLOGY
+	tank_manufacturer = {
+		designer = yes
+		dathabha_designer = { ##DUNLAND (horse thief)
+			picture = dathabha_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				66 = { is_core_of = ROOT }#dathabha
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				cat_light_armor = @tagResearchBonus
+			}
+			traits = { horse_thief }
+		}
+		angrast_designer = { ##ENEDWAITH (Medium tank manufacturer)
+			picture = angrast_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				62 = { is_core_of = ROOT }#angrast
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				cat_medium_armor = @tagResearchBonus
+			}
+			traits = { medium_tank_manufacturer }
+		}
+		adaraba_designer = { ##ANDRAST (light tank manufacturer)
+			picture = adaraba_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				222 = { is_core_of = ROOT }#adaraba
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				cat_light_armor = @tagResearchBonus
+			}
+			traits = { fast_tank_manufacturer }
+		}
+		tawarteleh_designer = { ##WHITE MOUNTAINS (heavy tank manufacturer)
+			picture = tawarteleh_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				226 = { is_core_of = ROOT }#tawarteleh
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				cat_heavy_armor = @tagResearchBonus
+			}
+			traits = { heavy_tank_manufacturer }
+		}
+	}
+				##NAVAL
+	naval_manufacturer = {
+		designer = yes
+		parth_iaur_designer = { ##ANDRAST (fishing concern)
+			picture = parth_iaur_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+				NOT = { has_dlc = "Man the Guns" }
+			}
+			visible = {}
+			available = { 
+				225 = { is_core_of = ROOT }#parth_iaur
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				dd_tech = @tagResearchBonus
+			}
+			equipment_bonus = {
+				screen_ship = {
+					reliability = 0.25
+				}
+			}
+			traits = { fishing_concern }
+		}
+		parth_iaur_designer_MTG = { ##ANDRAST (fishing concern)
+			picture = parth_iaur_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+				has_dlc = "Man the Guns"
+			}
+			visible = {}
+			available = { 
+				225 = { is_core_of = ROOT }#parth_iaur
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				naval_mines = @tagResearchBonus
+			}
+			traits = { fishing_concern }
+		}
+		rafinfalas_designer = { ##ANDRAST (convoy escort manufacturer)
+			picture = rafinfalas_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				134 = { is_core_of = ROOT }#rafinfalas
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				dd_tech = @tagResearchBonus
+			}
+			traits = { convoy_escort_naval_manufacturer }
+		}
+		byrig_designer = { ##DRUWAITH IAUR (battlefleet designer)
+			picture = byrig_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				133 = { is_core_of = ROOT }#byrig
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				bb_tech = @tagResearchBonus
+			}
+			traits = { battlefleet_designer }
+		}
+		colgrin_designer = { ##ENEDWAITH (convoy manufacturer)
+			picture = colgrin_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				215 = { is_core_of = ROOT }#colgrin
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				cl_tech = @tagResearchBonus
+			}
+			traits = { convoy_manufacturer }
+		}
+		reedwater_designer = { ##EREGION (swamp shipwright)
+			picture = reedwater_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				60 = { is_core_of = ROOT }#reedwater
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				marine_tech = @tagResearchBonus
+			}
+			modifier = {
+				naval_invasion_capacity = 10
+			}
+			traits = { swamp_shipwright }
+		}
+	}
+				##INDUSTRIAL
+	industrial_concern = {
+		designer = yes
+		nan_engui_designer = { ##ANDRAST (repair company)
+			picture = nan_engui_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				221 = { is_core_of = ROOT }#nan_engui
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				architecture = @tagResearchBonus
+			}
+			modifier = {
+				industry_free_repair_factor = 0.2
+			}
+			traits = { repair_company }
+		}
+		drulad_designer = { ##DRUWAITH IAUR (Throne room achitect)
+			picture = drulad_heritage
+			ai_will_do = {
+				base = 1
+				modifier = {
+					has_country_flag = diplomatic_flag
+					factor = 2
+				}
+			}
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				71 = { is_core_of = ROOT }#drulad
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			modifier = { 
+				prestige_modifier = 1
+			}
+			traits = { throne_room_architect }
+		}
+		isenrun_designer = { ##DRUWAITH IAUR (agricultural concern)
+			picture = isenrun_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				223 = { is_core_of = ROOT }#isenrun
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				harvest_tech = @tagResearchBonus
+			}
+			modifier = {
+				fuel_gain_factor = 0.2
+			}
+			traits = { agricultural_concern }
+		}
+		carreglyn_designer = { ##DUNLAND (linchpin of infrastructure)
+			picture = carreglyn_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				216 = { is_core_of = ROOT }#carreglyn
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = {
+				cat_urbanisation = @tagResearchBonus
+			}
+			traits = { linchpin_of_infrastructure }
+		}
+		dunfells_designer = { ##DUNLAND (blacksmithing concern)
+			picture = dunfells_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				63 = { is_core_of = ROOT }#dunfells
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				cat_production = @tagResearchBonus
+			}
+			traits = { blacksmithing_concern }
+		}
+		starkmoors_designer = { ##ENEDWAITH (non core factories)
+			picture = starkmoors_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				65 = { is_core_of = ROOT }#starkmoors
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				electronics = @tagResearchBonus #math
+			}
+			on_add = {
+				hidden_effect = {
+					every_controlled_state = {
+						set_variable = { non_core_factories = ROOT.modifier@non_core_factories }
+						set_variable = { non_core_resource = ROOT.modifier@non_core_resources }
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					every_controlled_state = {
+						set_variable = { non_core_factories = ROOT.modifier@non_core_factories }
+						set_variable = { non_core_resource = ROOT.modifier@non_core_resources }
+					}
+				}
+			}
+			traits = { loot_organizer }
+		}
+		hairaverkien_designer = { ##WHITE MOUNTAINS (fortification engineer)
+			picture = hairaverkien_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				140 = { is_core_of = ROOT }#hairaverkien
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				cat_fortification = @tagResearchBonus
+			}
+			traits = { fortification_engineer }
+		}
+		nan_i_feryth_designer = { ##WHITE MOUNTAINS (mining concern)
+			picture = nan_i_feryth_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				217 = { is_core_of = ROOT }#nan_i_feryth
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				excavation_tech = @tagResearchBonus
+			}
+			modifier = {
+				local_resources = 0.1
+			}
+			traits = { mining_concern }
+		}
+		##bonuses don't translate well to MIO
+		reedwater_designer_AAT = { ##EREGION (swamp shipwright)
+			name = reedwater_designer
+			picture = reedwater_heritage
+			allowed = {
+				has_dlc = "Arms Against Tyranny"
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				60 = { is_core_of = ROOT }#reedwater
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				marine_tech = @tagResearchBonus
+			}
+			modifier = {
+				naval_invasion_capacity = 10
+			}
+			traits = { swamp_shipwright }
+		}
+		mirobel_designer_AAT = { ##EREGION (Ranger artillery manufacturer)
+			name = mirobel_designer
+			picture = mirobel_heritage
+			allowed = { 
+				has_dlc = "Arms Against Tyranny"
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				61 = { is_core_of = ROOT }#mirobel
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				para_tech = @tagResearchBonus
+			}
+			traits = { artillery_manufacturer }
+		}
+		white_mountain_uprising_designer_AAT = { ##WHITE MOUNTAINS (mountain guerilla)
+			name = white_mountain_uprising_designer
+			picture = white_mountain_uprising_heritage
+			allowed = { 
+				has_dlc = "Arms Against Tyranny"
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				139 = { is_core_of = ROOT }#White Mountains of Morthond
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				mountaineers_tech = @tagResearchBonus
+			}
+			traits = { mountain_guerrilla }
+		}
+	}
+				###MATERIEL
+	materiel_manufacturer = {
+		designer = yes
+		an_khorgan_designer = { ##DRUWAITH IAUR (motorized equipment manufacturer)
+			picture = an_khorgan_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				224 = { is_core_of = ROOT }#an_khorgan
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				motorized_equipment = @tagResearchBonus
+			}
+			traits = { motorized_equipment_manufacturer }
+		}
+		dunfearn_designer = { ##DUNLAND (pike manufacturer)
+			picture = dunfearn_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				213 = { is_core_of = ROOT }#dunfearn
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				cat_anti_tank = @tagResearchBonus
+			}
+			traits = { pike_manufacturer }
+		}
+		harestolad_designer = { ##ENEDWAITH (armor smith)
+			picture = harestolad_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				64 = { is_core_of = ROOT }#harestolad
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				infantry_support_weapons = @tagResearchBonus
+			}
+			traits = { armor_smith }
+		}
+		glad_ereg_designer = { ##EREGION (artillery manufacturer)
+			picture = glad_ereg_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				46 = { is_core_of = ROOT }#glad_ereg
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				cat_actual_artillery = @tagResearchBonus
+			}
+			traits = { artillery_manufacturer }
+		}
+		hollin_designer = { ##EREGION (infantry equipment manufacturer)
+			picture = hollin_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				214 = { is_core_of = ROOT }#hollin
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				infantry_weapons = @tagResearchBonus
+			}
+			traits = { infantry_equipment_manufacturer }
+		}
+		mirobel_designer = { ##EREGION (Ranger artillery manufacturer)
+			picture = mirobel_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				61 = { is_core_of = ROOT }#mirobel
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				para_tech = @tagResearchBonus
+			}
+			traits = { artillery_manufacturer }
+		}
+		annulefnui_designer = { ##WHITE MOUNTAINS (javelin manufacturer)
+			picture = annulefnui_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				135 = { is_core_of = ROOT }#Annulefnui
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				rocketry = @tagResearchBonus
+			}
+			traits = { javelin_manufacturer }
+		}
+		white_mountain_uprising_designer = { ##WHITE MOUNTAINS (mountain guerilla)
+			picture = white_mountain_uprising_heritage
+			allowed = { 
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {}
+			available = { 
+				139 = { is_core_of = ROOT }#White Mountains of Morthond
+			}
+			cost = @tagDesignerCost
+			removal_cost = 10
+			research_bonus = { 
+				mountaineers_tech = @tagResearchBonus
+			}
+			traits = { mountain_guerrilla }
+		}
+	}
+		######################################## SPIRITS
+	country = {
+		dunland_saruman_heritage = {
+			picture = dunland_saruman_heritage
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				tribal_coring_cost = -0.5
+				compliance_growth = 0.5
+				custom_modifier_tooltip = cancel_if_not_sarumans_puppet_tooltip
+			}
+			cancel = { NOT = { overlord = { has_country_leader = { character = ISN_saruman ruling_only = yes } } } }
+		}
+		fanatical_shadow_cult = {
+			picture = generic_melkorite_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { conscription = 0.02 }
+			cancel = { NOT = { has_government = melkorite } }
+		}
+		@druwaith_iaur_mic_factor = 0.075
+		isen_trade_with_an_khorgan = {
+			picture = generic_trade_with_Druwaith_Iaur
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { custom_modifier_tooltip = remove_if_at_war_with_AKN_tooltip }
+			targeted_modifier = {
+				tag = AKN
+				mic_to_target_factor = @druwaith_iaur_mic_factor
+			}
+			cancel = { has_war_with = AKN }
+		}
+		isen_trade_with_byrig = {
+			picture = generic_trade_with_Druwaith_Iaur
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { custom_modifier_tooltip = remove_if_at_war_with_BYR_tooltip }
+			targeted_modifier = {
+				tag = BYR
+				mic_to_target_factor = @druwaith_iaur_mic_factor
+			}
+			cancel = { has_war_with = BYR }
+		}
+		isen_trade_with_drulad = {
+			picture = generic_trade_with_Druwaith_Iaur
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { custom_modifier_tooltip = remove_if_at_war_with_DRU_tooltip }
+			targeted_modifier = {
+				tag = DRU
+				mic_to_target_factor = @druwaith_iaur_mic_factor
+			}
+			cancel = { has_war_with = DRU }
+		}
+		isen_trade_with_isenrun = {
+			picture = generic_trade_with_Druwaith_Iaur
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { custom_modifier_tooltip = remove_if_at_war_with_IRN_tooltip }
+			targeted_modifier = {
+				tag = IRN
+				mic_to_target_factor = @druwaith_iaur_mic_factor
+			}
+			cancel = { has_war_with = BYR }
+		}
+		druwaith_trade_with_isengard = {
+			picture = generic_trade_with_isengard
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { custom_modifier_tooltip = remove_if_at_war_with_ISN_tooltip }
+			targeted_modifier = {
+				tag = ISN
+				trade_cost_for_target_factor = -0.5
+			}
+			cancel = { has_war_with = ISN }
+		}
+		repaired_eregion_forges = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.1
+			}
+		}
+		white_mountain_army = {
+			picture = YUG_federal_defense_council
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.5
+			}
+		}
+		white_mountain_rebels = {
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				hidden_modifier = {
+					ai_focus_defense_factor = 1
+					ai_join_ally_desire_factor = -10
+				}
+			}
+			rule = {
+				can_join_factions = no
+				can_decline_call_to_war = yes
+			}
+		}
+		cleanse_our_homeland_enedwaith = {
+			picture = SPR_anti_fascist_crusade
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				generate_wargoal_tension = -0.25
+				custom_modifier_tooltip = ENE_preserve_our_homeland_tooltip
+			}
+		}
+		memory_of_shared_victories = {
+			picture = FRA_scw_intervention_nationalists_focus
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				tribal_trust_cost = -0.5
+			}
+		}
+		free_council_of_enedwaith = {
+			picture = tribal_throne
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				tribal_same_faction_modifier = 1
+			}
+		}
+		free_council_of_enedwaith2 = {
+			picture = tribal_throne
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				tribal_same_faction_modifier = 1
+				subjects_autonomy_gain = -0.5
+			}
+		}
+		rohirric_protectorate = {
+			allowed = { always = no }
+			removal_cost = -1
+			targeted_modifier = {
+				tag = ROH
+				cic_to_target_factor = 0.15
+			}
+			modifier = {
+				custom_modifier_tooltip = cancel_if_not_guaranteed_by_ROH_tooltip
+			}
+			cancel = {
+				OR = {
+					NOT = {
+						OR = {
+							is_guaranteed_by = ROH
+							is_in_faction_with = ROH
+						}
+					}
+					is_subject_of = ROH
+				}
+			}	
+		}
+		gondorian_protectorate = {
+			allowed = { always = no }
+			removal_cost = -1
+			targeted_modifier = {
+				tag = GON
+				trade_cost_for_target_factor = -0.25
+				cic_to_target_factor = 0.1
+			}
+			modifier = {
+				custom_modifier_tooltip = cancel_if_not_guaranteed_by_GON_tooltip
+				custom_modifier_tooltip = gondorian_protectorate_investment_tooltip
+			}
+			cancel = {
+				OR = {
+					NOT = {
+						OR = {
+							is_guaranteed_by = GON
+							is_in_faction_with = GON
+						}
+					}
+					is_subject_of = GON
+				}
+			}	
+		}
+		admire_numenorean_handiwork_idea = {
+			picture = generic_build_infrastructure
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_infrastructure_factor = 0.2
+			}
+		}
+		unify_tribal_hosts = {
+			picture = generic_swear_fealty
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.1
+				supply_node_range = 0.1
+			}
+		}
+		king_before_clan = {
+			picture = generic_swear_fealty
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.1
+				supply_node_range = 0.1
+				conscription = 0.015
+			}
+		}
+		enedwaith_unifier = {
+			picture = unite_greater_enedwaith
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				custom_modifier_tooltip = unlock_tribal_wargoal_tooltip
+				custom_modifier_tooltip = reduce_tension_to_generate_enedwaith_tooltip
+			}
+			on_add = {
+				add_ideas = hidden_enedwaith_unifier
+			}
+			on_remove = {
+				#remove_ideas = hidden_enedwaith_unifier
+			}
+		}
+		invoke_enedwaith_heritage_idea = {
+			picture = unite_greater_enedwaith
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				tribal_coring_cost = -0.25
+			}
+		}
+		invoke_enedwaith_heritage_idea_combination = {
+			picture = unite_greater_enedwaith
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				custom_modifier_tooltip = unlock_tribal_wargoal_tooltip
+				custom_modifier_tooltip = reduce_tension_to_generate_enedwaith_tooltip
+				tribal_coring_cost = -0.25
+			}
+			on_add = {
+				#add_ideas = hidden_enedwaith_unifier
+			}
+			on_remove = {
+				remove_ideas = hidden_enedwaith_unifier
+			}
+		}
+		invoke_enedwaith_prowess_idea = {
+			picture = greater_enedwaith_prowess
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+			}
+		}
+		##################################################ATTACK NEIGHBORS
+		Andrast_attack_neighbors = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				custom_modifier_tooltip = Andrast_attack_neighbors_tooltip
+			}
+			on_add = {
+				add_ideas = { hidden_attack_andrast hidden_attack_druwaith_iaur hidden_attack_white_mountains }
+			}
+			on_remove = {
+				remove_ideas = { hidden_attack_andrast hidden_attack_druwaith_iaur hidden_attack_white_mountains }
+			}
+		}
+		Druwaith_Iaur_attack_neighbors = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				custom_modifier_tooltip = Druwaith_Iaur_attack_neighbors_tooltip
+			}
+			on_add = {
+				add_ideas = { hidden_attack_andrast hidden_attack_druwaith_iaur hidden_attack_white_mountains hidden_attack_enedwaith }
+			}
+			on_remove = {
+				remove_ideas = { hidden_attack_andrast hidden_attack_druwaith_iaur hidden_attack_white_mountains hidden_attack_enedwaith }
+			}
+		}
+		Dunland_attack_neighbors = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				custom_modifier_tooltip = Dunland_attack_neighbors_tooltip
+			}
+			on_add = {
+				add_ideas = { hidden_attack_enedwaith hidden_attack_dunland hidden_attack_eregion }
+			}
+			on_remove = {
+				remove_ideas = { hidden_attack_enedwaith hidden_attack_dunland hidden_attack_eregion }
+			}
+		}
+		Enedwaith_attack_neighbors = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				custom_modifier_tooltip = Enedwaith_attack_neighbors_tooltip
+			}
+			on_add = {
+				add_ideas = { hidden_attack_enedwaith hidden_attack_druwaith_iaur hidden_attack_dunland hidden_attack_eregion }
+			}
+			on_remove = {
+				remove_ideas = { hidden_attack_enedwaith hidden_attack_druwaith_iaur hidden_attack_dunland hidden_attack_eregion }
+			}
+		}
+		Eregion_attack_neighbors = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				custom_modifier_tooltip = Eregion_attack_neighbors_tooltip
+			}
+			on_add = {
+				add_ideas = { hidden_attack_enedwaith hidden_attack_dunland hidden_attack_eregion }
+			}
+			on_remove = {
+				remove_ideas = { hidden_attack_enedwaith hidden_attack_dunland hidden_attack_eregion }
+			}
+		}
+		White_Mountains_attack_neighbors = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				custom_modifier_tooltip = White_Mountains_attack_neighbors_tooltip
+			}
+			on_add = {
+				add_ideas = { hidden_attack_andrast hidden_attack_druwaith_iaur hidden_attack_white_mountains }
+			}
+			on_remove = {
+				remove_ideas = { hidden_attack_andrast hidden_attack_druwaith_iaur hidden_attack_white_mountains }
+			}
+		}
+	
+		isengard_planning = {
+			picture = generic_trade_with_isengard
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				max_planning = 0.25
+				custom_modifier_tooltip = isengard_planning_remove_tooltip
+			}
+			cancel = {
+				NOT = { is_ally_with = ISN }
+			}
+		}
+	}
+	hidden_ideas = {
+		hidden_attack_ancestral_enemy = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.15
+			}
+		}
+			
+		@tensionGenerateBonus = -0.25
+		hidden_enedwaith_unifier = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = ADB
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = AND
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = NEN
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = PRI
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = AKN
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = DRU
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = DWI
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = IRN
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = CGN
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = DFN
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = DTH
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = DUN
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = AGR
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = COL
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = HST
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = STK
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = ERG
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = HOL
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = MBL
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = REE
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = ANU
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = HVK
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = NIF
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+			targeted_modifier = {
+				tag = TAW
+				generate_wargoal_tension_against = @tensionGenerateBonus
+			}
+		}
+	}
+}

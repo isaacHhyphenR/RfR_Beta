@@ -842,6 +842,8 @@ ideas = {
 	}
 
 	##########################################################DESIGNERS
+	@guildResearchBonus = 0.1
+	@guildResearchBonusBoosted = 0.2
 	tank_manufacturer = { 
 		designer = yes
 		# mordor_heavy_tank_designer = {
@@ -872,10 +874,13 @@ ideas = {
 			# traits = { battlefleet_designer}
 		# }
 	}
-	@guildResearchBonus = 0.15
+				###MATERIEL
+	materiel_manufacturer = {
+		designer = yes
+	}
 				##INDUSTRIAL
 	industrial_concern = {
-		designer = yes
+		################################################################BAKING
 		dorwinion_baking_guild = {
 			allowed = {
 				original_tag = DOR
@@ -885,11 +890,128 @@ ideas = {
 			research_bonus = {
 				farming = @guildResearchBonus
 			}
+			traits = { baker }
+		}
+		dorwinion_baking_guild_fuel = {
+			name = dorwinion_baking_guild
+			picture = dorwinion_baking_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_baking_guild_fuel
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				farming = @guildResearchBonus
+			}
 			modifier = {
 				fuel_gain_factor = 0.05
 			}
-			traits = { agricultural_concern }
+			traits = { baker }
 		}
+		dorwinion_baking_guild_fuel_manpower = {
+			name = dorwinion_baking_guild
+			picture = dorwinion_baking_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_baking_guild_fuel_manpower
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				farming = @guildResearchBonus
+			}
+			modifier = {
+				fuel_gain_factor = 0.05
+				conscription = 0.002
+			}
+			traits = { baker }
+		}
+		dorwinion_baking_guild_fuel_manpower_tech = {
+			name = dorwinion_baking_guild
+			picture = dorwinion_baking_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_baking_guild_fuel_manpower_tech
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				farming = @guildResearchBonusBoosted
+			}
+			modifier = {
+				fuel_gain_factor = 0.05
+				conscription = 0.002
+			}
+			traits = { baker }
+		}
+		#################################
+		dorwinion_baking_guild_supply = {
+			name = dorwinion_baking_guild
+			picture = dorwinion_baking_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_baking_guild_supply
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				farming = @guildResearchBonus
+			}
+			modifier = {
+				no_supply_grace = 72
+			}
+			traits = { baker }
+		}
+		dorwinion_baking_guild_supply_colony = {
+			name = dorwinion_baking_guild
+			picture = dorwinion_baking_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_baking_guild_supply_colony
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				farming = @guildResearchBonus
+			}
+			modifier = {
+				no_supply_grace = 72
+				colony_growth_monthly_factor = 0.25
+			}
+			traits = { baker }
+		}
+		dorwinion_baking_guild_supply_colony_tech = {
+			name = dorwinion_baking_guild
+			picture = dorwinion_baking_guild
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_country_flag = dorwinion_baking_guild_supply_colony_tech
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				farming = @guildResearchBonusBoosted
+			}
+			modifier = {
+				no_supply_grace = 72
+				colony_growth_monthly_factor = 0.25
+			}
+			traits = { baker }
+		}
+		################################################################CARPENTRY
 		dorwinion_carpentry_guild = {
 			allowed = {
 				original_tag = DOR
@@ -904,6 +1026,7 @@ ideas = {
 			}
 			traits = { carpenter }
 		}
+		################################################################SMITHING
 		dorwinion_smithing_guild = {
 			allowed = {
 				original_tag = DOR
@@ -918,10 +1041,7 @@ ideas = {
 			}
 			traits = { blacksmith }
 		}
-	}
-				###MATERIEL
-	materiel_manufacturer = {
-		designer = yes
+		################################################################TAILORY
 		dorwinion_tailory_guild = {
 			allowed = {
 				original_tag = DOR
@@ -931,7 +1051,7 @@ ideas = {
 			research_bonus = {
 				support_tech = @guildResearchBonus
 			}
-			traits = { support_equipment_manufacturer }
+			traits = { tailor }
 		}
 	}
 }

@@ -1,0 +1,1422 @@
+ideas = {
+	@generalBonus = 0.05
+	@specialBonus = 0.30
+	@designerCost = 100
+		######################################## TECHNOLOGY
+				##ARMOR
+	tank_manufacturer = {
+		isn_rohan_designer = { #heavy cav (cav)
+			picture = rohirric_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_rohan_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				armor = @generalBonus
+				cat_medium_armor = @specialBonus
+			}
+			traits = { tank_manufacturer }
+		}
+		isn_misty_mountains_designer = { #monsters (cav)
+			picture = misty_mountains_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_misty_mountains_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				armor = @generalBonus
+				cat_heavy_armor = @specialBonus
+			}
+			traits = { tank_manufacturer }
+		}
+		isn_enedwaith_designer_NSB = { #barding (cav)
+			picture = enedwaith_heritage
+			allowed = {
+				original_tag = ISN
+				has_dlc = "No Step Back"
+			}
+			available = {
+				isn_has_enedwaith_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				armor = @generalBonus
+				tank_armor = @specialBonus
+			}
+			traits = { tank_manufacturer }
+		}
+		isn_enedwaith_designer = { #boosts cav armor (cav)
+			picture = enedwaith_heritage
+			allowed = {
+				original_tag = ISN
+				NOT = { has_dlc = "No Step Back" }
+			}
+			available = {
+				isn_has_enedwaith_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				armor = @generalBonus
+			}
+			equipment_bonus = {
+				armor = {
+					armor_value = 0.1
+					breakthrough = 0.1
+				}
+			}
+			traits = { tank_manufacturer }
+		}
+		isn_khand_designer = { #light tanks (cav)
+			picture = khand_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_khand_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				armor = @generalBonus
+				cat_light_armor = @specialBonus
+			}
+			traits = { tank_manufacturer }
+		}
+		isn_rhun_designer = { #motor/mech (mot)
+			picture = easterling_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_rhun_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				armor = @generalBonus
+				motorized_equipment = @specialBonus
+			}
+			traits = { motorized_equipment_manufacturer }
+		}
+		isn_harad_designer = { #unlocks mumakil (cav)
+			picture = harad_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_rhun_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				armor = @generalBonus
+			}
+			traits = { tank_manufacturer hidden_mumakil_tamer_trait }
+		}
+	}
+				##NAVAL
+	naval_manufacturer = {
+		isn_andrast_designer = { #mines (nav)
+			picture = andrast_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_andrast_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				naval_equipment = @generalBonus
+				naval_mines = @specialBonus
+			}
+			traits = { naval_manufacturer }
+		}
+		isn_dorwinion_designer = { #transports (nav)
+			picture = dorwinion_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_dorwinion_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				naval_equipment = @generalBonus
+				tp_tech = @specialBonus
+			}
+			traits = { convoy_manufacturer }
+		}
+		isn_umbar_designer = { #cruisers (nav)
+			picture = umbar_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_umbar_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				naval_equipment = @generalBonus
+				cl_tech = @specialBonus
+				ca_tech = @specialBonus
+			}
+			traits = { naval_manufacturer }
+		}
+	}
+				##MATERIEL
+	materiel_manufacturer = {
+		isn_dunland_designer = { #pikes (art)
+			picture = dunland_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_dunland_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				artillery = @generalBonus
+				cat_anti_tank = @specialBonus
+			}
+			traits = { pike_manufacturer }
+		}
+		isn_eregion_designer = { #bows (art)
+			picture = eregion_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_eregion_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				artillery = @generalBonus
+				cat_actual_artillery = @specialBonus
+			}
+			traits = { artillery_manufacturer }
+		}
+		isn_white_mountains_designer = { #javelins (art)
+			picture = white_mountains_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_white_mountains_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				artillery = @generalBonus
+				rocketry = @specialBonus
+			}
+			traits = { artillery_manufacturer }
+		}
+		isn_anduin_designer = { #infantry weapons (inf)
+			picture = beorning_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_anduin_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				infantry_tech = @generalBonus
+				infantry_weapons = @specialBonus
+			}
+			traits = { infantry_equipment_manufacturer }
+		}
+		isn_dale_designer = { #trains (sup)
+			picture = dale_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_dale_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				support_tech = @generalBonus
+				train_tech = @specialBonus
+			}
+			traits = { support_equipment_manufacturer }
+		}
+		isn_gondor_designer = { #logistics (sup)
+			picture = gondor_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_gondor_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				support_tech = @generalBonus
+				logistics_tech = @specialBonus
+			}
+			traits = { support_equipment_manufacturer }
+		}
+		isn_mirkwood_designer = { #special forces (inf)
+			picture = dol_guldur_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_mirkwood_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				infantry_tech = @generalBonus
+				cat_special_forces = @specialBonus
+			}
+			traits = { infantry_equipment_manufacturer }
+		}
+		isn_gundabad_designer = { #siege artillery (sup)
+			picture = gundabad_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_gundabad_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				support_tech = @generalBonus
+				cat_siege_artillery = @specialBonus
+			}
+			equipment_bonus = {
+				guided_missile_equipment = {
+					air_bombing = 0.05
+				}
+			}
+			traits = { siege_artillery_manufacturer }
+		}
+	}
+
+				##INDUSTRIAL
+	industrial_concern = {
+		isn_druwaith_iaur_designer = { #synth (farm)
+			picture = druwaith_iaur_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_druwaith_iaur_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				farming = @generalBonus
+				synth_resources = @specialBonus
+			}
+			modifier = { production_speed_synthetic_refinery_factor = 0.05 }
+			traits = { agricultural_concern }
+		}
+		isn_arnor_designer = { #radar (organize)
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_arnor_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			picture = arnor_heritage
+			research_bonus = {
+				cat_bureaucracy = @generalBonus
+				radar_tech = @specialBonus
+			}
+			modifier = { production_speed_radar_station_factor = 0.05 }
+			traits = { electronics_concern }
+		}
+		isn_ered_luin_designer = { #architecture (const)
+			picture = ered_luin_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_ered_luin_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				construction_tech = @generalBonus
+				architecture = @specialBonus
+			}
+			modifier = { production_speed_industrial_complex_factor = 0.05 }
+			traits = { industrial_concern }
+		}
+		isn_erebor_designer = { #production (smith)
+			picture = erebor_heritage
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_erebor_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				industry = @generalBonus
+				cat_production = @specialBonus
+			}
+			modifier = { production_speed_arms_factory_factor = 0.05 }
+			traits = { industrial_concern }
+		}
+		isn_mordor_designer = { #math (organize)
+			allowed = {
+				original_tag = ISN
+			}
+			available = {
+				isn_has_mordor_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			picture = mordor_heritage
+			research_bonus = {
+				cat_bureaucracy = @generalBonus
+				electronics = @specialBonus
+			}
+			modifier = { production_speed_supply_node_factor = 0.05 }
+			traits = { electronics_concern }
+		}
+		##These two don't translate well to MIOs
+		isn_mirkwood_designer_AAT = { #special forces (organize)
+			name = isn_mirkwood_designer
+			picture = dol_guldur_heritage
+			allowed = {
+				original_tag = ISN
+				has_dlc = "Arms Against Tyranny"
+			}
+			available = {
+				isn_has_mirkwood_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				cat_bureaucracy = @generalBonus
+				cat_special_forces = @specialBonus
+			}
+			traits = { infantry_equipment_manufacturer }
+		}
+		isn_gundabad_designer_AAT = { #siege artillery (ranged)
+			name = isn_gundabad_designer
+			picture = gundabad_heritage
+			allowed = {
+				original_tag = ISN
+				has_dlc = "Arms Against Tyranny"
+			}
+			available = {
+				isn_has_gundabad_subject = yes
+			}
+			cost = @designerCost
+			removal_cost = 10
+			research_bonus = {
+				artillery = @generalBonus
+				cat_siege_artillery = @specialBonus
+			}
+			equipment_bonus = {
+				guided_missile_equipment = {
+					air_bombing = 0.05
+				}
+			}
+			traits = { siege_artillery_manufacturer }
+		}
+	}
+		#################################### SPIRITS
+	country = {
+		ISN_survival_of_the_fittest_idea = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = FRA_scw_intervention_nationalists_focus
+			modifier = {
+				#custom_modifier_tooltip = ISN_promote_the_fittest_idea_tooltip
+			}
+		}
+		ISN_pikes_bonus_spirit = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_pikes_bonus
+			modifier = {
+				custom_modifier_tooltip = ISN_pikes_bonus_tooltip
+			}
+			on_add = {
+				set_technology = { isengard_pikes_boost = 1 popup = no }
+			}
+			on_remove = {
+				set_technology = { isengard_pikes_boost = 0 popup = no }
+			}
+		}
+	}
+	
+	hidden_ideas = {
+		@ENE_mil_bonus_strength = 0.15
+		@ENE_mil_bonus_strength_minor = 0.07
+		@ENE_mil_bonus_strength_minor_neg = -0.07
+		@ENE_mil_discpiline_malus = -0.01
+		andrast_ISN_mil_bonus = {
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				ENE_discipline_impact = @ENE_mil_discpiline_malus
+			}
+			on_add = {
+				add_to_variable = { andrast_mil_bonus = @ENE_mil_bonus_strength }
+			}
+			on_remove = {
+				subtract_from_variable = { andrast_mil_bonus = @ENE_mil_bonus_strength }
+				if = { ##if its the last one, remove the visible spirit
+					limit = {
+						NOT = { has_idea = druwaith_iaur_ISN_mil_bonus }
+						NOT = { has_idea = dunland_ISN_mil_bonus }
+						NOT = { has_idea = enedwaith_ISN_mil_bonus }
+						NOT = { has_idea = eregion_ISN_mil_bonus }
+						NOT = { has_idea = saralain_ISN_mil_bonus }
+						NOT = { has_idea = white_mountains_ISN_mil_bonus }
+					}
+					remove_dynamic_modifier = { modifier = ISN_ENE_mil_bonus_modifier }
+				}
+			}
+			cancel = {
+				NOT = {
+					any_allied_country = {
+						is_andrast_tag = yes
+						has_completed_focus = ENE_plan_our_enemies_demise
+					}
+				}
+			}
+		}
+		druwaith_iaur_ISN_mil_bonus = {
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				ENE_discipline_impact = @ENE_mil_discpiline_malus
+			}
+			on_add = {
+				add_to_variable = { druwaith_iaur_mil_bonus = @ENE_mil_bonus_strength }
+			}
+			on_remove = {
+				subtract_from_variable = { druwaith_iaur_mil_bonus = @ENE_mil_bonus_strength }
+				if = { ##if its the last one, remove the visible spirit
+					limit = {
+						NOT = { has_idea = andrast_ISN_mil_bonus }
+						NOT = { has_idea = dunland_ISN_mil_bonus }
+						NOT = { has_idea = enedwaith_ISN_mil_bonus }
+						NOT = { has_idea = eregion_ISN_mil_bonus }
+						NOT = { has_idea = saralain_ISN_mil_bonus }
+						NOT = { has_idea = white_mountains_ISN_mil_bonus }
+					}
+					remove_dynamic_modifier = { modifier = ISN_ENE_mil_bonus_modifier }
+				}
+			}
+			cancel = {
+				NOT = {
+					any_allied_country = {
+						is_druwaith_iaur_tag = yes
+						has_completed_focus = ENE_plan_our_enemies_demise
+					}
+				}
+			}
+		}
+		dunland_ISN_mil_bonus = {
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				ENE_discipline_impact = @ENE_mil_discpiline_malus
+			}
+			equipment_bonus = {
+				anti_tank_equipment = {
+					instant = yes
+					soft_attack = @ENE_mil_bonus_strength
+				}
+			}
+			on_add = {
+				add_to_variable = { dunland_mil_bonus = @ENE_mil_bonus_strength }
+			}
+			on_remove = {
+				subtract_from_variable = { dunland_mil_bonus = @ENE_mil_bonus_strength }
+				if = { ##if its the last one, remove the visible spirit
+					limit = {
+						NOT = { has_idea = andrast_ISN_mil_bonus }
+						NOT = { has_idea = druwaith_iaur_ISN_mil_bonus }
+						NOT = { has_idea = enedwaith_ISN_mil_bonus }
+						NOT = { has_idea = eregion_ISN_mil_bonus }
+						NOT = { has_idea = saralain_ISN_mil_bonus }
+						NOT = { has_idea = white_mountains_ISN_mil_bonus }
+					}
+					remove_dynamic_modifier = { modifier = ISN_ENE_mil_bonus_modifier }
+				}
+			}
+			cancel = {
+				NOT = {
+					any_allied_country = {
+						is_dunland_tag = yes
+						has_completed_focus = ENE_plan_our_enemies_demise
+					}
+				}
+			}
+		}
+		enedwaith_ISN_mil_bonus = {
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				ENE_discipline_impact = @ENE_mil_discpiline_malus
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					breakthrough = @ENE_mil_bonus_strength_minor
+				}
+			}
+			on_add = {
+				add_to_variable = { enedwaith_mil_bonus = @ENE_mil_bonus_strength_minor }
+			}
+			on_remove = {
+				subtract_from_variable = { enedwaith_mil_bonus = @ENE_mil_bonus_strength_minor }
+				if = { ##if its the last one, remove the visible spirit
+					limit = {
+						NOT = { has_idea = andrast_ISN_mil_bonus }
+						NOT = { has_idea = druwaith_iaur_ISN_mil_bonus }
+						NOT = { has_idea = dunland_ISN_mil_bonus }
+						NOT = { has_idea = eregion_ISN_mil_bonus }
+						NOT = { has_idea = saralain_ISN_mil_bonus }
+						NOT = { has_idea = white_mountains_ISN_mil_bonus }
+					}
+					remove_dynamic_modifier = { modifier = ISN_ENE_mil_bonus_modifier }
+				}
+			}
+			cancel = {
+				NOT = {
+					any_allied_country = {
+						is_enedwaith_tag = yes
+						has_completed_focus = ENE_plan_our_enemies_demise
+					}
+				}
+			}
+		}
+		eregion_ISN_mil_bonus = {
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				ENE_discipline_impact = @ENE_mil_discpiline_malus
+			}
+			on_add = {
+				add_to_variable = { eregion_mil_bonus = @ENE_mil_bonus_strength }
+			}
+			on_remove = {
+				subtract_from_variable = { eregion_mil_bonus = @ENE_mil_bonus_strength }
+				if = { ##if its the last one, remove the visible spirit
+					limit = {
+						NOT = { has_idea = andrast_ISN_mil_bonus }
+						NOT = { has_idea = druwaith_iaur_ISN_mil_bonus }
+						NOT = { has_idea = dunland_ISN_mil_bonus }
+						NOT = { has_idea = enedwaith_ISN_mil_bonus }
+						NOT = { has_idea = saralain_ISN_mil_bonus }
+						NOT = { has_idea = white_mountains_ISN_mil_bonus }
+					}
+					remove_dynamic_modifier = { modifier = ISN_ENE_mil_bonus_modifier }
+				}
+			}
+			cancel = {
+				NOT = {
+					any_allied_country = {
+						is_eregion_tag = yes
+						has_completed_focus = ENE_plan_our_enemies_demise
+					}
+				}
+			}
+		}
+		saralain_ISN_mil_bonus = {
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				ENE_discipline_impact = @ENE_mil_discpiline_malus
+			}
+			on_add = {
+				subtract_from_variable = { saralain_mil_bonus = @ENE_mil_bonus_strength_minor_neg }
+			}
+			on_remove = {
+				add_to_variable = { saralain_mil_bonus = @ENE_mil_bonus_strength_minor_neg }
+				if = { ##if its the last one, remove the visible spirit
+					limit = {
+						NOT = { has_idea = andrast_ISN_mil_bonus }
+						NOT = { has_idea = druwaith_iaur_ISN_mil_bonus }
+						NOT = { has_idea = dunland_ISN_mil_bonus }
+						NOT = { has_idea = enedwaith_ISN_mil_bonus }
+						NOT = { has_idea = eregion_ISN_mil_bonus }
+						NOT = { has_idea = white_mountains_ISN_mil_bonus }
+					}
+					remove_dynamic_modifier = { modifier = ISN_ENE_mil_bonus_modifier }
+				}
+			}
+			cancel = {
+				NOT = {
+					any_allied_country = {
+						is_saralain_tag = yes
+						has_completed_focus = ENE_plan_our_enemies_demise
+					}
+				}
+			}
+			equipment_bonus = {
+				medium_tank_chassis = {
+					instant = yes
+					build_cost_ic = @ENE_mil_bonus_strength_minor_neg
+				}
+			}
+		}
+		white_mountains_ISN_mil_bonus = {
+			allowed = {
+				always = no
+			}		
+			removal_cost = -1
+			modifier = {
+				ENE_discipline_impact = @ENE_mil_discpiline_malus
+			}
+			on_add = {
+				add_to_variable = { white_mountains_mil_bonus = @ENE_mil_bonus_strength_minor }
+				set_technology = { white_mountains_mountain_boost_minor = 1 popup = no }
+			}
+			on_remove = {
+				subtract_from_variable = { white_mountains_mil_bonus = @ENE_mil_bonus_strength_minor }
+				set_technology = { white_mountains_mountain_boost_minor = 0 popup = no }
+				if = { ##if its the last one, remove the visible spirit
+					limit = {
+						NOT = { has_idea = andrast_ISN_mil_bonus }
+						NOT = { has_idea = druwaith_iaur_ISN_mil_bonus }
+						NOT = { has_idea = dunland_ISN_mil_bonus }
+						NOT = { has_idea = enedwaith_ISN_mil_bonus }
+						NOT = { has_idea = eregion_ISN_mil_bonus }
+						NOT = { has_idea = saralain_ISN_mil_bonus }
+					}
+					remove_dynamic_modifier = { modifier = ISN_ENE_mil_bonus_modifier }
+				}
+			}
+			cancel = {
+				NOT = {
+					any_allied_country = {
+						is_white_mountains_tag = yes
+						has_completed_focus = ENE_plan_our_enemies_demise
+					}
+				}
+			}
+		}
+	}
+		#################################### LAWS
+	mobilization_laws = {
+		law = yes
+		use_list_view = yes
+		
+		disarmed_nation_isengard = {
+			picture = tree_law
+			
+			cost = @designerCost
+			removal_cost = -1
+			level = 7
+			allowed = {
+				tag = ISN
+			}
+
+			modifier = {
+				conscription = 0.005
+			}
+			
+			default = yes
+			cancel_if_invalid = no
+		}
+		
+		volunteer_only_isengard = {
+			picture = volunteer_only
+			
+			cost = @designerCost
+			removal_cost = -1
+			level = 6
+			allowed = {
+				tag = ISN
+			}
+			
+			
+			available = {
+				has_country_flag = unlocked_volunteer_only_isengard
+			}
+
+			ai_will_do = {
+   				factor = 1
+
+   				modifier = {
+					factor = 60 # being disarmed is bad in a wargame yo
+					has_idea = disarmed_nation 
+				}
+			}
+			modifier = {
+				conscription = 0.015
+			}
+			
+			
+			cancel_if_invalid = no
+		}
+		
+		limited_conscription_isengard = {
+			picture = limited_conscription
+					
+			cost = @designerCost
+			removal_cost = -1
+			level = 5
+			allowed = {
+				tag = ISN
+			}
+			available = {
+				has_country_flag = unlocked_limited_conscription_isengard
+			}
+
+			modifier = {
+				conscription = 0.03
+			}
+
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory <  1000
+				}
+				modifier = {
+					has_idea_with_trait = military_theorist
+					factor = 20
+				}
+				modifier = {
+					has_idea = disarmed_nation_isengard
+					factor = 100
+				}
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		extensive_conscription_isengard = {
+			picture = extensive_conscription
+			
+			allowed = {
+				tag = ISN
+			}
+			available = {
+				has_country_flag = unlocked_extensive_conscription_isengard
+			}
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory <  800
+				}
+				modifier = {
+					has_idea = limited_conscription_isengard
+					factor = 5
+				}
+				
+			}
+			
+			cost = @designerCost
+			removal_cost = -1
+			level = 4
+			
+			modifier = {
+				conscription = 0.06
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		service_by_requirement_isengard = {
+			picture = service_by_requirement
+			allowed = {
+				tag = ISN
+			}
+			available = {
+				has_country_flag = unlocked_service_by_requirement_isengard
+			}
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory <  700
+				}
+				modifier = {
+					#Lower chance if has decent amount
+					factor = 0.5
+					manpower_per_military_factory >  1000
+				}
+				modifier = {
+					#Block has plenty manpower
+					factor = 0
+					manpower_per_military_factory >  3000
+				}
+
+			}
+			
+			cost = @designerCost
+			removal_cost = -1
+			level = 3
+
+			modifier = {
+				conscription = 0.12
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				production_speed_buildings_factor = -0.1
+				training_time_factor = 0.1
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		all_adults_serve_isengard = {
+			picture = all_adults_serve
+			allowed = {
+				tag = ISN
+			}
+			available = {
+				has_country_flag = unlocked_all_adults_serve_isengard
+			}
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory <  600
+				}
+				modifier = {
+					#Lower chance if has decent amount
+					factor = 0.5
+					manpower_per_military_factory >  1000
+				}
+				modifier = {
+					#Block has plenty manpower
+					factor = 0
+					manpower_per_military_factory >  5000
+				}
+			}
+		
+			cost = @designerCost
+			removal_cost = -1
+			level = 2
+			
+			modifier = {
+				conscription = 0.25
+				industrial_capacity_factory = -0.2
+				industrial_capacity_dockyard = -0.2
+				production_speed_buildings_factor = -0.2
+				#XP from reinforcement penalty (small)
+				training_time_factor = 0.2
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		scraping_the_barrel_isengard = {
+			picture = scraping_the_barrel
+			allowed = {
+				tag = ISN
+			}
+			available = {
+				has_country_flag = unlocked_scraping_the_barrel_isengard
+			}
+
+
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					#Prio if low on manpower
+					factor = 20
+					manpower_per_military_factory <  500
+				}				
+				modifier = {
+					#Lower chance if has decent amount
+					factor = 0.5
+					manpower_per_military_factory >  1000
+				}
+				modifier = {
+					#Block has plenty manpower
+					factor = 0
+					manpower_per_military_factory >  5000
+				}
+			}
+
+			cost = @designerCost
+			removal_cost = -1
+			level = 1
+
+			modifier = {
+				conscription = 0.5
+				industrial_capacity_factory = -0.4
+				industrial_capacity_dockyard = -0.4
+				production_speed_buildings_factor = -0.4
+				training_time_factor = 0.4
+			}
+			
+			cancel_if_invalid = no
+		}
+	}
+
+	economy = { 
+		law = yes
+		use_list_view = yes
+		
+		undisturbed_isolation_isengard = {
+			picture = tree_law
+			
+			allowed = {
+				tag = ISN
+			}
+			cost = @designerCost
+			removal_cost = -1
+		
+			modifier = {
+				consumer_goods_expected_value = 0.6
+				production_speed_industrial_complex_factor = -0.6
+				production_speed_arms_factory_factor = -0.6
+				production_speed_dockyard_factor = -0.6
+				conversion_cost_civ_to_mil_factor = 0.6
+				conversion_cost_mil_to_civ_factor = 0.6
+				max_fuel_factor = -0.6
+				fuel_gain_factor = -0.6
+			}
+
+			
+			default = yes
+			
+			cancel_if_invalid = no
+		}
+		
+		isolation_isengard = {
+			picture = isolation
+
+			allowed = {
+				tag = ISN
+			}
+			available = {
+				has_country_flag = unlocked_isolation_isengard
+			}
+			cost = @designerCost
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_expected_value = 0.5
+				production_speed_industrial_complex_factor = -0.4
+				production_speed_arms_factory_factor = -0.4
+				production_speed_dockyard_factor = -0.4
+				conversion_cost_civ_to_mil_factor = 0.4
+				conversion_cost_mil_to_civ_factor = 0.4
+				max_fuel_factor = -0.4
+				fuel_gain_factor = -0.4
+			}
+			
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					has_idea = undisturbed_isolation_isengard
+					factor = 20
+				}
+			}
+			cancel_if_invalid = no
+		}
+		
+		civilian_economy_isengard = {
+			picture = civilian_economy
+			allowed = {
+				tag = ISN
+			}
+			available = {
+				has_country_flag = unlocked_civilian_economy_isengard
+			}
+		
+			cost = @designerCost
+			removal_cost = -1
+			
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					has_idea = isolation_isengard
+					factor = 20
+				}
+			}
+			modifier = {
+				consumer_goods_expected_value = 0.4
+				production_speed_industrial_complex_factor = -0.2
+				production_speed_arms_factory_factor = -0.2
+				conversion_cost_civ_to_mil_factor = 0.2
+				conversion_cost_mil_to_civ_factor = 0.2
+				max_fuel_factor = -0.2
+				fuel_gain_factor = -0.2
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		low_economic_mobilisation_isengard = {
+			picture = low_economic_mobilisation
+			allowed = {
+				tag = ISN
+			}
+			
+			available = {
+				has_country_flag = unlocked_low_economic_mobilisation_isengard
+			}
+
+			
+			cost = @designerCost
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_expected_value = 0.3
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 2
+
+   				modifier = {
+					factor = 20
+					
+					is_major = yes
+				}
+				modifier = {
+					has_war_support > 0.25
+					factor = 0 #don't even look at it if you could be taking partial mob
+				}
+				modifier = {
+					has_war = no
+					date < 3016.6.1
+					factor = 0
+				}
+   			}
+		}
+		
+		partial_economic_mobilisation_isengard = {
+			picture = partial_economic_mobilisation
+			allowed = {
+				tag = ISN
+			}
+			
+			available = {
+				has_country_flag = unlocked_partial_economic_mobilisation_isengard
+			}
+
+			cost = @designerCost
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_expected_value = 0.2
+				conscription = -0.01
+				production_speed_arms_factory_factor = 0.2
+				production_lack_of_resource_penalty_factor = -0.2
+				industrial_capacity_factory = 0.2
+			}
+			
+			cancel_if_invalid = no
+			ai_will_do = {
+   				factor = 2
+
+   				modifier = {
+					factor = 20
+					
+					is_major = yes
+				}
+   			}
+		}
+		
+		war_economy_isengard = {
+			picture = war_economy
+			allowed = {
+				tag = ISN
+			}
+			available = {
+				has_country_flag = unlocked_war_economy_isengard
+			}
+
+		
+			cost = @designerCost
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_expected_value = 0.1
+				conscription = -0.02
+				production_speed_arms_factory_factor = 0.4
+				production_lack_of_resource_penalty_factor = -0.4
+				industrial_capacity_factory = 0.4
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 5
+
+				modifier = {
+					#High prio on production
+					factor = 20
+					manpower_per_military_factory >  1000
+				}
+				
+   			}
+		}
+		
+		tot_economic_mobilisation_isengard = {
+			picture = tot_economic_mobilisation
+			allowed = {
+				tag = ISN
+			}
+			
+			available = {
+				has_country_flag = unlocked_tot_economic_mobilisation_isengard
+			}
+
+
+			ai_will_do = {
+   				factor = 1
+
+				modifier = {
+					factor = 25
+					#Prio this if nation has a lot of manpower compared to MIC
+					manpower_per_military_factory > 15000
+				}
+
+				modifier = {
+					#Block  unless nation has a lot of manpower
+					factor = 0
+					manpower_per_military_factory <  7000
+				}
+
+				
+				modifier = {
+					# never take this if we are on low conscription laws for safety
+					factor = 0
+					OR = {
+						has_idea = volunteer_only_isengard
+						has_idea = limited_conscription_isengard
+					}
+				}
+   			}
+			
+			cost = @designerCost
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_expected_value = 0.0
+				conscription = -0.03
+				production_speed_arms_factory_factor = 0.6
+				production_lack_of_resource_penalty_factor = -0.6
+				industrial_capacity_factory = 0.6
+			}
+			
+			cancel_if_invalid = no
+		}
+	}
+	
+	trade_laws = { 
+		law = yes
+		use_list_view = yes
+		
+		free_trade_isengard = {
+			picture = free_trade
+			allowed = {
+				tag = ISN
+			}
+			cost = @designerCost
+			removal_cost = -1
+			
+			modifier = {
+				min_export = 0.75
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				production_speed_buildings_factor = 0.15
+				civilian_intel_to_others = 40.0
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 1
+   			}
+			default = yes
+		}
+		
+		export_focus_isengard = {
+			picture = export_focus
+			
+			cost = @designerCost
+			removal_cost = -1
+			allowed = {
+				tag = isn
+			}
+			available = {
+				has_country_flag = unlocked_export_focus_isengard
+			}
+
+			modifier = {
+				min_export = 0.5
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				production_speed_buildings_factor = 0.1
+				civilian_intel_to_others = 20.0
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 1
+
+				modifier = {
+					factor = 0
+					
+					is_major = no
+					has_war = no
+					is_in_faction = no
+
+				}
+   			}
+		}
+		
+		limited_exports_isengard = {
+			picture = limited_exports
+			allowed = {
+				tag = ISN
+			}
+			available = {
+				has_country_flag = unlocked_limited_exports_isengard
+			}
+
+		
+			cost = @designerCost
+			removal_cost = -1
+			
+			modifier = {
+				min_export = 0.25
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor = 0.05
+				civilian_intel_to_others = 10.0
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 1
+
+   				modifier = {
+					add = -1
+					
+					is_major = no
+					is_in_faction = yes
+					has_war = yes
+				}
+
+				# minors not at war should want to get the bonuses from free trade
+				modifier = {
+					add = -1
+					
+					is_major = no
+					has_war = no
+				}
+				
+				modifier = {
+					add = 1500
+					
+					# revert from closed_economy if we have large allies
+					has_idea = closed_economy_isengard
+					has_large_ally_not_pick_closed_economy = yes
+				}
+   			}
+		}
+		
+		closed_economy_isengard = {
+			picture = closed_economy
+			allowed = {
+				tag = ISN
+			}
+			
+			available = {
+				has_country_flag = unlocked_closed_economy_isengard
+			}
+
+
+			on_add = {
+				custom_effect_tooltip = closed_economy_TT
+			}
+			
+			cost = @designerCost
+			removal_cost = -1
+			
+			
+			modifier = {
+				min_export = 0
+				#civilian_intel_to_others = 0.0
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 1
+
+   				modifier = {
+					factor = 0
+					
+					is_major = no
+					is_in_faction = yes
+					has_war = yes
+				}
+
+				# minors not at war should want to get the bonuses from free trade
+				modifier = {
+					factor = 0
+					
+					is_major = no
+					has_war = no
+				}
+				
+				modifier = {
+					factor = 0
+					
+					# don't take if we have a reasonable sized ally
+					# since they will require our trades
+					has_large_ally_not_pick_closed_economy = yes
+				}
+   			}
+		}
+	}
+}
