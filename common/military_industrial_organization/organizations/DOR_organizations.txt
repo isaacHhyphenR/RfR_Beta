@@ -472,3 +472,288 @@ DOR_carpentry_guild_MIO = {
 		}
 	}
 }
+
+##############################################################################################################################
+# SMITHING GUILD
+##############################################################################################################################
+DOR_smithing_guild_MIO = {
+	name = dorwinion_smithing_guild
+	icon = GFX_idea_dorwinion_smithing_guild
+
+	allowed = {
+		original_tag = DOR
+	}
+	available = { always = yes }
+	
+	equipment_type = {
+		infantry_equipment
+		infantry_armor
+	}
+	research_categories = {
+		infantry_tech
+		smithing
+	}
+	
+	
+	tree_header_text = {
+		text = mio_header_commercial
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_weapons_and_armor
+		x = 6
+	}
+
+	initial_trait = {
+		name = generic_mio_initial_trait_wagon_provisioner
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		equipment_bonus = {
+			fuel_capacity = 1
+		}
+	}
+
+####################################################
+#######################################################COMMERCIAL
+####################################################
+	trait = {
+		token = dorwinion_trait_better_tools
+		name = dorwinion_trait_better_tools
+		icon = GFX_generic_mio_trait_icon_entrenchment
+
+		position = { x=1 y=0 }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_smithing_guild_efficiency = yes }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_standardized_facilities
+		name = dorwinion_trait_standardized_facilities
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=-1 y=2 }
+		relative_position_id = dorwinion_trait_better_tools
+
+		any_parent = { dorwinion_trait_better_tools }
+		mutually_exclusive = { dorwinion_trait_elite_workers }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_smithing_guild_efficiency_build = yes }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_elite_workers
+		name = dorwinion_trait_elite_workers
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=1 y=2 }
+		relative_position_id = dorwinion_trait_better_tools
+
+		any_parent = { dorwinion_trait_better_tools }
+		mutually_exclusive = { dorwinion_trait_standardized_facilities }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_smithing_guild_efficiency_capacity = yes }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_innovation_of_artisans
+		name = dorwinion_trait_innovation_of_artisans
+		icon = GFX_generic_mio_trait_icon_book
+
+		position = { x=1 y=2 }
+		relative_position_id = dorwinion_trait_standardized_facilities
+
+		any_parent = { dorwinion_trait_standardized_facilities dorwinion_trait_elite_workers }
+		
+		on_complete = {
+			FROM = {
+				if = {
+					limit = { has_country_flag = dorwinion_smithing_guild_efficiency_build }
+					upgrade_to_dorwinion_smithing_guild_efficiency_build_tech = yes
+				}
+				else = {
+					upgrade_to_dorwinion_smithing_guild_efficiency_capacity_tech = yes
+				}
+			}
+		}
+	}
+####################################################
+#######################################################INFANTRY EQUIPMENT
+####################################################
+	trait = {
+		token = generic_mio_trait_drum_pattern_sights
+		name = generic_mio_trait_drum_pattern_sights
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=4 y=0 }
+
+		equipment_bonus = {
+			defense = 0.035
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_reinforced_stocks
+		name = generic_mio_trait_reinforced_stocks
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=4 y=0 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		equipment_bonus = {
+			soft_attack = 0.025
+			reliability = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_bolt_action
+		name = generic_mio_trait_bolt_action
+		icon = GFX_generic_mio_department_icon_infantry_line_efficiency
+
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_reinforced_stocks
+
+		all_parents = { generic_mio_trait_reinforced_stocks }
+
+		mutually_exclusive = { generic_mio_trait_semi_auto }
+
+		equipment_bonus = {
+			soft_attack = -0.03
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_semi_auto
+		name = generic_mio_trait_semi_auto
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_reinforced_stocks
+
+		all_parents = { generic_mio_trait_reinforced_stocks }
+
+		mutually_exclusive = { generic_mio_trait_bolt_action }
+
+		equipment_bonus = {
+			soft_attack = 0.03
+			breakthrough = 0.03
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_medium_machineguns
+		name = generic_mio_trait_medium_machineguns
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_bolt_action
+
+		any_parent = { generic_mio_trait_semi_auto generic_mio_trait_bolt_action }
+		
+		equipment_bonus = {
+			breakthrough = -0.04
+			build_cost_ic = -0.08
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_advanced_barrel_forging
+		name = generic_mio_trait_advanced_barrel_forging
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=2 y=2 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		any_parent = { generic_mio_trait_reinforced_stocks generic_mio_trait_drum_pattern_sights }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_mass_rifle_production
+		name = generic_mio_trait_mass_rifle_production
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_advanced_barrel_forging
+
+		all_parents = { generic_mio_trait_advanced_barrel_forging }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.03
+			production_cost_factor = -0.03
+		}
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.3
+		}
+	}
+
+
+	trait = {
+		token = generic_mio_trait_quality_materials
+		name = generic_mio_trait_quality_materials
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		all_parents = { generic_mio_trait_drum_pattern_sights }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+	}
+
+	trait = {
+		token = generic_mio_trait_improved_small_arms_bullet_design
+		name = generic_mio_trait_improved_small_arms_bullet_design
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_quality_materials
+
+		all_parents = { generic_mio_trait_quality_materials }
+
+		mutually_exclusive = { generic_mio_trait_armor_piercing_rounds }
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			breakthrough = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_armor_piercing_rounds
+		name = generic_mio_trait_armor_piercing_rounds
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_quality_materials
+
+		all_parents = { generic_mio_trait_quality_materials }
+		
+		mutually_exclusive = { generic_mio_trait_improved_small_arms_bullet_design }
+
+		equipment_bonus = {
+			ap_attack = 0.25
+			hard_attack = 0.05
+		}
+	}
+}

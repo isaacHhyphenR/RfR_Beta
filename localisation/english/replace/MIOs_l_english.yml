@@ -67,6 +67,7 @@ mio_header_fletching: "Fletching"
 mio_header_fishing_ships: "Fishing Ships"
 
 mio_header_commercial: "Commercial"
+mio_header_weapons_and_armor: "Weapons & Armor"
 
 
 
@@ -165,3 +166,4 @@ dorwinion_trait_efficient_planning: "Efficient Planning"
 dorwinion_trait_extensive_logistics: "Extensive Logistics"
 generic_mio_trait_simpler_models: "Simpler Models"
 generic_mio_trait_lighter_and_cheaper: "Lighter and Cheaper"
+dorwinion_trait_standardized_facilities: "Standardized Facilities"
