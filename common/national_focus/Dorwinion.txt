@@ -379,10 +379,12 @@ focus_tree = {
 				limit = { has_dlc = "Arms Against Tyranny" }
 				mio:DOR_carpentry_guild_MIO = {
 					unlock_mio_trait_tooltip = generic_mio_trait_foam_fire_extinguishers
+					add_mio_size = @guildFocusSizeBonus
 				}
 			}
 			else = {
-				custom_effect_tooltip = unimplemented
+				custom_effect_tooltip = unlock_idea_tooltip
+				show_ideas_tooltip = dorwinion_carpentry_guild_naval
 			}
 			great_merchants_focus_effect = yes
 		}
