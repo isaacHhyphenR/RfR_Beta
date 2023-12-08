@@ -1,0 +1,85 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_generic_mio_trait_icon_money"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic_mio_trait_icon_money.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_trait_icon_crown"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic_mio_trait_icon_crown.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_trait_icon_political"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic_mio_trait_icon_political.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_trait_icon_book"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic_mio_trait_icon_book.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_trait_icon_handshake"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic_mio_trait_icon_handshake.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_trait_icon_scales"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic_mio_trait_icon_scales.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_trait_icon_law"
+		texturefile = "gfx/interface/military_industrial_organization/trait_icons/generic_mio_trait_icon_law.dds"
+	}
+##############################################################################DEPARTMENTS
+	spriteType = {
+		name = "GFX_mio_cat_eq_all_support"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_support_equipment.dds"
+	}
+	spriteType = {
+		name = "GFX_mio_cat_eq_all_support_and_wagons"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_support_equipment.dds"
+	}
+	spriteType = {
+		name = "GFX_mio_cat_eq_all_ship"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_ship_all_cruiser_ship.dds"
+	}
+	spriteType = {
+		name = "GFX_military_industrial_organization_infantry_armor"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_armor.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_department_icon_infantry_defense"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_defense.dds"
+	}
+
+	### INFANTRY ARMOR DPT ###
+	spriteType = {
+		name = "GFX_generic_mio_department_icon_infantry_armor_offense"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_armor_offense.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_department_icon_infantry_armor_defense"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_armor_defense.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_department_icon_infantry_armor_quality"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_armor_quality.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_department_icon_infantry_armor_production"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_armor_production.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_department_icon_infantry_armor_technology"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_armor_technology.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_department_icon_infantry_armor_line_efficiency"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_armor_line_efficiency.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_department_icon_infantry_armor_conversion"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_armor_conversion.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_mio_department_icon_infantry_armor_materials"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_armor_materials.dds"
+	}
+}

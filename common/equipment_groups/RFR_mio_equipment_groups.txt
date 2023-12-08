@@ -14,3 +14,11 @@ mio_cat_eq_all_support_and_wagons = { #All support type equipment + trucks/train
 		train_equipment
 	}
 }
+mio_cat_eq_all_ship = {
+	equipment_type = {
+		ship_hull_heavy
+		ship_hull_cruiser
+		ship_hull_light
+		convoy_1
+	}
+}

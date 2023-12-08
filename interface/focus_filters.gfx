@@ -1,0 +1,38 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_FOCUS_FILTER_ARMY"
+		textureFile = "gfx/interface/focusview/filter/army_focus_filter.dds"
+	}
+	spriteType = {
+		name = "GFX_FOCUS_FILTER_DIPLOMATIC"
+		textureFile = "gfx/interface/focusview/filter/diplomatic_focus_filter.dds"
+	}
+	spriteType = {
+		name = "GFX_FOCUS_FILTER_ESPIONAGE"
+		textureFile = "gfx/interface/focusview/filter/espionage_focus_filter.dds"
+	}
+	spriteType = {
+		name = "GFX_FOCUS_FILTER_FORTIFICATION"
+		textureFile = "gfx/interface/focusview/filter/fortification_focus_filter.dds"
+	}
+	spriteType = {
+		name = "GFX_FOCUS_FILTER_LOGISTICS"
+		textureFile = "gfx/interface/focusview/filter/logistics_focus_filter.dds"
+	}
+	spriteType = {
+		name = "GFX_FOCUS_FILTER_NAVY"
+		textureFile = "gfx/interface/focusview/filter/navy_focus_filter.dds"
+	}
+	spriteType = {
+		name = "GFX_FOCUS_FILTER_RESOURCES"
+		textureFile = "gfx/interface/focusview/filter/resources_focus_filter.dds"
+	}
+	spriteType = {
+		name = "GFX_FOCUS_FILTER_PRESTIGE"
+		textureFile = "gfx/interface/focusview/filter/prestige_focus_filter.dds"
+	}
+	spriteType = {
+		name = "GFX_FOCUS_FILTER_GUILDS"
+		textureFile = "gfx/interface/focusview/filter/guilds_focus_filter.dds"
+	}
+}

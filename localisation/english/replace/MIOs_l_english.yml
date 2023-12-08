@@ -68,6 +68,7 @@ mio_header_fishing_ships: "Fishing Ships"
 
 mio_header_commercial: "Commercial"
 mio_header_weapons_and_armor: "Weapons & Armor"
+mio_header_support_equipment: "Support Equipment"
 
 
 
@@ -147,8 +148,16 @@ generic_mio_initial_trait_infantry_tanks_designer: "Support Cavalry Breeder"
 generic_mio_initial_trait_armored_cavalry_designer: "Armored Cavalry Breeder"
 generic_mio_initial_trait_blacksmith: "$blacksmith$"
 generic_mio_initial_trait_pike_manufacturer: "$pike_manufacturer$"
+generic_mio_initial_trait_mio_cat_eq_all_support_manufacturer: "$generic_mio_initial_trait_support_equipment_manufacturer$"
+generic_mio_initial_trait_infantry_armor_manufacturer: "Armor Smith"
+generic_mio_initial_trait_infantry_weapons_manufacturer: "Weapon Smith"
 
 generic_mio_trait_unlock_mumakil: "$mumakil$"
+generic_mio_trait_portable_forge: "Portable Forge"
+generic_mio_trait_diverse_tools: "Diverse Tools"
+generic_mio_trait_sanitary_equipment: "Sanitary Equipment"
+generic_mio_trait_bright_flags: "Bright Flags"
+generic_mio_trait_sturdy_chains: "Sturdy Chains"
 
 generic_mio_initial_trait_wagon_provisioner: "Wagon Provisioner"
 dorwinion_trait_efficient_recipes: "Efficient Recipes"
@@ -167,3 +176,9 @@ dorwinion_trait_extensive_logistics: "Extensive Logistics"
 generic_mio_trait_simpler_models: "Simpler Models"
 generic_mio_trait_lighter_and_cheaper: "Lighter and Cheaper"
 dorwinion_trait_standardized_facilities: "Standardized Facilities"
+dorwinion_trait_standardized_uniforms: "Standardized Uniforms"
+dorwinion_trait_hardy_uniforms: "Hardy Uniforms"
+dorwinion_trait_winter_coats: "Winter Coats"
+dorwinion_trait_mass_affordability: "Mass Affordability"
+dorwinion_trait_civilian_robes: "Civilian Robes"
+

@@ -181,13 +181,12 @@ DOR_carpentry_guild_MIO = {
 	equipment_type = {
 		artillery_equipment
 		#railway_gun_equipment
-		capital_ship
-		screen_ship
-		convoy_1
+		mio_cat_eq_all_ship
 	}
 	research_categories = {
 		artillery
 		naval_equipment
+		construction_tech
 	}
 	
 	
@@ -400,7 +399,7 @@ DOR_carpentry_guild_MIO = {
 		
 		available = { FROM = { has_completed_focus = DOR_order_a_vast_fleet } }
 		
-		limit_to_equipment_type = { capital_ship screen_ship convoy_1 }
+		limit_to_equipment_type = { mio_cat_eq_all_ship }
 		equipment_bonus = {
 			reliability = 0.03
 		}
@@ -416,7 +415,7 @@ DOR_carpentry_guild_MIO = {
 		
 		all_parents = { generic_mio_trait_foam_fire_extinguishers }
 		
-		limit_to_equipment_type = { capital_ship screen_ship convoy_1 }
+		limit_to_equipment_type = { mio_cat_eq_all_ship }
 		equipment_bonus = {
 			reliability = 0.01
 			armor_value = 0.02
@@ -433,7 +432,7 @@ DOR_carpentry_guild_MIO = {
 		
 		all_parents = { generic_mio_trait_bulkhead_shoring_procedure }
 		
-		limit_to_equipment_type = { capital_ship screen_ship convoy_1 }
+		limit_to_equipment_type = { mio_cat_eq_all_ship }
 		equipment_bonus = {
 			max_strength = 0.03
 		}
@@ -449,7 +448,7 @@ DOR_carpentry_guild_MIO = {
 		
 		all_parents = { generic_mio_trait_flooding_boundries }
 		
-		limit_to_equipment_type = { capital_ship screen_ship convoy_1 }
+		limit_to_equipment_type = { mio_cat_eq_all_ship }
 		equipment_bonus = {
 			max_strength = 0.05
 		}
@@ -465,7 +464,7 @@ DOR_carpentry_guild_MIO = {
 		
 		all_parents = { generic_mio_trait_bulkhead_shoring_procedure }
 		
-		limit_to_equipment_type = { capital_ship screen_ship convoy_1 }
+		limit_to_equipment_type = { mio_cat_eq_all_ship }
 		equipment_bonus = {
 			reliability = 0.01
 			armor_value = 0.02
@@ -491,7 +490,7 @@ DOR_smithing_guild_MIO = {
 	}
 	research_categories = {
 		infantry_tech
-		smithing
+		industry
 	}
 	
 	
@@ -505,7 +504,7 @@ DOR_smithing_guild_MIO = {
 	}
 
 	initial_trait = {
-		name = generic_mio_initial_trait_wagon_provisioner
+		name = blacksmith
 
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.05
@@ -754,6 +753,137 @@ DOR_smithing_guild_MIO = {
 		equipment_bonus = {
 			ap_attack = 0.25
 			hard_attack = 0.05
+		}
+	}
+}
+
+
+##############################################################################################################################
+# TAILORY GUILD
+##############################################################################################################################
+DOR_tailory_guild_MIO = {
+	name = dorwinion_tailory_guild
+	icon = GFX_idea_dorwinion_tailory_guild
+	
+	include = generic_support_equipment_organization
+	
+	allowed = {
+		original_tag = DOR
+	}
+	available = { always = yes }
+	
+	equipment_type = {
+		mio_cat_eq_all_support
+	}
+	research_categories = {
+		support_tech
+	}
+	
+	
+	tree_header_text = {
+		text = mio_header_commercial
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_support_equipment
+		x = 6
+	}
+
+	initial_trait = {
+		name = tailor
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		production_bonus = {
+			production_resource_penalty_factor = -0.1
+		}
+	}
+
+####################################################
+#######################################################COMMERCIAL
+####################################################
+	trait = {
+		token = dorwinion_trait_standardized_uniforms
+		name = dorwinion_trait_standardized_uniforms
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x=1 y=0 }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_tailory_guild_training = yes }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_civilian_robes
+		name = dorwinion_trait_civilian_robes
+		icon = GFX_generic_mio_trait_icon_political
+
+		position = { x=-1 y=2 }
+		relative_position_id = dorwinion_trait_standardized_uniforms
+
+		any_parent = { dorwinion_trait_standardized_uniforms }
+		mutually_exclusive = { dorwinion_trait_winter_coats }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_tailory_guild_training_pp = yes }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_mass_affordability
+		name = dorwinion_trait_mass_affordability
+		icon = GFX_generic_mio_trait_icon_money
+
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_civilian_robes
+		
+		any_parent = { dorwinion_trait_civilian_robes }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_tailory_guild_training_pp_cg = yes }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_winter_coats
+		name = dorwinion_trait_winter_coats
+		icon = GFX_generic_mio_trait_icon_supply_consumption
+
+		position = { x=1 y=2 }
+		relative_position_id = dorwinion_trait_standardized_uniforms
+		
+		any_parent = { dorwinion_trait_standardized_uniforms }
+		mutually_exclusive = { dorwinion_trait_civilian_robes }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_tailory_guild_training_cold = yes }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hardy_uniforms
+		name = dorwinion_trait_hardy_uniforms
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_winter_coats
+
+		any_parent = { dorwinion_trait_winter_coats }
+		
+		on_complete = {
+			FROM = { upgrade_to_dorwinion_tailory_guild_training_cold_attrition = yes  }
+		}
+	}
+####################################################
+#######################################################SUPPORT EQUIPMENT
+####################################################
+	override_trait = {
+		token = generic_mio_trait_material_recycling
+		name = generic_mio_trait_material_recycling
+		icon = GFX_generic_mio_department_icon_support_materials
+		
+		position = { x=6 y=0 } 
+		
+		production_bonus = {
+			production_resource_need_factor = -0.15
 		}
 	}
 }

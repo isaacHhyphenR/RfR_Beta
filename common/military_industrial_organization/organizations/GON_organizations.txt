@@ -1,0 +1,2798 @@
+
+##############################################################################################################################
+# Artillery Equipment; Escort ships unlocked through focus
+##############################################################################################################################
+GON_anfalas_MIO = {
+	name = gondor_anfalas_designer_alternate
+	icon = GFX_idea_gondor_anfalas_designer
+
+	allowed = {
+		original_tag = GON
+	}
+	available = {
+		FROM = { controls_state = 142 } #Anfalas
+	}
+	
+	
+	equipment_type = {
+		artillery_equipment
+		screen_ship
+	}
+	research_categories = {
+		mio_cat_all_artillery_equipment
+		mio_cat_tech_all_screen_ship_and_modules
+	}
+	
+	
+	tree_header_text = {
+		text = mio_header_gondor_nobility
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_bows
+		x = 4
+	}
+	tree_header_text = {
+		text = mio_header_fletching
+		x = 7
+	}
+	tree_header_text = {
+		text = mio_header_fishing_ships
+		x = 9.1
+	}
+
+	initial_trait = {
+		name = generic_mio_initial_trait_artillery_manufacturer
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = -0.03
+		}
+	}
+
+####################################################
+#######################################################NOBILITY
+####################################################
+	trait = {
+		token = gondor_mio_trait_noble_connections
+		name = gondor_mio_trait_noble_connections
+		icon = GFX_generic_mio_trait_icon_handshake
+
+		position = { x=0 y=0 }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_feudal_loyalty
+		name = gondor_mio_trait_feudal_loyalty
+		icon = GFX_generic_mio_trait_icon_crown
+
+		position = { x=2 y=0 }
+		relative_position_id = gondor_mio_trait_noble_connections
+		
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_dynastic_expertise
+		name = gondor_mio_trait_dynastic_expertise
+		icon = GFX_generic_mio_trait_icon_book
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_noble_connections
+
+		any_parent = { gondor_mio_trait_feudal_loyalty gondor_mio_trait_noble_connections }
+		
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_manor_economy
+		name = gondor_mio_trait_manor_economy
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=-1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = { gondor_mio_trait_numenorean_artisanship }
+		
+		production_bonus  = {
+			production_resource_need_factor = -0.15
+			production_efficiency_cap_factor = -0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_numenorean_artisanship
+		name = gondor_mio_trait_numenorean_artisanship
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = { gondor_mio_trait_manor_economy }
+		
+		production_bonus = {
+			production_cost_factor = 0.03
+		}
+		equipment_bonus = {
+			soft_attack = 0.15
+			lg_attack = 0.15
+		}
+	}
+	
+####################################################
+#######################################################ARTILLERY EQUIPMENT
+####################################################
+
+	trait = {
+		token = generic_mio_trait_mobile_limbers
+		name = generic_mio_trait_mobile_limbers
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=3 y=0 }
+		mutually_exclusive = { generic_mio_trait_stable_platforms }
+
+		limit_to_equipment_type = { artillery_equipment }
+		equipment_bonus = {
+			breakthrough = 0.1
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_stable_platforms
+		name = generic_mio_trait_stable_platforms
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_mobile_limbers
+
+		mutually_exclusive = { generic_mio_trait_mobile_limbers }
+
+		limit_to_equipment_type = { artillery_equipment }
+		equipment_bonus = {
+			defense = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_improved_hydraulic_recoil_system
+		name = generic_mio_trait_improved_hydraulic_recoil_system
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_mobile_limbers
+
+		any_parent = {
+			generic_mio_trait_stable_platforms
+			generic_mio_trait_mobile_limbers
+		}
+
+		limit_to_equipment_type = { artillery_equipment }
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+	trait = {
+		token = generic_mio_trait_advanced_trajectory_calculations
+		name = generic_mio_trait_advanced_trajectory_calculations
+		icon = GFX_generic_mio_department_icon_artillery
+
+		position = { x=-1 y=3 }
+		relative_position_id = generic_mio_trait_improved_hydraulic_recoil_system
+
+		all_parents = {
+			 generic_mio_trait_improved_hydraulic_recoil_system
+		}
+
+		limit_to_equipment_type = { artillery_equipment }
+		equipment_bonus = {
+			hard_attack = 1
+			breakthrough = 0.05
+		}
+	}
+
+
+	trait = {
+		token = generic_mio_trait_rapid_fire
+		name = generic_mio_trait_rapid_fire
+		icon = GFX_generic_mio_department_icon_artillery
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_improved_hydraulic_recoil_system
+		
+		all_parents = {
+			generic_mio_trait_improved_hydraulic_recoil_system
+		}
+
+		limit_to_equipment_type = { artillery_equipment }
+		equipment_bonus = {
+			soft_attack = 0.1
+			hard_attack = 0.04
+		}
+	}
+	trait = {
+		token = generic_mio_trait_sliding_breech_block
+		name = generic_mio_trait_sliding_breech_block
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_rapid_fire	
+
+		all_parents = {
+			generic_mio_trait_rapid_fire
+		}
+
+		limit_to_equipment_type = { artillery_equipment }
+		equipment_bonus = {
+			soft_attack = 0.03
+			breakthrough = 0.03
+		}
+	}
+
+####################################################
+#######################################################ARTILLERY PRODUCTION
+####################################################
+	trait = {
+		token = generic_mio_trait_advanced_barrel_forging
+		name = generic_mio_trait_advanced_barrel_forging
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=1 y=0 }
+		relative_position_id = generic_mio_trait_stable_platforms
+
+		available = { FROM = { has_completed_focus = GON_anfalas_materiel_designers } }
+		
+		limit_to_equipment_type = { artillery_equipment }
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_big_guns
+		name = generic_mio_trait_big_guns
+		icon = GFX_generic_mio_department_icon_artillery_production
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_advanced_barrel_forging
+
+		available = { FROM = { has_completed_focus = GON_anfalas_materiel_designers } }
+		
+		limit_to_equipment_type = { artillery_equipment }
+		equipment_bonus = {
+			soft_attack = 0.02
+			build_cost_ic = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_gun_mass_production
+		name = generic_mio_trait_gun_mass_production
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_advanced_barrel_forging
+
+		all_parents = {	generic_mio_trait_advanced_barrel_forging }
+
+		limit_to_equipment_type = { artillery_equipment }
+		production_bonus = {
+			production_efficiency_gain_factor = 0.03
+			production_efficiency_cap_factor = 0.03
+		}
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.15
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_super_charges
+		name = generic_mio_trait_super_charges
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_big_guns
+
+		all_parents = {	generic_mio_trait_big_guns }
+
+		limit_to_equipment_type = { artillery_equipment }
+		production_bonus = {
+			production_efficiency_gain_factor = 0.03
+			production_efficiency_cap_factor = 0.03
+		}
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.15
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_light_weight_barrels
+		name = generic_mio_trait_light_weight_barrels
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_gun_mass_production
+
+		all_parents = {
+			generic_mio_trait_super_charges
+			generic_mio_trait_gun_mass_production
+
+		}
+
+		limit_to_equipment_type = { artillery_equipment }
+		production_bonus = {
+			production_cost_factor = -0.03
+		}
+
+		equipment_bonus = {
+			breakthrough = 0.06
+			defense = 0.1
+		}
+	}
+####################################################
+#######################################################ESCORT SHIPS
+####################################################
+	trait = {
+		token = generic_mio_trait_fleet_minesweepers
+		name = generic_mio_trait_fleet_minesweepers
+		icon = GFX_generic_mio_trait_icon_sub_visibility
+		
+		available = { FROM = { has_completed_focus = GON_anfalas_naval_designers } }
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_big_guns
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			mines_sweeping = 0.15
+		}
+	}
+	
+	trait = {
+		token = generic_mio_trait_minelayers
+		name = generic_mio_trait_minelayers
+		icon = GFX_generic_mio_trait_icon_mines
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_fleet_minesweepers
+
+		any_parent = { generic_mio_trait_fleet_minesweepers }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			mines_planting = 0.1
+		}
+	}
+	trait = {
+		token = generic_mio_trait_catch_rations
+		name = generic_mio_trait_catch_rations
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_minelayers
+
+		any_parent = { generic_mio_trait_minelayers }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			naval_range = 0.15
+			fuel_consumption = -0.15
+		}
+	}
+	trait = {
+		token = generic_mio_trait_trap_capacity
+		name = generic_mio_trait_trap_capacity
+		icon = GFX_generic_mio_trait_icon_mines
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_catch_rations
+
+		any_parent = { generic_mio_trait_catch_rations }
+		mutually_exclusive = { generic_mio_trait_net_capacity }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			mines_planting = 0.2
+			mines_sweeping = -0.05
+		}
+	}
+	trait = {
+		token = generic_mio_trait_net_capacity
+		name = generic_mio_trait_net_capacity
+		icon = GFX_generic_mio_trait_icon_sub_visibility
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_catch_rations
+
+		any_parent = { generic_mio_trait_catch_rations }
+		mutually_exclusive = { generic_mio_trait_trap_capacity }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			mines_sweeping = 0.2
+			mines_planting = -0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_seaworthy_bows
+		name = generic_mio_trait_seaworthy_bows
+		icon = GFX_generic_mio_trait_icon_lg_attack
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_fleet_minesweepers
+
+		any_parent = { generic_mio_trait_fleet_minesweepers }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			lg_attack = 0.075
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_seaworthy_archers
+		name = generic_mio_trait_seaworthy_archers
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_offense
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_seaworthy_bows
+
+		any_parent = { generic_mio_trait_seaworthy_bows }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			lg_armor_piercing = 0.075
+		}
+	}
+}
+
+
+##############################################################################################################################
+# Heavy cavalry. Can unlock capital ships through focus
+##############################################################################################################################
+GON_belfalas_MIO = {
+	name = gondor_belfalas_designer_basic
+	icon = GFX_idea_gondor_belfalas_designer
+
+	allowed = {
+		original_tag = GON
+	}
+	available = {
+		FROM = { controls_state = 148 } #belfalas
+	}
+
+	equipment_type = {
+		mio_cat_eq_all_medium_tank
+		mio_cat_eq_all_battleship
+	}
+	research_categories = {
+		mio_cat_tech_medium_armor_and_modules
+		mio_cat_tech_all_capital_ship_and_modules
+	}
+
+	tree_header_text = {
+		text = mio_header_gondor_nobility
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_belfalas_cavalry
+		x = 4.25
+	}
+
+	tree_header_text = {
+		text = mio_header_belfalas_naval
+		x = 9
+	}
+
+
+	initial_trait = {
+		name = generic_mio_initial_trait_heavy_tank_designer
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		
+		equipment_bonus = {
+			armor_value = 0.075
+			build_cost_ic = 0.05
+		}
+	}
+####################################################
+#######################################################NOBILITY
+####################################################
+	trait = {
+		token = gondor_mio_trait_noble_connections
+		name = gondor_mio_trait_noble_connections
+		icon = GFX_generic_mio_trait_icon_handshake
+
+		position = { x=0 y=0 }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_feudal_loyalty
+		name = gondor_mio_trait_feudal_loyalty
+		icon = GFX_generic_mio_trait_icon_crown
+
+		position = { x=2 y=0 }
+		relative_position_id = gondor_mio_trait_noble_connections
+		
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_dynastic_expertise
+		name = gondor_mio_trait_dynastic_expertise
+		icon = GFX_generic_mio_trait_icon_book
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_noble_connections
+
+		any_parent = { gondor_mio_trait_feudal_loyalty gondor_mio_trait_noble_connections }
+		
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_manor_economy
+		name = gondor_mio_trait_manor_economy
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=-1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = {gondor_mio_trait_numenorean_artisanship }
+		
+		production_bonus  = {
+			production_resource_need_factor = -0.15
+			production_efficiency_cap_factor = -0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_numenorean_artisanship
+		name = gondor_mio_trait_numenorean_artisanship
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = { gondor_mio_trait_manor_economy }
+		
+		production_bonus  = {
+			production_cost_factor = 0.03
+		}
+		equipment_bonus = {
+			max_strength = 0.05
+			armor_value = 0.05
+		}
+	}
+
+####################################################
+#######################################################BASIC CAVALRY
+####################################################
+	trait = {
+		token = generic_mio_trait_wide_tracks
+		name = generic_mio_trait_wide_tracks
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=3 y=0 }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_fire_extinguishers
+		name = generic_mio_trait_fire_extinguishers
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_quality
+
+		position = { x=0 y=4 }
+		relative_position_id = generic_mio_trait_wide_tracks
+
+		all_parents = { generic_mio_trait_wide_tracks }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			reliability = 0.05
+			breakthrough = 0.02
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_one_piece_hull_side_coverings
+		name = generic_mio_trait_one_piece_hull_side_coverings
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_technology
+
+		position = { x=3 y=0 }
+		relative_position_id = generic_mio_trait_wide_tracks
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_simplified_transmission_system
+		name = generic_mio_trait_simplified_transmission_system
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_line_efficiency
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_wide_tracks
+
+		all_parents = { generic_mio_trait_wide_tracks generic_mio_trait_one_piece_hull_side_coverings }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_improved_engine_output
+		name = generic_mio_trait_improved_engine_output
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_simplified_transmission_system
+
+		all_parents = { generic_mio_trait_simplified_transmission_system }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			maximum_speed = 0.05
+			fuel_consumption = -0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_sloping_armor
+		name = generic_mio_trait_sloping_armor
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_one_piece_hull_side_coverings
+
+		all_parents = { generic_mio_trait_one_piece_hull_side_coverings }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			armor_value = 0.05
+			defense = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_improved_crew_ergonomics
+		name = generic_mio_trait_improved_crew_ergonomics
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_sloping_armor
+
+		all_parents = { generic_mio_trait_sloping_armor }
+
+		mutually_exclusive = { generic_mio_trait_reinforced_construction }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			breakthrough = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_reinforced_construction
+		name = generic_mio_trait_reinforced_construction
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_sloping_armor
+
+		all_parents = { generic_mio_trait_sloping_armor }
+
+		mutually_exclusive = { generic_mio_trait_improved_crew_ergonomics }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			armor_value = 0.05
+		}
+	}
+####################################################
+####################################################UPGRADED CAVALRY
+####################################################
+	trait = {
+		token = generic_mio_trait_fully_cast_turret
+		name = generic_mio_trait_fully_cast_turret
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+
+		position = { x=3 y=0 }
+		relative_position_id = generic_mio_trait_one_piece_hull_side_coverings
+		
+		available = { FROM = { has_completed_focus = GON_belfalas_cavalry_designers } }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			armor_value = 0.05
+			defense = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_commander_cupola
+		name = generic_mio_trait_commander_cupola
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_fully_cast_turret
+
+		all_parents = { generic_mio_trait_fully_cast_turret }
+
+		mutually_exclusive = { generic_mio_trait_simplified_layout }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			armor_value = 0.05
+			defense = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_simplified_layout
+		name = generic_mio_trait_simplified_layout
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_line_efficiency
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_fully_cast_turret
+
+		all_parents = { generic_mio_trait_fully_cast_turret }
+
+		mutually_exclusive = { generic_mio_trait_commander_cupola }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+			production_resource_penalty_factor = -0.1
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_high_explosive_shells
+		name = generic_mio_trait_high_explosive_shells
+		icon = GFX_generic_mio_department_icon_tank_general_weapons
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_commander_cupola
+
+		any_parent = { generic_mio_trait_commander_cupola generic_mio_trait_simplified_layout }
+
+		mutually_exclusive = { generic_mio_trait_apcr_hvap_shells }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_apcr_hvap_shells
+		name = generic_mio_trait_apcr_hvap_shells
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_simplified_layout
+
+		any_parent = { generic_mio_trait_commander_cupola generic_mio_trait_simplified_layout }
+
+		mutually_exclusive = { generic_mio_trait_high_explosive_shells }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			ap_attack = 0.05
+			hard_attack = 0.05
+		}
+	}
+	
+####################################################
+#######################################################NAVAL
+####################################################
+	trait = {
+		token = generic_mio_trait_external_armor_belt
+		name = generic_mio_trait_external_armor_belt
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_fully_cast_turret
+
+		available = { FROM = { has_completed_focus = GON_belfalas_naval_designers } }
+		mutually_exclusive = { generic_mio_trait_internal_armor_belt }
+
+		limit_to_equipment_type = { mio_cat_eq_all_battleship }
+		equipment_bonus = {
+			armor_value = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_internal_armor_belt
+		name = generic_mio_trait_internal_armor_belt
+		icon = GFX_generic_mio_department_icon_ship_capital_ship_armor
+
+		position = { x=2 y=0 }
+		
+		available = { FROM = { has_completed_focus = GON_belfalas_naval_designers } }
+		
+		relative_position_id = generic_mio_trait_external_armor_belt
+
+		mutually_exclusive = { generic_mio_trait_external_armor_belt }
+
+		limit_to_equipment_type = { mio_cat_eq_all_battleship }
+		equipment_bonus = {
+			armor_value = 0.15
+			build_cost_ic = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_hardened_critical_components
+		name = generic_mio_trait_hardened_critical_components
+		icon = GFX_generic_mio_trait_icon_naval_torpedo_damage_reduction_factor
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_external_armor_belt
+
+		any_parent = { generic_mio_trait_internal_armor_belt generic_mio_trait_external_armor_belt }
+
+		limit_to_equipment_type = { mio_cat_eq_all_battleship }
+		equipment_bonus = {
+			naval_torpedo_enemy_critical_chance_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_advanced_hydrodynamic_design
+		name = generic_mio_trait_advanced_hydrodynamic_design
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_hardened_critical_components
+
+		any_parent = { generic_mio_trait_hardened_critical_components }
+
+		mutually_exclusive = { generic_mio_trait_advanced_armor_design }
+
+		limit_to_equipment_type = { mio_cat_eq_all_battleship }
+		equipment_bonus = {
+			naval_speed = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_advanced_armor_design
+		name = generic_mio_trait_advanced_armor_design
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_hardened_critical_components
+
+		any_parent = { generic_mio_trait_hardened_critical_components }
+
+		mutually_exclusive = { generic_mio_trait_advanced_hydrodynamic_design }
+
+		limit_to_equipment_type = { mio_cat_eq_all_battleship }
+		equipment_bonus = {
+			armor_value = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_combat_information_center
+		name = generic_mio_trait_combat_information_center
+		icon = GFX_generic_mio_trait_icon_max_strength
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_hardened_critical_components
+
+		any_parent = { generic_mio_trait_hardened_critical_components }
+
+		limit_to_equipment_type = { mio_cat_eq_all_battleship }
+		equipment_bonus = {
+			max_strength = 0.1
+		}
+	}
+}
+
+
+
+##############################################################################################################################
+# Support Equipment; unlocked through focus
+##############################################################################################################################
+GON_lamedon_MIO = {
+	name = gondor_lamedon_designer_alternate
+	icon = GFX_idea_gondor_lamedon_designer
+	include = generic_support_equipment_organization
+
+	allowed = {
+		original_tag = GON
+	}
+	available = {
+		FROM = { controls_state = 146 } #Lamedon
+	}
+	
+	tree_header_text = {
+		text = mio_header_gondor_nobility
+		x = 1
+	}
+	
+	tree_header_text = {
+		text = mio_header_support_equipment
+		x = 5
+	}
+	
+	initial_trait = {
+		name = generic_mio_initial_trait_support_equipment_manufacturer
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+
+####################################################
+#######################################################NOBILITY
+####################################################
+	trait = {
+		token = gondor_mio_trait_noble_connections
+		name = gondor_mio_trait_noble_connections
+		icon = GFX_generic_mio_trait_icon_handshake
+
+		position = { x=0 y=0 }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_feudal_loyalty
+		name = gondor_mio_trait_feudal_loyalty
+		icon = GFX_generic_mio_trait_icon_crown
+
+		position = { x=2 y=0 }
+		relative_position_id = gondor_mio_trait_noble_connections
+		
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_dynastic_expertise
+		name = gondor_mio_trait_dynastic_expertise
+		icon = GFX_generic_mio_trait_icon_book
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_noble_connections
+
+		any_parent = { gondor_mio_trait_feudal_loyalty gondor_mio_trait_noble_connections }
+		
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_manor_economy
+		name = gondor_mio_trait_manor_economy
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=-1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = {gondor_mio_trait_numenorean_artisanship }
+		
+		production_bonus  = {
+			production_resource_need_factor = -0.15
+			production_efficiency_cap_factor = -0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_numenorean_artisanship
+		name = gondor_mio_trait_numenorean_artisanship
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = { gondor_mio_trait_manor_economy }
+		
+		production_bonus = {
+			production_cost_factor = 0.02
+		}
+		equipment_bonus = {
+			reliability = 0.15
+		}
+	}
+	
+####################################################
+#######################################################SUPPORT EQUIPMENT
+####################################################
+
+	override_trait = {
+		token = generic_mio_trait_material_recycling
+		name = generic_mio_trait_material_recycling
+		icon = GFX_generic_mio_department_icon_support_materials
+		
+		position = { x=5 y=0 }
+		
+		available = { FROM = { has_completed_focus = GON_lamedon_materiel_designers } }
+		
+		production_bonus = {
+			production_resource_need_factor = -0.15
+		}
+	}
+}
+
+
+
+##############################################################################################################################
+# General cavalry. Can unlock wagons through focus
+##############################################################################################################################
+GON_anorien_MIO = {
+	name = gondor_anorien_designer_basic
+	icon = GFX_idea_gondor_anorien_designer
+
+	allowed = {
+		original_tag = GON
+	}
+	available = {
+		FROM = { controls_state = 159 } #anorien
+	}
+	
+	equipment_type = {
+		mio_cat_eq_all_light_tank
+		mio_cat_eq_all_medium_tank
+		motorized_equipment
+		mechanized_equipment
+	}
+	
+	research_categories = {
+		mio_cat_tech_light_armor_and_modules
+		mio_cat_tech_medium_armor_and_modules
+		motorized_equipment
+	}
+
+	tree_header_text = {
+		text = mio_header_gondor_nobility
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_cavalry
+		x = 4.25
+	}
+	tree_header_text = {
+		text = mio_header_wagons
+		x = 9
+	}
+
+	
+	initial_trait = {
+		name = generic_mio_initial_trait_standardized_production
+		
+		equipment_bonus = {
+			armor_value = -0.05
+			defense =-0.05
+			build_cost_ic = -0.03
+		}
+	}
+
+####################################################
+#######################################################NOBILITY
+####################################################
+	trait = {
+		token = gondor_mio_trait_noble_connections
+		name = gondor_mio_trait_noble_connections
+		icon = GFX_generic_mio_trait_icon_handshake
+
+		position = { x=0 y=0 }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_feudal_loyalty
+		name = gondor_mio_trait_feudal_loyalty
+		icon = GFX_generic_mio_trait_icon_crown
+
+		position = { x=2 y=0 }
+		relative_position_id = gondor_mio_trait_noble_connections
+		
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_dynastic_expertise
+		name = gondor_mio_trait_dynastic_expertise
+		icon = GFX_generic_mio_trait_icon_book
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_noble_connections
+
+		any_parent = { gondor_mio_trait_feudal_loyalty gondor_mio_trait_noble_connections }
+		
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_manor_economy
+		name = gondor_mio_trait_manor_economy
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=-1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = {gondor_mio_trait_numenorean_artisanship }
+		
+		production_bonus  = {
+			production_resource_need_factor = -0.15
+			production_efficiency_cap_factor = -0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_numenorean_artisanship
+		name = gondor_mio_trait_numenorean_artisanship
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = { gondor_mio_trait_manor_economy }
+		
+		production_bonus  = {
+			production_cost_factor = 0.03
+		}
+		equipment_bonus = {
+			reliability = 0.15
+			fuel_consumption = -0.1
+		}
+	}
+	
+####################################################
+#######################################################CAVALRY
+####################################################
+	trait = {
+		token = generic_mio_trait_simplified_suspension
+		name = generic_mio_trait_simplified_suspension
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=3 y=0 }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+	
+	trait = {
+		token = generic_mio_trait_crew_ergonomics
+		name = generic_mio_trait_crew_ergonomics
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_simplified_suspension
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			maximum_speed = 0.02
+			defense = 0.02
+		}
+	}
+	
+	trait = {
+		token = generic_mio_trait_improved_tracks
+		name = generic_mio_trait_improved_tracks
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_simplified_suspension
+		
+		any_parent = { generic_mio_trait_simplified_suspension }
+
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			reliability = 0.05
+			maximum_speed = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_command_upgrades
+		name = generic_mio_trait_command_upgrades
+		icon = GFX_generic_mio_trait_icon_breakthrough
+		
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_crew_ergonomics
+		
+		any_parent = { generic_mio_trait_crew_ergonomics }
+
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			breakthrough = 0.05
+		}
+	}
+	
+	trait = {
+		token = generic_mio_trait_standardized_components
+		name = generic_mio_trait_standardized_components
+		icon = GFX_generic_mio_department_icon_tank_general_line_efficiency
+		
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_simplified_suspension
+		
+		all_parents = { generic_mio_trait_simplified_suspension generic_mio_trait_crew_ergonomics }
+
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		production_bonus = {
+			production_efficiency_gain_factor = 0.15
+			production_resource_need_factor = -0.15
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_improved_tooling
+		name = generic_mio_trait_improved_tooling
+		icon = GFX_generic_mio_department_icon_tank_general_technology
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_standardized_components
+		
+		all_parents = { generic_mio_trait_improved_tracks generic_mio_trait_standardized_components generic_mio_trait_command_upgrades }
+
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_mass_production
+		name = generic_mio_trait_mass_production
+		icon = GFX_generic_mio_department_icon_tank_general_production
+		
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_improved_tooling
+		
+		any_parent = { generic_mio_trait_improved_tooling }
+		
+		mutually_exclusive = { generic_mio_trait_quality_improvements }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		production_bonus = {
+			production_cost_factor = -0.05
+			production_efficiency_gain_factor = 0.1
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_quality_improvements
+		name = generic_mio_trait_quality_improvements
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+		
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_improved_tooling
+		
+		any_parent = { generic_mio_trait_improved_tooling }
+		
+		mutually_exclusive = { generic_mio_trait_mass_production}
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			armor_value = 0.1
+			defense = 0.1
+		}
+	}
+	
+####################################################
+#######################################################UPGRADED CAVALRY
+####################################################
+	trait = {
+		token = generic_mio_trait_defensive_equipment
+		name = generic_mio_trait_defensive_equipment
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_crew_ergonomics
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			soft_attack = 0.02
+			defense = 0.02
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_long_barreled_guns
+		name = generic_mio_trait_long_barreled_guns
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_defensive_equipment
+		
+		all_parents = { generic_mio_trait_crew_ergonomics generic_mio_trait_defensive_equipment }
+
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			ap_attack = 0.05
+			hard_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_anti_tank_specialization
+		name = generic_mio_trait_anti_tank_specialization
+		icon = GFX_generic_mio_trait_icon_hard_attack
+		
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_long_barreled_guns
+		
+		any_parent = { generic_mio_trait_long_barreled_guns }
+		
+		mutually_exclusive = { generic_mio_trait_infantry_support_tanks }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			armor_value = 0.05
+			hard_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_infantry_support_tanks
+		name = generic_mio_trait_infantry_support_tanks
+		icon = GFX_generic_mio_trait_icon_soft_attack
+		
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_long_barreled_guns
+		
+		any_parent = { generic_mio_trait_long_barreled_guns }
+		
+		mutually_exclusive = { generic_mio_trait_anti_tank_specialization }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
+		equipment_bonus = {
+			soft_attack = 0.05
+		}
+
+		production_bonus = {
+			production_cost_factor = -0.02
+		}
+	}
+	
+####################################################
+#######################################################MOT
+####################################################
+	trait = {
+		token = generic_mio_trait_composite_cargo_bed
+		name = generic_mio_trait_composite_cargo_bed
+		icon = GFX_generic_mio_department_icon_motorized_production
+		
+		available = { FROM = { has_completed_focus = GON_anorien_materiel_designers } }
+		
+		position = { x = 9 y=0 }
+		
+		mutually_exclusive = { generic_mio_trait_steel_cargo_bed }
+
+		limit_to_equipment_type = { motorized_equipment mechanized_equipment }
+
+		equipment_bonus = {
+			reliability = -0.07
+			build_cost_ic = -0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_open_chassi
+		name = generic_mio_trait_open_chassi
+		icon = GFX_generic_mio_department_icon_mechanized_production
+		
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_composite_cargo_bed
+		
+		any_parent = { generic_mio_trait_composite_cargo_bed }
+		
+		limit_to_equipment_type = { motorized_equipment mechanized_equipment }
+
+		equipment_bonus = {
+			defense = -0.02
+			build_cost_ic = -0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_steel_cargo_bed
+		name = generic_mio_trait_steel_cargo_bed
+		icon = GFX_generic_mio_trait_icon_reliability
+		
+		available = { FROM = { has_completed_focus = GON_anorien_materiel_designers } }
+		
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_composite_cargo_bed
+		
+		mutually_exclusive = { generic_mio_trait_composite_cargo_bed }
+
+		limit_to_equipment_type = { motorized_equipment mechanized_equipment }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+		production_bonus = {
+			production_resource_need_factor = 0.02
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_closed_chassi
+		name = generic_mio_trait_closed_chassi
+		icon = GFX_generic_mio_department_icon_mechanized_hull
+		
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_steel_cargo_bed
+		
+		any_parent = { generic_mio_trait_steel_cargo_bed }
+		
+		limit_to_equipment_type = { motorized_equipment mechanized_equipment }
+
+		equipment_bonus = {
+			armor_value = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_all_wheel_drive
+		name = generic_mio_trait_all_wheel_drive
+		icon = GFX_generic_mio_trait_icon_breakthrough
+		
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_composite_cargo_bed
+		
+		any_parent = { generic_mio_trait_composite_cargo_bed generic_mio_trait_steel_cargo_bed }
+
+		limit_to_equipment_type = { motorized_equipment mechanized_equipment }
+		
+		equipment_bonus = {
+			breakthrough = 0.035
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_attached_wood_gas_generator
+		name = generic_mio_trait_attached_wood_gas_generator
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+		
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_all_wheel_drive
+		
+		all_parents = { generic_mio_trait_all_wheel_drive }
+		
+		mutually_exclusive = { generic_mio_trait_high_powered_engine }
+
+		limit_to_equipment_type = { motorized_equipment mechanized_equipment }
+
+		equipment_bonus = {
+			fuel_consumption = -0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_high_powered_engine
+		name = generic_mio_trait_high_powered_engine
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_attached_wood_gas_generator
+		
+		all_parents = { generic_mio_trait_all_wheel_drive }
+		
+		mutually_exclusive = { generic_mio_trait_attached_wood_gas_generator }
+
+		limit_to_equipment_type = { motorized_equipment mechanized_equipment }
+
+		equipment_bonus = {
+			fuel_consumption = 0.05
+			maximum_speed = 0.05
+		}
+	}
+}
+
+##############################################################################################################################
+# Light navy. Can unlock convoys through a focus
+##############################################################################################################################
+GON_lebennin_MIO = {
+	name = gondor_lebennin_designer_basic
+	icon = GFX_idea_gondor_lebennin_designer
+
+	allowed = {
+		original_tag = GON
+	}
+	available = {
+		FROM = { controls_state = 150 } #lebennin
+	}
+	
+	equipment_type = {
+		screen_ship
+		convoy_1
+	}
+	research_categories = {
+		mio_cat_tech_all_screen_ship_and_modules
+		tp_tech
+	}
+	
+	tree_header_text = {
+		text = mio_header_gondor_nobility
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_escorts
+		x = 5
+	}
+
+	tree_header_text = {
+		text = mio_header_convoys
+		x = 9
+	}
+
+	initial_trait = {
+		name = generic_mio_initial_trait_escort_fleet
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+####################################################
+#######################################################NOBILITY
+####################################################
+	trait = {
+		token = gondor_mio_trait_noble_connections
+		name = gondor_mio_trait_noble_connections
+		icon = GFX_generic_mio_trait_icon_handshake
+
+		position = { x=0 y=0 }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_feudal_loyalty
+		name = gondor_mio_trait_feudal_loyalty
+		icon = GFX_generic_mio_trait_icon_crown
+
+		position = { x=2 y=0 }
+		relative_position_id = gondor_mio_trait_noble_connections
+		
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_dynastic_expertise
+		name = gondor_mio_trait_dynastic_expertise
+		icon = GFX_generic_mio_trait_icon_book
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_noble_connections
+
+		any_parent = { gondor_mio_trait_feudal_loyalty gondor_mio_trait_noble_connections }
+		
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_manor_economy
+		name = gondor_mio_trait_manor_economy
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=-1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = {gondor_mio_trait_numenorean_artisanship }
+		
+		production_bonus  = {
+			production_resource_need_factor = -0.15
+			production_efficiency_cap_factor = -0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_numenorean_artisanship
+		name = gondor_mio_trait_numenorean_artisanship
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = { gondor_mio_trait_manor_economy }
+		
+		production_bonus  = {
+			production_cost_factor = 0.03
+		}
+		equipment_bonus = {
+			reliability = 0.1
+			surface_visibility = -0.1
+		}
+	}
+
+####################################################
+#######################################################BASIC NAVY
+####################################################
+	trait = {
+		token = generic_mio_trait_submarine_hunters
+		name = generic_mio_trait_submarine_hunters
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=3 y=0 }
+
+		limit_to_equipment_type = { screen_ship }
+		production_bonus = {
+			production_cost_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_high_speed_mine_hunting_equipment
+		name = generic_mio_trait_high_speed_mine_hunting_equipment
+		icon = GFX_generic_mio_trait_icon_sub_visibility
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_submarine_hunters
+
+		any_parent = { generic_mio_trait_submarine_hunters }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			mines_sweeping = 0.1
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_advanced_hydrodynamic_design
+		name = generic_mio_trait_advanced_hydrodynamic_design
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_high_speed_mine_hunting_equipment
+
+		any_parent = { generic_mio_trait_high_speed_mine_hunting_equipment }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			naval_speed = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_fleet_escorts
+		name = generic_mio_trait_fleet_escorts
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_offense
+
+		position = { x=4 y=0 }
+		relative_position_id = generic_mio_trait_submarine_hunters
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			torpedo_attack = 0.05
+			lg_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_anti_air_ships
+		name = generic_mio_trait_anti_air_ships
+		icon = GFX_generic_mio_trait_icon_mines
+
+		position = { x=-3 y=2 }
+		relative_position_id = generic_mio_trait_fleet_escorts
+
+		any_parent = { generic_mio_trait_fleet_escorts }
+
+		mutually_exclusive = { generic_mio_trait_escort_in_force }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			mines_planting = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_escort_in_force
+		name = generic_mio_trait_escort_in_force
+		icon = GFX_generic_mio_trait_icon_lg_attack
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_anti_air_ships
+
+		any_parent = { generic_mio_trait_fleet_escorts }
+
+		mutually_exclusive = { generic_mio_trait_anti_air_ships }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			lg_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_anti_air_layout
+		name = generic_mio_trait_anti_air_layout
+		icon = GFX_generic_mio_trait_icon_hg_attack
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_escort_in_force
+
+		any_parent = { generic_mio_trait_fleet_escorts }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			lg_armor_piercing = 0.15
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_gyro_stabilized_mounts
+		name = generic_mio_trait_gyro_stabilized_mounts
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_offense
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_anti_air_layout
+
+		any_parent = { generic_mio_trait_anti_air_layout }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			lg_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_improved_anti_air_gun_mounting
+		name = generic_mio_trait_improved_anti_air_gun_mounting
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_anti_air_ships
+
+		any_parent = { generic_mio_trait_anti_air_ships generic_mio_trait_escort_in_force }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			naval_range = 0.1
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_mass_production
+		name = generic_mio_trait_mass_production
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
+
+		position = { x=1 y=0 }
+		relative_position_id = generic_mio_trait_improved_anti_air_gun_mounting
+
+		any_parent = { generic_mio_trait_anti_air_ships generic_mio_trait_escort_in_force }
+
+		limit_to_equipment_type = { screen_ship }
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_improved_light_gun_mounting
+		name = generic_mio_trait_improved_light_gun_mounting
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_offense
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_mass_production
+
+		any_parent = { generic_mio_trait_anti_air_ships generic_mio_trait_escort_in_force }
+		any_parent = {  generic_mio_trait_gyro_stabilized_mounts }
+
+		limit_to_equipment_type = { screen_ship }
+		equipment_bonus = {
+			lg_attack = 0.075
+		}
+	}
+
+####################################################
+#######################################################CONVOY
+####################################################
+	trait = {
+		token = generic_mio_trait_convoy_production
+		name = generic_mio_trait_convoy_production
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		
+		available = {
+			FROM = { has_completed_focus = GON_lebennin_naval_designers }
+		}
+		
+		position = { x=3 y=0 }
+		relative_position_id = generic_mio_trait_fleet_escorts
+
+		limit_to_equipment_type = { convoys }
+		production_bonus = {
+			production_cost_factor = -0.07
+		}
+	}
+	trait = {
+		token = generic_mio_trait_swift_convoys
+		name = generic_mio_trait_swift_convoys
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_convoy_production
+		
+		any_parent = { generic_mio_trait_convoy_production }
+		mutually_exclusive = { generic_mio_trait_defensive_convoys }
+
+		limit_to_equipment_type = { convoys }
+		equipment_bonus = {
+			naval_speed = 0.1
+			surface_visibility = -0.1
+		}
+	}
+	trait = {
+		token = generic_mio_trait_defensive_convoys
+		name = generic_mio_trait_defensive_convoys
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_convoy_production
+		
+		any_parent = { generic_mio_trait_convoy_production }
+		mutually_exclusive = { generic_mio_trait_swift_convoys }
+
+		limit_to_equipment_type = { convoys }
+		equipment_bonus = {
+			max_strength = 0.2
+		}
+	}
+	trait = {
+		token = generic_mio_trait_boarding_parties
+		name = generic_mio_trait_boarding_parties
+		icon = GFX_generic_mio_trait_icon_lg_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_defensive_convoys
+		
+		any_parent = { generic_mio_trait_defensive_convoys }
+
+		limit_to_equipment_type = { convoys }
+		equipment_bonus = {
+			lg_attack = 5
+		}
+	}
+	trait = {
+		token = generic_mio_trait_mass_produced_convoys
+		name = generic_mio_trait_mass_produced_convoys
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_swift_convoys
+		
+		any_parent = { generic_mio_trait_swift_convoys generic_mio_trait_defensive_convoys }
+
+		limit_to_equipment_type = { convoys }
+		production_bonus = {
+			production_cost_factor = -0.1
+		}
+	}
+	trait = {
+		token = generic_mio_trait_low_grade_wood
+		name = generic_mio_trait_low_grade_wood
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_mass_produced_convoys
+		
+		any_parent = { generic_mio_trait_mass_produced_convoys }
+
+		limit_to_equipment_type = { convoys }
+		production_bonus = {
+			production_resource_need_factor = -0.15
+		}
+		equipment_bonus = {
+			max_strength = -0.05
+		}
+	}
+}
+
+
+
+##############################################################################################################################
+# Infantry equipment; light cavalry unlocked via focus
+##############################################################################################################################
+GON_lossarnach_MIO = {
+	name = gondor_lossarnach_designer_alternate
+	icon = GFX_idea_gon_lossarnach_designer
+
+	allowed = {
+		original_tag = GON
+	}
+	available = {
+		FROM = { controls_state = 151 } #Lossarnach
+	}
+
+	tree_header_text = {
+		text = mio_header_gondor_nobility
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_industrial_capacity
+		x = 5
+	}
+	tree_header_text = {
+		text = mio_header_lossarnach_cavalry
+		x = 9
+	}
+
+	equipment_type = {
+		infantry_equipment
+		mio_cat_eq_all_light_tank
+	}
+	research_categories = {
+		infantry_weapons
+		mio_cat_tech_light_armor_and_modules
+	}
+
+	initial_trait = {
+		name = generic_mio_initial_trait_infantry_manufacturer
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			reliability = 0.05
+		}
+	}
+
+####################################################
+#######################################################NOBILITY
+####################################################
+	trait = {
+		token = gondor_mio_trait_noble_connections
+		name = gondor_mio_trait_noble_connections
+		icon = GFX_generic_mio_trait_icon_handshake
+
+		position = { x=0 y=0 }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_feudal_loyalty
+		name = gondor_mio_trait_feudal_loyalty
+		icon = GFX_generic_mio_trait_icon_crown
+
+		position = { x=2 y=0 }
+		relative_position_id = gondor_mio_trait_noble_connections
+		
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_dynastic_expertise
+		name = gondor_mio_trait_dynastic_expertise
+		icon = GFX_generic_mio_trait_icon_book
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_noble_connections
+
+		any_parent = { gondor_mio_trait_feudal_loyalty gondor_mio_trait_noble_connections }
+		
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_manor_economy
+		name = gondor_mio_trait_manor_economy
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=-1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = {gondor_mio_trait_numenorean_artisanship }
+		
+		production_bonus  = {
+			production_resource_need_factor = -0.15
+			production_efficiency_cap_factor = -0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_numenorean_artisanship
+		name = gondor_mio_trait_numenorean_artisanship
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = { gondor_mio_trait_manor_economy }
+		
+		production_bonus  = {
+			production_cost_factor = 0.03
+		}
+		equipment_bonus = {
+			soft_attack = 0.1
+		}
+	}
+####################################################
+#######################################################INFANTRY EQUIPMENT PRODUCTION
+####################################################
+	trait = {
+		token = generic_mio_trait_drum_pattern_sights
+		name = generic_mio_trait_drum_pattern_sights
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=4 y=0 }
+
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			defense = 0.035
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_reinforced_stocks
+		name = generic_mio_trait_reinforced_stocks
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			soft_attack = 0.025
+			reliability = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_bolt_action
+		name = generic_mio_trait_bolt_action
+		icon = GFX_generic_mio_department_icon_infantry_line_efficiency
+
+		position = { x=0 y=3 }
+		relative_position_id = generic_mio_trait_reinforced_stocks
+
+		all_parents = { generic_mio_trait_reinforced_stocks }
+
+		mutually_exclusive = { generic_mio_trait_semi_auto }
+
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			soft_attack = -0.03
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_semi_auto
+		name = generic_mio_trait_semi_auto
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=1 y=3 }
+		relative_position_id = generic_mio_trait_reinforced_stocks
+
+		all_parents = { generic_mio_trait_reinforced_stocks }
+
+		mutually_exclusive = { generic_mio_trait_bolt_action }
+
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			soft_attack = 0.03
+			breakthrough = 0.03
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_medium_machineguns
+		name = generic_mio_trait_medium_machineguns
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_bolt_action
+
+		any_parent = { generic_mio_trait_semi_auto generic_mio_trait_bolt_action }
+		
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			breakthrough = 0.06
+			build_cost_ic = 0.08
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_advanced_barrel_forging
+		name = generic_mio_trait_advanced_barrel_forging
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		any_parent = { generic_mio_trait_reinforced_stocks generic_mio_trait_drum_pattern_sights }
+
+		limit_to_equipment_type = { infantry_equipment }
+		production_bonus = {
+			production_efficiency_gain_factor = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_mass_rifle_production
+		name = generic_mio_trait_mass_rifle_production
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_advanced_barrel_forging
+
+		all_parents = { generic_mio_trait_advanced_barrel_forging }
+
+		limit_to_equipment_type = { infantry_equipment }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.03
+			production_cost_factor = -0.03
+		}
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.3
+		}
+	}
+
+
+	trait = {
+		token = generic_mio_trait_quality_materials
+		name = generic_mio_trait_quality_materials
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=3 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		all_parents = { generic_mio_trait_drum_pattern_sights }
+
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_improved_small_arms_bullet_design
+		name = generic_mio_trait_improved_small_arms_bullet_design
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_quality_materials
+
+		all_parents = { generic_mio_trait_quality_materials }
+
+		mutually_exclusive = { generic_mio_trait_armor_piercing_rounds }
+
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			soft_attack = 0.05
+			breakthrough = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_armor_piercing_rounds
+		name = generic_mio_trait_armor_piercing_rounds
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_quality_materials
+
+		all_parents = { generic_mio_trait_quality_materials }
+		
+		mutually_exclusive = { generic_mio_trait_improved_small_arms_bullet_design }
+
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			ap_attack = 0.25
+			hard_attack = 0.05
+		}
+	}
+
+####################################################
+#######################################################INFANTRY EQUIPMENT QUALITY
+####################################################
+	trait = {
+		token = generic_mio_trait_heavy_anti_armor_ammunition
+		name = generic_mio_trait_heavy_anti_armor_ammunition
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		available = { FROM = { has_completed_focus = GON_lossarnach_materiel_designers } }
+
+		position = { x=3 y=0 }
+		relative_position_id = generic_mio_trait_reinforced_stocks
+
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			hard_attack = 0.1
+			ap_attack = 0.25
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_vehicle_mounted_capabilities
+		name = generic_mio_trait_vehicle_mounted_capabilities
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_heavy_anti_armor_ammunition
+
+		all_parents = { generic_mio_trait_heavy_anti_armor_ammunition }
+		
+		mutually_exclusive = { generic_mio_trait_rubber_cushioned_buttpad }
+
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			breakthrough = 0.06
+			build_cost_ic = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_rubber_cushioned_buttpad
+		name = generic_mio_trait_rubber_cushioned_buttpad
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_heavy_anti_armor_ammunition
+
+		all_parents = { generic_mio_trait_heavy_anti_armor_ammunition }
+		
+		mutually_exclusive = { generic_mio_trait_vehicle_mounted_capabilities }
+
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			breakthrough = 0.02
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_anti_vechicle_land_mines
+		name = generic_mio_trait_anti_vechicle_land_mines
+		icon = GFX_generic_mio_department_icon_infantry_quality
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_vehicle_mounted_capabilities
+
+		any_parent = { generic_mio_trait_rubber_cushioned_buttpad generic_mio_trait_vehicle_mounted_capabilities }
+
+		limit_to_equipment_type = { infantry_equipment }
+		equipment_bonus = {
+			defense = 0.04
+			hard_attack = 0.03
+			build_cost_ic = 0.05
+
+		}
+	}
+####################################################
+#######################################################LIGHT CAVALRY
+####################################################
+	trait = {
+		token = generic_mio_trait_improved_boogies
+		name = generic_mio_trait_improved_boogies
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+
+		available = { FROM = { has_completed_focus = GON_lossarnach_cavalry_designers } }
+		
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_heavy_anti_armor_ammunition
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		equipment_bonus = {
+			maximum_speed = 0.02
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_engine_optimization
+		name = generic_mio_engine_optimization
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_improved_boogies
+
+		all_parents = { generic_mio_trait_improved_boogies }
+
+		mutually_exclusive = { generic_mio_reduced_fuel_usage }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		equipment_bonus = {
+			maximum_speed = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_reduced_fuel_usage
+		name = generic_mio_reduced_fuel_usage
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_improved_boogies
+
+		all_parents = { generic_mio_trait_improved_boogies }
+
+		mutually_exclusive = { generic_mio_engine_optimization }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		equipment_bonus = {
+			fuel_consumption = -0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_improved_ventilation
+		name = generic_mio_improved_ventilation
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_engine_optimization
+
+		any_parent = { generic_mio_engine_optimization generic_mio_reduced_fuel_usage }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		equipment_bonus = {
+			defense = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_improved_tracks_and_suspension
+		name = generic_mio_improved_tracks_and_suspension
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_improved_ventilation
+
+		all_parents = { generic_mio_improved_ventilation }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		equipment_bonus = {
+			breakthrough = 0.05
+			maximum_speed = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_sloping_armor
+		name = generic_mio_sloping_armor
+		icon = GFX_generic_mio_trait_icon_defense
+		
+		available = { FROM = { has_completed_focus = GON_lossarnach_cavalry_designers } }
+
+		position = { x=4 y=0 }
+		relative_position_id = generic_mio_trait_improved_boogies
+
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		equipment_bonus = {
+			defense = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_lighter_materials
+		name = generic_mio_lighter_materials
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_sloping_armor
+
+		all_parents = { generic_mio_sloping_armor }
+
+		mutually_exclusive = { generic_mio_armor_hardening_process }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		production_bonus = {
+			production_resource_penalty_factor = -0.1
+		}
+	}
+
+	trait = {
+		token = generic_mio_armor_hardening_process
+		name = generic_mio_armor_hardening_process
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_sloping_armor
+
+		all_parents = { generic_mio_sloping_armor }
+
+		mutually_exclusive = { generic_mio_lighter_materials }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		equipment_bonus = {
+			armor_value = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_enlarged_breech
+		name = generic_mio_enlarged_breech
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_lighter_materials
+
+		any_parent = { generic_mio_lighter_materials generic_mio_armor_hardening_process }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		equipment_bonus = {
+			soft_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_gunner_sight_improvements
+		name = generic_mio_gunner_sight_improvements
+		icon = GFX_generic_mio_department_icon_tank_general_quality
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_enlarged_breech
+
+		all_parents = { generic_mio_enlarged_breech }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		equipment_bonus = {
+			breakthrough = 0.05
+			defense = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_quality_assurance_routines
+		name = generic_mio_quality_assurance_routines
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=2 y=1 }
+		relative_position_id = generic_mio_trait_improved_boogies
+
+		all_parents = { generic_mio_trait_improved_boogies generic_mio_sloping_armor }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		equipment_bonus = {
+			reliability = 0.05
+			build_cost_ic = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_streamlined_production
+		name = generic_mio_streamlined_production
+		icon = GFX_generic_mio_department_icon_tank_general_technology		
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_quality_assurance_routines
+
+		all_parents = { generic_mio_quality_assurance_routines generic_mio_improved_ventilation generic_mio_enlarged_breech }
+
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+	}
+
+}
+
+
+##############################################################################################################################
+# Cost bonuses for navy; unlocked via focus
+##############################################################################################################################
+GON_pinnath_gelin_MIO = {
+	name = gondor_pinnath_gelin_designer_alternate
+	icon = GFX_idea_gon_pinnath_gelin_designer
+
+	allowed = {
+		original_tag = GON
+	}
+	available = {
+		FROM = { controls_state = 141 } #pinnath gelin
+	}
+	
+	equipment_type = {
+		capital_ship
+		screen_ship
+		convoy_1
+	}
+	research_categories = {
+		mio_cat_tech_all_capital_ship_and_modules
+		mio_cat_tech_all_screen_ship_and_modules
+	}
+	
+	tree_header_text = {
+		text = mio_header_gondor_nobility
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_industrial_capacity
+		x = 5
+	}
+
+	initial_trait = {
+		name = generic_mio_initial_trait_western_forests
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.01
+		}
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+####################################################
+#######################################################NOBILITY
+####################################################
+	trait = {
+		token = gondor_mio_trait_noble_connections
+		name = gondor_mio_trait_noble_connections
+		icon = GFX_generic_mio_trait_icon_handshake
+
+		position = { x=0 y=0 }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_feudal_loyalty
+		name = gondor_mio_trait_feudal_loyalty
+		icon = GFX_generic_mio_trait_icon_crown
+
+		position = { x=2 y=0 }
+		relative_position_id = gondor_mio_trait_noble_connections
+		
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_dynastic_expertise
+		name = gondor_mio_trait_dynastic_expertise
+		icon = GFX_generic_mio_trait_icon_book
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_noble_connections
+
+		any_parent = { gondor_mio_trait_feudal_loyalty gondor_mio_trait_noble_connections }
+		
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_manor_economy
+		name = gondor_mio_trait_manor_economy
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=-1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = {gondor_mio_trait_numenorean_artisanship }
+		
+		production_bonus  = {
+			production_resource_need_factor = -0.15
+			production_efficiency_cap_factor = -0.05
+		}
+	}
+	trait = {
+		token = gondor_mio_trait_numenorean_artisanship
+		name = gondor_mio_trait_numenorean_artisanship
+		icon = GFX_generic_mio_trait_icon_unique
+
+		position = { x=1 y=2 }
+		relative_position_id = gondor_mio_trait_dynastic_expertise
+
+		any_parent = { gondor_mio_trait_dynastic_expertise }
+		
+		mutually_exclusive = { gondor_mio_trait_manor_economy }
+		
+		production_bonus  = {
+			production_cost_factor = 0.03
+		}
+		equipment_bonus = {
+			max_strength = 0.05
+		}
+	}
+####################################################
+#######################################################PRODUCTION CAPACITY
+####################################################
+	trait = {
+		token = generic_mio_trait_abundant_lumber
+		name = generic_mio_trait_abundant_lumber
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x=5 y=0 }
+		
+		equipment_bonus = {
+			build_cost_ic = -0.04
+		}
+		available = {
+			FROM = { has_completed_focus = GON_pinnath_gelin_naval_designers }
+		}
+	}
+	trait = {
+		token = generic_mio_trait_mass_production
+		name = generic_mio_trait_mass_production
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_abundant_lumber
+
+		any_parent = { generic_mio_trait_abundant_lumber }
+		
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+	trait = {
+		token = generic_mio_trait_quality_materials
+		name = generic_mio_trait_quality_materials
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_abundant_lumber
+
+		any_parent = { generic_mio_trait_abundant_lumber }
+		
+		equipment_bonus = {
+			reliability = 0.1
+		}
+	}
+	trait = {
+		token = generic_mio_trait_every_available_tree
+		name = generic_mio_trait_every_available_tree
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_mass_production
+		any_parent = { generic_mio_trait_mass_production }
+		mutually_exclusive = { generic_mio_trait_oldest_oaks }
+		
+		equipment_bonus = {
+			max_strength = -0.03
+		}
+		production_bonus = {
+			production_resource_need_factor = -0.1
+		}
+	}
+	trait = {
+		token = generic_mio_trait_oldest_oaks
+		name = generic_mio_trait_oldest_oaks
+		icon = GFX_generic_mio_trait_icon_max_strength
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_quality_materials
+		any_parent = { generic_mio_trait_quality_materials }
+		mutually_exclusive = { generic_mio_trait_every_available_tree }
+		
+		equipment_bonus = {
+			max_strength = 0.1
+		}
+		production_bonus = {
+			production_resource_need_factor = 0.03
+		}
+	}
+	trait = {
+		token = generic_mio_trait_adaptable
+		name = generic_mio_trait_adaptable
+		icon = GFX_generic_mio_trait_icon_conversion_speed
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_mass_production
+		any_parent = { generic_mio_trait_mass_production generic_mio_trait_quality_materials }
+
+		
+		production_bonus = {
+			production_conversion_speed_factor = 0.1
+		}
+		organization_modifier = {
+			military_industrial_organization_design_team_change_cost = -0.2
+		}
+	}
+	trait = {
+		token = generic_mio_trait_shipyards
+		name = generic_mio_trait_shipyards
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_adaptable
+		any_parent = { generic_mio_trait_adaptable }
+		
+		equipment_bonus = {
+			build_cost_ic = -0.06
+		}
+	}
+	trait = {
+		token = generic_mio_trait_warehouses
+		name = generic_mio_trait_warehouses
+		icon = GFX_generic_mio_trait_icon_supply_consumption
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_adaptable
+		any_parent = { generic_mio_trait_adaptable }
+
+		production_bonus = {
+			production_resource_penalty_factor = -0.1
+		}
+		organization_modifier = {
+			military_industrial_organization_task_capacity = 2
+		}
+	}
+}
