@@ -53,6 +53,10 @@ spriteTypes = {
 		name = "GFX_decision_category_trade"
 		texturefile = "gfx/interface/decisions/categories/decision_category_trade.dds"
 	}
+	spriteType = {
+		name = "GFX_decision_category_guilds"
+		texturefile = "gfx/interface/decisions/categories/decision_category_guilds.dds"
+	}
 ################################################LAWS
 	SpriteType = {
 		name = "GFX_decision_volunteer_only"
@@ -755,6 +759,26 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_decision_voting"
 		texturefile = "gfx/interface/decisions/voting.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_baking_guild_loan"
+		texturefile = "gfx/interface/decisions/baking_guild_loan.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_carpentry_guild_loan"
+		texturefile = "gfx/interface/decisions/carpentry_guild_loan.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_smithing_guild_loan"
+		texturefile = "gfx/interface/decisions/smithing_guild_loan.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_tailory_guild_loan"
+		texturefile = "gfx/interface/decisions/tailory_guild_loan.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_take_loan"
+		texturefile = "gfx/interface/decisions/take_loan.dds"
 	}
 ################################################CATEGORY ICONS
 	spriteType = {

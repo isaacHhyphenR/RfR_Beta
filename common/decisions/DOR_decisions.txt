@@ -197,98 +197,323 @@ DOR_great_merchants_category = {
 	}
 }
 
-@guildLoanCG = -0.05
+@guildLoanCG = -0.1
 @guildLoanDays = 365
+@guildLoanFunds = 1000
 DOR_guilds_category = {
-	improve_guild_marketing = {
-		icon = GFX_decision_eng_propaganda_campaigns
-		fire_only_once = no
+	#loans
+	take_baking_guild_loan = {
+		icon = GFX_decision_baking_guild_loan
+		
 		ai_will_do = {
-			factor = 0
+			factor = 1
+			#take one loan at a time
+			modifier = {
+				OR = {
+					has_decision = take_carpentry_guild_loan
+					has_decision = take_smithing_guild_loan
+					has_decision = take_tailory_guild_loan
+				}
+				factor = 0
+			}
+			#take each loan once
+			modifier = {
+				has_country_flag = took_baking_guild_loan
+				factor = 0
+			}
+			#Don't take without enough factories to make a difference
+			modifier = {
+				num_of_factories < 7
+				factor = 0
+			}
+			#Don't take if you hate dorwinion
+			modifier = {
+				NOT = { original_tag = DOR }
+				has_opinion = {
+					target = DOR
+					value < -15
+				}
+			}
 		}
-		visible = { has_completed_focus = DOR_pillars_of_society }
+		
+		days_remove = @guildLoanDays
+		modifier = {
+			consumer_goods_factor = @guildLoanCG
+		}
+		remove_effect = {
+			set_country_flag = took_baking_guild_loan
+			##Pay the loan back (if not at war with Dorwinion)
+			if = {
+				limit = {
+					NOT = { has_war_with = DOR }
+				}
+				##Pay a factory
+				if = {
+					limit = { capital_scope = { industrial_complex > 0 } }
+					capital_scope = {
+						remove_building = {
+							type = industrial_complex
+							level = 1
+						}
+					}
+				}
+				else = {
+					random_controlled_state = {
+						limit = { industrial_complex > 0 }
+						remove_building = {
+							type = industrial_complex
+							level = 1
+						}
+					}
+				}
+				##Guild uses the money
+				DOR = {
+					if = {
+						limit = { has_dlc = "Arms Against Tyranny" }
+						mio:DOR_baking_guild_MIO = {
+							add_mio_funds = @guildLoanFunds
+						}
+					}
+					else = {
+						upgrade_dorwinion_baking_guild = yes
+					}
+				}
+			}
+		}
+	}
+	take_carpentry_guild_loan = {
+		icon = GFX_decision_carpentry_guild_loan
+		
+		ai_will_do = {
+			factor = 1
+			#take one loan at a time
+			modifier = {
+				OR = {
+					has_decision = take_baking_guild_loan
+					has_decision = take_smithing_guild_loan
+					has_decision = take_tailory_guild_loan
+				}
+				factor = 0
+			}
+			#take each loan once
+			modifier = {
+				has_country_flag = took_carpentry_guild_loan
+				factor = 0
+			}
+			#Don't take without enough factories to make a difference
+			modifier = {
+				num_of_factories < 7
+				factor = 0
+			}
+			#Don't take if you hate dorwinion
+			modifier = {
+				NOT = { original_tag = DOR }
+				has_opinion = {
+					target = DOR
+					value < -15
+				}
+			}
+		}
+		
+		days_remove = @guildLoanDays
+		modifier = {
+			consumer_goods_factor = @guildLoanCG
+		}
+		remove_effect = {
+			set_country_flag = took_carpentry_guild_loan
+			##Pay the loan back (if not at war with Dorwinion)
+			if = {
+				limit = {
+					NOT = { has_war_with = DOR }
+				}
+				##Pay a factory
+				if = {
+					limit = { capital_scope = { industrial_complex > 0 } }
+					capital_scope = {
+						remove_building = {
+							type = industrial_complex
+							level = 1
+						}
+					}
+				}
+				else = {
+					random_controlled_state = {
+						limit = { industrial_complex > 0 }
+						remove_building = {
+							type = industrial_complex
+							level = 1
+						}
+					}
+				}
+				##Guild uses the money
+				DOR = {
+					if = {
+						limit = { has_dlc = "Arms Against Tyranny" }
+						mio:DOR_carpentry_guild_MIO = {
+							add_mio_funds = @guildLoanFunds
+						}
+					}
+					else = {
+						upgrade_dorwinion_carpentry_guild = yes
+					}
+				}
+			}
+		}
 	}
 	take_smithing_guild_loan = {
 		icon = GFX_decision_smithing_guild_loan
+		
 		ai_will_do = {
-			factor = 0
+			factor = 1
+			#take one loan at a time
+			modifier = {
+				OR = {
+					has_decision = take_baking_guild_loan
+					has_decision = take_carpentry_guild_loan
+					has_decision = take_tailory_guild_loan
+				}
+				factor = 0
+			}
+			#take each loan once
+			modifier = {
+				has_country_flag = took_smithing_guild_loan
+				factor = 0
+			}
+			#Don't take without enough factories to make a difference
+			modifier = {
+				num_of_factories < 7
+				factor = 0
+			}
+			#Don't take if you hate dorwinion
+			modifier = {
+				NOT = { original_tag = DOR }
+				has_opinion = {
+					target = DOR
+					value < -15
+				}
+			}
 		}
-		visible = { has_completed_focus = DOR_take_guild_loans }
+		
 		days_remove = @guildLoanDays
 		modifier = {
 			consumer_goods_factor = @guildLoanCG
 		}
 		remove_effect = {
+			set_country_flag = took_smithing_guild_loan
+			##Pay the loan back (if not at war with Dorwinion)
 			if = {
-				limit = { capital_scope = { industrial_complex > 0 } }
-				capital_scope = {
-					remove_building = {
-						type = industrial_complex
-						level = 1
+				limit = {
+					NOT = { has_war_with = DOR }
+				}
+				##Pay a factory
+				if = {
+					limit = { capital_scope = { industrial_complex > 0 } }
+					capital_scope = {
+						remove_building = {
+							type = industrial_complex
+							level = 1
+						}
 					}
 				}
-			}
-			else = {
-				random_controlled_state = {
-					limit = { industrial_complex > 0 }
-					remove_building = {
-						type = industrial_complex
-						level = 1
+				else = {
+					random_controlled_state = {
+						limit = { industrial_complex > 0 }
+						remove_building = {
+							type = industrial_complex
+							level = 1
+						}
+					}
+				}
+				##Guild uses the money
+				DOR = {
+					if = {
+						limit = { has_dlc = "Arms Against Tyranny" }
+						mio:DOR_smithing_guild_MIO = {
+							add_mio_funds = @guildLoanFunds
+						}
+					}
+					else = {
+						upgrade_dorwinion_smithing_guild = yes
 					}
 				}
 			}
 		}
 	}
-}
-
-DOR_foreign_loans_category = {
-	take_smithing_guild_loan_foreign = {
-		icon = GFX_decision_smithing_guild_loan
+	take_tailory_guild_loan = {
+		icon = GFX_decision_tailory_guild_loan
+		
 		ai_will_do = {
-			factor = 0
+			factor = 1
+			#take one loan at a time
+			modifier = {
+				OR = {
+					has_decision = take_baking_guild_loan
+					has_decision = take_carpentry_guild_loan
+					has_decision = take_smithing_guild_loan
+				}
+				factor = 0
+			}
+			#take each loan once
+			modifier = {
+				has_country_flag = took_tailory_guild_loan
+				factor = 0
+			}
+			#Don't take without enough factories to make a difference
+			modifier = {
+				num_of_factories < 7
+				factor = 0
+			}
+			#Don't take if you hate dorwinion
+			modifier = {
+				NOT = { original_tag = DOR }
+				has_opinion = {
+					target = DOR
+					value < -15
+				}
+			}
 		}
+		
 		days_remove = @guildLoanDays
 		modifier = {
 			consumer_goods_factor = @guildLoanCG
 		}
-		complete_effect = {
-			add_opinion_modifier = {
-				modifier = banking_partners
-				target = DOR
-			}
-			reverse_add_opinion_modifier = {
-				modifier = banking_partners
-				target = DOR
-			}
-		}
 		remove_effect = {
+			set_country_flag = took_tailory_guild_loan
+			##Pay the loan back (if not at war with Dorwinion)
 			if = {
-				limit = { capital_scope = { industrial_complex > 0 } }
-				capital_scope = {
-					remove_building = {
-						type = industrial_complex
-						level = 1
+				limit = {
+					NOT = { has_war_with = DOR }
+				}
+				##Pay a factory
+				if = {
+					limit = { capital_scope = { industrial_complex > 0 } }
+					capital_scope = {
+						remove_building = {
+							type = industrial_complex
+							level = 1
+						}
 					}
 				}
-			}
-			else = {
-				random_controlled_state = {
-					limit = { industrial_complex > 0 }
-					remove_building = {
-						type = industrial_complex
-						level = 1
+				else = {
+					random_controlled_state = {
+						limit = { industrial_complex > 0 }
+						remove_building = {
+							type = industrial_complex
+							level = 1
+						}
 					}
 				}
-			}
-			
-			remove_opinion_modifier = {
-				modifier = banking_partners
-				target = DOR
-			}
-			DOR = {
-				remove_opinion_modifier = {
-					modifier = banking_partners
-					target = ROOT
+				##Guild uses the money
+				DOR = {
+					if = {
+						limit = { has_dlc = "Arms Against Tyranny" }
+						mio:DOR_tailory_guild_MIO = {
+							add_mio_funds = @guildLoanFunds
+						}
+					}
+					else = {
+						upgrade_dorwinion_tailory_guild = yes
+					}
 				}
 			}
 		}
@@ -409,6 +634,485 @@ DOR_college_category = {
 		remove_effect = {
 			DOR_upgrade_college_of_tactics = yes
 			clr_country_flag = upgrading_university
+		}
+	}
+}
+
+DOR_spread_revolution_category = {
+	@complianceForRepublic = 50
+	targeted_dal = {
+		icon = GFX_decision_republic
+		target_trigger = {
+			FROM = { tag = DAL }
+		}
+		available = {
+			always = yes
+		}
+	}
+	establish_DAL_republic = { #DALE
+		icon = GFX_decision_DAL_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			core_compliance = {
+				occupied_country_tag = DAL
+				value > @complianceForRepublic
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			DAL = {
+				custom_effect_tooltip = establish_this_sister_republic_tooltip
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				set_temp_variable = { republic_root = DAL } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = DAL
+					set_cosmetic_tag = DAL_republic
+					set_variable = { ROOT.DAL_republic_var = THIS }
+					every_country_with_original_tag = { ##this is civil war yall
+						original_tag_to_check = DAL
+						add_civil_war_target = PREV
+					}
+					found_THIS_revolutionary_republic = yes
+				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
+			}
+		}
+	}
+	establish_RVN_republic = { #Rhovanion
+		icon = GFX_decision_RVN_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_occupied_country = {
+				is_rhovanion_tag = yes
+				ROOT = {
+					core_compliance = {
+						occupied_country_tag = PREV 
+						value > @complianceForRepublic
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			random_occupied_country = {
+				limit = { is_rhovanion_tag = yes }
+				custom_effect_tooltip = establish_rhovanion_sister_republic_tooltip
+				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				var:republic_root = {
+					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+					create_dynamic_country = {
+						original_tag = var:republic_root
+						set_cosmetic_tag = RVN_republic
+						set_variable = { ROOT.RVN_republic_var = THIS }
+						every_other_country = {
+							limit = { is_rhovanion_tag = yes }
+							add_civil_war_target = PREV
+						}
+						##Gain cores on all of rhovanion
+						every_possible_country = {
+							limit = { is_rhovanion_tag = yes }
+							every_core_state = {
+								add_core_of = PREV.PREV
+							}
+						}
+						##final stuff
+						found_THIS_revolutionary_republic = yes
+					}
+					#so we know we did it, update home of the revolution modifiers
+					establish_sister_republic = yes
+				}
+			}
+		}
+	}
+	
+	debug_convert_all_republics = { ##gives all the 'base' nations their republican cosmetic tags & leaders
+		visible = { is_debug = yes }
+		complete_effect = {
+			ART = {
+				set_cosmetic_tag = arnor_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			BER = {
+				set_cosmetic_tag = BER_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			DAI = {
+				set_cosmetic_tag = DAI_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			DAL = {
+				set_cosmetic_tag = DAL_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			DOR = {
+				set_cosmetic_tag = DOR_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			RUN = {
+				set_cosmetic_tag = RUN_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			RLM = {
+				set_cosmetic_tag = steppe_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			DRU = {
+				set_cosmetic_tag = gwaithurium_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			GON = {
+				set_cosmetic_tag = GON_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			HAR = {
+				set_cosmetic_tag = HAR_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			KND = {
+				set_cosmetic_tag = KND_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			UMB = {
+				set_cosmetic_tag = UMB_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			ROH = {
+				set_cosmetic_tag = ROH_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			RIN = {
+				set_cosmetic_tag = RVN_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			HTH = {
+				set_cosmetic_tag = HTH_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+			HIL = {
+				set_cosmetic_tag = HIL_republic
+				random_character = {
+					limit = { can_be_country_leader = yes has_trait = republic_candidate } #throws errors if I don't have the trait to exclude random characters
+					promote_character = republic_isolationism
+					promote_character = republic_freedom
+					promote_character = corrupt_republic
+					remove_trait = { #no longer needs to be marked
+						ideology = republic_isolationism
+						trait = republic_candidate
+					}
+				}
+			}
+		}
+	}
+}
+
+DOR_monarchist_plot_category = {
+	DOR_monarchist_plot = {
+		icon = GFX_decision_revolt
+		days_mission_timeout = 100
+		is_good = no
+		allowed = { always = no }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DOR_monarchist_plot_available_tooltip
+				set_temp_variable = { vierling_size = party_popularity@opportunism }
+				add_to_temp_variable = { vierling_size = party_popularity@conquest }
+				add_to_temp_variable = { vierling_size = party_popularity@melkorite }
+				check_variable = { vierling_size < 0.05 }
+			}
+		}
+		complete_effect = {
+			retire_character = DOR_vidumarh_vierling
+			set_country_flag = defeated_monarchist_plot
+		}
+		timeout_effect = {
+			custom_effect_tooltip = DOR_monarchist_plot_tooltip
+			hidden_effect = { ##the tooltip is an absolute mess
+				set_temp_variable = { vierling_size = party_popularity@opportunism }
+				add_to_temp_variable = { vierling_size = party_popularity@conquest }
+				add_to_temp_variable = { vierling_size = party_popularity@melkorite }
+				start_civil_war = {
+					ideology = conquest
+					size = var:vierling_size
+					keep_all_characters = yes
+					hidden_effect = {
+						if = { #Uldonavuld
+							limit = { ROOT = { owns_state = 311 } }
+							transfer_state = 311
+						}
+						set_cosmetic_tag = VIR
+						save_event_target_as = VIR_revolution
+						set_country_flag = elected_winelord #so it can do the correct focuses
+						every_character = { #get rid of the genericish folks who pop up
+							retire = yes
+						}
+						#makes vidumarh leader
+						ROOT = {
+							DOR_vidumarh_vierling = { set_nationality = PREV.PREV }
+						}
+						DOR_vidumarh_vierling = {
+							promote_character = elective_monarchy_conquest
+							promote_character = elective_monarchy_melkorite
+						}
+					}
+				}
+				##transfers all Vierling supports & ~half of Koldana supporters
+				every_character = {
+					if = {
+						limit = { has_character_flag = vierling_supporter }
+						set_nationality = event_target:VIR_revolution
+					}
+					else_if = {
+						limit = { has_character_flag = koldana_supporter }
+						random = {
+							chance = 50
+							set_nationality = event_target:VIR_revolution
+						}
+					}
+				}
+				####Civil war cancels elections for some reason
+				if = {
+					limit = { is_republic = yes }
+					set_politics = {
+						ruling_party = DOR
+						elections_allowed = yes
+					}
+				}
+			}
+		}
+	}
+	#######################################################MITIGATION
+	DOR_campaign_against_monarchy  = {
+		icon = GFX_decision_SWI_swiss_democratic_tradition_campaign
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 50
+		days_remove = 100
+		visible = { has_completed_focus = DOR_investigate_reactionary_plot }
+		modifier = {
+			opportunism_drift = -0.01
+			conquest_drift = -0.01
+			melkorite_drift = -0.01
+		}
+	}
+	DOR_disrupt_monarchist_communications  = {
+		icon = GFX_decision_onmap_recruit_operative
+		ai_will_do = {
+			factor = 1
+			modifier = { #only do it once
+				has_country_flag = delayed_plot
+				factor = 0
+			}
+		}
+		cost = 25
+		days_remove = 14
+		days_re_enable = 50
+		visible = { has_completed_focus = DOR_investigate_reactionary_plot }
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = DOR_monarchist_plot
+				days = 50
+			}
+			set_country_flag = delayed_plot
+		}
+	}
+	DOR_raid_rebel_depots = {
+		icon = GFX_decision_generic_civil_support
+		ai_will_do = {
+			factor = 1
+		}
+		custom_cost_text = has_500_infantry_equipment_cost_tooltip
+		custom_cost_trigger = {
+			has_equipment = {
+				infantry_equipment > 499
+			}
+		}
+		days_remove = 14
+		fire_only_once = yes
+		visible = { has_completed_focus = DOR_investigate_reactionary_plot }
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -500
+				}
+			}
+		}
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = DOR_monarchist_plot
+				days = 25
+			}
+			add_popularity = {
+				ideology = opportunism
+				popularity = -0.01
+			}
+			add_popularity = {
+				ideology = conquest
+				popularity = -0.01
+			}
+		}
+	}
+	DOR_arrest_shadow_worshippers = {
+		icon = GFX_decision_generic_arrest
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 25
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = DOR_investigate_reactionary_plot
+			melkorite > 0.001 #at least 0.1% melkorite support
+		}
+		complete_effect = { #cost
+			add_popularity = {
+				ideology = melkorite
+				popularity = -0.025
+			}
 		}
 	}
 }

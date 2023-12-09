@@ -1,3 +1,4 @@
+@pillarOfSocietyCostReduction = -1
 ##############################################################################################################################
 # BAKING GUILD
 ##############################################################################################################################
@@ -15,7 +16,6 @@ DOR_baking_guild_MIO = {
 	}
 	research_categories = {
 		motorized_equipment
-		farming
 	}
 	
 	
@@ -119,6 +119,20 @@ DOR_baking_guild_MIO = {
 			}
 		}
 	}
+	#########PILLAR OF SOCIETY
+	trait = {
+		token = dorwinion_trait_pillar_of_society
+		name = dorwinion_trait_pillar_of_society
+		icon = GFX_generic_mio_trait_icon_political
+
+		position = { x=9 y=0 }
+		
+		available = { FROM = { has_completed_focus = DOR_pillars_of_society } }
+		
+		organization_modifier = {
+			military_industrial_organization_industrial_manufacturer_assign_cost = @pillarOfSocietyCostReduction
+		}
+	}
 ####################################################
 #######################################################WAGONS
 ####################################################
@@ -186,7 +200,6 @@ DOR_carpentry_guild_MIO = {
 	research_categories = {
 		artillery
 		naval_equipment
-		construction_tech
 	}
 	
 	
@@ -284,6 +297,20 @@ DOR_carpentry_guild_MIO = {
 		
 		on_complete = {
 			FROM = { upgrade_to_dorwinion_carpentry_guild_construction_infrastructure_tech = yes  }
+		}
+	}
+	#########PILLAR OF SOCIETY
+	trait = {
+		token = dorwinion_trait_pillar_of_society
+		name = dorwinion_trait_pillar_of_society
+		icon = GFX_generic_mio_trait_icon_political
+
+		position = { x=9 y=0 }
+		
+		available = { FROM = { has_completed_focus = DOR_pillars_of_society } }
+		
+		organization_modifier = {
+			military_industrial_organization_industrial_manufacturer_assign_cost = @pillarOfSocietyCostReduction
 		}
 	}
 ####################################################
@@ -490,7 +517,6 @@ DOR_smithing_guild_MIO = {
 	}
 	research_categories = {
 		infantry_tech
-		industry
 	}
 	
 	
@@ -578,6 +604,20 @@ DOR_smithing_guild_MIO = {
 					upgrade_to_dorwinion_smithing_guild_efficiency_capacity_tech = yes
 				}
 			}
+		}
+	}
+	#########PILLAR OF SOCIETY
+	trait = {
+		token = dorwinion_trait_pillar_of_society
+		name = dorwinion_trait_pillar_of_society
+		icon = GFX_generic_mio_trait_icon_political
+
+		position = { x=9 y=0 }
+		
+		available = { FROM = { has_completed_focus = DOR_pillars_of_society } }
+		
+		organization_modifier = {
+			military_industrial_organization_industrial_manufacturer_assign_cost = @pillarOfSocietyCostReduction
 		}
 	}
 ####################################################
@@ -870,6 +910,20 @@ DOR_tailory_guild_MIO = {
 		
 		on_complete = {
 			FROM = { upgrade_to_dorwinion_tailory_guild_training_cold_attrition = yes  }
+		}
+	}
+	#########PILLAR OF SOCIETY
+	trait = {
+		token = dorwinion_trait_pillar_of_society
+		name = dorwinion_trait_pillar_of_society
+		icon = GFX_generic_mio_trait_icon_political
+
+		position = { x=9 y=0 }
+		
+		available = { FROM = { has_completed_focus = DOR_pillars_of_society } }
+		
+		organization_modifier = {
+			military_industrial_organization_industrial_manufacturer_assign_cost = @pillarOfSocietyCostReduction
 		}
 	}
 ####################################################

@@ -90,7 +90,10 @@ focus_tree = {
 			great_merchants_focus_effect = yes
 		}
 	}
-	focus = { #give generous gifts
+	focus = { #give generous gifts (REQUIRES METAL TO IMPLEMENT)
+		
+		allow_branch = { always = no }
+	
 		id = DOR_give_generous_gifts
 		icon = GFX_focus_usa_reestablish_the_gold_standard
 		x = -2
@@ -111,7 +114,7 @@ focus_tree = {
 			great_merchants_focus_effect = yes
 		}
 	}
-	focus = { #pillars of society
+	focus = { #Pillars of society
 		id = DOR_pillars_of_society
 		#icon = GFX_focus_usa_reestablish_the_gold_standard
 		x = -1
@@ -126,9 +129,28 @@ focus_tree = {
 		}
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_GUILDS }
-		completion_reward = {
-			custom_effect_tooltip = unimplemented
-			unlock_decision_tooltip = improve_guild_marketing
+		completion_reward = {##Makes guilds not cost PP
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_baking_guild_MIO = {
+					complete_mio_trait = dorwinion_trait_pillar_of_society
+				}
+				mio:DOR_carpentry_guild_MIO = {
+					complete_mio_trait = dorwinion_trait_pillar_of_society
+				}
+				mio:DOR_smithing_guild_MIO = {
+					complete_mio_trait = dorwinion_trait_pillar_of_society
+				}
+				mio:DOR_tailory_guild_MIO = {
+					complete_mio_trait = dorwinion_trait_pillar_of_society
+				}
+			}
+			else = {
+				hidden_effect = {
+					add_ideas = DOR_pillars_of_society_idea
+				}
+				custom_effect_tooltip = DOR_pillars_of_society_tooltip
+			}
 			great_merchants_focus_effect = yes
 		}
 	}
@@ -168,7 +190,7 @@ focus_tree = {
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GUILDS }
 		completion_reward = {
-			unlock_decision_tooltip = take_smithing_guild_loan
+			custom_effect_tooltip = DOR_take_guild_loans_tooltip
 			great_merchants_focus_effect = yes
 		}
 	}
@@ -188,21 +210,7 @@ focus_tree = {
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GUILDS FOCUS_FILTER_DIPLOMATIC }
 		completion_reward = {
-			every_other_country = {
-				limit = {
-					allowed_celduin_trade = yes
-					market_capital = yes
-					NOT = {
-						OR = {
-							has_war_with = DOR
-							is_embargoing = DOR
-							is_embargoed_by = DOR
-						}
-					}
-				}
-				unlock_decision_tooltip = take_smithing_guild_loan_foreign
-				custom_effect_tooltip = gain_rhovanion_influence_from_loan
-			}
+			custom_effect_tooltip = DOR_loan_to_foreigners_tooltip
 			great_merchants_focus_effect = yes
 		}
 	}

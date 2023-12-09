@@ -1,4 +1,10 @@
 ﻿l_english:
+ idea_group_industrial_concern: "Economic Specialists"
+ idea_group_tank_manufacturer: "Cavalry Specialists"
+ idea_group_naval_manufacturer: "Naval Specialists"
+ idea_group_materiel_manufacturer: "Equipment Specialists"
+ idea_group_air_manufacturer: "Unique Specialists"
+
  mio_cat_tech_all_armor_and_modules: "All Cavalry Technologies"
  mio_cat_tech_light_armor_and_modules: "Light Cavalry Technologies" #Cannot talk about modules because of DLC lock tack
  mio_cat_tech_medium_armor_and_modules: "Heavy Cavalry Technologies" #Cannot talk about modules because of DLC lock tack
@@ -181,4 +187,4 @@ dorwinion_trait_hardy_uniforms: "Hardy Uniforms"
 dorwinion_trait_winter_coats: "Winter Coats"
 dorwinion_trait_mass_affordability: "Mass Affordability"
 dorwinion_trait_civilian_robes: "Civilian Robes"
-
+dorwinion_trait_pillar_of_society: "Pillar of Society"

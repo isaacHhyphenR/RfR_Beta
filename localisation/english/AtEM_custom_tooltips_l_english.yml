@@ -139,7 +139,9 @@
  gain_all_of_DAL_republic_cores_on_annex_tooltip: "We will inherit all of §Y$DAL_republic_DEF$'s§! cores upon diplomatically annexing it."
  gain_all_of_RVN_republic_cores_on_annex_tooltip: "We will inherit all of §Y$RVN_republic_DEF$'s§! cores upon diplomatically annexing it."
  unlock_idea_tooltip: "Unlocks idea: "
- 
+ DOR_pillars_of_society_tooltip: "Can hire §Y$idea_group_industrial_concern$s§! for free."
+ DOR_take_guild_loans_tooltip: "$unlocks_decision_tooltip$ to take loans from each Guild. Each loan grants §Y-10% $MODIFIER_CONSUMER_GOODS_FACTOR$§! for §G1 year§!. When it expires, you pay §R1 $industrial_complex$§! and the guild gets an upgrade."
+ DOR_loan_to_foreigners_tooltip: "Any country that can participate in Celduin Trade can also take loans from your guilds."
  
  
  

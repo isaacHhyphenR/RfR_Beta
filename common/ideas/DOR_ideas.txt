@@ -591,6 +591,15 @@ ideas = {
 	}
 	
 	hidden_ideas = {
+		DOR_pillars_of_society_idea = {
+			name = DOR_pillars_of_society
+			allowed_civil_war = {
+				has_character = DOR_thodria_celebcaen
+			}
+			modifier = {
+				industrial_concern_cost_factor = -1
+			}
+		}
 		DOR_revolutionary_leader_idea = {
 			allowed_civil_war = {
 				has_country_leader_with_trait = revolutionary

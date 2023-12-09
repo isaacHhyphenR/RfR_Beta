@@ -149,7 +149,8 @@ upgrade_dorwinion_baking_guild = {
 		limit = { has_country_flag = dorwinion_baking_guild_fuel }
 		upgrade_to_dorwinion_baking_guild_fuel_manpower = yes
 	}
-	else = {
+	else_if = {
+		limit = { has_country_flag = dorwinion_baking_guild }
 		upgrade_to_dorwinion_baking_guild_supply = yes
 	}
 }
@@ -279,7 +280,8 @@ upgrade_dorwinion_carpentry_guild = {
 		limit = { has_country_flag = dorwinion_carpentry_guild_construction }
 		upgrade_to_dorwinion_carpentry_guild_construction_factory = yes
 	}
-	else = {
+	else_if = {
+		limit = { has_country_flag = dorwinion_carpentry_guild }
 		upgrade_to_dorwinion_carpentry_guild_construction = yes
 	}
 }
@@ -409,7 +411,8 @@ upgrade_dorwinion_smithing_guild = {
 		limit = { has_country_flag = dorwinion_smithing_guild_efficiency }
 		upgrade_to_dorwinion_smithing_guild_efficiency_capacity = yes
 	}
-	else = {
+	else_if = {
+		limit = { has_country_flag = dorwinion_smithing_guild }
 		upgrade_to_dorwinion_smithing_guild_efficiency = yes
 	}
 }
@@ -539,7 +542,8 @@ upgrade_dorwinion_tailory_guild = {
 		limit = { has_country_flag = dorwinion_tailory_guild_training }
 		upgrade_to_dorwinion_tailory_guild_training_cold = yes
 	}
-	else = {
+	else_if = {
+		limit = { has_country_flag = dorwinion_tailory_guild }
 		upgrade_to_dorwinion_tailory_guild_training = yes
 	}
 }
