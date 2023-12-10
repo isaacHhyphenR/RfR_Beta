@@ -320,12 +320,44 @@ focus_tree = {
 		}
 	}
 #################################MERCHANT ECONOMY
+	focus = { #Jewels Upon the Sea
+		id = DOR_jewels_upon_the_sea
+		#icon = GFX_goal_the_deciever
+		x = 4
+		y = 1
+		relative_position_id = DOR_support_the_great_merchants
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_great_merchants
+		}
+		available = {
+			any_core_state = {
+				is_controlled_by = ROOT
+				market > 0
+			}
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_PROSPERITY }
+		completion_reward = {
+			every_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					market > 0
+				}
+				add_15_prosperity = yes
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
 	focus = { #Sail by river and wave
 		id = DOR_sail_by_river_and_wave
 		icon = GFX_focus_POL_develop_polish_shipbuilding
-		x = -9
-		y = 1
-		relative_position_id = DOR_support_the_great_merchants
+		x = 4
+		y = 0
+		relative_position_id = DOR_jewels_upon_the_sea
 		cost = 5
 		ai_will_do = {
 			factor = 1
@@ -595,38 +627,6 @@ focus_tree = {
 					type = iron
 					amount = @importResourceAmount
 				}
-			}
-			great_merchants_focus_effect = yes
-		}
-	}
-	focus = { #Jewels Upon the Sea
-		id = DOR_jewels_upon_the_sea
-		#icon = GFX_goal_the_deciever
-		x = -12
-		y = 1
-		relative_position_id = DOR_support_the_great_merchants
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = DOR_support_the_great_merchants
-		}
-		available = {
-			any_core_state = {
-				is_controlled_by = ROOT
-				market > 0
-			}
-			great_merchants_focus_trigger = yes
-		}
-		search_filters = { FOCUS_FILTER_PROSPERITY }
-		completion_reward = {
-			every_core_state = {
-				limit = {
-					is_controlled_by = ROOT
-					market > 0
-				}
-				add_15_prosperity = yes
 			}
 			great_merchants_focus_effect = yes
 		}
@@ -902,40 +902,10 @@ focus_tree = {
 		}
 	}
 #################################MERCHANT DIPLOMACY
-	focus = { #seek the wisdom of elves
-		id = DOR_seek_the_wisdom_of_elves
-		icon = GFX_goal_generic_befriend_woodland_realm
-		x = 3
-		y = 1
-		relative_position_id = DOR_support_the_great_merchants
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}
-		prerequisite = {
-			focus = DOR_support_the_great_merchants
-		}
-		available = {
-			country_exists = WOD
-			NOT = { has_war_with = WOD }
-			great_merchants_focus_trigger = yes
-		}
-		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			WOD = {
-				country_event = { id = atem.2 hours = 1 }
-				custom_effect_tooltip = if_they_accept_tooltip
-				effect_tooltip = {
-					DOR_seek_wisdom_of_elves_effect = yes
-				}
-			}
-			great_merchants_focus_effect = yes
-		}
-	}
 	focus = { #Dispatch celduin trade delegation
 		id = DOR_dispatch_celduin_trade_delegation
 		icon = GFX_goal_generic_positive_trade_relations
-		x = 8
+		x = -6
 		y = 1
 		relative_position_id = DOR_support_the_great_merchants
 		cost = 5
@@ -1221,7 +1191,7 @@ focus_tree = {
 	focus = { #Merchant Spies
 		id = DOR_merchant_spies
 		icon = GFX_focus_generic_secret_service_agency
-		x = 13
+		x = -13
 		y = 1
 		relative_position_id = DOR_support_the_great_merchants
 		cost = 5
@@ -1258,7 +1228,7 @@ focus_tree = {
 	focus = { #recruit foreign merchants
 		id = DOR_recruit_foreign_merchants
 		#icon = GFX_goal_generic_intelligence_exchange
-		x = -1
+		x = 1
 		y = 1
 		relative_position_id = DOR_merchant_spies
 		cost = 10
@@ -1341,7 +1311,7 @@ focus_tree = {
 	focus = { #knife guild of caras sant
 		id = DOR_knife_guild_of_caras_sant
 		#icon = GFX_goal_generic_intelligence_exchange
-		x = 1
+		x = -1
 		y = 1
 		relative_position_id = DOR_merchant_spies
 		cost = 5
@@ -3100,7 +3070,7 @@ focus_tree = {
 	focus = { #support the burghers
 		id = DOR_support_the_burghers
 		icon = GFX_goal_DOR_support_burghers
-		x = -20
+		x = -23
 		y = 8
 		relative_position_id = DOR_support_the_great_merchants
 		cost = 5
@@ -3626,6 +3596,37 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			burghers_focus_effect_big = yes
+		}
+	}
+#################################ELVEN DIPLOMACY
+	focus = { #seek the wisdom of elves
+		id = DOR_seek_the_wisdom_of_elves
+		icon = GFX_goal_generic_befriend_woodland_realm
+		x = -14
+		y = 1
+		relative_position_id = DOR_support_the_burghers
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_support_the_burghers
+		}
+		available = {
+			country_exists = WOD
+			NOT = { has_war_with = WOD }
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			WOD = {
+				country_event = { id = atem.2 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = {
+					DOR_seek_wisdom_of_elves_effect = yes
+				}
+			}
+			great_merchants_focus_effect = yes
 		}
 	}
 #################################BULWARK OF THE CELDUIN
@@ -4275,7 +4276,7 @@ focus_tree = {
 	focus = { #Nation of Artisans
 		id = DOR_nation_of_artisans
 		icon = GFX_focus_generic_industry_2
-		x = 18
+		x = 19
 		y = 1
 		relative_position_id = DOR_support_the_burghers
 		cost = 10
@@ -4302,10 +4303,45 @@ focus_tree = {
 			burghers_focus_effect = yes
 		}
 	}
+	focus = { #Invest in the Bakers
+		id = DOR_invest_in_the_bakers
+		icon = GFX_goal_DOR_bakers_guild
+		x = -3
+		y = 1
+		relative_position_id = DOR_nation_of_artisans
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_nation_of_artisans
+		}
+		available = {
+			burghers_focus_trigger = yes
+			NOT = { has_idea = DOR_investing_in_guild }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GUILDS }
+		completion_reward = {
+			add_timed_idea = {
+				idea = DOR_investing_in_guild
+				days = @guildInvestmentDays
+			}
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_baking_guild_MIO = {
+					add_mio_size = 1
+				}
+			}
+			else = {
+				upgrade_dorwinion_baking_guild = yes
+			}
+			burghers_focus_effect = yes
+		}
+	}
 	focus = { #Invest in the Carpenters
 		id = DOR_invest_in_the_carpenters
 		icon = GFX_goal_DOR_carpentry_guild
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = DOR_nation_of_artisans
 		cost = 5
@@ -4340,7 +4376,7 @@ focus_tree = {
 	focus = { #Invest in the Smiths
 		id = DOR_invest_in_the_smiths
 		icon = GFX_goal_DOR_smithing_guild
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = DOR_nation_of_artisans
 		cost = 5
@@ -4372,10 +4408,10 @@ focus_tree = {
 			burghers_focus_effect = yes
 		}
 	}
-	focus = { #Invest in the Bakers
-		id = DOR_invest_in_the_bakers
-		icon = GFX_goal_DOR_bakers_guild
-		x = 2
+	focus = { #Invest in the Tailors
+		id = DOR_invest_in_the_tailors
+		icon = GFX_goal_DOR_tailory_guild
+		x = 3
 		y = 1
 		relative_position_id = DOR_nation_of_artisans
 		cost = 5
@@ -4397,12 +4433,12 @@ focus_tree = {
 			}
 			if = {
 				limit = { has_dlc = "Arms Against Tyranny" }
-				mio:DOR_baking_guild_MIO = {
+				mio:DOR_tailory_guild_MIO = {
 					add_mio_size = 1
 				}
 			}
 			else = {
-				upgrade_dorwinion_baking_guild = yes
+				upgrade_dorwinion_tailory_guild = yes
 			}
 			burghers_focus_effect = yes
 		}
@@ -4418,17 +4454,118 @@ focus_tree = {
 			factor = 10
 		}
 		prerequisite = {
+			focus = DOR_invest_in_the_bakers
 			focus = DOR_invest_in_the_carpenters
-		}
-		prerequisite = {
 			focus = DOR_invest_in_the_smiths
+			focus = DOR_invest_in_the_tailors
 		}
 		available = {
 			burghers_focus_trigger = yes
+			count_triggers = {
+				amount = 2
+				has_completed_focus = DOR_invest_in_the_bakers
+				has_completed_focus = DOR_invest_in_the_carpenters
+				has_completed_focus = DOR_invest_in_the_smiths
+				has_completed_focus = DOR_invest_in_the_tailors
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_research_slot = 1
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Beyond our Walls, but not our Hearts
+		id = DOR_beyond_our_walls_but_not_our_hearts
+		#icon = GFX_focus_SOV_breadbasket_of_the_union
+		x = 0
+		y = 2
+		relative_position_id = DOR_invest_in_the_bakers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_invest_in_the_bakers
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = farming
+				name = DOR_beyond_our_walls_but_not_our_hearts
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Reinvest in our suppliers
+		id = DOR_reinvest_in_our_suppliers
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		x = 0
+		y = 1
+		relative_position_id = DOR_beyond_our_walls_but_not_our_hearts
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_beyond_our_walls_but_not_our_hearts
+		}
+		mutually_exclusive = {
+			focus = DOR_reinvest_in_our_producers
+		}
+		available = {
+			burghers_focus_trigger = yes
+			any_core_state = {
+				is_core_of = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				has_resources_amount = {
+					resource = food
+					amount > 14
+					delivered = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = DOR_well_fed_workers_tooltip
+			# effect_tooltip = {
+				# add_building_construction = {
+					# type = industrial_complex
+					# level = 1
+					# instant_build = yes
+				# }
+				# add_extra_state_shared_building_slots = 1
+			# }
+			every_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					has_resources_amount = {
+						resource = food
+						amount > 14
+						delivered = yes
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
 			burghers_focus_effect = yes
 		}
 	}
@@ -4486,8 +4623,8 @@ focus_tree = {
 			burghers_focus_effect = yes
 		}
 	}
-	focus = { #Reinvest in our Communities
-		id = DOR_reinvest_in_our_communities
+	focus = { #Reinvest in our Producers
+		id = DOR_reinvest_in_our_producers
 		icon = GFX_focus_generic_industry_3
 		x = 1
 		y = 1
@@ -4502,11 +4639,14 @@ focus_tree = {
 		prerequisite = {
 			focus = DOR_artisans_on_the_seashore
 		}
+		mutually_exclusive = {
+			focus = DOR_reinvest_in_our_suppliers
+		}
 		available = {
 			burghers_focus_trigger = yes
 			any_core_state = {
 				is_controlled_by = ROOT
-				at_least_five_factories_trigger = yes
+				at_least_ten_factories_trigger = yes
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -4534,7 +4674,7 @@ focus_tree = {
 			every_core_state = {
 				limit = {
 					is_controlled_by = ROOT
-					at_least_five_factories_trigger = yes
+					at_least_ten_factories_trigger = yes
 				}
 				random_list = {
 					1 = {
@@ -4649,93 +4789,27 @@ focus_tree = {
 			burghers_focus_effect = yes
 		}
 	}
-	focus = { #Beyond our Walls, but not our Hearts
-		id = DOR_beyond_our_walls_but_not_our_hearts
-		#icon = GFX_focus_SOV_breadbasket_of_the_union
+	focus = { #Affordable Luxury
+		id = DOR_affordable_luxury
+		icon = GFX_goal_generic_consumer_goods
 		x = 0
 		y = 1
-		relative_position_id = DOR_invest_in_the_bakers
+		relative_position_id = DOR_invest_in_the_tailors
 		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
 		prerequisite = {
-			focus = DOR_invest_in_the_bakers
+			focus = DOR_invest_in_the_tailors
 		}
 		available = {
 			burghers_focus_trigger = yes
-		}
-		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = @techBoostBonus
-				uses = @techBoostUses
-				category = farming
-				name = DOR_beyond_our_walls_but_not_our_hearts
-			}
-			burghers_focus_effect = yes
-		}
-	}
-	focus = { #Well Fed Workers
-		id = DOR_well_fed_workers
-		icon = GFX_focus_SOV_breadbasket_of_the_union
-		x = 0
-		y = 1
-		relative_position_id = DOR_beyond_our_walls_but_not_our_hearts
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}
-		prerequisite = {
-			focus = DOR_beyond_our_walls_but_not_our_hearts
-		}
-		available = {
-			burghers_focus_trigger = yes
-			any_core_state = {
-				is_core_of = ROOT
-				free_building_slots = {
-					building = industrial_complex
-					size > 0
-					include_locked = yes
-				}
-				has_resources_amount = {
-					resource = food
-					amount > 14
-					delivered = yes
-				}
-			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			custom_effect_tooltip = DOR_well_fed_workers_tooltip
-			# effect_tooltip = {
-				# add_building_construction = {
-					# type = industrial_complex
-					# level = 1
-					# instant_build = yes
-				# }
-				# add_extra_state_shared_building_slots = 1
-			# }
-			every_core_state = {
-				limit = {
-					is_controlled_by = ROOT
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					has_resources_amount = {
-						resource = food
-						amount > 14
-						delivered = yes
-					}
-				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
+			add_timed_idea = {
+				days = 365
+				idea = DOR_affordable_luxury_idea
 			}
 			burghers_focus_effect = yes
 		}

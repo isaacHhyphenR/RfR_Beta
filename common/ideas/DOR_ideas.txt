@@ -589,10 +589,16 @@ ideas = {
 			}
 		}
 		DOR_investing_in_guild = {
-			picture = generic_goods_red_bonus
+			picture = take_loan
 			removal_cost = -1
 			modifier = {
-				consumer_goods_factor = 0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+		DOR_affordable_luxury_idea = {
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = -0.15
 			}
 		}
 	}

@@ -189,6 +189,14 @@ at_least_five_factories_trigger = { #returns true if state has at least 5 civs/m
 		check_variable = { factories > 4 }
 	}
 }
+at_least_ten_factories_trigger = { #returns true if state has at least 10 civs/mils
+	custom_trigger_tooltip = {
+		tooltip = at_least_ten_factories_trigger
+		set_temp_variable = { factories = building_level@arms_factory }
+		add_to_temp_variable = { factories = building_level@industrial_complex }
+		check_variable = { factories > 10 }
+	}
+}
 
 is_republic = { #returns true if the country is one of the revolutionary republics DOR can found
 	#has_country_flag = revolutionary_republic

@@ -806,4 +806,8 @@ spriteTypes = {
 		name = "GFX_idea_barding_archery"
 		texturefile = "gfx/interface/ideas/barding_archery.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_take_loan"
+		texturefile = "gfx/interface/ideas/take_loan.dds"
+	}
 }
