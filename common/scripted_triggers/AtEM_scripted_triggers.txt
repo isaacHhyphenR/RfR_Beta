@@ -236,5 +236,21 @@ republican_puppet_trigger = {
 }
 
 
-
+DOR_guild_loan_visible = {
+	if = {
+		limit = { original_tag = DOR }
+		has_completed_focus = DOR_take_guild_loans
+	}
+	else = {
+		DOR = { has_completed_focus = DOR_loan_to_foreigners }
+		NOT = {
+			OR = {
+				has_war_with = DOR
+				is_embargoing = DOR
+				is_embargoed_by = DOR
+			}
+		}
+		market_capital = yes
+	}
+}
 

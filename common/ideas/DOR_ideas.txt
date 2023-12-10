@@ -588,6 +588,13 @@ ideas = {
 				country_resource_iron = @merchant_contract_size
 			}
 		}
+		DOR_investing_in_guild = {
+			picture = generic_goods_red_bonus
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
 	}
 	
 	hidden_ideas = {

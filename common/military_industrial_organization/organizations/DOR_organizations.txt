@@ -1,4 +1,5 @@
 @pillarOfSocietyCostReduction = -1
+@expandedMarketFundsGain = 0.25
 ##############################################################################################################################
 # BAKING GUILD
 ##############################################################################################################################
@@ -119,7 +120,7 @@ DOR_baking_guild_MIO = {
 			}
 		}
 	}
-	#########PILLAR OF SOCIETY
+	#########FOCUS TRAITS
 	trait = {
 		token = dorwinion_trait_pillar_of_society
 		name = dorwinion_trait_pillar_of_society
@@ -131,6 +132,19 @@ DOR_baking_guild_MIO = {
 		
 		organization_modifier = {
 			military_industrial_organization_industrial_manufacturer_assign_cost = @pillarOfSocietyCostReduction
+		}
+	}
+	trait = {
+		token = dorwinion_trait_expanded_market
+		name = dorwinion_trait_expanded_market
+		icon = GFX_generic_mio_trait_icon_money
+
+		position = { x=9 y=1 }
+		
+		available = { FROM = { has_completed_focus = DOR_expand_citizenship_rights } }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = @expandedMarketFundsGain
 		}
 	}
 ####################################################
@@ -299,7 +313,7 @@ DOR_carpentry_guild_MIO = {
 			FROM = { upgrade_to_dorwinion_carpentry_guild_construction_infrastructure_tech = yes  }
 		}
 	}
-	#########PILLAR OF SOCIETY
+	#########FOCUS TRAITS
 	trait = {
 		token = dorwinion_trait_pillar_of_society
 		name = dorwinion_trait_pillar_of_society
@@ -311,6 +325,19 @@ DOR_carpentry_guild_MIO = {
 		
 		organization_modifier = {
 			military_industrial_organization_industrial_manufacturer_assign_cost = @pillarOfSocietyCostReduction
+		}
+	}
+	trait = {
+		token = dorwinion_trait_expanded_market
+		name = dorwinion_trait_expanded_market
+		icon = GFX_generic_mio_trait_icon_money
+
+		position = { x=9 y=1 }
+		
+		available = { FROM = { has_completed_focus = DOR_expand_citizenship_rights } }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = @expandedMarketFundsGain
 		}
 	}
 ####################################################
@@ -606,7 +633,7 @@ DOR_smithing_guild_MIO = {
 			}
 		}
 	}
-	#########PILLAR OF SOCIETY
+	#########FOCUS TRAITS
 	trait = {
 		token = dorwinion_trait_pillar_of_society
 		name = dorwinion_trait_pillar_of_society
@@ -618,6 +645,19 @@ DOR_smithing_guild_MIO = {
 		
 		organization_modifier = {
 			military_industrial_organization_industrial_manufacturer_assign_cost = @pillarOfSocietyCostReduction
+		}
+	}
+	trait = {
+		token = dorwinion_trait_expanded_market
+		name = dorwinion_trait_expanded_market
+		icon = GFX_generic_mio_trait_icon_money
+
+		position = { x=9 y=1 }
+		
+		available = { FROM = { has_completed_focus = DOR_expand_citizenship_rights } }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = @expandedMarketFundsGain
 		}
 	}
 ####################################################
@@ -912,7 +952,7 @@ DOR_tailory_guild_MIO = {
 			FROM = { upgrade_to_dorwinion_tailory_guild_training_cold_attrition = yes  }
 		}
 	}
-	#########PILLAR OF SOCIETY
+	#########FOCUS TRAITS
 	trait = {
 		token = dorwinion_trait_pillar_of_society
 		name = dorwinion_trait_pillar_of_society
@@ -924,6 +964,19 @@ DOR_tailory_guild_MIO = {
 		
 		organization_modifier = {
 			military_industrial_organization_industrial_manufacturer_assign_cost = @pillarOfSocietyCostReduction
+		}
+	}
+	trait = {
+		token = dorwinion_trait_expanded_market
+		name = dorwinion_trait_expanded_market
+		icon = GFX_generic_mio_trait_icon_money
+
+		position = { x=9 y=1 }
+		
+		available = { FROM = { has_completed_focus = DOR_expand_citizenship_rights } }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = @expandedMarketFundsGain
 		}
 	}
 ####################################################

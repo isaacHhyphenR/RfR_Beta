@@ -59,23 +59,6 @@ DOR_guilds_category = {
 	icon = GFX_decision_category_guilds
 	priority = 80
 	allowed = { allowed_celduin_trade = yes }
-	visible = {
-		if = {
-			limit = { original_tag = DOR }
-			has_completed_focus = DOR_take_guild_loans
-		}
-		else = {
-			DOR = { has_completed_focus = DOR_loan_to_foreigners }
-			NOT = {
-				OR = {
-					has_war_with = DOR
-					is_embargoing = DOR
-					is_embargoed_by = DOR
-				}
-			}
-			market_capital = yes
-		}
-	}
 }
 
 DOR_college_category = {

@@ -235,6 +235,9 @@ DOR_guilds_category = {
 				}
 			}
 		}
+		visible = {
+			DOR_guild_loan_visible = yes
+		}
 		
 		days_remove = @guildLoanDays
 		modifier = {
@@ -313,6 +316,9 @@ DOR_guilds_category = {
 					value < -15
 				}
 			}
+		}
+		visible = {
+			DOR_guild_loan_visible = yes
 		}
 		
 		days_remove = @guildLoanDays
@@ -393,6 +399,9 @@ DOR_guilds_category = {
 				}
 			}
 		}
+		visible = {
+			DOR_guild_loan_visible = yes
+		}
 		
 		days_remove = @guildLoanDays
 		modifier = {
@@ -471,6 +480,9 @@ DOR_guilds_category = {
 					value < -15
 				}
 			}
+		}
+		visible = {
+			DOR_guild_loan_visible = yes
 		}
 		
 		days_remove = @guildLoanDays
@@ -640,13 +652,88 @@ DOR_college_category = {
 
 DOR_spread_revolution_category = {
 	@complianceForRepublic = 50
-	targeted_dal = {
-		icon = GFX_decision_republic
-		target_trigger = {
-			FROM = { tag = DAL }
+	establish_ARN_republic = { #ARNOR
+		icon = GFX_decision_ARN_republic
+		ai_will_do = {
+			factor = 1
 		}
 		available = {
-			always = yes
+			any_occupied_country = {
+				is_arnor_tag = yes
+				ROOT = {
+					core_compliance = {
+						occupied_country_tag = PREV 
+						value > @complianceForRepublic
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			random_occupied_country = {
+				limit = { is_arnor_tag = yes }
+				custom_effect_tooltip = establish_arnor_sister_republic_tooltip
+				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				var:republic_root = {
+					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+					create_dynamic_country = {
+						original_tag = var:republic_root
+						set_cosmetic_tag = arnor_republic
+						set_variable = { ROOT.arnor_republic_var = THIS }
+						every_other_country = {
+							limit = { is_arnor_tag = yes }
+							add_civil_war_target = PREV
+						}
+						##Gain cores on all of arnor
+						every_possible_country = {
+							limit = { is_arnor_tag = yes }
+							every_core_state = {
+								add_core_of = PREV.PREV
+							}
+						}
+						##final stuff
+						found_THIS_revolutionary_republic = yes
+					}
+					#so we know we did it, update home of the revolution modifiers
+					establish_sister_republic = yes
+				}
+			}
+		}
+	}
+	establish_BER_republic = { #ANDUIN
+		icon = GFX_decision_BER_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			core_compliance = {
+				occupied_country_tag = BER
+				value > @complianceForRepublic
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			BER = {
+				custom_effect_tooltip = establish_this_sister_republic_tooltip
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				set_temp_variable = { republic_root = BER } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = BER
+					set_cosmetic_tag = BER_republic
+					set_variable = { ROOT.BER_republic_var = THIS }
+					every_country_with_original_tag = { ##this is civil war yall
+						original_tag_to_check = BER
+						add_civil_war_target = PREV
+					}
+					found_THIS_revolutionary_republic = yes
+				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
+			}
 		}
 	}
 	establish_DAL_republic = { #DALE
@@ -683,7 +770,277 @@ DOR_spread_revolution_category = {
 			}
 		}
 	}
-	establish_RVN_republic = { #Rhovanion
+	establish_DAI_republic = { #DRUEDAIN
+		icon = GFX_decision_DAI_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			core_compliance = {
+				occupied_country_tag = DAI
+				value > @complianceForRepublic
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			DAI = {
+				custom_effect_tooltip = establish_this_sister_republic_tooltip
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				set_temp_variable = { republic_root = DAI } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = DAI
+					set_cosmetic_tag = DAI_republic
+					set_variable = { ROOT.DAI_republic_var = THIS }
+					every_country_with_original_tag = { ##this is civil war yall
+						original_tag_to_check = DAI
+						add_civil_war_target = PREV
+					}
+					found_THIS_revolutionary_republic = yes
+				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
+			}
+		}
+	}
+	establish_gwaithurium_republic = { #gwaithurium
+		icon = GFX_decision_gwaithurium_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_occupied_country = {
+				is_greater_enedwaith_tag = yes
+				ROOT = {
+					core_compliance = {
+						occupied_country_tag = PREV 
+						value > @complianceForRepublic
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			random_occupied_country = {
+				limit = { is_greater_enedwaith_tag = yes }
+				custom_effect_tooltip = establish_gwaithurium_sister_republic_tooltip
+				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				var:republic_root = {
+					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+					create_dynamic_country = {
+						original_tag = var:republic_root
+						set_cosmetic_tag = gwaithurium_republic
+						set_variable = { ROOT.gwaithurium_republic_var = THIS }
+						every_other_country = {
+							limit = { is_greater_enedwaith_tag = yes }
+							add_civil_war_target = PREV
+						}
+						##Gain cores on all of gwaithurium
+						every_possible_country = {
+							limit = { is_greater_enedwaith_tag = yes }
+							every_core_state = {
+								add_core_of = PREV.PREV
+							}
+						}
+						##final stuff
+						found_THIS_revolutionary_republic = yes
+					}
+					#so we know we did it, update home of the revolution modifiers
+					establish_sister_republic = yes
+				}
+			}
+		}
+	}
+	establish_HAR_republic = { #HARAD
+		icon = GFX_decision_HAR_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			core_compliance = {
+				occupied_country_tag = HAR
+				value > @complianceForRepublic
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			HAR = {
+				custom_effect_tooltip = establish_this_sister_republic_tooltip
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				set_temp_variable = { republic_root = HAR } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = HAR
+					set_cosmetic_tag = HAR_republic
+					set_variable = { ROOT.HAR_republic_var = THIS }
+					every_country_with_original_tag = { ##this is civil war yall
+						original_tag_to_check = HAR
+						add_civil_war_target = PREV
+					}
+					found_THIS_revolutionary_republic = yes
+				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
+			}
+		}
+	}
+	establish_HIL_republic = { #HILDORIEN
+		icon = GFX_decision_HIL_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			core_compliance = {
+				occupied_country_tag = HIL
+				value > @complianceForRepublic
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			HIL = {
+				custom_effect_tooltip = establish_this_sister_republic_tooltip
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				set_temp_variable = { republic_root = HIL } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = HIL
+					set_cosmetic_tag = HIL_republic
+					set_variable = { ROOT.HIL_republic_var = THIS }
+					every_country_with_original_tag = { ##this is civil war yall
+						original_tag_to_check = HIL
+						add_civil_war_target = PREV
+					}
+					found_THIS_revolutionary_republic = yes
+				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
+			}
+		}
+	}
+	establish_HTH_republic = { #HITHERLANDS
+		icon = GFX_decision_HTH_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			core_compliance = {
+				occupied_country_tag = HTH
+				value > @complianceForRepublic
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			HTH = {
+				custom_effect_tooltip = establish_this_sister_republic_tooltip
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				set_temp_variable = { republic_root = HTH } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = HTH
+					set_cosmetic_tag = HTH_republic
+					set_variable = { ROOT.HTH_republic_var = THIS }
+					every_country_with_original_tag = { ##this is civil war yall
+						original_tag_to_check = HTH
+						add_civil_war_target = PREV
+					}
+					found_THIS_revolutionary_republic = yes
+				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
+			}
+		}
+	}
+	establish_GON_republic = { #GONDOR
+		icon = GFX_decision_GON_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_occupied_country = {
+				is_gondor_tag = yes
+				ROOT = {
+					core_compliance = {
+						occupied_country_tag = PREV 
+						value > @complianceForRepublic
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			random_occupied_country = {
+				limit = { is_gondor_tag = yes }
+				custom_effect_tooltip = establish_gondor_sister_republic_tooltip
+				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				var:republic_root = {
+					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+					create_dynamic_country = {
+						original_tag = var:republic_root
+						set_cosmetic_tag = GON_republic
+						set_variable = { ROOT.GON_republic_var = THIS }
+						every_other_country = {
+							limit = { is_gondor_tag = yes }
+							add_civil_war_target = PREV
+						}
+						##Gain cores on all of gondor
+						every_possible_country = {
+							limit = { is_gondor_tag = yes }
+							every_core_state = {
+								add_core_of = PREV.PREV
+							}
+						}
+						##final stuff
+						found_THIS_revolutionary_republic = yes
+					}
+					#so we know we did it, update home of the revolution modifiers
+					establish_sister_republic = yes
+				}
+			}
+		}
+	}
+	establish_KND_republic = { #KHAND
+		icon = GFX_decision_KND_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			core_compliance = {
+				occupied_country_tag = KND
+				value > @complianceForRepublic
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			KND = {
+				custom_effect_tooltip = establish_this_sister_republic_tooltip
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				set_temp_variable = { republic_root = KND } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = KND
+					set_cosmetic_tag = KND_republic
+					set_variable = { ROOT.KND_republic_var = THIS }
+					every_country_with_original_tag = { ##this is civil war yall
+						original_tag_to_check = KND
+						add_civil_war_target = PREV
+					}
+					found_THIS_revolutionary_republic = yes
+				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
+			}
+		}
+	}
+	establish_RVN_republic = { #RHOVANION
 		icon = GFX_decision_RVN_republic
 		ai_will_do = {
 			factor = 1
@@ -730,6 +1087,174 @@ DOR_spread_revolution_category = {
 					#so we know we did it, update home of the revolution modifiers
 					establish_sister_republic = yes
 				}
+			}
+		}
+	}
+	establish_RUN_republic = { #RHUN
+		icon = GFX_decision_RUN_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_occupied_country = {
+				is_rhunnic_tag = yes
+				ROOT = {
+					core_compliance = {
+						occupied_country_tag = PREV 
+						value > @complianceForRepublic
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			random_occupied_country = {
+				limit = { is_rhunnic_tag = yes }
+				custom_effect_tooltip = establish_rhunnic_sister_republic_tooltip
+				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				var:republic_root = {
+					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+					create_dynamic_country = {
+						original_tag = var:republic_root
+						set_cosmetic_tag = RUN_republic
+						set_variable = { ROOT.RUN_republic_var = THIS }
+						every_other_country = {
+							limit = { is_rhunnic_tag = yes }
+							add_civil_war_target = PREV
+						}
+						##Gain cores on all of rhunnic
+						every_possible_country = {
+							limit = { is_rhunnic_tag = yes }
+							every_core_state = {
+								add_core_of = PREV.PREV
+							}
+						}
+						##final stuff
+						found_THIS_revolutionary_republic = yes
+					}
+					#so we know we did it, update home of the revolution modifiers
+					establish_sister_republic = yes
+				}
+			}
+		}
+	}
+	establish_ROH_republic = { #ROHAN
+		icon = GFX_decision_ROH_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			core_compliance = {
+				occupied_country_tag = ROH
+				value > @complianceForRepublic
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			ROH = {
+				custom_effect_tooltip = establish_this_sister_republic_tooltip
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				set_temp_variable = { republic_root = ROH } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = ROH
+					set_cosmetic_tag = ROH_republic
+					set_variable = { ROOT.ROH_republic_var = THIS }
+					every_country_with_original_tag = { ##this is civil war yall
+						original_tag_to_check = ROH
+						add_civil_war_target = PREV
+					}
+					found_THIS_revolutionary_republic = yes
+				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
+			}
+		}
+	}
+	establish_steppe_republic = { #STEPPE
+		icon = GFX_decision_steppe_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_occupied_country = {
+				is_steppe_tag = yes
+				ROOT = {
+					core_compliance = {
+						occupied_country_tag = PREV 
+						value > @complianceForRepublic
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			random_occupied_country = {
+				limit = { is_steppe_tag = yes }
+				custom_effect_tooltip = establish_steppe_sister_republic_tooltip
+				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				var:republic_root = {
+					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+					create_dynamic_country = {
+						original_tag = var:republic_root
+						set_cosmetic_tag = steppe_republic
+						set_variable = { ROOT.steppe_republic_var = THIS }
+						every_other_country = {
+							limit = { is_steppe_tag = yes }
+							add_civil_war_target = PREV
+						}
+						##Gain cores on all of steppe
+						every_possible_country = {
+							limit = { is_steppe_tag = yes }
+							every_core_state = {
+								add_core_of = PREV.PREV
+							}
+						}
+						##final stuff
+						found_THIS_revolutionary_republic = yes
+					}
+					#so we know we did it, update home of the revolution modifiers
+					establish_sister_republic = yes
+				}
+			}
+		}
+	}
+	establish_UMB_republic = { #UMBAR
+		icon = GFX_decision_UMB_republic
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			core_compliance = {
+				occupied_country_tag = UMB
+				value > @complianceForRepublic
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			UMB = {
+				custom_effect_tooltip = establish_this_sister_republic_tooltip
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
+			}
+			hidden_effect = { ##the tooltip is an absolute mess
+				set_temp_variable = { republic_root = UMB } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = UMB
+					set_cosmetic_tag = UMB_republic
+					set_variable = { ROOT.UMB_republic_var = THIS }
+					every_country_with_original_tag = { ##this is civil war yall
+						original_tag_to_check = UMB
+						add_civil_war_target = PREV
+					}
+					found_THIS_revolutionary_republic = yes
+				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
 			}
 		}
 	}

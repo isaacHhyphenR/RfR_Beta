@@ -459,5 +459,7 @@
  large_DOR_investment_desc: "Our economic cooperation with Dorwinion is paying off wonderfully."
  DOR_bribes_in_pockets_idea: "Bribed Noble Advisors"
  DOR_bribes_in_pockets_idea_desc: "$DOR_bribes_in_pockets_desc$"
+ DOR_investing_in_guild: "Investing in Guild"
+ DOR_investing_in_guild_desc: "The Guilds form a cornerstone of our economy. We do what we can to support them."
  
  

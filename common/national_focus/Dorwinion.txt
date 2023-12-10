@@ -3224,11 +3224,28 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_GUILDS }
 		completion_reward = {
-			custom_effect_tooltip = unimplemented
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_baking_guild_MIO = {
+					complete_mio_trait = dorwinion_trait_expanded_market
+				}
+				mio:DOR_carpentry_guild_MIO = {
+					complete_mio_trait = dorwinion_trait_expanded_market
+				}
+				mio:DOR_smithing_guild_MIO = {
+					complete_mio_trait = dorwinion_trait_expanded_market
+				}
+				mio:DOR_tailory_guild_MIO = {
+					complete_mio_trait = dorwinion_trait_expanded_market
+				}
+			}
+			else = {
+				add_political_power = 70
+			}
 			burghers_focus_effect = yes
 		}
 	}
-	focus = { #march forth as liberators
+	focus = { #March Forth as liberators
 		id = DOR_march_forth_as_liberators
 		icon = GFX_focus_focus_fra_revolution_utmost
 		x = 2
@@ -3270,7 +3287,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			custom_effect_tooltip = unimplemented
+			custom_effect_tooltip = unlocks_spread_revolution_decisions
 			custom_effect_tooltip = unlocks_spread_revolution_war_goal
 			burghers_focus_effect = yes
 		}
@@ -3400,7 +3417,6 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			custom_effect_tooltip = unimplemented
 			burghers_focus_effect_big = yes
 		}
 	}
@@ -3629,6 +3645,10 @@ focus_tree = {
 		available = {
 			burghers_focus_trigger = yes
 			freedom > 0.45
+			threat > 0.14
+		}
+		bypass = {
+			has_government = freedom
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -4251,6 +4271,7 @@ focus_tree = {
 		}
 	}
 #################################GUILD ECONOMY
+	@guildInvestmentDays = 100
 	focus = { #Nation of Artisans
 		id = DOR_nation_of_artisans
 		icon = GFX_focus_generic_industry_2
@@ -4296,10 +4317,23 @@ focus_tree = {
 		}
 		available = {
 			burghers_focus_trigger = yes
+			NOT = { has_idea = DOR_investing_in_guild }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GUILDS }
 		completion_reward = {
-			custom_effect_tooltip = unimplemented
+			add_timed_idea = {
+				idea = DOR_investing_in_guild
+				days = @guildInvestmentDays
+			}
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_carpentry_guild_MIO = {
+					add_mio_size = 1
+				}
+			}
+			else = {
+				upgrade_dorwinion_carpentry_guild = yes
+			}
 			burghers_focus_effect = yes
 		}
 	}
@@ -4318,10 +4352,23 @@ focus_tree = {
 		}
 		available = {
 			burghers_focus_trigger = yes
+			NOT = { has_idea = DOR_investing_in_guild }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GUILDS }
 		completion_reward = {
-			custom_effect_tooltip = unimplemented
+			add_timed_idea = {
+				idea = DOR_investing_in_guild
+				days = @guildInvestmentDays
+			}
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_smithing_guild_MIO = {
+					add_mio_size = 1
+				}
+			}
+			else = {
+				upgrade_dorwinion_smithing_guild = yes
+			}
 			burghers_focus_effect = yes
 		}
 	}
@@ -4340,10 +4387,23 @@ focus_tree = {
 		}
 		available = {
 			burghers_focus_trigger = yes
+			NOT = { has_idea = DOR_investing_in_guild }
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_GUILDS }
 		completion_reward = {
-			custom_effect_tooltip = unimplemented
+			add_timed_idea = {
+				idea = DOR_investing_in_guild
+				days = @guildInvestmentDays
+			}
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_baking_guild_MIO = {
+					add_mio_size = 1
+				}
+			}
+			else = {
+				upgrade_dorwinion_baking_guild = yes
+			}
 			burghers_focus_effect = yes
 		}
 	}
