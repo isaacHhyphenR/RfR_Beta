@@ -670,35 +670,33 @@ DOR_spread_revolution_category = {
 		}
 		fire_only_once = yes
 		complete_effect = {
-			random_occupied_country = {
-				limit = { is_arnor_tag = yes }
+			ART = {
 				custom_effect_tooltip = establish_arnor_sister_republic_tooltip
-				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
 			}
 			hidden_effect = { ##the tooltip is an absolute mess
-				var:republic_root = {
-					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
-					create_dynamic_country = {
-						original_tag = var:republic_root
-						set_cosmetic_tag = arnor_republic
-						set_variable = { ROOT.arnor_republic_var = THIS }
-						every_other_country = {
-							limit = { is_arnor_tag = yes }
-							add_civil_war_target = PREV
-						}
-						##Gain cores on all of arnor
-						every_possible_country = {
-							limit = { is_arnor_tag = yes }
-							every_core_state = {
-								add_core_of = PREV.PREV
-							}
-						}
-						##final stuff
-						found_THIS_revolutionary_republic = yes
+				set_temp_variable = { republic_root = ART } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = ART
+					set_cosmetic_tag = arnor_republic
+					set_variable = { ROOT.arnor_republic_var = THIS }
+					##this is civil war yall
+					every_other_country = {
+						limit = { is_arnor_tag = yes }
+						add_civil_war_target = PREV
 					}
-					#so we know we did it, update home of the revolution modifiers
-					establish_sister_republic = yes
+					##Gain cores on all of arnor
+					every_possible_country = {
+						limit = { is_arnor_tag = yes }
+						every_core_state = {
+							add_core_of = PREV.PREV
+						}
+					}
+						##final stuff
+					found_THIS_revolutionary_republic = yes
 				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
 			}
 		}
 	}
@@ -822,35 +820,32 @@ DOR_spread_revolution_category = {
 		}
 		fire_only_once = yes
 		complete_effect = {
-			random_occupied_country = {
-				limit = { is_greater_enedwaith_tag = yes }
+			DRU = {
 				custom_effect_tooltip = establish_gwaithurium_sister_republic_tooltip
-				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
 			}
 			hidden_effect = { ##the tooltip is an absolute mess
-				var:republic_root = {
-					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
-					create_dynamic_country = {
-						original_tag = var:republic_root
-						set_cosmetic_tag = gwaithurium_republic
-						set_variable = { ROOT.gwaithurium_republic_var = THIS }
-						every_other_country = {
-							limit = { is_greater_enedwaith_tag = yes }
-							add_civil_war_target = PREV
-						}
-						##Gain cores on all of gwaithurium
-						every_possible_country = {
-							limit = { is_greater_enedwaith_tag = yes }
-							every_core_state = {
-								add_core_of = PREV.PREV
-							}
-						}
-						##final stuff
-						found_THIS_revolutionary_republic = yes
+				set_temp_variable = { republic_root = DRU } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = DRU
+					set_cosmetic_tag = gwaithurium_republic
+					set_variable = { ROOT.gwaithurium_republic_var = DRU }
+					every_other_country = {
+						limit = { is_greater_enedwaith_tag = yes }
+						add_civil_war_target = PREV
 					}
-					#so we know we did it, update home of the revolution modifiers
-					establish_sister_republic = yes
+					##Gain cores on all of gwaithurium
+					every_possible_country = {
+						limit = { is_greater_enedwaith_tag = yes }
+						every_core_state = {
+							add_core_of = PREV.PREV
+						}
+					}
+					##final stuff
+					found_THIS_revolutionary_republic = yes
 				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
 			}
 		}
 	}
@@ -974,35 +969,33 @@ DOR_spread_revolution_category = {
 		}
 		fire_only_once = yes
 		complete_effect = {
-			random_occupied_country = {
-				limit = { is_gondor_tag = yes }
+			GON = {
 				custom_effect_tooltip = establish_gondor_sister_republic_tooltip
-				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
 			}
 			hidden_effect = { ##the tooltip is an absolute mess
-				var:republic_root = {
-					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
-					create_dynamic_country = {
-						original_tag = var:republic_root
-						set_cosmetic_tag = GON_republic
-						set_variable = { ROOT.GON_republic_var = THIS }
-						every_other_country = {
-							limit = { is_gondor_tag = yes }
-							add_civil_war_target = PREV
-						}
-						##Gain cores on all of gondor
-						every_possible_country = {
-							limit = { is_gondor_tag = yes }
-							every_core_state = {
-								add_core_of = PREV.PREV
-							}
-						}
-						##final stuff
-						found_THIS_revolutionary_republic = yes
+				set_temp_variable = { republic_root = GON } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = GON
+					set_cosmetic_tag = GON_republic
+					set_variable = { ROOT.GON_republic_var = THIS }
+					##this is civil war yall
+					every_other_country = {
+						limit = { is_gondor_tag = yes }
+						add_civil_war_target = PREV
 					}
-					#so we know we did it, update home of the revolution modifiers
-					establish_sister_republic = yes
+					##Gain cores on all of GON
+					every_possible_country = {
+						limit = { is_gondor_tag = yes }
+						every_core_state = {
+							add_core_of = PREV.PREV
+						}
+					}
+						##final stuff
+					found_THIS_revolutionary_republic = yes
 				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
 			}
 		}
 	}
@@ -1058,35 +1051,32 @@ DOR_spread_revolution_category = {
 		}
 		fire_only_once = yes
 		complete_effect = {
-			random_occupied_country = {
-				limit = { is_rhovanion_tag = yes }
+			RIN = {
 				custom_effect_tooltip = establish_rhovanion_sister_republic_tooltip
-				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
 			}
 			hidden_effect = { ##the tooltip is an absolute mess
-				var:republic_root = {
-					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
-					create_dynamic_country = {
-						original_tag = var:republic_root
-						set_cosmetic_tag = RVN_republic
-						set_variable = { ROOT.RVN_republic_var = THIS }
-						every_other_country = {
-							limit = { is_rhovanion_tag = yes }
-							add_civil_war_target = PREV
-						}
-						##Gain cores on all of rhovanion
-						every_possible_country = {
-							limit = { is_rhovanion_tag = yes }
-							every_core_state = {
-								add_core_of = PREV.PREV
-							}
-						}
-						##final stuff
-						found_THIS_revolutionary_republic = yes
+				set_temp_variable = { republic_root = RIN } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = RIN
+					set_cosmetic_tag = RVN_republic
+					set_variable = { ROOT.RVN_republic_var = THIS }
+					every_other_country = {
+						limit = { is_rhovanion_tag = yes }
+						add_civil_war_target = PREV
 					}
-					#so we know we did it, update home of the revolution modifiers
-					establish_sister_republic = yes
+					##Gain cores on all of rhovanion
+					every_possible_country = {
+						limit = { is_rhovanion_tag = yes }
+						every_core_state = {
+							add_core_of = PREV.PREV
+						}
+					}
+					##final stuff
+					found_THIS_revolutionary_republic = yes
 				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
 			}
 		}
 	}
@@ -1108,35 +1098,32 @@ DOR_spread_revolution_category = {
 		}
 		fire_only_once = yes
 		complete_effect = {
-			random_occupied_country = {
-				limit = { is_rhunnic_tag = yes }
+			MED = {
 				custom_effect_tooltip = establish_rhunnic_sister_republic_tooltip
-				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
 			}
 			hidden_effect = { ##the tooltip is an absolute mess
-				var:republic_root = {
-					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
-					create_dynamic_country = {
-						original_tag = var:republic_root
-						set_cosmetic_tag = RUN_republic
-						set_variable = { ROOT.RUN_republic_var = THIS }
-						every_other_country = {
-							limit = { is_rhunnic_tag = yes }
-							add_civil_war_target = PREV
-						}
-						##Gain cores on all of rhunnic
-						every_possible_country = {
-							limit = { is_rhunnic_tag = yes }
-							every_core_state = {
-								add_core_of = PREV.PREV
-							}
-						}
-						##final stuff
-						found_THIS_revolutionary_republic = yes
+				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = MED
+					set_cosmetic_tag = RUN_republic
+					set_variable = { ROOT.RUN_republic_var = MED }
+					every_other_country = {
+						limit = { is_rhunnic_tag = yes }
+						add_civil_war_target = PREV
 					}
-					#so we know we did it, update home of the revolution modifiers
-					establish_sister_republic = yes
+					##Gain cores on all of rhunnic
+					every_possible_country = {
+						limit = { is_rhunnic_tag = yes }
+						every_core_state = {
+							add_core_of = PREV.PREV
+						}
+					}
+					##final stuff
+					found_THIS_revolutionary_republic = yes
 				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
 			}
 		}
 	}
@@ -1192,35 +1179,32 @@ DOR_spread_revolution_category = {
 		}
 		fire_only_once = yes
 		complete_effect = {
-			random_occupied_country = {
-				limit = { is_steppe_tag = yes }
+			RLM = {
 				custom_effect_tooltip = establish_steppe_sister_republic_tooltip
-				set_temp_variable = { republic_root = THIS } #used in the scripted effect to transfer characters
+				stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
 			}
 			hidden_effect = { ##the tooltip is an absolute mess
-				var:republic_root = {
-					stash_republican_characters = yes #otherwise they can get lost if the original tag no longer exists
-					create_dynamic_country = {
-						original_tag = var:republic_root
-						set_cosmetic_tag = steppe_republic
-						set_variable = { ROOT.steppe_republic_var = THIS }
-						every_other_country = {
-							limit = { is_steppe_tag = yes }
-							add_civil_war_target = PREV
-						}
-						##Gain cores on all of steppe
-						every_possible_country = {
-							limit = { is_steppe_tag = yes }
-							every_core_state = {
-								add_core_of = PREV.PREV
-							}
-						}
-						##final stuff
-						found_THIS_revolutionary_republic = yes
+				set_temp_variable = { republic_root = RLM } #used in the scripted effect to transfer characters
+				create_dynamic_country = {
+					original_tag = RLM
+					set_cosmetic_tag = steppe_republic
+					set_variable = { ROOT.steppe_republic_var = RLM }
+					every_other_country = {
+						limit = { is_steppe_tag = yes }
+						add_civil_war_target = PREV
 					}
-					#so we know we did it, update home of the revolution modifiers
-					establish_sister_republic = yes
+					##Gain cores on all of steppe
+					every_possible_country = {
+						limit = { is_steppe_tag = yes }
+						every_core_state = {
+							add_core_of = PREV.PREV
+						}
+					}
+					##final stuff
+					found_THIS_revolutionary_republic = yes
 				}
+				#so we know we did it, update home of the revolution modifiers
+				establish_sister_republic = yes
 			}
 		}
 	}

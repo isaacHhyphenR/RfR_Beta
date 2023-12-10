@@ -639,7 +639,7 @@ DOR_smithing_guild_MIO = {
 		name = dorwinion_trait_pillar_of_society
 		icon = GFX_generic_mio_trait_icon_political
 
-		position = { x=9 y=0 }
+		position = { x=10 y=0 }
 		
 		available = { FROM = { has_completed_focus = DOR_pillars_of_society } }
 		
@@ -652,7 +652,7 @@ DOR_smithing_guild_MIO = {
 		name = dorwinion_trait_expanded_market
 		icon = GFX_generic_mio_trait_icon_money
 
-		position = { x=9 y=1 }
+		position = { x=10 y=1 }
 		
 		available = { FROM = { has_completed_focus = DOR_expand_citizenship_rights } }
 		

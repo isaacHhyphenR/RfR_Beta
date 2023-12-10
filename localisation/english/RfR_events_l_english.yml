@@ -817,7 +817,7 @@
  rfr_news.108.t: "[FROM.GetName] Accepts our Trade Offer"
  rfr_news.108.d: "[FROM.GetNameDefCap] has accepted our proposal to increase the amount of their resources our merchants are allowed to export."
  rfr_news.108.a: "All wealth flows on [ROOT.GetAdj] ships."
- rfr_news.109.t: "FROM.GetName] Rejects our Trade Offer"
+ rfr_news.109.t: "[FROM.GetName] Rejects our Trade Offer"
  rfr_news.109.d: "Our ambassador returns emptyhanded from [FROM.capital.GetCapitalVictoryPointName]; they will not grant us any special trade privileges."
  rfr_news.109.a: "Why would they refuse our money?"
  rfr_news.110.t: "The Dorwin Senate"
