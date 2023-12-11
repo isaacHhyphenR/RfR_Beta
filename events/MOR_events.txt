@@ -113,6 +113,17 @@ country_event = { ##2## Sauron Demands Submission
 			}
 		}
 		every_subject_country = {
+			##Khagan cores khans
+			if = {
+				limit = {
+					is_rhunnic_tag = yes
+					ROOT = { is_rhunnic_tag = yes }
+				}
+				every_core_state = {
+					add_core_of = ROOT
+				}
+			}
+			##Annex them
 			ROOT = {
 				annex_country = {
 					target = PREV
