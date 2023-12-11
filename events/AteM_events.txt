@@ -580,7 +580,7 @@ country_event = { ##10## Dorwinion asks for Barding training
 	}
 }
 
-country_event = { ##11## Dorwinion asks to inrease trade
+country_event = { ##11## Dorwinion asks to increase trade
 	id = atem.11
 	title = atem.11.t
 	desc = atem.11.d
@@ -603,13 +603,13 @@ country_event = { ##11## Dorwinion asks to inrease trade
 		}
 		add_political_power = 40
 		if = {
-			limit = { original_tag = DAL }
+			limit = { ROOT = { original_tag = DAL } }
 			FROM = {
 				DOR_add_cloth_contract = yes
 			}
 		}
 		else_if = {
-			limit = { original_tag = ERE }
+			limit = { ROOT = { original_tag = ERE } }
 			FROM = {
 				DOR_add_iron_contract = yes
 			}
@@ -644,6 +644,37 @@ country_event = { ##11## Dorwinion asks to inrease trade
 		hidden_effect = { FROM = { news_event = { id = rfr_news.109 hours = 1 } } }
 	}
 }
+
+country_event = { ##12## Dorwinion offers to join our war against GLD
+	id = atem.12
+	title = atem.12.t
+	desc = atem.12.d
+	picture = GFX_rohan_generic_charge
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.12.a
+		ai_chance = {
+			factor = 1
+		}
+		FROM = {
+			add_to_war = {
+				targeted_alliance = ROOT
+				enemy = GLD
+			}
+		}
+	}
+	option = { ##no
+		name = atem.12.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.112 hours = 1 } } }
+	}
+}
+
+
 
 ################################################################SENATE EVENTS
 add_namespace = senate

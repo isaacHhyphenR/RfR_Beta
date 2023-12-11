@@ -1999,7 +1999,7 @@ focus_tree = {
 	focus = { #Renovate the Royal University of Szrel-Kain
 		id = DOR_renovate_the_royal_university_of_srzel_kain
 		dynamic = yes #might need to drop the 'royal'
-		icon = GFX_goal_university_research
+		icon = GFX_focus_NORDIC_com_capstone_research
 		x = -5
 		y = 0
 		relative_position_id = DOR_reclaim_rightful_fiefs
@@ -3577,7 +3577,7 @@ focus_tree = {
 	}
 	focus = { #Support a Dorwin Republic
 		id = DOR_support_a_dorwin_republic
-		#icon = GFX_focus_generic_treaty
+		icon = GFX_focus_focus_fra_liberte_egalite_solidarite
 		x = 0
 		y = 1
 		relative_position_id = DOR_institutions_of_democracy
@@ -3593,9 +3593,39 @@ focus_tree = {
 		available = {
 			burghers_focus_trigger = yes
 		}
+		bypass = {
+			has_idea = DOR_republic_idea
+		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			burghers_focus_effect_big = yes
+		}
+	}
+	focus = { #Stand Unified Behind Democracy
+		id = DOR_stand_unified_behind_democracy
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 1
+		relative_position_id = DOR_support_a_dorwin_republic
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_support_a_dorwin_republic
+		}
+		available = {
+			has_idea = DOR_republic_idea
+			freedom > 0.74
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				add_idea = DOR_republic_idea2
+				remove_idea = DOR_republic_idea
+			}
+			burghers_focus_effect = yes
 		}
 	}
 #################################ELVEN DIPLOMACY
@@ -3626,6 +3656,165 @@ focus_tree = {
 					DOR_seek_wisdom_of_elves_effect = yes
 				}
 			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #seek military knowledge
+		id = DOR_seek_military_knowledge
+		icon = GFX_goal_generic_army_artillery
+		x = -1
+		y = 1
+		relative_position_id = DOR_seek_the_wisdom_of_elves
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_seek_the_wisdom_of_elves
+		}
+		available = {
+			country_exists = WOD
+			WOD = {
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}
+			}
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #1 bow & 1 ranger ahead of time bonus
+			add_tech_bonus = {
+				uses = 1
+				category = cat_actual_artillery
+				ahead_reduction = 2
+				name = DOR_seek_military_knowledge
+			}
+			add_tech_bonus = {
+				uses = 1
+				category = para_tech
+				ahead_reduction = 2
+				name = DOR_seek_military_knowledge
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #Seek Closer Trade Connections
+		id = DOR_seek_closer_trade_connections
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 1
+		y = 1
+		relative_position_id = DOR_seek_the_wisdom_of_elves
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_seek_the_wisdom_of_elves
+		}
+		available = {
+			country_exists = WOD
+			WOD = {
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}
+			}
+			great_merchants_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			WOD = {
+				random_controlled_state = {
+					limit = { market > 0 }
+					prioritize = { 90 } #woodland realm
+					add_25_prosperity = yes
+				}
+			}
+			random_owned_state = {
+				limit = { is_controlled_by = ROOT }
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #Defend Our Forest Friends
+		id = DOR_defend_our_forest_friends
+		icon = GFX_goal_generic_attack_dol_guldur
+		x = 1
+		y = 1
+		relative_position_id = DOR_seek_military_knowledge
+		cost = 5
+		ai_will_do = {
+			factor = 0.1
+		}
+		prerequisite = {
+			focus = DOR_seek_military_knowledge
+			focus = DOR_seek_closer_trade_connections
+		}
+		available = {
+			has_opinion = {
+				target = WOD
+				value > 24
+			}
+			WOD = { has_war_with = GLD }
+			GLD = { can_ROOT_get_wargoal_on_THIS = yes }
+			great_merchants_focus_trigger = yes
+		}
+		bypass = {
+			has_war_with = GLD
+		}
+		will_lead_to_war_with = GLD
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Offer to join WOD's war against GLD
+			WOD = {
+				country_event = { id = atem.12 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				event_option_tooltip = atem.12.a
+			}
+			great_merchants_focus_effect = yes
+		}
+	}
+	focus = { #Rally Them to Our Cause
+		id = DOR_rally_them_to_our_case
+		icon = GFX_goal_generic_elves
+		x = 0
+		y = 2
+		relative_position_id = DOR_seek_military_knowledge
+		cost = 5
+		ai_will_do = {
+			factor = 0.1
+		}
+		prerequisite = {
+			focus = DOR_seek_military_knowledge
+			focus = DOR_seek_closer_trade_connections
+		}
+		available = {
+			country_exists = WOD
+			WOD = {
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}
+			}
+			any_enemy_country = {
+				OR = {
+					has_government = conquest
+					has_government = melkorite
+				}
+			}
+			great_merchants_focus_trigger = yes
+		}
+		will_lead_to_war_with = GLD
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Gain elven general
+			
+			WOD = { army_experience = 10 }
 			great_merchants_focus_effect = yes
 		}
 	}

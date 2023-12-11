@@ -443,6 +443,8 @@
  DOR_militia_urban_defence_tech: "$DOR_professional_militias$"
  DOR_republic_idea: "Republican Spirit"
  DOR_republic_idea_desc: "The people of Dorwinion stand proudly behind their hard won democracy and the guilds that spearheaded the reforms."
+ DOR_republic_idea2: "$DOR_republic_idea$"
+ DOR_republic_idea2_desc: "$DOR_republic_idea_desc$"
  DOR_senate_idea: "Senate of the People"
  DOR_senate_idea_desc: "Citizens of Dorwinion elect senators to represent them in Riavod. Though the realm master retains significant power, they cannot pass any laws or budgets without the senate's approval."
  DOR_senate_republic_idea: "Senate of the People"

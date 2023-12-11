@@ -1766,3 +1766,16 @@ news_event = { ##111## Monarchist plot begins
 		name = rfr_news.111.a
 	}
 }
+
+news_event = { ##112## WOD doesn't want our help vs GLD
+	id = rfr_news.112
+	title = rfr_news.112.t
+	desc = rfr_news.112.d
+	picture = GFX_news_gondor_defending
+	
+	is_triggered_only = yes
+	
+	option = { #Why not?
+		name = rfr_news.112.a
+	}
+}
