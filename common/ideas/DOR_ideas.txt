@@ -601,6 +601,39 @@ ideas = {
 				consumer_goods_factor = -0.15
 			}
 		}
+		
+		DOR_protection_for_a_price = {
+			picture = generic_deal_with_the_devil2
+			targeted_modifier = {
+				tag = DOR
+				cic_to_target_factor = 0.3
+			}
+			cancel = {
+				OR = {
+					NOT = {
+						is_guaranteed_by = DOR
+					}
+					is_subject_of = DOR
+				}
+			}
+		}
+		DOR_favored_trader = {
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				prosperity_gain_factor = 0.25
+			}
+			targeted_modifier = {
+				tag = DOR
+				custom_modifier_tooltip = unimplemented
+			}
+			cancel = {
+				OR = {
+					has_war_with = DOR
+					NOT = { country_exists = DOR }
+				}
+			}
+		}
+			
 	}
 	
 	hidden_ideas = {

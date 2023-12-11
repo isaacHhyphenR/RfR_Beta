@@ -674,7 +674,388 @@ country_event = { ##12## Dorwinion offers to join our war against GLD
 	}
 }
 
+country_event = { ##13## Dorwinion offers protection for a price
+	id = atem.13
+	title = atem.13.t
+	desc = atem.13.d
+	picture = GFX_gondor_defending
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.13.a
+		ai_chance = {
+			factor = 1.75
+			modifier = {
+				any_other_country = {
+					has_wargoal_against = ROOT
+				}
+				factor = 3
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.25
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 90
+				}
+				factor = 1.5
+			}
+		}
+		add_ideas = DOR_protection_for_a_price
+		FROM = { give_guarantee = ROOT }
+		hidden_effect = { FROM = { news_event = { id = rfr_news.113 hours = 1 } } }
+	}
+	option = { ##no
+		name = atem.13.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 0.9
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				factor = 1.25
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -50
+				}
+				factor = 10
+			}
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.114 hours = 1 } } }
+		add_opinion_modifier = {
+			target = FROM
+			modifier = offensive_offer
+		}
+	}
+}
+country_event = { ##14## Dorwinion offers favored trader status
+	id = atem.14
+	title = atem.14.t
+	desc = atem.14.d
+	picture = GFX_gondor_defending
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.14.a
+		ai_chance = {
+			factor = 1.75
+			modifier = {
+				any_other_country = {
+					has_wargoal_against = ROOT
+				}
+				factor = 3
+			}
+			modifier = {
+				set_temp_variable = { CIC_ratio = num_of_civilian_factories }
+				divide_temp_variable = { CIC_ratio = FROM.num_of_civilian_factories }
+				check_variable = { CIC_ratio < 0.25 }
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 90
+				}
+				factor = 1.5
+			}
+		}
+		add_ideas = DOR_favored_trader
+		hidden_effect = { FROM = { news_event = { id = rfr_news.122 hours = 1 } } }
+	}
+	option = { ##no
+		name = atem.14.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				set_temp_variable = { CIC_ratio = num_of_civilian_factories }
+				divide_temp_variable = { CIC_ratio = FROM.num_of_civilian_factories }
+				check_variable = { CIC_ratio > 0.9 }
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				factor = 1.25
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -50
+				}
+				factor = 10
+			}
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.123 hours = 1 } } }
+		add_opinion_modifier = {
+			target = FROM
+			modifier = offensive_offer
+		}
+	}
+}
 
+country_event = { ##15## Dorwinion offers to annex RUS
+	id = atem.15
+	title = atem.15.t
+	desc = atem.15.d
+	picture = GFX_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.15.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				any_other_country = {
+					has_wargoal_against = ROOT
+				}
+				factor = 2
+			}
+			modifier = {
+				has_war = yes
+				factor = 1.5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.25
+				}
+				factor = 2
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.1
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 90
+				}
+				factor = 1.5
+			}
+			modifier = { ##if you complete both focuses, more likely
+				has_completed_focus = DOR_support_ruscovulder_felt_traders
+				has_completed_focus = DOR_fortify_the_frontier
+				factor = 1.5
+			}
+		}
+		FROM = {
+			annex_country = {
+				target = PREV
+				transfer_troops = yes
+			}
+		}
+		every_core_state = {
+			add_compliance = 100
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.120 hours = 1 } } }
+	}
+	option = { ##no
+		name = atem.15.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 0.75
+				}
+				factor = 2
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 1
+				}
+				factor = 4
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -50
+				}
+				factor = 5
+			}
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.121 hours = 1 } } }
+	}
+}
+country_event = { ##16## Dorwinion offers to annex RIN
+	id = atem.16
+	title = atem.16.t
+	desc = atem.16.d
+	picture = GFX_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.16.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				set_temp_variable = { CIC_ratio = num_of_civilian_factories }
+				divide_temp_variable = { CIC_ratio = FROM.num_of_civilian_factories }
+				check_variable = { CIC_ratio < 0.25 }
+				factor = 2
+			}
+			modifier = {
+				set_temp_variable = { CIC_ratio = num_of_civilian_factories }
+				divide_temp_variable = { CIC_ratio = FROM.num_of_civilian_factories }
+				check_variable = { CIC_ratio < 0.1 }
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 90
+				}
+				factor = 1.5
+			}
+			modifier = { ##if you complete 2 focuses, more likely
+				count_triggers = {
+					amount = 2
+					has_completed_focus = DOR_support_local_merchants
+					has_completed_focus = DOR_invest_in_rinnavuld_clothiers
+					has_completed_focus = DOR_heal_burnt_vineyards
+				}
+				factor = 1.3
+			}
+			modifier = { ##if you complete all focuses, more likely
+				has_completed_focus = DOR_support_local_merchants
+				has_completed_focus = DOR_invest_in_rinnavuld_clothiers
+				has_completed_focus = DOR_heal_burnt_vineyards
+				factor = 1.3
+			}
+		}
+		FROM = {
+			annex_country = {
+				target = PREV
+				transfer_troops = yes
+			}
+		}
+		every_core_state = {
+			add_compliance = 100
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.120 hours = 1 } } }
+	}
+	option = { ##no
+		name = atem.16.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				set_temp_variable = { CIC_ratio = num_of_civilian_factories }
+				divide_temp_variable = { CIC_ratio = FROM.num_of_civilian_factories }
+				check_variable = { CIC_ratio > 0.75 }
+				factor = 2
+			}
+			modifier = {
+				set_temp_variable = { CIC_ratio = num_of_civilian_factories }
+				divide_temp_variable = { CIC_ratio = FROM.num_of_civilian_factories }
+				check_variable = { CIC_ratio > 1 }
+				factor = 4
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -50
+				}
+				factor = 5
+			}
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.121 hours = 1 } } }
+	}
+}
 
 ################################################################SENATE EVENTS
 add_namespace = senate

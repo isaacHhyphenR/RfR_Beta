@@ -1779,3 +1779,174 @@ news_event = { ##112## WOD doesn't want our help vs GLD
 		name = rfr_news.112.a
 	}
 }
+
+news_event = { ##113## RUS accepts our protection
+	id = rfr_news.113
+	title = rfr_news.113.t
+	desc = rfr_news.113.d
+	picture = GFX_news_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { #Yay
+		name = rfr_news.113.a
+	}
+}
+news_event = { ##114## RUS rejects our protection
+	id = rfr_news.114
+	title = rfr_news.114.t
+	desc = rfr_news.114.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Shame
+		name = rfr_news.114.a
+	}
+}
+
+news_event = { ##115## DOR invested in RUS felt
+	id = rfr_news.115
+	title = rfr_news.115.t
+	desc = rfr_news.115.d
+	picture = GFX_news_event_trade
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.115.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			240 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = cloth
+					amount = 8
+				}
+				add_10_prosperity = yes
+			}
+		}
+	}
+}
+news_event = { ##116## DOR invested in RUS forts
+	id = rfr_news.116
+	title = rfr_news.116.t
+	desc = rfr_news.116.d
+	picture = GFX_news_gondor_defending
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.116.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			240 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_fortification
+				name = DOR_fortify_the_frontier
+			}
+		}
+	}
+}
+news_event = { ##117## DOR invested in RIN clothiers
+	id = rfr_news.117
+	title = rfr_news.117.t
+	desc = rfr_news.117.d
+	picture = GFX_news_event_trade
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.117.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			305 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+news_event = { ##118## DOR invested in RIN vineyards
+	id = rfr_news.118
+	title = rfr_news.118.t
+	desc = rfr_news.118.d
+	picture = GFX_news_event_trade
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.118.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			305 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = vineyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+news_event = { ##119## DOR invested in RIN merchants
+	id = rfr_news.119
+	title = rfr_news.119.t
+	desc = rfr_news.119.d
+	picture = GFX_news_event_trade
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.119.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			305 = {
+				add_25_prosperity = yes
+			}
+		}
+	}
+}
+
+news_event = { ##120## RUS/RIN accepted annexation
+	id = rfr_news.120
+	title = rfr_news.120.t
+	desc = rfr_news.120.d
+	picture = GFX_news_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.120.a
+	}
+}
+news_event = { ##121## RUS/RIN rejected annexation
+	id = rfr_news.121
+	title = rfr_news.121.t
+	desc = rfr_news.121.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Aww :(
+		name = rfr_news.121.a
+	}
+}
+

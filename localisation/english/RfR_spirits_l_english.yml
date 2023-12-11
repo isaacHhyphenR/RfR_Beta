@@ -465,5 +465,7 @@
  DOR_investing_in_guild_desc: "The Guilds form a cornerstone of our economy. We do what we can to support them."
  DOR_affordable_luxury_idea: "$DOR_affordable_luxury$"
  DOR_affordable_luxury_idea_desc: "$DOR_affordable_luxury_desc$"
- 
- 
+ DOR_protection_for_a_price: "Paying for Protection"
+ DOR_protection_for_a_price_desc: "Though it's far from a perfect deal, paying our former overlords for protection prevents our less than savory neighbours from having their way with us."
+ DOR_favored_trader: "Dorwin Trade Deals"
+ DOR_favored_trader_desc: "Our many concessions to Dorwinion's merchants mean they are far happier to call at our ports, but they are able to wield outsized influence in our country."

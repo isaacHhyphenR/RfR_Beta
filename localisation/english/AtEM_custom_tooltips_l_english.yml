@@ -152,6 +152,7 @@
  DOR_gaurantee_the_rights_of_marcher_citizens_tooltip: "We will be able to core §Y$STATE_305$§! & §Y$STATE_240$§! if they have at least §Y80%§! compliance."
  DOR_rally_them_to_our_cause_tooltip: "§Y$DOR_arodor_aludor$§! becomes a §Y$cc_leader$§! with:\n   §Y$old_guard$§!, §Y$career_officer$§!, §Y$engineer_officer$§!, §Y$organizer$§!, §Y$ranger$§!, §Y$hill_fighter$§!, §Y$adaptable$§!, §Y$organizer$§!\n   §Y3 $SKILL_ATTACK$§!\n   §Y4 $SKILL_DEFENSE$§!\n   §Y5 $SKILL_PLANNING$§!\n   §Y4 $SKILL_LOGISTICS$§!"
  cannot_join_opposing_ideology_faction: "§RCannot join a faction led by an opposing ideology.§R"
-
+ RUS_accept_annexation_factors_tooltip: "\n\nThey are more likely to accept if:$new_line_tab$-They have a high opinion of us$new_line_tab$-We have a large army relative to theirs$new_line_tab$-We have common enemies$new_line_tab$-We have completed more focuses investing in them"
+ RIN_accept_annexation_factors_tooltip: "\n\nThey are more likely to accept if:$new_line_tab$-They have a high opinion of us$new_line_tab$-We have many §Y$industrial_complex$s§! relative to them$new_line_tab$-We have completed more focuses investing in them"
 
 

@@ -11,6 +11,11 @@
 #GFX_goal_university_diplomacy
 #GFX_goal_university_tactics
 #GFX_goal_support_hawin_koldana
+#GFX_goal_rus_and_dor
+#GFX_goal_rin_and_dor
+#GFX_goal_generic_trade_deal
+#GFX_goal_generic_construct_market
+#GFX_focus_generic_cloth_industry
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -3828,17 +3833,375 @@ focus_tree = {
 		relative_position_id = DOR_support_the_burghers
 		cost = 5
 		ai_will_do = {
-			factor = 10
+			factor = 2
 		}
 		prerequisite = {
 			focus = DOR_support_the_burghers
 		}
 		available = {
+			OR = {
+				AND = {
+					country_exists = RUS
+					NOT = { has_war_with = RUS }
+				}
+				AND = {
+					country_exists = RIN
+					NOT = { has_war_with = RIN }
+				}
+			}
 			burghers_focus_trigger = yes
+		}
+		bypass = {
+			240 = { is_core_of = ROOT }
+			305 = { is_core_of = ROOT }
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			custom_effect_tooltip = DOR_gaurantee_the_rights_of_marcher_citizens_tooltip
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Offer Protection... For a Price
+		id = DOR_offer_protection_for_a_price
+		icon = GFX_goal_generic_dangerous_deal
+		x = 1
+		y = 1
+		relative_position_id = DOR_gaurantee_the_rights_of_marcher_citizens
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_gaurantee_the_rights_of_marcher_citizens
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		bypass = {
+			RUS = {
+				OR = {
+					is_guaranteed_by = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			RUS = {
+				country_event = { id = atem.13 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				event_option_tooltip = atem.13.a
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Support Ruscovulder Felt Traders
+		id = DOR_support_ruscovulder_felt_traders
+		icon = GFX_focus_FIN_utilize_the_sami
+		x = -1
+		y = 1
+		relative_position_id = DOR_offer_protection_for_a_price
+		cost = 5
+		ai_will_do = {
+			factor = 4
+		}
+		prerequisite = {
+			focus = DOR_offer_protection_for_a_price
+		}
+		available = {
+			NOT = { has_war_with = RUS }
+			RUS = { controls_state = 240 }
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			RUS = {
+				hidden_effect = {
+					news_event = { id = RFR_news.115 hours = 1 }
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = small_investment
+				}
+			}
+			240 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = cloth
+					amount = 8
+				}
+				add_10_prosperity = yes
+			}
+			
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Fortify the Frontier
+		id = DOR_fortify_the_frontier
+		icon = GFX_focus_SWE_hedgehog_defense
+		x = 1
+		y = 1
+		relative_position_id = DOR_offer_protection_for_a_price
+		cost = 5
+		ai_will_do = {
+			factor = 4
+		}
+		prerequisite = {
+			focus = DOR_offer_protection_for_a_price
+		}
+		available = {
+			OR = {
+				has_guaranteed = RUS
+				RUS = { is_subject_of = ROOT }
+			}
+			RUS = { controls_state = 240 }
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			RUS = {
+				hidden_effect = {
+					news_event = { id = RFR_news.116 hours = 1 }
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = small_investment
+				}
+			}
+			RUS = {
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = cat_fortification
+					name = DOR_fortify_the_frontier
+				}
+			}
+			240 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_fortification
+				name = DOR_fortify_the_frontier
+			}
+			
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Safer Together
+		id = DOR_safer_together
+		icon = GFX_goal_rus_and_dor
+		x = 1
+		y = 1
+		relative_position_id = DOR_support_ruscovulder_felt_traders
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+		prerequisite = {
+			focus = DOR_support_ruscovulder_felt_traders
+			focus = DOR_fortify_the_frontier
+		}
+		available = {
+			RUS = { is_subject_of = ROOT }
+			burghers_focus_trigger = yes
+		}
+		bypass = {
+			owns_state = 240
+			NOT = { country_exists = RUS }
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			RUS = {
+				country_event = { id = atem.15 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				event_option_tooltip = atem.15.a
+				custom_effect_tooltip = RUS_accept_annexation_factors_tooltip
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Exchange Favored Trader Status
+		id = DOR_exchange_favored_trader_status
+		icon = GFX_goal_generic_trade_deal
+		x = -2
+		y = 1
+		relative_position_id = DOR_gaurantee_the_rights_of_marcher_citizens
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_gaurantee_the_rights_of_marcher_citizens
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			RIN = {
+				country_event = { id = atem.14 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				event_option_tooltip = atem.14.a
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Support Local Merchants
+		id = DOR_support_local_merchants
+		icon = GFX_goal_generic_construct_market
+		x = -1
+		y = 2
+		relative_position_id = DOR_exchange_favored_trader_status
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_exchange_favored_trader_status
+		}
+		available = {
+			NOT = { has_war_with = RIN }
+			RIN = { controls_state = 305 }
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			RIN = {
+				hidden_effect = {
+					news_event = { id = RFR_news.119 hours = 1 }
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = small_investment
+				}
+			}
+			305 = {
+				add_25_prosperity = yes
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Invest in Rinnavuld Clothiers
+		id = DOR_invest_in_rinnavuld_clothiers
+		icon = GFX_focus_generic_cloth_industry
+		x = 0
+		y = 1
+		relative_position_id = DOR_exchange_favored_trader_status
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_exchange_favored_trader_status
+		}
+		available = {
+			NOT = { has_war_with = RIN }
+			RIN = { controls_state = 305 }
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			RIN = {
+				hidden_effect = {
+					news_event = { id = RFR_news.117 hours = 1 }
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = small_investment
+				}
+			}
+			305 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Heal Burnt Vineyards
+		id = DOR_heal_burnt_vineyards
+		icon = GFX_goal_grapes
+		x = 1
+		y = 2
+		relative_position_id = DOR_exchange_favored_trader_status
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_exchange_favored_trader_status
+		}
+		available = {
+			NOT = { has_war_with = RIN }
+			RIN = { controls_state = 305 }
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			RIN = {
+				hidden_effect = {
+					news_event = { id = RFR_news.118 hours = 1 }
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = small_investment
+				}
+			}
+			305 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = vineyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Richer Together
+		id = DOR_richer_together
+		icon = GFX_goal_rin_and_dor
+		x = 0
+		y = 2
+		relative_position_id = DOR_invest_in_rinnavuld_clothiers
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+		prerequisite = {
+			focus = DOR_support_local_merchants
+			focus = DOR_invest_in_rinnavuld_clothiers
+			focus = DOR_heal_burnt_vineyards
+		}
+		available = {
+			RIN = { is_subject_of = ROOT }
+			burghers_focus_trigger = yes
+		}
+		bypass = {
+			owns_state = 240
+			NOT = { country_exists = RIN }
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			RIN = {
+				country_event = { id = atem.16 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				event_option_tooltip = atem.16.a
+				custom_effect_tooltip = RIN_accept_annexation_factors_tooltip
+			}
 			burghers_focus_effect = yes
 		}
 	}
