@@ -690,6 +690,48 @@ DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
 			}
 		}
 	}
+	if = { ##Melkorite/Conquest cannot join Isolationist/Freedom faction.
+		limit = {
+			var:FROM.faction_leader = {
+				OR = {
+					has_government = isolationism
+					has_government = freedom
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = cannot_join_opposing_ideology_faction
+			ROOT = {
+				NOT = {
+					OR = {
+						has_government = melkorite
+						has_government = conquest
+					}
+				}
+			}
+		}
+	}
+	else_if = { ##Isolationist/Freedom cannot join Melkorite/Conquest faction.
+		limit = {
+			var:FROM.faction_leader = {
+				OR = {
+					has_government = melkorite
+					has_government = conquest
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = cannot_join_opposing_ideology_faction
+			ROOT = {
+				NOT = {
+					OR = {
+						has_government = isolationism
+						has_government = freedom
+					}
+				}
+			}
+		}
+	}
 }
 DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
 	if = { ##non-gwaithurium tags cannot join gwaithurium led faction
@@ -700,6 +742,48 @@ DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
 			tooltip = cannot_join_gwaithurium_faction_tooltip
 			FROM = {
 				is_greater_enedwaith_tag = yes
+			}
+		}
+	}
+	if = { ##Melkorite/Conquest cannot join Isolationist/Freedom faction.
+		limit = {
+			var:ROOT.faction_leader = {
+				OR = {
+					has_government = isolationism
+					has_government = freedom
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = cannot_join_opposing_ideology_faction
+			ROOT = {
+				NOT = {
+					OR = {
+						has_government = melkorite
+						has_government = conquest
+					}
+				}
+			}
+		}
+	}
+	else_if = { ##Isolationist/Freedom cannot join Melkorite/Conquest faction.
+		limit = {
+			var:ROOT.faction_leader = {
+				OR = {
+					has_government = melkorite
+					has_government = conquest
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = cannot_join_opposing_ideology_faction
+			ROOT = {
+				NOT = {
+					OR = {
+						has_government = isolationism
+						has_government = freedom
+					}
+				}
 			}
 		}
 	}

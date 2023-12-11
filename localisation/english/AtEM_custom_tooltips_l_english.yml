@@ -84,7 +84,7 @@
  demoralized_army_level_6: "§RLevel 6/6§!"
  DOR_demoralized_army_tooltip: "As long as $DOR_demoralized_army$ is present, it has a chance to increase in severity every time we lose control of a non-core state to the enemy. The chance is based on the state's category, ranging from §R5%§! for a §Y$pastoral$§! to §R60%§! for a §Ymegalopolis§!.\nEverytime you capture a Ring Victory Point or a major countrie's capital, the idea will decrease in severity, eventually being removed altogether."
  has_any_level_demoralized_army: "Has idea §Y$DOR_demoralized_army$§!"
- cannot_join_gwaithurium_faction_tooltip: "Countries outside of $greater_enedwaith_format$ cannot join factions led by $Greater_Enedwaith_ADJ$ tribes"
+ cannot_join_gwaithurium_faction_tooltip: "§RCountries outside of $greater_enedwaith_format$ cannot join factions led by $Greater_Enedwaith_ADJ$ tribes.§R"
  declared_on_rebels: "Declared war on either of the rebel cities"
  DOR_preserve_local_rulers_tooltip: "Unlocks the §Y$DOR_preserve_local_rulers_law$§! occupation law against §Y[RIN.GetFlag] [RIN.GetNameDefCap]§! and §Y[RUS.GetFlag] [RUS.GetNameDefCap]§!."
  DOR_campaign_of_cordiality_tooltip: "The decision costs £GFX_wine_texticon §R1,000§! and grants §Y0.10%§! daily $winelords_formatted$ support for 100 days"
@@ -151,7 +151,7 @@
  unlocks_spread_revolution_decisions: "We can found §Y$autonomy_sister_republic$§! puppets by increasing compliance in human nations."
  DOR_gaurantee_the_rights_of_marcher_citizens_tooltip: "We will be able to core §Y$STATE_305$§! & §Y$STATE_240$§! if they have at least §Y80%§! compliance."
  DOR_rally_them_to_our_cause_tooltip: "§Y$DOR_arodor_aludor$§! becomes a §Y$cc_leader$§! with:\n   §Y$old_guard$§!, §Y$career_officer$§!, §Y$engineer_officer$§!, §Y$organizer$§!, §Y$ranger$§!, §Y$hill_fighter$§!, §Y$adaptable$§!, §Y$organizer$§!\n   §Y3 $SKILL_ATTACK$§!\n   §Y4 $SKILL_DEFENSE$§!\n   §Y5 $SKILL_PLANNING$§!\n   §Y4 $SKILL_LOGISTICS$§!"
-
+ cannot_join_opposing_ideology_faction: "§RCannot join a faction led by an opposing ideology.§R"
 
 
 
