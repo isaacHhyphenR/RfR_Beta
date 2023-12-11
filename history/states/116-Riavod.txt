@@ -43,7 +43,7 @@ state = {
 			dockyard = 1
 			industrial_complex = 1
 			vineyard = 2
-			market = 1
+			market = 2
 			6260 = {
 				naval_base = 7
 			}

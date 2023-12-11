@@ -130,6 +130,8 @@ recruit_character = DOR_vanderkind_szrelga
 recruit_character = DOR_inwar_sant_maleryn
 recruit_character = DOR_beawyn_hack
 recruit_character = DOR_theoren_gastwolk
+#elf
+recruit_character = DOR_arodor_aludor
 
 every_character = { #assign everyone character_flags of their faction
 	if = {

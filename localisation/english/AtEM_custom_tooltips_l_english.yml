@@ -149,6 +149,9 @@
  DOR_take_guild_loans_tooltip: "$unlocks_decision_tooltip$ to take loans from each Guild. Each loan grants §Y-10% $MODIFIER_CONSUMER_GOODS_FACTOR$§! for §G1 year§!. When it expires, you pay §R1 $industrial_complex$§! and the guild gets an upgrade."
  DOR_loan_to_foreigners_tooltip: "Any country that can participate in Celduin Trade can also take loans from your guilds."
  unlocks_spread_revolution_decisions: "We can found §Y$autonomy_sister_republic$§! puppets by increasing compliance in human nations."
- 
- 
- 
+ DOR_gaurantee_the_rights_of_marcher_citizens_tooltip: "We will be able to core §Y$STATE_305$§! & §Y$STATE_240$§! if they have at least §Y80%§! compliance."
+ DOR_rally_them_to_our_cause_tooltip: "§Y$DOR_arodor_aludor$§! becomes a §Y$cc_leader$§! with:\n   §Y$old_guard$§!, §Y$career_officer$§!, §Y$engineer_officer$§!, §Y$organizer$§!, §Y$ranger$§!, §Y$hill_fighter$§!, §Y$adaptable$§!, §Y$organizer$§!\n   §Y3 $SKILL_ATTACK$§!\n   §Y4 $SKILL_DEFENSE$§!\n   §Y5 $SKILL_PLANNING$§!\n   §Y4 $SKILL_LOGISTICS$§!"
+
+
+
+

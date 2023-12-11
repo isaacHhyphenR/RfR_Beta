@@ -726,3 +726,8 @@
  take_smithing_guild_loan_desc: "The guilds are happy to invest portions of their vast wealth in promising customers."
  take_tailory_guild_loan: "Take a Loan From $dorwinion_tailory_guild$"
  take_tailory_guild_loan_desc: "The guilds are happy to invest portions of their vast wealth in promising customers."
+ rhovanion_influence_category: "Influence in Rhovanion"
+ DOR_core_rinnavuld_compliance: "Integrate $STATE_305$"
+ DOR_core_rinnavuld_compliance_desc: "We have finally regained the trust of our northern subjects."
+ DOR_core_ruscovuld_compliance: "Integrate $STATE_240$"
+ DOR_core_ruscovuld_compliance_desc: "We have finally regained the trust of our northern subjects."

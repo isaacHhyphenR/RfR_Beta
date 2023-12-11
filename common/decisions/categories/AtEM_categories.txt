@@ -1,4 +1,4 @@
-########################################TRADE########################################
+########################################TRADE############################################
 celduin_trade_category = {
 	icon = GFX_decision_category_trade
 	priority = {
@@ -9,7 +9,8 @@ celduin_trade_category = {
 	}
 	visible = { capital_scope = { market > 0 } }
 }
-########################################COLONISATION########################################
+
+########################################COLONISATION#####################################
 colonisation_category = {
 	icon = GFX_decision_category_generic_prospect_for_resources
 	priority = {
@@ -19,6 +20,15 @@ colonisation_category = {
 		always = yes
 	}
 }
+
+########################################RHOVANION########################################
+rhovanion_influence_category = {
+	icon = GFX_decision_category_power_struggle
+	priority = 90
+	allowed = { allow_influence_rhovanion = yes }
+	visible = { can_influence_rhovanion = yes }
+}
+
 ########################################DORWINION########################################
 DOR_election_category = {
 	icon = GFX_decision_category_power_struggle

@@ -999,6 +999,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMATIC }
 		completion_reward = {
+			custom_effect_tooltip = unimplemented
 			great_merchants_focus_effect = yes
 		}
 	}
@@ -3781,7 +3782,7 @@ focus_tree = {
 		}
 	}
 	focus = { #Rally Them to Our Cause
-		id = DOR_rally_them_to_our_case
+		id = DOR_rally_them_to_our_cause
 		icon = GFX_goal_generic_elves
 		x = 0
 		y = 2
@@ -3813,9 +3814,32 @@ focus_tree = {
 		will_lead_to_war_with = GLD
 		search_filters = { FOCUS_FILTER_ARMY }
 		completion_reward = { #Gain elven general
-			
+			custom_effect_tooltip = DOR_rally_them_to_our_cause_tooltip
 			WOD = { army_experience = 10 }
 			great_merchants_focus_effect = yes
+		}
+	}
+#################################NORTHERN PROVINCE DIPLOMACY
+	focus = { #Guarantee the Rights of Marcher Citizens
+		id = DOR_gaurantee_the_rights_of_marcher_citizens
+		icon = GFX_focus_generic_treaty
+		x = -8
+		y = 1
+		relative_position_id = DOR_support_the_burghers
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_support_the_burghers
+		}
+		available = {
+			burghers_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			custom_effect_tooltip = DOR_gaurantee_the_rights_of_marcher_citizens_tooltip
+			burghers_focus_effect = yes
 		}
 	}
 #################################BULWARK OF THE CELDUIN
@@ -3835,7 +3859,7 @@ focus_tree = {
 		available = {
 			burghers_focus_trigger = yes
 			freedom > 0.45
-			threat > 0.14
+			#threat > 0.14
 		}
 		bypass = {
 			has_government = freedom

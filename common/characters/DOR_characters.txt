@@ -955,4 +955,26 @@ characters = {
 			logistics_skill = 3
 		}
 	}
+
+	DOR_arodor_aludor = { #army bow
+		name = DOR_arodor_aludor
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Elves_Generic_m_3"
+				small = "GFX_Portrait_Elves_Generic_m_3_small"
+			}
+		}
+		corps_commander = {
+			visible = {
+				has_completed_focus = DOR_rally_them_to_our_cause
+			}
+			traits = { old_guard career_officer engineer_officer organizer ranger hill_fighter adaptable }
+			skill = 5
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
 }

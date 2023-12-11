@@ -1,3 +1,54 @@
+rhovanion_influence_category = {
+	DOR_core_rinnavuld_compliance = {
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		allowed = {
+			original_tag = DOR
+		}
+		visible = {
+			has_completed_focus = DOR_gaurantee_the_rights_of_marcher_citizens
+			NOT = { 305 = { is_core_of = ROOT } }
+		}
+		available = {
+			305 = {
+				is_controlled_by = ROOT
+				compliance > 79
+			}
+		}
+		complete_effect = {
+			305 = { add_core_of = ROOT }
+		}
+	}
+	DOR_core_ruscovuld_compliance = {
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		allowed = {
+			original_tag = DOR
+		}
+		visible = {
+			has_completed_focus = DOR_gaurantee_the_rights_of_marcher_citizens
+			NOT = { 240 = { is_core_of = ROOT } }
+		}
+		available = {
+			240 = {
+				is_controlled_by = ROOT
+				compliance > 79
+			}
+		}
+		complete_effect = {
+			240 = { add_core_of = ROOT }
+		}
+	}
+}
+
 DOR_election_category = {
 	DOR_campaign_for_the_great_merchants = {
 		icon = GFX_decision_great_merchants
@@ -1461,7 +1512,7 @@ DOR_spread_revolution_category = {
 DOR_monarchist_plot_category = {
 	DOR_monarchist_plot = {
 		icon = GFX_decision_revolt
-		days_mission_timeout = 100
+		days_mission_timeout = 120
 		is_good = no
 		allowed = { always = no }
 		available = {
