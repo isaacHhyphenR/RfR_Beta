@@ -30,11 +30,18 @@ focus_tree = {
 	default = no
 	#reset_on_civil_war = yes
 	initial_show_position = {
-		focus = DOR_support_the_great_merchants
+		x = 10
+		y = 0
+		# x = 
+		# y = 
+		#focus = DOR_support_the_great_merchants
 	}
+	
+	
+	########################################################CONTINUOUS FOCUS TO EVENTUALLY ELIMINATE DEMORALIZED ARMY
 	continuous_focus_position = {
 		x = 200
-		y = 2500
+		y = 50
 		# x = 
 		# y = 
 	}

@@ -761,19 +761,22 @@ PREV_annex_THIS_blood_oath_vassal = { ##Call when the overlord (PREV) integrates
 	}
 	
 	every_character = { #Overlord gets country leader (including already gained leaders) as advisor & field marshals as generals
-		if = { limit = { is_field_marshal = yes }
-			if = { limit = { has_trait = monarch_mil }
+		if = { 
+			limit = { is_field_marshal = yes }
+			if = {
+				limit = { has_trait = monarch_mil }
 				remove_unit_leader_trait = monarch_mil
 			}
 			demote_leader = yes
 			set_nationality = PREV.PREV
 		}
-		else_if = { limit = { can_be_country_leader = yes }
+		else_if = {
+			limit = { can_be_country_leader = yes }
 			set_nationality = PREV.PREV
 		}
 		else_if = {#A central Perspective gives you all recruited advisors
 			limit = {
-				PREV.PREV = { has_completed_focus = ENE_a_central_perspective }
+				PREV = { overlord = { has_completed_focus = ENE_a_central_perspective } }
 				OR = {
 					is_political_advisor = yes
 					is_high_command = yes

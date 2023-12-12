@@ -108,7 +108,8 @@
  DOR_attend_to_our_beloved_realm_master_tooltip: "Extends §Y$DOR_hawin_koldana$'s§! life by §Y70§! days, plus §Y70§! days per completed upgrade to the §Y$DOR_college_of_medicine_idea$§!"
  convert_half_isolationism_to_freedom: "Converts half of our §Y$isolationism_noun$§! support into §Y$freedom_noun$§! support"
  every_guaranteed_rhovanion_tag_tooltip: "Every §Y$RVN$§! country that we have §Yguaranteed§!:\n"
- DOR_liberators_idea_conference_modifiers: "Peace Conference Modifiers:$new_line_tab$Take State cost: §R+100%§!$new_line_tab$Puppet State cost: §R+50%§!$new_line_tab$Force Governement cost: §G-25%§!$new_line_tab$Liberate country cost: §G-25%§!"
+ DOR_liberators_idea_conference_modifiers: "Peace Conference Modifiers:$new_line_tab$Force Governement cost: §G-25%§!$new_line_tab$Liberate country cost: §G-25%§!"
+ #$new_line_tab$Take State cost: §R+100%§!$new_line_tab$Puppet State cost: §R+50%§!
  DOR_the_peoples_army_tooltip: "Every 180 days:"
  DOR_professional_militias_terrain_tooltip: "§YUrban:§!$new_line_tab$Defense: §G+20%§!\n§YFort:§!$new_line_tab$Defense: §G+10%§!"
  every_controlled_core_state_with_five_factories: "Every controlled core state with at least §Y5§! total §Y$industrial_complex$s§! and §Y$arms_factory$s§!"
@@ -133,7 +134,7 @@
  DOR_monarchist_plot_available_tooltip: "Less than §R5%§! combined support for §Y$opportunism_noun$§!, §Y$conquest_noun$§!, and §Y$melkorite_noun$§!"
  DOR_monarchist_plot_tooltip: "The §Y$opportunism_noun$§!, §Y$conquest_noun$§!, and §Y$melkorite_noun$§! supporters will start a §Rcivil war!§!\n"
  DOR_investigate_reactionary_plot_tooltip: "$unlocks_decision_tooltip$ to delay the §Y$DOR_monarchist_plot$§! and reduce its support."
- DOR_become_republic_tooltip: "Implement annual elections. Prominent $burgher_formatted$ politicians will run for the office of president./n"
+ DOR_become_republic_tooltip: "Implement annual elections. Prominent $burgher_formatted$ politicians will run for the office of president.\n"
  establish_this_sister_republic_tooltip: "We transfer each of §Y[THIS.GetNameDef]'s§! cores that we control & are not our cores to a new §Y$autonomy_sister_republic$§!. This §Y$autonomy_sister_republic$§! will inherit all of §Y[THIS.GetNameDef]'s§! cores. It will act as our puppet and join our wars, but hold annual public elections."
  establish_rhovanion_sister_republic_tooltip: "We transfer every core of any §Y$RVN_ADJ$§! country that we control & are not our cores to a new §Y$autonomy_sister_republic$§!. This §Y$autonomy_sister_republic$§! will inherit all §Y$RVN_ADJ$§! cores. It will act as our puppet and join our wars, but hold annual public elections."
  establish_gondor_sister_republic_tooltip: "We transfer every core of any §Y$GON_ADJ$§! country that we control & are not our cores to a new §Y$autonomy_sister_republic$§!. This §Y$autonomy_sister_republic$§! will inherit all §Y$GON_ADJ$§! cores. It will act as our puppet and join our wars, but hold annual public elections."

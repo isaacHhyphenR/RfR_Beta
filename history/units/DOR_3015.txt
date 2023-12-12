@@ -1,4 +1,6 @@
-﻿division_template = {
+﻿@militiaXP = 0.09
+
+division_template = {
 	name = "City Militia"
 
 	regiments = {
@@ -26,55 +28,66 @@ division_template = {
 	support = {
 	}
 }
+
 units = {
 	division = {	
 		name = "Eldrast Militia"
 		location = 950
 		division_template = "City Militia"
+        start_experience_factor = @militiaXP
 	}
 	division = {	
 		name = "Padavon Militia"
 		location = 1822
 		division_template = "City Militia"
+        start_experience_factor = @militiaXP
 	}
 	division = {	
 		name = "Srzel-Kain Militia"
 		location = 480
 		division_template = "City Militia"
+        start_experience_factor = @militiaXP
 	}
 	division = {	
 		name = "Riavod Militia"
 		location = 6260
 		division_template = "City Militia"
+        start_experience_factor = @militiaXP
 	}
 	division = {	
 		name = "Mihrason Militia"
 		location = 4924
 		division_template = "City Militia"
+        start_experience_factor = @militiaXP
 	}
 	division = {	
 		name = "Caras Sant Militia"
 		location = 1912
 		division_template = "City Militia"
+        start_experience_factor = @militiaXP
 	}
 	division = {	
 		name = "Darcega Militia"
 		location = 6550
 		division_template = "City Militia"
+        start_experience_factor = @militiaXP
 	}
 	division = {	
 		name = "House Vierling Retinue"
 		location = 6417
 		division_template = "Noble Retinue"
+        start_experience_factor = 0.2
 	}
 	division = {	
 		name = "House Koldana Retinue"
 		location = 6260
 		division_template = "Noble Retinue"
+        start_experience_factor = 0.2
 	}
 	division = {	
 		name = "House Aldiana Retinue"
 		location = 950
 		division_template = "Noble Retinue"
+        start_experience_factor = 0.1
 	}
 }

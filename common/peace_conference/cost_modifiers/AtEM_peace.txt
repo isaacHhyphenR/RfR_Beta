@@ -4,27 +4,27 @@
 peace_action_modifiers = {
 
     ####################################DORWIN REPUBLIC
-    DOR_liberator_of_the_people_take_state = {
-        category = other
-        peace_action_type = take_states
+    # DOR_liberator_of_the_people_take_state = {
+        # category = other
+        # peace_action_type = take_states
 
-        enable = {
-            FROM = { has_idea = DOR_liberators_idea }
-			NOT = { FROM.FROM.FROM = { is_core_of = ROOT.FROM } }
-        }
+        # enable = {
+            # FROM = { has_idea = DOR_liberators_idea }
+			# NOT = { FROM.FROM.FROM = { is_core_of = ROOT.FROM } }
+        # }
 
-        cost_multiplier = 2 #+100%
-    }
-    DOR_liberator_of_the_people_puppet = {
-        category = other
-        peace_action_type = puppet
+        # cost_multiplier = 2 #+100%
+    # }
+    # DOR_liberator_of_the_people_puppet = {
+        # category = other
+        # peace_action_type = puppet
 
-        enable = {
-            ROOT = { has_idea = DOR_liberators_idea }
-        }
+        # enable = {
+            # ROOT = { has_idea = DOR_liberators_idea }
+        # }
 
-        cost_multiplier = 1.5 #+50%
-    }
+        # cost_multiplier = 1.5 #+50%
+    # }
     DOR_liberator_of_the_people_liberate = {
         category = other
         peace_action_type = liberate

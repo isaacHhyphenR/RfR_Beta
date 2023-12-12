@@ -364,8 +364,6 @@ DOR_carpentry_guild_MIO = {
 
 		position = { x=2 y=0 }
 		relative_position_id = generic_mio_trait_advanced_barrel_forging
-
-		available = { FROM = { has_completed_focus = GON_anfalas_materiel_designers } }
 		
 		limit_to_equipment_type = { artillery_equipment } #railway_gun_equipment }
 		equipment_bonus = {

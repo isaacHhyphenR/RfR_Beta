@@ -310,6 +310,13 @@ country_event = { ##6## Hawin Koldana Falls ill
 	picture = GFX_theodred_wounded
 	
 	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_leader = {
+			character = DOR_hawin_koldana
+		}
+	}
 	
 	immediate = {
 		hidden_effect = {
@@ -429,6 +436,13 @@ country_event = { ##7## Hawin Koldana Dies, election happens
 	picture = GFX_aragorn_coronation_event
 	
 	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_leader = {
+			character = DOR_hawin_koldana
+		}
+	}
 	
 	immediate = {
 		hidden_effect = {
@@ -504,14 +518,22 @@ country_event = { ##7## Hawin Koldana Dies, election happens
 	}
 }
 
-country_event = { ##8## Hidden hawin killer
+country_event = { ##8## Hidden Hawin Killer
 	id = atem.8
 	
 	is_triggered_only = yes
 	hidden = yes
 	
+	##This event fires when Hawin would normally fall ill. If Hawin is still alive, it'll fire the 'ill' event.
 	immediate = {
-		country_event = { id = atem.6 days = var:hawin_extension }
+		if = {
+			limit = {
+				has_country_leader = {
+					character = DOR_hawin_koldana
+				}
+			}
+			country_event = { id = atem.6 days = var:hawin_extension }
+		}
 	}
 }
 

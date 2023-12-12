@@ -1,58 +1,9 @@
-rhovanion_influence_category = {
-	DOR_core_rinnavuld_compliance = {
-		icon = GFX_decision_generic_nationalism
-		fire_only_once = yes
-		cost = 100
-		ai_will_do = {
-			factor = 1
-		}
-		allowed = {
-			original_tag = DOR
-		}
-		visible = {
-			has_completed_focus = DOR_gaurantee_the_rights_of_marcher_citizens
-			NOT = { 305 = { is_core_of = ROOT } }
-		}
-		available = {
-			305 = {
-				is_controlled_by = ROOT
-				compliance > 79
-			}
-		}
-		complete_effect = {
-			305 = { add_core_of = ROOT }
-		}
-	}
-	DOR_core_ruscovuld_compliance = {
-		icon = GFX_decision_generic_nationalism
-		fire_only_once = yes
-		cost = 100
-		ai_will_do = {
-			factor = 1
-		}
-		allowed = {
-			original_tag = DOR
-		}
-		visible = {
-			has_completed_focus = DOR_gaurantee_the_rights_of_marcher_citizens
-			NOT = { 240 = { is_core_of = ROOT } }
-		}
-		available = {
-			240 = {
-				is_controlled_by = ROOT
-				compliance > 79
-			}
-		}
-		complete_effect = {
-			240 = { add_core_of = ROOT }
-		}
-	}
-}
+@campaignFireOnlyOnce = no
 
-DOR_election_category = {
+DOR_election_category = { #BOP
 	DOR_campaign_for_the_great_merchants = {
 		icon = GFX_decision_great_merchants
-		fire_only_once = yes
+		fire_only_once = @campaignFireOnlyOnce
 		days_remove = 100
 		cost = 50
 		cancel_if_not_visible = yes
@@ -65,7 +16,7 @@ DOR_election_category = {
 	}
 	DOR_campaign_for_the_winelords = {
 		icon = GFX_decision_winelords
-		fire_only_once = yes
+		fire_only_once = @campaignFireOnlyOnce
 		days_remove = 100
 		cost = 50
 		cancel_if_not_visible = yes
@@ -222,7 +173,132 @@ DOR_election_category = {
 	}
 }
 
-DOR_great_merchants_category = {
+DOR_great_merchants_category = { #BOP
+	DOR_campaign_for_the_burghers = {
+		icon = GFX_decision_burghers
+		fire_only_once = @campaignFireOnlyOnce
+		days_remove = 100
+		cost = 50
+		cancel_if_not_visible = yes
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+			power_balance_weekly = -0.005
+		}
+	}
+	DOR_promote_equality = {
+		icon = GFX_decision_freedom
+		fire_only_once = no
+		days_remove = 100
+		cost = 50
+		available = {
+			power_balance_value = {
+				id = DOR_great_merchants_power_balance
+				value < -0.15
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				opportunism > 0.05
+				has_decision = DOR_monarchist_plot
+				add = 100
+			}
+		}
+		modifier = {
+			freedom_drift = 0.1
+		}
+	}
+	DOR_disrupt_social_order = {
+		icon = GFX_decision_generic_political_rally
+		fire_only_once = yes
+		available = {
+			power_balance_value = {
+				id = DOR_great_merchants_power_balance
+				value < -0.15
+			}
+		}
+			
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_stability > 0.95
+				add = 1
+			}
+		}
+		complete_effect = {
+			add_stability = -0.1
+			add_political_power = 75
+		}
+	}
+	DOR_campaign_for_the_merchant_houses = {
+		icon = GFX_decision_merchant_houses
+		fire_only_once = @campaignFireOnlyOnce
+		days_remove = 100
+		cost = 50
+		cancel_if_not_visible = yes
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+			power_balance_weekly = -0.005
+		}
+	}
+}
+
+rhovanion_influence_category = {
+	DOR_core_rinnavuld_compliance = {
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		allowed = {
+			original_tag = DOR
+		}
+		visible = {
+			has_completed_focus = DOR_gaurantee_the_rights_of_marcher_citizens
+			NOT = { 305 = { is_core_of = ROOT } }
+		}
+		available = {
+			305 = {
+				is_controlled_by = ROOT
+				compliance > 79
+			}
+		}
+		complete_effect = {
+			305 = { add_core_of = ROOT }
+		}
+	}
+	DOR_core_ruscovuld_compliance = {
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		allowed = {
+			original_tag = DOR
+		}
+		visible = {
+			has_completed_focus = DOR_gaurantee_the_rights_of_marcher_citizens
+			NOT = { 240 = { is_core_of = ROOT } }
+		}
+		available = {
+			240 = {
+				is_controlled_by = ROOT
+				compliance > 79
+			}
+		}
+		complete_effect = {
+			240 = { add_core_of = ROOT }
+		}
+	}
+}
+
+propaganda_efforts = {
 	DOR_the_peoples_army_mission = {
 		icon = GFX_decision_generic_nationalism
 		fire_only_once = yes

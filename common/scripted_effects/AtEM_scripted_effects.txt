@@ -2256,7 +2256,7 @@ DOR_add_iron_contract = {
 		}
 	}
 	else_if = {
-		limit = { has_idea = DOR_contract_fod }
+		limit = { has_idea = DOR_contract_food }
 		swap_ideas = {
 			remove_idea = DOR_contract_food
 			add_idea = DOR_contract_food_iron
