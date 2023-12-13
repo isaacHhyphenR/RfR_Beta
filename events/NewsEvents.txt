@@ -1405,6 +1405,7 @@ news_event = { ##92## rejected merchant offices
 }
 
 news_event = { ##93## Accepted trade delegation
+	id = rfr_news.93
 	title = rfr_news.93.t
 	desc = rfr_news.93.d
 	picture = GFX_news_feast2

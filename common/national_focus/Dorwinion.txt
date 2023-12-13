@@ -4439,6 +4439,39 @@ focus_tree = {
 			burghers_focus_effect = yes
 		}
 	}
+	focus = { #An Equitable Federation
+		id = DOR_an_equitable_federation
+		icon = GFX_focus_generic_self_management
+		x = 1
+		y = 1
+		relative_position_id = DOR_rally_the_free_cities
+		cost = 5
+		ai_will_do = {
+			factor = 0
+		}
+		allow_branch = { #can't reduce autonomy without DLC
+			has_subject_autonomy_feature = yes
+		}
+		prerequisite = {
+			focus = DOR_rally_the_free_cities
+		}
+		prerequisite = {
+			focus = DOR_limit_the_power_of_the_nobility
+		}
+		available = {
+			burghers_focus_trigger = yes
+			num_subjects > 0
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			every_subject_country = {
+				country_event = atem.17
+				custom_effect_tooltip = if_they_accept_tooltip
+				event_option_tooltip = atem.17.a
+			}
+			burghers_focus_effect = yes
+		}
+	}
 #################################MILITIA ARMY
 	focus = { #Rely on Urban Militias
 		id = DOR_rely_on_urban_militias

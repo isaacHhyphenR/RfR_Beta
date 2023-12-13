@@ -2374,6 +2374,10 @@ DOR_fire_senate_event = {
 			country_event = senate.4
 		}
 		1 = { #5# Guild contract
+			modifier = { #useless without AAT
+				NOT = { has_dlc = "Arms Against Tyranny" }
+				factor = 0
+			}
 			modifier = { #unlikely to fire mulitple times
 				has_country_flag = senate_guild_contract_event
 				factor = 0.1

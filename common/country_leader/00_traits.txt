@@ -2704,7 +2704,7 @@ leader_traits = {
 	}
 	guild_coordinator = { #Ansovald Gwingalon
 		random = no
-		custom_modifier_tooltip = unimplemented
+		military_industrial_organization_funds_gain = 0.1
 	}
 	land_reformer = { #Arigesel Hammdost
 		random = no
