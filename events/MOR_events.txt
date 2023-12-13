@@ -171,7 +171,7 @@ country_event = { ##2## Sauron Demands Submission
 		}
 		add_popularity = {
 			ideology = freedom
-			popularity = 0.2
+			popularity = 0.05
 		}
 		add_ideas = spurned_sauron
 		custom_effect_tooltip = refused_dark_lord_tooltip
