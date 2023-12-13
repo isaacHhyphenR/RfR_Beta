@@ -779,6 +779,7 @@ DOR_college_category = {
 
 DOR_spread_revolution_category = {
 	@complianceForRepublic = 50
+	@foundRepublicCost = 50
 	establish_ARN_republic = { #ARNOR
 		icon = GFX_decision_ARN_republic
 		ai_will_do = {
@@ -796,6 +797,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			ART = {
 				custom_effect_tooltip = establish_arnor_sister_republic_tooltip
@@ -839,6 +841,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			BER = {
 				custom_effect_tooltip = establish_this_sister_republic_tooltip
@@ -873,6 +876,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			DAL = {
 				custom_effect_tooltip = establish_this_sister_republic_tooltip
@@ -907,6 +911,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			DAI = {
 				custom_effect_tooltip = establish_this_sister_republic_tooltip
@@ -946,6 +951,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			DRU = {
 				custom_effect_tooltip = establish_gwaithurium_sister_republic_tooltip
@@ -988,6 +994,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			HAR = {
 				custom_effect_tooltip = establish_this_sister_republic_tooltip
@@ -1022,6 +1029,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			HIL = {
 				custom_effect_tooltip = establish_this_sister_republic_tooltip
@@ -1056,6 +1064,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			HTH = {
 				custom_effect_tooltip = establish_this_sister_republic_tooltip
@@ -1095,6 +1104,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			GON = {
 				custom_effect_tooltip = establish_gondor_sister_republic_tooltip
@@ -1138,6 +1148,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			KND = {
 				custom_effect_tooltip = establish_this_sister_republic_tooltip
@@ -1177,6 +1188,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			RIN = {
 				custom_effect_tooltip = establish_rhovanion_sister_republic_tooltip
@@ -1224,6 +1236,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			MED = {
 				custom_effect_tooltip = establish_rhunnic_sister_republic_tooltip
@@ -1266,6 +1279,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			ROH = {
 				custom_effect_tooltip = establish_this_sister_republic_tooltip
@@ -1305,6 +1319,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			RLM = {
 				custom_effect_tooltip = establish_steppe_sister_republic_tooltip
@@ -1347,6 +1362,7 @@ DOR_spread_revolution_category = {
 			}
 		}
 		fire_only_once = yes
+		cost = @foundRepublicCost
 		complete_effect = {
 			UMB = {
 				custom_effect_tooltip = establish_this_sister_republic_tooltip

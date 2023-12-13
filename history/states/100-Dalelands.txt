@@ -15,8 +15,8 @@ state = {
 		add_core_of = DAL
 		set_ring_victory_point = yes
 		set_variable = { historical_capital_for_country = DAL }
-		victory_points = { #Dale, 28
-			5658 25
+		victory_points = { #Dale, 38
+			5658 35
 		}
 		victory_points = { #Ulgerstat
 			5706 3

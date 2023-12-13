@@ -14,8 +14,8 @@ state = {
 		add_core_of = ERE
 		set_ring_victory_point = yes
 		set_variable = { historical_capital_for_country = ERE }
-		victory_points = { #25
-			4452 25
+		victory_points = { #35
+			4452 35
 		}
 		buildings = {
 			infrastructure = 3

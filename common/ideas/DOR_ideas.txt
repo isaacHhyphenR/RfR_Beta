@@ -337,6 +337,23 @@ ideas = {
 				custom_modifier_tooltip = DOR_liberators_idea_conference_modifiers
 			}
 		}
+		DOR_liberators_idea2 = {
+			name = DOR_liberators_idea
+			picture = generic_victors_of_ww1
+			removal_cost = -1
+			allowed_civil_war = {
+				has_government = freedom
+			}
+			modifier = {
+				resistance_target = -0.15
+				starting_compliance = 0.15
+				custom_modifier_tooltip = DOR_liberators_idea_conference_modifiers
+			}
+			rule = {
+				can_only_justify_war_on_threat_country = no
+				can_declare_war_on_same_ideology = yes
+			}
+		}
 		DOR_meritocratic_army = {
 			picture = FRA_national_mobilization_focus
 			removal_cost = -1

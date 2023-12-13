@@ -3272,6 +3272,10 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = unlocks_spread_revolution_decisions
 			custom_effect_tooltip = unlocks_spread_revolution_war_goal
+			swap_ideas = {
+				remove_idea = DOR_liberators_idea
+				add_idea = DOR_liberators_idea2
+			}
 			burghers_focus_effect = yes
 		}
 	}

@@ -1398,6 +1398,10 @@ country_event = { ##4## Prosperous Market Town
 	}
 }
 
+
+@largeContractFunds = 1500
+@mediumContractFunds = 1000
+@smallContractFunds = 500
 country_event = { ##51A## Renegotiate Carpentry guild contract
 	id = senate.51
 	title = senate.5A.t
@@ -1415,7 +1419,9 @@ country_event = { ##51A## Renegotiate Carpentry guild contract
 			}
 		}
 		add_political_power = -80
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_carpentry_guild_MIO = {
+			add_mio_funds = @largeContractFunds
+		}
 	}
 	option = { ##medium contracts
 		name = senate.5.b
@@ -1427,7 +1433,9 @@ country_event = { ##51A## Renegotiate Carpentry guild contract
 			}
 		}
 		add_political_power = -40
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_carpentry_guild_MIO = {
+			add_mio_funds = @mediumContractFunds
+		}
 	}
 	option = { ##Small contracts
 		name = senate.5.c
@@ -1439,7 +1447,9 @@ country_event = { ##51A## Renegotiate Carpentry guild contract
 			}
 		}
 		add_political_power = -20
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_carpentry_guild_MIO = {
+			add_mio_funds = @smallContractFunds
+		}
 	}
 	option = { ##Abstain
 		name = senate.5.dd
@@ -1465,7 +1475,9 @@ country_event = { ##52B## Renegotiate Baking guild contract
 			}
 		}
 		add_political_power = -80
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_baking_guild_MIO = {
+			add_mio_funds = @largeContractFunds
+		}
 	}
 	option = { ##medium contracts
 		name = senate.5.b
@@ -1477,7 +1489,9 @@ country_event = { ##52B## Renegotiate Baking guild contract
 			}
 		}
 		add_political_power = -40
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_baking_guild_MIO = {
+			add_mio_funds = @mediumContractFunds
+		}
 	}
 	option = { ##Small contracts
 		name = senate.5.c
@@ -1489,7 +1503,9 @@ country_event = { ##52B## Renegotiate Baking guild contract
 			}
 		}
 		add_political_power = -20
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_baking_guild_MIO = {
+			add_mio_funds = @smallContractFunds
+		}
 	}
 	option = { ##Abstain
 		name = senate.5.dd
@@ -1515,7 +1531,9 @@ country_event = { ##53c## Renegotiate Smithing guild contract
 			}
 		}
 		add_political_power = -80
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_smithing_guild_MIO = {
+			add_mio_funds = @largeContractFunds
+		}
 	}
 	option = { ##medium contracts
 		name = senate.5.b
@@ -1527,7 +1545,9 @@ country_event = { ##53c## Renegotiate Smithing guild contract
 			}
 		}
 		add_political_power = -40
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_smithing_guild_MIO = {
+			add_mio_funds = @mediumContractFunds
+		}
 	}
 	option = { ##Small contracts
 		name = senate.5.c
@@ -1539,7 +1559,9 @@ country_event = { ##53c## Renegotiate Smithing guild contract
 			}
 		}
 		add_political_power = -20
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_smithing_guild_MIO = {
+			add_mio_funds = @smallContractFunds
+		}
 	}
 	option = { ##Abstain
 		name = senate.5.dd
@@ -1565,7 +1587,9 @@ country_event = { ##54D## Renegotiate Tailory guild contract
 			}
 		}
 		add_political_power = -80
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_tailory_guild_MIO = {
+			add_mio_funds = @largeContractFunds
+		}
 	}
 	option = { ##medium contracts
 		name = senate.5.b
@@ -1577,7 +1601,9 @@ country_event = { ##54D## Renegotiate Tailory guild contract
 			}
 		}
 		add_political_power = -40
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_tailory_guild_MIO = {
+			add_mio_funds = @mediumContractFunds
+		}
 	}
 	option = { ##Small contracts
 		name = senate.5.c
@@ -1589,7 +1615,9 @@ country_event = { ##54D## Renegotiate Tailory guild contract
 			}
 		}
 		add_political_power = -20
-		custom_effect_tooltip = UNIMPLEMENTED
+		mio:DOR_tailory_guild_MIO = {
+			add_mio_funds = @smallContractFunds
+		}
 	}
 	option = { ##Abstain
 		name = senate.5.dd
@@ -1915,7 +1943,7 @@ country_event = { ##9## Fund a Playwright
 		add_stability = 0.05
 	}
 	option = { ##Heroes
-		name = senate.9.ac
+		name = senate.9.c
 		ai_chance = {
 			factor = 2
 			modifier = { #AI won't go into debt

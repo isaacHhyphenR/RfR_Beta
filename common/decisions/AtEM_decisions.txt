@@ -339,7 +339,7 @@ celduin_trade_category = {
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
 		modifier = {
-			consumer_goods_factor = -0.05
+			consumer_goods_factor = -0.1
 		}
 		complete_effect = { #cost
 			hidden_effect = {

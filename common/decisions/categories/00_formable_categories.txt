@@ -39,6 +39,11 @@ form_Druwaith_Iaur_category = {
 	allowed = {
 		is_druwaith_iaur_tag = yes
 	}
+	visible = {
+		NOT = {
+			has_country_flag = revolutionary_republic
+		}
+	}
 }
 form_Dunland_category = {
 	icon = generic_formable_nations
@@ -86,11 +91,21 @@ form_Greater_Enedwaith_category = {
 	allowed = {
 		is_greater_enedwaith_tag = yes
 	}
+	visible = {
+		NOT = {
+			has_country_flag = revolutionary_republic
+		}
+	}
 }
 form_rhovanion_category = {
 	icon = generic_formable_nations
 	#picture = GFX_decision_cat_generic_Greater_Enedwaith
 	allowed = {
 		is_rhovanion_tag = yes
+	}
+	visible = {
+		NOT = {
+			has_country_flag = revolutionary_republic
+		}
 	}
 }

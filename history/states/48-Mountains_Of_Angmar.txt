@@ -15,7 +15,7 @@ state = {
 		owner = GDB
 		add_core_of = GDB
 		victory_points = {
-			3289 15
+			3289 7
 		}
 		buildings = {
 			infrastructure = 1
