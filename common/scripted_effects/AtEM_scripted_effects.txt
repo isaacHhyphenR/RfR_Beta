@@ -106,8 +106,12 @@ calculate_market_upgrade_time = { #call in state. Mission refuses to read variab
 	multiply_variable = { market_upgrade_time = factor }
 }
 
-increase_trade_level = { #call in the tag of the seller with the buyer as ROOT
-	##costs factory
+increase_riavod_trade_level = { #call in the tag of the seller with the buyer as ROOT.
+	add_to_variable = { ROOT.riavod_imports = 1 }
+	#calculate how much actually transfers in this export
+	set_temp_variable = { TEMP_export_size = global.export_size }
+	clamp_temp_variable = { var = TEMP_export_size max = global.wine_export_available }
+	##Get paid with a factory
 	add_offsite_building = { type = industrial_complex level = 1 }
 	##buyer uses convoys
 	ROOT = {
@@ -136,24 +140,19 @@ increase_trade_level = { #call in the tag of the seller with the buyer as ROOT
 	}
 	##adds prosperity to buyer & seller
 	var:ROOT.capital = { add_to_variable = { num_import_routes = 1 } } #tell it to gain prosperity
-	var:capital = { add_to_variable = { num_export_routes = 1 } } #tell it to gain prosperity
+	116 = { add_to_variable = { num_export_routes = 1 } } #tell it to gain prosperity
 	#######adds prosperity to the markets in between
 	set_temp_variable = { current_node = ROOT.capital }
 	set_temp_variable = { nodes_left = current_node:node_index }
-	subtract_from_temp_variable = { nodes_left = capital:node_index }
+	subtract_from_temp_variable = { nodes_left = 116:node_index }
 	
 ##########traces downstream path from buyer capital to seller capital
 	if = {
-		limit = { check_variable = { current_node:node_index < capital:node_index } }
+		limit = { check_variable = { current_node:node_index < 116:node_index } }
 		#Skip the buyer capital
 		if = {
 			limit = { check_variable = { current_node:downstream_node = null } }
-			meta_effect = {
-				text = {
-					set_temp_variable = { current_node = current_node:downstream_towards_[DESTINATION] }
-				}
-				DESTINATION = "[?capital.GetID]"
-			}
+			set_temp_variable = { current_node = current_node:downstream_towards_116 }
 		}
 		#or just go straight
 		else = {
@@ -169,12 +168,7 @@ increase_trade_level = { #call in the tag of the seller with the buyer as ROOT
 			#pick which way to go in forks
 			if = {
 				limit = { check_variable = { current_node:downstream_node = null } }
-				meta_effect = {
-					text = {
-						set_temp_variable = { current_node = current_node:downstream_towards_[DESTINATION] }
-					}
-					DESTINATION = "[?capital.GetID]"
-				}
+				set_temp_variable = { current_node = current_node:downstream_towards_116 }
 			}
 			#or just go straight
 			else = {
@@ -188,12 +182,7 @@ increase_trade_level = { #call in the tag of the seller with the buyer as ROOT
 		#Skip the buyer capital
 		if = {
 			limit = { check_variable = { current_node:upstream_node = null } }
-			meta_effect = {
-				text = {
-					set_temp_variable = { current_node = current_node:upstream_towards_[DESTINATION] }
-				}
-				DESTINATION = "[?capital.GetID]"
-			}
+					set_temp_variable = { current_node = current_node:upstream_towards_116 }
 		}
 		#or just go straight
 		else = {
@@ -208,12 +197,7 @@ increase_trade_level = { #call in the tag of the seller with the buyer as ROOT
 			#pick which way to go in forks
 			if = {
 				limit = { check_variable = { current_node:upstream_node = null } }
-				meta_effect = {
-					text = {
-						set_temp_variable = { current_node = current_node:upstream_towards_[DESTINATION] }
-					}
-					DESTINATION = "[?capital.GetID]"
-				}
+				set_temp_variable = { current_node = current_node:upstream_towards_116 }
 			}
 			#or just go straight
 			else = {
@@ -222,9 +206,12 @@ increase_trade_level = { #call in the tag of the seller with the buyer as ROOT
 		}
 	}
 }
-
-decrease_trade_level = { #call in the tag of the seller with the buyer as ROOT
-	##costs factory
+decrease_riavod_trade_level = { #call in the tag of the seller with the buyer as ROOT.
+	subtract_from_variable = { ROOT.riavod_imports = 1 }
+	#calculate how much actually transfers in this export
+	set_temp_variable = { TEMP_export_size = global.export_size }
+	clamp_temp_variable = { var = TEMP_export_size max = ROOT.wine_imported }
+	##Lose the payment factory
 	add_offsite_building = { type = industrial_complex level = -1 }
 	##Buyer stops using convoys
 	ROOT = {
@@ -250,20 +237,15 @@ decrease_trade_level = { #call in the tag of the seller with the buyer as ROOT
 	#######adds prosperity to the markets in between
 	set_temp_variable = { current_node = ROOT.capital }
 	set_temp_variable = { nodes_left = current_node:node_index }
-	subtract_from_temp_variable = { nodes_left = capital:node_index }
+	subtract_from_temp_variable = { nodes_left = 116:node_index }
 	
 ##########traces downstream path from buyer capital to seller capital
 	if = {
-		limit = { check_variable = { current_node:node_index < capital:node_index } }
+		limit = { check_variable = { current_node:node_index < 116:node_index } }
 		#Skip the buyer capital
 		if = {
 			limit = { check_variable = { current_node:downstream_node = null } }
-			meta_effect = {
-				text = {
-					set_temp_variable = { current_node = current_node:downstream_towards_[DESTINATION] }
-				}
-				DESTINATION = "[?capital.GetID]"
-			}
+			set_temp_variable = { current_node = current_node:downstream_towards_116 }
 		}
 		#or just go straight
 		else = {
@@ -279,12 +261,7 @@ decrease_trade_level = { #call in the tag of the seller with the buyer as ROOT
 			#pick which way to go in forks
 			if = {
 				limit = { check_variable = { current_node:downstream_node = null } }
-				meta_effect = {
-					text = {
-						set_temp_variable = { current_node = current_node:downstream_towards_[DESTINATION] }
-					}
-					DESTINATION = "[?capital.GetID]"
-				}
+				set_temp_variable = { current_node = current_node:downstream_towards_116 }
 			}
 			#or just go straight
 			else = {
@@ -298,12 +275,7 @@ decrease_trade_level = { #call in the tag of the seller with the buyer as ROOT
 		#Skip the buyer capital
 		if = {
 			limit = { check_variable = { current_node:upstream_node = null } }
-			meta_effect = {
-				text = {
-					set_temp_variable = { current_node = current_node:upstream_towards_[DESTINATION] }
-				}
-				DESTINATION = "[?capital.GetID]"
-			}
+			set_temp_variable = { current_node = current_node:upstream_towards_116 }
 		}
 		#or just go straight
 		else = {
@@ -318,18 +290,22 @@ decrease_trade_level = { #call in the tag of the seller with the buyer as ROOT
 			#pick which way to go in forks
 			if = {
 				limit = { check_variable = { current_node:upstream_node = null } }
-				meta_effect = {
-					text = {
-						set_temp_variable = { current_node = current_node:upstream_towards_[DESTINATION] }
-					}
-					DESTINATION = "[?capital.GetID]"
-				}
+				set_temp_variable = { current_node = current_node:upstream_towards_116 }
 			}
 			#or just go straight
 			else = {
 				set_temp_variable = { current_node = current_node:upstream_node }
 			}
 		}
+	}
+}
+
+end_riavod_trade = { #call in the tag of the seller with the buyer as ROOT
+	while_loop_effect = {
+		limit = {
+			ROOT = { check_variable = { riavod_imports > 0 } }
+		}
+		decrease_riavod_trade_level = yes
 	}
 }
 
@@ -342,6 +318,8 @@ calculate_riavod_trade_cost_effect = {
 		limit = { check_variable = { riavod_route_convoy_cost < 0 } }
 		multiply_variable = { riavod_route_convoy_cost = -1 }
 	}
+	##Subtract one so that the origin node doesn't country_event
+	subtract_from_variable = { riavod_route_convoy_cost = 1 }
 }
 
 set_ideology_index = { #call in a tag

@@ -75,11 +75,15 @@ calculate_trade_convoy_cost = { #Call where THIS is buyer/seller and ROOT is the
 		limit = { check_variable = { route_convoy_cost < 0 } }
 		multiply_temp_variable = { route_convoy_cost = -1 }
 	}
+	##Subtract one so that the origin node doesn't country_event
+	subtract_from_temp_variable = { route_convoy_cost = 1 }
 	always = yes
 }
 calculate_celdui_trade_convoy_cost_negative = { #Call where THIS is buyer/seller and ROOT is the other
 	calculate_trade_convoy_cost = yes
 	multiply_temp_variable = { route_convoy_cost = -1 }
+	##Subtract -one so that the origin node doesn't country_event
+	subtract_from_temp_variable = { route_convoy_cost = -1 }
 }
 
 great_merchants_focus_trigger = {

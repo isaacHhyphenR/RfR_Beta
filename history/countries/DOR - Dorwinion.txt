@@ -24,6 +24,7 @@ set_technology = {
 }
 starting_train_buffer = 1
 set_fuel_ratio = 1
+set_convoys = 20
 ################### ARMOR TECH
 if = {
 	limit = { has_dlc = "No Step Back" }

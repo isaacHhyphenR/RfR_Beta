@@ -13,27 +13,23 @@ scripted_gui = {
 		effects = {
 			increase_export_1_click = {
 				var:global.wine_exporter = {
-					#calculate how much actually transfers in this export
-					set_temp_variable = { TEMP_export_size = global.export_size }
-					clamp_temp_variable = { var = TEMP_export_size max = global.wine_export_available }
-					increase_trade_level = yes
+					increase_riavod_trade_level = yes
 				}
 			}
 			decrease_export_1_click = {
 				var:global.wine_exporter = {
-					#calculate how much actually transfers in this export
-					set_temp_variable = { TEMP_export_size = global.export_size }
-					clamp_temp_variable = { var = TEMP_export_size max = ROOT.wine_imported }
-					decrease_trade_level = yes
+					decrease_riavod_trade_level = yes
 				}
 			}
 		}
 		triggers = {
 			increase_export_1_click_enabled = {
-				custom_trigger_tooltip = {
-					tooltip = cant_import_from_yourself
+				hidden_trigger = {
+					#tooltip = cant_import_from_yourself
 					NOT = { 116 = { is_controlled_by = ROOT } }
 				}
+				NOT = { has_war_with = 116.controller }
+				NOT = { is_embargoed_by = 116.controller }
 				custom_trigger_tooltip = {
 					tooltip = first_export_wine_remaining_trigger
 					116 = { controller = { check_variable = { wine_export_available > 0 } } }

@@ -4,6 +4,7 @@ set_oob = "MED_3015"
 set_research_slots = 3
 set_stability = .95
 set_war_support = 0.5
+set_convoys = 14
 
 set_technology = {
 	easterling_heritage_tech = 1
