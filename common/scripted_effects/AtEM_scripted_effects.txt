@@ -1,8 +1,4 @@
 calculate_all_wine_production = { #call in FOR
-	# clear_array = global.exporter_array
-	# clear_array = global.exporter_ideology_array
-	# clear_array = global.exporter_exported_array
-	# clear_array = global.exporter_available_array
 	every_state = { #state wine production
 		limit = { check_variable = { modifier@wine_gain > 0 } }
 		set_temp_variable = { wine_production = modifier@wine_gain }
@@ -28,7 +24,7 @@ calculate_all_wine_production = { #call in FOR
 calculate_national_wine_production = { #call in tag
 	##compute export
 	if = { #only export if you actually have a market to export from
-		limit = { check_variable = { global.wine_exporter = THIS } }
+		limit = { controls_state = 116 }
 		set_variable = { wine_export = wine_produced }
 		multiply_variable = { wine_export = modifier@min_export }
 		subtract_from_variable = { wine_produced = wine_export }
@@ -38,13 +34,6 @@ calculate_national_wine_production = { #call in tag
 		set_variable = { global.wine_export = wine_export }
 		set_variable = { global.wine_export_available = wine_export_available }
 		# ##add to exporter list
-		# if = {
-			# limit = { check_variable = { wine_export > 0 } }
-			# # add_to_array = { value = THIS array = global.exporter_array }
-			# # add_to_array = { value = ideology_index array = global.exporter_ideology_array }
-			# # add_to_array = { value = wine_export array = global.exporter_exported_array }
-			# # add_to_array = { value = wine_export_available array = global.exporter_available_array }
-		# }
 	}
 	##compute off-map/import gain, which is not exported
 	set_variable = { national_wine = modifier@national_wine_gain }
@@ -106,15 +95,15 @@ calculate_market_upgrade_time = { #call in state. Mission refuses to read variab
 	multiply_variable = { market_upgrade_time = factor }
 }
 
-increase_riavod_trade_level = { #call in the tag of the seller with the buyer as ROOT.
-	add_to_variable = { ROOT.riavod_imports = 1 }
+increase_riavod_trade_level = { #call in the tag of the seller with the buyer as PREV.
+	add_to_variable = { PREV.riavod_imports = 1 }
 	#calculate how much actually transfers in this export
 	set_temp_variable = { TEMP_export_size = global.export_size }
 	clamp_temp_variable = { var = TEMP_export_size max = global.wine_export_available }
 	##Get paid with a factory
 	add_offsite_building = { type = industrial_complex level = 1 }
 	##buyer uses convoys
-	ROOT = {
+	PREV = {
 		set_temp_variable = { route_convoy_cost = riavod_route_convoy_cost }
 		multiply_temp_variable = { route_convoy_cost = -1 } #since it calculates the positive value
 		add_equipment_to_stockpile = {
@@ -127,7 +116,7 @@ increase_riavod_trade_level = { #call in the tag of the seller with the buyer as
 	subtract_from_variable = { wine_export_available = TEMP_export_size }
 	set_variable = { global.wine_export_available = wine_export_available }
 	custom_effect_tooltip = increase_wine_import_level_tooltip
-	ROOT = {
+	PREV = {
 		add_to_variable = { wine_imported = TEMP_export_size }
 		add_to_variable = { wine_imported@PREV = TEMP_export_size }
 		add_to_variable = { import_routes = 1 }
@@ -139,10 +128,10 @@ increase_riavod_trade_level = { #call in the tag of the seller with the buyer as
 		custom_effect_tooltip = cost_civ_for_import
 	}
 	##adds prosperity to buyer & seller
-	var:ROOT.capital = { add_to_variable = { num_import_routes = 1 } } #tell it to gain prosperity
+	var:PREV.capital = { add_to_variable = { num_import_routes = 1 } } #tell it to gain prosperity
 	116 = { add_to_variable = { num_export_routes = 1 } } #tell it to gain prosperity
 	#######adds prosperity to the markets in between
-	set_temp_variable = { current_node = ROOT.capital }
+	set_temp_variable = { current_node = PREV.capital }
 	set_temp_variable = { nodes_left = current_node:node_index }
 	subtract_from_temp_variable = { nodes_left = 116:node_index }
 	
@@ -206,15 +195,15 @@ increase_riavod_trade_level = { #call in the tag of the seller with the buyer as
 		}
 	}
 }
-decrease_riavod_trade_level = { #call in the tag of the seller with the buyer as ROOT.
-	subtract_from_variable = { ROOT.riavod_imports = 1 }
+decrease_riavod_trade_level = { #call in the tag of the seller with the buyer as PREV.
+	subtract_from_variable = { PREV.riavod_imports = 1 }
 	#calculate how much actually transfers in this export
 	set_temp_variable = { TEMP_export_size = global.export_size }
-	clamp_temp_variable = { var = TEMP_export_size max = ROOT.wine_imported }
+	clamp_temp_variable = { var = TEMP_export_size max = PREV.wine_imported }
 	##Lose the payment factory
 	add_offsite_building = { type = industrial_complex level = -1 }
 	##Buyer stops using convoys
-	ROOT = {
+	PREV = {
 		add_equipment_to_stockpile = {
 			type = convoy_1
 			amount = riavod_route_convoy_cost
@@ -225,17 +214,17 @@ decrease_riavod_trade_level = { #call in the tag of the seller with the buyer as
 	subtract_from_variable = { wine_exported = TEMP_export_size }
 	add_to_variable = { wine_export_available = TEMP_export_size }
 	set_variable = { global.wine_export_available = wine_export_available }
-	ROOT = {
+	PREV = {
 		subtract_from_variable = { wine_imported = TEMP_export_size }
 		subtract_from_variable = { wine_imported@PREV = TEMP_export_size }
 		subtract_from_variable = { import_routes = 1 }
 		custom_effect_tooltip = regain_cost_civ_for_import
 	}
 	##adds prosperity to buyer & seller
-	var:ROOT.capital = { subtract_from_variable = { num_import_routes = 1 } } #tell it to gain prosperity
-	var:capital = { subtract_from_variable = { num_export_routes = 1 } } #tell it to gain prosperity
+	var:PREV.capital = { subtract_from_variable = { num_import_routes = 1 } } #tell it to gain prosperity
+	116 = { subtract_from_variable = { num_export_routes = 1 } } #tell it to gain prosperity
 	#######adds prosperity to the markets in between
-	set_temp_variable = { current_node = ROOT.capital }
+	set_temp_variable = { current_node = PREV.capital }
 	set_temp_variable = { nodes_left = current_node:node_index }
 	subtract_from_temp_variable = { nodes_left = 116:node_index }
 	
@@ -300,10 +289,10 @@ decrease_riavod_trade_level = { #call in the tag of the seller with the buyer as
 	}
 }
 
-end_riavod_trade = { #call in the tag of the seller with the buyer as ROOT
+end_riavod_trade = { #call in the tag of the seller with the buyer as PREV
 	while_loop_effect = {
 		limit = {
-			ROOT = { check_variable = { riavod_imports > 0 } }
+			PREV = { check_variable = { riavod_imports > 0 } }
 		}
 		decrease_riavod_trade_level = yes
 	}

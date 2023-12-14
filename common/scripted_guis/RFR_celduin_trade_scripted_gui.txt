@@ -12,44 +12,47 @@ scripted_gui = {
 		}
 		effects = {
 			increase_export_1_click = {
-				var:global.wine_exporter = {
+				var:116.controller = {
 					increase_riavod_trade_level = yes
 				}
 			}
 			decrease_export_1_click = {
-				var:global.wine_exporter = {
+				var:116.controller = {
 					decrease_riavod_trade_level = yes
 				}
 			}
 		}
 		triggers = {
 			increase_export_1_click_enabled = {
-				hidden_trigger = {
-					#tooltip = cant_import_from_yourself
-					NOT = { 116 = { is_controlled_by = ROOT } }
+				if = {
+					limit = {
+						116 = { is_controlled_by = ROOT }
+					}
+					custom_trigger_tooltip = {
+						tooltip = cant_import_from_yourself
+						always = no
+					}
 				}
-				NOT = { has_war_with = 116.controller }
-				NOT = { is_embargoed_by = 116.controller }
-				custom_trigger_tooltip = {
-					tooltip = first_export_wine_remaining_trigger
-					116 = { controller = { check_variable = { wine_export_available > 0 } } }
-				}
-				num_of_civilian_factories_available_for_projects > 0
-				#convoy cost
-				custom_trigger_tooltip = {
-					tooltip = has_enough_convoys_for_import
-					check_variable = {
-						var = num_equipment@convoy
-						value = riavod_route_convoy_cost
-						compare = greater_than_or_equals
+				else = {
+					NOT = { has_war_with = 116.controller }
+					NOT = { is_embargoed_by = 116.controller }
+					custom_trigger_tooltip = {
+						tooltip = first_export_wine_remaining_trigger
+						116 = { controller = { check_variable = { wine_export_available > 0 } } }
+					}
+					num_of_civilian_factories_available_for_projects > 0
+					#convoy cost
+					custom_trigger_tooltip = {
+						tooltip = has_enough_convoys_for_import
+						check_variable = {
+							var = num_equipment@convoy
+							value = riavod_route_convoy_cost
+							compare = greater_than_or_equals
+						}
 					}
 				}
 			}
 			decrease_export_1_click_enabled = {
-				custom_trigger_tooltip = {
-					tooltip = cant_import_from_yourself
-					NOT = { check_variable = { global.wine_exporter = ROOT } }
-				}
 				custom_trigger_tooltip = {
 					tooltip = is_importing_wine
 					check_variable = { wine_imported > 0 }

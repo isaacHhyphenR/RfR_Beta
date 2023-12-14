@@ -171,15 +171,70 @@ on_actions = {
 		}
 	}
 	
-	on_state_control_changed = {
-		effect = { #exporters
-			if = {
-				limit = { FROM.FROM = { state = 116 } } #riavod
-				set_variable = { global.wine_exporter = ROOT }
+	on_state_control_changed = { #ROOT is new, FROM is old, FROM.FROM is state
+		effect = { #If you lose your capital & you're allowed to celduin trade, switch capital to a market state
+			if = { #Dale prioritises Laketown
+				limit = {
+					FROM = {
+						check_variable = { capital = FROM.FROM }
+						controls_state = 102
+					}
+				}
+				FROM = {
+					set_capital = {
+					  state = 102
+					  remember_old_capital = yes
+					}
+				}
 			}
 			else_if = {
-				limit = { FROM.FROM = { state = 101 } } #erebor
-				set_variable = { global.gold_exporter = ROOT }
+				limit = {
+					FROM = {
+						check_variable = { capital = FROM.FROM }
+						allowed_celduin_trade = yes
+						any_controlled_state = {
+							is_owned_by = PREV
+							market > 0
+						}
+					}
+				}
+				log = "Capital"
+				FROM = {
+					random_owned_controlled_state = {
+						limit = {
+							market > 0
+						}
+						PREV = {
+							set_capital = {
+								state = PREV
+								remember_old_capital = yes
+							}
+						}
+					}
+				}
+			}
+					
+		}
+		effect = { ##End wine trade if capital disrupted
+			if = { #Riavod changes hands
+				limit = {
+					FROM.FROM = { state = 116 }
+				}
+				every_country = {
+					limit = { check_variable = { riavod_imports > 0 } }
+					FROM = { end_riavod_trade = yes }
+				}
+			}
+			else_if = { #Buyer's capital
+				limit = {
+					FROM = {
+						check_variable = { riavod_imports > 0 }
+						check_variable = { capital = FROM.FROM }
+						#can_celduin_trade = no
+					}
+				}
+				log = "Imports"
+				FROM = { var:116.controller = { end_riavod_trade = yes } }
 			}
 		}
 		effect = { #colony uprising
@@ -363,12 +418,19 @@ on_actions = {
 			}
 		}
 		effect = { ##End wine trade
-			if = {
+			if = { #Buyer declares on Seller
 				limit = {
 					FROM = { controls_state = 116 }
 					ROOT = { check_variable = { riavod_imports > 0 } }
 				}
 				FROM = { end_riavod_trade = yes }
+			}
+			else_if = { #sSeller declares on Buyer
+				limit = {
+					ROOT = { controls_state = 116 }
+					FROM = { check_variable = { riavod_imports > 0 } }
+				}
+				FROM = { ROOT = { end_riavod_trade = yes } }
 			}
 		}
 	}
