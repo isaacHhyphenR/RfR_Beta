@@ -288,6 +288,9 @@
  army_chief_entrenchment_1: "Army Entrenchment\n(Specialist)"
  army_chief_entrenchment_2: "Army Entrenchment\n(Expert)"
  army_chief_entrenchment_3: "Army Entrenchment\n(Genius)"
+ army_artillery_1: "Ranged\n(Specialist)"
+ army_artillery_2: "Ranged\n(Expert)"
+ army_artillery_3: "Ranged\n(Genius)"
  ########################################COMMANDERS
  cavalry_officer: "$cavalry$ Officer"
  cavalry_officer_desc: "§LLived and fought with the $cavalry$.§!"

@@ -106,8 +106,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_4"
-				small = "GFX_Portrait_Northern_Generic_f_4_small"
+				large = "GFX_Portrait_Northern_Generic_f_1"
+				small = "GFX_Portrait_Northern_Generic_f_1_small"
 			}
 		}
 		advisor = {
@@ -677,17 +677,6 @@ characters = {
 				small = "GFX_Portrait_Northern_Generic_f_2_small"
 			}
 		}
-		advisor = {
-			slot = high_command
-			idea_token = DOR_kelai_aldiana
-			allowed = { original_tag = DOR }
-			traits = { navy_screen_1 merchant_house_pol_eighth }
-			ai_will_do = {
-				factor = 1
-			}
-			on_add = { merchant_house_advisor_effect = yes }
-			on_remove = { merchant_house_advisor_effect_remove = yes }
-		}
 		corps_commander = {
 			traits = { merchant_house_mil administrator extravagent infantry_officer trait_engineer }
 			skill = 2
@@ -902,8 +891,8 @@ characters = {
 		gender = female
 		portraits = {
 			army = {
-				large = "GFX_Portrait_Northern_Generic_f_4"
-				small = "GFX_Portrait_Northern_Generic_f_4_small"
+				large = "GFX_Portrait_Northern_Generic_f_2"
+				small = "GFX_Portrait_Northern_Generic_f_2_small"
 			}
 		}
 		advisor = {
@@ -939,7 +928,7 @@ characters = {
 			slot = high_command
 			idea_token = DOR_theoren_gastwolk
 			allowed = { original_tag = DOR }
-			traits = { army_artillery_1 burgher_pol_eighth }
+			traits = { army_logistics_1 burgher_pol_eighth }
 			ai_will_do = {
 				factor = 1
 			}
@@ -947,7 +936,7 @@ characters = {
 			on_remove = { burgher_advisor_effect_remove = yes }
 		}
 		corps_commander = {
-			traits = { burgher_mil fair_leader infantry_officer trait_engineer organizer fortress_buster }
+			traits = { burgher_mil fair_leader infantry_officer trait_engineer skilled_staffer organizer }
 			skill = 5
 			attack_skill = 6
 			defense_skill = 4
@@ -956,7 +945,7 @@ characters = {
 		}
 	}
 
-	DOR_arodor_aludor = { #army bow
+	DOR_arodor_aludor = { #army bow (focus)
 		name = DOR_arodor_aludor
 		gender = male
 		portraits = {
@@ -965,11 +954,26 @@ characters = {
 				small = "GFX_Portrait_Elves_Generic_m_3_small"
 			}
 		}
+		advisor = {
+			slot = high_command
+			idea_token = DOR_arodor_aludor
+			allowed = { original_tag = DOR }
+			visible = {
+				great_merchants_focus_trigger = yes
+			}
+			available = {
+				has_completed_focus = DOR_rally_them_to_our_cause
+			}
+			traits = { army_artillery_1 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
 		corps_commander = {
 			visible = {
 				has_completed_focus = DOR_rally_them_to_our_cause
 			}
-			traits = { old_guard career_officer engineer_officer organizer ranger hill_fighter adaptable }
+			traits = { old_guard career_officer trait_engineer fortress_buster ranger hill_fighter adaptable }
 			skill = 5
 			attack_skill = 3
 			defense_skill = 4
