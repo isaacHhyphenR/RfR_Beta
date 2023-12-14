@@ -1222,6 +1222,9 @@ focus_tree = {
 				limit = { has_dlc = "La Resistance" }
 				has_intelligence_agency = yes
 			}
+			else = {
+				always = no
+			}
 		}
 		search_filters = { FOCUS_FILTER_ESPIONAGE }
 		completion_reward = {
