@@ -1,0 +1,34 @@
+scripted_gui = {
+	max_prosperity_alert = {
+		window_name = "max_prosperity_alert_window"
+		context_type = player_context
+		parent_window_token = top_bar
+		visible = {
+			NOT = { has_country_flag = dismissed_market_alert }
+			any_controlled_state = {
+				check_variable = {
+					var = prosperity
+					value = 100
+					compare = greater_than_or_equals
+				}
+				NOT = { has_state_flag = constructing_market }
+			}
+		}
+		effects = {
+			alert_icon_click = { ##left click moves the camera to a state with max prosperity
+				random_controlled_state = {
+					limit = {
+						check_variable = { prosperity = 100 }
+						NOT = { has_state_flag = constructing_market }
+					}
+					ROOT = {
+						goto_state = PREV
+					}
+				}
+			}
+			alert_icon_right_click = { #right click to dismiss
+				set_country_flag = dismissed_market_alert
+			}
+		}
+	}
+}

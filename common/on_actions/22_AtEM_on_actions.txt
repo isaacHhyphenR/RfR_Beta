@@ -121,6 +121,22 @@ on_actions = {
 		}
 	}
 	
+	on_weekly = { #market alert comes back after being dismissed
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = dismissed_market_alert
+					NOT = {
+						any_controlled_state = {
+							check_variable = { prosperity = 100 }
+						}
+					}
+				}
+				clr_country_flag = dismissed_market_alert
+			}
+		}
+	}
+	
 	on_ruling_party_change = { #party ideology index
 		effect = {
 			set_ideology_index = yes
