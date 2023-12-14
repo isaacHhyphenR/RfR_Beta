@@ -109,6 +109,15 @@ calculate_market_upgrade_time = { #call in state. Mission refuses to read variab
 increase_trade_level = { #call in the tag of the seller with the buyer as ROOT
 	##costs factory
 	add_offsite_building = { type = industrial_complex level = 1 }
+	##buyer uses convoys
+	ROOT = {
+		set_temp_variable = { route_convoy_cost = riavod_route_convoy_cost }
+		multiply_temp_variable = { route_convoy_cost = -1 } #since it calculates the positive value
+		add_equipment_to_stockpile = {
+			type = convoy_1
+			amount = route_convoy_cost
+		}
+	}
 	##transfers wine towards you
 	add_to_variable = { wine_exported = TEMP_export_size }
 	subtract_from_variable = { wine_export_available = TEMP_export_size }
@@ -217,6 +226,13 @@ increase_trade_level = { #call in the tag of the seller with the buyer as ROOT
 decrease_trade_level = { #call in the tag of the seller with the buyer as ROOT
 	##costs factory
 	add_offsite_building = { type = industrial_complex level = -1 }
+	##Buyer stops using convoys
+	ROOT = {
+		add_equipment_to_stockpile = {
+			type = convoy_1
+			amount = riavod_route_convoy_cost
+		}
+	}
 	##untransfers wine towards you
 	custom_effect_tooltip = decrease_wine_import_level_tooltip
 	subtract_from_variable = { wine_exported = TEMP_export_size }
@@ -314,6 +330,17 @@ decrease_trade_level = { #call in the tag of the seller with the buyer as ROOT
 				set_temp_variable = { current_node = current_node:upstream_node }
 			}
 		}
+	}
+}
+
+calculate_riavod_trade_cost_effect = {
+	116 = {
+		set_variable = { PREV.riavod_route_convoy_cost = node_index }
+	}
+	subtract_from_variable = { riavod_route_convoy_cost = capital:node_index }
+	if = { #If it's negative, makes it positive
+		limit = { check_variable = { riavod_route_convoy_cost < 0 } }
+		multiply_variable = { riavod_route_convoy_cost = -1 }
 	}
 }
 

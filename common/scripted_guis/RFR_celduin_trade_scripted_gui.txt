@@ -7,7 +7,7 @@ scripted_gui = {
 		properties = {
 			flag1 = {
 				image = "[first_export_flag]"
-				frame = var:global:wine_exporter.ideology_index
+				frame = 116:controller.ideology_index
 			}
 		}
 		effects = {
@@ -32,17 +32,22 @@ scripted_gui = {
 			increase_export_1_click_enabled = {
 				custom_trigger_tooltip = {
 					tooltip = cant_import_from_yourself
-					NOT = { check_variable = { global.wine_exporter = ROOT } }
+					NOT = { 116 = { is_controlled_by = ROOT } }
 				}
 				custom_trigger_tooltip = {
 					tooltip = first_export_wine_remaining_trigger
-					var:global.wine_exporter = { check_variable = { wine_export_available > 0 } } 
+					116 = { controller = { check_variable = { wine_export_available > 0 } } }
 				}
 				num_of_civilian_factories_available_for_projects > 0
-				##convoy cost
-				# if = { limit = { var:global.exporter_array^0 = {calculate_trade_convoy_cost = yes } } }
-				# subtract_from_temp_variable = { route_convoy_cost = 1 }
-				# has_equipment = { convoy > route_convoy_cost }
+				#convoy cost
+				custom_trigger_tooltip = {
+					tooltip = has_enough_convoys_for_import
+					check_variable = {
+						var = num_equipment@convoy
+						value = riavod_route_convoy_cost
+						compare = greater_than_or_equals
+					}
+				}
 			}
 			decrease_export_1_click_enabled = {
 				custom_trigger_tooltip = {

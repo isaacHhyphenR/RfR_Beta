@@ -1,9 +1,8 @@
 on_actions = {
 	on_startup = {
-		effect = { #setup Easterling khanates
-			every_country = {
-				limit = { OR = { has_idea = easterling_heritage_idea has_idea = steppe_heritage_idea } }
-				load_steppe_warband = yes
+		effect = { ##party ideology index
+			every_possible_country = {
+				set_ideology_index = yes
 			}
 		}
 		effect = { ##setup technology slowers, monster unlockers
@@ -67,12 +66,20 @@ on_actions = {
 				}
 			}
 		}
-		effect = { #party ideology index
-			every_possible_country = {
-				set_ideology_index = yes
+		effect = { ##setup Easterling khanates
+			every_country = {
+				limit = { OR = { has_idea = easterling_heritage_idea has_idea = steppe_heritage_idea } }
+				load_steppe_warband = yes
 			}
 		}
-		effect = { #make day 1 wine
+		effect = { ##Calculate convoy trade cost
+			every_country = {
+				limit = { can_celduin_trade = yes }
+				calculate_riavod_trade_cost_effect = yes
+			}
+		}
+			
+		effect = { ##make day 1 wine
 			FOR = {
 				calculate_all_wine_production = yes
 			}
@@ -81,7 +88,7 @@ on_actions = {
 				daily_prosperity_gain = yes
 			}
 		}
-		effect = { #timed events
+		effect = { ##timed events
 			DOR = { #hawin falls ill
 				country_event = { id = atem.8 days = 687 } #time for 10 70 day focuses before death
 			}
@@ -114,6 +121,12 @@ on_actions = {
 						set_variable = { integration_cost = PREV.integration_cost }
 					}
 				}
+			}
+		}
+		effect = { ##Calculate convoy trade cost
+			every_country = {
+				limit = { can_celduin_trade = yes }
+				calculate_riavod_trade_cost_effect = yes
 			}
 		}
 		effect = { #number of republics

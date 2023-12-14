@@ -1,17 +1,50 @@
 defined_text = { ##Returns which flag strip to use for the first celduin exporter slot
 	name = first_export_flag
+	text = { #DOR republic
+		trigger = {
+			116 = {
+				controller = {
+					has_cosmetic_tag = DOR_republic
+				}
+			}
+		}
+		localization_key = DOR_republic_flag_strip_key
+	}
 	text = { #VIR
 		trigger = {
-			check_variable = { global.wine_exporter = DOR }
-			DOR = {
-				has_cosmetic_tag = VIR
+			116 = {
+				controller = {
+					has_cosmetic_tag = VIR
+				}
 			}
 		}
 		localization_key = VIR_flag_strip_key
 	}
+	text = { #Celduin
+		trigger = {
+			116 = {
+				controller = {
+					has_cosmetic_tag = celduin
+				}
+			}
+		}
+		localization_key = celduin_flag_strip_key
+	}
+	text = { #Celduin
+		trigger = {
+			116 = {
+				controller = {
+					has_cosmetic_tag = celduin_republic
+				}
+			}
+		}
+		localization_key = celduin_republic_flag_strip_key
+	}
 	text = { #DOR
 		trigger = {
-			check_variable = { global.wine_exporter = DOR }
+			116 = {
+				is_controlled_by = DOR
+			}
 		}
 		localization_key = DOR_flag_strip_key
 	}
@@ -21,80 +54,24 @@ defined_text = {
 	name = first_export_flag_frame
 	text = {
 		trigger = { always = yes }
-		localization_key = "[?global:exporter_array^0.GetTag].ideology_index"
+		localization_key = "116:controller.ideology_index"
 	}
 }
 defined_text = {
 	name = first_wine_import_scripted_loc
 	text = {
-		trigger = { check_variable = { global:exporter_array^0 = DOR } }
-		localization_key = "[?wine_import@DOR]"
+		#trigger = { 116 = { is_controlled_by = DOR } }
+		localization_key = "[?wine_import@116.controller]"
 	}
 }
 
-defined_text = { #displays the market city for the current state
-	name = market_name_scripted_loc
-	text = {
-		trigger = { state = 101 } #Erebor
-		localization_key = VICTORY_POINTS_4452
-	}
-	text = {
-		trigger = { state = 100 } #dale
-		localization_key = VICTORY_POINTS_5658
-	}
-	text = {
-		trigger = { state = 102 } #Esgaroth
-		localization_key = VICTORY_POINTS_7804
-	}
-	text = {
-		trigger = { state = 90 } #Woodland Realm
-		localization_key = VICTORY_POINTS_4150
-	}
-	text = {
-		trigger = { state = 306 } #Sunnarinna
-		localization_key = VICTORY_POINTS_5918
-	}
-	text = {
-		trigger = { state = 110 } #Yesterinna
-		localization_key = VICTORY_POINTS_5985
-	}
-	text = {
-		trigger = { state = 303 } #Hamarsland
-		localization_key = VICTORY_POINTS_5849
-	}
-	text = {
-		trigger = { state = 305 } #Rinnavuld
-		localization_key = VICTORY_POINTS_6151
-	}
-	text = {
-		trigger = { state = 240 } #Ruscovuld
-		localization_key = VICTORY_POINTS_627
-	}
-	text = {
-		trigger = { state = 310 } #Doraldana
-		localization_key = VICTORY_POINTS_1822
-	}
-	text = {
-		trigger = { state = 116 } #Riavod
-		localization_key = VICTORY_POINTS_6260
-	}
-	text = {
-		trigger = { state = 118 } #Folyvuld
-		localization_key = VICTORY_POINTS_1912
-	}
-	text = {
-		trigger = { state = 128 } #Dacranamel
-		localization_key = VICTORY_POINTS_3667
-	}
-	text = {
-		trigger = { state = 291 } #Medloshad
-		localization_key = VICTORY_POINTS_4688
-	}
-	text = {
-		trigger = { state = 115 } #Gazar Gord
-		localization_key = VICTORY_POINTS_1506
-	}
-}
+# defined_text = { ##Displays the correct number of convoys you need to upgrade your import route
+	# name = has_enough_convoys_for_import
+	# text = {
+		# trigger = { check_variable = { route_convoy_cost = 0 } }
+		# localization_key = has_at_least_0_convoys
+	# }
+# }
 
 defined_text = { #displays the current modifiers from the market
 	name = market_current_level_modifiers_scripted_loc

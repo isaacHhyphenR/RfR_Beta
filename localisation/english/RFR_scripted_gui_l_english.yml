@@ -32,6 +32,7 @@
  is_importing_wine: "Is importing"
  increase_wine_import_level_tooltip: "Increase our daily §Y$wine_equipment$§! import by [?global.export_size|+0..0]"
  decrease_wine_import_level_tooltip: "Decrease our daily §Y$wine_equipment$§! import by [?global.export_size|-0..0]"
+ has_enough_convoys_for_import: "At least [?riavod_route_convoy_cost|Y0] §Y$convoy$§! stored in stockpile."
  ##first exporter
  export_country_1: "[?global.wine_exporter.GetName]"
  export_country_1_flag: "[?global.wine_exporter.GetFlag] [?global.wine_exporter.GetName]"
@@ -39,6 +40,9 @@
  first_wine_export_available: "[?global.wine_export_available]"
  first_wine_import: "[?wine_imported]"
  DOR_flag_strip_key: "GFX_DOR_flag_strip"
+ DOR_republic_flag_strip_key: "GFX_DOR_republic_flag_strip"
+ celduin_flag_strip_key: "GFX_celduin_flag_strip"
+ celduin_republic_flag_strip_key: "GFX_celduin_republic_flag_strip"
  VIR_flag_strip_key: "GFX_VIR_flag_strip"
  increase_export_1_tooltip: "[!increase_export_1_click_enabled]---------------\n[!increase_export_1_click]"
  decrease_export_1_tooltip: "[!decrease_export_1_click_enabled]---------------\n[!decrease_export_1_click]"

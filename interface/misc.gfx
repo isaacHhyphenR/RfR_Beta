@@ -24,6 +24,21 @@ spriteTypes = {
 		noOfFrames = 5
 	}
 	spriteType = {
+		name = "GFX_DOR_republic_flag_strip"
+		texturefile = "gfx/flag_strips/DOR_republic.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_celduin_flag_strip"
+		texturefile = "gfx/flag_strips/celduin.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_celduin_republic_flag_strip"
+		texturefile = "gfx/flag_strips/celduin_republic.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
 		name = "GFX_VIR_flag_strip"
 		texturefile = "gfx/flag_strips/VIR.dds"
 		noOfFrames = 5
