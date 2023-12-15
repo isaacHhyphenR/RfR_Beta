@@ -1,0 +1,16 @@
+﻿units = {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "The Royal Escort Fleet"
+		naval_base = 6260 #Riavod
+		task_force = {
+			name = "The Royal Escort Fleet"
+			location = 6260 #Riavod
+			ship = { name = "Caras Sant" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = DOR version_name = "Caras Sant" } } }
+			ship = { name = "Padavan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = DOR version_name = "Caras Sant" } } }
+			ship = { name = "Eldrast" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = DOR version_name = "Caras Sant" } } }
+			ship = { name = "Darcega" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = DOR version_name = "Caras Sant" } } }
+			ship = { name = "Srezel-Kain" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = DOR version_name = "Caras Sant" } } }
+		}
+	}
+}
