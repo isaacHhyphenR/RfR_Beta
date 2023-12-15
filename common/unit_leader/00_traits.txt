@@ -2719,6 +2719,21 @@ leader_traits = {
 # ## ####  # #  #### #       ###  ##  ###   #  #  # # ## #### #    #   #    #        #  ###  ####  #   #   #  
 #  # #  #  # #  #  # #       #    #   #  #   # #  # #  # #  # #    #   #    #        #  #  # #  #  #   #    # 
 #  # #  #   #   #  # ###     #    ### #  # ##   ##  #  # #  # ### ###  #    #        #  #  # #  # ###  #  ##  
+	veteran_advisor = { 
+		type = navy
+		trait_type = personality_trait
+		
+		modifier = {
+			experience_gain_factor = 0.1
+			naval_coordination = 0.1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 	old_guard_navy = { 
 		type = navy

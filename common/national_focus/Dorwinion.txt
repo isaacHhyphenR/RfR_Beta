@@ -16,6 +16,7 @@
 #GFX_goal_generic_trade_deal
 #GFX_goal_generic_construct_market
 #GFX_focus_generic_cloth_industry
+#GFX_goal_dorwin_sea
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -3091,14 +3092,14 @@ focus_tree = {
 		relative_position_id = DOR_support_the_great_merchants
 		cost = 5
 		ai_will_do = {
-			factor = 5
+			factor = 12
 		}
 		available = { burghers_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			burghers_focus_effect_big = yes
 			set_country_flag = supporting_burghers
-			#unlock_national_focus = DOR_support_the_merchant_houses
+			unlock_national_focus = DOR_support_the_merchant_houses
 		}
 	}
 #################################FOUND THE REPUBLIC
@@ -5440,6 +5441,645 @@ focus_tree = {
 				idea = DOR_affordable_luxury_idea
 			}
 			burghers_focus_effect = yes
+		}
+	}
+
+
+######################################################################MERCHANT HOUSES BRANCH
+	focus = { #Support the Merchant Houses
+		id = DOR_support_the_merchant_houses
+		icon = GFX_goal_DOR_support_merchant_houses
+		x = 23
+		y = 8
+		relative_position_id = DOR_support_the_great_merchants
+		cost = 5
+		ai_will_do = {
+			factor = 12
+		}
+		available = { merchant_houses_focus_trigger = yes }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_country_flag = supporting_burghers
+			unlock_national_focus = DOR_support_the_burghers
+			merchant_houses_focus_effect_big = yes
+		}
+	}
+#################################MERCHANT NAVY
+	focus = { #Port of the East
+		id = DOR_port_of_the_east
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 16
+		y = 1
+		relative_position_id = DOR_support_the_merchant_houses
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_support_the_merchant_houses
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			controls_state = 116
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+		completion_reward = {
+			116 = {
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 6260
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Appoint Veteran Merchant Captains as Advisors
+		id = DOR_appoint_veteran_merchant_captains_as_advisors
+		icon = GFX_focus_generic_naval_discipline
+		x = -1
+		y = 1
+		relative_position_id = DOR_port_of_the_east
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_port_of_the_east
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+		completion_reward = {
+			every_navy_leader = {
+				gain_xp = 1500
+				add_unit_leader_trait = veteran_advisor
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Trained for Naval Combat
+		id = DOR_trained_for_naval_combat
+		icon = GFX_focus_NOR_the_royal_norwegian_navy
+		x = -1
+		y = 1
+		relative_position_id = DOR_appoint_veteran_merchant_captains_as_advisors
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_appoint_veteran_merchant_captains_as_advisors
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				add_tech_bonus = {
+					bonus = @techBoostBonus
+					uses = @techBoostUses
+					category = naval_battery
+					name = DOR_trained_for_naval_combat
+				}
+			}
+			else = {
+				navy_experience = 50
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Masters of Tide and Current
+		id = DOR_masters_of_tide_and_current
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 2
+		relative_position_id = DOR_appoint_veteran_merchant_captains_as_advisors
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_appoint_veteran_merchant_captains_as_advisors
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = @doctrineBoostBonus
+				uses = 2
+				category = naval_doctrine
+				name = DOR_masters_of_tide_and_current
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Maintain our Trade
+		id = DOR_maintain_our_trade
+		icon = GFX_goal_generic_merchant_ship
+		x = 2
+		y = 1
+		relative_position_id = DOR_port_of_the_east
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_port_of_the_east
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_LOGISTICS }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = 50
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Control the Open Sea
+		id = DOR_control_the_open_sea
+		icon = GFX_goal_generic_navy_cruiser
+		x = -1
+		y = 1
+		relative_position_id = DOR_maintain_our_trade
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_maintain_our_trade
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus  = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = cl_tech
+				category = ca_tech
+				name = DOR_control_the_open_sea
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Project our Power
+		id = DOR_project_our_power
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 1
+		relative_position_id = DOR_control_the_open_sea
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_control_the_open_sea
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			navy_experience = 50
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Threaten Evil Coasts
+		id = DOR_threaten_evil_coasts
+		icon = GFX_focus_ITA_milizia_marittima_di_artiglieria
+		x = -1
+		y = 1
+		relative_position_id = DOR_project_our_power
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_project_our_power
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus  = {
+				bonus = @techBoostBonus
+				ahead_reduction = 2
+				uses = 1
+				category = marine_tech
+				name = DOR_threaten_evil_coasts
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Defend Against Pirates
+		id = DOR_defend_against_pirates
+		icon = GFX_focus_generic_destroyer
+		x = 1
+		y = 1
+		relative_position_id = DOR_maintain_our_trade
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_maintain_our_trade
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus  = {
+				bonus = @techBoostBonus
+				uses = @techBoostUses
+				category = dd_tech
+				name = DOR_defend_against_pirates
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Dedicated Boarding Crews
+		id = DOR_dedicated_boarding_crews
+		icon = GFX_focus_generic_destroyer
+		x = 0
+		y = 1
+		relative_position_id = DOR_defend_against_pirates
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_defend_against_pirates
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				add_tech_bonus  = {
+					bonus = @techBoostBonus
+					uses = 1
+					category = torpedoes
+					name = DOR_dedicated_boarding_crews
+				}
+			}
+			else = {
+				navy_experience = 25
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #The Dorwin Sea
+		id = DOR_the_dorwin_sea
+		icon = GFX_goal_dorwin_sea
+		x = 1
+		y = 1
+		relative_position_id = DOR_project_our_power
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_project_our_power
+			focus = DOR_defend_against_pirates
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			OR = {
+				controls_state = 310
+				controls_state = 118
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #dock & slot on doraledana & folyavuld, harbors
+			310 = { #doraldena
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 1822
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			118 = { #folyavuld
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 1912
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Commission a Grand Flagship
+		id = DOR_commission_a_grand_flagship
+		icon = GFX_goal_generic_navy_battleship
+		x = -1
+		y = 1
+		relative_position_id = DOR_the_dorwin_sea
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_the_dorwin_sea
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			any_controlled_state = {
+				dockyard > 0
+				naval_base > 0
+			}
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				has_tech = early_ship_hull_heavy
+			}
+			else = {
+				has_tech = early_battleship
+			}
+		}
+		mutually_exclusive = {
+			focus = DOR_construct_an_overwhelming_fleet
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+		completion_reward = { #Battleship
+			if = { ##MTG variant
+				limit = { has_dlc = "Man the Guns" }
+				if = { #Hull 2, battery 2
+					limit = {
+						has_tech = basic_ship_hull_heavy
+						has_tech = basic_heavy_battery
+					}
+					hidden_effect = {
+						create_equipment_variant = {
+							name = "Aldiana Class"
+							type = ship_hull_heavy_2
+							name_group = DOR_BB_HISTORICAL
+							role_icon_index = 1
+							modules = {
+								fixed_ship_battery_slot = ship_heavy_battery_2
+								fixed_ship_fire_control_system_slot = empty
+								fixed_ship_radar_slot = empty
+								fixed_ship_engine_slot = heavy_ship_engine_2
+								fixed_ship_secondaries_slot = empty
+								fixed_ship_armor_slot = ship_armor_bb_2
+								front_1_custom_slot = empty
+								mid_1_custom_slot = empty
+								mid_2_custom_slot = empty
+								rear_1_custom_slot = ship_heavy_battery_2
+							}
+						}
+					}
+					###############CREATE THE DAMN THING
+					create_ship = {
+						type = ship_hull_heavy_2
+						equipment_variant = "Aldiana Class"
+						name = "Bergholda"
+					}
+				}
+				else_if = { #Hull 2, battery 1
+					limit = {
+						has_tech = basic_ship_hull_heavy
+					}
+					hidden_effect = {
+						create_equipment_variant = {
+							name = "Aldiana Class"
+							type = ship_hull_heavy_2
+							name_group = DOR_BB_HISTORICAL
+							role_icon_index = 1
+							modules = {
+								fixed_ship_battery_slot = ship_heavy_battery_1
+								fixed_ship_fire_control_system_slot = empty
+								fixed_ship_radar_slot = empty
+								fixed_ship_engine_slot = heavy_ship_engine_2
+								fixed_ship_secondaries_slot = empty
+								fixed_ship_armor_slot = ship_armor_bb_2
+								front_1_custom_slot = empty
+								mid_1_custom_slot = empty
+								mid_2_custom_slot = empty
+								rear_1_custom_slot = ship_heavy_battery_1
+							}
+						}
+					}
+					###############CREATE THE DAMN THING
+					create_ship = {
+						type = ship_hull_heavy_2
+						equipment_variant = "Aldiana Class"
+						name = "Bergholda"
+					}
+				}
+				else = { #hull 1, battery 1
+					hidden_effect = {
+						create_equipment_variant = {
+							name = "Aldiana Class"
+							type = ship_hull_heavy_1
+							name_group = DOR_BB_HISTORICAL
+							role_icon_index = 1
+							modules = {
+								fixed_ship_battery_slot = ship_heavy_battery_1
+								fixed_ship_fire_control_system_slot = empty
+								fixed_ship_radar_slot = empty
+								fixed_ship_engine_slot = heavy_ship_engine_1
+								fixed_ship_secondaries_slot = empty
+								fixed_ship_armor_slot = ship_armor_bb_1
+								front_1_custom_slot = empty
+								mid_1_custom_slot = empty
+								mid_2_custom_slot = empty
+								rear_1_custom_slot = ship_heavy_battery_1
+							}
+						}
+					}
+					###############CREATE THE DAMN THING
+					create_ship = {
+						type = ship_hull_heavy_1
+						equipment_variant = "Aldiana Class"
+						name = "Bergholda"
+					}
+				}
+			}
+			else = { ##Non designed
+				if = { ##Battleship 2
+					limit = { has_tech = basic_battleship }
+					hidden_effect = {
+						create_equipment_variant = {
+							name = "Aldiana Class"
+							type = battleship_2
+							name_group = DOR_BB_HISTORICAL
+							role_icon_index = 1
+						}
+					}
+					###############CREATE THE DAMN THING
+					create_ship = {
+						type = battleship_2
+						equipment_variant = "Aldiana Class"
+						name = "Bergholda"
+					}
+				}
+				else = { ##Battleship 1
+					hidden_effect = {
+						create_equipment_variant = {
+							name = "Aldiana Class"
+							type = battleship_1
+							name_group = DOR_BB_HISTORICAL
+							role_icon_index = 1
+						}
+					}
+					###############CREATE THE DAMN THING
+					create_ship = {
+						type = battleship_1
+						equipment_variant = "Aldiana Class"
+						name = "Bergholda"
+					}
+				}
+			}
+
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Construct an Overwhelming Fleet
+		id = DOR_construct_an_overwhelming_fleet
+		icon = GFX_focus_generic_destroyer
+		x = 1
+		y = 1
+		relative_position_id = DOR_the_dorwin_sea
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_the_dorwin_sea
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			any_controlled_state = {
+				dockyard > 0
+				naval_base > 0
+			}
+		}
+		mutually_exclusive = {
+			focus = DOR_commission_a_grand_flagship
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+		completion_reward = { #Destroyers
+			hidden_effect = { #Amount doesn't work, have to manually create 5
+				if = {
+					limit = { has_dlc = "Man the Guns" }
+					create_ship = {
+						type = ship_hull_light_1
+						equipment_variant = "Caras Sant"
+					}
+					create_ship = {
+						type = ship_hull_light_1
+						equipment_variant = "Caras Sant"
+					}
+					create_ship = {
+						type = ship_hull_light_1
+						equipment_variant = "Caras Sant"
+					}
+					create_ship = {
+						type = ship_hull_light_1
+						equipment_variant = "Caras Sant"
+					}
+					create_ship = {
+						type = ship_hull_light_1
+						equipment_variant = "Caras Sant"
+					}
+				}
+				else = {
+					create_ship = {
+						type = destroyer_1
+						equipment_variant = "Caras Sant"
+					}
+					create_ship = {
+						type = destroyer_1
+						equipment_variant = "Caras Sant"
+					}
+					create_ship = {
+						type = destroyer_1
+						equipment_variant = "Caras Sant"
+					}
+					create_ship = {
+						type = destroyer_1
+						equipment_variant = "Caras Sant"
+					}
+					create_ship = {
+						type = destroyer_1
+						equipment_variant = "Caras Sant"
+					}
+				}
+			}
+			custom_effect_tooltip = DOR_construct_an_overwhelming_fleet_tooltip
+			merchant_houses_focus_effect = yes
+		}
+	}
+#################################TRADE ECONOMY
+	focus = { #Invest in Growth
+		id = DOR_invest_in_growth
+		icon = GFX_focus_generic_industry_3
+		x = 6
+		y = 0
+		relative_position_id = DOR_port_of_the_east
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_support_the_merchant_houses
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			controls_state = 116
+		}
+		search_filters = { FOCUS_FILTER_NAVY }
+		completion_reward = {
+			every_controlled_state = {
+				random_select_amount = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			merchant_houses_focus_effect = yes
 		}
 	}
 }

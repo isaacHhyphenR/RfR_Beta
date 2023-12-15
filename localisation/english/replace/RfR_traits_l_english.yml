@@ -424,6 +424,7 @@
  mountain_rebel: "Mountain Rebel"
  wilderness_trait: "Untamed"
  ################################################################################AteM
+ veteran_advisor: "Veteran Advisor"
  koldana_mil: "House Koldana Supporter"
  koldana_mil_desc: "§LKoldana Realm Masters have guided Dorwinion with a steady hand for many years. Only we can preserve our country in these darkest of days.§!"
  vierling_mil: "House Vierling Supporter"
@@ -537,3 +538,4 @@
  guild_coordinator: "Guild Coordinator"
  nation_builder: "Nation Builder"
  republic_candidate: ""
+ 

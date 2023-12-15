@@ -897,6 +897,7 @@ technologies = {
 		
 		categories = {
 			naval_equipment
+			torpedoes
 			carpentry
 		}
 	}
@@ -955,6 +956,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_early
+			torpedoes
 		}
 	}
 
@@ -998,6 +1000,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_improved
+			torpedoes
 		}
 	}
 
@@ -1033,6 +1036,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_improved
+			torpedoes
 		}
 	}
 	improved_ship_torpedo_launcher = {
@@ -1075,6 +1079,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_early
+			torpedoes
 		}
 	}
 	advanced_ship_torpedo_launcher = {
@@ -1116,6 +1121,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_improved
+			torpedoes
 		}
 	}
 	modern_ship_torpedo_launcher = {
@@ -1151,6 +1157,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_advanced
+			torpedoes
 		}
 	}
 
@@ -1217,6 +1224,7 @@ technologies = {
 		categories = {
 			naval_equipment
 			carpentry
+			naval_battery
 		}
 	}
 
@@ -1269,6 +1277,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_early
+			naval_battery
 		}
 	}
 	improved_light_battery = {
@@ -1315,6 +1324,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_improved
+			naval_battery
 		}
 	}
 	advanced_light_battery = {
@@ -1355,6 +1365,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_advanced
+			naval_battery
 		}
 	}
 
@@ -1416,6 +1427,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_improved
+			naval_battery
 		}
 	}
 	improved_light_shell = {
@@ -1471,6 +1483,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_improved
+			naval_battery
 		}
 	}
 
@@ -1524,6 +1537,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_early
+			naval_battery
 		}
 	}
 	improved_medium_battery = {
@@ -1569,6 +1583,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_improved
+			naval_battery
 		}
 	}
 	advanced_medium_battery = {
@@ -1605,6 +1620,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_advanced
+			naval_battery
 		}
 	}
 	basic_medium_shell = {
@@ -1653,6 +1669,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_early
+			naval_battery
 		}
 	}
 	improved_medium_shell = {
@@ -1698,6 +1715,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_advanced
+			naval_battery
 		}
 	}
 
@@ -1749,6 +1767,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_early
+			naval_battery
 		}
 	}
 	improved_heavy_battery = {
@@ -1793,6 +1812,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_improved
+			naval_battery
 		}
 	}
 	advanced_heavy_battery = {
@@ -1832,6 +1852,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_advanced
+			naval_battery
 		}
 	}
 	basic_heavy_shell = {
@@ -1881,6 +1902,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_early
+			naval_battery
 		}
 	}
 	improved_heavy_shell = {
@@ -1926,6 +1948,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_advanced
+			naval_battery
 		}
 	}
 
@@ -1967,6 +1990,7 @@ technologies = {
 		categories = {
 			naval_equipment
 			carpentry
+			naval_battery
 		}
 	}
 	improved_secondary_battery = {
@@ -2014,6 +2038,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_early
+			naval_battery
 		}
 	}
 	dp_secondary_battery = {
@@ -2050,6 +2075,7 @@ technologies = {
 			naval_equipment
 			carpentry
 			carpentry_improved
+			naval_battery
 		}
 	}
 

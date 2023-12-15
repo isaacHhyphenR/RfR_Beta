@@ -109,6 +109,11 @@
  cat_siege_artillery: "Artillery"
  cat_siege_artillery_research: "$cat_siege_artillery$ Research Speed"
  
+ naval_battery: "Naval Batteries"
+ naval_battery_research: "Naval Batteries Research Speed"
+ torpedoes: "Torpedoes"
+ torpedoes_research: "Torpedoes Research Speed"
+ 
                      ###AGRICULTURE
  agriculture: "Agriculture"
  agriculture_research: "Agriculture Research Speed"

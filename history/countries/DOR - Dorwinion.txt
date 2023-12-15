@@ -89,6 +89,18 @@ if = {	###DESTROYER
 		}
 	}
 }
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	create_equipment_variant = {
+		name = "Caras Sant"
+		type = destroyer_1
+		name_group = DOR_DD_HISTORICAL
+		parent_version = 0
+	}
+}
+	
 			####ARMOR
 if = {
 	limit = {

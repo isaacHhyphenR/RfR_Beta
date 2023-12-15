@@ -79,6 +79,8 @@ technology_categories = {
 	naval_mines
 	naval_minesweeping
 	naval_minelaying
+	naval_battery
+	torpedoes
 
 ##################Agriculture
 	agriculture
