@@ -1,0 +1,2838 @@
+defined_text = { ##Returns color for if you can afford to increase trust
+	name = has_pol_power_for_trust_increase_scripted_loc
+	text = {
+		trigger = {
+			set_temp_variable = { total_cost = 0 }
+			ROOT = { calculate_tribal_trust_cost = yes }
+			add_to_temp_variable = { total_cost = -0.1 } ##so that the > works
+			ROOT = { has_political_power > var:total_cost }
+		}
+		localization_key = yellow_tooltip
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_tooltip
+	}
+}
+
+defined_text = { ##Returns if ANU is WHT's sponsor
+	name = is_ANU_the_WHT_sponsor
+	text = {
+		trigger = {
+			check_variable = { WHT.sponsor = ANU }
+		}
+		localization_key = they_are_the_current_sponsor
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = blank_loc_key
+	}
+}
+defined_text = { ##Returns if HVK is WHT's sponsor
+	name = is_HVK_the_WHT_sponsor
+	text = {
+		trigger = {
+			check_variable = { WHT.sponsor = HVK }
+		}
+		localization_key = they_are_the_current_sponsor
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = blank_loc_key
+	}
+}
+defined_text = { ##Returns if NIF is WHT's sponsor
+	name = is_NIF_the_WHT_sponsor
+	text = {
+		trigger = {
+			check_variable = { WHT.sponsor = NIF }
+		}
+		localization_key = they_are_the_current_sponsor
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = blank_loc_key
+	}
+}
+defined_text = { ##Returns if TAW is WHT's sponsor
+	name = is_TAW_the_WHT_sponsor
+	text = {
+		trigger = {
+			check_variable = { WHT.sponsor = TAW }
+		}
+		localization_key = they_are_the_current_sponsor
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = blank_loc_key
+	}
+}
+
+defined_text = { ##Returns which states GON handed over to white mountains
+	name = which_white_mountain_states_gondor_returned_scripted_loc
+	text = {
+		trigger = {
+			owns_state = 153
+		}
+		localization_key = return_morthond_and_andhen
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = return_morthond
+	}
+}
+
+defined_text = { ##Returns WHT's current equipment
+	name = WHT_infantry_equipment
+	text = {
+		trigger = {
+			set_temp_variable = { inf_equipment = WHT.num_target_equipment_in_armies@infantry_equipment }
+			subtract_from_temp_variable = { inf_equipment = WHT.num_equipment@infantry_equipment }
+			subtract_from_temp_variable = { inf_equipment = WHT.num_equipment_in_armies@infantry_equipment }
+			multiply_temp_variable = { inf_equipment = -1 }
+		}
+		localization_key = wht_inf_equipment_key
+	}
+}
+
+defined_text = { ##Returns name for ENE_resettle_ancient_lands
+	name = ENE_resettle_ancient_lands_name_scripted_loc
+	text = {
+		trigger = { is_andrast_tag = yes }
+		localization_key = ENE_resettle_ancient_lands_name_andrast
+	}
+	text = {
+		trigger = { is_white_mountains_tag = yes }
+		localization_key = ENE_resettle_ancient_lands_name_white_mountains
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = ENE_resettle_ancient_lands_name_base
+	}
+}
+defined_text = { ##Returns desc for ENE_resettle_ancient_lands
+	name = ENE_resettle_ancient_lands_desc_scripted_loc
+	text = {
+		trigger = { is_andrast_tag = yes }
+		localization_key = ENE_resettle_ancient_lands_desc_andrast
+	}
+	text = {
+		trigger = { is_white_mountains_tag = yes }
+		localization_key = ENE_resettle_ancient_lands_desc_white_mountains
+	}
+	text = {
+		trigger = { can_access_adorn_vale_branch = yes }
+		localization_key = ENE_resettle_ancient_lands_desc_rohan
+	}
+	text = {
+		trigger = { can_access_ENE_arnor_interaction = yes }
+		localization_key = ENE_resettle_ancient_lands_desc_cardolan
+	}
+}
+
+defined_text = { ##Returns region name for local agent recruitment
+	name = get_enedwaith_region_scripted_loc_local_recruitment
+	text = {
+		trigger = { From.Owner = { is_andrast_tag = yes } }
+		localization_key = Andrast
+	}
+	text = {
+		trigger = { From.Owner = { is_druwaith_iaur_tag = yes } }
+		localization_key = Druwaith_Iaur
+	}
+	text = {
+		trigger = { From.Owner = { is_dunland_tag = yes } }
+		localization_key = Dunland
+	}
+	text = {
+		trigger = { From.Owner = { is_enedwaith_tag = yes } }
+		localization_key = Enedwaith
+	}
+	text = {
+		trigger = { From.Owner = { is_eregion_tag = yes } }
+		localization_key = Eregion
+	}
+	text = {
+		trigger = { From.Owner = { is_saralain_tag = yes } }
+		localization_key = SAR
+	}
+	text = {
+		trigger = { From.Owner = { is_white_mountains_tag = yes } }
+		localization_key = White_Mountains
+	}
+}
+
+defined_text = { ##Returns region name
+	name = get_enedwaith_region_scripted_loc
+	text = {
+		trigger = { is_andrast_tag = yes }
+		localization_key = Andrast
+	}
+	text = {
+		trigger = { is_druwaith_iaur_tag = yes }
+		localization_key = Druwaith_Iaur
+	}
+	text = {
+		trigger = { is_dunland_tag = yes }
+		localization_key = Dunland
+	}
+	text = {
+		trigger = { is_enedwaith_tag = yes }
+		localization_key = Enedwaith
+	}
+	text = {
+		trigger = { is_eregion_tag = yes }
+		localization_key = Eregion
+	}
+	text = {
+		trigger = { is_saralain_tag = yes }
+		localization_key = SAR
+	}
+	text = {
+		trigger = { is_white_mountains_tag = yes }
+		localization_key = White_Mountains
+	}
+}
+
+defined_text = { ##Returns culture name
+	name = get_enedwaith_culture_scripted_loc
+	text = {
+		trigger = { is_andrast_tag = yes }
+		localization_key = Andrast_ADJ
+	}
+	text = {
+		trigger = { is_druwaith_iaur_tag = yes }
+		localization_key = Druwaith_Iaur_ADJ
+	}
+	text = {
+		trigger = { is_dunland_tag = yes }
+		localization_key = Dunland_ADJ
+	}
+	text = {
+		trigger = { is_enedwaith_tag = yes }
+		localization_key = Enedwaith_ADJ
+	}
+	text = {
+		trigger = { is_eregion_tag = yes }
+		localization_key = Eregion_ADJ
+	}
+	text = {
+		trigger = { is_saralain_tag = yes }
+		localization_key = SAR_ADJ
+	}
+	text = {
+		trigger = { is_white_mountains_tag = yes }
+		localization_key = White_Mountains_ADJ
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = our_tooltip
+	}
+}
+
+defined_text = { ##Returns Saruman's Current Color
+	name = get_saruman_color_scripted_loc
+	text = {
+		trigger = { ISN = { OR = { has_government = conquest has_government = melkorite } } }
+		localization_key = Rainbow_loc_key
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = White_loc_key
+	}
+}
+
+######################################################################## INDIVIDUAL ACCEPTANCE REASONS
+defined_text = { ##ideology
+	name = ideology_compatibility_blood_oath_scripted_loc
+	text = {#Good vs evil
+		trigger = { THIS_and_PREV_good_vs_evil = yes }
+		localization_key = blood_oath_opposing_ideologies_tooltip
+	}
+	text = {#Same Ideology
+		trigger = { THIS_and_PREV_same_ideology = yes }
+		localization_key = blood_oath_same_ideology_tooltip
+	}
+	text = {#Both good/both evil
+		trigger = { always = yes }
+		localization_key = blood_oath_neutral_ideologies_tooltip
+	}
+}
+
+defined_text = { ##network strength
+	name = network_strength_blood_oath_scripted_loc
+	text = { ##Can't have network strength without LAR
+		trigger = { NOT = { has_dlc = "La Resistance" } }
+		localization_key = blank_loc_key
+	}
+	text = {
+		trigger = { blood_oath_network_threshold_9_reached = yes }
+		localization_key = blood_oath_network_threshold_9_met_tooltip
+	}
+	text = {
+		trigger = { blood_oath_network_threshold_8_reached = yes }
+		localization_key = blood_oath_network_threshold_8_met_tooltip
+	}
+	text = {
+		trigger = { blood_oath_network_threshold_7_reached = yes }
+		localization_key = blood_oath_network_threshold_7_met_tooltip
+	}
+	text = {
+		trigger = { blood_oath_network_threshold_6_reached = yes }
+		localization_key = blood_oath_network_threshold_6_met_tooltip
+	}
+	text = {
+		trigger = { blood_oath_network_threshold_5_reached = yes }
+		localization_key = blood_oath_network_threshold_5_met_tooltip
+	}
+	text = {
+		trigger = { blood_oath_network_threshold_4_reached = yes }
+		localization_key = blood_oath_network_threshold_4_met_tooltip
+	}
+	text = {
+		trigger = { blood_oath_network_threshold_3_reached = yes }
+		localization_key = blood_oath_network_threshold_3_met_tooltip
+	}
+	text = {
+		trigger = { blood_oath_network_threshold_2_reached = yes }
+		localization_key = blood_oath_network_threshold_2_met_tooltip
+	}
+	text = {
+		trigger = { blood_oath_network_threshold_1_reached = yes }
+		localization_key = blood_oath_network_threshold_1_met_tooltip
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = blood_oath_network_threshold_not_met_tooltip
+	}
+}
+
+defined_text = { ##Culture
+	name = cultural_similarity_blood_oath_scripted_loc
+	text = {
+		trigger = { tribal_cultural_similarity_tier_1 = yes }
+		localization_key = tribal_cultural_similarity_tier_1_acceptance_tooltip
+	}
+	text = {
+		trigger = { tribal_cultural_similarity_tier_2 = yes }
+		localization_key = tribal_cultural_similarity_tier_2_acceptance_tooltip
+	}
+	text = {
+		trigger = { tribal_cultural_similarity_tier_3 = yes }
+		localization_key = tribal_cultural_similarity_tier_3_acceptance_tooltip
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = tribal_cultural_similarity_tier_4_acceptance_tooltip
+	}
+}
+
+defined_text = { ##relative strength
+	name = relative_strength_blood_oath_scripted_loc
+	text = {
+		trigger = {
+			set_temp_variable = { strength_value = num_battalions }
+			set_temp_variable = { divs_multiplier = modifier@submission_strength_projection }
+			add_to_temp_variable = { divs_multiplier = 1 }
+			multiply_temp_variable = { strength_value = divs_multiplier }
+			set_temp_variable = { PREV_divs = PREV.num_battalions }
+			if = { limit = { check_variable = { PREV_divs = 0 } } #don't divide by 0
+				add_to_temp_variable = { PREV_divs = 0.01 }
+			}
+			divide_temp_variable = { strength_value = PREV_divs }
+			check_variable = { strength_value > global.blood_oath_strength_threshold_1 }
+		}
+		localization_key = blood_oath_strength_threshold_1_tooltip
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { strength_value = num_battalions }
+			set_temp_variable = { divs_multiplier = modifier@submission_strength_projection }
+			add_to_temp_variable = { divs_multiplier = 1 }
+			multiply_temp_variable = { strength_value = divs_multiplier }
+			set_temp_variable = { PREV_divs = PREV.num_battalions }
+			if = { limit = { check_variable = { PREV_divs = 0 } } #don't divide by 0
+				add_to_temp_variable = { PREV_divs = 0.01 }
+			}
+			divide_temp_variable = { strength_value = PREV_divs }
+			check_variable = { strength_value > global.blood_oath_strength_threshold_1 }
+		}
+		localization_key = blood_oath_strength_threshold_1_tooltip
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { strength_value = num_battalions }
+			set_temp_variable = { divs_multiplier = modifier@submission_strength_projection }
+			add_to_temp_variable = { divs_multiplier = 1 }
+			multiply_temp_variable = { strength_value = divs_multiplier }
+			set_temp_variable = { PREV_divs = PREV.num_battalions }
+			if = { limit = { check_variable = { PREV_divs = 0 } } #don't divide by 0
+				add_to_temp_variable = { PREV_divs = 0.01 }
+			}
+			divide_temp_variable = { strength_value = PREV_divs }
+			check_variable = { strength_value > global.blood_oath_strength_threshold_3 }
+		}
+		localization_key = blood_oath_strength_threshold_3_tooltip
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { strength_value = num_battalions }
+			set_temp_variable = { divs_multiplier = modifier@submission_strength_projection }
+			add_to_temp_variable = { divs_multiplier = 1 }
+			multiply_temp_variable = { strength_value = divs_multiplier }
+			set_temp_variable = { PREV_divs = PREV.num_battalions }
+			if = { limit = { check_variable = { PREV_divs = 0 } } #don't divide by 0
+				add_to_temp_variable = { PREV_divs = 0.01 }
+			}
+			divide_temp_variable = { strength_value = PREV_divs }
+			check_variable = { strength_value > global.blood_oath_strength_threshold_4 }
+		}
+		localization_key = blood_oath_strength_threshold_4_tooltip
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { strength_value = num_battalions }
+			set_temp_variable = { divs_multiplier = modifier@submission_strength_projection }
+			add_to_temp_variable = { divs_multiplier = 1 }
+			multiply_temp_variable = { strength_value = divs_multiplier }
+			set_temp_variable = { PREV_divs = PREV.num_battalions }
+			if = { limit = { check_variable = { PREV_divs = 0 } } #don't divide by 0
+				add_to_temp_variable = { PREV_divs = 0.01 }
+			}
+			divide_temp_variable = { strength_value = PREV_divs }
+			check_variable = { strength_value > global.blood_oath_strength_threshold_5 }
+		}
+		localization_key = blood_oath_strength_threshold_5_tooltip
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = blood_oath_strength_threshold_6_tooltip
+	}
+}
+
+defined_text = { ##trust as percentage
+	name = trust_as_percentage_scripted_loc
+	text = {
+		trigger = { check_variable = { THIS.enedwaith_tag_trust_towards_this^PREV.tribal_array_position > 0 } }
+		localization_key = PREV_trust_towards_THIS_percentage_long
+	}
+	text = {
+		trigger = { check_variable = { THIS.enedwaith_tag_trust_towards_this^PREV.tribal_array_position < 0 } }
+		localization_key = PREV_trust_towards_THIS_percentage_long_negative
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = PREV_trust_towards_THIS_percentage_short
+	}
+}
+defined_text = { ##Prestige as percentage
+	name = prestige_as_percentage_scripted_loc
+	text = {
+		trigger = { check_variable = { modifier@prestige_modifier > 0} }
+		localization_key = display_prestige_percentage_long
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = display_prestige_percentage_short
+	}
+}
+
+defined_text = { ##Faction Status
+	name = faction_status_blood_oath_scripted_loc
+	text = {
+		trigger = {
+			is_in_faction_with = PREV
+			is_faction_leader = yes
+		}
+		localization_key = blood_oath_faction_leader
+	}
+	text = {
+		trigger = {
+			is_in_faction_with = PREV
+		}
+		localization_key = blood_oath_same_faction
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = blood_oath_different_faction
+	}
+}
+defined_text = { ##Faction Bonus
+	name = faction_bonus_blood_oath_scripted_loc
+	text = {
+		trigger = {
+			is_in_faction_with = PREV
+			is_faction_leader = yes
+			set_temp_variable = { temp_modifier = global.faction_leader_blood_oath_modifier }
+			#bonus from modifier
+			set_temp_variable = { faction_leader_blood_oath_modifier_bonus = global.faction_leader_blood_oath_modifier }
+			multiply_temp_variable = { faction_leader_blood_oath_modifier_bonus = modifier@tribal_same_faction_modifier }
+			add_to_temp_variable = { temp_modifier = faction_leader_blood_oath_modifier_bonus }
+		}
+		localization_key = "[?temp_modifier|+%0..0]"
+	}
+	text = {
+		trigger = {
+			is_in_faction_with = PREV
+			set_temp_variable = { temp_modifier = global.same_faction_blood_oath_modifier }
+			#bonus from modifier
+			set_temp_variable = { same_faction_blood_oath_modifier_bonus = global.same_faction_blood_oath_modifier }
+			multiply_temp_variable = { same_faction_blood_oath_modifier_bonus = modifier@tribal_same_faction_modifier }
+			add_to_temp_variable = { temp_modifier = same_faction_blood_oath_modifier_bonus }
+		}
+		localization_key = "[?temp_modifier|+%0..0]"
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = zero_percent_tooltip
+	}
+}
+
+######################################################################## CALCULATIONS FOR TOTAL ACCEPTANCE
+defined_text = { ##total acceptance
+	name = blood_oath_total_acceptance_scripted_loc
+	text = { #10+
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			calculate_blood_oath_submission_chance = yes
+			############Check it
+			check_variable = { total_acceptance > 0.9 }
+		}
+		localization_key = tooltip_100_acceptance
+	}
+	text = {
+		trigger = { check_variable = { total_acceptance = 0.9 } }
+		localization_key = tooltip_90_acceptance
+	}
+	text = {
+		trigger = { check_variable = { total_acceptance = 0.8 } }
+		localization_key = tooltip_80_acceptance
+	}
+	text = {
+		trigger = { check_variable = { total_acceptance = 0.7 } }
+		localization_key = tooltip_70_acceptance
+	}
+	text = {
+		trigger = { check_variable = { total_acceptance = 0.6 } }
+		localization_key = tooltip_60_acceptance
+	}
+	text = {
+		trigger = { check_variable = { total_acceptance = 0.5 } }
+		localization_key = tooltip_50_acceptance
+	}
+	text = {
+		trigger = { check_variable = { total_acceptance = 0.4 } }
+		localization_key = tooltip_40_acceptance
+	}
+	text = {
+		trigger = { check_variable = { total_acceptance = 0.3 } }
+		localization_key = tooltip_30_acceptance
+	}
+	text = {
+		trigger = { check_variable = { total_acceptance = 0.2 } }
+		localization_key = tooltip_20_acceptance
+	}
+	text = {
+		trigger = { check_variable = { total_acceptance = 0.1 } }
+		localization_key = tooltip_10_acceptance
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = tooltip_0_acceptance
+	}
+}
+
+########################################################################################################################################
+defined_text = { ##get ancestral enemy
+	name = get_ancestral_enemy
+	text = {
+		trigger = { check_variable = { ancestral_enemy = ADB } }
+		localization_key = ADB_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = NEN } }
+		localization_key = NEN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = PRI } }
+		localization_key = PRI_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = RAF } }
+		localization_key = RAF_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = AKN } }
+		localization_key = AKN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = DRU } }
+		localization_key = DRU_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = BYR } }
+		localization_key = BYR_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = IRN } }
+		localization_key = IRN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = CGN } }
+		localization_key = CGN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = DFN } }
+		localization_key = DFN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = DTH } }
+		localization_key = DTH_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = DUN } }
+		localization_key = DUN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = AGR } }
+		localization_key = AGR_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = COL } }
+		localization_key = COL_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = HST } }
+		localization_key = HST_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = STK } }
+		localization_key = STK_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = ERG } }
+		localization_key = ERG_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = HOL } }
+		localization_key = HOL_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = MBL } }
+		localization_key = MBL_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = REE } }
+		localization_key = REE_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = ANU } }
+		localization_key = ANU_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = HVK } }
+		localization_key = HVK_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = NIF } }
+		localization_key = NIF_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_enemy = TAW } }
+		localization_key = TAW_loc_string
+	}
+}
+
+defined_text = { ##get ancestral friend
+	name = get_ancestral_friend
+	text = {
+		trigger = { check_variable = { ancestral_friend = ADB } }
+		localization_key = ADB_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = NEN } }
+		localization_key = NEN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = PRI } }
+		localization_key = PRI_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = RAF } }
+		localization_key = RAF_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = AKN } }
+		localization_key = AKN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = DRU } }
+		localization_key = DRU_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = BYR } }
+		localization_key = BYR_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = IRN } }
+		localization_key = IRN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = CGN } }
+		localization_key = CGN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = DFN } }
+		localization_key = DFN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = DTH } }
+		localization_key = DTH_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = DUN } }
+		localization_key = DUN_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = AGR } }
+		localization_key = AGR_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = COL } }
+		localization_key = COL_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = HST } }
+		localization_key = HST_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = STK } }
+		localization_key = STK_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = ERG } }
+		localization_key = ERG_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = HOL } }
+		localization_key = HOL_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = MBL } }
+		localization_key = MBL_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = REE } }
+		localization_key = REE_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = ANU } }
+		localization_key = ANU_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = HVK } }
+		localization_key = HVK_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = NIF } }
+		localization_key = NIF_loc_string
+	}
+	text = {
+		trigger = { check_variable = { ancestral_friend = TAW } }
+		localization_key = TAW_loc_string
+	}
+}
+
+######################################################################## CALCULATIONS FOR COSTS
+defined_text = { ##Coring cost
+	name = core_greater_enedwaith_state_cost_scripted_loc
+	text = {
+		trigger = {
+			set_temp_variable = { total_cost = 0 }
+			calculate_tribal_coring_cost = yes
+			############Check it
+			check_variable = { total_cost < 1 }
+		}
+		localization_key = cost_0_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 2 } }
+		localization_key = cost_1_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 3 } }
+		localization_key = cost_2_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 4 } }
+		localization_key = cost_3_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 5 } }
+		localization_key = cost_4_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 6 } }
+		localization_key = cost_5_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 7 } }
+		localization_key = cost_6_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 8 } }
+		localization_key = cost_7_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 9 } }
+		localization_key = cost_8_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 10 } }
+		localization_key = cost_9_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 11 } }
+		localization_key = cost_10_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 12 } }
+		localization_key = cost_11_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 13 } }
+		localization_key = cost_12_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 14 } }
+		localization_key = cost_13_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 15 } }
+		localization_key = cost_14_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 16 } }
+		localization_key = cost_15_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 17 } }
+		localization_key = cost_16_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 18 } }
+		localization_key = cost_17_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 19 } }
+		localization_key = cost_18_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 20 } }
+		localization_key = cost_19_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 21 } }
+		localization_key = cost_20_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 22 } }
+		localization_key = cost_21_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 23 } }
+		localization_key = cost_22_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 24 } }
+		localization_key = cost_23_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 25 } }
+		localization_key = cost_24_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 26 } }
+		localization_key = cost_25_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 27 } }
+		localization_key = cost_26_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 28 } }
+		localization_key = cost_27_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 29 } }
+		localization_key = cost_28_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 30 } }
+		localization_key = cost_29_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 31 } }
+		localization_key = cost_30_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 32 } }
+		localization_key = cost_31_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 33 } }
+		localization_key = cost_32_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 34 } }
+		localization_key = cost_33_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 35 } }
+		localization_key = cost_34_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 36 } }
+		localization_key = cost_35_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 37 } }
+		localization_key = cost_36_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 38 } }
+		localization_key = cost_37_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 39 } }
+		localization_key = cost_38_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 40 } }
+		localization_key = cost_39_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 41 } }
+		localization_key = cost_40_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 42 } }
+		localization_key = cost_41_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 43 } }
+		localization_key = cost_42_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 44 } }
+		localization_key = cost_43_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 45 } }
+		localization_key = cost_44_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 46 } }
+		localization_key = cost_45_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 47 } }
+		localization_key = cost_46_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 48 } }
+		localization_key = cost_47_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 49 } }
+		localization_key = cost_48_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 50 } }
+		localization_key = cost_49_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 51 } }
+		localization_key = cost_50_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 52 } }
+		localization_key = cost_51_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 53 } }
+		localization_key = cost_52_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 54 } }
+		localization_key = cost_53_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 55 } }
+		localization_key = cost_54_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 56 } }
+		localization_key = cost_55_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 57 } }
+		localization_key = cost_56_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 58 } }
+		localization_key = cost_57_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 59 } }
+		localization_key = cost_58_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 60 } }
+		localization_key = cost_59_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 61 } }
+		localization_key = cost_60_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 62 } }
+		localization_key = cost_61_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 63 } }
+		localization_key = cost_62_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 64 } }
+		localization_key = cost_63_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 65 } }
+		localization_key = cost_64_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 66 } }
+		localization_key = cost_65_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 67 } }
+		localization_key = cost_66_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 68 } }
+		localization_key = cost_67_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 69 } }
+		localization_key = cost_68_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 70 } }
+		localization_key = cost_69_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 71 } }
+		localization_key = cost_70_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 72 } }
+		localization_key = cost_71_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 73 } }
+		localization_key = cost_72_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 74 } }
+		localization_key = cost_73_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 75 } }
+		localization_key = cost_74_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 76 } }
+		localization_key = cost_75_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 77 } }
+		localization_key = cost_76_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 78 } }
+		localization_key = cost_77_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 79 } }
+		localization_key = cost_78_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 80 } }
+		localization_key = cost_79_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 81 } }
+		localization_key = cost_80_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 82 } }
+		localization_key = cost_81_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 83 } }
+		localization_key = cost_82_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 84 } }
+		localization_key = cost_83_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 85 } }
+		localization_key = cost_84_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 86 } }
+		localization_key = cost_85_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 87 } }
+		localization_key = cost_86_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 88 } }
+		localization_key = cost_87_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 89 } }
+		localization_key = cost_88_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 90 } }
+		localization_key = cost_89_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 91 } }
+		localization_key = cost_90_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 92 } }
+		localization_key = cost_91_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 93 } }
+		localization_key = cost_92_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 94 } }
+		localization_key = cost_93_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 95 } }
+		localization_key = cost_94_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 96 } }
+		localization_key = cost_95_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 97 } }
+		localization_key = cost_96_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 98 } }
+		localization_key = cost_97_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 99 } }
+		localization_key = cost_98_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 100 } }
+		localization_key = cost_99_tooltip
+	}
+	text = {
+		trigger = { calculate_tribal_coring_cost = yes check_variable = { total_cost < 101 } }
+		localization_key = cost_100_tooltip
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = cost_more_than_100_tooltip
+	}
+}
+
+defined_text = { ##Trust cost
+	name = increase_greater_enedwaith_trust_cost_scripted_loc
+	text = {
+		trigger = {
+			set_temp_variable = { total_cost = 0 }
+			ROOT = { calculate_tribal_trust_cost = yes }
+			############Check it
+			check_variable = { total_cost < 1 }
+		}
+		localization_key = cost_0_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 2 } }
+		localization_key = cost_1_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 3 } }
+		localization_key = cost_2_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 4 } }
+		localization_key = cost_3_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 5 } }
+		localization_key = cost_4_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 6 } }
+		localization_key = cost_5_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 7 } }
+		localization_key = cost_6_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 8 } }
+		localization_key = cost_7_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 9 } }
+		localization_key = cost_8_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 10 } }
+		localization_key = cost_9_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 11 } }
+		localization_key = cost_10_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 12 } }
+		localization_key = cost_11_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 13 } }
+		localization_key = cost_12_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 14 } }
+		localization_key = cost_13_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 15 } }
+		localization_key = cost_14_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 16 } }
+		localization_key = cost_15_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 17 } }
+		localization_key = cost_16_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 18 } }
+		localization_key = cost_17_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 19 } }
+		localization_key = cost_18_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 20 } }
+		localization_key = cost_19_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 21 } }
+		localization_key = cost_20_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 22 } }
+		localization_key = cost_21_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 23 } }
+		localization_key = cost_22_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 24 } }
+		localization_key = cost_23_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 25 } }
+		localization_key = cost_24_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 26 } }
+		localization_key = cost_25_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 27 } }
+		localization_key = cost_26_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 28 } }
+		localization_key = cost_27_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 29 } }
+		localization_key = cost_28_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 30 } }
+		localization_key = cost_29_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 31 } }
+		localization_key = cost_30_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 32 } }
+		localization_key = cost_31_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 33 } }
+		localization_key = cost_32_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 34 } }
+		localization_key = cost_33_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 35 } }
+		localization_key = cost_34_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 36 } }
+		localization_key = cost_35_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 37 } }
+		localization_key = cost_36_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 38 } }
+		localization_key = cost_37_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 39 } }
+		localization_key = cost_38_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 40 } }
+		localization_key = cost_39_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 41 } }
+		localization_key = cost_40_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 42 } }
+		localization_key = cost_41_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 43 } }
+		localization_key = cost_42_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 44 } }
+		localization_key = cost_43_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 45 } }
+		localization_key = cost_44_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 46 } }
+		localization_key = cost_45_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 47 } }
+		localization_key = cost_46_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 48 } }
+		localization_key = cost_47_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 49 } }
+		localization_key = cost_48_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 50 } }
+		localization_key = cost_49_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 51 } }
+		localization_key = cost_50_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 52 } }
+		localization_key = cost_51_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 53 } }
+		localization_key = cost_52_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 54 } }
+		localization_key = cost_53_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 55 } }
+		localization_key = cost_54_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 56 } }
+		localization_key = cost_55_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 57 } }
+		localization_key = cost_56_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 58 } }
+		localization_key = cost_57_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 59 } }
+		localization_key = cost_58_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 60 } }
+		localization_key = cost_59_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 61 } }
+		localization_key = cost_60_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 62 } }
+		localization_key = cost_61_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 63 } }
+		localization_key = cost_62_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 64 } }
+		localization_key = cost_63_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 65 } }
+		localization_key = cost_64_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 66 } }
+		localization_key = cost_65_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 67 } }
+		localization_key = cost_66_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 68 } }
+		localization_key = cost_67_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 69 } }
+		localization_key = cost_68_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 70 } }
+		localization_key = cost_69_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 71 } }
+		localization_key = cost_70_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 72 } }
+		localization_key = cost_71_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 73 } }
+		localization_key = cost_72_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 74 } }
+		localization_key = cost_73_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 75 } }
+		localization_key = cost_74_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 76 } }
+		localization_key = cost_75_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 77 } }
+		localization_key = cost_76_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 78 } }
+		localization_key = cost_77_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 79 } }
+		localization_key = cost_78_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 80 } }
+		localization_key = cost_79_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 81 } }
+		localization_key = cost_80_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 82 } }
+		localization_key = cost_81_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 83 } }
+		localization_key = cost_82_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 84 } }
+		localization_key = cost_83_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 85 } }
+		localization_key = cost_84_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 86 } }
+		localization_key = cost_85_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 87 } }
+		localization_key = cost_86_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 88 } }
+		localization_key = cost_87_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 89 } }
+		localization_key = cost_88_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 90 } }
+		localization_key = cost_89_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 91 } }
+		localization_key = cost_90_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 92 } }
+		localization_key = cost_91_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 93 } }
+		localization_key = cost_92_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 94 } }
+		localization_key = cost_93_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 95 } }
+		localization_key = cost_94_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 96 } }
+		localization_key = cost_95_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 97 } }
+		localization_key = cost_96_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 98 } }
+		localization_key = cost_97_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 99 } }
+		localization_key = cost_98_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 100 } }
+		localization_key = cost_99_tooltip
+	}
+	text = {
+		trigger = { ROOT = { calculate_tribal_trust_cost = yes } check_variable = { total_cost < 101 } }
+		localization_key = cost_100_tooltip
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = cost_more_than_100_tooltip
+	}
+}
+
+######################################################################## FLAG HIGHLIGHT FOR GUI
+@greenThreshold = 0.75
+@yellowThreshold = 0.25
+defined_text = { ##ADB
+	name = ADB_flag_highlight_color
+	text = {
+		trigger = {
+			ADB = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			ADB = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			ADB = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##RAF
+	name = RAF_flag_highlight_color
+	text = {
+		trigger = {
+			RAF = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			RAF = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			RAF = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##NEN
+	name = NEN_flag_highlight_color
+	text = {
+		trigger = {
+			NEN = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			NEN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			NEN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##PRI
+	name = PRI_flag_highlight_color
+	text = {
+		trigger = {
+			PRI = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			PRI = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			PRI = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##AKN
+	name = AKN_flag_highlight_color
+	text = {
+		trigger = {
+			AKN = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			AKN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			AKN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##DRU
+	name = DRU_flag_highlight_color
+	text = {
+		trigger = {
+			DRU = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			DRU = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			DRU = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##BYR
+	name = BYR_flag_highlight_color
+	text = {
+		trigger = {
+			BYR = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			BYR = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			BYR = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##IRN
+	name = IRN_flag_highlight_color
+	text = {
+		trigger = {
+			IRN = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			IRN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			IRN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##CGN
+	name = CGN_flag_highlight_color
+	text = {
+		trigger = {
+			CGN = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			CGN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			CGN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##DFN
+	name = DFN_flag_highlight_color
+	text = {
+		trigger = {
+			DFN = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			DFN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			DFN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##DTH
+	name = DTH_flag_highlight_color
+	text = {
+		trigger = {
+			DTH = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			DTH = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			DTH = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##DUN
+	name = DUN_flag_highlight_color
+	text = {
+		trigger = {
+			DUN = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			DUN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			DUN = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##AGR
+	name = AGR_flag_highlight_color
+	text = {
+		trigger = {
+			AGR = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			AGR = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			AGR = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##COL
+	name = COL_flag_highlight_color
+	text = {
+		trigger = {
+			COL = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			COL = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			COL = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##HST
+	name = HST_flag_highlight_color
+	text = {
+		trigger = {
+			HST = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			HST = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			HST = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##STK
+	name = STK_flag_highlight_color
+	text = {
+		trigger = {
+			STK = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			STK = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			STK = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##ERG
+	name = ERG_flag_highlight_color
+	text = {
+		trigger = {
+			ERG = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			ERG = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			ERG = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##HOL
+	name = HOL_flag_highlight_color
+	text = {
+		trigger = {
+			HOL = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			HOL = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			HOL = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##MBL
+	name = MBL_flag_highlight_color
+	text = {
+		trigger = {
+			MBL = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			MBL = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			MBL = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##REE
+	name = REE_flag_highlight_color
+	text = {
+		trigger = {
+			REE = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			REE = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			REE = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##ANU
+	name = ANU_flag_highlight_color
+	text = {
+		trigger = {
+			ANU = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			ANU = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			ANU = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##HVK
+	name = HVK_flag_highlight_color
+	text = {
+		trigger = {
+			HVK = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			HVK = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			HVK = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##NIF
+	name = NIF_flag_highlight_color
+	text = {
+		trigger = {
+			NIF = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			NIF = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			NIF = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##TAW
+	name = TAW_flag_highlight_color
+	text = {
+		trigger = {
+			TAW = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			TAW = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			TAW = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##ISD
+	name = ISD_flag_highlight_color
+	text = {
+		trigger = {
+			NOT = { any_country = { has_cosmetic_tag = Province_of_Dunland } }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			ISD = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			ISD = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##WHT
+	name = WHT_flag_highlight_color
+	text = {
+		trigger = {
+			WHT = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			WHT = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			WHT = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+defined_text = { ##SAR
+	name = SAR_flag_highlight_color
+	text = {
+		trigger = {
+			SAR = { display_blank_flag_highlight = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			SAR = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @greenThreshold }
+		}
+		localization_key = green_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { total_acceptance = 0 }
+			SAR = { ROOT = { calculate_blood_oath_submission_chance = yes } }
+			check_variable = { total_acceptance > @yellowThreshold }
+		}
+		localization_key = yellow_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = red_flag_decision_highlight
+	}
+}
+######################################################################## FLAG VISIBLE FOR GUI
+defined_text = { ##ADB
+	name = ADB_flag_blood_oath
+	text = {
+		trigger = {
+			ADB = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_ADB_flag"
+	}
+}
+defined_text = { ##RAF
+	name = RAF_flag_blood_oath
+	text = {
+		trigger = {
+			RAF = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_RAF_flag"
+	}
+}
+defined_text = { ##NEN
+	name = NEN_flag_blood_oath
+	text = {
+		trigger = {
+			NEN = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_NEN_flag"
+	}
+}
+defined_text = { ##PRI
+	name = PRI_flag_blood_oath
+	text = {
+		trigger = {
+			PRI = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_PRI_flag"
+	}
+}
+defined_text = { ##AKN
+	name = AKN_flag_blood_oath
+	text = {
+		trigger = {
+			AKN = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_AKN_flag"
+	}
+}
+defined_text = { ##DRU
+	name = DRU_flag_blood_oath
+	text = {
+		trigger = {
+			DRU = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_DRU_flag"
+	}
+}
+defined_text = { ##BYR
+	name = BYR_flag_blood_oath
+	text = {
+		trigger = {
+			BYR = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_BYR_flag"
+	}
+}
+defined_text = { ##IRN
+	name = IRN_flag_blood_oath
+	text = {
+		trigger = {
+			IRN = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_IRN_flag"
+	}
+}
+defined_text = { ##CGN
+	name = CGN_flag_blood_oath
+	text = {
+		trigger = {
+			CGN = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_CGN_flag"
+	}
+}
+defined_text = { ##DFN
+	name = DFN_flag_blood_oath
+	text = {
+		trigger = {
+			DFN = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_DFN_flag"
+	}
+}
+defined_text = { ##DTH
+	name = DTH_flag_blood_oath
+	text = {
+		trigger = {
+			DTH = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_DTH_flag"
+	}
+}
+defined_text = { ##DUN
+	name = DUN_flag_blood_oath
+	text = {
+		trigger = {
+			DUN = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_DUN_flag"
+	}
+}
+defined_text = { ##AGR
+	name = AGR_flag_blood_oath
+	text = {
+		trigger = {
+			AGR = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_AGR_flag"
+	}
+}
+defined_text = { ##COL
+	name = COL_flag_blood_oath
+	text = {
+		trigger = {
+			COL = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_COL_flag"
+	}
+}
+defined_text = { ##HST
+	name = HST_flag_blood_oath
+	text = {
+		trigger = {
+			HST = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_HST_flag"
+	}
+}
+defined_text = { ##STK
+	name = STK_flag_blood_oath
+	text = {
+		trigger = {
+			STK = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_STK_flag"
+	}
+}
+defined_text = { ##ERG
+	name = ERG_flag_blood_oath
+	text = {
+		trigger = {
+			ERG = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_ERG_flag"
+	}
+}
+defined_text = { ##HOL
+	name = HOL_flag_blood_oath
+	text = {
+		trigger = {
+			HOL = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_HOL_flag"
+	}
+}
+defined_text = { ##MBL
+	name = MBL_flag_blood_oath
+	text = {
+		trigger = {
+			MBL = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_MBL_flag"
+	}
+}
+defined_text = { ##REE
+	name = REE_flag_blood_oath
+	text = {
+		trigger = {
+			REE = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_REE_flag"
+	}
+}
+defined_text = { ##ANU
+	name = ANU_flag_blood_oath
+	text = {
+		trigger = {
+			ANU = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_ANU_flag"
+	}
+}
+defined_text = { ##HVK
+	name = HVK_flag_blood_oath
+	text = {
+		trigger = {
+			HVK = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_HVK_flag"
+	}
+}
+defined_text = { ##NIF
+	name = NIF_flag_blood_oath
+	text = {
+		trigger = {
+			NIF = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_NIF_flag"
+	}
+}
+defined_text = { ##TAW
+	name = TAW_flag_blood_oath
+	text = {
+		trigger = {
+			TAW = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_TAW_flag"
+	}
+}
+defined_text = { ##ISD
+	name = ISD_flag_blood_oath
+	text = {
+		trigger = {
+			NOT = { any_country = { has_cosmetic_tag = Province_of_Dunland } }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_ISD_flag"
+	}
+}
+defined_text = { ##WHT
+	name = WHT_flag_blood_oath
+	text = {
+		trigger = {
+			WHT = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_WHT_flag"
+	}
+}
+defined_text = { ##SAR
+	name = SAR_flag_blood_oath
+	text = {
+		trigger = {
+			SAR = { display_blank_flag_main = yes }
+		}
+		localization_key =  blank_flag_decision_highlight
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "GFX_decision_SAR_flag"
+	}
+}
