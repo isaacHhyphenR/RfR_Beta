@@ -1,0 +1,86 @@
+﻿##### DORDOR NAME LISTS #####
+### REGULAR DESTROYER NAMES###
+DOR_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	for_countries = { DOR }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer }			
+
+	prefix = "DOR "
+	fallback_name = "Destroyer %d"					
+
+	unique = {
+		"Yzelvod" "Kalimatvuld" "Aldanirn" "Kelperia" "Ariserini" "Galgorin" "Kuzarend" "Darcega" "Riavashad" "Visegrad" "Meldin" "Luagros" "Aldenatoron" "Saelin" "Bennek" "Ery Gwinion" "Caravasanor" "Lendembas" "Pareltir" "Mihrason" "Iaurgobel" "Orivalond" "Arasant"
+	}
+}
+
+### LIGHT CRUISER NAMES###
+DOR_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+
+	for_countries = { DOR }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	prefix = "DOR "
+	fallback_name = "Light Cruiser %d"
+
+	unique = {
+		"Riavod" "Caras Sant" "Padavan" "Eldrast" "Szrel-Kain"
+	}
+}
+
+### HEAVY CRUISER NAMES###
+DOR_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { DOR }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	prefix = "DOR "
+	fallback_name = "Heavy Cruiser %d"
+
+	unique = {
+		"Doraldena" "Illanavuld" "Folyavuld" "Iaurvuld" "Dargeca" "Uldonavuld"
+	}
+}
+
+### BATTLECRUISER NAMES ###
+DOR_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { DOR }
+
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	
+	prefix = "DOR "
+	fallback_name = "Battlecruiser %d"		
+
+	unique = {
+		"Doraldena" "Illanavuld" "Folyavuld" "Iaurvuld" "Dargeca" "Uldonavuld"
+	}
+}
+
+
+### BATTLESHIP NAMES ###
+DOR_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { DOR }
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	
+	prefix = "DOR "
+	fallback_name = "Battleship %d"		
+
+	unique = {
+		"Doraldena" "Illanavuld" "Folyavuld" "Iaurvuld" "Dargeca" "Uldonavuld"
+	}
+}
