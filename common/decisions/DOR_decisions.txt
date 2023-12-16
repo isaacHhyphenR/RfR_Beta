@@ -242,7 +242,7 @@ DOR_great_merchants_category = { #BOP
 			factor = 0
 		}
 		modifier = {
-			power_balance_weekly = -0.005
+			power_balance_weekly = 0.005
 		}
 	}
 }
@@ -1764,6 +1764,205 @@ DOR_monarchist_plot_category = {
 			add_popularity = {
 				ideology = melkorite
 				popularity = -0.025
+			}
+		}
+	}
+}
+
+celduin_trade_category = {
+	@spendProsperityPPCost = 0
+	DOR_boost_other_market = {
+		icon = GFX_decision_upgrade_market
+		fire_only_once = no
+		#cost = @spendProsperityPPCost
+		custom_cost_trigger = { always = yes } #can't check state variable
+		custom_cost_text = cost_market_prosperity
+		ai_will_do = {
+			factor = 0.5
+			modifier = { #fully upgrade market first
+				FROM = { market < var:market_max_level }
+				factor = 0
+			}
+		}
+		allowed = { original_tag = DOR }
+		state_target = yes
+		target_array = global.celduin_markets
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		visible = {
+			power_balance_value = {
+				id = DOR_great_merchants_power_balance
+				value > 0.499
+			}
+			check_variable = { FROM.prosperity = 100 }
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				check_variable = { prosperity = 100 }
+			}
+		}
+		available = {
+			any_controlled_state = {
+				market > 0
+				custom_trigger_tooltip = {
+					tooltip = less_than_100_prosperity_tooltip
+					check_variable = { prosperity < 100 }
+				}
+			}
+		}
+		complete_effect = { #adds 25 prosperity to a different market
+			##tries to add to a core market that can fully benefit
+			if = {
+				limit = {
+					any_controlled_state = {
+						is_core_of = ROOT
+						market > 0
+						check_variable = { prosperity < 76 }
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						market > 0
+						check_variable = { prosperity < 76 }
+					}
+					add_25_prosperity = yes
+				}
+			}
+			##tries to add to a core market that can somewhat benefit
+			else_if = {
+				limit = {
+					any_controlled_state = {
+						is_core_of = ROOT
+						market > 0
+						check_variable = { prosperity < 100 }
+					}
+				}
+				random_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						market > 0
+						check_variable = { prosperity < 100 }
+					}
+					add_25_prosperity = yes
+				}
+			}
+			##adds to any market that can benefit
+			else = {
+				random_controlled_state = {
+					limit = {
+						market > 0
+						check_variable = { prosperity < 100 }
+					}
+					add_25_prosperity = yes
+				}
+			}
+			##do this at the end so it doesn't accidentally select itself
+			set_variable = { FROM.prosperity = 0 }
+		}
+	}
+	DOR_prosperity_for_resources = {
+		icon = GFX_decision_resources
+		fire_only_once = no
+		#cost = @spendProsperityPPCost
+		custom_cost_trigger = { always = yes } #can't check state variable
+		custom_cost_text = cost_market_prosperity
+		ai_will_do = {
+			factor = 1
+			modifier = { #fully upgrade market first
+				FROM = { market < var:market_max_level }
+				factor = 0
+			}
+		}
+		allowed = { original_tag = DOR }
+		state_target = yes
+		target_array = global.celduin_markets
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		visible = {
+			power_balance_value = {
+				id = DOR_great_merchants_power_balance
+				value > 0.749
+			}
+			check_variable = { FROM.prosperity = 100 }
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				check_variable = { prosperity = 100 }
+			}
+		}
+		complete_effect = { #choose between food, wood, cloth, or iron
+			set_variable = { FROM.prosperity = 0 }
+			FROM = { save_event_target_as = market_resource_state }
+			country_event = { id = atem.18 }
+			custom_effect_tooltip = DOR_prosperity_for_resources_tooltip
+		}
+	}
+	DOR_prosperity_for_factory = {
+		icon = GFX_decision_generic_factory
+		fire_only_once = no
+		#cost = @spendProsperityPPCost
+		custom_cost_trigger = { always = yes } #can't check state variable
+		custom_cost_text = cost_market_prosperity
+		ai_will_do = {
+			factor = 2
+			modifier = { #fully upgrade market first
+				FROM = { market < var:market_max_level }
+				factor = 0
+			}
+		}
+		allowed = { original_tag = DOR }
+		state_target = yes
+		target_array = global.celduin_markets
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		visible = {
+			power_balance_value = {
+				id = DOR_great_merchants_power_balance
+				value > 0.99
+			}
+			check_variable = { FROM.prosperity = 100 }
+		}
+		available = {
+			FROM = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = no
+				}
+			}
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				check_variable = { prosperity = 100 }
+			}
+		}
+		complete_effect = { #adds 1 civ to the state
+			set_variable = { FROM.prosperity = 0 }
+			FROM = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 			}
 		}
 	}

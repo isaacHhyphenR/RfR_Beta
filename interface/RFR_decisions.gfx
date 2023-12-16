@@ -780,6 +780,10 @@ spriteTypes = {
 		name = "GFX_decision_take_loan"
 		texturefile = "gfx/interface/decisions/take_loan.dds"
 	}
+	spriteType = {
+		name = "GFX_decision_resources"
+		texturefile = "gfx/interface/decisions/decision_resources.dds"
+	}
 ################################################CATEGORY ICONS
 	spriteType = {
 		name = "GFX_decision_category_explosion"

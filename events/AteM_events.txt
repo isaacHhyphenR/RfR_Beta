@@ -1142,6 +1142,162 @@ country_event = { ##17## Dorwinion offers equitable federation
 		hidden_effect = { FROM = { news_event = { id = rfr_news.123 hours = 1 } } }
 	}
 }
+
+country_event = { ##18## Spent prosperity on resources
+	id = atem.18
+	title = atem.18.t
+	desc = atem.18.d
+	picture = GFX_event_trade
+	
+	is_triggered_only = yes
+	
+	@marketProsperityResources = 8
+	option = { ##food
+		name = atem.18.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_resources_in_country = {
+					resource = food
+					amount > 20
+					extracted = yes
+				}
+				factor = 0.75
+			}
+			modifier = {
+				has_resources_in_country = {
+					resource = food
+					amount > 50
+					extracted = yes
+				}
+				factor = 0.75
+			}
+			modifier = {
+				has_resources_in_country = {
+					resource = food
+					amount > 100
+					extracted = yes
+				}
+				factor = 0.5
+			}
+		}
+		event_target:market_resource_state = {
+			add_resource = {
+				type = food
+				amount = @marketProsperityResources
+			}
+		}
+	}
+	option = { ##wood
+		name = atem.18.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_resources_in_country = {
+					resource = wood
+					amount > 20
+					extracted = yes
+				}
+				factor = 0.75
+			}
+			modifier = {
+				has_resources_in_country = {
+					resource = wood
+					amount > 50
+					extracted = yes
+				}
+				factor = 0.75
+			}
+			modifier = {
+				has_resources_in_country = {
+					resource = wood
+					amount > 100
+					extracted = yes
+				}
+				factor = 0.5
+			}
+		}
+		event_target:market_resource_state = {
+			add_resource = {
+				type = wood
+				amount = @marketProsperityResources
+			}
+		}
+	}
+	option = { ##cloth
+		name = atem.18.c
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_resources_in_country = {
+					resource = cloth
+					amount > 20
+					extracted = yes
+				}
+				factor = 0.75
+			}
+			modifier = {
+				has_resources_in_country = {
+					resource = cloth
+					amount > 50
+					extracted = yes
+				}
+				factor = 0.75
+			}
+			modifier = {
+				has_resources_in_country = {
+					resource = cloth
+					amount > 100
+					extracted = yes
+				}
+				factor = 0.5
+			}
+		}
+		event_target:market_resource_state = {
+			add_resource = {
+				type = cloth
+				amount = @marketProsperityResources
+			}
+		}
+	}
+	option = { ##iron
+		name = atem.18.dd
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_resources_in_country = {
+					resource = iron
+					amount > 20
+					extracted = yes
+				}
+				factor = 0.75
+			}
+			modifier = {
+				has_resources_in_country = {
+					resource = iron
+					amount > 50
+					extracted = yes
+				}
+				factor = 0.75
+			}
+			modifier = {
+				has_resources_in_country = {
+					resource = iron
+					amount > 100
+					extracted = yes
+				}
+				factor = 0.5
+			}
+		}
+		event_target:market_resource_state = {
+			add_resource = {
+				type = iron
+				amount = @marketProsperityResources
+			}
+		}
+	}
+}
+
 ################################################################SENATE EVENTS
 add_namespace = senate
 country_event = { ##0## Hidden event selector

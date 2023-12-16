@@ -818,4 +818,8 @@ spriteTypes = {
 		name = "GFX_idea_construct_market"
 		texturefile = "gfx/interface/ideas/construct_market.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_prosperity"
+		texturefile = "gfx/interface/ideas/prosperity.dds"
+	}
 }

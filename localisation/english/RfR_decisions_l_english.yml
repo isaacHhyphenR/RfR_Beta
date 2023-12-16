@@ -741,3 +741,14 @@
  DOR_core_rinnavuld_compliance_desc: "We have finally regained the trust of our northern subjects."
  DOR_core_ruscovuld_compliance: "Integrate $STATE_240$"
  DOR_core_ruscovuld_compliance_desc: "We have finally regained the trust of our northern subjects."
+ DOR_boost_other_market: "Use [FROM.GetName]'s Profits to Invest"
+ DOR_boost_other_market_desc: "[FROM.GetCapitalVictoryPointName] is a bustling trade hub. We should use this wealth to improve other markets."
+ DOR_prosperity_for_resources: "Increase Imports to [FROM.GetName]"
+ DOR_prosperity_for_resources_desc: "[FROM.GetCapitalVictoryPointName]'s booming market brings goods and resources from all corners of Middle Earth. We should use our wealth to purchase more."
+ DOR_prosperity_for_factory: "Diversify [FROM.GetName]'s Economy"
+ DOR_prosperity_for_factory_desc: "Many sectors of [FROM.GetCapitalVictoryPointName]'s stand to benefit from it's booming market."
+ 
+ 
+ 
+ 
+ 

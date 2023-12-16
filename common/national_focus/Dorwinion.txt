@@ -3102,6 +3102,7 @@ focus_tree = {
 		completion_reward = {
 			burghers_focus_effect_big = yes
 			set_country_flag = supporting_burghers
+			custom_effect_tooltip = DOR_support_the_burghers_tooltip
 			unlock_national_focus = DOR_support_the_merchant_houses
 		}
 	}
@@ -5462,7 +5463,8 @@ focus_tree = {
 		available = { merchant_houses_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			set_country_flag = supporting_burghers
+			set_country_flag = supporting_merchant_houses
+			custom_effect_tooltip = DOR_support_the_merchant_houses_tooltip
 			unlock_national_focus = DOR_support_the_burghers
 			merchant_houses_focus_effect_big = yes
 		}
@@ -6509,7 +6511,7 @@ focus_tree = {
 				}
 				hidden_effect = {
 					add_country_leader_trait = {
-						ideology = elective_monarchy_isolationism
+						ideology = elective_monarchy_freedom
 						trait = guardian_of_prosperity
 					}
 				}

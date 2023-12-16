@@ -227,6 +227,7 @@ DOR_election_power_balance = {
 	}
 }
 
+@sidePowerActivation = 25 #gain pp first time you activate a range for a side you support
 DOR_great_merchants_power_balance = {
 	initial_value = 0.15
 	left_side = DOR_burghers_side
@@ -262,6 +263,16 @@ DOR_great_merchants_power_balance = {
 				prosperity_gain_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.04
 			}
+			on_activate = {
+				if = {
+					limit = {
+						has_country_flag = supporting_burghers
+						NOT = { has_country_flag = activated_burghers_1 }
+					}
+					set_country_flag = activated_burghers_1
+					add_political_power = @sidePowerActivation
+				}
+			}
 		}
 		range = { #senate
 			id = DOR_burghers_range2
@@ -273,6 +284,14 @@ DOR_great_merchants_power_balance = {
 			}
 			on_activate = {
 				DOR_establish_senate = yes
+				if = {
+					limit = {
+						has_country_flag = supporting_burghers
+						NOT = { has_country_flag = activated_burghers_2 }
+					}
+					set_country_flag = activated_burghers_2
+					add_political_power = @sidePowerActivation
+				}
 			}
 		}
 		range = { #plot
@@ -291,6 +310,14 @@ DOR_great_merchants_power_balance = {
 						news_event = rfr_news.111
 					}
 				}
+				if = {
+					limit = {
+						has_country_flag = supporting_burghers
+						NOT = { has_country_flag = activated_burghers_3 }
+					}
+					set_country_flag = activated_burghers_3
+					add_political_power = @sidePowerActivation
+				}
 			}
 		}
 		range = { #republic
@@ -302,6 +329,14 @@ DOR_great_merchants_power_balance = {
 			}
 			on_activate = {
 				DOR_become_republic = yes
+				if = {
+					limit = {
+						has_country_flag = supporting_burghers
+						NOT = { has_country_flag = activated_burghers_4 }
+					}
+					set_country_flag = activated_burghers_4
+					add_political_power = @sidePowerActivation
+				}
 			}
 		}
 	}
@@ -311,7 +346,6 @@ DOR_great_merchants_power_balance = {
 		id = DOR_merchant_houses_side
 		icon = GFX_merchant_houses_bop
 		
-		@housesPowerActivation = 50 #gain pp first time you activate a merchant house tier
 		range = {
 			id = DOR_merchant_houses_range1
 			min = 0.25
@@ -323,9 +357,12 @@ DOR_great_merchants_power_balance = {
 			}
 			on_activate = {
 				if = {
-					limit = { NOT = { has_country_flag = activated_houses_1 } }
+					limit = {
+						has_country_flag = supporting_merchant_houses
+						NOT = { has_country_flag = activated_houses_1 }
+					}
 					set_country_flag = activated_houses_1
-					add_political_power = @housesPowerActivation
+					add_political_power = @sidePowerActivation
 				}
 			}
 		}
@@ -337,12 +374,16 @@ DOR_great_merchants_power_balance = {
 				prosperity_gain_factor = 0.15
 				local_resources_factor = 0.07
 				trade_opinion_factor = 0.14
+				custom_modifier_tooltip = can_transfer_prosperity_tooltip
 			}
 			on_activate = {
 				if = {
-					limit = { NOT = { has_country_flag = activated_houses_2 } }
+					limit = {
+						has_country_flag = supporting_merchant_houses
+						NOT = { has_country_flag = activated_houses_2 }
+					}
 					set_country_flag = activated_houses_2
-					add_political_power = @housesPowerActivation
+					add_political_power = @sidePowerActivation
 				}
 			}
 		}
@@ -354,12 +395,16 @@ DOR_great_merchants_power_balance = {
 				prosperity_gain_factor = 0.125
 				local_resources_factor = 0.09
 				trade_opinion_factor = 0.18
+				custom_modifier_tooltip = can_spend_prosperity_on_resources_tooltip
 			}
 			on_activate = {
 				if = {
-					limit = { NOT = { has_country_flag = activated_houses_3 } }
+					limit = {
+						has_country_flag = supporting_merchant_houses
+						NOT = { has_country_flag = activated_houses_3 }
+					}
 					set_country_flag = activated_houses_3
-					add_political_power = @housesPowerActivation
+					add_political_power = @sidePowerActivation
 				}
 			}
 		}
@@ -371,12 +416,16 @@ DOR_great_merchants_power_balance = {
 				prosperity_gain_factor = 0.1
 				local_resources_factor = 0.1
 				trade_opinion_factor = 0.2
+				custom_modifier_tooltip = can_spend_prosperity_on_civilian_factory_tooltip
 			}
 			on_activate = {
 				if = {
-					limit = { NOT = { has_country_flag = activated_houses_4 } }
+					limit = {
+						has_country_flag = supporting_merchant_houses
+						NOT = { has_country_flag = activated_houses_4 }
+					}
 					set_country_flag = activated_houses_4
-					add_political_power = @housesPowerActivation
+					add_political_power = @sidePowerActivation
 				}
 			}
 		}

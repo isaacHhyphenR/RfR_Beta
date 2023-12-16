@@ -50,7 +50,7 @@
 ########################################CELDUIN MARKET
  market_level: "[?non_damaged_building_level@market]/[?market_max_level]"
  state_prosperity_click: "[!prosperity_level_click]"
- state_prosperity: "[?prosperity|+] Prosperity\n--------------\n $daily_prosperity_gain_tooltip$"
+ state_prosperity: "[?prosperity|+] £GFX_prosperity_texticon Prosperity\n--------------\n $daily_prosperity_gain_tooltip$"
  market_current_level_modifiers: "[market_current_level_modifiers_scripted_loc]"
  market_header: "§YMarket§! (State level: [?building_level@market|Y0..0])\n--------------\n$market_desc$\n\n"
  market_level_1_modifiers: "$market_header$$MODIFIER_CONSUMER_GOODS_EXPECTED_VALUE$: §Y-1.0%§!\nMax Factories in State: §G+1§!\nTrade deal opinion factor: §Y+1.00%§!\n$local_construction_speed$: §G+5.00%§!"
@@ -61,7 +61,7 @@
  upgrade_market_click_tooltip: "[!upgrade_market_click_enabled]---------------\n[!upgrade_market_click]"
  upgrade_market_effect_tooltip: "Costs [?global.market_upgrade_cost|R] §Y$industrial_complex$s§! for §Y[market_upgrade_days]§! days.\n\n§YWhen finished:§!\nAdd §G1§! §Y$market$§!\nReset prosperity to 0"
  resets_prosperity: "Resets Prosperity"
- has_100_prosperity: "§Y[THIS.GetName]§! has §G100§! Prosperity"
+ has_100_prosperity: "§Y[THIS.GetName]§! has §G100§! £GFX_prosperity_texticon Prosperity"
  constructing_market: "Already constructing a §Y$market$§! in this state"
  daily_prosperity_gain_tooltip: "[?total_prosperity_gain|=+] Daily.\n    $prosperity_gain_from_imports$\n    $prosperity_gain_from_exports$\n    $prosperity_gain_from_passthrough$\n    $prosperity_gain_factor_in_state$\n    $prosperity_fain_factor_in_state_country$"
  prosperity_gain_from_imports: "[?importGain|=+] total from [?num_import_routes|+0..0] Import Routes"

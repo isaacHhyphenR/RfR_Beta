@@ -207,4 +207,6 @@
  MOR_settle_wilderness_cost: "£GFX_manpower_texticon §Y[?dagorlad_settlement_cost]§!"
  MOR_settle_wilderness_cost_blocked: "£GFX_manpower_texticon §R[?dagorlad_settlement_cost]§!"
  MOR_settle_wilderness_cost_tooltip: "It costs £GFX_manpower_texticon §Y[?dagorlad_settlement_cost]§! to take the decision"
- 
+ cost_market_prosperity: "£GFX_prosperity_texticon §Y100§!"
+ cost_market_prosperity_blocked: "£GFX_prosperity_texticon §R100§!"
+ cost_market_prosperity_tooltip: "It costs £GFX_prosperity_texticon §Y100§! from §Y[FROM.GetName]§! to take the decision"
