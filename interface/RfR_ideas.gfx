@@ -810,4 +810,12 @@ spriteTypes = {
 		name = "GFX_idea_take_loan"
 		texturefile = "gfx/interface/ideas/take_loan.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_money_agreement"
+		texturefile = "gfx/interface/ideas/money_agreement.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_construct_market"
+		texturefile = "gfx/interface/ideas/construct_market.dds"
+	}
 }

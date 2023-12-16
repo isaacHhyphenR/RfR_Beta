@@ -93,6 +93,11 @@ on_actions = {
 				country_event = { id = atem.8 days = 687 } #time for 10 70 day focuses before death
 			}
 		}
+		effect = { ##Set market max level to 5
+			every_state = {
+				set_variable = { market_max_level = 5 }
+			}
+		}
 	}
 	
 	on_daily_FOR = { #wine & precious metals gain, prosperity

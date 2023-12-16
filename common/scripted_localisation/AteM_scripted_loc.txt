@@ -50,28 +50,23 @@ defined_text = { ##Returns which flag strip to use for the first celduin exporte
 	}
 }
 
-defined_text = {
+defined_text = { ##Returns which flag frame to show on the Riavod exporter
 	name = first_export_flag_frame
 	text = {
 		trigger = { always = yes }
 		localization_key = "116:controller.ideology_index"
 	}
 }
-defined_text = {
-	name = first_wine_import_scripted_loc
+defined_text = { ##Returns number of days it takes to upgrade market
+	name = market_upgrade_days
 	text = {
-		#trigger = { 116 = { is_controlled_by = DOR } }
-		localization_key = "[?wine_import@116.controller]"
+		trigger = { controller = { has_country_flag = reduce_market_time } }
+		localization_key = "75"
+	}
+	text = {
+		localization_key = "100"
 	}
 }
-
-# defined_text = { ##Displays the correct number of convoys you need to upgrade your import route
-	# name = has_enough_convoys_for_import
-	# text = {
-		# trigger = { check_variable = { route_convoy_cost = 0 } }
-		# localization_key = has_at_least_0_convoys
-	# }
-# }
 
 defined_text = { #displays the current modifiers from the market
 	name = market_current_level_modifiers_scripted_loc

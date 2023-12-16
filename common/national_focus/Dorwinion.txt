@@ -17,6 +17,9 @@
 #GFX_goal_generic_construct_market
 #GFX_focus_generic_cloth_industry
 #GFX_goal_dorwin_sea
+#GFX_goal_riavod_market
+#GFX_goal_merchants
+#GFX_goal_generic_imports
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -4904,7 +4907,7 @@ focus_tree = {
 	@guildInvestmentDays = 100
 	focus = { #Nation of Artisans
 		id = DOR_nation_of_artisans
-		icon = GFX_focus_generic_industry_2
+		icon = GFX_focus_ITA_workers_unions
 		x = 19
 		y = 1
 		relative_position_id = DOR_support_the_burghers
@@ -5133,7 +5136,7 @@ focus_tree = {
 	}
 	focus = { #Reinvest in our suppliers
 		id = DOR_reinvest_in_our_suppliers
-		icon = GFX_focus_SOV_breadbasket_of_the_union
+		icon = GFX_focus_generic_agricultural_subsidies
 		x = 0
 		y = 1
 		relative_position_id = DOR_beyond_our_walls_but_not_our_hearts
@@ -5641,7 +5644,7 @@ focus_tree = {
 	}
 	focus = { #Project our Power
 		id = DOR_project_our_power
-		icon = GFX_goal_generic_navy_doctrines_tactics
+		icon = GFX_goal_generic_occupy_states_coastal
 		x = 0
 		y = 1
 		relative_position_id = DOR_control_the_open_sea
@@ -5718,7 +5721,7 @@ focus_tree = {
 	}
 	focus = { #Dedicated Boarding Crews
 		id = DOR_dedicated_boarding_crews
-		icon = GFX_focus_generic_destroyer
+		icon = GFX_focus_ICE_modernizing_the_coast_guard
 		x = 0
 		y = 1
 		relative_position_id = DOR_defend_against_pirates
@@ -6053,7 +6056,7 @@ focus_tree = {
 #################################TRADE ECONOMY
 	focus = { #Invest in Growth
 		id = DOR_invest_in_growth
-		icon = GFX_focus_generic_industry_3
+		icon = GFX_focus_generic_industry_1
 		x = 6
 		y = 0
 		relative_position_id = DOR_port_of_the_east
@@ -6078,6 +6081,527 @@ focus_tree = {
 					instant_build = yes
 				}
 				add_extra_state_shared_building_slots = 1
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Source of All Wealth
+		id = DOR_source_of_all_wealth
+		icon = GFX_focus_generic_industry_2
+		x = 4
+		y = 1
+		relative_position_id = DOR_port_of_the_east
+		cost = 10
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				116 = { dockyard > 1 }
+				add = 2
+			}
+			modifier = {
+				116 = { dockyard > 2 }
+				add = 2
+			}
+			modifier = {
+				116 = { dockyard > 5 }
+				add = 10
+			}
+		}
+		prerequisite = {
+			focus = DOR_invest_in_growth
+		}
+		prerequisite = {
+			focus = DOR_port_of_the_east
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			116 = {
+				is_controlled_by = ROOT
+				dockyard > 0
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = DOR_source_of_all_wealth_tooltip
+			for_loop_effect = {
+				start = 0
+				end = 116:building_level@dockyard
+				add = 1
+				value = temp
+				random_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Nation of Commerce
+		id = DOR_nation_of_commerce
+		icon = GFX_goal_generic_construct_market
+		x = 0
+		y = 1
+		relative_position_id = DOR_invest_in_growth
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_invest_in_growth
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			market > 0
+		}
+		search_filters = { FOCUS_FILTER_PROSPERITY }
+		completion_reward = {
+			every_controlled_state = {
+				limit = {
+					market > 0
+				}
+				add_15_prosperity = yes
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Connected Economies
+		id = DOR_connected_economies
+		icon = GFX_focus_generic_merchant_fleet
+		x = -1
+		y = 1
+		relative_position_id = DOR_nation_of_commerce
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_maintain_our_trade
+		}
+		prerequisite = {
+			focus = DOR_nation_of_commerce
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			num_of_naval_factories > 0
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			custom_effect_tooltip = DOR_connected_economies_tooltip
+			if = {
+				limit = { dockyard > 9 }
+				add_tech_bonus = {
+					bonus = 2
+					uses = @techBoostUses
+					category = industry
+					category = construction_tech
+					name = DOR_connected_economies
+				}
+			}
+			else_if = {
+				limit = { dockyard > 8 }
+				add_tech_bonus = {
+					bonus = 1.8
+					uses = @techBoostUses
+					category = industry
+					category = construction_tech
+					name = DOR_connected_economies
+				}
+			}
+			else_if = {
+				limit = { dockyard > 7 }
+				add_tech_bonus = {
+					bonus = 1.6
+					uses = @techBoostUses
+					category = industry
+					category = construction_tech
+					name = DOR_connected_economies
+				}
+			}
+			else_if = {
+				limit = { dockyard > 6 }
+				add_tech_bonus = {
+					bonus = 1.4
+					uses = @techBoostUses
+					category = industry
+					category = construction_tech
+					name = DOR_connected_economies
+				}
+			}
+			else_if = {
+				limit = { dockyard > 5 }
+				add_tech_bonus = {
+					bonus = 1.2
+					uses = @techBoostUses
+					category = industry
+					category = construction_tech
+					name = DOR_connected_economies
+				}
+			}
+			else_if = {
+				limit = { dockyard > 4 }
+				add_tech_bonus = {
+					bonus = 1
+					uses = @techBoostUses
+					category = industry
+					category = construction_tech
+					name = DOR_connected_economies
+				}
+			}
+			else_if = {
+				limit = { dockyard > 3 }
+				add_tech_bonus = {
+					bonus = 0.8
+					uses = @techBoostUses
+					category = industry
+					category = construction_tech
+					name = DOR_connected_economies
+				}
+			}
+			else_if = {
+				limit = { dockyard > 2 }
+				add_tech_bonus = {
+					bonus = 0.6
+					uses = @techBoostUses
+					category = industry
+					category = construction_tech
+					name = DOR_connected_economies
+				}
+			}
+			else_if = {
+				limit = { dockyard > 1 }
+				add_tech_bonus = {
+					bonus = 0.4
+					uses = @techBoostUses
+					category = industry
+					category = construction_tech
+					name = DOR_connected_economies
+				}
+			}
+			else_if = {
+				limit = { dockyard > 0 }
+				add_tech_bonus = {
+					bonus = 0.2
+					uses = @techBoostUses
+					category = industry
+					category = construction_tech
+					name = DOR_connected_economies
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Wealth Flows Like Water
+		id = DOR_wealth_flows_like_water
+		icon = GFX_focus_ETH_adopt_the_lira
+		x = 0
+		y = 2
+		relative_position_id = DOR_nation_of_commerce
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_nation_of_commerce
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			any_owned_state = {
+				is_controlled_by = ROOT
+				is_coastal = yes
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Culture of Commerce
+		id = DOR_culture_of_commerce
+		icon = GFX_goal_bribery
+		x = -1
+		y = 1
+		relative_position_id = DOR_wealth_flows_like_water
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_wealth_flows_like_water
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_PROSPERITY }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = DOR_all_wealth_flows_through_us_idea
+				}
+				swap_ideas = {
+					remove_idea = DOR_all_wealth_flows_through_us_idea
+					add_idea = DOR_culture_of_commerce_idea2
+				}
+			}
+			else = {
+				add_ideas = DOR_culture_of_commerce_idea
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Capital of Commerce
+		id = DOR_capital_of_commerce
+		icon = GFX_goal_riavod_market
+		x = 1
+		y = 1
+		relative_position_id = DOR_wealth_flows_like_water
+		cost = 5
+		ai_will_do = {
+			factor = 2
+			modifier = { #don't do if riavod not near max market anyway
+				116 = {
+					market < 5
+				}
+				factor = 0
+			}
+		}
+		prerequisite = {
+			focus = DOR_wealth_flows_like_water
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			controls_state = 116
+		}
+		search_filters = { FOCUS_FILTER_PROSPERITY }
+		completion_reward = {
+			custom_effect_tooltip = DOR_capital_of_commerce_tooltip
+			hidden_effect = {
+				116 = { set_variable = { market_max_level = 6 } }
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #All Wealth Flows Through Us
+		id = DOR_all_wealth_flows_through_us
+		icon = GFX_goal_merchants
+		x = 1
+		y = 1
+		relative_position_id = DOR_culture_of_commerce
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_culture_of_commerce
+			focus = DOR_capital_of_commerce
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = DOR_culture_of_commerce_idea
+				}
+				swap_ideas = {
+					remove_idea = DOR_culture_of_commerce_idea
+					add_idea = DOR_culture_of_commerce_idea2
+				}
+			}
+			else = {
+				add_ideas = DOR_all_wealth_flows_through_us_idea
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Every Coin Accounted For
+		id = DOR_every_coin_accounted_for
+		icon = GFX_focus_ITA_devaluate_the_lire
+		x = 2
+		y = 1
+		relative_position_id = DOR_invest_in_growth
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_invest_in_growth
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				uses = 1
+				category = cat_bureaucracy
+				name = DOR_every_coin_accounted_for
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Expand Mercantile Operations
+		id = DOR_expand_mercantile_operations
+		icon = GFX_goal_generic_construct_market
+		x = 0
+		y = 1
+		relative_position_id = DOR_every_coin_accounted_for
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_every_coin_accounted_for
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_PROSPERITY }
+		completion_reward = {
+			add_ideas = DOR_expand_mercantile_operations_idea
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Guardian of Prosperity
+		id = DOR_guardian_of_prosperity
+		icon = GFX_goal_generic_construct_market
+		x = 2
+		y = 1
+		relative_position_id = DOR_every_coin_accounted_for
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_every_coin_accounted_for
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			has_country_leader = {
+				character = DOR_bergholda_aldiana
+				ruling_only = yes
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			DOR_bergholda_aldiana = {
+				add_country_leader_trait = {
+					ideology = elective_monarchy_isolationism
+					trait = guardian_of_prosperity
+				}
+				hidden_effect = {
+					add_country_leader_trait = {
+						ideology = elective_monarchy_isolationism
+						trait = guardian_of_prosperity
+					}
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Trade Benefits All Endeavours
+		id = DOR_trade_benefits_all_endeavours
+		icon = GFX_focus_generic_industry_3
+		x = 1
+		y = 1
+		relative_position_id = DOR_expand_mercantile_operations
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_expand_mercantile_operations
+			focus = DOR_guardian_of_prosperity
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			any_controlled_state = {
+				market > 2
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = every_level_three_market
+			every_controlled_state = {
+				limit = { market > 2 }
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Import Everything we Lack
+		id = DOR_import_everything_we_lack
+		icon = GFX_goal_generic_imports
+		x = 0
+		y = 1
+		relative_position_id = DOR_trade_benefits_all_endeavours
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_trade_benefits_all_endeavours
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			any_controlled_state = {
+				market > 2
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = {
+			custom_effect_tooltip = every_level_three_market
+			every_controlled_state = {
+				limit = { market > 2 }
+				random_list = {
+					1 = {
+						add_resource = {
+							type = cloth
+							amount = @importResourceAmount
+						}
+					}
+					1 = {
+						add_resource = {
+							type = wood
+							amount = @importResourceAmount
+						}
+					}
+					1 = {
+						add_resource = {
+							type = iron
+							amount = @importResourceAmount
+						}
+					}
+					1 = {
+						add_resource = {
+							type = mounts
+							amount = @importResourceAmount
+						}
+					}
+				}
 			}
 			merchant_houses_focus_effect = yes
 		}

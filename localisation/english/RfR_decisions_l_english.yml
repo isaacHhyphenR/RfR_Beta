@@ -579,6 +579,8 @@
  celduin_trade_category_desc: "The flow of goods along the Celduin and Rhûnaer bring prosperity to all involved."
  upgrade_market: "Upgrading [FROM.GetName] Market"
  upgrade_market_desc: "Construction workers, merchants, and administrators are hard at work expanding the marketplace to accomodate higher volumes of trade."
+ upgrade_market_short: "$upgrade_market$"
+ upgrade_market_short_desc: "$upgrade_market_desc$"
  auto_renew_luxury: "Automatically Renew Luxury Allocations"
  auto_renew_luxury_desc: "Our wealth is overflowing; we should keep investing as much of it as we can."
  stop_auto_renew_luxury: "Stop Automatically Renewing Luxury Allocations"

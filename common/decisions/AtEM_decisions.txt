@@ -53,6 +53,60 @@ celduin_trade_category = {
 			}
 		}
 	}
+	upgrade_market_short = {
+		icon = GFX_decision_upgrade_market
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = 75
+		is_good = yes
+		#days_remove = var:FROM.market_upgrade_time
+		state_target = yes
+		on_map_mode = map_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = FROM
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+		cancel_trigger = { ##upgrade gets canceled if conquered
+			NOT = { controls_state = FROM }
+		}
+		allowed = { always = no }
+		available = { hidden_trigger = { always = no } }
+		cancel_effect = {
+			FROM = { clr_state_flag = constructing_market }
+			subtract_from_variable = { market_upgrading_cost = global.market_upgrade_cost }
+		}
+		timeout_effect = {
+			FROM = {
+				add_building_construction = {
+					type = market
+					level = 1
+					instant_build = yes
+				}
+				custom_effect_tooltip = resets_prosperity
+				set_variable = { prosperity = 0 }
+			}
+			FROM = { clr_state_flag = constructing_market }
+			subtract_from_variable = { market_upgrading_cost = global.market_upgrade_cost }
+			random_other_country = { ##gain prosperity on their market from shipping tax
+				limit = {
+					has_idea = DOR_shipping_tax
+					can_trade_with_ROOT = yes		
+				}
+				random_controlled_state = {
+					limit = {
+						market > 0
+						check_variable = { prosperity < 100 }
+					}
+					add_5_prosperity = yes
+				}
+			}
+		}
+	}
 
 	@luxury_cost = 999
 	@luxury_cost_negative = -1000

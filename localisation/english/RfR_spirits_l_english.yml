@@ -469,3 +469,7 @@
  DOR_protection_for_a_price_desc: "Though it's far from a perfect deal, paying our former overlords for protection prevents our less than savory neighbours from having their way with us."
  DOR_favored_trader: "Dorwin Trade Deals"
  DOR_favored_trader_desc: "Our many concessions to Dorwinion's merchants mean they are far happier to call at our ports, but they are able to wield outsized influence in our country."
+ DOR_culture_of_commerce_idea: "Culture of Commerce"
+ DOR_culture_of_commerce_idea_desc: "$DOR_culture_of_commerce_desc$"
+ DOR_expand_mercantile_operations_idea: "Expanded Mercantile Operations"
+ DOR_expand_mercantile_operations_idea_desc: "$DOR_expand_mercantile_operations_desc$"

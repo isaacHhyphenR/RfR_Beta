@@ -156,4 +156,10 @@
  RUS_accept_annexation_factors_tooltip: "\n\nThey are more likely to accept if:$new_line_tab$-They have a high opinion of us$new_line_tab$-We have a large army relative to theirs$new_line_tab$-We have common enemies$new_line_tab$-We have completed more focuses investing in them"
  RIN_accept_annexation_factors_tooltip: "\n\nThey are more likely to accept if:$new_line_tab$-They have a high opinion of us$new_line_tab$-We have many §Y$industrial_complex$s§! relative to them$new_line_tab$-We have completed more focuses investing in them"
  DOR_construct_an_overwhelming_fleet_tooltip: "Create 5 §YCaras Sant§! class §Y$destroyer_1$§!"
+ DOR_source_of_all_wealth_tooltip: "Add 1 §Y$industrial_complex$§! in a random state per §Y$dockyard$§! in §Y$STATE_116$§!.\n"
+ DOR_connected_economies_tooltip: "§Y2x§! Research bonus for: §Y$industry$§! and §Y$construction_tech$§!. Bonus is §G20%§! per controlled §Y$dockyard$§!$VorV_dev_line_end$"
+ DOR_capital_of_commerce_tooltip: "Increases the maximum §Y$market$§! level in §Y$STATE_116$§! to 6."
+ twentyfive_percent_market_speed: "$market$ Construction Speed: §G+25%§!"
+ every_level_three_market: "Every level 3 or higher §Y$market$§!:\n"
+ 
  

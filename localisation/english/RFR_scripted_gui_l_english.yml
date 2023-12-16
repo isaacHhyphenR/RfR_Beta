@@ -48,7 +48,7 @@
  decrease_export_1_tooltip: "[!decrease_export_1_click_enabled]---------------\n[!decrease_export_1_click]"
  ##second exporter
 ########################################CELDUIN MARKET
- market_level: "[?non_damaged_building_level@market]/5"
+ market_level: "[?non_damaged_building_level@market]/[?market_max_level]"
  state_prosperity_click: "[!prosperity_level_click]"
  state_prosperity: "[?prosperity|+] Prosperity\n--------------\n $daily_prosperity_gain_tooltip$"
  market_current_level_modifiers: "[market_current_level_modifiers_scripted_loc]"
@@ -59,7 +59,7 @@
  market_level_4_modifiers: "$market_header$$MODIFIER_CONSUMER_GOODS_EXPECTED_VALUE$: §Y-4.0%§!\nMax Factories in State: §G+4§!\nTrade deal opinion factor: §Y+4.00%§!\n$local_construction_speed$: §G+20.00%§!"
  market_level_5_modifiers: "$market_header$$MODIFIER_CONSUMER_GOODS_EXPECTED_VALUE$: §Y-5.0%§!\nMax Factories in State: §G+5§!\nTrade deal opinion factor: §Y+5.00%§!\n$local_construction_speed$: §G+25.00%§!"
  upgrade_market_click_tooltip: "[!upgrade_market_click_enabled]---------------\n[!upgrade_market_click]"
- upgrade_market_effect_tooltip: "Costs [?global.market_upgrade_cost|R] §Y$industrial_complex$s§! for §Y100§! days.\n\n§YWhen finished:§!\nAdd §G1§! §Y$market$§!\nReset prosperity to 0"
+ upgrade_market_effect_tooltip: "Costs [?global.market_upgrade_cost|R] §Y$industrial_complex$s§! for §Y[market_upgrade_days]§! days.\n\n§YWhen finished:§!\nAdd §G1§! §Y$market$§!\nReset prosperity to 0"
  resets_prosperity: "Resets Prosperity"
  has_100_prosperity: "§Y[THIS.GetName]§! has §G100§! Prosperity"
  constructing_market: "Already constructing a §Y$market$§! in this state"

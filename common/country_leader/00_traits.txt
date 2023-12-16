@@ -2649,6 +2649,11 @@ leader_traits = {
 		random = no
 		custom_modifier_tooltip = trade_theorist_modifier_tooltip
 	}
+	guardian_of_prosperity = { #bergholda aldiana (focus}
+		random = no
+		sprite = 10
+		consumer_goods_factor = -0.075
+	}
 	anti_interventionist = {
 		random = no
 		sprite = 12

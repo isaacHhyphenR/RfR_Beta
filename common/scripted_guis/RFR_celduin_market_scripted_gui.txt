@@ -17,11 +17,22 @@ scripted_gui = {
 				custom_effect_tooltip = upgrade_market_effect_tooltip
 				set_state_flag = constructing_market
 				ROOT = {
-					activate_targeted_decision = {
-						target = PREV
-						decision = upgrade_market
+					#Couldn't get a variable mission time to work so just activate specific mission instead
+					if = {
+						limit = { has_country_flag = reduce_market_time }
+						activate_targeted_decision = {
+							target = PREV
+							decision = upgrade_market_short
+						}
 					}
-					add_to_variable = { market_upgrading_cost = global.market_upgrade_cost } #missions don't accept modifiers, so gotta jank it
+					else = {
+						activate_targeted_decision = {
+							target = PREV
+							decision = upgrade_market
+						}
+					}
+					#missions don't accept modifiers, so gotta jank it
+					add_to_variable = { market_upgrading_cost = global.market_upgrade_cost }
 					hidden_effect = { #cost factories
 						if = {
 							limit = { NOT = { has_dynamic_modifier = { modifier = market_upgrade_cost_modifier } } }
@@ -48,7 +59,7 @@ scripted_gui = {
 					num_of_civilian_factories_available_for_projects > 2
 				}
 				NOT = { has_state_flag = constructing_market }
-				hidden_trigger = { market < 5 } #can't upgrade beyond level 5
+				hidden_trigger = { market < var:market_max_level } #can't upgrade beyond level 5 unless you take that one focus
 				is_controlled_by = ROOT
 			}
 		}

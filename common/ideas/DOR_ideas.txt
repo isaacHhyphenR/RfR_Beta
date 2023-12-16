@@ -650,7 +650,53 @@ ideas = {
 				}
 			}
 		}
-			
+		DOR_culture_of_commerce_idea = {
+			picture = money_agreement
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				prosperity_gain_factor = 0.15
+			}
+		}
+		DOR_all_wealth_flows_through_us_idea = {
+			name = DOR_culture_of_commerce_idea
+			picture = money_agreement
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				production_lack_of_resource_penalty_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		DOR_culture_of_commerce_idea2 = {
+			picture = money_agreement
+			name = DOR_culture_of_commerce_idea
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				prosperity_gain_factor = 0.15
+				production_lack_of_resource_penalty_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		DOR_expand_mercantile_operations_idea = {
+			picture = construct_market
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				custom_modifier_tooltip = twentyfive_percent_market_speed
+			}
+			on_add = {
+				set_country_flag = reduce_market_time
+			}
+			on_remove = {
+				clr_country_flag = reduce_market_time
+			}
+		}
 	}
 	
 	hidden_ideas = {
