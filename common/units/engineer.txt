@@ -37,6 +37,11 @@ sub_units = {
 		weight = 0.1
 		supply_consumption = 0.02
 
+		battalion_mult = {
+			category = category_light_infantry
+			entrenchment = 0.20
+			add = yes
+		}
 
 		# Support nerfs to combat abilities
 		soft_attack = -0.5
@@ -114,6 +119,12 @@ sub_units = {
 
 		# Support nerfs to combat abilities
 		soft_attack = -0.5
+		
+		battalion_mult = {
+			category = category_light_infantry
+			entrenchment = 0.20
+			add = yes
+		}
 
 		essential = {
 			engineering_equipment

@@ -196,4 +196,20 @@ spriteTypes = {
 		name = "GFX_idea_dorwinion_tailory_guild"
 		texturefile = "gfx/interface/designers/00_Northron/DOR_tailory_guild.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_dorwinion_riverstalkers"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_riverstalkers.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_dorwinion_company_of_winter"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_company_of_winter.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_dorwinion_mountains_vengeance"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_mountains_vengeance.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_dorwinion_dragons_breath"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_dragons_breath.dds"
+	}
 }

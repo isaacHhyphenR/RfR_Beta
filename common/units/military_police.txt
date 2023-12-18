@@ -34,6 +34,10 @@ sub_units = {
 		supply_consumption = 0.02
 		##can_be_parachuted = yes
 		
+		battalion_mult = {
+			category = category_all_infantry
+			default_morale = 0.20
+		}
 
 		essential = {
 			infantry_equipment
