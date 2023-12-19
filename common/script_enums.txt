@@ -194,6 +194,9 @@ script_enum_equipment_bonus_type = {
 	guided_missile_equipment_2
 	guided_missile_equipment_3
 
+	example_airframe
+	example_air_equipment_0
+
 ######################################################INFANTRY
 	infantry_equipment
 	infantry_equipment_99

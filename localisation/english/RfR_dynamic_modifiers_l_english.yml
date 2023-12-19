@@ -141,7 +141,10 @@
  DOR_artisan_burgomeister_desc: "The local leadership was installed with significant support from the Senate. In thanks, the guild is working twice as hard for the national benefit."
  DOR_merchant_burgomeister: "Merchant Burgomeister"
  DOR_merchant_burgomeister_desc: "The local leadership was installed with significant support from the Senate. In thanks, their trading company is offering significant discounts on their goods."
- 
+ company_of_winter_payment: "$dorwinion_company_of_winter$"
+ riverstalkers_payment: "$dorwinion_riverstalkers$"
+ mountains_vengeance_payment: "$dorwinion_mountains_vengeance$"
+ dragons_breath_payment: "$dorwinion_dragons_breath$"
  
  
  

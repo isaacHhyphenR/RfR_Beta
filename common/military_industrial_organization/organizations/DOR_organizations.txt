@@ -992,3 +992,107 @@ DOR_tailory_guild_MIO = {
 		}
 	}
 }
+
+##############################################################################################################################
+# COMPANY OF WINTER
+##############################################################################################################################
+DOR_company_of_winter_MIO = {
+	name = dorwinion_company_of_winter
+	icon = GFX_idea_dorwinion_company_of_winter
+
+	allowed = {
+		original_tag = DOR
+	}
+	#visible = { FROM = { has_completed_focus = DOR_rely_on_mercenary_guards } }
+	available = { FROM = { has_completed_focus = DOR_hire_the_elites } }
+	
+	equipment_type {
+		example_airframe
+	}
+	
+	tree_header_text = {
+		text = mio_header_expand_mercenary
+		x = 0.5
+	}
+	tree_header_text = {
+		text = mio_header_support_companies
+		x = 4
+	}
+	tree_header_text = {
+		text = mio_header_template
+		x = 7
+	}
+	tree_header_text = {
+		text = mio_header_banners
+		x = 9
+	}
+
+	initial_trait = {
+		name = dorwinion_company_of_winter
+	}
+
+####################################################
+#######################################################HIRE MORE
+####################################################
+	trait = {
+		token = dorwinion_trait_hire_infantry1
+		name = dorwinion_trait_hire_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=0 }
+
+		mutually_exclusive = { dorwinion_trait_hire_cavalry1 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_winters_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Winter's 3rd Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
+							owner = ROOT
+						}
+					}
+				}
+				calculate_company_of_winter_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_cavalry1
+		name = dorwinion_trait_hire_cavalry
+		icon = GFX_military_industrial_organization_medium_tank_chassis
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_hire_infantry1
+
+		mutually_exclusive = { dorwinion_trait_hire_infantry1 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_winters_cavalry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Winter's 1st Knights\" division_template = \"Winter's Knights\" start_experience_factor = 0.75"
+							owner = ROOT
+						}
+					}
+				}
+				calculate_company_of_winter_costs = yes
+			}
+		}
+	}
+}

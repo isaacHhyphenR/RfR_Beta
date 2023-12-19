@@ -526,3 +526,6 @@
  precious_metals_equipment_desc: "The gleaming fruit of the Earth have few practical uses and yet all folk, both good an evil, covet them."
  precious_metals_equipment_0: "Precious Metals"
  precious_metals_equipment_0_desc: "$precious_metals_equipment_desc$
+ 
+ example_airframe: ""
+ example_air_equipment_0: ""

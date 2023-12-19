@@ -312,6 +312,15 @@ technologies = {
 			}
 		}
 	}
+	DOR_company_of_winter = {
+		allow = {
+			always = no
+		}
 
+		research_cost = 1
+		company_of_winter_banner = {
+			
+		}
+	}
 }
 

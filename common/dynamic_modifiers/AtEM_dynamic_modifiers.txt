@@ -48,3 +48,17 @@ DOR_home_of_the_revolution_modifier = {
 	subjects_autonomy_gain = var:global.republics_autonomy_bonus #-0.005 per
 	custom_modifier_tooltip = DOR_home_of_the_revolution_stealable
 }
+
+
+company_of_winter_payment = {
+	civilian_factory_use = var:company_of_winter_cost
+}
+riverstalkers_payment = {
+	civilian_factory_use = var:riverstalkers_cost
+}
+mountains_vengeance_payment = {
+	civilian_factory_use = var:mountains_vengeance_cost
+}
+dragons_breath_payment = {
+	civilian_factory_use = var:dragons_breath_cost
+}

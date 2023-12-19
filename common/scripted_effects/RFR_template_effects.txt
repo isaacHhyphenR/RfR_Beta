@@ -342,3 +342,50 @@ load_VorV_OOB = {
 		}
 	}
 }
+
+
+unlock_company_of_winter_template = {
+	custom_effect_tooltip = unlock_company_of_winter_template
+	division_template = {
+		name = "Winter's Infantry"
+		is_locked = yes
+		division_names_group = DOR_winter_inf
+		template_counter = 200
+		regiments = {
+			heavy_infantry = { x = 0 y = 0 }
+			heavy_infantry = { x = 0 y = 1 }
+			heavy_infantry = { x = 0 y = 2 }
+			heavy_infantry = { x = 0 y = 3 }
+			heavy_infantry = { x = 0 y = 4 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 1 y = 3 }
+		}
+		support = {
+			company_of_winter_banner = { x = 0 y = 0 }
+			light_tank_recon = { x = 0 y = 1 }
+		}
+	}
+	division_template = {
+		name = "Winter's Knights"
+		is_locked = yes
+		division_names_group = DOR_winter_cav
+		template_counter = 201
+		regiments = {
+			medium_armor = { x = 0 y = 0 }
+			medium_armor = { x = 0 y = 1 }
+			medium_armor = { x = 0 y = 2 }
+			light_armor = { x = 1 y = 0 }
+			light_armor = { x = 1 y = 1 }
+			light_armor = { x = 1 y = 2 }
+			heavy_motorized = { x = 2 y = 0 }
+			heavy_motorized = { x = 2 y = 1 }
+			heavy_motorized = { x = 2 y = 2 }
+		}
+		support = {
+			company_of_winter_banner = { x = 0 y = 0 }
+			light_tank_recon = { x = 0 y = 1 }
+		}
+	}
+}

@@ -720,7 +720,7 @@ ideas = {
 			picture = empty
 			removal_cost = -1
 			allowed_civil_war = {
-				always = yes
+				has_character = DOR_bergholda_aldiana
 			}
 			targeted_modifier = {
 				tag = DOR
@@ -954,6 +954,17 @@ ideas = {
 			}
 			modifier = {
 				land_doctrine_cost_factor = -0.15
+			}
+		}
+	
+		##Mercenaries
+		DOR_company_of_winter_division_xp = {
+			name = dorwinion_company_of_winter
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				experience_gain_army_unit_factor = 0.1
 			}
 		}
 	}

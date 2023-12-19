@@ -1,0 +1,39 @@
+##These exist so that I can force MIOs to appear in the air slot
+equipments = {
+
+	example_airframe = {
+		year = 3000
+
+		can_be_produced = {
+			always = no
+		}
+
+		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_fighter_equipment
+		is_buildable = no
+		type = fighter
+		allowed_types = {
+			fighter
+		}
+		allow_mission_type = training
+		group_by = archetype
+		sprite = light_plane
+		air_map_icon_frame = 1
+		interface_category = interface_category_air
+		
+		interface_overview_category_index = 1
+
+	}
+
+	example_air_equipment_0 = {
+		year = 3000
+
+		archetype = example_airframe
+		priority = 5
+
+		allow_mission_type = {
+			air_superiority
+		}
+	}
+}

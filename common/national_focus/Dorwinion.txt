@@ -6608,6 +6608,83 @@ focus_tree = {
 			merchant_houses_focus_effect = yes
 		}
 	}
+#################################MERCENARYS
+	focus = { #Rely on Mercenary Guards
+		id = DOR_rely_on_mercenary_guards
+		icon = GFX_goal_generic_mercenaries
+		x = 7
+		y = 1
+		relative_position_id = DOR_support_the_merchant_houses
+		cost = 5
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_manpower < 1000
+				factor = 1.5
+			}
+			modifier = {
+				has_war = yes
+				alliance_strength_ratio < 0.8
+				factor = 1.5
+			}
+			modifier = {
+				has_war = yes
+				alliance_strength_ratio < 0.5
+				factor = 2
+			}
+		}
+		prerequisite = {
+			focus = DOR_support_the_merchant_houses
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 10000
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Hire the Elites
+		id = DOR_hire_the_elites
+		icon = GFX_goal_DOR_company_of_winter
+		x = 4
+		y = 1
+		relative_position_id = DOR_rely_on_mercenary_guards
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_rely_on_mercenary_guards
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			custom_effect_tooltip = unlocks_company_of_winter
+			unlock_company_of_winter_template = yes
+			capital_scope = {
+				custom_effect_tooltip = create_winters_infantry_unit
+				custom_effect_tooltip = create_winters_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Winter's 1st Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Winter's 2nd Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
+						owner = ROOT
+					}
+				}
+			}
+			hidden_effect = { add_dynamic_modifier = { modifier = company_of_winter_payment } }
+			calculate_company_of_winter_costs = yes
+			merchant_houses_focus_effect = yes
+		}
+	}
 }
 
  # FOCUS_FILTER_POLITICAL:0 "Political"

@@ -82,4 +82,12 @@ spriteTypes = {
 		name = "GFX_generic_mio_department_icon_infantry_armor_materials"
 		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_armor_materials.dds"
 	}
+	
+	### BLANK AIR DEPARMENT ###
+	spriteType = {
+		name = "GFX_military_industrial_organization_example_airframe"
+		texturefile = "gfx/interface/ideas/empty.dds"
+		allwaystransparent = yes
+		transparencecheck = yes
+	}
 }

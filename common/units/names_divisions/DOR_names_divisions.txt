@@ -1,0 +1,14 @@
+DOR_winter_inf = {
+	name = "Company of Winter Infantry"
+	for_countries = { DOR }
+	can_use = { has_completed_focus = DOR_hire_the_elites }
+	division_types = { "infantry" }
+	fallback_name = "Winter's %d Infantry"
+}
+DOR_winter_cav = {
+	name = "Company of Winter Cavalry"
+	for_countries = { DOR }
+	can_use = { has_completed_focus = DOR_hire_the_elites }
+	division_types = { "medium_armor" }
+	fallback_name = "Winter's %d Knights"
+}

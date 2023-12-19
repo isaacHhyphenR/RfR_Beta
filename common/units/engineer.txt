@@ -38,7 +38,7 @@ sub_units = {
 		supply_consumption = 0.02
 
 		battalion_mult = {
-			category = category_light_infantry
+			category = category_foot_infantry
 			entrenchment = 0.20
 			add = yes
 		}
@@ -121,7 +121,7 @@ sub_units = {
 		soft_attack = -0.5
 		
 		battalion_mult = {
-			category = category_light_infantry
+			category = category_foot_infantry
 			entrenchment = 0.20
 			add = yes
 		}

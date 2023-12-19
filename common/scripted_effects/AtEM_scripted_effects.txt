@@ -2639,7 +2639,6 @@ found_THIS_revolutionary_republic = {
 	}
 }
 
-
 stash_republican_characters = { #otherwise they can get lost if the original tag no longer exists
 	hidden_effect = {
 		every_character = {
@@ -2648,3 +2647,37 @@ stash_republican_characters = { #otherwise they can get lost if the original tag
 		}
 	}
 }
+
+
+DOR_pay_mercenaries = {
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+			has_completed_focus = DOR_rely_on_mercenary_guards
+		}
+		calculate_company_of_winter_costs = yes
+		log = "[?company_of_winter_funds]"
+		mio:DOR_company_of_winter_MIO = {
+			add_mio_funds = var:FROM.company_of_winter_funds
+		}
+	}
+}
+calculate_company_of_winter_costs = {
+	set_variable = { company_of_winter_cost = num_battalions_with_type@company_of_winter_banner }
+	set_variable = { company_of_winter_funds = num_battalions_with_type@company_of_winter_banner }
+	multiply_variable = { company_of_winter_funds = 20 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

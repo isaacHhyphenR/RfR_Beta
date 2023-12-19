@@ -155,6 +155,12 @@ on_actions = {
 		}
 	}
 	
+	on_weekly_DOR = { #pay mercenaries
+		effect = {
+			DOR_pay_mercenaries = yes
+		}
+	}
+	
 	on_ruling_party_change = { #party ideology index
 		effect = {
 			set_ideology_index = yes

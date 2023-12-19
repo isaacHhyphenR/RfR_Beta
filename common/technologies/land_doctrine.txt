@@ -529,6 +529,7 @@ technologies = {
 		planning_speed = 0.2
 		
 		enable_tactic = tactic_overwhelming_fire
+		additional_brigade_column_size = 1
 		
 		path = {
 			leads_to_tech = firebrigades 
@@ -1397,6 +1398,7 @@ technologies = {
 		land_reinforce_rate = 0.02
 	
 		enable_tactic = tactic_tactical_withdrawal
+		additional_brigade_column_size = 1
 		
 		path = {
 			leads_to_tech = air_land_battle 
@@ -1614,6 +1616,7 @@ technologies = {
 		#armored_car = { max_organisation = 2 default_morale = 0.05 }
 		
 		enable_tactic = tactic_tactical_withdrawal
+		additional_brigade_column_size = 1
 		
 		path = {
 			leads_to_tech = shock_and_awe 
@@ -1925,6 +1928,7 @@ technologies = {
 		
 		enable_tactic = tactic_blitz
 		enable_tactic = tactic_elastic_defense
+		additional_brigade_column_size = 1
 		
 		
 		path = {
@@ -2242,6 +2246,7 @@ technologies = {
 		}
 		
 		enable_tactic = tactic_infantry_charge
+		additional_brigade_column_size = 1
 		
 		path = {
 			leads_to_tech = armored_operations 
@@ -2693,6 +2698,7 @@ technologies = {
 		supply_consumption_factor = -0.10
 
 		enable_tactic = tactic_relentless_assault
+		additional_brigade_column_size = 1
 		
 		path = {
 			leads_to_tech = deep_operations
@@ -3074,6 +3080,7 @@ technologies = {
 		attrition = -0.1 #take 10% less attrition losses
 		
 		enable_tactic = tactic_human_wave_tactics
+		additional_brigade_column_size = 1
 		
 		
 		path = {

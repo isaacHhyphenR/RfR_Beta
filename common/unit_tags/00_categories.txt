@@ -18,4 +18,7 @@ sub_unit_categories = {
 	category_motorized
 	category_recon
 	category_engineer
+	category_militia
+	category_foot_infantry
+	category_mercenary_banner
 }
