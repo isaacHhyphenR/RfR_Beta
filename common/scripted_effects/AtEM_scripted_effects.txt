@@ -2656,9 +2656,18 @@ DOR_pay_mercenaries = {
 			has_completed_focus = DOR_rely_on_mercenary_guards
 		}
 		calculate_company_of_winter_costs = yes
-		log = "[?company_of_winter_funds]"
 		mio:DOR_company_of_winter_MIO = {
 			add_mio_funds = var:FROM.company_of_winter_funds
+		}
+		##equipment replenishment
+		if = {
+			limit = {
+				mio:DOR_company_of_winter_MIO = { is_mio_trait_completed = dorwinion_trait_signals_equipment }
+			}
+			add_equipment_to_stockpile = {
+				type = signals_equipment
+				amount = num_battalions_with_type@company_of_winter_banner
+			}
 		}
 	}
 }

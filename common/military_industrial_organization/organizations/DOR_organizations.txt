@@ -1056,7 +1056,7 @@ DOR_company_of_winter_MIO = {
 					hidden_effect = {
 						create_unit = {
 							division = "name = \"Winter's 3rd Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
-							owner = ROOT
+							owner = FROM
 						}
 					}
 				}
@@ -1077,6 +1077,13 @@ DOR_company_of_winter_MIO = {
 		available = {
 			FROM = {
 				num_of_civilian_factories_available_for_projects > 0
+				if = {
+					limit = { has_dlc = "No Step Back" }
+					has_tech = basic_medium_tank_chassis
+				}
+				else = {
+					has_tech = basic_medium_tank
+				}
 			}
 		}
 		
@@ -1087,12 +1094,347 @@ DOR_company_of_winter_MIO = {
 					hidden_effect = {
 						create_unit = {
 							division = "name = \"Winter's 1st Knights\" division_template = \"Winter's Knights\" start_experience_factor = 0.75"
-							owner = ROOT
+							owner = FROM
 						}
 					}
 				}
 				calculate_company_of_winter_costs = yes
 			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry2
+		name = dorwinion_trait_hire_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry1
+		any_parent = { dorwinion_trait_hire_infantry1 dorwinion_trait_hire_cavalry1 }
+		
+		mutually_exclusive = { dorwinion_trait_hire_cavalry2 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_winters_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Winter's 4th Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
+							owner = FROM
+						}
+					}
+				}
+				calculate_company_of_winter_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_cavalry2
+		name = dorwinion_trait_hire_cavalry
+		icon = GFX_military_industrial_organization_medium_tank_chassis
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_hire_infantry2
+		any_parent = { dorwinion_trait_hire_infantry1 dorwinion_trait_hire_cavalry1 }
+
+		mutually_exclusive = { dorwinion_trait_hire_infantry2 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+				if = {
+					limit = { has_dlc = "No Step Back" }
+					has_tech = basic_medium_tank_chassis
+				}
+				else = {
+					has_tech = basic_medium_tank
+				}
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_winters_cavalry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Winter's 2nd Knights\" division_template = \"Winter's Knights\" start_experience_factor = 0.75"
+							owner = FROM
+						}
+					}
+				}
+				calculate_company_of_winter_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry3
+		name = dorwinion_trait_hire_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry2
+		any_parent = { dorwinion_trait_hire_infantry2 dorwinion_trait_hire_cavalry2 }
+		
+		mutually_exclusive = { dorwinion_trait_hire_cavalry3 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_winters_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Winter's 5th Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
+							owner = FROM
+						}
+					}
+				}
+				calculate_company_of_winter_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_cavalry3
+		name = dorwinion_trait_hire_cavalry
+		icon = GFX_military_industrial_organization_medium_tank_chassis
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_hire_infantry3
+		any_parent = { dorwinion_trait_hire_infantry2 dorwinion_trait_hire_cavalry2 }
+
+		mutually_exclusive = { dorwinion_trait_hire_infantry3 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+				if = {
+					limit = { has_dlc = "No Step Back" }
+					has_tech = basic_medium_tank_chassis
+				}
+				else = {
+					has_tech = basic_medium_tank
+				}
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_winters_cavalry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Winter's 3rd Knights\" division_template = \"Winter's Knights\" start_experience_factor = 0.75"
+							owner = FROM
+						}
+					}
+				}
+				calculate_company_of_winter_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry4
+		name = dorwinion_trait_hire_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry3
+		any_parent = { dorwinion_trait_hire_infantry3 dorwinion_trait_hire_cavalry3 }
+		
+		mutually_exclusive = { dorwinion_trait_hire_cavalry4 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_winters_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Winter's 6th Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
+							owner = FROM
+						}
+					}
+				}
+				calculate_company_of_winter_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_cavalry4
+		name = dorwinion_trait_hire_cavalry
+		icon = GFX_military_industrial_organization_medium_tank_chassis
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_hire_infantry4
+		any_parent = { dorwinion_trait_hire_infantry3 dorwinion_trait_hire_cavalry3 }
+
+		mutually_exclusive = { dorwinion_trait_hire_infantry4 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+				if = {
+					limit = { has_dlc = "No Step Back" }
+					has_tech = basic_medium_tank_chassis
+				}
+				else = {
+					has_tech = basic_medium_tank
+				}
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_winters_cavalry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Winter's 4th Knights\" division_template = \"Winter's Knights\" start_experience_factor = 0.75"
+							owner = FROM
+						}
+					}
+				}
+				calculate_company_of_winter_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry5
+		name = dorwinion_trait_hire_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry4
+		any_parent = { dorwinion_trait_hire_infantry4 dorwinion_trait_hire_cavalry4 }
+		
+		mutually_exclusive = { dorwinion_trait_hire_cavalry5 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_winters_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Winter's 7th Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
+							owner = FROM
+						}
+					}
+				}
+				calculate_company_of_winter_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_cavalry5
+		name = dorwinion_trait_hire_cavalry
+		icon = GFX_military_industrial_organization_medium_tank_chassis
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_hire_infantry5
+		any_parent = { dorwinion_trait_hire_infantry4 dorwinion_trait_hire_cavalry4 }
+
+		mutually_exclusive = { dorwinion_trait_hire_infantry5 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+				if = {
+					limit = { has_dlc = "No Step Back" }
+					has_tech = basic_medium_tank_chassis
+				}
+				else = {
+					has_tech = basic_medium_tank
+				}
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_winters_cavalry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Winter's 5th Knights\" division_template = \"Winter's Knights\" start_experience_factor = 0.75"
+							owner = FROM
+						}
+					}
+				}
+				calculate_company_of_winter_costs = yes
+			}
+		}
+	}
+####################################################
+#######################################################ADD SUPPORT
+####################################################
+	trait = {
+		token = dorwinion_trait_add_signals
+		name = dorwinion_trait_add_signals
+		icon = GFX_generic_mio_trait_icon_surface_detection
+		
+		position = { x=3 y=0 }
+		
+		available = {
+			FROM = {
+				has_tech = tech_signal_company
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Infantry"
+					support = {
+						signal_company = 0
+					}
+				}
+				add_units_to_division_template = {
+					template_name = "Winter's Knights"
+					support = {
+						signal_company = 0
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_signals_equipment
+		name = dorwinion_trait_signals_equipment
+		icon = GFX_military_industrial_organization_signals_equipment
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_signals
+		any_parent = { dorwinion_trait_add_signals }
+		
+		on_complete = {
+			custom_effect_tooltip = one_signals_per_CoW_unit
 		}
 	}
 }

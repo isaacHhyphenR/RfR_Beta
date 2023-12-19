@@ -170,10 +170,13 @@
  DOR_prosperity_for_resources_tooltip: "Choose between §G8§! £GFX_food_texticon , §G8§! £GFX_wood_texticon , §G8§! £GFX_cloth_texticon , or §G8§! £GFX_iron_texticon.\n"
  unlocks_company_of_winter: "Unlocks §Y$dorwinion_company_of_winter$§! as recruitable mercenaries."
  unlock_company_of_winter_template: "The Winter's Infantry template starts with 5 §Y$heavy_infantry$§!, 4 §Y$infantry$§!, and a §Y$light_tank_recon$§!.\nThe Winter's Knights template starts with 3 §Y$medium_armor$§!, 3 §Y$light_armor$§!, 3 §Y$heavy_motorized$§!, and a §Y$light_tank_recon$§!.\nTheir unique §Y$company_of_winter_banner$§! support company increases initiative and reduces experience loss."
- create_winters_infantry_unit: "Creates a unit of Winter's Infantry with hardened experience. This unit costs §R1§! §Y$industrial_complex$§! to maintain and earns §Y$dorwinion_company_of_winter$§! §G20§! funds a week.\n"
- create_winters_cavalry_unit: "Creates a unit of Winter's Knights with hardened experience. This unit costs §R1§! §Y$industrial_complex$§! to maintain and earns §Y$dorwinion_company_of_winter$§! §G20§! funds a week.\n"
- 
- 
+ create_winters_infantry_unit: "Creates a unit of Winter's Infantry with seasoned experience. This unit costs §R1§! §Y$industrial_complex$§! to maintain and earns §Y$dorwinion_company_of_winter$§! §G20§! funds a week.\n"
+ create_winters_cavalry_unit: "Creates a unit of Winter's Knights with seasoned experience. This unit costs §R1§! §Y$industrial_complex$§! to maintain and earns §Y$dorwinion_company_of_winter$§! §G20§! funds a week.\n"
+ has_at_least_one_support_slot_remaining_tooltip: "At least 1 open support company slot"
+ one_signals_per_CoW_unit: "Adds 1 §Y$signals_equipment$§! to the national stockpile each week per fielded §Y$dorwinion_company_of_winter$§! unit."
+ one_medical_per_CoW_unit: "Adds 1 §Y$medical_equipment$§! to the national stockpile each week per fielded §Y$dorwinion_company_of_winter$§! unit."
+ one_suppression_per_CoW_unit: "Adds 1 §Y$suppression_equipment$§! to the national stockpile each week per fielded §Y$dorwinion_company_of_winter$§! unit."
+ one_maintenance_per_CoW_unit: "Adds 1 §Y$maintenance_equipment$§! to the national stockpile each week per fielded §Y$dorwinion_company_of_winter$§! unit."
  
  
  

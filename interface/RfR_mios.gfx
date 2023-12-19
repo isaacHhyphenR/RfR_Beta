@@ -49,6 +49,28 @@ spriteTypes = {
 		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry_defense.dds"
 	}
 
+	### SUPPORT EQUIPMENT ###
+	spriteType = {
+		name = "GFX_military_industrial_organization_maintenance_equipment"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_maintenance.dds"
+	}
+	spriteType = {
+		name = "GFX_military_industrial_organization_engineering_equipment"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_engineering.dds"
+	}
+	spriteType = {
+		name = "GFX_military_industrial_organization_medical_equipment"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_medical.dds"
+	}
+	spriteType = {
+		name = "GFX_military_industrial_organization_signals_equipment"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_signals.dds"
+	}
+	spriteType = {
+		name = "GFX_military_industrial_organization_suppression_equipment"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_suppression.dds"
+	}
+
 	### INFANTRY ARMOR DPT ###
 	spriteType = {
 		name = "GFX_generic_mio_department_icon_infantry_armor_offense"

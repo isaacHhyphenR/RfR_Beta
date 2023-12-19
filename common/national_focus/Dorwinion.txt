@@ -6680,7 +6680,12 @@ focus_tree = {
 					}
 				}
 			}
-			hidden_effect = { add_dynamic_modifier = { modifier = company_of_winter_payment } }
+			hidden_effect = {
+				add_dynamic_modifier = { modifier = company_of_winter_payment }
+				mio:DOR_company_of_winter_MIO = {
+					set_variable = { num_support_companies = 2 }
+				}
+			}
 			calculate_company_of_winter_costs = yes
 			merchant_houses_focus_effect = yes
 		}
