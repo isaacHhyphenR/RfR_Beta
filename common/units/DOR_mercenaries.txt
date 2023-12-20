@@ -59,7 +59,179 @@ sub_units = {
 			infantry_equipment = 50
 			infantry_armor = 50
 		}
+	}
+	mountains_vengeance_banner = {
+		abbreviation = "MTV"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_mercenary_banner
+		}
+	
+		combat_width = 0
+		
+		#Size Definitions
+		max_strength = 35
+		max_organisation = 70
+		default_morale = 0.3
+		manpower = 500
+		
+		##cause you smaller
+		defense = -0.25
+		breakthrough = -0.25
+		soft_attack = -0.5
+		hard_attack = -0.5
+
+		mountain = {
+			attack = 0.25
+			defence = 0.75
+		}
 			
+		#Misc Abilities
+		training_time = 90
+		suppression = 0.5
+		weight = 0.5
+		
+		supply_consumption = 0.06
+		
+		
+		essential = {
+			infantry_equipment
+		}
+	
+		need = {
+			infantry_equipment = 50
+			infantry_armor = 50
+		}
+	}
+	riverstalkers_banner = {
+		abbreviation = "RIV"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_mercenary_banner
+		}
+	
+		combat_width = 0
+		
+		#Size Definitions
+		max_strength = 35
+		max_organisation = 70
+		default_morale = 0.3
+		manpower = 500
+		
+		##cause you smaller
+		defense = -0.25
+		breakthrough = -0.25
+		soft_attack = -0.5
+		hard_attack = -0.5
+
+		mountain = {
+			attack = 0.25
+			defence = 0.75
+		}
+			
+		#Misc Abilities
+		training_time = 90
+		suppression = 0.5
+		weight = 0.5
+		
+		supply_consumption = 0.06
+		
+		
+		essential = {
+			infantry_equipment
+		}
+	
+		need = {
+			infantry_equipment = 50
+		}
+	}
+	dragons_breath_banner = {
+		abbreviation = "DRB"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_mercenary_banner
+		}
+	
+		combat_width = 0
+		
+		#Size Definitions
+		max_strength = 35
+		max_organisation = 70
+		default_morale = 0.3
+		manpower = 500
+		
+		##cause you smaller
+		defense = -0.25
+		breakthrough = -0.25
+		soft_attack = -0.5
+		hard_attack = -0.5
+
+		mountain = {
+			attack = 0.25
+			defence = 0.75
+		}
+			
+		#Misc Abilities
+		training_time = 90
+		suppression = 0.5
+		weight = 0.5
+		
+		supply_consumption = 0.06
+		
+		
+		essential = {
+			infantry_equipment
+		}
+	
+		need = {
+			infantry_equipment = 50
+			infantry_armor = 50
+		}
 	}
 }
 

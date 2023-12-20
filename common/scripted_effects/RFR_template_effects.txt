@@ -395,3 +395,31 @@ unlock_company_of_winter_template = {
 		}
 	}
 }
+
+unlock_mountains_vengeance_template = {
+	custom_effect_tooltip = unlock_mountains_vengeance_template
+	hidden_effect = {
+		set_technology = {
+			DOR_mountains_vengeance_tech = 1
+			popup = no
+		}
+	}
+	division_template = {
+		name = "Mountain's Infantry"
+		is_locked = yes
+		division_names_group = DOR_mountain_inf
+		template_counter = 203
+		regiments = {
+			heavy_infantry = { x = 0 y = 0 }
+			heavy_infantry = { x = 0 y = 1 }
+			heavy_infantry = { x = 0 y = 2 }
+			heavy_pikes_brigade = { x = 1 y = 0 }
+			heavy_pikes_brigade = { x = 1 y = 1 }
+			heavy_pikes_brigade = { x = 1 y = 2 }
+			artillery_brigade = { x = 2 y = 0 }
+		}
+		support = {
+			mountains_vengeance_banner = { x = 0 y = 0 }
+		}
+	}
+}

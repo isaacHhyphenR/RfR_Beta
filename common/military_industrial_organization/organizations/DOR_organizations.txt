@@ -560,9 +560,6 @@ DOR_smithing_guild_MIO = {
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.05
 		}
-		equipment_bonus = {
-			fuel_capacity = 1
-		}
 	}
 
 ####################################################
@@ -989,6 +986,706 @@ DOR_tailory_guild_MIO = {
 		
 		production_bonus = {
 			production_resource_need_factor = -0.15
+		}
+	}
+}
+
+
+##############################################################################################################################
+# MOUNTAINS VENGEANCE
+##############################################################################################################################
+DOR_mountains_vengeance_MIO = {
+	name = dorwinion_mountains_vengeance
+	icon = GFX_idea_dorwinion_mountains_vengeance
+
+	allowed = {
+		original_tag = DOR
+	}
+	#visible = { FROM = { has_completed_focus = DOR_rely_on_mercenary_guards } }
+	available = { FROM = { has_completed_focus = DOR_hire_the_dwarves } }
+	
+	equipment_type {
+		infantry_equipment
+		infantry_armor
+		example_airframe
+	}
+	research_categories = {
+		infantry_tech
+	}
+	tree_header_text = {
+		text = mio_header_expand_mercenary
+		x = 0
+	}
+	# tree_header_text = {
+		# text = mio_header_support_companies
+		# x = 2.5
+	# }
+	tree_header_text = {
+		text = mio_header_template
+		x = 2
+	}
+	tree_header_text = {
+		text = mio_header_banners
+		x = 4
+	}
+	tree_header_text = {
+		text = mio_header_weapons_and_armor
+		x = 7
+	}
+
+	initial_trait = {
+		name = dorwinion_mountains_vengeance
+	}
+
+####################################################
+#######################################################HIRE MORE
+####################################################
+	trait = {
+		token = dorwinion_trait_hire_infantry1
+		name = dorwinion_trait_hire_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=0 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_mountains_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Mountain's 4th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							owner = FROM
+						}
+					}
+				}
+				calculate_mountains_vengeance_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry2
+		name = dorwinion_trait_hire_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry1
+		
+		any_parent = { dorwinion_trait_hire_infantry1 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_mountains_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Mountain's 5th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							owner = FROM
+						}
+					}
+				}
+				calculate_mountains_vengeance_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry3
+		name = dorwinion_trait_hire_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry2
+		
+		any_parent = { dorwinion_trait_hire_infantry2 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_mountains_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Mountain's 6th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							owner = FROM
+						}
+					}
+				}
+				calculate_mountains_vengeance_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry4
+		name = dorwinion_trait_hire_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry3
+		
+		any_parent = { dorwinion_trait_hire_infantry3 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_mountains_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Mountain's 7th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							owner = FROM
+						}
+					}
+				}
+				calculate_mountains_vengeance_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry5
+		name = dorwinion_trait_hire_two_infantry
+		icon = GFX_military_industrial_organization_infantry_armor
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry4
+		
+		any_parent = { dorwinion_trait_hire_infantry4 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_mountains_infantry_unit
+					custom_effect_tooltip = create_mountains_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Mountain's 8th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							owner = FROM
+						}
+						create_unit = {
+							division = "name = \"Mountain's 9th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							owner = FROM
+						}
+					}
+				}
+				calculate_mountains_vengeance_costs = yes
+			}
+		}
+	}
+####################################################
+#######################################################SUPPORT
+####################################################	
+	trait = {
+		token = dorwinion_trait_add_engineer
+		name = dorwinion_trait_add_engineer
+		icon = GFX_generic_mio_trait_icon_entrenchment
+		
+		position = { x=1 y=0 }
+		
+		available = {
+			FROM = {
+				has_tech = tech_combined_engineers
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Mountain's Infantry"
+					support = {
+						siege_engineer = 0
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_engineer_equipment
+		name = dorwinion_trait_engineer_equipment
+		icon = GFX_military_industrial_organization_engineering_equipment
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_engineer
+		any_parent = { dorwinion_trait_add_engineer }
+		
+		on_complete = {
+			custom_effect_tooltip = one_engineer_per_MV_unit
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_maintenance
+		name = dorwinion_trait_add_maintenance
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_engineer
+		
+		available = {
+			FROM = {
+				has_tech = tech_maintenance_company
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Mountain's Infantry"
+					support = {
+						maintenance_company = 0
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_maintenance_equipment
+		name = dorwinion_trait_maintenance_equipment
+		icon = GFX_military_industrial_organization_maintenance_equipment
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_maintenance
+		any_parent = { dorwinion_trait_add_maintenance }
+		
+		on_complete = {
+			custom_effect_tooltip = one_maintenance_per_MV_unit
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_medical
+		name = dorwinion_trait_add_medical
+		icon = GFX_generic_mio_trait_icon_political
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_maintenance
+		
+		available = {
+			FROM = {
+				has_tech = tech_field_hospital
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Mountain's Infantry"
+					support = {
+						field_hospital = 0
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_medical_equipment
+		name = dorwinion_trait_medical_equipment
+		icon = GFX_military_industrial_organization_medical_equipment
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_medical
+		any_parent = { dorwinion_trait_add_medical }
+		
+		on_complete = {
+			custom_effect_tooltip = one_medical_per_MV_unit
+		}
+	}
+####################################################
+#######################################################TEMPLATE
+####################################################
+	trait = {
+		token = dorwinion_trait_add_heavy_infantry
+		name = dorwinion_trait_add_heavy_infantry
+		icon = GFX_military_industrial_organization_infantry_armor
+		
+		position = { x=0 y=3 }
+		relative_position_id = dorwinion_trait_add_engineer
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Mountain's Infantry"
+					regiments = {
+						heavy_infantry = 0
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_heavy_infantry2
+		name = dorwinion_trait_add_heavy_infantry
+		icon = GFX_military_industrial_organization_infantry_armor
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_heavy_infantry
+		any_parent = { dorwinion_trait_add_heavy_infantry }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Mountain's Infantry"
+					regiments = {
+						heavy_infantry = 0
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_heavy_pikes
+		name = dorwinion_trait_add_heavy_pikes
+		icon = GFX_military_industrial_organization_anti_tank
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_heavy_infantry
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Mountain's Infantry"
+					regiments = {
+						heavy_pikes_brigade = 1
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_heavy_pikes2
+		name = dorwinion_trait_add_heavy_pikes
+		icon = GFX_military_industrial_organization_anti_tank
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_heavy_pikes
+		any_parent = { dorwinion_trait_add_heavy_pikes }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Mountain's Infantry"
+					regiments = {
+						heavy_pikes_brigade = 1
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_crossbows
+		name = dorwinion_trait_add_crossbows
+		icon = GFX_military_industrial_organization_artillery
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_heavy_pikes
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Mountain's Infantry"
+					regiments = {
+						artillery_brigade = 2
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_support_crossbows
+		name = dorwinion_trait_add_support_crossbows
+		icon = GFX_military_industrial_organization_artillery
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_crossbows
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Mountain's Infantry"
+					support = {
+						artillery = 0
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+
+####################################################
+#######################################################BANNER BUFFS
+####################################################
+	trait = {
+		token = dorwinion_trait_banner_defense
+		name = DOR_mountains_vengeance_defense
+		icon = GFX_generic_mio_trait_icon_defense
+		
+		position = { x=4 y=0 }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_mountains_vengeance_defense_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_mountains_vengeance_defense = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_banner_hp
+		name = DOR_mountains_vengeance_hp
+		icon = GFX_generic_mio_trait_icon_max_strength
+		
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_banner_defense
+		any_parent = { dorwinion_trait_banner_defense }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_mountains_vengeance_hp_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_mountains_vengeance_hp = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+####################################################
+#######################################################INFANTRY EQUIPMENT
+####################################################
+	trait = {
+		token = generic_mio_trait_drum_pattern_sights
+		name = generic_mio_trait_drum_pattern_sights
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=6 y=0 }
+		
+		available = { FROM = { has_completed_focus = DOR_commission_their_other_skills } }
+
+		equipment_bonus = {
+			defense = 0.035
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.025
+		}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.025
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_reinforced_stocks
+		name = generic_mio_trait_reinforced_stocks
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+		available = { FROM = { has_completed_focus = DOR_commission_their_other_skills } }
+
+		equipment_bonus = {
+			soft_attack = 0.025
+			reliability = 0.03
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.025
+		}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.025
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_bolt_action
+		name = generic_mio_trait_bolt_action
+		icon = GFX_generic_mio_department_icon_infantry_line_efficiency
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_reinforced_stocks
+
+		all_parents = { generic_mio_trait_reinforced_stocks }
+
+		mutually_exclusive = { generic_mio_trait_semi_auto }
+
+		equipment_bonus = {
+			soft_attack = -0.03
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_semi_auto
+		name = generic_mio_trait_semi_auto
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_reinforced_stocks
+
+		all_parents = { generic_mio_trait_reinforced_stocks }
+
+		mutually_exclusive = { generic_mio_trait_bolt_action }
+
+		equipment_bonus = {
+			soft_attack = 0.03
+			breakthrough = 0.03
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_medium_machineguns
+		name = generic_mio_trait_medium_machineguns
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_bolt_action
+
+		any_parent = { generic_mio_trait_semi_auto generic_mio_trait_bolt_action }
+		
+		equipment_bonus = {
+			breakthrough = 0.06
+			build_cost_ic = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_advanced_barrel_forging
+		name = generic_mio_trait_advanced_barrel_forging
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		any_parent = { generic_mio_trait_reinforced_stocks generic_mio_trait_drum_pattern_sights }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_mass_rifle_production
+		name = generic_mio_trait_mass_rifle_production
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_advanced_barrel_forging
+
+		all_parents = { generic_mio_trait_advanced_barrel_forging }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.03
+			production_cost_factor = -0.03
+		}
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.3
+		}
+	}
+
+
+	trait = {
+		token = generic_mio_trait_quality_materials
+		name = generic_mio_trait_quality_materials
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		all_parents = { generic_mio_trait_drum_pattern_sights }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+	}
+
+	trait = {
+		token = generic_mio_trait_improved_small_arms_bullet_design
+		name = generic_mio_trait_improved_small_arms_bullet_design
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_quality_materials
+
+		all_parents = { generic_mio_trait_quality_materials }
+
+		mutually_exclusive = { generic_mio_trait_armor_piercing_rounds }
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			breakthrough = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_armor_piercing_rounds
+		name = generic_mio_trait_armor_piercing_rounds
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_quality_materials
+
+		all_parents = { generic_mio_trait_quality_materials }
+		
+		mutually_exclusive = { generic_mio_trait_improved_small_arms_bullet_design }
+
+		equipment_bonus = {
+			ap_attack = 0.25
+			hard_attack = 0.05
 		}
 	}
 }
@@ -1865,7 +2562,7 @@ DOR_company_of_winter_MIO = {
 		}
 	}
 ####################################################
-#######################################################BANNER BUFF (The techs don't apply to the subunit for some reason)
+#######################################################BANNER BUFF
 ####################################################
 	trait = {
 		token = dorwinion_trait_banner_morale

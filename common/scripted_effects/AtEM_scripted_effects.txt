@@ -2650,6 +2650,45 @@ stash_republican_characters = { #otherwise they can get lost if the original tag
 
 
 DOR_pay_mercenaries = {
+	###MOUNTAINS VENGEANCE
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+			has_completed_focus = DOR_hire_the_dwarves
+		}
+		calculate_mountains_vengeance_costs = yes
+		mio:DOR_mountains_vengeance_MIO = {
+			add_mio_funds = var:FROM.cmountains_vengeance_funds
+		}
+		##equipment replenishment
+		if = {
+			limit = {
+				mio:DOR_mountains_vengeance_MIO = { is_mio_trait_completed = dorwinion_trait_engineering_equipment }
+			}
+			add_equipment_to_stockpile = {
+				type = engineering_equipment
+				amount = num_battalions_with_type@mountains_vengeance_banner
+			}
+		}
+		if = {
+			limit = {
+				mio:DOR_mountains_vengeance_MIO = { is_mio_trait_completed = dorwinion_trait_medical_equipment }
+			}
+			add_equipment_to_stockpile = {
+				type = medical_equipment
+				amount = num_battalions_with_type@mountains_vengeance_banner
+			}
+		}
+		if = {
+			limit = {
+				mio:DOR_mountains_vengeance_MIO = { is_mio_trait_completed = dorwinion_trait_maintenance_equipment }
+			}
+			add_equipment_to_stockpile = {
+				type = maintenance_equipment
+				amount = num_battalions_with_type@mountains_vengeance_banner
+			}
+		}
+	}
 	###COMPANY OF WINTER
 	if = {
 		limit = {
@@ -2699,7 +2738,25 @@ DOR_pay_mercenaries = {
 		}
 	}
 }
-calculate_company_of_winter_costs = {
+calculate_riverstalkers_costs = { #1 civ = 2 div
+	set_variable = { riverstalkers_cost = num_battalions_with_type@riverstalkers_banner }
+	divide_variable = { riverstalkers_cost = 2 }
+	set_variable = { riverstalkers_funds = num_battalions_with_type@riverstalkers_banner }
+	multiply_variable = { riverstalkers_funds = 10 }
+}
+calculate_mountains_vengeance_costs = { #1 civ = 1.5 div
+	set_variable = { mountains_vengeance_cost = num_battalions_with_type@mountains_vengeance_banner }
+	divide_variable = { mountains_vengeance_cost = 1.5 }
+	set_variable = { mountains_vengeance_funds = num_battalions_with_type@mountains_vengeance_banner }
+	multiply_variable = { mountains_vengeance_funds = 15 }
+}
+calculate_dragons_breath_costs = { #1 civ = 1.5 div
+	set_variable = { dragons_breath_cost = num_battalions_with_type@dragons_breath_banner }
+	divide_variable = { dragons_breath_cost = 1.5 }
+	set_variable = { dragons_breath_funds = num_battalions_with_type@dragons_breath_banner }
+	multiply_variable = { dragons_breath_funds = 15 }
+}
+calculate_company_of_winter_costs = { #1 civ = 1 div
 	set_variable = { company_of_winter_cost = num_battalions_with_type@company_of_winter_banner }
 	set_variable = { company_of_winter_funds = num_battalions_with_type@company_of_winter_banner }
 	multiply_variable = { company_of_winter_funds = 20 }

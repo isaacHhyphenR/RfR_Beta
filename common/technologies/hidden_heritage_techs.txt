@@ -312,7 +312,7 @@ technologies = {
 			}
 		}
 	}
-	
+	######DOR mercenaries
 	DOR_company_of_winter_tech = {
 		allow = {
 			always = no
@@ -373,6 +373,35 @@ technologies = {
 				category = category_tanks
 				breakthrough = 0.15
 			}
+		}
+	}
+	
+	
+	DOR_mountains_vengeance_tech = {
+		allow = {
+			always = no
+		}
+		enable_subunits = {
+			mountains_vengeance_banner
+		}
+	}
+	DOR_mountains_vengeance_defense = {
+		allow = {
+			always = no
+		}
+		mountains_vengeance_banner = {
+			battalion_mult = {
+				category = category_all_infantry
+				defense = 0.15
+			}
+		}
+	}
+	DOR_mountains_vengeance_hp = {
+		allow = {
+			always = no
+		}
+		mountains_vengeance_banner = {
+			max_strength = 30
 		}
 	}
 }

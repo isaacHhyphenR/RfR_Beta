@@ -1,14 +1,42 @@
+DOR_river_inf = {
+	name = "Riverstalkers"
+	for_countries = { DOR }
+	can_use = { always = no } # has_completed_focus = DOR_hire_the_rabble }
+	division_types = { "infantry" }
+	fallback_name = "%d Stalkers"
+}
+DOR_mountain_inf = {
+	name = "Mountain's Vengeance Infantry"
+	for_countries = { DOR }
+	can_use = { always = no } # has_completed_focus = DOR_hire_the_dwarves }
+	division_types = { "infantry" }
+	fallback_name = "Mountain's %d Infantry"
+}
+DOR_dragon_cav = {
+	name = "Dragon's Breath Cavalry"
+	for_countries = { DOR }
+	can_use = { always = no } # has_completed_focus = DOR_hire_the_cavalry }
+	division_types = { "light_armor" "medium_armor" }
+	fallback_name = "Dragon's %d Cavalry"
+}
+DOR_dragon_char = {
+	name = "Dragon's Breath Chariots"
+	for_countries = { DOR }
+	can_use = { always = no } # has_completed_focus = DOR_more_exotic_techniques }
+	division_types = { "mechanized" }
+	fallback_name = "Dragon's %d Chariots"
+}
 DOR_winter_inf = {
 	name = "Company of Winter Infantry"
 	for_countries = { DOR }
-	can_use = { has_completed_focus = DOR_hire_the_elites }
+	can_use = { always = no } # has_completed_focus = DOR_hire_the_elites }
 	division_types = { "infantry" }
 	fallback_name = "Winter's %d Infantry"
 }
 DOR_winter_cav = {
 	name = "Company of Winter Cavalry"
 	for_countries = { DOR }
-	can_use = { has_completed_focus = DOR_hire_the_elites }
+	can_use = { always = no } # has_completed_focus = DOR_hire_the_elites }
 	division_types = { "medium_armor" }
 	fallback_name = "Winter's %d Knights"
 }

@@ -6648,6 +6648,233 @@ focus_tree = {
 			}
 		}
 	}
+	focus = { #Hire the Rabble
+		id = DOR_hire_the_rabble
+		icon = GFX_goal_DOR_riverstalkers
+		x = -3
+		y = 1
+		relative_position_id = DOR_rely_on_mercenary_guards
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_rely_on_mercenary_guards
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			custom_effect_tooltip = unlocks_mountains_vengeance
+			unlock_mountains_vengeance_template = yes
+			capital_scope = {
+				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_mountains_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Mountains's 1st Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Mountains's 2nd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Mountains's 3rd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				add_dynamic_modifier = { modifier = mountains_vengeance_payment }
+				mio:DOR_mountains_vengeance_MIO = {
+					set_variable = { num_support_companies = 1 }
+				}
+				calculate_mountains_vengeance_costs = yes
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Hire the Dwarves
+		id = DOR_hire_the_dwarves
+		icon = GFX_goal_DOR_mountains_vengeance
+		x = -1
+		y = 1
+		relative_position_id = DOR_rely_on_mercenary_guards
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_rely_on_mercenary_guards
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			custom_effect_tooltip = unlocks_mountains_vengeance
+			unlock_mountains_vengeance_template = yes
+			capital_scope = {
+				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_mountains_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Mountains's 1st Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Mountains's 2nd Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Mountains's 3rd Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				add_dynamic_modifier = { modifier = mountains_vengeance_payment }
+				mio:DOR_mountains_vengeance_MIO = {
+					set_variable = { num_support_companies = 1 }
+				}
+				calculate_mountains_vengeance_costs = yes
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Commission Their Other Skills
+		id = DOR_commission_their_other_skills
+		icon = GFX_goal_generic_production2
+		x = 0
+		y = 1
+		relative_position_id = DOR_hire_the_dwarves
+		cost = 10
+		ai_will_do = {
+			factor = 0
+		}
+		prerequisite = {
+			focus = DOR_hire_the_dwarves
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			mio:DOR_mountains_vengeance_MIO = {
+				add_mio_size = 1
+				unlock_mio_trait_tooltip = generic_mio_trait_drum_pattern_sights
+				unlock_mio_trait_tooltip = generic_mio_trait_reinforced_stocks
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Hire the Cavalry
+		id = DOR_hire_the_cavalry
+		icon = GFX_goal_DOR_dragons_breath
+		x = 1
+		y = 1
+		relative_position_id = DOR_rely_on_mercenary_guards
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_rely_on_mercenary_guards
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			custom_effect_tooltip = unlocks_mountains_vengeance
+			unlock_mountains_vengeance_template = yes
+			capital_scope = {
+				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_mountains_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Mountains's 1st Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Mountains's 2nd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Mountains's 3rd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				add_dynamic_modifier = { modifier = mountains_vengeance_payment }
+				mio:DOR_mountains_vengeance_MIO = {
+					set_variable = { num_support_companies = 1 }
+				}
+				calculate_mountains_vengeance_costs = yes
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	
+	focus = { #More Exotic Techniques
+		id = DOR_more_exotic_techniques
+		icon = GFX_goal_generic_army_motorized
+		x = 0
+		y = 1
+		relative_position_id = DOR_hire_the_cavalry
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_hire_the_cavalry
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			custom_effect_tooltip = unlocks_mountains_vengeance
+			unlock_mountains_vengeance_template = yes
+			capital_scope = {
+				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_mountains_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Mountains's 1st Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Mountains's 2nd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Mountains's 3rd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						owner = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				add_dynamic_modifier = { modifier = mountains_vengeance_payment }
+				mio:DOR_mountains_vengeance_MIO = {
+					set_variable = { num_support_companies = 1 }
+				}
+				calculate_mountains_vengeance_costs = yes
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
 	focus = { #Hire the Elites
 		id = DOR_hire_the_elites
 		icon = GFX_goal_DOR_company_of_winter
