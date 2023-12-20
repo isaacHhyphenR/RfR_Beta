@@ -1277,4 +1277,36 @@ spriteTypes = {
 		name = "GFX_goal_DOR_support_vierling"
 		texturefile = "gfx/interface/goals/goal_DOR_support_vierling.dds"
 	}
+	SpriteType = {
+		name = "GFX_goal_DOR_tailory_guild"
+		texturefile = "gfx/interface/goals/designers/goal_DOR_tailory_guild.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_baking_guild"
+		texturefile = "gfx/interface/goals/designers/goal_DOR_baking_guild.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_smithing_guild"
+		texturefile = "gfx/interface/goals/designers/goal_DOR_smithing_guild.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_carpentry_guild"
+		texturefile = "gfx/interface/goals/designers/goal_DOR_carpentry_guild.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_mountains_vengeance"
+		texturefile = "gfx/interface/goals/designers/goal_DOR_mountains_vengeance.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_dragons_breath"
+		texturefile = "gfx/interface/goals/designers/goal_DOR_dragons_breath.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_riverstalkers"
+		texturefile = "gfx/interface/goals/designers/goal_DOR_riverstalkers.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_company_of_winter"
+		texturefile = "gfx/interface/goals/designers/goal_DOR_company_of_winter.dds"
+	}
 }
