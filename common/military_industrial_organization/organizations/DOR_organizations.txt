@@ -1865,7 +1865,7 @@ DOR_company_of_winter_MIO = {
 		}
 	}
 ####################################################
-#######################################################BANNER BUFF
+#######################################################BANNER BUFF (The techs don't apply to the subunit for some reason)
 ####################################################
 	trait = {
 		token = dorwinion_trait_banner_morale

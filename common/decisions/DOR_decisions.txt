@@ -1,6 +1,20 @@
 @campaignFireOnlyOnce = no
 
 DOR_election_category = { #BOP
+	debug_elect_aldiana = {
+		ai_will_do = {
+			factor = 0
+		}
+		visible = { is_debug = yes }
+		complete_effect = {
+			add_power_balance_value = {
+				id = DOR_election_power_balance
+				value = -1
+			}
+			country_event = atem.7
+		}
+	}
+		
 	DOR_campaign_for_the_great_merchants = {
 		icon = GFX_decision_great_merchants
 		fire_only_once = @campaignFireOnlyOnce

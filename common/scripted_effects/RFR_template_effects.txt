@@ -346,6 +346,12 @@ load_VorV_OOB = {
 
 unlock_company_of_winter_template = {
 	custom_effect_tooltip = unlock_company_of_winter_template
+	hidden_effect = {
+		set_technology = {
+			DOR_company_of_winter_tech = 1
+			popup = no
+		}
+	}
 	division_template = {
 		name = "Winter's Infantry"
 		is_locked = yes

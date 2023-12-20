@@ -6643,6 +6643,9 @@ focus_tree = {
 		completion_reward = {
 			add_manpower = 10000
 			merchant_houses_focus_effect = yes
+			hidden_effect = {
+				add_ideas = cannot_design_mercenaries
+			}
 		}
 	}
 	focus = { #Hire the Elites
@@ -6685,8 +6688,8 @@ focus_tree = {
 				mio:DOR_company_of_winter_MIO = {
 					set_variable = { num_support_companies = 2 }
 				}
+				calculate_company_of_winter_costs = yes
 			}
-			calculate_company_of_winter_costs = yes
 			merchant_houses_focus_effect = yes
 		}
 	}

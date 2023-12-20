@@ -20,7 +20,6 @@ sub_units = {
 			category_army
 			category_mercenary_banner
 		}
-
 	
 		combat_width = 0
 		
@@ -45,6 +44,10 @@ sub_units = {
 		experience_loss_factor = -0.10
 		
 		supply_consumption = 0.06
+		
+		essential = {
+			infantry_equipment
+		}
 	
 		need = {
 			infantry_equipment = 50

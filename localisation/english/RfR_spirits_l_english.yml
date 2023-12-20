@@ -475,3 +475,8 @@
  DOR_expand_mercantile_operations_idea_desc: "$DOR_expand_mercantile_operations_desc$"
  DOR_whip_our_levies_into_shape_idea: "Company of Winter Training"
  DOR_whip_our_levies_into_shape_idea_desc: "$DOR_whip_our_levies_into_shape_desc$"
+ cannot_design_mercenaries: "§RCannot manually design mercenary companies.§!"
+ 
+ 
+ 
+ 

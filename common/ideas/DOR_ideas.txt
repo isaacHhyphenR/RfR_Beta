@@ -968,6 +968,15 @@ ideas = {
 		}
 	
 		##Mercenaries
+		cannot_design_mercenaries = {
+			allowed_civil_war = { always = yes }
+			modifier = {
+				unit_company_of_winter_banner_design_cost_factor = 999
+				unit_riverstalkers_banner_design_cost_factor = 999
+				unit_mountains_vengeance_banner_design_cost_factor = 999
+				unit_dragons_breath_banner_design_cost_factor = 999
+			}
+		}
 		DOR_company_of_winter_division_xp = {
 			name = dorwinion_company_of_winter
 			allowed_civil_war = {

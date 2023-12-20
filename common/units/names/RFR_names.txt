@@ -1,0 +1,11 @@
+﻿# Names are based on equipment types (picking equipment with highest amount from the pool)
+# Generic are used for countries that are not scripted in.
+generic = {
+	# Land units
+	company_of_winter_banner = {
+		prefix = ""
+		generic = { "Company of Winter Banner" }
+		generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+		unique = {}
+	}
+}

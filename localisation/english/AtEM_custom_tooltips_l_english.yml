@@ -178,11 +178,11 @@
  one_suppression_per_CoW_unit: "Adds 1 §Y$suppression_equipment$§! to the national stockpile each week per fielded §Y$dorwinion_company_of_winter$§! unit."
  one_maintenance_per_CoW_unit: "Adds 1 §Y$maintenance_equipment$§! to the national stockpile each week per fielded §Y$dorwinion_company_of_winter$§! unit."
  dorwinion_trait_banner_xp_loss_tooltip: "Makes the focus §Y$DOR_whip_our_levies_into_shape$§! available."
- DOR_company_of_winter_morale_tooltip: "§Y$company_of_winter_banner$§!:$new_line_tab$Recovery Rate: §G+25%§!"
- DOR_company_of_winter_initiative_tooltip: "§Y$company_of_winter_banner$§!:$new_line_tab$Initiative: §G+50%§!"
- DOR_company_of_winter_soft_attack_tooltip: "Aggressive Assault"
- DOR_company_of_winter_breakthrough_tooltip: "Relentless Advance"
- DOR_company_of_winter_xp_loss_tooltip: "§Y$company_of_winter_banner$§!:$new_line_tab$Exp. Loss: §G-100%§!"
+ DOR_company_of_winter_morale_tooltip: "§Y$company_of_winter_banner$§!:$new_line_tab$Recovery Rate: §G+50%§!"
+ DOR_company_of_winter_initiative_tooltip: "§Y$company_of_winter_banner$§!:$new_line_tab$Initiative: §G+5.00%§!"
+ DOR_company_of_winter_soft_attack_tooltip: "§Y$company_of_winter_banner$§!:$new_line_tab$§YBattalion Modifier: Infantry & Cavalry§!$new_line_tab$ - $Soft_Attack$: §G+15.00%§!"
+ DOR_company_of_winter_breakthrough_tooltip: "§Y$company_of_winter_banner$§!:$new_line_tab$§YBattalion Modifier: Infantry & Cavalry§!$new_line_tab$ - $MODIFIER_BREAKTHROUGH$: §G+15.00%§!"
+ DOR_company_of_winter_xp_loss_tooltip: "§Y$company_of_winter_banner$§!:$new_line_tab$Exp. Loss: §G-10.00%§!"
  
  
  

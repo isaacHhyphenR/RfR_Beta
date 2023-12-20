@@ -312,12 +312,21 @@ technologies = {
 			}
 		}
 	}
+	
+	DOR_company_of_winter_tech = {
+		allow = {
+			always = no
+		}
+		enable_subunits = {
+			company_of_winter_banner
+		}
+	}
 	DOR_company_of_winter_morale = {
 		allow = {
 			always = no
 		}
 		company_of_winter_banner = {
-			default_morale = 0.25
+			default_morale = 0.5
 		}
 	}
 	DOR_company_of_winter_xp_loss = {
@@ -325,7 +334,7 @@ technologies = {
 			always = no
 		}
 		company_of_winter_banner = {
-			experience_loss_factor = -1
+			experience_loss_factor = -0.1
 		}
 	}
 	DOR_company_of_winter_initiative = {
@@ -333,7 +342,7 @@ technologies = {
 			always = no
 		}
 		company_of_winter_banner = {
-			initiative = 0.5
+			initiative = 0.05
 		}
 	}
 	DOR_company_of_winter_soft_attack = {
@@ -343,6 +352,9 @@ technologies = {
 		company_of_winter_banner = {
 			battalion_mult = {
 				category = category_all_infantry
+				soft_attack = 0.15
+			}
+			battalion_mult = {
 				category = category_tanks
 				soft_attack = 0.15
 			}
@@ -355,6 +367,9 @@ technologies = {
 		company_of_winter_banner = {
 			battalion_mult = {
 				category = category_all_infantry
+				breakthrough = 0.15
+			}
+			battalion_mult = {
 				category = category_tanks
 				breakthrough = 0.15
 			}
