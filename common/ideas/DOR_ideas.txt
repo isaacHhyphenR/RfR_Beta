@@ -696,6 +696,16 @@ ideas = {
 				clr_country_flag = reduce_market_time
 			}
 		}
+	
+		DOR_whip_our_levies_into_shape_idea = {
+			picture = generic_army_war_college
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				experience_gain_army_unit_factor = 0.1
+			}
+		}
 	}
 	
 	hidden_ideas = {

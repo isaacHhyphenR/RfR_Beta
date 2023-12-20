@@ -1016,15 +1016,15 @@ DOR_company_of_winter_MIO = {
 	}
 	tree_header_text = {
 		text = mio_header_support_companies
-		x = 4
+		x = 2.5
 	}
 	tree_header_text = {
 		text = mio_header_template
-		x = 7
+		x = 5
 	}
 	tree_header_text = {
 		text = mio_header_banners
-		x = 9
+		x = 8
 	}
 
 	initial_trait = {
@@ -1394,7 +1394,7 @@ DOR_company_of_winter_MIO = {
 		name = dorwinion_trait_add_signals
 		icon = GFX_generic_mio_trait_icon_surface_detection
 		
-		position = { x=3 y=0 }
+		position = { x=2 y=0 }
 		
 		available = {
 			FROM = {
@@ -1435,6 +1435,544 @@ DOR_company_of_winter_MIO = {
 		
 		on_complete = {
 			custom_effect_tooltip = one_signals_per_CoW_unit
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_medical
+		name = dorwinion_trait_add_medical
+		icon = GFX_generic_mio_trait_icon_political
+		
+		position = { x=0 y=3 }
+		relative_position_id = dorwinion_trait_add_signals
+		
+		available = {
+			FROM = {
+				has_tech = tech_field_hospital
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Infantry"
+					support = {
+						field_hospital = 0
+					}
+				}
+				add_units_to_division_template = {
+					template_name = "Winter's Knights"
+					support = {
+						field_hospital = 0
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_medical_equipment
+		name = dorwinion_trait_medical_equipment
+		icon = GFX_military_industrial_organization_medical_equipment
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_medical
+		any_parent = { dorwinion_trait_add_medical }
+		
+		on_complete = {
+			custom_effect_tooltip = one_medical_per_CoW_unit
+		}
+	}
+	
+	trait = {
+		token = dorwinion_trait_add_engineer
+		name = dorwinion_trait_add_engineer
+		icon = GFX_generic_mio_trait_icon_entrenchment
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_signals
+		
+		available = {
+			FROM = {
+				has_tech = tech_combined_engineers
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Infantry"
+					support = {
+						engineer = 0
+					}
+				}
+				add_units_to_division_template = {
+					template_name = "Winter's Knights"
+					support = {
+						engineer = 0
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_engineer_equipment
+		name = dorwinion_trait_engineer_equipment
+		icon = GFX_military_industrial_organization_engineering_equipment
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_engineer
+		any_parent = { dorwinion_trait_add_engineer }
+		
+		on_complete = {
+			custom_effect_tooltip = one_engineer_per_CoW_unit
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_maintenance
+		name = dorwinion_trait_add_maintenance
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_medical
+		
+		available = {
+			FROM = {
+				has_tech = tech_maintenance_company
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Infantry"
+					support = {
+						maintenance_company = 0
+					}
+				}
+				add_units_to_division_template = {
+					template_name = "Winter's Knights"
+					support = {
+						maintenance_company = 0
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_maintenance_equipment
+		name = dorwinion_trait_maintenance_equipment
+		icon = GFX_military_industrial_organization_maintenance_equipment
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_maintenance
+		any_parent = { dorwinion_trait_add_maintenance }
+		
+		on_complete = {
+			custom_effect_tooltip = one_maintenance_per_CoW_unit
+		}
+	}
+####################################################
+#######################################################ADD INFANTRY
+####################################################
+	trait = {
+		token = dorwinion_trait_add_heavy_infantry
+		name = dorwinion_trait_add_heavy_infantry
+		icon = GFX_military_industrial_organization_infantry_armor
+		
+		position = { x=4 y=0 }
+		
+		mutually_exclusive = { dorwinion_trait_add_heavy_pikes dorwinion_trait_add_bows }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Infantry"
+					regiments = {
+						heavy_infantry = 2
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_two_heavy_infantry
+		name = dorwinion_trait_add_two_heavy_infantry
+		icon = GFX_military_industrial_organization_infantry_armor
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_heavy_infantry
+		any_parent = { dorwinion_trait_add_heavy_infantry }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Infantry"
+					regiments = {
+						heavy_infantry = 2
+						heavy_infantry = 2
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_heavy_pikes
+		name = dorwinion_trait_add_heavy_pikes
+		icon = GFX_military_industrial_organization_anti_tank
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_heavy_infantry
+		
+		mutually_exclusive = { dorwinion_trait_add_heavy_infantry dorwinion_trait_add_bows }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Infantry"
+					regiments = {
+						heavy_pikes_brigade = 2
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_two_heavy_pikes
+		name = dorwinion_trait_add_two_heavy_pikes
+		icon = GFX_military_industrial_organization_anti_tank
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_heavy_pikes
+		any_parent = { dorwinion_trait_add_heavy_pikes }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Infantry"
+					regiments = {
+						heavy_pikes_brigade = 2
+						heavy_pikes_brigade = 2
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_bows
+		name = dorwinion_trait_add_bows
+		icon = GFX_military_industrial_organization_artillery
+		
+		position = { x=2 y=0 }
+		relative_position_id = dorwinion_trait_add_heavy_infantry
+		
+		mutually_exclusive = { dorwinion_trait_add_heavy_pikes dorwinion_trait_add_heavy_infantry }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Infantry"
+					regiments = {
+						artillery_brigade = 2
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_two_bows
+		name = dorwinion_trait_add_two_bows
+		icon = GFX_military_industrial_organization_artillery
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_bows
+		any_parent = { dorwinion_trait_add_bows }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Infantry"
+					regiments = {
+						artillery_brigade = 2
+						artillery_brigade = 2
+					}
+				}
+			}
+		}
+	}
+####################################################
+#######################################################ADD CAVALRY
+####################################################
+	trait = {
+		token = dorwinion_trait_add_heavy_cavalry
+		name = dorwinion_trait_add_heavy_cavalry
+		icon = GFX_military_industrial_organization_medium_tank_chassis
+		
+		position = { x=0 y=3 }
+		relative_position_id = dorwinion_trait_add_heavy_infantry
+		
+		mutually_exclusive = { dorwinion_trait_add_heavy_lancers dorwinion_trait_add_light_skirmishers }
+		
+		available = {
+			FROM = {
+				if = {
+					limit = { has_dlc = "No Step Back" }
+					has_tech = basic_medium_tank_chassis
+				}
+				else = {
+					has_tech = basic_medium_tank
+				}
+			}
+		}
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Knights"
+					regiments = {
+						medium_armor = 2
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_two_heavy_cavalry
+		name = dorwinion_trait_add_two_heavy_cavalry
+		icon = GFX_military_industrial_organization_medium_tank_chassis
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_heavy_cavalry
+		any_parent = { dorwinion_trait_add_heavy_cavalry }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Knights"
+					regiments = {
+						medium_armor = 2
+						medium_armor = 2
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_heavy_lancers
+		name = dorwinion_trait_add_heavy_lancers
+		icon = GFX_military_industrial_organization_medium_tank_destroyer_chassis
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_heavy_cavalry
+		
+		mutually_exclusive = { dorwinion_trait_add_heavy_cavalry dorwinion_trait_add_light_skirmishers }
+		
+		available = {
+			FROM = {
+				if = {
+					limit = { has_dlc = "No Step Back" }
+					has_tech = basic_medium_tank_chassis
+				}
+				else = {
+					has_tech = basic_medium_td
+				}
+			}
+		}
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Knights"
+					regiments = {
+						medium_tank_destroyer_brigade = 2
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_two_heavy_lancers
+		name = dorwinion_trait_add_two_heavy_lancers
+		icon = GFX_military_industrial_organization_medium_tank_destroyer_chassis
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_heavy_lancers
+		any_parent = { dorwinion_trait_add_heavy_lancers }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Knights"
+					regiments = {
+						medium_tank_destroyer_brigade = 2
+						medium_tank_destroyer_brigade = 2
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_light_skirmishers
+		name = dorwinion_trait_add_light_skirmishers
+		icon = GFX_military_industrial_organization_light_tank_artillery_chassis
+		
+		position = { x=2 y=0 }
+		relative_position_id = dorwinion_trait_add_heavy_cavalry
+		
+		mutually_exclusive = { dorwinion_trait_add_heavy_lancers dorwinion_trait_add_heavy_cavalry }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Knights"
+					regiments = {
+						light_sp_artillery_brigade = 2
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_two_light_skirmishers
+		name = dorwinion_trait_add_two_light_skirmishers
+		icon = GFX_military_industrial_organization_light_tank_artillery_chassis
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_light_skirmishers
+		any_parent = { dorwinion_trait_add_light_skirmishers }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Winter's Knights"
+					regiments = {
+						light_sp_artillery_brigade = 2
+						light_sp_artillery_brigade = 2
+					}
+				}
+			}
+		}
+	}
+####################################################
+#######################################################BANNER BUFF
+####################################################
+	trait = {
+		token = dorwinion_trait_banner_morale
+		name = DOR_company_of_winter_morale
+		icon = GFX_generic_mio_trait_icon_crown
+		
+		position = { x=8 y=0 }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_company_of_winter_morale_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_company_of_winter_morale = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_banner_initiative
+		name = DOR_company_of_winter_initiative
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_banner_morale
+		any_parent = { dorwinion_trait_banner_morale }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_company_of_winter_initiative_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_company_of_winter_initiative = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_banner_soft_attack
+		name = DOR_company_of_winter_soft_attack
+		icon = GFX_generic_mio_trait_icon_soft_attack
+		
+		position = { x=-1 y=2 }
+		relative_position_id = dorwinion_trait_banner_initiative
+		any_parent = { dorwinion_trait_banner_initiative }
+		
+		mutually_exclusive = { dorwinion_trait_banner_breakthrough }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_company_of_winter_soft_attack_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_company_of_winter_soft_attack = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_banner_breakthrough
+		name = DOR_company_of_winter_breakthrough
+		icon = GFX_generic_mio_trait_icon_breakthrough
+		
+		position = { x=1 y=2 }
+		relative_position_id = dorwinion_trait_banner_initiative
+		any_parent = { dorwinion_trait_banner_initiative }
+		
+		mutually_exclusive = { dorwinion_trait_banner_soft_attack }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_company_of_winter_breakthrough_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_company_of_winter_breakthrough = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_banner_xp_loss
+		name = DOR_company_of_winter_xp_loss
+		icon = GFX_generic_mio_trait_icon_scales
+		
+		position = { x=1 y=1 }
+		relative_position_id = dorwinion_trait_banner_morale
+		any_parent = { dorwinion_trait_banner_morale }
+		
+		on_complete = {
+			custom_effect_tooltip = dorwinion_trait_banner_xp_loss_tooltip
+			FROM = {
+				custom_effect_tooltip = DOR_company_of_winter_xp_loss_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_company_of_winter_xp_loss = 1
+						popup = no
+					}
+				}
+			}
 		}
 	}
 }

@@ -6690,6 +6690,37 @@ focus_tree = {
 			merchant_houses_focus_effect = yes
 		}
 	}
+	focus = { #Whip our levies into shape
+		id = DOR_whip_our_levies_into_shape
+		icon = GFX_focus_chi_army_reform
+		x = 1
+		y = 1
+		relative_position_id = DOR_hire_the_elites
+		cost = 5
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_hire_the_elites
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_company_of_winter_MIO = {
+					is_mio_trait_completed = dorwinion_trait_banner_xp_loss
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				add_ideas = DOR_whip_our_levies_into_shape_idea
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
 }
 
  # FOCUS_FILTER_POLITICAL:0 "Political"

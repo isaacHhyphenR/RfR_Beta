@@ -2650,10 +2650,11 @@ stash_republican_characters = { #otherwise they can get lost if the original tag
 
 
 DOR_pay_mercenaries = {
+	###COMPANY OF WINTER
 	if = {
 		limit = {
 			has_dlc = "Arms Against Tyranny"
-			has_completed_focus = DOR_rely_on_mercenary_guards
+			has_completed_focus = DOR_hire_the_elites
 		}
 		calculate_company_of_winter_costs = yes
 		mio:DOR_company_of_winter_MIO = {
@@ -2666,6 +2667,33 @@ DOR_pay_mercenaries = {
 			}
 			add_equipment_to_stockpile = {
 				type = signals_equipment
+				amount = num_battalions_with_type@company_of_winter_banner
+			}
+		}
+		if = {
+			limit = {
+				mio:DOR_company_of_winter_MIO = { is_mio_trait_completed = dorwinion_trait_medical_equipment }
+			}
+			add_equipment_to_stockpile = {
+				type = medical_equipment
+				amount = num_battalions_with_type@company_of_winter_banner
+			}
+		}
+		if = {
+			limit = {
+				mio:DOR_company_of_winter_MIO = { is_mio_trait_completed = dorwinion_trait_maintenance_equipment }
+			}
+			add_equipment_to_stockpile = {
+				type = maintenance_equipment
+				amount = num_battalions_with_type@company_of_winter_banner
+			}
+		}
+		if = {
+			limit = {
+				mio:DOR_company_of_winter_MIO = { is_mio_trait_completed = dorwinion_trait_engineering_equipment }
+			}
+			add_equipment_to_stockpile = {
+				type = engineering_equipment
 				amount = num_battalions_with_type@company_of_winter_banner
 			}
 		}

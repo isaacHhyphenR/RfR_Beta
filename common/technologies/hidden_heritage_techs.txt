@@ -312,14 +312,52 @@ technologies = {
 			}
 		}
 	}
-	DOR_company_of_winter = {
+	DOR_company_of_winter_morale = {
 		allow = {
 			always = no
 		}
-
-		research_cost = 1
 		company_of_winter_banner = {
-			
+			default_morale = 0.25
+		}
+	}
+	DOR_company_of_winter_xp_loss = {
+		allow = {
+			always = no
+		}
+		company_of_winter_banner = {
+			experience_loss_factor = -1
+		}
+	}
+	DOR_company_of_winter_initiative = {
+		allow = {
+			always = no
+		}
+		company_of_winter_banner = {
+			initiative = 0.5
+		}
+	}
+	DOR_company_of_winter_soft_attack = {
+		allow = {
+			always = no
+		}
+		company_of_winter_banner = {
+			battalion_mult = {
+				category = category_all_infantry
+				category = category_tanks
+				soft_attack = 0.15
+			}
+		}
+	}
+	DOR_company_of_winter_breakthrough = {
+		allow = {
+			always = no
+		}
+		company_of_winter_banner = {
+			battalion_mult = {
+				category = category_all_infantry
+				category = category_tanks
+				breakthrough = 0.15
+			}
 		}
 	}
 }
