@@ -6642,10 +6642,11 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_manpower = 10000
-			merchant_houses_focus_effect = yes
 			hidden_effect = {
 				add_ideas = cannot_design_mercenaries
+				set_country_flag = fillMercenaryBattalions
 			}
+			merchant_houses_focus_effect = yes
 		}
 	}
 	focus = { #Hire the Rabble
@@ -6667,33 +6668,104 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			custom_effect_tooltip = unlocks_mountains_vengeance
-			unlock_mountains_vengeance_template = yes
+			custom_effect_tooltip = unlocks_riverstalkers
+			unlock_riverstalkers_template = yes
 			capital_scope = {
-				custom_effect_tooltip = create_mountains_infantry_unit
-				custom_effect_tooltip = create_mountains_infantry_unit
-				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_rivers_infantry_unit
+				custom_effect_tooltip = create_rivers_infantry_unit
+				custom_effect_tooltip = create_rivers_infantry_unit
+				custom_effect_tooltip = create_rivers_infantry_unit
 				hidden_effect = {
 					create_unit = {
-						division = "name = \"Mountains's 1st Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						division = "name = \"1st Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "name = \"Mountains's 2nd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						division = "name = \"2nd Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "name = \"Mountains's 3rd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						division = "name = \"3rd Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"4th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
 						owner = ROOT
 					}
 				}
 			}
 			hidden_effect = {
-				add_dynamic_modifier = { modifier = mountains_vengeance_payment }
-				mio:DOR_mountains_vengeance_MIO = {
+				add_dynamic_modifier = { modifier = riverstalkers_payment }
+				mio:DOR_riverstalkers_MIO = {
 					set_variable = { num_support_companies = 1 }
 				}
-				calculate_mountains_vengeance_costs = yes
+				calculate_riverstalkers_costs = yes
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Land for Service
+		id = DOR_land_for_service
+		icon = GFX_goal_tribal_village
+		x = 0
+		y = 1
+		relative_position_id = DOR_hire_the_rabble
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_hire_the_rabble
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			any_controlled_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = no
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			every_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				random_select_amount = 4
+				add_extra_state_shared_building_slots = -1
+			}
+			capital_scope = {
+				custom_effect_tooltip = create_free_rivers_infantry_unit
+				custom_effect_tooltip = create_free_rivers_infantry_unit
+				custom_effect_tooltip = create_free_rivers_infantry_unit
+				custom_effect_tooltip = create_free_rivers_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"16th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"17th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"18th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"19th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				calculate_riverstalkers_costs = yes
 			}
 			merchant_houses_focus_effect = yes
 		}
@@ -6725,15 +6797,15 @@ focus_tree = {
 				custom_effect_tooltip = create_mountains_infantry_unit
 				hidden_effect = {
 					create_unit = {
-						division = "name = \"Mountains's 1st Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+						division = "name = \"Mountains's 1st Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "name = \"Mountains's 2nd Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+						division = "name = \"Mountains's 2nd Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "name = \"Mountains's 3rd Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+						division = "name = \"Mountains's 3rd Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
 						owner = ROOT
 					}
 				}
@@ -6763,6 +6835,9 @@ focus_tree = {
 		}
 		available = {
 			merchant_houses_focus_trigger = yes
+			NOT = {
+				has_country_flag = disbanded_mountains_vengeance
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -6824,7 +6899,6 @@ focus_tree = {
 			merchant_houses_focus_effect = yes
 		}
 	}
-	
 	focus = { #More Exotic Techniques
 		id = DOR_more_exotic_techniques
 		icon = GFX_goal_generic_army_motorized
@@ -6840,7 +6914,9 @@ focus_tree = {
 		}
 		available = {
 			merchant_houses_focus_trigger = yes
-			num_of_civilian_factories_available_for_projects > 1
+			NOT = {
+				has_country_flag = disbanded_dragons_breath
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
@@ -6940,6 +7016,9 @@ focus_tree = {
 				mio:DOR_company_of_winter_MIO = {
 					is_mio_trait_completed = dorwinion_trait_banner_xp_loss
 				}
+			}
+			NOT = {
+				has_country_flag = disbanded_company_of_winter
 			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY }

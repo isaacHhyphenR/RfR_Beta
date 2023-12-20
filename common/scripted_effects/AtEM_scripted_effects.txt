@@ -2650,6 +2650,17 @@ stash_republican_characters = { #otherwise they can get lost if the original tag
 
 
 DOR_pay_mercenaries = {
+	###RIVERSTALKERS
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+			has_completed_focus = DOR_hire_the_rabble
+		}
+		calculate_riverstalkers_costs = yes
+		mio:DOR_riverstalkers_MIO = {
+			add_mio_funds = var:FROM.riverstalkers_funds
+		}
+	}
 	###MOUNTAINS VENGEANCE
 	if = {
 		limit = {
@@ -2658,7 +2669,7 @@ DOR_pay_mercenaries = {
 		}
 		calculate_mountains_vengeance_costs = yes
 		mio:DOR_mountains_vengeance_MIO = {
-			add_mio_funds = var:FROM.cmountains_vengeance_funds
+			add_mio_funds = var:FROM.mountains_vengeance_funds
 		}
 		##equipment replenishment
 		if = {
@@ -2740,6 +2751,15 @@ DOR_pay_mercenaries = {
 }
 calculate_riverstalkers_costs = { #1 civ = 2 div
 	set_variable = { riverstalkers_cost = num_battalions_with_type@riverstalkers_banner }
+	if = {
+		limit = { has_completed_focus = DOR_land_for_service }
+		subtract_from_variable = { riverstalkers_cost = 4 }
+		if = {
+			limit = { check_variable = { riverstalkers_cost < 0 } }
+			set_variable = { riverstalkers_cost = 0
+			}
+		}
+	}
 	divide_variable = { riverstalkers_cost = 2 }
 	set_variable = { riverstalkers_funds = num_battalions_with_type@riverstalkers_banner }
 	multiply_variable = { riverstalkers_funds = 10 }

@@ -21,4 +21,8 @@ sub_unit_categories = {
 	category_militia
 	category_foot_infantry
 	category_mercenary_banner
+	category_riverstalkers
+	category_company_of_winter
+	category_mountains_vengeance
+	category_dragons_breath
 }

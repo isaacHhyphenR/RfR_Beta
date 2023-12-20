@@ -423,3 +423,29 @@ unlock_mountains_vengeance_template = {
 		}
 	}
 }
+unlock_riverstalkers_template = {
+	custom_effect_tooltip = unlock_riverstalkers_template
+	hidden_effect = {
+		set_technology = {
+			DOR_riverstalkers_tech = 1
+			popup = no
+		}
+	}
+	division_template = {
+		name = "Riverstalkers"
+		is_locked = yes
+		division_names_group = DOR_river_inf
+		template_counter = 202
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			irregular_infantry = { x = 0 y = 2 }
+			irregular_infantry = { x = 0 y = 3 }
+			irregular_infantry = { x = 1 y = 0 }
+			irregular_infantry = { x = 1 y = 1 }
+		}
+		support = {
+			riverstalkers_banner = { x = 0 y = 0 }
+		}
+	}
+}

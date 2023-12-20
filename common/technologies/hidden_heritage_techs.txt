@@ -376,7 +376,6 @@ technologies = {
 		}
 	}
 	
-	
 	DOR_mountains_vengeance_tech = {
 		allow = {
 			always = no
@@ -402,6 +401,81 @@ technologies = {
 		}
 		mountains_vengeance_banner = {
 			max_strength = 30
+		}
+	}
+	
+	DOR_riverstalkers_tech = {
+		allow = {
+			always = no
+		}
+		enable_subunits = {
+			riverstalkers_banner
+		}
+	}
+	DOR_riverstalkers_supply = {
+		allow = {
+			always = no
+		}
+		riverstalkers_banner = {
+			supply_consumption_factor = -0.1
+		}
+	}
+	DOR_riverstalkers_reliability = {
+		allow = {
+			always = no
+		}
+		riverstalkers_banner = {
+			reliability = 0.25
+		}
+	}
+	DOR_riverstalkers_movement = {
+		allow = {
+			always = no
+		}
+		riverstalkers_banner = {
+			forest = {
+				movement = 0.1
+			}
+			hills = {
+				movement = 0.1
+			}
+			mountain = {
+				movement = 0.1
+			}
+			jungle = {
+				movement = 0.1
+			}
+			marsh = {
+				movement = 0.1
+			}
+			plains = {
+				movement = 0.1
+			}
+			desert = {
+				movement = 0.1
+			}
+			urban = {
+				movement = 0.1
+			}
+		}
+	}
+	DOR_riverstalkers_river = {
+		allow = {
+			always = no
+		}
+		riverstalkers_banner = {
+			river = {
+				movement = 0.1
+				attack = 0.1
+			}
+			amphibious = {
+				movement = 0.1
+				attack = 0.1
+			}
+			marsh = {
+				movement = 0.1
+				attack = 0.1
+			}
 		}
 	}
 }

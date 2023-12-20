@@ -1981,3 +1981,75 @@ celduin_trade_category = {
 		}
 	}
 }
+
+DOR_mercenary_category = {
+	DOR_disband_riverstalkers = {
+		icon = DOR_riverstalkers_decision
+		fire_only_once = yes
+		visible = { has_completed_focus = DOR_hire_the_rabble }
+		cost = 25
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			custom_effect_tooltip = disband_riverstalkers
+			set_country_flag = disbanded_riverstalkers
+			delete_unit_template_and_units = {
+				division_template = "Riverstalkers"
+				disband = no #will not refund equipment and manpower
+			}
+			calculate_riverstalkers_costs = yes
+			hidden_effect = { remove_dynamic_modifier = { modifier = riverstalkers_payment } }
+		}
+	}
+	DOR_disband_mountains_vengeance = {
+		icon = DOR_mountains_vengeance_decision
+		fire_only_once = yes
+		visible = { has_completed_focus = DOR_hire_the_dwarves }
+		cost = 25
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			custom_effect_tooltip = disband_mountains_vengeance
+			set_country_flag = disbanded_mountains_vengeance
+			delete_unit_template_and_units = {
+				division_template = "Mountain's Infantry"
+				disband = no #will not refund equipment and manpower
+			}
+			calculate_mountains_vengeance_costs = yes
+			hidden_effect = { remove_dynamic_modifier = { modifier = mountains_vengeance_payment } }
+		}
+	}
+	DOR_disband_company_of_winter = {
+		icon = DOR_company_of_winter_decision
+		fire_only_once = yes
+		visible = { has_completed_focus = DOR_hire_the_elites }
+		cost = 25
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			custom_effect_tooltip = disband_company_of_winter
+			set_country_flag = disbanded_company_of_winter
+			delete_unit_template_and_units = {
+				division_template = "Winters's Infantry"
+				disband = no #will not refund equipment and manpower
+			}
+			delete_unit_template_and_units = {
+				division_template = "Winters's Knights"
+				disband = no #will not refund equipment and manpower
+			}
+			calculate_company_of_winter_costs = yes
+			hidden_effect = { remove_dynamic_modifier = { modifier = company_of_winter_payment } }
+			if = {
+				limit = { has_idea = DOR_whip_our_levies_into_shape_idea }
+				remove_ideas = DOR_whip_our_levies_into_shape_idea
+			}
+		}
+	}
+}
+
+
+
+

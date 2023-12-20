@@ -136,3 +136,7 @@
  mountains_vengeance_desc: "$dorwinion_mountains_vengeance_desc$"
  dragons_breath_banner: "Dragon's Breath Banners"
  dragons_breath_desc: "$dorwinion_dragons_breath_desc$"
+ category_riverstalkers: "All Riverstalkers Units"
+ category_mountains_vengeance: "All Mountain's Vengeance Units"
+ category_dragons_breath: "All Dragon's Breath Units"
+ category_company_of_winter: "All Company of Winter Units"

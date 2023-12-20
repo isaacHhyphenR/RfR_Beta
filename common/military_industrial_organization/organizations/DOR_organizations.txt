@@ -1,5 +1,18 @@
 @pillarOfSocietyCostReduction = -1
 @expandedMarketFundsGain = 0.25
+@equipForSupportArtillery = 12
+@equipForArtillery = 36
+@equipForInfantry = 100
+@equipForIrregular = 80
+@equipForSupport = 30
+@infEquipForSupport = 10
+@equipForTanks = 50
+@manpowerForInfantry = 1000
+@manpowerForArtillery = 500
+@manpowerForSupportArtillery = 300
+@manpowerForSupport = 500
+@manpowerForTanks = 500
+
 ##############################################################################################################################
 # BAKING GUILD
 ##############################################################################################################################
@@ -990,6 +1003,544 @@ DOR_tailory_guild_MIO = {
 	}
 }
 
+##############################################################################################################################
+# RIVERSTALKERS
+##############################################################################################################################
+DOR_riverstalkers_MIO = {
+	name = dorwinion_riverstalkers
+	icon = GFX_idea_dorwinion_riverstalkers
+
+	allowed = {
+		original_tag = DOR
+	}
+	visible = { FROM = { NOT = { has_country_flag = disbanded_riverstalkers } } }
+	available = { FROM = { has_completed_focus = DOR_hire_the_rabble } }
+	
+	equipment_type {
+		example_airframe
+	}
+	tree_header_text = {
+		text = mio_header_expand_mercenary
+		x = 0
+	}
+	tree_header_text = {
+		text = mio_header_template
+		x = 3.5
+	}
+	tree_header_text = {
+		text = mio_header_banners
+		x = 7.5
+	}
+
+	initial_trait = {
+		name = dorwinion_riverstalkers
+	}
+
+####################################################
+#######################################################HIRE MORE
+####################################################
+	trait = {
+		token = dorwinion_trait_hire_infantry1
+		name = dorwinion_trait_hire_two_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=0 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_rivers_infantry_unit
+					custom_effect_tooltip = create_rivers_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"5th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+							owner = FROM
+						}
+						create_unit = {
+							division = "name = \"6th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+							owner = FROM
+						}
+					}
+				}
+				calculate_riverstalkers_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry2
+		name = dorwinion_trait_hire_two_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry1
+		
+		any_parent = { dorwinion_trait_hire_infantry1 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_rivers_infantry_unit
+					custom_effect_tooltip = create_rivers_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"7th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+							owner = FROM
+						}
+						create_unit = {
+							division = "name = \"8th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+							owner = FROM
+						}
+					}
+				}
+				calculate_riverstalkers_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry3
+		name = dorwinion_trait_hire_two_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry2
+		
+		any_parent = { dorwinion_trait_hire_infantry2 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_rivers_infantry_unit
+					custom_effect_tooltip = create_rivers_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"9th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+							owner = FROM
+						}
+						create_unit = {
+							division = "name = \"10th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+							owner = FROM
+						}
+					}
+				}
+				calculate_riverstalkers_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry4
+		name = dorwinion_trait_hire_two_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry3
+		
+		any_parent = { dorwinion_trait_hire_infantry3 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_rivers_infantry_unit
+					custom_effect_tooltip = create_rivers_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"11th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+							owner = FROM
+						}
+						create_unit = {
+							division = "name = \"12th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+							owner = FROM
+						}
+					}
+				}
+				calculate_riverstalkers_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_infantry5
+		name = dorwinion_trait_hire_two_infantry
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_infantry4
+		
+		any_parent = { dorwinion_trait_hire_infantry4 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_rivers_infantry_unit
+					custom_effect_tooltip = create_rivers_infantry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"13th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+							owner = FROM
+						}
+						create_unit = {
+							division = "name = \"14th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+							owner = FROM
+						}
+					}
+				}
+				calculate_riverstalkers_costs = yes
+			}
+		}
+	}
+####################################################
+#######################################################TEMPLATE
+####################################################
+	trait = {
+		token = dorwinion_trait_add_irregulars
+		name = dorwinion_trait_add_irregulars
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=2 y=0 }
+		mutually_exclusive = { dorwinion_trait_add_javelins }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Riverstalkers"
+					regiments = {
+						irregular_infantry = 1
+					}
+				}
+				hidden_effect = { #Grants equipment & manpower for the newly spawned battalions
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { equipment_to_add = @equipForIrregular }
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { manpower_to_add = @manpowerForInfantry }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_irregulars2
+		name = dorwinion_trait_add_irregulars
+		icon = GFX_military_industrial_organization_infantry
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_irregulars
+		any_parent = { dorwinion_trait_add_irregulars }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Riverstalkers"
+					regiments = {
+						irregular_infantry = 1
+					}
+				}
+				hidden_effect = { #Grants equipment & manpower for the newly spawned battalions
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { equipment_to_add = @equipForIrregular }
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { manpower_to_add = @manpowerForInfantry }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_javelins
+		name = dorwinion_trait_add_javelins
+		icon = GFX_military_industrial_organization_rocket
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_irregulars
+		mutually_exclusive = {
+			dorwinion_trait_add_irregulars
+			dorwinion_trait_add_support_javelins
+		}
+		
+		available = {
+			FROM = {
+				has_tech = javelins1
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Riverstalkers"
+					regiments = {
+						rocket_artillery_brigade = 2
+					}
+				}
+				hidden_effect = { #Grants equipment & manpower for the newly spawned battalions
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { equipment_to_add = @equipForArtillery }
+						add_equipment_to_stockpile = {
+							type = rocket_artillery_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { manpower_to_add = @manpowerForArtillery }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_javelins2
+		name = dorwinion_trait_add_javelins
+		icon = GFX_military_industrial_organization_rocket
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_javelins
+		any_parent = { dorwinion_trait_add_javelins }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Riverstalkers"
+					regiments = {
+						rocket_artillery_brigade = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { equipment_to_add = @equipForArtillery }
+						add_equipment_to_stockpile = {
+							type = rocket_artillery_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { manpower_to_add = @manpowerForArtillery }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_support_javelins
+		name = dorwinion_trait_add_support_javelins
+		icon = GFX_military_industrial_organization_rocket
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_javelins
+		mutually_exclusive = { dorwinion_trait_add_javelins }
+		
+		available = {
+			FROM = {
+				has_tech = javelins1
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Riverstalkers"
+					support = {
+						rocket_artillery = 0
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { equipment_to_add = @equipForSupportArtillery }
+						add_equipment_to_stockpile = {
+							type = rocket_artillery_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupportArtillery }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_recon
+		name = dorwinion_trait_add_recon
+		icon = GFX_generic_mio_trait_icon_surface_detection
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_support_javelins
+		
+		available = {
+			FROM = {
+				has_tech = tech_recon
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Riverstalkers"
+					support = {
+						recon = 0
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { equipment_to_add = 40 }
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@riverstalkers_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupport }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+
+####################################################
+#######################################################BANNER BUFFS
+####################################################
+	trait = {
+		token = dorwinion_trait_banner_supply
+		name = DOR_riverstalkers_supply
+		icon = GFX_generic_mio_trait_icon_supply_consumption
+		
+		position = { x=7 y=0 }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_riverstalkers_supply_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_riverstalkers_supply = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_banner_reliability
+		name = DOR_riverstalkers_reliability
+		icon = GFX_generic_mio_trait_icon_reliability
+		
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_banner_supply
+		any_parent = { dorwinion_trait_banner_supply }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_riverstalkers_reliability_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_riverstalkers_reliability = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_banner_river
+		name = DOR_riverstalkers_river
+		icon = GFX_generic_mio_trait_icon_sub_detection
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_banner_supply
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_riverstalkers_river_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_riverstalkers_river = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_banner_movement
+		name = DOR_riverstalkers_movement
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_banner_river
+		any_parent = { dorwinion_trait_banner_river }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_riverstalkers_movement_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_riverstalkers_movement = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+}
 
 ##############################################################################################################################
 # MOUNTAINS VENGEANCE
@@ -1001,7 +1552,7 @@ DOR_mountains_vengeance_MIO = {
 	allowed = {
 		original_tag = DOR
 	}
-	#visible = { FROM = { has_completed_focus = DOR_rely_on_mercenary_guards } }
+	visible = { FROM = { NOT = { has_country_flag = disbanded_mountains_vengeance } } }
 	available = { FROM = { has_completed_focus = DOR_hire_the_dwarves } }
 	
 	equipment_type {
@@ -1016,10 +1567,6 @@ DOR_mountains_vengeance_MIO = {
 		text = mio_header_expand_mercenary
 		x = 0
 	}
-	# tree_header_text = {
-		# text = mio_header_support_companies
-		# x = 2.5
-	# }
 	tree_header_text = {
 		text = mio_header_template
 		x = 2
@@ -1059,7 +1606,7 @@ DOR_mountains_vengeance_MIO = {
 					custom_effect_tooltip = create_mountains_infantry_unit
 					hidden_effect = {
 						create_unit = {
-							division = "name = \"Mountain's 4th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							division = "name = \"Mountain's 4th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
 							owner = FROM
 						}
 					}
@@ -1090,7 +1637,7 @@ DOR_mountains_vengeance_MIO = {
 					custom_effect_tooltip = create_mountains_infantry_unit
 					hidden_effect = {
 						create_unit = {
-							division = "name = \"Mountain's 5th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							division = "name = \"Mountain's 5th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
 							owner = FROM
 						}
 					}
@@ -1121,7 +1668,7 @@ DOR_mountains_vengeance_MIO = {
 					custom_effect_tooltip = create_mountains_infantry_unit
 					hidden_effect = {
 						create_unit = {
-							division = "name = \"Mountain's 6th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							division = "name = \"Mountain's 6th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
 							owner = FROM
 						}
 					}
@@ -1152,7 +1699,7 @@ DOR_mountains_vengeance_MIO = {
 					custom_effect_tooltip = create_mountains_infantry_unit
 					hidden_effect = {
 						create_unit = {
-							division = "name = \"Mountain's 7th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							division = "name = \"Mountain's 7th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
 							owner = FROM
 						}
 					}
@@ -1184,11 +1731,11 @@ DOR_mountains_vengeance_MIO = {
 					custom_effect_tooltip = create_mountains_infantry_unit
 					hidden_effect = {
 						create_unit = {
-							division = "name = \"Mountain's 8th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							division = "name = \"Mountain's 8th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
 							owner = FROM
 						}
 						create_unit = {
-							division = "name = \"Mountain's 9th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.5"
+							division = "name = \"Mountain's 9th Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
 							owner = FROM
 						}
 					}
@@ -1223,6 +1770,27 @@ DOR_mountains_vengeance_MIO = {
 					template_name = "Mountain's Infantry"
 					support = {
 						siege_engineer = 0
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						set_variable = { secondary_equipment_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { equipment_to_add = @equipForSupport }
+						multiply_variable = { secondary_equipment_to_add = @infEquipForSupport }
+						add_equipment_to_stockpile = {
+							type = engineering_equipment
+							amount = var:equipment_to_add
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = var:secondary_equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupport }
+						add_manpower = var:manpower_to_add
 					}
 				}
 			}
@@ -1268,6 +1836,21 @@ DOR_mountains_vengeance_MIO = {
 						maintenance_company = 0
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { equipment_to_add = @equipForSupport }
+						add_equipment_to_stockpile = {
+							type = maintenance_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupport }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 			add_to_variable = { num_support_companies = 1 }
 		}
@@ -1311,6 +1894,21 @@ DOR_mountains_vengeance_MIO = {
 						field_hospital = 0
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { equipment_to_add = @equipForSupport }
+						add_equipment_to_stockpile = {
+							type = medical_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupport }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 			add_to_variable = { num_support_companies = 1 }
 		}
@@ -1347,6 +1945,25 @@ DOR_mountains_vengeance_MIO = {
 						heavy_infantry = 0
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { equipment_to_add = @equipForInfantry }
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = var:equipment_to_add
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_armor
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { manpower_to_add = @manpowerForInfantry }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 		}
 	}
@@ -1367,6 +1984,25 @@ DOR_mountains_vengeance_MIO = {
 						heavy_infantry = 0
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { equipment_to_add = @equipForInfantry }
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = var:equipment_to_add
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_armor
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { manpower_to_add = @manpowerForInfantry }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 		}
 	}
@@ -1384,6 +2020,25 @@ DOR_mountains_vengeance_MIO = {
 					template_name = "Mountain's Infantry"
 					regiments = {
 						heavy_pikes_brigade = 1
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { equipment_to_add = @equipForInfantry }
+						add_equipment_to_stockpile = {
+							type = anti_tank_equipment
+							amount = var:equipment_to_add
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_armor
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { manpower_to_add = @manpowerForInfantry }
+						add_manpower = var:manpower_to_add
 					}
 				}
 			}
@@ -1406,6 +2061,25 @@ DOR_mountains_vengeance_MIO = {
 						heavy_pikes_brigade = 1
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { equipment_to_add = @equipForInfantry }
+						add_equipment_to_stockpile = {
+							type = anti_tank_equipment
+							amount = var:equipment_to_add
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_armor
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { manpower_to_add = @manpowerForInfantry }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 		}
 	}
@@ -1423,6 +2097,21 @@ DOR_mountains_vengeance_MIO = {
 					template_name = "Mountain's Infantry"
 					regiments = {
 						artillery_brigade = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { equipment_to_add = @equipForArtillery }
+						add_equipment_to_stockpile = {
+							type = artillery_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { manpower_to_add = @manpowerForArtillery }
+						add_manpower = var:manpower_to_add
 					}
 				}
 			}
@@ -1448,6 +2137,21 @@ DOR_mountains_vengeance_MIO = {
 					template_name = "Mountain's Infantry"
 					support = {
 						artillery = 0
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { equipment_to_add = @equipForSupportArtillery }
+						add_equipment_to_stockpile = {
+							type = artillery_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@mountains_vengeance_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupportArtillery }
+						add_manpower = var:manpower_to_add
 					}
 				}
 			}
@@ -1700,7 +2404,7 @@ DOR_company_of_winter_MIO = {
 	allowed = {
 		original_tag = DOR
 	}
-	#visible = { FROM = { has_completed_focus = DOR_rely_on_mercenary_guards } }
+	visible = { FROM = { NOT = { has_country_flag = disbanded_company_of_winter } } }
 	available = { FROM = { has_completed_focus = DOR_hire_the_elites } }
 	
 	equipment_type {
@@ -2117,6 +2821,21 @@ DOR_company_of_winter_MIO = {
 						signal_company = 0
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForSupport }
+						add_equipment_to_stockpile = {
+							type = signals_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupport }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 			add_to_variable = { num_support_companies = 1 }
 		}
@@ -2164,6 +2883,21 @@ DOR_company_of_winter_MIO = {
 					template_name = "Winter's Knights"
 					support = {
 						field_hospital = 0
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForSupport }
+						add_equipment_to_stockpile = {
+							type = medical_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupport }
+						add_manpower = var:manpower_to_add
 					}
 				}
 			}
@@ -2216,6 +2950,27 @@ DOR_company_of_winter_MIO = {
 						engineer = 0
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						set_variable = { secondary_equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForSupport }
+						multiply_variable = { secondary_equipment_to_add = @infEquipForSupport }
+						add_equipment_to_stockpile = {
+							type = engineering_equipment
+							amount = var:equipment_to_add
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = var:secondary_equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupport }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 			add_to_variable = { num_support_companies = 1 }
 		}
@@ -2265,6 +3020,21 @@ DOR_company_of_winter_MIO = {
 						maintenance_company = 0
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForSupport }
+						add_equipment_to_stockpile = {
+							type = maintenance_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupport }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 			add_to_variable = { num_support_companies = 1 }
 		}
@@ -2302,6 +3072,25 @@ DOR_company_of_winter_MIO = {
 						heavy_infantry = 2
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForInfantry }
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = var:equipment_to_add
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_armor
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForInfantry }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 		}
 	}
@@ -2321,6 +3110,27 @@ DOR_company_of_winter_MIO = {
 					regiments = {
 						heavy_infantry = 2
 						heavy_infantry = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForInfantry }
+						multiply_variable = { equipment_to_add = 2 }
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = var:equipment_to_add
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_armor
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForInfantry }
+						multiply_variable = { manpower_to_add = 2 }
+						add_manpower = var:manpower_to_add
 					}
 				}
 			}
@@ -2344,6 +3154,25 @@ DOR_company_of_winter_MIO = {
 						heavy_pikes_brigade = 2
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForInfantry }
+						add_equipment_to_stockpile = {
+							type = anti_tank_equipment
+							amount = var:equipment_to_add
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_armor
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForInfantry }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 		}
 	}
@@ -2363,6 +3192,27 @@ DOR_company_of_winter_MIO = {
 					regiments = {
 						heavy_pikes_brigade = 2
 						heavy_pikes_brigade = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForInfantry }
+						multiply_variable = { equipment_to_add = 2 }
+						add_equipment_to_stockpile = {
+							type = anti_tank_equipment
+							amount = var:equipment_to_add
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_armor
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForInfantry }
+						multiply_variable = { manpower_to_add = 2 }
+						add_manpower = var:manpower_to_add
 					}
 				}
 			}
@@ -2386,6 +3236,21 @@ DOR_company_of_winter_MIO = {
 						artillery_brigade = 2
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForArtillery }
+						add_equipment_to_stockpile = {
+							type = artillery_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForArtillery }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 		}
 	}
@@ -2405,6 +3270,23 @@ DOR_company_of_winter_MIO = {
 					regiments = {
 						artillery_brigade = 2
 						artillery_brigade = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForArtillery }
+						multiply_variable = { equipment_to_add = 2 }
+						add_equipment_to_stockpile = {
+							type = artillery_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForArtillery }
+						multiply_variable = { manpower_to_add = 2 }
+						add_manpower = var:manpower_to_add
 					}
 				}
 			}
@@ -2442,6 +3324,21 @@ DOR_company_of_winter_MIO = {
 						medium_armor = 2
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForTanks }
+						add_equipment_to_stockpile = {
+							type = medium_tank_chassis
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForTanks }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 		}
 	}
@@ -2461,6 +3358,23 @@ DOR_company_of_winter_MIO = {
 					regiments = {
 						medium_armor = 2
 						medium_armor = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForTanks }
+						multiply_variable = { equipment_to_add = 2 }
+						add_equipment_to_stockpile = {
+							type = medium_tank_chassis
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForTanks }
+						multiply_variable = { manpower_to_add = 2 }
+						add_manpower = var:manpower_to_add
 					}
 				}
 			}
@@ -2495,6 +3409,21 @@ DOR_company_of_winter_MIO = {
 						medium_tank_destroyer_brigade = 2
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForTanks }
+						add_equipment_to_stockpile = {
+							type = medium_tank_destroyer_chassis
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForTanks }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 		}
 	}
@@ -2514,6 +3443,23 @@ DOR_company_of_winter_MIO = {
 					regiments = {
 						medium_tank_destroyer_brigade = 2
 						medium_tank_destroyer_brigade = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForTanks }
+						multiply_variable = { equipment_to_add = 2 }
+						add_equipment_to_stockpile = {
+							type = medium_tank_destroyer_chassis
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForTanks }
+						multiply_variable = { manpower_to_add = 2 }
+						add_manpower = var:manpower_to_add
 					}
 				}
 			}
@@ -2537,6 +3483,21 @@ DOR_company_of_winter_MIO = {
 						light_sp_artillery_brigade = 2
 					}
 				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForTanks }
+						add_equipment_to_stockpile = {
+							type = light_tank_artillery_chassis
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForTanks }
+						add_manpower = var:manpower_to_add
+					}
+				}
 			}
 		}
 	}
@@ -2556,6 +3517,23 @@ DOR_company_of_winter_MIO = {
 					regiments = {
 						light_sp_artillery_brigade = 2
 						light_sp_artillery_brigade = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { equipment_to_add = @equipForTanks }
+						multiply_variable = { equipment_to_add = 2 }
+						add_equipment_to_stockpile = {
+							type = light_tank_artillery_chassis
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@company_of_winter_banner }
+						multiply_variable = { manpower_to_add = @manpowerForTanks }
+						multiply_variable = { manpower_to_add = 2 }
+						add_manpower = var:manpower_to_add
 					}
 				}
 			}
