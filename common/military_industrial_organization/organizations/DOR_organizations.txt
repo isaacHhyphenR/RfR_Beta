@@ -1,5 +1,6 @@
 @pillarOfSocietyCostReduction = -1
 @expandedMarketFundsGain = 0.25
+@trustedEmployerBonus = -0.15
 @equipForSupportArtillery = 12
 @equipForArtillery = 36
 @equipForInfantry = 100
@@ -1035,6 +1036,23 @@ DOR_riverstalkers_MIO = {
 	initial_trait = {
 		name = dorwinion_riverstalkers
 	}
+	trait = {
+		token = dorwinion_trait_trusted_employer
+		name = dorwinion_trait_trusted_employer
+		icon = GFX_generic_mio_trait_icon_money
+		
+		position = { x=9 y=0 }
+		
+		available = {
+			FROM = {
+				has_completed_focus = DOR_trusted_employers
+			}
+		}
+		
+		organization_modifier = {
+			military_industrial_organization_size_up_requirement = @trustedEmployerBonus
+		}
+	}
 
 ####################################################
 #######################################################HIRE MORE
@@ -1582,6 +1600,23 @@ DOR_mountains_vengeance_MIO = {
 
 	initial_trait = {
 		name = dorwinion_mountains_vengeance
+	}
+	trait = {
+		token = dorwinion_trait_trusted_employer
+		name = dorwinion_trait_trusted_employer
+		icon = GFX_generic_mio_trait_icon_money
+		
+		position = { x=9 y=0 }
+		
+		available = {
+			FROM = {
+				has_completed_focus = DOR_trusted_employers
+			}
+		}
+		
+		organization_modifier = {
+			military_industrial_organization_size_up_requirement = @trustedEmployerBonus
+		}
 	}
 
 ####################################################
@@ -2426,6 +2461,24 @@ DOR_dragons_breath_MIO = {
 	initial_trait = {
 		name = dorwinion_dragons_breath
 	}
+	
+	trait = {
+		token = dorwinion_trait_trusted_employer
+		name = dorwinion_trait_trusted_employer
+		icon = GFX_generic_mio_trait_icon_money
+		
+		position = { x=9 y=0 }
+		
+		available = {
+			FROM = {
+				has_completed_focus = DOR_trusted_employers
+			}
+		}
+		
+		organization_modifier = {
+			military_industrial_organization_size_up_requirement = @trustedEmployerBonus
+		}
+	}
 
 ####################################################
 #######################################################HIRE MORE
@@ -2761,12 +2814,6 @@ DOR_dragons_breath_MIO = {
 		position = { x=0 y=3 }
 		relative_position_id = dorwinion_trait_add_logistics
 		
-		available = {
-			FROM = {
-				has_tech = mechanised_infantry
-			}
-		}
-		
 		on_complete = {
 			FROM = {
 				add_units_to_division_template = {
@@ -3076,6 +3123,23 @@ DOR_company_of_winter_MIO = {
 
 	initial_trait = {
 		name = dorwinion_company_of_winter
+	}
+	trait = {
+		token = dorwinion_trait_trusted_employer
+		name = dorwinion_trait_trusted_employer
+		icon = GFX_generic_mio_trait_icon_money
+		
+		position = { x=9 y=0 }
+		
+		available = {
+			FROM = {
+				has_completed_focus = DOR_trusted_employers
+			}
+		}
+		
+		organization_modifier = {
+			military_industrial_organization_size_up_requirement = @trustedEmployerBonus
+		}
 	}
 
 ####################################################

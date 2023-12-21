@@ -6710,7 +6710,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DOR_hire_the_rabble
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}
@@ -6826,7 +6826,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DOR_hire_the_dwarves
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 0
 		}
@@ -6865,6 +6865,7 @@ focus_tree = {
 		available = {
 			merchant_houses_focus_trigger = yes
 			num_of_civilian_factories_available_for_projects > 1
+			has_tech = mechanised_infantry
 		}
 		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
@@ -6905,7 +6906,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DOR_hire_the_cavalry
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 3
 		}
@@ -7005,6 +7006,58 @@ focus_tree = {
 			if = {
 				limit = { has_dlc = "Arms Against Tyranny" }
 				add_ideas = DOR_whip_our_levies_into_shape_idea
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Trusted Employers
+		id = DOR_trusted_employers
+		icon = GFX_goal_generic_mercenaries
+		x = 0
+		y = 3
+		relative_position_id = DOR_rely_on_mercenary_guards
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_hire_the_rabble
+			focus = DOR_hire_the_dwarves
+			focus = DOR_hire_the_cavalry
+			focus = DOR_hire_the_elites
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = at_least_five_total_mercenary_size
+				mio:DOR_company_of_winter_MIO = {
+					set_temp_variable = { merc_size = size }
+				}
+				mio:DOR_dragons_breath_MIO = {
+					add_to_temp_variable = { merc_size = size }
+				}
+				mio:DOR_mountains_vengeance_MIO = {
+					add_to_temp_variable = { merc_size = size }
+				}
+				mio:DOR_riverstalkers_MIO = {
+					add_to_temp_variable = { merc_size = size }
+				}
+				check_variable = { merc_size > 4 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			mio:DOR_riverstalkers_MIO = {
+				complete_mio_trait = dorwinion_trait_trusted_employer
+			}
+			mio:DOR_mountains_vengeance_MIO = {
+				complete_mio_trait = dorwinion_trait_trusted_employer
+			}
+			mio:DOR_dragons_breath_MIO = {
+				complete_mio_trait = dorwinion_trait_trusted_employer
+			}
+			mio:DOR_company_of_winter_MIO = {
+				complete_mio_trait = dorwinion_trait_trusted_employer
 			}
 			merchant_houses_focus_effect = yes
 		}
