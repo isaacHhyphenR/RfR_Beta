@@ -766,6 +766,15 @@
  DOR_recruit_company_of_winter_infantry_desc: "Professional soldiers hardened by years of skirmishes between feudal lords, easterling raiders, roaming orcs, and anyone else able to afford them."
  DOR_recruit_company_of_winter_cavalry: "Recruit Winter's Knights"
  DOR_recruit_company_of_winter_cavalry_desc: "Though not true knights in the sense that most of them lack noble titles, no employer would dare insult them by mentioning this."
- 
+ DOR_mountains_vengeance_equipment: "Re-Equip $dorwinion_mountains_vengeance$"
+ DOR_mountains_vengeance_equipment_desc: "We've payed these mercenaries enough for them to afford their own equipment."
+ DOR_riverstalkers_equipment: "Re-Equip $dorwinion_riverstalkers$"
+ DOR_riverstalkers_equipment_desc: "We've payed these mercenaries enough for them to afford their own equipment."
+ DOR_dragons_breath_equipment: "Re-Equip $dorwinion_dragons_breath$"
+ DOR_dragons_breath_equipment_desc: "We've payed these mercenaries enough for them to afford their own equipment."
+ DOR_company_of_winter_equipment_infantry: "Re-Equip $dorwinion_company_of_winter$ Infantry"
+ DOR_company_of_winter_equipment_infantry_desc: "We've payed these mercenaries enough for them to afford their own equipment."
+ DOR_company_of_winter_equipment_cavalry: "Re-Equip $dorwinion_company_of_winter$ Cavalry"
+ DOR_company_of_winter_equipment_cavalry_desc: "We've payed these mercenaries enough for them to afford their own equipment."
  
  

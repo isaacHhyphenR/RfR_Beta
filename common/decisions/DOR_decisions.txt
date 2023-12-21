@@ -2149,7 +2149,727 @@ DOR_mercenary_category = {
 			}
 		}
 	}
-		
+
+	@mercEquipCost = 200
+	@mercEquipCostNeg = -200
+	DOR_riverstalkers_equipment = {
+		icon = GFX_decision_riverstalkers
+		custom_cost_text = riverstalkers_100_funds
+		custom_cost_trigger = {
+			mio:DOR_riverstalkers_MIO = {
+				check_variable = {
+					var = funds
+					value = @mercEquipCost
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		allowed = { has_dlc = "Arms Against Tyranny" }
+		visible = {
+			has_completed_focus = DOR_hire_the_rabble
+			NOT = { has_country_flag = disbanded_riverstalkers }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = { #once every 180 days
+				has_country_flag = equipped_riverstalkers
+				factor = 0
+			}
+			modifier = { #no need to do so
+				has_equipment = {
+					infantry_equipment > 100
+				}
+				factor = 0
+			}
+			modifier = { #nothing else to spend on
+				mio:DOR_riverstalkers_MIO = {
+					has_mio_size > 11
+				}
+				add = 100
+			}
+		}
+			
+		complete_effect = {
+			hidden_effect = {
+				mio:DOR_riverstalkers_MIO = {
+					add_mio_funds = @mercEquipCostNeg
+				}
+			}
+			if = { #+2 irregulars
+				limit = {
+					mio:DOR_riverstalkers_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_irregulars2
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 730
+				}
+			}
+			else_if = { #+1 irregulars
+				limit = {
+					mio:DOR_riverstalkers_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_irregulars
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 650
+				}
+			}
+			else = { #Normal
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 570
+				}
+			}
+			if = { #+2 javs
+				limit = {
+					mio:DOR_riverstalkers_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_javelins2
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = rocket_artillery_equipment
+					amount = 72
+				}
+			}
+			else_if = { #+1 javs
+				limit = {
+					mio:DOR_riverstalkers_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_javelins
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = rocket_artillery_equipment
+					amount = 36
+				}
+			}
+			else_if = { #+support javs
+				limit = {
+					mio:DOR_riverstalkers_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_support_javelins
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = rocket_artillery_equipment
+					amount = 12
+				}
+			}
+			set_country_flag = { #Don't take more than once every 180 days
+				flag = equipped_riverstalkers
+				days = 180
+			}
+		}
+	}
+	DOR_mountains_vengeance_equipment = {
+		icon = GFX_decision_mountains_vengeance
+		custom_cost_text = mountains_vengeance_100_funds
+		custom_cost_trigger = {
+			mio:DOR_mountains_vengeance_MIO = {
+				check_variable = {
+					var = funds
+					value = @mercEquipCost
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		allowed = { has_dlc = "Arms Against Tyranny" }
+		visible = {
+			has_completed_focus = DOR_hire_the_dwarves
+			NOT = { has_country_flag = disbanded_mountains_vengeance }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = { #once every 180 days
+				has_country_flag = equipped_mountains_vengeance
+				factor = 0
+			}
+			modifier = { #no need to do so
+				has_equipment = {
+					infantry_equipment > 100
+				}
+				has_equipment = {
+					infantry_armor > 100
+				}
+				factor = 0
+			}
+			modifier = { #nothing else to spend on
+				mio:DOR_mountains_vengeance_MIO = {
+					has_mio_size > 15
+				}
+				add = 100
+			}
+		}
+			
+		complete_effect = {
+			hidden_effect = {
+				mio:DOR_mountains_vengeance_MIO = {
+					add_mio_funds = @mercEquipCostNeg
+				}
+			}
+			if = { #+2 heavy infantry
+				limit = {
+					mio:DOR_mountains_vengeance_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_heavy_infantry2
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 500
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_armor
+					amount = 500
+				}
+			}
+			else_if = { #+1 heavy infantry
+				limit = {
+					mio:DOR_mountains_vengeance_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_heavy_infantry
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 400
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_armor
+					amount = 400
+				}
+			}
+			else = { #Normal infantry
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 300
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_armor
+					amount = 300
+				}
+			}
+			if = { #+2 heavy pikes
+				limit = {
+					mio:DOR_mountains_vengeance_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_heavy_infantry2
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = 500
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_armor
+					amount = 500
+				}
+			}
+			else_if = { #+1 heavy pikes
+				limit = {
+					mio:DOR_mountains_vengeance_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_heavy_infantry
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = 400
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_armor
+					amount = 400
+				}
+			}
+			else = { #Normal infantry
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = 300
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_armor
+					amount = 300
+				}
+			}
+			if = { #+bows & support bows
+				limit = {
+					mio:DOR_mountains_vengeance_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_crossbows
+						is_mio_trait_completed = dorwinion_trait_add_support_crossbows
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 120
+				}
+			}
+			else_if = { #+bows
+				limit = {
+					mio:DOR_mountains_vengeance_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_crossbows
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 72
+				}
+			}
+			else_if = { #+support bows
+				limit = {
+					mio:DOR_mountains_vengeance_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_support_crossbows
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 48
+				}
+			}
+			else = { #normal bows
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 36
+				}
+			}
+			set_country_flag = { #Don't take more than once every 180 days
+				flag = equipped_mountains_vengeance
+				days = 180
+			}
+		}
+	}
+	DOR_dragons_breath_equipment = {
+		icon = GFX_decision_dragons_breath
+		custom_cost_text = dragons_breath_100_funds
+		custom_cost_trigger = {
+			mio:DOR_dragons_breath_MIO = {
+				check_variable = {
+					var = funds
+					value = @mercEquipCost
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		allowed = { has_dlc = "Arms Against Tyranny" }
+		visible = {
+			has_completed_focus = DOR_hire_the_cavalry
+			NOT = { has_country_flag = disbanded_dragons_breath }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = { #once every 180 days
+				has_country_flag = equipped_dragons_breath
+				factor = 0
+			}
+			modifier = { #no need to do so
+				has_equipment = {
+					light_tank_chassis > 50
+				}
+				has_equipment = {
+					mechanized_equipment > 50
+				}
+				factor = 0
+			}
+			modifier = { #nothing else to spend on
+				mio:DOR_dragons_breath_MIO = {
+					has_mio_size > 13
+				}
+				add = 100
+			}
+		}
+			
+		complete_effect = {
+			hidden_effect = {
+				mio:DOR_dragons_breath_MIO = {
+					add_mio_funds = @mercEquipCostNeg
+				}
+			}
+			if = { #+chariot
+				limit = {
+					mio:DOR_dragons_breath_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_chariot
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = mechanized_equipment
+					amount = 160
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 400
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 12
+				}
+			}
+			else = { #Normal
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis
+					amount = 200
+				}
+				add_equipment_to_stockpile = {
+					type = mechanized_equipment
+					amount = 120
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 350
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 12
+				}
+			}
+			if = { #+2 lancers
+				limit = {
+					mio:DOR_dragons_breath_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_heavy_lancers2
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_destroyer_chassis
+					amount = 100
+				}
+			}
+			else_if = { #+1 lancer
+				limit = {
+					mio:DOR_dragons_breath_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_heavy_lancers
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_destroyer_chassis
+					amount = 50
+				}
+			}
+			else_if = { #+2 skirmishers
+				limit = {
+					mio:DOR_dragons_breath_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_light_skirmishers2
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_artillery_chassis
+					amount = 100
+				}
+			}
+			else_if = { #+1 skirmishers
+				limit = {
+					mio:DOR_dragons_breath_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_light_skirmishers
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_artillery_chassis
+					amount = 50
+				}
+			}
+			set_country_flag = { #Don't take more than once every 180 days
+				flag = equipped_dragons_breath
+				days = 180
+			}
+		}
+	}
+	DOR_company_of_winter_equipment_infantry = {
+		icon = GFX_decision_company_of_winter
+		custom_cost_text = company_of_winter_100_funds
+		custom_cost_trigger = {
+			mio:DOR_company_of_winter_MIO = {
+				check_variable = {
+					var = funds
+					value = @mercEquipCost
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		allowed = { has_dlc = "Arms Against Tyranny" }
+		visible = {
+			has_completed_focus = DOR_hire_the_elites
+			NOT = { has_country_flag = disbanded_company_of_winter }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = { #once every 180 days
+				has_country_flag = equipped_company_of_winter
+				factor = 0
+			}
+			modifier = { #no need to do so
+				has_equipment = {
+					infantry_equipment > 100
+				}
+				factor = 0
+			}
+			modifier = { #nothing else to spend on
+				mio:DOR_company_of_winter_MIO = {
+					has_mio_size > 17
+				}
+				add = 100
+			}
+		}
+			
+		complete_effect = {
+			hidden_effect = {
+				mio:DOR_company_of_winter_MIO = {
+					add_mio_funds = @mercEquipCostNeg
+				}
+			}
+			if = { #+3 infantry
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_two_heavy_infantry
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1200
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_armor
+					amount = 800
+				}
+			}
+			else_if = { #+1 infantry
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_heavy_infantry
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_armor
+					amount = 6000
+				}
+			}
+			else_if = { #+3 pikes
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_two_heavy_pikes
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 900
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = 300
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_armor
+					amount = 800
+				}
+			}
+			else_if = { #+1 pikes
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_heavy_pikes
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 900
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = 100
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_armor
+					amount = 600
+				}
+			}
+			else = { #Normal
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 900
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_armor
+					amount = 500
+				}
+			}
+			if = { #+3 bows
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_two_bows
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 100
+				}
+			}
+			else_if = { #+1 bows
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_bows
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 35
+				}
+			}
+			set_country_flag = { #Don't take more than once every 180 days
+				flag = equipped_company_of_winter
+				days = 180
+			}
+		}
+	}
+	DOR_company_of_winter_equipment_cavalry = {
+		icon = GFX_decision_company_of_winter
+		custom_cost_text = company_of_winter_100_funds
+		custom_cost_trigger = {
+			mio:DOR_company_of_winter_MIO = {
+				check_variable = {
+					var = funds
+					value = @mercEquipCost
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		allowed = { has_dlc = "Arms Against Tyranny" }
+		visible = {
+			has_completed_focus = DOR_hire_the_elites
+			NOT = { has_country_flag = disbanded_company_of_winter }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = { #once every 180 days
+				has_country_flag = equipped_company_of_winter
+				factor = 0
+			}
+			modifier = { #no need to do so
+				has_equipment = {
+					medium_tank_chassis > 50
+				}
+				has_equipment = {
+					motorized_equipment > 50
+				}
+				factor = 0
+			}
+			modifier = { #nothing else to spend on
+				mio:DOR_company_of_winter_MIO = {
+					has_mio_size > 11
+				}
+				add = 100
+			}
+		}
+			
+		complete_effect = {
+			hidden_effect = {
+				mio:DOR_company_of_winter_MIO = {
+					add_mio_funds = @mercEquipCostNeg
+				}
+			}
+			if = { #+3 heavy cav
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_two_heavy_cavalry
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_chassis
+					amount = 400
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 140
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 400
+				}
+			}
+			else_if = { #+1 heavy cav
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_heavy_cavalry
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_chassis
+					amount = 300
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 140
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 400
+				}
+			}
+			else = { #Normal
+				add_equipment_to_stockpile = {
+					type = medium_tank_chassis
+					amount = 250
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 140
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 400
+				}
+			}
+			if = { #+3 lancers
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_two_heavy_lancers
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_destroyer_chassis
+					amount = 150
+				}
+			}
+			else_if = { #+1 lancers
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_heavy_lancers
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_destroyer_chassis
+					amount = 50
+				}
+			}
+			if = { #+3 skirmishers
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_two_light_skirmishers
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_artillery_chassis
+					amount = 10
+				}
+			}
+			else_if = { #+1 skirmishers
+				limit = {
+					mio:DOR_company_of_winter_MIO = {
+						is_mio_trait_completed = dorwinion_trait_add_light_skirmishers
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_artillery_chassis
+					amount = 50
+				}
+			}
+			set_country_flag = { #Don't take more than once every 180 days
+				flag = equipped_company_of_winter
+				days = 180
+			}
+		}
+	}
+
+	
 	DOR_disband_riverstalkers = {
 		icon = GFX_decision_disband_riverstalkers
 		fire_only_once = yes

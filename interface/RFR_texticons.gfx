@@ -220,6 +220,26 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 	SpriteType = {
+		name = "GFX_riverstalkers_texticon"
+		texturefile = "gfx/texticons/DOR_riverstalkers.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_mountains_vengeance_texticon"
+		texturefile = "gfx/texticons/DOR_mountains_vengeance.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_dragons_breath_texticon"
+		texturefile = "gfx/texticons/DOR_dragons_breath.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_company_of_winter_texticon"
+		texturefile = "gfx/texticons/DOR_company_of_winter.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
 		name = "GFX_prosperity_texticon"
 		texturefile = "gfx/texticons/prosperity.dds"
 		legacy_lazy_load = no

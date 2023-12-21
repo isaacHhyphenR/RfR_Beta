@@ -3188,13 +3188,7 @@ DOR_company_of_winter_MIO = {
 		available = {
 			FROM = {
 				num_of_civilian_factories_available_for_projects > 0
-				if = {
-					limit = { has_dlc = "No Step Back" }
-					has_tech = basic_medium_tank_chassis
-				}
-				else = {
-					has_tech = basic_medium_tank
-				}
+				has_design_based_on = medium_tank_chassis
 			}
 		}
 		
@@ -4102,15 +4096,10 @@ DOR_company_of_winter_MIO = {
 		
 		available = {
 			FROM = {
-				if = {
-					limit = { has_dlc = "No Step Back" }
-					has_tech = basic_medium_tank_chassis
-				}
-				else = {
-					has_tech = basic_medium_td
-				}
+				has_design_based_on = medium_tank_destroyer_chassis
 			}
 		}
+		
 		on_complete = {
 			FROM = {
 				add_units_to_division_template = {
@@ -4184,6 +4173,12 @@ DOR_company_of_winter_MIO = {
 		relative_position_id = dorwinion_trait_add_heavy_cavalry
 		
 		mutually_exclusive = { dorwinion_trait_add_heavy_lancers dorwinion_trait_add_heavy_cavalry }
+		
+		available = {
+			FROM = {
+				has_design_based_on = light_tank_artillery_chassis
+			}
+		}
 		
 		on_complete = {
 			FROM = {
