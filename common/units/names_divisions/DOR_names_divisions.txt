@@ -19,13 +19,6 @@ DOR_dragon_cav = {
 	division_types = { "light_armor" "medium_armor" }
 	fallback_name = "Dragon's %d Cavalry"
 }
-DOR_dragon_char = {
-	name = "Dragon's Breath Chariots"
-	for_countries = { DOR }
-	can_use = { always = no } # has_completed_focus = DOR_more_exotic_techniques }
-	division_types = { "mechanized" }
-	fallback_name = "Dragon's %d Chariots"
-}
 DOR_winter_inf = {
 	name = "Company of Winter Infantry"
 	for_countries = { DOR }

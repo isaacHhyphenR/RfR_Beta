@@ -21,6 +21,7 @@ sub_units = {
 		categories = {
 			category_all_armor
 			category_army
+			category_dragons_breath
 		}		
 
 		combat_width = 3

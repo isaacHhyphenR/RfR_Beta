@@ -2700,6 +2700,36 @@ DOR_pay_mercenaries = {
 			}
 		}
 	}
+	###DRAGONS BREATH
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+			has_completed_focus = DOR_hire_the_cavalry
+		}
+		calculate_dragons_breath_costs = yes
+		mio:DOR_dragons_breath_MIO = {
+			add_mio_funds = var:FROM.dragons_breath_funds
+		}
+		##equipment replenishment
+		if = {
+			limit = {
+				mio:DOR_dragons_breath_MIO = { is_mio_trait_completed = dorwinion_trait_signals_equipment }
+			}
+			add_equipment_to_stockpile = {
+				type = signals_equipment
+				amount = num_battalions_with_type@dragons_breath_banner
+			}
+		}
+		if = {
+			limit = {
+				mio:DOR_dragons_breath_MIO = { is_mio_trait_completed = dorwinion_trait_recon_equipment }
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = num_battalions_with_type@dragons_breath_banner
+			}
+		}
+	}
 	###COMPANY OF WINTER
 	if = {
 		limit = {

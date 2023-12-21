@@ -423,6 +423,34 @@ unlock_mountains_vengeance_template = {
 		}
 	}
 }
+unlock_dragons_breath_template = {
+	custom_effect_tooltip = unlock_dragons_breath_template
+	hidden_effect = {
+		set_technology = {
+			DOR_dragons_breath_tech = 1
+			popup = no
+		}
+	}
+	division_template = {
+		name = "Dragon's Cavalry"
+		is_locked = yes
+		division_names_group = DOR_dragon_cav
+		template_counter = 204
+		regiments = {
+			light_armor = { x = 0 y = 0 }
+			light_armor = { x = 0 y = 1 }
+			light_armor = { x = 0 y = 2 }
+			light_armor = { x = 0 y = 3 }
+			mechanized = { x = 1 y = 0 }
+			mechanized = { x = 1 y = 1 }
+			mechanized = { x = 1 y = 2 }
+		}
+		support = {
+			dragons_breath_banner = { x = 0 y = 0 }
+			artillery = { x = 0 y = 1 }
+		}
+	}
+}
 unlock_riverstalkers_template = {
 	custom_effect_tooltip = unlock_riverstalkers_template
 	hidden_effect = {

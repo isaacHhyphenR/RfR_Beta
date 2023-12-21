@@ -6868,39 +6868,39 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			custom_effect_tooltip = unlocks_mountains_vengeance
-			unlock_mountains_vengeance_template = yes
+			custom_effect_tooltip = unlocks_dragons_breath
+			unlock_dragons_breath_template = yes
 			capital_scope = {
-				custom_effect_tooltip = create_mountains_infantry_unit
-				custom_effect_tooltip = create_mountains_infantry_unit
-				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_dragons_cavalry_unit
+				custom_effect_tooltip = create_dragons_cavalry_unit
+				custom_effect_tooltip = create_dragons_cavalry_unit
 				hidden_effect = {
 					create_unit = {
-						division = "name = \"Mountains's 1st Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						division = "name = \"Dragon's 1st Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.5"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "name = \"Mountains's 2nd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						division = "name = \"Dragon's 2nd Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.5"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "name = \"Mountains's 3rd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
+						division = "name = \"Dragon's 3rd Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.5"
 						owner = ROOT
 					}
 				}
 			}
 			hidden_effect = {
-				add_dynamic_modifier = { modifier = mountains_vengeance_payment }
-				mio:DOR_mountains_vengeance_MIO = {
+				add_dynamic_modifier = { modifier = dragons_breath_payment }
+				mio:DOR_dragons_breath_MIO = {
 					set_variable = { num_support_companies = 1 }
 				}
-				calculate_mountains_vengeance_costs = yes
+				calculate_dragons_breath_costs = yes
 			}
 			merchant_houses_focus_effect = yes
 		}
 	}
-	focus = { #More Exotic Techniques
-		id = DOR_more_exotic_techniques
+	focus = { #Learn Their Techniques
+		id = DOR_learn_their_techniques
 		icon = GFX_goal_generic_army_motorized
 		x = 0
 		y = 1
@@ -6918,35 +6918,14 @@ focus_tree = {
 				has_country_flag = disbanded_dragons_breath
 			}
 		}
-		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			custom_effect_tooltip = unlocks_mountains_vengeance
-			unlock_mountains_vengeance_template = yes
-			capital_scope = {
-				custom_effect_tooltip = create_mountains_infantry_unit
-				custom_effect_tooltip = create_mountains_infantry_unit
-				custom_effect_tooltip = create_mountains_infantry_unit
-				hidden_effect = {
-					create_unit = {
-						division = "name = \"Mountains's 1st Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"Mountains's 2nd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"Mountains's 3rd Infantry\" division_template = \"Mountains's Infantry\" start_experience_factor = 0.5"
-						owner = ROOT
-					}
-				}
-			}
-			hidden_effect = {
-				add_dynamic_modifier = { modifier = mountains_vengeance_payment }
-				mio:DOR_mountains_vengeance_MIO = {
-					set_variable = { num_support_companies = 1 }
-				}
-				calculate_mountains_vengeance_costs = yes
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				ahead_reduction = 2
+				uses = 1
+				category = cat_mechanized_equipment
+				name = DOR_learn_their_techniques
 			}
 			merchant_houses_focus_effect = yes
 		}

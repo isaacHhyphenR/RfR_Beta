@@ -188,7 +188,7 @@
  one_maintenance_per_MV_unit: "Adds 1 §Y$maintenance_equipment$§! to the national stockpile each week per fielded §Y$dorwinion_mountains_vengeance$§! unit."
  create_mountains_infantry_unit: "Creates a unit of Mountain's Infantry with trained experience. This unit costs §R0.66§! §Y$industrial_complex$s§! to maintain and earns §Y$dorwinion_mountains_vengeance$§! §G15§! funds a week.\n"
  unlocks_mountains_vengeance: "Unlocks §Y$dorwinion_mountains_vengeance$§! as recruitable mercenaries."
- unlock_mountains_vengeance_template: "The Mountains's Infantry template starts with 3 §Y$heavy_infantry$§!, 3 §Y$heavy_pikes_brigade$§!, and a §Y$artillery_brigade$§!.\nTheir unique §Y$mountians_vengeance_banner$§! support company can increase defense."
+ unlock_mountains_vengeance_template: "The Mountains's Infantry template starts with 3 §Y$heavy_infantry$§!, 3 §Y$heavy_pikes_brigade$§!, and a §Y$artillery_brigade$§!.\nTheir unique §Y$mountains_vengeance_banner$§! support company can increase defense."
  DOR_mountains_vengeance_hp_tooltip: "§Y$mountains_vengeance_banner$§!:$new_line_tab$$MODIFIER_ARMY_STRENGTH$: §G+30§!"
  DOR_mountains_vengeance_defense_tooltip: "§Y$mountains_vengeance_banner$§!:$new_line_tab$§YBattalion Modifier: $category_all_infantry$§!$new_line_tab$ - Defense: §G+15.00%§!"
  DOR_riverstalkers_supply_tooltip: "§Y$riverstalkers_banner$§!:$new_line_tab$$STAT_ARMY_SUPPLY_CONSUMPTION_FACTOR$: §G-10.00%§!"
@@ -207,3 +207,15 @@
  disbanded_mountains_vengeance: "Disbanded §Y$dorwinion_mountains_vengeance$§!"
  disbanded_dragons_breath: "Disbanded §Y$dorwinion_dragons_breath$§!"
  disbanded_company_of_winter: "Disbanded §Y$dorwinion_company_of_winter$§!"
+ create_dragons_cavalry_unit: "Creates a unit of Dragon's Cavalry with trained experience. This unit costs §R0.66§! §Y$industrial_complex$s§! to maintain and earns §Y$dorwinion_dragons_breath$§! §G15§! funds a week.\n"
+ unlocks_dragons_breath: "Unlocks §Y$dorwinion_dragons_breath$§! as recruitable mercenaries."
+ unlock_dragons_breath_template: "The Dragon's Cavalry template starts with 4 §Y$light_armor$§!, 3 §Y$mechanized$§!, and a §Y$artillery$§!.\nTheir unique §Y$dragons_breath_banner$§! support company can increase breakthough & speed.."
+ DOR_dragons_breath_speed_tooltip: "§Y$dragons_breath_banner$§!:$new_line_tab$§YBattalion Modifier: $category_dragons_breath$§!$new_line_tab$ - Max. Speed: §G+10.00%§!"
+ DOR_dragons_breath_armor_tooltip: "§Y$dragons_breath_banner$§!:$new_line_tab$§YBattalion Modifier: $category_dragons_breath$§!$new_line_tab$ - $Armor_stat$: §G+10.00%§!"
+ DOR_dragons_breath_breakthrough_tooltip: "§Y$dragons_breath_banner$§!:$new_line_tab$§YBattalion Modifier: $category_dragons_breath$§!$new_line_tab$ - $MODIFIER_BREAKTHROUGH$: §G+10.00%§!"
+ DOR_dragons_breath_soft_attack_tooltip: "§Y$dragons_breath_banner$§!:$new_line_tab$§YBattalion Modifier: $category_dragons_breath$§!$new_line_tab$ - $Soft_Attack$: §G+10.00%§!"
+ one_wagon_per_DB_unit: "Adds 1 §Y$motorized_equipment$§! to the national stockpile each week per fielded §Y$dorwinion_dragons_breath$§! unit."
+ one_signals_per_DB_unit: "Adds 1 §Y$signals_equipment$§! to the national stockpile each week per fielded §Y$dorwinion_dragons_breath$§! unit."
+ 
+ 
+ 

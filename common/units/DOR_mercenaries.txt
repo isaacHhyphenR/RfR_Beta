@@ -187,45 +187,40 @@ sub_units = {
 		group = support
 		
 		categories = {
+			category_front_line
 			category_support_battalions
 			category_army
+			category_all_armor
 			category_mercenary_banner
 		}
 	
 		combat_width = 0
-		
+	
 		#Size Definitions
-		max_strength = 35
-		max_organisation = 70
+		max_strength = 2
+		max_organisation = 20
 		default_morale = 0.3
 		manpower = 500
-		
-		##cause you smaller
-		defense = -0.25
-		breakthrough = -0.25
+		training_time = 90
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		##can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		defense = -0.5
+		breakthrough = -0.5
 		soft_attack = -0.5
 		hard_attack = -0.5
-
-		mountain = {
-			attack = 0.25
-			defence = 0.75
-		}
-			
-		#Misc Abilities
-		training_time = 90
-		suppression = 0.5
-		weight = 0.5
-		
-		supply_consumption = 0.06
 		
 		
 		essential = {
-			infantry_equipment
+			light_tank_chassis
 		}
-	
+
 		need = {
-			infantry_equipment = 50
-			infantry_armor = 50
+			light_tank_chassis = 25
 		}
 	}
 }

@@ -2395,6 +2395,652 @@ DOR_mountains_vengeance_MIO = {
 }
 
 ##############################################################################################################################
+# DRAGONS BREATH
+##############################################################################################################################
+DOR_dragons_breath_MIO = {
+	name = dorwinion_dragons_breath
+	icon = GFX_idea_dorwinion_dragons_breath
+
+	allowed = {
+		original_tag = DOR
+	}
+	visible = { FROM = { NOT = { has_country_flag = disbanded_dragons_breath } } }
+	available = { FROM = { has_completed_focus = DOR_hire_the_cavalry } }
+	
+	equipment_type {
+		example_airframe
+	}
+	tree_header_text = {
+		text = mio_header_expand_mercenary
+		x = 0
+	}
+	tree_header_text = {
+		text = mio_header_template
+		x = 3
+	}
+	tree_header_text = {
+		text = mio_header_banners
+		x = 7
+	}
+
+	initial_trait = {
+		name = dorwinion_dragons_breath
+	}
+
+####################################################
+#######################################################HIRE MORE
+####################################################
+	trait = {
+		token = dorwinion_trait_hire_cavalry1
+		name = dorwinion_trait_hire_cavalry
+		icon = GFX_military_industrial_organization_light_tank_chassis
+		
+		position = { x=0 y=0 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_dragons_cavalry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Dragon's 4th Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
+							owner = FROM
+						}
+					}
+				}
+				calculate_dragons_breath_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_cavalry2
+		name = dorwinion_trait_hire_cavalry
+		icon = GFX_military_industrial_organization_light_tank_chassis
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_cavalry1
+		
+		any_parent = { dorwinion_trait_hire_cavalry1 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_dragons_cavalry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Dragon's 5th Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
+							owner = FROM
+						}
+					}
+				}
+				calculate_dragons_breath_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_cavalry3
+		name = dorwinion_trait_hire_cavalry
+		icon = GFX_military_industrial_organization_light_tank_chassis
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_cavalry2
+		
+		any_parent = { dorwinion_trait_hire_cavalry2 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_dragons_cavalry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Dragon's 6th Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
+							owner = FROM
+						}
+					}
+				}
+				calculate_dragons_breath_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_cavalry4
+		name = dorwinion_trait_hire_cavalry
+		icon = GFX_military_industrial_organization_light_tank_chassis
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_cavalry3
+		
+		any_parent = { dorwinion_trait_hire_cavalry3 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_dragons_cavalry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Dragon's 7th Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
+							owner = FROM
+						}
+					}
+				}
+				calculate_dragons_breath_costs = yes
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_hire_cavalry5
+		name = dorwinion_trait_hire_two_cavalry
+		icon = GFX_military_industrial_organization_armor
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_hire_cavalry4
+		
+		any_parent = { dorwinion_trait_hire_cavalry4 }
+		
+		available = {
+			FROM = {
+				num_of_civilian_factories_available_for_projects > 0
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				capital_scope = {
+					custom_effect_tooltip = create_dragons_cavalry_unit
+					custom_effect_tooltip = create_dragons_cavalry_unit
+					hidden_effect = {
+						create_unit = {
+							division = "name = \"Dragon's 8th Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
+							owner = FROM
+						}
+						create_unit = {
+							division = "name = \"Dragon's 9th Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
+							owner = FROM
+						}
+					}
+				}
+				calculate_dragons_breath_costs = yes
+			}
+		}
+	}
+####################################################
+#######################################################SUPPORT
+####################################################	
+	trait = {
+		token = dorwinion_trait_add_logistics
+		name = dorwinion_trait_add_logistics
+		icon = GFX_generic_mio_trait_icon_supply_consumption
+		
+		position = { x=2 y=0 }
+		
+		available = {
+			FROM = {
+				has_tech = tech_logistics_company
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Dragon's Cavalry"
+					support = {
+						logistics_company = 0
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { equipment_to_add = @equipForSupport }
+						add_equipment_to_stockpile = {
+							type = motorized_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupport }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_motorized_equipment
+		name = dorwinion_trait_motorized_equipment
+		icon = GFX_military_industrial_organization_motorized
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_logistics
+		any_parent = { dorwinion_trait_add_logistics }
+		
+		on_complete = {
+			custom_effect_tooltip = one_wagon_per_DB_unit
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_recon
+		name = dorwinion_trait_add_recon
+		icon = GFX_generic_mio_trait_icon_surface_detection
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_logistics
+		
+		available = {
+			FROM = {
+				has_tech = tech_recon
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Dragon's Cavalry"
+					support = {
+						light_tank_recon = 0
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { equipment_to_add = @equipForSupport }
+						add_equipment_to_stockpile = {
+							type = light_tank_chassis
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupport }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_signals
+		name = dorwinion_trait_add_signals
+		icon = GFX_generic_mio_trait_icon_unique
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_recon
+		
+		available = {
+			FROM = {
+				has_tech = tech_signal_company
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_at_least_one_support_slot_remaining_tooltip
+				check_variable = { num_support_companies < 5 }
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Dragon's Cavalry"
+					support = {
+						signal_company = 0
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { equipment_to_add = @equipForSupport }
+						add_equipment_to_stockpile = {
+							type = signals_equipment
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { manpower_to_add = @manpowerForSupport }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+			add_to_variable = { num_support_companies = 1 }
+		}
+	}
+	trait = {
+		token = dorwinion_trait_signals_equipment
+		name = dorwinion_trait_signals_equipment
+		icon = GFX_military_industrial_organization_signals_equipment
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_signals
+		any_parent = { dorwinion_trait_add_signals }
+		
+		on_complete = {
+			custom_effect_tooltip = one_signals_per_DB_unit
+		}
+	}
+####################################################
+#######################################################TEMPLATE
+####################################################
+	trait = {
+		token = dorwinion_trait_add_chariot
+		name = dorwinion_trait_add_chariot
+		icon = GFX_military_industrial_organization_mechanized
+		
+		position = { x=0 y=3 }
+		relative_position_id = dorwinion_trait_add_logistics
+		
+		available = {
+			FROM = {
+				has_tech = mechanised_infantry
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Dragon's Cavalry"
+					regiments = {
+						mechanized = 1
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { equipment_to_add = @equipForInfantry }
+						set_variable = { secondary_equipment_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { secondary_equipment_to_add = 40 }
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = var:equipment_to_add
+						}
+						add_equipment_to_stockpile = {
+							type = mechanized_equipment
+							amount = var:secondary_equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { manpower_to_add = @manpowerForInfantry }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_heavy_lancers
+		name = dorwinion_trait_add_heavy_lancers
+		icon = GFX_military_industrial_organization_medium_tank_destroyer_chassis
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_chariot
+		
+		mutually_exclusive = { dorwinion_trait_add_light_skirmishers }
+		
+		available = {
+			FROM = {
+				if = {
+					limit = { has_dlc = "No Step Back" }
+					has_tech = basic_medium_tank_chassis
+				}
+				else = {
+					has_tech = basic_medium_td
+				}
+			}
+		}
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Dragon's Cavalry"
+					regiments = {
+						medium_tank_destroyer_brigade = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { equipment_to_add = @equipForTanks }
+						add_equipment_to_stockpile = {
+							type = medium_tank_destroyer_chassis
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { manpower_to_add = @manpowerForTanks }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_heavy_lancers2
+		name = dorwinion_trait_add_heavy_lancers
+		icon = GFX_military_industrial_organization_medium_tank_destroyer_chassis
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_heavy_lancers
+		any_parent = { dorwinion_trait_add_heavy_lancers }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Dragon's Cavalry"
+					regiments = {
+						medium_tank_destroyer_brigade = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { equipment_to_add = @equipForTanks }
+						add_equipment_to_stockpile = {
+							type = medium_tank_destroyer_chassis
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { manpower_to_add = @manpowerForTanks }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_light_skirmishers
+		name = dorwinion_trait_add_light_skirmishers
+		icon = GFX_military_industrial_organization_light_tank_artillery_chassis
+		
+		position = { x=1 y=0 }
+		relative_position_id = dorwinion_trait_add_heavy_lancers
+		
+		mutually_exclusive = { dorwinion_trait_add_heavy_lancers }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Dragon's Cavalry"
+					regiments = {
+						light_sp_artillery_brigade = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { equipment_to_add = @equipForTanks }
+						add_equipment_to_stockpile = {
+							type = light_tank_artillery_chassis
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { manpower_to_add = @manpowerForTanks }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_add_light_skirmishers2
+		name = dorwinion_trait_add_light_skirmishers
+		icon = GFX_military_industrial_organization_light_tank_artillery_chassis
+		
+		position = { x=0 y=1 }
+		relative_position_id = dorwinion_trait_add_light_skirmishers
+		any_parent = { dorwinion_trait_add_light_skirmishers }
+		
+		on_complete = {
+			FROM = {
+				add_units_to_division_template = {
+					template_name = "Dragon's Cavalry"
+					regiments = {
+						light_sp_artillery_brigade = 2
+					}
+				}
+				#Grants equipment & manpower for the newly spawned battalions
+				hidden_effect = {
+					if = {
+						limit = { FROM = { has_country_flag = fillMercenaryBattalions } }
+						set_variable = { equipment_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { equipment_to_add = @equipForTanks }
+						add_equipment_to_stockpile = {
+							type = light_tank_artillery_chassis
+							amount = var:equipment_to_add
+						}
+						set_variable = { manpower_to_add = num_battalions_with_type@dragons_breath_banner }
+						multiply_variable = { manpower_to_add = @manpowerForTanks }
+						add_manpower = var:manpower_to_add
+					}
+				}
+			}
+		}
+	}
+
+####################################################
+#######################################################BANNER BUFFS
+####################################################
+	trait = {
+		token = dorwinion_trait_banner_speed
+		name = DOR_dragons_breath_speed
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		
+		position = { x=7 y=0 }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_dragons_breath_speed_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_dragons_breath_speed = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_banner_breakthrough
+		name = DOR_dragons_breath_breakthrough
+		icon = GFX_generic_mio_trait_icon_breakthrough
+		
+		position = { x=-1 y=2 }
+		relative_position_id = dorwinion_trait_banner_speed
+		any_parent = { dorwinion_trait_banner_speed }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_dragons_breath_breakthrough_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_dragons_breath_breakthrough = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_banner_armor
+		name = DOR_dragons_breath_armor
+		icon = GFX_generic_mio_trait_icon_max_strength
+		
+		position = { x=0 y=2 }
+		relative_position_id = dorwinion_trait_banner_breakthrough
+		any_parent = { dorwinion_trait_banner_breakthrough }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_dragons_breath_armor_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_dragons_breath_armor = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+	trait = {
+		token = dorwinion_trait_banner_soft_attack
+		name = DOR_dragons_breath_soft_attack
+		icon = GFX_generic_mio_trait_icon_soft_attack
+		
+		position = { x=1 y=2 }
+		relative_position_id = dorwinion_trait_banner_speed
+		any_parent = { dorwinion_trait_banner_speed }
+		
+		on_complete = {
+			FROM = {
+				custom_effect_tooltip = DOR_dragons_breath_soft_attack_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOR_dragons_breath_soft_attack = 1
+						popup = no
+					}
+				}
+			}
+		}
+	}
+}
+##############################################################################################################################
 # COMPANY OF WINTER
 ##############################################################################################################################
 DOR_company_of_winter_MIO = {

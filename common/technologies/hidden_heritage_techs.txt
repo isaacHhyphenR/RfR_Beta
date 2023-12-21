@@ -404,6 +404,59 @@ technologies = {
 		}
 	}
 	
+	DOR_dragons_breath_tech = {
+		allow = {
+			always = no
+		}
+		enable_subunits = {
+			dragons_breath_banner
+		}
+	}
+	DOR_dragons_breath_speed = {
+		allow = {
+			always = no
+		}
+		dragons_breath_banner = {
+			battalion_mult = {
+				category = category_dragons_breath
+				maximum_speed = 0.1
+			}
+		}
+	}
+	DOR_dragons_breath_armor = {
+		allow = {
+			always = no
+		}
+		dragons_breath_banner = {
+			battalion_mult = {
+				category = category_dragons_breath
+				armor_value = 0.1
+			}
+		}
+	}
+	DOR_dragons_breath_breakthrough = {
+		allow = {
+			always = no
+		}
+		dragons_breath_banner = {
+			battalion_mult = {
+				category = category_dragons_breath
+				breakthrough = 0.1
+			}
+		}
+	}
+	DOR_dragons_breath_soft_attack = {
+		allow = {
+			always = no
+		}
+		dragons_breath_banner = {
+			battalion_mult = {
+				category = category_dragons_breath
+				soft_attack = 0.1
+			}
+		}
+	}
+	
 	DOR_riverstalkers_tech = {
 		allow = {
 			always = no

@@ -2021,6 +2021,25 @@ DOR_mercenary_category = {
 			hidden_effect = { remove_dynamic_modifier = { modifier = mountains_vengeance_payment } }
 		}
 	}
+	DOR_disband_dragons_breath = {
+		icon = DOR_dragons_breath_decision
+		fire_only_once = yes
+		visible = { has_completed_focus = DOR_hire_the_cavalry }
+		cost = 25
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			custom_effect_tooltip = disband_dragons_breath
+			set_country_flag = disbanded_dragons_breath
+			delete_unit_template_and_units = {
+				division_template = "Dragon's Cavalry"
+				disband = no #will not refund equipment and manpower
+			}
+			calculate_dragons_breath_costs = yes
+			hidden_effect = { remove_dynamic_modifier = { modifier = dragons_breath_payment } }
+		}
+	}
 	DOR_disband_company_of_winter = {
 		icon = DOR_company_of_winter_decision
 		fire_only_once = yes
