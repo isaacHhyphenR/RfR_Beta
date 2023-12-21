@@ -747,8 +747,25 @@
  DOR_prosperity_for_resources_desc: "[FROM.GetCapitalVictoryPointName]'s booming market brings goods and resources from all corners of Middle Earth. We should use our wealth to purchase more."
  DOR_prosperity_for_factory: "Diversify [FROM.GetName]'s Economy"
  DOR_prosperity_for_factory_desc: "Many sectors of [FROM.GetCapitalVictoryPointName]'s stand to benefit from it's booming market."
- 
- 
+ DOR_mercenary_category: "Mercenaries"
+ DOR_disband_riverstalkers: "Disband $dorwinion_riverstalkers$"
+ DOR_disband_riverstalkers_desc: "Our strategy no longer benefits from the upkeep of expensive mercenaries. We should send them on their way and focus on our real army."
+ DOR_disband_mountains_vengeance: "Disband $dorwinion_mountains_vengeance$"
+ DOR_disband_mountains_vengeance_desc: "Our strategy no longer benefits from the upkeep of expensive mercenaries. We should send them on their way and focus on our real army."
+ DOR_disband_dragons_breath: "Disband $dorwinion_dragons_breath$"
+ DOR_disband_dragons_breath_desc: "Our strategy no longer benefits from the upkeep of expensive mercenaries. We should send them on their way and focus on our real army."
+ DOR_disband_company_of_winter: "Disband $dorwinion_company_of_winter$"
+ DOR_disband_company_of_winter_desc: "Our strategy no longer benefits from the upkeep of expensive mercenaries. We should send them on their way and focus on our real army."
+ DOR_recruit_riverstalkers: "Recruit Riverstalkers"
+ DOR_recruit_riverstalkers_desc: "Though crude and poorly trained, they are cheap and numerous."
+ DOR_recruit_mountains_vengeance: "Recruit Mountain's Infantry"
+ DOR_recruit_mountains_vengeance_desc: "Nothing breaks these dwarves."
+ DOR_recruit_dragons_breath: "Recruit Dragon's Cavalry"
+ DOR_recruit_dragons_breath_desc: "An Easterling charge, with thundering hooves and clattering wheels, is terrifying to both see and hear."
+ DOR_recruit_company_of_winter_infantry: "Recruit Winter's Infantry"
+ DOR_recruit_company_of_winter_infantry_desc: "Professional soldiers hardened by years of skirmishes between feudal lords, easterling raiders, roaming orcs, and anyone else able to afford them."
+ DOR_recruit_company_of_winter_cavalry: "Recruit Winter's Knights"
+ DOR_recruit_company_of_winter_cavalry_desc: "Though not true knights in the sense that most of them lack noble titles, no employer would dare insult them by mentioning this."
  
  
  

@@ -682,4 +682,32 @@ leader_traits = {
 			base = 1
 		}
 	}
+######################################################################################DOR MERCENARIES
+	dor_riverstalkers_trait = {
+		random = no
+		custom_modifier_tooltip = DOR_riverstalkers_supply_tooltip
+		custom_modifier_tooltip = DOR_riverstalkers_movement_tooltip
+		custom_modifier_tooltip = DOR_riverstalkers_reliability_tooltip
+		custom_modifier_tooltip = DOR_riverstalkers_river_tooltip
+	}
+	dor_mountains_vengeance_trait = {
+		random = no
+		custom_modifier_tooltip = DOR_mountains_vengeance_hp_tooltip
+		custom_modifier_tooltip = DOR_mountains_vengeance_defense_tooltip
+	}
+	dor_dragons_breath_trait = {
+		random = no
+		custom_modifier_tooltip = DOR_dragons_breath_speed_tooltip
+		custom_modifier_tooltip = DOR_dragons_breath_armor_tooltip
+		custom_modifier_tooltip = DOR_dragons_breath_breakthrough_tooltip
+		custom_modifier_tooltip = DOR_dragons_breath_soft_attack_tooltip
+	}
+	dor_company_of_winter_trait = {
+		random = no
+		custom_modifier_tooltip = DOR_company_of_winter_morale_tooltip
+		custom_modifier_tooltip = DOR_company_of_winter_xp_loss_tooltip
+		custom_modifier_tooltip = DOR_company_of_winter_initiative_tooltip
+		custom_modifier_tooltip = DOR_company_of_winter_breakthrough_tooltip
+		custom_modifier_tooltip = DOR_company_of_winter_soft_attack_tooltip
+	}
 }

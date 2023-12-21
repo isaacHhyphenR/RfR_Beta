@@ -3,8 +3,11 @@
  idea_group_tank_manufacturer: "Cavalry Specialists"
  idea_group_naval_manufacturer: "Naval Specialists"
  idea_group_materiel_manufacturer: "Equipment Specialists"
- idea_group_air_manufacturer: "Unique Specialists"
+ idea_group_aircraft_manufacturer: "Unique Specialists"
  idea_group_light_aircraft_manufacturer: "Unique Specialists
+ aircraft_manufacturer: "Unique Specialist"
+ materiel_manufacturer: "Equipment Specialist"
+ industry_concern: "Economic Specialist"
  
  tank_manufacturer_cost_factor: "Cavalry Specialist Cost"
  tank_manufacturer_cost_factor_MIO: "Cavalry §YMilitary Industrial Organization§! cost"

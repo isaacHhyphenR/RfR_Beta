@@ -70,6 +70,10 @@ spriteTypes = {
 		name = "GFX_military_industrial_organization_suppression_equipment"
 		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_suppression.dds"
 	}
+	spriteType = {
+		name = "GFX_generic_mio_department_icon_infantry"
+		texturefile = "gfx/interface/military_industrial_organization/department_icons/generic_mio_department_icon_infantry.dds"
+	}
 
 	### INFANTRY ARMOR DPT ###
 	spriteType = {

@@ -68,7 +68,7 @@ defined_text = { ##Returns number of days it takes to upgrade market
 	}
 }
 
-defined_text = { #displays the current modifiers from the market
+defined_text = { ##displays the current modifiers from the market
 	name = market_current_level_modifiers_scripted_loc
 	text = {
 		trigger = { check_variable = { non_damaged_building_level@market = 1 } }
@@ -91,3 +91,67 @@ defined_text = { #displays the current modifiers from the market
 		localization_key = market_level_5_modifiers
 	}
 }
+
+defined_text = { ##Displays effects of recruiting riverstalkers with correct cost (DLC dependent)
+	name = create_rivers_unit_scripted
+	text = { #AAT
+		trigger = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		localization_key = create_rivers_unit_AAT
+	}
+	text = {
+		localization_key = empty_loc_key
+	}
+}
+defined_text = { ##Displays effects of recruiting free riverstalkers with correct cost (DLC dependent)
+	name = create_free_rivers_unit_scripted
+	text = { #AAT
+		trigger = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		localization_key = create_free_rivers_unit_AAT
+	}
+	text = {
+		localization_key = empty_loc_key
+	}
+}
+defined_text = { ##Displays effects of recruiting mountains infantry with correct cost (DLC dependent)
+	name = create_mountains_unit_scripted
+	text = { #AAT
+		trigger = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		localization_key = create_mountains_unit_AAT
+	}
+	text = {
+		localization_key = empty_loc_key
+	}
+}
+defined_text = { ##Displays effects of recruiting dragons cavalry with correct cost (DLC dependent)
+	name = create_dragons_cavalry_scripted
+	text = { #AAT
+		trigger = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		localization_key = create_dragons_unit_AAT
+	}
+	text = {
+		localization_key = empty_loc_key
+	}
+}
+defined_text = { ##Displays effects of recruiting company of winter unit with correct cost (DLC dependent)
+	name = create_winters_unit_scripted
+	text = { #AAT
+		trigger = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		localization_key = create_winters_unit_AAT
+	}
+	text = {
+		localization_key = empty_loc_key
+	}
+}
+
+
+

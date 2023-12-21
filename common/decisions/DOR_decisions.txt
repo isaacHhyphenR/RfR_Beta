@@ -1983,8 +1983,175 @@ celduin_trade_category = {
 }
 
 DOR_mercenary_category = {
+	@recruitMercenariesDays = 50
+	DOR_recruit_riverstalkers = {
+		icon = GFX_decision_riverstalkers
+		custom_cost_text = has_2_civ_factory_cost_tooltip
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		allowed = { NOT = { has_dlc = "Arms Against Tyranny" } }
+		visible = {
+			has_completed_focus = DOR_hire_the_rabble
+			NOT = { has_country_flag = disbanded_riverstalkers }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = riverstalkers_within_cap
+				check_variable = { num_battalions_with_type@riverstalkers_banner < riverstalkers_cap }
+			}
+		}
+		days_remove = @recruitMercenariesDays
+		modifier = {
+			civilian_factory_use = 2
+		}
+		complete_effect = {
+			capital_scope = {
+				custom_effect_tooltip = create_rivers_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Riverstalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	DOR_recruit_mountains_vengeance = {
+		icon = GFX_decision_mountains_vengeance
+		custom_cost_text = has_3_civ_factory_cost_tooltip
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		allowed = { NOT = { has_dlc = "Arms Against Tyranny" } }
+		visible = {
+			has_completed_focus = DOR_hire_the_dwarves
+			NOT = { has_country_flag = disbanded_mountains_vengeance }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = mountains_vengeance_within_cap
+				check_variable = { num_battalions_with_type@mountains_vengeance_banner < mountains_vengeance_cap }
+			}
+		}
+		days_remove = @recruitMercenariesDays
+		modifier = {
+			civilian_factory_use = 2
+		}
+		complete_effect = {
+			capital_scope = {
+				custom_effect_tooltip = create_mountains_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Mountain's Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	DOR_recruit_dragons_breath = {
+		icon = GFX_decision_dragons_breath
+		custom_cost_text = has_3_civ_factory_cost_tooltip
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		allowed = { NOT = { has_dlc = "Arms Against Tyranny" } }
+		visible = {
+			has_completed_focus = DOR_hire_the_dwarves
+			NOT = { has_country_flag = disbanded_dragons_breath }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = dragons_breath_within_cap
+				check_variable = { num_battalions_with_type@dragons_breath_banner < dragons_breath_cap }
+			}
+		}
+		days_remove = @recruitMercenariesDays
+		modifier = {
+			civilian_factory_use = 2
+		}
+		complete_effect = {
+			capital_scope = {
+				custom_effect_tooltip = create_dragons_cavalry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Dragon's Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	DOR_recruit_company_of_winter_infantry = {
+		icon = GFX_decision_company_of_winter
+		custom_cost_text = has_4_civ_factory_cost_tooltip
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 3
+		}
+		allowed = { NOT = { has_dlc = "Arms Against Tyranny" } }
+		visible = {
+			has_completed_focus = DOR_hire_the_elites
+			NOT = { has_country_flag = disbanded_company_of_winter }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = company_of_winter_within_cap
+				check_variable = { num_battalions_with_type@company_of_winter_banner < company_of_winter_cap }
+			}
+		}
+		days_remove = @recruitMercenariesDays
+		modifier = {
+			civilian_factory_use = 4
+		}
+		complete_effect = {
+			capital_scope = {
+				custom_effect_tooltip = create_winters_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Winter's Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	DOR_recruit_company_of_winter_cavalry = {
+		icon = GFX_decision_company_of_winter
+		custom_cost_text = has_4_civ_factory_cost_tooltip
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 3
+		}
+		allowed = { NOT = { has_dlc = "Arms Against Tyranny" } }
+		visible = {
+			has_completed_focus = DOR_hire_the_elites
+			NOT = { has_country_flag = disbanded_company_of_winter }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = company_of_winter_within_cap
+				check_variable = { num_battalions_with_type@company_of_winter_banner < company_of_winter_cap }
+			}
+		}
+		days_remove = @recruitMercenariesDays
+		modifier = {
+			civilian_factory_use = 4
+		}
+		complete_effect = {
+			capital_scope = {
+				custom_effect_tooltip = create_winters_cavalry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Winter's Knights\" division_template = \"Winter's Knights\" start_experience_factor = 0.75"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+		
 	DOR_disband_riverstalkers = {
-		icon = DOR_riverstalkers_decision
+		icon = GFX_decision_disband_riverstalkers
 		fire_only_once = yes
 		visible = { has_completed_focus = DOR_hire_the_rabble }
 		cost = 25
@@ -1998,12 +2165,19 @@ DOR_mercenary_category = {
 				division_template = "Riverstalkers"
 				disband = no #will not refund equipment and manpower
 			}
-			calculate_riverstalkers_costs = yes
-			hidden_effect = { remove_dynamic_modifier = { modifier = riverstalkers_payment } }
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				calculate_riverstalkers_costs = yes
+				hidden_effect = { remove_dynamic_modifier = { modifier = riverstalkers_payment } }
+			}
+			else_if = {
+				limit = { has_idea = DOR_hire_riverstalkers }
+				remove_ideas = DOR_hire_riverstalkers
+			}
 		}
 	}
 	DOR_disband_mountains_vengeance = {
-		icon = DOR_mountains_vengeance_decision
+		icon = GFX_decision_disband_mountains_vengeance_decision
 		fire_only_once = yes
 		visible = { has_completed_focus = DOR_hire_the_dwarves }
 		cost = 25
@@ -2017,12 +2191,19 @@ DOR_mercenary_category = {
 				division_template = "Mountain's Infantry"
 				disband = no #will not refund equipment and manpower
 			}
-			calculate_mountains_vengeance_costs = yes
-			hidden_effect = { remove_dynamic_modifier = { modifier = mountains_vengeance_payment } }
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				calculate_mountains_vengeance_costs = yes
+				hidden_effect = { remove_dynamic_modifier = { modifier = mountains_vengeance_payment } }
+			}
+			else_if = {
+				limit = { has_idea = DOR_hire_mountains_vengeance }
+				remove_ideas = DOR_hire_mountains_vengeance
+			}
 		}
 	}
 	DOR_disband_dragons_breath = {
-		icon = DOR_dragons_breath_decision
+		icon = GFX_decision_disband_ragons_breath_decision
 		fire_only_once = yes
 		visible = { has_completed_focus = DOR_hire_the_cavalry }
 		cost = 25
@@ -2036,12 +2217,19 @@ DOR_mercenary_category = {
 				division_template = "Dragon's Cavalry"
 				disband = no #will not refund equipment and manpower
 			}
-			calculate_dragons_breath_costs = yes
-			hidden_effect = { remove_dynamic_modifier = { modifier = dragons_breath_payment } }
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				calculate_dragons_breath_costs = yes
+				hidden_effect = { remove_dynamic_modifier = { modifier = dragons_breath_payment } }
+			}
+			else_if = {
+				limit = { has_idea = DOR_hire_dragons_breath }
+				remove_ideas = DOR_hire_dragons_breath
+			}
 		}
 	}
 	DOR_disband_company_of_winter = {
-		icon = DOR_company_of_winter_decision
+		icon = GFX_decision_disband_company_of_winter_decision
 		fire_only_once = yes
 		visible = { has_completed_focus = DOR_hire_the_elites }
 		cost = 25
@@ -2059,8 +2247,15 @@ DOR_mercenary_category = {
 				division_template = "Winters's Knights"
 				disband = no #will not refund equipment and manpower
 			}
-			calculate_company_of_winter_costs = yes
-			hidden_effect = { remove_dynamic_modifier = { modifier = company_of_winter_payment } }
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				calculate_company_of_winter_costs = yes
+				hidden_effect = { remove_dynamic_modifier = { modifier = company_of_winter_payment } }
+			}
+			else_if = {
+				limit = { has_idea = DOR_hire_company_of_winter }
+				remove_ideas = DOR_hire_company_of_winter
+			}
 			if = {
 				limit = { has_idea = DOR_whip_our_levies_into_shape_idea }
 				remove_ideas = DOR_whip_our_levies_into_shape_idea

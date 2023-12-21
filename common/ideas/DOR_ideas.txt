@@ -706,6 +706,46 @@ ideas = {
 				experience_gain_army_unit_factor = 0.1
 			}
 		}
+		DOR_hire_riverstalkers = {
+			name = DOR_hire_the_rabble
+			picture = dorwinion_riverstalkers
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				civilian_factory_use = 8
+			}
+		}
+		DOR_hire_mountains_vengeance = {
+			name = DOR_hire_the_dwarves
+			picture = dorwinion_mountains_vengeance
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				civilian_factory_use = 8
+			}
+		}
+		DOR_hire_dragons_breath = {
+			name = DOR_hire_the_cavalry
+			picture = dorwinion_dragons_breath
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				civilian_factory_use = 8
+			}
+		}
+		DOR_hire_company_of_winter = {
+			name = DOR_hire_the_elites
+			picture = dorwinion_company_of_winter
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				civilian_factory_use = 8
+			}
+		}
 	}
 	
 	hidden_ideas = {
@@ -716,6 +756,15 @@ ideas = {
 			}
 			modifier = {
 				industrial_concern_cost_factor = -1
+			}
+		}
+		DOR_trusted_employers_idea = {
+			name = DOR_trusted_employers
+			allowed_civil_war = {
+				has_character = DOR_bergholda_aldiana
+			}
+			modifier = {
+				aircraft_manufacturer_cost_factor = -1
 			}
 		}
 		DOR_revolutionary_leader_idea = {
@@ -991,6 +1040,138 @@ ideas = {
 	##########################################################DESIGNERS
 	@guildResearchBonus = 0.1
 	@guildResearchBonusBoosted = 0.2
+				##MERCENARIES
+	aircraft_manufacturer = { 
+		designer = yes
+		@mercenaryIdeaCost = 100
+		dorwinion_riverstalkers = {
+			allowed = {
+				original_tag = DOR
+			}
+			available = { has_completed_focus = DOR_hire_the_rabble }
+			visible = { NOT = { has_country_flag = disbanded_riverstalkers } }
+			cost = @mercenaryIdeaCost
+			allowed_to_remove = { always = no } #techs don't unapply
+			traits = { dor_riverstalkers_trait }
+			on_add = {
+				hidden_effect = {
+					set_technology = {
+						DOR_riverstalkers_supply = 1
+						DOR_riverstalkers_reliability = 1
+						DOR_riverstalkers_movement = 1
+						DOR_riverstalkers_river = 1
+						popup = no
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					set_technology = {
+						DOR_riverstalkers_supply = 0
+						DOR_riverstalkers_reliability = 0
+						DOR_riverstalkers_movement = 0
+						DOR_riverstalkers_river = 0
+						popup = no
+					}
+				}
+			}
+		}
+		dorwinion_mountains_vengeance = {
+			allowed = {
+				original_tag = DOR
+			}
+			available = { has_completed_focus = DOR_hire_the_dwarves }
+			visible = { NOT = { has_country_flag = disbanded_mountains_vengeance } }
+			cost = @mercenaryIdeaCost
+			allowed_to_remove = { always = no } #techs don't unapply
+			traits = { dor_mountains_vengeance_trait }
+			on_add = {
+				hidden_effect = {
+					set_technology = {
+						DOR_mountains_vengeance_defense = 1
+						DOR_mountains_vengeance_hp = 1
+						popup = no
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					set_technology = {
+						DOR_mountains_vengeance_defense = 0
+						DOR_mountains_vengeance_hp = 0
+						popup = no
+					}
+				}
+			}
+		}
+		dorwinion_dragons_breath = {
+			allowed = {
+				original_tag = DOR
+			}
+			available = { has_completed_focus = DOR_hire_the_cavalry }
+			visible = { NOT = { has_country_flag = disbanded_dragons_breath } }
+			cost = @mercenaryIdeaCost
+			allowed_to_remove = { always = no } #techs don't unapply
+			traits = { dor_dragons_breath_trait }
+			on_add = {
+				hidden_effect = {
+					set_technology = {
+						DOR_dragons_breath_speed = 1
+						DOR_dragons_breath_armor = 1
+						DOR_dragons_breath_breakthrough = 1
+						DOR_dragons_breath_soft_attack = 1
+						popup = no
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					set_technology = {
+						DOR_dragons_breath_speed = 0
+						DOR_dragons_breath_armor = 0
+						DOR_dragons_breath_breakthrough = 0
+						DOR_dragons_breath_soft_attack = 0
+						popup = no
+					}
+				}
+			}
+		}
+		dorwinion_company_of_winter = {
+			allowed = {
+				original_tag = DOR
+			}
+			available = { has_completed_focus = DOR_hire_the_elites }
+			visible = { NOT = { has_country_flag = disbanded_company_of_winter } }
+			cost = @mercenaryIdeaCost
+			allowed_to_remove = { always = no } #techs don't unapply
+			traits = { dor_company_of_winter_trait }
+			on_add = {
+				hidden_effect = {
+					set_technology = {
+						DOR_company_of_winter_morale = 1
+						DOR_company_of_winter_xp_loss = 1
+						DOR_company_of_winter_initiative = 1
+						DOR_company_of_winter_breakthrough = 1
+						DOR_company_of_winter_soft_attack = 1
+						popup = no
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					set_technology = {
+						DOR_company_of_winter_morale = 0
+						DOR_company_of_winter_xp_loss = 0
+						DOR_company_of_winter_initiative = 0
+						DOR_company_of_winter_breakthrough = 0
+						DOR_company_of_winter_soft_attack = 0
+						popup = no
+					}
+				}
+			}
+		}
+	}
+				##CAVALRY
 	tank_manufacturer = { 
 		designer = yes
 		# mordor_heavy_tank_designer = {

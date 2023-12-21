@@ -784,6 +784,39 @@ spriteTypes = {
 		name = "GFX_decision_resources"
 		texturefile = "gfx/interface/decisions/decision_resources.dds"
 	}
+	SpriteType = {
+		name = "GFX_decision_riverstalkers"
+		texturefile = "gfx/interface/decisions/riverstalkers.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_dragons_breath"
+		texturefile = "gfx/interface/decisions/dragons_breath.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_mountains_vengeance"
+		texturefile = "gfx/interface/decisions/mountains_vengeance.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_company_of_winter"
+		texturefile = "gfx/interface/decisions/company_of_winter.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_disband_riverstalkers"
+		texturefile = "gfx/interface/decisions/disband_riverstalkers.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_disband_dragons_breath"
+		texturefile = "gfx/interface/decisions/disband_dragons_breath.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_disband_mountains_vengeance"
+		texturefile = "gfx/interface/decisions/disband_mountains_vengeance.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_disband_company_of_winter"
+		texturefile = "gfx/interface/decisions/disband_company_of_winter.dds"
+	}
+
 ################################################CATEGORY ICONS
 	spriteType = {
 		name = "GFX_decision_category_explosion"
@@ -828,6 +861,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_decision_category_republic_swords"
 		texturefile = "gfx/interface/decisions/categories/decision_category_republic_swords.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_mercenaries"
+		texturefile = "gfx/interface/decisions/categories/decision_category_mercenaries.dds"
 	}
 ################################################CATEGORY PICTURES
 	spriteType = {

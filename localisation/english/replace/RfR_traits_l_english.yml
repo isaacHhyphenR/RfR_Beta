@@ -539,4 +539,7 @@
  nation_builder: "Nation Builder"
  republic_candidate: ""
  guardian_of_prosperity: "Guardian of Prosperity"
- 
+ dor_riverstalkers_trait: "$dorwinion_riverstalkers$"
+ dor_mountains_vengeance_trait: "$dorwinion_mountains_vengeance$"
+ dor_dragons_breath_trait: "$dorwinion_dragons_breath$"
+ dor_company_of_winter_trait: "$dorwinion_company_of_winter$"
