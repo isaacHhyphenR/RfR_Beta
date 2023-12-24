@@ -543,9 +543,16 @@ on_actions = {
 		effect = {  ##celduin trade league
 			if = {
 				limit = {
-					ROOT = { has_idea = head_of_celduin_trade_league }
+					has_idea = head_of_celduin_trade_league
 				}
 				FROM = { add_ideas = member_of_celduin_trade_league }
+				#tech sharing
+				if = {
+					limit = {
+						is_in_tech_sharing_group = celduin_trade_league_tech_sharing
+					}
+					FROM = { add_to_tech_sharing_group = celduin_trade_league_tech_sharing }
+				}
 			}
 		}
 	}
@@ -557,6 +564,13 @@ on_actions = {
 					FROM = { has_idea = head_of_celduin_trade_league }
 				}
 				add_ideas = member_of_celduin_trade_league
+				#tech sharing
+				if = {
+					limit = {
+						FROM = { is_in_tech_sharing_group = celduin_trade_league_tech_sharing }
+					}
+					add_to_tech_sharing_group = celduin_trade_league_tech_sharing
+				}
 			}
 		}
 	}

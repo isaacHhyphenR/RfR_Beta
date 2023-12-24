@@ -45,4 +45,6 @@
  WHITE_MOUNTAINS_INSURGENCY_FACTION: "Siblings of the White Mountains"
  THE_REVOLUTION_FACTION: "The Revolution"
  CELDUIN_TRADE_LEAGUE_FACTION: "Celduin Trade League"
+ celduin_trade_league_tech_sharing_name: "$CELDUIN_TRADE_LEAGUE_FACTION$
+ celduin_trade_league_tech_sharing_desc: "Merchants carry goods and ideas up and down the Celduin River."
  

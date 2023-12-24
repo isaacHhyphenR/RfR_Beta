@@ -230,4 +230,8 @@
  DOR_profit_off_foreign_wealth_tooltip: "Every other country that joins the $CELDUIN_TRADE_LEAGUE_FACTION$ gains:"
  celduin_trade_league_only_celduin_states: "§ROnly countries participating in Celduin trade can join the $CELDUIN_TRADE_LEAGUE_FACTION$.§!"
  the_revolution_only_republics: "§ROnly Republics can join The Revolution.§!"
- 
+ head_of_celduin_trade_league_tooltip: "Enjoys §G20%§! cheaper trade with other members of the $CELDUIN_TRADE_LEAGUE_FACTION$"
+ DOR_levy_new_taxes_on_vineyards_tooltip: "Add 1 §Y$industrial_complex$§! in a random state per 3 controlled §Y$vineyard$s§!$VorV_dev_line_end$"
+ DOR_raise_tariffs_tooltip: "$add_10_prosperity$ in a random state per faction member.$VorV_dev_line_end$"
+ new_members_automatically_added_to_celduin_trade_league_tech_sharing: "All new faction members will be automatically added to the group."
+ DOR_knowledge_flows_with_goods_no_dlc_tooltip: "§Y1x faction size§! §G25%§! Research bonuses for: §YAll Technologies§!"

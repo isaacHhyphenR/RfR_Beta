@@ -22,6 +22,8 @@
 #GFX_goal_generic_imports
 #GFX_goal_money_politics
 #GFX_goal_celduin_trade_league
+#GFX_goal_generic_taxation
+#GFX_goal_wine_tax
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -5575,6 +5577,49 @@ focus_tree = {
 			merchant_houses_focus_effect = yes
 		}
 	}
+	focus = { #Levy New Taxes on Vineyards
+		id = DOR_levy_new_taxes_on_vineyards
+		icon = GFX_goal_wine_tax
+		x = 0
+		y = 1
+		relative_position_id = DOR_profit_off_our_own_wealth
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_profit_off_our_own_wealth
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			vineyard > 2
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #1 civ per 3 vineyards
+			custom_effect_tooltip = DOR_levy_new_taxes_on_vineyards_tooltip
+			hidden_effect = {
+				every_controlled_state = {
+					add_to_temp_variable = { civs_to_build = building_level@vineyard }
+				}
+			}
+			every_controlled_state = {
+				random_select_amount = civs_to_build
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
 	focus = { #Profit Off Foreign Wealth
 		id = DOR_profit_off_foreign_wealth
 		icon = GFX_goal_celduin_trade_league
@@ -5593,9 +5638,9 @@ focus_tree = {
 			merchant_houses_focus_trigger = yes
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PROSPERITY }
-		completion_reward = { #Create factoin & invite celduin states. others must give 20% trade discount to join
+		completion_reward = { #Create faction & invite celduin states. others must give 20% trade discount to join
 			create_faction = CELDUIN_TRADE_LEAGUE_FACTION
-			add_ideas = head_of_celduin_trade_league
+			hidden_effect = { add_ideas = head_of_celduin_trade_league } #unnecessary tooltip
 			every_other_country = {
 				limit = {
 					can_celduin_trade = yes
@@ -5610,6 +5655,116 @@ focus_tree = {
 				FOR = { news_event = { id = rfr_news.126 days = 1 } }
 			}
 			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Raise Tariffs
+		id = DOR_raise_tariffs
+		icon = GFX_goal_generic_trade_deal
+		x = 0
+		y = 1
+		relative_position_id = DOR_profit_off_foreign_wealth
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_profit_off_foreign_wealth
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			is_faction_leader = yes
+		}
+		search_filters = { FOCUS_FILTER_PROSPERITY }
+		completion_reward = { #10 propserity per faction member
+			custom_effect_tooltip = DOR_raise_tariffs_tooltip
+			for_loop_effect = {
+				end = num_faction_members
+				random_controlled_state = {
+					limit = {
+						market > 0
+						check_variable = { prosperity < 100 }
+					}
+					add_10_prosperity = yes
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Knowledge Flows With Goods
+		id = DOR_knowledge_flows_with_goods
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = -1
+		y = 2
+		relative_position_id = DOR_profit_off_foreign_wealth
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_profit_off_foreign_wealth
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			is_faction_leader = yes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Tech sharing
+			if = {
+				limit = { has_tech_sharing_feature = yes }
+				add_to_tech_sharing_group = celduin_trade_league_tech_sharing
+				every_other_country = {
+					limit = { is_in_faction_with = ROOT }
+					add_to_tech_sharing_group = celduin_trade_league_tech_sharing
+				}
+				custom_effect_tooltip = new_members_automatically_added_to_celduin_trade_league_tech_sharing
+			}
+			#Without DLC, every faciton member gets a 25% bonus per faction member
+			else = {
+				every_country = {
+					limit = {
+						OR = {
+							tag = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+					custom_effect_tooltip = DOR_knowledge_flows_with_goods_no_dlc_tooltip
+					for_loop_effect = {
+						end = num_faction_members
+						add_tech_bonus = {
+							bonus = 0.25
+							uses = 1
+							category = metallurgy
+							category = carpentry
+							category = farming
+							category = cat_bureaucracy
+							name = DOR_knowledge_flows_with_goods
+						}
+					}
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Reward Loyal Partners
+		id = DOR_reward_loyal_partners
+		icon = GFX_goal_DOR_reward_loyal_partners
+		x = 1
+		y = 1
+		relative_position_id = DOR_raise_tariffs
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_raise_tariffs
+			focus = DOR_levy_new_taxes_on_vineyards
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			merchant_houses_focus_effect_big = yes
 		}
 	}
 #################################MERCENARYS

@@ -753,7 +753,8 @@ ideas = {
 				has_character = DOR_bergholda_aldiana
 			}
 			modifier = {
-				prosperity_gain_factor = 0.05
+				#prosperity_gain_factor = 0.05
+				custom_modifier_tooltip = head_of_celduin_trade_league_tooltip
 				custom_modifier_tooltip = idea_transfers_with_faction_leader
 			}
 			on_add = {

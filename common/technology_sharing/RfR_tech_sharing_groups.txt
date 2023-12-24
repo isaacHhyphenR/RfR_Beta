@@ -1,0 +1,53 @@
+technology_sharing_group = {
+
+	id = palantiri_tech_sharing
+	name = palantiri_tech_sharing_name
+	desc = palantiri_tech_sharing_desc
+	picture = GFX_idea_generic_palantir
+    
+	research_sharing_per_country_bonus = 0.1
+	
+    available = {
+        OR = {
+			original_tag = ISN
+			original_tag = MOR
+			original_tag = GON
+		}
+    }
+}
+
+technology_sharing_group = {
+
+	id = sarumans_council_tech_sharing
+	name = sarumans_council_tech_sharing_name
+	desc = sarumans_council_tech_sharing_desc
+	picture = GFX_idea_generic_tech_sharing
+    
+	research_sharing_per_country_bonus = 0.1
+	
+    available = {
+        OR = {
+			original_tag = ISN
+			is_subject_of = ISN
+		}
+    }
+}
+
+
+
+technology_sharing_group = {
+
+	id = celduin_trade_league_tech_sharing
+	name = celduin_trade_league_tech_sharing_name
+	desc = celduin_trade_league_tech_sharing_desc
+	picture = GFX_idea_celduin_trade_league
+    
+	research_sharing_per_country_bonus = 0.1
+	
+    available = {
+        OR = {
+			has_idea = head_of_celduin_trade_league
+			has_idea = member_of_celduin_trade_league
+		}
+    }
+}
