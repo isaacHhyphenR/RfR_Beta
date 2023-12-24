@@ -1071,6 +1071,8 @@ ideas = {
 	##########################################################DESIGNERS
 	@guildResearchBonus = 0.1
 	@guildResearchBonusBoosted = 0.2
+	@designerResearchBonus = 0.1
+	@designerResearchBonusHalf = 0.05
 				##MERCENARIES
 	aircraft_manufacturer = { 
 		designer = yes
@@ -1205,17 +1207,39 @@ ideas = {
 				##CAVALRY
 	tank_manufacturer = { 
 		designer = yes
-		# mordor_heavy_tank_designer = {
-			# allowed = {
-				# original_tag = MOR
-			# }
-			# cost = 150
-			# removal_cost = 10
-			# research_bonus = {
-				# cat_heavy_armor = @designerResearchBonus
-			# }
-			# traits = { heavy_tank_manufacturer }
-		# }
+		dorwinion_house_barvadinian = {
+			allowed = {
+				original_tag = DOR
+			}
+			cost = 150
+			research_bonus = {
+				cat_light_armor = @designerResearchBonus
+			}
+			traits = { fast_tank_manufacturer }
+		}
+		dorwinion_house_raudbarad = {
+			allowed = {
+				original_tag = DOR
+			}
+			cost = 150
+			research_bonus = {
+				armor = @designerResearchBonusHalf
+			}
+			traits = { infantry_tank_manufacturer }
+		}
+		dorwinion_house_vierling = {
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				house_vierling_visible = yes
+			}
+			cost = 150
+			research_bonus = {
+				cat_medium_armor = @designerResearchBonus
+			}
+			traits = { medium_tank_manufacturer }
+		}
 	}
 				##NAVAL
 	naval_manufacturer = {
@@ -1232,20 +1256,88 @@ ideas = {
 			cost = 150
 			removal_cost = 10
 			research_bonus = {
-				naval_equipment = @guildResearchBonus
+				naval_equipment = @designerResearchBonusHalf
 			}
 			modifier = {
 				industrial_capacity_dockyard = 0.1
 			}
 			traits = { carpenter }
 		}
+		dorwinion_house_aldiana = {
+			allowed = {
+				original_tag = DOR
+			}
+			cost = 150
+			research_bonus = {
+				tp_tech = @designerResearchBonus
+				dd_tech = @designerResearchBonus
+			}
+			traits = { convoy_escort_naval_manufacturer }
+		}
+		dorwinion_house_blorchid = {
+			allowed = {
+				original_tag = DOR
+			}
+			cost = 150
+			research_bonus = {
+				cl_tech = @designerResearchBonus
+				ca_tech = @designerResearchBonus
+			}
+			traits = { raiding_fleet_naval_manufacturer }
+		}
 	}
 				###MATERIEL
 	materiel_manufacturer = {
 		designer = yes
+		dorwinion_house_ilian = {
+			allowed = {
+				original_tag = DOR
+			}
+			cost = 150
+			research_bonus = {
+				infantry_tech = @designerResearchBonus
+			}
+			traits = { infantry_equipment_manufacturer }
+		}
+		dorwinion_house_garmeniana = {
+			allowed = {
+				original_tag = DOR
+			}
+			cost = 150
+			research_bonus = {
+				support_tech = @designerResearchBonus
+			}
+			traits = { support_equipment_manufacturer }
+		}
+		dorwinion_house_galen = {
+			allowed = {
+				original_tag = DOR
+			}
+			cost = 150
+			research_bonus = {
+				artillery = @designerResearchBonus
+			}
+			traits = { artillery_manufacturer }
+		}
 	}
 				##INDUSTRIAL
 	industrial_concern = {
+		################################################################KOLDANA
+		dorwinion_house_koldana = {
+			allowed = {
+				original_tag = DOR
+			}
+			cost = 150
+			removal_cost = 10
+			research_bonus = {
+				farming = @designerResearchBonusHalf
+				wine_tech_category = 0.25
+			}
+			modifier = {
+				production_speed_vineyard_factor = 0.25
+			}
+			traits = { wine_concern }
+		}
 		################################################################BAKING
 		dorwinion_baking_guild = {
 			allowed = {

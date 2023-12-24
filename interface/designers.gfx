@@ -213,40 +213,40 @@ spriteTypes = {
 		texturefile = "gfx/interface/designers/00_Northron/DOR_dragons_breath.dds"
 	}
 	SpriteType = {
-		name = "GFX_idea_DOR_house_koldana"
-		texturefile = "gfx/interface/ideas/DOR_house_koldana.dds"
+		name = "GFX_idea_dorwinion_house_koldana"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_house_koldana.dds"
 	}
 	SpriteType = {
-		name = "GFX_idea_DOR_house_vierling"
-		texturefile = "gfx/interface/ideas/DOR_house_vierling.dds"
+		name = "GFX_idea_dorwinion_house_vierling"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_house_vierling.dds"
 	}
 	SpriteType = {
-		name = "GFX_idea_DOR_house_aldiana"
-		texturefile = "gfx/interface/ideas/DOR_house_aldiana.dds"
+		name = "GFX_idea_dorwinion_house_aldiana"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_house_aldiana.dds"
 	}
 	SpriteType = {
-		name = "GFX_idea_DOR_house_blorchid"
-		texturefile = "gfx/interface/ideas/DOR_house_blorchid.dds"
+		name = "GFX_idea_dorwinion_house_blorchid"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_house_blorchid.dds"
 	}
 	SpriteType = {
-		name = "GFX_idea_DOR_house_ilian"
-		texturefile = "gfx/interface/ideas/DOR_house_ilian.dds"
+		name = "GFX_idea_dorwinion_house_ilian"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_house_ilian.dds"
 	}
 	SpriteType = {
-		name = "GFX_idea_DOR_house_barvadinian"
-		texturefile = "gfx/interface/ideas/DOR_house_barvadinian.dds"
+		name = "GFX_idea_dorwinion_house_barvadinian"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_house_barvadinian.dds"
 	}
 	SpriteType = {
-		name = "GFX_idea_DOR_house_garmeniana"
-		texturefile = "gfx/interface/ideas/DOR_house_garmeniana.dds"
+		name = "GFX_idea_dorwinion_house_garmeniana"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_house_garmeniana.dds"
 	}
 	SpriteType = {
-		name = "GFX_idea_DOR_house_raudbarad"
-		texturefile = "gfx/interface/ideas/DOR_house_raudbarad.dds"
+		name = "GFX_idea_dorwinion_house_raudbarad"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_house_raudbarad.dds"
 	}
 	SpriteType = {
-		name = "GFX_idea_DOR_house_galen"
-		texturefile = "gfx/interface/ideas/DOR_house_galen.dds"
+		name = "GFX_idea_dorwinion_house_galen"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_house_galen.dds"
 	}
 
 }

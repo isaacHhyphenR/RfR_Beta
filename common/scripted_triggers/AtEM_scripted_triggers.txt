@@ -284,3 +284,16 @@ can_influence_rhovanion = {
 	}
 }
 
+house_vierling_visible = {
+	NOT = {
+		OR = {
+			has_country_flag = defeated_monarchist_plot
+			has_country_flag = monarchist_revolt_happened
+		}
+	}
+}
+merchant_houses_visible = {
+	NOT = {
+		has_country_flag = monarchist_revolt
+	}
+}

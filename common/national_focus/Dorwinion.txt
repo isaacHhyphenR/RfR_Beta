@@ -24,6 +24,7 @@
 #GFX_goal_celduin_trade_league
 #GFX_goal_generic_taxation
 #GFX_goal_wine_tax
+#GFX_goal_generic_freedom
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -3160,7 +3161,7 @@ focus_tree = {
 	}
 	focus = { #power to the people
 		id = DOR_power_to_the_people
-		icon = GFX_focus_generic_support_the_left_right
+		icon = GFX_goal_generic_voting
 		x = 1
 		y = 1
 		relative_position_id = DOR_support_the_burghers
@@ -3402,7 +3403,7 @@ focus_tree = {
 	}
 	focus = { #Limit the power of the nobility
 		id = DOR_limit_the_power_of_the_nobility
-		#icon = GFX_focus_focus_fra_revolution_utmost
+		icon = GFX_goal_generic_sign_law
 		x = -1
 		y = 1
 		relative_position_id = DOR_expand_citizenship_rights
@@ -3449,7 +3450,14 @@ focus_tree = {
 	}
 	focus = { #Expand the Powers of the Senate
 		id = DOR_expand_the_powers_of_the_senate
-		#icon = GFX_focus_focus_fra_revolution_utmost
+		icon = {
+			trigger = { is_republic = yes }
+			value = GFX_goal_DOR_senate_republic
+		}
+		icon = {
+			value = GFX_goal_DOR_senate
+		}
+		dynamic = yes
 		x = 0
 		y = 2
 		relative_position_id = DOR_limit_the_power_of_the_nobility
@@ -3529,7 +3537,7 @@ focus_tree = {
 	}
 	focus = { #Institutions of democracy
 		id = DOR_institutions_of_democracy
-		icon = GFX_focus_generic_treaty
+		icon = GFX_goal_generic_free_voting
 		x = 0
 		y = 1
 		relative_position_id = DOR_expand_the_powers_of_the_senate
@@ -4632,7 +4640,7 @@ focus_tree = {
 	}
 	focus = { #Every Citizen a Defender
 		id = DOR_every_citizen_a_defender
-		icon = GFX_goal_panzerwaffe
+		icon = GFX_goal_generic_raised_swords
 		x = 0
 		y = 1
 		relative_position_id = DOR_mandate_weapon_ownership
@@ -4659,7 +4667,7 @@ focus_tree = {
 	}
 	focus = { #Strengthen universal Training Obligations
 		id = DOR_strengthen_universal_training_obligations
-		icon = GFX_goal_panzerwaffe
+		icon = GFX_focus_SOV_womens_fascist_movement
 		x = -1
 		y = 1
 		relative_position_id = DOR_every_citizen_a_defender
@@ -4687,7 +4695,7 @@ focus_tree = {
 	}
 	focus = { #Offer Specialized Training
 		id = DOR_offer_specialized_training
-		icon = GFX_goal_panzerwaffe
+		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
 		x = 1
 		y = 1
 		relative_position_id = DOR_every_citizen_a_defender
@@ -5114,7 +5122,7 @@ focus_tree = {
 	}
 	focus = { #Beyond our Walls, but not our Hearts
 		id = DOR_beyond_our_walls_but_not_our_hearts
-		#icon = GFX_focus_SOV_breadbasket_of_the_union
+		icon = GFX_focus_SOV_breadbasket_of_the_union
 		x = 0
 		y = 2
 		relative_position_id = DOR_invest_in_the_bakers
@@ -5601,20 +5609,87 @@ focus_tree = {
 				every_controlled_state = {
 					add_to_temp_variable = { civs_to_build = building_level@vineyard }
 				}
+				divide_temp_variable = { civs_to_build = 3 }
 			}
-			every_controlled_state = {
-				random_select_amount = civs_to_build
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = no
-					}
+			##Can't random_select_amount a variable, unfortunately
+			if = {
+				limit = { check_variable = { civs_to_build > 9 } }
+				every_controlled_state = {
+					random_select_amount = 10
+					limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
+			}
+			else_if = {
+				limit = { check_variable = { civs_to_build > 8 } }
+				every_controlled_state = {
+					random_select_amount = 9
+					limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { civs_to_build > 7 } }
+				every_controlled_state = {
+					random_select_amount = 8
+					limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { civs_to_build > 6 } }
+				every_controlled_state = {
+					random_select_amount = 7
+					limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { civs_to_build > 5 } }
+				every_controlled_state = {
+					random_select_amount = 6
+					limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { civs_to_build > 4 } }
+				every_controlled_state = {
+					random_select_amount = 5
+					limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { civs_to_build > 3 } }
+				every_controlled_state = {
+					random_select_amount = 4
+					limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { civs_to_build > 2 } }
+				every_controlled_state = {
+					random_select_amount = 3
+					limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { civs_to_build > 1 } }
+				every_controlled_state = {
+					random_select_amount = 2
+					limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { civs_to_build > 0 } }
+				every_controlled_state = {
+					random_select_amount = 1
+					limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = no } }
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 				}
 			}
 			merchant_houses_focus_effect = yes

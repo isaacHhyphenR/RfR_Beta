@@ -15,6 +15,252 @@
 @manpowerForTanks = 500
 
 ##############################################################################################################################
+# CAVALRY HOUSES
+##############################################################################################################################
+DOR_house_vierling_MIO = {
+	name = dorwinion_house_vierling
+	icon = GFX_idea_dorwinion_house_vierling
+	include = generic_medium_tank_organization
+
+	allowed = {
+		original_tag = DOR
+	}
+	available = { always = yes }
+	visible = {
+		FROM = { house_vierling_visible = yes }
+	}
+}
+DOR_house_raudbarad_MIO = {
+	name = dorwinion_house_raudbarad
+	icon = GFX_idea_dorwinion_house_raudbarad
+	include = generic_infantry_tank_organization
+
+	allowed = {
+		original_tag = DOR
+	}
+	available = { always = yes }
+}
+DOR_house_barvadinian_MIO = {
+	name = dorwinion_house_barvadinian
+	icon = GFX_idea_dorwinion_house_barvadinian
+	include = generic_mobile_tank_organization
+
+	allowed = {
+		original_tag = DOR
+	}
+	available = { always = yes }
+	
+	equipment_type = { mio_cat_eq_all_light_tank }
+	research_categories = { mio_cat_tech_light_armor_and_modules }
+
+	initial_trait = {
+		name = generic_mio_initial_trait_fast_tanks_designer
+		
+		equipment_bonus = {
+			armor_value = -0.05
+			reliability = -0.05
+			maximum_speed = 0.1
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+	}
+}
+
+
+##############################################################################################################################
+# NAVAL HOUSES
+##############################################################################################################################
+DOR_house_aldiana_MIO = {
+	name = dorwinion_house_aldiana
+	icon = GFX_idea_dorwinion_house_aldiana
+	include = generic_escort_ship_organization
+
+	allowed = {
+		original_tag = DOR
+	}
+	available = { always = yes }
+	
+	equipment_type = {
+		screen_ship
+		convoy_1
+	}
+	research_categories = {
+		mio_cat_tech_all_screen_ship_and_modules
+		tp_tech
+	}
+		
+	tree_header_text = {
+		text = mio_header_systems
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_weapons
+		x = 5
+	}
+	tree_header_text = {
+		text = mio_header_convoys
+		x = 8
+	}
+	##convoys
+	trait = {
+		token = generic_mio_trait_convoy_production
+		name = generic_mio_trait_convoy_production
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		
+		position = { x=8 y=0 }
+
+		limit_to_equipment_type = { convoys }
+		production_bonus = {
+			production_cost_factor = -0.07
+		}
+	}
+	trait = {
+		token = generic_mio_trait_swift_convoys
+		name = generic_mio_trait_swift_convoys
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_convoy_production
+		
+		any_parent = { generic_mio_trait_convoy_production }
+		mutually_exclusive = { generic_mio_trait_defensive_convoys }
+
+		limit_to_equipment_type = { convoys }
+		equipment_bonus = {
+			naval_speed = 0.1
+			surface_visibility = -0.1
+		}
+	}
+	trait = {
+		token = generic_mio_trait_defensive_convoys
+		name = generic_mio_trait_defensive_convoys
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_convoy_production
+		
+		any_parent = { generic_mio_trait_convoy_production }
+		mutually_exclusive = { generic_mio_trait_swift_convoys }
+
+		limit_to_equipment_type = { convoys }
+		equipment_bonus = {
+			max_strength = 0.2
+		}
+	}
+	trait = {
+		token = generic_mio_trait_boarding_parties
+		name = generic_mio_trait_boarding_parties
+		icon = GFX_generic_mio_trait_icon_lg_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_defensive_convoys
+		
+		any_parent = { generic_mio_trait_defensive_convoys }
+
+		limit_to_equipment_type = { convoys }
+		equipment_bonus = {
+			lg_attack = 5
+		}
+	}
+	trait = {
+		token = generic_mio_trait_mass_produced_convoys
+		name = generic_mio_trait_mass_produced_convoys
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_swift_convoys
+		
+		any_parent = { generic_mio_trait_swift_convoys generic_mio_trait_defensive_convoys }
+
+		limit_to_equipment_type = { convoys }
+		production_bonus = {
+			production_cost_factor = -0.1
+		}
+	}
+	trait = {
+		token = generic_mio_trait_low_grade_wood
+		name = generic_mio_trait_low_grade_wood
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_mass_produced_convoys
+		
+		any_parent = { generic_mio_trait_mass_produced_convoys }
+
+		limit_to_equipment_type = { convoys }
+		production_bonus = {
+			production_resource_need_factor = -0.15
+		}
+		equipment_bonus = {
+			max_strength = -0.05
+		}
+	}
+}
+DOR_house_blorchid_MIO = {
+	name = dorwinion_house_blorchid
+	icon = GFX_idea_dorwinion_house_blorchid
+	include = generic_battle_line_ship_organization
+
+	allowed = {
+		original_tag = DOR
+	}
+	available = { always = yes }
+	
+	equipment_type = {
+		mio_cat_eq_all_cruiser
+	}
+	research_categories = {
+		mio_cat_tech_all_cruiser_and_modules
+	}
+	
+}
+
+##############################################################################################################################
+# INFANTRY HOUSES
+##############################################################################################################################
+DOR_house_ilian_MIO = {
+	name = dorwinion_house_ilian
+	icon = GFX_idea_dorwinion_house_ilian
+	include = generic_infantry_equipment_organization
+
+	allowed = {
+		original_tag = DOR
+	}
+	available = { always = yes }
+	
+	equipment_type = {
+		infantry_equipment
+		infantry_armor
+	}
+	research_categories = {
+		infantry_weapons
+		infantry_support_weapons
+	}
+}
+DOR_house_garmeniana_MIO = {
+	name = dorwinion_house_garmeniana
+	icon = GFX_idea_dorwinion_house_garmeniana
+	include = generic_support_equipment_organization
+
+	allowed = {
+		original_tag = DOR
+	}
+	available = { always = yes }
+}
+DOR_house_galen_MIO = {
+	name = dorwinion_house_galen
+	icon = GFX_idea_dorwinion_house_galen
+	include = generic_artillery_organization
+
+	allowed = {
+		original_tag = DOR
+	}
+	available = { always = yes }
+}
+
+
+##############################################################################################################################
 # BAKING GUILD
 ##############################################################################################################################
 DOR_baking_guild_MIO = {
