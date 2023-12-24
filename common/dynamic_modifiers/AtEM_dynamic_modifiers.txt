@@ -46,7 +46,7 @@ DOR_home_of_the_revolution_modifier = {
 	freedom_drift = var:global.republics_freedom_bonus #0.001 per
 	war_support_factor = var:global.republics_war_support_bonus #1 per
 	subjects_autonomy_gain = var:global.republics_autonomy_bonus #-0.005 per
-	custom_modifier_tooltip = DOR_home_of_the_revolution_stealable
+	custom_modifier_tooltip = idea_transfers_with_faction_leader
 }
 
 

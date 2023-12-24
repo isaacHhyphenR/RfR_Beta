@@ -732,6 +732,28 @@ DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
 			}
 		}
 	}
+	if = { ##Only celduin trade countries can join celduin trade league
+		limit = {
+			var:FROM.faction_leader = { has_idea = head_of_celduin_trade_league }
+		}
+		custom_trigger_tooltip = {
+			tooltip = celduin_trade_league_only_celduin_states
+			ROOT = {
+				allowed_celduin_trade = yes
+			}
+		}
+	}
+	else_if = { ##only republics can join The Revolution
+		limit = {
+			var:FROM.faction_leader = { has_dynamic_modifier = { modifier = DOR_home_of_the_revolution_modifier } }
+		}
+		custom_trigger_tooltip = {
+			tooltip = the_revolution_only_republics
+			ROOT = {
+				is_republic = yes
+			}
+		}
+	}
 }
 DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
 	if = { ##non-gwaithurium tags cannot join gwaithurium led faction
@@ -784,6 +806,28 @@ DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
 						has_government = freedom
 					}
 				}
+			}
+		}
+	}
+	if = { ##Only celduin trade countries can join celduin trade league
+		limit = {
+			var:ROOT.faction_leader = { has_idea = head_of_celduin_trade_league }
+		}
+		custom_trigger_tooltip = {
+			tooltip = celduin_trade_league_only_celduin_states
+			FROM = {
+				allowed_celduin_trade = yes
+			}
+		}
+	}
+	else_if = { ##only republics can join The Revolution
+		limit = {
+			var:ROOT.faction_leader = { has_dynamic_modifier = { modifier = DOR_home_of_the_revolution_modifier } }
+		}
+		custom_trigger_tooltip = {
+			tooltip = the_revolution_only_republics
+			FROM = {
+				is_republic = yes
 			}
 		}
 	}

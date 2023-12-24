@@ -20,6 +20,8 @@
 #GFX_goal_riavod_market
 #GFX_goal_merchants
 #GFX_goal_generic_imports
+#GFX_goal_money_politics
+#GFX_goal_celduin_trade_league
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -3172,7 +3174,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			burghers_focus_effect_med = yes
+			burghers_focus_effect_big = yes
 		}
 	}
 	focus = { #take control of local affairs
@@ -5469,11 +5471,706 @@ focus_tree = {
 			merchant_houses_focus_effect_big = yes
 		}
 	}
+#################################SUPPORT THE MERCHANT HOUSES
+	focus = { #Wealth is Power
+		id = DOR_wealth_is_power
+		icon = GFX_goal_money_politics
+		x = -2
+		y = 1
+		relative_position_id = DOR_support_the_merchant_houses
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_support_the_merchant_houses
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 90
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Profit Off Our Own Wealth
+		id = DOR_profit_off_our_own_wealth
+		icon = GFX_focus_ETH_adopt_the_lira
+		x = 1
+		y = 1
+		relative_position_id = DOR_wealth_is_power
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_wealth_is_power
+		}
+		mutually_exclusive = { focus = DOR_profit_off_foreign_wealth }
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_PROSPERITY }
+		completion_reward = { #Eco laws have new modifiers
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = civilian_economy_merchants
+					remove_idea = civilian_economy
+				}
+				swap_ideas = {
+					add_idea = low_economic_mobilisation_merchants
+					remove_idea = low_economic_mobilisation
+				}
+				swap_ideas = {
+					add_idea = partial_economic_mobilisation_merchants
+					remove_idea = partial_economic_mobilisation
+				}
+				swap_ideas = {
+					add_idea = war_economy_merchants
+					remove_idea = war_economy
+				}
+				swap_ideas = {
+					add_idea = tot_economic_mobilisation_merchants
+					remove_idea = tot_economic_mobilisation
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_idea = civilian_economy }
+					swap_ideas = {
+						add_idea = civilian_economy_merchants
+						remove_idea = civilian_economy
+					}
+				}
+				else_if = {
+					limit = { has_idea = low_economic_mobilisation }
+					swap_ideas = {
+						add_idea = low_economic_mobilisation_merchants
+						remove_idea = low_economic_mobilisation
+					}
+				}
+				else_if = {
+					limit = { has_idea = partial_economic_mobilisation }
+					swap_ideas = {
+						add_idea = partial_economic_mobilisation_merchants
+						remove_idea = partial_economic_mobilisation
+					}
+				}
+				else_if = {
+					limit = { has_idea = war_economy }
+					swap_ideas = {
+						add_idea = war_economy_merchants
+						remove_idea = war_economy
+					}
+				}
+				else_if = {
+					limit = { has_idea = tot_economic_mobilisation }
+					swap_ideas = {
+						add_idea = tot_economic_mobilisation_merchants
+						remove_idea = tot_economic_mobilisation
+					}
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Profit Off Foreign Wealth
+		id = DOR_profit_off_foreign_wealth
+		icon = GFX_goal_celduin_trade_league
+		x = -2
+		y = 0
+		relative_position_id = DOR_profit_off_our_own_wealth
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_wealth_is_power
+		}
+		mutually_exclusive = { focus = DOR_profit_off_our_own_wealth }
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PROSPERITY }
+		completion_reward = { #Create factoin & invite celduin states. others must give 20% trade discount to join
+			create_faction = CELDUIN_TRADE_LEAGUE_FACTION
+			add_ideas = head_of_celduin_trade_league
+			every_other_country = {
+				limit = {
+					can_celduin_trade = yes
+					NOT = { has_war_with = ROOT }
+					is_subject = no
+				}
+				country_event = { id = atem.19 hours = 1 }
+			}
+			custom_effect_tooltip = DOR_profit_off_foreign_wealth_tooltip
+			show_ideas_tooltip = member_of_celduin_trade_league
+			hidden_effect = { #fired for FOR because it's a major
+				FOR = { news_event = { id = rfr_news.126 days = 1 } }
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+#################################MERCENARYS
+	focus = { #Rely on Mercenary Guards
+		id = DOR_rely_on_mercenary_guards
+		icon = GFX_goal_generic_mercenaries
+		x = 9
+		y = 1
+		relative_position_id = DOR_support_the_merchant_houses
+		cost = 5
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_manpower < 1000
+				factor = 1.5
+			}
+			modifier = {
+				has_war = yes
+				alliance_strength_ratio < 0.8
+				factor = 1.5
+			}
+			modifier = {
+				has_war = yes
+				alliance_strength_ratio < 0.5
+				factor = 2
+			}
+		}
+		prerequisite = {
+			focus = DOR_support_the_merchant_houses
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 10000
+			hidden_effect = {
+				add_ideas = cannot_design_mercenaries
+				set_country_flag = fillMercenaryBattalions
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Hire the Rabble
+		id = DOR_hire_the_rabble
+		icon = GFX_goal_DOR_riverstalkers
+		x = -3
+		y = 1
+		relative_position_id = DOR_rely_on_mercenary_guards
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_rely_on_mercenary_guards
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				num_of_civilian_factories_available_for_projects > 1
+			}
+			else = {
+				num_of_civilian_factories_available_for_projects > 7
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			custom_effect_tooltip = unlocks_riverstalkers
+			unlock_riverstalkers_template = yes
+			capital_scope = {
+				custom_effect_tooltip = create_rivers_infantry_unit
+				custom_effect_tooltip = create_rivers_infantry_unit
+				custom_effect_tooltip = create_rivers_infantry_unit
+				custom_effect_tooltip = create_rivers_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"1st Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"2nd Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"3rd Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"4th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				hidden_effect = {
+					add_dynamic_modifier = { modifier = riverstalkers_payment }
+					mio:DOR_riverstalkers_MIO = {
+						set_variable = { num_support_companies = 1 }
+					}
+					calculate_riverstalkers_costs = yes
+				}
+			}
+			else = {
+				set_variable = { riverstalkers_cap = 14 }
+				add_timed_idea = {
+					idea = DOR_hire_riverstalkers
+					days = 50
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Land for Service
+		id = DOR_land_for_service
+		icon = GFX_goal_tribal_village
+		x = 0
+		y = 1
+		relative_position_id = DOR_hire_the_rabble
+		cost = 5
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_hire_the_rabble
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			any_controlled_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = no
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			every_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				random_select_amount = 4
+				add_extra_state_shared_building_slots = -1
+			}
+			capital_scope = {
+				custom_effect_tooltip = create_free_rivers_infantry_unit
+				custom_effect_tooltip = create_free_rivers_infantry_unit
+				custom_effect_tooltip = create_free_rivers_infantry_unit
+				custom_effect_tooltip = create_free_rivers_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"15th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"16th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"17th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"18th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
+						owner = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				hidden_effect = {
+					calculate_riverstalkers_costs = yes
+				}
+			}
+			else = {
+				add_to_variable = { riverstalkers_cap = 4 }
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Hire the Dwarves
+		id = DOR_hire_the_dwarves
+		icon = GFX_goal_DOR_mountains_vengeance
+		x = -1
+		y = 1
+		relative_position_id = DOR_rely_on_mercenary_guards
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_rely_on_mercenary_guards
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				num_of_civilian_factories_available_for_projects > 1
+			}
+			else = {
+				num_of_civilian_factories_available_for_projects > 7
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			custom_effect_tooltip = unlocks_mountains_vengeance
+			unlock_mountains_vengeance_template = yes
+			capital_scope = {
+				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_mountains_infantry_unit
+				custom_effect_tooltip = create_mountains_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Mountains's 1st Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Mountains's 2nd Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Mountains's 3rd Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
+						owner = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				hidden_effect = {
+					add_dynamic_modifier = { modifier = mountains_vengeance_payment }
+					mio:DOR_mountains_vengeance_MIO = {
+						set_variable = { num_support_companies = 1 }
+					}
+					calculate_mountains_vengeance_costs = yes
+				}
+			}
+			else = {
+				set_variable = { mountains_vengeance_cap = 9 }
+				add_timed_idea = {
+					idea = DOR_hire_mountains_vengeance
+					days = 50
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Commission Their Other Skills
+		id = DOR_commission_their_other_skills
+		icon = GFX_goal_generic_production2
+		x = 0
+		y = 1
+		relative_position_id = DOR_hire_the_dwarves
+		cost = 5
+		ai_will_do = {
+			factor = 0
+		}
+		prerequisite = {
+			focus = DOR_hire_the_dwarves
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			NOT = {
+				has_country_flag = disbanded_mountains_vengeance
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			mio:DOR_mountains_vengeance_MIO = {
+				add_mio_size = 1
+				unlock_mio_trait_tooltip = generic_mio_trait_drum_pattern_sights
+				unlock_mio_trait_tooltip = generic_mio_trait_reinforced_stocks
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Hire the Cavalry
+		id = DOR_hire_the_cavalry
+		icon = GFX_goal_DOR_dragons_breath
+		x = 1
+		y = 1
+		relative_position_id = DOR_rely_on_mercenary_guards
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_rely_on_mercenary_guards
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				num_of_civilian_factories_available_for_projects > 1
+			}
+			else = {
+				num_of_civilian_factories_available_for_projects > 7
+			}
+			has_tech = mechanised_infantry
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			custom_effect_tooltip = unlocks_dragons_breath
+			unlock_dragons_breath_template = yes
+			capital_scope = {
+				custom_effect_tooltip = create_dragons_cavalry_unit
+				custom_effect_tooltip = create_dragons_cavalry_unit
+				custom_effect_tooltip = create_dragons_cavalry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Dragon's 1st Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Dragon's 2nd Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Dragon's 3rd Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
+						owner = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				hidden_effect = {
+					add_dynamic_modifier = { modifier = dragons_breath_payment }
+					mio:DOR_dragons_breath_MIO = {
+						set_variable = { num_support_companies = 1 }
+					}
+					calculate_dragons_breath_costs = yes
+				}
+			}
+			else = {
+				set_variable = { dragons_breath_cap = 9 }
+				add_timed_idea = {
+					idea = DOR_hire_dragons_breath
+					days = 50
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Learn Their Techniques
+		id = DOR_learn_their_techniques
+		icon = GFX_goal_generic_army_motorized
+		x = 0
+		y = 1
+		relative_position_id = DOR_hire_the_cavalry
+		cost = 5
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_hire_the_cavalry
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			NOT = {
+				has_country_flag = disbanded_dragons_breath
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = @techBoostBonus
+				ahead_reduction = 2
+				uses = 1
+				category = cat_mechanized_equipment
+				name = DOR_learn_their_techniques
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Hire the Elites
+		id = DOR_hire_the_elites
+		icon = GFX_goal_DOR_company_of_winter
+		x = 3
+		y = 1
+		relative_position_id = DOR_rely_on_mercenary_guards
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_rely_on_mercenary_guards
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				num_of_civilian_factories_available_for_projects > 1
+			}
+			else = {
+				num_of_civilian_factories_available_for_projects > 7
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			custom_effect_tooltip = unlocks_company_of_winter
+			unlock_company_of_winter_template = yes
+			capital_scope = {
+				custom_effect_tooltip = create_winters_infantry_unit
+				custom_effect_tooltip = create_winters_infantry_unit
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Winter's 1st Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Winter's 2nd Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
+						owner = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				hidden_effect = {
+					add_dynamic_modifier = { modifier = company_of_winter_payment }
+					mio:DOR_company_of_winter_MIO = {
+						set_variable = { num_support_companies = 2 }
+					}
+					calculate_company_of_winter_costs = yes
+				}
+			}
+			else = {
+				set_variable = { company_of_winter_cap = 7 }
+				add_timed_idea = {
+					idea = DOR_hire_company_of_winter
+					days = 50
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Whip our levies into shape
+		id = DOR_whip_our_levies_into_shape
+		icon = GFX_focus_chi_army_reform
+		x = 0
+		y = 1
+		relative_position_id = DOR_hire_the_elites
+		cost = 5
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = {
+			focus = DOR_hire_the_elites
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_company_of_winter_MIO = {
+					is_mio_trait_completed = dorwinion_trait_banner_xp_loss
+				}
+			}
+			NOT = {
+				has_country_flag = disbanded_company_of_winter
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				add_ideas = DOR_whip_our_levies_into_shape_idea
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Trusted Employers
+		id = DOR_trusted_employers
+		icon = GFX_goal_generic_mercenaries
+		x = 0
+		y = 3
+		relative_position_id = DOR_rely_on_mercenary_guards
+		cost = 5
+		ai_will_do = {
+			factor = 10
+			modifier = { #pretty worthless without AAT
+				has_dlc = "Arms Against Tyranny"
+				factor = 0
+			}
+		}
+		prerequisite = {
+			focus = DOR_hire_the_rabble
+			focus = DOR_hire_the_dwarves
+			focus = DOR_hire_the_cavalry
+			focus = DOR_hire_the_elites
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_trigger_tooltip = {
+					tooltip = at_least_five_total_mercenary_size
+					mio:DOR_company_of_winter_MIO = {
+						set_temp_variable = { merc_size = size }
+					}
+					mio:DOR_dragons_breath_MIO = {
+						add_to_temp_variable = { merc_size = size }
+					}
+					mio:DOR_mountains_vengeance_MIO = {
+						add_to_temp_variable = { merc_size = size }
+					}
+					mio:DOR_riverstalkers_MIO = {
+						add_to_temp_variable = { merc_size = size }
+					}
+					check_variable = { merc_size > 4 }
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:DOR_riverstalkers_MIO = {
+					complete_mio_trait = dorwinion_trait_trusted_employer
+				}
+				mio:DOR_mountains_vengeance_MIO = {
+					complete_mio_trait = dorwinion_trait_trusted_employer
+				}
+				mio:DOR_dragons_breath_MIO = {
+					complete_mio_trait = dorwinion_trait_trusted_employer
+				}
+				mio:DOR_company_of_winter_MIO = {
+					complete_mio_trait = dorwinion_trait_trusted_employer
+				}
+			}
+			else = {
+				hidden_effect = {
+					add_ideas = DOR_trusted_employers_idea
+				}
+				custom_effect_tooltip = DOR_trusted_employers_tooltip
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
 #################################MERCHANT NAVY
 	focus = { #Port of the East
 		id = DOR_port_of_the_east
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 14
+		x = 16
 		y = 1
 		relative_position_id = DOR_support_the_merchant_houses
 		cost = 5
@@ -6604,560 +7301,6 @@ focus_tree = {
 						}
 					}
 				}
-			}
-			merchant_houses_focus_effect = yes
-		}
-	}
-#################################MERCENARYS
-	focus = { #Rely on Mercenary Guards
-		id = DOR_rely_on_mercenary_guards
-		icon = GFX_goal_generic_mercenaries
-		x = 7
-		y = 1
-		relative_position_id = DOR_support_the_merchant_houses
-		cost = 5
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				has_manpower < 1000
-				factor = 1.5
-			}
-			modifier = {
-				has_war = yes
-				alliance_strength_ratio < 0.8
-				factor = 1.5
-			}
-			modifier = {
-				has_war = yes
-				alliance_strength_ratio < 0.5
-				factor = 2
-			}
-		}
-		prerequisite = {
-			focus = DOR_support_the_merchant_houses
-		}
-		available = {
-			merchant_houses_focus_trigger = yes
-		}
-		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {
-			add_manpower = 10000
-			hidden_effect = {
-				add_ideas = cannot_design_mercenaries
-				set_country_flag = fillMercenaryBattalions
-			}
-			merchant_houses_focus_effect = yes
-		}
-	}
-	focus = { #Hire the Rabble
-		id = DOR_hire_the_rabble
-		icon = GFX_goal_DOR_riverstalkers
-		x = -3
-		y = 1
-		relative_position_id = DOR_rely_on_mercenary_guards
-		cost = 10
-		ai_will_do = {
-			factor = 3
-		}
-		prerequisite = {
-			focus = DOR_rely_on_mercenary_guards
-		}
-		available = {
-			merchant_houses_focus_trigger = yes
-			if = {
-				limit = { has_dlc = "Arms Against Tyranny" }
-				num_of_civilian_factories_available_for_projects > 1
-			}
-			else = {
-				num_of_civilian_factories_available_for_projects > 7
-			}
-		}
-		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
-		completion_reward = {
-			custom_effect_tooltip = unlocks_riverstalkers
-			unlock_riverstalkers_template = yes
-			capital_scope = {
-				custom_effect_tooltip = create_rivers_infantry_unit
-				custom_effect_tooltip = create_rivers_infantry_unit
-				custom_effect_tooltip = create_rivers_infantry_unit
-				custom_effect_tooltip = create_rivers_infantry_unit
-				hidden_effect = {
-					create_unit = {
-						division = "name = \"1st Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"2nd Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"3rd Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"4th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
-						owner = ROOT
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				hidden_effect = {
-					add_dynamic_modifier = { modifier = riverstalkers_payment }
-					mio:DOR_riverstalkers_MIO = {
-						set_variable = { num_support_companies = 1 }
-					}
-					calculate_riverstalkers_costs = yes
-				}
-			}
-			else = {
-				set_variable = { riverstalkers_cap = 14 }
-				add_timed_idea = {
-					idea = DOR_hire_riverstalkers
-					days = 50
-				}
-			}
-			merchant_houses_focus_effect = yes
-		}
-	}
-	focus = { #Land for Service
-		id = DOR_land_for_service
-		icon = GFX_goal_tribal_village
-		x = 0
-		y = 1
-		relative_position_id = DOR_hire_the_rabble
-		cost = 5
-		ai_will_do = {
-			factor = 3
-		}
-		prerequisite = {
-			focus = DOR_hire_the_rabble
-		}
-		available = {
-			merchant_houses_focus_trigger = yes
-			any_controlled_state = {
-				free_building_slots = {
-					building = industrial_complex
-					size > 0
-					include_locked = no
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
-		completion_reward = {
-			every_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = no
-					}
-				}
-				random_select_amount = 4
-				add_extra_state_shared_building_slots = -1
-			}
-			capital_scope = {
-				custom_effect_tooltip = create_free_rivers_infantry_unit
-				custom_effect_tooltip = create_free_rivers_infantry_unit
-				custom_effect_tooltip = create_free_rivers_infantry_unit
-				custom_effect_tooltip = create_free_rivers_infantry_unit
-				hidden_effect = {
-					create_unit = {
-						division = "name = \"15th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"16th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"17th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"18th Stalkers\" division_template = \"Riverstalkers\" start_experience_factor = 0.075"
-						owner = ROOT
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				hidden_effect = {
-					calculate_riverstalkers_costs = yes
-				}
-			}
-			else = {
-				add_to_variable = { riverstalkers_cap = 4 }
-			}
-			merchant_houses_focus_effect = yes
-		}
-	}
-	focus = { #Hire the Dwarves
-		id = DOR_hire_the_dwarves
-		icon = GFX_goal_DOR_mountains_vengeance
-		x = -1
-		y = 1
-		relative_position_id = DOR_rely_on_mercenary_guards
-		cost = 10
-		ai_will_do = {
-			factor = 3
-		}
-		prerequisite = {
-			focus = DOR_rely_on_mercenary_guards
-		}
-		available = {
-			merchant_houses_focus_trigger = yes
-			if = {
-				limit = { has_dlc = "Arms Against Tyranny" }
-				num_of_civilian_factories_available_for_projects > 1
-			}
-			else = {
-				num_of_civilian_factories_available_for_projects > 7
-			}
-		}
-		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
-		completion_reward = {
-			custom_effect_tooltip = unlocks_mountains_vengeance
-			unlock_mountains_vengeance_template = yes
-			capital_scope = {
-				custom_effect_tooltip = create_mountains_infantry_unit
-				custom_effect_tooltip = create_mountains_infantry_unit
-				custom_effect_tooltip = create_mountains_infantry_unit
-				hidden_effect = {
-					create_unit = {
-						division = "name = \"Mountains's 1st Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"Mountains's 2nd Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"Mountains's 3rd Infantry\" division_template = \"Mountain's Infantry\" start_experience_factor = 0.4"
-						owner = ROOT
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				hidden_effect = {
-					add_dynamic_modifier = { modifier = mountains_vengeance_payment }
-					mio:DOR_mountains_vengeance_MIO = {
-						set_variable = { num_support_companies = 1 }
-					}
-					calculate_mountains_vengeance_costs = yes
-				}
-			}
-			else = {
-				set_variable = { mountains_vengeance_cap = 9 }
-				add_timed_idea = {
-					idea = DOR_hire_mountains_vengeance
-					days = 50
-				}
-			}
-			merchant_houses_focus_effect = yes
-		}
-	}
-	focus = { #Commission Their Other Skills
-		id = DOR_commission_their_other_skills
-		icon = GFX_goal_generic_production2
-		x = 0
-		y = 1
-		relative_position_id = DOR_hire_the_dwarves
-		cost = 5
-		ai_will_do = {
-			factor = 0
-		}
-		prerequisite = {
-			focus = DOR_hire_the_dwarves
-		}
-		available = {
-			merchant_houses_focus_trigger = yes
-			NOT = {
-				has_country_flag = disbanded_mountains_vengeance
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {
-			mio:DOR_mountains_vengeance_MIO = {
-				add_mio_size = 1
-				unlock_mio_trait_tooltip = generic_mio_trait_drum_pattern_sights
-				unlock_mio_trait_tooltip = generic_mio_trait_reinforced_stocks
-			}
-			merchant_houses_focus_effect = yes
-		}
-	}
-	focus = { #Hire the Cavalry
-		id = DOR_hire_the_cavalry
-		icon = GFX_goal_DOR_dragons_breath
-		x = 1
-		y = 1
-		relative_position_id = DOR_rely_on_mercenary_guards
-		cost = 10
-		ai_will_do = {
-			factor = 3
-		}
-		prerequisite = {
-			focus = DOR_rely_on_mercenary_guards
-		}
-		available = {
-			merchant_houses_focus_trigger = yes
-			if = {
-				limit = { has_dlc = "Arms Against Tyranny" }
-				num_of_civilian_factories_available_for_projects > 1
-			}
-			else = {
-				num_of_civilian_factories_available_for_projects > 7
-			}
-			has_tech = mechanised_infantry
-		}
-		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
-		completion_reward = {
-			custom_effect_tooltip = unlocks_dragons_breath
-			unlock_dragons_breath_template = yes
-			capital_scope = {
-				custom_effect_tooltip = create_dragons_cavalry_unit
-				custom_effect_tooltip = create_dragons_cavalry_unit
-				custom_effect_tooltip = create_dragons_cavalry_unit
-				hidden_effect = {
-					create_unit = {
-						division = "name = \"Dragon's 1st Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"Dragon's 2nd Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"Dragon's 3rd Cavalry\" division_template = \"Dragon's Cavalry\" start_experience_factor = 0.4"
-						owner = ROOT
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				hidden_effect = {
-					add_dynamic_modifier = { modifier = dragons_breath_payment }
-					mio:DOR_dragons_breath_MIO = {
-						set_variable = { num_support_companies = 1 }
-					}
-					calculate_dragons_breath_costs = yes
-				}
-			}
-			else = {
-				set_variable = { dragons_breath_cap = 9 }
-				add_timed_idea = {
-					idea = DOR_hire_dragons_breath
-					days = 50
-				}
-			}
-			merchant_houses_focus_effect = yes
-		}
-	}
-	focus = { #Learn Their Techniques
-		id = DOR_learn_their_techniques
-		icon = GFX_goal_generic_army_motorized
-		x = 0
-		y = 1
-		relative_position_id = DOR_hire_the_cavalry
-		cost = 5
-		ai_will_do = {
-			factor = 3
-		}
-		prerequisite = {
-			focus = DOR_hire_the_cavalry
-		}
-		available = {
-			merchant_houses_focus_trigger = yes
-			NOT = {
-				has_country_flag = disbanded_dragons_breath
-			}
-		}
-		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = @techBoostBonus
-				ahead_reduction = 2
-				uses = 1
-				category = cat_mechanized_equipment
-				name = DOR_learn_their_techniques
-			}
-			merchant_houses_focus_effect = yes
-		}
-	}
-	focus = { #Hire the Elites
-		id = DOR_hire_the_elites
-		icon = GFX_goal_DOR_company_of_winter
-		x = 3
-		y = 1
-		relative_position_id = DOR_rely_on_mercenary_guards
-		cost = 10
-		ai_will_do = {
-			factor = 3
-		}
-		prerequisite = {
-			focus = DOR_rely_on_mercenary_guards
-		}
-		available = {
-			merchant_houses_focus_trigger = yes
-			if = {
-				limit = { has_dlc = "Arms Against Tyranny" }
-				num_of_civilian_factories_available_for_projects > 1
-			}
-			else = {
-				num_of_civilian_factories_available_for_projects > 7
-			}
-		}
-		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
-		completion_reward = {
-			custom_effect_tooltip = unlocks_company_of_winter
-			unlock_company_of_winter_template = yes
-			capital_scope = {
-				custom_effect_tooltip = create_winters_infantry_unit
-				custom_effect_tooltip = create_winters_infantry_unit
-				hidden_effect = {
-					create_unit = {
-						division = "name = \"Winter's 1st Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"Winter's 2nd Infantry\" division_template = \"Winter's Infantry\" start_experience_factor = 0.75"
-						owner = ROOT
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				hidden_effect = {
-					add_dynamic_modifier = { modifier = company_of_winter_payment }
-					mio:DOR_company_of_winter_MIO = {
-						set_variable = { num_support_companies = 2 }
-					}
-					calculate_company_of_winter_costs = yes
-				}
-			}
-			else = {
-				set_variable = { company_of_winter_cap = 7 }
-				add_timed_idea = {
-					idea = DOR_hire_company_of_winter
-					days = 50
-				}
-			}
-			merchant_houses_focus_effect = yes
-		}
-	}
-	focus = { #Whip our levies into shape
-		id = DOR_whip_our_levies_into_shape
-		icon = GFX_focus_chi_army_reform
-		x = 0
-		y = 1
-		relative_position_id = DOR_hire_the_elites
-		cost = 5
-		ai_will_do = {
-			factor = 3
-		}
-		prerequisite = {
-			focus = DOR_hire_the_elites
-		}
-		available = {
-			merchant_houses_focus_trigger = yes
-			if = {
-				limit = { has_dlc = "Arms Against Tyranny" }
-				mio:DOR_company_of_winter_MIO = {
-					is_mio_trait_completed = dorwinion_trait_banner_xp_loss
-				}
-			}
-			NOT = {
-				has_country_flag = disbanded_company_of_winter
-			}
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-		completion_reward = {
-			if = {
-				limit = { has_dlc = "Arms Against Tyranny" }
-				add_ideas = DOR_whip_our_levies_into_shape_idea
-			}
-			merchant_houses_focus_effect = yes
-		}
-	}
-	focus = { #Trusted Employers
-		id = DOR_trusted_employers
-		icon = GFX_goal_generic_mercenaries
-		x = 0
-		y = 3
-		relative_position_id = DOR_rely_on_mercenary_guards
-		cost = 5
-		ai_will_do = {
-			factor = 10
-			modifier = { #pretty worthless without AAT
-				has_dlc = "Arms Against Tyranny"
-				factor = 0
-			}
-		}
-		prerequisite = {
-			focus = DOR_hire_the_rabble
-			focus = DOR_hire_the_dwarves
-			focus = DOR_hire_the_cavalry
-			focus = DOR_hire_the_elites
-		}
-		available = {
-			merchant_houses_focus_trigger = yes
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				custom_trigger_tooltip = {
-					tooltip = at_least_five_total_mercenary_size
-					mio:DOR_company_of_winter_MIO = {
-						set_temp_variable = { merc_size = size }
-					}
-					mio:DOR_dragons_breath_MIO = {
-						add_to_temp_variable = { merc_size = size }
-					}
-					mio:DOR_mountains_vengeance_MIO = {
-						add_to_temp_variable = { merc_size = size }
-					}
-					mio:DOR_riverstalkers_MIO = {
-						add_to_temp_variable = { merc_size = size }
-					}
-					check_variable = { merc_size > 4 }
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_ARMY }
-		completion_reward = {
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				mio:DOR_riverstalkers_MIO = {
-					complete_mio_trait = dorwinion_trait_trusted_employer
-				}
-				mio:DOR_mountains_vengeance_MIO = {
-					complete_mio_trait = dorwinion_trait_trusted_employer
-				}
-				mio:DOR_dragons_breath_MIO = {
-					complete_mio_trait = dorwinion_trait_trusted_employer
-				}
-				mio:DOR_company_of_winter_MIO = {
-					complete_mio_trait = dorwinion_trait_trusted_employer
-				}
-			}
-			else = {
-				hidden_effect = {
-					add_ideas = DOR_trusted_employers_idea
-				}
-				custom_effect_tooltip = DOR_trusted_employers_tooltip
 			}
 			merchant_houses_focus_effect = yes
 		}

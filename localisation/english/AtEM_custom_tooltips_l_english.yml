@@ -128,7 +128,7 @@
  DOR_establish_senate_tooltip: ""
  established_sister_republic: "Has established at least one §YSister Republic§!"
  home_of_the_revolution_update_tooltip: ""
- DOR_home_of_the_revolution_stealable: "§RIf another republic assumes control of our faction, they will take this spirit from us.§!"
+ idea_transfers_with_faction_leader: "§RIf another country assumes control of our faction, they will take this spirit from us.§!"
  DOR_home_of_the_revolution_focus_tooltip: "Per §YSister Republic§!:$new_line_tab$War Support: [?global.republics_war_support_bonus_base|G%=]$new_line_tab$Daily Subject Autonomy Gain: [?global.republics_autonomy_bonus_base|G=]$new_line_tab$Daily Compliance Gain: [?global.republics_compliance_bonus_base|G%%=]$new_line_tab$Daily Freedom Support: [?global.republics_freedom_bonus_base|G=]"
  DOR_has_senate: "Has national spirit §Y$DOR_senate_idea$§!"
  DOR_monarchist_plot_available_tooltip: "Less than §R5%§! combined support for §Y$opportunism_noun$§!, §Y$conquest_noun$§!, and §Y$melkorite_noun$§!"
@@ -152,7 +152,7 @@
  unlocks_spread_revolution_decisions: "We can found §Y$autonomy_sister_republic$§! puppets by increasing compliance in human nations."
  DOR_gaurantee_the_rights_of_marcher_citizens_tooltip: "We will be able to core §Y$STATE_305$§! & §Y$STATE_240$§! if they have at least §Y80%§! compliance."
  DOR_rally_them_to_our_cause_tooltip: "§Y$DOR_arodor_aludor$§! becomes a §Y$cc_leader$§! with:\n   §Y$old_guard$§!, §Y$career_officer$§!, §Y$trait_engineer$§!, §Y$fortress_buster$§!, §Y$ranger$§!, §Y$hill_fighter$§!, §Y$adaptable$§!, §Y$organizer$§!\n   §Y3 $SKILL_ATTACK$§!\n   §Y4 $SKILL_DEFENSE$§!\n   §Y5 $SKILL_PLANNING$§!\n   §Y4 $SKILL_LOGISTICS$§!"
- cannot_join_opposing_ideology_faction: "§RCannot join a faction led by an opposing ideology.§R"
+ cannot_join_opposing_ideology_faction: "§RCannot join a faction led by an opposing ideology.§!"
  RUS_accept_annexation_factors_tooltip: "\n\nThey are more likely to accept if:$new_line_tab$-They have a high opinion of us$new_line_tab$-We have a large army relative to theirs$new_line_tab$-We have common enemies$new_line_tab$-We have completed more focuses investing in them"
  RIN_accept_annexation_factors_tooltip: "\n\nThey are more likely to accept if:$new_line_tab$-They have a high opinion of us$new_line_tab$-We have many §Y$industrial_complex$s§! relative to them$new_line_tab$-We have completed more focuses investing in them"
  DOR_construct_an_overwhelming_fleet_tooltip: "Create 5 §YCaras Sant§! class §Y$destroyer_1$§!"
@@ -227,5 +227,7 @@
  dragons_breath_within_cap: "Fewer than [?dragons_breath_cap] §Y$dorwinion_dragons_breath$§! units."
  company_of_winter_within_cap: "Fewer than [?company_of_winter_cap] §Y$dorwinion_company_of_winter$§! units."
  DOR_trusted_employers_tooltip: "Can hire §Y$idea_group_aircraft_manufacturer$s§! for free."
- 
+ DOR_profit_off_foreign_wealth_tooltip: "Every other country that joins the $CELDUIN_TRADE_LEAGUE_FACTION$ gains:"
+ celduin_trade_league_only_celduin_states: "§ROnly countries participating in Celduin trade can join the $CELDUIN_TRADE_LEAGUE_FACTION$.§!"
+ the_revolution_only_republics: "§ROnly Republics can join The Revolution.§!"
  

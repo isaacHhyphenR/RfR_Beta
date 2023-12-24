@@ -512,14 +512,77 @@ on_actions = {
 			if = {
 				limit = {
 					FROM = { has_dynamic_modifier = { modifier = DOR_home_of_the_revolution_modifier } }
-					ROOT = { is_republic = yes }
 				}
 				FROM = { remove_dynamic_modifier = { modifier = DOR_home_of_the_revolution_modifier } }
 				ROOT = { add_dynamic_modifier = { modifier = DOR_home_of_the_revolution_modifier } }
 			}
 		}
+		effect = { #steal head of celduin trade league
+			if = {
+				limit = {
+					FROM = { has_idea = head_of_celduin_trade_league }
+				}
+				FROM = {
+					swap_ideas = {
+						remove_idea = head_of_celduin_trade_league
+						add_idea = member_of_celduin_trade_league
+					}
+				}
+				ROOT = {
+					swap_ideas = {
+						remove_idea = member_of_celduin_trade_league
+						add_idea = head_of_celduin_trade_league
+					}
+					set_variable = { global.celduin_trade_leader = THIS }
+				}
+			}
+		}
 	}
-
+	
+	on_offer_join_faction = { #ROOT & THIS are the faction leader, FROM is the joiner
+		effect = {  ##celduin trade league
+			if = {
+				limit = {
+					ROOT = { has_idea = head_of_celduin_trade_league }
+				}
+				FROM = { add_ideas = member_of_celduin_trade_league }
+			}
+		}
+	}
+	
+	on_join_faction = { #ROOT & THIS are the joiner, FROM is the faction leader
+		effect = {  ##celduin trade league
+			if = {
+				limit = {
+					FROM = { has_idea = head_of_celduin_trade_league }
+				}
+				add_ideas = member_of_celduin_trade_league
+			}
+		}
+	}
+	
+	on_leave_faction = { ##celduin trade league
+		effect = {
+			if = { #make the new faction leader the trade leader
+				limit = {
+					has_idea = head_of_celduin_trade_league
+				}
+				remove_ideas = head_of_celduin_trade_league
+				random_country = {
+					limit = {
+						has_idea = member_of_celduin_trade_league
+						is_faction_leader = yes
+					}
+					swap_ideas = {
+						remove_idea = member_of_celduin_trade_league
+						add_idea = head_of_celduin_trade_league
+					}
+					set_variable = { global.celduin_trade_leader = THIS }
+				}
+			}
+		}
+	}
+					
 	on_subject_annexed = { ##DOR celduinic republic
 		effect = {
 			if = { #Republic of dale

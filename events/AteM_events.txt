@@ -1298,6 +1298,138 @@ country_event = { ##18## Spent prosperity on resources
 	}
 }
 
+country_event = { ##19## Dorwinion invites to Celduin trade league
+	id = atem.19
+	title = atem.19.t
+	desc = atem.19.d
+	picture = GFX_event_trade2
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.19.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 90
+				}
+				factor = 1.5
+			}
+			modifier = { #military strength
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.25
+				}
+				factor = 1.5
+			}
+			modifier = { #military strength
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.1
+				}
+				factor = 1.5
+			}
+			modifier = { #economic strength
+				set_temp_variable = { CIC_ratio = num_of_civilian_factories }
+				divide_temp_variable = { CIC_ratio = FROM.num_of_civilian_factories }
+				check_variable = { CIC_ratio < 0.25 }
+				factor = 1.5
+			}
+			modifier = { #economic strength
+				set_temp_variable = { CIC_ratio = num_of_civilian_factories }
+				divide_temp_variable = { CIC_ratio = FROM.num_of_civilian_factories }
+				check_variable = { CIC_ratio < 0.1 }
+				factor = 1.5
+			}
+			modifier = { ##opportunists always leave immediatly anyway, the party poopers
+				ROOT = { has_government = opportunism }
+				FROM = { OR = { has_government = freedom has_government = isolationism } }
+				factor = 0.5
+			}
+				
+			modifier = { #good vs evil
+				OR = {
+					AND = {
+						ROOT = { OR = { has_government = melkorite has_government = conquest } }
+						FROM = { OR = { has_government = freedom has_government = isolationism } }
+					}
+					AND = {
+						ROOT = { OR = { has_government = freedom has_government = isolationism } }
+						FROM = { OR = { has_government = melkorite has_government = conquest } }
+					}
+				}
+				factor = 0
+			}
+			modifier = { #don't leave your faction
+				is_in_faction = yes
+				factor = 0
+			}
+		}
+		FROM = {
+			add_to_faction = ROOT
+		}
+		add_ideas = member_of_celduin_trade_league
+		hidden_effect = { FROM = { news_event = { id = rfr_news.124 hours = 1 } } }
+	}
+	option = { ##no
+		name = atem.19.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -50
+				}
+				factor = 5
+			}
+			modifier = { #don't join if you want to eat them
+				OR = {
+					FROM = {
+						any_owned_state = {
+							is_core_of = ROOT
+						}
+					}
+					has_wargoal_against = FROM
+				}
+				factor = 3
+			}
+		}
+		hidden_effect = {
+			FROM = { news_event = { id = rfr_news.125 hours = 1 } }
+			#Less likely to join in the future
+			add_ai_strategy = {
+				type = alliance
+				id = FROM
+				value = -20
+			}
+		}
+	}
+}
+
+
 ################################################################SENATE EVENTS
 add_namespace = senate
 country_event = { ##0## Hidden event selector

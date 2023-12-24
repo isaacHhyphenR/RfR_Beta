@@ -476,6 +476,10 @@
  DOR_whip_our_levies_into_shape_idea: "Company of Winter Training"
  DOR_whip_our_levies_into_shape_idea_desc: "$DOR_whip_our_levies_into_shape_desc$"
  cannot_design_mercenaries: "§RCannot manually design mercenary companies.§!"
+ member_of_celduin_trade_league: "Member of the Celduin Trade League"
+ member_of_celduin_trade_league_desc: "A mercantile alliance formed to protect the common financial and political interests of its members."
+ head_of_celduin_trade_league: "Head of the Celduin Trade League"
+ head_of_celduin_trade_league_desc: "The Celduin Trade Leage is a mercantile alliance formed to protect the common financial and political interests of its members. As the most powerful member of this alliance, this country excersises great influence over the other members."
  
  
  

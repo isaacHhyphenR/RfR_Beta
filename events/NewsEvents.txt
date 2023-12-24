@@ -1951,3 +1951,76 @@ news_event = { ##121## RUS/RIN rejected annexation
 	}
 }
 
+news_event = { ##122## Subject accepted equitable federation
+	id = rfr_news.122
+	title = rfr_news.122.t
+	desc = rfr_news.122.d
+	picture = GFX_news_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.122.a
+	}
+}
+news_event = { ##123## Subject refused equitable federation
+	id = rfr_news.123
+	title = rfr_news.123.t
+	desc = rfr_news.123.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Aww :(
+		name = rfr_news.123.a
+	}
+}
+
+news_event = { ##124## Celduin state joined trade league
+	id = rfr_news.124
+	title = rfr_news.124.t
+	desc = rfr_news.124.d
+	picture = GFX_news_feast2
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.124.a
+	}
+}
+news_event = { ##125## Celduin state rejected trade league
+	id = rfr_news.125
+	title = rfr_news.125.t
+	desc = rfr_news.125.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Aww :(
+		name = rfr_news.125.a
+	}
+}
+
+
+news_event = { ##126## Celduin Trade League formed
+	id = rfr_news.126
+	title = rfr_news.126.t
+	desc = rfr_news.126.d
+	picture = GFX_news_feast2
+	
+	is_triggered_only = yes
+	major = yes
+	fire_for_sender = no
+	
+	trigger = { #don't need to see the event if you already joined the league
+		NOT = {
+			is_in_faction_with = FROM
+		}
+	}
+	
+	option = { #Cool
+		name = rfr_news.126.a
+	}
+}
+
+

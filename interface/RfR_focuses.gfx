@@ -1309,4 +1309,44 @@ spriteTypes = {
 		name = "GFX_goal_DOR_company_of_winter"
 		texturefile = "gfx/interface/goals/designers/goal_DOR_company_of_winter.dds"
 	}
+	SpriteType = {
+		name = "GFX_goal_DOR_reward_loyal_partners"
+		texturefile = "gfx/interface/goals/goal_DOR_reward_loyal_partners.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_suppress_resistance"
+		texturefile = "gfx/interface/goals/goal_generic_suppress_resistance.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_suppress_resistance2"
+		texturefile = "gfx/interface/goals/goal_generic_suppress_resistance2.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_voting"
+		texturefile = "gfx/interface/goals/goal_generic_voting.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_free_voting"
+		texturefile = "gfx/interface/goals/goal_generic_free_voting.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_crush_voting"
+		texturefile = "gfx/interface/goals/goal_generic_crush_voting.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_sign_law"
+		texturefile = "gfx/interface/goals/goal_generic_sign_law.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_raised_swords"
+		texturefile = "gfx/interface/goals/goal_generic_raised_swords.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_senate"
+		texturefile = "gfx/interface/goals/goal_DOR_senate.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_DOR_senate_republic"
+		texturefile = "gfx/interface/goals/goal_DOR_senate_republic.dds"
+	}
 }
