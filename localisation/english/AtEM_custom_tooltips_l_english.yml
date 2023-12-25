@@ -235,3 +235,13 @@
  DOR_raise_tariffs_tooltip: "$add_10_prosperity$ in a random state per faction member."
  new_members_automatically_added_to_celduin_trade_league_tech_sharing: "All new faction members will be automatically added to the group."
  DOR_knowledge_flows_with_goods_no_dlc_tooltip: "§Y1x faction size§! §G25%§! Research bonuses for: §YAll Technologies§!"
+ complete_internal_focus: "Is an §YInternal Affairs§! focus."
+ complete_external_focus: "Is a §YForeign Affairs§! focus."
+ completed_at_least_one_internal_focus: "Completed at least one §YInternal Affairs§! focus."
+ completed_at_least_one_external_focus: "Completed at least one §YForeign Affairs§! focus."
+ DOR_host_lavish_galas_tooltip: "Wine decisions cost §Y250%§! as much and provide §G200%§! as much benefit."
+ DOR_focus_on_governance_tooltip: "Gain 50 §YPolitical Power§! per §Y$merchant_house_pol_first$§! in government$VorV_dev_line_end$"
+ option_1: "Option 1:\n"
+ option_2: "Option 2:\n
+ option_3: "Option 3:\n
+ DOR_economic_powerhouse_tooltip: "Add 3 §Ybuilding slots§! per completed §YInternal Affairs§! focus$VorV_dev_line_end$"

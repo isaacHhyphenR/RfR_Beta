@@ -197,6 +197,7 @@ DOR_house_aldiana_MIO = {
 		}
 	}
 }
+
 DOR_house_blorchid_MIO = {
 	name = dorwinion_house_blorchid
 	icon = GFX_idea_dorwinion_house_blorchid

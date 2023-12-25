@@ -585,6 +585,10 @@ characters = {
 				small = "GFX_Portrait_Northern_Generic_f_5_small"
 			}
 		}
+		country_leader = { ##just so the tooltip on that focus works correctly
+			ideology = elective_monarchy_isolationism
+			traits = { financial_expert }
+		}
 		advisor = {
 			slot = political_advisor
 			idea_token = DOR_thraear_barvadinian

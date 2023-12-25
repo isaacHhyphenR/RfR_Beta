@@ -25,6 +25,8 @@
 #GFX_goal_generic_taxation
 #GFX_goal_wine_tax
 #GFX_goal_generic_freedom
+#GFX_goal_invest_in_rhovanion
+#GFX_dorwin_nobility
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -79,7 +81,7 @@ focus_tree = {
 #################################ELECT MERCHANTS
 	focus = { #Sponsor guild activities
 		id = DOR_sponsor_guild_activites
-		#icon = GFX_goal_the_deciever
+		icon = GFX_goal_generic_party
 		x = 0
 		y = 1
 		relative_position_id = DOR_support_the_great_merchants
@@ -1043,62 +1045,103 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_POLITICAL }
 		completion_reward = { ##subversive activites/boost ideology mission efficiency, depending on DLC
-			if = { #LAR
-				limit = { has_dlc = "La Resistance" }
-				DOR_fornagarth_barvadinian = {
-					effect_tooltip = {
-						swap_country_leader_traits = {
-							remove = smooth_talking_charmer
-							add = smooth_talking_charmer_ideology_lar
-							ideology = elective_monarchy_isolationism
+			DOR_fornagarth_barvadinian = {
+				##so that the real trait doesn't have a weird blank space
+				hidden_effect = {
+					remove_trait = {
+						slot = political_advisor
+						trait = merchant_house_pol_third
+					}
+				}
+				#He can get buffed later on, so 4 possible combinations of upgrade
+				if = { #LAR
+					limit = { has_dlc = "La Resistance" }
+					if = { #Upgraded
+						limit = { has_trait = expert_smooth_talking_charmer }
+						effect_tooltip = {
+							swap_country_leader_traits = {
+								remove = expert_smooth_talking_charmer
+								add = expert_smooth_talking_charmer_ideology_lar
+								ideology = elective_monarchy_isolationism
+							}
+						}
+						hidden_effect = {
+							remove_trait = {
+								slot = political_advisor
+								trait = expert_smooth_talking_charmer
+							}
+							add_trait = {
+								slot = political_advisor
+								trait = sexpert_mooth_talking_charmer_ideology_lar
+							}
 						}
 					}
-					hidden_effect = {
-						remove_trait = {##so that the real trait doesn't have a weird blank space
-							slot = political_advisor
-							trait = merchant_house_pol_third
+					else = { #first upgrade
+						effect_tooltip = {
+							swap_country_leader_traits = {
+								remove = smooth_talking_charmer
+								add = smooth_talking_charmer_ideology_lar
+								ideology = elective_monarchy_isolationism
+							}
 						}
-						remove_trait = {
-							slot = political_advisor
-							trait = smooth_talking_charmer
-						}
-						add_trait = {
-							slot = political_advisor
-							trait = smooth_talking_charmer_ideology_lar
-						}
-						add_trait = {##so that the real trait doesn't have a weird blank space
-							slot = political_advisor
-							trait = merchant_house_pol_third
+						hidden_effect = {
+							remove_trait = {
+								slot = political_advisor
+								trait = smooth_talking_charmer
+							}
+							add_trait = {
+								slot = political_advisor
+								trait = smooth_talking_charmer_ideology_lar
+							}
 						}
 					}
 				}
-			}
-			else = { #VANILLA
-				DOR_fornagarth_barvadinian = {
-					effect_tooltip = {
-						swap_country_leader_traits = {
-							remove = smooth_talking_charmer
-							add = smooth_talking_charmer_ideology
-							ideology = elective_monarchy_isolationism
+				else = { #VANILLA
+					if = { #Upgraded
+						limit = { has_trait = expert_smooth_talking_charmer }
+						effect_tooltip = {
+							swap_country_leader_traits = {
+								remove = expert_smooth_talking_charmer
+								add = expert_smooth_talking_charmer_ideology
+								ideology = elective_monarchy_isolationism
+							}
+						}
+						hidden_effect = {
+							remove_trait = {
+								slot = political_advisor
+								trait = expert_smooth_talking_charmer
+							}
+							add_trait = {
+								slot = political_advisor
+								trait = sexpert_mooth_talking_charmer_ideology
+							}
 						}
 					}
-					hidden_effect = {
-						remove_trait = {##so that the real trait doesn't have a weird blank space
-							slot = political_advisor
-							trait = merchant_house_pol_third
+					else = { #first upgrade
+						effect_tooltip = {
+							swap_country_leader_traits = {
+								remove = smooth_talking_charmer
+								add = smooth_talking_charmer_ideology
+								ideology = elective_monarchy_isolationism
+							}
 						}
-						remove_trait = {
-							slot = political_advisor
-							trait = smooth_talking_charmer
+						hidden_effect = {
+							remove_trait = {
+								slot = political_advisor
+								trait = smooth_talking_charmer
+							}
+							add_trait = {
+								slot = political_advisor
+								trait = smooth_talking_charmer_ideology
+							}
 						}
-						add_trait = {
-							slot = political_advisor
-							trait = smooth_talking_charmer_ideology
-						}
-						add_trait = {##so that the real trait doesn't have a weird blank space
-							slot = political_advisor
-							trait = merchant_house_pol_third
-						}
+					}
+				}
+				##so that the real trait doesn't have a weird blank space
+				hidden_effect = {
+					add_trait = {
+						slot = political_advisor
+						trait = merchant_house_pol_third
 					}
 				}
 			}
@@ -5582,6 +5625,7 @@ focus_tree = {
 					}
 				}
 			}
+			one_internal_focus = yes
 			merchant_houses_focus_effect = yes
 		}
 	}
@@ -5692,6 +5736,7 @@ focus_tree = {
 					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 				}
 			}
+			one_internal_focus = yes
 			merchant_houses_focus_effect = yes
 		}
 	}
@@ -5729,6 +5774,7 @@ focus_tree = {
 			hidden_effect = { #fired for FOR because it's a major
 				FOR = { news_event = { id = rfr_news.126 days = 1 } }
 			}
+			one_external_focus = yes
 			merchant_houses_focus_effect = yes
 		}
 	}
@@ -5762,6 +5808,7 @@ focus_tree = {
 					add_10_prosperity = yes
 				}
 			}
+			one_external_focus = yes
 			merchant_houses_focus_effect = yes
 		}
 	}
@@ -5817,12 +5864,13 @@ focus_tree = {
 					}
 				}
 			}
+			one_external_focus = yes
 			merchant_houses_focus_effect = yes
 		}
 	}
-	focus = { #Reward Loyal Partners
-		id = DOR_reward_loyal_partners
-		icon = GFX_goal_DOR_reward_loyal_partners
+	focus = { #Bringers of Wealth
+		id = DOR_bringers_of_wealth
+		icon = GFX_goal_generic_consumer_goods
 		x = 1
 		y = 1
 		relative_position_id = DOR_raise_tariffs
@@ -5837,9 +5885,726 @@ focus_tree = {
 		available = {
 			merchant_houses_focus_trigger = yes
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL}
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			merchant_houses_focus_effect_big = yes
+		}
+	}
+	focus = { #Reward Loyal Partners
+		id = DOR_reward_loyal_partners
+		icon = GFX_goal_DOR_reward_loyal_partners
+		x = 0
+		y = 1
+		relative_position_id = DOR_bringers_of_wealth
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_bringers_of_wealth
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##buffs merchant house MIOs
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_house_aldiana_MIO = {
+					add_mio_size = 2
+				}
+				mio:DOR_house_barvadinian_MIO = {
+					add_mio_size = 2
+				}
+				mio:DOR_house_blorchid_MIO = {
+					add_mio_size = 2
+				}
+			}
+			##without AAT, improves the ideas
+			else = {
+				#Aldiana
+				if = {
+					limit = {
+						has_idea = dorwinion_house_aldiana
+					}
+					swap_ideas = {
+						remove_idea = dorwinion_house_aldiana
+						add_idea = dorwinion_house_aldiana_buffed
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = dorwinion_house_aldiana
+							add_idea = dorwinion_house_aldiana_buffed
+						}
+					}
+				}
+				#Barvadinian
+				if = {
+					limit = {
+						has_idea = dorwinion_house_barvadinian
+					}
+					swap_ideas = {
+						remove_idea = dorwinion_house_barvadinian
+						add_idea = dorwinion_house_barvadinian_buffed
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = dorwinion_house_barvadinian
+							add_idea = dorwinion_house_barvadinian_buffed
+						}
+					}
+				}
+				#Blorchid
+				if = {
+					limit = {
+						has_idea = dorwinion_house_blorchid
+					}
+					swap_ideas = {
+						remove_idea = dorwinion_house_blorchid
+						add_idea = dorwinion_house_blorchid_buffed
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = dorwinion_house_blorchid
+							add_idea = dorwinion_house_blorchid_buffed
+						}
+					}
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Preserve Traditional Power Structures
+		id = DOR_preserve_traditional_power_structures
+		icon = GFX_focus_generic_home_defense
+		x = 2
+		y = 1
+		relative_position_id = DOR_support_the_merchant_houses
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_support_the_merchant_houses
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			merchant_houses_focus_effect_big = yes
+		}
+	}
+	focus = { #Favor Foreign Ministry
+		id = DOR_favor_foreign_ministry
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = -1
+		y = 1
+		relative_position_id = DOR_preserve_traditional_power_structures
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_preserve_traditional_power_structures
+		}
+		mutually_exclusive = { focus = DOR_favor_internal_ministry }
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #upgrades Thorngarth Barvadinian's diplomatic trait
+			DOR_fornagarth_barvadinian = {
+				##so that the real trait doesn't have a weird blank space
+				hidden_effect = {
+					remove_trait = {
+						slot = political_advisor
+						trait = merchant_house_pol_third
+					}
+				}
+				#He can get upgraded earlier with a trait that changes based on DLC. 3 possible combinations
+				if = { #No upgrades
+					limit = { has_trait = smooth_talking_charmer }
+					effect_tooltip = {
+						swap_country_leader_traits = {
+							remove = smooth_talking_charmer
+							add = expert_smooth_talking_charmer
+							ideology = elective_monarchy_isolationism
+						}
+					}
+					hidden_effect = {
+						remove_trait = {
+							slot = political_advisor
+							trait = smooth_talking_charmer
+						}
+						add_trait = {
+							slot = political_advisor
+							trait = expert_smooth_talking_charmer
+						}
+					}
+				}
+				else_if = { #Vanilla upgrade
+					limit = { has_trait = smooth_talking_charmer_ideology }
+					effect_tooltip = {
+						swap_country_leader_traits = {
+							remove = smooth_talking_charmer_ideology
+							add = expert_smooth_talking_charmer_ideology
+							ideology = elective_monarchy_isolationism
+						}
+					}
+					hidden_effect = {
+						remove_trait = {
+							slot = political_advisor
+							trait = smooth_talking_charmer_ideology
+						}
+						add_trait = {
+							slot = political_advisor
+							trait = expert_smooth_talking_charmer_ideology
+						}
+					}
+				}
+				else_if = { #LAR upgrade
+					limit = { has_trait = smooth_talking_charmer_ideology_LAR }
+					effect_tooltip = {
+						swap_country_leader_traits = {
+							remove = smooth_talking_charmer_ideology_LAR
+							add = expert_smooth_talking_charmer_ideology_LAR
+							ideology = elective_monarchy_isolationism
+						}
+					}
+					hidden_effect = {
+						remove_trait = {
+							slot = political_advisor
+							trait = smooth_talking_charmer_ideology_LAR
+						}
+						add_trait = {
+							slot = political_advisor
+							trait = expert_smooth_talking_charmer_ideology_LAR
+						}
+					}
+				}
+				##so that the real trait doesn't have a weird blank space
+				hidden_effect = {
+					add_trait = {
+						slot = political_advisor
+						trait = merchant_house_pol_third
+					}
+				}
+			}
+			one_external_focus = yes
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Spend More on the City States
+		id = DOR_spend_more_on_the_city_states
+		icon = GFX_goal_invest_in_rhovanion
+		x = 0
+		y = 2
+		relative_position_id = DOR_favor_foreign_ministry
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_favor_foreign_ministry
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Can use wine & precious metals to gain Rhovanion influence
+			custom_effect_tooltip = unimplemented
+			one_external_focus = yes
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Favor Internal Ministry
+		id = DOR_favor_internal_ministry
+		icon = GFX_focus_generic_industry_2
+		x = 1
+		y = 1
+		relative_position_id = DOR_preserve_traditional_power_structures
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_preserve_traditional_power_structures
+		}
+		mutually_exclusive = { focus = DOR_favor_foreign_ministry }
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #upgrades Thraer Barvadinian's consumer goods trait
+			DOR_thraear_barvadinian = {
+				effect_tooltip = {
+					swap_country_leader_traits = {
+						remove = financial_expert
+						add = expert_financial_expert
+						ideology = elective_monarchy_isolationism
+					}
+				}
+				hidden_effect = {
+					remove_trait = {##so that the real trait doesn't have a weird blank space
+						slot = political_advisor
+						trait = merchant_house_pol_fourth
+					}
+					remove_trait = {
+						slot = political_advisor
+						trait = financial_expert
+					}
+					add_trait = {
+						slot = political_advisor
+						trait = expert_financial_expert
+					}
+					add_trait = {##so that the real trait doesn't have a weird blank space
+						slot = political_advisor
+						trait = merchant_house_pol_fourth
+					}
+				}
+			}
+			one_internal_focus = yes
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Host Lavish Galas
+		id = DOR_host_lavish_galas
+		icon = GFX_goal_generic_party
+		x = -1
+		y = 1
+		relative_position_id = DOR_favor_internal_ministry
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_favor_internal_ministry
+		}
+		mutually_exclusive = { focus = DOR_focus_on_governance }
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_PROSPERITY }
+		completion_reward = { #wine decisions cost 2.5 as much, give 2 benefit
+			custom_effect_tooltip = DOR_host_lavish_galas_tooltip
+			one_internal_focus = yes
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Focus on Governance
+		id = DOR_focus_on_governance
+		icon = GFX_goal_generic_sign_law
+		x = 1
+		y = 1
+		relative_position_id = DOR_favor_internal_ministry
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_favor_internal_ministry
+		}
+		mutually_exclusive = { focus = DOR_host_lavish_galas }
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #50 pp per merchant advisor
+			custom_effect_tooltip = DOR_focus_on_governance_tooltip
+			if = {
+				limit = {
+					count_triggers = {
+						amount = 10
+						has_idea_with_trait = merchant_house_pol_first
+						has_idea_with_trait = merchant_house_pol_second
+						has_idea_with_trait = merchant_house_pol_third
+						has_idea_with_trait = merchant_house_pol_fourth
+						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_sixth
+						has_idea_with_trait = merchant_house_pol_seventh
+						has_idea_with_trait = merchant_house_pol_eighth
+						has_idea_with_trait = merchant_house_pol_ninth
+						has_idea_with_trait = merchant_house_pol_tenth
+					}
+				}
+				add_political_power = 500
+			}
+			else_if = {
+				limit = {
+					count_triggers = {
+						amount = 9
+						has_idea_with_trait = merchant_house_pol_first
+						has_idea_with_trait = merchant_house_pol_second
+						has_idea_with_trait = merchant_house_pol_third
+						has_idea_with_trait = merchant_house_pol_fourth
+						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_sixth
+						has_idea_with_trait = merchant_house_pol_seventh
+						has_idea_with_trait = merchant_house_pol_eighth
+						has_idea_with_trait = merchant_house_pol_ninth
+						has_idea_with_trait = merchant_house_pol_tenth
+					}
+				}
+				add_political_power = 450
+			}
+			else_if = {
+				limit = {
+					count_triggers = {
+						amount = 8
+						has_idea_with_trait = merchant_house_pol_first
+						has_idea_with_trait = merchant_house_pol_second
+						has_idea_with_trait = merchant_house_pol_third
+						has_idea_with_trait = merchant_house_pol_fourth
+						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_sixth
+						has_idea_with_trait = merchant_house_pol_seventh
+						has_idea_with_trait = merchant_house_pol_eighth
+						has_idea_with_trait = merchant_house_pol_ninth
+						has_idea_with_trait = merchant_house_pol_tenth
+					}
+				}
+				add_political_power = 400
+			}
+			else_if = {
+				limit = {
+					count_triggers = {
+						amount = 7
+						has_idea_with_trait = merchant_house_pol_first
+						has_idea_with_trait = merchant_house_pol_second
+						has_idea_with_trait = merchant_house_pol_third
+						has_idea_with_trait = merchant_house_pol_fourth
+						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_sixth
+						has_idea_with_trait = merchant_house_pol_seventh
+						has_idea_with_trait = merchant_house_pol_eighth
+						has_idea_with_trait = merchant_house_pol_ninth
+						has_idea_with_trait = merchant_house_pol_tenth
+					}
+				}
+				add_political_power = 350
+			}
+			else_if = {
+				limit = {
+					count_triggers = {
+						amount = 6
+						has_idea_with_trait = merchant_house_pol_first
+						has_idea_with_trait = merchant_house_pol_second
+						has_idea_with_trait = merchant_house_pol_third
+						has_idea_with_trait = merchant_house_pol_fourth
+						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_sixth
+						has_idea_with_trait = merchant_house_pol_seventh
+						has_idea_with_trait = merchant_house_pol_eighth
+						has_idea_with_trait = merchant_house_pol_ninth
+						has_idea_with_trait = merchant_house_pol_tenth
+					}
+				}
+				add_political_power = 300
+			}
+			else_if = {
+				limit = {
+					count_triggers = {
+						amount = 5
+						has_idea_with_trait = merchant_house_pol_first
+						has_idea_with_trait = merchant_house_pol_second
+						has_idea_with_trait = merchant_house_pol_third
+						has_idea_with_trait = merchant_house_pol_fourth
+						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_sixth
+						has_idea_with_trait = merchant_house_pol_seventh
+						has_idea_with_trait = merchant_house_pol_eighth
+						has_idea_with_trait = merchant_house_pol_ninth
+						has_idea_with_trait = merchant_house_pol_tenth
+					}
+				}
+				add_political_power = 250
+			}
+			else_if = {
+				limit = {
+					count_triggers = {
+						amount = 4
+						has_idea_with_trait = merchant_house_pol_first
+						has_idea_with_trait = merchant_house_pol_second
+						has_idea_with_trait = merchant_house_pol_third
+						has_idea_with_trait = merchant_house_pol_fourth
+						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_sixth
+						has_idea_with_trait = merchant_house_pol_seventh
+						has_idea_with_trait = merchant_house_pol_eighth
+						has_idea_with_trait = merchant_house_pol_ninth
+						has_idea_with_trait = merchant_house_pol_tenth
+					}
+				}
+				add_political_power = 200
+			}
+			else_if = {
+				limit = {
+					count_triggers = {
+						amount = 3
+						has_idea_with_trait = merchant_house_pol_first
+						has_idea_with_trait = merchant_house_pol_second
+						has_idea_with_trait = merchant_house_pol_third
+						has_idea_with_trait = merchant_house_pol_fourth
+						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_sixth
+						has_idea_with_trait = merchant_house_pol_seventh
+						has_idea_with_trait = merchant_house_pol_eighth
+						has_idea_with_trait = merchant_house_pol_ninth
+						has_idea_with_trait = merchant_house_pol_tenth
+					}
+				}
+				add_political_power = 150
+			}
+			else_if = {
+				limit = {
+					count_triggers = {
+						amount = 2
+						has_idea_with_trait = merchant_house_pol_first
+						has_idea_with_trait = merchant_house_pol_second
+						has_idea_with_trait = merchant_house_pol_third
+						has_idea_with_trait = merchant_house_pol_fourth
+						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_sixth
+						has_idea_with_trait = merchant_house_pol_seventh
+						has_idea_with_trait = merchant_house_pol_eighth
+						has_idea_with_trait = merchant_house_pol_ninth
+						has_idea_with_trait = merchant_house_pol_tenth
+					}
+				}
+				add_political_power = 100
+			}
+			else_if = {
+				limit = {
+					count_triggers = {
+						amount = 1
+						has_idea_with_trait = merchant_house_pol_first
+						has_idea_with_trait = merchant_house_pol_second
+						has_idea_with_trait = merchant_house_pol_third
+						has_idea_with_trait = merchant_house_pol_fourth
+						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_sixth
+						has_idea_with_trait = merchant_house_pol_seventh
+						has_idea_with_trait = merchant_house_pol_eighth
+						has_idea_with_trait = merchant_house_pol_ninth
+						has_idea_with_trait = merchant_house_pol_tenth
+					}
+				}
+				add_political_power = 50
+			}
+			one_internal_focus = yes
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Spend More on the Economy
+		id = DOR_spend_more_on_the_economy
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 1
+		y = 1
+		relative_position_id = DOR_host_lavish_galas
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_host_lavish_galas
+			focus = DOR_focus_on_governance
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #exchange pp for civs
+			country_event = { id = atem.20 }
+			custom_effect_tooltip = option_1
+			event_option_tooltip = atem.20.a
+			custom_effect_tooltip = option_2
+			event_option_tooltip = atem.20.b
+			custom_effect_tooltip = option_3
+			event_option_tooltip = atem.20.c
+			one_internal_focus = yes
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #A Noble Nation
+		id = DOR_a_noble_nation
+		icon = GFX_dorwin_nobility
+		x = 1
+		y = 1
+		relative_position_id = DOR_spend_more_on_the_city_states
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_spend_more_on_the_city_states
+			focus = DOR_spend_more_on_the_economy
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = { #10% stability
+			add_stability = 0.1
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Diplomatic Powerhouse
+		id = DOR_diplomatic_powerhouse
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 1
+		y = 1
+		relative_position_id = DOR_reward_loyal_partners
+		cost = 10
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				check_variable = { external_focuses > 2 }
+				factor = 2
+			}
+			modifier = {
+				check_variable = { external_focuses < 2 }
+				factor = 0.5
+			}
+		}
+		prerequisite = {
+			focus = DOR_reward_loyal_partners
+			focus = DOR_a_noble_nation
+		}
+		mutually_exclusive = { focus = DOR_economic_powerhouse }
+		available = {
+			merchant_houses_focus_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = completed_at_least_one_external_focus
+				check_variable = { external_focuses > 0 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #20 influence in each RVN per external focus
+			custom_effect_tooltip = unimplemented
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Economic Powerhouse
+		id = DOR_economic_powerhouse
+		icon = GFX_focus_generic_industry_3
+		x = 3
+		y = 1
+		relative_position_id = DOR_reward_loyal_partners
+		cost = 10
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				check_variable = { internal_focuses > 2 }
+				factor = 2
+			}
+			modifier = {
+				check_variable = { internal_focuses < 2 }
+				factor = 0.5
+			}
+		}
+		prerequisite = {
+			focus = DOR_reward_loyal_partners
+			focus = DOR_a_noble_nation
+		}
+		mutually_exclusive = { focus = DOR_diplomatic_powerhouse }
+		available = {
+			merchant_houses_focus_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = completed_at_least_one_internal_focus
+				check_variable = { internal_focuses > 0 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #3 slots per internal focus
+			custom_effect_tooltip = DOR_economic_powerhouse_tooltip
+			if = {
+				limit = {
+					check_variable = { internal_focuses > 4 }
+				}
+				every_owned_state = {
+					random_select_amount = 5
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { internal_focuses > 3 }
+				}
+				every_owned_state = {
+					random_select_amount = 4
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { internal_focuses > 2 }
+				}
+				every_owned_state = {
+					random_select_amount = 3
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { internal_focuses > 1 }
+				}
+				every_owned_state = {
+					random_select_amount = 2
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { internal_focuses > 0 }
+				}
+				every_owned_state = {
+					random_select_amount = 1
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			merchant_houses_focus_effect = yes
 		}
 	}
 #################################MERCENARYS

@@ -230,6 +230,16 @@ leader_traits = {
 			factor = 1
 		}
 	}
+	expert_smooth_talking_charmer = { #+200%
+		random = no
+		sprite = 2
+		improve_relations_maintain_cost_factor = -0.75
+		trade_opinion_factor = 0.20
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	smooth_talking_charmer_ideology = {
 		random = no
 		sprite = 2
@@ -250,6 +260,26 @@ leader_traits = {
 			factor = 1
 		}
 	}
+	expert_smooth_talking_charmer_ideology = {
+		random = no
+		sprite = 2
+		improve_relations_maintain_cost_factor = -0.75
+		trade_opinion_factor = 0.20
+		subversive_activites_upkeep = -0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	expert_smooth_talking_charmer_ideology_LAR = {
+		random = no
+		sprite = 2
+		improve_relations_maintain_cost_factor = -0.75
+		trade_opinion_factor = 0.20
+		boost_ideology_mission_factor = 0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	ideological_crusader = {
 		random = yes
 		sprite = 13
@@ -264,6 +294,15 @@ leader_traits = {
 		sprite = 10
 		random = yes
 		consumer_goods_factor = -0.05
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	expert_financial_expert = { #+200%
+		sprite = 10
+		random = no
+		consumer_goods_factor = -0.1
 		
 		ai_will_do = {
 			factor = 2

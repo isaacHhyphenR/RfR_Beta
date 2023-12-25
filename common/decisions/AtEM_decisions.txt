@@ -111,6 +111,8 @@ celduin_trade_category = {
 	@luxury_cost = 999
 	@luxury_cost_negative = -1000
 	@wine_decision_days = 100
+	@luxury_cost_buffed = 2499
+	@luxury_cost_buffed_negative = -2000
 	
 	auto_renew_luxury = {
 		visible = { NOT = { has_country_flag = renew_luxury_decisions } }
@@ -179,12 +181,12 @@ celduin_trade_category = {
 				factor = 0
 			}
 		}
-		#allowed = { NOT = { original_tag = DOR } } ##they get special version
 		custom_cost_trigger = {
 			has_equipment = { wine_equipment > @luxury_cost }
 		}
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
+		visible = { NOT = { has_completed_focus = DOR_host_lavish_galas } } #unlocks stronger version
 		modifier = {
 			stability_factor = 0.1
 			#stability_weekly = @weeklyStab
@@ -209,53 +211,7 @@ celduin_trade_category = {
 			}
 		}
 	}
-	# wine_for_stability_DOR = {
-		# icon = GFX_decision_generic_stability
-		# ai_will_do = {
-			# factor = 1
-			# modifier = {
-				# has_stability < 0.75
-				# factor = 2
-			# }
-			# modifier = {
-				# has_stability < 0.5
-				# factor = 10
-			# }
-			# modifier = { #don't do if enough stability
-				# has_stability > 0.95
-				# factor = 0
-			# }
-		# }
-		# allowed = { original_tag = DOR } ##they get special version
-		# custom_cost_trigger = {
-			# has_equipment = { wine_equipment > @luxury_cost }
-		# }
-		# custom_cost_text = wine_decision_cost
-		# days_remove = @wine_decision_days
-		# modifier = {
-			# stability_factor = 0.1
-		# }
-		# complete_effect = { #cost
-			# hidden_effect = {
-				# add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
-			# }
-		# }
-		# remove_effect = {
-			# hidden_effect = { #renews if possible
-				# if = { #try to renew
-					# limit = { has_country_flag = renew_luxury_decisions }
-					# if = { #renew if can afford
-						# limit = { has_equipment = { wine_equipment > @luxury_cost } }
-						# activate_decision = wine_for_stability
-					# }
-					# else = { #let the player know they can't renew
-						# news_event = rfr_news.79
-					# }
-				# }
-			# }
-		# }
-	# }
-	
+
 	wine_for_war_support = {
 		icon = GFX_decision_generic_war_support
 		ai_will_do = {
@@ -287,11 +243,11 @@ celduin_trade_category = {
 				factor = 0
 			}
 		}
-		#allowed = { NOT = { original_tag = DOR } } ##they get special version
 		custom_cost_trigger = {
 			has_equipment = { wine_equipment > @luxury_cost }
 		}
 		custom_cost_text = wine_decision_cost
+		visible = { NOT = { has_completed_focus = DOR_host_lavish_galas } } #unlocks stronger version
 		days_remove = @wine_decision_days
 		modifier = {
 			war_support_factor = 0.1
@@ -317,66 +273,6 @@ celduin_trade_category = {
 			}
 		}
 	}
-	# wine_for_war_support_DOR = {
-		# icon = GFX_decision_generic_war_support
-		# ai_will_do = {
-			# factor = 1
-			# modifier = {
-				# has_war_support < 0.75
-				# OR = {
-					# has_war = yes
-					# has_government = melkorite
-					# has_government = conquest
-				# }
-				# factor = 2
-			# }
-			# modifier = {
-				# has_war_support < 0.5
-				# OR = {
-					# has_war = yes
-					# is_evil = yes
-				# }
-				# factor = 10
-			# }
-			# modifier = { #peaceful people don't really care
-				# has_war = no
-				# is_good = yes
-				# factor = 0
-			# }
-			# modifier = { #don't do if enough stability
-				# has_war_support > 0.95
-				# factor = 0
-			# }
-		# }
-		# allowed = { original_tag = DOR } ##they get special version
-		# custom_cost_trigger = {
-			# has_equipment = { wine_equipment > @luxury_cost }
-		# }
-		# custom_cost_text = wine_decision_cost
-		# days_remove = @wine_decision_days
-		# modifier = {
-			# war_support_factor = 0.1
-		# }
-		# complete_effect = { #cost
-			# hidden_effect = {
-				# add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
-			# }
-		# }
-		# remove_effect = {
-			# hidden_effect = { #renews if possible
-				# if = { #try to renew
-					# limit = { has_country_flag = renew_luxury_decisions }
-					# if = { #renew if can afford
-						# limit = { has_equipment = { wine_equipment > @luxury_cost } }
-						# activate_decision = wine_for_war_support
-					# }
-					# else = { #let the player know they can't renew
-						# news_event = rfr_news.79
-					# }
-				# }
-			# }
-		# }
-	# }
 
 	wine_for_consumer_goods = {
 		icon = GFX_decision_generic_consumer_goods
@@ -392,6 +288,7 @@ celduin_trade_category = {
 		}
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
+		visible = { NOT = { has_completed_focus = DOR_host_lavish_galas } } #unlocks stronger version
 		modifier = {
 			consumer_goods_factor = -0.1
 		}
@@ -442,6 +339,7 @@ celduin_trade_category = {
 		}
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
+		visible = { NOT = { has_completed_focus = DOR_host_lavish_galas } } #unlocks stronger version
 		modifier = {
 			army_morale_factor = 0.25
 		}
@@ -486,6 +384,7 @@ celduin_trade_category = {
 		}
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
+		visible = { NOT = { has_completed_focus = DOR_host_lavish_galas } } #unlocks stronger version
 		modifier = {
 			improve_relations_maintain_cost_factor = -0.75
 		}
@@ -530,6 +429,7 @@ celduin_trade_category = {
 		}
 		custom_cost_text = wine_decision_cost
 		days_remove = @wine_decision_days
+		visible = { NOT = { has_completed_focus = DOR_host_lavish_galas } } #unlocks stronger version
 		modifier = {
 			drift_defence_factor = -0.25
 		}
@@ -544,6 +444,306 @@ celduin_trade_category = {
 					limit = { has_country_flag = renew_luxury_decisions }
 					if = { #renew if can afford
 						limit = { has_equipment = { wine_equipment > @luxury_cost } }
+						activate_decision = wine_for_ideology_drift
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+
+	buffed_wine_for_stability = {
+		name = wine_for_stability
+		icon = GFX_decision_generic_stability
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_stability < 0.75
+				factor = 2
+			}
+			modifier = {
+				has_stability < 0.5
+				factor = 10
+			}
+			modifier = { #don't do if enough stability
+				has_stability > 0.95
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost_buffed }
+		}
+		custom_cost_text = wine_decision_cost_buffed
+		days_remove = @wine_decision_days
+		allowed = { original_tag = DOR }
+		visible = { has_completed_focus = DOR_host_lavish_galas } #unlocks stronger version
+		modifier = {
+			stability_factor = 0.2
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_buffed_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost_buffed } }
+						activate_decision = wine_for_stability
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+
+	buffed_wine_for_war_support = {
+		name = wine_for_war_support
+		icon = GFX_decision_generic_war_support
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_war_support < 0.75
+				OR = {
+					has_war = yes
+					has_government = melkorite
+					has_government = conquest
+				}
+				factor = 2
+			}
+			modifier = {
+				has_war_support < 0.5
+				OR = {
+					has_war = yes
+					is_evil = yes
+				}
+				factor = 10
+			}
+			modifier = { #peaceful people don't really care
+				has_war = no
+				is_good = yes
+				factor = 0
+			}
+			modifier = { #don't do if enough stability
+				has_war_support > 0.95
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost_buffed }
+		}
+		custom_cost_text = wine_decision_cost_buffed
+		allowed = { original_tag = DOR }
+		visible = { has_completed_focus = DOR_host_lavish_galas } #unlocks stronger version
+		days_remove = @wine_decision_days
+		modifier = {
+			war_support_factor = 0.2
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_buffed_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost_buffed } }
+						activate_decision = wine_for_war_support
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+
+	buffed_wine_for_consumer_goods = {
+		name = wine_for_consumer_goods
+		icon = GFX_decision_generic_consumer_goods
+		ai_will_do = {
+			factor = 2
+			modifier = { #don't do if not enough factories to likely make a difference
+				num_of_factories < 15
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost_buffed }
+		}
+		custom_cost_text = wine_decision_cost_buffed
+		days_remove = @wine_decision_days
+		allowed = { original_tag = DOR }
+		visible = { has_completed_focus = DOR_host_lavish_galas } #unlocks stronger version
+		modifier = {
+			consumer_goods_factor = -0.2
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_buffed_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost_buffed } }
+						activate_decision = wine_for_consumer_goods
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+	
+	buffed_wine_for_morale = {
+		name = wine_for_morale
+		icon = GFX_decision_generic_military
+		ai_will_do = {
+			factor = 1
+			modifier = { #more likely if outmatched
+				enemies_strength_ratio > 1
+				factor = 2
+			}
+			modifier = { #more likely if outmatched
+				enemies_strength_ratio > 1.25
+				factor = 2
+			}
+			modifier = { #more likely if losing ground
+				any_owned_state = { NOT = { is_controlled_by = ROOT } }
+				factor = 3
+			}
+			modifier = { #no reason if at peace
+				has_war = no
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost_buffed }
+		}
+		custom_cost_text = wine_decision_cost_buffed
+		days_remove = @wine_decision_days
+		allowed = { original_tag = DOR }
+		visible = { has_completed_focus = DOR_host_lavish_galas } #unlocks stronger version
+		modifier = {
+			army_morale_factor = 0.5
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_buffed_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost_buffed } }
+						activate_decision = wine_for_morale
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+	
+	buffed_wine_for_diplomacy = {
+		name = wine_for_diplomacy
+		icon = GFX_generic_befriend_decision
+		ai_will_do = {
+			factor = 0.25
+			modifier = { #you don't need diplomacy!
+				OR = {
+					is_subject = yes
+					AND = {
+						has_war = yes
+						is_in_faction = yes
+					}
+				}
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost_buffed }
+		}
+		custom_cost_text = wine_decision_cost_buffed
+		days_remove = @wine_decision_days
+		allowed = { original_tag = DOR }
+		visible = { has_completed_focus = DOR_host_lavish_galas } #unlocks stronger version
+		modifier = {
+			improve_relations_maintain_cost_factor = -1.5
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_buffed_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost_buffed } }
+						activate_decision = wine_for_diplomacy
+					}
+					else = { #let the player know they can't renew
+						news_event = rfr_news.79
+					}
+				}
+			}
+		}
+	}
+	
+	buffed_wine_for_ideology_drift = {
+		name = wine_for_ideology_drift
+		icon = GFX_decision_eng_blackshirt_speech
+		ai_will_do = {
+			factor = 0.25
+			modifier = { #you don't need diplomacy!
+				OR = {
+					is_subject = yes
+					AND = {
+						has_war = yes
+						is_in_faction = yes
+					}
+				}
+				factor = 0
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost_buffed }
+		}
+		custom_cost_text = wine_decision_cost_buffed
+		days_remove = @wine_decision_days
+		allowed = { original_tag = DOR }
+		visible = { has_completed_focus = DOR_host_lavish_galas } #unlocks stronger version
+		modifier = {
+			drift_defence_factor = -0.5
+		}
+		complete_effect = { #cost
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_buffed_negative }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { #renews if possible
+				if = { #try to renew
+					limit = { has_country_flag = renew_luxury_decisions }
+					if = { #renew if can afford
+						limit = { has_equipment = { wine_equipment > @luxury_cost_buffed } }
 						activate_decision = wine_for_ideology_drift
 					}
 					else = { #let the player know they can't renew

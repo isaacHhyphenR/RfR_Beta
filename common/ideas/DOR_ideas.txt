@@ -774,7 +774,7 @@ ideas = {
 				prosperity_gain_factor = 0.15
 			}
 			cancel = {
-				NOT = { is_in_faction_with = var::global.celduin_trade_leader }
+				NOT = { is_in_faction_with = var:global.celduin_trade_leader }
 			}
 		}
 	}
@@ -1207,9 +1207,12 @@ ideas = {
 				##CAVALRY
 	tank_manufacturer = { 
 		designer = yes
-		dorwinion_house_barvadinian = {
+		dorwinion_house_barvadinian = { #Merchants
 			allowed = {
 				original_tag = DOR
+			}
+			visible = {
+				NOT = { has_completed_focus = DOR_reward_loyal_partners }
 			}
 			cost = 150
 			research_bonus = {
@@ -1217,7 +1220,28 @@ ideas = {
 			}
 			traits = { fast_tank_manufacturer }
 		}
-		dorwinion_house_raudbarad = {
+		dorwinion_house_barvadinian_buffed = { #Merchants
+			name = dorwinion_house_barvadinian
+			picture = dorwinion_house_barvadinian
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_completed_focus = DOR_reward_loyal_partners
+			}
+			cost = 150
+			research_bonus = {
+				cat_light_armor = @designerResearchBonus
+			}
+			equipment_bonus = {
+				light_tank_chassis = {
+					maximum_speed = 0.05
+					soft_attack = 0.05
+				}
+			}
+			traits = { fast_tank_manufacturer }
+		}
+		dorwinion_house_raudbarad = { #Koldana
 			allowed = {
 				original_tag = DOR
 			}
@@ -1227,7 +1251,7 @@ ideas = {
 			}
 			traits = { infantry_tank_manufacturer }
 		}
-		dorwinion_house_vierling = {
+		dorwinion_house_vierling = { #Vierling
 			allowed = {
 				original_tag = DOR
 			}
@@ -1263,9 +1287,12 @@ ideas = {
 			}
 			traits = { carpenter }
 		}
-		dorwinion_house_aldiana = {
+		dorwinion_house_aldiana = { #Merchants
 			allowed = {
 				original_tag = DOR
+			}
+			visible = {
+				NOT = { has_completed_focus = DOR_reward_loyal_partners }
 			}
 			cost = 150
 			research_bonus = {
@@ -1274,22 +1301,69 @@ ideas = {
 			}
 			traits = { convoy_escort_naval_manufacturer }
 		}
-		dorwinion_house_blorchid = {
+		dorwinion_house_aldiana_buffed = { #Merchants
+			name = dorwinion_house_aldiana
+			picture = dorwinion_house_aldiana
 			allowed = {
 				original_tag = DOR
+			}
+			visible = {
+				has_completed_focus = DOR_reward_loyal_partners
+			}
+			cost = 150
+			research_bonus = {
+				tp_tech = @designerResearchBonus
+				dd_tech = @designerResearchBonus
+			}
+			equipment_bonus = {
+				screen_ship = {
+					torpedo_attack = 0.05
+					mines_sweeping = 0.1
+				}
+			}
+			traits = { convoy_escort_naval_manufacturer }
+		}
+		dorwinion_house_blorchid = { #Merchants
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				NOT = { has_completed_focus = DOR_reward_loyal_partners }
 			}
 			cost = 150
 			research_bonus = {
 				cl_tech = @designerResearchBonus
 				ca_tech = @designerResearchBonus
 			}
-			traits = { raiding_fleet_naval_manufacturer }
+			traits = { battlefleet_designer }
+		}
+		dorwinion_house_blorchid_buffed = { #Merchants
+			name = dorwinion_house_blorchid
+			picture = dorwinion_house_blorchid
+			allowed = {
+				original_tag = DOR
+			}
+			visible = {
+				has_completed_focus = DOR_reward_loyal_partners
+			}
+			cost = 150
+			research_bonus = {
+				cl_tech = @designerResearchBonus
+				ca_tech = @designerResearchBonus
+			}
+			equipment_bonus = {
+				ship_hull_cruiser = {
+					build_cost_ic = -0.05
+					armor_value = 0.05
+				}
+			}
+			traits = { battlefleet_designer }
 		}
 	}
 				###MATERIEL
 	materiel_manufacturer = {
 		designer = yes
-		dorwinion_house_ilian = {
+		dorwinion_house_ilian = { #Koldana
 			allowed = {
 				original_tag = DOR
 			}
@@ -1299,7 +1373,7 @@ ideas = {
 			}
 			traits = { infantry_equipment_manufacturer }
 		}
-		dorwinion_house_garmeniana = {
+		dorwinion_house_garmeniana = { #Vierling
 			allowed = {
 				original_tag = DOR
 			}
@@ -1309,7 +1383,7 @@ ideas = {
 			}
 			traits = { support_equipment_manufacturer }
 		}
-		dorwinion_house_galen = {
+		dorwinion_house_galen = { #Vierling
 			allowed = {
 				original_tag = DOR
 			}
