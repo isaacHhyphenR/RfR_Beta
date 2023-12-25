@@ -246,3 +246,6 @@
  option_3: "Option 3:\n
  DOR_economic_powerhouse_tooltip: "Add 3 §Ybuilding slots§! per completed §YInternal Affairs§! focus$VorV_dev_line_end$"
  autonomy_mining_colony_resource_tooltip: "This subject type has a §G100%§! bonus to resource extraction."
+ defeated_monarchist_plot: "Defeated Monarchist Plot"
+ monarchist_revolt_happened: "Monarchists Revolted"
+ unlocks_designers_tooltip: "Unlocks Specialists:\n"

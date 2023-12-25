@@ -1349,4 +1349,8 @@ spriteTypes = {
 		name = "GFX_goal_DOR_senate_republic"
 		texturefile = "gfx/interface/goals/goal_DOR_senate_republic.dds"
 	}
+	SpriteType = {
+		name = "GFX_goal_generic_production3"
+		texturefile = "gfx/interface/goals/goal_generic_production3.dds"
+	}
 }

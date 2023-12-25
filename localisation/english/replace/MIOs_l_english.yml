@@ -106,7 +106,8 @@ mio_header_fishing_ships: "Fishing Ships"
 mio_header_commercial: "Commercial"
 mio_header_weapons_and_armor: "Weapons & Armor"
 mio_header_support_equipment: "Support Equipment"
-
+mio_header_economic: "Economic"
+mio_header_masonry: "Masonry"
 
 
 ########   #######  ##       ####  ######  #### ########  ######  
@@ -274,3 +275,7 @@ DOR_dragons_breath_speed: "Thundering Hooves"
 DOR_dragons_breath_armor: "Unassailable Mounts"
 DOR_dragons_breath_breakthrough: "Terrifying Charge"
 DOR_dragons_breath_soft_attack: "Merciless Riders"
+
+generic_mio_trait_dwarven_mining: "Dwarven Mining"
+generic_mio_trait_stubborn_defense: "Stubborn Defense"
+generic_mio_trait_dwarven_masonry: "Dwarven Masonry"

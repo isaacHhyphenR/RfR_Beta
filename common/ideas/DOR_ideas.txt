@@ -1066,6 +1066,36 @@ ideas = {
 				experience_gain_army_unit_factor = 0.1
 			}
 		}
+		
+		##Dwarven Prospectors
+		hidden_dwarven_prospectors_empty = {
+			name = dorwinion_dwarven_prospectors
+			picture = dorwinion_dwarven_prospectors
+		}
+		hidden_dwarven_prospectors = {
+			name = dorwinion_dwarven_prospectors
+			picture = dorwinion_dwarven_prospectors
+			modifier = {
+				local_resources_factor = 0.1
+			}
+		}
+		hidden_dwarven_prospectors_fortification = {
+			name = dorwinion_dwarven_prospectors
+			picture = dorwinion_dwarven_prospectors
+			modifier = {
+				local_resources_factor = 0.1
+				land_bunker_effectiveness_factor = 0.1
+			}
+		}
+		hidden_dwarven_prospectors_fortification_construction = {
+			name = dorwinion_dwarven_prospectors
+			picture = dorwinion_dwarven_prospectors
+			modifier = {
+				local_resources_factor = 0.1
+				land_bunker_effectiveness_factor = 0.1
+				production_speed_bunker_factor = 0.1
+			}
+		}
 	}
 
 	##########################################################DESIGNERS
@@ -1073,6 +1103,7 @@ ideas = {
 	@guildResearchBonusBoosted = 0.2
 	@designerResearchBonus = 0.1
 	@designerResearchBonusHalf = 0.05
+	@prospectorsCost = 100
 				##MERCENARIES
 	aircraft_manufacturer = { 
 		designer = yes
@@ -1114,9 +1145,55 @@ ideas = {
 				original_tag = DOR
 			}
 			available = { has_completed_focus = DOR_hire_the_dwarves }
-			visible = { NOT = { has_country_flag = disbanded_mountains_vengeance } }
+			visible = {
+				NOT = { has_country_flag = disbanded_mountains_vengeance }
+				NOT = { has_completed_focus = DOR_commission_their_other_skills }
+			}
 			cost = @mercenaryIdeaCost
 			allowed_to_remove = { always = no } #techs don't unapply
+			traits = { dor_mountains_vengeance_trait }
+			on_add = {
+				hidden_effect = {
+					set_technology = {
+						DOR_mountains_vengeance_defense = 1
+						DOR_mountains_vengeance_hp = 1
+						popup = no
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					set_technology = {
+						DOR_mountains_vengeance_defense = 0
+						DOR_mountains_vengeance_hp = 0
+						popup = no
+					}
+				}
+			}
+		}
+		dorwinion_mountains_vengeance_equipment = {
+			name = dorwinion_mountains_vengeance
+			picture = dorwinion_mountains_vengeance
+			allowed = {
+				original_tag = DOR
+			}
+			available = { has_completed_focus = DOR_hire_the_dwarves }
+			visible = {
+				NOT = { has_country_flag = disbanded_mountains_vengeance }
+				has_completed_focus = DOR_commission_their_other_skills
+			}
+			cost = @mercenaryIdeaCost
+			allowed_to_remove = { always = no } #techs don't unapply
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.05
+					reliability = 0.05
+				}
+				infantry_armor = {
+					breakthrough = 0.05
+					reliability = 0.05
+				}
+			}
 			traits = { dor_mountains_vengeance_trait }
 			on_add = {
 				hidden_effect = {
@@ -1392,6 +1469,89 @@ ideas = {
 				artillery = @designerResearchBonus
 			}
 			traits = { artillery_manufacturer }
+		}
+		################################################################DWARVEN PROSPECTORS
+		dorwinion_dwarven_prospectors_materiel = {
+			name = dorwinion_dwarven_prospectors
+			picture = dorwinion_dwarven_prospectors
+			allowed = {
+				original_tag = DOR
+				has_dlc = "Arms Against Tyranny"
+				NOT = {
+					has_country_flag = elected_winelord
+				}
+			}
+			available = {
+				has_completed_focus = DOR_employ_their_expertise
+			}
+			visible = {
+				NOT = { has_completed_focus = DOR_take_command_of_neglected_forges }
+			}
+			cost = @prospectorsCost
+			removal_cost = 10
+			research_bonus = {
+				cat_production = 0.1
+			}
+			modifier = {
+				#-10% infantry cost in trait
+			}
+			traits = { blacksmithing_concern }
+		}
+		dorwinion_dwarven_prospectors_materiel_mils = {
+			name = dorwinion_dwarven_prospectors
+			picture = dorwinion_dwarven_prospectors
+			allowed = {
+				original_tag = DOR
+				has_dlc = "Arms Against Tyranny"
+				NOT = {
+					has_country_flag = elected_winelord
+				}
+			}
+			available = {
+				has_completed_focus = DOR_employ_their_expertise
+			}
+			visible = {
+				NOT = { has_completed_focus = DOR_train_a_generation_of_smiths }
+				has_completed_focus = DOR_take_command_of_neglected_forges
+			}
+			cost = @prospectorsCost
+			removal_cost = 10
+			research_bonus = {
+				cat_production = 0.2
+			}
+			modifier = {
+				#-10% infantry cost in trait
+				production_speed_arms_factory_factor = 0.1
+			}
+			traits = { blacksmithing_concern }
+		}
+		dorwinion_dwarven_prospectors_materiel_mils_tools = {
+			name = dorwinion_dwarven_prospectors
+			picture = dorwinion_dwarven_prospectors
+			allowed = {
+				original_tag = DOR
+				has_dlc = "Arms Against Tyranny"
+				NOT = {
+					has_country_flag = elected_winelord
+				}
+			}
+			available = {
+				has_completed_focus = DOR_employ_their_expertise
+			}
+			visible = {
+				has_completed_focus = DOR_train_a_generation_of_smiths
+			}
+			cost = @prospectorsCost
+			removal_cost = 10
+			research_bonus = {
+				cat_production = 0.3
+			}
+			modifier = {
+				#-10% infantry cost in trait
+				production_speed_arms_factory_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+			}
+			traits = { blacksmithing_concern }
 		}
 	}
 				##INDUSTRIAL
@@ -1893,6 +2053,90 @@ ideas = {
 				attrition = -0.05
 			}
 			traits = { tailor }
+		}
+		################################################################DWARVEN PROSPECTORS
+		dorwinion_dwarven_prospectors = {
+			allowed = {
+				original_tag = DOR
+				has_dlc = "Arms Against Tyranny"
+				NOT = {
+					has_country_flag = elected_winelord
+				}
+			}
+			available = {
+				has_completed_focus = DOR_employ_their_expertise
+			}
+			visible = {
+				NOT = { has_completed_focus = DOR_maintain_crumbling_walls_and_gates }
+			}
+			cost = @prospectorsCost
+			removal_cost = 10
+			research_bonus = {
+				excavation_tech = @designerResearchBonus
+			}
+			modifier = {
+				local_resources_factor = 0.1
+			}
+			traits = { mining_concern }
+		}
+		dorwinion_dwarven_prospectors_fortification = {
+			name = dorwinion_dwarven_prospectors
+			picture = dorwinion_dwarven_prospectors
+			allowed = {
+				original_tag = DOR
+				has_dlc = "Arms Against Tyranny"
+				NOT = {
+					has_country_flag = elected_winelord
+				}
+			}
+			available = {
+				has_completed_focus = DOR_employ_their_expertise
+			}
+			visible = {
+				NOT = { has_completed_focus = DOR_train_a_generation_of_masons }
+				has_completed_focus = DOR_maintain_crumbling_walls_and_gates
+			}
+			cost = @prospectorsCost
+			removal_cost = 10
+			research_bonus = {
+				excavation_tech = @designerResearchBonus
+				cat_fortification = @designerResearchBonus
+			}
+			modifier = {
+				local_resources_factor = 0.1
+				land_bunker_effectiveness_factor = 0.1
+			}
+			traits = { mining_concern }
+		}
+		dorwinion_dwarven_prospectors_fortification_construction = {
+			name = dorwinion_dwarven_prospectors
+			picture = dorwinion_dwarven_prospectors
+			allowed = {
+				original_tag = DOR
+				has_dlc = "Arms Against Tyranny"
+				NOT = {
+					has_country_flag = elected_winelord
+				}
+			}
+			available = {
+				has_completed_focus = DOR_employ_their_expertise
+			}
+			visible = {
+				has_completed_focus = DOR_train_a_generation_of_masons
+			}
+			cost = @prospectorsCost
+			removal_cost = 10
+			research_bonus = {
+				excavation_tech = @designerResearchBonus
+				cat_fortification = @designerResearchBonus
+				architecture = @designerResearchBonusHalf
+			}
+			modifier = {
+				local_resources_factor = 0.1
+				land_bunker_effectiveness_factor = 0.1
+				production_speed_bunker_factor = 0.1
+			}
+			traits = { mining_concern }
 		}
 	}
 

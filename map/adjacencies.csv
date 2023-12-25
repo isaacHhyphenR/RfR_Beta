@@ -123,6 +123,7 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 3779;4867;impassable;-1;-1;-1;-1;-1;;
 1081;4867;impassable;-1;-1;-1;-1;-1;;
 1596;720;impassable;-1;-1;-1;-1;-1;;
+1081;720;impassable;-1;-1;-1;-1;-1;;
 4376;720;impassable;-1;-1;-1;-1;-1;;
 1164;720;impassable;-1;-1;-1;-1;-1;;
 3993;720;impassable;-1;-1;-1;-1;-1;;

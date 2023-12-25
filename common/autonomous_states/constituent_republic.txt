@@ -29,6 +29,10 @@ autonomy_state = {
 	ai_overlord_wants_lower = {
 		factor = 0.5
 	}
+	
+	allowed_levels_filter = {
+		autonomy_sister_republic
+	}
 
 	ai_overlord_wants_garrison = {
 		always = yes

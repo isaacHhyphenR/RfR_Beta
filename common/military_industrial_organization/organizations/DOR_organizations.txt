@@ -4603,3 +4603,283 @@ DOR_company_of_winter_MIO = {
 		}
 	}
 }
+##############################################################################################################################
+# DWARVEN PROSPECTORS
+##############################################################################################################################
+DOR_dwarven_prospectors_MIO = {
+	name = dorwinion_dwarven_prospectors
+	icon = GFX_idea_dorwinion_dwarven_prospectors
+
+	allowed = {
+		original_tag = DOR
+		NOT = { has_country_flag = elected_winelord }
+	}
+	available = { FROM = { has_completed_focus = DOR_employ_their_expertise } }
+	
+	equipment_type {
+		infantry_equipment
+		infantry_armor
+	}
+	research_categories = {
+		infantry_tech
+	}
+	tree_header_text = {
+		text = mio_header_masonry
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_weapons_and_armor
+		x = 5
+	}
+
+	initial_trait = {
+		name = mining_concern
+		production_bonus = {
+			production_resource_need_factor = -0.1
+			production_resource_penalty_factor = -0.1
+		}
+	}
+####################################################
+#######################################################ECONOMIC
+####################################################
+####################################################
+	trait = {
+		token = generic_mio_trait_dwarven_mining
+		name = generic_mio_trait_dwarven_mining
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=1 y=0 }
+
+		on_complete = { #10% resources
+			FROM = {
+				swap_ideas = {
+					remove_idea = hidden_dwarven_prospectors_empty
+					add_idea = hidden_dwarven_prospectors
+				}
+			}
+		}
+	}
+	trait = {
+		token = generic_mio_trait_stubborn_defense
+		name = generic_mio_trait_stubborn_defense
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_dwarven_mining
+		all_parents = { generic_mio_trait_dwarven_mining }
+
+		on_complete = { #10% fort effectiveness
+			FROM = {
+				swap_ideas = {
+					remove_idea = hidden_dwarven_prospectors
+					add_idea = hidden_dwarven_prospectors_fortification
+				}
+			}
+		}
+	}
+	trait = {
+		token = generic_mio_trait_dwarven_masonry
+		name = generic_mio_trait_dwarven_masonry
+		icon = GFX_generic_mio_trait_icon_political
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_stubborn_defense
+		all_parents = { generic_mio_trait_stubborn_defense }
+
+		on_complete = { #10% fort speed
+			FROM = {
+				swap_ideas = {
+					remove_idea = hidden_dwarven_prospectors_fortification
+					add_idea = hidden_dwarven_prospectors_fortification_construction
+				}
+			}
+		}
+	}
+####################################################
+#######################################################INFANTRY EQUIPMENT
+####################################################
+	trait = {
+		token = generic_mio_trait_drum_pattern_sights
+		name = generic_mio_trait_drum_pattern_sights
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=4 y=0 }
+
+		equipment_bonus = {
+			defense = 0.035
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.025
+		}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.025
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_reinforced_stocks
+		name = generic_mio_trait_reinforced_stocks
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		equipment_bonus = {
+			soft_attack = 0.025
+			reliability = 0.03
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.025
+		}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.025
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_bolt_action
+		name = generic_mio_trait_bolt_action
+		icon = GFX_generic_mio_department_icon_infantry_line_efficiency
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_reinforced_stocks
+
+		all_parents = { generic_mio_trait_reinforced_stocks }
+
+		mutually_exclusive = { generic_mio_trait_semi_auto }
+
+		equipment_bonus = {
+			soft_attack = -0.03
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_semi_auto
+		name = generic_mio_trait_semi_auto
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_reinforced_stocks
+
+		all_parents = { generic_mio_trait_reinforced_stocks }
+
+		mutually_exclusive = { generic_mio_trait_bolt_action }
+
+		equipment_bonus = {
+			soft_attack = 0.03
+			breakthrough = 0.03
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_medium_machineguns
+		name = generic_mio_trait_medium_machineguns
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_bolt_action
+
+		any_parent = { generic_mio_trait_semi_auto generic_mio_trait_bolt_action }
+		
+		equipment_bonus = {
+			breakthrough = 0.06
+			build_cost_ic = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_advanced_barrel_forging
+		name = generic_mio_trait_advanced_barrel_forging
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		any_parent = { generic_mio_trait_reinforced_stocks generic_mio_trait_drum_pattern_sights }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_mass_rifle_production
+		name = generic_mio_trait_mass_rifle_production
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_advanced_barrel_forging
+
+		all_parents = { generic_mio_trait_advanced_barrel_forging }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.03
+			production_cost_factor = -0.03
+		}
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.3
+		}
+	}
+
+
+	trait = {
+		token = generic_mio_trait_quality_materials
+		name = generic_mio_trait_quality_materials
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		all_parents = { generic_mio_trait_drum_pattern_sights }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+	}
+
+	trait = {
+		token = generic_mio_trait_improved_small_arms_bullet_design
+		name = generic_mio_trait_improved_small_arms_bullet_design
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_quality_materials
+
+		all_parents = { generic_mio_trait_quality_materials }
+
+		mutually_exclusive = { generic_mio_trait_armor_piercing_rounds }
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			breakthrough = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_armor_piercing_rounds
+		name = generic_mio_trait_armor_piercing_rounds
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_quality_materials
+
+		all_parents = { generic_mio_trait_quality_materials }
+		
+		mutually_exclusive = { generic_mio_trait_improved_small_arms_bullet_design }
+
+		equipment_bonus = {
+			ap_attack = 0.25
+			hard_attack = 0.05
+		}
+	}
+}

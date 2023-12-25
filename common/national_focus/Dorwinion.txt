@@ -28,6 +28,7 @@
 #GFX_goal_invest_in_rhovanion
 #GFX_dorwin_nobility
 #GFX_goal_erebor_trade
+#GFX_goal_dwarven_smith
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -6755,6 +6756,7 @@ focus_tree = {
 		prerequisite = {
 			focus = DOR_invite_dwarven_prospectors
 		}
+		mutually_exclusive = { focus = DOR_employ_their_expertise }
 		available = {
 			OR = {
 				controls_state = 312
@@ -6783,7 +6785,317 @@ focus_tree = {
 			hidden_effect = {
 				NRK = {
 					inherit_technology = ERE
-					add_idea = free_trade
+					add_ideas = free_trade
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Service the Miners
+		id = DOR_service_the_miners
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = DOR_allow_them_to_reestablish_halls_of_old
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_allow_them_to_reestablish_halls_of_old
+		}
+		available = {
+			controls_state = 118
+			NRK = { #Dwarves are your subject and control the neighboring mountains
+				is_subject_of = ROOT
+				controls_state = 312
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_PROSPERITY }
+		completion_reward = { #civ, slot & prosperity in FOlyavuld
+			118 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_15_prosperity = yes
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Grant Them Traitors Lands
+		id = DOR_grant_them_traitors_lands
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = -1
+		y = 2
+		relative_position_id = DOR_allow_them_to_reestablish_halls_of_old
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_allow_them_to_reestablish_halls_of_old
+		}
+		available = { #defeated monarchist plot/revolt
+			controls_state = 311
+			country_exists = NRK
+			has_subject = NRK
+			OR = {
+				has_country_flag = defeated_monarchist_plot
+				has_country_flag = monarchist_revolt_happened
+			}
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_RESOURCES }
+		completion_reward = { #Dwarves get Uldonavuld
+			311 = {
+				transfer_state_to = NRK
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Employ Their Expertise
+		id = DOR_employ_their_expertise
+		icon = GFX_goal_dwarven_smith
+		x = 1
+		y = 1
+		relative_position_id = DOR_invite_dwarven_prospectors
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_invite_dwarven_prospectors
+		}
+		mutually_exclusive = { focus = DOR_allow_them_to_reestablish_halls_of_old }
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_RESEARCH }
+		completion_reward = { #unlocks dwarven prospectors MIO/designers
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				hidden_effect = { #so that I can 'swap ideas' in the MIO for better tooltip
+					add_ideas = hidden_dwarven_prospectors_empty
+				}
+				custom_effect_tooltip = unlocks_designers_tooltip
+				show_mio_tooltip = DOR_dwarven_prospectors_MIO
+			}
+			else = {
+				custom_effect_tooltip = unlocks_designers_tooltip
+				show_ideas_tooltip = dorwinion_dwarven_prospectors_materiel
+				show_ideas_tooltip = dorwinion_dwarven_prospectors
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Maintain Crumbling Walls and Gates
+		id = DOR_maintain_crumbling_walls_and_gates
+		icon = GFX_goal_generic_construct_military
+		x = -1
+		y = 1
+		relative_position_id = DOR_employ_their_expertise
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_employ_their_expertise
+		}
+		search_filters = { FOCUS_FILTER_FORTIFICATION }
+		completion_reward = { #bunkers on every border
+			every_controlled_state = {
+				limit = {
+					any_neighbor_state = { NOT = { is_controlled_by = ROOT } }
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+						limit_to_border_country = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_dwarven_prospectors_MIO = {
+					add_mio_size = 1
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = dorwinion_dwarven_prospectors
+					}
+					swap_ideas = {
+						remove_idea = dorwinion_dwarven_prospectors
+						add_idea = dorwinion_dwarven_prospectors_fortification
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = dorwinion_dwarven_prospectors
+							add_idea = dorwinion_dwarven_prospectors_fortification
+						}
+					}
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Train a Generation of Masons
+		id = DOR_train_a_generation_of_masons
+		icon = GFX_goal_generic_construction2
+		x = 0
+		y = 1
+		relative_position_id = DOR_maintain_crumbling_walls_and_gates
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_maintain_crumbling_walls_and_gates
+		}
+		search_filters = { FOCUS_FILTER_FORTIFICATION FOCUS_FILTER_RESEARCH }
+		completion_reward = { #fort research
+			add_tech_bonus = {
+				uses = 2
+				bonus = 1
+				ahead_reduction = 1
+				category = cat_fortification
+				name = DOR_train_a_generation_of_masons
+			}
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_dwarven_prospectors_MIO = {
+					add_mio_size = 1
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = dorwinion_dwarven_prospectors_fortification
+					}
+					swap_ideas = {
+						remove_idea = dorwinion_dwarven_prospectors_fortification
+						add_idea = dorwinion_dwarven_prospectors_fortification_construction
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = dorwinion_dwarven_prospectors_fortification
+							add_idea = dorwinion_dwarven_prospectors_fortification_construction
+						}
+					}
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Take Command of Neglected Forges
+		id = DOR_take_command_of_neglected_forges
+		icon = GFX_goal_generic_forge
+		x = 1
+		y = 1
+		relative_position_id = DOR_employ_their_expertise
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_employ_their_expertise
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #1 mil and slot
+			random_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_dwarven_prospectors_MIO = {
+					add_mio_size = 1
+				}
+			}
+			#without AAT, improves the materiel designer
+			else = {
+				if = {
+					limit = {
+						has_idea = dorwinion_dwarven_prospectors_materiel
+					}
+					swap_ideas = {
+						remove_idea = dorwinion_dwarven_prospectors_materiel
+						add_idea = dorwinion_dwarven_prospectors_materiel_mils
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = dorwinion_dwarven_prospectors_materiel
+							add_idea = dorwinion_dwarven_prospectors_materiel_mils
+						}
+					}
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Train a Generation of Smiths
+		id = DOR_train_a_generation_of_smiths
+		icon = GFX_goal_generic_production3
+		x = 0
+		y = 1
+		relative_position_id = DOR_take_command_of_neglected_forges
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_take_command_of_neglected_forges
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #1 mil and slot
+			add_tech_bonus = {
+				uses = 2
+				bonus = 1
+				ahead_reduction = 1
+				category = cat_production
+				name = DOR_train_a_generation_of_masons
+			}
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_dwarven_prospectors_MIO = {
+					add_mio_size = 1
+				}
+			}
+			#without AAT, improves the materiel designer
+			else = {
+				if = {
+					limit = {
+						has_idea = dorwinion_dwarven_prospectors_materiel_mils
+					}
+					swap_ideas = {
+						remove_idea = dorwinion_dwarven_prospectors_materiel_mils
+						add_idea = dorwinion_dwarven_prospectors_materiel_mils_tools
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = dorwinion_dwarven_prospectors_materiel_mils
+							add_idea = dorwinion_dwarven_prospectors_materiel_mils_tools
+						}
+					}
 				}
 			}
 			merchant_houses_focus_effect = yes
@@ -7066,10 +7378,33 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			mio:DOR_mountains_vengeance_MIO = {
-				add_mio_size = 1
-				unlock_mio_trait_tooltip = generic_mio_trait_drum_pattern_sights
-				unlock_mio_trait_tooltip = generic_mio_trait_reinforced_stocks
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_mountains_vengeance_MIO = {
+					add_mio_size = 1
+					unlock_mio_trait_tooltip = generic_mio_trait_drum_pattern_sights
+					unlock_mio_trait_tooltip = generic_mio_trait_reinforced_stocks
+				}
+			}
+			#Without AAT, buffs the idea with infantry weapons/equipment bonuses
+			else = {
+				if = {
+					limit = {
+						has_idea = dorwinion_mountains_vengeance
+					}
+					swap_ideas = {
+						remove_idea = dorwinion_mountains_vengeance
+						add_idea = dorwinion_mountains_vengeance_equipment
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = dorwinion_mountains_vengeance
+							add_idea = dorwinion_mountains_vengeance_equipment
+						}
+					}
+				}
 			}
 			merchant_houses_focus_effect = yes
 		}
@@ -8358,7 +8693,7 @@ focus_tree = {
 	}
 	focus = { #Guardian of Prosperity
 		id = DOR_guardian_of_prosperity
-		icon = GFX_goal_generic_construct_market
+		icon = GFX_focus_SWE_the_barrel
 		x = 2
 		y = 1
 		relative_position_id = DOR_every_coin_accounted_for
