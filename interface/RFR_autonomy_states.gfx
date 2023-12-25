@@ -31,4 +31,8 @@ spriteTypes = {
 		name = "GFX_autonomy_constituent_republic_icon"
 		textureFile = "gfx/interface/autonomy/autonomy_constituent_republic.dds"
 	}
+	spriteType = {
+		name = "GFX_autonomy_mining_colony_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_mining_colony.dds"
+	}
 }

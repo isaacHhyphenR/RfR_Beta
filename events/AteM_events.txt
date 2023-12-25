@@ -1504,6 +1504,212 @@ country_event = { ##20## DOR Spend more on the economy
 	}
 }
 
+country_event = { ##21## DOR wants precious metals for wine
+	id = atem.21
+	title = atem.21.t
+	desc = atem.21.d
+	picture = GFX_feast2
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.21.a
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = {
+			type = wine_equipment
+			amount = 1000
+			producer = FROM
+		}
+		capital_scope = {
+			add_25_prosperity = yes
+		}
+		FROM = {
+			add_equipment_to_stockpile = {
+				type = precious_metals_equipment
+				amount = 1000
+				producer = ROOT
+			}
+			capital_scope = {
+				add_25_prosperity = yes
+			}
+		}
+		add_opinion_modifier = {
+			modifier = good_trade
+			target = FROM
+		}
+		reverse_add_opinion_modifier = {
+			modifier = good_trade
+			target = FROM
+		}
+		hidden_effect = {
+			FROM = { news_event = rfr_news.127 }
+		}
+	}
+	option = { ##no
+		name = atem.21.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				FROM = {
+					THIS_and_PREV_good_vs_evil = yes
+				}
+				add = 10
+			}
+		}
+		hidden_effect = {
+			FROM = { news_event = rfr_news.128 }
+		}
+	}
+}
+
+country_event = { ##22## DOR wants diplo relations with Erebor
+	id = atem.22
+	title = atem.22.t
+	desc = atem.22.d
+	picture = GFX_gondor_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.22.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				add = -98
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				add = -1.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -35
+				}
+				factor = 0
+			}
+			modifier = { #don't good vs evil
+				FROM = {
+					THIS_and_PREV_good_vs_evil = yes
+				}
+				factor = 0
+			}
+		}
+		give_guarantee = FROM
+		give_military_access = FROM
+		diplomatic_relation = {
+			country = FROM
+			relation = non_aggression_pact
+			active = yes
+		}
+		FROM = {
+			give_guarantee = ROOT
+			give_military_access = ROOT
+			diplomatic_relation = {
+				country = FROM
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+			
+		hidden_effect = {
+			FROM = { news_event = rfr_news.129 }
+		}
+	}
+	option = { ##no
+		name = atem.22.b
+		ai_chance = {
+			factor = 1
+		}
+		hidden_effect = {
+			FROM = { news_event = rfr_news.130 }
+		}
+	}
+}
+
+country_event = { ##23## DOR wants to trade tech
+	id = atem.23
+	title = atem.23.t
+	desc = atem.23.d
+	picture = GFX_feast
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.23.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -40
+				}
+				factor = 0
+			}
+		}
+		add_tech_bonus = {
+			uses = 2
+			bonus = 0.75
+			category = agriculture
+		}
+		FROM = {
+			add_tech_bonus = {
+				uses = 2
+				bonus = 0.75
+				category = metallurgy
+			}
+			hidden_effect = {
+				news_event = rfr_news.131
+			}
+		}
+	}
+	option = { ##no
+		name = atem.23.b
+		ai_chance = {
+			factor = 2
+			modifier = {
+				FROM = {
+					THIS_and_PREV_good_vs_evil = yes
+				}
+				add = 14
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 20
+				}
+				factor = 0
+			}
+		}
+		hidden_effect = {
+			FROM = { news_event = rfr_news.132 }
+		}
+	}
+}
+
 ################################################################SENATE EVENTS
 add_namespace = senate
 country_event = { ##0## Hidden event selector

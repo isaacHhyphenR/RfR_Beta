@@ -27,4 +27,8 @@ opinion_modifiers = {
 	offensive_offer ={
 		value = -10
 	}
+	
+	good_trade = {
+		value = 15
+	}
 }

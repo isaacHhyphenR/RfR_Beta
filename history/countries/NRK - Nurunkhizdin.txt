@@ -1,0 +1,80 @@
+﻿capital = 312 #Dhobok Rhin
+
+set_research_slots = 3
+set_stability = .98
+set_war_support = 0.4
+
+set_technology = {
+	dwarven_heritage_tech = 1
+	metallurgy0 = 1
+	metallurgy1 = 1
+	tools1 = 1
+	excavation1 = 1
+	infantry_weapons = 1
+	infantry_armor_tech_0 = 1
+	infantry_armor_tech_1 = 1
+	carpentry0 = 1
+	fort_tech_1 = 1
+	gw_artillery = 1
+	agriculture0 = 1
+	basic_train = 1
+	tech_combined_engineers = 1
+	tech_mountaineers = 1
+}
+starting_train_buffer = 1
+set_fuel_ratio = 0.5
+################### ARMOR TECH
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		#armored_car1 = 1
+	}
+}
+################### NAVAL TECH
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		mtg_transport = 1
+	}
+	else = {
+		set_technology = {
+			transport = 1
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = isolationism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	isolationism = 84
+	freedom = 12
+	opportunism = 4
+}
+division_template = {
+    name = "Miners' Militia"
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 0 y = 2 }
+        infantry = { x = 0 y = 3 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 1 y = 1 }
+        infantry = { x = 1 y = 2 }
+        infantry = { x = 1 y = 3 }
+    }
+    support = {
+        siege_engineer = { x = 0 y = 0 }
+    }
+}
+
+add_ideas = dwarven_heritage_idea
+
+add_ideas = female_leader_chance_idea
+#!&!&!

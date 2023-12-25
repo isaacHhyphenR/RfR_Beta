@@ -223,6 +223,10 @@ NIF = {
 	color = rgb { 77 120 205 }
 	color_ui = rgb { 64 109 198 }
 }
+NRK = {
+	color = rgb { 71 4 98 }
+	color_ui = rgb { 60 1 84 }
+}
 ORI = {
 	color = rgb { 255 0 153 }
 	color_ui = rgb { 212 0 141 }

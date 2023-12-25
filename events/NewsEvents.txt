@@ -2001,7 +2001,6 @@ news_event = { ##125## Celduin state rejected trade league
 	}
 }
 
-
 news_event = { ##126## Celduin Trade League formed
 	id = rfr_news.126
 	title = rfr_news.126.t
@@ -2023,4 +2022,78 @@ news_event = { ##126## Celduin Trade League formed
 	}
 }
 
+news_event = { ##127## Erebor accepts wine for metals
+	id = rfr_news.127
+	title = rfr_news.127.t
+	desc = rfr_news.127.d
+	picture = GFX_news_dwarves_accept_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.127.a
+	}
+}
+news_event = { ##128## Erebor rejects wine for metals
+	id = rfr_news.128
+	title = rfr_news.128.t
+	desc = rfr_news.128.d
+	picture = GFX_news_dwarves_reject_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Aww :(
+		name = rfr_news.128.a
+	}
+}
+
+news_event = { ##129## Erebor accepts 'alliance'
+	id = rfr_news.129
+	title = rfr_news.129.t
+	desc = rfr_news.129.d
+	picture = GFX_news_dwarves_accept_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.129.a
+	}
+}
+news_event = { ##130## Erebor rejects 'alliance'
+	id = rfr_news.130
+	title = rfr_news.130.t
+	desc = rfr_news.130.d
+	picture = GFX_news_dwarves_reject_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Aww :(
+		name = rfr_news.130.a
+	}
+}
+
+news_event = { ##131## Erebor accepts tech exchange
+	id = rfr_news.131
+	title = rfr_news.131.t
+	desc = rfr_news.131.d
+	picture = GFX_news_dwarves_accept_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.131.a
+	}
+}
+news_event = { ##132## Erebor accepts tech exchange
+	id = rfr_news.132
+	title = rfr_news.132.t
+	desc = rfr_news.132.d
+	picture = GFX_news_dwarves_reject_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Aww :(
+		name = rfr_news.132.a
+	}
+}
 
