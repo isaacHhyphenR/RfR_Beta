@@ -1640,7 +1640,7 @@ country_event = { ##23## DOR wants to trade tech
 	id = atem.23
 	title = atem.23.t
 	desc = atem.23.d
-	picture = GFX_feast
+	picture = GFX_gondor_accepts_diplomacy
 	
 	is_triggered_only = yes
 	
@@ -1710,6 +1710,211 @@ country_event = { ##23## DOR wants to trade tech
 	}
 }
 
+################################################################PETITION EVENTS
+add_namespace = petition
+@petitionLargeCost = 75
+@petitionMediumCost = 50
+@petitionSmallCost = 25
+@petitionLargeCostNeg = -75
+@petitionMediumCostNeg = -50
+@petitionSmallCostNeg = -25
+
+@petitionHours = 1
+@petitionResponseHours = 1
+
+country_event = { ##1## DOR petition DAL for guarantee
+	id = petition.1
+	title = petition.1.t
+	desc = petition.1.d
+	picture = GFX_debate
+	
+	is_triggered_only = yes
+	
+	option = { ##spend 5 pp
+		name = petition.1.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = @petitionLargeCostNeg
+		DAL = {
+			country_event = { id = petition.10 hours = @petitionHours }
+			custom_effect_tooltip = if_they_accept_tooltip
+			event_option_tooltip = petition.10.a
+			effect_tooltip = { add_political_power = @petitionLargeCost }
+			set_country_flag = large_petition
+			clr_country_flag = medium_petition
+			clr_country_flag = small_petition
+		}
+	}
+	option = { ##spend 50 pp
+		name = petition.1.b
+		ai_chance = {
+			factor = 2
+		}
+		add_political_power = @petitionMediumCostNeg
+		DAL = {
+			country_event = { id = petition.10 hours = @petitionHours }
+			custom_effect_tooltip = if_they_accept_tooltip
+			event_option_tooltip = petition.10.a
+			effect_tooltip = { add_political_power = @petitionMediumCost }
+			clr_country_flag = large_petition
+			set_country_flag = medium_petition
+			clr_country_flag = small_petition
+
+		}
+	}
+	option = { ##spend 25 pp
+		name = petition.1.c
+		ai_chance = {
+			factor = 2
+		}
+		add_political_power = @petitionSmallCostNeg
+		DAL = {
+			country_event = { id = petition.10 hours = @petitionHours }
+			custom_effect_tooltip = if_they_accept_tooltip
+			event_option_tooltip = petition.10.a
+			add_political_power = @petitionSmallCost
+			clr_country_flag = large_petition
+			clr_country_flag = medium_petition
+			set_country_flag = small_petition
+		}
+	}
+	option = { ##don't attempt
+		name = petition.1.dd
+		ai_chance = {
+			factor = 0
+		}
+		country_event = { id = petition.2 }
+	}
+}
+
+country_event = { ##2## DOR petition DAL to clamp down on smuggling
+	id = petition.2
+	title = petition.2.t
+	desc = { #Rejection
+		text = petition.2.d.a
+		trigger = {
+			has_country_flag = rejected_petition
+		}
+	}
+	desc = { #Acceptance
+		trigger = {
+			has_country_flag = accepted_petition
+		}
+		text = petition.2.d.b
+	}
+	desc = { #This is the first petition
+		text = petition.2.d.c
+	}
+	picture = GFX_debate
+	
+	is_triggered_only = yes
+	
+	option = { ##spend 5 pp
+		name = petition.2.a
+		ai_chance = {
+			factor = 20
+		}
+		add_political_power = @petitionLargeCostNeg
+		DAL = {
+			country_event = { id = petition.20 hours = @petitionHours }
+			custom_effect_tooltip = if_they_accept_tooltip
+			event_option_tooltip = petition.20.a
+			effect_tooltip = { add_political_power = @petitionLargeCost }
+			set_country_flag = large_petition
+			clr_country_flag = medium_petition
+			clr_country_flag = small_petition
+		}
+	}
+	option = { ##spend 50 pp
+		name = petition.2.b
+		ai_chance = {
+			factor = 2
+		}
+		add_political_power = @petitionMediumCostNeg
+		DAL = {
+			country_event = { id = petition.20 hours = @petitionHours }
+			custom_effect_tooltip = if_they_accept_tooltip
+			event_option_tooltip = petition.20.a
+			effect_tooltip = { add_political_power = @petitionMediumCost }
+			clr_country_flag = large_petition
+			set_country_flag = medium_petition
+			clr_country_flag = small_petition
+
+		}
+	}
+	option = { ##spend 25 pp
+		name = petition.2.c
+		ai_chance = {
+			factor = 2
+		}
+		add_political_power = @petitionSmallCostNeg
+		DAL = {
+			country_event = { id = petition.20 hours = @petitionHours }
+			custom_effect_tooltip = if_they_accept_tooltip
+			event_option_tooltip = petition.20.a
+			add_political_power = @petitionSmallCost
+			clr_country_flag = large_petition
+			clr_country_flag = medium_petition
+			set_country_flag = small_petition
+		}
+	}
+	option = { ##don't attempt
+		name = petition.2.dd
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { ##10## DAL recieve's DOR petition for guarantee
+	id = petition.10
+	title = petition.10.t
+	desc = petition.10.d
+	picture = GFX_offer_wine
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = petition.10.a
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = { has_country_flag = large_petition }
+			add_political_power = @petitionLargeCost
+		}
+		else_if = {
+			limit = { has_country_flag = medium_petition }
+			add_political_power = @petitionMediumCost
+		}
+		else_if = {
+			limit = { has_country_flag = small_petition }
+			add_political_power = @petitionSmallCost
+		}
+		give_guarantee = FROM
+		hidden_effect = {
+			FROM = {
+				country_event = { id = petition.2 hours = @petitionResponseHours }
+				clr_country = rejected_petition
+				set_country_flag = accepted_petition
+			}
+		}
+	}
+	option = { ##no
+		name = petition.10.b
+		ai_chance = {
+			factor = 2
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = { id = petition.2 hours = @petitionResponseHours }
+				clr_country = accepted_petition
+				set_country_flag = rejected_petition
+			}
+		}	
+	}
+}
 ################################################################SENATE EVENTS
 add_namespace = senate
 country_event = { ##0## Hidden event selector

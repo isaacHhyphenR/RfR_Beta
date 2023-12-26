@@ -2124,7 +2124,7 @@ news_event = { ##134## Dale sends DAL king gifts
 	id = rfr_news.134
 	title = rfr_news.134.t
 	desc = rfr_news.134.d
-	picture = GFX_news_fealty_to_gondor
+	picture = GFX_newsoffer_wine
 	
 	is_triggered_only = yes
 	

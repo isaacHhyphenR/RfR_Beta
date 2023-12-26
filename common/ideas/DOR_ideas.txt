@@ -777,6 +777,24 @@ ideas = {
 				NOT = { is_in_faction_with = var:global.celduin_trade_leader }
 			}
 		}
+		
+		diverted_arms_production_to_dorwinion = {
+			picture = invest_in_dorwinion
+			removal_cost = -1
+			allowed_civil_war = {
+				is_dynamic_country = no
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = 0.05
+				}
+				artillery_equipment = {
+					instant = yes
+					build_cost_ic = 0.05
+				}
+			}
+		}
 	}
 	
 	hidden_ideas = {
