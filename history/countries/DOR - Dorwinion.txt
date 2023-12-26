@@ -223,4 +223,6 @@ set_country_flag = dorwinion_tailory_guild
 add_ideas = female_leader_chance_idea
 set_variable = { global.wine_exporter = THIS }
 set_variable = { global.celduin_trade_leader = THIS }
+set_variable = { baseMercenaryDecisionDays = 50 }
+set_variable = { mercenaryDecisionDays = baseMercenaryDecisionDays }
 #!&!&!

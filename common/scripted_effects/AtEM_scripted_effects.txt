@@ -2782,32 +2782,59 @@ calculate_riverstalkers_costs = { #1 civ = 2 div
 	if = {
 		limit = { has_completed_focus = DOR_land_for_service }
 		subtract_from_variable = { riverstalkers_cost = 4 }
+		#ensures it's not negative
 		if = {
 			limit = { check_variable = { riverstalkers_cost < 0 } }
-			set_variable = { riverstalkers_cost = 0
-			}
+			set_variable = { riverstalkers_cost = 0 }
 		}
 	}
 	divide_variable = { riverstalkers_cost = 2 }
+	#factors in cost modifiers
+	set_temp_variable = { cost_modifier = modifier@mercenary_cost }
+	multiply_temp_variable = { cost_modifier = riverstalkers_cost }
+	add_to_variable = { riverstalkers_cost = cost_modifier }
+	##adds funds to the MIO
 	set_variable = { riverstalkers_funds = num_battalions_with_type@riverstalkers_banner }
 	multiply_variable = { riverstalkers_funds = 10 }
 }
 calculate_mountains_vengeance_costs = { #1 civ = 1.5 div
 	set_variable = { mountains_vengeance_cost = num_battalions_with_type@mountains_vengeance_banner }
 	divide_variable = { mountains_vengeance_cost = 1.5 }
+	#factors in cost modifiers
+	set_temp_variable = { cost_modifier = modifier@mercenary_cost }
+	multiply_temp_variable = { cost_modifier = mountains_vengeance_cost }
+	add_to_variable = { mountains_vengeance_cost = cost_modifier }
+	##adds funds to the MIO
 	set_variable = { mountains_vengeance_funds = num_battalions_with_type@mountains_vengeance_banner }
 	multiply_variable = { mountains_vengeance_funds = 15 }
 }
 calculate_dragons_breath_costs = { #1 civ = 1.5 div
 	set_variable = { dragons_breath_cost = num_battalions_with_type@dragons_breath_banner }
 	divide_variable = { dragons_breath_cost = 1.5 }
+	#factors in cost modifiers
+	set_temp_variable = { cost_modifier = modifier@mercenary_cost }
+	multiply_temp_variable = { cost_modifier = dragons_breath_cost }
+	add_to_variable = { dragons_breath_cost = cost_modifier }
+	##adds funds to the MIO
 	set_variable = { dragons_breath_funds = num_battalions_with_type@dragons_breath_banner }
 	multiply_variable = { dragons_breath_funds = 15 }
 }
 calculate_company_of_winter_costs = { #1 civ = 1 div
 	set_variable = { company_of_winter_cost = num_battalions_with_type@company_of_winter_banner }
+	#factors in cost modifiers
+	set_temp_variable = { cost_modifier = modifier@mercenary_cost }
+	multiply_temp_variable = { cost_modifier = company_of_winter_cost }
+	add_to_variable = { company_of_winter_cost = cost_modifier }
+	##adds funds to the MIO
 	set_variable = { company_of_winter_funds = num_battalions_with_type@company_of_winter_banner }
 	multiply_variable = { company_of_winter_funds = 20 }
+}
+
+calculate_mercenary_decision_days = { #(NON-AAT) calculates how long it takes to recruit mercenarcys based on modifiers
+	set_variable = { mercenaryDecisionDays = baseMercenaryDecisionDays }
+	set_temp_variable = { cost_modifier = modifier@mercenary_cost }
+	multiply_temp_variable = { cost_modifier = mercenaryDecisionDays }
+	add_to_variable = { mercenaryDecisionDays = cost_modifier }
 }
 
 one_internal_focus = {

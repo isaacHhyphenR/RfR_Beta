@@ -361,6 +361,7 @@ characters = {
 			slot = political_advisor
 			idea_token = DOR_raganhildis_lugon
 			allowed = { original_tag = DOR has_dlc = "La Resistance" }
+			available = { has_intelligence_agency = yes }
 			traits = { head_of_intelligence vierling_pol_fourth }
 			ai_will_do = {
 				factor = 1
@@ -635,12 +636,19 @@ characters = {
 			slot = theorist
 			idea_token = DOR_sunngifa_illasarian
 			allowed = { original_tag = DOR }
+			available = { has_completed_focus = DOR_rely_on_mercenary_guards }
 			traits = { mercenary_theorist merchant_house_pol_sixth }
 			ai_will_do = {
 				factor = 1
 			}
-			on_add = { merchant_house_advisor_effect = yes }
-			on_remove = { merchant_house_advisor_effect_remove = yes }
+			on_add = {
+				merchant_house_advisor_effect = yes
+				calculate_mercenary_decision_days = yes
+			}
+			on_remove = {
+				merchant_house_advisor_effect_remove = yes
+				calculate_mercenary_decision_days = yes
+			}
 		}
 	}
 	DOR_godomar_taca = { #naval high command

@@ -1821,6 +1821,7 @@ celduin_trade_category = {
 			FROM = {
 				is_controlled_by = ROOT
 				check_variable = { prosperity = 100 }
+				NOT = { has_state_flag = constructing_market }
 			}
 		}
 		available = {
@@ -1917,6 +1918,7 @@ celduin_trade_category = {
 			FROM = {
 				is_controlled_by = ROOT
 				check_variable = { prosperity = 100 }
+				NOT = { has_state_flag = constructing_market }
 			}
 		}
 		complete_effect = { #choose between food, wood, cloth, or iron
@@ -1969,6 +1971,7 @@ celduin_trade_category = {
 			FROM = {
 				is_controlled_by = ROOT
 				check_variable = { prosperity = 100 }
+				NOT = { has_state_flag = constructing_market }
 			}
 		}
 		complete_effect = { #adds 1 civ to the state
@@ -2003,7 +2006,7 @@ DOR_mercenary_category = {
 				check_variable = { num_battalions_with_type@riverstalkers_banner < riverstalkers_cap }
 			}
 		}
-		days_remove = @recruitMercenariesDays
+		days_remove = var:mercenaryDecisionDays
 		modifier = {
 			civilian_factory_use = 2
 		}
@@ -2036,7 +2039,7 @@ DOR_mercenary_category = {
 				check_variable = { num_battalions_with_type@mountains_vengeance_banner < mountains_vengeance_cap }
 			}
 		}
-		days_remove = @recruitMercenariesDays
+		days_remove = var:mercenaryDecisionDays
 		modifier = {
 			civilian_factory_use = 2
 		}
@@ -2069,7 +2072,7 @@ DOR_mercenary_category = {
 				check_variable = { num_battalions_with_type@dragons_breath_banner < dragons_breath_cap }
 			}
 		}
-		days_remove = @recruitMercenariesDays
+		days_remove = var:mercenaryDecisionDays
 		modifier = {
 			civilian_factory_use = 2
 		}
@@ -2102,7 +2105,7 @@ DOR_mercenary_category = {
 				check_variable = { num_battalions_with_type@company_of_winter_banner < company_of_winter_cap }
 			}
 		}
-		days_remove = @recruitMercenariesDays
+		days_remove = var:mercenaryDecisionDays
 		modifier = {
 			civilian_factory_use = 4
 		}
@@ -2135,7 +2138,7 @@ DOR_mercenary_category = {
 				check_variable = { num_battalions_with_type@company_of_winter_banner < company_of_winter_cap }
 			}
 		}
-		days_remove = @recruitMercenariesDays
+		days_remove = var:mercenaryDecisionDays
 		modifier = {
 			civilian_factory_use = 4
 		}

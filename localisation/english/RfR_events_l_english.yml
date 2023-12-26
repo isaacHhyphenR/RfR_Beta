@@ -931,6 +931,13 @@
  rfr_news.126.d: "A new power rises in the North- The Celduin Trade League, led by [FROM.GetNameDefCap]. The minor powers of the Celduin River system have agreed to pool their economic and military resources for mutual benefit. Time will tell whether this alliance can hold its own against the dark shadows that grow in in all directions."
  rfr_news.126.a: "I wonder if they offer member discounts?"
  
+ rfr_news.133.t: "[FROM.GetName] Establishes Embassy"
+ rfr_news.133.d: "[FROM.GetNameDefCat], recognizing our important position as both their friend and most powerful human realm in the North, has decided to invest in a permanent embassy in our capital so that we can always be in close contact."
+ rfr_news.133.a: "They seek to grow closer to greatness."
+ rfr_news.134.t: "[FROM.GetLeader] Sends Coronation Gifts"
+ rfr_news.134.d: "[ROOT.GetLeader] has recieved sumptuous gifts from [FROM.GetName] to celebrate [ROOT.GetLeader.GetHerHis] accession to the throne. These cannot hope to make up [ROOT.GetLeader.GetHerHis] father's passing, but they show that [FROM.GetName] still stands with us."
+ rfr_news.134.a: "How thoughtful."
+ 
  rfr_election.1.t: "The Dorwin Republic!"
  rfr_election.1.d: "Jubilation has overtaken the streets of every city at the news: free and open elections will be held to choose Dorwinion's first president! A group of senators, emboldened by guild funding and popular support, confronted [ROOT.GetLeader] with an ultimatum: put down [FROM.GetLeader.GetHerHis] crown or face revolution. [FROM.GetLeader.GetSheHeCap] chose to peacefully abolish the office of Realm Master and hand over power to the people. The struggle for democracy has been long and hard, and now the Dorwin people may finally choose their leader."
  rfr_election.1.a: "$DOR_thodria_celebcaen$ will unify the North!"

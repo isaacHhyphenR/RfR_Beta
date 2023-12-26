@@ -29,6 +29,8 @@
 #GFX_dorwin_nobility
 #GFX_goal_erebor_trade
 #GFX_goal_dwarven_smith
+#GFX_goal_support_calmar
+#GFX_goal_aldiana_calmar
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -3448,7 +3450,7 @@ focus_tree = {
 	}
 	focus = { #Limit the power of the nobility
 		id = DOR_limit_the_power_of_the_nobility
-		icon = GFX_goal_generic_sign_law
+		icon = GFX_focus_rom_handle_king
 		x = -1
 		y = 1
 		relative_position_id = DOR_expand_citizenship_rights
@@ -7097,6 +7099,278 @@ focus_tree = {
 						}
 					}
 				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+#################################DALE
+	focus = { #Establish an Embassy in Dale
+		id = DOR_establish_an_embassy_in_dale
+		icon = GFX_goal_generic_befriend_dale
+		x = -9
+		y = 0
+		relative_position_id = DOR_strengthen_trade_with_the_lonely_mountain
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_support_the_merchant_houses
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			country_exists = DAL
+			NOT = { has_war_with = DAL }
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			DAL = {
+				hidden_effect = {
+					country_event = { id = rfr_news.133 hours = 1 }
+				}
+				add_popularity = {
+					ideology = ROOT
+					popularity = 0.05
+				}
+				add_opinion_modifier = {
+					modifier = medium_increase
+					target = ROOT
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	# focus = { #Petition Our Northern Friends
+		# id = DOR_petition_our_northern_friends
+		# icon = GFX_goal_generic_positive_trade_relations
+		# x = 0
+		# y = 1
+		# relative_position_id = DOR_establish_an_embassy_in_dale
+		# cost = 5
+		# ai_will_do = {
+			# factor = 5
+		# }
+		# prerequisite = {
+			# focus = DOR_establish_an_embassy_in_dale
+		# }
+		# available = {
+			# merchant_houses_focus_trigger = yes
+			# country_exists = DAL
+			# NOT = { has_war_with = DAL }
+		# }
+		# search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		# completion_reward = {
+			# custom_effect_tooltip = DOR_petition_our_northern_friends_tooltip
+			# effect_tooltip = {
+				# DAL = { give_guarantee = ROOT }
+				# custom_effect_tooltip = VorV_dev_line_end
+				# steal_random_tech_bonus = {
+					# category = carpentry
+					# category = metallurgy
+					# instant = yes
+					# name = DOR_petition_our_northern_friends
+					# target = DAL
+					# uses = 2
+				# }
+				# custom_effect_tooltip = VorV_dev_line_end
+				
+				# custom_effect_tooltip = VorV_dev_line_end
+				# custom_effect_tooltip = VorV_dev_line_end
+			# }
+			# merchant_houses_focus_effect = yes
+		# }
+	# }
+	focus = { #Sister Cities of the North
+		id = DOR_sister_cities_of_the_north
+		icon = GFX_goal_generic_positive_trade_relations
+		x = -1
+		y = 2
+		relative_position_id = DOR_establish_an_embassy_in_dale
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_establish_an_embassy_in_dale
+		}
+		mutually_exclusive = { focus = DOR_move_our_embassy_to_esgaroth }
+		available = {
+			merchant_houses_focus_trigger = yes
+			country_exists = DAL
+			NOT = { has_war_with = DAL }
+			DAL = { controls_state = 100 } #dalelands
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_PROSPERITY }
+		completion_reward = {
+			116 = {
+				add_25_prosperity = yes
+			}
+			100 = {
+				add_25_prosperity = yes
+			}
+			DAL = {
+				add_opinion_modifier = {
+					modifier = sister_cities
+					target = ROOT
+				}
+			}
+			add_opinion_modifier = {
+				modifier = sister_cities
+				target = DAL
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Coronation Gifts for the New King
+		id = DOR_coronation_gifts_for_the_new_king
+		icon = GFX_focus_NORDIC_mon_capstone_materiel
+		x = 0
+		y = 1
+		relative_position_id = DOR_sister_cities_of_the_north
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_sister_cities_of_the_north
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			country_exists = DAL
+			NOT = { has_war_with = DAL }
+			DAL = { NOT = { has_country_leader = { character = DAL_isolation_brand } } }
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			DAL = {
+				hidden_effect = {
+					news_event = { id = rfr_news.134 hours = 1 }
+				}
+				add_equipment_to_stockpile = {
+					type = wine_equipment
+					amount = 1000
+					producer = ROOT
+				}
+				add_popularity = {
+					ideology = ROOT
+					popularity = 0.05
+				}
+				custom_effect_tooltip = unimplemented
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Move our Embassy to Esgaroth
+		id = DOR_move_our_embassy_to_esgaroth
+		icon = GFX_goal_support_calmar
+		x = 2
+		y = 2
+		relative_position_id = DOR_establish_an_embassy_in_dale
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_establish_an_embassy_in_dale
+		}
+		mutually_exclusive = { focus = DOR_sister_cities_of_the_north }
+		available = {
+			merchant_houses_focus_trigger = yes
+			country_exists = DAL
+			NOT = { has_war_with = DAL }
+			DAL = { controls_state = 102 } #Lake town
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Exchange Fine Gifts
+		id = DOR_exchange_fine_gifts
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = -1
+		y = 1
+		relative_position_id = DOR_move_our_embassy_to_esgaroth
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_move_our_embassy_to_esgaroth
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			country_exists = DAL
+			NOT = { has_war_with = DAL }
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #League of Merchant Families
+		id = DOR_league_of_merchant_families
+		icon = GFX_goal_merchants
+		x = 1
+		y = 1
+		relative_position_id = DOR_move_our_embassy_to_esgaroth
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_move_our_embassy_to_esgaroth
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			country_exists = DAL
+			NOT = { has_war_with = DAL }
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = unimplemented
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Mutual Patronage
+		id = DOR_mutual_patronage
+		icon = GFX_goal_aldiana_calmar
+		x = 1
+		y = 1
+		relative_position_id = DOR_exchange_fine_gifts
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_exchange_fine_gifts
+			focus = DOR_league_of_merchant_families
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			country_exists = DAL
+			NOT = { has_war_with = DAL }
+			DAL = { controls_state = 102 } #laketown
+			controls_state = 309 #ilanavuld
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			102 = { #laketown
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = cloth
+					amount = 12
+				}
+			}
+			309 = { #ilanavuld
+				add_building_construction = {
+					type = vineyard
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
 			}
 			merchant_houses_focus_effect = yes
 		}

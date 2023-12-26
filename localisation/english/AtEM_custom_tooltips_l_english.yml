@@ -249,3 +249,4 @@
  defeated_monarchist_plot: "Defeated Monarchist Plot"
  monarchist_revolt_happened: "Monarchists Revolted"
  unlocks_designers_tooltip: "Unlocks Specialists:\n"
+ DOR_petition_our_northern_friends_tooltip: "Starts an event chain allowing us to invest §Y25§!, §Y50§!, or §Y75§! political power to request various concessions from §Y[DAL.GetFlag][DAL.GetName]§!. The following concessions are available:\n"
