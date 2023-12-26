@@ -20,6 +20,37 @@
 
 
 leader_traits = {
+######################################################################################HERITAGE
+	easterling_heritage_trait = {
+		random = no
+	}
+	northron_heritage_trait = {
+		random = no
+	}
+	numenorean_heritage_trait = {
+		random = no
+	}
+	southron_heritage_trait = {
+		random = no
+	}
+	wildling_heritage_trait = {
+		random = no
+	}
+	elven_heritage_trait = {
+		random = no
+	}
+	orcish_heritage_trait = {
+		random = no
+	}
+	entish_heritage_trait = {
+		random = no
+	}
+	dwarven_heritage_trait = {
+		random = no
+	}
+	halfling_heritage_trait = {
+		random = no
+	}
 ######################################################################################DESIGNERS
 	industrial_concern = {
 		random = no

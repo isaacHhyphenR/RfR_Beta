@@ -34,4 +34,10 @@ opinion_modifiers = {
 	sister_cities = {
 		value = 10
 	}
+	affinity_for_northrons = {
+		value = 15
+	}
+	affinity_for_dwarves = {
+		value = 15
+	}
 }

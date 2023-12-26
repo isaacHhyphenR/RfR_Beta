@@ -1,0 +1,70 @@
+ideas = {
+	country = {
+		prestigious_tribe_spirit = {
+			allowed = {
+				always = no
+			}
+			picture = tribal_crown
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.2
+				subjects_autonomy_gain = -0.5
+				compliance_gain = 0.05
+				weekly_manpower = 2500
+				research_speed_factor = 0.1
+				war_support_factor = 0.15
+			}
+		}
+		stewards_authority_spirit = {
+			allowed = {
+				always = no
+			}
+			picture = steward_authority
+			removal_cost = -1
+			modifier = {
+				# political_power_factor = @steward_political_authority
+				# conscription = @steward_conscription_authority
+				# consumer_goods_factor = @steward_economy_authority
+				# industrial_capacity_factory = @steward_trade_authority
+				# industrial_capacity_dockyard = @steward_trade_authority
+				# production_speed_buildings_factor = @steward_trade_authority
+			}
+		}
+		@ISNheritageBoost = 0.05
+		isengardian_heritage_spirit = {
+			allowed = { always = no }
+			picture = isengardian_heritage
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = @ISNheritageBoost
+				production_speed_buildings_factor = @ISNheritageBoost
+				industrial_capacity_factory = @ISNheritageBoost
+				army_infantry_attack_factor = @ISNheritageBoost
+				global_building_slots_factor = @ISNheritageBoost
+				army_infantry_defence_factor = @ISNheritageBoost
+				fortification_damage = @ISNheritageBoost
+			}
+			traits = { orcish_heritage_trait }
+		}
+		@MORheritageBoost = 0.15
+		servants_of_sauron_spirit = {
+			allowed = { always = no }
+			picture = saurons_slaves_icon
+			removal_cost = -1
+			modifier = {
+				global_building_slots_factor = @MORheritageBoost
+				production_speed_buildings_factor = @MORheritageBoost
+				infantry_equipment_production_cost = -0.15
+				fuel_gain_factor = @MORheritageBoost
+				monthly_population = @MORheritageBoost
+				monsters_from_refinery = 1
+				army_armor_attack_factor = @MORheritageBoost
+				command_power_gain_mult = @MORheritageBoost
+				army_infantry_attack_factor = @MORheritageBoost
+				army_leader_max_divisions = 12
+				infantry_width = -0.04
+				attrition = -0.15
+			}
+		}
+	}
+}

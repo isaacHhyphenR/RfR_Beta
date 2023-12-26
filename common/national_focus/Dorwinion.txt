@@ -7140,46 +7140,46 @@ focus_tree = {
 			merchant_houses_focus_effect = yes
 		}
 	}
-	# focus = { #Petition Our Northern Friends
-		# id = DOR_petition_our_northern_friends
-		# icon = GFX_goal_generic_positive_trade_relations
-		# x = 0
-		# y = 1
-		# relative_position_id = DOR_establish_an_embassy_in_dale
-		# cost = 5
-		# ai_will_do = {
-			# factor = 5
-		# }
-		# prerequisite = {
-			# focus = DOR_establish_an_embassy_in_dale
-		# }
-		# available = {
-			# merchant_houses_focus_trigger = yes
-			# country_exists = DAL
-			# NOT = { has_war_with = DAL }
-		# }
-		# search_filters = { FOCUS_FILTER_DIPLOMATIC }
-		# completion_reward = {
-			# custom_effect_tooltip = DOR_petition_our_northern_friends_tooltip
-			# effect_tooltip = {
-				# DAL = { give_guarantee = ROOT }
-				# custom_effect_tooltip = VorV_dev_line_end
-				# steal_random_tech_bonus = {
-					# category = carpentry
-					# category = metallurgy
-					# instant = yes
-					# name = DOR_petition_our_northern_friends
-					# target = DAL
-					# uses = 2
-				# }
-				# custom_effect_tooltip = VorV_dev_line_end
+	focus = { #Petition Our Northern Friends
+		id = DOR_petition_our_northern_friends
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 0
+		y = 1
+		relative_position_id = DOR_establish_an_embassy_in_dale
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_establish_an_embassy_in_dale
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			country_exists = DAL
+			NOT = { has_war_with = DAL }
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			custom_effect_tooltip = DOR_petition_our_northern_friends_tooltip
+			effect_tooltip = {
+				DAL = { give_guarantee = ROOT }
+				custom_effect_tooltip = VorV_dev_line_end
+				steal_random_tech_bonus = {
+					category = carpentry
+					category = metallurgy
+					instant = yes
+					name = DOR_petition_our_northern_friends
+					target = DAL
+					uses = 2
+				}
+				custom_effect_tooltip = VorV_dev_line_end
 				
-				# custom_effect_tooltip = VorV_dev_line_end
-				# custom_effect_tooltip = VorV_dev_line_end
-			# }
-			# merchant_houses_focus_effect = yes
-		# }
-	# }
+				custom_effect_tooltip = VorV_dev_line_end
+				custom_effect_tooltip = VorV_dev_line_end
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
 	focus = { #Sister Cities of the North
 		id = DOR_sister_cities_of_the_north
 		icon = GFX_goal_generic_positive_trade_relations
@@ -7883,7 +7883,7 @@ focus_tree = {
 	focus = { #Trusted Employers
 		id = DOR_trusted_employers
 		icon = GFX_goal_generic_mercenaries
-		x = 0
+		x = -2
 		y = 3
 		relative_position_id = DOR_rely_on_mercenary_guards
 		cost = 5
@@ -7949,6 +7949,52 @@ focus_tree = {
 				}
 				custom_effect_tooltip = DOR_trusted_employers_tooltip
 			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Motivated by Money
+		id = DOR_motivated_by_money
+		icon = GFX_goal_DOR_army_morale
+		x = 2
+		y = 3
+		relative_position_id = DOR_rely_on_mercenary_guards
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOR_hire_the_rabble
+			focus = DOR_hire_the_dwarves
+			focus = DOR_hire_the_cavalry
+			focus = DOR_hire_the_elites
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_trigger_tooltip = {
+					tooltip = at_least_five_total_mercenary_size
+					mio:DOR_company_of_winter_MIO = {
+						set_temp_variable = { merc_size = size }
+					}
+					mio:DOR_dragons_breath_MIO = {
+						add_to_temp_variable = { merc_size = size }
+					}
+					mio:DOR_mountains_vengeance_MIO = {
+						add_to_temp_variable = { merc_size = size }
+					}
+					mio:DOR_riverstalkers_MIO = {
+						add_to_temp_variable = { merc_size = size }
+					}
+					check_variable = { merc_size > 4 }
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = {
+			DOR_increase_army_morale = yes
 			merchant_houses_focus_effect = yes
 		}
 	}

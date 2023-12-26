@@ -19,7 +19,7 @@
  isengardian_espionage_wisdom_desc: "$ISN_Saruman$ knows many things about espionage."
  isengardian_espionage_wisdom_lar: "$isengardian_espionage_wisdom$"
  isengardian_espionage_wisdom_lar_desc: "$isengardian_espionage_wisdom_desc$"
- isengardian_heritage_spirit: "$isengardian_heritage_modifier$"
+ isengardian_heritage_spirit: "Isengardian Heritage"
  isengardian_heritage_spirit_desc: "$isengardian_heritage_modifier_desc$" servants_of_sauron_spirit: "$servants_of_sauron_modifier$"
  dunland_saruman_heritage: "Servants of the [get_saruman_color_scripted_loc] Wizard"
  dunland_saruman_heritage_desc: "Saruman has thrown all his weight and charm behind this tribe. People flock to its banner, swayed by his masterful propoganda"
@@ -480,7 +480,16 @@
  member_of_celduin_trade_league_desc: "A mercantile alliance formed to protect the common financial and political interests of its members."
  head_of_celduin_trade_league: "Head of the Celduin Trade League"
  head_of_celduin_trade_league_desc: "The Celduin Trade Leage is a mercantile alliance formed to protect the common financial and political interests of its members. As the most powerful member of this alliance, this country excersises great influence over the other members."
- 
+ easterling_heritage_trait: "§OEasterling§!"
+ northron_heritage_trait: "§ONorthron§!"
+ numenorean_heritage_trait: "§O$numenorean$§!"
+ southron_heritage_trait: "§OSouthron§!"
+ wildling_heritage_trait: "§OWildling§!"
+ elven_heritage_trait: "§OElven§!"
+ orcish_heritage_trait: "§OOrcish§!"
+ entish_heritage_trait: "§OEntish§!"
+ dwarven_heritage_trait: "§O§ODwarven§!"
+ halfling_heritage_trait: "§OHalfling§!"
  
  
  

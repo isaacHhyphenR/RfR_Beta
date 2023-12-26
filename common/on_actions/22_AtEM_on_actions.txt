@@ -78,7 +78,28 @@ on_actions = {
 				calculate_riavod_trade_cost_effect = yes
 			}
 		}
-			
+		
+		effect = { #Dwarvish Northron Affinity
+			every_possible_country = {
+				limit = {
+					has_idea = dwarven_heritage_idea
+				}
+				every_possible_country = {
+					limit = {
+						has_idea = northern_heritage_idea
+					}
+					add_opinion_modifier = {
+						modifier = affinity_for_dwarves
+						target = PREV
+					}
+					reverse_add_opinion_modifier = {
+						modifier = affinity_for_northrons
+						target = PREV
+					}
+				}
+			}
+		}
+		
 		effect = { ##make day 1 wine
 			FOR = {
 				calculate_all_wine_production = yes
