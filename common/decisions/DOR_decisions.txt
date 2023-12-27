@@ -259,6 +259,66 @@ DOR_great_merchants_category = { #BOP
 			power_balance_weekly = 0.005
 		}
 	}
+	DOR_secure_artisan_support = {
+		icon = GFX_decision_gre_investment_decisions
+		fire_only_once = no
+		days_re_enable = 60
+		custom_cost_text = any_state_25_prosperity_cost
+		custom_cost_trigger = {
+			any_controlled_state = {
+				check_variable = { prosperity > 24.99 }
+				NOT = { has_state_flag = constructing_market }
+			}
+		}
+			
+		complete_effect = {
+			hidden_effect = {
+				random_controlled_state = {
+					limit = {
+						check_variable = { prosperity > 24.99 }
+						NOT = { has_state_flag = constructing_market }
+					}
+					subtract_25_prosperity = yes
+				}
+			}
+			add_power_balance_value = {
+				id = DOR_great_merchants_power_balance
+				value = 0.05
+				tooltip_side = DOR_merchant_houses_side
+			}
+		}
+	}
+	DOR_attract_sellswords = {
+		icon = GFX_decision_generic_manpower
+		fire_only_once = no
+		days_re_enable = 60
+		custom_cost_text = any_state_25_prosperity_cost
+		custom_cost_trigger = {
+			any_controlled_state = {
+				check_variable = { prosperity > 24.99 }
+				NOT = { has_state_flag = constructing_market }
+			}
+		}
+		available = {
+			has_completed_focus = DOR_rely_on_mercenary_guards
+		}
+			
+		complete_effect = {
+			hidden_effect = {
+				random_controlled_state = {
+					limit = {
+						check_variable = { prosperity > 24.99 }
+						NOT = { has_state_flag = constructing_market }
+					}
+					subtract_25_prosperity = yes
+				}
+			}
+			add_manpower = 25000
+		}
+		# modifier = {
+			# weekly_manpower = 5000
+		# }
+	}
 }
 
 rhovanion_influence_category = {

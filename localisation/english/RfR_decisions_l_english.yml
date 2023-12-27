@@ -776,5 +776,7 @@
  DOR_company_of_winter_equipment_infantry_desc: "We've payed these mercenaries enough for them to afford their own equipment."
  DOR_company_of_winter_equipment_cavalry: "Re-Equip $dorwinion_company_of_winter$ Cavalry"
  DOR_company_of_winter_equipment_cavalry_desc: "We've payed these mercenaries enough for them to afford their own equipment."
- 
- 
+ DOR_secure_artisan_support: "Secure Artisan Support"
+ DOR_secure_artisan_support_desc: "We can assauge the rising calls for 'democracy' by reminding the city folk where their wealth comes from: the trade that we facilitate."
+ DOR_attract_sellswords: "Attract Sellswords"
+ DOR_attract_sellswords_desc: "Flaunting our vast wealth & willingness to spend it will bring many mercenaries to our lands seeking work."
