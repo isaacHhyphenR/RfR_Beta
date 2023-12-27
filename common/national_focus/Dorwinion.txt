@@ -7174,10 +7174,10 @@ focus_tree = {
 						}
 					}
 					DAL = { give_guarantee = ROOT }
-					custom_effect_tooltip = VorV_dev_line_end
+					custom_effect_tooltip = line_of_dashes
 				}
 				capital_scope = { add_25_prosperity = yes }
-				custom_effect_tooltip = VorV_dev_line_end
+				custom_effect_tooltip = line_of_dashes
 				steal_random_tech_bonus = {
 					category = carpentry
 					category = metallurgy
@@ -7186,12 +7186,12 @@ focus_tree = {
 					target = DAL
 					uses = 2
 				}
-				custom_effect_tooltip = VorV_dev_line_end
+				custom_effect_tooltip = line_of_dashes
 				random_controlled_state = {
 					limit = {
 						free_building_slots = {
 							building = arms_factory
-							amount > 0
+							size > 0
 							include_locked = yes
 						}
 						market > 0
@@ -7203,7 +7203,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				custom_effect_tooltip = VorV_dev_line_end
+				custom_effect_tooltip = line_of_dashes
 				every_controlled_state = {
 					random_select_amount = 2
 					limit = {
@@ -7214,7 +7214,9 @@ focus_tree = {
 						type = food
 						amount = 8
 					}
-				}	
+				}
+				custom_effect_tooltip = line_of_dashes
+				custom_effect_tooltip = new_line_tooltip
 			}
 			##Fires the actual event
 			hidden_effect = {

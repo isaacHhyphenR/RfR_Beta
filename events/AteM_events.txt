@@ -1739,8 +1739,8 @@ country_event = { ##1## DOR petition DAL for guarantee
 		DAL = {
 			country_event = { id = petition.10 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
-			event_option_tooltip = petition.10.a
 			effect_tooltip = { add_political_power = @petitionLargeCost }
+			event_option_tooltip = petition.10.a
 			set_country_flag = large_petition
 			clr_country_flag = medium_petition
 			clr_country_flag = small_petition
@@ -1755,8 +1755,8 @@ country_event = { ##1## DOR petition DAL for guarantee
 		DAL = {
 			country_event = { id = petition.10 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
-			event_option_tooltip = petition.10.a
 			effect_tooltip = { add_political_power = @petitionMediumCost }
+			event_option_tooltip = petition.10.a
 			clr_country_flag = large_petition
 			set_country_flag = medium_petition
 			clr_country_flag = small_petition
@@ -1772,8 +1772,8 @@ country_event = { ##1## DOR petition DAL for guarantee
 		DAL = {
 			country_event = { id = petition.10 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
+			effect_tooltip = { add_political_power = @petitionSmallCost }
 			event_option_tooltip = petition.10.a
-			add_political_power = @petitionSmallCost
 			clr_country_flag = large_petition
 			clr_country_flag = medium_petition
 			set_country_flag = small_petition
@@ -1784,6 +1784,8 @@ country_event = { ##1## DOR petition DAL for guarantee
 		ai_chance = {
 			factor = 5
 		}
+		clr_country_flag = accepted_petition
+		clr_country_flag = rejected_petition
 		country_event = { id = petition.2 }
 	}
 }
@@ -1792,10 +1794,10 @@ country_event = { ##2## DOR petition DAL to clamp down on smuggling
 	id = petition.2
 	title = petition.2.t
 	desc = { #Rejection
-		text = petition.2.d.a
 		trigger = {
 			has_country_flag = rejected_petition
 		}
+		text = petition.2.d.a
 	}
 	desc = { #Acceptance
 		trigger = {
@@ -1819,8 +1821,8 @@ country_event = { ##2## DOR petition DAL to clamp down on smuggling
 		DAL = {
 			country_event = { id = petition.20 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
-			event_option_tooltip = petition.20.a
 			effect_tooltip = { add_political_power = @petitionLargeCost }
+			event_option_tooltip = petition.20.a
 			set_country_flag = large_petition
 			clr_country_flag = medium_petition
 			clr_country_flag = small_petition
@@ -1835,8 +1837,8 @@ country_event = { ##2## DOR petition DAL to clamp down on smuggling
 		DAL = {
 			country_event = { id = petition.20 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
-			event_option_tooltip = petition.20.a
 			effect_tooltip = { add_political_power = @petitionMediumCost }
+			event_option_tooltip = petition.20.a
 			clr_country_flag = large_petition
 			set_country_flag = medium_petition
 			clr_country_flag = small_petition
@@ -1852,8 +1854,8 @@ country_event = { ##2## DOR petition DAL to clamp down on smuggling
 		DAL = {
 			country_event = { id = petition.20 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
+			effect_tooltip = { add_political_power = @petitionSmallCost }
 			event_option_tooltip = petition.20.a
-			add_political_power = @petitionSmallCost
 			clr_country_flag = large_petition
 			clr_country_flag = medium_petition
 			set_country_flag = small_petition
@@ -1864,6 +1866,9 @@ country_event = { ##2## DOR petition DAL to clamp down on smuggling
 		ai_chance = {
 			factor = 5
 		}
+		clr_country_flag = accepted_petition
+		clr_country_flag = rejected_petition
+		country_event = { id = petition.3 }
 	}
 }
 
@@ -1871,10 +1876,10 @@ country_event = { ##3## DOR petition DAL to share industrial expertise
 	id = petition.3
 	title = petition.3.t
 	desc = { #Rejection
-		text = petition.3.d.a
 		trigger = {
 			has_country_flag = rejected_petition
 		}
+		text = petition.3.d.a
 	}
 	desc = { #Acceptance
 		trigger = {
@@ -1898,8 +1903,8 @@ country_event = { ##3## DOR petition DAL to share industrial expertise
 		DAL = {
 			country_event = { id = petition.30 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
-			event_option_tooltip = petition.30.a
 			effect_tooltip = { add_political_power = @petitionLargeCost }
+			event_option_tooltip = petition.30.a
 			set_country_flag = large_petition
 			clr_country_flag = medium_petition
 			clr_country_flag = small_petition
@@ -1914,8 +1919,8 @@ country_event = { ##3## DOR petition DAL to share industrial expertise
 		DAL = {
 			country_event = { id = petition.30 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
-			event_option_tooltip = petition.30.a
 			effect_tooltip = { add_political_power = @petitionMediumCost }
+			event_option_tooltip = petition.30.a
 			clr_country_flag = large_petition
 			set_country_flag = medium_petition
 			clr_country_flag = small_petition
@@ -1931,8 +1936,8 @@ country_event = { ##3## DOR petition DAL to share industrial expertise
 		DAL = {
 			country_event = { id = petition.30 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
+			effect_tooltip = { add_political_power = @petitionSmallCost }
 			event_option_tooltip = petition.30.a
-			add_political_power = @petitionSmallCost
 			clr_country_flag = large_petition
 			clr_country_flag = medium_petition
 			set_country_flag = small_petition
@@ -1943,6 +1948,9 @@ country_event = { ##3## DOR petition DAL to share industrial expertise
 		ai_chance = {
 			factor = 5
 		}
+		clr_country_flag = accepted_petition
+		clr_country_flag = rejected_petition
+		country_event = { id = petition.4 }
 	}
 }
 
@@ -1950,10 +1958,10 @@ country_event = { ##4## DOR petition DAL to divert arms production
 	id = petition.4
 	title = petition.4.t
 	desc = { #Rejection
-		text = petition.4.d.a
 		trigger = {
 			has_country_flag = rejected_petition
 		}
+		text = petition.4.d.a
 	}
 	desc = { #Acceptance
 		trigger = {
@@ -1977,8 +1985,8 @@ country_event = { ##4## DOR petition DAL to divert arms production
 		DAL = {
 			country_event = { id = petition.40 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
-			event_option_tooltip = petition.40.a
 			effect_tooltip = { add_political_power = @petitionLargeCost }
+			event_option_tooltip = petition.40.a
 			set_country_flag = large_petition
 			clr_country_flag = medium_petition
 			clr_country_flag = small_petition
@@ -1993,8 +2001,8 @@ country_event = { ##4## DOR petition DAL to divert arms production
 		DAL = {
 			country_event = { id = petition.40 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
-			event_option_tooltip = petition.40.a
 			effect_tooltip = { add_political_power = @petitionMediumCost }
+			event_option_tooltip = petition.40.a
 			clr_country_flag = large_petition
 			set_country_flag = medium_petition
 			clr_country_flag = small_petition
@@ -2010,8 +2018,8 @@ country_event = { ##4## DOR petition DAL to divert arms production
 		DAL = {
 			country_event = { id = petition.40 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
+			effect_tooltip = { add_political_power = @petitionSmallCost }
 			event_option_tooltip = petition.40.a
-			add_political_power = @petitionSmallCost
 			clr_country_flag = large_petition
 			clr_country_flag = medium_petition
 			set_country_flag = small_petition
@@ -2022,6 +2030,9 @@ country_event = { ##4## DOR petition DAL to divert arms production
 		ai_chance = {
 			factor = 5
 		}
+		clr_country_flag = accepted_petition
+		clr_country_flag = rejected_petition
+		country_event = { id = petition.5 }
 	}
 }
 
@@ -2029,10 +2040,10 @@ country_event = { ##5## DOR petition DAL to increase grain exports
 	id = petition.5
 	title = petition.5.t
 	desc = { #Rejection
-		text = petition.5.d.a
 		trigger = {
 			has_country_flag = rejected_petition
 		}
+		text = petition.5.d.a
 	}
 	desc = { #Acceptance
 		trigger = {
@@ -2056,8 +2067,8 @@ country_event = { ##5## DOR petition DAL to increase grain exports
 		DAL = {
 			country_event = { id = petition.50 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
-			event_option_tooltip = petition.50.a
 			effect_tooltip = { add_political_power = @petitionLargeCost }
+			event_option_tooltip = petition.50.a
 			set_country_flag = large_petition
 			clr_country_flag = medium_petition
 			clr_country_flag = small_petition
@@ -2072,8 +2083,8 @@ country_event = { ##5## DOR petition DAL to increase grain exports
 		DAL = {
 			country_event = { id = petition.50 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
-			event_option_tooltip = petition.50.a
 			effect_tooltip = { add_political_power = @petitionMediumCost }
+			event_option_tooltip = petition.50.a
 			clr_country_flag = large_petition
 			set_country_flag = medium_petition
 			clr_country_flag = small_petition
@@ -2089,8 +2100,8 @@ country_event = { ##5## DOR petition DAL to increase grain exports
 		DAL = {
 			country_event = { id = petition.50 hours = @petitionHours }
 			custom_effect_tooltip = if_they_accept_tooltip
+			effect_tooltip = { add_political_power = @petitionSmallCost }
 			event_option_tooltip = petition.50.a
-			add_political_power = @petitionSmallCost
 			clr_country_flag = large_petition
 			clr_country_flag = medium_petition
 			set_country_flag = small_petition
@@ -2101,10 +2112,12 @@ country_event = { ##5## DOR petition DAL to increase grain exports
 		ai_chance = {
 			factor = 5
 		}
+		clr_country_flag = accepted_petition
+		clr_country_flag = rejected_petition
 	}
 }
 
-country_event = { ##10## DAL recieve's DOR petition for guarantee
+country_event = { ##10## DAL recieves DOR petition for guarantee
 	id = petition.10
 	title = petition.10.t
 	desc = petition.10.d
@@ -2168,11 +2181,18 @@ country_event = { ##10## DAL recieve's DOR petition for guarantee
 		give_guarantee = FROM
 		hidden_effect = {
 			FROM = {
-				country_event = { id = petition.2 hours = @petitionResponseHours }
-				clr_country = rejected_petition
+				clr_country_flag = rejected_petition
 				set_country_flag = accepted_petition
+				country_event = { id = petition.2 hours = @petitionResponseHours }
+				add_opinion_modifier = {
+					modifier = accepted_petition
+					target = ROOT
+				}
 			}
 		}
+		clr_country_flag = large_petition
+		clr_country_flag = medium_petition
+		clr_country_flag = small_petition
 	}
 	option = { ##no
 		name = petition.10.b
@@ -2181,15 +2201,22 @@ country_event = { ##10## DAL recieve's DOR petition for guarantee
 		}
 		hidden_effect = {
 			FROM = {
-				country_event = { id = petition.2 hours = @petitionResponseHours }
-				clr_country = accepted_petition
+				clr_country_flag = accepted_petition
 				set_country_flag = rejected_petition
+				country_event = { id = petition.2 hours = @petitionResponseHours }
+				add_opinion_modifier = {
+					modifier = rejected_petition
+					target = ROOT
+				}
 			}
-		}	
+		}
+		clr_country_flag = large_petition
+		clr_country_flag = medium_petition
+		clr_country_flag = small_petition
 	}
 }
 
-country_event = { ##20## DAL recieve's DOR petition to clamp down on smuggling
+country_event = { ##20## DAL recieves DOR petition to clamp down on smuggling
 	id = petition.20
 	title = petition.20.t
 	desc = petition.20.d
@@ -2253,16 +2280,23 @@ country_event = { ##20## DAL recieve's DOR petition to clamp down on smuggling
 		capital_scope = {
 			subtract_10_prosperity = yes
 		}
-		FROM.capital = {
+		var:FROM.capital = {
 			add_25_prosperity = yes
 		}
 		hidden_effect = {
 			FROM = {
-				country_event = { id = petition.3 hours = @petitionResponseHours }
-				clr_country = rejected_petition
+				clr_country_flag = rejected_petition
 				set_country_flag = accepted_petition
+				country_event = { id = petition.3 hours = @petitionResponseHours }
+				add_opinion_modifier = {
+					modifier = accepted_petition
+					target = ROOT
+				}
 			}
 		}
+		clr_country_flag = large_petition
+		clr_country_flag = medium_petition
+		clr_country_flag = small_petition
 	}
 	option = { ##no
 		name = petition.20.b
@@ -2271,15 +2305,22 @@ country_event = { ##20## DAL recieve's DOR petition to clamp down on smuggling
 		}
 		hidden_effect = {
 			FROM = {
-				country_event = { id = petition.3 hours = @petitionResponseHours }
-				clr_country = accepted_petition
+				clr_country_flag = accepted_petition
 				set_country_flag = rejected_petition
+				country_event = { id = petition.3 hours = @petitionResponseHours }
+				add_opinion_modifier = {
+					modifier = rejected_petition
+					target = ROOT
+				}
 			}
-		}	
+		}
+		clr_country_flag = large_petition
+		clr_country_flag = medium_petition
+		clr_country_flag = small_petition
 	}
 }
 
-country_event = { ##30## DAL recieve's DOR petition to share industrial expertise
+country_event = { ##30## DAL recieves DOR petition to share industrial expertise
 	id = petition.30
 	title = petition.30.t
 	desc = petition.30.d
@@ -2352,11 +2393,18 @@ country_event = { ##30## DAL recieve's DOR petition to share industrial expertis
 		}
 		hidden_effect = {
 			FROM = {
-				country_event = { id = petition.4 hours = @petitionResponseHours }
-				clr_country = rejected_petition
+				clr_country_flag = rejected_petition
 				set_country_flag = accepted_petition
+				country_event = { id = petition.4 hours = @petitionResponseHours }
+				add_opinion_modifier = {
+					modifier = accepted_petition
+					target = ROOT
+				}
 			}
 		}
+		clr_country_flag = large_petition
+		clr_country_flag = medium_petition
+		clr_country_flag = small_petition
 	}
 	option = { ##no
 		name = petition.30.b
@@ -2365,15 +2413,22 @@ country_event = { ##30## DAL recieve's DOR petition to share industrial expertis
 		}
 		hidden_effect = {
 			FROM = {
-				country_event = { id = petition.4 hours = @petitionResponseHours }
-				clr_country = accepted_petition
+				clr_country_flag = accepted_petition
 				set_country_flag = rejected_petition
+				country_event = { id = petition.4 hours = @petitionResponseHours }
+				add_opinion_modifier = {
+					modifier = rejected_petition
+					target = ROOT
+				}
 			}
-		}	
+		}
+		clr_country_flag = large_petition
+		clr_country_flag = medium_petition
+		clr_country_flag = small_petition
 	}
 }
 
-country_event = { ##40## DAL recieve's DOR petition to divert arms production
+country_event = { ##40## DAL recieves DOR petition to divert arms production
 	id = petition.40
 	title = petition.40.t
 	desc = petition.40.d
@@ -2443,11 +2498,10 @@ country_event = { ##40## DAL recieve's DOR petition to divert arms production
 				limit = {
 					free_building_slots = {
 						building = arms_factory
-						amount > 0
+						size > 0
 						include_locked = yes
 					}
-					market > 0
-					is_core_of = ROOT
+					is_core_of = PREV
 				}
 				add_building_construction = {
 					type = arms_factory
@@ -2458,11 +2512,18 @@ country_event = { ##40## DAL recieve's DOR petition to divert arms production
 		}
 		hidden_effect = {
 			FROM = {
-				country_event = { id = petition.5 hours = @petitionResponseHours }
-				clr_country = rejected_petition
+				clr_country_flag = rejected_petition
 				set_country_flag = accepted_petition
+				country_event = { id = petition.5 hours = @petitionResponseHours }
+				add_opinion_modifier = {
+					modifier = accepted_petition
+					target = ROOT
+				}
 			}
 		}
+		clr_country_flag = large_petition
+		clr_country_flag = medium_petition
+		clr_country_flag = small_petition
 	}
 	option = { ##no
 		name = petition.40.b
@@ -2471,15 +2532,22 @@ country_event = { ##40## DAL recieve's DOR petition to divert arms production
 		}
 		hidden_effect = {
 			FROM = {
-				country_event = { id = petition.5 hours = @petitionResponseHours }
-				clr_country = accepted_petition
+				clr_country_flag = accepted_petition
 				set_country_flag = rejected_petition
+				country_event = { id = petition.5 hours = @petitionResponseHours }
+				add_opinion_modifier = {
+					modifier = rejected_petition
+					target = ROOT
+				}
 			}
-		}	
+		}
+		clr_country_flag = large_petition
+		clr_country_flag = medium_petition
+		clr_country_flag = small_petition
 	}
 }
 
-country_event = { ##50## DAL recieve's DOR petition to increase grain exports
+country_event = { ##50## DAL recieves DOR petition to increase grain exports
 	id = petition.50
 	title = petition.50.t
 	desc = petition.50.d
@@ -2569,11 +2637,18 @@ country_event = { ##50## DAL recieve's DOR petition to increase grain exports
 		}
 		hidden_effect = {
 			FROM = { #last petition
+				clr_country_flag = rejected_petition
+				clr_country_flag = accepted_petition
 				news_event = { id = rfr_news.135 hours = @petitionResponseHours }
-				clr_country = rejected_petition
-				clr_country = accepted_petition
+				add_opinion_modifier = {
+					modifier = accepted_petition
+					target = ROOT
+				}
 			}
 		}
+		clr_country_flag = large_petition
+		clr_country_flag = medium_petition
+		clr_country_flag = small_petition
 	}
 	option = { ##no
 		name = petition.50.b
@@ -2582,11 +2657,18 @@ country_event = { ##50## DAL recieve's DOR petition to increase grain exports
 		}
 		hidden_effect = {
 			FROM = { #last petition
+				clr_country_flag = accepted_petition
+				clr_country_flag = rejected_petition
 				news_event = { id = rfr_news.136 hours = @petitionResponseHours }
-				clr_country = accepted_petition
-				clr_country = rejected_petition
+				add_opinion_modifier = {
+					modifier = rejected_petition
+					target = ROOT
+				}
 			}
-		}	
+		}
+		clr_country_flag = large_petition
+		clr_country_flag = medium_petition
+		clr_country_flag = small_petition
 	}
 }
 

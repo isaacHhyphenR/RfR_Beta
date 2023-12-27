@@ -1240,9 +1240,12 @@ great_merchants_win_election_effect = {
 	}
 	set_power_balance = {
 		id = DOR_great_merchants_power_balance
-		left_side = DOR_burghers_side
-		right_side = DOR_merchant_houses_side
+		#left_side = DOR_burghers_side
+		#right_side = DOR_merchant_houses_side
 		set_default = yes
+	}
+	remove_power_balance = {
+		id = DOR_election_power_balance
 	}
 	#figure out how much BoP from advisors
 	DOR_great_merchants_BOP_initial_advisors = yes

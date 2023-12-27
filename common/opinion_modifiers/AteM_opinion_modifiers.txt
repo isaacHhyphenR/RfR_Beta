@@ -40,4 +40,10 @@ opinion_modifiers = {
 	affinity_for_dwarves = {
 		value = 15
 	}
+	accepted_petition = {
+		value = 10
+	}
+	rejected_petition = {
+		value = -5
+	}
 }

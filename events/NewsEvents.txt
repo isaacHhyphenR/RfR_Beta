@@ -2147,6 +2147,7 @@ news_event = { ##134## Dale sends DAL king gifts
 }
 
 news_event = { ##135## DAL accepts grain export petition
+	id = rfr_news.135
 	title = rfr_news.135.t
 	desc = rfr_news.135.d
 	picture = GFX_news_gondor_accepts_diplomacy

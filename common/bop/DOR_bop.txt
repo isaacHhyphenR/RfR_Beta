@@ -366,7 +366,7 @@ DOR_great_merchants_power_balance = {
 				}
 			}
 		}
-		range = {
+		range = { #invest in other markets
 			id = DOR_merchant_houses_range2
 			min = 0.5
 			max = 0.75
@@ -387,7 +387,7 @@ DOR_great_merchants_power_balance = {
 				}
 			}
 		}
-		range = {
+		range = { #invest in resources
 			id = DOR_merchant_houses_range3
 			min = 0.75
 			max = 0.99
@@ -408,7 +408,7 @@ DOR_great_merchants_power_balance = {
 				}
 			}
 		}
-		range = {
+		range = { #invest in civ factory
 			id = DOR_merchant_houses_range4
 			min = 0.99
 			max = 1
