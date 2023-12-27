@@ -7162,7 +7162,21 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = DOR_petition_our_northern_friends_tooltip
 			effect_tooltip = {
-				DAL = { give_guarantee = ROOT }
+				if = { ##Dal can't guarantee if already has
+					limit = {
+						NOT = {
+							OR = {
+								is_guaranteed_by = DAL
+								is_subject_of = DAL
+								has_subject = DAL
+								is_in_faction_with = DAL
+							}
+						}
+					}
+					DAL = { give_guarantee = ROOT }
+					custom_effect_tooltip = VorV_dev_line_end
+				}
+				capital_scope = { add_25_prosperity = yes }
 				custom_effect_tooltip = VorV_dev_line_end
 				steal_random_tech_bonus = {
 					category = carpentry
@@ -7172,8 +7186,6 @@ focus_tree = {
 					target = DAL
 					uses = 2
 				}
-				custom_effect_tooltip = VorV_dev_line_end
-				capital_scope = { add_25_prosperity = yes }
 				custom_effect_tooltip = VorV_dev_line_end
 				random_controlled_state = {
 					limit = {
@@ -7203,6 +7215,25 @@ focus_tree = {
 						amount = 8
 					}
 				}	
+			}
+			##Fires the actual event
+			hidden_effect = {
+				if = { ##Dal can't guarantee if already has
+					limit = {
+						NOT = {
+							OR = {
+								is_guaranteed_by = DAL
+								is_subject_of = DAL
+								has_subject = DAL
+								is_in_faction_with = DAL
+							}
+						}
+					}
+					country_event = { id = petition.1 }
+				}
+				else = {
+					country_event = { id = petition.2 }
+				}
 			}
 			merchant_houses_focus_effect = yes
 		}

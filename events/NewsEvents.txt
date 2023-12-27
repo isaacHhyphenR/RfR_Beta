@@ -2124,7 +2124,7 @@ news_event = { ##134## Dale sends DAL king gifts
 	id = rfr_news.134
 	title = rfr_news.134.t
 	desc = rfr_news.134.d
-	picture = GFX_newsoffer_wine
+	picture = GFX_news_offer_wine
 	
 	is_triggered_only = yes
 	
@@ -2145,3 +2145,44 @@ news_event = { ##134## Dale sends DAL king gifts
 		}
 	}
 }
+
+news_event = { ##135## DAL accepts grain export petition
+	title = rfr_news.135.t
+	desc = rfr_news.135.d
+	picture = GFX_news_gondor_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.135.a
+	}
+}
+news_event = { ##136## DAL refused grain export petition
+	id = rfr_news.136
+	title = rfr_news.136.t
+	desc = rfr_news.136.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Aww :(
+		name = rfr_news.136.a
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

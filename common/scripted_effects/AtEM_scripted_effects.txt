@@ -357,6 +357,34 @@ add_50_prosperity = {
 	add_to_variable = { prosperity = 50 }
 	custom_effect_tooltip = add_50_prosperity
 }
+subtract_5_prosperity = {
+	subtract_from_variable = { prosperity = 5 }
+	custom_effect_tooltip = subtract_5_prosperity
+}
+subtract_10_prosperity = {
+	subtract_from_variable = { prosperity = 10 }
+	custom_effect_tooltip = subtract_10_prosperity
+}
+subtract_15_prosperity = {
+	subtract_from_variable = { prosperity = 15 }
+	custom_effect_tooltip = subtract_15_prosperity
+}
+subtract_20_prosperity = {
+	subtract_from_variable = { prosperity = 20 }
+	custom_effect_tooltip = subtract_20_prosperity
+}
+subtract_25_prosperity = {
+	subtract_from_variable = { prosperity = 25 }
+	custom_effect_tooltip = subtract_25_prosperity
+}
+subtract_30_prosperity = {
+	subtract_from_variable = { prosperity = 30 }
+	custom_effect_tooltip = subtract_30_prosperity
+}
+subtract_50_prosperity = {
+	subtract_from_variable = { prosperity = 50 }
+	custom_effect_tooltip = subtract_50_prosperity
+}
 
 ############################################################################################COLONIES
 clear_undeveloped_colony_resources = { #call in a state to remove any 1 size resources
