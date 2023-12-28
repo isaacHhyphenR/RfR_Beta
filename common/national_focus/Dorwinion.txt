@@ -5,6 +5,8 @@
 @bigBoPCost = 5
 
 @guildFocusSizeBonus = 1
+
+@importResourceAmount = 12
 #GFX:
 #GFX_goal_university_research
 #GFX_goal_university_medicine
@@ -641,7 +643,6 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
 		completion_reward = { #+12 of resources on capital
-			@importResourceAmount = 12
 			capital_scope = {
 				add_resource = {
 					type = cloth
@@ -6267,7 +6268,7 @@ focus_tree = {
 						has_idea_with_trait = merchant_house_pol_second
 						has_idea_with_trait = merchant_house_pol_third
 						has_idea_with_trait = merchant_house_pol_fourth
-						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_fifth
 						has_idea_with_trait = merchant_house_pol_sixth
 						has_idea_with_trait = merchant_house_pol_seventh
 						has_idea_with_trait = merchant_house_pol_eighth
@@ -6285,7 +6286,7 @@ focus_tree = {
 						has_idea_with_trait = merchant_house_pol_second
 						has_idea_with_trait = merchant_house_pol_third
 						has_idea_with_trait = merchant_house_pol_fourth
-						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_fifth
 						has_idea_with_trait = merchant_house_pol_sixth
 						has_idea_with_trait = merchant_house_pol_seventh
 						has_idea_with_trait = merchant_house_pol_eighth
@@ -6303,7 +6304,7 @@ focus_tree = {
 						has_idea_with_trait = merchant_house_pol_second
 						has_idea_with_trait = merchant_house_pol_third
 						has_idea_with_trait = merchant_house_pol_fourth
-						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_fifth
 						has_idea_with_trait = merchant_house_pol_sixth
 						has_idea_with_trait = merchant_house_pol_seventh
 						has_idea_with_trait = merchant_house_pol_eighth
@@ -6321,7 +6322,7 @@ focus_tree = {
 						has_idea_with_trait = merchant_house_pol_second
 						has_idea_with_trait = merchant_house_pol_third
 						has_idea_with_trait = merchant_house_pol_fourth
-						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_fifth
 						has_idea_with_trait = merchant_house_pol_sixth
 						has_idea_with_trait = merchant_house_pol_seventh
 						has_idea_with_trait = merchant_house_pol_eighth
@@ -6339,7 +6340,7 @@ focus_tree = {
 						has_idea_with_trait = merchant_house_pol_second
 						has_idea_with_trait = merchant_house_pol_third
 						has_idea_with_trait = merchant_house_pol_fourth
-						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_fifth
 						has_idea_with_trait = merchant_house_pol_sixth
 						has_idea_with_trait = merchant_house_pol_seventh
 						has_idea_with_trait = merchant_house_pol_eighth
@@ -6357,7 +6358,7 @@ focus_tree = {
 						has_idea_with_trait = merchant_house_pol_second
 						has_idea_with_trait = merchant_house_pol_third
 						has_idea_with_trait = merchant_house_pol_fourth
-						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_fifth
 						has_idea_with_trait = merchant_house_pol_sixth
 						has_idea_with_trait = merchant_house_pol_seventh
 						has_idea_with_trait = merchant_house_pol_eighth
@@ -6375,7 +6376,7 @@ focus_tree = {
 						has_idea_with_trait = merchant_house_pol_second
 						has_idea_with_trait = merchant_house_pol_third
 						has_idea_with_trait = merchant_house_pol_fourth
-						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_fifth
 						has_idea_with_trait = merchant_house_pol_sixth
 						has_idea_with_trait = merchant_house_pol_seventh
 						has_idea_with_trait = merchant_house_pol_eighth
@@ -6393,7 +6394,7 @@ focus_tree = {
 						has_idea_with_trait = merchant_house_pol_second
 						has_idea_with_trait = merchant_house_pol_third
 						has_idea_with_trait = merchant_house_pol_fourth
-						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_fifth
 						has_idea_with_trait = merchant_house_pol_sixth
 						has_idea_with_trait = merchant_house_pol_seventh
 						has_idea_with_trait = merchant_house_pol_eighth
@@ -6411,7 +6412,7 @@ focus_tree = {
 						has_idea_with_trait = merchant_house_pol_second
 						has_idea_with_trait = merchant_house_pol_third
 						has_idea_with_trait = merchant_house_pol_fourth
-						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_fifth
 						has_idea_with_trait = merchant_house_pol_sixth
 						has_idea_with_trait = merchant_house_pol_seventh
 						has_idea_with_trait = merchant_house_pol_eighth
@@ -6429,7 +6430,7 @@ focus_tree = {
 						has_idea_with_trait = merchant_house_pol_second
 						has_idea_with_trait = merchant_house_pol_third
 						has_idea_with_trait = merchant_house_pol_fourth
-						has_idea_with_trait = merchant_house_pol_firth
+						has_idea_with_trait = merchant_house_pol_fifth
 						has_idea_with_trait = merchant_house_pol_sixth
 						has_idea_with_trait = merchant_house_pol_seventh
 						has_idea_with_trait = merchant_house_pol_eighth
@@ -7553,8 +7554,8 @@ focus_tree = {
 			merchant_houses_focus_effect = yes
 		}
 	}
-	focus = { #Guage Enemy Strength
-		id = DOR_guage_enemy_strength
+	focus = { #Gauge Enemy Strength
+		id = DOR_gauge_enemy_strength
 		icon = GFX_goal_generic_intelligence_exchange
 		x = 0
 		y = 1
@@ -7595,7 +7596,7 @@ focus_tree = {
 				}
 				add_resistance_target = {
 					amount = @resistanceFocusSmall
-					tooltip = DOR_guage_enemy_strength
+					tooltip = DOR_gauge_enemy_strength
 				}
 			}
 			merchant_houses_focus_effect = yes
@@ -7642,7 +7643,7 @@ focus_tree = {
 				}
 				add_resistance_target = {
 					amount = @resistanceFocusLarge
-					tooltip = DOR_return_in_disguise
+					tooltip = DOR_smuggle_out_the_essentials
 				}
 			}
 			merchant_houses_focus_effect = yes
@@ -7680,7 +7681,7 @@ focus_tree = {
 				}
 				add_resistance_target = {
 					amount = @resistanceFocusSmall
-					tooltip = DOR_return_in_disguise
+					tooltip = DOR_bring_out_stored_vintages
 				}
 			}
 			merchant_houses_focus_effect = yes
@@ -7715,7 +7716,7 @@ focus_tree = {
 				}
 				add_resistance_target = {
 					amount = @resistanceFocusLarge
-					tooltip = DOR_return_in_disguise
+					tooltip = DOR_dip_into_the_war_chest
 				}
 			}
 			merchant_houses_focus_effect = yes
@@ -7812,7 +7813,7 @@ focus_tree = {
 				}
 				add_resistance_target = {
 					amount = @resistanceFocusLarge
-					tooltip = DOR_return_in_disguise
+					tooltip = DOR_rally_exiled_warriors
 				}
 			}
 			merchant_houses_focus_effect = yes
@@ -7847,7 +7848,7 @@ focus_tree = {
 				}
 				add_resistance_target = {
 					amount = @resistanceFocusSmall
-					tooltip = DOR_return_in_disguise
+					tooltip = DOR_all_will_fight_for_home
 				}
 			}
 			merchant_houses_focus_effect = yes
@@ -7855,7 +7856,7 @@ focus_tree = {
 	}
 	focus = { #Throw off the Easterling Yoke
 		id = DOR_throw_off_the_easterling_yoke
-		icon = GFX_focus_SOV_builder_of_the_red_army
+		icon = GFX_focus_POL_riot_of_37
 		x = 0
 		y = 3
 		relative_position_id = DOR_seek_santuary_in_dale
@@ -9577,6 +9578,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			custom_effect_tooltip = every_level_three_market
+			effect_tooltip = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			custom_effect_tooltip = line_of_dashes
 			every_controlled_state = {
 				limit = { market > 2 }
 				add_building_construction = {
@@ -9611,6 +9621,40 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESOURCES }
 		completion_reward = {
 			custom_effect_tooltip = every_level_three_market
+			@importResourceAmountSecond = 8
+			effect_tooltip = {
+				random_list = {
+					1 = {
+						add_resource = {
+							type = cloth
+							amount = @importResourceAmountSecond
+							state = 310
+						}
+					}
+					1 = {
+						add_resource = {
+							type = wood
+							amount = @importResourceAmountSecond
+							state = 310
+						}
+					}
+					1 = {
+						add_resource = {
+							type = iron
+							amount = @importResourceAmountSecond
+							state = 310
+						}
+					}
+					1 = {
+						add_resource = {
+							type = mounts
+							amount = @importResourceAmountSecond
+							state = 310
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = line_of_dashes
 			every_controlled_state = {
 				limit = { market > 2 }
 				random_list = {
