@@ -31,7 +31,6 @@
 #GFX_goal_erebor_trade
 #GFX_goal_dwarven_smith
 #GFX_goal_support_calmar
-#GFX_goal_aldiana_calmar
 #GFX_goal_propoganda_law
 #GFX_goal_smuggle_wine
 #GFX_goal_market_operative

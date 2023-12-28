@@ -401,7 +401,71 @@ spriteTypes = {
 		name = "GFX_goal_generic_attack_shire"
 		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_shire.dds"			
 	}
-		SpriteType = {
+	SpriteType = {
+		name = "GFX_goal_generic_attack_sagath"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_sagath.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_logath"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_logath.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_surubeki"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_surubeki.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_ulgath"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_ulgath.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_medloshukain"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_medloshukain.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_dorwinion_evil"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_dorwinion_evil.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_rhovanion"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_rhovanion.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_attack_rin_rus"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_attack_rin_rus.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_sagath"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_sagath.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_logath"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_logath.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_surubeki"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_surubeki.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_ulgath"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_ulgath.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_medloshukain"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_medloshukain.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_dorwinion_evil"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_dorwinion_evil.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_rhovanion"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_rhovanion.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_befriend_rin_rus"
+		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_rin_rus.dds"
+	}	SpriteType = {
 		name = "GFX_goal_generic_befriend_arthedain"
 		texturefile = "gfx/interface/goals/diplomatic/focus_generic_befriend_arthedain.dds"
 	}
@@ -1352,5 +1416,9 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_goal_generic_production3"
 		texturefile = "gfx/interface/goals/goal_generic_production3.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_aldiana_calmar"
+		texturefile = "gfx/interface/goals/goal_aldiana_calmar.dds"
 	}
 }
