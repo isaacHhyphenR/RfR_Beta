@@ -1724,4 +1724,6 @@ colonisation_category = {
 	# }
 }
 
-
+rhovanion_influence_category = {
+	
+}

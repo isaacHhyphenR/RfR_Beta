@@ -275,8 +275,9 @@ allow_influence_rhovanion = {
 	}
 }
 can_influence_rhovanion = {
+	is_subject = no
 	OR = {
-		is_rhovanion_tag = yes
+		#is_rhovanion_tag = yes
 		original_tag = DOR
 		original_tag = DAL
 		original_tag = GLD

@@ -26,7 +26,7 @@
  EQ_MOD_CAT_mumak_ranged_weapon_TITLE: "$EQ_MOD_CAT_cav_ranged_weapon_TITLE$"
  EQ_MOD_CAT_mumak_thrown_weapon_TITLE: "$EQ_MOD_CAT_cav_thrown_weapon_TITLE$"
  EQ_MOD_CAT_mumak_artillery_weapon_TITLE: "Artillery"
- EQ_MOD_CAT_tank_radio_module_TITLE: "Sheild"
+ EQ_MOD_CAT_tank_radio_module_TITLE: "Shield"
  EQ_MOD_CAT_cav_ammunition_TITLE: "Ammunition"
  ### EQUIPMENT MODULE SLOTS ###
  EQ_MOD_SLOT_main_armament_slot_TITLE: "Main Weapon"
@@ -199,13 +199,13 @@
  mumak_ballista_tower_desc: "Mûmak mounted artillery can dominate the battlefield."
  mumak_catapult_tower: "Catapult Tower"
  mumak_catapult_tower_desc: "Not only does the mûmak provide mobility, it also grants the catapult a vantage from which to shoot over most castle walls."
- #####Sheild
- cav_sheild_1: "Round Sheild"
- cav_sheild_1_desc: "The easiest, but most cumbersome, sheild design."
- cav_sheild_2: "Kite Sheild"
- cav_sheild_2_desc: "A Kite sheild helps protect the rider's lower body from upwards attacks."
- cav_sheild_3: "Heater Sheild"
- cav_sheild_3_desc: "The heater sheild exposes its soldier's legs more than the kite, but with advancements in leg armor this is a small price for greater agility."
+ #####Shield
+ cav_sheild_1: "Round Shield"
+ cav_sheild_1_desc: "The easiest, but most cumbersome, shield design."
+ cav_sheild_2: "Kite Shield"
+ cav_sheild_2_desc: "A Kite shield helps protect the rider's lower body from upwards attacks."
+ cav_sheild_3: "Heater Shield"
+ cav_sheild_3_desc: "The heater shield exposes its soldier's legs more than the kite, but with advancements in leg armor this is a small price for greater agility."
  #####Sidearms
  early_sidearm: "Early Sidearm"
  early_sidearm_desc: "A backup weapon in case the enemy gets too close."

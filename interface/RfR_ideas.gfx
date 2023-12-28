@@ -830,4 +830,105 @@ spriteTypes = {
 		name = "GFX_idea_smuggled_wine"
 		texturefile = "gfx/interface/ideas/smuggled_wine.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_DAL_isolationism_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DAL_isolationism_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DAL_freedom_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DAL_freedom_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DAL_opportunism_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DAL_opportunism_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DAL_conquest_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DAL_conquest_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DAL_melkorite_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DAL_melkorite_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_isolationism_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DOR_isolationism_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_freedom_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DOR_freedom_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_opportunism_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DOR_opportunism_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_conquest_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DOR_conquest_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_melkorite_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DOR_melkorite_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_GLD_isolationism_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/GLD_isolationism_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_GLD_freedom_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/GLD_freedom_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_GLD_opportunism_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/GLD_opportunism_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_GLD_conquest_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/GLD_conquest_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_GLD_melkorite_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/GLD_melkorite_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RUN_isolationism_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RUN_isolationism_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RUN_freedom_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RUN_freedom_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RUN_opportunism_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RUN_opportunism_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RUN_conquest_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RUN_conquest_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RUN_melkorite_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RUN_melkorite_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RVN_isolationism_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RVN_isolationism_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RVN_freedom_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RVN_freedom_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RVN_opportunism_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RVN_opportunism_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RVN_conquest_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RVN_conquest_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RVN_melkorite_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RVN_melkorite_influence.dds"
+	}
+
 }
