@@ -424,6 +424,32 @@ on_actions = {
 				}
 			}
 		}
+		effect = { #DOR freedom rebels
+			if = {
+				limit = {
+					FROM.FROM = {
+						is_core_of = DOR
+					}
+					ROOT = {
+						tag = DOR
+						has_completed_focus = DOR_throw_off_the_easterling_yoke
+						has_war_with = FROM
+					}
+				}
+				FROM.FROM = {
+					create_unit = {
+						division = "name = \"Citizen Rebels\" division_template = \"Citizen Rebels\" start_experience_factor = 0.1"
+						owner = DOR
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "name = \"Citizen Rebels\" division_template = \"Citizen Rebels\" start_experience_factor = 0.1"
+						owner = DOR
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}
+		}
 	}
 	
 	on_war_relation_added = {
@@ -463,6 +489,69 @@ on_actions = {
 					FROM = { check_variable = { riavod_imports > 0 } }
 				}
 				FROM = { ROOT = { end_riavod_trade = yes } }
+			}
+		}
+		effect = { ##DOR respawning in DAL
+			if = { #Checks if this is a thing that can happen
+				limit = {
+					NOT = { country_exists = DOR }
+					DOR = { has_country_flag = respawn_in_dale }
+					OR = { #is dal at war with someone who owns Dorwinion
+						AND = {
+							ROOT = { tag = DAL }
+							FROM = { any_owned_state = { is_core_of = DOR } }
+						}
+						AND = {
+							FROM = { tag = DAL }
+							ROOT = { any_owned_state = { is_core_of = DOR } }
+						}
+					}
+				}
+				#Checks whether to do DLC or non DLC way
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					DOR = {
+						become_exiled_in = { target = DAL legitimacy = 30 }
+					}
+				}
+				else = {
+					DOR = {
+						random_core_state = { ##gives them a state so that they can exist
+							limit = {
+								owner = {
+									has_war_with = DAL
+								}
+							}
+							set_state_owner_to = DOR
+						}
+					}
+					set_autonomy = {
+						target = DOR
+						autonomy_state = autonomy_puppet
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+				#can only happen once
+				DOR = {
+					clr_country_flag = respawn_in_dale
+					##Dor joins war
+					if = {
+						limit = { FROM = { tag = DAL } }
+						add_to_war = {
+							targeted_alliance = DAL
+							enemy = ROOT
+						}
+					}
+					else = {
+						add_to_war = {
+							targeted_alliance = DAL
+							enemy = FROM
+						}
+					}
+				}
 			}
 		}
 	}
@@ -617,7 +706,7 @@ on_actions = {
 			}
 		}
 	}
-					
+
 	on_subject_annexed = { ##DOR celduinic republic
 		effect = {
 			if = { #Republic of dale

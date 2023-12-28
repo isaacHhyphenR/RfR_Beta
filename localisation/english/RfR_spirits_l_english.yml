@@ -492,6 +492,10 @@
  halfling_heritage_trait: "§OHalfling§!"
  diverted_arms_production_to_dorwinion: "Diverted Arms Production"
  diverted_arms_production_to_dorwinion_desc: "We have diverted a portion of our weapon production toward Dorwinion to support them as the first bulwark against the East."
- 
- 
+ smuggled_wine: "Smuggled Wine"
+ smuggled_wine_desc: "$DOR_smuggle_out_the_essentials_desc$"
+ DOR_exiled_operatives: "Exiled Operatives"
+ DOR_exiled_operatives_desc: "$DOR_return_in_disguise_desc$"
+ DOR_exiled_patriots: "Rallying Exiled Patriots"
+ DOR_exiled_patriots_desc: "$DOR_rally_exiled_warriors_desc$"
  

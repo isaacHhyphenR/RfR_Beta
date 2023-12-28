@@ -826,4 +826,8 @@ spriteTypes = {
 		name = "GFX_idea_celduin_trade_league"
 		texturefile = "gfx/interface/ideas/celduin_trade_league.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_smuggled_wine"
+		texturefile = "gfx/interface/ideas/smuggled_wine.dds"
+	}
 }

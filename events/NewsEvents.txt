@@ -183,6 +183,7 @@ news_event = { ##13## Last march of the ents
 		name = rfr_news.13.a
 	}
 }
+
 ######################################################################################################VorV
 news_event = { ##14## Swore a blood oath
 	id = rfr_news.14
@@ -2168,6 +2169,32 @@ news_event = { ##136## DAL refused grain export petition
 	
 	option = { #Aww :(
 		name = rfr_news.136.a
+	}
+}
+
+
+news_event = { ##137## DAL accepted to grant us sanctuary
+	id = rfr_news.137
+	title = rfr_news.137.t
+	desc = rfr_news.137.d
+	picture = GFX_news_gondor_accepts_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Nice
+		name = rfr_news.137.a
+	}
+}
+news_event = { ##138## DAL refused to grant us sanctuary
+	id = rfr_news.138
+	title = rfr_news.138.t
+	desc = rfr_news.138.d
+	picture = GFX_news_gondor_rejects_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #Aww :(
+		name = rfr_news.138.a
 	}
 }
 

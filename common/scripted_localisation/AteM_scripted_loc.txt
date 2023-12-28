@@ -153,5 +153,16 @@ defined_text = { ##Displays effects of recruiting company of winter unit with co
 	}
 }
 
-
+defined_text = { ##Displays DLC variant for how DOR will seek santuary in Dale
+	name = DOR_seek_santuary_in_dale_scripted_loc
+	text = { #MTG
+		trigger = {
+			has_dlc = "Man the Guns"
+		}
+		localization_key = DOR_seek_santuary_in_dale_tooltip_MTG
+	}
+	text = { #vanilla
+		localization_key = DOR_seek_santuary_in_dale_tooltip_vanilla
+	}
+}
 

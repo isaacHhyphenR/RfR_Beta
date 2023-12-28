@@ -748,6 +748,10 @@ DOR_college_category = {
 				has_idea = DOR_college_of_philosophy_2
 				has_idea = DOR_college_of_philosophy_3
 				has_idea = DOR_college_of_philosophy_4
+				AND = { #focus increases level cap
+					has_idea = DOR_college_of_philosophy_5
+					has_completed_focus = DOR_open_the_university_to_the_public
+				}
 			}
 			has_completed_focus = DOR_expand_the_university
 		}
@@ -776,6 +780,10 @@ DOR_college_category = {
 				has_idea = DOR_college_of_manners_2
 				has_idea = DOR_college_of_manners_3
 				has_idea = DOR_college_of_manners_4
+				AND = { #focus increases level cap
+					has_idea = DOR_college_of_manners_5
+					has_completed_focus = DOR_open_the_university_to_the_public
+				}
 			}
 			has_completed_focus = DOR_expand_the_university
 		}
@@ -804,6 +812,10 @@ DOR_college_category = {
 				has_idea = DOR_college_of_medicine_2
 				has_idea = DOR_college_of_medicine_3
 				has_idea = DOR_college_of_medicine_4
+				AND = { #focus increases level cap
+					has_idea = DOR_college_of_medicine_5
+					has_completed_focus = DOR_open_the_university_to_the_public
+				}
 			}
 			has_completed_focus = DOR_expand_the_university
 		}
@@ -832,6 +844,10 @@ DOR_college_category = {
 				has_idea = DOR_college_of_tactics_2
 				has_idea = DOR_college_of_tactics_3
 				has_idea = DOR_college_of_tactics_4
+				AND = { #focus increases level cap
+					has_idea = DOR_college_of_tactics_5
+					has_completed_focus = DOR_open_the_university_to_the_public
+				}
 			}
 			has_completed_focus = DOR_expand_the_university
 		}

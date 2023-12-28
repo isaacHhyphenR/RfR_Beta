@@ -38,6 +38,7 @@ calculate_national_wine_production = { #call in tag
 	##compute off-map/import gain, which is not exported
 	set_variable = { national_wine = modifier@national_wine_gain }
 	multiply_variable = { national_wine = modifier@wine_gain_factor }
+	add_to_variable = { national_wine = modifier@national_wine_gain }
 	add_to_variable = { wine_produced = national_wine }
 	add_to_variable = { wine_produced = wine_imported }
 	set_variable = { wine_production_SHOWCASE = wine_produced } #for tooltips
@@ -1861,6 +1862,13 @@ DOR_upgrade_college_of_philosophy = {
 			add_idea = DOR_college_of_philosophy_5
 		}
 	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_philosophy_5 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_philosophy_5
+			add_idea = DOR_college_of_philosophy_6
+		}
+	}
 	DOR_increase_university_level_1 = yes
 }
 DOR_upgrade_college_of_manners = {
@@ -1890,6 +1898,13 @@ DOR_upgrade_college_of_manners = {
 		swap_ideas = {
 			remove_idea = DOR_college_of_manners_4
 			add_idea = DOR_college_of_manners_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_manners_5 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_manners_5
+			add_idea = DOR_college_of_manners_6
 		}
 	}
 	DOR_increase_university_level_1 = yes
@@ -1923,6 +1938,13 @@ DOR_upgrade_college_of_medicine = {
 			add_idea = DOR_college_of_medicine_5
 		}
 	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_medicine_5 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_medicine_5
+			add_idea = DOR_college_of_medicine_6
+		}
+	}
 	DOR_increase_university_level_1 = yes
 }
 DOR_upgrade_college_of_tactics = {
@@ -1952,6 +1974,13 @@ DOR_upgrade_college_of_tactics = {
 		swap_ideas = {
 			remove_idea = DOR_college_of_tactics_4
 			add_idea = DOR_college_of_tactics_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOR_college_of_tactics_5 }
+		swap_ideas = {
+			remove_idea = DOR_college_of_tactics_5
+			add_idea = DOR_college_of_tactics_6
 		}
 	}
 	DOR_increase_university_level_1 = yes
@@ -2876,8 +2905,6 @@ one_external_focus = {
 	add_to_variable = { external_focuses = 1 }
 	custom_effect_tooltip = complete_external_focus
 }
-
-
 
 
 

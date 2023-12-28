@@ -17,7 +17,6 @@
 #GFX_goal_generic_construct_market
 #GFX_focus_generic_cloth_industry
 #GFX_goal_dorwin_sea
-#GFX_goal_riavod_market
 #GFX_goal_merchants
 #GFX_goal_generic_imports
 #GFX_goal_money_politics
@@ -31,6 +30,8 @@
 #GFX_goal_dwarven_smith
 #GFX_goal_support_calmar
 #GFX_goal_aldiana_calmar
+#GFX_goal_propoganda_law
+#GFX_goal_smuggle_wine
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -2705,7 +2706,7 @@ focus_tree = {
 	}
 	focus = { #Idyllic rolling fields
 		id = DOR_idyllic_rolling_fields
-		icon = GFX_focus_SOV_breadbasket_of_the_union
+		icon = GFX_focus_generic_farmland
 		x = -3
 		y = 1
 		relative_position_id = DOR_improve_access_to_inland_communities
@@ -3161,7 +3162,7 @@ focus_tree = {
 #################################FOUND THE REPUBLIC
 	focus = { #theres good in this world
 		id = DOR_theres_good_in_this_world
-		icon = GFX_goal_support_democracy
+		icon = GFX_focus_SWE_form_rfsu
 		x = -1
 		y = 1
 		relative_position_id = DOR_support_the_burghers
@@ -3229,7 +3230,7 @@ focus_tree = {
 	}
 	focus = { #take control of local affairs
 		id = DOR_take_control_of_local_affairs
-		icon = GFX_focus_generic_self_management
+		icon = GFX_focus_FIN_mustapaidat
 		x = 0
 		y = 1
 		relative_position_id = DOR_power_to_the_people
@@ -3251,7 +3252,7 @@ focus_tree = {
 	}
 	focus = { #Expand citizenship rights
 		id = DOR_expand_citizenship_rights
-		icon = GFX_focus_generic_population_growth
+		icon = GFX_focus_DEN_national_unity
 		x = 0
 		y = 1
 		relative_position_id = DOR_take_control_of_local_affairs
@@ -3472,9 +3473,9 @@ focus_tree = {
 			burghers_focus_effect_big = yes
 		}
 	}
-	focus = { #Investigate reactionary plot
+	focus = { #Investigate Reactionary Plot
 		id = DOR_investigate_reactionary_plot
-		#icon = GFX_focus_focus_fra_revolution_utmost
+		icon = GFX_focus_NOR_lurk_in_the_shadows
 		x = 1
 		y = 1
 		relative_position_id = DOR_limit_the_power_of_the_nobility
@@ -3582,7 +3583,7 @@ focus_tree = {
 			burghers_focus_effect = yes
 		}
 	}
-	focus = { #Institutions of democracy
+	focus = { #Institutions of Democracy
 		id = DOR_institutions_of_democracy
 		icon = GFX_goal_generic_free_voting
 		x = 0
@@ -3607,7 +3608,7 @@ focus_tree = {
 			burghers_focus_effect = yes
 		}
 	}
-	focus = { #Purge nepotism
+	focus = { #Purge Nepotism
 		id = DOR_purge_nepotism
 		icon = GFX_focus_generic_court
 		x = 2
@@ -3661,6 +3662,42 @@ focus_tree = {
 					}
 				}
 			}
+			burghers_focus_effect = yes
+		}
+	}
+	focus = { #Open the University to the Public
+		id = DOR_open_the_university_to_the_public
+		icon = GFX_focus_FIN_socialist_welfare
+		x = 0
+		y = 1
+		relative_position_id = DOR_purge_nepotism
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = {
+			focus = DOR_implement_meritocratic_reforms
+			focus = DOR_institutions_of_democracy
+		}
+		prerequisite = {
+			focus = DOR_implement_meritocratic_reforms
+			focus = DOR_purge_nepotism
+		}
+		prerequisite = {
+			focus = DOR_institutions_of_democracy
+			focus = DOR_purge_nepotism
+		}
+		available = {
+			burghers_focus_trigger = yes
+			has_completed_focus = DOR_renovate_the_royal_university_of_srzel_kain
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { ##+1 level of each college completed
+			custom_effect_tooltip = DOR_open_the_university_to_the_public_tooltip
+			DOR_upgrade_college_of_philosophy = yes
+			DOR_upgrade_college_of_manners = yes
+			DOR_upgrade_college_of_medicine = yes
+			DOR_upgrade_college_of_tactics = yes
 			burghers_focus_effect = yes
 		}
 	}
@@ -4857,7 +4894,7 @@ focus_tree = {
 	}
 	focus = { #Put Civilian Skills to Use
 		id = DOR_put_civilian_skills_to_use
-		#icon = GFX_goal_generic_fortify_city
+		icon = GFX_focus_FIN_finnish_federation_of_trade_unions
 		x = -5
 		y = 1
 		relative_position_id = DOR_rely_on_urban_militias
@@ -4884,7 +4921,7 @@ focus_tree = {
 	}
 	focus = { #Leverage guild Tithes
 		id = DOR_leverage_guild_tithes
-		#icon = GFX_goal_generic_fortify_city
+		icon = GFX_goal_generic_fortify_city
 		x = 0
 		y = 1
 		relative_position_id = DOR_put_civilian_skills_to_use
@@ -5169,7 +5206,7 @@ focus_tree = {
 	}
 	focus = { #Beyond our Walls, but not our Hearts
 		id = DOR_beyond_our_walls_but_not_our_hearts
-		icon = GFX_focus_SOV_breadbasket_of_the_union
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
 		x = 0
 		y = 2
 		relative_position_id = DOR_invest_in_the_bakers
@@ -6130,7 +6167,7 @@ focus_tree = {
 	}
 	focus = { #Favor Internal Ministry
 		id = DOR_favor_internal_ministry
-		icon = GFX_focus_generic_industry_2
+		icon = GFX_focus_DEN_limited_regulations
 		x = 1
 		y = 1
 		relative_position_id = DOR_preserve_traditional_power_structures
@@ -7142,7 +7179,7 @@ focus_tree = {
 	}
 	focus = { #Petition Our Northern Friends
 		id = DOR_petition_our_northern_friends
-		icon = GFX_goal_generic_positive_trade_relations
+		icon = GFX_goal_propoganda_law
 		x = 0
 		y = 1
 		relative_position_id = DOR_establish_an_embassy_in_dale
@@ -7372,7 +7409,7 @@ focus_tree = {
 	}
 	focus = { #League of Merchant Families
 		id = DOR_league_of_merchant_families
-		icon = GFX_goal_merchants
+		icon = GFX_goal_aldiana_calmar
 		x = 1
 		y = 1
 		relative_position_id = DOR_move_our_embassy_to_esgaroth
@@ -7396,7 +7433,7 @@ focus_tree = {
 	}
 	focus = { #Mutual Patronage
 		id = DOR_mutual_patronage
-		icon = GFX_goal_aldiana_calmar
+		icon = GFX_goal_merchants
 		x = 1
 		y = 1
 		relative_position_id = DOR_exchange_fine_gifts
@@ -7432,6 +7469,415 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 2
 			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+#################################EXILE
+	@resistanceFocusLarge = 10
+	@resistanceFocusSmall = 5
+	focus = { #Seek Santuary in Dale
+		id = DOR_seek_santuary_in_dale
+		icon = GFX_focus_generic_improve_the_administration
+		x = -3
+		y = 4
+		relative_position_id = DOR_establish_an_embassy_in_dale
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_establish_an_embassy_in_dale
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			country_exists = DAL
+			NOT = { has_war_with = DAL }
+			NOT = {
+				has_war = yes
+				is_in_faction_with = DAL
+			}
+		}
+		bypass = {
+			is_in_faction = yes
+			has_capitulated = yes
+		}
+		# allow_branch = {
+			# has_dlc = "Man the Guns"
+		# }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #will respawn as an exile/puppet of dale (depending on DLC) if we are annexed and they go to war with our annexer
+			DAL = {
+				country_event = { id = atem.24 hours = 1 }
+			}
+			custom_effect_tooltip = if_they_accept_tooltip
+			custom_effect_tooltip = DOR_seek_santuary_in_dale_tooltip
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Return in Disguise
+		id = DOR_return_in_disguise
+		icon = GFX_focus_generic_vatican_agents
+		x = -3
+		y = 1
+		relative_position_id = DOR_seek_santuary_in_dale
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = DOR_seek_santuary_in_dale
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			has_capitulated = yes
+			has_intelligence_agency = yes
+		}
+		available_if_capitulated = yes
+		allow_branch = {
+			has_dlc = "La Resistance"
+		}
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = {
+			add_ideas = DOR_exiled_operatives
+			every_core_state = {
+				limit = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				add_resistance_target = {
+					amount = @resistanceFocusLarge
+					tooltip = DOR_return_in_disguise
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Guage Enemy Strength
+		id = DOR_guage_enemy_strength
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = DOR_return_in_disguise
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_return_in_disguise
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			has_capitulated = yes
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = {
+			if = {
+				limit = {
+					var:116.controller = {
+						has_war_with = ROOT
+					}
+				}
+				add_intel = {
+					target = var:116.controller
+					civilian_intel = 50
+					army_intel = 50
+					navy_intel = 50
+				}
+			}
+				
+			every_core_state = {
+				limit = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				add_resistance_target = {
+					amount = @resistanceFocusSmall
+					tooltip = DOR_guage_enemy_strength
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Smuggle Out the Essentials
+		id = DOR_smuggle_out_the_essentials
+		icon = GFX_goal_smuggle_wine
+		x = -1
+		y = 1
+		relative_position_id = DOR_seek_santuary_in_dale
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_seek_santuary_in_dale
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			has_capitulated = yes
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_PROSPERITY }
+		completion_reward = {
+			add_ideas = smuggled_wine
+			if = {
+				limit = { is_government_in_exile = yes }
+				var:host = {
+					add_ideas = smuggled_wine
+				}
+			}
+			else_if = {
+				limit = { is_subject = yes }
+				overlord = {
+					add_ideas = smuggled_wine
+				}
+			}
+			every_core_state = {
+				limit = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				add_resistance_target = {
+					amount = @resistanceFocusLarge
+					tooltip = DOR_return_in_disguise
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Bring Out Stored Vintages
+		id = DOR_bring_out_stored_vintages
+		icon = GFX_goal_wine_glass
+		x = 0
+		y = 1
+		relative_position_id = DOR_smuggle_out_the_essentials
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_smuggle_out_the_essentials
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			has_capitulated = yes
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_PROSPERITY }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = wine_equipment
+				amount = 5000
+			}
+			every_core_state = {
+				limit = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				add_resistance_target = {
+					amount = @resistanceFocusSmall
+					tooltip = DOR_return_in_disguise
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Dip Into the War Chest
+		id = DOR_dip_into_the_war_chest
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 1
+		y = 1
+		relative_position_id = DOR_seek_santuary_in_dale
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_seek_santuary_in_dale
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			has_capitulated = yes
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #3 offmap mils
+			add_offsite_building = { type = arms_factory level = 3 }
+			every_core_state = {
+				limit = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				add_resistance_target = {
+					amount = @resistanceFocusLarge
+					tooltip = DOR_return_in_disguise
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Learn the Ways of Foreign Smiths
+		id = DOR_learn_the_ways_of_foreign_smiths
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = DOR_dip_into_the_war_chest
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_dip_into_the_war_chest
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			has_capitulated = yes
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #5k swords
+			if = {
+				limit = { is_government_in_exile = yes }
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 5000
+					producer = var:host
+				}
+			}
+			else_if = {
+				limit = { is_subject = yes }
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 5000
+					producer = var:overlord
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 5000
+				}
+			}
+			every_core_state = {
+				limit = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				add_resistance_target = {
+					amount = @resistanceFocusSmall
+					tooltip = DOR_return_in_disguise
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Rally Exiles Warriors
+		id = DOR_rally_exiled_warriors
+		icon = GFX_focus_generic_manpower
+		x = 3
+		y = 1
+		relative_position_id = DOR_seek_santuary_in_dale
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_seek_santuary_in_dale
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			has_capitulated = yes
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #weekly manpower
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				add_ideas = DOR_exiled_patriots_mtg
+			}
+			else = {
+				add_ideas = DOR_exiled_patriots
+			}
+			every_core_state = {
+				limit = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				add_resistance_target = {
+					amount = @resistanceFocusLarge
+					tooltip = DOR_return_in_disguise
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #All Will Fight for Home
+		id = DOR_all_will_fight_for_home
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		x = 0
+		y = 1
+		relative_position_id = DOR_rally_exiled_warriors
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = DOR_rally_exiled_warriors
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			has_capitulated = yes
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #20k manpower
+			add_manpower = 20000
+			every_core_state = {
+				limit = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+				add_resistance_target = {
+					amount = @resistanceFocusSmall
+					tooltip = DOR_return_in_disguise
+				}
+			}
+			merchant_houses_focus_effect = yes
+		}
+	}
+	focus = { #Throw off the Easterling Yoke
+		id = DOR_throw_off_the_easterling_yoke
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		x = 0
+		y = 3
+		relative_position_id = DOR_seek_santuary_in_dale
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = {
+			focus = DOR_return_in_disguise
+			focus = DOR_smuggle_out_the_essentials
+			focus = DOR_dip_into_the_war_chest
+			focus = DOR_rally_exiled_warriors
+		}
+		available = {
+			merchant_houses_focus_trigger = yes
+			has_capitulated = yes
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_MANPOWER }
+		completion_reward = { #2 militia divisions upon state returning to control
+			hidden_effect = { DOR_patriot_rebels_template = yes }
+			custom_effect_tooltip = DOR_throw_off_the_easterling_yoke_tooltip
 			merchant_houses_focus_effect = yes
 		}
 	}
@@ -8958,7 +9404,7 @@ focus_tree = {
 	}
 	focus = { #Capital of Commerce
 		id = DOR_capital_of_commerce
-		icon = GFX_goal_riavod_market
+		icon = GFX_focus_SWE_urbanization
 		x = 1
 		y = 1
 		relative_position_id = DOR_wealth_flows_like_water

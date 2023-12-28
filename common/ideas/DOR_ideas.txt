@@ -795,6 +795,74 @@ ideas = {
 				}
 			}
 		}
+		
+		smuggled_wine = {
+			modifier = {
+				national_wine_gain = 20
+			}
+			cancel = { #DOR isn't exiled anymore
+				if = {
+					limit = {
+						tag = DOR
+					}
+					NOT = {
+						if = {
+							limit = {
+								has_DLC = "Man the Guns"
+							}
+							is_government_in_exile = yes
+						}
+						else = {
+							has_capitulated = yes
+						}
+					}
+				}
+				else = {
+					NOT = {
+						if = {
+							limit = {
+								has_DLC = "Man the Guns"
+							}
+							is_hosting_exile = DOR
+						}
+						else = {
+							has_subject = DOR
+							DOR = {
+								has_capitulated = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		DOR_exiled_operatives = {
+			picture = generic_spy_intel
+			removal_cost = -1
+			modifier = {
+				operative_slot = 1
+			}
+		}
+		DOR_exiled_patriots = {
+			picture = SPR_international_brigades
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 1000
+			}
+			cancel = {
+				is_government_in_exile = no
+			}
+		}
+		DOR_exiled_patriots_mtg = {
+			picture = SPR_international_brigades
+			name = DOR_exiled_patriots
+			removal_cost = -1
+			modifier = {
+				exiled_government_weekly_manpower = 1000
+			}
+			cancel = {
+				has_capitulated = no
+			}
+		}
 	}
 	
 	hidden_ideas = {
@@ -886,6 +954,16 @@ ideas = {
 				research_speed_factor = 0.15
 			}
 		}
+		DOR_college_of_philosophy_6 = { #burghers
+			name = DOR_college_of_philosophy_idea
+			picture = empty
+			allowed_civil_war = {
+				always = yes #owns_state = 116
+			}
+			modifier = {
+				research_speed_factor = 0.175
+			}
+		}
 		###medicine
 		DOR_college_of_medicine_1 = {
 			name = DOR_college_of_medicine_idea
@@ -952,6 +1030,19 @@ ideas = {
 				}
 			}
 		}
+		DOR_college_of_medicine_6 = { #burghers
+			name = DOR_college_of_medicine_idea
+			picture = empty
+			allowed_civil_war = {
+				always = yes #owns_state = 116
+			}
+			equipment_bonus = {
+				medical_equipment = {
+					casualty_trickleback = 0.175
+					experience_loss_factor = -0.175
+				}
+			}
+		}
 		###manners
 		DOR_college_of_manners_1 = {
 			name = DOR_college_of_manners_idea
@@ -1013,6 +1104,18 @@ ideas = {
 				trade_opinion_factor = 0.15
 			}
 		}
+		DOR_college_of_manners_6 = { #burghers
+			name = DOR_college_of_manners_idea
+			picture = empty
+			allowed_civil_war = {
+				always = yes #owns_state = 116
+			}
+			modifier = {
+				opinion_gain_monthly_factor = 0.175
+				improve_relations_maintain_cost_factor = -0.175
+				trade_opinion_factor = 0.175
+			}
+		}
 		###tactics
 		DOR_college_of_tactics_1 = {
 			name = DOR_college_of_tactics_idea
@@ -1062,6 +1165,16 @@ ideas = {
 			}
 			modifier = {
 				land_doctrine_cost_factor = -0.15
+			}
+		}
+		DOR_college_of_tactics_6 = { #burghers
+			name = DOR_college_of_tactics_idea
+			picture = empty
+			allowed_civil_war = {
+				always = yes #owns_state = 116
+			}
+			modifier = {
+				land_doctrine_cost_factor = -0.175
 			}
 		}
 	

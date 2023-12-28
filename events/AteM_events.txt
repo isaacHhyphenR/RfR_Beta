@@ -1710,6 +1710,39 @@ country_event = { ##23## DOR wants to trade tech
 	}
 }
 
+country_event = { ##24## DOR wants sanctuary if their realm falls
+	id = atem.24
+	title = atem.24.t
+	desc = atem.24.d
+	picture = GFX_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { ##yes
+		name = atem.24.a
+		ai_chance = { #AI should never refuse
+			factor = 10
+		}
+		custom_effect_tooltip = DOR_seek_santuary_in_dale_tooltip
+		FROM = {
+			set_country_flag = respawn_in_dale
+			hidden_effect = {
+				news_event = rfr_news.137
+			}
+		}
+	}
+	option = { ##no
+		name = atem.24.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			FROM = { news_event = rfr_news.138 }
+		}
+	}
+}
+
+
 ################################################################PETITION EVENTS
 add_namespace = petition
 @petitionLargeCost = 75

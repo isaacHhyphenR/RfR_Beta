@@ -477,3 +477,17 @@ unlock_riverstalkers_template = {
 		}
 	}
 }
+DOR_patriot_rebels_template = {
+	division_template = {
+		name = "Citizen Rebels"
+		is_locked = yes
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+			militia = { x = 1 y = 2 }
+		}
+	}
+}
