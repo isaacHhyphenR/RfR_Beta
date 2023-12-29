@@ -127,3 +127,12 @@ civil_war_ideology_threshold = {
 	category = country
 	postfix = none
 }
+
+rhovanion_influence_gain_factor = {
+	color_type = good
+	value_type = percentage
+	precision = 2
+	category = politics
+	category = country
+	postfix = none
+}

@@ -508,4 +508,10 @@
  RUN_influence_desc: "[RUN.GetNameDef] is exerting pressure on this country to act more in line with their interests."
  RVN_influence: "$RVN_ADJ$ Influence"
  RVN_influence_desc: "[RVN.GetNameDef] is exerting pressure on this country to act more in line with their interests."
+ influence_HEH_cost: "Influencing [HEH.GetName]"
+ influence_RIN_cost: "Influencing [RIN.GetName]"
+ influence_RUS_cost: "Influencing [RUS.GetName]"
+ influence_SEK_cost: "Influencing [SEK.GetName]"
+ influence_SUN_cost: "Influencing [SUN.GetName]"
+ influence_YST_cost: "Influencing [YST.GetName]"
  

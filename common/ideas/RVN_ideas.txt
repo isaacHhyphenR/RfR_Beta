@@ -15,7 +15,7 @@ ideas = {
 			name = GLD_influence
 			modifier = {
 				freedom_drift = @influenceIdeologyDrift
-				freedom__acceptance = @influenceIdeologyAcceptance
+				freedom_acceptance = @influenceIdeologyAcceptance
 			}
 		}
 		GLD_opportunism_influence = {
@@ -51,7 +51,7 @@ ideas = {
 			name = DAL_influence
 			modifier = {
 				freedom_drift = @influenceIdeologyDrift
-				freedom__acceptance = @influenceIdeologyAcceptance
+				freedom_acceptance = @influenceIdeologyAcceptance
 			}
 		}
 		DAL_opportunism_influence = {
@@ -87,7 +87,7 @@ ideas = {
 			name = DOR_influence
 			modifier = {
 				freedom_drift = @influenceIdeologyDrift
-				freedom__acceptance = @influenceIdeologyAcceptance
+				freedom_acceptance = @influenceIdeologyAcceptance
 			}
 		}
 		DOR_opportunism_influence = {
@@ -123,7 +123,7 @@ ideas = {
 			name = RUN_influence
 			modifier = {
 				freedom_drift = @influenceIdeologyDrift
-				freedom__acceptance = @influenceIdeologyAcceptance
+				freedom_acceptance = @influenceIdeologyAcceptance
 			}
 		}
 		RUN_opportunism_influence = {
@@ -159,7 +159,7 @@ ideas = {
 			name = RVN_influence
 			modifier = {
 				freedom_drift = @influenceIdeologyDrift
-				freedom__acceptance = @influenceIdeologyAcceptance
+				freedom_acceptance = @influenceIdeologyAcceptance
 			}
 		}
 		RVN_opportunism_influence = {
@@ -187,6 +187,39 @@ ideas = {
 	}
 	
 	hidden_ideas = {
+		##cost influencers PP
+		@rhovanionInfluenceDailyCost = 0.1
+		influence_HEH_cost = {
+			modifier = {
+				political_power_cost = @rhovanionInfluenceDailyCost
+			}
+		}
+		influence_RIN_cost = {
+			modifier = {
+				political_power_cost = @rhovanionInfluenceDailyCost
+			}
+		}
+		influence_RUS_cost = {
+			modifier = {
+				political_power_cost = @rhovanionInfluenceDailyCost
+			}
+		}
+		influence_SEK_cost = {
+			modifier = {
+				political_power_cost = @rhovanionInfluenceDailyCost
+			}
+		}
+		influence_SUN_cost = {
+			modifier = {
+				political_power_cost = @rhovanionInfluenceDailyCost
+			}
+		}
+		influence_YST_cost = {
+			modifier = {
+				political_power_cost = @rhovanionInfluenceDailyCost
+			}
+		}
+
 	}
 
 	##########################################################DESIGNERS

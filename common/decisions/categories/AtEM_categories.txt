@@ -25,7 +25,7 @@ colonisation_category = {
 rhovanion_influence_category = {
 	icon = GFX_decision_category_power_struggle
 	priority = 90
-	allowed = { allow_influence_rhovanion = yes }
+	allowed = { allowed_influence_rhovanion = yes }
 	visible = { can_influence_rhovanion = yes }
 }
 

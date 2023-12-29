@@ -309,6 +309,7 @@ form_rhovanion_category = {
 		}
 		complete_effect = {
 			set_cosmetic_tag = RVN
+			save_global_event_target_as = RVN_event_target
 			every_possible_country = {
 				limit = { is_rhovanion_tag = yes }
 				every_core_state = { add_core_of = ROOT }

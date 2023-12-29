@@ -121,13 +121,44 @@ on_actions = {
 		}
 	}
 	
-	on_daily_FOR = { #wine & precious metals gain, prosperity
+	on_daily_FOR = { #wine & precious metals gain, prosperity, rhovnaion influence
 		effect = {
 			calculate_all_wine_production = yes
 			#log = "GLOBAL P:[?global.prosperity_per_passthrough] I:[?global.prosperity_per_import] E:[?global.prosperity_per_export]"
 			every_state = {
 				limit = { market > 0 }
 				daily_prosperity_gain = yes
+			}
+		}
+		effect = { #rhovanion influence
+			every_country = {
+				limit = { can_influence_rhovanion = yes }
+				for_each_scope_loop = {
+					array = influenced_rhovanion_tags
+					#cancels if not still valid
+					if = {
+						limit = {
+							OR = {
+								has_opinion = { value < 1 target = PREV }
+								PREV = { is_subject = yes }
+							}
+						}
+						remove_from_array = { PREV.influenced_rhovanion_tags = THIS }
+					}
+					#if still valid, gain influence
+					else = {
+					#Gets base gain from opinion
+						set_temp_variable = { influence_gain = global.max_rhovanion_influence_gain }
+						multiply_temp_variable = { influence_gain = opinion@PREV }
+						divide_temp_variable = { influence_gain = 100 } #This turn opinion into a 0-1 scale
+						#Adds country modifier
+						set_temp_variable = { gain_modifier = 1 }
+						add_to_temp_variable = { gain_modifier = PREV.rhovanion_influence_gain_factor }
+						multiply_temp_variable = { influence_gain = gain_modifier }
+						#Applys it
+						add_to_variable = { influence@PREV = influence_gain }
+					}
+				}
 			}
 		}
 	}

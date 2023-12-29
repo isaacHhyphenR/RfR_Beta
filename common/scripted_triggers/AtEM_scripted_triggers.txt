@@ -265,7 +265,7 @@ DOR_guild_loan_visible = {
 	}
 }
 
-allow_influence_rhovanion = {
+allowed_influence_rhovanion = {
 	OR = {
 		is_rhovanion_tag = yes
 		original_tag = DOR
@@ -277,7 +277,7 @@ allow_influence_rhovanion = {
 can_influence_rhovanion = {
 	is_subject = no
 	OR = {
-		#is_rhovanion_tag = yes
+		tag = RVN
 		original_tag = DOR
 		original_tag = DAL
 		original_tag = GLD

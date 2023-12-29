@@ -51,3 +51,8 @@ RUN = {
 	fallback = MED
 }
 
+RVN = {
+	global_event_target = RVN_event_target
+}
+
+
