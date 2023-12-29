@@ -1,0 +1,208 @@
+ideas = {
+	country = {
+		####################################################INFLUENCE IDEAS
+		@influenceIdeologyDrift = 0.15
+		@influenceIdeologyAcceptance = 20
+		##GLD
+		GLD_isolationism_influence = {
+			name = GLD_influence
+			modifier = {
+				isolationism_drift = @influenceIdeologyDrift
+				isolationism_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		GLD_freedom_influence = {
+			name = GLD_influence
+			modifier = {
+				freedom_drift = @influenceIdeologyDrift
+				freedom__acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		GLD_opportunism_influence = {
+			name = GLD_influence
+			modifier = {
+				opportunism_drift = @influenceIdeologyDrift
+				opportunism_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		GLD_conquest_influence = {
+			name = GLD_influence
+			modifier = {
+				conquest_drift = @influenceIdeologyDrift
+				conquest_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		GLD_melkorite_influence = {
+			name = GLD_influence
+			modifier = {
+				melkorite_drift = @influenceIdeologyDrift
+				melkorite_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		##DAL
+		DAL_isolationism_influence = {
+			name = DAL_influence
+			modifier = {
+				isolationism_drift = @influenceIdeologyDrift
+				isolationism_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		DAL_freedom_influence = {
+			name = DAL_influence
+			modifier = {
+				freedom_drift = @influenceIdeologyDrift
+				freedom__acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		DAL_opportunism_influence = {
+			name = DAL_influence
+			modifier = {
+				opportunism_drift = @influenceIdeologyDrift
+				opportunism_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		DAL_conquest_influence = {
+			name = DAL_influence
+			modifier = {
+				conquest_drift = @influenceIdeologyDrift
+				conquest_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		DAL_melkorite_influence = {
+			name = DAL_influence
+			modifier = {
+				melkorite_drift = @influenceIdeologyDrift
+				melkorite_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		##DOR
+		DOR_isolationism_influence = {
+			name = DOR_influence
+			modifier = {
+				isolationism_drift = @influenceIdeologyDrift
+				isolationism_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		DOR_freedom_influence = {
+			name = DOR_influence
+			modifier = {
+				freedom_drift = @influenceIdeologyDrift
+				freedom__acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		DOR_opportunism_influence = {
+			name = DOR_influence
+			modifier = {
+				opportunism_drift = @influenceIdeologyDrift
+				opportunism_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		DOR_conquest_influence = {
+			name = DOR_influence
+			modifier = {
+				conquest_drift = @influenceIdeologyDrift
+				conquest_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		DOR_melkorite_influence = {
+			name = DOR_influence
+			modifier = {
+				melkorite_drift = @influenceIdeologyDrift
+				melkorite_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		##RUN
+		RUN_isolationism_influence = {
+			name = RUN_influence
+			modifier = {
+				isolationism_drift = @influenceIdeologyDrift
+				isolationism_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		RUN_freedom_influence = {
+			name = RUN_influence
+			modifier = {
+				freedom_drift = @influenceIdeologyDrift
+				freedom__acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		RUN_opportunism_influence = {
+			name = RUN_influence
+			modifier = {
+				opportunism_drift = @influenceIdeologyDrift
+				opportunism_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		RUN_conquest_influence = {
+			name = RUN_influence
+			modifier = {
+				conquest_drift = @influenceIdeologyDrift
+				conquest_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		RUN_melkorite_influence = {
+			name = RUN_influence
+			modifier = {
+				melkorite_drift = @influenceIdeologyDrift
+				melkorite_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		##RVN
+		RVN_isolationism_influence = {
+			name = RVN_influence
+			modifier = {
+				isolationism_drift = @influenceIdeologyDrift
+				isolationism_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		RVN_freedom_influence = {
+			name = RVN_influence
+			modifier = {
+				freedom_drift = @influenceIdeologyDrift
+				freedom__acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		RVN_opportunism_influence = {
+			name = RVN_influence
+			modifier = {
+				opportunism_drift = @influenceIdeologyDrift
+				opportunism_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		RVN_conquest_influence = {
+			name = RVN_influence
+			modifier = {
+				conquest_drift = @influenceIdeologyDrift
+				conquest_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		RVN_melkorite_influence = {
+			name = RVN_influence
+			modifier = {
+				melkorite_drift = @influenceIdeologyDrift
+				melkorite_acceptance = @influenceIdeologyAcceptance
+			}
+		}
+		
+	}
+	
+	hidden_ideas = {
+	}
+
+	##########################################################DESIGNERS
+				##CAVALRY
+	tank_manufacturer = { 
+		designer = yes
+	}
+				##NAVAL
+	naval_manufacturer = {
+		designer = yes
+	}
+				###MATERIEL
+	materiel_manufacturer = {
+		designer = yes
+	}
+				##INDUSTRIAL
+	industrial_concern = {
+	}
+}
