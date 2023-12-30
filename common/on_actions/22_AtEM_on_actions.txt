@@ -191,9 +191,27 @@ on_actions = {
 		}
 	}
 	
-	on_weekly = { #market alert comes back after being dismissed
+	on_weekly = { #Alerts comes back after being dismissed
 		effect = {
-			if = {
+			if = { #Blood Oath alert
+				limit = {
+					has_country_flag = dismissed_blood_oath_alert
+					NOT = {
+						any_other_country = {
+							is_greater_enedwaith_tag = yes
+							ROOT = {
+								set_temp_variable = { total_acceptance = 0 }
+								AND = {
+									calculate_blood_oath_submission_chance = yes
+									check_variable = { total_acceptance > 0.75 }
+								}
+							}
+						}
+					}
+				}
+				clr_country_flag = dismissed_blood_oath_alert
+			}
+			else_if = { #Market Alert. No countries can get both, hense the else
 				limit = {
 					has_country_flag = dismissed_market_alert
 					NOT = {

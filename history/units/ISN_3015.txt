@@ -1,0 +1,23 @@
+﻿division_template = {
+	name = "Guards of Orthanc"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+	}
+}
+units = {
+	division = {	
+		name = "Saruman's Guards"
+		location = 770 #Orthanc
+		division_template = "Guards of Orthanc"
+        start_experience_factor = 0.3
+	}
+}
+

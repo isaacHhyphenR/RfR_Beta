@@ -1725,5 +1725,46 @@ colonisation_category = {
 }
 
 rhovanion_influence_category = {
-	
+	DEBUG_100_RHOVAN_INFLUENCE = {
+		visible = { is_debug = yes }
+		complete_effect = {
+			every_country = {
+				limit = { is_rhovanion_tag = yes }
+				set_variable = { influence@ROOT = 100 }
+			}
+		}
+	}
+	rhovanion_influence_puppet = {
+		custom_cost_text = rhovanion_100_influence_cost
+		custom_cost_trigger = { always = yes }
+		#can't check FROM variables in custom cost trigger
+		visible = {
+			FROM = { is_subject = no }
+		}
+		available = {
+			hidden_trigger = {
+				FROM = {
+					check_variable = {
+						var = influence@ROOT
+						compare = greater_than_or_equals
+						value = 100
+					}
+				}
+			}
+		}
+		targets = { HEH RIN RUS SEK SUN YST }
+		targets_dynamic = yes
+		
+		complete_effect = {
+			FROM = {
+				subtract_from_variable = { influence@ROOT = 100 }
+			}
+			set_autonomy = {
+				target = FROM
+				autonomy_state = autonomy_puppet
+				end_wars = yes
+				end_civil_wars = yes
+			}
+		}
+	}
 }

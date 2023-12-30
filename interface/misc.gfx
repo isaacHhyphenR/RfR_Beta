@@ -359,4 +359,45 @@ spriteTypes = {
 		transparencecheck = yes
 		noOfFrames = 2
 	}
+	##############RHOVANION INFLUENCE
+	spriteType = {
+		name = "GFX_rhovanion_influence_background"
+		texturefile = "gfx/interface/decisions/GUIs/rhovanion_influence/background.dds"
+	}
+	spriteType = {
+		name = "GFX_HEH_flag_shape"
+		texturefile = "gfx/interface/decisions/GUIs/rhovanion_influence/HEH.dds"
+		transparencecheck = yes
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_RIN_flag_shape"
+		texturefile = "gfx/interface/decisions/GUIs/rhovanion_influence/RIN.dds"
+		transparencecheck = yes
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_RUS_flag_shape"
+		texturefile = "gfx/interface/decisions/GUIs/rhovanion_influence/RUS.dds"
+		transparencecheck = yes
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_SEK_flag_shape"
+		texturefile = "gfx/interface/decisions/GUIs/rhovanion_influence/SEK.dds"
+		transparencecheck = yes
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_SUN_flag_shape"
+		texturefile = "gfx/interface/decisions/GUIs/rhovanion_influence/SUN.dds"
+		transparencecheck = yes
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_YST_flag_shape"
+		texturefile = "gfx/interface/decisions/GUIs/rhovanion_influence/YST.dds"
+		transparencecheck = yes
+		noOfFrames = 5
+	}
 }

@@ -2,6 +2,6 @@
  INCREASE_TRIBAL_TRUST_TITLE: "Exchange Favors for Trust"
  INCREASE_TRIBAL_TRUST_ACTION_DESC: "Increases their $trust$ towards us by §G1§!"
  BEGIN_RHOVANION_INFLUENCE_TITLE: "Increase Influence"
- BEGIN_RHOVANION_INFLUENCE_DESC: "Increases our influence over them. Scales with opinion up to §G[?global.max_rhovanion_influence_gain]§! daily.\nCosts §R0.1§! Political Power in daily upkeep."
+ BEGIN_RHOVANION_INFLUENCE_ACTION_DESC: "Increases our influence over them. Scales with opinion up to §G0.5§!£GFX_rhovanion_influence_texticon daily.\nThis will also require a daily cost of §Y0.1§!£GFX_pol_power.."
  END_RHOVANION_INFLUENCE_TITLE: "Stop Influencing"
- END_RHOVANION_INFLUENCE_DESC: "Stops increasing our influence over this country."
+ END_RHOVANION_INFLUENCE_ACTION_DESC: "Stops increasing our influence over this country."

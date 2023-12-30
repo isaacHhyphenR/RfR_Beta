@@ -1,0 +1,359 @@
+guiTypes = {
+	
+	containerWindowType = {
+		name = "blood_oath_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height = 100% }
+		@TRIBAL_FLAG_SCALE = 0.75
+		#subtract 6 from X
+		#add 2 to y
+		@ERGx = 109 @ERGy = -201
+		@HOLx = 133 @HOLy = -198
+		@MBLx = 124 @MBLy = -182
+		@REEx = 87 @REEy = -187
+		@ISDx = 123 @ISDy = -137
+		@DUNx = 89 @DUNy = -166
+		@DFNx = 116 @DFNy = -153
+		@CGNx = 96 @CGNy = -136
+		@DTHx = 106 @DTHy = -125
+		@SARx = 36 @SARy = -157
+		@HSTx = 63 @HSTy = -166
+		@COLx = 51 @COLy = -150
+		@AGRx = 48 @AGRy = -123
+		@STKx = 74 @STKy = -139
+		@IRNx = 72 @IRNy = -115
+		@DRUx = 103 @DRUy = -109
+		@BYRx = 50 @BYRy = -99
+		@WHTx = 138 @WHTy = -143
+		@AKNx = 72 @AKNy = -97
+		@NIFx = 111 @NIFy = -89
+		@HVKx = 85 @HVKy = -83
+		@PRIx = 53 @PRIy = -78
+		@TAWx = 72 @TAWy = -70
+		@ANUx = 65 @ANUy = -56
+		@ADBx = 72 @ADBy = -43
+		@NENx = 50 @NENy = -40
+		@RAFx = 29 @RAFy = -33
+########################################################################FLAGS HIGHLIGHT COLORS
+		iconType = {
+			name = "ERG_highlight"
+			position = { x = @ERGx y = @ERGy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "HOL_highlight"
+			position = { x = @HOLx y = @HOLy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "MBL_highlight"
+			position = { x = @MBLx y = @MBLy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "REE_highlight"
+			position = { x = @REEx y = @REEy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "ISD_highlight"
+			position = { x = @ISDx y = @ISDy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "DUN_highlight"
+			position = { x = @DUNx y = @DUNy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "DFN_highlight"
+			position = { x = @DFNx y = @DFNy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "CGN_highlight"
+			position = { x = @CGNx y = @CGNy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "DTH_highlight"
+			position = { x = @DTHx y = @DTHy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "SAR_highlight"
+			position = { x = @SARx y = @SARy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "HST_highlight"
+			position = { x = @HSTx y = @HSTy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "COL_highlight"
+			position = { x = @COLx y = @COLy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "AGR_highlight"
+			position = { x = @AGRx y = @AGRy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "STK_highlight"
+			position = { x = @STKx y = @STKy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "IRN_highlight"
+			position = { x = @IRNx y = @IRNy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "DRU_highlight"
+			position = { x = @DRUx y = @DRUy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "BYR_highlight"
+			position = { x = @BYRx y = @BYRy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "WHT_highlight"
+			position = { x = @WHTx y = @WHTy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "AKN_highlight"
+			position = { x = @AKNx y = @AKNy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "NIF_highlight"
+			position = { x = @NIFx y = @NIFy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "HVK_highlight"
+			position = { x = @HVKx y = @HVKy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "PRI_highlight"
+			position = { x = @PRIx y = @PRIy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "TAW_highlight"
+			position = { x = @TAWx y = @TAWy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "ANU_highlight"
+			position = { x = @ANUx y = @ANUy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "ADB_highlight"
+			position = { x = @ADBx y = @ADBy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "NEN_highlight"
+			position = { x = @NENx y = @NENy }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "RAF_highlight"
+			position = { x = @RAFx y = @RAFy }
+			Orientation = "UPPER_LEFT"
+		}
+########################################################################FLAGS THEMSELVES
+		iconType = {
+			name = "ERG_flag"
+			position = { x = @ERGx y = @ERGy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_ERG_submission_hovertext
+		}
+		iconType = {
+			name = "HOL_flag"
+			position = { x = @HOLx y = @HOLy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_HOL_submission_hovertext
+		}
+		iconType = {
+			name = "MBL_flag"
+			position = { x = @MBLx y = @MBLy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_MBL_submission_hovertext
+		}
+		iconType = {
+			name = "REE_flag"
+			position = { x = @REEx y = @REEy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_REE_submission_hovertext
+		}
+		iconType = {
+			name = "ISD_flag"
+			position = { x = @ISDx y = @ISDy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_ISD_submission_hovertext
+		}
+		iconType = {
+			name = "DUN_flag"
+			position = { x = @DUNx y = @DUNy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_DUN_submission_hovertext
+		}
+		iconType = {
+			name = "DFN_flag"
+			position = { x = @DFNx y = @DFNy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_DFN_submission_hovertext
+		}
+		iconType = {
+			name = "CGN_flag"
+			position = { x = @CGNx y = @CGNy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_CGN_submission_hovertext
+		}
+		iconType = {
+			name = "DTH_flag"
+			position = { x = @DTHx y = @DTHy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_DTH_submission_hovertext
+		}
+		iconType = {
+			name = "SAR_flag"
+			position = { x = @SARx y = @SARy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_SAR_submission_hovertext
+		}
+		iconType = {
+			name = "HST_flag"
+			position = { x = @HSTx y = @HSTy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_HST_submission_hovertext
+		}
+		iconType = {
+			name = "COL_flag"
+			position = { x = @COLx y = @COLy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_COL_submission_hovertext
+		}
+		iconType = {
+			name = "AGR_flag"
+			position = { x = @AGRx y = @AGRy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_AGR_submission_hovertext
+		}
+		iconType = {
+			name = "STK_flag"
+			position = { x = @STKx y = @STKy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_STK_submission_hovertext
+		}
+		iconType = {
+			name = "IRN_flag"
+			position = { x = @IRNx y = @IRNy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_IRN_submission_hovertext
+		}
+		iconType = {
+			name = "DRU_flag"
+			position = { x = @DRUx y = @DRUy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_DRU_submission_hovertext
+		}
+		iconType = {
+			name = "BYR_flag"
+			position = { x = @BYRx y = @BYRy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_BYR_submission_hovertext
+		}
+		iconType = {
+			name = "WHT_flag"
+			position = { x = @WHTx y = @WHTy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_WHT_submission_hovertext
+		}
+		iconType = {
+			name = "AKN_flag"
+			position = { x = @AKNx y = @AKNy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_AKN_submission_hovertext
+		}
+		iconType = {
+			name = "NIF_flag"
+			position = { x = @NIFx y = @NIFy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_NIF_submission_hovertext
+		}
+		iconType = {
+			name = "HVK_flag"
+			position = { x = @HVKx y = @HVKy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_HVK_submission_hovertext
+		}
+		iconType = {
+			name = "PRI_flag"
+			position = { x = @PRIx y = @PRIy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_PRI_submission_hovertext
+		}
+		iconType = {
+			name = "TAW_flag"
+			position = { x = @TAWx y = @TAWy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_TAW_submission_hovertext
+		}
+		iconType = {
+			name = "ANU_flag"
+			position = { x = @ANUx y = @ANUy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_ANU_submission_hovertext
+		}
+		iconType = {
+			name = "ADB_flag"
+			position = { x = @ADBx y = @ADBy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_ADB_submission_hovertext
+		}
+		iconType = {
+			name = "NEN_flag"
+			position = { x = @NENx y = @NENy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_NEN_submission_hovertext
+		}
+		iconType = {
+			name = "RAF_flag"
+			position = { x = @RAFx y = @RAFy }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = demand_RAF_submission_hovertext
+		}
+	}
+	
+##########################################################################################
+	containerWindowType = {
+		name = "blood_oath_alert_window"
+		position = { x = 718 y = 80 }
+		size = { width = 100% height = 100% }
+		iconType = {
+			name = "alert_icon"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_global_alert_icons"
+			Orientation = "UPPER_LEFT"
+			frame = 56
+			pdx_tooltip = blood_oath_alert_instant
+			pdx_tooltip_delayed = blood_oath_alert_delayed
+		}
+		iconType = {
+			name = "glow"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_yellow_alert_glow"
+			Orientation = "UPPER_LEFT"
+		}
+	}
+}

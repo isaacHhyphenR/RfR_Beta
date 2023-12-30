@@ -265,3 +265,5 @@
  DOR_seek_santuary_in_dale_tooltip_vanilla: "If §Y[DOR.GetFlag][DOR.GetNameDef]§! is ever annexed, it will respawn as an §Y$autonomy_puppet$§! of §Y[DAL.GetFlag][DAL.GetNameDef]§! as soon as §Y[DAL.GetFlag][DAL.GetNameDef]§! is at war with anyone who owns a §Y[DOR.GetFlag][DOR.GetAdjective]§! core state."
  DOR_seek_santuary_in_dale_tooltip: "[DOR_seek_santuary_in_dale_scripted_loc]"
  DOR_throw_off_the_easterling_yoke_tooltip: "When a core state returns to our control through conquest or rebellion, it will spawn 2 divisions of 6 §Y$militia$§! each."
+ influence: "Influence"
+ influence_texticon: "£GFX_rhovanion_influence_texticon $influence$"

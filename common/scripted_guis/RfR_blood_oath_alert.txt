@@ -1,0 +1,45 @@
+scripted_gui = {
+	blood_oath_alert = {
+		window_name = "blood_oath_alert_window"
+		context_type = player_context
+		parent_window_token = top_bar
+		visible = { #if anyone has > 75% chance of submitting to blood oath
+			NOT = { has_country_flag = dismissed_blood_oath_alert }
+			can_tribally_subjugate = yes
+			any_other_country = {
+				is_greater_enedwaith_tag = yes
+				ROOT = {
+					set_temp_variable = { total_acceptance = 0 }
+					AND = {
+						calculate_blood_oath_submission_chance = yes
+						check_variable = { total_acceptance > 0.75 }
+					}
+				}
+			}
+		}
+		effects = {
+			alert_icon_click = { ##left click moves the camera to the potential vassal's capital
+				random_other_country = {
+					limit = {
+						is_greater_enedwaith_tag = yes
+						ROOT = {
+							set_temp_variable = { total_acceptance = 0 }
+							AND = {
+								calculate_blood_oath_submission_chance = yes
+								check_variable = { total_acceptance > 0.75 }
+							}
+						}
+					}
+					capital_scope = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+			alert_icon_right_click = { #right click to dismiss
+				set_country_flag = dismissed_blood_oath_alert
+			}
+		}
+	}
+}

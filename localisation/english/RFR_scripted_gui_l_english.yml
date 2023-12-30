@@ -73,3 +73,15 @@
 ########################################MAX PROSPERITY ALERT
  max_prosperity_alert_instant: "§YMarket at Max Prosperity§!"
  max_prosperity_alert_delayed: "At least one of your §YMarkets§! has reached §G100§! prosperity.\n§GRight-click to dismiss§!"
+########################################BLOOD OATH ALERT
+ blood_oath_alert_instant: "§YTribe Will Likely Swear Blood Oath§!"
+ blood_oath_alert_delayed: "At least one Gwaithur tribe has a greater than §G75%§! chance of submitting if you demand they become your §YBlood Oath§!.\n§GRight-click to dismiss§!"
+########################################RHOVANION INFLUENCE
+ HEH_flag_outline_click_tooltip: "$rhovanion_influence_display$"
+ HEH_flag_outline_right_click_tooltip: "$foreign_rhovanion_influence_display$"
+ HEH_flag_outline_hovertext: "[!HEH_flag_outline_click]"
+ HEH_flag_outline_hovertext_delayed: "[!HEH_flag_outline_right_click]"
+ rhovanion_influence_display: "\nWe have [?influence@ROOT|+] $influence_texticon$"
+ # in [THIS.GetFlag]§Y[THIS.GetName]§!"
+ foreign_rhovanion_influence_display: "\n[DAL_rhovanion_influence_scripted]"
+ DAL_rhovanion_influence_key: " [DAL.GetFlag] has [?influence@DAL|+] £GFX_rhovanion_influence_texticon"

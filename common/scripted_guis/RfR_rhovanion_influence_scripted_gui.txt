@@ -1,0 +1,78 @@
+scripted_gui = {
+
+	rhovanion_influence_gui = {
+		context_type = decision_category
+		window_name = "rhovanion_influence_ui_window"
+		parent_window_token = decision_tab
+		#visible = { always = yes }
+		properties = {
+			HEH_flag_outline = {
+				image = GFX_HEH_flag_shape 
+				frame = HEH.ideology_index
+			}
+			RIN_flag_outline = {
+				image = GFX_RIN_flag_shape
+				frame = RIN.ideology_index
+			}
+			RUS_flag_outline = {
+				image = GFX_RUS_flag_shape
+				frame = RUS.ideology_index
+			}
+			SEK_flag_outline = {
+				image = GFX_SEK_flag_shape
+				frame = SEK.ideology_index
+			}
+			SUN_flag_outline = {
+				image = GFX_SUN_flag_shape
+				frame = SUN.ideology_index
+			}
+			YST_flag_outline = {
+				image = GFX_YST_flag_shape
+				frame = YST.ideology_index
+			}
+		}
+		effects = {
+			HEH_flag_outline_click = {
+				HEH = { custom_effect_tooltip = HEH_flag_outline_click_tooltip }
+			}
+			HEH_flag_outline_right_click = {
+				HEH = { custom_effect_tooltip = HEH_flag_outline_right_click_tooltip }
+			}
+			RIN_flag_outline_click = {
+				RIN = { custom_effect_tooltip = RIN_flag_outline_click_tooltip }
+			}
+			RUS_flag_outline_click = {
+				RUS = { custom_effect_tooltip = RUS_flag_outline_click_tooltip }
+			}
+			SEK_flag_outline_click = {
+				SEK = { custom_effect_tooltip = SEK_flag_outline_click_tooltip }
+			}
+			SUN_flag_outline_click = {
+				SUN = { custom_effect_tooltip = SUN_flag_outline_click_tooltip }
+			}
+			YST_flag_outline_click = {
+				YST = { custom_effect_tooltip = YST_flag_outline_click_tooltip }
+			}
+		}
+		triggers = {
+			HEH_flag_outline_visible = {
+				always = yes #country_exists = HEH
+			}
+			RIN_flag_outline_visible = {
+				country_exists = RIN
+			}
+			RUS_flag_outline_visible = {
+				country_exists = RUS
+			}
+			SEK_flag_outline_visible = {
+				country_exists = SEK
+			}
+			SUN_flag_outline_visible = {
+				country_exists = SUN
+			}
+			YST_flag_outline_visible = {
+				country_exists = YST
+			}
+		}
+	}
+}

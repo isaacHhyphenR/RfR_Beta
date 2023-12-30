@@ -24,9 +24,17 @@ colonisation_category = {
 ########################################RHOVANION########################################
 rhovanion_influence_category = {
 	icon = GFX_decision_category_power_struggle
+	picture = GFX_rhovanion_influence_background
+    scripted_gui = rhovanion_influence_gui
 	priority = 90
 	allowed = { allowed_influence_rhovanion = yes }
-	visible = { can_influence_rhovanion = yes }
+	visible = {
+		can_influence_rhovanion = yes
+		any_other_country = {
+			is_rhovanion_tag = yes
+			country_exists = THIS
+		}
+	}
 }
 
 ########################################DORWINION########################################

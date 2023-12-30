@@ -166,3 +166,14 @@ defined_text = { ##Displays DLC variant for how DOR will seek santuary in Dale
 	}
 }
 
+######################################################################## RHOVANION INFLUENCE
+defined_text = { ##DAL
+	name = DAL_rhovanion_influence_scripted
+	text = { #Only displays text if DAL has influence
+		trigger = {
+			check_variable = { influence@DAL > 0 }
+			NOT = { ROOT = { tag = DAL } }
+		}
+		localization_key = DAL_rhovanion_influence_key
+	}
+}
