@@ -193,30 +193,48 @@ ideas = {
 			modifier = {
 				political_power_cost = @rhovanionInfluenceDailyCost
 			}
+			cancel = {
+				NOT = { country_exists = HEH }
+			}
 		}
 		influence_RIN_cost = {
 			modifier = {
 				political_power_cost = @rhovanionInfluenceDailyCost
+			}
+			cancel = {
+				NOT = { country_exists = RIN }
 			}
 		}
 		influence_RUS_cost = {
 			modifier = {
 				political_power_cost = @rhovanionInfluenceDailyCost
 			}
+			cancel = {
+				NOT = { country_exists = RUS }
+			}
 		}
 		influence_SEK_cost = {
 			modifier = {
 				political_power_cost = @rhovanionInfluenceDailyCost
+			}
+			cancel = {
+				NOT = { country_exists = SEK }
 			}
 		}
 		influence_SUN_cost = {
 			modifier = {
 				political_power_cost = @rhovanionInfluenceDailyCost
 			}
+			cancel = {
+				NOT = { country_exists = SUN }
+			}
 		}
 		influence_YST_cost = {
 			modifier = {
 				political_power_cost = @rhovanionInfluenceDailyCost
+			}
+			cancel = {
+				NOT = { country_exists = YST }
 			}
 		}
 

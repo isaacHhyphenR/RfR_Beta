@@ -166,6 +166,21 @@ defined_text = { ##Displays DLC variant for how DOR will seek santuary in Dale
 	}
 }
 
+defined_text = { ##Displays DLC variant for annexing RVN puppet
+	name = influence_annex_RVN_puppet_scripted
+	text = {
+		trigger = {
+			has_subject_autonomy_feature = yes
+		}
+		localization_key = influence_annex_RVN_puppet_DLC
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = influence_annex_RVN_puppet
+	}
+}
 ######################################################################## RHOVANION INFLUENCE
 defined_text = { ##DAL
 	name = DAL_rhovanion_influence_scripted
@@ -177,3 +192,135 @@ defined_text = { ##DAL
 		localization_key = DAL_rhovanion_influence_key
 	}
 }
+defined_text = { ##DOR
+	name = DOR_rhovanion_influence_scripted
+	text = { #Only displays text if DOR has influence
+		trigger = {
+			check_variable = { influence@DOR > 0 }
+			NOT = { ROOT = { tag = DOR } }
+		}
+		localization_key = DOR_rhovanion_influence_key
+	}
+}
+defined_text = { ##GLD
+	name = GLD_rhovanion_influence_scripted
+	text = { #Only displays text if GLD has influence
+		trigger = {
+			check_variable = { influence@GLD > 0 }
+			NOT = { ROOT = { tag = GLD } }
+		}
+		localization_key = GLD_rhovanion_influence_key
+	}
+}
+defined_text = { ##RIN
+	name = RIN_rhovanion_influence_scripted
+	text = { #Only displays text if RIN has influence
+		trigger = {
+			check_variable = { influence@RIN > 0 }
+			NOT = { ROOT = { tag = RIN } }
+		}
+		localization_key = RIN_rhovanion_influence_key
+	}
+}
+defined_text = { ##RUS
+	name = RUS_rhovanion_influence_scripted
+	text = { #Only displays text if RUS has influence
+		trigger = {
+			check_variable = { influence@RUS > 0 }
+			NOT = { ROOT = { tag = RUS } }
+		}
+		localization_key = RUS_rhovanion_influence_key
+	}
+}
+defined_text = { ##SEK
+	name = SEK_rhovanion_influence_scripted
+	text = { #Only displays text if SEK has influence
+		trigger = {
+			check_variable = { influence@SEK > 0 }
+			NOT = { ROOT = { tag = SEK } }
+		}
+		localization_key = SEK_rhovanion_influence_key
+	}
+}
+defined_text = { ##SUN
+	name = SUN_rhovanion_influence_scripted
+	text = { #Only displays text if SUN has influence
+		trigger = {
+			check_variable = { influence@SUN > 0 }
+			NOT = { ROOT = { tag = SUN } }
+		}
+		localization_key = SUN_rhovanion_influence_key
+	}
+}
+defined_text = { ##YST
+	name = YST_rhovanion_influence_scripted
+	text = { #Only displays text if YST has influence
+		trigger = {
+			check_variable = { influence@YST > 0 }
+			NOT = { ROOT = { tag = YST } }
+		}
+		localization_key = YST_rhovanion_influence_key
+	}
+}
+defined_text = { ##HEH
+	name = HEH_rhovanion_influence_scripted
+	text = { #Only displays text if HEH has influence
+		trigger = {
+			check_variable = { influence@HEH > 0 }
+			NOT = { ROOT = { tag = HEH } }
+		}
+		localization_key = HEH_rhovanion_influence_key
+	}
+}
+defined_text = { ##MED
+	name = MED_rhovanion_influence_scripted
+	text = { #Only displays text if MED has influence
+		trigger = {
+			check_variable = { influence@MED > 0 }
+			NOT = { ROOT = { tag = MED } }
+		}
+		localization_key = MED_rhovanion_influence_key
+	}
+}
+defined_text = { ##SAG
+	name = SAG_rhovanion_influence_scripted
+	text = { #Only displays text if SAG has influence
+		trigger = {
+			check_variable = { influence@SAG > 0 }
+			NOT = { ROOT = { tag = SAG } }
+		}
+		localization_key = SAG_rhovanion_influence_key
+	}
+}
+defined_text = { ##ULG
+	name = ULG_rhovanion_influence_scripted
+	text = { #Only displays text if ULG has influence
+		trigger = {
+			check_variable = { influence@ULG > 0 }
+			NOT = { ROOT = { tag = ULG } }
+		}
+		localization_key = ULG_rhovanion_influence_key
+	}
+}
+defined_text = { ##SRB
+	name = SRB_rhovanion_influence_scripted
+	text = { #Only displays text if SRB has influence
+		trigger = {
+			check_variable = { influence@SRB > 0 }
+			NOT = { ROOT = { tag = SRB } }
+		}
+		localization_key = SRB_rhovanion_influence_key
+	}
+}
+defined_text = { ##LGA
+	name = LGA_rhovanion_influence_scripted
+	text = { #Only displays text if LGA has influence
+		trigger = {
+			check_variable = { influence@LGA > 0 }
+			NOT = { ROOT = { tag = LGA } }
+		}
+		localization_key = LGA_rhovanion_influence_key
+	}
+}
+
+

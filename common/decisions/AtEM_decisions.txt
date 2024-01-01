@@ -1734,12 +1734,84 @@ rhovanion_influence_category = {
 			}
 		}
 	}
-	rhovanion_influence_puppet = {
-		custom_cost_text = rhovanion_100_influence_cost
-		custom_cost_trigger = { always = yes }
-		#can't check FROM variables in custom cost trigger
+	rhovanion_influence_ideology = {
+		icon = GFX_decision_eng_propaganda_campaigns
+		custom_cost_text = rhovanion_25_influence_cost
+		custom_cost_trigger = { always = yes } #can't check FROM variables in custom cost trigger
+		ai_will_do = {
+			factor = 1
+		}
+		days_re_enable = 180
 		visible = {
-			FROM = { is_subject = no }
+			FROM = {
+				NOT = { has_government = ROOT }
+			}
+		}
+		available = {
+			hidden_trigger = {
+				FROM = {
+					check_variable = {
+						var = influence@ROOT
+						compare = greater_than_or_equals
+						value = 25
+					}
+				}
+			}
+		}
+		targets = { HEH RIN RUS SEK SUN YST }
+		targets_dynamic = yes
+		
+		complete_effect = {
+			FROM = {
+				subtract_from_variable = { influence@ROOT = 25 }
+			}
+			##uses this variable in the meta effect
+			if = {
+				limit = { is_rhunnic_tag = yes }
+				set_variable = { tag_token = RUN }
+			}
+			else_if = {
+				limit = { is_rhovanion_tag = yes }
+				set_variable = { tag_token = RVN }
+			}
+			else_if = {
+				limit = { original_tag = DAL }
+				set_variable = { tag_token = DAL }
+			}
+			else_if = {
+				limit = { original_tag = DOR }
+				set_variable = { tag_token = DOR }
+			}
+			else_if = {
+				limit = { original_tag = GLD }
+				set_variable = { tag_token = GLD }
+			}
+			meta_effect = {
+				text = {
+					FROM = {
+						add_timed_idea = {
+							idea = [TAG_TOKEN]_[IDEOLOGY_TOKEN]_influence
+							days = 180
+						}
+					}
+				}
+				IDEOLOGY_TOKEN = "[?current_party_ideology_group.GetTokenKey]"
+				TAG_TOKEN = "[?tag_token.GetTag]"
+			}
+		}
+	}
+	rhovanion_influence_puppet = {
+		icon = GFX_decision_rhovanion_influence
+		custom_cost_text = rhovanion_100_influence_cost
+		custom_cost_trigger = { always = yes } #can't check FROM variables in custom cost trigger
+		ai_will_do = {
+			factor = 10
+		}
+		visible = {
+			FROM = {
+				has_government = ROOT
+				is_subject = no
+			}
 		}
 		available = {
 			hidden_trigger = {

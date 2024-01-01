@@ -816,6 +816,14 @@ spriteTypes = {
 		name = "GFX_decision_disband_company_of_winter"
 		texturefile = "gfx/interface/decisions/disband_company_of_winter.dds"
 	}
+	SpriteType = {
+		name = "GFX_decision_disband_company_of_winter"
+		texturefile = "gfx/interface/decisions/disband_company_of_winter.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_rhovanion_influence"
+		texturefile = "gfx/interface/decisions/rhovanion_influence.dds"
+	}
 
 ################################################CATEGORY ICONS
 	spriteType = {
@@ -865,6 +873,14 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_decision_category_mercenaries"
 		texturefile = "gfx/interface/decisions/categories/decision_category_mercenaries.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_rhovanion_influence"
+		texturefile = "gfx/interface/decisions/categories/decision_category_rhovanion_influence.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_category_rhovanion"
+		texturefile = "gfx/interface/decisions/categories/decision_category_rhovanion.dds"
 	}
 ################################################CATEGORY PICTURES
 	spriteType = {

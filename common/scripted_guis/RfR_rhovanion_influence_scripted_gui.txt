@@ -56,7 +56,7 @@ scripted_gui = {
 		}
 		triggers = {
 			HEH_flag_outline_visible = {
-				always = yes #country_exists = HEH
+				country_exists = HEH
 			}
 			RIN_flag_outline_visible = {
 				country_exists = RIN

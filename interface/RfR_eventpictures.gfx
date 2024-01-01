@@ -571,6 +571,14 @@ spriteTypes = {
 		name = "GFX_popular_reaction"
 		texturefile = "gfx/event_pictures/popular_reaction.dds"
 	}
+	spriteType = {
+		name = "GFX_dwarves_accept_diplomacy"
+		texturefile = "gfx/event_pictures/dwarves_accept_diplomacy.dds"
+	}
+	spriteType = {
+		name = "GFX_dwarves_reject_diplomacy"
+		texturefile = "gfx/event_pictures/dwarves_reject_diplomacy.dds"
+	}
 ##################################################################NEWS
 	spriteType = {
 		name = "GFX_news_retreat"
@@ -668,4 +676,13 @@ spriteTypes = {
 		name = "GFX_news_popular_reaction"
 		texturefile = "gfx/event_pictures/news_events/news_popular_reaction.dds"
 	}
+	spriteType = {
+		name = "GFX_news_dwarves_accept_diplomacy"
+		texturefile = "gfx/event_pictures/news_events/news_dwarves_accept_diplomacy.dds"
+	}
+	spriteType = {
+		name = "GFX_news_dwarves_reject_diplomacy"
+		texturefile = "gfx/event_pictures/news_events/news_dwarves_reject_diplomacy.dds"
+	}
+
 }

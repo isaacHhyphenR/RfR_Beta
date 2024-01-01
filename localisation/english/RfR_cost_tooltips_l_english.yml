@@ -302,3 +302,6 @@
  rhovanion_100_influence_cost: "£GFX_rhovanion_influence_texticon §Y100§!"
  rhovanion_100_influence_cost_blocked: "£GFX_rhovanion_influence_texticon §R100§!"
  rhovanion_100_influence_cost_tooltip: "It costs §Y100§! £GFX_rhovanion_influence_texticon to take the decision"
+ rhovanion_150_influence_cost: "£GFX_rhovanion_influence_texticon §Y150§!"
+ rhovanion_150_influence_cost_blocked: "£GFX_rhovanion_influence_texticon §R150§!"
+ rhovanion_150_influence_cost_tooltip: "It costs §Y150§! £GFX_rhovanion_influence_texticon to take the decision"

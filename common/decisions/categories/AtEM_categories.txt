@@ -23,7 +23,7 @@ colonisation_category = {
 
 ########################################RHOVANION########################################
 rhovanion_influence_category = {
-	icon = GFX_decision_category_power_struggle
+	icon = GFX_decision_category_rhovanion_influence
 	picture = GFX_rhovanion_influence_background
     scripted_gui = rhovanion_influence_gui
 	priority = 90
@@ -80,7 +80,7 @@ DOR_guilds_category = {
 }
 
 DOR_college_category = {
-	icon = GFX_decision_category_usa_congress
+	icon = GFX_decision_category_SOV_soviet_academy_of_sciences
 	picture = GFX_decision_cat_college_decision_background
 	visible_when_empty = yes
 	priority = 79
