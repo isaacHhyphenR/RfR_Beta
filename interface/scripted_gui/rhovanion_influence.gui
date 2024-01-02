@@ -6,49 +6,49 @@ guiTypes = {
 		size = { width = 100% height = 100% }
 		iconType = {
 			name = "DRG_flag_outline"
-			position = { x = 149 y = -58 }
+			position = { x = 152 y = -57 }
 			Orientation = "UPPER_LEFT"
 			pdx_tooltip = DRG_flag_outline_hovertext
 			pdx_tooltip_delayed = DRG_flag_outline_hovertext_delayed
 		}
 		iconType = {
 			name = "HEH_flag_outline"
-			position = { x = 69 y = -126 }
+			position = { x = 72 y = -125 }
 			Orientation = "UPPER_LEFT"
 			pdx_tooltip = HEH_flag_outline_hovertext
 			pdx_tooltip_delayed = HEH_flag_outline_hovertext_delayed
 		}
 		iconType = {
 			name = "RIN_flag_outline"
-			position = { x = 87 y = -159 }
+			position = { x = 90 y = -158 }
 			Orientation = "UPPER_LEFT"
 			pdx_tooltip = RIN_flag_outline_hovertext
 			pdx_tooltip_delayed = RIN_flag_outline_hovertext_delayed
 		}
 		iconType = {
 			name = "RUS_flag_outline"
-			position = { x = 127 y = -168 }
+			position = { x = 130 y = -167 }
 			Orientation = "UPPER_LEFT"
 			pdx_tooltip = RUS_flag_outline_hovertext
 			pdx_tooltip_delayed = RUS_flag_outline_hovertext_delayed
 		}
 		iconType = {
 			name = "SEK_flag_outline"
-			position = { x = 87 y = -78 }
+			position = { x = 90 y = -77 }
 			Orientation = "UPPER_LEFT"
 			pdx_tooltip = SEK_flag_outline_hovertext
 			pdx_tooltip_delayed = SEK_flag_outline_hovertext_delayed
 		}
 		iconType = {
 			name = "SUN_flag_outline"
-			position = { x = 9 y = -191 }
+			position = { x = 12 y = -190 }
 			Orientation = "UPPER_LEFT"
 			pdx_tooltip = SUN_flag_outline_hovertext
 			pdx_tooltip_delayed = SUN_flag_outline_hovertext_delayed
 		}
 		iconType = {
 			name = "YST_flag_outline"
-			position = { x = 54 y = -164 }
+			position = { x = 57 y = -163 }
 			Orientation = "UPPER_LEFT"
 			pdx_tooltip = YST_flag_outline_hovertext
 			pdx_tooltip_delayed = YST_flag_outline_hovertext_delayed

@@ -2018,6 +2018,7 @@ rhovanion_influence_category = {
 		complete_effect = {
 			FROM = {
 				subtract_from_variable = { influence@ROOT = 100 }
+				hidden_effect = { news_event = { id = rfr_news.139 hours = 1 } }
 			}
 			set_autonomy = {
 				target = FROM
@@ -2069,6 +2070,7 @@ rhovanion_influence_category = {
 					}
 					TAG_TOKEN = "[ROOT.GetTag]"
 				}
+				hidden_effect = { news_event = { id = rfr_news.140 hours = 1 } }
 			}
 			every_state = {
 				limit = { is_owned_by = FROM }

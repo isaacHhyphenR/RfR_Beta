@@ -2198,7 +2198,7 @@ news_event = { ##138## DAL refused to grant us sanctuary
 }
 
 
-news_event = { ##139## RVN we got 
+news_event = { ##139## RVN we got puppeted
 	id = rfr_news.139
 	title = rfr_news.139.t
 	desc = rfr_news.139.d
@@ -2208,6 +2208,18 @@ news_event = { ##139## RVN we got
 	
 	option = { #OK
 		name = rfr_news.139.a
+	}
+}
+news_event = { ##140## RVN we got resource rightsed
+	id = rfr_news.140
+	title = rfr_news.140.t
+	desc = rfr_news.140.d
+	picture = GFX_news_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { #OK
+		name = rfr_news.140.a
 	}
 }
 
