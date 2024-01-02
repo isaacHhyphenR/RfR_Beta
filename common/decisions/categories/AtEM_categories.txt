@@ -28,8 +28,8 @@ rhovanion_influence_category = {
     scripted_gui = rhovanion_influence_gui
 	priority = 90
 	allowed = { allowed_influence_rhovanion = yes }
+	visible_when_empty = yes
 	visible = {
-		can_influence_rhovanion = yes
 		any_other_country = {
 			is_rhovanion_tag = yes
 			country_exists = THIS

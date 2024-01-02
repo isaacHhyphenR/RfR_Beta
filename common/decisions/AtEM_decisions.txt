@@ -1748,6 +1748,7 @@ rhovanion_influence_category = {
 		}
 		visible = {
 			is_in_faction_with = FROM
+			can_influence_rhovanion = yes
 		}
 		targets = { DRG HEH RIN RUS SEK SUN YST }
 		targets_dynamic = yes
@@ -1768,6 +1769,7 @@ rhovanion_influence_category = {
 			factor = 0
 		}
 		visible = { #any other country has enoguh influence to matter
+			can_influence_rhovanion = yes
 			any_other_country = {
 				check_variable = { FROM.influence@THIS > 0 }
 			}
@@ -1812,6 +1814,7 @@ rhovanion_influence_category = {
 		}
 		days_re_enable = 180
 		visible = {
+			can_influence_rhovanion = yes
 			FROM = {
 				NOT = { has_government = ROOT }
 			}
@@ -1887,6 +1890,7 @@ rhovanion_influence_category = {
 		}
 		fire_only_once = yes
 		visible = {
+			can_influence_rhovanion = yes
 			FROM = {
 				has_government = ROOT
 			}
@@ -1927,6 +1931,7 @@ rhovanion_influence_category = {
 		}
 		fire_only_once = yes
 		visible = {
+			can_influence_rhovanion = yes
 			FROM = {
 				has_government = ROOT
 				is_subject = no
@@ -1996,6 +2001,7 @@ rhovanion_influence_category = {
 		}
 		fire_only_once = yes
 		visible = {
+			can_influence_rhovanion = yes
 			FROM = {
 				has_government = ROOT
 				is_subject = no
