@@ -262,6 +262,16 @@ defined_text = { ##YST
 		localization_key = YST_rhovanion_influence_key
 	}
 }
+defined_text = { ##DRG
+	name = DRG_rhovanion_influence_scripted
+	text = { #Only displays text if DRG has influence
+		trigger = {
+			check_variable = { influence@DRG > 0 }
+			NOT = { ROOT = { tag = DRG } }
+		}
+		localization_key = DRG_rhovanion_influence_key
+	}
+}
 defined_text = { ##HEH
 	name = HEH_rhovanion_influence_scripted
 	text = { #Only displays text if HEH has influence

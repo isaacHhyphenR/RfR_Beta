@@ -6,6 +6,10 @@ scripted_gui = {
 		parent_window_token = decision_tab
 		#visible = { always = yes }
 		properties = {
+			DRG_flag_outline = {
+				image = GFX_DRG_flag_shape
+				frame = DRG.ideology_index
+			}
 			HEH_flag_outline = {
 				image = GFX_HEH_flag_shape 
 				frame = HEH.ideology_index
@@ -32,6 +36,12 @@ scripted_gui = {
 			}
 		}
 		effects = {
+			DRG_flag_outline_click = {
+				DRG = { custom_effect_tooltip = DRG_flag_outline_click_tooltip }
+			}
+			DRG_flag_outline_right_click = {
+				DRG = { custom_effect_tooltip = DRG_flag_outline_right_click_tooltip }
+			}
 			HEH_flag_outline_click = {
 				HEH = { custom_effect_tooltip = HEH_flag_outline_click_tooltip }
 			}
@@ -41,20 +51,38 @@ scripted_gui = {
 			RIN_flag_outline_click = {
 				RIN = { custom_effect_tooltip = RIN_flag_outline_click_tooltip }
 			}
+			RIN_flag_outline_right_click = {
+				RIN = { custom_effect_tooltip = RIN_flag_outline_right_click_tooltip }
+			}
 			RUS_flag_outline_click = {
 				RUS = { custom_effect_tooltip = RUS_flag_outline_click_tooltip }
+			}
+			RUS_flag_outline_right_click = {
+				RUS = { custom_effect_tooltip = RUS_flag_outline_right_click_tooltip }
 			}
 			SEK_flag_outline_click = {
 				SEK = { custom_effect_tooltip = SEK_flag_outline_click_tooltip }
 			}
+			SEK_flag_outline_right_click = {
+				SEK = { custom_effect_tooltip = SEK_flag_outline_right_click_tooltip }
+			}
 			SUN_flag_outline_click = {
 				SUN = { custom_effect_tooltip = SUN_flag_outline_click_tooltip }
+			}
+			SUN_flag_outline_right_click = {
+				SUN = { custom_effect_tooltip = SUN_flag_outline_right_click_tooltip }
 			}
 			YST_flag_outline_click = {
 				YST = { custom_effect_tooltip = YST_flag_outline_click_tooltip }
 			}
+			YST_flag_outline_right_click = {
+				YST = { custom_effect_tooltip = YST_flag_outline_right_click_tooltip }
+			}
 		}
 		triggers = {
+			DRG_flag_outline_visible = {
+				country_exists = DRG
+			}
 			HEH_flag_outline_visible = {
 				country_exists = HEH
 			}

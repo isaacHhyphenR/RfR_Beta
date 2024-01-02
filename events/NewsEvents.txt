@@ -2172,7 +2172,6 @@ news_event = { ##136## DAL refused grain export petition
 	}
 }
 
-
 news_event = { ##137## DAL accepted to grant us sanctuary
 	id = rfr_news.137
 	title = rfr_news.137.t
@@ -2199,6 +2198,18 @@ news_event = { ##138## DAL refused to grant us sanctuary
 }
 
 
+news_event = { ##139## RVN we got 
+	id = rfr_news.139
+	title = rfr_news.139.t
+	desc = rfr_news.139.d
+	picture = GFX_news_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { #OK
+		name = rfr_news.139.a
+	}
+}
 
 
 

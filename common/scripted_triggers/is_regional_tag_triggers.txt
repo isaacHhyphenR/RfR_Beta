@@ -1,0 +1,52 @@
+is_rhunnic_tag = {
+	OR = {
+		original_tag = LGA
+		original_tag = MED
+		original_tag = SAG
+		original_tag = SRB
+		original_tag = ULG
+	}
+}
+
+is_rhovanion_tag = {
+	custom_trigger_tooltip = {
+		tooltip = is_rhovanion_tag
+		OR = {
+			original_tag = DRG
+			original_tag = HEH
+			original_tag = RIN
+			original_tag = RUS
+			original_tag = SEK
+			original_tag = SUN
+			original_tag = YST
+		}
+	}
+}
+
+is_steppe_tag = {
+	OR = {
+		original_tag = DLP
+		original_tag = DYR
+		original_tag = KRG
+		original_tag = KST
+		original_tag = LGR
+		original_tag = MAG
+		original_tag = RLM
+	}
+}
+
+is_arnor_tag = {
+	OR = {
+		original_tag = ART
+		original_tag = CAR
+		original_tag = RDR
+	}
+}
+is_gondor_tag = {
+	OR = {
+		original_tag = ANF
+		original_tag = GON
+		original_tag = ITH
+		original_tag = PNG
+	}
+}

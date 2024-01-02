@@ -71,6 +71,10 @@ DPG = {
 	color = rgb { 87 48 125 }
 	color_ui = rgb { 68 37 98 }
 }
+DRG = {
+	color = rgb { 222 193 164 }
+	color_ui = rgb { 195 161 126 }
+}
 DRU = {
 	color = rgb { 129 119 132 }
 	color_ui = rgb { 115 93 121 }

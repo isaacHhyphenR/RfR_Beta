@@ -1,4 +1,20 @@
 characters = {
+		#######DRG
+	DRG_shakal_adekig = { #leader
+		name = DRG_shakal_adekig
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Easterling_Generic_m_2"
+				small = "GFX_Portrait_Easterling_Generic_m_2_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			traits = {   }
+			#desc = DOR_vidumarh_vierling_desc
+		}
+	}
 		#######SUN
 	SUN_frani_glenbrook = { #leader
 		name = SUN_frani_glenbrook

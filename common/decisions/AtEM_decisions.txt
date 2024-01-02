@@ -1749,7 +1749,7 @@ rhovanion_influence_category = {
 		visible = {
 			is_in_faction_with = FROM
 		}
-		targets = { HEH RIN RUS SEK SUN YST }
+		targets = { DRG HEH RIN RUS SEK SUN YST }
 		targets_dynamic = yes
 		
 		complete_effect = {
@@ -1771,6 +1771,7 @@ rhovanion_influence_category = {
 			any_other_country = {
 				check_variable = { FROM.influence@THIS > 0 }
 			}
+			NOT = { has_war_with = FROM }
 		}
 		available = {
 			hidden_trigger = {
@@ -1783,7 +1784,7 @@ rhovanion_influence_category = {
 				}
 			}
 		}
-		targets = { HEH RIN RUS SEK SUN YST }
+		targets = { DRG HEH RIN RUS SEK SUN YST }
 		targets_dynamic = yes
 		
 		complete_effect = {
@@ -1814,6 +1815,7 @@ rhovanion_influence_category = {
 			FROM = {
 				NOT = { has_government = ROOT }
 			}
+			NOT = { has_war_with = FROM }
 		}
 		available = {
 			hidden_trigger = {
@@ -1826,7 +1828,7 @@ rhovanion_influence_category = {
 				}
 			}
 		}
-		targets = { HEH RIN RUS SEK SUN YST }
+		targets = { DRG HEH RIN RUS SEK SUN YST }
 		targets_dynamic = yes
 		
 		complete_effect = {
@@ -1888,6 +1890,7 @@ rhovanion_influence_category = {
 			FROM = {
 				has_government = ROOT
 			}
+			NOT = { has_war_with = FROM }
 		}
 		available = {
 			hidden_trigger = {
@@ -1900,7 +1903,7 @@ rhovanion_influence_category = {
 				}
 			}
 		}
-		targets = { HEH RIN RUS SEK SUN YST }
+		targets = { DRG HEH RIN RUS SEK SUN YST }
 		targets_dynamic = yes
 		
 		complete_effect = {
@@ -1911,6 +1914,75 @@ rhovanion_influence_category = {
 						add_ideas = [TAG_TOKEN]_trade_influence
 					}
 					TAG_TOKEN = "[ROOT.GetTag]"
+				}
+			}
+		}
+	}
+	rhovanion_influence_guarantee = {
+		icon = GFX_decision_rhovanion_influence
+		custom_cost_text = rhovanion_25_influence_cost
+		custom_cost_trigger = { always = yes } #can't check FROM variables in custom cost trigger
+		ai_will_do = {
+			factor = 0
+		}
+		fire_only_once = yes
+		visible = {
+			FROM = {
+				has_government = ROOT
+				is_subject = no
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+		available = {
+			hidden_trigger = {
+				FROM = {
+					check_variable = {
+						var = influence@ROOT
+						compare = greater_than_or_equals
+						value = 25
+					}
+				}
+			}
+		}
+		targets = { DRG HEH RIN RUS SEK SUN YST }
+		targets_dynamic = yes
+		
+		complete_effect = {
+			FROM = {
+				subtract_from_variable = { influence@ROOT = 25 }
+				if = {
+					limit = {
+						NOT = { has_guaranteed = ROOT }
+					}
+					give_guarantee = ROOT
+				}
+				if = {
+					limit = {
+						NOT = { gives_military_access_to = ROOT }
+					}
+					give_military_access = ROOT
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_guaranteed = FROM }
+				}
+				give_guarantee = FROM
+			}
+			if = {
+				limit = {
+					NOT = { gives_military_access_to = FROM }
+				}
+				give_military_access = FROM
+			}
+			if = {
+				limit = {
+					NOT = { has_non_aggression_pact_with = FROM }
+				}
+				diplomatic_relation = {
+					country = FROM
+					relation = non_aggression_pact
+					active = yes
 				}
 			}
 		}
@@ -1940,7 +2012,7 @@ rhovanion_influence_category = {
 				}
 			}
 		}
-		targets = { HEH RIN RUS SEK SUN YST }
+		targets = { DRG HEH RIN RUS SEK SUN YST }
 		targets_dynamic = yes
 		
 		complete_effect = {
@@ -1985,7 +2057,7 @@ rhovanion_influence_category = {
 				}
 			}
 		}
-		targets = { HEH RIN RUS SEK SUN YST }
+		targets = { DRG HEH RIN RUS SEK SUN YST }
 		targets_dynamic = yes
 		
 		complete_effect = {
@@ -2015,7 +2087,7 @@ rhovanion_influence_category = {
 		}
 		fire_only_once = yes
 		allowed = {
-			has_autonomy_feature = no
+			has_subject_autonomy_feature = no
 		}
 		visible = {
 			has_subject = FROM
@@ -2031,7 +2103,7 @@ rhovanion_influence_category = {
 				}
 			}
 		}
-		targets = { HEH RIN RUS SEK SUN YST }
+		targets = { DRG HEH RIN RUS SEK SUN YST }
 		targets_dynamic = yes
 		
 		complete_effect = {
@@ -2052,7 +2124,7 @@ rhovanion_influence_category = {
 			factor = 10
 		}
 		allowed = {
-			has_autonomy_feature = yes
+			has_subject_autonomy_feature = yes
 		}
 		visible = {
 			has_subject = FROM
@@ -2068,7 +2140,7 @@ rhovanion_influence_category = {
 				}
 			}
 		}
-		targets = { HEH RIN RUS SEK SUN YST }
+		targets = { DRG HEH RIN RUS SEK SUN YST }
 		targets_dynamic = yes
 		
 		complete_effect = {

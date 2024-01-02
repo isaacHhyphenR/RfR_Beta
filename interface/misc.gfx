@@ -365,6 +365,12 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/GUIs/rhovanion_influence/background.dds"
 	}
 	spriteType = {
+		name = "GFX_DRG_flag_shape"
+		texturefile = "gfx/interface/decisions/GUIs/rhovanion_influence/DRG.dds"
+		transparencecheck = yes
+		noOfFrames = 5
+	}
+	spriteType = {
 		name = "GFX_HEH_flag_shape"
 		texturefile = "gfx/interface/decisions/GUIs/rhovanion_influence/HEH.dds"
 		transparencecheck = yes

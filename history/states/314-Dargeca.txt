@@ -5,6 +5,7 @@ state = {
 	history = {
 		owner = DOR
 		add_core_of = DOR
+		add_core_of = DRG
 		victory_points = { #Darcega, 7
 			6550 4 
 		}

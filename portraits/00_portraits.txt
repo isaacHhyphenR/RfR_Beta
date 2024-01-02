@@ -392,6 +392,60 @@ ROH = {
 		}
 	}
 }
+
+DRG = { #NORTHRON + EASTERLINGS
+	female = {
+		"GFX_Portrait_Northern_Generic_f_1"
+		"GFX_Portrait_Northern_Generic_f_2"
+		"GFX_Portrait_Northern_Generic_f_3"
+		"GFX_Portrait_Northern_Generic_f_4"
+		"GFX_Portrait_Northern_Generic_f_5"
+		"GFX_Portrait_Easterling_Generic_f_1"
+		"GFX_Portrait_Easterling_Generic_f_2"
+		"GFX_Portrait_Easterling_Generic_f_3"
+		"GFX_Portrait_Easterling_Generic_f_4"
+		"GFX_Portrait_Easterling_Generic_f_5"
+	}
+	male = {
+		"GFX_Portrait_Northern_Generic_m_1"
+		"GFX_Portrait_Northern_Generic_m_2"
+		"GFX_Portrait_Northern_Generic_m_3"
+		"GFX_Portrait_Northern_Generic_m_4"
+		"GFX_Portrait_Northern_Generic_m_5"
+		"GFX_Portrait_Easterling_Generic_m_1"
+		"GFX_Portrait_Easterling_Generic_m_2"
+		"GFX_Portrait_Easterling_Generic_m_3"
+		"GFX_Portrait_Easterling_Generic_m_4"
+		"GFX_Portrait_Easterling_Generic_m_5"
+	}
+	operative = {
+		female = {
+			"GFX_Portrait_Northern_Generic_f_1"
+			"GFX_Portrait_Northern_Generic_f_2"
+			"GFX_Portrait_Northern_Generic_f_3"
+			"GFX_Portrait_Northern_Generic_f_4"
+			"GFX_Portrait_Northern_Generic_f_5"
+			"GFX_Portrait_Easterling_Generic_f_1"
+			"GFX_Portrait_Easterling_Generic_f_2"
+			"GFX_Portrait_Easterling_Generic_f_3"
+			"GFX_Portrait_Easterling_Generic_f_4"
+			"GFX_Portrait_Easterling_Generic_f_5"
+		}
+		male = {
+			"GFX_Portrait_Northern_Generic_m_1"
+			"GFX_Portrait_Northern_Generic_m_2"
+			"GFX_Portrait_Northern_Generic_m_3"
+			"GFX_Portrait_Northern_Generic_m_4"
+			"GFX_Portrait_Northern_Generic_m_5"
+			"GFX_Portrait_Easterling_Generic_m_1"
+			"GFX_Portrait_Easterling_Generic_m_2"
+			"GFX_Portrait_Easterling_Generic_m_3"
+			"GFX_Portrait_Easterling_Generic_m_4"
+			"GFX_Portrait_Easterling_Generic_m_5"
+		}
+	}
+}	
+
 ####################################################################################
 				###ORCS
 continent = {
