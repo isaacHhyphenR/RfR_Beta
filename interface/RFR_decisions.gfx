@@ -824,6 +824,10 @@ spriteTypes = {
 		name = "GFX_decision_rhovanion_influence"
 		texturefile = "gfx/interface/decisions/rhovanion_influence.dds"
 	}
+	SpriteType = {
+		name = "GFX_decision_power_struggle"
+		texturefile = "gfx/interface/decisions/power_struggle.dds"
+	}
 
 ################################################CATEGORY ICONS
 	spriteType = {

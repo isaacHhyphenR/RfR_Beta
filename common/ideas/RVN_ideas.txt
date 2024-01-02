@@ -184,6 +184,123 @@ ideas = {
 			}
 		}
 		
+		##Trade Influence
+		@tradeInfluenceCost = -0.9
+		@tradeInfluenceExtraTrade = 1
+		DAL_trade_influence = {
+			picture = DAL_trade_influence
+			targeted_modifier = {
+				tag = DAL
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		DOR_trade_influence = {
+			picture = DOR_trade_influence
+			targeted_modifier = {
+				tag = DOR
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		GLD_trade_influence = {
+			picture = GLD_trade_influence
+			targeted_modifier = {
+				tag = GLD
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		MED_trade_influence = {
+			picture = RUN_trade_influence
+			targeted_modifier = {
+				tag = MED
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		ULG_trade_influence = {
+			picture = RUN_trade_influence
+			targeted_modifier = {
+				tag = ULG
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		SAG_trade_influence = {
+			picture = RUN_trade_influence
+			targeted_modifier = {
+				tag = SAG
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		SRB_trade_influence = {
+			picture = RUN_trade_influence
+			targeted_modifier = {
+				tag = SRB
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		LGA_trade_influence = {
+			picture = RUN_trade_influence
+			targeted_modifier = {
+				tag = LGA
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		RIN_trade_influence = {
+			picture = RVN_trade_influence
+			targeted_modifier = {
+				tag = RIN
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		RUS_trade_influence = {
+			picture = RVN_trade_influence
+			targeted_modifier = {
+				tag = RUS
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		YST_trade_influence = {
+			picture = RVN_trade_influence
+			targeted_modifier = {
+				tag = YST
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		SUN_trade_influence = {
+			picture = RVN_trade_influence
+			targeted_modifier = {
+				tag = SUN
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		HEH_trade_influence = {
+			picture = RVN_trade_influence
+			targeted_modifier = {
+				tag = HEH
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+		SEK_trade_influence = {
+			picture = RVN_trade_influence
+			targeted_modifier = {
+				tag = SEK
+				trade_cost_for_target_factor = @tradeInfluenceCost
+				extra_trade_to_target_factor = @tradeInfluenceExtraTrade
+			}
+		}
+
+		
 	}
 	
 	hidden_ideas = {

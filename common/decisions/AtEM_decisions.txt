@@ -1731,6 +1731,74 @@ rhovanion_influence_category = {
 			every_country = {
 				limit = { is_rhovanion_tag = yes }
 				set_variable = { influence@ROOT = 100 }
+				custom_effect_tooltip = add_100_PREV_influence
+			}
+		}
+	}
+	rhovanion_influence_same_faction = {
+		icon = GFX_decision_generic_political_discourse
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0
+			modifier = { #don't spam, focus on one
+				check_variable = { FROM.influence@ROOT > 5 }
+				add = 5
+			}
+		}
+		visible = {
+			is_in_faction_with = FROM
+		}
+		targets = { HEH RIN RUS SEK SUN YST }
+		targets_dynamic = yes
+		
+		complete_effect = {
+			FROM = {
+				#Gain influence
+				add_to_variable = { influence@ROOT = 25 }
+				custom_effect_tooltip = add_25_PREV_influence
+			}
+		}
+	}
+	rhovanion_influence_subtract = {
+		icon = GFX_decision_power_struggle
+		custom_cost_text = rhovanion_30_influence_cost
+		custom_cost_trigger = { always = yes } #can't check FROM variables in custom cost trigger
+		ai_will_do = {
+			factor = 0
+		}
+		visible = { #any other country has enoguh influence to matter
+			any_other_country = {
+				check_variable = { FROM.influence@THIS > 0 }
+			}
+		}
+		available = {
+			hidden_trigger = {
+				FROM = {
+					check_variable = {
+						var = influence@ROOT
+						compare = greater_than_or_equals
+						value = 30
+					}
+				}
+			}
+		}
+		targets = { HEH RIN RUS SEK SUN YST }
+		targets_dynamic = yes
+		
+		complete_effect = {
+			FROM = {
+				#cost you
+				subtract_from_variable = { influence@ROOT = 25 }
+				#cost everyone else
+				every_other_country = {
+					limit = {
+						check_variable = { PREV.influence@THIS > 0 }
+						NOT = { tag = ROOT }
+					}
+					subtract_from_variable = { PREV.influence@THIS = 10 }
+					custom_effect_tooltip = subtract_10_influence
+				}
 			}
 		}
 	}
@@ -1800,6 +1868,53 @@ rhovanion_influence_category = {
 			}
 		}
 	}
+	rhovanion_influence_trade = {
+		icon = GFX_decision_generic_trade
+		custom_cost_text = rhovanion_25_influence_cost
+		custom_cost_trigger = { always = yes } #can't check FROM variables in custom cost trigger
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				original_tag = DOR
+				add = 1
+			}
+			modifier = {
+				has_government = isolationism
+				add = 1
+			}
+		}
+		fire_only_once = yes
+		visible = {
+			FROM = {
+				has_government = ROOT
+			}
+		}
+		available = {
+			hidden_trigger = {
+				FROM = {
+					check_variable = {
+						var = influence@ROOT
+						compare = greater_than_or_equals
+						value = 25
+					}
+				}
+			}
+		}
+		targets = { HEH RIN RUS SEK SUN YST }
+		targets_dynamic = yes
+		
+		complete_effect = {
+			FROM = {
+				subtract_from_variable = { influence@ROOT = 25 }
+				meta_effect = {
+					text = {
+						add_ideas = [TAG_TOKEN]_trade_influence
+					}
+					TAG_TOKEN = "[ROOT.GetTag]"
+				}
+			}
+		}
+	}
 	rhovanion_influence_puppet = {
 		icon = GFX_decision_rhovanion_influence
 		custom_cost_text = rhovanion_100_influence_cost
@@ -1807,6 +1922,7 @@ rhovanion_influence_category = {
 		ai_will_do = {
 			factor = 10
 		}
+		fire_only_once = yes
 		visible = {
 			FROM = {
 				has_government = ROOT
@@ -1836,6 +1952,132 @@ rhovanion_influence_category = {
 				autonomy_state = autonomy_puppet
 				end_wars = yes
 				end_civil_wars = yes
+			}
+		}
+	}
+	rhovanion_influence_resource_rights = {
+		icon = GFX_decision_eng_trade_unions_demand
+		custom_cost_text = rhovanion_25_influence_cost
+		custom_cost_trigger = { always = yes } #can't check FROM variables in custom cost trigger
+		ai_will_do = {
+			factor = 0
+		}
+		fire_only_once = yes
+		visible = {
+			has_subject = FROM
+		}
+		available = {
+			hidden_trigger = {
+				FROM = {
+					check_variable = {
+						var = influence@ROOT
+						compare = greater_than_or_equals
+						value = 25
+					}
+				}
+			}
+			FROM = {
+				meta_trigger = {
+					text = {
+						has_idea = [TAG_TOKEN]_trade_influence
+					}
+					TAG_TOKEN = "[ROOT.GetTag]"
+				}
+			}
+		}
+		targets = { HEH RIN RUS SEK SUN YST }
+		targets_dynamic = yes
+		
+		complete_effect = {
+			FROM = {
+				subtract_from_variable = { influence@ROOT = 25 }
+				meta_effect = {
+					text = {
+						remove_ideas = [TAG_TOKEN]_trade_influence
+					}
+					TAG_TOKEN = "[ROOT.GetTag]"
+				}
+			}
+			every_state = {
+				limit = { is_owned_by = FROM }
+				FROM = {
+					give_resource_rights = { receiver = ROOT state = PREV }
+				}
+			}
+		}
+	}
+	rhovanion_influence_annex = { #non-DLC
+		icon = GFX_decision_infiltrate_state
+		custom_cost_text = rhovanion_150_influence_cost
+		custom_cost_trigger = { always = yes } #can't check FROM variables in custom cost trigger
+		ai_will_do = {
+			factor = 1
+		}
+		fire_only_once = yes
+		allowed = {
+			has_autonomy_feature = no
+		}
+		visible = {
+			has_subject = FROM
+		}
+		available = {
+			hidden_trigger = {
+				FROM = {
+					check_variable = {
+						var = influence@ROOT
+						compare = greater_than_or_equals
+						value = 150
+					}
+				}
+			}
+		}
+		targets = { HEH RIN RUS SEK SUN YST }
+		targets_dynamic = yes
+		
+		complete_effect = {
+			FROM = {
+				subtract_from_variable = { influence@ROOT = 150 }
+			}
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+		}
+	}
+	rhovanion_influence_autonomy = { #DLC
+		icon = GFX_decision_infiltrate_state
+		custom_cost_text = rhovanion_50_influence_cost
+		custom_cost_trigger = { always = yes } #can't check FROM variables in custom cost trigger
+		ai_will_do = {
+			factor = 10
+		}
+		allowed = {
+			has_autonomy_feature = yes
+		}
+		visible = {
+			has_subject = FROM
+		}
+		available = {
+			hidden_trigger = {
+				FROM = {
+					check_variable = {
+						var = influence@ROOT
+						compare = greater_than_or_equals
+						value = 50
+					}
+				}
+			}
+		}
+		targets = { HEH RIN RUS SEK SUN YST }
+		targets_dynamic = yes
+		
+		complete_effect = {
+			FROM = {
+				subtract_from_variable = { influence@ROOT = 50 }
+				add_autonomy_score = {
+					value = -500
+					localization = rhovanion_influence_autonomy
+				}
 			}
 		}
 	}

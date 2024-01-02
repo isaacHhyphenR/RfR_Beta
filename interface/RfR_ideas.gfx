@@ -930,5 +930,47 @@ spriteTypes = {
 		name = "GFX_idea_RVN_melkorite_influence"
 		texturefile = "gfx/interface/ideas/rhovanion_influence/RVN_melkorite_influence.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_DAL_trade_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DAL_trade_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_trade_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DOR_trade_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_GLD_trade_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/GLD_trade_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RUN_trade_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RUN_trade_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RVN_trade_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RVN_trade_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DAL_economic_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DAL_economic_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_DOR_economic_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/DOR_economic_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_GLD_economic_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/GLD_economic_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RUN_economic_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RUN_economic_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_RVN_economic_influence"
+		texturefile = "gfx/interface/ideas/rhovanion_influence/RVN_economic_influence.dds"
+	}
+
+
 
 }
