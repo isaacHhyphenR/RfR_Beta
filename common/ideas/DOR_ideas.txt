@@ -640,7 +640,7 @@ ideas = {
 			}
 			targeted_modifier = {
 				tag = DOR
-				custom_modifier_tooltip = unimplemented
+				custom_modifier_tooltip = DOR_favored_trader_influence_tooltip
 			}
 			cancel = {
 				OR = {

@@ -1012,8 +1012,8 @@ focus_tree = {
 			great_merchants_focus_effect = yes
 		}
 	}
-	focus = { #open offers of economic cooperation
-		id = DOR_open_offers_of_economic_cooperation
+	focus = { #Procure Resources for Our Economy
+		id = DOR_procure_resources_for_our_economy
 		#icon = GFX_focus_ETH_adopt_the_lira
 		x = -2
 		y = 1
@@ -1030,7 +1030,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMATIC }
 		completion_reward = {
-			custom_effect_tooltip = unimplemented
+			custom_effect_tooltip = DOR_procure_resources_for_our_economy_tooltip
 			great_merchants_focus_effect = yes
 		}
 	}
@@ -1217,7 +1217,7 @@ focus_tree = {
 			focus = DOR_wealth_is_conviction
 		}
 		prerequisite = {
-			focus = DOR_open_offers_of_economic_cooperation
+			focus = DOR_procure_resources_for_our_economy
 		}
 		available = {
 			great_merchants_focus_trigger = yes
@@ -1592,7 +1592,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DOR_proven_aptitude
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -4430,10 +4430,7 @@ focus_tree = {
 				}
 				country_event = { id = atem.9 hours = 1 }
 				custom_effect_tooltip = if_they_accept_tooltip
-				effect_tooltip = {
-					ROOT = { give_guarantee = PREV }
-					custom_effect_tooltip = unimplemented
-				}
+				event_option_tooltip = atem.9.a
 			}
 			burghers_focus_effect = yes
 		}
@@ -4495,6 +4492,7 @@ focus_tree = {
 	focus = { #Establish a Rhovan Republic
 		id = DOR_establish_a_rhovan_republic
 		icon = GFX_goal_republic_of_rhovanion
+		allow_branch = { always = no } #don't like this focus
 		x = 0
 		y = 2
 		relative_position_id = DOR_bulwark_of_the_celduin

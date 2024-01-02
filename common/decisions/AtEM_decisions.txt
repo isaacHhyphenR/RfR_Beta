@@ -2036,8 +2036,10 @@ rhovanion_influence_category = {
 			factor = 0
 		}
 		fire_only_once = yes
+		allowed = { original_tag = DOR }
 		visible = {
 			has_subject = FROM
+			has_completed_focus = DOR_procure_resources_for_our_economy
 		}
 		available = {
 			hidden_trigger = {

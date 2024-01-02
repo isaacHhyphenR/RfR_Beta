@@ -1840,6 +1840,7 @@ DOR_upgrade_college_of_philosophy = {
 			remove_idea = DOR_college_of_philosophy_1
 			add_idea = DOR_college_of_philosophy_2
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_philosophy_2 }
@@ -1847,6 +1848,7 @@ DOR_upgrade_college_of_philosophy = {
 			remove_idea = DOR_college_of_philosophy_2
 			add_idea = DOR_college_of_philosophy_3
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_philosophy_3 }
@@ -1854,6 +1856,7 @@ DOR_upgrade_college_of_philosophy = {
 			remove_idea = DOR_college_of_philosophy_3
 			add_idea = DOR_college_of_philosophy_4
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_philosophy_4 }
@@ -1861,6 +1864,7 @@ DOR_upgrade_college_of_philosophy = {
 			remove_idea = DOR_college_of_philosophy_4
 			add_idea = DOR_college_of_philosophy_5
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_philosophy_5 }
@@ -1868,8 +1872,8 @@ DOR_upgrade_college_of_philosophy = {
 			remove_idea = DOR_college_of_philosophy_5
 			add_idea = DOR_college_of_philosophy_6
 		}
+		DOR_increase_university_level_1 = yes
 	}
-	DOR_increase_university_level_1 = yes
 }
 DOR_upgrade_college_of_manners = {
 	if = {
@@ -1878,6 +1882,7 @@ DOR_upgrade_college_of_manners = {
 			remove_idea = DOR_college_of_manners_1
 			add_idea = DOR_college_of_manners_2
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_manners_2 }
@@ -1885,6 +1890,7 @@ DOR_upgrade_college_of_manners = {
 			remove_idea = DOR_college_of_manners_2
 			add_idea = DOR_college_of_manners_3
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_manners_3 }
@@ -1892,6 +1898,7 @@ DOR_upgrade_college_of_manners = {
 			remove_idea = DOR_college_of_manners_3
 			add_idea = DOR_college_of_manners_4
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_manners_4 }
@@ -1899,6 +1906,7 @@ DOR_upgrade_college_of_manners = {
 			remove_idea = DOR_college_of_manners_4
 			add_idea = DOR_college_of_manners_5
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_manners_5 }
@@ -1906,8 +1914,8 @@ DOR_upgrade_college_of_manners = {
 			remove_idea = DOR_college_of_manners_5
 			add_idea = DOR_college_of_manners_6
 		}
+		DOR_increase_university_level_1 = yes
 	}
-	DOR_increase_university_level_1 = yes
 }
 DOR_upgrade_college_of_medicine = {
 	if = {
@@ -1916,6 +1924,7 @@ DOR_upgrade_college_of_medicine = {
 			remove_idea = DOR_college_of_medicine_1
 			add_idea = DOR_college_of_medicine_2
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_medicine_2 }
@@ -1923,6 +1932,7 @@ DOR_upgrade_college_of_medicine = {
 			remove_idea = DOR_college_of_medicine_2
 			add_idea = DOR_college_of_medicine_3
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_medicine_3 }
@@ -1930,6 +1940,7 @@ DOR_upgrade_college_of_medicine = {
 			remove_idea = DOR_college_of_medicine_3
 			add_idea = DOR_college_of_medicine_4
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_medicine_4 }
@@ -1937,6 +1948,7 @@ DOR_upgrade_college_of_medicine = {
 			remove_idea = DOR_college_of_medicine_4
 			add_idea = DOR_college_of_medicine_5
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_medicine_5 }
@@ -1944,8 +1956,8 @@ DOR_upgrade_college_of_medicine = {
 			remove_idea = DOR_college_of_medicine_5
 			add_idea = DOR_college_of_medicine_6
 		}
+		DOR_increase_university_level_1 = yes
 	}
-	DOR_increase_university_level_1 = yes
 }
 DOR_upgrade_college_of_tactics = {
 	if = {
@@ -1954,6 +1966,7 @@ DOR_upgrade_college_of_tactics = {
 			remove_idea = DOR_college_of_tactics_1
 			add_idea = DOR_college_of_tactics_2
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_tactics_2 }
@@ -1961,6 +1974,7 @@ DOR_upgrade_college_of_tactics = {
 			remove_idea = DOR_college_of_tactics_2
 			add_idea = DOR_college_of_tactics_3
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_tactics_3 }
@@ -1968,6 +1982,7 @@ DOR_upgrade_college_of_tactics = {
 			remove_idea = DOR_college_of_tactics_3
 			add_idea = DOR_college_of_tactics_4
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_tactics_4 }
@@ -1975,6 +1990,7 @@ DOR_upgrade_college_of_tactics = {
 			remove_idea = DOR_college_of_tactics_4
 			add_idea = DOR_college_of_tactics_5
 		}
+		DOR_increase_university_level_1 = yes
 	}
 	else_if = {
 		limit = { has_idea = DOR_college_of_tactics_5 }
@@ -1982,8 +1998,8 @@ DOR_upgrade_college_of_tactics = {
 			remove_idea = DOR_college_of_tactics_5
 			add_idea = DOR_college_of_tactics_6
 		}
+		DOR_increase_university_level_1 = yes
 	}
-	DOR_increase_university_level_1 = yes
 }
 
 DOR_increase_university_level_1 = {

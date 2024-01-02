@@ -153,6 +153,13 @@ on_actions = {
 						divide_temp_variable = { influence_gain = 100 } #This turn opinion into a 0-1 scale
 						#Adds country modifier
 						set_temp_variable = { gain_modifier = 1 }
+						if = { #Unique modifier
+							limit = {
+								has_idea = DOR_favored_trader
+								PREV = { original_tag = DOR }
+							}
+							add_to_temp_variable = { gain_modifier = 0.25 }
+						}
 						add_to_temp_variable = { gain_modifier = PREV.rhovanion_influence_gain_factor }
 						multiply_temp_variable = { influence_gain = gain_modifier }
 						#Applys it

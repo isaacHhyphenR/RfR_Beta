@@ -182,8 +182,8 @@ demand_blood_oath_submission_category = {
 		# days_remove = 180 #cannot try again for 180 days
 	# }
 	annex_blood_oath_vassal_decision = {
-		allowed = { has_autonomy_DLC = no } ##Alternative to the autonomy system
-		cost = 50
+		allowed = { has_subject_autonomy_feature = no } ##Alternative to the autonomy system
+		cost = 150
 		ai_will_do = {
 			base = 10000
 		}

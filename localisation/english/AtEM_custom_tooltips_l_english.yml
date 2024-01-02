@@ -311,3 +311,5 @@
  subtract_45_PREV_influence: "§Y[PREV.GetFlag][PREV.GetName]§!: §R-45§! $influence_texticon$"
  subtract_50_PREV_influence: "§Y[PREV.GetFlag][PREV.GetName]§!: §R-50§! $influence_texticon$"
  subtract_100_PREV_influence: "§Y[PREV.GetFlag][PREV.GetName]§!: §R-100§! $influence_texticon$"
+ DOR_procure_resources_for_our_economy_tooltip: "$unlocks_decision_tooltip$ allowing you to spend $influence_texticon$ to gain resource rights in Rhovanion puppets with §Y$DOR_trade_influence$§!."
+ DOR_favored_trader_influence_tooltip: "§Y[DOR.GetFlag][DOR.GetName]§!: §Y+25%§! Influence Gain over us"

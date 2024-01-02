@@ -554,8 +554,9 @@ country_event = { ##9## Dorwinion offers guarantee for influence
 				factor = 20
 			}
 		}
-		FROM = { give_guarantee = ROOT }
-		custom_effect_tooltip = unimplemented
+		FROM = { give_guarantee = PREV }
+		add_to_variable = { influence@FROM = 25 }
+		FROM = { custom_effect_tooltip = add_25_influence }
 		hidden_effect = { FROM = { news_event = { id = 99 hours = 1 } } }
 	}
 	option = { ##no
@@ -820,6 +821,8 @@ country_event = { ##14## Dorwinion offers favored trader status
 			}
 		}
 		add_ideas = DOR_favored_trader
+		#add_to_variable = { influence@FROM = 25 }
+		#FROM = { custom_effect_tooltip = add_25_influence }
 		hidden_effect = { FROM = { news_event = { id = rfr_news.122 hours = 1 } } }
 	}
 	option = { ##no
