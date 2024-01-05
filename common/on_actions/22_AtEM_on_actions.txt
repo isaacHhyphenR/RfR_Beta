@@ -221,7 +221,10 @@ on_actions = {
 							}
 							modifier = {
 								factor = 0.1
-								has_war_support > 0.5
+								OR = {
+									has_war_support > 0.5
+									has_war = no
+								}
 							}
 							add_ideas = draft_dodging 
 							country_event = { id = stability.21 random_days = 0 }
@@ -234,7 +237,9 @@ on_actions = {
 							modifier = {
 								factor = 0.1
 								OR = {
-									has_idea_with_trait = civilian_economy
+									has_idea_with_trait = undisturbed_isolation_trait
+									has_idea_with_trait = isolation_trait
+									has_idea_with_trait = civilian_economy_trait
 								}
 							}
 							modifier = {
