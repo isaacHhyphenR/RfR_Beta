@@ -744,10 +744,12 @@ ideas = {
 		
 		disarmed_nation_isengard = {
 			picture = tree_law
-			
 			cost = @designerCost
 			removal_cost = -1
 			level = 7
+			
+			traits = { disarmed_nation_trait }
+			
 			allowed = {
 				tag = ISN
 			}
@@ -762,18 +764,18 @@ ideas = {
 		
 		volunteer_only_isengard = {
 			picture = volunteer_only
-			
 			cost = @designerCost
 			removal_cost = -1
 			level = 6
+			
 			allowed = {
 				tag = ISN
 			}
-			
-			
 			available = {
 				has_country_flag = unlocked_volunteer_only_isengard
 			}
+			
+			traits = { volunteer_only_trait }
 
 			ai_will_do = {
    				factor = 1
@@ -793,16 +795,18 @@ ideas = {
 		
 		limited_conscription_isengard = {
 			picture = limited_conscription
-					
 			cost = @designerCost
 			removal_cost = -1
 			level = 5
+			
 			allowed = {
 				tag = ISN
 			}
 			available = {
 				has_country_flag = unlocked_limited_conscription_isengard
 			}
+			
+			traits = { limited_conscription_trait }
 
 			modifier = {
 				conscription = 0.03
@@ -830,6 +834,9 @@ ideas = {
 		
 		extensive_conscription_isengard = {
 			picture = extensive_conscription
+			cost = @designerCost
+			removal_cost = -1
+			level = 4
 			
 			allowed = {
 				tag = ISN
@@ -837,6 +844,9 @@ ideas = {
 			available = {
 				has_country_flag = unlocked_extensive_conscription_isengard
 			}
+			
+			traits = { extensive_conscription_trait }
+			
 			ai_will_do = {
    				factor = 1
 				modifier = {
@@ -851,10 +861,6 @@ ideas = {
 				
 			}
 			
-			cost = @designerCost
-			removal_cost = -1
-			level = 4
-			
 			modifier = {
 				conscription = 0.06
 			}
@@ -864,12 +870,19 @@ ideas = {
 		
 		service_by_requirement_isengard = {
 			picture = service_by_requirement
+			cost = @designerCost
+			removal_cost = -1
+			level = 3
+			
 			allowed = {
 				tag = ISN
 			}
 			available = {
 				has_country_flag = unlocked_service_by_requirement_isengard
 			}
+			
+			traits = { service_by_requirement_trait }
+			
 			ai_will_do = {
    				factor = 1
 				modifier = {
@@ -889,10 +902,6 @@ ideas = {
 				}
 
 			}
-			
-			cost = @designerCost
-			removal_cost = -1
-			level = 3
 
 			modifier = {
 				conscription = 0.12
@@ -907,12 +916,19 @@ ideas = {
 		
 		all_adults_serve_isengard = {
 			picture = all_adults_serve
+			cost = @designerCost
+			removal_cost = -1
+			level = 2
+			
 			allowed = {
 				tag = ISN
 			}
 			available = {
 				has_country_flag = unlocked_all_adults_serve_isengard
 			}
+			
+			traits = { all_adults_serve_trait }
+			
 			ai_will_do = {
    				factor = 1
 				modifier = {
@@ -931,10 +947,6 @@ ideas = {
 					manpower_per_military_factory >  5000
 				}
 			}
-		
-			cost = @designerCost
-			removal_cost = -1
-			level = 2
 			
 			modifier = {
 				conscription = 0.25
@@ -950,14 +962,19 @@ ideas = {
 		
 		scraping_the_barrel_isengard = {
 			picture = scraping_the_barrel
+			cost = @designerCost
+			removal_cost = -1
+			level = 1
+			
 			allowed = {
 				tag = ISN
 			}
 			available = {
 				has_country_flag = unlocked_scraping_the_barrel_isengard
 			}
-
-
+			
+			traits = { scraping_the_barrel_trait }
+			
 			ai_will_do = {
    				factor = 1
 				modifier = {
@@ -977,10 +994,6 @@ ideas = {
 				}
 			}
 
-			cost = @designerCost
-			removal_cost = -1
-			level = 1
-
 			modifier = {
 				conscription = 0.5
 				industrial_capacity_factory = -0.4
@@ -999,13 +1012,15 @@ ideas = {
 		
 		undisturbed_isolation_isengard = {
 			picture = tree_law
+			cost = @designerCost
+			removal_cost = -1
 			
 			allowed = {
 				tag = ISN
 			}
-			cost = @designerCost
-			removal_cost = -1
-		
+			
+			traits = { undisturbed_isolation_trait }
+			
 			modifier = {
 				consumer_goods_expected_value = 0.6
 				production_speed_industrial_complex_factor = -0.6
@@ -1025,6 +1040,8 @@ ideas = {
 		
 		isolation_isengard = {
 			picture = isolation
+			cost = @designerCost
+			removal_cost = -1
 
 			allowed = {
 				tag = ISN
@@ -1032,8 +1049,8 @@ ideas = {
 			available = {
 				has_country_flag = unlocked_isolation_isengard
 			}
-			cost = @designerCost
-			removal_cost = -1
+			
+			traits = { isolation_trait }
 			
 			modifier = {
 				consumer_goods_expected_value = 0.5
@@ -1058,6 +1075,9 @@ ideas = {
 		
 		civilian_economy_isengard = {
 			picture = civilian_economy
+			cost = @designerCost
+			removal_cost = -1
+			
 			allowed = {
 				tag = ISN
 			}
@@ -1065,9 +1085,8 @@ ideas = {
 				has_country_flag = unlocked_civilian_economy_isengard
 			}
 		
-			cost = @designerCost
-			removal_cost = -1
-			
+			traits = { civilian_economy_trait }
+
 			ai_will_do = {
    				factor = 1
 				modifier = {
@@ -1090,18 +1109,18 @@ ideas = {
 		
 		low_economic_mobilisation_isengard = {
 			picture = low_economic_mobilisation
+			cost = @designerCost
+			removal_cost = -1
+			
 			allowed = {
 				tag = ISN
 			}
-			
 			available = {
 				has_country_flag = unlocked_low_economic_mobilisation_isengard
 			}
 
-			
-			cost = @designerCost
-			removal_cost = -1
-			
+			traits = { low_economic_mobilisation_trait }
+
 			modifier = {
 				consumer_goods_expected_value = 0.3
 			}
@@ -1130,17 +1149,18 @@ ideas = {
 		
 		partial_economic_mobilisation_isengard = {
 			picture = partial_economic_mobilisation
+			cost = @designerCost
+			removal_cost = -1
+			
 			allowed = {
 				tag = ISN
-			}
-			
+			}		
 			available = {
 				has_country_flag = unlocked_partial_economic_mobilisation_isengard
 			}
 
-			cost = @designerCost
-			removal_cost = -1
-			
+			traits = { partial_economic_mobilisation_trait }
+
 			modifier = {
 				consumer_goods_expected_value = 0.2
 				conscription = -0.01
@@ -1163,6 +1183,9 @@ ideas = {
 		
 		war_economy_isengard = {
 			picture = war_economy
+			cost = @designerCost
+			removal_cost = -1
+			
 			allowed = {
 				tag = ISN
 			}
@@ -1170,10 +1193,8 @@ ideas = {
 				has_country_flag = unlocked_war_economy_isengard
 			}
 
-		
-			cost = @designerCost
-			removal_cost = -1
-			
+			traits = { war_economy_trait }
+
 			modifier = {
 				consumer_goods_expected_value = 0.1
 				conscription = -0.02
@@ -1198,14 +1219,17 @@ ideas = {
 		
 		tot_economic_mobilisation_isengard = {
 			picture = tot_economic_mobilisation
+			cost = @designerCost
+			removal_cost = -1
+			
 			allowed = {
 				tag = ISN
 			}
-			
 			available = {
 				has_country_flag = unlocked_tot_economic_mobilisation_isengard
 			}
 
+			traits = { tot_economic_mobilisation_trait }
 
 			ai_will_do = {
    				factor = 1
@@ -1232,9 +1256,6 @@ ideas = {
 					}
 				}
    			}
-			
-			cost = @designerCost
-			removal_cost = -1
 			
 			modifier = {
 				consumer_goods_expected_value = 0.0
@@ -1278,15 +1299,17 @@ ideas = {
 		
 		export_focus_isengard = {
 			picture = export_focus
-			
 			cost = @designerCost
 			removal_cost = -1
+			
 			allowed = {
 				tag = isn
 			}
 			available = {
 				has_country_flag = unlocked_export_focus_isengard
 			}
+
+			traits = { export_focus_trait }
 
 			modifier = {
 				min_export = 0.5
@@ -1314,6 +1337,9 @@ ideas = {
 		
 		limited_exports_isengard = {
 			picture = limited_exports
+			cost = @designerCost
+			removal_cost = -1
+			
 			allowed = {
 				tag = ISN
 			}
@@ -1321,10 +1347,8 @@ ideas = {
 				has_country_flag = unlocked_limited_exports_isengard
 			}
 
-		
-			cost = @designerCost
-			removal_cost = -1
-			
+			traits = { limited_exports_trait }
+
 			modifier = {
 				min_export = 0.25
 				industrial_capacity_factory = 0.05
@@ -1366,22 +1390,21 @@ ideas = {
 		
 		closed_economy_isengard = {
 			picture = closed_economy
+			cost = @designerCost
+			removal_cost = -1
+			
 			allowed = {
 				tag = ISN
 			}
-			
 			available = {
 				has_country_flag = unlocked_closed_economy_isengard
 			}
 
+			traits = { closed_economy_trait }
 
 			on_add = {
 				custom_effect_tooltip = closed_economy_TT
 			}
-			
-			cost = @designerCost
-			removal_cost = -1
-			
 			
 			modifier = {
 				min_export = 0

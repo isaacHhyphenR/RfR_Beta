@@ -99,6 +99,7 @@ has_50_good_support = {
 		check_variable = { good > 0.5 }
 	}
 }
+
 has_any_level_demoralized_army = {
 	custom_trigger_tooltip = {
 		tooltip = has_any_level_demoralized_army

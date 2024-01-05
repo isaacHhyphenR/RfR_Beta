@@ -748,4 +748,58 @@ leader_traits = {
 		custom_modifier_tooltip = DOR_company_of_winter_breakthrough_tooltip
 		custom_modifier_tooltip = DOR_company_of_winter_soft_attack_tooltip
 	}
+	disarmed_nation_trait = {
+		random = no
+	}
+	volunteer_only_trait = {
+		random = no
+	}
+	limited_conscription_trait = {
+		random = no
+	}
+	extensive_conscription_trait = {
+		random = no
+	}
+	service_by_requirement_trait = {
+		random = no
+	}
+	all_adults_serve_trait = {
+		random = no
+	}
+	scraping_the_barrel_trait = {
+		random = no
+	}
+	undisturbed_isolation_trait = {
+		random = no
+	}
+	isolation_trait = {
+		random = no
+	}
+	civilian_economy_trait = {
+		random = no
+	}
+	low_economic_mobilisation_trait = {
+		random = no
+	}
+	partial_economic_mobilisation_trait = {
+		random = no
+	}
+	war_economy_trait = {
+		random = no
+	}
+	tot_economic_mobilisation_trait = {
+		random = no
+	}
+	free_trade_trait = {
+		random = no
+	}
+	export_focus_trait = {
+		random = no
+	}
+	limited_exports_trait = {
+		random = no
+	}
+	closed_economy_trait = {
+		random = no
+	}
 }

@@ -17,6 +17,7 @@ ideas = {
 				}
 			}
 			
+			traits =  { civilian_economy_trait }
 		
 			cost = 150
 			removal_cost = -1
@@ -53,6 +54,7 @@ ideas = {
 				has_war_support > 0.15
 			}
 
+			traits =  { low_economic_mobilisation_trait }
 			
 			cost = 150
 			removal_cost = -1
@@ -109,6 +111,7 @@ ideas = {
 			available = {
 				has_war_support > 0.25
 			}
+			traits = { partial_economic_mobilisation_trait }
 
 			cost = 150
 			removal_cost = -1
@@ -172,6 +175,8 @@ ideas = {
 				}
 			}
 		
+			traits =  { war_economy_trait }
+			
 			cost = 150
 			removal_cost = -1
 			
@@ -225,8 +230,6 @@ ideas = {
 					}
 				}
 			}
-			
-			
 			available = {
 				has_war = yes
 				has_war_support > 0.8
@@ -236,9 +239,10 @@ ideas = {
 						ratio > 0.5
 					}
 				}
-
 			}
 
+			traits =  { tot_economic_mobilisation_trait }
+			
 			ai_will_do = {
    				factor = 1
 
@@ -296,6 +300,8 @@ ideas = {
 			cost = 150
 			removal_cost = -1
 			
+			traits = { free_trade_trait }
+			
 			modifier = {
 				min_export = 0.8
 				industrial_capacity_factory = 0.15
@@ -327,6 +333,7 @@ ideas = {
 				}
 			}
 			
+			traits = { export_focus_trait }
 			
 			cost = 150
 			removal_cost = -1
@@ -393,8 +400,9 @@ ideas = {
 						}
 					}
 				}
-
 			}
+			
+			traits = { limited_exports_trait }
 		
 			cost = 150
 			removal_cost = -1
@@ -416,7 +424,6 @@ ideas = {
 
    				modifier = {
 					add = -1
-					
 					is_major = no
 					is_in_faction = yes
 					has_war = yes
@@ -425,7 +432,6 @@ ideas = {
 				# minors not at war should want to get the bonuses from free trade
 				modifier = {
 					add = -1
-					
 					is_major = no
 					has_war = no
 				}
@@ -453,7 +459,6 @@ ideas = {
 					has_country_leader_with_trait = ruling_steward
 				}
 			}
-			
 			available = {
 				has_war = yes
 				OR = { 
@@ -464,8 +469,9 @@ ideas = {
 					has_idea = war_economy
 					has_idea = tot_economic_mobilisation
 				}
-
 			}
+			
+			traits = { closed_economy_trait }
 			
 			cost = 150
 			removal_cost = -1

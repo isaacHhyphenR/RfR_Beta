@@ -2582,11 +2582,11 @@ leader_traits = {
 	}
 	influencing_the_election = { #Hawin Koldana (focus)
 		random = no
-		low_stability_risk = -0.15
+		low_stability_risk = -15
 	}
 	improved_influencing_the_election = { #Hawin Koldana (focus)
 		random = no
-		low_stability_risk = -0.15
+		low_stability_risk = -15
 		power_balance_weekly = 0.02
 		political_power_cost = 0.01
 	}

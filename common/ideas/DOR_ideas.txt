@@ -2279,13 +2279,16 @@ ideas = {
 		@merchantEcoLawsWarSupport = -0.1
 		
 		civilian_economy_merchants = {
-			allowed = { original_tag = DOR }
-			visible = { has_completed_focus = DOR_profit_off_our_own_wealth}
-		
 			cost = 150
 			removal_cost = -1
 			picture = civilian_economy
 			name = civilian_economy
+			
+			allowed = { original_tag = DOR }
+			visible = { has_completed_focus = DOR_profit_off_our_own_wealth}
+		
+		
+			traits = { civilian_economy_trait }
 			
 			modifier = {
 				consumer_goods_expected_value = 0.35
@@ -2308,18 +2311,18 @@ ideas = {
 		}
 		
 		low_economic_mobilisation_merchants = {
-			allowed = { original_tag = DOR }
-			visible = { has_completed_focus = DOR_profit_off_our_own_wealth}
-			
-			available = {
-				has_war_support > 0.15
-			}
-
-			
 			cost = 150
 			removal_cost = -1
 			picture = low_economic_mobilisation
 			name = low_economic_mobilisation
+			
+			allowed = { original_tag = DOR }
+			visible = { has_completed_focus = DOR_profit_off_our_own_wealth}
+			available = {
+				has_war_support > 0.15
+			}
+			traits = { low_economic_mobilisation_trait }
+
 			
 			modifier = {
 				consumer_goods_expected_value = 0.3
@@ -2354,17 +2357,18 @@ ideas = {
 		}
 		
 		partial_economic_mobilisation_merchants = {
-			allowed = { original_tag = DOR }
-			visible = { has_completed_focus = DOR_profit_off_our_own_wealth}
-			
 			cost = 150
 			removal_cost = -1
 			picture = partial_economic_mobilisation
 			name = partial_economic_mobilisation
 			
+			allowed = { original_tag = DOR }
+			visible = { has_completed_focus = DOR_profit_off_our_own_wealth}
 			available = {
 				has_war_support > 0.25
 			}
+			
+			traits = { partial_economic_mobilisation_trait }
 
 			
 			modifier = {
@@ -2394,6 +2398,8 @@ ideas = {
 		war_economy_merchants = {
 			allowed = { original_tag = DOR }
 			visible = { has_completed_focus = DOR_profit_off_our_own_wealth}
+			
+			traits = { war_economy_trait }
 			
 			cost = 150
 			removal_cost = -1
@@ -2452,14 +2458,13 @@ ideas = {
 		}
 		
 		tot_economic_mobilisation_merchants = {
-			allowed = { original_tag = DOR }
-			visible = { has_completed_focus = DOR_profit_off_our_own_wealth }
-			
 			cost = 150
 			removal_cost = -1
 			picture = tot_economic_mobilisation
 			name = tot_economic_mobilisation
 			
+			allowed = { original_tag = DOR }
+			visible = { has_completed_focus = DOR_profit_off_our_own_wealth }
 			available = {
 				has_war = yes
 				has_war_support > 0.8
@@ -2469,8 +2474,10 @@ ideas = {
 						ratio > 0.5
 					}
 				}
-
 			}
+			
+			traits = { tot_economic_mobilisation_trait }
+			
 
 			ai_will_do = {
    				factor = 1

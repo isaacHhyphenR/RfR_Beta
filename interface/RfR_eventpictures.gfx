@@ -701,6 +701,21 @@ spriteTypes = {
 		name = "GFX_news_aragorn_rallies_soldiers"
 		texturefile = "gfx/event_pictures/news_events/news_aragorn_rallies_soldiers.dds"
 	}
-
+	spriteType = {
+		name = "GFX_blade_forging"
+		texturefile = "gfx/event_pictures/blade_forging.dds"
+	}
+	spriteType = {
+		name = "GFX_elven_smiths"
+		texturefile = "gfx/event_pictures/elven_smiths.dds"
+	}
+	spriteType = {
+		name = "GFX_news_blade_forging"
+		texturefile = "gfx/event_pictures/news_events/news_blade_forging.dds"
+	}
+	spriteType = {
+		name = "GFX_news_elven_smiths"
+		texturefile = "gfx/event_pictures/news_events/news_elven_smiths.dds"
+	}
 
 }

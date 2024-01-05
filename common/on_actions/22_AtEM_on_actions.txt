@@ -197,6 +197,78 @@ on_actions = {
 			calculate_num_republics = yes
 		}
 	}
+
+	on_monthly = { #low stab events
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = crisis_in_progress }
+				}
+				#randomly determines whether to fire an event
+				random = {
+					chance = var:modifier@low_stability_risk
+					set_country_flag = crisis_in_progress
+					#randomly determines which event to fire
+					random_list = {
+						20 = { #draft dodging
+							modifier = {
+								factor = 0
+								OR = {
+									has_country_flag = draft_dodging_resolved
+									has_idea_with_trait = disarmed_nation_trait
+									has_idea_with_trait = volunteer_only_trait
+								}
+							}
+							modifier = {
+								factor = 0.1
+								has_war_support > 0.5
+							}
+							add_ideas = draft_dodging 
+							country_event = { id = stability.21 random_days = 0 }
+						}
+						20 = { #strikes
+							modifier = {
+								factor = 0
+								has_country_flag = strikes_resolved
+							}
+							modifier = {
+								factor = 0.1
+								OR = {
+									has_idea_with_trait = civilian_economy
+								}
+							}
+							modifier = {
+								factor = 0.1
+								has_stability > 0.5
+							}
+							add_ideas = strikes_1 
+							country_event = { id = stability.22 random_days = 0 }
+						}
+						20 = { #mutinies
+							modifier = {
+								factor = 0
+								has_country_flag = mutiny_resolved
+							}
+							modifier = {
+								factor = 0.1
+								has_war_support > 0.5
+							}
+							modifier = {
+								factor = 0.1
+								has_war = no
+							}
+							modifier = {
+								has_any_level_demoralized_army = yes
+								factor = 2
+							}
+							add_ideas = mutiny_1 
+							country_event = { id = stability.23 random_days = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
 	
 	on_weekly = { #Alerts comes back after being dismissed
 		effect = {

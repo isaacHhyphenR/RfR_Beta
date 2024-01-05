@@ -229,7 +229,7 @@ stability_good_modifier = {
 	industrial_capacity_dockyard = 0.20
 	consumer_goods_factor = -0.05
 	political_power_factor = 0.1
-	low_stability_risk = -0.1
+	low_stability_risk = -10
 	civil_war_ideology_threshold = 0.1
 }
 
@@ -238,7 +238,7 @@ stability_bad_modifier = {
 	industrial_capacity_factory = -0.50
 	industrial_capacity_dockyard = -0.50
 	political_power_factor = -0.2
-	low_stability_risk = 1
+	low_stability_risk = 100
 	civil_war_ideology_threshold = -0.15
 }
 

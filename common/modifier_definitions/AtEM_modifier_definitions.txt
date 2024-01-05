@@ -114,7 +114,7 @@ assassin_trait_chance_factor = {
 
 low_stability_risk = {
 	color_type = bad
-	value_type = percentage
+	value_type = percentage_in_hundred
 	precision = 2
 	category = country
 	postfix = none

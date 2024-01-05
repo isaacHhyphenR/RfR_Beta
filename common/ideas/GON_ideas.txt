@@ -553,6 +553,8 @@ ideas = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
 			
+			traits = { disarmed_nation_trait }
+			
 			cost = 150
 			removal_cost = -1
 			level = 7
@@ -568,7 +570,9 @@ ideas = {
 		volunteer_only_steward = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
-						
+			
+			traits = { volunteer_only_trait }
+			
 			cost = 150
 			removal_cost = -1
 			level = 6
@@ -595,7 +599,9 @@ ideas = {
 		limited_conscription_steward = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
-					
+			
+			traits = { limited_conscription_trait }
+			
 			cost = 150
 			removal_cost = -1
 			level = 5
@@ -628,6 +634,8 @@ ideas = {
 		extensive_conscription_steward = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
+			
+			traits = { extensive_conscription_trait }
 			
 			cost = 150
 			removal_cost = -1
@@ -665,6 +673,8 @@ ideas = {
 		service_by_requirement_steward = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
+			
+			traits = { service_by_requirement_trait }
 			
 			cost = 150
 			removal_cost = -1
@@ -722,6 +732,8 @@ ideas = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
 		
+			traits = { all_adults_serve_trait }
+			
 			cost = 150
 			removal_cost = -1
 			level = 2
@@ -770,6 +782,8 @@ ideas = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
 
+			traits = { scraping_the_barrel_trait }
+			
 			cost = 150
 			removal_cost = -1
 			level = 1
@@ -824,6 +838,8 @@ ideas = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
 		
+			traits =  { civilian_economy_trait }
+			
 			cost = 150
 			removal_cost = -1
 			picture = civilian_economy
@@ -846,6 +862,8 @@ ideas = {
 		low_economic_mobilisation_steward = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
+			
+			traits =  { low_economic_mobilisation_trait }
 			
 			available = {
 				has_war_support > 0.15
@@ -889,6 +907,8 @@ ideas = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
 			
+			traits =  { partial_economic_mobilisation_trait }
+			
 			cost = 150
 			removal_cost = -1
 			picture = partial_economic_mobilisation
@@ -921,6 +941,8 @@ ideas = {
 		war_economy_steward = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
+			
+			traits =  { war_economy_trait }
 			
 			cost = 150
 			removal_cost = -1
@@ -976,6 +998,8 @@ ideas = {
 		tot_economic_mobilisation_steward = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
+			
+			traits =  { tot_economic_mobilisation_trait }
 			
 			cost = 150
 			removal_cost = -1
@@ -1040,6 +1064,8 @@ ideas = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
 			
+			traits =  { free_trade_trait }
+			
 			cost = 150
 			removal_cost = -1
 			picture = free_trade
@@ -1064,6 +1090,8 @@ ideas = {
 		export_focus_steward = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
+			
+			traits =  { export_focus_trait }
 			
 			cost = 150
 			removal_cost = -1
@@ -1100,6 +1128,8 @@ ideas = {
 		limited_exports_steward = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
+			
+			traits =  { limited_exports_trait }
 			
 			available = {
 				OR = {
@@ -1173,6 +1203,8 @@ ideas = {
 			allowed = { original_tag = GON }
 			visible = { has_country_leader_with_trait = ruling_steward }
 			
+			traits =  { closed_economy_trait }
+			
 			cost = 150
 			removal_cost = -1
 			picture = closed_economy
@@ -1229,4 +1261,5 @@ ideas = {
 				}
    			}
 		}
+	}
 }
