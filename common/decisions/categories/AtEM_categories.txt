@@ -93,3 +93,10 @@ DOR_mercenary_category = {
 	priority = 50
 	allowed = { original_tag = DOR }
 }
+
+########################################GENERAL########################################
+crisis_category = {
+	icon = GFX_decision_category_crisis
+	priority = 99
+	allowed = { always = yes }
+}

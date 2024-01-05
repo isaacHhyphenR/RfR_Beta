@@ -53,6 +53,8 @@ ideologies = {
 			
 			drift_defence_factor = -0.3	
 			war_support_factor = -0.1
+			
+			civil_war_ideology_threshold = 0.5
 		}
 		
 		faction_modifiers = {
@@ -115,6 +117,8 @@ ideologies = {
 			army_intel_to_others = 5.0
 			navy_intel_to_others = 20.0
 			airforce_intel_to_others = 5
+			
+			civil_war_ideology_threshold = 0.5
 		}
 		
 		faction_modifiers = {
@@ -168,6 +172,8 @@ ideologies = {
 			navy_intel_to_others = 12.5
 			airforce_intel_to_others = 7.5
 			hidden_modifier = { join_faction_tension = -0.1 }
+			
+			civil_war_ideology_threshold = 0.5
 		}
 		
 		faction_modifiers = {
@@ -217,6 +223,8 @@ ideologies = {
 			navy_intel_to_others = 10.0
 			airforce_intel_to_others = 10.0
 			hidden_modifier = { join_faction_tension = -0.1 }
+			
+			civil_war_ideology_threshold = 0.5
 		}
 
 		ai_fascist = yes # uses the fascist AI behaviour
@@ -265,6 +273,8 @@ ideologies = {
 			navy_intel_to_others = 10.0
 			airforce_intel_to_others = 10.0
 			hidden_modifier = { join_faction_tension = -0.1 }
+			
+			civil_war_ideology_threshold = 0.5
 		}
 
 		ai_communist = yes # uses the fascist AI behaviour

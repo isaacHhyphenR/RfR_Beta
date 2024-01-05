@@ -3999,6 +3999,8 @@ focus_tree = {
 		}
 		available = {
 			burghers_focus_trigger = yes
+			country_exists = RUS
+			NOT = { RUS = { has_war_with = ROOT } }
 		}
 		bypass = {
 			RUS = {

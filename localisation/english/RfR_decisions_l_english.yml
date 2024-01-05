@@ -802,3 +802,5 @@
  rhovanion_influence_annex_desc: ""
  rhovanion_influence_autonomy: "Integrate [FROM.GetNameDef]"
  rhovanion_influence_autonomy_desc: ""
+ crisis_category: "Crisis"
+ melkorite_civil_war_mission: "The Melkorites Prepare a Rebellion!"

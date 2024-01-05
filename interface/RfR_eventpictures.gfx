@@ -684,5 +684,23 @@ spriteTypes = {
 		name = "GFX_news_dwarves_reject_diplomacy"
 		texturefile = "gfx/event_pictures/news_events/news_dwarves_reject_diplomacy.dds"
 	}
+############################################Just put it all together
+	spriteType = {
+		name = "GFX_aragorn_rides"
+		texturefile = "gfx/event_pictures/aragorn_rides.dds"
+	}
+	spriteType = {
+		name = "GFX_aragorn_rallies_soldiers"
+		texturefile = "gfx/event_pictures/aragorn_rallies_soldiers.dds"
+	}
+	spriteType = {
+		name = "GFX_news_aragorn_rides"
+		texturefile = "gfx/event_pictures/news_events/news_aragorn_rides.dds"
+	}
+	spriteType = {
+		name = "GFX_news_aragorn_rallies_soldiers"
+		texturefile = "gfx/event_pictures/news_events/news_aragorn_rallies_soldiers.dds"
+	}
+
 
 }

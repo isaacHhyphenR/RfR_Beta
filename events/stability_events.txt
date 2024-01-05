@@ -1,0 +1,289 @@
+﻿###########################
+#stability events
+###########################
+
+add_namespace = stability
+
+@civilWarPopularityLoss = -0.5
+
+country_event = { #Evil Civil War
+	id = stability.1
+	title = stability.1.t
+	desc = {
+		text = stability.1.dm
+		trigger = {
+			NOT = { has_government = melkorite }
+			melkorite > modifier@civil_war_ideology_threshold
+		}
+	}
+	desc = {
+		text = stability.1.dc
+		trigger = {
+			NOT = { has_government = conquest }
+			conquest > modifier@civil_war_ideology_threshold
+		}
+	}
+	desc = {
+		text = stability.1.do
+	}
+	picture = GFX_saruman_rallies_dunlendings
+	
+
+	trigger = {
+		is_government_in_exile = no # strikes etc shouldn't affect you if you are not there... 
+		has_civil_war = no
+		NOT = { has_country_flag = civil_war_preparations }
+		OR = {
+			AND = {
+				NOT = { has_government = melkorite }
+				melkorite > modifier@civil_war_ideology_threshold
+			}
+			AND = {
+				NOT = { has_government = conquest }
+				conquest > modifier@civil_war_ideology_threshold
+			}
+			AND = {
+				NOT = { has_government = opportunism }
+				opportunism > modifier@civil_war_ideology_threshold
+			}
+		}
+	}
+
+	mean_time_to_happen = { 
+		days = 30
+	}
+	
+	option = { #prepare for war
+		name = stability.1.a
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				NOT = { has_government = melkorite }
+				melkorite > modifier@civil_war_ideology_threshold
+			}
+			#activate_mission = melkorite_civil_war_mission
+			start_civil_war = {
+				ideology = melkorite
+				size = party_popularity@melkorite
+			}
+			hidden_effect = {
+				add_popularity = {
+					ideology = melkorite
+					popularity = @civilWarPopularityLoss
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_government = conquest }
+				conquest > modifier@civil_war_ideology_threshold
+			}
+			start_civil_war = {
+				ideology = conquest
+				size = party_popularity@conquest
+			}
+			hidden_effect = {
+				add_popularity = {
+					ideology = conquest
+					popularity = @civilWarPopularityLoss
+				}
+			}
+			#activate_mission = conquest_civil_war_mission
+		}
+		else_if = {
+			limit = {
+				NOT = { has_government = opportunism }
+				opportunism > modifier@civil_war_ideology_threshold
+			}
+			start_civil_war = {
+				ideology = opportunism
+				size = party_popularity@opportunism
+			}
+			hidden_effect = {
+				add_popularity = {
+					ideology = opportunism
+					popularity = @civilWarPopularityLoss
+				}
+			}
+			#activate_mission = opportunism_civil_war_mission
+		}
+		set_country_flag = ongoing_crisis
+	}
+	option = { #Give in
+		name = stability.1.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				has_government = opportunism
+				add = 200
+			}
+			modifier = { #switching to overlord's ideology
+				is_subject = yes
+				OR = {
+					AND = {
+						NOT = { has_government = melkorite }
+						melkorite > modifier@civil_war_ideology_threshold
+						overlord = { has_government = melkorite }
+					}
+					AND = {
+						NOT = { has_government = conquest }
+						conquest > modifier@civil_war_ideology_threshold
+						overlord = { has_government = conquest }
+					}
+					AND = {
+						NOT = { has_government = opportunism }
+						opportunism > modifier@civil_war_ideology_threshold
+						overlord = { has_government = opportunism }
+					}
+				}
+				add = 200
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_government = melkorite }
+				melkorite > modifier@civil_war_ideology_threshold
+			}
+			set_politics = {
+				ruling_party = melkorite
+				elections_allowed = no
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_government = conquest }
+				conquest > modifier@civil_war_ideology_threshold
+			}
+			set_politics = {
+				ruling_party = conquest
+				elections_allowed = no
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_government = opportunism }
+				opportunism > modifier@civil_war_ideology_threshold
+			}
+			set_politics = {
+				ruling_party = opportunism
+				elections_allowed = no
+			}
+		}
+	}
+}
+
+
+country_event = { #Good Civil War
+	id = stability.2
+	title = stability.2.t	
+	desc = stability.2.desc	#
+	picture = GFX_ararogn_rallies_soldiers
+
+	trigger = {
+		is_government_in_exile = no # strikes etc shouldn't affect you if you are not there... 
+		has_civil_war = no
+		NOT = { has_country_flag = civil_war_preparations }
+		OR = {
+			AND = {
+				NOT = { has_government = freedom }
+				freedom > modifier@civil_war_ideology_threshold
+			}
+			AND = {
+				NOT = { has_government = isolationism }
+				isolationism > modifier@civil_war_ideology_threshold
+			}
+		}
+	}
+
+	mean_time_to_happen = { 
+		days = 30
+	}
+	
+	option = { #prepare for war
+		name = stability.2.a
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				NOT = { has_government = freedom }
+				freedom > modifier@civil_war_ideology_threshold
+			}
+			#activate_mission = freedom_civil_war_mission
+			start_civil_war = {
+				ideology = freedom
+				size = party_popularity@freedom
+			}
+			hidden_effect = {
+				add_popularity = {
+					ideology = freedom
+					popularity = @civilWarPopularityLoss
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_government = isolationism }
+				isolationism > modifier@civil_war_ideology_threshold
+			}
+			start_civil_war = {
+				ideology = isolationism
+				size = party_popularity@isolationism
+			}
+			hidden_effect = {
+				add_popularity = {
+					ideology = isolationism
+					popularity = @civilWarPopularityLoss
+				}
+			}
+			#activate_mission = isolationism_civil_war_mission
+		}
+	}
+	option = { #Give in
+		name = stability.2.b
+		ai_chance = {
+			modifier = {
+				has_government = isolationism
+				add = 200
+			}
+			modifier = { #switching to overlord's ideology
+				is_subject = yes
+				OR = {
+					AND = {
+						NOT = { has_government = freedom }
+						freedom > modifier@civil_war_ideology_threshold
+						overlord = { has_government = freedom }
+					}
+					AND = {
+						NOT = { has_government = isolationism }
+						isolationism > modifier@civil_war_ideology_threshold
+						overlord = { has_government = isolationism }
+					}
+				}
+				add = 200
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_government = freedom }
+				freedom > modifier@civil_war_ideology_threshold
+			}
+			set_politics = {
+				ruling_party = freedom
+				elections_allowed = no
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_government = isolationism }
+				isolationism > modifier@civil_war_ideology_threshold
+			}
+			set_politics = {
+				ruling_party = isolationism
+				elections_allowed = no
+			}
+		}
+	}
+}
