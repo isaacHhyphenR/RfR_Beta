@@ -207,10 +207,6 @@ scripted_diplomatic_actions = {
 	
 		# root is the initiator of action and this is the target country
 		allowed = { #if action is valid
-			ROOT = {
-				allowed_influence_rhovanion = yes
-			}
-			is_rhovanion_tag = yes
 		}
 		visible = { #if action is visible on gui
 			NOT = {
@@ -219,6 +215,10 @@ scripted_diplomatic_actions = {
 					value = THIS
 				}
 			}
+			ROOT = {
+				allowed_influence_rhovanion = yes
+			}
+			is_rhovanion_tag = yes
 		}
 		selectable = { #if action is selectable on gui
 			has_opinion = {
@@ -341,10 +341,6 @@ scripted_diplomatic_actions = {
 	
 		# root is the initiator of action and this is the target country
 		allowed = { #if action is valid
-			ROOT = {
-				allowed_influence_rhovanion = yes
-			}
-			is_rhovanion_tag = yes
 		}
 		visible = { #if action is visible on gui
 			is_in_array = {

@@ -5,6 +5,7 @@
 add_namespace = stability
 
 @civilWarPopularityLoss = -0.5
+@canPeacefullySwitch = no
 
 country_event = { #Evil Civil War
 	id = stability.1
@@ -113,6 +114,7 @@ country_event = { #Evil Civil War
 	}
 	option = { #Give in
 		name = stability.1.b
+		trigger = { always = @canPeacefullySwitch }
 		ai_chance = {
 			factor = 0
 			modifier = {
@@ -172,8 +174,72 @@ country_event = { #Evil Civil War
 			}
 		}
 	}
+	option = { #Take their side
+		name = stability.1.c
+		trigger = { NOT = { always = @canPeacefullySwitch } }
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				NOT = { has_government = melkorite }
+				melkorite > modifier@civil_war_ideology_threshold
+			}
+			#activate_mission = melkorite_civil_war_mission
+			start_civil_war = {
+				ideology = melkorite
+				size = party_popularity@melkorite
+				hiddene_effect = { change_tag_from = ROOT }
+			}
+			custom_effect_tooltip = side_with_rebels_tooltip
+			hidden_effect = {
+				add_popularity = {
+					ideology = melkorite
+					popularity = @civilWarPopularityLoss
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_government = conquest }
+				conquest > modifier@civil_war_ideology_threshold
+			}
+			start_civil_war = {
+				ideology = conquest
+				size = party_popularity@conquest
+				hiddene_effect = { change_tag_from = ROOT }
+			}
+			custom_effect_tooltip = side_with_rebels_tooltip
+			hidden_effect = {
+				add_popularity = {
+					ideology = conquest
+					popularity = @civilWarPopularityLoss
+				}
+			}
+			#activate_mission = conquest_civil_war_mission
+		}
+		else_if = {
+			limit = {
+				NOT = { has_government = opportunism }
+				opportunism > modifier@civil_war_ideology_threshold
+			}
+			start_civil_war = {
+				ideology = opportunism
+				size = party_popularity@opportunism
+				hiddene_effect = { change_tag_from = ROOT }
+			}
+			custom_effect_tooltip = side_with_rebels_tooltip
+			hidden_effect = {
+				add_popularity = {
+					ideology = opportunism
+					popularity = @civilWarPopularityLoss
+				}
+			}
+			#activate_mission = opportunism_civil_war_mission
+		}
+		set_country_flag = ongoing_crisis
+	}
 }
-
 
 country_event = { #Good Civil War
 	id = stability.2
@@ -243,6 +309,7 @@ country_event = { #Good Civil War
 	}
 	option = { #Give in
 		name = stability.2.b
+		trigger = { always = @canPeacefullySwitch }
 		ai_chance = {
 			modifier = {
 				has_government = isolationism
@@ -284,6 +351,51 @@ country_event = { #Good Civil War
 				ruling_party = isolationism
 				elections_allowed = no
 			}
+		}
+	}	
+	option = { #Take their side
+		name = stability.2.c
+		trigger = { NOT = { always = @canPeacefullySwitch } }
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				NOT = { has_government = freedom }
+				freedom > modifier@civil_war_ideology_threshold
+			}
+			#activate_mission = freedom_civil_war_mission
+			start_civil_war = {
+				ideology = freedom
+				size = party_popularity@freedom
+				hiddene_effect = { change_tag_from = ROOT }
+			}
+			custom_effect_tooltip = side_with_rebels_tooltip
+			hidden_effect = {
+				add_popularity = {
+					ideology = freedom
+					popularity = @civilWarPopularityLoss
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_government = isolationism }
+				isolationism > modifier@civil_war_ideology_threshold
+			}
+			start_civil_war = {
+				ideology = isolationism
+				size = party_popularity@isolationism
+				hiddene_effect = { change_tag_from = ROOT }
+			}
+			custom_effect_tooltip = side_with_rebels_tooltip
+			hidden_effect = {
+				add_popularity = {
+					ideology = isolationism
+					popularity = @civilWarPopularityLoss
+				}
+			}
+			#activate_mission = isolationism_civil_war_mission
 		}
 	}
 }

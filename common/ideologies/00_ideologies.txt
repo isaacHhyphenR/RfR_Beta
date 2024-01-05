@@ -4,10 +4,12 @@ ideologies = {
 	
 		types = {
 			clanship = {
+				can_be_randomly_selected = yes
 			}
 			#communalism = {
 			#}
 			wise_monarchy = {
+				can_be_randomly_selected = yes
 			}
 			# false_stewardship = {
 				# can_be_randomly_selected = no
@@ -68,10 +70,13 @@ ideologies = {
 	
 		types = {
 			golden_clanship = { #steppe
+				can_be_randomly_selected = no
 			}
 			rightful_monarchy = {
+				can_be_randomly_selected = yes
 			}
 			feudalism = {
+				can_be_randomly_selected = yes
 			}
 			stewardship = {
 				can_be_randomly_selected = no
@@ -131,10 +136,13 @@ ideologies = {
 		
 		types = {
 			khanship = { #steppe
+				can_be_randomly_selected = no
 			}
 			tribalism = {
+				can_be_randomly_selected = yes
 			}
 			petty_monarchy = {
+				can_be_randomly_selected = yes
 			}
 			elective_monarchy_opportunism = { #dorwinion
 				can_be_randomly_selected = no
@@ -186,10 +194,13 @@ ideologies = {
 	
 		types = {
 			golden_khanship = { #steppe
+				can_be_randomly_selected = no
 			}
 			autocracy = {
+				can_be_randomly_selected = yes
 			}
 			glorious_monarchy = {
+				can_be_randomly_selected = yes
 			}
 			elective_monarchy_conquest = { #dorwinion
 				can_be_randomly_selected = no
@@ -235,10 +246,13 @@ ideologies = {
 	
 		types = {
 			shadow_khanship = { #steppe
+				can_be_randomly_selected = no
 			}
 			evil_monarchy = {
+				can_be_randomly_selected = yes
 			}
 			shadow_worship = {
+				can_be_randomly_selected = yes
 			}
 			the_eye = {
 				can_be_randomly_selected = no
