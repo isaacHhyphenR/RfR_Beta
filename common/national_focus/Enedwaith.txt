@@ -4877,7 +4877,7 @@ focus_tree = {
 @level1DevBase = 12
 @level2DevBase = 8
 @level3DevBase = 4
-@level4DevBase = 0
+@level4DevBase = 0.5 #not 0 so they'll complete trees before going on continuous
 @perStateDevAdd = 4
 
 @tier1EquipmentNum = 100

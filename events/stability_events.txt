@@ -28,6 +28,10 @@ country_event = { ##1## Evil Civil War
 	}
 	desc = {
 		text = stability.1.do
+		trigger = {
+			NOT = { has_government = opportunism }
+			opportunism > modifier@civil_war_ideology_threshold
+		}
 	}
 	picture = GFX_saruman_rallies_dunlendings
 	
@@ -70,6 +74,7 @@ country_event = { ##1## Evil Civil War
 			start_civil_war = {
 				ideology = melkorite
 				size = party_popularity@melkorite
+				set_country_flag = elected_winelord #Dorwinion
 			}
 			hidden_effect = {
 				add_popularity = {
@@ -86,6 +91,7 @@ country_event = { ##1## Evil Civil War
 			start_civil_war = {
 				ideology = conquest
 				size = party_popularity@conquest
+				set_country_flag = elected_winelord #Dorwinion
 			}
 			hidden_effect = {
 				add_popularity = {
@@ -103,6 +109,7 @@ country_event = { ##1## Evil Civil War
 			start_civil_war = {
 				ideology = opportunism
 				size = party_popularity@opportunism
+				set_country_flag = elected_winelord #Dorwinion
 			}
 			hidden_effect = {
 				add_popularity = {
@@ -191,6 +198,7 @@ country_event = { ##1## Evil Civil War
 			start_civil_war = {
 				ideology = melkorite
 				size = party_popularity@melkorite
+				set_country_flag = elected_winelord #Dorwinion
 				hidden_effect = { change_tag_from = ROOT }
 			}
 			custom_effect_tooltip = side_with_rebels_tooltip
@@ -209,6 +217,7 @@ country_event = { ##1## Evil Civil War
 			start_civil_war = {
 				ideology = conquest
 				size = party_popularity@conquest
+				set_country_flag = elected_winelord #Dorwinion
 				hidden_effect = { change_tag_from = ROOT }
 			}
 			custom_effect_tooltip = side_with_rebels_tooltip
@@ -228,6 +237,7 @@ country_event = { ##1## Evil Civil War
 			start_civil_war = {
 				ideology = opportunism
 				size = party_popularity@opportunism
+				set_country_flag = elected_winelord #Dorwinion
 				hidden_effect = { change_tag_from = ROOT }
 			}
 			custom_effect_tooltip = side_with_rebels_tooltip
@@ -245,7 +255,20 @@ country_event = { ##1## Evil Civil War
 country_event = { ##2## Good Civil War
 	id = stability.2
 	title = stability.2.t	
-	desc = stability.2.desc
+	desc = {
+		text = stability.1.di
+		trigger = {
+			NOT = { has_government = isolationism }
+			isolationism > modifier@civil_war_ideology_threshold
+		}
+	}
+	desc = {
+		text = stability.1.df
+		trigger = {
+			NOT = { has_government = freedom }
+			freedom > modifier@civil_war_ideology_threshold
+		}
+	}
 	picture = GFX_aragorn_rallies_soldiers
 
 	trigger = {
@@ -282,6 +305,7 @@ country_event = { ##2## Good Civil War
 			start_civil_war = {
 				ideology = freedom
 				size = party_popularity@freedom
+				set_country_flag = elected_great_merchant #Dorwinion
 			}
 			hidden_effect = {
 				add_popularity = {
@@ -298,6 +322,7 @@ country_event = { ##2## Good Civil War
 			start_civil_war = {
 				ideology = isolationism
 				size = party_popularity@isolationism
+				set_country_flag = elected_great_merchant #Dorwinion
 			}
 			hidden_effect = {
 				add_popularity = {
@@ -369,6 +394,7 @@ country_event = { ##2## Good Civil War
 			start_civil_war = {
 				ideology = freedom
 				size = party_popularity@freedom
+				set_country_flag = elected_great_merchant #Dorwinion
 				hidden_effect = { change_tag_from = ROOT }
 			}
 			custom_effect_tooltip = side_with_rebels_tooltip
@@ -387,6 +413,7 @@ country_event = { ##2## Good Civil War
 			start_civil_war = {
 				ideology = isolationism
 				size = party_popularity@isolationism
+				set_country_flag = elected_great_merchant #Dorwinion
 				hidden_effect = { change_tag_from = ROOT }
 			}
 			custom_effect_tooltip = side_with_rebels_tooltip

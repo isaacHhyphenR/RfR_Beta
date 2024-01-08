@@ -1,6 +1,6 @@
 name="Ride for Ruin Beta Branch"
 picture="thumbnail.png"
-version="1.01.15"
+version="1.01.16"
 tags={
 	"Map"
 	"National Focuses"

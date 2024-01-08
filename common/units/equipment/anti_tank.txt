@@ -1,7 +1,7 @@
 equipments = {
 
 	anti_tank_equipment = {
-		year = 3013
+		year = 3000
 
 		is_archetype = yes
 		picture = archetype_anti_tank_equipment		
@@ -25,6 +25,7 @@ equipments = {
 		archetype = anti_tank_equipment
 		priority = 90
 		visual_level = 0
+		
 		#Defensive Abilities
 		defense = 8 #equal to two handed
 		breakthrough = 0.7 #one hand of two handed
@@ -35,8 +36,7 @@ equipments = {
 		soft_attack = 2
 		hard_attack = 10
 		ap_attack = 23
-		air_attack = 0
-				
+
 		build_cost_ic = 0.35 #same as two handed
 		resources = {
 			iron = 1
@@ -60,14 +60,12 @@ equipments = {
 		soft_attack = 4
 		hard_attack = 15
 		ap_attack = 45
-		air_attack = 0
-				
+		
 		build_cost_ic = 0.42
 		resources = {
 			iron = 1
 			wood = 1
 		}
-		archetype = anti_tank_equipment
 		priority = 90
 		visual_level = 1
 	}

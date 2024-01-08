@@ -1,0 +1,1043 @@
+@nazgul_training_days = 100
+@sauronsFocusCost = 140
+@sauronsFocusCostStab = 0.5
+@sauronsFocusDays = 140
+
+MOR_unleash_the_darkness_category = {
+	unleash_the_darkness_against = {
+		icon = GFX_decision_oppression
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+			# modifier = { ##Don't war Dorwinion, just cause
+				# FROM = { tag = DOR }
+				# factor = 0
+			# }
+			modifier = { #don't war subjects unless you're also warring their overlord
+				FROM = {
+					is_subject = yes
+				}
+				factor = 0
+			}
+		}
+		target_trigger = {
+			FROM = { OR = { has_idea = saurons_prize_spirit has_idea = spurned_sauron } }
+		}
+		available = {
+			NOT = { has_war_with = FROM }
+			any_enemy_country = {
+				is_major = yes
+				custom_trigger_tooltip = {
+					tooltip = NOT_is_greater_enedwaith_tag_tooltip
+					is_greater_enedwaith_tag = no
+				}
+			}
+		}
+		war_with_target_on_complete = yes
+		complete_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+			every_subject_country = {
+				add_to_war = {
+					targeted_alliance = ROOT
+					enemy = FROM
+				}
+			}
+			add_named_threat = { 
+				threat = 3 
+				name = mor_unleashed_darkness
+			}
+			if = { limit = { FROM = { has_idea = saurons_prize_spirit } }
+				FROM = { remove_ideas = saurons_prize_spirit }
+			}
+			if = { limit = { FROM = { has_idea = spurned_sauron } }
+				FROM = { remove_ideas = spurned_sauron }
+			}
+		}
+	}
+}
+
+
+MOR_direct_saurons_attention_decision = {
+	the_deciever_decision = {
+		icon = GFX_decision_the_eye
+		ai_will_do = {
+			factor = 1
+		}
+		cost = @sauronsFocusCost
+		days_remove = @sauronsFocusDays
+		modifier = {
+			subjects_autonomy_gain = -2.5
+		}
+		visible = { has_completed_focus = MOR_the_deciever }
+	}
+	the_necromancer_decision = {
+		icon = GFX_decision_the_eye
+		ai_will_do = {
+			factor = 1
+		}
+		cost = @sauronsFocusCost
+		days_remove = @sauronsFocusDays
+		complete_effect = {
+			hidden_effect = { add_research_slot = 1 }
+		}
+		remove_effect = {
+			hidden_effect = { add_research_slot = -1 }
+		}
+		modifier = {
+			extra_research_slot_modifier = 1
+		}
+		visible = { has_completed_focus = MOR_the_necromancer }
+	}
+	@sauronOffMapFactories = 4
+	@sauronOffMapFactoriesNegative = -4
+	the_black_hand_decision = {
+		icon = GFX_decision_the_eye
+		ai_will_do = {
+			factor = 1
+		}
+		cost = @sauronsFocusCost
+		days_remove = @sauronsFocusDays
+		complete_effect = {
+			hidden_effect = {
+				add_offsite_building = { type = arms_factory level = @sauronOffMapFactories }
+				add_offsite_building = { type = industrial_complex level = @sauronOffMapFactories }
+			}
+		}
+		remove_effect = {
+			hidden_effect = {
+				add_offsite_building = { type = arms_factory level = @sauronOffMapFactoriesNegative }
+				add_offsite_building = { type = industrial_complex level = @sauronOffMapFactoriesNegative }
+			}
+		}
+		modifier = {
+			off_map_civs = @sauronOffMapFactories
+			off_map_mils = @sauronOffMapFactories
+		}
+		visible = { has_completed_focus = MOR_the_black_hand }
+	}
+	the_dark_lord_decision = {
+		icon = GFX_decision_the_eye
+		ai_will_do = {
+			factor = 1
+		}
+		cost = @sauronsFocusCost
+		days_remove = @sauronsFocusDays
+		modifier = {
+			army_org_regain = 1
+		}
+		visible = { has_completed_focus = MOR_the_dark_lord }
+	}
+	the_lord_of_the_rings_decision = {
+		icon = GFX_decision_the_one_ring
+		ai_will_do = {
+			factor = 1
+		}
+		days_remove = @sauronsFocusDays
+		modifier = {
+			political_power_gain = 1
+			stability_weekly = -0.05
+		}
+		visible = { has_completed_focus = MOR_the_lord_of_the_rings }
+	}
+}
+
+MOR_upgrade_nazgul_attack_category = {
+	upgrade_adunabeth_attack = {
+		icon = GFX_adunabeth_attack_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_war_support > nazgul_attack_cost
+		}
+		custom_cost_text = nazgul_attack_cost_tooltip
+		visible = { has_character = MOR_adunabeth MOR_adunabeth = {}}# attack_skill_level < 10 } }
+		available = { MOR_adunabeth= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_attack_complete_effect = yes
+			MOR_adunabeth = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_adunabeth = {
+				upgrade_nazgul_attack_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_dendra_dwar_attack = {
+		icon = GFX_dendra_dwar_attack_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_war_support > nazgul_attack_cost
+		}
+		custom_cost_text = nazgul_attack_cost_tooltip
+		visible = { has_character = MOR_dendra_dwar MOR_dendra_dwar = {}}# attack_skill_level < 10 } }
+		available = { MOR_dendra_dwar= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_attack_complete_effect = yes
+			MOR_dendra_dwar = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_dendra_dwar = {
+				upgrade_nazgul_attack_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_hoarmurath_attack = {
+		icon = GFX_hoarmurath_attack_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_war_support > nazgul_attack_cost
+		}
+		custom_cost_text = nazgul_attack_cost_tooltip
+		visible = { has_character = MOR_hoarmurath MOR_hoarmurath = {}}# attack_skill_level < 10 } }
+		available = { MOR_hoarmurath= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_attack_complete_effect = yes
+			MOR_hoarmurath = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_hoarmurath = {
+				upgrade_nazgul_attack_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_ji_indur_attack = {
+		icon = GFX_ji_indur_attack_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_war_support > nazgul_attack_cost
+		}
+		custom_cost_text = nazgul_attack_cost_tooltip
+		visible = { has_character = MOR_ji_indur MOR_ji_indur = {}}# attack_skill_level < 10 } }
+		available = { MOR_ji_indur= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_attack_complete_effect = yes
+			MOR_ji_indur = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_ji_indur = {
+				upgrade_nazgul_attack_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_khamul_attack = {
+		icon = GFX_khamul_attack_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_war_support > nazgul_attack_cost
+		}
+		custom_cost_text = nazgul_attack_cost_tooltip
+		visible = { has_character = MOR_khamul MOR_khamul = {}}# attack_skill_level < 10 } }
+		available = { MOR_khamul= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_attack_complete_effect = yes
+			MOR_khamul = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_khamul = {
+				upgrade_nazgul_attack_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_khorahil_attack = {
+		icon = GFX_khorahil_attack_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_war_support > nazgul_attack_cost
+		}
+		custom_cost_text = nazgul_attack_cost_tooltip
+		visible = { has_character = MOR_khorahil MOR_khorahil = {}}# attack_skill_level < 10 } }
+		available = { MOR_khorahil= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_attack_complete_effect = yes
+			MOR_khorahil = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_khorahil = {
+				upgrade_nazgul_attack_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_ren_iey_attack = {
+		icon = GFX_ren_iey_attack_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_war_support > nazgul_attack_cost
+		}
+		custom_cost_text = nazgul_attack_cost_tooltip
+		visible = { has_character = MOR_ren_iey MOR_ren_iey = {}}# attack_skill_level < 10 } }
+		available = { MOR_ren_iey= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_attack_complete_effect = yes
+			MOR_ren_iey = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_ren_iey = {
+				upgrade_nazgul_attack_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_uvatha_achef_attack = {
+		icon = GFX_uvatha_achef_attack_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_war_support > nazgul_attack_cost
+		}
+		custom_cost_text = nazgul_attack_cost_tooltip
+		visible = { has_character = MOR_uvatha_achef MOR_uvatha_achef = {}}# attack_skill_level < 10 } }
+		available = { MOR_uvatha_achef= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_attack_complete_effect = yes
+			MOR_uvatha_achef = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_uvatha_achef = {
+				upgrade_nazgul_attack_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_witch_king_attack = {
+		icon = GFX_witch_king_attack_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_war_support > nazgul_attack_cost
+		}
+		custom_cost_text = nazgul_attack_cost_tooltip
+		visible = {
+			has_character = MOR_witch_king
+		}
+		available = { MOR_witch_king = { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_attack_complete_effect = yes
+			MOR_witch_king = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_witch_king = {
+				upgrade_nazgul_attack_remove_character_effect = yes
+			}
+			set_variable = { witch_king_attack = MOR_witch_king.attack_skill_level }
+		}
+	}
+}
+MOR_upgrade_nazgul_defense_category = {
+	upgrade_adunabeth_defense = {
+		icon = GFX_adunabeth_defense_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_political_power > nazgul_defense_cost
+		}
+		custom_cost_text = nazgul_defense_cost_tooltip
+		visible = { has_character = MOR_adunabeth MOR_adunabeth = { defense_skill_level < 10 } }
+		available = { MOR_adunabeth= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_defense_complete_effect = yes
+			MOR_adunabeth = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_adunabeth = {
+				upgrade_nazgul_defense_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_dendra_dwar_defense = {
+		icon = GFX_dendra_dwar_defense_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_political_power > nazgul_defense_cost
+		}
+		custom_cost_text = nazgul_defense_cost_tooltip
+		visible = { has_character = MOR_dendra_dwar MOR_dendra_dwar = { defense_skill_level < 10 } }
+		available = { MOR_dendra_dwar= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_defense_complete_effect = yes
+			MOR_dendra_dwar = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_dendra_dwar = {
+				upgrade_nazgul_defense_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_hoarmurath_defense = {
+		icon = GFX_hoarmurath_defense_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_political_power > nazgul_defense_cost
+		}
+		custom_cost_text = nazgul_defense_cost_tooltip
+		visible = { has_character = MOR_hoarmurath MOR_hoarmurath = { defense_skill_level < 10 } }
+		available = { MOR_hoarmurath= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_defense_complete_effect = yes
+			MOR_hoarmurath = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_hoarmurath = {
+				upgrade_nazgul_defense_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_ji_indur_defense = {
+		icon = GFX_ji_indur_defense_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_political_power > nazgul_defense_cost
+		}
+		custom_cost_text = nazgul_defense_cost_tooltip
+		visible = { has_character = MOR_ji_indur MOR_ji_indur = { defense_skill_level < 10 } }
+		available = { MOR_ji_indur= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_defense_complete_effect = yes
+			MOR_ji_indur = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_ji_indur = {
+				upgrade_nazgul_defense_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_khamul_defense = {
+		icon = GFX_khamul_defense_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_political_power > nazgul_defense_cost
+		}
+		custom_cost_text = nazgul_defense_cost_tooltip
+		visible = { has_character = MOR_khamul MOR_khamul = { defense_skill_level < 10 } }
+		available = { MOR_khamul= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_defense_complete_effect = yes
+			MOR_khamul = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_khamul = {
+				upgrade_nazgul_defense_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_khorahil_defense = {
+		icon = GFX_khorahil_defense_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_political_power > nazgul_defense_cost
+		}
+		custom_cost_text = nazgul_defense_cost_tooltip
+		visible = { has_character = MOR_khorahil MOR_khorahil = { defense_skill_level < 10 } }
+		available = { MOR_khorahil= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_defense_complete_effect = yes
+			MOR_khorahil = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_khorahil = {
+				upgrade_nazgul_defense_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_ren_iey_defense = {
+		icon = GFX_ren_iey_defense_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_political_power > nazgul_defense_cost
+		}
+		custom_cost_text = nazgul_defense_cost_tooltip
+		visible = { has_character = MOR_ren_iey MOR_ren_iey = { defense_skill_level < 10 } }
+		available = { MOR_ren_iey= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_defense_complete_effect = yes
+			MOR_ren_iey = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_ren_iey = {
+				upgrade_nazgul_defense_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_uvatha_achef_defense = {
+		icon = GFX_uvatha_achef_defense_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_political_power > nazgul_defense_cost
+		}
+		custom_cost_text = nazgul_defense_cost_tooltip
+		visible = { has_character = MOR_uvatha_achef MOR_uvatha_achef = { defense_skill_level < 10 } }
+		available = { MOR_uvatha_achef= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_defense_complete_effect = yes
+			MOR_uvatha_achef = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_uvatha_achef = {
+				upgrade_nazgul_defense_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_witch_king_defense = {
+		icon = GFX_witch_king_defense_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_political_power > nazgul_defense_cost
+		}
+		custom_cost_text = nazgul_defense_cost_tooltip
+		visible = { has_character = MOR_witch_king MOR_witch_king = { defense_skill_level < 10 } }
+		available = { MOR_witch_king= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_defense_complete_effect = yes
+			MOR_witch_king = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_witch_king = {
+				upgrade_nazgul_defense_remove_character_effect = yes
+			}
+		}
+	}
+}
+MOR_upgrade_nazgul_logistics_category = {
+	upgrade_adunabeth_logistics = {
+		icon = GFX_adunabeth_logistics_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			command_power > nazgul_logistics_cost
+		}
+		custom_cost_text = nazgul_logistics_cost_tooltip
+		visible = { has_character = MOR_adunabeth MOR_adunabeth = { logistics_skill_level < 10 } }
+		available = { MOR_adunabeth= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_logistics_complete_effect = yes
+			MOR_adunabeth = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_adunabeth = {
+				upgrade_nazgul_logistics_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_dendra_dwar_logistics = {
+		icon = GFX_dendra_dwar_logistics_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			command_power > nazgul_logistics_cost
+		}
+		custom_cost_text = nazgul_logistics_cost_tooltip
+		visible = { has_character = MOR_dendra_dwar MOR_dendra_dwar = { logistics_skill_level < 10 } }
+		available = { MOR_dendra_dwar= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_logistics_complete_effect = yes
+			MOR_dendra_dwar = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_dendra_dwar = {
+				upgrade_nazgul_logistics_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_hoarmurath_logistics = {
+		icon = GFX_hoarmurath_logistics_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			command_power > nazgul_logistics_cost
+		}
+		custom_cost_text = nazgul_logistics_cost_tooltip
+		visible = { has_character = MOR_hoarmurath MOR_hoarmurath = { logistics_skill_level < 10 } }
+		available = { MOR_hoarmurath= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_logistics_complete_effect = yes
+			MOR_hoarmurath = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_hoarmurath = {
+				upgrade_nazgul_logistics_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_ji_indur_logistics = {
+		icon = GFX_ji_indur_logistics_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			command_power > nazgul_logistics_cost
+		}
+		custom_cost_text = nazgul_logistics_cost_tooltip
+		visible = { has_character = MOR_ji_indur MOR_ji_indur = { logistics_skill_level < 10 } }
+		available = { MOR_ji_indur= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_logistics_complete_effect = yes
+			MOR_ji_indur = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_ji_indur = {
+				upgrade_nazgul_logistics_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_khamul_logistics = {
+		icon = GFX_khamul_logistics_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			command_power > nazgul_logistics_cost
+		}
+		custom_cost_text = nazgul_logistics_cost_tooltip
+		visible = { has_character = MOR_khamul MOR_khamul = { logistics_skill_level < 10 } }
+		available = { MOR_khamul= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_logistics_complete_effect = yes
+			MOR_khamul = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_khamul = {
+				upgrade_nazgul_logistics_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_khorahil_logistics = {
+		icon = GFX_khorahil_logistics_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			command_power > nazgul_logistics_cost
+		}
+		custom_cost_text = nazgul_logistics_cost_tooltip
+		visible = { has_character = MOR_khorahil MOR_khorahil = { logistics_skill_level < 10 } }
+		available = { MOR_khorahil= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_logistics_complete_effect = yes
+			MOR_khorahil = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_khorahil = {
+				upgrade_nazgul_logistics_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_ren_iey_logistics = {
+		icon = GFX_ren_iey_logistics_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			command_power > nazgul_logistics_cost
+		}
+		custom_cost_text = nazgul_logistics_cost_tooltip
+		visible = { has_character = MOR_ren_iey MOR_ren_iey = { logistics_skill_level < 10 } }
+		available = { MOR_ren_iey= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_logistics_complete_effect = yes
+			MOR_ren_iey = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_ren_iey = {
+				upgrade_nazgul_logistics_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_uvatha_achef_logistics = {
+		icon = GFX_uvatha_achef_logistics_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			command_power > nazgul_logistics_cost
+		}
+		custom_cost_text = nazgul_logistics_cost_tooltip
+		visible = { has_character = MOR_uvatha_achef MOR_uvatha_achef = { logistics_skill_level < 10 } }
+		available = { MOR_uvatha_achef= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_logistics_complete_effect = yes
+			MOR_uvatha_achef = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_uvatha_achef = {
+				upgrade_nazgul_logistics_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_witch_king_logistics = {
+		icon = GFX_witch_king_logistics_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			command_power > nazgul_logistics_cost
+		}
+		custom_cost_text = nazgul_logistics_cost_tooltip
+		visible = { has_character = MOR_witch_king MOR_witch_king = { logistics_skill_level < 10 } }
+		available = { MOR_witch_king= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_logistics_complete_effect = yes
+			MOR_witch_king = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_witch_king = {
+				upgrade_nazgul_logistics_remove_character_effect = yes
+			}
+		}
+	}
+}
+MOR_upgrade_nazgul_planning_category = {
+	upgrade_adunabeth_planning = {
+		icon = GFX_adunabeth_planning_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_army_experience > nazgul_planning_cost
+		}
+		custom_cost_text = nazgul_planning_cost_tooltip
+		visible = { has_character = MOR_adunabeth MOR_adunabeth = { planning_skill_level < 10 } }
+		available = { MOR_adunabeth= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_planning_complete_effect = yes
+			MOR_adunabeth = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_adunabeth = {
+				upgrade_nazgul_planning_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_dendra_dwar_planning = {
+		icon = GFX_dendra_dwar_planning_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_army_experience > nazgul_planning_cost
+		}
+		custom_cost_text = nazgul_planning_cost_tooltip
+		visible = { has_character = MOR_dendra_dwar MOR_dendra_dwar = { planning_skill_level < 10 } }
+		available = { MOR_dendra_dwar= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_planning_complete_effect = yes
+			MOR_dendra_dwar = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_dendra_dwar = {
+				upgrade_nazgul_planning_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_hoarmurath_planning = {
+		icon = GFX_hoarmurath_planning_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_army_experience > nazgul_planning_cost
+		}
+		custom_cost_text = nazgul_planning_cost_tooltip
+		visible = { has_character = MOR_hoarmurath MOR_hoarmurath = { planning_skill_level < 10 } }
+		available = { MOR_hoarmurath= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_planning_complete_effect = yes
+			MOR_hoarmurath = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_hoarmurath = {
+				upgrade_nazgul_planning_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_ji_indur_planning = {
+		icon = GFX_ji_indur_planning_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_army_experience > nazgul_planning_cost
+		}
+		custom_cost_text = nazgul_planning_cost_tooltip
+		visible = { has_character = MOR_ji_indur MOR_ji_indur = { planning_skill_level < 10 } }
+		available = { MOR_ji_indur= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_planning_complete_effect = yes
+			MOR_ji_indur = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_ji_indur = {
+				upgrade_nazgul_planning_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_khamul_planning = {
+		icon = GFX_khamul_planning_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_army_experience > nazgul_planning_cost
+		}
+		custom_cost_text = nazgul_planning_cost_tooltip
+		visible = { has_character = MOR_khamul MOR_khamul = { planning_skill_level < 10 } }
+		available = { MOR_khamul= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_planning_complete_effect = yes
+			MOR_khamul = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_khamul = {
+				upgrade_nazgul_planning_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_khorahil_planning = {
+		icon = GFX_khorahil_planning_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_army_experience > nazgul_planning_cost
+		}
+		custom_cost_text = nazgul_planning_cost_tooltip
+		visible = { has_character = MOR_khorahil MOR_khorahil = { planning_skill_level < 10 } }
+		available = { MOR_khorahil= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_planning_complete_effect = yes
+			MOR_khorahil = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_khorahil = {
+				upgrade_nazgul_planning_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_ren_iey_planning = {
+		icon = GFX_ren_iey_planning_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_army_experience > nazgul_planning_cost
+		}
+		custom_cost_text = nazgul_planning_cost_tooltip
+		visible = { has_character = MOR_ren_iey MOR_ren_iey = { planning_skill_level < 10 } }
+		available = { MOR_ren_iey= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_planning_complete_effect = yes
+			MOR_ren_iey = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_ren_iey = {
+				upgrade_nazgul_planning_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_uvatha_achef_planning = {
+		icon = GFX_uvatha_achef_planning_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_army_experience > nazgul_planning_cost
+		}
+		custom_cost_text = nazgul_planning_cost_tooltip
+		visible = { has_character = MOR_uvatha_achef MOR_uvatha_achef = { planning_skill_level < 10 } }
+		available = { MOR_uvatha_achef= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_planning_complete_effect = yes
+			MOR_uvatha_achef = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_uvatha_achef = {
+				upgrade_nazgul_planning_remove_character_effect = yes
+			}
+		}
+	}
+	upgrade_witch_king_planning = {
+		icon = GFX_witch_king_planning_decision
+		ai_will_do = {
+			factor = 0
+		}
+		custom_cost_trigger = {
+			has_army_experience > nazgul_planning_cost
+		}
+		custom_cost_text = nazgul_planning_cost_tooltip
+		visible = { has_character = MOR_witch_king MOR_witch_king = { planning_skill_level < 10 } }
+		available = { MOR_witch_king= { NOT = { is_being_trained = yes } } }
+		days_remove = @nazgul_training_days
+		complete_effect = {
+			upgrade_nazgul_planning_complete_effect = yes
+			MOR_witch_king = { upgrade_nazgul_skill_complete_character_effect = yes }
+		}
+		remove_effect = {
+			MOR_witch_king = {
+				upgrade_nazgul_planning_remove_character_effect = yes
+			}
+		}
+	}
+}
+
+
+@sauronBorderWarPrepDays = 30
+@ithilienBorderWarCost = 20
+rfr_border_war_category = {
+	ithilien_border_war = {
+		icon = GFX_decision_border_war
+		fire_only_once = yes
+		allowed = { tag = MOR }
+		visible = { has_completed_focus = MOR_probe_ithilien_garrisons }
+		available = {
+			ROOT = {
+				custom_trigger_tooltip = { tooltip = not_preparing_border_war_tooltip NOT = { has_country_flag = preparing_border_war } }
+				has_border_war = no
+			}
+		}
+		custom_cost_trigger = {
+			command_power > @ithilienBorderWarCost
+		}
+		custom_cost_text = ithilien_border_war_cost_tooltip
+		ai_will_do = {
+			factor = 5
+		}
+		days_remove = @sauronBorderWarPrepDays
+		war_with_on_remove = GON
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				has_state_flag = ithilien_state
+				OWNER = {
+					can_ROOT_get_wargoal_on_THIS = yes
+				}
+				any_neighbor_state = {
+					is_owned_by = ROOT
+					impassable = no
+				}
+			}
+		}
+		complete_effect = {
+			FROM = { save_global_event_target_as = ithilien_border_state }
+			set_country_flag = preparing_border_war
+			add_named_threat = {
+				threat = 1
+				name = ithilien_border_war_threat_tooltip
+			}
+			hidden_effect = { add_command_power = @ithilienBorderWarCost }
+		}
+		remove_effect = {
+			clr_country_flag = preparing_border_war
+			random_owned_controlled_state = {
+				prioritize = { 165 } #Morgul Vale
+				limit = { any_neighbor_state = { state = FROM } impassable = no }
+				start_border_war = {
+					change_state_after_war = no
+					attacker = {
+						state = THIS
+						num_provinces = 4
+						on_win = rfr_border_war.4
+						on_lose = rfr_border_war.5
+						on_cancel = rfr_border_war.6
+					}
+								
+					defender = {
+						state = FROM
+						num_provinces = 4
+						on_win = rfr_border_war.5
+						on_lose = rfr_border_war.4
+						on_cancel = rfr_border_war.6
+					}
+				}
+			}
+		}
+	}
+	ithilien_border_war_warning = {
+		icon = GFX_decision_border_war
+		is_good = no
+		fire_only_once = no
+		days_mission_timeout = 29
+		allowed = { tag = GON }
+		activation = {
+			MOR = { has_country_flag = preparing_border_war }
+		}
+		war_with_on_remove = MOR
+		available = { hidden_trigger = { always = no } }
+		highlight_states = {
+			highlight_state_targets = {
+				state = event_target:ithilien_border_state
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+	}
+}
+

@@ -8,12 +8,6 @@ ideologies = {
 			}
 			#communalism = {
 			#}
-			wise_monarchy = {
-				can_be_randomly_selected = yes
-			}
-			# false_stewardship = {
-				# can_be_randomly_selected = no
-			# }
 			stewardship_isolation = {
 				can_be_randomly_selected = no
 			}
@@ -23,6 +17,12 @@ ideologies = {
 			republic_isolationism = { #dorwinion
 				can_be_randomly_selected = no
 			}
+			wise_monarchy = {
+				can_be_randomly_selected = yes
+			}
+			# false_stewardship = {
+				# can_be_randomly_selected = no
+			# }
 		}
 
 		dynamic_faction_names = {
@@ -77,9 +77,6 @@ ideologies = {
 			rightful_monarchy = {
 				can_be_randomly_selected = yes
 			}
-			feudalism = {
-				can_be_randomly_selected = yes
-			}
 			stewardship = {
 				can_be_randomly_selected = no
 			}
@@ -88,6 +85,9 @@ ideologies = {
 			}
 			republic_freedom = { #dorwinion
 				can_be_randomly_selected = no
+			}
+			feudalism = {
+				can_be_randomly_selected = yes
 			}
 		}
 		
@@ -145,14 +145,14 @@ ideologies = {
 			tribalism = {
 				can_be_randomly_selected = yes
 			}
-			petty_monarchy = {
-				can_be_randomly_selected = yes
-			}
 			elective_monarchy_opportunism = { #dorwinion
 				can_be_randomly_selected = no
 			}
 			corrupt_republic = {
 				can_be_randomly_selected = no
+			}
+			petty_monarchy = {
+				can_be_randomly_selected = yes
 			}
 		}
 		
@@ -199,6 +199,12 @@ ideologies = {
 	conquest = {
 	
 		types = {
+			elective_monarchy_conquest = { #dorwinion
+				can_be_randomly_selected = no
+			}
+			plutocracy = {
+				can_be_randomly_selected = no
+			}
 			golden_khanship = { #steppe
 				can_be_randomly_selected = no
 			}
@@ -207,12 +213,6 @@ ideologies = {
 			}
 			glorious_monarchy = {
 				can_be_randomly_selected = yes
-			}
-			elective_monarchy_conquest = { #dorwinion
-				can_be_randomly_selected = no
-			}
-			plutocracy = {
-				can_be_randomly_selected = no
 			}
 		}
 		
@@ -253,6 +253,9 @@ ideologies = {
 	melkorite = {
 	
 		types = {
+			elective_monarchy_melkorite = { #dorwinion
+				can_be_randomly_selected = no
+			}
 			shadow_khanship = { #steppe
 				can_be_randomly_selected = no
 			}
@@ -263,9 +266,6 @@ ideologies = {
 				can_be_randomly_selected = yes
 			}
 			the_eye = {
-				can_be_randomly_selected = no
-			}
-			elective_monarchy_melkorite = { #dorwinion
 				can_be_randomly_selected = no
 			}
 

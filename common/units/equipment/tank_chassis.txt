@@ -714,7 +714,7 @@ equipments = {
 
 		fuel_consumption = 0
 		maximum_speed = 3.5
-		breakthrough = 10
+		breakthrough = 15
 		build_cost_ic = 8
 		reliability = 1
 		armor_value = 45
@@ -907,7 +907,7 @@ equipments = {
 
 		fuel_consumption = 0
 		maximum_speed = 4
-		breakthrough = 16
+		breakthrough = 45
 		build_cost_ic = 12
 		reliability = 0.75
 		armor_value = 90
@@ -933,7 +933,7 @@ equipments = {
 	}
 	super_heavy_tank_chassis_2 = {
 		abbreviation = "mk2"
-		derived_variant_name = super_heavy_tank_equipment_1
+		derived_variant_name = super_heavy_tank_equipment_2
 		visual_level = 1
 		year = 3018
 		archetype = super_heavy_tank_chassis
@@ -1017,13 +1017,13 @@ equipments = {
 	}
 	super_heavy_tank_chassis_3 = {
 		abbreviation = "mk3"
-		derived_variant_name = super_heavy_tank_equipment_1
+		derived_variant_name = super_heavy_tank_equipment_3
 		visual_level = 2
 		year = 3022
 		archetype = super_heavy_tank_chassis
 		priority = 2000
-		module_slots = inherit
 		parent = super_heavy_tank_chassis_2
+		module_slots = inherit
 		
 		maximum_speed = 4.25
 		build_cost_ic = 20
