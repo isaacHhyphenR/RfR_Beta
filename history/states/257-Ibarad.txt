@@ -9,18 +9,29 @@ state = {
 		cloth = 16
 		mounts = 6
 	}
-	provinces = {
+	provinces = { #41
 		682 784 839 989 1180 1428 1564 1662 1740 1813 1850 2016 2082 2225 2532 2603 2622 2782 3419 3694 4229 4659 5064 5175 5246 5861 5873 5912 5913 5914 5919 5928 5967 5987 6001 6028 6068 6098 8711 11706 
 	}
 	history = {
 		owner = LGA
 		add_core_of = LGA
-		set_variable = { historical_capital_for_country = LGA }
 		buildings = {
 			infrastructure = 1
 			industrial_complex = 1
 		}
-
+		#10
+		victory_points = { #Dyshem
+			1662 4
+		}
+		victory_points = { #Makovica
+			6001 3
+		}
+		victory_points = { #Kadalot
+			5913 2
+		}
+		victory_points = { #Sadvar
+			2016 1
+		}
 	}
 }
 

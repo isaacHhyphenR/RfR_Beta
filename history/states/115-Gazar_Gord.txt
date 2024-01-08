@@ -4,6 +4,7 @@ state = {
 	manpower = 1189706
 	state_category = Rural
 	
+	#51
 	provinces = {
 		46 93 195 202 232 357 542 573 748 873 1088 1096 1248 1329 1394 1477 1506 1604 1661 1798 1958 2058 2081 2297 2561 3671 3764 4480 4737 4761 5122 5300 5360 5364 5369 5393 5409 5419 5473 5962 5966 5980 5991 6014 6035 6039 6043 6050 6058 6113 
 	}
@@ -20,6 +21,25 @@ state = {
 			infrastructure = 3
 			industrial_complex = 1
 			market = 1
+			1506 = {
+				naval_base = 2
+			}
+		}
+		#12
+		victory_points = { #Kugavod
+			1506 7
+		}
+		victory_points = { #Drugavod
+			5122 1
+		}
+		victory_points = { #Eryribor
+			1477 2
+		}
+		victory_points = { #Khuba
+			1088 1
+		}
+		victory_points = { #Alá
+			3671 2
 		}
 ##########################################TRADE
 		set_variable = { upstream_node = 116 } #riavod

@@ -2,6 +2,11 @@
 state={
 	id=108
 	name="STATE_108"
+	provinces={ #46
+		66 119 183 244 341 531 568 595 709 742 798 964 1645 1815 1826 1846 3119 3161 3205 3584 3596 3774 3788 3890 4294 4679 4698 4707 4716 5034 5130 5188 5235 5298 5743 5757 5765 5766 5776 5796 5813 5817 5842 5856 5870 
+	}
+	manpower=1257180
+	state_category=rural
 	resources={
 		food=9.000
 		cloth=14.000
@@ -12,31 +17,25 @@ state={
 	history={
 		owner = LGA
 		add_core_of = LGA
-		victory_points = {
-			595 5 
+		#12
+		victory_points = { #Hoorzakar
+			709 4 
 		}
-		victory_points = {
-			2525 3 
+		victory_points = { #Canagas
+			3119 3
 		}
-		victory_points = {
-			1645 2 
+		victory_points = { #Rynok Das
+			5765 2
 		}
-		victory_points = {
-			5776 1 
+		victory_points = { #Kyzandar
+			1846 2
+		}
+		victory_points = { #Oran Kadar
+			5776 1
 		}
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
-
 		}
-
 	}
-
-	provinces={
-		66 119 183 244 341 531 568 595 709 742 798 964 1645 1815 1826 1846 3119 3161 3205 3584 3596 3774 3788 3890 4294 4679 4698 4707 4716 5034 5130 5188 5235 5298 5743 5757 5765 5766 5776 5796 5813 5817 5842 5856 5870 
-	}
-	manpower=1257180
-	buildings_max_level_factor=1.000
-	state_category=rural
-	local_supplies=0.000
 }
