@@ -1,12 +1,13 @@
 
-state={
-	id=125
-	name="STATE_125"
-	resources={
-		mounts=1.000
+state = {
+	id = 125
+	name = "STATE_125"
+	resources = {
+		iron = 6
+		mounts = 6
 	}
 
-	history={
+	history = {
 		owner = SAG
 		add_core_of = SAG
 		victory_points = {
@@ -16,17 +17,18 @@ state={
 			6920 1 
 		}
 		buildings = {
-			infrastructure = 0
-
+			infrastructure = 1
 		}
 
 	}
 
-	provinces={
+	provinces = {
 		429 911 923 963 1614 1619 1729 1772 2154 2323 2698 2834 2951 3112 3143 3244 3387 3500 3587 3730 3763 3861 4011 4046 4095 4102 4111 4184 4194 4239 4543 4863 5283 6755 6758 6816 6824 6854 6864 6874 6880 6891 6909 6920 6923 10788 12561 
 	}
-	manpower=83000
-	buildings_max_level_factor=1.000
-	state_category=pastoral
-	local_supplies=0.000
+	manpower = 807653
+	buildings_max_level_factor = 1.000
+	state_category = Pastoral
+	local_supplies = 0.000
 }
+
+

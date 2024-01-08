@@ -1,23 +1,28 @@
 
-state={
-	id=247
-	name="STATE_247"
+state = {
+	id = 247
+	name = "STATE_247"
 
-	history={
+	history = {
 		owner = LGA
 		add_core_of = LGA
 		buildings = {
 			infrastructure = 1
-
 		}
 
 	}
 
-	provinces={
+	provinces = {
 		664 824 831 1228 1239 1375 2155 2501 2613 3036 3058 3105 3159 3540 3591 3934 3973 4002 4072 4189 4675 4841 5385 5395 5518 5941 6080 6112 6114 6125 6143 6160 6181 6187 6194 6211 6237 6261 
 	}
-	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
+	manpower = 901120
+	buildings_max_level_factor = 1.000
+	state_category = Pastoral
+	local_supplies = 0.000
+	resources = {
+		wood = 13
+
+	}
 }
+
+

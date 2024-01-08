@@ -1,18 +1,16 @@
-state={
-	id=128
-	name="STATE_128"
-	manpower=3721000
-	state_category=large_city
-	provinces={
+state = {
+	id = 128
+	name = "STATE_128"
+	manpower = 2505051
+	state_category = Large_Town
+	provinces = {
 		282 338 348 506 876 1700 2130 2251 2322 2342 2494 2791 3064 3261 3667 4179 4330 4395 4483 4814 5219 6539 6552 6553 6655 6693 6717 
 	}
-	resources={
-		food=2.000
-		cloth=4.000
-		iron=12.000
+	resources = {
+		food = 16
 	}
 
-	history={
+	history = {
 		owner = SAG
 		add_core_of = SAG
 		victory_points = {
@@ -23,7 +21,9 @@ state={
 		}
 		buildings = {
 			infrastructure = 3
-			industrial_complex = 3
+			arms_factory = 1
+			dockyard = 1
+			industrial_complex = 1
 			market = 1
 		}
 ##########################################TRADE
@@ -37,3 +37,5 @@ state={
 		add_dynamic_modifier = { modifier = market_modifiers }
 	}
 }
+
+

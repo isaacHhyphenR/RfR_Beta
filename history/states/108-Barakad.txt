@@ -3,8 +3,10 @@ state={
 	id=108
 	name="STATE_108"
 	resources={
-		food=4.000
-		mounts=6.000
+		food=9.000
+		cloth=14.000
+		wood=5.000
+		mounts=4.000
 	}
 
 	history={
@@ -23,17 +25,17 @@ state={
 			5776 1 
 		}
 		buildings = {
-			infrastructure = 1
-			arms_factory = 1
+			infrastructure = 2
+			industrial_complex = 1
 
 		}
 
 	}
 
 	provinces={
-		66 119 183 244 341 531 595 709 742 798 964 1645 1815 1826 1846 3119 3161 3205 3584 3596 3774 3788 3890 4294 4679 4698 4707 4716 5034 5130 5188 5235 5298 5743 5757 5765 5766 5776 5796 5813 5817 5842 5856 5870 
+		66 119 183 244 341 531 568 595 709 742 798 964 1645 1815 1826 1846 3119 3161 3205 3584 3596 3774 3788 3890 4294 4679 4698 4707 4716 5034 5130 5188 5235 5298 5743 5757 5765 5766 5776 5796 5813 5817 5842 5856 5870 
 	}
-	manpower=604000
+	manpower=1257180
 	buildings_max_level_factor=1.000
 	state_category=rural
 	local_supplies=0.000

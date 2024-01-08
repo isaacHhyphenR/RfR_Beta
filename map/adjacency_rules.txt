@@ -46,7 +46,7 @@ adjacency_rule = {
 	
 	required_provinces = { 2594 3529 }
 	
-	icon = 8223
+	icon = 12500
 	offset = { 18 0 1 }
 }
 
@@ -80,7 +80,7 @@ adjacency_rule = {
 	
 	required_provinces = { 4218 1546 7452 }
 	
-	icon = 8457
+	icon = 12734
 	offset = { 24 0 8 }
 }
 
@@ -114,7 +114,7 @@ adjacency_rule = {
 	
 	required_provinces = { 7442 7437 3314 1438 }
 	
-	icon = 8652
+	icon = 12929
 	offset = { -28 0 -3 }
 }
 
@@ -148,7 +148,7 @@ adjacency_rule = {
 	
 	required_provinces = { 7471 7466 3559 3040 }
 	
-	icon = 8312
+	icon = 12589
 	offset = { 26 0 21 }
 }
 
@@ -216,7 +216,7 @@ adjacency_rule = {
 	
 	required_provinces = { 4722 7435 7415 7410 7455 5087 7434 7420 }
 	
-	icon = 8573
+	icon = 12850
 	offset = { -29 0 -19 }
 }
 
@@ -250,7 +250,7 @@ adjacency_rule = {
 	
 	required_provinces = { 4209 7377 4634 3687 7411 7391 4643 }
 	
-	icon = 8254
+	icon = 12531
 	offset = { -10 0 -15 }
 }
 
@@ -284,7 +284,7 @@ adjacency_rule = {
 	
 	required_provinces = { 3560 7320 2472 5252 7240 5067 462 3385 7300 4318 2652 }
 	
-	icon = 8470
+	icon = 12747
 	offset = { -8 0 -39 }
 }
 
@@ -320,7 +320,7 @@ adjacency_rule = {
 	
 	required_provinces = { 4843 2337 3757 7182 5039 7210 7201 1511 7189 }
 	
-	icon = 8378
+	icon = 12655
 	offset = { -11 0 -12 }
 }
 
@@ -354,7 +354,7 @@ adjacency_rule = {
 	
 	required_provinces = { 7151 7133 7176 2918 4174 7126 }
 	
-	icon = 8464
+	icon = 12741
 	offset = { -2 0 -12 }
 }
 
@@ -419,9 +419,9 @@ adjacency_rule = {
 		trade = yes
 	}
 	
-	required_provinces = { 4825 5261 7052 4023 7049 7037 }
+	required_provinces = { 4825 5261 7052 4023 7049 }
 	
-	icon = 8568
+	icon = 12845
 	offset = { 39 0 -12 }
 }
 
@@ -455,7 +455,7 @@ adjacency_rule = {
 	
 	required_provinces = { 1049 7051 699 3128 2467 6983 2792 3677 4642 3394 973 }
 	
-	icon = 8585
+	icon = 12862
 	offset = { 4 0 -24 }
 }
 
@@ -494,7 +494,7 @@ adjacency_rule = { #lond daer
 	
 	required_provinces = { 1684 6694 }
 	
-	icon = 8033
+	icon = 12310
 	offset = { -13 0 -18 }
 }
 adjacency_rule = { #fordh maru
@@ -527,7 +527,7 @@ adjacency_rule = { #fordh maru
 	
 	required_provinces = { 2671 3454 }
 	
-	icon = 8101
+	icon = 12378
 	offset = { 9 0 19 }
 }
 adjacency_rule = { #tharbad
@@ -560,7 +560,7 @@ adjacency_rule = { #tharbad
 	
 	required_provinces = { 1720 4397 }
 	
-	icon = 8184
+	icon = 12461
 	offset = { 22 0 20 }
 }
 
@@ -595,7 +595,7 @@ adjacency_rule = {
 		
 	required_provinces = { 1631 1879 7763 }
 	
-	icon = 8341
+	icon = 12618
 	offset = { -9 0 -4 }
 }
 
@@ -630,6 +630,6 @@ adjacency_rule = {
 		
 	required_provinces = { 5105 6013 }
 	
-	icon = 8620
+	icon = 12897
 	offset = { 0 0 0 }
 }

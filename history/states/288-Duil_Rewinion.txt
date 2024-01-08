@@ -1,23 +1,30 @@
 
-state={
-	id=288
-	name="STATE_288"
+state = {
+	id = 288
+	name = "STATE_288"
 
-	history={
+	history = {
 		owner = SAG
 		add_core_of = SAG
 		buildings = {
 			infrastructure = 1
-
+			arms_factory = 1
 		}
 
 	}
 
-	provinces={
+	provinces = {
 		327 387 896 1074 1470 1473 1681 2061 2064 2884 2988 3254 3357 4871 6783 6792 6862 6890 6896 6913 6930  
 	}
-	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
+	manpower = 1160130
+	buildings_max_level_factor = 1.000
+	state_category = Pastoral
+	local_supplies = 0.000
+	resources = {
+		iron = 9
+		mounts = 8
+
+	}
 }
+
+

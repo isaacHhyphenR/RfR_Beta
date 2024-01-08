@@ -1,29 +1,29 @@
 
-state={
-	id=126
-	name="STATE_126"
-	resources={
-		food=2.000
-		cloth=1.000
-		mounts=6.000
+state = {
+	id = 126
+	name = "STATE_126"
+	resources = {
+		food = 10
+		mounts = 8
 	}
 
-	history={
+	history = {
 		owner = SAG
 		add_core_of = SAG
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 			arms_factory = 1
-
 		}
 
 	}
 
-	provinces={
+	provinces = {
 		909 1589 1795 1875 2038 2134 2296 2299 2300 2317 2437 2503 2733 2820 3030 3285 3392 3410 3466 4905 5324 5326 5366 6674 6680 6688 6724 6775 6813 6820 10777 
 	}
-	manpower=837000
-	buildings_max_level_factor=1.000
-	state_category=rural
-	local_supplies=0.000
+	manpower = 1985021
+	buildings_max_level_factor = 1.000
+	state_category = Pastoral
+	local_supplies = 0.000
 }
+
+

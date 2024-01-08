@@ -1,23 +1,29 @@
 
-state={
-	id=249
-	name="STATE_249"
+state = {
+	id = 249
+	name = "STATE_249"
 
-	history={
+	history = {
 		owner = ULG
 		add_core_of = ULG
 		buildings = {
 			infrastructure = 1
-
+			industrial_complex = 1
 		}
 
 	}
 
-	provinces={
+	provinces = {
 		7840 7844 8007 8092 8184 8324 8346 8519 8718 8763 8779 9074 9107 9266 9316 9678 9857 9883 9932 10017 10019 10030 10136 10233 10313 10366 10645 10710 11078 11080 11090 11098 11107 11115 11119 11123 11129 11136 11146 11148 11159 
 	}
-	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
+	manpower = 1205672
+	buildings_max_level_factor = 1.000
+	state_category = Rural
+	local_supplies = 0.000
+	resources = {
+		mounts = 12
+
+	}
 }
+
+

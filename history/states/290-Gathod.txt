@@ -1,23 +1,32 @@
 
-state={
-	id=290
-	name="STATE_290"
+state = {
+	id = 290
+	name = "STATE_290"
 
-	history={
+	history = {
 		owner = SAG
 		add_core_of = SAG
 		buildings = {
-			infrastructure = 1
-
+			infrastructure = 2
+			industrial_complex = 1
 		}
 
 	}
 
-	provinces={
+	provinces = {
 		199 238 908 978 1331 1703 1810 1830 1966 2086 2253 2357 2362 2541 2745 2864 2901 3425 3451 3626 3665 3718 3942 3989 4052 5107 5184 5230 6716 6723 6726 6733 6747 6765 6799 6804 6814 6819 6826 6840 6846 6849 6865 6870 6884 6901 
 	}
-	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
+	manpower = 1335652
+	buildings_max_level_factor = 1.000
+	state_category = Town
+	local_supplies = 0.000
+	resources = {
+		food = 8
+		cloth = 8
+		iron = 7
+		mounts = 16
+
+	}
 }
+
+

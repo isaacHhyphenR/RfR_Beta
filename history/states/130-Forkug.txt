@@ -1,25 +1,31 @@
 
-state={
-	id=130
-	name="STATE_130"
-	resources={
-		food=4.000
-		cloth=2.000
-		wood=2.000
-		iron=6.000
-		mounts=16.000
+state = {
+	id = 130
+	name = "STATE_130"
+	resources = {
+		food = 8
+		cloth = 12
+		wood = 3
+		mounts = 14
 	}
 
-	history={
+	history = {
 		owner = ULG
 		add_core_of = ULG
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+
+		}
 	}
 
-	provinces={
+	provinces = {
 		42 250 368 417 455 530 758 850 982 1167 1254 1425 1512 1694 2271 2677 2765 2806 3169 3287 3424 3605 3680 3958 3990 4119 4162 4715 4721 4880 4884 5038 5357 5363 5367 5526 5792 5851 6226 6436 7855 8151 8310 9377 9802 9891 9918 10431 10848 11042 11060 11061 11076 
 	}
-	manpower=1702000
-	buildings_max_level_factor=1.000
-	state_category=wasteland
-	local_supplies=0.000
+	manpower = 1405672
+	buildings_max_level_factor = 1.000
+	state_category = Rural
+	local_supplies = 0.000
 }
+
+

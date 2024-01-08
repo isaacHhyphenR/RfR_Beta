@@ -1,22 +1,28 @@
-state={
-	id=294
-	name="STATE_294"
-	manpower=100000
-	state_category=town
+state = {
+	id = 294
+	name = "STATE_294"
+	manpower = 2205072
+	state_category = Large_Town
 
-	provinces={
+	provinces = {
 		138 284 294 346 801 1119 1558 2496 2684 3444 4005 4054 4411 4499 5265 6367 6456 6477 6495 6512 6528 6561 8724 
 	}
+	resources = {
+		food = 19
+	}
 	
-	history={
+	history = {
 		owner = MED
 		add_core_of = MED
 		buildings = {
-			infrastructure = 1
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
 			market = 1
 		}
 ##########################################TRADE
-		set_variable = { upstream_node = 116 } #riavod
+		set_variable = { upstream_node = 116 }
+		#riavod
 		set_variable = { node_index = 11 }
 		add_to_array = {
 			array = global.celduin_markets
@@ -26,3 +32,5 @@ state={
 		add_dynamic_modifier = { modifier = market_modifiers }
 	}
 }
+
+

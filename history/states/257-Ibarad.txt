@@ -1,24 +1,27 @@
 
-state={
-	id=257
-	name="STATE_257"
-
-	history={
+state = {
+	id = 257
+	name = "STATE_257"
+	manpower = 1187067
+	state_category = Rural
+	resources = {
+		food = 7
+		cloth = 16
+		mounts = 6
+	}
+	provinces = {
+		682 784 839 989 1180 1428 1564 1662 1740 1813 1850 2016 2082 2225 2532 2603 2622 2782 3419 3694 4229 4659 5064 5175 5246 5861 5873 5912 5913 5914 5919 5928 5967 5987 6001 6028 6068 6098 8711 11706 
+	}
+	history = {
 		owner = LGA
 		add_core_of = LGA
 		set_variable = { historical_capital_for_country = LGA }
 		buildings = {
 			infrastructure = 1
-
+			industrial_complex = 1
 		}
 
 	}
-
-	provinces={
-		682 784 839 989 1180 1428 1564 1662 1740 1813 1850 2016 2082 2225 2532 2603 2622 2782 3419 3694 4229 4659 5064 5175 5246 5861 5873 5912 5913 5914 5919 5928 5967 5987 6001 6028 6068 6098 8711 11706 
-	}
-	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
 }
+
+

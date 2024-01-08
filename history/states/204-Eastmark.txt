@@ -31,7 +31,7 @@ state = {
 		set_variable = { current_state_fyrd = 0 }
 		set_variable = { max_state_fyrd = 1 }
 	}
-
+}
 
 
 
