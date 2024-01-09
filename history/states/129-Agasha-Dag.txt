@@ -14,9 +14,9 @@ state={
 			infrastructure = 2
 			arms_factory = 3
 		}
-		#12
+		#15
 		victory_points = {
-			1636 4 #Tset-Ulgatha
+			1636 5 #Tset-Ulgatha
 		}
 		victory_points = {
 			6336 3 #Thiredaman
@@ -25,7 +25,7 @@ state={
 			6478 3 #Kulath
 		}
 		victory_points = {
-			3219 2 #Karada
+			3219 4 #Karada
 		}
 	}
 

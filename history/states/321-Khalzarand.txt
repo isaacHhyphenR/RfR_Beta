@@ -9,9 +9,9 @@ state = {
 		buildings = {
 			infrastructure = 1
 		}
-		#2
+		#3
 		victory_points = {
-			5093 2 #Alashtani
+			5093 3 #Alashtani
 		}
 
 	}

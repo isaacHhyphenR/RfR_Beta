@@ -10,8 +10,18 @@ state = {
 			infrastructure = 1
 			industrial_complex = 1
 		}
+		#11
 		victory_points = {
-			0 2 #45
+			10030 2 #Khai Tâd
+		}
+		victory_points = {
+			11080 2 #Pûthar
+		}
+		victory_points = {
+			107810 4 #Uldinûgar Tâd
+		}
+		victory_points = {
+			10366 3 #Khena Mîn
 		}
 
 	}

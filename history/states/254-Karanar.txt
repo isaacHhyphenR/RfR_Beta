@@ -11,18 +11,21 @@ state = {
 			industrial_complex = 1
 		}
 		victory_points = {
-			0 2 #45
+			960 3 #Derli Mîn
 		}
-
+		victory_points = {
+			11186 5 #Iskat
+		}
+		victory_points = {
+			8688 4 #Napa
+		}
 	}
-
+	#12
 	provinces = { #34
 		892 960 7847 7850 7944 7975 8088 8220 8688 8848 9009 9027 9215 9436 9439 9616 9636 9855 9959 9991 10009 10262 11151 11157 11163 11175 11186 11187 11190 11197 11204 11218 11221 11227 
 	}
 	manpower = 1367586
-	buildings_max_level_factor = 1.000
 	state_category = Pastoral
-	local_supplies = 0.000
 	resources = {
 		cloth = 3
 		mounts = 9

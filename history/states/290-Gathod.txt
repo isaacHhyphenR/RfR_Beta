@@ -10,9 +10,9 @@ state = {
 			infrastructure = 2
 			industrial_complex = 1
 		}
-		#15
+		#17
 		victory_points = {
-			1830 2 #Shôritol
+			1830 4 #Shôritol
 		}
 		victory_points = {
 			4052 3 #Tarlzahad
@@ -24,7 +24,7 @@ state = {
 			908 3 #Sânisahr
 		}
 		victory_points = {
-			5184 2 #?
+			5184 2 #Côrikas
 		}
 
 	}

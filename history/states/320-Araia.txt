@@ -8,13 +8,16 @@ state = {
 		add_core_of = SRB
 		buildings = {
 		}
-
+		#2
+		victory_points = {
+			2405 = 2
+		}
 	}
 
 	provinces = { #29
 		219 222 383 990 1029 1496 1588 1787 2069 2405 2487 2538 2963 3269 4434 4597 4828 5114 5345 6881 6916 6927 6928 6960 6968 6981 7019 7044 7053 
 	}
-	manpower = 498041
+	manpower = 428041
 	state_category = Wasteland
 	resources = {
 

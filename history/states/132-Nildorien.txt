@@ -13,8 +13,15 @@ state = {
 		buildings = {
 			infrastructure = 1
 		}
+		#10
 		victory_points = {
-			0 2 #45
+			11308 4 #Elin î Kota
+		}
+		victory_points = {
+			1145 2 #Karada
+		}
+		victory_points = {
+			4621 4 #Târu
 		}
 	}
 
@@ -22,9 +29,7 @@ state = {
 		299 1145 1174 2195 2348 2394 2894 3089 3651 4621 5082 5346 6497 6628 8202 9369 10129 10193 10226 10655 11266 11280 11308 11324 
 	}
 	manpower = 1250708
-	buildings_max_level_factor = 1.000
 	state_category = Pastoral
-	local_supplies = 0.000
 }
 
 

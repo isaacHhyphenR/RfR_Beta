@@ -10,9 +10,9 @@ state = {
 			infrastructure = 1
 			industrial_complex = 1
 		}
-		#12
+		#15
 		victory_points = {
-			10767 2 #Raza
+			10767 3 #Raza
 		}
 		victory_points = {
 			7027 3 #Vermatokor
@@ -21,7 +21,7 @@ state = {
 			8479 5 #Kherâs Tâd
 		}
 		victory_points = {
-			7891 2 #Gên Mîn
+			7891 4 #Gên Mîn
 		}
 
 	}

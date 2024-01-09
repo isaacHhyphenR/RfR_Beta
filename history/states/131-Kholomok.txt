@@ -11,8 +11,15 @@ state={
 			infrastructure = 1
 
 		}
+		#18
 		victory_points = {
-			0 2 #45
+			1217 13 #Jamart
+		}
+		victory_points = {
+			12068 3 #Kamomath
+		}
+		victory_points = {
+			586 2 #Tya
 		}
 
 	}
@@ -20,8 +27,10 @@ state={
 	provinces={ #28
 		267 336 436 518 586 832 945 1217 1289 1474 1977 2092 2530 2617 2688 4048 4373 6316 6359 6394 6538 6579 6681 9361 10393 10547 11208 11234 11240 12068 
 	}
-	manpower=100000
-	buildings_max_level_factor=1.000
+	manpower=1967504
 	state_category=town
-	local_supplies=0.000
+	resources = {
+		food = 10
+		mounts = 13
+	}
 }

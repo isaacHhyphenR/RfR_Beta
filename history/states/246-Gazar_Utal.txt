@@ -9,15 +9,15 @@ state = {
 		buildings = {
 			infrastructure = 1
 		}
-		#4
+		#7
 		victory_points = { #Târuda
-			1273 2
+			1273 3
 		}
 		victory_points = { #Ulufald
-			10449 1
+			10449 2
 		}
 		victory_points = { #Tonaar
-			3273 1
+			3273 2
 		}
 
 	}

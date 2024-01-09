@@ -12,15 +12,15 @@ state = {
 				naval_base = 1
 			}
 		}
-		#5
+		#8
 		victory_points = {
-			5341 1 #Tset-Risok
+			5341 2 #Tset-Risok
 		}
 		victory_points = {
-			6245 3 #Dazakur
+			6245 4 #Dazakur
 		}
 		victory_points = {
-			445 1 #Rhûbar
+			445 2 #Rhûbar
 		}
 	}
 

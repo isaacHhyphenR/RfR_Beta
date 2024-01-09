@@ -12,12 +12,12 @@ state = {
 				naval_base = 1
 			}
 		}
-		#6
+		#7
 		victory_points = { #Otava
 			6237 2
 		}
 		victory_points = { #Chernobor
-			5941 2
+			5941 3
 		}
 		victory_points = { #Polonava
 			6125 2

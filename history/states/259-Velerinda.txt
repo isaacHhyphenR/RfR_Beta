@@ -10,10 +10,19 @@ state={
 			infrastructure = 1
 			industrial_complex = 1
 		}
+		#11
 		victory_points = {
-			0 2 #45
+			8415 3 #Lynren
 		}
-
+		victory_points = {
+			7867 3 #Kinadirk Tâd
+		}
+		victory_points = {
+			8314 2 #Liknekar Mîn
+		}
+		victory_points = {
+			11355 3 #Tiriând
+		}
 	}
 
 	provinces={ #42

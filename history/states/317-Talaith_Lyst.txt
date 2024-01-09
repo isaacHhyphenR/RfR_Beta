@@ -9,15 +9,15 @@ state = {
 		buildings = {
 			infrastructure = 1
 		}
-		#8
+		#11
 		victory_points = {
-			20 3 #Brenaril
+			20 4 #Brenaril
 		}
 		victory_points = {
-			667 2 #Kulath
+			667 3 #Kulath
 		}
 		victory_points = {
-			6653 3 #Minavadir
+			6653 4 #Minavadir
 		}
 	}
 

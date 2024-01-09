@@ -17,7 +17,7 @@ state = {
 		set_ring_victory_point = yes
 		set_variable = { historical_capital_for_country = HAR }
 		victory_points = { #27
-			7658 20
+			7653 20
 		}
 		victory_points = {
 			263 5
