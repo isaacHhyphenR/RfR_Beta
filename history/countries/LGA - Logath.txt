@@ -1,4 +1,4 @@
-﻿capital = 257 #Ibarad
+﻿capital = 233 #Utalad
 	# VPs
 set_oob = "LGA_3015"
 set_research_slots = 2
@@ -88,7 +88,7 @@ set_popularities = {
 	melkorite = 10
 }
 
-recruit_character = LGA_Asterel_Ibarad
+recruit_character = LGA_Asterel_Ibarad #should be Utalad
 add_ideas = easterling_heritage_idea
 
 			####ARMOR

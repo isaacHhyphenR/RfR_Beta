@@ -1,21 +1,24 @@
 state = {
 	id = 127
-	name = "STATE_127" #Nebur
+	name = "STATE_127" #Egil Dorn
 	state_category = Small_Island
 	manpower = 124070
 	resources = {
 	}
-	provinces = {
+	provinces = { #6
 		602 1781 4893 5143 6435 6482 
 	}
 	history = {
 		owner = MED
 		add_core_of = MED
-		victory_points = { #3
-			5143 3
+		victory_points = { #2
+			5143 2 #Neburkah
 		}
 		buildings = {
 			infrastructure = 1
+			5143 = {
+				naval_base = 1
+			}
 		}
 	}
 }

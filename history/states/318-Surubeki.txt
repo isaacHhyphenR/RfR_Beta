@@ -1,29 +1,46 @@
 
-state = {
-	id = 318
-	name = "STATE_318"
-	manpower = 2100750
-	state_category = Large_Town
-
-	provinces = {
-		128 794 914 1234 1376 1844 1928 1932 2430 2516 2889 2945 3002 3291 3434 3822 3945 3947 4129 4140 4425 4564 4713 4868 5316 5374 5422 6686 6708 6753 6759 6779 6793 
-	}
-	
-	resources = {
-		food = 13
-		mounts = 13
+state={
+	id=318
+	name="STATE_318"
+	resources={
+		food=13.000
+		mounts=13.000
 	}
 
-	history = {
+	history={
 		owner = SRB
 		add_core_of = SRB
-		set_variable = { historical_capital_for_country = SRB }
+		set_variable = {
+			historical_capital_for_country = SRB
+		}
 		buildings = {
 			infrastructure = 2
 			arms_factory = 2
 		}
+		#20
+		victory_points = {
+			1376 3 #Crispa
+		}
+		victory_points = {
+			2516 1 #Barudhand
+		}
+		victory_points = {
+			6753 13 #Sarand
+		}
+		victory_points = {
+			1932 1 #Valorand
+		}
+		victory_points = {
+			794 2 #Avlama Kand
+		}
 
 	}
+
+	provinces={ #34
+		128 794 914 1234 1376 1844 1928 1932 2430 2516 2889 2945 3002 3291 3434 3822 3945 3947 4129 4140 4425 4564 4713 4868 5316 5374 5422 6686 6708 6753 6759 6779 6793 10829 
+	}
+	manpower=2100750
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
 }
-
-

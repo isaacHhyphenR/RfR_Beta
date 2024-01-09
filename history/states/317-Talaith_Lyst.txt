@@ -9,20 +9,27 @@ state = {
 		buildings = {
 			infrastructure = 1
 		}
-
+		#8
+		victory_points = {
+			20 3 #Brenaril
+		}
+		victory_points = {
+			667 2 #Kulath
+		}
+		victory_points = {
+			6653 3 #Minavadir
+		}
 	}
 
-	provinces = {
+	provinces = { #29
 		20 401 525 666 667 707 740 746 838 1115 1803 1937 2153 2886 3150 3358 3487 3858 4231 4385 4460 4505 4541 4874 4994 6603 6647 6653 7299 
 	}
 	manpower = 1491112
 	buildings_max_level_factor = 1.000
 	state_category = Rural
-	local_supplies = 0.000
 	resources = {
 		iron = 8
 		mounts = 8
-
 	}
 }
 

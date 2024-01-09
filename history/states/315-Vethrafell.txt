@@ -6,26 +6,28 @@ state = {
 	history = {
 		owner = SAG
 		add_core_of = SAG
-		set_variable = {
-			historical_capital_for_country = SAG
-
-		}
 		buildings = {
 			infrastructure = 1
 		}
-
+		#10
+		victory_points = {
+			4685 6 #Ulurikon
+		}
+		victory_points = {
+			6736 3 #Naznara
+		}
+		victory_points = {
+			2902 1 #Cabunkot
+		}
 	}
 
-	provinces = {
+	provinces = { #32
 		231 240 471 634 648 840 1828 1919 2110 2286 2789 2902 3009 3083 3126 3155 3322 3786 4315 4685 4771 5343 5418 6651 6670 6706 6721 6725 6727 6732 6736 6797 
 	}
 	manpower = 835652
-	buildings_max_level_factor = 1.000
-	state_category = Pastoral
-	local_supplies = 0.000
+	state_category = Rural
 	resources = {
 		mounts = 12
-
 	}
 }
 

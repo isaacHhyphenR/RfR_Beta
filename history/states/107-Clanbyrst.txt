@@ -1,36 +1,36 @@
 
-state = {
-	id = 107
-	name = "STATE_107"
-	resources = {
-		wood = 10
+state={
+	id=107
+	name="STATE_107"
+	resources={
+		wood=10.000
 	}
 
-	history = {
+	history={
 		owner = DAL
 		add_core_of = DAL
-		victory_points = { #Arag Kyn, 8
-			5838 3
+		#8
+		victory_points = {
+			5838 3 
 		}
-		victory_points = { #Mialag
-			5059 3
+		victory_points = {
+			5059 3 
 		}
-		victory_points = { #Grasland
-			5186 2
+		victory_points = {
+			5186 2 
 		}
 		buildings = {
 			infrastructure = 1
+
 		}
 
 	}
 
-	provinces = { #24
-		23 328 1385 2247 2429 2442 3748 3773 3867 3878 4142 4692 4941 5059 5186 5740 5741 5764 5791 5794 5816 5834 5838 5845 
+	provinces={ #26
+		23 135 328 1385 2247 2429 2442 2461 3748 3773 3867 3878 4142 4692 4941 5059 5186 5740 5741 5764 5791 5794 5816 5834 5838 5845 
 	}
-	manpower = 856079
-	buildings_max_level_factor = 1.000
-	state_category = Town
-	local_supplies = 0.000
+	manpower=856079
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
 }
-
-

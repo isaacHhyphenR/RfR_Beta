@@ -4,7 +4,7 @@ state = {
 	manpower = 2205072
 	state_category = Large_Town
 
-	provinces = {
+	provinces = { #23
 		138 284 294 346 801 1119 1558 2496 2684 3444 4005 4054 4411 4499 5265 6367 6456 6477 6495 6512 6528 6561 8724 
 	}
 	resources = {
@@ -19,6 +19,31 @@ state = {
 			arms_factory = 1
 			industrial_complex = 2
 			market = 1
+			4499 = {
+				naval_base = 3
+			}
+			284 = {
+				naval_base = 1
+			}
+			3444 = {
+				naval_base = 1
+			}
+		}
+		#20
+		victory_points = {
+			6367 1 #Zilîrye
+		}
+		victory_points = {
+			4499 12 #Kelepar
+		}
+		victory_points = {
+			284 3 #Tset-Tôkay
+		}
+		victory_points = {
+			3444 4 #Tset-Habaor
+		}
+		victory_points = {
+			6512 2 #?
 		}
 ##########################################TRADE
 		set_variable = { upstream_node = 116 }

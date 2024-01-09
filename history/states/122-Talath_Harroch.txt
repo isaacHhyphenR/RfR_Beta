@@ -10,10 +10,13 @@ state={
 		owner = WLD
 		add_core_of = WLD
 		victory_points = {
-			3260 0 
+			6739 0 
 		}
 		victory_points = {
 			6578 0 
+		}
+		victory_points = {
+			2614 0 
 		}
 
 	}

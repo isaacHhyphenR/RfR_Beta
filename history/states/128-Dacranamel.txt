@@ -3,7 +3,7 @@ state = {
 	name = "STATE_128"
 	manpower = 2505051
 	state_category = Large_Town
-	provinces = {
+	provinces = { #27
 		282 338 348 506 876 1700 2130 2251 2322 2342 2494 2791 3064 3261 3667 4179 4330 4395 4483 4814 5219 6539 6552 6553 6655 6693 6717 
 	}
 	resources = {
@@ -25,6 +25,25 @@ state = {
 			dockyard = 1
 			industrial_complex = 1
 			market = 1
+			3667 = {
+				naval_base = 3
+			}
+			3261 = {
+				naval_base = 1
+			}
+		}
+		#21
+		victory_points = {
+			4487 15 #Lest
+		}
+		victory_points = {
+			3261 2 #Severna
+		}
+		victory_points = {
+			2494 1 #Riav
+		}
+		victory_points = {
+			876 3 #Tset-Lunaras
 		}
 ##########################################TRADE
 		set_variable = { upstream_node = 118 } #folyvuld

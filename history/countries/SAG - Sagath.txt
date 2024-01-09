@@ -1,4 +1,4 @@
-﻿capital = 315 #Vethrafell
+﻿capital = 126 #Stainah Westor, Tag-Ures
 	# VPs
 set_oob = "SAG_3015"
 set_research_slots = 3

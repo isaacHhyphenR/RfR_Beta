@@ -512,7 +512,7 @@ add_colony_start_victory_points = { #call in a state to add its first victory po
 	}
 	else_if = { limit = { state = 121 } #Dagorlad
 		add_victory_points = {
-			province = 6622
+			province = 6739
 			value = 1
 		}
 	}
@@ -530,7 +530,7 @@ add_colony_start_victory_points = { #call in a state to add its first victory po
 	}
 	else_if = { limit = { state = 335 } #ashkirir
 		add_victory_points = {
-			province = 2915
+			province = 2435
 			value = 1
 		}
 	}
@@ -643,11 +643,11 @@ add_colony_finished_victory_points = { #call in a state to add it's victory poin
 	}
 	else_if = { limit = { state = 122 } #Talath Harroch
 		add_victory_points = {
-			province = 3260
+			province = 6578
 			value = 1
 		}
 		add_victory_points = {
-			province = 6578
+			province = 2614
 			value = 1
 		}
 	}
@@ -663,11 +663,11 @@ add_colony_finished_victory_points = { #call in a state to add it's victory poin
 	}
 	else_if = { limit = { state = 335 } #ashkirir
 		add_victory_points = {
-			province = 2915
+			province = 3765
 			value = 1
 		}
 		add_victory_points = {
-			province = 75
+			province = 10580
 			value = 1
 		}
 	}
@@ -754,11 +754,15 @@ remove_colony_victory_points = { #call in a state to clear its victory points
 	}
 	else_if = { limit = { state = 122 } #Talath Harroch
 		set_victory_points = {
-			province = 3260
+			province = 6739
 			value = 0
 		}
 		set_victory_points = {
 			province = 6578
+			value = 0
+		}
+		set_victory_points = {
+			province = 2614
 			value = 0
 		}
 	}
@@ -774,11 +778,15 @@ remove_colony_victory_points = { #call in a state to clear its victory points
 	}
 	else_if = { limit = { state = 335 } #ashkirir
 		set_victory_points = {
-			province = 2915
+			province = 2435
 			value = 0
 		}
 		set_victory_points = {
-			province = 75
+			province = 3765
+			value = 0
+		}
+		set_victory_points = {
+			province = 10580
 			value = 0
 		}
 	}
