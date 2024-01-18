@@ -770,7 +770,7 @@
  atem.23.a: "Thrice they came, Thrice we will agree!"
  atem.23.b: "Nay, the Dwarves need no help from traders"
  atem.24.t: "[FROM.GetLeader] Seeks Santuary"
- atem.24.d: "[FROM.GetName] sit perilously close to the "
+ atem.24.d: "[FROM.GetName] sit perilously close to the rising shadow of the e"
  atem.24.a: "We'll keep the budget as it is."
  atem.24.b: "We'll keep the budget as it is."
  
@@ -1086,7 +1086,7 @@
  senate.7.c: "Increase funding for the College of Medicine."
  senate.7.dd: "The scholars can manage with their current resources."
  senate.8.t: "Senate Debates Import Deals"
- senate.8.d: “The Trading Guild has approached us, inquiring whether they should prioritize an import deal with our neighbors. From the [ERE.GetNameDef], we can obtain the most magnificent toys and metal products ever seen, while from [DAL.GetNameDef], we can acquire food and other human-made products. There has even been talk of a caravan venturing across the desert to [RUN.GetNameDef] to obtain the finest horses and oxen. Alternatively, we can choose to do nothing, as our economy is already in a strong position.”
+ senate.8.d: "The Trading Guild has approached us, inquiring whether they should prioritize an import deal with our neighbors. From the [ERE.GetNameDef], we can obtain the most magnificent toys and metal products ever seen, while from [DAL.GetNameDef], we can acquire food and other human-made products. There has even been talk of a caravan venturing across the desert to [RUN.GetNameDef] to obtain the finest horses and oxen. Alternatively, we can choose to do nothing, as our economy is already in a strong position."
  senate.8.a: "Negotiate with [DAL.GetNameDef]."
  senate.8.b: "Negotiate with [RUN.GetNameDef]."
  senate.8.c: "Negotiate with [ERE.GetNameDef]."
