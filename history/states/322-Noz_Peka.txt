@@ -1,23 +1,30 @@
 
-state={
-	id=322
-	name="STATE_322"
+state = {
+	id = 322
+	name = "STATE_322"
 
-	history={
+	history = {
 		owner = KND
 		add_core_of = KND
 		buildings = {
-			infrastructure = 1
-
+			infrastructure = 2
+			arms_factory = 1
 		}
-
+		#7
+		victory_points = {
+			4219 7 #Brâlifisa
+		}
 	}
 
-	provinces={
+	provinces = { #19
 		288 1355 2169 2829 3059 3634 4219 4535 4773 4824 5194 5271 7532 7547 7548 7553 7571 7644 10791 
 	}
-	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
+	manpower = 578982
+	state_category = Town
+	
+	resources = {
+		food = 5
+	}
 }
+
+

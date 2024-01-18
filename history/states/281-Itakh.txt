@@ -1,23 +1,39 @@
 
-state={
-	id=281
-	name="STATE_281"
+state = {
+	id = 281
+	name = "STATE_281"
 
-	history={
+	history = {
 		owner = KND
 		add_core_of = KND
 		buildings = {
 			infrastructure = 1
-
+			arms_factory = 1
+		}
+		#11
+		victory_points = {
+			8352 2 #Dagorkhûn
+		}
+		victory_points = {
+			9062 6 #Akharn
+		}
+		victory_points = {
+			10031 3 #Khahak
 		}
 
 	}
 
-	provinces={
+	provinces = { #73
 		4609 5231 7780 7896 7946 8000 8069 8139 8161 8200 8287 8341 8352 8438 8445 8510 8522 8628 8682 8867 8874 8988 9062 9298 9353 9456 9467 9509 9576 9613 9767 9812 9870 9907 10031 10078 10265 10277 10287 10330 10332 10364 10387 10410 10436 10451 10561 10571 10649 11667 11702 11709 11712 11714 11716 11717 11722 11725 11726 11730 11733 11735 11743 11744 11749 11752 11760 11764 11770 11772 11773 11775 11782 
 	}
-	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
+	manpower = 987564
+	state_category = Town
+	
+	resources = {
+		iron = 12
+		mounts = 8
+
+	}
 }
+
+

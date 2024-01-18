@@ -1,4 +1,4 @@
-﻿capital = 184 #Akharn
+﻿capital = 201 #Starlurtsa
 	# VPs
 # if = {
 	# limit = { has_dlc = "No Step Back" }

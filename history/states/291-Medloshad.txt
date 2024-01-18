@@ -26,7 +26,7 @@ state = {
 			4688 = {
 				naval_base = 4
 			}
-			4487 = {
+			6487 = {
 				naval_base = 2
 			}
 			6516 = {
@@ -38,7 +38,7 @@ state = {
 			4688 35 #Mistarand
 		}
 		victory_points = {
-			4487 4 #Dilgul
+			6487 4 #Dilgul
 		}
 		victory_points = {
 			6662 3 #Pitarana

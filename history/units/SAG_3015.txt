@@ -30,23 +30,33 @@ units = {
 			##LOKE-NAR (INFANTRY)
 	division = {	
 		name = "1st Lôke-Nar Rim"
-		location = 3667 #lest
+		location = 3667 #Lest
 		division_template = "Lôke-Nar"
 	}
 	division = {	
 		name = "2nd Lôke-Nar Rim"
-		location = 3786 #
+		location = 2362 #Gathod
 		division_template = "Lôke-Nar"
 	}
 	##LOKE-INNAS (CAV)
 	division = {	
 		name = "1st Lôke-Innas Rim"
-		location = 3667
+		location = 6724 #Stainah Westa
 		division_template = "Lôke-Innas"
 	}
 	division = {	
 		name = "2nd Lôke-Innas Rim"
-		location = 3786
+		location = 876
+		division_template = "Lôke-Innas"
+	}
+	division = {	
+		name = "3rd Lôke-Innas Rim"
+		location = 4685
+		division_template = "Lôke-Innas"
+	}
+	division = {	
+		name = "4th Lôke-Innas Rim"
+		location = 6783
 		division_template = "Lôke-Innas"
 	}
 }

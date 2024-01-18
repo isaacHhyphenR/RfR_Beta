@@ -1,23 +1,37 @@
 
-state={
-	id=274
-	name="STATE_274"
+state = {
+	id = 274
+	name = "STATE_274"
+	manpower = 1257622
+	state_category = Town
+	
+	resources = {
+		food = 13
+		cloth = 20
+	}
 
-	history={
+	history = {
 		owner = KND
 		add_core_of = KND
 		buildings = {
-			infrastructure = 1
-
+			infrastructure = 3
+			industrial_complex = 1
 		}
-
+		#11
+		victory_points = {
+			11791 3 #Zijta
+		}
+		victory_points = {
+			7866 5 #Kruk Azhanna
+		}
+		victory_points = {
+			11839 3 #Ozhod
+		}
 	}
 
-	provinces={
+	provinces = { #63
 		1756 7866 7897 7997 8101 8109 8345 8473 8616 8637 8685 8794 8846 8923 8938 9108 9129 9457 9460 9462 9513 9739 9944 10035 10068 10224 10453 10497 10646 10647 10706 11776 11777 11784 11791 11795 11799 11801 11806 11808 11814 11815 11816 11819 11820 11825 11827 11835 11838 11839 11849 11857 11866 
 	}
-	manpower=100000
-	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=0.000
 }
+
+

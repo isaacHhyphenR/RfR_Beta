@@ -30,18 +30,23 @@ units = {
 			##LOKE-NAR (INFANTRY)
 	division = {	
 		name = "1st Lôke-Nar Rim"
-		location = 1506 #capital
+		location = 1506 #Kugavod
+		division_template = "Lôke-Nar"
+	}
+	division = {	
+		name = "2nd Lôke-Nar Rim"
+		location = 4793 #Kelperia
 		division_template = "Lôke-Nar"
 	}
 	##LOKE-INNAS (CAV)
 	division = {	
 		name = "1st Lôke-Innas Rim"
-		location = 595
+		location = 1662 #Ibarad
 		division_template = "Lôke-Innas"
 	}
 	division = {	
 		name = "2nd Lôke-Innas Rim"
-		location = 3106
+		location = 709 #Barakad
 		division_template = "Lôke-Innas"
 	}
 }

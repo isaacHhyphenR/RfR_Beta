@@ -1,0 +1,52 @@
+division_template = {
+	name = "Lôke-Nar"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		artillery_brigade = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+division_template = {
+	name = "Lôke-Innas"
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+		mechanized = { x = 1 y = 0 }
+		mechanized = { x = 1 y = 1 }
+		mechanized = { x = 1 y = 2 }
+	}
+	support = {
+		light_tank_recon = { x = 0 y = 0 }
+	}
+}
+units = {
+	##LOKE-NAR (INFANTRY)
+	division = {	
+		name = "1st Lôke-Innas Rim"
+		location = 5094 #Mavishad
+		division_template = "Lôke-Innas"
+	}
+	##LOKE-INNAS (CAV)
+	division = {	
+		name = "1st Lôke-Innas Rim"
+		location = 6753
+		division_template = "Lôke-Innas"
+	}
+	division = {	
+		name = "2nd Lôke-Innas Rim"
+		location = 794
+		division_template = "Lôke-Innas"
+	}
+	division = {	
+		name = "3rd Lôke-Innas Rim"
+		location = 147
+		division_template = "Lôke-Innas"
+	}
+}

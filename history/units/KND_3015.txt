@@ -1,0 +1,72 @@
+﻿division_template = {
+	name = "Variag Riders"
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_tank_destroyer_brigade = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+	support = {
+		light_tank_recon = {x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Variag Skirmishers"
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_sp_artillery_brigade = { x = 0 y = 1 }
+		light_sp_artillery_brigade = { x = 0 y = 2 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 1 }
+	}
+	support = {
+		light_tank_recon = { x = 0 y = 0 }
+	}
+}
+units = {
+			##RIDERS
+	division = {	
+		name = "1st Riders"
+		location = 4219#
+		division_template = "Variag Riders"
+	}
+	division = {	
+		name = "2nd Riders"
+		location = 5022#
+		division_template = "Variag Riders"
+	}
+	division = {	
+		name = "3rd Riders"
+		location = 10286#
+		division_template = "Variag Riders"
+	}
+	division = {	
+		name = "4th Riders"
+		location = 9062#
+		division_template = "Variag Riders"
+	}
+	##Skirmishers
+	division = {
+		name = "1st Skirmishers"
+		location = 10161#
+		division_template = "Variag Skirmishers"
+	}
+	division = {
+		name = "2nd Skirmishers"
+		location = 376#
+		division_template = "Variag Skirmishers"
+	}
+	division = {	
+		name = "3rd Skirmishers"
+		location = 4121#
+		division_template = "Variag Skirmishers"
+	}
+	division = {	
+		name = "4th Skirmishers"
+		location = 7866#
+		division_template = "Variag Skirmishers"
+	}
+}
