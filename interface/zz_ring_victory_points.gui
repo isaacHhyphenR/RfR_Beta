@@ -1,0 +1,196 @@
+guiTypes = {
+	
+	containerWindowType = {
+		name = "ring_victory_points_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height = 100% }
+		
+		iconType = {
+			name = "Umbar_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 48 y = -9 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Amrun_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 72 y = -17 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Starlurtsa_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 95 y = -20 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Dol_amroth_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 43 y = -36 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Calembel_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 49 y = -40 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Pelargir_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 59 y = -33 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Minas_tirith_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 60 y = -39 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Osgiliath_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 63 y = -40 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Minas_morgul_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 66 y = -41 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Mount_doom_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 69 y = -45 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Barad_Dur_Star"
+			#spriteType = "GFX_Portrait_Denethor"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 72 y = -43 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Morannon_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 67 y = -49 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Ring_of_Isengard_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 39 y = -55 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Orthanc_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 39 y = -55 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Hornburg_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 41 y = -49 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Edoras_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 46 y = -47 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Moria_Star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 43 y = -68 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Lorien_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 49 y = -65 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Dol_guldur_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 56 y = -66 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Carag_sant_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 89 y = -69 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Mistarand_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 94 y = -59 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Fenas_drunin_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 37 y = -73 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Rivendell_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 44 y = -79 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Goblintown_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 48 y = -72 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Gundabad_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 46 y = -89 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Elfkings_halls_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 61 y = -86 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Dale_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 65 y = -89 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Erebor_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 65 y = -93 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Gondamon_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 4 y = -84 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Mithlond_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 7 y = -79 }
+			Orientation = "UPPER_LEFT"
+		}
+		iconType = {
+			name = "Annuminas_star"
+			quadTextureSprite  = "GFX_ring_stars_9"
+			position = { x = 17 y = -82 }
+			Orientation = "UPPER_LEFT"
+		}
+	}
+}

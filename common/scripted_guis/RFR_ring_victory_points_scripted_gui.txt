@@ -1,0 +1,105 @@
+scripted_gui = {
+
+	RFR_ring_victory_points_ui = {
+		context_type = decision_category
+		window_name = "ring_victory_points_ui_window"
+		parent_window_token = decision_tab
+		#visible = { always = yes }
+		properties = {
+			Umbar_star = {
+				frame = 195.ring_ui_frame
+			}
+			Amrun_star = {
+				frame = 194.ring_ui_frame
+			}
+			Starlurtsa_star = {
+				frame = 201.ring_ui_frame
+			}
+			Dol_amroth_star = {
+				frame = 148.ring_ui_frame
+			}
+			Calembel_star = {
+				frame = 146.ring_ui_frame
+			}
+			Pelargir_star = {
+				frame = 150.ring_ui_frame
+			}
+			Minas_tirith_star = {
+				frame = 152.ring_ui_frame
+			}
+			Osgiliath_star = {
+				frame = 163.ring_ui_frame
+			}
+			Minas_morgul_star = {
+				frame = 165.ring_ui_frame
+			}
+			Mount_doom_star = {
+				frame = 175.ring_ui_frame
+			}
+			Barad_Dur_Star = {
+				frame = 177.ring_ui_frame
+			}
+			Morannon_star = {
+				frame = 176.ring_ui_frame
+			}
+			Ring_of_isengard_star = {
+				frame = 68.ring_ui_frame
+			}
+			Orthanc_star = {
+				frame = 210.ring_ui_frame
+			}
+			Hornburg_star = {
+				frame = 73.ring_ui_frame
+			}
+			Edoras_star = {
+				frame = 157.ring_ui_frame
+			}
+			Moria_Star = {
+				frame = 57.ring_ui_frame
+			}
+			Lorien_star = {
+				frame = 80.ring_ui_frame
+			}
+			Dol_guldur_star = {
+				frame = 93.ring_ui_frame
+			}
+			Carag_sant_star = {
+				frame = 116.ring_ui_frame
+			}
+			Mistarand_star = {
+				frame = 128.ring_ui_frame
+			}
+			Fenas_drunin_star = {
+				frame = 43.ring_ui_frame
+			}
+			Rivendell_star = {
+				frame = 44.ring_ui_frame
+			}
+			Goblintown_star = {
+				frame = 54.ring_ui_frame
+			}
+			Gundabad_star = {
+				frame = 53.ring_ui_frame
+			}
+			Elfkings_halls_star = {
+				frame = 90.ring_ui_frame
+			}
+			Dale_star = {
+				frame = 100.ring_ui_frame
+			}
+			Erebor_star = {
+				frame = 101.ring_ui_frame
+			}
+			Gondamon_star = {
+				frame = 10.ring_ui_frame
+			}
+			Mithlond_star = {
+				frame = 5.ring_ui_frame
+			}
+			Annuminas_star = {
+				frame = 24.ring_ui_frame
+			}
+		}
+	}
+}
+
