@@ -8,37 +8,8 @@
 
 @importResourceAmount = 12
 #GFX:
-#GFX_goal_university_research
-#GFX_goal_university_medicine
-#GFX_goal_university_diplomacy
-#GFX_goal_university_tactics
-#GFX_goal_support_hawin_koldana
-#GFX_goal_kill_hawin_koldana
-#GFX_goal_generic_trade_deal
-#GFX_goal_generic_construct_market
-#GFX_goal_dorwin_sea
-#GFX_goal_celduin_trade_league
-#GFX_goal_generic_imports
-#GFX_goal_propoganda_law
-#GFX_goal_smuggle_wine
-#GFX_goal_take_loan
-#GFX_goal_money_politics
-#GFX_goal_generic_freedom
-#GFX_goal_erebor_trade
-#GFX_goal_rus_and_dor
-#GFX_goal_rin_and_dor
-#GFX_focus_generic_cloth_industry
-#GFX_goal_merchants
-#GFX_goal_generic_taxation
-#GFX_goal_wine_tax
-#GFX_goal_invest_in_rhovanion
-#GFX_goal_dorwin_nobility
 #GFX_goal_dwarven_smith
 #GFX_goal_support_calmar
-#GFX_goal_market_operative
-#GFX_goal_pillar
-#GFX_goal_republic_of_rhovanion
-#GFX_goal_defend_rhovanion
 
 focus_tree = {
 	id = dorwinion_focus_tree

@@ -1421,4 +1421,132 @@ spriteTypes = {
 		name = "GFX_goal_aldiana_calmar"
 		texturefile = "gfx/interface/goals/goal_aldiana_calmar.dds"
 	}
+	SpriteType = {
+		name = "GFX_goal_university_research"
+		texturefile = "gfx/interface/goals/goal_university_research.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_university_medicine"
+		texturefile = "gfx/interface/goals/goal_university_medicine.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_university_diplomacy"
+		texturefile = "gfx/interface/goals/goal_university_diplomacy.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_university_tactics"
+		texturefile = "gfx/interface/goals/goal_university_tactics.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_support_hawin_koldana"
+		texturefile = "gfx/interface/goals/goal_support_hawin_koldana.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_kill_hawin_koldana"
+		texturefile = "gfx/interface/goals/goal_kill_hawin_koldana.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_trade_deal"
+		texturefile = "gfx/interface/goals/goal_generic_trade_deal.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_construct_market"
+		texturefile = "gfx/interface/goals/goal_generic_construct_market.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_dorwin_sea"
+		texturefile = "gfx/interface/goals/goal_dorwin_sea.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_celduin_trade_league"
+		texturefile = "gfx/interface/goals/goal_celduin_trade_league.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_imports"
+		texturefile = "gfx/interface/goals/goal_generic_imports.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_propoganda_law"
+		texturefile = "gfx/interface/goals/goal_propoganda_law.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_smuggle_wine"
+		texturefile = "gfx/interface/goals/goal_smuggle_wine.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_take_loan"
+		texturefile = "gfx/interface/goals/goal_take_loan.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_money_politics"
+		texturefile = "gfx/interface/goals/goal_money_politics.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_freedom"
+		texturefile = "gfx/interface/goals/goal_generic_freedom.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_erebor_trade"
+		texturefile = "gfx/interface/goals/goal_erebor_trade.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_rus_and_dor"
+		texturefile = "gfx/interface/goals/goal_rus_and_dor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_rin_and_dor"
+		texturefile = "gfx/interface/goals/goal_rin_and_dor.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_cloth_industry"
+		texturefile = "gfx/interface/goals/goal_generic_cloth_industry.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_taxation"
+		texturefile = "gfx/interface/goals/goal_generic_taxation.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_wine_tax"
+		texturefile = "gfx/interface/goals/goal_wine_tax.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_invest_in_rhovanion"
+		texturefile = "gfx/interface/goals/goal_invest_in_rhovanion.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_dorwin_nobility"
+		texturefile = "gfx/interface/goals/goal_dorwin_nobility.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_market_operative"
+		texturefile = "gfx/interface/goals/goal_market_operative.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_generic_operative"
+		texturefile = "gfx/interface/goals/goal_generic_operative.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_money_operative"
+		texturefile = "gfx/interface/goals/goal_money_operative.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_pillar"
+		texturefile = "gfx/interface/goals/goal_pillar.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_republic_of_rhovanion"
+		texturefile = "gfx/interface/goals/goal_republic_of_rhovanion.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_defend_rhovanion"
+		texturefile = "gfx/interface/goals/goal_defend_rhovanion.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_human_archer"
+		texturefile = "gfx/interface/goals/goal_human_archer.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_dorwinion"
+		texturefile = "gfx/interface/goals/regions/goal_dorwinion.dds"
+	}
 }
