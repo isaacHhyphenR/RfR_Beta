@@ -604,6 +604,7 @@ rfr_border_war_category = {
 			OR = {
 				NOT = { country_exists = WHT }
 				WHT = { has_capitulated = yes }
+				WHT = { is_subject = yes } #if they somehow get subjugated, don't want to deal with the white peace
 			}
 		}
 		##If the war goes on too long, your people like war less
@@ -635,20 +636,103 @@ rfr_border_war_category = {
 				add = 5
 			}
 		}
-		visible = { var:WHT.uprising_enemy = { tag = ROOT } has_war_with = WHT WHT = { NOT = { has_country_flag = uprising_completed } } }
+		visible = {
+			var:WHT.uprising_enemy = {
+				tag = ROOT
+			}
+			has_war_with = WHT
+			WHT = { NOT = { has_country_flag = uprising_completed } }
+		}
+		available = { WHT = { is_subject = no } } #if they somehow get subjugated, don't want to deal with the white peace
 		complete_effect = {
-			every_country = {
-				limit = { OR = { tag = WHT is_ally_with = WHT } has_war_with = GON }
-				hidden_effect = { news_event = { id = rfr_news.52 hours = 1 } }
+			every_country = { #cycles through the uprising
+				limit = {
+					OR = {
+						tag = WHT
+						is_subject_of = WHT
+						AND = { #faction member who joined through focus
+							is_in_faction_with = WHT
+							OR = {
+								has_country_flag = joined_WHT_uprising
+								faction_leader = { has_country_flag = joined_WHT_uprising }
+							}
+						}
+					}
+					has_war_with = var:WHT.uprising_enemy
+				}
+				#cycles through every state the uprising controls. If it belongs to anyone you're about to peace with, you gain it
 				every_controlled_state = {
-					limit = { owner = { tag = ROOT is_ally_with = ROOT } }
+					limit = { owner = { OR = { tag = var:WHT.uprising_enemy is_in_faction_with = var:WHT.uprising_enemy } } }
 					set_state_owner_to = PREV
 				}
+				#Peaces out with GON & all their allies
+				every_country = {
+					limit = {
+						OR = { tag = var:WHT.uprising_enemy is_ally_with = var:WHT.uprising_enemy }
+						has_war_with = PREV
+					}
+					custom_effect_tooltip = white_peace_prev_tooltip
+					hidden_effect = {
+						white_peace = {
+							tag = PREV
+							message = successful_white_mountain_uprising
+						}
+					}
+				}
+				#Event acknowledges that gondor lost the war
+				hidden_effect = { news_event = { id = rfr_news.52 hours = 1 } }
 			}
-			WHT = {
-				set_country_flag = uprising_completed
-				THIS_faction_peace_with_PREV_faction = yes
+			hidden_effect = {
+				WHT = {
+					set_country_flag = uprising_completed
+					if = { #leave the faction so you don't get dragged back into the war
+						limit = { NOT = { faction_leader = has_country_flag = joined_WHT_uprising } }
+						leave_faction = yes
+					}
+				}
 			}
+		}
+	}
+
+	@gwathloBorderWarDays = 35
+	border_war_tharbad_warning = {
+		icon = GFX_decision_border_war
+		is_good = no
+		days_mission_timeout = @gwathloBorderWarDays
+		war_with_target_on_remove = yes
+		war_with_target_on_complete = yes
+		allowed = { always = no }
+		available = { hidden_trigger = { always = no } }
+		target_trigger = {
+			always = no
+		}
+		fire_only_once = yes
+		highlight_states = {
+			highlight_state_targets = {
+				state = 219 ##Northern tharbad
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
+		}
+	}
+	border_war_minhiriath_warning = {
+		icon = GFX_decision_border_war
+		is_good = no
+		days_mission_timeout = @gwathloBorderWarDays
+		war_with_target_on_remove = yes
+		war_with_target_on_complete = yes
+		allowed = { always = no }
+		available = { hidden_trigger = { always = no } }
+		target_trigger = {
+			always = no
+		}
+		fire_only_once = yes
+		highlight_states = {
+			highlight_state_targets = {
+				state = 39 ##Minhiriath
+			}
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
 		}
 	}
 }
@@ -1623,50 +1707,6 @@ influence_white_mountain_uprising_category = {
 		# complete_effect = {
 			# news_event = { id = rfr_info.1 }
 		# }
-	}
-}
-
-rfr_border_war_category = {
-	@gwathloBorderWarDays = 35
-	border_war_tharbad_warning = {
-		icon = GFX_decision_border_war
-		is_good = no
-		days_mission_timeout = @gwathloBorderWarDays
-		war_with_target_on_remove = yes
-		war_with_target_on_complete = yes
-		allowed = { always = no }
-		available = { hidden_trigger = { always = no } }
-		target_trigger = {
-			always = no
-		}
-		fire_only_once = yes
-		highlight_states = {
-			highlight_state_targets = {
-				state = 219 ##Northern tharbad
-			}
-			highlight_color_while_active = 3
-			highlight_color_before_active = 2
-		}
-	}
-	border_war_minhiriath_warning = {
-		icon = GFX_decision_border_war
-		is_good = no
-		days_mission_timeout = @gwathloBorderWarDays
-		war_with_target_on_remove = yes
-		war_with_target_on_complete = yes
-		allowed = { always = no }
-		available = { hidden_trigger = { always = no } }
-		target_trigger = {
-			always = no
-		}
-		fire_only_once = yes
-		highlight_states = {
-			highlight_state_targets = {
-				state = 39 ##Minhiriath
-			}
-			highlight_color_while_active = 3
-			highlight_color_before_active = 2
-		}
 	}
 }
 

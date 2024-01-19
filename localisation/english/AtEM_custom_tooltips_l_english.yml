@@ -261,9 +261,9 @@
  line_of_dashes: "§L-----------------------------------------------------------------§!\n"
  new_line_tooltip: " \n"
  DOR_open_the_university_to_the_public_tooltip: "§Y$DOR_royal_university$§! becomes known as §Y$DOR_public_university$§!.\nIncrease the §YLevel§! & §YMaximum Level§! of each unlocked college by §G1§!$VorV_dev_line_end$"
- DOR_seek_santuary_in_dale_tooltip_MTG: "If §Y[DOR.GetFlag][DOR.GetNameDef]§! is ever annexed, it will respawn as a Government in Exile with §G30§! legitimacy in §Y[DAL.GetFlag][DAL.GetNameDef]§! as soon as §Y[DAL.GetFlag][DAL.GetNameDef]§! is at war with anyone who owns a §Y[DOR.GetFlag][DOR.GetAdjective]§! core state."
- DOR_seek_santuary_in_dale_tooltip_vanilla: "If §Y[DOR.GetFlag][DOR.GetNameDef]§! is ever annexed, it will respawn as an §Y$autonomy_puppet$§! of §Y[DAL.GetFlag][DAL.GetNameDef]§! as soon as §Y[DAL.GetFlag][DAL.GetNameDef]§! is at war with anyone who owns a §Y[DOR.GetFlag][DOR.GetAdjective]§! core state."
- DOR_seek_santuary_in_dale_tooltip: "[DOR_seek_santuary_in_dale_scripted_loc]"
+ DOR_seek_sanctuary_in_dale_tooltip_MTG: "If §Y[DOR.GetFlag][DOR.GetNameDef]§! is ever annexed, it will respawn as a Government in Exile with §G30§! legitimacy in §Y[DAL.GetFlag][DAL.GetNameDef]§! as soon as §Y[DAL.GetFlag][DAL.GetNameDef]§! is at war with anyone who owns a §Y[DOR.GetFlag][DOR.GetAdjective]§! core state."
+ DOR_seek_sanctuary_in_dale_tooltip_vanilla: "If §Y[DOR.GetFlag][DOR.GetNameDef]§! is ever annexed, it will respawn as an §Y$autonomy_puppet$§! of §Y[DAL.GetFlag][DAL.GetNameDef]§! as soon as §Y[DAL.GetFlag][DAL.GetNameDef]§! is at war with anyone who owns a §Y[DOR.GetFlag][DOR.GetAdjective]§! core state."
+ DOR_seek_sanctuary_in_dale_tooltip: "[DOR_seek_sanctuary_in_dale_scripted_loc]"
  DOR_throw_off_the_easterling_yoke_tooltip: "When a core state returns to our control through conquest or rebellion, it will spawn 2 divisions of 6 §Y$militia$§! each."
  influence: "Influence"
  influence_texticon: "£GFX_rhovanion_influence_texticon §Y$influence$§!"
@@ -316,6 +316,8 @@
  side_with_rebels_tooltip: "We will take control of the rebel forces against the current government."
  DOR_liberators_idea_rules_tooltip: "£GFX_trigger_yes $CAN_ONLY_JUSTIFY_WAR_ON_THREAT_COUNTRY$\n£GFX_trigger_yes $CAN_DECLARE_WAR_ON_SAME_IDEOLOGY$"
  in_one_hour_tooltip: "In one hour:\n"
- 
+ will_peace_out_if_WHT_wins: "§RIf [WHT.GetFlag][WHT.GetName] holds out long enough to bring [?WHT:uprising_enemy.GetFlag][?WHT:uprising_enemy.GetName] to the negotiating table, we will gain all occupied territory and then sign the white peace.§!"
+ successful_white_mountain_uprising: "The White Mountain rebels have brought their former overlord to the peace table and secured their freedom."
+ white_peace_prev_tooltip: "§Y[THIS.GetNameWithFlag]§! makes peace with §Y[PREV.GetNameWithFlag]§!"
  
  

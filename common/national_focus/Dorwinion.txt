@@ -7450,8 +7450,8 @@ focus_tree = {
 #################################EXILE
 	@resistanceFocusLarge = 10
 	@resistanceFocusSmall = 5
-	focus = { #Seek Santuary in Dale
-		id = DOR_seek_santuary_in_dale
+	focus = { #Seek Sanctuary in Dale
+		id = DOR_seek_sanctuary_in_dale
 		icon = GFX_focus_generic_improve_the_administration
 		x = -3
 		y = 4
@@ -7485,7 +7485,7 @@ focus_tree = {
 				country_event = { id = atem.24 hours = 1 }
 			}
 			custom_effect_tooltip = if_they_accept_tooltip
-			custom_effect_tooltip = DOR_seek_santuary_in_dale_tooltip
+			custom_effect_tooltip = DOR_seek_sanctuary_in_dale_tooltip
 			merchant_houses_focus_effect = yes
 		}
 	}
@@ -7494,13 +7494,13 @@ focus_tree = {
 		icon = GFX_focus_generic_vatican_agents
 		x = -3
 		y = 1
-		relative_position_id = DOR_seek_santuary_in_dale
+		relative_position_id = DOR_seek_sanctuary_in_dale
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = DOR_seek_santuary_in_dale
+			focus = DOR_seek_sanctuary_in_dale
 		}
 		available = {
 			merchant_houses_focus_trigger = yes
@@ -7581,13 +7581,13 @@ focus_tree = {
 		icon = GFX_goal_smuggle_wine
 		x = -1
 		y = 1
-		relative_position_id = DOR_seek_santuary_in_dale
+		relative_position_id = DOR_seek_sanctuary_in_dale
 		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
 		prerequisite = {
-			focus = DOR_seek_santuary_in_dale
+			focus = DOR_seek_sanctuary_in_dale
 		}
 		available = {
 			merchant_houses_focus_trigger = yes
@@ -7666,13 +7666,13 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 1
 		y = 1
-		relative_position_id = DOR_seek_santuary_in_dale
+		relative_position_id = DOR_seek_sanctuary_in_dale
 		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
 		prerequisite = {
-			focus = DOR_seek_santuary_in_dale
+			focus = DOR_seek_sanctuary_in_dale
 		}
 		available = {
 			merchant_houses_focus_trigger = yes
@@ -7757,13 +7757,13 @@ focus_tree = {
 		icon = GFX_focus_generic_manpower
 		x = 3
 		y = 1
-		relative_position_id = DOR_seek_santuary_in_dale
+		relative_position_id = DOR_seek_sanctuary_in_dale
 		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
 		prerequisite = {
-			focus = DOR_seek_santuary_in_dale
+			focus = DOR_seek_sanctuary_in_dale
 		}
 		available = {
 			merchant_houses_focus_trigger = yes
@@ -7833,7 +7833,7 @@ focus_tree = {
 		icon = GFX_focus_POL_riot_of_37
 		x = 0
 		y = 3
-		relative_position_id = DOR_seek_santuary_in_dale
+		relative_position_id = DOR_seek_sanctuary_in_dale
 		cost = 10
 		ai_will_do = {
 			factor = 15

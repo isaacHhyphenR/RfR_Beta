@@ -511,7 +511,7 @@
  WHT_invite_warriors: "Rally Warriors to our Cause"
  WHT_invite_warriors_desc: "Skilled folk from across the $White_Mountains$ flock our banner, eager to fight for freedom and fellowship!"
  GON_surrender_WHT_uprising: "Concede to [WHT.GetNameDef]"
- GON_surrender_WHT_uprising_desc: "This war is going nowhere. We should conserver our resources for the true enemy."
+ GON_surrender_WHT_uprising_desc: "This war is going nowhere. We should conserve our resources for the true enemy."
  GON_surrender_WHT_uprising_mission: "The People Tire of [WHT.GetNameDef]"
  GON_surrender_WHT_uprising_mission_desc: "Our people openly wonder why we still fight against [WHT.GetNameDef] when we clearly cannot win."
  recruit_easterling_agent: "Create the $easterling_race$ Section"

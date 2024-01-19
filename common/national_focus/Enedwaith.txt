@@ -3205,6 +3205,8 @@ focus_tree = {
 				create_faction = WHITE_MOUNTAINS_INSURGENCY_FACTION
 			}
 			add_to_faction = WHT
+			custom_effect_tooltip = will_peace_out_if_WHT_wins
+			set_country_flag = joined_WHT_uprising
 			increase_white_mountain_influence_2 = yes
 		}
 	}

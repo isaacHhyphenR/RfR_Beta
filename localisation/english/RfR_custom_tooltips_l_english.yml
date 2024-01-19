@@ -569,6 +569,7 @@
  ENE_legacy_of_rebel_miners_tooltip: "$ARMY_EXPERIENCE$: §G+15§! $per_controlled_white_mountains_state$$VorV_dev_line_end$"
  ENE_learn_from_the_oathbreakers_mistakes_tooltip: "§Y2x§! Cost reduction for: §Y$land_doctrine$§!. Reduction is §G$VorV_tier_1_doctrine_bonus$§! $per_controlled_white_mountains_state$$VorV_dev_line_end$"
  ENE_axes_for_trees_and_knecks_tooltip: "§Y$VorV_tier_1_equipment_bonus$§! units of §Y$infantry_equipment$§! is added to the national stockpile $per_controlled_white_mountains_state$$VorV_dev_line_end$"
+ ENE_foster_national_sentiment_in_the_white_mountains_tooltip: "Unlocks decisions to increase resistance in §Y$STATE_139$§!. If resistance reaches §R90%§!, the inhabitants will become a puppet of §Y[139.owner.GetNameWithFlag]§! and may eventually declare war for full independence. They can win this war by maintaining their borders for a year."
  unlocks_decision_tooltip: "Unlocks £decision_icon_small §Ydecisions§!"
  has_limited_war_tooltip: "We are in a limited war"
  THIS_has_non_limited_war_with_PREV_tooltip: "Has a non-limited war with §Y[PREV.GetNameWithFlag]§!"
