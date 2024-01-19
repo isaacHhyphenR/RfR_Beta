@@ -1,0 +1,28 @@
+spriteTypes = {
+	corneredTileSpriteType = {
+		name = "GFX_frontend_bg"
+		texturefile = "gfx/loadingscreens/load_main.dds"
+		borderSize = { x=0 y=0 }
+		size = { x=1920 y=1440 }
+		tilingCenter = no
+		effectFile = "gfx/FX/buttonstate.shader"
+	}
+	spriteType = {
+		name = "discord"
+		texturefile = "gfx//interface//discord_image.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
+		name = "GFX_discord_text"
+		texturefile = "gfx/interface/discord_logo.dds"
+	}
+	spriteType = {
+		name = "wiki"
+		texturefile = "gfx//interface//wiki_image.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
+		name = "GFX_wiki_text"
+		texturefile = "gfx/interface/wiki_logo.dds"
+	}
+}
