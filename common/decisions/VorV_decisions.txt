@@ -686,7 +686,7 @@ rfr_border_war_category = {
 				WHT = {
 					set_country_flag = uprising_completed
 					if = { #leave the faction so you don't get dragged back into the war
-						limit = { NOT = { faction_leader = has_country_flag = joined_WHT_uprising } }
+						limit = { NOT = { faction_leader = { has_country_flag = joined_WHT_uprising } } }
 						leave_faction = yes
 					}
 				}
