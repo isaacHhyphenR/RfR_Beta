@@ -8,188 +8,187 @@ guiTypes = {
 		iconType = {
 			name = "Umbar_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 48 y = -9 }
+			position = { x = 61 y = -7 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Amrun_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 72 y = -17 }
+			position = { x = 80 y = -16 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Starlurtsa_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 95 y = -20 }
+			position = { x = 118 y = -24 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Dol_amroth_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 43 y = -36 }
+			position = { x = 56 y = -32 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Calembel_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 49 y = -40 }
+			position = { x = 61 y = -39 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Pelargir_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 59 y = -33 }
+			position = { x = 72 y = -31 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Minas_tirith_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 60 y = -39 }
+			position = { x = 73 y = -38 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Osgiliath_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 63 y = -40 }
+			position = { x = 77 y = -38 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Minas_morgul_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 66 y = -41 }
+			position = { x = 80 y = -40 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Mount_doom_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 69 y = -45 }
+			position = { x = 83 y = -42 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Barad_Dur_Star"
-			#spriteType = "GFX_Portrait_Denethor"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 72 y = -43 }
+			position = { x = 86 y = -44 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Morannon_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 67 y = -49 }
+			position = { x = 80 y = -47 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Ring_of_Isengard_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 39 y = -55 }
+			position = { x = 52 y = -54 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Orthanc_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 39 y = -55 }
+			position = { x = 52 y = -54 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Hornburg_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 41 y = -49 }
+			position = { x = 54 y = -48 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Edoras_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 46 y = -47 }
+			position = { x = 59 y = -46 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Moria_Star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 43 y = -68 }
+			position = { x = 56 y = -67 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Lorien_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 49 y = -65 }
+			position = { x = 62 y = -64 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Dol_guldur_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 56 y = -66 }
+			position = { x = 69 y = -65 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
-			name = "Carag_sant_star"
+			name = "Riavod_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 89 y = -69 }
+			position = { x = 102 y = -67 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Mistarand_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 94 y = -59 }
+			position = { x = 108 y = -57 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Fenas_drunin_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 37 y = -73 }
+			position = { x = 50 y = -71 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Rivendell_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 44 y = -79 }
+			position = { x = 56 y = -77 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Goblintown_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 48 y = -72 }
+			position = { x = 61 y = -79 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Gundabad_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 46 y = -89 }
+			position = { x = 59 y = -88 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Elfkings_halls_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 61 y = -86 }
+			position = { x = 74 y = -81 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Dale_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 65 y = -89 }
+			position = { x = 79 y = -80 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Erebor_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 65 y = -93 }
+			position = { x = 78 y = -84 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Gondamon_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 4 y = -84 }
+			position = { x = 17 y = -82 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Mithlond_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 7 y = -79 }
+			position = { x = 20 y = -77 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType = {
 			name = "Annuminas_star"
 			quadTextureSprite  = "GFX_ring_stars_9"
-			position = { x = 17 y = -82 }
+			position = { x = 31 y = -81 }
 			Orientation = "UPPER_LEFT"
 		}
 	}

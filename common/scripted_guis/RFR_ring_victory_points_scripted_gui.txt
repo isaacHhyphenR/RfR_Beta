@@ -63,7 +63,7 @@ scripted_gui = {
 			Dol_guldur_star = {
 				frame = 93.ring_ui_frame
 			}
-			Carag_sant_star = {
+			Riavod_star = {
 				frame = 116.ring_ui_frame
 			}
 			Mistarand_star = {
