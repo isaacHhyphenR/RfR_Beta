@@ -462,10 +462,16 @@ country_event = { ##7## Hawin Koldana Dies, election happens
 						value < 0.0
 					}
 				}
-				great_merchants_win_election_effect = yes
+				remove_power_balance = {
+					id = DOR_election_power_balance
+				}
+				country_event = { id = atem.702 hours = 1 }
 			}
 			else = {
-				winelords_win_election_effect = yes
+				remove_power_balance = {
+					id = DOR_election_power_balance
+				}
+				country_event = { id = atem.701 hours = 1 }
 			}
 			news_event = { id = rfr_news.98 hours = 1 } #tell everyone else
 		}
@@ -482,39 +488,61 @@ country_event = { ##7## Hawin Koldana Dies, election happens
 			if = {
 				limit = { has_government = opportunism }
 				custom_effect_tooltip = bladorthin_koldana_ascends
-				custom_effect_tooltip = activate_winelords_bop
 				add_popularity = {
 					ideology = opportunism
 					popularity = 0.1
 				}
-				set_power_balance = {
-					id = DOR_winelords_power_balance
-					left_side = DOR_koldana_side
-					right_side = DOR_vierling_side
-				}
+				# set_power_balance = {
+					# id = DOR_winelords_power_balance
+					# left_side = DOR_koldana_side
+					# right_side = DOR_vierling_side
+				# }
 				if = { #reward PP
 					limit = { has_country_flag = supporting_winelords }
 					add_political_power = 100
 				}
+				custom_effect_tooltip = in_one_hour_tooltip
+				custom_effect_tooltip = activate_winelords_bop
 			}
 			else = {
 				custom_effect_tooltip = aldiana_bergholda_ascends
-				custom_effect_tooltip = activate_great_merchants_bop
 				add_popularity = {
 					ideology = isolationism
 					popularity = 0.1
 				}
-				set_power_balance = {
-					id = DOR_great_merchants_power_balance
-					left_side = DOR_burghers_side
-					right_side = DOR_merchant_houses_side
-				}
+				# set_power_balance = {
+					# id = DOR_great_merchants_power_balance
+					# left_side = DOR_burghers_side
+					# right_side = DOR_merchant_houses_side
+				# }
 				if = { #reward PP
 					limit = { has_country_flag = supporting_great_merchants }
 					add_political_power = 100
 				}
+				custom_effect_tooltip = in_one_hour_tooltip
+				custom_effect_tooltip = activate_great_merchants_bop
 			}
 		}
+	}
+}
+country_event = { ##701## winelords win
+	id = atem.701
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	immediate = {
+		winelords_win_election_effect = yes
+	}
+}
+country_event = { ##702# merchants win
+	id = atem.702
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	immediate = {
+		great_merchants_win_election_effect = yes
 	}
 }
 

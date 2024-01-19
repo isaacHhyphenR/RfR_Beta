@@ -111,8 +111,8 @@
  hawin_koldana_dies: "§R$DOR_hawin_koldana$ dies!§!"
  aldiana_bergholda_ascends: "§G$DOR_bergholda_aldiana$ becomes ruler.§!"
  bladorthin_koldana_ascends: "§G$DOR_bladorthin_koldana$ becomes ruler.§!"
- activate_great_merchants_bop: "Activate $DOR_great_merchants_power_balance$"
- activate_winelords_bop: "Activate $DOR_winelords_power_balance$"
+ activate_great_merchants_bop: "§Y$DOR_great_merchants_power_balance$§! begins."
+ activate_winelords_bop: "§Y$DOR_winelords_power_balance$§! begins."
  DOR_attend_to_our_beloved_realm_master_tooltip: "Extends §Y$DOR_hawin_koldana$'s§! life by §Y70§! days, plus §Y70§! days per completed upgrade to the §Y$DOR_college_of_medicine_idea$§!"
  convert_half_isolationism_to_freedom: "Converts half of our §Y$isolationism_noun$§! support into §Y$freedom_noun$§! support"
  every_guaranteed_rhovanion_tag_tooltip: "Every §Y$RVN$§! country that we have §Yguaranteed§!:\n"
@@ -314,8 +314,8 @@
  DOR_procure_resources_for_our_economy_tooltip: "$unlocks_decision_tooltip$ allowing you to spend $influence_texticon$ to gain resource rights in Rhovanion puppets with §Y$DOR_trade_influence$§!."
  DOR_favored_trader_influence_tooltip: "§Y[DOR.GetFlag][DOR.GetName]§!: §Y+25%§! Influence Gain over us"
  side_with_rebels_tooltip: "We will take control of the rebel forces against the current government."
- 
- 
+ DOR_liberators_idea_rules_tooltip: "£GFX_trigger_yes $CAN_ONLY_JUSTIFY_WAR_ON_THREAT_COUNTRY$\n£GFX_trigger_yes $CAN_DECLARE_WAR_ON_SAME_IDEOLOGY$"
+ in_one_hour_tooltip: "In one hour:\n"
  
  
  

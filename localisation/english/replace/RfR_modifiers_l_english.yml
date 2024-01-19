@@ -96,4 +96,5 @@
  
  MODIFIER_ROCKET_ATTACK_FACTOR: "Siege Artillery Damage"
  
- 
+ CAN_DECLARE_WAR_ON_SAME_IDEOLOGY: "Can justify a war goal on a country with the same ideology group without a war goal"
+ CAN_ONLY_JUSTIFY_WAR_ON_THREAT_COUNTRY: " Can justify war goals against a country that has not generated world tension"

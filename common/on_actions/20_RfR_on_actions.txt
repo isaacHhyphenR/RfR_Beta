@@ -1,0 +1,563 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			#starting information Events
+			every_country = {
+				limit = { has_country_info_event = yes }
+				activate_decision = country_info_decision
+			}
+			FOR = {
+				randomise_ai_strategy = yes ##Randomise any AIs set to be 'random'
+				check_evil_ring_points = yes
+				news_event = { id = rfr_news.10 } #starting popup
+			}
+		}
+		effect = { #fire timed events
+			GON = {
+				country_event = { id = gondor.3 days = 180 } #first palantir interaction
+				country_event = { id = gondor.9 days = 1520 } #check for boromir's death: February 29, 3019
+				country_event = { id = gondor.10 days = 1800 } #december 6 3019 #94 } #Aragorn arrives with the army of the dead: March 9 3020
+			}
+			ROH = { country_event = { id = rohan.12 days = 1157 } } #check whether gandalf cures theoden: March 4, 3018
+		}
+		effect = { ##REMOVE UNEARNED UNIT LEADER TRAIT SLOTS
+			GON = {
+				GON_boromir = { add_max_trait = -3 }
+				GON_faramir = { add_max_trait = -2 }
+				GON_duinhir = { add_max_trait = -1 }
+				GON_imrahil = { add_max_trait = -1 }
+				GON_ciryandar_earnarionath = { add_max_trait = -1 }
+			}
+			MOR = {
+				MOR_khamul = { add_max_trait = -4 }
+				MOR_dendra_dwar = { add_max_trait = -4 }
+				MOR_ji_indur = { add_max_trait = -1 }
+				MOR_khorahil = { add_max_trait = -4 }
+				MOR_hoarmurath = { add_max_trait = -4 }
+				MOR_adunabeth = { add_max_trait = -4 }
+				MOR_ren_iey = { add_max_trait = -4 }
+				MOR_uvatha_achef = { add_max_trait = -1 }
+			}
+			ROH = {
+				ROH_theodred = { add_max_trait = -3 }
+				ROH_eomer = { add_max_trait = -3 }
+				ROH_elfhelm = { add_max_trait = -2 }
+				ROH_grimbold = { add_max_trait = -1 }
+			}
+		}
+		effect = { ##MAJORS
+			GON = { set_major = yes }
+			ISN = { set_major = yes }
+			ROH = { set_major = yes }
+			MOR = { set_major = yes }
+		}
+		effect = { ##fractured peoples ideas
+			KND = { add_ideas = fractured_people }
+		}
+		effect = {###Gives ROH 1 fyrd in each state & all commanders special trait if has correct flags
+			ROH = {
+				if = { ##TRAIT
+					limit = { has_country_flag = recruit_mark_nobles }
+					every_unit_leader = {
+						add_unit_leader_trait = ROH_noble_of_the_mark
+					}
+				}
+				if = { ##FYRD
+					limit = { has_country_flag = start_with_trained_fyrd }
+					every_controlled_state = {
+						if = { limit = { NOT = { OR = { state = 72 state = 73 state = 209 } } } ##Not in states that can't train fyrd
+							add_dynamic_modifier = { modifier = local_fyrd_1 }
+							add_to_variable = { current_state_fyrd = 1 }
+							set_variable = { available_state_fyrd = 1 }
+						}
+					}
+				}
+			}
+		}
+		effect = { ##ensures Eomer will revolt with his revolution, creates all of Rohan's units so that they can have IDs for the rebellion event
+			ROH = {
+				ROH_eomer = {
+					set_character_flag = ROH_loyal_to_country
+				}
+				country_event = {
+					id = rohan.2
+				}
+			}
+		}
+		effect = {#makes melkorites want to ally sauron
+			every_country = {
+				limit = { has_government = melkorite }
+				add_ai_strategy = {
+					type = alliance
+					id = MOR
+					value = 20
+				}
+			}
+		}
+			
+		# effect = { ##Unlocks level 5 forts
+			# every_country = {
+				# set_technology = {
+					# hidden_fort_tech = 1
+				# }
+			# }
+		# }
+	}
+			
+	on_daily_ROH = { #Fires eomer's revolt/Grima's arrest
+		effect = {
+			if = { limit = { ROH = { has_idea = ROH_a_hall_divided } } #can only fire once
+				if = { limit = { ROH = { has_stability < 0.25 } has_country_flag = conflict_ongoing} #REBELLION
+					ROH = { country_event = { id = rohan.1 } }
+					clr_country_flag = conflict_ongoing
+				}
+				else_if = { limit = { ROH = { has_war_support < 0.25 } has_country_flag = conflict_ongoing } ##ARREST
+					ROH = { country_event = { id = rohan.3 } }
+					clr_country_flag = conflict_ongoing
+				}
+			}
+		}
+	}
+	
+	on_civil_war_end = {
+		effect = { #Removes civil war ideas
+			if = { limit = { has_idea = the_peasants_duty }
+				remove_ideas = the_peasants_duty
+			}
+			if = { limit = { has_idea = ROH_emergency_tythes }
+				remove_ideas = ROH_emergency_tythes
+			}
+			if = { limit = { has_idea = securing_the_country }
+				remove_ideas = securing_the_country
+			}
+			if = { limit = { has_cosmetic_tag = EOM }
+				country_event = { id = rohan.4 }
+			}
+		}
+		effect = { #Undoes the emrgency measures allowing countries to send volunteers to ROH
+			if = { limit = { FROM = { original_tag = ROH } }
+				every_country = {
+					limit = { has_dynamic_modifier = { modifier = can_send_volunteers_to_EOM } }
+					remove_dynamic_modifier = { modifier = can_send_volunteers_to_EOM }
+					if = { ##Isolationists can't send volunteers
+						limit = { has_government = isolationism }
+						set_rule = {
+							can_send_volunteers = no
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	on_civil_war_end_before_annexation = {
+		effect = { ##Prevents civil war devastation events during annexation
+			ROOT = {
+				set_country_flag = just_ended_civil_war
+			}
+		}
+		effect = { #If grima promised ISN civs, ISN gets civs
+			if = {
+				limit = {
+					ROH = {
+						has_volunteers_amount_from = { #ISN only gets paid if they participate
+							tag = ISN
+							count > 0
+						}
+					}
+					OR = {
+						ROOT = { has_completed_focus = ROH_request_covert_assistance }
+						FROM = { has_completed_focus = ROH_request_covert_assistance }
+					}
+				}
+				ISN = {
+					country_event = { id = isengard.3 }
+				}
+			}
+		}
+	}
+	
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = { ##Rohan's civil war is brutal
+			if = { ##Only happens if both sides are Rohirrim in a civil war
+				limit = {
+					ROOT = { original_tag = ROH has_civil_war = yes NOT = { has_country_flag = just_ended_civil_war } }
+					FROM = { original_tag = ROH has_civil_war = yes }
+					NOT = { FROM = { has_country_flag = just_started_civil_war } } ##Ensures doesn't damage while transfering initial states
+				}
+				ROOT = { clr_country_flag = just_ended_civil_war }
+				FROM.FROM = {
+					set_state_flag = rohirricCivilWarDevastation
+				}
+				random_list = {
+					10 = { #Sacking civs
+						if = { limit = { FROM.FROM = { industrial_complex > 0 } } ##Can't sack civs if no civs around
+							ROOT = {
+								country_event = {
+									id = rohan.50
+								}
+							}
+							FROM = {
+								country_event = {
+									id = rohan.50
+								}
+							}
+						}
+						else = { #if the event doesn't fire, flag has to be cleared here
+							FROM.FROM = {
+								clr_state_flag = rohirricCivilWarDevastation
+							}
+						}
+					}
+					8 = { #Sacking mils
+						if = { limit = { FROM.FROM = { arms_factory > 0 } } ##Can't sack mils if no mils around
+							ROOT = {
+								country_event = {
+									id = rohan.51
+								}
+							}
+							FROM = {
+								country_event = {
+									id = rohan.51
+								}
+							}
+						}
+						else = { #if the event doesn't fire, flag has to be cleared here
+							FROM.FROM = {
+								clr_state_flag = rohirricCivilWarDevastation
+							}
+						}
+					}
+					8 = { #Sacking infra
+						if = { limit = { FROM.FROM = { infrastructure > 0 } } ##Can't sack infra if no infra around
+							ROOT = {
+								country_event = {
+									id = rohan.52
+								}
+							}
+							FROM = {
+								country_event = {
+									id = rohan.52
+								}
+							}
+						}
+						else = { #if the event doesn't fire, flag has to be cleared here
+							FROM.FROM = {
+								clr_state_flag = rohirricCivilWarDevastation
+							}
+						}
+					}
+					6 = { #Sacking mounts
+						if = { ##Can't sack mounts if no mounts around
+							limit = {
+								FROM.FROM = {
+									has_resources_amount = {
+										resource = mounts
+										amount > 2
+									}
+									NOT = { has_dynamic_modifier = { modifier = slaughtered_herds } }
+								}
+							}
+							ROOT = {
+								country_event = {
+									id = rohan.53
+								}
+							}
+							FROM = {
+								country_event = {
+									id = rohan.53
+								}
+							}
+						}
+						else = { #if the event doesn't fire, flag has to be cleared here
+							FROM.FROM = {
+								clr_state_flag = rohirricCivilWarDevastation
+							}
+						}
+					}
+					6 = { #Sacking food
+						if = { ##Can't sack food if no food around
+							limit = {
+								FROM.FROM = {
+									has_resources_amount = {
+										resource = food
+										amount > 2
+									}
+									NOT = { has_dynamic_modifier = { modifier = trampled_crops } }
+								}
+							}
+							ROOT = {
+								country_event = {
+									id = rohan.54
+								}
+							}
+							FROM = {
+								country_event = {
+									id = rohan.54
+								}
+							}
+						}
+						else = { #if the event doesn't fire, flag has to be cleared here
+							FROM.FROM = {
+								clr_state_flag = rohirricCivilWarDevastation
+							}
+						}
+					}
+					4 = { #No devastation
+						FROM.FROM = {
+							clr_state_flag = rohirricCivilWarDevastation
+						}
+					}
+				}
+			}
+		}
+		effect = { #Ring victory points
+			if = {
+				limit = { FROM.FROM = { has_state_flag = ring_victory_point } }
+				check_evil_ring_points = yes
+			}
+		}
+	}
+	
+	############################ISN's subject research for overlord bonus
+	on_subject_autonomy_level_change = {
+		effect = {
+			if = {
+				limit = { OR = { ROOT = { has_autonomy_state = autonomy_councils_partner } ROOT = { has_autonomy_state = autonomy_councils_ward } ROOT = { has_autonomy_state = autonomy_councils_servant } ROOT = { has_autonomy_state = autonomy_councils_slave } } }
+				FROM = { calculate_council_subject_research_bonus = yes }
+			}
+		}
+	}
+	on_release_as_puppet = {
+		effect = {##ISN's subject research for overlord bonus
+			if = {
+				limit = { OR = { ROOT = { has_autonomy_state = autonomy_councils_partner } ROOT = { has_autonomy_state = autonomy_councils_ward } ROOT = { has_autonomy_state = autonomy_councils_servant } ROOT = { has_autonomy_state = autonomy_councils_slave } } }
+				FROM = { calculate_council_subject_research_bonus = yes }
+			}
+		}
+	}
+	
+	# on_monthly = {
+		# effect = { ##As a backup for council subject research bonus, especially for freeing/annexing pupppets
+			# if = { limit = { original_tag = ISN }
+				# calculate_council_subject_research_bonus = yes
+			# }
+		# }
+	# }
+	
+	
+	on_daily_ISN = {
+		effect = {
+			calculate_council_subject_research_bonus = yes
+			isengard_calculate_all_subject_control = yes
+		}
+	}
+	
+	# on_daily_ISN = {
+		# effect = {
+			# if = { limit = { has_idea = ISN_survival_of_the_fittest_idea }
+				# every_unit_leader = {
+					# gain_xp = 2
+				# }
+			# }
+		# }
+	# }
+	
+	on_weekly_ROH = {
+		effect = { ##Mercenaries in the civil war have a chance of devastation each week
+			if = { 
+				limit = { has_civil_war = yes }
+				random_controlled_state = { ##targets a random state for devastation
+					limit = { NOT = { OR = { state = 72 state = 73 state = 209 } } } ##Nothing to sack in thrihyrne, helms deep, or harrowdale
+					set_state_flag = rohirricMercenaryDevastation
+					random_list = {
+						10 = { #Beornings decrease build speed #55
+							if = { ##must have hired beornings
+								limit = { PREV = { has_idea = roh_beorning_mercenaries } }
+								PREV = { #sends event to roh
+									country_event = {
+										id = rohan.55
+									}
+								}
+								random_country = { ##sends event to the other side in the civil war
+									limit = { NOT = { tag = ROH } original_tag = ROH }
+									country_event = {
+										id = rohan.55
+									}
+								}
+							}
+							else = {
+								clr_state_flag = rohirricMercenaryDevastation
+							}
+						}
+						10 = { #Beornings damage infra #56
+							if = { ##must have hired beornings $ have infra to damage
+								limit = { PREV = { has_idea = roh_beorning_mercenaries } infrastructure > 0 }
+								PREV = { #sends event to roh
+									country_event = {
+										id = rohan.56
+									}
+								}
+								random_country = { ##sends event to the other side in the civil war
+									limit = { NOT = { tag = ROH } original_tag = ROH }
+									country_event = {
+										id = rohan.56
+									}
+								}
+							}
+							else = {
+								clr_state_flag = rohirricMercenaryDevastation
+							}
+						}
+						10 = { #Enedwaithy steal horses #57
+							if = { ##must have hired enedwaithy & have horses to damage
+								limit = {
+									PREV = { has_idea = roh_enedwaithy_mercenaries }
+									has_resources_amount = {
+										resource = mounts
+										amount > 4
+									}
+									NOT = { has_dynamic_modifier = { modifier = slaughtered_herds } }
+								}
+								PREV = { #sends event to roh
+									country_event = {
+										id = rohan.57
+									}
+								}
+								random_country = { ##sends event to the other side in the civil war
+									limit = { NOT = { tag = ROH } original_tag = ROH }
+									country_event = {
+										id = rohan.57
+									}
+								}
+							}
+							else = {
+								clr_state_flag = rohirricMercenaryDevastation
+							}
+						}
+						10 = { #Enedwaithy sack mils #58
+							if = { ##must have hired enedwaithy & have mils to damage
+								limit = {
+									PREV = { has_idea = roh_enedwaithy_mercenaries }
+									arms_factory > 0
+								}
+								PREV = { #sends event to roh
+									country_event = {
+										id = rohan.58
+									}
+								}
+								random_country = { ##sends event to the other side in the civil war
+									limit = { NOT = { tag = ROH } original_tag = ROH }
+									country_event = {
+										id = rohan.58
+									}
+								}
+							}
+							else = {
+								clr_state_flag = rohirricMercenaryDevastation
+							}
+						}
+						10 = { #dunlendings damage all #59
+							if = { ##must have hired dunlendings
+								limit = {
+									PREV = { has_idea = roh_dunlending_mercenaries }
+								}
+								PREV = { #sends event to roh
+									country_event = {
+										id = rohan.59
+									}
+								}
+								random_country = { ##sends event to the other side in the civil war
+									limit = { NOT = { tag = ROH } original_tag = ROH }
+									country_event = {
+										id = rohan.59
+									}
+								}
+							}
+							else = {
+								clr_state_flag = rohirricMercenaryDevastation
+							}
+						}
+						10 = { #dunlendings damage resources #60
+							if = { ##must have hired dunlendings & have resources to damage
+								limit = {
+									PREV = { has_idea = roh_dunlending_mercenaries }
+									NOT = { has_dynamic_modifier = { modifier = damaged_resources } }
+								}
+								PREV = { #sends event to roh
+									country_event = {
+										id = rohan.60
+									}
+								}
+								random_country = { ##sends event to the other side in the civil war
+									limit = { NOT = { tag = ROH } original_tag = ROH }
+									country_event = {
+										id = rohan.60
+									}
+								}
+							}
+							else = {
+								clr_state_flag = rohirricMercenaryDevastation
+							}
+						}
+						20 = { #orcs damage everything #61
+							if = { ##must have hired misty mountains
+								limit = {
+									PREV = { has_idea = roh_misty_mountain_mercenaries }
+								}
+								PREV = { #sends event to roh
+									country_event = {
+										id = rohan.61
+									}
+								}
+								random_country = { ##sends event to the other side in the civil war
+									limit = { NOT = { tag = ROH } original_tag = ROH }
+									country_event = {
+										id = rohan.61
+									}
+								}
+							}
+							else = {
+								clr_state_flag = rohirricMercenaryDevastation
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	on_unit_leader_created = { # This uses the UNIT LEADER sub scope of a character, FROM == country
+		effect = { #Rohan's Noble of The Mark trait, Mordor's horde commander trait
+			if = {
+				limit = {
+					FROM = { has_country_flag = recruit_mark_nobles }
+				}
+				add_unit_leader_trait = ROH_noble_of_the_mark
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_completed_focus = MOR_marching_seargents
+						has_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+					}
+				}
+				add_unit_leader_trait = horde_commander
+			}
+		}
+	}
+	on_peaceconference_ended = {
+		effect = {
+			ROOT = {
+				if = {
+					limit = {
+						has_focus_tree = rohan_focus
+						FROM = { original_tag = ISN }
+					}
+					unlock_national_focus = ROH_hang_saruman_for_his_crimes
+				}
+			}
+		}
+	}
+}

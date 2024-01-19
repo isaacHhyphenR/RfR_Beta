@@ -347,6 +347,7 @@ ideas = {
 				resistance_target = -0.15
 				starting_compliance = 0.15
 				custom_modifier_tooltip = DOR_liberators_idea_conference_modifiers
+				custom_modifier_tooltip = DOR_liberators_idea_rules_tooltip
 			}
 			rule = {
 				can_only_justify_war_on_threat_country = no

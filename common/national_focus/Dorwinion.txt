@@ -3307,10 +3307,11 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = unlocks_spread_revolution_decisions
 			custom_effect_tooltip = unlocks_spread_revolution_war_goal
-			swap_ideas = {
+			swap_ideas = { #Does not modify peace conference anymore
 				remove_idea = DOR_liberators_idea
 				add_idea = DOR_liberators_idea2
 			}
+			custom_effect_tooltip = DOR_liberators_idea_rules_tooltip
 			burghers_focus_effect = yes
 		}
 	}
