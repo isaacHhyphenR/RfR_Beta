@@ -130,6 +130,15 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 3592;997;impassable;-1;-1;-1;-1;-1;;
 6455;6441;impassable;-1;-1;-1;-1;-1;;
 6401;6441;impassable;-1;-1;-1;-1;-1;;
+10783;7852;impassable;-1;-1;-1;-1;-1;;KHAND
+10783;10747;impassable;-1;-1;-1;-1;-1;;
+10747;7852;impassable;-1;-1;-1;-1;-1;;
+7896;7952;impassable;-1;-1;-1;-1;-1;;
+7896;8737;impassable;-1;-1;-1;-1;-1;;
+11744;8966;impassable;-1;-1;-1;-1;-1;;
+11770;8966;impassable;-1;-1;-1;-1;-1;;
+11770;10236;impassable;-1;-1;-1;-1;-1;;
+10236;8966;impassable;-1;-1;-1;-1;-1;;
 12500;12734;;-1;-1;-1;-1;-1;N_MOUTH_OF_ANDUIN;MOUTHS OF ANDUIN-NAVAL
 12734;12491;;-1;-1;-1;-1;-1;NC_MOUTH_OF_ANDUIN;
 12491;12929;;-1;-1;-1;-1;-1;C_MOUTH_OF_ANDUIN;
