@@ -1,0 +1,243 @@
+ideas = {
+		######################################## SPIRITS
+	country = {
+		@ringPenalties = -0.33
+		the_one_ring_destroyed_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = the_one_ring_destroyed
+			modifier = {
+				political_power_factor = @ringPenalties
+				army_org_factor = @ringPenalties
+				opinion_gain_monthly_factor = @ringPenalties
+				army_attack_factor = @ringPenalties
+				army_defence_factor = @ringPenalties
+				recruitable_population_factor = @ringPenalties
+				production_factory_max_efficiency_factor = @ringPenalties
+			}
+		}
+		@ringBonuses = 0.25
+		the_one_ring_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = the_one_ring
+			modifier = {
+				political_power_factor = @ringBonuses
+				command_power_gain_mult = @ringBonuses
+				army_org_factor = @ringBonuses
+				army_attack_factor = @ringBonuses
+				production_speed_buildings_factor = @ringBonuses
+				production_factory_efficiency_gain_factor = @ringBonuses
+				non_core_manpower = @ringBonuses
+				conscription_factor = @ringBonuses
+			}
+		}
+		saurons_prize_spirit = {
+			allowed_civil_war = {
+				NOT = { has_government = melkorite }
+			}
+			removal_cost = -1
+			picture = saurons_prize_icon
+			modifier = {
+				mobilization_speed = 0.5
+				production_speed_bunker_factor = 0.05
+				war_support_factor = 0.05
+				custom_modifier_tooltip = sauron_reserve_wargoal_tooltip
+			}
+		}
+		spurned_sauron = {
+			allowed_civil_war = {
+				NOT = { has_government = melkorite }
+			}
+			removal_cost = -1
+			picture = spurned_sauron_icon
+			modifier = {
+				melkorite_drift = -0.05
+				melkorite_acceptance = -50
+				custom_modifier_tooltip = sauron_reserve_wargoal_tooltip
+			}
+		}
+		@fracturedMalus = -0.66
+		fractured_people = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = tfv_can_conscription_crisis
+			modifier = {
+				recruitable_population_factor = @fracturedMalus
+				industrial_capacity_factory = @fracturedMalus
+				production_speed_buildings_factor = @fracturedMalus
+			}
+		}
+		beastly_spies = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = birds_and_beasts
+			modifier = {
+				operative_slot = 1
+			}
+		}
+		crebain = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = crebain
+			modifier = {
+				operative_slot = 1
+			}
+		}
+		basic_palantir = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_palantir
+			modifier = {
+				decryption = 1
+			}
+		}
+		@masterPalantirDecryption = 2
+		mastered_palantir = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_palantir
+			modifier = {
+				decryption = @masterPalantirDecryption
+			}
+		}
+		mastered_palantir_offence = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_palantir
+			modifier = {
+				decryption = @masterPalantirDecryption
+				offence = 0.05
+			}
+		}
+		mastered_palantir_efficiency = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_palantir
+			modifier = {
+				decryption = @masterPalantirDecryption
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		basic_palantir_LAR = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_palantir
+			modifier = {
+				decryption_power = 10
+			}
+		}
+		@masterPalantirDecryptionLAR = 35
+		mastered_palantir_LAR = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_palantir
+			modifier = {
+				decryption_power = @masterPalantirDecryptionLAR
+			}
+		}
+		mastered_palantir_offence_LAR = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_palantir
+			modifier = {
+				decryption_power = @masterPalantirDecryptionLAR
+				offence = 0.05
+			}
+		}
+		mastered_palantir_efficiency_LAR = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_palantir
+			modifier = {
+				decryption_power = @masterPalantirDecryptionLAR
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		celebrating_saurons_fall = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = ROM_king_carol_ii_hedonist
+			modifier = {
+				consumer_goods_factor = -0.15
+				stability_weekly = 0.05
+			}
+		}
+		ancient_hatred = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = chi_war_of_resistance3
+			modifier = {
+				recruitable_population_factor = 0.25
+				war_support_factor = 0.25
+			}
+		}
+		######################################## TRADE
+		shire_trade_spirit = {
+			allowed = {
+				always = no
+			}
+			cancel = { NOT = { country_exists = SHI } }
+			removal_cost = -1
+			picture = generic_trade_with_shire
+			modifier = {
+				#civilian_factory_use = 1
+				stability_factor = 0.1
+			}
+		}
+		isengard_trade_spirit = {
+			allowed = {
+				always = no
+			}
+			cancel = { NOT = { country_exists = ISN } }
+			removal_cost = -1
+			picture = generic_trade_with_isengard
+			on_add = { add_offsite_building = { type = industrial_complex level = 1 } }
+			on_remove = { add_offsite_building = { type = industrial_complex level = -1 } }
+			modifier = {
+				custom_modifier_tooltip = extra_civ_factory_tooltip
+			}
+		}
+	}
+	hidden_ideas = {
+		
+		@femaleChance = 0.25
+		female_leader_chance_idea = {
+			allowed = { always = yes }
+			removal_cost = 100
+			picture = SOV_fascist_womens_movement
+			modifier = {
+				female_random_country_leader_chance = @femaleChance
+				female_divisional_commander_chance = @femaleChance
+				female_random_admiral_chance = @femaleChance
+				female_random_army_leader_chance = @femaleChance
+			}
+		}
+	}
+}

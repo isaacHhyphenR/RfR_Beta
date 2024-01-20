@@ -19,6 +19,7 @@ scripted_gui = {
 				random_controlled_state = {
 					limit = {
 						check_variable = { prosperity = 100 }
+						market < var:market_max_level
 						NOT = { has_state_flag = constructing_market }
 					}
 					ROOT = {

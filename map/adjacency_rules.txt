@@ -461,9 +461,9 @@ adjacency_rule = {
 
 
 ######################################################################### #GREYFLOOD
-@greyfloodContestedNavies = no
-@greyfloodContestedArmies = no
-@greyfloodContestedTrade = no
+@greyfloodContestedNavies = yes
+@greyfloodContestedArmies = yes
+@greyfloodContestedTrade = yes
 adjacency_rule = { #lond daer
 	name = "LOND_DAER"
 
@@ -495,7 +495,7 @@ adjacency_rule = { #lond daer
 	required_provinces = { 1684 6694 }
 	
 	icon = 12310
-	offset = { -13 0 -18 }
+	offset = { -11 0 -30 }
 }
 adjacency_rule = { #fordh maru
 	name = "FORDH_MARU"

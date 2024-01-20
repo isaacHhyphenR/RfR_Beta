@@ -301,6 +301,7 @@ on_actions = {
 					NOT = {
 						any_controlled_state = {
 							check_variable = { prosperity = 100 }
+							market < var:market_max_level
 						}
 					}
 				}
