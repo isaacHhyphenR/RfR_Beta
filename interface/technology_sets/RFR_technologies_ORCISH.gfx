@@ -1,5 +1,529 @@
 spriteTypes = {
 							######################################
+									#GUNDABAD
+							######################################
+###ORCISH INFANTRY armor
+	SpriteType = {
+		name = "GFX_GDB_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_2.dds"
+	}
+###ORCISH INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_GDB_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_double_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_double_infantry_weapons1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_double_infantry_weapons2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_double_infantry_weapons2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_double_infantry_weapons3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_double_infantry_weapons3.dds"
+	}
+###ORCISH SPEARS
+	SpriteType = {
+		name = "GFX_GDB_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_3.dds"
+	}
+###ORCISH THROWN
+	SpriteType = {
+		name = "GFX_GDB_gw_artillery_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_javelin_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_artillery1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_javelin_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_artillery4_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_javelin_3.dds"
+	}
+###ORCISH BOWS
+	SpriteType = {
+		name = "GFX_GDB_gw_artillery_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_bow_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_artillery1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_bow_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_artillery4_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_bow_2.dds"
+	}
+###ORCISH MOBILE
+	SpriteType = {
+		name = "GFX_GDB_motorised_infantry_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_motorized_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_basic_train_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_train_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_wartime_train_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_train_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_mechanised_infantry_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_mechanized_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_mechanised_infantry2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_mechanized_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_mechanised_infantry3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_mechanized_equipment_3.dds"
+	}
+###ORCISH CAVALRY
+	SpriteType = {
+		name = "GFX_GDB_gwtank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_early_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_gwtank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_early_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_gw_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_early_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_gw_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_early_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_basic_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_basic_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_basic_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_basic_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_improved_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_improved_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_improved_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_improved_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_advanced_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_advanced_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_advanced_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_advanced_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_basic_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_basic_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_basic_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_basic_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_improved_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_improved_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_improved_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_improved_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_advanced_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_advanced_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_advanced_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_advanced_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_main_battle_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_modern_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GDB_main_battle_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_modern_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_modern_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_modern_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_skirmisher.dds"
+	}
+	spriteType = {
+		name = "GFX_GDB_railway_gun_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/siege_artillery1.dds"
+	}
+							######################################
+									#DOL GULDUR
+							######################################
+###ORCISH INFANTRY armor
+	SpriteType = {
+		name = "GFX_GLD_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_2.dds"
+	}
+###ORCISH INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_GLD_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_double_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_double_infantry_weapons1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_double_infantry_weapons2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_double_infantry_weapons2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_double_infantry_weapons3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_double_infantry_weapons3.dds"
+	}
+###ORCISH SPEARS
+	SpriteType = {
+		name = "GFX_GLD_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_3.dds"
+	}
+###ORCISH THROWN
+	SpriteType = {
+		name = "GFX_GLD_gw_artillery_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_javelin_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_artillery1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_javelin_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_artillery4_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_javelin_3.dds"
+	}
+###ORCISH BOWS
+	SpriteType = {
+		name = "GFX_GLD_gw_artillery_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_bow_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_artillery1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_bow_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_artillery4_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_bow_2.dds"
+	}
+###ORCISH MOBILE
+	SpriteType = {
+		name = "GFX_GLD_motorised_infantry_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_motorized_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_basic_train_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_train_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_wartime_train_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_train_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_mechanised_infantry_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_mechanized_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_mechanised_infantry2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_mechanized_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_mechanised_infantry3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_mechanized_equipment_3.dds"
+	}
+###ORCISH CAVALRY
+	SpriteType = {
+		name = "GFX_GLD_gwtank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_early_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_gwtank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_early_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_gw_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_early_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_gw_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_early_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_basic_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_basic_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_basic_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_basic_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_improved_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_improved_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_improved_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_improved_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_advanced_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_advanced_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_advanced_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_advanced_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_basic_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_basic_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_basic_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_basic_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_improved_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_improved_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_improved_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_improved_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_advanced_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_advanced_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_advanced_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_advanced_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_main_battle_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_modern_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_GLD_main_battle_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_modern_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_modern_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_modern_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_skirmisher.dds"
+	}
+	spriteType = {
+		name = "GFX_GLD_railway_gun_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/siege_artillery1.dds"
+	}
+							######################################
 									#ISENGARD
 							######################################
 ###ORCISH INFANTRY ARISN
@@ -264,34 +788,34 @@ spriteTypes = {
 							######################################
 									#MISTY MOUNTAINS
 							######################################
-###ORCISH INFANTRY ARMST
+###ORCISH INFANTRY armor
 	SpriteType = {
-		name = "GFX_MST_infantry_arMST_tech_0_medium"
-		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_arMST_0.dds"
+		name = "GFX_MST_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_0.dds"
 	}
 	SpriteType = {
-		name = "GFX_MST_infantry_arMST_tech_1_medium"
-		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_arMST_1.dds"
+		name = "GFX_MST_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_1.dds"
 	}
 	SpriteType = {
-		name = "GFX_MST_infantry_arMST_tech_2_medium"
-		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_arMST_2.dds"
+		name = "GFX_MST_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_2.dds"
 	}
 	SpriteType = {
-		name = "GFX_MST_infantry_arMST_tech_3_medium"
-		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_arMST_3.dds"
+		name = "GFX_MST_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_3.dds"
 	}
 	SpriteType = {
-		name = "GFX_MST_infantry_arMST_upgrade_0_medium"
-		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_arMST_upgrade_0.dds"
+		name = "GFX_MST_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_0.dds"
 	}
 	SpriteType = {
-		name = "GFX_MST_infantry_arMST_upgrade_1_medium"
-		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_arMST_upgrade_1.dds"
+		name = "GFX_MST_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_1.dds"
 	}
 	SpriteType = {
-		name = "GFX_MST_infantry_arMST_upgrade_2_medium"
-		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_arMST_upgrade_2.dds"
+		name = "GFX_MST_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_2.dds"
 	}
 ###ORCISH INFANTRY WEAPONS
 	SpriteType = {
@@ -784,6 +1308,268 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_MOR_railway_gun_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/siege_artillery1.dds"
+	}
+							######################################
+									#WINDY MOUNTAINS
+							######################################
+###ORCISH INFANTRY armor
+	SpriteType = {
+		name = "GFX_WND_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_armor_upgrade_2.dds"
+	}
+###ORCISH INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_WND_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry_equipment_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_double_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_double_infantry_weapons1.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_double_infantry_weapons2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_double_infantry_weapons2.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_double_infantry_weapons3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_double_infantry_weapons3.dds"
+	}
+###ORCISH SPEARS
+	SpriteType = {
+		name = "GFX_WND_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_spear_3.dds"
+	}
+###ORCISH THROWN
+	SpriteType = {
+		name = "GFX_WND_gw_artillery_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_javelin_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_artillery1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_javelin_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_artillery4_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_javelin_3.dds"
+	}
+###ORCISH BOWS
+	SpriteType = {
+		name = "GFX_WND_gw_artillery_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_bow_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_artillery1_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_bow_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_artillery4_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_bow_2.dds"
+	}
+###ORCISH MOBILE
+	SpriteType = {
+		name = "GFX_WND_motorised_infantry_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_motorized_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_basic_train_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_train_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_wartime_train_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_train_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_mechanised_infantry_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_mechanized_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_mechanised_infantry2_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_mechanized_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_mechanised_infantry3_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_mechanized_equipment_3.dds"
+	}
+###ORCISH CAVALRY
+	SpriteType = {
+		name = "GFX_WND_gwtank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_early_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_gwtank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_early_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_gw_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_early_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_gw_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_early_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_basic_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_basic_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_basic_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_basic_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_improved_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_improved_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_improved_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_improved_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_advanced_light_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_light_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_advanced_light_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_light_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_advanced_light_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_light_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_advanced_light_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_light_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_basic_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_basic_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_basic_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_basic_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_basic_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_improved_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_improved_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_improved_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_improved_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_improved_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_improved_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_advanced_medium_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_heavy_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_advanced_medium_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_advanced_heavy_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_advanced_medium_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_advanced_medium_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_advanced_heavy_skirmisher.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_main_battle_tank_chassis_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_modern_chassis.dds"
+	}
+	SpriteType = {
+		name = "GFX_WND_main_battle_tank_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/ORCISH_modern_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_modern_td_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_lancer.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_modern_art_medium"
+		texturefile = "gfx/interface/technologies/00_Orcish/cavalry_variants/ORCISH_basic_heavy_skirmisher.dds"
+	}
+	spriteType = {
+		name = "GFX_WND_railway_gun_medium"
 		texturefile = "gfx/interface/technologies/00_Orcish/siege_artillery1.dds"
 	}
 }

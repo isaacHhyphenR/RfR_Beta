@@ -1,6 +1,6 @@
 spriteTypes = {
 							######################################
-									#ORCISH INFANTRY
+									#GONDOR
 							######################################
 ###NUMENOREAN INFANTRY ARMOR
 	SpriteType = {
@@ -58,6 +58,494 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_GON_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_3.dds"
+	}
+							######################################
+									#ANFALAS
+							######################################
+###NUMENOREAN INFANTRY ARMOR
+	SpriteType = {
+		name = "GFX_ANF_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_2.dds"
+	}
+###############################GONDORIAN INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_ANF_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ANF_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_3.dds"
+	}
+							######################################
+									#ITHILIEN
+							######################################
+###NUMENOREAN INFANTRY ARMOR
+	SpriteType = {
+		name = "GFX_ITH_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_2.dds"
+	}
+###############################GONDORIAN INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_ITH_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ITH_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_3.dds"
+	}
+							######################################
+									#HARONDOR
+							######################################
+###NUMENOREAN INFANTRY ARMOR
+	SpriteType = {
+		name = "GFX_HRN_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_2.dds"
+	}
+###############################GONDORIAN INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_HRN_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_HRN_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_3.dds"
+	}
+							######################################
+									#PINNATH GELIN
+							######################################
+###NUMENOREAN INFANTRY ARMOR
+	SpriteType = {
+		name = "GFX_PNG_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_2.dds"
+	}
+###############################GONDORIAN INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_PNG_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/GON/infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_PNG_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_3.dds"
+	}
+							######################################
+									#ARTHEDAIN
+							######################################
+### INFANTRY ARMOR
+	SpriteType = {
+		name = "GFX_ART_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_2.dds"
+	}
+### INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_ART_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ART_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_3.dds"
+	}
+							######################################
+									#CARDOLAN
+							######################################
+### INFANTRY ARMOR
+	SpriteType = {
+		name = "GFX_CAR_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_2.dds"
+	}
+### INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_CAR_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_CAR_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_3.dds"
+	}
+							######################################
+									#RHUDAUR
+							######################################
+### INFANTRY ARMOR
+	SpriteType = {
+		name = "GFX_RDR_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_2.dds"
+	}
+### INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_RDR_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_RDR_spear_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_3.dds"
+	}
+							######################################
+									#UMBAR
+							######################################
+### INFANTRY ARMOR
+	SpriteType = {
+		name = "GFX_UMB_infantry_armor_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_infantry_armor_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_infantry_armor_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_infantry_armor_tech_3_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_infantry_armor_upgrade_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_infantry_armor_upgrade_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_infantry_armor_upgrade_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry_armor_upgrade_2.dds"
+	}
+### INFANTRY WEAPONS
+	SpriteType = {
+		name = "GFX_UMB_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry1.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry2.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/infantry3.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_spear_tech_0_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_0.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_spear_tech_1_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_spear_tech_2_medium"
+		texturefile = "gfx/interface/technologies/00_Numenorean/spear_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_UMB_spear_tech_3_medium"
 		texturefile = "gfx/interface/technologies/00_Numenorean/spear_3.dds"
 	}
 }

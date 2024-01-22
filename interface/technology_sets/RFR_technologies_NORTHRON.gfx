@@ -2,7 +2,7 @@ spriteTypes = {
 							######################################
 									#ROHIRRIM INFANTRY
 							######################################
-###ROHIRRIM INFANTRY ARROH
+###ROHIRRIM INFANTRY ARMOR
 	SpriteType = {
 		name = "GFX_ROH_infantry_armor_tech_0_medium"
 		texturefile = "gfx/interface/technologies/00_Rohirrim/infantry_armor_0.dds"
