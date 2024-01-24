@@ -1,5 +1,6 @@
 sub_units = {
 
+	@artilleryFuelConsumption = 0
 	artillery_brigade = {
 		abbreviation = "ART"
 		sprite = artillery
@@ -34,6 +35,7 @@ sub_units = {
 		training_time = 120
 		weight = 0.5
 		supply_consumption = 0.21
+		fuel_consumption = @artilleryFuelConsumption
 
 		#Line artillery bonuses
 		# soft_attack = 0.25
@@ -184,6 +186,7 @@ sub_units = {
 		weight = 0.5
 
 		supply_consumption = 0.22
+		fuel_consumption = @artilleryFuelConsumption
 		
 		forest = {
 			attack = -0.2

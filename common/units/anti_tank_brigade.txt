@@ -1,5 +1,6 @@
 sub_units = {
 
+	@infantryFuelConsumption = 0
 	@pikeStrength = 20
 	@pikeOrg = 60
 	anti_tank_brigade = {
@@ -40,6 +41,7 @@ sub_units = {
 		weight = 0.5
 		
 		supply_consumption = 0.06
+		fuel_consumption = @infantryFuelConsumption
 
 		need = {
 			anti_tank_equipment = 100
@@ -202,6 +204,7 @@ sub_units = {
 		weight = 0.5
 		
 		supply_consumption = 0.06
+		fuel_consumption = @infantryFuelConsumption
 
 		need = {
 			anti_tank_equipment = 100

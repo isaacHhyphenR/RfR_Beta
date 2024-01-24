@@ -3,7 +3,10 @@
 # For sea units: ship,transport,uboat
 
 sub_units = {
-
+	
+	
+	@rangersFuelConsumption = 0
+	
 	cavalry = {
 		abbreviation = "CAV"
 		sprite = cavalry
@@ -39,6 +42,7 @@ sub_units = {
 		weight = 0.5
 		
 		supply_consumption = 0.07
+		fuel_consumption = @rangersFuelConsumption
 
 		#Offensive Abilities
 		suppression = 2
