@@ -6,8 +6,10 @@ scripted_gui = {
 		visible = { #if anyone has > 75% chance of submitting to blood oath
 			NOT = { has_country_flag = dismissed_blood_oath_alert }
 			can_tribally_subjugate = yes
+			is_subject = no
 			any_other_country = {
 				is_greater_enedwaith_tag = yes
+				is_subject = no
 				ROOT = {
 					set_temp_variable = { total_acceptance = 0 }
 					AND = {

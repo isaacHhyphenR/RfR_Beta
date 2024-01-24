@@ -57,7 +57,7 @@ country_event = { ##1## Evil Civil War
 	}
 
 	mean_time_to_happen = { 
-		days = 30
+		days = 60
 	}
 	
 	option = { #prepare for war
@@ -288,7 +288,7 @@ country_event = { ##2## Good Civil War
 	}
 
 	mean_time_to_happen = { 
-		days = 30
+		days = 60
 	}
 	
 	option = { #prepare for war

@@ -1,0 +1,7354 @@
+characters = {
+	@LeaderAdvisorCost = 100
+########################################################################ADARABA
+	ADB_Arid_Rast_Hwarin = {
+		name = ADB_Arid_Rast_Hwarin
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_2"
+				small = "GFX_Portrait_Wild_Generic_m_2_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { coastal_traveler fisher }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { coastal_traveler fisher }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { coastal_traveler fisher }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { coastal_traveler fisher }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { coastal_traveler fisher }
+			id = -1
+		}
+		field_marshal = {
+			traits = { andrast_heritage_mil monarch_mil administrator engineer_officer naval_invader trickster expert_improviser }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ADB_Arid_Rast_Hwarin
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_coastal_traveler }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	ADB_avan_ziraxes = {
+		name = ADB_avan_ziraxes
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_2"
+				small = "GFX_Portrait_Wild_Generic_f_2_small"
+			}
+		}
+		navy_leader = {
+			traits = { andrast_heritage_mil gentlemanly navy_career_officer superior_tactician lone_wolf }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 3
+			maneuvering_skill = 4
+			coordination_skill = 4
+		}
+	}
+	ADB_sinna_urengarozing = {
+		name = ADB_sinna_urengarozing
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_3"
+				small = "GFX_Portrait_Wild_Generic_f_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ADB_sinna_urengarozing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { war_industrialist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################NAN ENGUI
+	NEN_Nifad_Arunozing = {
+		name = NEN_Nifad_Arunozing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_4"
+				small = "GFX_Portrait_Wild_Generic_m_4_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { wistful_sailor compassionate_gentleman }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { wistful_sailor compassionate_gentleman }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { wistful_sailor compassionate_gentleman }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { wistful_sailor compassionate_gentleman }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { wistful_sailor compassionate_gentleman }
+			id = -1
+		}
+
+		navy_leader = {
+			traits = { andrast_heritage_mil gentlemanly naval_lineage superior_tactician ironside fleet_protector ground_pounder }
+			skill = 6
+			attack_skill = 6
+			defense_skill = 5
+			maneuvering_skill = 4
+			coordination_skill = 4
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEN_Nifad_Arunozing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_wistful_sailor }
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					dockyard < 1
+					factor = 0
+				}
+			}
+		}
+	}
+	NEN_rinir_falfarozaing = {
+		name = NEN_rinir_falfarozaing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_2"
+				small = "GFX_Portrait_Wild_Generic_m_2_small"
+			}
+		}
+		corps_commander = {
+			traits = { andrast_heritage_mil brilliant_strategist fair_leader organizer naval_invader amphibious naval_liason }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+		}
+	}
+	NEN_dinak_tundrezing = {
+		name = NEN_dinak_tundrezing
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_5"
+				small = "GFX_Portrait_Wild_Generic_f_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEN_dinak_tundrezing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { captain_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################PARTH IAUR
+	PRI_Eribin_Rholfosing = {
+		name = PRI_Eribin_Rholfosing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_6"
+				small = "GFX_Portrait_Wild_Generic_m_6_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1" 
+			traits = { thrifty_inventor technocrat }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { thrifty_inventor technocrat }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { thrifty_inventor technocrat }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { thrifty_inventor technocrat }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { thrifty_inventor technocrat }
+			id = -1
+		}
+		field_marshal = {
+			traits = { andrast_heritage_mil monarch_mil brilliant_strategist ambitious trickster expert_improviser swamp_fox hill_fighter adaptable }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = PRI_Eribin_Rholfosing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_thrifty_inventor }
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					is_good = yes
+					factor = 0
+				}
+			}
+		}
+	}
+	PRI_rint_ceneling = {
+		name = PRI_rint_ceneling
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_5"
+				small = "GFX_Portrait_Wild_Generic_m_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = PRI_rint_ceneling
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { captain_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	PRI_rana_gutharozing = {
+		name = PRI_rana_gutharozing
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_1"
+				small = "GFX_Portrait_Wild_Generic_f_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = PRI_rana_gutharozing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { rugged_farmer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################RAFINFALAS
+	RAF_Goned_Ilondoti = {
+		name = RAF_Goned_Ilondoti
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_5"
+				small = "GFX_Portrait_Wild_Generic_f_5_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1" 
+			traits = { maniacal_monologuer conscription_overseer }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { maniacal_monologuer conscription_overseer }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { maniacal_monologuer conscription_overseer }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { maniacal_monologuer conscription_overseer }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { maniacal_monologuer conscription_overseer }
+			id = -1
+		}
+		field_marshal = {
+			traits = { andrast_heritage_mil monarch_mil corrupt trait_reckless inspirational_leader trickster hill_fighter }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = RAF_Goned_Ilondoti
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_maniacal_monologuer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	RAF_malad_hildfafosing = {
+		name = RAF_malad_hildfafosing
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_3"
+				small = "GFX_Portrait_Wild_Generic_f_3_small"
+			}
+		}
+		navy_leader = {
+			traits = { andrast_heritage_mil bold caustic_personality cuts_corners green_water_expert }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+	}
+	RAF_ruz_lengfealozing = {
+		name = RAF_ruz_lengfealozing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_3"
+				small = "GFX_Portrait_Wild_Generic_m_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = RAF_ruz_lengfealozing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { prince_of_terror }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################GLAD EREG
+	ERG_Cus_Frerogh_Fergoling = {
+		name = ERG_Cus_Frerogh_Fergoling
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_1"
+				small = "GFX_Portrait_Wild_Generic_m_1_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { ruin_explorer technocrat }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { ruin_explorer technocrat }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { ruin_explorer technocrat }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { ruin_explorer technocrat }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { ruin_explorer technocrat }
+			id = -1
+		}
+		field_marshal = {
+			traits = { eregion_heritage_mil monarch_mil administrator extravagent inspirational_leader organisational_leader }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ERG_Cus_Frerogh_Fergoling
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_ruin_explorer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	ERG_gin_tothrening = {
+		name = ERG_gin_tothrening
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_5"
+				small = "GFX_Portrait_Wild_Generic_f_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ERG_gin_tothrening
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { smooth_talking_charmer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	ERG_hedrig_gutharding = {
+		name = ERG_hedrig_gutharding
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_5"
+				small = "GFX_Portrait_Wild_Generic_m_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ERG_hedrig_gutharding
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { rugged_farmer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################HOLLIN
+	HOL_alfrid_henning = {
+		name = HOL_alfrid_henning
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_3"
+				small = "GFX_Portrait_Wild_Generic_m_3_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { orcish_mercenary_lord armaments_organizer }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { orcish_mercenary_lord armaments_organizer }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { orcish_mercenary_lord armaments_organizer }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { orcish_mercenary_lord armaments_organizer }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { orcish_mercenary_lord armaments_organizer }
+			id = -1
+		}
+		field_marshal = {
+			traits = { eregion_heritage_mil monarch_mil harsh_leader corrupt organizer skilled_staffer infantry_leader }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = HOL_alfrid_henning
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_orcish_mercenary_lord }
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					has_country_flag = freedom_flag
+					factor = 0
+				}
+			}
+		}
+	}
+	HOL_gerun_map_inyr = {
+		name = HOL_gerun_map_inyr
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_6"
+				small = "GFX_Portrait_Wild_Generic_m_6_small"
+			}
+		}
+		corps_commander = {
+			traits = { eregion_heritage_mil ambitious trait_reckless harsh_leader trait_mountaineer ranger }
+			skill = 4
+			attack_skill = 6
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	HOL_atherhin_map_cadfan = {
+		name = HOL_atherhin_map_cadfan
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_2"
+				small = "GFX_Portrait_Wild_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = HOL_atherhin_map_cadfan
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { prince_of_terror }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################MIROBEL
+	MBL_Bluain_clanna_Banoc = {
+		name = MBL_Bluain_clanna_Banoc
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_4"
+				small = "GFX_Portrait_Wild_Generic_m_4_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1" 
+			traits = { forest_stalker head_of_intelligence }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { forest_stalker head_of_intelligence }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { forest_stalker head_of_intelligence }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { forest_stalker head_of_intelligence }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { forest_stalker head_of_intelligence }
+			id = -1
+		}
+		field_marshal = {
+			traits = { eregion_heritage_mil monarch_mil trait_reckless raider ranger cavalry_leader commando }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MBL_Bluain_clanna_Banoc
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_forest_stalker }
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					is_good = yes
+					factor = 0
+				}
+			}
+		}
+	}
+	MBL_erlis_map_lorcan = {
+		name = MBL_erlis_map_lorcan
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_5"
+				small = "GFX_Portrait_Wild_Generic_f_5_small"
+			}
+		}
+		field_marshal = {
+			traits = { eregion_heritage_mil guardian old_guard hill_fighter trickster }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	MBL_cadualader_frenfaling = {
+		name = MBL_cadualader_frenfaling
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_1"
+				small = "GFX_Portrait_Wild_Generic_m_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MBL_cadualader_frenfaling
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { compassionate_gentleman }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################REEDWATER
+	REE_Cenel_Duillean = {
+		name = REE_Cenel_Duillean
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_2"
+				small = "GFX_Portrait_Wild_Generic_m_2_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1" 
+			traits = { marshland_developer captain_of_industry }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { marshland_developer captain_of_industry }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { marshland_developer captain_of_industry }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { marshland_developer captain_of_industry }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { marshland_developer captain_of_industry }
+			id = -1
+		}
+		field_marshal = {
+			traits = { eregion_heritage_mil monarch_mil trait_engineer invader swamp_fox }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = REE_Cenel_Duillean
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_marshland_developer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	REE_marin_londing = {
+		name = REE_marin_londing
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_3"
+				small = "GFX_Portrait_Wild_Generic_f_3_small"
+			}
+		}
+		corps_commander = {
+			traits = { eregion_heritage_mil career_officer garrison_commander ranger infantry_leader trait_engineer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	REE_laskdar_falfaling = {
+		name = REE_laskdar_falfaling
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_2"
+				small = "GFX_Portrait_Wild_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = REE_laskdar_falfaling
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { war_industrialist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################AN KHORGAN
+	AKN_Nuth_clenna_Emon = {
+		name = AKN_Nuth_clenna_Emon
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_6"
+				small = "GFX_Portrait_Wild_Generic_m_6_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1" 
+			traits = { satisfied_ascetic humble }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { satisfied_ascetic humble }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { satisfied_ascetic humble }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { satisfied_ascetic humble }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { satisfied_ascetic humble }
+			id = -1
+		}
+		field_marshal = {
+			traits = { druwaith_iaur_heritage_mil monarch_mil fair_leader content organizer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AKN_Nuth_clenna_Emon
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_satisfied_ascetic }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	AKN_aynsar_nienfeading = {
+		name = AKN_aynsar_nienfeading
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_5"
+				small = "GFX_Portrait_Wild_Generic_m_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AKN_aynsar_nienfeading
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { silent_workhorse }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	AKN_lena_nienfeading = {
+		name = AKN_lena_nienfeading
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_5"
+				small = "GFX_Portrait_Wild_Generic_f_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AKN_lena_nienfeading
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { captain_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################BYRIG
+	BYR_Dera_Dunlogan = {
+		name = BYR_Dera_Dunlogan
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_4"
+				small = "GFX_Portrait_Wild_Generic_f_4_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1" 
+			traits = { clockwork_conquerer army_chief_planning_2 }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { clockwork_conquerer army_chief_planning_2 }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { clockwork_conquerer army_chief_planning_2 }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { clockwork_conquerer army_chief_planning_2 }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { clockwork_conquerer army_chief_planning_2 }
+			id = -1
+		}
+		field_marshal = {
+			traits = { druwaith_iaur_heritage_mil monarch_mil administrator infantry_officer organizer thorough_planner organisational_leader }
+			skill = 6
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 6
+			logistics_skill = 5
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = BYR_Dera_Dunlogan
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_clockwork_conquerer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	BYR_doeth_falfaling = {
+		name = BYR_doeth_falfaling
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_1"
+				small = "GFX_Portrait_Wild_Generic_m_1_small"
+			}
+		}
+		corps_commander = {
+			traits = { druwaith_iaur_heritage_mil trait_reckless career_officer brilliant_strategist ambitious skilled_staffer organizer }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+	BYR_derg_arfanding = {
+		name = BYR_derg_arfanding
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_5"
+				small = "GFX_Portrait_Wild_Generic_m_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = BYR_derg_arfanding
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { compassionate_gentleman }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################DRULAD
+	DRU_Glenis_Hedricing = {
+		name = DRU_Glenis_Hedricing
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Glenis_Hedricing"
+				small = "GFX_Portrait_Glenis_Hedricing_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1" 
+			traits = { regal_negotiator determined }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { regal_negotiator determined }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { regal_negotiator determined }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { regal_negotiator determined }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { regal_negotiator determined }
+			id = -1
+		}
+		field_marshal = {
+			traits = { druwaith_iaur_heritage_mil monarch_mil fair_leader inspirational_leader organisational_leader }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DRU_Glenis_Hedricing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_regal_negotiator }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	DRU_dremitudh_balfing = {
+		name = DRU_dremitudh_balfing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_5"
+				small = "GFX_Portrait_Wild_Generic_m_5_small"
+			}
+		}
+		corps_commander = {
+			traits = { druwaith_iaur_heritage_mil career_officer ambitious brilliant_strategist infantry_leader organizer trait_engineer }
+			skill = 6
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+	DRU_dwac_arunding = {
+		name = DRU_dwac_arunding
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_2"
+				small = "GFX_Portrait_Wild_Generic_m_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DRU_dwac_arunding
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { chancellor }
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					num_subjects > 1
+					factor = 2
+				}
+			}
+		}
+	}
+########################################################################ISENRUN
+	IRN_Slacon_och_Cadlus = {
+		name = IRN_Slacon_och_Cadlus
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_3"
+				small = "GFX_Portrait_Wild_Generic_m_3_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1" 
+			traits = { jovial_hawker smooth_talking_charmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { jovial_hawker smooth_talking_charmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { jovial_hawker smooth_talking_charmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { jovial_hawker smooth_talking_charmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { jovial_hawker smooth_talking_charmer }
+			id = -1
+		}
+		field_marshal = {
+			traits = { druwaith_iaur_heritage_mil monarch_mil media_personality administrator organizer logistics_wizard }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 5
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = IRN_Slacon_och_Cadlus
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_jovial_hawker }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	IRN_iren_henning = {
+		name = IRN_iren_Henning
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_3"
+				small = "GFX_Portrait_Wild_Generic_f_3_small"
+			}
+		}
+		corps_commander = {
+			traits = { druwaith_iaur_heritage_mil career_officer inflexible_strategist engineer_officer infantry_leader }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 1
+		}
+	}
+	IRN_emlyn_cenfaling = {
+		name = IRN_emlyn_cenfaling
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_2"
+				small = "GFX_Portrait_Wild_Generic_m_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = IRN_emlyn_cenfaling
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { captain_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################CARREGLYN
+	CGN_Fridalda_ard_Phuing = {
+		name = CGN_Fridalda_ard_Phuing
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_1"
+				small = "GFX_Portrait_Wild_Generic_f_1_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1" 
+			traits = { defiant_dealmaker eager_collaborator }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { defiant_dealmaker eager_collaborator }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { defiant_dealmaker eager_collaborator }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { defiant_dealmaker eager_collaborator }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { defiant_dealmaker eager_collaborator }
+			id = -1
+		}
+		field_marshal = {
+			traits = { dunland_heritage_mil monarch_mil fair_leader trickster guerilla_fighter }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CGN_Fridalda_ard_Phuing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_defiant_dealmaker }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	CGN_nefyn_fulfing = {
+		name = CGN_nefyn_fulfing
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_5"
+				small = "GFX_Portrait_Wild_Generic_f_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CGN_nefyn_fulfing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { appeaser }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	CGN_athin_arfarding = {
+		name = CGN_athin_arfarding
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_5"
+				small = "GFX_Portrait_Wild_Generic_m_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CGN_athin_arfarding
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { smooth_talking_charmer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################DUNFEARN
+	DFN_Morrin_Riasach = {
+		name = DFN_Morrin_Riasach
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_1"
+				small = "GFX_Portrait_Wild_Generic_m_1_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { tribal_traditionalist rugged_farmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { tribal_traditionalist rugged_farmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { tribal_traditionalist rugged_farmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { tribal_traditionalist rugged_farmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { tribal_traditionalist rugged_farmer }
+			id = -1
+		}
+		field_marshal = {
+			traits = { dunland_heritage_mil monarch_mil inflexible_strategist old_guard organizer hill_fighter}
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DFN_Morrin_Riasach
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_tribal_traditionalist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	DFN_yrn_map_dunfearn = {
+		name = DFN_yrn_map_dunfearn
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_4"
+				small = "GFX_Portrait_Wild_Generic_m_4_small"
+			}
+		}
+		corps_commander = {
+			traits = { dunland_heritage_mil trait_cautious content skilled_staffer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+	DFN_afralyb_bocaerning = {
+		name = DFN_afralyb_bocaerning
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_3"
+				small = "GFX_Portrait_Wild_Generic_m_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DFN_afralyb_bocaerning
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { economic_stabilizer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################DATHABHA
+	DTH_Lenfeld_map_Luarch = {
+		name = DTH_Lenfeld_map_Luarch
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_2"
+				small = "GFX_Portrait_Wild_Generic_m_2_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { greedy_plunderer prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { greedy_plunderer prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { greedy_plunderer prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { greedy_plunderer prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { greedy_plunderer prince_of_terror }
+			id = -1
+		}
+		field_marshal = {
+			traits = { monarch_mil dunland_heritage_mil harsh_leader raider hill_fighter }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DTH_Lenfeld_map_Luarch
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_greedy_plunderer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	DTH_doeth_arfoling = {
+		name = DTH_doeth_arfoling
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_4"
+				small = "GFX_Portrait_Wild_Generic_m_4_small"
+			}
+		}
+		corps_commander = {
+			traits = { dunland_heritage_mil corrupt trait_reckless trickster expert_improviser }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	DTH_ifsa_branting = {
+		name = DTH_ifsa_branting
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_2"
+				small = "GFX_Portrait_Wild_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DTH_ifsa_branting
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { armaments_organizer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################DUNFELLS
+	DUN_wulfgar_brynjarsson = {
+		name = DUN_wulfgar_brynjarsson
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wulfgar_Brynarsson"
+				small = "GFX_Portrait_Wulfgar_Brynarsson_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { raging_unifier hawk }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { raging_unifier hawk }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { raging_unifier hawk }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { raging_unifier hawk }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { raging_unifier hawk }
+			id = -1
+		}
+		field_marshal = {
+			traits = { dunland_heritage_mil monarch_mil ambitious brilliant_strategist hill_fighter trickster expert_improviser }
+			skill = 7
+			attack_skill = 8
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 4
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DUN_wulfgar_brynjarsson
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_raging_unifier }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	DUN_yngust_erlaening = {
+		name = DUN_yngust_erlaening
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_2"
+				small = "GFX_Portrait_Wild_Generic_m_2_small"
+			}
+		}
+		corps_commander = {
+			traits = { dunland_heritage_mil trait_reckless harsh_leader commando infantry_leader hill_fighter }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		# corps_commander = {
+			# traits = { administrator engineer_officer organizer }
+			# skill = 4
+			# attack_skill = 2
+			# defense_skill = 3
+			# planning_skill = 4
+			# logistics_skill = 4
+		# }
+	}
+	DUN_turen_map_glanduin = {
+		name = DUN_turen_map_glanduin
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_3"
+				small = "GFX_Portrait_Wild_Generic_f_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DUN_turen_map_glanduin
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { prince_of_terror }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################PROVINCE OF DUNLAND
+	@royalAdvisorCost = 150
+	@tribalAdvisorCost = 100
+	ISD_Aga_Londing = {
+		name = ISD_Aga_Londing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_3"
+				small = "GFX_Portrait_Wild_Generic_m_3_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { eager_collaborator prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { eager_collaborator prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { eager_collaborator prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { eager_collaborator prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { eager_collaborator prince_of_terror }
+			id = -1
+		}
+		field_marshal = {
+			traits = { monarch_mil dunland_heritage_mil raider harsh_leader infantry_leader organizer hill_fighter }
+			visible = { NOT = { tag = ISN } }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ISD_Aga_Londing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { eager_collaborator }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	ISD_athin_arfarding = {
+		name = CGN_athin_arfarding
+		gender = male
+		portraits = {
+			civilian = { small = "GFX_Portrait_Wild_Generic_m_2_small" }
+		}
+		advisor = {
+			slot = political_advisor
+			cost = @tribalAdvisorCost
+			idea_token = ENE_civ_construction
+			traits = {
+				tribal_architect
+			}
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			available = {
+				has_completed_focus = ENE_an_intellectual_coalition
+			}
+		}
+	}
+	ISD_afralyb_bocaerning = {
+		name = DFN_afralyb_bocaerning
+		gender = female
+		portraits = {
+			civilian = { small = "GFX_Portrait_Wild_Generic_f_5_small" }
+		}
+		advisor = {
+			slot = political_advisor
+			cost = @tribalAdvisorCost
+			idea_token = ENE_stability
+			traits = {
+				tribal_loremaster
+			}
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			available = {
+				has_completed_focus = ENE_an_intellectual_coalition
+			}
+		}
+	}
+	ISD_ifsa_branting = {
+		name = DTH_ifsa_branting
+		gender = female
+		portraits = {
+			civilian = { small = "GFX_Portrait_Wild_Generic_f_3_small" }
+		}
+		advisor = {
+			slot = theorist
+			ledger = army
+			cost = @tribalAdvisorCost
+			idea_token = ENE_theorist
+			traits = {
+				tribal_theorist
+			}
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			available = {
+				has_completed_focus = ENE_an_intellectual_coalition
+			}
+		}
+	}
+	ISD_nefyn_fulfing = {
+		name = CGN_nefyn_fulfing
+		gender = male
+		portraits = {
+			civilian = { small = "GFX_Portrait_Wild_Generic_m_5_small" }
+		}
+		advisor = {
+			slot = political_advisor
+			cost = @royalAdvisorCost
+			idea_token = ENE_consumer_goods
+			traits = {
+				financial_expert
+			}
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			available = {
+				has_completed_focus = ENE_hire_regions_brightest
+			}
+		}
+	}
+	ISD_wuldyn_map_inyr = {
+		name = WLF_wuldyn_map_inyr
+		gender = male
+		portraits = {
+			civilian = { small = "GFX_Portrait_Wild_Generic_m_6_small" }
+		}
+		advisor = {
+			slot = political_advisor
+			cost = @royalAdvisorCost
+			idea_token = ENE_production_efficiency
+			traits = {
+				economist
+			}
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			available = {
+				has_completed_focus = ENE_hire_regions_brightest
+			}
+		}
+	}
+	ISD_yngust_erlaening = {
+		name = DUN_yngust_erlaening
+		gender = male
+		portraits = {
+			civilian = { small = "GFX_Portrait_Wild_Generic_m_4_small" }
+		}
+		advisor = {
+			slot = political_advisor
+			cost = @royalAdvisorCost
+			idea_token = ENE_tech
+			traits = {
+				technocrat
+			}
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			available = {
+				has_completed_focus = ENE_hire_regions_brightest
+			}
+		}
+	}
+########################################################################WULFING ROHAN
+	WLF_country_leader = {
+		name = DFN_WLF_leader_name
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_1"
+				small = "GFX_Portrait_Wild_Generic_m_1_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { foreigner figurehead_puppet }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { foreigner figurehead_puppet }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { foreigner figurehead_puppet }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { foreigner figurehead_puppet }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { foreigner figurehead_puppet }
+			id = -1
+		}
+	}
+	WLF_aranel_map_merfyn = {
+		name = WLF_aranel_map_merfyn
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_1"
+				small = "GFX_Portrait_Wild_Generic_f_1_small"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = WLF_aranel_map_merfyn
+			ledger = army
+			allowed = {
+				original_tag = ROH
+			}
+			traits = { army_chief_organizational_1 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
+			traits = { dunland_heritage_mil trait_cautious organisational_leader organizer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+	WLF_rwyn_erraigarding = {
+		name = WLF_rwyn_erraigarding
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_4"
+				small = "GFX_Portrait_Wild_Generic_f_4_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WLF_rwyn_erraigarding
+			ledger = civilian
+			allowed = {
+				original_tag = ROH
+			}
+			traits = { captain_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	WLF_gerginauw_nelfaining = {
+		name = WLF_gerginauw_nelfaining
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_4"
+				small = "GFX_Portrait_Wild_Generic_m_4_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WLF_gerginauw_nelfaining
+			ledger = civilian
+			allowed = {
+				original_tag = ROH
+			}
+			traits = { prince_of_terror }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	WLF_wuldyn_map_inyr = {
+		name = WLF_wuldyn_map_inyr
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_1"
+				small = "GFX_Portrait_Wild_Generic_m_1_small"
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = WLF_wuldyn_map_inyr
+			ledger = army
+			allowed = {
+				original_tag = ROH
+			}
+			traits = { military_theorist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	WLF_beorhtfrith_fen = {
+		name = WLF_beorhtfrith_fen
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Rohirrim_Generic_m_2"
+				small = "GFX_Portrait_Rohirrim_Generic_m_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WLF_beorhtfrith_fen
+			ledger = civilian
+			allowed = {
+				original_tag = ROH
+			}
+			traits = { loremaster }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	WLF_gytha_fen = {
+		name = WLF_gytha_fen
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Rohirrim_Generic_f_2"
+				small = "GFX_Portrait_Rohirrim_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WLF_gytha_fen
+			ledger = civilian
+			allowed = {
+				original_tag = ROH
+			}
+			traits = { silent_workhorse }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	WLF_eadsige_slaighreluath = {
+		name = WLF_eadsige_slaighreluath
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Rohirrim_Generic_m_5"
+				small = "GFX_Portrait_Rohirrim_Generic_m_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WLF_eadsige_slaighreluath
+			ledger = civilian
+			allowed = {
+				original_tag = ROH
+			}
+			traits = { financial_expert }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################ANGRAST
+	AGR_Madogh_Morcad = {
+		name = AGR_Madogh_Morcad
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Madogh_Morcad"
+				small = "GFX_Portrait_Madogh_Morcad_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { mad_dog ideological_fanatic }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { mad_dog ideological_fanatic }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { mad_dog ideological_fanatic }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { mad_dog ideological_fanatic }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { mad_dog ideological_fanatic }
+			id = -1
+		}
+		field_marshal = {
+			traits = { enedwaith_heritage_mil monarch_mil ambitious trait_reckless harsh_leader aggressive_assaulter infantry_leader panzer_leader }
+			skill = 4
+			attack_skill = 6
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AGR_Madogh_Morcad
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_mad_dog }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	AGR_una_pafrading = { #general
+		name = AGR_una_pafrading
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_2"
+				small = "GFX_Portrait_Wild_Generic_f_2_small"
+			}
+		}
+		corps_commander = {
+			traits = { enedwaith_heritage_mil brilliant_strategist administrator organizer skilled_staffer }
+			skill = 6
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 7
+		}
+	}
+	AGR_acha_map_cada = { #advisor
+		name = AGR_acha_map_cada
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_3"
+				small = "GFX_Portrait_Wild_Generic_m_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AGR_acha_map_cada
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { industrial_propogandist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	AGR_aidd_map_rioc = { #admiral
+		name = AGR_acha_map_cada
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_6"
+				small = "GFX_Portrait_Wild_Generic_m_6_small"
+			}
+		}
+		navy_leader = {
+			traits = { enedwaith_heritage_mil bold inshore_fighter fleet_protector lancer }
+			skill = 5
+			attack_skill = 6
+			defense_skill = 3
+			maneuvering_skill = 4
+			coordination_skill = 3
+		}
+	}
+########################################################################COLGRIN
+	COL_Cail_Burol_Colgrin = {
+		name = COL_Cail_Burol_Colgrin
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_6"
+				small = "GFX_Portrait_Wild_Generic_m_6_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { merchant_lord ideological_fanatic }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { merchant_lord ideological_fanatic }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { merchant_lord ideological_fanatic }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { merchant_lord ideological_fanatic }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { merchant_lord ideological_fanatic }
+			id = -1
+		}
+		field_marshal = {
+			traits = { enedwaith_heritage_mil monarch_mil administrator fair_leader organizer logistics_wizard }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = COL_Cail_Burol_Colgrin
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_merchant_lord }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	COL_adderhin_map_lond_daer = {
+		name = COL_adderhin_map_lond_daer
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_2"
+				small = "GFX_Portrait_Wild_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = COL_adderhin_map_lond_daer
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { captain_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	COL_ninfria_linfarding = {
+		name = COL_ninfria_linfarding
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_3"
+				small = "GFX_Portrait_Wild_Generic_f_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = COL_ninfria_linfarding
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { administrator_pol }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################HARESTOLAD
+	HST_Tithayndhotir_map_Dein = {
+		name = HST_Tithayndhotir_map_Dein
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_2"
+				small = "GFX_Portrait_Wild_Generic_f_2_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { coalition_builder dealbroker }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { coalition_builder dealbroker }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { coalition_builder dealbroker }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { coalition_builder dealbroker }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { coalition_builder dealbroker }
+			id = -1
+		}
+		field_marshal = {
+			traits = { enedwaith_heritage_mil monarch_mil inflexible_strategist old_guard infantry_leader organisational_leader }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = HST_Tithayndhotir_map_Dein
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_coalition_builder }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	HST_adon_map_fraid = {
+		name = HST_adon_map_fraid
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_2"
+				small = "GFX_Portrait_Wild_Generic_m_2_small"
+			}
+		}
+		corps_commander = {
+			traits = { enedwaith_heritage_mil trait_cautious naval_invader }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	HST_drus_cenfaling = {
+		name = HST_drus_cenfaling
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_1"
+				small = "GFX_Portrait_Wild_Generic_m_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = HST_drus_cenfaling
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { chancellor }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################STARKMOORS
+	STK_Bulafrard_Corgail = {
+		name = STK_Bulafrard_Corgail
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_5"
+				small = "GFX_Portrait_Wild_Generic_m_5_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { open_invitation_partier compassionate_gentleman }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { open_invitation_partier compassionate_gentleman }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { open_invitation_partier compassionate_gentleman }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { open_invitation_partier compassionate_gentleman }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { open_invitation_partier compassionate_gentleman }
+			id = -1
+		}
+		field_marshal = {
+			traits = { enedwaith_heritage_mil monarch_mil raider extravagent organizer fast_planner }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = STK_Bulafrard_Corgail
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_open_invitation_partier }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	STK_cenfranain_tothrening = {
+		name = STK_cenfranain_tothrening
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_3"
+				small = "GFX_Portrait_Wild_Generic_m_3_small"
+			}
+		}
+		corps_commander = {
+			traits = { enedwaith_heritage_mil inflexible_strategist career_officer infantry_leader trait_engineer ambusher scavenger }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	STK_erulfdin_roricing = {
+		name = STK_erulfdin_roricing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_6"
+				small = "GFX_Portrait_Wild_Generic_m_6_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = STK_erulfdin_roricing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { war_industrialist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################ANULEFNUI
+	ANU_Erliz_Hundarin = {
+		name = ANU_Erliz_Hundarin
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_3"
+				small = "GFX_Portrait_Wild_Generic_f_3_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { generous_raider quartermaster_general }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { generous_raider quartermaster_general }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { generous_raider quartermaster_general }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { generous_raider quartermaster_general }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { generous_raider quartermaster_general }
+			id = -1
+		}
+		field_marshal = {
+			traits = { white_mountains_heritage_mil monarch_mil raider extravagent trait_engineer trickster inspirational_leader}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 5
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ANU_Erliz_Hundarin
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_generous_raider }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	ANU_diyilaz_dranting = { #general
+		name = ANU_diyilaz_dranting
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_2"
+				small = "GFX_Portrait_Wild_Generic_m_2_small"
+			}
+		}
+		corps_commander = {
+			traits = { white_mountains_heritage_mil brilliant_strategist career_officer organizer infantry_leader skilled_staffer }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+	ANU_guthard_fudreiming = { #advisor
+		name = ANU_guthard_fudreiming
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_3"
+				small = "GFX_Portrait_Wild_Generic_m_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ANU_guthard_fudreiming
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { prince_of_terror }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################HAIRAVERKIEN
+	HVK_Ruratharu_dol_Thorod = {
+		name = HVK_Ruratharu_dol_Thorod
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_6"
+				small = "GFX_Portrait_Wild_Generic_m_6_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { dug_in_decreer fortification_engineer }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { dug_in_decreer fortification_engineer }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { dug_in_decreer fortification_engineer }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { dug_in_decreer fortification_engineer }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { dug_in_decreer fortification_engineer }
+			id = -1
+		}
+		field_marshal = {
+			traits = { white_mountains_heritage_mil monarch_mil old_guard cautious trait_engineer hill_fighter defensive_doctrine }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = HVK_Ruratharu_dol_Thorod
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_dug_in_decreer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	HVK_saluzi_daeglafosing = {
+		name = HVK_saluzi_daeglafosing
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_2"
+				small = "GFX_Portrait_Wild_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = HVK_saluzi_daeglafosing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { backroom_backstabber }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	HVK_glarnmo_rhoricing = {
+		name = HVK_glarnmo_rhoricing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_4"
+				small = "GFX_Portrait_Wild_Generic_m_4_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = HVK_glarnmo_rhoricing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { rugged_farmer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################NAN-I-FERYTH
+	NIF_Amadoyuz_norn_Eleyu = {
+		name = NIF_Amadoyuz_norn_Eleyu
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_4"
+				small = "GFX_Portrait_Wild_Generic_m_4_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { mountain_recluse rugged_farmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { mountain_recluse rugged_farmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { mountain_recluse rugged_farmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { mountain_recluse rugged_farmer }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { mountain_recluse rugged_farmer }
+			id = -1
+		}
+		field_marshal = {
+			traits = { white_mountains_heritage_mil monarch_mil content guardian trait_mountaineer ranger commando }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NIF_Amadoyuz_norn_Eleyu
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_mountain_recluse }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	NIF_rerna_pafanozing = {
+		name = NIF_rerna_pafanozing
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_2"
+				small = "GFX_Portrait_Wild_Generic_f_2_small"
+			}
+		}
+		corps_commander = {
+			traits = { white_mountains_heritage_mil trait_reckless trait_mountaineer }
+			skill = 3
+			attack_skill = 5
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	NIF_teyarn_ilffanozing = {
+		name = NIF_teyarn_ilffanozing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_1"
+				small = "GFX_Portrait_Wild_Generic_f_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NIF_teyarn_ilffanozing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { captain_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################TAWARTELEH
+	TAW_Malmadon_Hundarin = {
+		name = TAW_Malmadon_Hundarin
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_2"
+				small = "GFX_Portrait_Wild_Generic_m_2_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { obsessive_avenger prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { obsessive_avenger prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { obsessive_avenger prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { obsessive_avenger prince_of_terror }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { obsessive_avenger prince_of_terror }
+			id = -1
+		}
+		field_marshal = {
+			traits = { white_mountains_heritage_mil monarch_mil inflexible_strategist harsh_leader aggressive_assaulter trait_mountaineer infantry_leader infantry_expert offensive_doctrine }
+			skill = 5
+			attack_skill = 6
+			defense_skill = 1
+			planning_skill = 5
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = TAW_Malmadon_Hundarin
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_obsessive_avenger }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	TAW_vingo_bocaerning = {
+		name = TAW_vingo_bocaerning
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_3"
+				small = "GFX_Portrait_Wild_Generic_m_3_small"
+			}
+		}
+		corps_commander = {
+			traits = { white_mountains_heritage_mil career_officer administrator infantry_leader infantry_expert skilled_staffer organizer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	TAW_gumga_vulfgarozing = {
+		name = STK_erulfdin_roricing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_6"
+				small = "GFX_Portrait_Wild_Generic_m_6_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = TAW_gumga_vulfgarozing
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			traits = { war_industrialist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+########################################################################WHITE MOUNTAIN UPRISING
+	WHT_Helvi_Wildebeorh = {
+		name = WHT_Helvi_Wildebeorh
+		gender = female
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_f_4"
+				small = "GFX_Portrait_Wild_Generic_f_4_small"
+			}
+		}
+		country_leader = {
+			ideology = clanship
+			expire = "3050.1.1.1"
+			traits = { charismatic_rebel popular_commoner }
+			id = -1
+		}
+		country_leader = {
+			ideology = feudalism
+			expire = "3050.1.1.1"
+			traits = { charismatic_rebel popular_commoner }
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			expire = "3050.1.1.1"
+			traits = { charismatic_rebel popular_commoner }
+			id = -1
+		}
+		country_leader = {
+			ideology = autocracy
+			expire = "3050.1.1.1"
+			traits = { charismatic_rebel popular_commoner }
+			id = -1
+		}
+		country_leader = {
+			ideology = shadow_worship
+			expire = "3050.1.1.1"
+			traits = { charismatic_rebel popular_commoner }
+			id = -1
+		}
+		field_marshal = {
+			traits = { white_mountains_heritage_mil guardian ambitious trait_mountaineer trickster guerilla_fighter inspirational_leader }
+			skill = 5
+			attack_skill = 3
+			defense_skill = 6
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WHT_Helvi_Wildebeorh
+			cost = @LeaderAdvisorCost
+			ledger = civilian
+			allowed = {
+				is_greater_enedwaith_tag = yes
+			}
+			visible = {
+				is_country_leader = no
+			}
+			traits = { minor_charismatic_rebel }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	WHT_Brorn_Vulfosing = {
+		name = WHT_Brorn_Vulfosing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_3"
+				small = "GFX_Portrait_Wild_Generic_m_3_small"
+			}
+		}
+		corps_commander = {
+			traits = { white_mountains_heritage_mil raider war_hero trait_mountaineer trait_engineer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = high_command
+			idea_token = WHT_Brorn_Vulfosing
+			ledger = army
+			allowed = {
+				tag = WHT
+			}
+			traits = { army_entrenchment_1 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	WHT_Malmadon_Lonozing = {
+		name = WHT_Malmadon_Lonozing
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_Wild_Generic_m_4"
+				small = "GFX_Portrait_Wild_Generic_m_4_small"
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = WHT_Malmadon_Lonozing
+			ledger = army
+			allowed = {
+				tag = WHT
+			}
+			traits = { mountain_rebel }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+######################################################################################################################GENERIC FOCUS ADVISORS
+	# @tribalAdvisorCost = 100
+	# @royalAdvisorCost = 150
+	# ERG_stability = {
+		# name = ERG_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ERG_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ERG_civ_construction = {
+		# name = ERG_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ERG_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ERG_theorist = {
+		# name = ERG_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = ERG_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ERG_consumer_goods = {
+		# name = ERG_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ERG_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ERG_production_efficiency = {
+		# name = ERG_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ERG_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ERG_tech = {
+		# name = ERG_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ERG_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HOL_stability = {
+		# name = HOL_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HOL_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HOL_civ_construction = {
+		# name = HOL_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HOL_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HOL_theorist = {
+		# name = HOL_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = HOL_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HOL_consumer_goods = {
+		# name = HOL_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HOL_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HOL_production_efficiency = {
+		# name = HOL_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HOL_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HOL_tech = {
+		# name = HOL_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HOL_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# MBL_stability = {
+		# name = MBL_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = MBL_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# MBL_civ_construction = {
+		# name = MBL_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = MBL_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# MBL_theorist = {
+		# name = MBL_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = MBL_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# MBL_consumer_goods = {
+		# name = MBL_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = MBL_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# MBL_production_efficiency = {
+		# name = MBL_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = MBL_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# MBL_tech = {
+		# name = MBL_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = MBL_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# REE_stability = {
+		# name = REE_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = REE_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# REE_civ_construction = {
+		# name = REE_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = REE_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# REE_theorist = {
+		# name = REE_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = REE_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# REE_consumer_goods = {
+		# name = REE_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = REE_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# REE_production_efficiency = {
+		# name = REE_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = REE_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# REE_tech = {
+		# name = REE_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = REE_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ISD_stability = {
+		# name = ISD_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ISD_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ISD_civ_construction = {
+		# name = ISD_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ISD_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ISD_theorist = {
+		# name = ISD_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = ISD_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ISD_consumer_goods = {
+		# name = ISD_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ISD_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ISD_production_efficiency = {
+		# name = ISD_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ISD_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ISD_tech = {
+		# name = ISD_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ISD_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DUN_stability = {
+		# name = DUN_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DUN_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DUN_civ_construction = {
+		# name = DUN_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DUN_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DUN_theorist = {
+		# name = DUN_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = DUN_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DUN_consumer_goods = {
+		# name = DUN_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DUN_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DUN_production_efficiency = {
+		# name = DUN_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DUN_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DUN_tech = {
+		# name = DUN_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DUN_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DFN_stability = {
+		# name = DFN_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DFN_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DFN_civ_construction = {
+		# name = DFN_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DFN_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DFN_theorist = {
+		# name = DFN_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = DFN_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DFN_consumer_goods = {
+		# name = DFN_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DFN_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DFN_production_efficiency = {
+		# name = DFN_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DFN_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DFN_tech = {
+		# name = DFN_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DFN_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# CGN_stability = {
+		# name = CGN_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = CGN_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# CGN_civ_construction = {
+		# name = CGN_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = CGN_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# CGN_theorist = {
+		# name = CGN_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = CGN_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# CGN_consumer_goods = {
+		# name = CGN_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = CGN_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# CGN_production_efficiency = {
+		# name = CGN_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = CGN_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# CGN_tech = {
+		# name = CGN_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = CGN_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DTH_stability = {
+		# name = DTH_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DTH_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DTH_civ_construction = {
+		# name = DTH_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DTH_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DTH_theorist = {
+		# name = DTH_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = DTH_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DTH_consumer_goods = {
+		# name = DTH_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DTH_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DTH_production_efficiency = {
+		# name = DTH_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DTH_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DTH_tech = {
+		# name = DTH_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DTH_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# SAR_stability = {
+		# name = SAR_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = SAR_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# SAR_civ_construction = {
+		# name = SAR_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = SAR_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# SAR_theorist = {
+		# name = SAR_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = SAR_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# SAR_consumer_goods = {
+		# name = SAR_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = SAR_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# SAR_production_efficiency = {
+		# name = SAR_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = SAR_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# SAR_tech = {
+		# name = SAR_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = SAR_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HST_stability = {
+		# name = HST_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HST_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HST_civ_construction = {
+		# name = HST_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HST_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HST_theorist = {
+		# name = HST_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = HST_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HST_consumer_goods = {
+		# name = HST_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HST_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HST_production_efficiency = {
+		# name = HST_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HST_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HST_tech = {
+		# name = HST_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HST_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# COL_stability = {
+		# name = COL_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = COL_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# COL_civ_construction = {
+		# name = COL_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = COL_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# COL_theorist = {
+		# name = COL_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = COL_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# COL_consumer_goods = {
+		# name = COL_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = COL_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# COL_production_efficiency = {
+		# name = COL_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = COL_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# COL_tech = {
+		# name = COL_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = COL_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AGR_stability = {
+		# name = AGR_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = AGR_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AGR_civ_construction = {
+		# name = AGR_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = AGR_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AGR_theorist = {
+		# name = AGR_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = AGR_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AGR_consumer_goods = {
+		# name = AGR_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = AGR_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AGR_production_efficiency = {
+		# name = AGR_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = AGR_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AGR_tech = {
+		# name = AGR_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = AGR_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# STK_stability = {
+		# name = STK_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = STK_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# STK_civ_construction = {
+		# name = STK_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = STK_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# STK_theorist = {
+		# name = STK_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = STK_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# STK_consumer_goods = {
+		# name = STK_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = STK_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# STK_production_efficiency = {
+		# name = STK_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = STK_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# STK_tech = {
+		# name = STK_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = STK_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# IRN_stability = {
+		# name = IRN_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = IRN_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# IRN_civ_construction = {
+		# name = IRN_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = IRN_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# IRN_theorist = {
+		# name = IRN_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = IRN_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# IRN_consumer_goods = {
+		# name = IRN_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = IRN_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# IRN_production_efficiency = {
+		# name = IRN_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = IRN_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# IRN_tech = {
+		# name = IRN_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = IRN_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DRU_stability = {
+		# name = DRU_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DRU_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DRU_civ_construction = {
+		# name = DRU_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DRU_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DRU_theorist = {
+		# name = DRU_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = DRU_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DRU_consumer_goods = {
+		# name = DRU_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DRU_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DRU_production_efficiency = {
+		# name = DRU_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DRU_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# DRU_tech = {
+		# name = DRU_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = DRU_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# BYR_stability = {
+		# name = BYR_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = BYR_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# BYR_civ_construction = {
+		# name = BYR_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = BYR_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# BYR_theorist = {
+		# name = BYR_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = BYR_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# BYR_consumer_goods = {
+		# name = BYR_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = BYR_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# BYR_production_efficiency = {
+		# name = BYR_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = BYR_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# BYR_tech = {
+		# name = BYR_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = BYR_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# WHT_stability = {
+		# name = WHT_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = WHT_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# WHT_civ_construction = {
+		# name = WHT_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = WHT_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# WHT_theorist = {
+		# name = WHT_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = WHT_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# WHT_consumer_goods = {
+		# name = WHT_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = WHT_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# WHT_production_efficiency = {
+		# name = WHT_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = WHT_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# WHT_tech = {
+		# name = WHT_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = WHT_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AKN_stability = {
+		# name = AKN_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = AKN_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AKN_civ_construction = {
+		# name = AKN_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = AKN_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AKN_theorist = {
+		# name = AKN_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = AKN_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AKN_consumer_goods = {
+		# name = AKN_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = AKN_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AKN_production_efficiency = {
+		# name = AKN_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = AKN_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# AKN_tech = {
+		# name = AKN_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = AKN_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NIF_stability = {
+		# name = NIF_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = NIF_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NIF_civ_construction = {
+		# name = NIF_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = NIF_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NIF_theorist = {
+		# name = NIF_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = NIF_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NIF_consumer_goods = {
+		# name = NIF_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = NIF_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NIF_production_efficiency = {
+		# name = NIF_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = NIF_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NIF_tech = {
+		# name = NIF_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = NIF_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HVK_stability = {
+		# name = HVK_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HVK_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HVK_civ_construction = {
+		# name = HVK_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HVK_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HVK_theorist = {
+		# name = HVK_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = HVK_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HVK_consumer_goods = {
+		# name = HVK_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HVK_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HVK_production_efficiency = {
+		# name = HVK_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HVK_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# HVK_tech = {
+		# name = HVK_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = HVK_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# PRI_stability = {
+		# name = PRI_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = PRI_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# PRI_civ_construction = {
+		# name = PRI_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = PRI_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# PRI_theorist = {
+		# name = PRI_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = PRI_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# PRI_consumer_goods = {
+		# name = PRI_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = PRI_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# PRI_production_efficiency = {
+		# name = PRI_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = PRI_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# PRI_tech = {
+		# name = PRI_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = PRI_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# TAW_stability = {
+		# name = TAW_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = TAW_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# TAW_civ_construction = {
+		# name = TAW_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = TAW_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# TAW_theorist = {
+		# name = TAW_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = TAW_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# TAW_consumer_goods = {
+		# name = TAW_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = TAW_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# TAW_production_efficiency = {
+		# name = TAW_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = TAW_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# TAW_tech = {
+		# name = TAW_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = TAW_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ANU_stability = {
+		# name = ANU_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ANU_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ANU_civ_construction = {
+		# name = ANU_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ANU_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ANU_theorist = {
+		# name = ANU_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = ANU_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ANU_consumer_goods = {
+		# name = ANU_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ANU_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ANU_production_efficiency = {
+		# name = ANU_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ANU_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ANU_tech = {
+		# name = ANU_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ANU_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ADB_stability = {
+		# name = ADB_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ADB_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ADB_civ_construction = {
+		# name = ADB_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ADB_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ADB_theorist = {
+		# name = ADB_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = ADB_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ADB_consumer_goods = {
+		# name = ADB_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ADB_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ADB_production_efficiency = {
+		# name = ADB_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ADB_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# ADB_tech = {
+		# name = ADB_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = ADB_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NEN_stability = {
+		# name = NEN_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = NEN_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NEN_civ_construction = {
+		# name = NEN_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = NEN_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NEN_theorist = {
+		# name = NEN_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = NEN_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NEN_consumer_goods = {
+		# name = NEN_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = NEN_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NEN_production_efficiency = {
+		# name = NEN_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = NEN_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# NEN_tech = {
+		# name = NEN_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = NEN_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# RAF_stability = {
+		# name = RAF_stability
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = RAF_stability
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_loremaster }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# RAF_civ_construction = {
+		# name = RAF_civ_construction
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_4"
+				# small = "GFX_Portrait_Wild_Generic_m_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = RAF_civ_construction
+			# ledger = civilian
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_architect }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# RAF_theorist = {
+		# name = RAF_theorist
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_2"
+				# small = "GFX_Portrait_Wild_Generic_m_2_small"
+			# }
+		# }
+		# advisor = {
+			# slot = theorist
+			# idea_token = RAF_theorist
+			# ledger = army
+			# cost = @tribalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_an_intellectual_coalition
+			# }
+			# traits = { tribal_theorist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# RAF_consumer_goods = {
+		# name = RAF_consumer_goods
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_6"
+				# small = "GFX_Portrait_Wild_Generic_m_6_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = RAF_consumer_goods
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { financial_expert }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# RAF_production_efficiency = {
+		# name = RAF_production_efficiency
+		# gender = male
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_m_1"
+				# small = "GFX_Portrait_Wild_Generic_m_1_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = RAF_production_efficiency
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { economist }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+	# RAF_tech = {
+		# name = RAF_tech
+		# gender = female
+		# portraits = {
+			# army = {
+				# large = "GFX_Portrait_Wild_Generic_f_4"
+				# small = "GFX_Portrait_Wild_Generic_f_4_small"
+			# }
+		# }
+		# advisor = {
+			# slot = political_advisor
+			# idea_token = RAF_tech
+			# ledger = civilian
+			# cost = @royalAdvisorCost
+			# allowed = {
+				# is_greater_enedwaith_tag = yes
+			# }
+			# available = {
+				# has_completed_focus = ENE_hire_regions_brightest
+			# }
+			# traits = { technocrat }
+			# ai_will_do = {
+				# factor = 1
+			# }
+		# }
+	# }
+}

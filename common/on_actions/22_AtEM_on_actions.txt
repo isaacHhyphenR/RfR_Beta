@@ -280,9 +280,11 @@ on_actions = {
 			if = { #Blood Oath alert
 				limit = {
 					has_country_flag = dismissed_blood_oath_alert
+					is_subject = no
 					NOT = {
 						any_other_country = {
 							is_greater_enedwaith_tag = yes
+							is_subject = no
 							ROOT = {
 								set_temp_variable = { total_acceptance = 0 }
 								AND = {
