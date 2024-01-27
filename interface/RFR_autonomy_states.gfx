@@ -35,4 +35,16 @@ spriteTypes = {
 		name = "GFX_autonomy_mining_colony_icon"
 		textureFile = "gfx/interface/autonomy/autonomy_mining_colony.dds"
 	}
+	spriteType = {
+		name = "GFX_autonomy_shadow_tributary_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_shadow_tributary_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_shadow_thrall_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_shadow_thrall_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_shadow_slave_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_shadow_slave_icon.dds"
+	}
 }

@@ -32,4 +32,36 @@ spriteTypes = {
 		name = "GFX_koldana_bop"
 		texturefile = "gfx/interface/bop/koldana.dds"
 	}
+	spriteType = {
+		name = "GFX_melkorite_sauron_bop"
+		texturefile = "gfx/interface/bop/melkorite_sauron.dds"
+	}
+	spriteType = {
+		name = "GFX_melkorite_southron_bop"
+		texturefile = "gfx/interface/bop/melkorite_southron.dds"
+	}
+	spriteType = {
+		name = "GFX_melkorite_northron_bop"
+		texturefile = "gfx/interface/bop/melkorite_northron.dds"
+	}
+	spriteType = {
+		name = "GFX_melkorite_easterling_bop"
+		texturefile = "gfx/interface/bop/melkorite_easterling.dds"
+	}
+	spriteType = {
+		name = "GFX_melkorite_numenorean_bop"
+		texturefile = "gfx/interface/bop/melkorite_numenorean.dds"
+	}
+	spriteType = {
+		name = "GFX_melkorite_orcish_bop"
+		texturefile = "gfx/interface/bop/melkorite_orcish.dds"
+	}
+	spriteType = {
+		name = "GFX_melkorite_generic_bop"
+		texturefile = "gfx/interface/bop/melkorite_generic.dds"
+	}
+	spriteType = {
+		name = "GFX_conquest_bop"
+		texturefile = "gfx/interface/bop/conquest.dds"
+	}
 }
