@@ -1,11 +1,11 @@
 autonomy_state = {
-	id = autonomy_colony
+	id = autonomy_blood_oath
 	
 	is_puppet = yes
 	
-	min_freedom_level = 0.60
+	min_freedom_level = 0.25
 	
-	manpower_influence = 0.7
+	manpower_influence = 0.33
 	
 	rule = {
 		can_not_declare_war = yes
@@ -16,42 +16,32 @@ autonomy_state = {
 	}
 	
 	modifier = {
-		autonomy_manpower_share = 0.7
-		
+		autonomy_manpower_share = 0.5
 		extra_trade_to_overlord_factor = 0.5
 		overlord_trade_cost_factor = -0.5
+		cic_to_overlord_factor = 0.5
+		mic_to_overlord_factor = 0.5
 		can_master_build_for_us = 1
-
-		research_sharing_per_country_bonus_factor = -0.5
 	}
 	
 	ai_subject_wants_higher = {
-		factor = 1.0
+		factor = 0.5
 	}
 	
 	ai_overlord_wants_lower = {
-		factor = 1.0
+		factor = 10.0
 	}
 
 	ai_overlord_wants_garrison = {
 		always = no
 	}
-
+	
+	allowed_levels_filter = { #Directly from free to blood oath to annexed
+		#autonomy_tribal_free
+	}
+	
 	allowed = {
-		has_dlc = "Together for Victory"
-		NOT = {
-			overlord = {
-				OR = {
-					original_tag = ISN #council
-					has_country_leader = { #shadow
-						character = MOR_sauron
-						ruling_only = yes
-					}
-				}
-			}
-		}
-		can_be_blood_oath_vassal = no
-		republican_puppet_trigger = no
+		can_be_blood_oath_vassal = yes
 	}
 	
 	can_take_level = {

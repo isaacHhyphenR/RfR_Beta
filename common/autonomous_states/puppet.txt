@@ -38,13 +38,18 @@ autonomy_state = {
 	}
 
 	allowed = {
-		if = {
-			limit = { has_dlc = "Death or Dishonor" }
-			NOT = { has_government = melkorite }
-			NOT = { has_government = conquest }
-		}
 		##ISN has their own system
-		NOT = { overlord = { original_tag = ISN } }
+		NOT = {
+			overlord = {
+				OR = {
+					original_tag = ISN #council
+					has_country_leader = { #shadow
+						character = MOR_sauron
+						ruling_only = yes
+					}
+				}
+			}
+		}
 		can_be_blood_oath_vassal = no
 		republican_puppet_trigger = no
 	}

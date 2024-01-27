@@ -131,27 +131,10 @@ country_event = { ##2## Sauron Demands Submission
 				}
 			}
 		}
-		if = {
-			limit = { has_dlc = "Death or Dishonor" }
-			FROM = {
-				set_autonomy = {
-					target = ROOT
-					autonomous_state = autonomy_satellite
-				}
-			}
-		}
-		else_if = {
-			limit = { OR = { has_dlc = "Together for Victory" has_dlc = "Waking the Tiger" } }
-			FROM = {
-				set_autonomy = {
-					target = ROOT
-					autonomous_state = autonomy_dominion
-				}
-			}
-		}
-		else = {
-			FROM = {
-				puppet = ROOT
+		FROM = {
+			set_autonomy = {
+				target = ROOT
+				autonomous_state = autonomy_shadow_tributary
 			}
 		}
 		MOR = { #tell MOR about the result

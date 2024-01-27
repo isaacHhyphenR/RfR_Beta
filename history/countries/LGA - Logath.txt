@@ -67,7 +67,7 @@ if = {
 MED = {
 	set_autonomy = {
 		target = ROOT
-		autonomy_state = autonomy_reichsprotectorate
+		autonomy_state = autonomy_puppet
 		end_wars = no
 		end_civil_wars = no
 	}

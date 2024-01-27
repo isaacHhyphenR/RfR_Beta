@@ -75,23 +75,6 @@ add_ideas = {
 				###DIPLOMACY
 create_faction = the_shadow
 add_to_faction = GLD
-if = {
-	limit = { has_dlc = "Death or Dishonor" }
-	set_autonomy = {
-		target = GLD
-		autonomous_state = autonomy_reichskommissariat
-	}
-	else_if = {
-		limit = { OR = { has_dlc = "Together for Victory" has_dlc = "Waking the Tiger" } }
-		set_autonomy = {
-			target = GLD
-			autonomous_state = autonomy_integrated_puppet
-		}
-	}
-	else = {
-		puppet = GLD
-	}
-}
 
 recruit_character = MOR_adunabeth
 recruit_character = MOR_dendra_dwar

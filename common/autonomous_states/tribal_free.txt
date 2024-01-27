@@ -1,0 +1,41 @@
+autonomy_state = {
+	id = autonomy_tribal_free
+
+	min_freedom_level = 0.5
+	
+	rule = {
+	}
+	
+	modifier = {
+		autonomy_gain = 1000
+	}
+	
+	ai_subject_wants_higher = {
+		factor = 1.0
+	}
+	
+	ai_overlord_wants_lower = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = no
+	}
+
+	allowed = {
+		can_be_blood_oath_vassal = yes
+	}
+
+	#ROOT is puppet - FROM is potential OVERLORD
+	use_for_peace_conference_weight = {
+		base = 0
+	}
+
+	can_take_level = {
+		#trigger here
+	}
+
+	can_lose_level = {
+		#trigger here
+	}
+}

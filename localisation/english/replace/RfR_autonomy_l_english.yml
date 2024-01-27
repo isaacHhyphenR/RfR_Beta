@@ -21,3 +21,6 @@
  autonomy_sister_republic: "Sister Republic"
  autonomy_constituent_republic: "Constituent Republic"
  autonomy_mining_colony: "Mining Colony"
+ autonomy_shadow_tributary: "Shadow Tributary"
+ autonomy_shadow_thrall: "Shadow Thrall"
+ autonomy_shadow_slave: "Shadow Slave"

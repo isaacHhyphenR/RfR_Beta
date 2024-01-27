@@ -52,6 +52,14 @@ if = {
 	}
 }
 			###POLITICS
+if = {
+	MOR = {
+		set_autonomy = {
+			target = GLD
+			autonomous_state = autonomy_shadow_slave
+		}
+	}
+}
 set_politics = {
 	ruling_party = melkorite
 	last_election = "1933.3.5"
