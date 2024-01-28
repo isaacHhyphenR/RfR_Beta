@@ -53,6 +53,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/bop/melkorite_numenorean.dds"
 	}
 	spriteType = {
+		name = "GFX_melkorite_wildling_bop"
+		texturefile = "gfx/interface/bop/melkorite_wildling.dds"
+	}
+	spriteType = {
 		name = "GFX_melkorite_orcish_bop"
 		texturefile = "gfx/interface/bop/melkorite_orcish.dds"
 	}

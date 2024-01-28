@@ -1,8 +1,12 @@
 on_actions = {
 	on_startup = {
-		effect = { ##party ideology index
+		effect = { ##party ideology index & melkorite BoP GFX
 			every_possible_country = {
 				set_ideology_index = yes
+				if = {
+					limit = { has_government = melkorite }
+					set_melkorite_bop_pantheon_gfx = yes
+				}
 			}
 		}
 		effect = { ##setup technology slowers, monster unlockers
@@ -117,6 +121,33 @@ on_actions = {
 		effect = { ##Set market max level to 5
 			every_state = {
 				set_variable = { market_max_level = 5 }
+			}
+		}
+		
+		effect = { ##Sets initial Melkorite BoPs since they refuse to listen to history files
+			GLD = {
+				add_power_balance_value = {
+					id = melkorite_power_balance
+					value = 0.7
+				}
+			}
+			AGR = {
+				add_power_balance_value = {
+					id = melkorite_power_balance
+					value = -0.2
+				}
+			}
+			HOL = {
+				add_power_balance_value = {
+					id = melkorite_power_balance
+					value = 0.2
+				}
+			}
+			RLM = {
+				add_power_balance_value = {
+					id = melkorite_power_balance
+					value = 0.2
+				}
 			}
 		}
 	}
