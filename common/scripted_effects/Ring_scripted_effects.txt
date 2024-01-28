@@ -1,0 +1,144 @@
+the_one_ring_destroyed = {
+	MOR = {
+		custom_effect_tooltip = the_one_ring_destroyed_tooltip
+		add_stability = -0.5
+		add_war_support = -0.5
+		hidden_effect = {
+			news_event = {
+				id = rfr_news.3
+			}
+			every_subject_country = {
+				MOR = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_free
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+			}
+			kill_country_leader = yes
+			every_unit_leader = {
+				limit = { has_trait = nazgul }
+				retire = yes
+			}
+			every_controlled_state = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = {
+						all_provinces = yes
+						level > 1
+					}
+				}
+				set_building_level = {
+					type = coastal_bunker
+					level = 1
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+						level > 1
+					}
+				}
+			}
+			if = { limit = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } }
+				remove_dynamic_modifier = { modifier = servants_of_sauron_modifier }
+			}
+			if = { limit = { has_idea = mor_hidden_troll_production }
+				remove_ideas = mor_hidden_troll_production
+			}
+			if = { limit = { has_idea = mor_hidden_infantry_equipment_cost }
+				remove_ideas = mor_hidden_infantry_equipment_cost
+			}
+		}
+	}
+	hidden_effect = {
+		every_country = {
+			if = { limit = { has_government = melkorite }
+				add_timed_idea = {
+					idea = the_one_ring_destroyed_spirit
+					days = 365
+				}
+			}
+			if = {
+				limit = {
+					has_power_balance = { id = melkorite_power_balance }
+				}
+				deactivate_melkorite_bop = yes
+			}
+		}
+	}
+	custom_effect_tooltip = the_one_ring_destroyed_apply_idea_tooltip
+	effect_tooltip = {
+		add_timed_idea = {
+			idea = the_one_ring_destroyed_spirit
+			days = 365
+		}
+	}
+}
+the_one_ring_claimed = {
+	MOR = {
+		hidden_effect = {
+			news_event = {
+				id = rfr_news.4
+			}
+		}
+		add_ideas = the_one_ring_spirit
+		MOR_sauron = {
+			add_field_marshal_role = {
+				skill = 9
+				attack_skill = 10
+				defense_skill = 10
+				planning_skill = 10
+				logistics_skill = 10
+				traits = { the_one_ring_mil brilliant_strategist harsh_leader ambitious infantry_leader infantry_expert organizer skilled_staffer trait_engineer thorough_planner logistics_wizard aggressive_assaulter offensive_doctrine } 
+			}
+			set_portraits = {
+				army = { large = "GFX_Portrait_Sauron_Embodied" }
+				civilian = { large = "GFX_Portrait_Sauron_Embodied" }
+			}
+		}
+	}
+}
+
+check_evil_ring_points = { #tallys how many ring victory states are controlled by conquest/melkorite
+	set_variable = { FOR.evilRingPoints = 0 }
+	for_each_scope_loop = {
+		array = FOR.ring_victory_points
+		if = {
+			limit = {
+				is_saurons_ring_point = yes
+			}
+			set_variable = { ring_ui_frame = 2 }
+			add_to_variable = { FOR.evilRingPoints = 1 }
+		}
+		else = {
+			set_variable = { ring_ui_frame = 1 }
+		}
+	}
+}
+
+set_ring_victory_point = { #Call in a state to make it count for the ring race
+	set_state_flag = ring_victory_point
+	add_to_array = {
+		array = FOR.ring_victory_points
+		value = THIS
+	}
+	if = {
+		limit = {
+			is_saurons_ring_point = yes
+		}
+		set_variable = { ring_ui_frame = 2 }
+	}
+	else = {
+		set_variable = { ring_ui_frame = 1 }
+	}
+}
+remove_ring_victory_point = { #Call in a state to make it NOT count for the ring race
+	clr_state_flag = ring_victory_point
+	set_variable = { ring_ui_frame = 3 }
+	remove_from_array = {
+		array = FOR.ring_victory_points
+		value = THIS
+	}
+}

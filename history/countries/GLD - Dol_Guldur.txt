@@ -66,6 +66,12 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 }
+set_power_balance = {
+	id = melkorite_power_balance
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	set_value = 0.7
+}
 
 set_popularities = {
 	opportunism = 4

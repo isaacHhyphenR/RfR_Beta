@@ -1,0 +1,183 @@
+melkorite_power_balance = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutal_range
+		max = 0.25
+		min = -0.25
+		modifier = {
+		}
+		on_activate = {
+
+		}
+		on_deactivate = {
+			
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			max = -0.25
+			min = -0.5
+			modifier = {
+				opportunism_drift = 0.05
+				autonomy_gain = 0.5
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			max = -0.5
+			min = -0.75
+			modifier = {
+				opportunism_drift = 0.1
+				autonomy_gain = 1.0
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			max = -0.75
+			min = -1
+			modifier = {
+				opportunism_drift = 0.15
+				autonomy_gain = 1.5
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = 0.25
+			max = 0.5
+			modifier = {
+				melkorite_drift = 0.05
+				autonomy_gain = -0.5
+				stability_factor = 0.05
+				war_support_factor = 0.05
+			}
+			on_activate = {
+				if = {
+					limit = {
+						is_subject = no
+					}
+					MOR = {
+						set_autonomy = {
+							target = ROOT
+							autonomous_state = autonomy_shadow_tributary
+							end_wars = no
+							end_civil_wars = no
+						}
+					}
+				}
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = 0.5
+			max = 0.75
+			modifier = {
+				melkorite_drift = 0.1
+				autonomy_gain = -1.0
+				stability_factor = 0.1
+				war_support_factor = 0.1
+			}
+			on_activate = {
+				if = { #for non-DLC, reduces autonomy
+					limit = {
+						has_subject_autonomy_feature = no
+						OR = {
+							is_subject = no
+							has_autonomy_state = autonomy_shadow_tributary
+						}
+					}
+					MOR = {
+						set_autonomy = {
+							target = ROOT
+							autonomous_state = autonomy_shadow_thrall
+							end_wars = no
+							end_civil_wars = no
+						}
+					}
+				}
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = { #3
+			id = melkorite_lidless_eye_range3
+			min = 0.75
+			max = 1
+			modifier = {
+				melkorite_drift = 0.15
+				autonomy_gain = -1.5
+				stability_factor = 0.15
+				war_support_factor = 0.15
+			}
+			on_activate = {
+				if = { #for non-DLC, reduces autonomy
+					limit = {
+						has_subject_autonomy_feature = no
+						OR = {
+							is_subject = no
+							has_autonomy_state = autonomy_shadow_tributary
+							has_autonomy_state = autonomy_shadow_thrall
+						}
+					}
+					MOR = {
+						set_autonomy = {
+							target = ROOT
+							autonomous_state = autonomy_shadow_slave
+							end_wars = no
+							end_civil_wars = no
+						}
+					}
+				}
+				if = { #annex your subjects for non-DLC
+					limit = { has_subject_autonomy_feature = no }
+					MOR = {
+						unlock_decision_tooltip = MOR_annex_melkorite_decision
+					}
+				}
+			}
+			on_deactivate = {
+				
+			}
+		}
+	}
+}

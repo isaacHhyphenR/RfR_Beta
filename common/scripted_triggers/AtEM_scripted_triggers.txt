@@ -247,3 +247,22 @@ merchant_houses_visible = {
 		has_country_flag = monarchist_revolt
 	}
 }
+
+needs_melkorite_bop = { #returns true if THIS is needs to gain the melkorite BoP
+	NOT = { tag = MOR }
+	has_government = melkorite
+	MOR = { #Sauron lives
+		has_country_leader = {
+			character = MOR_sauron
+			ruling_only = yes
+		}
+	}
+	OR = { #isn't someone else's puppet
+		is_subject = no
+		is_subject_of = MOR
+	}
+	has_any_power_balance = no
+}
+
+
+

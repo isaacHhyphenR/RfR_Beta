@@ -119,6 +119,7 @@ if = {
 	}
 }
 add_dynamic_modifier = { modifier = isengardian_heritage_modifier }
+add_ideas = hidden_orcish_heritage
 if = { limit = { has_dlc = "Together for Victory" }
 	add_to_tech_sharing_group = sarumans_council_tech_sharing
 }

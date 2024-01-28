@@ -2921,8 +2921,71 @@ one_external_focus = {
 	custom_effect_tooltip = complete_external_focus
 }
 
+activate_melkorite_bop = {
+	set_power_balance = {
+		id = melkorite_power_balance
+		left_side = melkorite_local_pantheon_side
+		right_side = melkorite_lidless_eye_side
+	}
+	#Sets the pantheon GFX based on culture. Setting it for a side changes for eveyr country with the BoP, so only changes if player
+	if = {
+		limit = { is_ai = no }
+		if = {
+			limit = { has_idea_with_trait = orcish_heritage_trait }
+			set_power_balance_gfx = {
+				id = melkorite_power_balance
+				side = melkorite_local_pantheon_side
+				gfx = GFX_melkorite_orcish_bop
+			}
+		}
+		else_if = {
+			limit = { has_idea_with_trait = easterling_heritage_trait }
+			set_power_balance_gfx = {
+				id = melkorite_power_balance
+				side = melkorite_local_pantheon_side
+				gfx = GFX_melkorite_easterling_bop
+			}
+		}
+		else_if = {
+			limit = { has_idea_with_trait = southron_heritage_trait }
+			set_power_balance_gfx = {
+				id = melkorite_power_balance
+				side = melkorite_local_pantheon_side
+				gfx = GFX_melkorite_southron_bop
+			}
+		}
+		else_if = {
+			limit = { has_idea_with_trait = northron_heritage_trait }
+			set_power_balance_gfx = {
+				id = melkorite_power_balance
+				side = melkorite_local_pantheon_side
+				gfx = GFX_melkorite_northron_bop
+			}
+		}
+		else_if = {
+			limit = { has_idea_with_trait = numenorean_heritage_trait }
+			set_power_balance_gfx = {
+				id = melkorite_power_balance
+				side = melkorite_local_pantheon_side
+				gfx = GFX_melkorite_numenorean_bop
+			}
+		}
+		else_if = {
+			limit = { has_idea_with_trait = wildling_heritage_trait }
+			set_power_balance_gfx = {
+				id = melkorite_power_balance
+				side = melkorite_local_pantheon_side
+				gfx = GFX_melkorite_wildling_bop
+			}
+		}
+	}
+}
 
-
+deactivate_melkorite_bop = {
+	remove_power_balance = {
+		id = melkorite_power_balance
+	}
+}
 
 
 

@@ -318,8 +318,8 @@ on_actions = {
 		}
 	}
 	
-	on_ruling_party_change = { #party ideology index
-		effect = {
+	on_ruling_party_change = {
+		effect = { #party ideology index
 			set_ideology_index = yes
 		}
 		effect = { #prevent bergholda from reducing trade cost when not in power
@@ -335,6 +335,41 @@ on_actions = {
 					}
 				}
 				bergholda_trade_effect_remove = yes
+			}
+		}
+		effect = { #activate/deactive melkorite BoP
+			if = {
+				limit = {
+					needs_melkorite_bop = yes
+				}
+				activate_melkorite_bop = yes
+			}
+			else_if = {
+				limit = {
+					has_power_balance = { id = melkorite_power_balance }
+					NOT = { has_government = melkorite }
+				}
+				deactivate_melkorite_bop = yes
+			}
+		}
+	}
+	on_subject_free = {
+		effect = { #activate/deactive melkorite BoP for newly freed melkorites
+			if = {
+				limit = {
+					needs_melkorite_bop = yes
+				}
+				activate_melkorite_bop = yes
+			}
+		}
+	}
+	on_subject_autonomy_level_change = {
+		effect = { #activate/deactive melkorite BoP for newly freed melkorites
+			if = {
+				limit = {
+					needs_melkorite_bop = yes
+				}
+				activate_melkorite_bop = yes
 			}
 		}
 	}

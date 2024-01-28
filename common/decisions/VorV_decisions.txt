@@ -393,48 +393,48 @@ request_ENE_state_return_category = {
 	}
 }
 
-ENE_send_tribute_to_barad_dur_decision_category = {
-	ENE_send_tribute_to_barad_dur_decision = {
-		icon = GFX_decision_barad_dur_tribute
-		fire_only_once = no
-		cost = 10
-		ai_will_do = {
-			base = 0.3
-			modifier = { #If they get nothing, they won't try again
-				has_country_flag = MOR_rejected_tribute
-				factor = 0
-			}
-		}
-		modifier = { consumer_goods_factor = 0.05 }
-		days_remove = 100
-		remove_effect = {
-			MOR = {
-				country_event = { id = blood_oath.6 hours = 1 }
-				random_core_state = {
-					prioritize = { 177 } #mordath/barad dur
-					limit = {
-						is_controlled_by = MOR
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = no
-						}
-					}
-					set_state_flag = build_ene_tribute_here
-					effect_tooltip = {
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
-						}
-					}
-				}
-			}
-			custom_effect_tooltip = ENE_send_tribute_to_barad_dur_decision_tooltip
-			effect_tooltip = { add_opinion_modifier = { target = FROM modifier = sent_tribute } }
-		}
-	}
-}
+# ENE_send_tribute_to_barad_dur_decision_category = {
+	# ENE_send_tribute_to_barad_dur_decision = {
+		# icon = GFX_decision_barad_dur_tribute
+		# fire_only_once = no
+		# cost = 10
+		# ai_will_do = {
+			# base = 0.3
+			# modifier = { #If they get nothing, they won't try again
+				# has_country_flag = MOR_rejected_tribute
+				# factor = 0
+			# }
+		# }
+		# modifier = { consumer_goods_factor = 0.05 }
+		# days_remove = 100
+		# remove_effect = {
+			# MOR = {
+				# country_event = { id = blood_oath.6 hours = 1 }
+				# random_core_state = {
+					# prioritize = { 177 } #mordath/barad dur
+					# limit = {
+						# is_controlled_by = MOR
+						# free_building_slots = {
+							# building = industrial_complex
+							# size > 0
+							# include_locked = no
+						# }
+					# }
+					# set_state_flag = build_ene_tribute_here
+					# effect_tooltip = {
+						# add_building_construction = {
+							# type = industrial_complex
+							# level = 1
+							# instant_build = yes
+						# }
+					# }
+				# }
+			# }
+			# custom_effect_tooltip = ENE_send_tribute_to_barad_dur_decision_tooltip
+			# effect_tooltip = { add_opinion_modifier = { target = FROM modifier = sent_tribute } }
+		# }
+	# }
+# }
 
 repair_royal_road_decision_category = {
 	repair_royal_road_decision = {

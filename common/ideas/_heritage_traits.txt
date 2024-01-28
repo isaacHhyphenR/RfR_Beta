@@ -697,4 +697,15 @@ ideas = {
 			traits = { hidden_mumakil_tamer_trait }
 		}
 	}
+	hidden_ideas = {
+		#So that isengard can have the trait
+		hidden_orcish_heritage = {
+			allowed_civil_war = {
+				always = yes
+			}
+			traits = {
+				orcish_heritage_trait
+			}
+		}
+	}
 }

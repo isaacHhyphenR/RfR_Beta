@@ -51,7 +51,7 @@ ideologies = {
 			civilian_intel_to_others = 20.0
 			army_intel_to_others = 20.0
 			navy_intel_to_others = 20.0
-			airforce_intel_to_others = 10.0
+			#airforce_intel_to_others = 10.0
 			
 			drift_defence_factor = -0.3	
 			war_support_factor = -0.1
@@ -123,7 +123,7 @@ ideologies = {
 			civilian_intel_to_others = 20.0
 			army_intel_to_others = 5.0
 			navy_intel_to_others = 20.0
-			airforce_intel_to_others = 5
+			#airforce_intel_to_others = 5
 			
 			hidden_modifier = {
 				civil_war_ideology_threshold = 0.5
@@ -182,7 +182,7 @@ ideologies = {
 			civilian_intel_to_others = 10.0
 			army_intel_to_others = 7.5
 			navy_intel_to_others = 12.5
-			airforce_intel_to_others = 7.5
+			#airforce_intel_to_others = 7.5
 			hidden_modifier = { join_faction_tension = -0.1 }
 			
 			hidden_modifier = {
@@ -238,7 +238,7 @@ ideologies = {
 			civilian_intel_to_others = 15.0
 			army_intel_to_others = 10.0
 			navy_intel_to_others = 10.0
-			airforce_intel_to_others = 10.0
+			#airforce_intel_to_others = 10.0
 			hidden_modifier = { join_faction_tension = -0.1 }
 			
 			hidden_modifier = {
@@ -289,11 +289,12 @@ ideologies = {
 		can_collaborate = yes
 		
 		modifiers = {
+			custom_modifier_tooltip = melkorite_ideology_tooltip
 			justify_war_goal_when_in_major_war_time = -0.80
 			civilian_intel_to_others = 15.0
 			army_intel_to_others = 10.0
 			navy_intel_to_others = 10.0
-			airforce_intel_to_others = 10.0
+			#airforce_intel_to_others = 10.0
 			hidden_modifier = { join_faction_tension = -0.1 }
 			
 			hidden_modifier = {
@@ -301,7 +302,7 @@ ideologies = {
 			}
 		}
 
-		ai_communist = yes # uses the fascist AI behaviour
+		ai_fascist = yes # uses the fascist AI behaviour
 	}
 }
 	

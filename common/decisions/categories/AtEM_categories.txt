@@ -94,9 +94,29 @@ DOR_mercenary_category = {
 	allowed = { original_tag = DOR }
 }
 
+#######################################MELKORITE########################################
+melkorite_bop_category = {
+	icon = GFX_decision_category_power_struggle
+	priority = 99
+	allowed = { NOT = { tag = MOR } }
+	visible = { has_power_balance = { id = melkorite_power_balance } }
+}
+MOR_the_dark_lord_category = {
+	priority = 99
+	allowed = { tag = MOR }
+	visible = {
+		has_country_leader = {
+			character = MOR_sauron
+			ruling_only = yes
+		}
+	}
+	visible_when_empty = yes
+}
 ########################################GENERAL########################################
 crisis_category = {
 	icon = GFX_decision_category_crisis
 	priority = 99
 	allowed = { always = yes }
 }
+
+	

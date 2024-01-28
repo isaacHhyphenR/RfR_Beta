@@ -17,7 +17,7 @@ MOR_unleash_the_darkness_category = {
 				FROM = {
 					is_subject = yes
 				}
-				factor = 0
+				factor = 0  
 			}
 		}
 		target_trigger = {
@@ -59,6 +59,58 @@ MOR_unleash_the_darkness_category = {
 	}
 }
 
+MOR_the_dark_lord_category = {
+	MOR_annex_melkorite_decision = {
+		icon = GFX_decision_infiltrate_state
+		ai_will_do = {
+			factor = 100 #Hell yeah
+		}
+		cost = 150
+		allowed = { has_subject_autonomy_feature = no }
+		target_trigger = {
+			FROM = {
+				is_power_balance_in_range = {
+					id = melkorite_power_balance
+					range = melkorite_lidless_eye_range3
+				}
+			}
+		}
+		complete_effect = {
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+		}
+	}
+	MOR_core_orcs_decision = {
+		icon = GFX_decision_oppression
+		ai_will_do = {
+			factor = 100 #Obviously
+		}
+		fire_only_once = yes
+		cost = 25
+		state_target = yes
+		target_trigger = { #is core of an orc
+			FROM = {
+				is_controlled_by = ROOT
+				NOT = { is_core_of = ROOT }
+				any_country_with_core = {
+					has_idea_with_trait = orcish_heritage_trait
+				}
+			}
+		}
+		available = {
+			FROM = {
+				resistance < 25
+			}
+		}
+		complete_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+		}
+	}
+}
 
 MOR_direct_saurons_attention_decision = {
 	the_deciever_decision = {
@@ -1041,3 +1093,99 @@ rfr_border_war_category = {
 	}
 }
 
+###############BoP for Melkorite countries
+melkorite_bop_category = {
+	send_tribute_to_barad_dur_decision = {
+		icon = GFX_decision_barad_dur_tribute
+		fire_only_once = no
+		cost = 25
+		ai_will_do = {
+			base = 1
+			modifier = {
+				num_of_available_civilian_factories < 2
+				factor = 0
+			}
+			modifier = {
+				num_of_available_civilian_factories > 8
+				factor = 2
+			}
+			modifier = { #If they get nothing, they won't try again
+				has_country_flag = MOR_rejected_tribute
+				factor = 0
+			}
+			modifier = { #don't spam, only do it once every so often
+				has_country_flag = recently_sent_tribute
+				factor = 0.1
+			}
+		}
+		modifier = { consumer_goods_factor = 0.1 }
+		days_remove = 100
+		remove_effect = {
+			MOR = {
+				country_event = { id = blood_oath.6 hours = 1 }
+				random_core_state = {
+					prioritize = { 177 } #mordath/barad dur
+					limit = {
+						is_controlled_by = MOR
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+					}
+					set_state_flag = build_ene_tribute_here
+					effect_tooltip = {
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = ENE_send_tribute_to_barad_dur_decision_tooltip
+			effect_tooltip = { add_opinion_modifier = { target = FROM modifier = sent_tribute } }
+			##Tell the AI not to do this constantly
+			hidden_effect = {
+				random_list = {
+					1 = {
+						set_country_flag = {
+							flag = recently_sent_tribute
+							days = 100
+						}
+					}
+					2 = {
+						set_country_flag = {
+							flag = recently_sent_tribute
+							days = 150
+						}
+					}
+					3 = {
+						set_country_flag = {
+							flag = recently_sent_tribute
+							days = 200
+						}
+					}
+					4 = { #250 + 100 days for the decision = 350
+						set_country_flag = {
+							flag = recently_sent_tribute
+							days = 250
+						}
+					}
+					2 = {
+						set_country_flag = {
+							flag = recently_sent_tribute
+							days = 300
+						}
+					}
+					1 = {
+						set_country_flag = {
+							flag = recently_sent_tribute
+							days = 350
+						}
+					}
+				}
+			}
+		}
+	}
+}
