@@ -1549,4 +1549,8 @@ spriteTypes = {
 		name = "GFX_goal_dorwinion"
 		texturefile = "gfx/interface/goals/regions/goal_dorwinion.dds"
 	}
+	SpriteType = {
+		name = "GFX_goal_generic_consumer_goods2"
+		texturefile = "gfx/interface/goals/regions/goal_generic_consumer_goods2.dds"
+	}
 }

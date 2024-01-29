@@ -13,7 +13,7 @@ load_steppe_warband = {
 				turret_type_slot = empty
 				suspension_type_slot = cavalry_racing_saddle
 				armor_type_slot = cavalry_standard_barding
-				engine_type_slot = cav_rouncey_mount
+				engine_type_slot = cav_steppe_mount
 			}
 			upgrades = {
 				tank_nsb_engine_upgrade = 5

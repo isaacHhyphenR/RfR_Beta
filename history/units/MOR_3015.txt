@@ -1,0 +1,174 @@
+﻿division_template = {
+	name = "Snagas"
+	division_names_group = SNAGA_NAMES_01
+	template_counter = 36
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+	}
+	support = {
+	}
+}
+division_template = {
+	name = "Orc Raiders"
+	division_names_group = ORC_NAMES_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		artillery_brigade = { x = 2 y = 0 }
+	}
+	support = {
+	}
+}
+division_template = {
+	name = "Trolls"
+
+	regiments = {
+		heavy_armor = { x = 0 y = 0 }
+		heavy_armor = { x = 0 y = 1 }
+		heavy_armor = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+	}
+}
+division_template = {
+	name = "Warg Riders"
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+units = {
+		##SNAGAS
+	division = {
+		location = 5262 #Cirith Ungol
+		division_template = "Snagas"
+        start_experience_factor = 0.3
+	}
+	division = {
+		location = 4778 #Isenmouth
+		division_template = "Snagas"
+	}
+	division = {
+		location = 6985 #Durthang
+		division_template = "Snagas"
+        start_experience_factor = 0.3
+	}
+	division = {
+		location = 2051 #Barad Dur
+		division_template = "Snagas"
+        start_experience_factor = 0.3
+	}
+	division = {
+		location = 2911 #Minas Durlith
+		division_template = "Snagas"
+	}
+	division = {
+		location = 7054 #Seregost
+		division_template = "Snagas"
+	}
+	division = {
+		location = 7219 #Barad-Wath
+		division_template = "Snagas"
+	}
+	division = {
+		location = 3815 #Ostigurth
+		division_template = "Snagas"
+	}
+	division = {
+		location = 844 #Urlutsu Nurn
+		division_template = "Snagas"
+	}
+	division = {
+		location = 7332 #Maegond
+		division_template = "Snagas"
+	}
+	division = {
+		location = 7265 #Caran
+		division_template = "Snagas"
+	}
+	division = {
+		location = 7274 #Sturlurtza Nurn
+		division_template = "Snagas"
+	}
+	division = {
+		location = 3086 #Calduin
+		division_template = "Snagas"
+	}
+	# division = {
+		# location = 1114
+		# division_template = "Snagas"
+	# }
+	# division = {
+		# location = 7054
+		# division_template = "Snagas"
+	# }
+	# division = {
+		# location = 7332
+		# division_template = "Snagas"
+	# }
+	# division = {
+		# location = 844
+		# division_template = "Snagas"
+	# }
+	# division = {
+		# location = 7265
+		# division_template = "Snagas"
+	# }
+	# division = {
+		# location = 7231
+		# division_template = "Snagas"
+	# }
+	# division = {
+		# location = 7274
+		# division_template = "Snagas"
+	# }
+	# division = {
+		# location = 3086
+		# division_template = "Snagas"
+	# }
+	# division = {
+		# location = 4509
+		# division_template = "Snagas"
+	# }
+	# division = {
+		# location = 1476
+		# division_template = "Snagas"
+	# }
+		##RAIDERS
+	division = {
+		location = 3197 #Morannon
+		division_template = "Orc Raiders"
+        start_experience_factor = 0.5
+	}
+	division = {
+		location = 3442 #Minas Morgul
+		division_template = "Orc Raiders"
+        start_experience_factor = 0.5
+	}
+			##TROLLS
+	division = {
+		name = "1 Stomper"
+		location = 3197 #Morannon
+		division_template = "Trolls"
+        start_experience_factor = 0.5
+	}
+			##WARGS
+	division = {
+		name = "1 Red Fangs"
+		location = 3442 #Minas Morgul
+		division_template = "Warg Riders"
+        start_experience_factor = 0.5
+	}
+}

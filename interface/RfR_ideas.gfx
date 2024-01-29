@@ -970,7 +970,16 @@ spriteTypes = {
 		name = "GFX_idea_RVN_economic_influence"
 		texturefile = "gfx/interface/ideas/rhovanion_influence/RVN_economic_influence.dds"
 	}
-
-
-
+	SpriteType = {
+		name = "GFX_idea_generic_goods_red_bonus2"
+		texturefile = "gfx/interface/ideas/generic_goods_red_bonus2.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_gaze_of_sauron"
+		texturefile = "gfx/interface/ideas/gaze_of_sauron.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_shadow_of_the_eye"
+		texturefile = "gfx/interface/ideas/shadow_of_the_eye.dds"
+	}
 }

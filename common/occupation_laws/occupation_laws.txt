@@ -557,7 +557,7 @@ brutally_oppressive_occupation = {
 }
 
 slavery_occupation = {
-	icon = 10
+	icon = 13
 	sound_effect = "Martial_Law_Interface_Forced_Labor_Occupation"
 
 	visible = {

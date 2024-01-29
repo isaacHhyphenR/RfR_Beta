@@ -92,6 +92,7 @@ MOR_the_dark_lord_category = {
 		state_target = yes
 		target_trigger = { #is core of an orc
 			FROM = {
+				impassable = no
 				is_controlled_by = ROOT
 				NOT = { is_core_of = ROOT }
 				any_country_with_core = {
@@ -107,6 +108,17 @@ MOR_the_dark_lord_category = {
 		complete_effect = {
 			FROM = {
 				add_core_of = ROOT
+				every_neighbor_state = {
+					limit = {
+						impassable = yes
+						is_controlled_by = ROOT
+						NOT = { is_core_of = ROOT }
+						any_country_with_core = {
+							has_idea_with_trait = orcish_heritage_trait
+						}
+					}
+					add_core_of = ROOT
+				}
 			}
 		}
 	}
@@ -1142,11 +1154,6 @@ melkorite_bop_category = {
 					custom_effect_tooltip = OR_tooltip
 					army_experience = 40
 				}
-				# event_option_tooltip = blood_oath.6.a
-				# custom_effect_tooltip = OR_tooltip
-				# event_option_tooltip = blood_oath.6.b
-				# custom_effect_tooltip = OR_tooltip
-				# event_option_tooltip = blood_oath.6.c
 			}
 			custom_effect_tooltip = ENE_send_tribute_to_barad_dur_decision_tooltip
 			effect_tooltip = { add_opinion_modifier = { target = FROM modifier = sent_tribute } }
