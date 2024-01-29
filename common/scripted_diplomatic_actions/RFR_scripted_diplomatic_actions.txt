@@ -177,14 +177,14 @@ scripted_diplomatic_actions = {
 				factor = 100
 			}
 			modifier = {
-				has_autonomy_DLC = no
+				has_subject_autonomy_feature = no
 				has_subject = ROOT
 				check_variable = { THIS.enedwaith_tag_trust_towards_this^ROOT.tribal_array_position < @trustForNoDLCAnnexation }
 				factor = 25
 			}
 				
 			modifier = {##don't waste PP if you've already got them
-				has_autonomy_DLC = yes
+				has_subject_autonomy_feature = yes
 				ROOT = {
 					OR = {
 						PREV = {
@@ -257,13 +257,13 @@ scripted_diplomatic_actions = {
 		
 		# ai_will_do to decide if AI should send this action or not
 		ai_desire = {
-			base = 0
+			base = 5
 			modifier = {
 				has_opinion = {
 					target = ROOT
-					value > 25
+					value < 25
 				}
-				add = 1
+				add = -1000
 			}
 			modifier = {
 				has_opinion = {
@@ -403,14 +403,105 @@ scripted_diplomatic_actions = {
 						}
 					}
 				}
-				factor = 10
+				add = 100
 			}
 			modifier = { #don't bother if someone else got them puppeted
 				is_subject = yes
 				overlord = {
 					NOT = { tag = ROOT }
 				}
-				factor = 10
+				add = 100
+			}
+		}
+	}
+	
+	
+	begin_promoting_lidless_eye = { # will be used in most localizations
+	
+		# root is the initiator of action and this is the target country
+		visible = { #if action is visible on gui
+			has_power_balance = { id = melkorite_power_balance }
+			ROOT = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+			NOT = { has_idea = sauron_influencing_bop_hidden }
+		}
+
+		requires_acceptance = no # if true the action will require acceptance of target country
+		cost = 10 # pp cost, can be zero
+
+		show_acceptance_on_action_button = yes # set to no if acceptance shouldn't be displayed on the action button
+
+		icon = 1 # icon frame to use in notification
+
+		#for effects/triggers/variables, root is the sender and this is receiver
+		# runs when the action is properly sent and accepted
+		complete_effect = {
+			hidden_effect = { #Begin influencing
+				add_ideas = sauron_influencing_bop_hidden
+				news_event = { id = rfr_news.142 hours = 1 }
+				ROOT = {
+					add_to_variable = { current_influencing_bop_cost = cost_to_influence_bop }
+				}
+			}
+		}
+		
+		# ai_will_do to decide if AI should send this action or not
+		ai_desire = {
+			base = 5
+			modifier = {
+				ROOT = { political_power_daily < 0.5 }
+				factor = 0
+			}
+			modifier = { #no need
+				power_balance_value = {
+					id = melkorite_power_balance
+					value > 0.75
+				}
+				factor = 0
+			}
+			modifier = {
+				has_autonomy_state = autonomy_shadow_slave
+				factor = 0
+			}
+		}
+	}
+	stop_promoting_lidless_eye = { # will be used in most localizations
+	
+		# root is the initiator of action and this is the target country
+		visible = { #if action is visible on gui
+			ROOT = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
+			has_idea = sauron_influencing_bop_hidden
+		}
+
+		requires_acceptance = no # if true the action will require acceptance of target country
+
+		show_acceptance_on_action_button = yes # set to no if acceptance shouldn't be displayed on the action button
+
+		icon = 1 # icon frame to use in notification
+
+		#for effects/triggers/variables, root is the sender and this is receiver
+		# runs when the action is properly sent and accepted
+		complete_effect = {
+			hidden_effect = { #Begin influencing
+				remove_ideas = sauron_influencing_bop_hidden
+				ROOT = {
+					subtract_from_variable = { current_influencing_bop_cost = cost_to_influence_bop }
+				}
+			}
+		}
+		
+		# ai_will_do to decide if AI should send this action or not
+		ai_desire = {
+			base = 0
+			modifier = { #no need
+				power_balance_value = {
+					id = melkorite_power_balance
+					value > 0.8
+				}
+				add = 50
+			}
+			modifier = {
+				has_autonomy_state = autonomy_shadow_slave
+				add = 50
 			}
 		}
 	}

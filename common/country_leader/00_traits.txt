@@ -64,6 +64,11 @@ leader_traits = {
 		navy_intel_factor = 0.25
 		melkorite_drift = 1
 	}
+	lieutenant_of_melkor = {
+		random = no
+		custom_modifier_tooltip = can_core_orcs_tooltip
+		custom_modifier_tooltip = can_influence_shadow_worship_tooltip
+	}
 	the_deciever = {
 		random = no
 

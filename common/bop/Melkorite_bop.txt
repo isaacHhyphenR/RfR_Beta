@@ -135,12 +135,9 @@ melkorite_power_balance = {
 						is_subject = no
 					}
 					MOR = {
-						set_autonomy = {
-							target = ROOT
-							autonomous_state = autonomy_shadow_tributary
-							end_wars = no
-							end_civil_wars = no
-						}
+						country_event = { id = mordor.7 hours = 1 }
+						custom_effect_tooltip = if_they_accept_tooltip
+						event_option_tooltip = mordor.7.a
 					}
 				}
 			}

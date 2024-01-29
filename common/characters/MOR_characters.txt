@@ -1,0 +1,740 @@
+characters = {
+		#######LEADERS
+	MOR_sauron = {
+		name = MOR_sauron
+		gender = male
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_The_Eye"
+			}
+		}
+		country_leader = {
+			ideology = the_eye
+			expire = "4000.1.1.1"
+			id = -1
+			traits = { the_all_seeing_eye lieutenant_of_melkor }
+		}
+	}
+	MOR_anarchy = {
+		name = MOR_anarchy
+		gender = male
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_the_Ruins_of_Barad_Dur"
+			}
+		}
+		country_leader = {
+			ideology = evil_monarchy
+			expire = "4000.1.1.1"
+			id = -1
+			traits = { anarchy_pol }
+		}
+	}
+		#######FIELD MARSHALS
+	MOR_witch_king = {
+		name = MOR_witch_king
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_witch_king"
+				small = "GFX_Portrait_witch_king_small"
+			}
+		}
+		field_marshal = {
+			traits = { nazgul trait_reckless brilliant_strategist organizer offensive_doctrine urban_assault_specialist skilled_staffer expert_delegator inspirational_leader trait_engineer fortress_buster infantry_leader thorough_planner }
+			skill = 8
+			attack_skill = 6
+			defense_skill = 7
+			planning_skill = 6
+			logistics_skill = 7
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = MOR_witch_king
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { army_chief_offensive_3 }
+			ai_will_do = {
+				factor = 3
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_witch_king
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { silent_workhorse }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MOR_khamul = {
+		name = MOR_khamul
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_khamul"
+				small = "GFX_Portrait_khamul_small"
+			}
+		}
+		field_marshal = {
+			traits = { nazgul inflexible_strategist engineer_officer old_guard commando hill_fighter organisational_leader unyielding_defender trickster guerilla_fighter defensive_doctrine }
+			skill = 7
+			attack_skill = 5
+			defense_skill = 7
+			planning_skill = 5
+			logistics_skill = 5
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = MOR_khamul
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { army_chief_organizational_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_khamul
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { quartermaster_general }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MOR_dendra_dwar = {
+		name = MOR_dendra_dwar
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_dendra_dwar"
+				small = "GFX_Portrait_dendra_dwar_small"
+			}
+		}
+		field_marshal = {
+			traits = { nazgul brilliant_strategist raider cavalry_leader naval_invader combined_arms_expert invader_ii naval_liason aggressive_assaulter }
+			skill = 6
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 6
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MOR_dendra_dwar
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { navy_amphibious_assault_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_dendra_dwar
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { war_industrialist }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MOR_ji_indur = {
+		name = MOR_ji_indur
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_ji_indur"
+				small = "GFX_Portrait_ji_indur_small"
+			}
+		}
+		field_marshal = {
+			traits = { nazgul monster_leader administrator jungle_rat organizer logistics_wizard organisational_leader }
+			skill = 6
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 6
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MOR_ji_indur
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { army_monsters_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_ji_indur
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { captain_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MOR_khorahil = {
+		name = MOR_khorahil
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_khorahil"
+				small = "GFX_Portrait_khorahil_small"
+			}
+		}
+		field_marshal = {
+			traits = { nazgul ambitious brilliant_strategist offensive_doctrine organizer thorough_planner inspirational_leader infantry_leader trait_mountaineer }
+			skill = 6
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 6
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = MOR_khorahil
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { army_chief_planning_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_khorahil
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { administrator_pol }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MOR_hoarmurath = { #North of Forodwaith
+		name = MOR_hoarmurath
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_hoarmurath"
+				small = "GFX_Portrait_hoarmurath_small"
+			}
+		}
+		field_marshal = {
+			traits = { nazgul inflexible_strategist garrison_commander winter_specialist ranger trait_engineer unyielding_defender defensive_doctrine organisational_leader }
+			skill = 6
+			attack_skill = 3
+			defense_skill = 6
+			planning_skill = 5
+			logistics_skill = 5
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MOR_hoarmurath
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { army_entrenchment_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_hoarmurath
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { conscription_overseer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MOR_adunabeth = { #Near Harad
+		name = MOR_adunabeth
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_adunabeth"
+				small = "GFX_Portrait_adunabeth_small"
+			}
+		}
+		field_marshal = {
+			traits = { nazgul trait_cautious old_guard skilled_staffer infantry_leader ambusher trickster guerilla_fighter organisational_leader  }
+			skill = 6
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 5
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MOR_adunabeth
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { army_logistics_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_adunabeth
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { logistics_organizer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MOR_ren_iey = {
+		name = MOR_ren_iey
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_ren_iey"
+				small = "GFX_Portrait_ren_iey_small"
+			}
+		}
+		field_marshal = {
+			traits = { nazgul trait_reckless harsh_leader offensive_doctrine inspirational_leader aggressive_assaulter panzer_leader infantry_leader cavalry_leader }
+			skill = 6
+			attack_skill = 7
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MOR_ren_iey
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { army_infantry_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_ren_iey
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { prince_of_terror }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MOR_uvatha_achef = { #easterling
+		name = MOR_uvatha_achef
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_uvatha_achef"
+				small = "GFX_Portrait_uvatha_achef_small"
+			}
+		}
+		field_marshal = {
+			traits = { nazgul trait_reckless ambitious panzer_leader commando trickster improvisation_expert organizer fast_planner }
+			skill = 6
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 5
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MOR_uvatha_achef
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { army_armored_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_uvatha_achef
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { head_of_intelligence }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+			###GENERALS
+	MOR_gothmog = {
+		name = MOR_gothmog
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_gothmog"
+				small = "GFX_Portrait_gothmog_small"
+			}
+		}
+		corps_commander = {
+			traits = { brilliant_strategist extravagent trait_engineer infantry_leader organizer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MOR_gothmog
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			#visible = { is_country_leader = no }
+			traits = { army_regrouping_1 }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = MOR_gothmog
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			traits = { mass_assault_expert }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+			###ADVISORS
+	MOR_mouth_of_sauron = {
+		name = MOR_mouth_of_sauron
+		gender = male
+		portraits = {
+			army = {
+				large = "GFX_Portrait_mouth_of_sauron"
+				small = "GFX_Portrait_mouth_of_sauron_small"
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = MOR_mouth_of_sauron
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			traits = { military_theorist }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_mouth_of_sauron
+			ledger = army
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			traits = { chancellor }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+			###SILLY ORCS
+	MOR_fimbet = {
+		name = MOR_fimbet
+		gender = female
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Orcs_Generic_f_1"
+				small = "GFX_Portrait_Orcs_Generic_f_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_fimbet
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			available = { NOT = { has_idea_with_trait = silent_workhorse } }
+			traits = { minor_silent_workhorse }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	MOR_takra = {
+		name = MOR_takra
+		gender = male
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Orcs_Generic_m_1"
+				small = "GFX_Portrait_Orcs_Generic_m_1_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_takra
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			available = { NOT = { has_idea_with_trait = quartermaster_general } }
+			traits = { minor_quartermaster_general }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	MOR_gazmuzged = {
+		name = MOR_gazmuzged
+		gender = female
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Orcs_Generic_f_2"
+				small = "GFX_Portrait_Orcs_Generic_f_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_gazmuzged
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			available = { NOT = { has_idea_with_trait = war_industrialist } }
+			traits = { minor_war_industrialist }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	MOR_hizbug = {
+		name = MOR_hizbug
+		gender = male
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Orcs_Generic_m_2"
+				small = "GFX_Portrait_Orcs_Generic_m_2_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_hizbug
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			available = { NOT = { has_idea_with_trait = captain_of_industry } }
+			traits = { minor_captain_of_industry }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	MOR_shagmoghi = {
+		name = MOR_shagmoghi
+		gender = female
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Orcs_Generic_f_3"
+				small = "GFX_Portrait_Orcs_Generic_f_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_shagmoghi
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			available = { NOT = { has_idea_with_trait = administrator_pol } }
+			traits = { minor_administrator_pol }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	MOR_pugraft = {
+		name = MOR_pugraft
+		gender = male
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Orcs_Generic_m_3"
+				small = "GFX_Portrait_Orcs_Generic_m_3_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_pugraft
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			available = { NOT = { has_idea_with_trait = conscription_overseer } }
+			traits = { minor_conscription_overseer }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	MOR_ubrutta = {
+		name = MOR_ubrutta
+		gender = female
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Orcs_Generic_f_4"
+				small = "GFX_Portrait_Orcs_Generic_f_4_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_ubrutta
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			available = { NOT = { has_idea_with_trait = logistics_organizer } }
+			traits = { minor_logistics_organizer }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	MOR_flug_dush = {
+		name = MOR_flug_dush
+		gender = male
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Orcs_Generic_m_4"
+				small = "GFX_Portrait_Orcs_Generic_m_4_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_flug_dush
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			available = { NOT = { has_idea_with_trait = prince_of_terror } }
+			traits = { minor_prince_of_terror }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	MOR_warennia = {
+		name = MOR_warennia
+		gender = female
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Orcs_Generic_f_5"
+				small = "GFX_Portrait_Orcs_Generic_f_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_warennia
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			available = { NOT = { has_idea_with_trait = head_of_intelligence } }
+			traits = { minor_head_of_intelligence }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	MOR_drognot = {
+		name = MOR_drognot
+		gender = male
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Orcs_Generic_m_5"
+				small = "GFX_Portrait_Orcs_Generic_m_5_small"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MOR_drognot
+			ledger = civilian
+			allowed = {
+				OR = { original_tag = MOR }
+			}
+			available = { NOT = { has_idea_with_trait = chancellor } }
+			traits = { minor_chancellor }
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+}

@@ -324,3 +324,6 @@
  OR_tooltip: "§YOR§!\n"
  this_country_tooltip: "(§Y[THIS.GetNameWithFlag]§!):\n"
  from_country_tooltip: "(§Y[FROM.GetNameWithFlag]§!):\n"
+ sauron_influencing_bop_tooltip: "§Y$melkorite_power_balance$§! will move [?MOR.daily_lidless_eye_influence|Y%%] daily towards the side of £GFX_BoP_right_texticon §Y$melkorite_lidless_eye_side$§! until §Y[MOR.GetNameWithFlag]$§! recalls their agents."
+ can_core_orcs_tooltip: "Can core $orcish_heritage_trait$ core states."
+ can_influence_shadow_worship_tooltip: "  - Can influence other Melkorite countries' §Y$melkorite_power_balance$§! via diplomacy."

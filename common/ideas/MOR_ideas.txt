@@ -284,5 +284,21 @@ ideas = {
 				NOT = { has_dynamic_modifier = { modifier = servants_of_sauron_modifier } }
 			}
 		}
+		sauron_influencing_bop_hidden = { ##applied to other countries through diplomatic actions
+			modifier = {
+				power_balance_daily = 0.25
+			}
+			allowed_civil_war = {
+				has_government = melkorite
+			}
+			cancel = {
+				NOT = { has_power_balance = { id = melkorite_power_balance } }
+			}
+			on_remove = {
+				MOR = {
+					subtract_from_variable = { current_influencing_bop_cost = cost_to_influence_bop }
+				}
+			}
+		}
 	}
 }

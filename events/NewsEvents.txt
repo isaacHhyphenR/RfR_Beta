@@ -2238,7 +2238,48 @@ news_event = { ##141## Sauron rewards large tribute largely
 	}
 }
 
+news_event = { ##142## Sauron influences BoP
+	id = rfr_news.142
+	title = rfr_news.142.t
+	desc = rfr_news.142.d
+	picture = GFX_news_eye_of_sauron
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.142.a
+		custom_effect_tooltip = sauron_influencing_bop_tooltip
+		# custom_effect_tooltip = has_happened_tooltip
+		# effect_tooltip = {
+			# add_ideas = sauron_influencing_bop
+		# }
+	}
+}
 
+news_event = { ##143## Sauron accepted our BoP tributary
+	id = rfr_news.143
+	title = rfr_news.143.t
+	desc = rfr_news.143.d
+	picture = GFX_news_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	option = { #OK
+		name = rfr_news.143.a
+	}
+}
+news_event = { ##144## Sauron did not tributary us
+	id = rfr_news.144
+	title = rfr_news.144.t
+	desc = rfr_news.144.d
+	picture = GFX_news_news_mouth_of_sauron_killed
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.144.a
+	}
+}
 
 
 

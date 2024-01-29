@@ -62,3 +62,7 @@ mountains_vengeance_payment = {
 dragons_breath_payment = {
 	civilian_factory_use = var:dragons_breath_cost
 }
+
+MOR_influencing_bop_cost = {
+	political_power_cost = var:current_influencing_bop_cost
+}

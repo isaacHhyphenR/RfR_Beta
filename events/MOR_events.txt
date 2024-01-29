@@ -386,3 +386,36 @@ country_event = { ##6## ENE pays tribute
 		}
 	}
 }
+
+country_event = { ##7## Melkorite ready to become tributary
+	id = mordor.7
+	title = mordor.7.t
+	desc = mordor.7.d
+	picture = GFX_swear_blood_oath
+	
+	is_triggered_only = yes
+	option = { ##Puppet them
+		name = mordor.7.a
+		ai_chance = {
+			base = 5
+		}
+		set_autonomy = {
+			target = FROM
+			autonomous_state = autonomy_shadow_tributary
+			end_wars = no
+			end_civil_wars = no
+		}
+		hidden_effect = {
+			FROM = { news_event = { id = rfr_news.143 hours = 1 } }
+		}
+	}
+	option = { ##No reward
+		name = mordor.7.b
+		ai_chance = { #why the hell would we?
+			base = 0
+		}
+		hidden_effect = {
+			FROM = { news_event = { id = rfr_news.144 hours = 1 } }
+		}
+	}
+}
