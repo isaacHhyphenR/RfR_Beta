@@ -1164,20 +1164,25 @@ request_ENE_state_return_effect = {
 }
 
 ENE_mordor_tribute_for_mordor = {
-	random_state = {
-		limit = {
-			has_state_flag = build_ene_tribute_here
-		}
-		clr_state_flag = build_ene_tribute_here
-		add_building_construction = {
-			type = industrial_complex
-			level = 1
-			instant_build = yes
-		}
-	}
+	add_cic = 10000
 }
 ENE_mordor_tribute_for_mordor_accepted = {
-	add_political_power = -10
+	if = {
+		limit = {
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		FROM = {
+			add_autonomy_score = {
+				value = 75
+				localization = master_accepted_tribute
+			}
+		}
+	}
+	else = {
+		add_political_power = -25
+	}
 	FROM = { #Mutually increased relations
 		add_AI_friendly_desire_towards_PREV = yes
 		add_opinion_modifier = {

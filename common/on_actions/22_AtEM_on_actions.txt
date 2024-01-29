@@ -406,7 +406,7 @@ on_actions = {
 	}
 	
 	on_state_control_changed = { #ROOT is new, FROM is old, FROM.FROM is state
-		effect = { #If you lose your capital & you're allowed to celduin trade, switch capital to a market state
+		effect = { ##If you lose your capital & you're allowed to celduin trade, switch capital to a market state
 			if = { #Dale prioritises Laketown
 				limit = {
 					FROM = {
@@ -471,7 +471,7 @@ on_actions = {
 				FROM = { var:116.controller = { end_riavod_trade = yes } }
 			}
 		}
-		effect = { #colony uprising
+		effect = { ##Colony Uprising
 			if = {
 				limit = {
 					ROOT = { original_tag = WLD }
@@ -542,7 +542,7 @@ on_actions = {
 				}
 			}
 		}
-		effect = { #DOR demoralised army
+		effect = { ##DOR demoralised army
 			if = {
 				limit = {
 					FROM = {
@@ -626,7 +626,7 @@ on_actions = {
 				}
 			}
 		}
-		effect = { #DOR freedom rebels
+		effect = { ##DOR freedom rebels
 			if = {
 				limit = {
 					FROM.FROM = {
@@ -649,6 +649,14 @@ on_actions = {
 						owner = DOR
 						allow_spawning_on_enemy_provs = yes
 					}
+				}
+			}
+		}
+		effect = { ##Starting resistance
+			FROM.FROM = {
+				if = {
+					limit = { has_resistance = yes }
+					add_resistance = ROOT.modifier@starting_resistance
 				}
 			}
 		}

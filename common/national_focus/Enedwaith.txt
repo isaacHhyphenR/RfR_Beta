@@ -622,13 +622,20 @@ focus_tree = {
 				}
 				factor = 2
 			}
+			modifier = {
+				NOT = { has_government = melkorite }
+				factor = 0
+			}
 		}
 		available = { is_evil = yes }
 		prerequisite = { focus = ENE_praise_their_greatest_foe }
-		search_filters = { FOCUS_FILTER_DIPLOMATIC }
-		completion_reward = { #Unlocks decisions allowing you to exchange stuff with mordor
-			unlock_decision_category_tooltip = ENE_send_tribute_to_barad_dur_decision_category
-			custom_effect_tooltip = ENE_send_tribute_to_barad_dur_tooltip
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = { #Mordor gets a factory, can choose to reward us
+			MOR = {
+				country_event = { id = mordor.6 hours = 1 }
+				custom_effect_tooltip = if_they_accept_tooltip
+				event_option_tooltip = mordor.6.a
+			}
 		}
 	}
 	focus = { #Commision songs of the power of evil things

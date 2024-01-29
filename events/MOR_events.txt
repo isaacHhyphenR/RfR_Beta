@@ -329,3 +329,60 @@ country_event = { ##5## King masters Palantir
 		custom_effect_tooltip = cannot_influence_palantir_visions_tooltip
 	}
 }
+
+country_event = { ##6## ENE pays tribute
+	id = mordor.6
+	title = mordor.6.t
+	desc = mordor.6.d
+	picture = GFX_swear_blood_oath
+	
+	is_triggered_only = yes
+	option = { ##Reward with pp, xp, stab, and war support
+		name = mordor.6.a
+		ai_chance = {
+			base = 5
+		}
+		ENE_mordor_tribute_for_mordor_accepted = yes
+		random_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = FROM
+		}
+		custom_effect_tooltip = from_country_tooltip
+		FROM = {
+			add_political_power = 50
+			army_experience = 25
+			add_stability = 0.05
+			add_war_support = 0.05
+			hidden_effect = { news_event = { id = RFR_news.25 hours = 1 } }
+		}
+	}
+	option = { ##No reward
+		name = mordor.6.b
+		ai_chance = {
+			base = 0
+		}
+		random_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		FROM = {
+			set_country_flag = MOR_rejected_tribute
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = stole_tribute
+			}
+			hidden_effect = { news_event = { id = RFR_news.26 hours = 1 } }
+		}
+	}
+}

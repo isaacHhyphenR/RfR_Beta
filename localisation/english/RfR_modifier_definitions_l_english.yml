@@ -41,3 +41,4 @@
  low_war_support_risk: "Risk of Low War Support Crisis Each Month"
  civil_war_ideology_threshold: "Ideology Support Necessary for Rebellion"
  rhovanion_influence_gain_factor: "Influence Gain with $RVN_ADJ$ Countries"
+ starting_resistance: "Starting Resistance in New States"

@@ -1118,30 +1118,35 @@ melkorite_bop_category = {
 				factor = 0.1
 			}
 		}
-		modifier = { consumer_goods_factor = 0.1 }
+		modifier = { consumer_goods_factor = 0.25 }
 		days_remove = 100
 		remove_effect = {
 			MOR = {
 				country_event = { id = blood_oath.6 hours = 1 }
-				random_core_state = {
-					prioritize = { 177 } #mordath/barad dur
-					limit = {
-						is_controlled_by = MOR
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = no
+				custom_effect_tooltip = if_they_accept_tooltip
+				effect_tooltip = {
+					add_cic = 10000
+					custom_effect_tooltip = from_country_tooltip
+					if = {
+						limit = { FROM = { is_subject_of = MOR } }
+						add_autonomy_score = {
+							value = 75
+							localization = master_accepted_tribute
 						}
+						custom_effect_tooltip = new_line_tab
 					}
-					set_state_flag = build_ene_tribute_here
-					effect_tooltip = {
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
-						}
-					}
+					add_political_power = 100
+					custom_effect_tooltip = OR_tooltip
+					add_war_support = 0.1
+					add_stability = 0.1
+					custom_effect_tooltip = OR_tooltip
+					army_experience = 40
 				}
+				# event_option_tooltip = blood_oath.6.a
+				# custom_effect_tooltip = OR_tooltip
+				# event_option_tooltip = blood_oath.6.b
+				# custom_effect_tooltip = OR_tooltip
+				# event_option_tooltip = blood_oath.6.c
 			}
 			custom_effect_tooltip = ENE_send_tribute_to_barad_dur_decision_tooltip
 			effect_tooltip = { add_opinion_modifier = { target = FROM modifier = sent_tribute } }

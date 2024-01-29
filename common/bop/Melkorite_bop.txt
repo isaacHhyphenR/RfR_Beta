@@ -33,7 +33,20 @@ melkorite_power_balance = {
 				autonomy_gain = 0.5
 			}
 			on_activate = {
-				
+				if = { #for non-DLC, increases autonomy
+					limit = {
+						has_subject_autonomy_feature = no
+						has_autonomy_state = autonomy_shadow_slave
+					}
+					MOR = {
+						set_autonomy = {
+							target = ROOT
+							autonomous_state = autonomy_shadow_thrall
+							end_wars = no
+							end_civil_wars = no
+						}
+					}
+				}
 			}
 			on_deactivate = {
 				
@@ -48,7 +61,23 @@ melkorite_power_balance = {
 				autonomy_gain = 1.0
 			}
 			on_activate = {
-				
+				if = { #for non-DLC, increases autonomy
+					limit = {
+						has_subject_autonomy_feature = no
+						OR = {
+							has_autonomy_state = autonomy_shadow_slave
+							has_autonomy_state = autonomy_shadow_thrall
+						}
+					}
+					MOR = {
+						set_autonomy = {
+							target = ROOT
+							autonomous_state = autonomy_shadow_tributary
+							end_wars = no
+							end_civil_wars = no
+						}
+					}
+				}
 			}
 			on_deactivate = {
 				
@@ -63,6 +92,20 @@ melkorite_power_balance = {
 				autonomy_gain = 1.5
 			}
 			on_activate = {
+				if = { #for non-DLC, increases autonomy
+					limit = {
+						has_subject_autonomy_feature = no
+						is_subject_of = MOR
+					}
+					MOR = {
+						set_autonomy = {
+							target = ROOT
+							autonomous_state = autonomy_free
+							end_wars = no
+							end_civil_wars = no
+						}
+					}
+				}
 				
 			}
 			on_deactivate = {
@@ -133,7 +176,6 @@ melkorite_power_balance = {
 						}
 					}
 				}
-				
 			}
 			on_deactivate = {
 				

@@ -133,6 +133,7 @@ ideologies = {
 		faction_modifiers = {
 			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
 		}
+		
 		ai_democratic = yes # uses the democratic AI behaviour
 	}
 
@@ -165,8 +166,6 @@ ideologies = {
 		war_impact_on_world_tension = 0.75		#Commie less threatening
 		faction_impact_on_world_tension = 0.5
 		
-		ai_fascist  = yes # uses the facist AI behaviour
-		
 		rules = {
 			can_force_government = no
 			can_send_volunteers = yes
@@ -194,6 +193,7 @@ ideologies = {
 			
 		}
 
+		ai_neutral = yes
 	}
 
 	conquest = {
@@ -295,6 +295,7 @@ ideologies = {
 			army_intel_to_others = 10.0
 			navy_intel_to_others = 10.0
 			#airforce_intel_to_others = 10.0
+			starting_resistance = 30
 			hidden_modifier = { join_faction_tension = -0.1 }
 			
 			hidden_modifier = {

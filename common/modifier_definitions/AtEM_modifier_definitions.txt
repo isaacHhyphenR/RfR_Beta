@@ -136,3 +136,11 @@ rhovanion_influence_gain_factor = {
 	category = country
 	postfix = none
 }
+
+starting_resistance = {
+	color_type = bad
+	value_type = percentage_in_hundred
+	precision = 2
+	category = country
+	postfix = none
+}

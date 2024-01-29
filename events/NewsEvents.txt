@@ -2223,7 +2223,20 @@ news_event = { ##140## RVN we got resource rightsed
 	}
 }
 
-
+news_event = { ##141## Sauron rewards large tribute largely
+	id = rfr_news.141
+	title = rfr_news.141.t
+	desc = rfr_news.141.d
+	picture = GFX_news_eye_of_sauron
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.141.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = { army_experience = 40 }
+	}
+}
 
 
 

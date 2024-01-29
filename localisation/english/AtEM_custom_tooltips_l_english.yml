@@ -319,5 +319,8 @@
  will_peace_out_if_WHT_wins: "§RIf [WHT.GetFlag][WHT.GetName] holds out long enough to bring [?WHT:uprising_enemy.GetFlag][?WHT:uprising_enemy.GetName] to the negotiating table, we will gain all occupied territory and then sign the white peace.§!"
  successful_white_mountain_uprising: "The White Mountain rebels have brought their former overlord to the peace table and secured their freedom."
  white_peace_prev_tooltip: "§Y[THIS.GetNameWithFlag]§! makes peace with §Y[PREV.GetNameWithFlag]§!"
-  melkorite_ideology_tooltip: "Has the §Y$melkorite_power_balance$§! balance of power between returning to §Y$opportunism_noun$§! or becoming a §Y$autonomy_shadow_slave$§! of Sauron"
- 
+ melkorite_ideology_tooltip: "Has the §Y$melkorite_power_balance$§! balance of power between returning to §Y$opportunism_noun$§! or becoming a §Y$autonomy_shadow_slave$§! of Sauron"
+ master_accepted_tribute: "Master accepted tribute"
+ OR_tooltip: "§YOR§!\n"
+ this_country_tooltip: "(§Y[THIS.GetNameWithFlag]§!):\n"
+ from_country_tooltip: "(§Y[FROM.GetNameWithFlag]§!):\n"

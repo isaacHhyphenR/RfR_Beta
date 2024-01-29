@@ -32,21 +32,25 @@ units = {
 		name = "1st Lôke-Innas Rim"
 		location = 5094 #Mavishad
 		division_template = "Lôke-Innas"
+        start_experience_factor = 0.25
 	}
 	##LOKE-INNAS (CAV)
 	division = {	
 		name = "1st Lôke-Innas Rim"
 		location = 6753
 		division_template = "Lôke-Innas"
+        start_experience_factor = 0.7
 	}
 	division = {	
 		name = "2nd Lôke-Innas Rim"
 		location = 794
 		division_template = "Lôke-Innas"
+        start_experience_factor = 0.7
 	}
 	division = {	
 		name = "3rd Lôke-Innas Rim"
 		location = 147
 		division_template = "Lôke-Innas"
+        start_experience_factor = 0.4
 	}
 }

@@ -396,6 +396,7 @@
  ENE_tribal_occupation_law: "Impress Local Tribes"
  ISN_tribal_occupation_law: "Rally Local Warriors"
  DOR_preserve_local_rulers_law: "Preserve Local Rulers"
+ slavery_occupation_law: "Enslave Local Population"
  prestigious_tribe_spirit: "$ENE_prestige_spirit$"
  prestigious_tribe_spirit_desc: "$ENE_prestige_spirit_desc$"
  repaired_eregion_forges: "The Forges of Eregion"

@@ -57,6 +57,9 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			modifier = {
+				supply_node_range = 0.25
+			}
 			traits = {
 				easterling_heritage_trait
 			}
@@ -67,6 +70,9 @@ ideas = {
 			picture = easterling_heritage
 			allowed_civil_war = {
 				always = yes
+			}
+			modifier = {
+				supply_node_range = 0.25
 			}
 			traits = {
 				easterling_heritage_trait

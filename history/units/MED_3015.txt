@@ -32,41 +32,49 @@ units = {
 		name = "1st Lôke-Nar Rim"
 		location = 4688 #Mistarand
 		division_template = "Lôke-Nar"
+        start_experience_factor = 0.3
 	}
 	division = {	
 		name = "2nd Lôke-Nar Rim"
 		location = 4499 #Kelepar
 		division_template = "Lôke-Nar"
+        start_experience_factor = 0.3
 	}
 	division = {	
 		name = "3rd Lôke-Nar Rim"
 		location = 5143 #Neburkah
 		division_template = "Lôke-Nar"
+        start_experience_factor = 0.3
 	}
 	division = {	
 		name = "4th Lôke-Nar Rim"
 		location = 6662 #Obgalla
 		division_template = "Lôke-Nar"
+        start_experience_factor = 0.3
 	}
 	##LOKE-INNAS (CAV)
 	division = {	
 		name = "1st Lôke-Innas Rim"
 		location = 4688 #Mistarand
 		division_template = "Lôke-Innas"
+        start_experience_factor = 0.5
 	}
 	division = {	
 		name = "2nd Lôke-Innas Rim"
 		location = 6487 #Dilgul
 		division_template = "Lôke-Innas"
+        start_experience_factor = 0.5
 	}
 	division = {	
 		name = "3rd Lôke-Innas Rim"
 		location = 20 #Brenaril
 		division_template = "Lôke-Innas"
+        start_experience_factor = 0.3
 	}
 	division = {	
 		name = "4th Lôke-Innas Rim"
 		location = 6245 #Dazakur
 		division_template = "Lôke-Innas"
+        start_experience_factor = 0.3
 	}
 }

@@ -130,7 +130,7 @@ ENE_tribal_occupation_law = {
 	}
 
 	ai_will_do = {
-		base = 200
+		base = 2000
 	}
 }
 ISN_tribal_occupation_law = {
@@ -153,7 +153,7 @@ ISN_tribal_occupation_law = {
 	}
 
 	ai_will_do = {
-		base = 200
+		base = 2000
 	}
 }
 
@@ -375,6 +375,14 @@ martial_law_occupation = {
 
 			add = 500
 		}
+		
+		modifier = { #Orcs can maybe core
+			FROM = { has_idea_with_trait = orcish_heritage_trait }
+			any_country_with_core = {
+				has_idea_with_trait = orcish_heritage_trait
+			}
+			add = 500
+		}
 	}
 }
 
@@ -402,7 +410,7 @@ forced_labor_occupation = {
 
 		modifier = {
 			FROM = { has_government = melkorite }
-			add = 10 #evil
+			add = 5 #evil
 		}
 		modifier = {
 			set_temp_variable = { requirement_limit = 1.5 }
@@ -433,38 +441,38 @@ forced_labor_occupation = {
 			compliance < 40
 
 			# if we are desiring a resource produced here
-			set_temp_variable = { releveant_resources = 0 }
+			set_temp_variable = { relevant_resources = 0 }
 
 			set_temp_variable = { t = resource@food }
 			multiply_temp_variable = { t = ai_desire_food }
-			add_to_temp_variable = { releveant_resources = t }
+			add_to_temp_variable = { relevant_resources = t }
 
 			set_temp_variable = { t = resource@cloth }
 			multiply_temp_variable = { t = ai_desire_cloth }
-			add_to_temp_variable = { releveant_resources = t }
+			add_to_temp_variable = { relevant_resources = t }
 
 			set_temp_variable = { t = resource@wood }
 			multiply_temp_variable = { t = ai_desire_wood }
-			add_to_temp_variable = { releveant_resources = t }
+			add_to_temp_variable = { relevant_resources = t }
 
 			set_temp_variable = { t = resource@mounts }
 			multiply_temp_variable = { t = ai_desire_mounts }
-			add_to_temp_variable = { releveant_resources = t }
+			add_to_temp_variable = { relevant_resources = t }
 
 			set_temp_variable = { t = resource@iron }
 			multiply_temp_variable = { t = ai_desire_iron }
-			add_to_temp_variable = { releveant_resources = t }
+			add_to_temp_variable = { relevant_resources = t }
 
 			set_temp_variable = { t = resource@monsters }
 			multiply_temp_variable = { t = ai_desire_monsters }
-			add_to_temp_variable = { releveant_resources = t }
+			add_to_temp_variable = { relevant_resources = t }
 
-			check_variable = { releveant_resources > 0 }
-			clamp_temp_variable = { var = releveant_resources max = 40 }
-			divide_temp_variable = { releveant_resources = 40 }
-			multiply_temp_variable = { releveant_resources = 200 }
-			add_to_temp_variable = { releveant_resources = 100 }
-			add = releveant_resources
+			check_variable = { relevant_resources > 0 }
+			clamp_temp_variable = { var = relevant_resources max = 40 }
+			divide_temp_variable = { relevant_resources = 40 }
+			multiply_temp_variable = { relevant_resources = 200 }
+			add_to_temp_variable = { relevant_resources = 100 }
+			add = relevant_resources
 		}
 	}
 }
@@ -494,7 +502,7 @@ harsh_quotas_occupation = {
 		base = 0
 		modifier = {
 			FROM = { has_government = melkorite }
-			add = 10 #evil
+			add = 5 #evil
 		}
 		modifier = {
 			set_temp_variable = { num_damaged = damaged_building_level@arms_factory }
@@ -544,6 +552,53 @@ brutally_oppressive_occupation = {
 			resistance > resistance_limit
 
 			add = 1000
+		}
+	}
+}
+
+slavery_occupation = {
+	icon = 10
+	sound_effect = "Martial_Law_Interface_Forced_Labor_Occupation"
+
+	visible = {
+		has_government = melkorite
+	}
+
+	state_modifier = {
+		resistance_target 				= 0.25
+		compliance_gain 				= -0.25
+		required_garrison_factor 		= 1.0
+		resistance_damage_to_garrison 	= 1.0
+		local_resources 				= 0.35
+		local_factories					= 0.35
+		local_manpower	 				= -0.25
+	}
+
+	ai_will_do = {
+		base = 500 #evil
+		
+		modifier = {
+			check_variable  = { resistance_target_without_law > 0.94 }
+
+			set_temp_variable = { resistance_limit = 40 }
+			set_temp_variable = { requirement_limit = 2.0 }
+			if = {
+				limit = { occupation_law = brutally_oppressive_occupation }
+				set_temp_variable = { resistance_limit = 35 }
+				set_temp_variable = { requirement_limit = 1.8 }
+			}
+			check_variable = { garrison_min_support_ratio > requirement_limit }
+			resistance > resistance_limit
+
+			factor = 0
+		}
+		
+		modifier = { #don't spike resistance on potential core
+			FROM = { has_idea_with_trait = orcish_heritage_trait }
+			any_country_with_core = {
+				has_idea_with_trait = orcish_heritage_trait
+			}
+			factor = 0
 		}
 	}
 }
