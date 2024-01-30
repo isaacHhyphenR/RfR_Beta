@@ -4,27 +4,19 @@
 @sauronsFocusDays = 140
 
 MOR_unleash_the_darkness_category = {
-	unleash_the_darkness_against = {
+	unleash_the_darkness = {
 		icon = GFX_decision_oppression
 		fire_only_once = yes
 		ai_will_do = {
 			factor = 100
-			# modifier = { ##Don't war Dorwinion, just cause
-				# FROM = { tag = DOR }
-				# factor = 0
-			# }
-			modifier = { #don't war subjects unless you're also warring their overlord
-				FROM = {
-					is_subject = yes
-				}
-				factor = 0  
+		}
+		visible = {
+			any_other_country = {
+				NOT = { has_war_with = ROOT }
+				OR = { has_idea = saurons_prize_spirit has_idea = spurned_sauron }
 			}
 		}
-		target_trigger = {
-			FROM = { OR = { has_idea = saurons_prize_spirit has_idea = spurned_sauron } }
-		}
 		available = {
-			NOT = { has_war_with = FROM }
 			any_enemy_country = {
 				is_major = yes
 				custom_trigger_tooltip = {
@@ -33,27 +25,36 @@ MOR_unleash_the_darkness_category = {
 				}
 			}
 		}
-		war_with_target_on_complete = yes
+		
 		complete_effect = {
-			declare_war_on = {
-				target = FROM
-				type = annex_everything
-			}
-			every_subject_country = {
-				add_to_war = {
-					targeted_alliance = ROOT
-					enemy = FROM
+			add_ideas = MOR_unleashed_darkness
+			every_other_country = {
+				limit = {
+					NOT = { has_war_with = ROOT }
+					OR = { has_idea = saurons_prize_spirit has_idea = spurned_sauron }
 				}
-			}
-			add_named_threat = { 
-				threat = 3 
-				name = mor_unleashed_darkness
-			}
-			if = { limit = { FROM = { has_idea = saurons_prize_spirit } }
-				FROM = { remove_ideas = saurons_prize_spirit }
-			}
-			if = { limit = { FROM = { has_idea = spurned_sauron } }
-				FROM = { remove_ideas = spurned_sauron }
+				ROOT = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
+					every_subject_country = {
+						add_to_war = {
+							targeted_alliance = ROOT
+							enemy = PREV.PREV
+						}
+					}
+					add_named_threat = { 
+						threat = 3 
+						name = mor_unleashed_darkness
+					}
+				}
+				if = { limit = { has_idea = saurons_prize_spirit }
+					remove_ideas = saurons_prize_spirit
+				}
+				if = { limit = { has_idea = spurned_sauron }
+					remove_ideas = spurned_sauron
+				}
 			}
 		}
 	}

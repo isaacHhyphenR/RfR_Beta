@@ -78,7 +78,7 @@ technologies = {
 		}
 		force_use_small_tech_layout = yes
 		ai_will_do = {
-			factor = 10
+			factor = 50
 			
 			modifier = {
 				factor = 2
@@ -124,7 +124,7 @@ technologies = {
 		show_effect_as_desc = yes
 		
 		ai_will_do = {
-			factor = 7
+			factor = 45
 			
 			modifier = {
 				factor = 2
@@ -170,7 +170,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 6
+			factor = 40
 			
 			modifier = {
 				factor = 2
@@ -216,7 +216,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 6
+			factor = 40
 			
 			modifier = {
 				factor = 2
@@ -258,7 +258,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 6
+			factor = 40
 			
 			modifier = {
 				factor = 2
@@ -342,7 +342,7 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 40
-						
+
 			modifier = {
 				factor = 10
 				date > "3016.1.1"
@@ -471,7 +471,7 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 15
-						
+
 			modifier = {
 				factor = 10
 				date > "3022.1.1"

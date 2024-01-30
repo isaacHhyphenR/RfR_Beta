@@ -158,6 +158,18 @@ country_event = { ##2## Sauron Demands Submission
 		}
 		add_ideas = spurned_sauron
 		custom_effect_tooltip = refused_dark_lord_tooltip
+		if = { #RUN gets wargoal vs DOR
+			limit = {
+				original_tag = DOR
+				FROM = { has_subject = RUN }
+			}
+			RUN = {
+				create_wargoal = {
+					type = annex_everything
+					target = ROOT
+				}
+			}
+		}
 		reverse_add_opinion_modifier = {
 			target = FROM
 			modifier = refused_submission
@@ -398,6 +410,27 @@ country_event = { ##7## Melkorite ready to become tributary
 		name = mordor.7.a
 		ai_chance = {
 			base = 5
+		}
+		FROM = {
+			every_subject_country = {
+				##Khagan cores khans
+				if = {
+					limit = {
+						is_rhunnic_tag = yes
+						PREV = { is_rhunnic_tag = yes }
+					}
+					every_core_state = {
+						add_core_of = PREV.PREV
+					}
+				}
+				##Annex them
+				PREV = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
 		}
 		set_autonomy = {
 			target = FROM

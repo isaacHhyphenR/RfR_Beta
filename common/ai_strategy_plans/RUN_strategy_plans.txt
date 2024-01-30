@@ -57,13 +57,40 @@ run_target_dale = {
 	######DIPLOMACY
 	ai_strategy = {
 		type = prepare_for_war
+		id = DOR
+		value = 150
+	}
+	ai_strategy = {
+		type = conquer
+		id = DOR
+		value = 150
+	}
+	ai_strategy = {
+		type = declare_war
+		id = DOR
+		value = 75
+	}
+	ai_strategy = {
+		type = consider_weak
+		id = DOR
+		value = 75
+	}
+	ai_strategy = {
+		type = front_control
+		state = 314 #dargeca
+		ratio = 0.75
+		ordertype = front
+		execution_type = rush
+	}
+	ai_strategy = {
+		type = prepare_for_war
 		id = DAL
-		value = 50
+		value = 75
 	}
 	ai_strategy = {
 		type = conquer
 		id = DAL
-		value = 50
+		value = 75
 	}
 	ai_strategy = {
 		type = prepare_for_war
