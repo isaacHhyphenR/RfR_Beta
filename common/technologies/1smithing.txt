@@ -19,7 +19,7 @@ technologies = {
 	@maintenanceX = 26
 	@conversionX = 30
 	
-	@AIbehindMetallurgy = 0.2
+	@AIbehindMetallurgy = 0#.05
 ###########################################################
 				#METALLURGY
 ###########################################################
@@ -78,7 +78,7 @@ technologies = {
 		}
 		force_use_small_tech_layout = yes
 		ai_will_do = {
-			factor = 50
+			factor = 75
 			
 			modifier = {
 				factor = 2

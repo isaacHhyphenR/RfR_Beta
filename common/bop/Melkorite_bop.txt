@@ -1,4 +1,41 @@
-melkorite_power_balance = {
+#######Ranges
+@eyeMax3 = 1
+@eyeMin3 = 0.75
+@eyeMax2 = 0.75
+@eyeMin2 = 0.5
+@eyeMax1 = 0.5
+@eyeMin1 = 0.25
+@neutralMax = 0.25
+@neutralMin = -0.25
+@pantheonMax1 = -0.25
+@pantheonMin1 = -0.5
+@pantheonMax2 = -0.5
+@pantheonMin2 = -0.75
+@pantheonMax3 = -0.75
+@pantheonMin3 = -1
+#######Modifiers
+@pantheonDrift1 = 0.05
+@pantheonAutonomy1 = 0.5
+@pantheonDrift2 = 0.1
+@pantheonAutonomy2 = 1
+@pantheonDrift3 = 0.15
+@pantheonAutonomy3 = 1.5
+
+@eyeDrift1 = 0.025
+@eyeAutonomy1 = 0.25
+@eyeStability1 = 0.025
+@eyeWarSupport1 = 0.025
+@eyeDrift2 = 0.05
+@eyeAutonomy2 = 0.5
+@eyeStability2 = 0.05
+@eyeWarSupport2 = 0.05
+@eyeDrift3 = 0.1
+@eyeAutonomy3 = 1.0
+@eyeStability3 = 0.1
+@eyeWarSupport3 = 0.1
+
+
+melkorite_power_balance0 = {
 	initial_value = 0.0
 	left_side = melkorite_local_pantheon_side
 	right_side = melkorite_lidless_eye_side
@@ -6,16 +43,14 @@ melkorite_power_balance = {
 
 	### Neutral status
 	range = {
-		id = melkorite_neutal_range
-		max = 0.25
-		min = -0.25
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
 		modifier = {
 		}
 		on_activate = {
-
 		}
 		on_deactivate = {
-			
 		}
 	}
 
@@ -26,90 +61,38 @@ melkorite_power_balance = {
 
 		range = { #1
 			id = melkorite_local_pantheon_range1
-			max = -0.25
-			min = -0.5
+			min = @pantheonMin1
+			max = @pantheonMax1
 			modifier = {
-				opportunism_drift = 0.05
-				autonomy_gain = 0.5
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
 			}
 			on_activate = {
-				if = { #for non-DLC, increases autonomy
-					limit = {
-						has_subject_autonomy_feature = no
-						has_autonomy_state = autonomy_shadow_slave
-					}
-					MOR = {
-						set_autonomy = {
-							target = ROOT
-							autonomous_state = autonomy_shadow_thrall
-							end_wars = no
-							end_civil_wars = no
-						}
-					}
-				}
-			}
-			on_deactivate = {
-				
+				melkorite_pantheon_activation1 = yes
 			}
 		}
 		range = { #2
 			id = melkorite_local_pantheon_range2
-			max = -0.5
-			min = -0.75
+			min = @pantheonMin2
+			max = @pantheonMax2
 			modifier = {
-				opportunism_drift = 0.1
-				autonomy_gain = 1.0
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
 			}
 			on_activate = {
-				if = { #for non-DLC, increases autonomy
-					limit = {
-						has_subject_autonomy_feature = no
-						OR = {
-							has_autonomy_state = autonomy_shadow_slave
-							has_autonomy_state = autonomy_shadow_thrall
-						}
-					}
-					MOR = {
-						set_autonomy = {
-							target = ROOT
-							autonomous_state = autonomy_shadow_tributary
-							end_wars = no
-							end_civil_wars = no
-						}
-					}
-				}
-			}
-			on_deactivate = {
-				
+				melkorite_pantheon_activation2 = yes
 			}
 		}
 		range = { #3
 			id = melkorite_local_pantheon_range3
-			max = -0.75
-			min = -1
+			min = @pantheonMin3
+			max = @pantheonMax3
 			modifier = {
-				opportunism_drift = 0.15
-				autonomy_gain = 1.5
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
 			}
 			on_activate = {
-				if = { #for non-DLC, increases autonomy
-					limit = {
-						has_subject_autonomy_feature = no
-						is_subject_of = MOR
-					}
-					MOR = {
-						set_autonomy = {
-							target = ROOT
-							autonomous_state = autonomy_free
-							end_wars = no
-							end_civil_wars = no
-						}
-					}
-				}
-				
-			}
-			on_deactivate = {
-				
+				melkorite_pantheon_activation3 = yes
 			}
 		}
 	}
@@ -121,102 +104,5535 @@ melkorite_power_balance = {
 
 		range = { #1
 			id = melkorite_lidless_eye_range1
-			min = 0.25
-			max = 0.5
+			min = @eyeMin1
+			max = @eyeMax1
 			modifier = {
-				melkorite_drift = 0.05
-				autonomy_gain = -0.5
-				stability_factor = 0.05
-				war_support_factor = 0.05
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
 			}
 			on_activate = {
-				if = {
-					limit = {
-						is_subject = no
-					}
-					MOR = {
-						country_event = { id = mordor.7 hours = 1 }
-						custom_effect_tooltip = if_they_accept_tooltip
-						event_option_tooltip = mordor.7.a
-					}
-				}
-			}
-			on_deactivate = {
-				
+				melkorite_pantheon_activation1 = yes
 			}
 		}
 		range = { #2
 			id = melkorite_lidless_eye_range2
-			min = 0.5
-			max = 0.75
+			min = @eyeMin2
+			max = @eyeMax2
 			modifier = {
-				melkorite_drift = 0.1
-				autonomy_gain = -1.0
-				stability_factor = 0.1
-				war_support_factor = 0.1
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
 			}
 			on_activate = {
-				if = { #for non-DLC, reduces autonomy
-					limit = {
-						has_subject_autonomy_feature = no
-						OR = {
-							is_subject = no
-							has_autonomy_state = autonomy_shadow_tributary
-						}
-					}
-					MOR = {
-						set_autonomy = {
-							target = ROOT
-							autonomous_state = autonomy_shadow_thrall
-							end_wars = no
-							end_civil_wars = no
-						}
-					}
-				}
-			}
-			on_deactivate = {
-				
+				melkorite_pantheon_activation2 = yes
 			}
 		}
 		range = { #3
 			id = melkorite_lidless_eye_range3
-			min = 0.75
-			max = 1
+			min = @eyeMin3
+			max = @eyeMax3
 			modifier = {
-				melkorite_drift = 0.15
-				autonomy_gain = -1.5
-				stability_factor = 0.15
-				war_support_factor = 0.15
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
 			}
 			on_activate = {
-				if = { #for non-DLC, reduces autonomy
-					limit = {
-						has_subject_autonomy_feature = no
-						OR = {
-							is_subject = no
-							has_autonomy_state = autonomy_shadow_tributary
-							has_autonomy_state = autonomy_shadow_thrall
-						}
-					}
-					MOR = {
-						set_autonomy = {
-							target = ROOT
-							autonomous_state = autonomy_shadow_slave
-							end_wars = no
-							end_civil_wars = no
-						}
-					}
-				}
-				if = { #annex your subjects for non-DLC
-					limit = { has_subject_autonomy_feature = no }
-					MOR = {
-						unlock_decision_tooltip = MOR_annex_melkorite_decision
-					}
-				}
-			}
-			on_deactivate = {
-				
+				melkorite_pantheon_activation3 = yes
 			}
 		}
 	}
 }
+
+melkorite_power_balance1 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance2 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance3 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance4 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance5 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance6 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance7 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance8 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance9 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance10 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance11 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance12 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance13 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance14 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance15 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance16 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance17 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance18 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance19 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance20 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance21 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance22 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance23 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance24 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance25 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance26 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance27 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance28 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance29 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance30 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance31 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance32 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance33 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance34 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance35 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance36 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance37 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance38 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance39 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance40 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance41 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance42 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance43 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance44 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance45 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance46 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance47 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance48 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+melkorite_power_balance49 = {
+	initial_value = 0.0
+	left_side = melkorite_local_pantheon_side
+	right_side = melkorite_lidless_eye_side
+	decision_category = melkorite_bop_category
+
+	### Neutral status
+	range = {
+		id = melkorite_neutral_range
+		max = @neutralMax
+		min = @neutralMin
+		modifier = {
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	###Local Pantheons
+	side = {
+		id = melkorite_local_pantheon_side	
+		icon = GFX_melkorite_generic_bop
+
+		range = { #1
+			id = melkorite_local_pantheon_range1
+			min = @pantheonMin1
+			max = @pantheonMax1
+			modifier = {
+				opportunism_Drift = @pantheonDrift1
+				autonomy_gain = @pantheonAutonomy1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_local_pantheon_range2
+			min = @pantheonMin2
+			max = @pantheonMax2
+			modifier = {
+				opportunism_Drift = @pantheonDrift2
+				autonomy_gain = @pantheonAutonomy2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range = { #3
+			id = melkorite_local_pantheon_range3
+			min = @pantheonMin3
+			max = @pantheonMax3
+			modifier = {
+				opportunism_Drift = @pantheonDrift3
+				autonomy_gain = @pantheonAutonomy3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+
+	###Cult of the Lidless Eye
+	side = {
+		id = melkorite_lidless_eye_side	
+		icon = GFX_melkorite_sauron_bop
+
+		range = { #1
+			id = melkorite_lidless_eye_range1
+			min = @eyeMin1
+			max = @eyeMax1
+			modifier = {
+				melkorite_Drift = @eyeDrift1
+				autonomy_gain = @eyeAutonomy1
+				stability_factor = @eyeStability1
+				war_support_factor = @eyeWarSupport1
+			}
+			on_activate = {
+				melkorite_pantheon_activation1 = yes
+			}
+		}
+		range = { #2
+			id = melkorite_lidless_eye_range2
+			min = @eyeMin2
+			max = @eyeMax2
+			modifier = {
+				melkorite_Drift = @eyeDrift2
+				autonomy_gain = @eyeAutonomy2
+				stability_factor = @eyeStability2
+				war_support_factor = @eyeWarSupport2
+			}
+			on_activate = {
+				melkorite_pantheon_activation2 = yes
+			}
+		}
+		range =  { #3
+			id = melkorite_lidless_eye_range3
+			min = @eyeMin3
+			max = @eyeMax3
+			modifier = {
+				melkorite_Drift = @eyeDrift3
+				autonomy_gain = @eyeAutonomy3
+				stability_factor = @eyeStability3
+				war_support_factor = @eyeWarSupport3
+			}
+			on_activate = {
+				melkorite_pantheon_activation3 = yes
+			}
+		}
+	}
+}
+
+

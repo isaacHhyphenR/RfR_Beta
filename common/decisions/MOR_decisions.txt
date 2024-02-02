@@ -70,9 +70,14 @@ MOR_the_dark_lord_category = {
 		allowed = { has_subject_autonomy_feature = no }
 		target_trigger = {
 			FROM = {
-				is_power_balance_in_range = {
-					id = melkorite_power_balance
-					range = melkorite_lidless_eye_range3
+				meta_trigger = {
+					text = {
+						is_power_balance_in_range = {
+							id = melkorite_power_balance[ID]
+							range = melkorite_lidless_eye_range3
+						}
+					}
+					ID = "[?melkorite_bop_index]"
 				}
 			}
 		}

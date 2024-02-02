@@ -123,32 +123,9 @@ on_actions = {
 				set_variable = { market_max_level = 5 }
 			}
 		}
-		
-		effect = { ##Sets initial Melkorite BoPs since they refuse to listen to history files
-			GLD = {
-				add_power_balance_value = {
-					id = melkorite_power_balance
-					value = 0.7
-				}
-			}
-			AGR = {
-				add_power_balance_value = {
-					id = melkorite_power_balance
-					value = -0.2
-				}
-			}
-			HOL = {
-				add_power_balance_value = {
-					id = melkorite_power_balance
-					value = 0.2
-				}
-			}
-			RLM = {
-				add_power_balance_value = {
-					id = melkorite_power_balance
-					value = 0.2
-				}
-			}
+
+		effect = { ##Tells AGR to use the correct pantheon GFX cause otherwise it uses easterling for some reason.
+			AGR = { set_melkorite_bop_pantheon_gfx = yes }
 		}
 	}
 	
@@ -377,7 +354,7 @@ on_actions = {
 			}
 			else_if = {
 				limit = {
-					has_power_balance = { id = melkorite_power_balance }
+					has_variable = melkorite_bop_index
 					NOT = { has_government = melkorite }
 				}
 				deactivate_melkorite_bop = yes

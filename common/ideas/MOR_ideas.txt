@@ -292,7 +292,7 @@ ideas = {
 				has_government = melkorite
 			}
 			cancel = {
-				NOT = { has_power_balance = { id = melkorite_power_balance } }
+				NOT = { has_variable = melkorite_bop_index }
 			}
 			on_remove = {
 				MOR = {

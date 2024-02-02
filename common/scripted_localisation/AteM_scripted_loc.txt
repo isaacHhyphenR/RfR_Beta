@@ -181,6 +181,38 @@ defined_text = { ##Displays DLC variant for annexing RVN puppet
 		localization_key = influence_annex_RVN_puppet
 	}
 }
+
+defined_text = { ##Returns the spritename to use for your cultures melkorite BoP pantheon
+	name = melkorite_bop_pantheon_gfx
+	text = {
+		trigger = { has_idea_with_trait = orcish_heritage_trait }
+		localization_key = GFX_melkorite_orcish_bop
+	}
+	text = {
+		trigger = { has_idea_with_trait = easterling_heritage_trait }
+		localization_key = GFX_melkorite_easterling_bop
+	}
+	text = {
+		trigger = { has_idea_with_trait = southron_heritage_trait }
+		localization_key = GFX_melkorite_southron_bop
+	}
+	text = {
+		trigger = { has_idea_with_trait = northron_heritage_trait }
+		localization_key = GFX_melkorite_northron_bop
+	}
+	text = {
+		trigger = { has_idea_with_trait = numenorean_heritage_trait }
+		localization_key = GFX_melkorite_numenorean_bop
+	}
+	text = {
+		trigger = { has_idea_with_trait = wildling_heritage_trait }
+		localization_key = GFX_melkorite_wildling_bop
+	}
+	text = {
+		localization_key = GFX_melkorite_generic_bop
+	}
+}
+
 ######################################################################## RHOVANION INFLUENCE
 defined_text = { ##DAL
 	name = DAL_rhovanion_influence_scripted

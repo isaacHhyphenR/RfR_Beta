@@ -62,7 +62,7 @@ the_one_ring_destroyed = {
 			}
 			if = {
 				limit = {
-					has_power_balance = { id = melkorite_power_balance }
+					has_variable = melkorite_bop_index
 				}
 				deactivate_melkorite_bop = yes
 			}

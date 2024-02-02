@@ -420,7 +420,7 @@ scripted_diplomatic_actions = {
 	
 		# root is the initiator of action and this is the target country
 		visible = { #if action is visible on gui
-			has_power_balance = { id = melkorite_power_balance }
+			has_variable = melkorite_bop_index
 			ROOT = { has_country_leader = { character = MOR_sauron ruling_only = yes } }
 			NOT = { has_idea = sauron_influencing_bop_hidden }
 		}
@@ -452,9 +452,14 @@ scripted_diplomatic_actions = {
 				factor = 0
 			}
 			modifier = { #no need
-				power_balance_value = {
-					id = melkorite_power_balance
-					value > 0.75
+				meta_trigger = {
+					text = {
+						power_balance_value = {
+							id = melkorite_power_balance[ID]
+							value > 0.75
+						}
+					}
+					ID = [?melkorite_bop_index]
 				}
 				factor = 0
 			}
@@ -493,9 +498,14 @@ scripted_diplomatic_actions = {
 		ai_desire = {
 			base = 0
 			modifier = { #no need
-				power_balance_value = {
-					id = melkorite_power_balance
-					value > 0.8
+				meta_trigger = {
+					text = {
+						power_balance_value = {
+							id = melkorite_power_balance[ID]
+							value > 0.8
+						}
+					}
+					ID = [?melkorite_bop_index]
 				}
 				add = 50
 			}

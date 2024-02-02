@@ -31,11 +31,12 @@ technologies = {
 	@fieldHospitalX = 11
 	@colonyX = 14
 	@wineX = 16
+	
+	@AIbehindAgriculture = 0#.05
 ###########################################################
 				#AGRICULTURE
 ###########################################################
 	@unlockerCost = 1.25
-	@AIbehindAgriculture = 0.2
 	agriculture0 = {
 		
 		research_cost = @unlockerCost

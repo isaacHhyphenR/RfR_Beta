@@ -67,7 +67,9 @@ set_politics = {
 	elections_allowed = no
 }
 activate_melkorite_bop = yes
-
+set_variable = { melkorite_bop_to_add = 0.7 }
+add_to_melkorite_bop = yes
+clear_variable = melkorite_bop_to_add #can't do temps in history
 
 set_popularities = {
 	opportunism = 4

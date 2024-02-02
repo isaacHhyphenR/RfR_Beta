@@ -2922,76 +2922,190 @@ one_external_focus = {
 }
 
 activate_melkorite_bop = {
-	set_power_balance = {
-		id = melkorite_power_balance
-		set_default = yes
-		# left_side = melkorite_local_pantheon_side
-		# right_side = melkorite_lidless_eye_side
-		# set_value = 0
+	#Activates the BoP with that ID
+	meta_effect = {
+		text = {
+			set_power_balance = {
+				id = melkorite_power_balance[ID]
+				set_default = yes
+			}
+		}
+		ID = "[?global.lowest_unused_melkorite_bop]"
 	}
+	set_variable = { melkorite_bop_index = global.lowest_unused_melkorite_bop }
+	add_to_variable = { global.lowest_unused_melkorite_bop = 1 }
 	set_melkorite_bop_pantheon_gfx = yes
 }
-set_melkorite_bop_pantheon_gfx = {
-	#Sets the pantheon GFX based on culture. Setting it for a side changes for eveyr country with the BoP, so only changes if player
-	if = {
-		limit = { is_ai = no }
-		if = {
-			limit = { has_idea_with_trait = orcish_heritage_trait }
-			set_power_balance_gfx = {
-				id = melkorite_power_balance
-				side = melkorite_local_pantheon_side
-				gfx = GFX_melkorite_orcish_bop
-			}
-		}
-		else_if = {
-			limit = { has_idea_with_trait = easterling_heritage_trait }
-			set_power_balance_gfx = {
-				id = melkorite_power_balance
-				side = melkorite_local_pantheon_side
-				gfx = GFX_melkorite_easterling_bop
-			}
-		}
-		else_if = {
-			limit = { has_idea_with_trait = southron_heritage_trait }
-			set_power_balance_gfx = {
-				id = melkorite_power_balance
-				side = melkorite_local_pantheon_side
-				gfx = GFX_melkorite_southron_bop
-			}
-		}
-		else_if = {
-			limit = { has_idea_with_trait = northron_heritage_trait }
-			set_power_balance_gfx = {
-				id = melkorite_power_balance
-				side = melkorite_local_pantheon_side
-				gfx = GFX_melkorite_northron_bop
-			}
-		}
-		else_if = {
-			limit = { has_idea_with_trait = numenorean_heritage_trait }
-			set_power_balance_gfx = {
-				id = melkorite_power_balance
-				side = melkorite_local_pantheon_side
-				gfx = GFX_melkorite_numenorean_bop
-			}
-		}
-		else_if = {
-			limit = { has_idea_with_trait = wildling_heritage_trait }
-			set_power_balance_gfx = {
-				id = melkorite_power_balance
-				side = melkorite_local_pantheon_side
-				gfx = GFX_melkorite_wildling_bop
-			}
-		}
-	}
-}
-	
 deactivate_melkorite_bop = {
-	remove_power_balance = {
-		id = melkorite_power_balance
+	meta_effect = {
+		text = {
+			remove_power_balance = {
+				id = melkorite_power_balance[ID]
+			}
+		}
+		ID = "[?melkorite_bop_index]"
+	}
+	clear_variable = melkorite_bop_index
+}
+
+set_melkorite_bop_pantheon_gfx = {
+	#Sets the pantheon side GFX based on culture
+	meta_effect = {
+		text = {
+			set_power_balance_gfx = {
+				id = melkorite_power_balance[ID]
+				side = melkorite_local_pantheon_side
+				gfx = [ICON]
+			}
+		}
+		ID = "[?melkorite_bop_index]"
+		ICON = "[melkorite_bop_pantheon_gfx]"
 	}
 }
 
+add_to_melkorite_bop = { #adds temp variable melkorite_bop_to_add
+	if = {
+		limit = { check_variable = { melkorite_bop_to_add < 0 } }
+		meta_effect = {
+			text = {
+				add_power_balance_value = {
+					id = melkorite_power_balance[ID]
+					value = [AMOUNT]
+					tooltip_side = melkorite_local_pantheon_side
+				}
+			}
+			ID = "[?melkorite_bop_index]"
+			AMOUNT = "[?melkorite_bop_to_add]"
+		}
+	}
+	else = {
+		meta_effect = {
+			text = {
+				add_power_balance_value = {
+					id = melkorite_power_balance[ID]
+					value = [AMOUNT]
+					tooltip_side = melkorite_lidless_eye_side
+				}
+			}
+			ID = "[?melkorite_bop_index]"
+			AMOUNT = "[?melkorite_bop_to_add]"
+		}
+	}
+}
+
+	
+
+
+
+###Scripted effects for activating various ranges of the melkorite BoP
+melkorite_pantheon_activation1 = {
+	if = { #for non-DLC, increases autonomy
+		limit = {
+			has_subject_autonomy_feature = no
+			has_autonomy_state = autonomy_shadow_slave
+		}
+		MOR = {
+			set_autonomy = {
+				target = ROOT
+				autonomous_state = autonomy_shadow_thrall
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+	}
+}
+melkorite_pantheon_activation2 = {
+	if = { #for non-DLC, increases autonomy
+		limit = {
+			has_subject_autonomy_feature = no
+			OR = {
+				has_autonomy_state = autonomy_shadow_slave
+				has_autonomy_state = autonomy_shadow_thrall
+			}
+		}
+		MOR = {
+			set_autonomy = {
+				target = ROOT
+				autonomous_state = autonomy_shadow_tributary
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+	}
+}
+melkorite_pantheon_activation3 = {
+	if = { #for non-DLC, increases autonomy
+		limit = {
+			has_subject_autonomy_feature = no
+			is_subject_of = MOR
+		}
+		MOR = {
+			set_autonomy = {
+				target = ROOT
+				autonomous_state = autonomy_free
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+	}
+}
+melkorite_eye_activation1 = {
+	if = {
+		limit = {
+			is_subject = no
+		}
+		MOR = {
+			country_event = { id = mordor.7 hours = 1 }
+			custom_effect_tooltip = if_they_accept_tooltip
+			event_option_tooltip = mordor.7.a
+		}
+	}
+}
+melkorite_eye_activation2 = {
+	if = { #for non-DLC, reduces autonomy
+		limit = {
+			has_subject_autonomy_feature = no
+			OR = {
+				is_subject = no
+				has_autonomy_state = autonomy_shadow_tributary
+			}
+		}
+		MOR = {
+			set_autonomy = {
+				target = ROOT
+				autonomous_state = autonomy_shadow_thrall
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+	}
+}
+melkorite_eye_activation3 = {
+	if = { #for non-DLC, reduces autonomy
+		limit = {
+			has_subject_autonomy_feature = no
+			OR = {
+				is_subject = no
+				has_autonomy_state = autonomy_shadow_tributary
+				has_autonomy_state = autonomy_shadow_thrall
+			}
+		}
+		MOR = {
+			set_autonomy = {
+				target = ROOT
+				autonomous_state = autonomy_shadow_slave
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+	}
+	if = { #annex your subjects for non-DLC
+		limit = { has_subject_autonomy_feature = no }
+		MOR = {
+			unlock_decision_tooltip = MOR_annex_melkorite_decision
+		}
+	}
+}
 
 
 

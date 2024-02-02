@@ -94,14 +94,6 @@ on_actions = {
 				}
 			}
 		}
-			
-		# effect = { ##Unlocks level 5 forts
-			# every_country = {
-				# set_technology = {
-					# hidden_fort_tech = 1
-				# }
-			# }
-		# }
 	}
 			
 	on_daily_ROH = { #Fires eomer's revolt/Grima's arrest

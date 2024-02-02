@@ -17,7 +17,7 @@ technologies = {
 	@siegeEngineerX = 23
 	@fortX = 0
 
-	@AIbehindCarpentry = 0.2
+	@AIbehindCarpentry = 0#.05
 	
 ###########################################################
 				#CARPENTRY
