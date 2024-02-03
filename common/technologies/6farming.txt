@@ -32,7 +32,7 @@ technologies = {
 	@colonyX = 14
 	@wineX = 16
 	
-	@AIbehindAgriculture = 0#.05
+	@AIbehindAgriculture = 0.05
 ###########################################################
 				#AGRICULTURE
 ###########################################################

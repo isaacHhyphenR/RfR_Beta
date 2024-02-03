@@ -1,5 +1,4 @@
-﻿capital = 312 #Dhobok Rhin
-
+﻿capital = 313 #Dhobok Broen
 set_research_slots = 3
 set_stability = .98
 set_war_support = 0.4

@@ -6801,6 +6801,26 @@ focus_tree = {
 					inherit_technology = ERE
 					add_ideas = free_trade
 				}
+				312 = {
+					add_victory_points = {
+						province = 1356 #Gaurblog Lûg
+						value = 2
+					}
+				}
+				312 = {
+					add_victory_points = {
+						province = 3794 #Hathur-na-bunderok
+						value = 3
+					}
+					add_victory_points = {
+						province = 4155 #Falek-dim
+						value = 1
+					}
+					add_victory_points = {
+						province = 4623 #Marzgur
+						value = 1
+					}
+				}
 			}
 			merchant_houses_focus_effect = yes
 		}
@@ -6865,6 +6885,10 @@ focus_tree = {
 		completion_reward = { #Dwarves get Uldonavuld
 			311 = {
 				transfer_state_to = NRK
+				set_province_name = {
+					id = 385
+					name = VICTORY_POINTS_385_DWARVEN
+				}
 			}
 			merchant_houses_focus_effect = yes
 		}

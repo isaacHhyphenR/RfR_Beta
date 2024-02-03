@@ -543,4 +543,5 @@
  HEH_trade_influence_desc: "[HEH.GetNameDefCap] exerts undue influence over this country's economy."
  SEK_trade_influence: "[SEK.GetAdjective] Trade Influence"
  SEK_trade_influence_desc: "[SEK.GetNameDefCap] exerts undue influence over this country's economy."
-
+ mor_unleash_darkness: "Darkness Unleashed"
+ mor_unleash_darkness_desc: "The Dark Lord has called forth all His evil minions. They will pour forth from their caves and fortresses until the whole world falls beneath the dawnless shadow of Barad-dûr."

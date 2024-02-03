@@ -434,6 +434,17 @@ DIPLOMACY_REQUEST_LICENSED_PRODUCTION_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
+	#melkorite
+	if = {
+		limit = {
+			has_government = melkorite
+		}
+		custom_trigger_tooltip = {
+			tooltip = diplomacy_tooltip_melkorite_hasnt_unleashed_darkness
+			any_country = { check_variable = { modifier@melkorite_can_justify > 0 } }
+		}
+	}
+	##Rules
 	if = {
 		limit = {
 			has_game_rule = {
@@ -677,6 +688,33 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 		custom_trigger_tooltip = { tooltip = can_send_EOM_volunteers_tooltip ROOT = { has_dynamic_modifier = { modifier = can_send_volunteers_to_EOM } } }
 	}
 }
+
+
+DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
+	#melkorite
+	if = {
+		limit = {
+			has_government = melkorite
+		}
+		custom_trigger_tooltip = {
+			tooltip = diplomacy_tooltip_melkorite_hasnt_unleashed_darkness
+			any_country = { check_variable = { modifier@melkorite_can_justify > 0 } }
+		}
+	}
+}
+DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
+	#melkorite
+	if = {
+		limit = {
+			FROM = { has_government = melkorite }
+		}
+		custom_trigger_tooltip = {
+			tooltip = diplomacy_tooltip_melkorite_hasnt_unleashed_darkness
+			any_country = { check_variable = { modifier@melkorite_can_justify > 0 } }
+		}
+	}
+}
+
 
 DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
 	if = { ##non-gwaithurium tags cannot join gwaithurium led faction

@@ -244,6 +244,14 @@ ideas = {
 			}
 			cancel = { has_war_with = ISN }
 		}
+		mor_unleash_darkness = {
+			picture = unleash_darkness
+			modifier = {
+				training_time_factor = -0.15
+				attrition = -0.15
+				melkorite_can_justify = 1
+			}
+		}
 	}
 	hidden_ideas = {
 		mor_hidden_infantry_equipment_cost = {

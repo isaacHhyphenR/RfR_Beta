@@ -144,3 +144,9 @@ starting_resistance = {
 	category = country
 	postfix = none
 }
+
+melkorite_can_justify = {
+	color_type = good
+	value_type = yes_no
+	category = country
+}

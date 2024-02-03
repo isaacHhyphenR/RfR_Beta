@@ -19,7 +19,7 @@ technologies = {
 	@maintenanceX = 26
 	@conversionX = 30
 	
-	@AIbehindMetallurgy = 0#.05
+	@AIbehindMetallurgy = 0.05
 ###########################################################
 				#METALLURGY
 ###########################################################

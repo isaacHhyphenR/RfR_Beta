@@ -117,8 +117,9 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 6991;4431;impassable;-1;-1;-1;-1;-1;;
 6947;379;impassable;-1;-1;-1;-1;-1;;
 5262;3442;impassable;-1;-1;-1;-1;-1;;CIRITH UNGOL
-2325;845;impassable;-1;-1;-1;-1;-1;;DORWINION
+2325;845;impassable;-1;-1;-1;-1;-1;;ULDONOVULD
 2258;845;impassable;-1;-1;-1;-1;-1;;
+2922;845;impassable;-1;-1;-1;-1;-1;;
 6474;4867;impassable;-1;-1;-1;-1;-1;;
 3779;4867;impassable;-1;-1;-1;-1;-1;;
 1081;4867;impassable;-1;-1;-1;-1;-1;;
@@ -127,9 +128,30 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 4376;720;impassable;-1;-1;-1;-1;-1;;
 1164;720;impassable;-1;-1;-1;-1;-1;;
 3993;720;impassable;-1;-1;-1;-1;-1;;
+3993;997;impassable;-1;-1;-1;-1;-1;;DOBOK RHIN
 3592;997;impassable;-1;-1;-1;-1;-1;;
-6455;6441;impassable;-1;-1;-1;-1;-1;;
-6401;6441;impassable;-1;-1;-1;-1;-1;;
+6418;6444;impassable;-1;-1;-1;-1;-1;;
+6418;6428;impassable;-1;-1;-1;-1;-1;;
+1356;6428;impassable;-1;-1;-1;-1;-1;;
+1356;3855;impassable;-1;-1;-1;-1;-1;;
+5049;5078;impassable;-1;-1;-1;-1;-1;;
+5049;3794;impassable;-1;-1;-1;-1;-1;;
+5078;3794;impassable;-1;-1;-1;-1;-1;;
+6524;3794;impassable;-1;-1;-1;-1;-1;;DOBOK BROEN
+6535;3206;impassable;-1;-1;-1;-1;-1;;
+6535;4960;impassable;-1;-1;-1;-1;-1;;
+3791;4960;impassable;-1;-1;-1;-1;-1;;
+3791;4155;impassable;-1;-1;-1;-1;-1;;
+4623;6569;impassable;-1;-1;-1;-1;-1;;
+6619;6569;impassable;-1;-1;-1;-1;-1;;
+4623;6619;impassable;-1;-1;-1;-1;-1;;
+6570;6619;impassable;-1;-1;-1;-1;-1;;
+6570;3199;impassable;-1;-1;-1;-1;-1;;
+6585;2267;impassable;-1;-1;-1;-1;-1;;
+6585;6602;impassable;-1;-1;-1;-1;-1;;
+4155;6602;impassable;-1;-1;-1;-1;-1;;
+4155;3845;impassable;-1;-1;-1;-1;-1;;
+3125;3845;impassable;-1;-1;-1;-1;-1;;
 10783;7852;impassable;-1;-1;-1;-1;-1;;KHAND
 10783;10747;impassable;-1;-1;-1;-1;-1;;
 10747;7852;impassable;-1;-1;-1;-1;-1;;

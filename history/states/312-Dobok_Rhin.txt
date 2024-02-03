@@ -8,7 +8,9 @@ state = {
 		add_core_of = DOR
 		buildings = {
 		}
-
+		victory_points = { #Gaurblog Lûg
+			1356 0
+		}
 	}
 
 	provinces = { #15

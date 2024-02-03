@@ -9,6 +9,15 @@ state = {
 		add_core_of = DRG
 		buildings = {
 		}
+		victory_points = { #Hathur-na-bunderok
+			3794 0
+		}
+		victory_points = { #Falek-dim
+			4155 0
+		}
+		victory_points = { #Marzgûr
+			4623 0
+		}
 
 	}
 

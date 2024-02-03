@@ -3,7 +3,7 @@
 @sauronsFocusCostStab = 0.5
 @sauronsFocusDays = 140
 
-MOR_unleash_the_darkness_category = {
+MOR_the_dark_lord_category = {
 	unleash_the_darkness = {
 		icon = GFX_decision_oppression
 		fire_only_once = yes
@@ -27,7 +27,7 @@ MOR_unleash_the_darkness_category = {
 		}
 		
 		complete_effect = {
-			add_ideas = MOR_unleashed_darkness
+			add_ideas = mor_unleash_darkness
 			every_other_country = {
 				limit = {
 					NOT = { has_war_with = ROOT }
@@ -58,9 +58,6 @@ MOR_unleash_the_darkness_category = {
 			}
 		}
 	}
-}
-
-MOR_the_dark_lord_category = {
 	MOR_annex_melkorite_decision = {
 		icon = GFX_decision_infiltrate_state
 		ai_will_do = {
