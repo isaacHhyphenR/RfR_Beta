@@ -6885,6 +6885,7 @@ focus_tree = {
 		completion_reward = { #Dwarves get Uldonavuld
 			311 = {
 				transfer_state_to = NRK
+				add_compliance = 70
 				set_province_name = {
 					id = 385
 					name = VICTORY_POINTS_385_DWARVEN
