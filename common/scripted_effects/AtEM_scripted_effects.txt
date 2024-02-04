@@ -2935,6 +2935,9 @@ activate_melkorite_bop = {
 	set_variable = { melkorite_bop_index = global.lowest_unused_melkorite_bop }
 	add_to_variable = { global.lowest_unused_melkorite_bop = 1 }
 	set_melkorite_bop_pantheon_gfx = yes
+	hidden_effect = {
+		add_ideas = melkorite_BOP_idea
+	}
 }
 deactivate_melkorite_bop = {
 	meta_effect = {
@@ -2946,6 +2949,9 @@ deactivate_melkorite_bop = {
 		ID = "[?melkorite_bop_index]"
 	}
 	clear_variable = melkorite_bop_index
+	hidden_effect = {
+		remove_ideas = melkorite_BOP_idea
+	}
 }
 
 set_melkorite_bop_pantheon_gfx = {
@@ -3013,6 +3019,8 @@ melkorite_pantheon_activation1 = {
 			}
 		}
 	}
+	#So that I can get it from scripted loc
+	set_variable = { melkorite_bop_side = -1 }
 }
 melkorite_pantheon_activation2 = {
 	if = { #for non-DLC, increases autonomy
@@ -3032,6 +3040,8 @@ melkorite_pantheon_activation2 = {
 			}
 		}
 	}
+	#So that I can get it from scripted loc
+	set_variable = { melkorite_bop_side = -1 }
 }
 melkorite_pantheon_activation3 = {
 	if = { #for non-DLC, increases autonomy
@@ -3048,6 +3058,8 @@ melkorite_pantheon_activation3 = {
 			}
 		}
 	}
+	#So that I can get it from scripted loc
+	set_variable = { melkorite_bop_side = -1 }
 }
 melkorite_eye_activation1 = {
 	if = {
@@ -3060,6 +3072,8 @@ melkorite_eye_activation1 = {
 			event_option_tooltip = mordor.7.a
 		}
 	}
+	#So that I can get it from scripted loc
+	set_variable = { melkorite_bop_side = 1 }
 }
 melkorite_eye_activation2 = {
 	if = { #for non-DLC, reduces autonomy
@@ -3079,6 +3093,8 @@ melkorite_eye_activation2 = {
 			}
 		}
 	}
+	#So that I can get it from scripted loc
+	set_variable = { melkorite_bop_side = 1 }
 }
 melkorite_eye_activation3 = {
 	if = { #for non-DLC, reduces autonomy
@@ -3105,6 +3121,8 @@ melkorite_eye_activation3 = {
 			unlock_decision_tooltip = MOR_annex_melkorite_decision
 		}
 	}
+	#So that I can get it from scripted loc
+	set_variable = { melkorite_bop_side = 1 }
 }
 
 

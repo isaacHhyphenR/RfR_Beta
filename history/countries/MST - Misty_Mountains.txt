@@ -95,7 +95,7 @@ recruit_character = MST_fimbul
 recruit_character = MST_zagbed
 recruit_character = MST_ulthugga
 recruit_character = MST_gorshag
-add_ideas = troll_tamers_spirit
+#add_ideas = troll_tamers_spirit
 add_ideas = orcish_heritage_idea
 
 			####ARMOR

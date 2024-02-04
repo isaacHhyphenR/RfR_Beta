@@ -252,6 +252,12 @@ ideas = {
 				melkorite_can_justify = 1
 			}
 		}
+		melkorite_BOP_idea = {
+			picture = cult_of_the_lidless_eye
+			modifier = {
+				custom_modifier_tooltip = melkorite_bop_value_tooltip
+			}
+		}
 	}
 	hidden_ideas = {
 		mor_hidden_infantry_equipment_cost = {

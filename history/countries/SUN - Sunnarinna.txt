@@ -64,13 +64,18 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 }
-activate_melkorite_bop = yes
 
 set_popularities = {
 	freedom = 20
 	opportunism = 32
 	melkorite = 48
 }
+
+##Melkorite!
+activate_melkorite_bop = yes
+set_variable = { melkorite_bop_to_add = 0 }
+add_to_melkorite_bop = yes
+clear_variable = melkorite_bop_to_add #can't do temps in history
 
 
 add_ideas = female_leader_chance_idea

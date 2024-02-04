@@ -545,3 +545,7 @@
  SEK_trade_influence_desc: "[SEK.GetNameDefCap] exerts undue influence over this country's economy."
  mor_unleash_darkness: "Darkness Unleashed"
  mor_unleash_darkness_desc: "The Dark Lord has called forth all His evil minions. They will pour forth from their caves and fortresses until the whole world falls beneath the dawnless shadow of Barad-dûr."
+ melkorite_BOP_idea: "$melkorite_power_balance$"
+ melkorite_BOP_idea_desc: "Many of Melkor's followers prefer to worship the shadow through their traditional pantheons of dark gods. As Sauron grows in strength and reasserts his title as Dark Lord, the Cult of the Lidless Eye promotes fealty to the dark master of Barad-dûr."
+ 
+ 

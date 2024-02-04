@@ -2347,7 +2347,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		custom_modifier_tooltip = allows_trolls_tooltip
+		#custom_modifier_tooltip = allows_trolls_tooltip
 	}
 
 ######################################################################################AteM

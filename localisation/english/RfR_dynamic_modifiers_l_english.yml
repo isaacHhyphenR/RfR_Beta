@@ -72,6 +72,8 @@
  isengardian_heritage_modifier_desc: "Once Saruman was as great as his fame made him. His knowledge was deep, his thought was subtle, and his hands marvelously skilled; and he had a power over the minds of others. The wise he could persuade, and the smaller folk he could daunt. That power he certainly still keeps."
  servants_of_sauron_modifier: "Servants of Sauron"
  servants_of_sauron_modifier_desc: "The Dark Lord's followers, worshippers, servants, and slaves are diverse. If not for his leadership they would be at war with each other just as much as with foreigners, but when his gaze is upon them they can accomplish many great and terrible things."
+ servants_of_sauron_spirit: "$servants_of_sauron_modifier$"
+ servants_of_sauron_spirit_desc: "$servants_of_sauron_modifier_desc$"
  mor_hidden_infantry_equipment_cost: "$servants_of_sauron_modifier$"
  mor_hidden_infantry_equipment_cost_desc: "$servants_of_sauron_modifier_desc$"
  mor_hidden_troll_production: "$servants_of_sauron_modifier$"

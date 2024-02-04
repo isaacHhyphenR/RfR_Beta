@@ -169,6 +169,7 @@ ideas = {
 				breakthrough_factor = -0.25
 				conscription = 0.015
 				custom_modifier_tooltip = orcish_heritage_tooltip
+				custom_modifier_tooltip = allows_trolls_tooltip
 			}
 			on_add = {
 				set_technology = { orcish_heritage_tech = 1 popup = no }
@@ -178,6 +179,7 @@ ideas = {
 			}
 			traits = {
 				orcish_heritage_trait
+				hidden_troll_tamer_trait
 			}
 		}
 		southron_heritage_idea = {
@@ -670,9 +672,9 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
-			# modifier = {
-				# custom_modifier_tooltip = allows_trolls_tooltip
-			# }
+			modifier = {
+				custom_modifier_tooltip = allows_trolls_tooltip
+			}
 			on_add = {
 				hidden_effect = {
 					set_technology = {

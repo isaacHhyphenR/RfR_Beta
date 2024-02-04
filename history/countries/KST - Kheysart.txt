@@ -49,7 +49,6 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 }
-activate_melkorite_bop = yes
 
 set_popularities = {
 	freedom = 25
@@ -61,6 +60,12 @@ set_popularities = {
 			###DIPLOMACY
 #recruit_character = LOG_Asterel_Ibarad
 add_ideas = steppe_heritage_idea
+
+##Melkorite!
+activate_melkorite_bop = yes
+set_variable = { melkorite_bop_to_add = 0 }
+add_to_melkorite_bop = yes
+clear_variable = melkorite_bop_to_add #can't do temps in history
 
 			####ARMOR
 			

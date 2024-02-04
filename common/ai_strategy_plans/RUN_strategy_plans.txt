@@ -77,46 +77,57 @@ run_target_dale = {
 		value = 200
 	}
 	ai_strategy = {
+		type = prepare_for_war
+		id = DAL
+		value = 50
+	}
+	ai_strategy = {
+		type = conquer
+		id = DAL
+		value = 50
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = GON
+		value = 25
+	}
+	ai_strategy = {
+		type = conquer
+		id = GON
+		value = 25
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = ERE
+		value = 25
+	}
+	ai_strategy = {
+		type = conquer
+		id = ERE
+		value = 25
+	}
+	#####STRATEGY
+	ai_strategy = {
 		type = front_control
 		state = 314 #dargeca
 		ratio = 0.75
 		ordertype = front
 		execution_type = rush
 	}
+	ai_strategy = { #Invade not the dorwin mountains
+		type = front_unit_request
+		state_trigger = {
+			is_controlled_by = DOR
+			NOT = {
+				OR = { state = 312 state = 313 } #Dobok rhin & dokok broen
+			}
+		}
+		value = 25
+	}
 	ai_strategy = {
 		type = area_priority
 		id = dorwinion
 		value = 50
-	}
-	ai_strategy = {
-		type = prepare_for_war
-		id = DAL
-		value = 50
-	}
-	ai_strategy = {
-		type = conquer
-		id = DAL
-		value = 50
-	}
-	ai_strategy = {
-		type = prepare_for_war
-		id = GON
-		value = 25
-	}
-	ai_strategy = {
-		type = conquer
-		id = GON
-		value = 25
-	}
-	ai_strategy = {
-		type = prepare_for_war
-		id = ERE
-		value = 25
-	}
-	ai_strategy = {
-		type = conquer
-		id = ERE
-		value = 25
 	}
 	ai_strategy = {
 		type = area_priority

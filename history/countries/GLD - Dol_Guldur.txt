@@ -66,10 +66,6 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 }
-activate_melkorite_bop = yes
-set_variable = { melkorite_bop_to_add = 0.7 }
-add_to_melkorite_bop = yes
-clear_variable = melkorite_bop_to_add #can't do temps in history
 
 set_popularities = {
 	opportunism = 4
@@ -85,15 +81,14 @@ recruit_character = GLD_fimbul
 recruit_character = GLD_zagbed
 recruit_character = GLD_ulthugga
 recruit_character = GLD_gorshag
-add_ideas = troll_tamers_spirit
 add_ideas = orcish_heritage_idea
-			###DIPLOMACY
-# 3015.1.1 = {
-	# declare_war_on = {
-		# target = WOD
-		# type = annex_everything
-	# }
-# }
+#add_ideas = troll_tamers_spirit
+
+#Melkorite!
+activate_melkorite_bop = yes
+set_variable = { melkorite_bop_to_add = 0.7 }
+add_to_melkorite_bop = yes
+clear_variable = melkorite_bop_to_add #can't do temps in history
 			####ARMOR
 load_early_warg_riders = yes
 

@@ -13,6 +13,7 @@
  RAILWAY_GUN_TRANSPORT_WEIGHT: "Total weight of Siege Artillerys"
  RAILWAY_GUN_ASSIGNED_MANUAL_ORDER_TITLE: "Unassign Siege Artillery from Army?"
  RAILWAY_GUN_ASSIGNED_MANUAL_ORDER_DESC: "You are about to unassign this Siege Artillery from the Army. This will remove its current orders. Are you sure?"
+ BM_FORT_MODIFIER_DESC: "Forts lower casualties for defenders and help with defense. To help take heavily fortified provinces employ Monsters or Engineers. Attacking from several directions will reduce forts effect."
  BM_FORT_MODIFIER_DESC_WITH_RAILWAY_GUN: "Forts lower casualties for defenders and help with defense. To help take heavily fortified provinces employ Monsters, Engineers or Siege Artillery. Attacking from several directions will also reduce forts effect."
  SELECT_GROUP_WITH_RAILWAY_GUNS_SELECTED_TOOLTIP: "§GRight-click§! to assign the selected §YSiege Artillerys§!"
  SELECT_GROUP_WITH_RWGS_SELECTED_TOOLTIP: "§GRight-click§! to assign the selected §YSiege Artillerys§!"

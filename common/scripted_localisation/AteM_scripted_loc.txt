@@ -213,6 +213,20 @@ defined_text = { ##Returns the spritename to use for your cultures melkorite BoP
 	}
 }
 
+defined_text = { ##Returns the name of the side winning the melkorite BoP
+	name = get_active_melkorite_BOP_side
+	text = {
+		trigger = {
+			check_variable = { melkorite_bop_side = 1 }
+		}
+		localization_key = melkorite_lidless_eye_side
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = melkorite_local_pantheon_side
+	}
+}
+
 ######################################################################## RHOVANION INFLUENCE
 defined_text = { ##DAL
 	name = DAL_rhovanion_influence_scripted

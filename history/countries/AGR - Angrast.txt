@@ -21,10 +21,6 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 }
-activate_melkorite_bop = yes
-set_variable = { melkorite_bop_to_add = 0.2 }
-add_to_melkorite_bop = yes
-clear_variable = melkorite_bop_to_add #can't do temps in history
 
 set_popularities = {
 	freedom = 6
@@ -39,6 +35,12 @@ recruit_character = AGR_aidd_map_rioc
 add_ideas = enedwaith_heritage_idea
 add_ideas = limited_conscription
 add_ideas = low_economic_mobilisation
+
+##Melkorite!
+activate_melkorite_bop = yes
+set_variable = { melkorite_bop_to_add = 0.2 }
+add_to_melkorite_bop = yes
+clear_variable = melkorite_bop_to_add #can't do temps in history
 
 #!&!&!
 ######################An Intellectual Coalition

@@ -194,6 +194,11 @@
  amphibious_tank_equipment_2_desc: "These mounts are taken from coastlines and islands so they are far more comfortable with waves and water than normal beasts"
 
                     ###TROLLS
+ light_tank_chassis: "Light Cavalry"
+ medium_tank_chassis: "Heavy Cavalry"
+ modern_tank_chassis: "Modern Cavalry"
+ heavy_tank_chassis: "Trolls"
+ super_heavy_tank_chassis: "$Mumakil$"
  monster_mount: "Specimen"
  hidden_troll_gun_prerequisite: "$heavy_tank_equipment_0$"
  hidden_troll_gun_prerequisite_desc: "$heavy_tank_equipment_0_desc$"

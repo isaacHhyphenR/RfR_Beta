@@ -51,7 +51,7 @@ set_popularities = {
 }
 
 #recruit_character = GDB_gorshag
-add_ideas = troll_tamers_spirit
+#add_ideas = troll_tamers_spirit
 add_ideas = orcish_heritage_idea
 
 			####ARMOR

@@ -986,4 +986,8 @@ spriteTypes = {
 		name = "GFX_idea_unleash_darkness"
 		texturefile = "gfx/interface/ideas/unleash_darkness.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_cult_of_the_lidless_eye"
+		texturefile = "gfx/interface/ideas/cult_of_the_lidless_eye.dds"
+	}
 }

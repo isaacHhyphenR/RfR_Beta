@@ -99,7 +99,7 @@ recruit_character = MOR_flug_dush
 recruit_character = MOR_warennia
 recruit_character = MOR_drognot
 recruit_character = MOR_anarchy
-add_ideas = troll_tamers_spirit
+#add_ideas = troll_tamers_spirit
 add_ideas = orcish_heritage_idea
 
 			####ARMOR

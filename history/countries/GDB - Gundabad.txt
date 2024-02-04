@@ -95,7 +95,7 @@ recruit_character = GDB_fimbul
 recruit_character = GDB_zagbed
 recruit_character = GDB_ulthugga
 recruit_character = GDB_gorshag
-add_ideas = troll_tamers_spirit
+##add_ideas = troll_tamers_spirit
 add_ideas = orcish_heritage_idea
 
 			####ARMOR

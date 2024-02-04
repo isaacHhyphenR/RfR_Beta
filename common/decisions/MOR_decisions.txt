@@ -45,7 +45,7 @@ MOR_the_dark_lord_category = {
 						}
 					}
 					add_named_threat = { 
-						threat = 3 
+						threat = 3
 						name = mor_unleashed_darkness
 					}
 				}
