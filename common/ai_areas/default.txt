@@ -1,0 +1,88 @@
+areas = {
+
+	eriador = {
+		strategic_regions = {
+			2 #Forlindon
+			3 #Harlindon
+			4 #Arthedain
+			5 #Cardolan
+			6 #Rhudaur
+			7 #Eregion
+			8 #Angmar
+			39 #Shire
+		}
+	}
+	rohan = {
+		strategic_regions = {
+			11 #Gap of Rohan
+			12 #Calenardhon
+			28 #Northern Gondor
+		}
+	}
+	enedwaith = {
+		strategic_regions = {
+			7 #Eregion
+			10 #Enedwaith
+			11 #Gap of Rohan
+			25 #Western Gondor
+		}
+	}
+	gondor = {
+		strategic_regions = {
+			25 #Western Gondor
+			26 #Central Gondor
+			27 #Southern Gondor
+			28 #Northern Gondor
+			29 #Ithilien
+			37 #Eastern Gondor
+		}
+	}
+	mordor = {
+		strategic_regions = {
+			30 #Gorgoroth
+			31 #Nurn
+		}
+	}
+	rhovanion = {
+		strategic_regions = {
+			16 #long lake
+			17 #carnen
+			18 #lower mirvan
+			19 #Logath
+			20 #dorwinion
+			22 #Sagath
+			23 #Sea of Rhun
+			83 #upper mervan
+		}
+	}
+	mirkwood = {
+		strategic_regions = {
+			15 #Mirkwood
+		}
+	}
+	vales_of_anduin = {
+		strategic_regions = {
+			14 #Upper Vales
+			13 #Lower Vales
+		}
+	}
+			
+	dorwinion = {
+		strategic_regions = {
+			20 #dorwinion
+		}
+	}
+	lower_anduin = {
+		strategic_regions = {
+			40 #Discharge of Entwash
+			41 #Mouths of anduin
+			75 #southern anduin
+			76 #Crossings of Anduin
+		}
+	}
+	ithilien = {
+		strategic_regions = {
+			29 #ithilien
+		}
+	}
+}

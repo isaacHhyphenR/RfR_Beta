@@ -1,0 +1,92 @@
+
+ai_focus_defense = {
+	research = {
+		defensive = 5.0
+		carpentry = 5
+		true_carpentry = 5
+		cat_fortification = 20
+		radar_tech = 1.0
+		construction_tech = 2.0
+		artillery = 2.0
+	}
+}
+
+ai_focus_aggressive = {
+	research = {
+		offensive = 5.0
+		agriculture = 5
+		true_agriculture = 2
+		synth_resources = 1.0
+		motorized_equipment = 2.0
+		armor = 2.0
+	}
+}
+
+ai_focus_war_production = {
+	research = {
+		metallurgy = 2
+		true_metallurgy = 10
+		industry = 10.0
+		cat_production = 10
+		construction_tech = 2.0
+		electronics = 2.0
+		computing_tech = 2.0	
+	}
+}
+
+ai_focus_military_equipment = {
+	research = {
+		metallurgy = 2
+		true_metallurgy = 5
+		infantry_weapons = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+}
+
+ai_focus_military_advancements = {
+	research = {
+		cat_bureaucracy = 15
+		true_metallurgy = 10
+		armor = 10.0
+		land_doctrine = 100.0
+		rocketry = 7.5
+		radar_tech = 3.0
+		encryption_tech = 7.5
+		decryption_tech = 7.5
+		synth_resources = 3.0
+		motorized_equipment = 4.0
+		nuclear = 5.0
+		night_vision = 5.0
+		train_tech = 5.0
+	}
+}
+
+ai_focus_peaceful = {
+	research = {
+		cat_bureaucracy = 15
+		true_carpentry = 5
+		construction_tech = 15.0
+		architecture = 5
+		wine_tech_category = 5
+		electronics = 10.0
+		colony_tech = 5
+	}
+}
+
+ai_focus_naval = {
+	research = {
+		true_carpentry = 10
+		naval_equipment = 5.0
+		naval_doctrine = 100.0
+		marine_tech = 10.0
+		dd_tech = 3.0
+		cl_tech = 3.0
+		ca_tech = 3.0
+		bc_tech = 3.0
+		bb_tech = 3.0
+		shbb_tech = 3.0
+		tp_tech = 3.0
+	}
+}
