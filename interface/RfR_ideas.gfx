@@ -446,8 +446,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/diplomatic/attack_lorien.dds"
 	}
 	SpriteType = {
-		name = "GFX_idea_generic_attack_mirvan"
-		texturefile = "gfx/interface/ideas/diplomatic/attack_mirvan.dds"
+		name = "GFX_idea_generic_attack_rhovanion"
+		texturefile = "gfx/interface/ideas/diplomatic/attack_rhovanion.dds"
 	}
 	SpriteType = {
 		name = "GFX_idea_generic_attack_misty_mountains"
@@ -989,5 +989,9 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_idea_cult_of_the_lidless_eye"
 		texturefile = "gfx/interface/ideas/cult_of_the_lidless_eye.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_shadow_of_barad_dur"
+		texturefile = "gfx/interface/ideas/shadow_of_barad_dur.dds"
 	}
 }

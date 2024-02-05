@@ -258,6 +258,15 @@ ideas = {
 				custom_modifier_tooltip = melkorite_bop_value_tooltip
 			}
 		}
+		gaze_of_the_eye = {
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				melkorite_drift = 0.5
+				custom_modifier_tooltip = sauron_reserve_wargoal_tooltip
+			}
+		}
 	}
 	hidden_ideas = {
 		mor_hidden_infantry_equipment_cost = {

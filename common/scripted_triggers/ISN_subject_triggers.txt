@@ -1,0 +1,396 @@
+@statesFor4StateRegion = 2
+
+isn_has_anduin_subject = { #7
+	custom_trigger_tooltip = {
+		tooltip = isn_has_anduin_subject_tooltip
+		count_triggers = {
+			amount = 4 #7
+			1 = { 85 = { counts_as_ISN_subject_state = yes } } #carrocklands
+			1 = { 78 = { counts_as_ISN_subject_state = yes } } #celebrant
+			1 = { 84 = { counts_as_ISN_subject_state = yes } } #drownholt
+			1 = { 81 = { counts_as_ISN_subject_state = yes } } #gladden_feilds
+			1 = { 89 = { counts_as_ISN_subject_state = yes } } #grey_foothills
+			1 = { 82 = { counts_as_ISN_subject_state = yes } } #middle_vales
+			1 = { 83 = { counts_as_ISN_subject_state = yes } } #upper_vales
+		}
+	}
+}
+isn_has_arnor_subject = { #18
+	custom_trigger_tooltip = {
+		tooltip = isn_has_arnor_subject_tooltip
+		count_triggers = {
+			amount = 9 #18
+			1 = { 24 = { counts_as_ISN_subject_state = yes } } #annuminas
+			1 = { 25 = { counts_as_ISN_subject_state = yes } } #breeland
+			1 = { 36 = { counts_as_ISN_subject_state = yes } } #caladhir
+			1 = { 42 = { counts_as_ISN_subject_state = yes } } #dyr_erib
+			1 = { 33 = { counts_as_ISN_subject_state = yes } } #egenyar
+			1 = { 38 = { counts_as_ISN_subject_state = yes } } #eryn_vorn
+			1 = { 43 = { counts_as_ISN_subject_state = yes } } #the_angle
+			1 = { 41 = { counts_as_ISN_subject_state = yes } } #ettenmoors
+			1 = { 22 = { counts_as_ISN_subject_state = yes } } #evendim
+			1 = { 37 = { counts_as_ISN_subject_state = yes } } #faerdor
+			1 = { 34 = { counts_as_ISN_subject_state = yes } } #girithlir
+			1 = { 39 = { counts_as_ISN_subject_state = yes } } #minhiriath
+			1 = { 219 = { counts_as_ISN_subject_state = yes } } #north_tharbad
+			1 = { 23 = { counts_as_ISN_subject_state = yes } } #numeridor
+			1 = { 21 = { counts_as_ISN_subject_state = yes } } #oiland
+			1 = { 40 = { counts_as_ISN_subject_state = yes } } #udanorionath
+			1 = { 35 = { counts_as_ISN_subject_state = yes } } #weather_hills
+			1 = { 26 = { counts_as_ISN_subject_state = yes } } #westmarch
+		}
+	}
+}
+isn_has_dale_subject = { #6
+	custom_trigger_tooltip = {
+		tooltip = isn_has_dale_subject_tooltip
+		count_triggers = {
+			amount = 5 #9
+			1 = { 304 = { counts_as_ISN_subject_state = yes } } #Aesfirion
+			1 = { 302 = { counts_as_ISN_subject_state = yes } } #Aldmyrr
+			1 = { 107 = { counts_as_ISN_subject_state = yes } } #Clanbyrst
+			1 = { 100 = { counts_as_ISN_subject_state = yes } } #Dalelands
+			1 = { 301 = { counts_as_ISN_subject_state = yes } } #Gramavuld
+			1 = { 303 = { counts_as_ISN_subject_state = yes } } #Hamarsland
+			1 = { 103 = { counts_as_ISN_subject_state = yes } } #Hrafnvild
+			1 = { 102 = { counts_as_ISN_subject_state = yes } } #Laketown
+			1 = { 106 = { counts_as_ISN_subject_state = yes } } #Vargfell
+		}
+	}
+}
+isn_has_dorwinion_subject = { #4
+	custom_trigger_tooltip = {
+		tooltip = isn_has_dorwinion_subject_tooltip
+		count_triggers = {
+			amount = 4 #7
+			1 = { 314 = { counts_as_ISN_subject_state = yes } } #Dargeca
+			1 = { 310 = { counts_as_ISN_subject_state = yes } } #Doraldena
+			1 = { 118 = { counts_as_ISN_subject_state = yes } } #Folyavuld
+			1 = { 113 = { counts_as_ISN_subject_state = yes } } #Iaurvuld
+			1 = { 309 = { counts_as_ISN_subject_state = yes } } #Ilanavuld
+			1 = { 116 = { counts_as_ISN_subject_state = yes } } #Riavod
+			1 = { 311 = { counts_as_ISN_subject_state = yes } } #Uldonavuld
+		}
+	}
+}
+isn_has_gondor_subject = {#19
+	custom_trigger_tooltip = {
+		tooltip = isn_has_gondor_subject_tooltip
+		count_triggers = {
+			amount = 10 #19
+			1 = { 142 = { counts_as_ISN_subject_state = yes } } #anfalas
+			1 = { 231 = { counts_as_ISN_subject_state = yes } } #annodrun
+			1 = { 159 = { counts_as_ISN_subject_state = yes } } #anorien
+			1 = { 230 = { counts_as_ISN_subject_state = yes } } #arlefnui
+			1 = { 148 = { counts_as_ISN_subject_state = yes } } #belfalas
+			1 = { 161 = { counts_as_ISN_subject_state = yes } } #doranorien
+			1 = { 164 = { counts_as_ISN_subject_state = yes } } #east_osgiliath
+			1 = { 167 = { counts_as_ISN_subject_state = yes } } #emyn_arnen
+			1 = { 166 = { counts_as_ISN_subject_state = yes } } #forithilien
+			1 = { 147 = { counts_as_ISN_subject_state = yes } } #gilrain
+			1 = { 168 = { counts_as_ISN_subject_state = yes } } #harithilien
+			1 = { 146 = { counts_as_ISN_subject_state = yes } } #lamedon
+			1 = { 150 = { counts_as_ISN_subject_state = yes } } #lebennin
+			1 = { 151 = { counts_as_ISN_subject_state = yes } } #lossarnach
+			1 = { 143 = { counts_as_ISN_subject_state = yes } } #morthond_vale
+			1 = { 141 = { counts_as_ISN_subject_state = yes } } #pinnath_gelin
+			1 = { 152 = { counts_as_ISN_subject_state = yes } } #pelennor_feilds
+			1 = { 232 = { counts_as_ISN_subject_state = yes } } #serelond
+			1 = { 163 = { counts_as_ISN_subject_state = yes } } #west_osgiliath
+		}
+	}
+}
+isn_has_gundabad_subject = { #4
+	custom_trigger_tooltip = {
+		tooltip = isn_has_gundabad_subject_tooltip
+		count_triggers = {
+			amount = @statesFor4StateRegion
+			1 = { 87 = { counts_as_ISN_subject_state = yes } } #e_grey_mts
+			1 = { 53 = { counts_as_ISN_subject_state = yes } } #mount_gundabad
+			1 = { 48 = { counts_as_ISN_subject_state = yes } } #mts_of_angmar
+			1 = { 86 = { counts_as_ISN_subject_state = yes } } #w_grey_mts
+		}
+	}
+}
+isn_has_erebor_subject = { #5
+	custom_trigger_tooltip = {
+		tooltip = isn_has_erebor_subject_tooltip
+		count_triggers = {
+			amount = 3 #5
+			1 = { 99 = { counts_as_ISN_subject_state = yes } } #dwarven_corridor
+			1 = { 104 = { counts_as_ISN_subject_state = yes } } #iron_heath
+			1 = { 105 = { counts_as_ISN_subject_state = yes } } #iron_hills
+			1 = { 98 = { counts_as_ISN_subject_state = yes } } #lonely_hinterlands
+			1 = { 101 = { counts_as_ISN_subject_state = yes } } #the_lonely_mountain
+		}
+	}
+}
+isn_has_ered_luin_subject = { #4
+	custom_trigger_tooltip = {
+		tooltip = isn_has_ered_luin_subject_tooltip
+		count_triggers = {
+			amount = @statesFor4StateRegion
+			1 = { 16 = { counts_as_ISN_subject_state = yes } } #blue_spur
+			1 = { 10 = { counts_as_ISN_subject_state = yes } } #c_blue_mountains
+			1 = { 9 = { counts_as_ISN_subject_state = yes } } #n_blue_mountains
+			1 = { 11 = { counts_as_ISN_subject_state = yes } } #s_blue_mountains
+		}
+	}
+}
+isn_has_lorien_subject = { #2
+	custom_trigger_tooltip = {
+		tooltip = isn_has_lorien_subject_tooltip
+		count_triggers = {
+			amount = 1 #2
+			1 = { 79 = { counts_as_ISN_subject_state = yes } } #silverlode
+			1 = { 80 = { counts_as_ISN_subject_state = yes } } #lothlorien
+		}
+	}
+}
+isn_has_mirkwood_subject = { #4
+	custom_trigger_tooltip = {
+		tooltip = isn_has_mirkwood_subject_tooltip
+		count_triggers = {
+			amount = @statesFor4StateRegion
+			1 = { 90 = { counts_as_ISN_subject_state = yes } } #woodland_realm
+			1 = { 91 = { counts_as_ISN_subject_state = yes } } #expanse
+			1 = { 92 = { counts_as_ISN_subject_state = yes } } #narrows
+			1 = { 93 = { counts_as_ISN_subject_state = yes } } #reaches
+		}
+	}
+}
+isn_has_misty_mountains_subject = { #6
+	custom_trigger_tooltip = {
+		tooltip = isn_has_misty_mountains_subject_tooltip
+		count_triggers = {
+			amount = 3 #6
+			1 = { 56 = { counts_as_ISN_subject_state = yes } } #c_mm
+			1 = { 54 = { counts_as_ISN_subject_state = yes } } #goblintown
+			1 = { 55 = { counts_as_ISN_subject_state = yes } } #high_pass
+			1 = { 57 = { counts_as_ISN_subject_state = yes } } #moria
+			1 = { 52 = { counts_as_ISN_subject_state = yes } } #n_mm
+			1 = { 59 = { counts_as_ISN_subject_state = yes } } #s_mm
+		}
+	}
+}
+isn_has_mordor_subject = {#11
+	custom_trigger_tooltip = {
+		tooltip = isn_has_mordor_subject_tooltip
+		count_triggers = {
+			amount = 6 #11
+			1 = { 212 = { counts_as_ISN_subject_state = yes } } #baugatsor
+			1 = { 178 = { counts_as_ISN_subject_state = yes } } #gaer_durlith
+			1 = { 181 = { counts_as_ISN_subject_state = yes } } #ghurzun
+			1 = { 183 = { counts_as_ISN_subject_state = yes } } #lithlad
+			1 = { 180 = { counts_as_ISN_subject_state = yes } } #maegun
+			1 = { 177 = { counts_as_ISN_subject_state = yes } } #mordath
+			1 = { 165 = { counts_as_ISN_subject_state = yes } } #morgul_vale
+			1 = { 175 = { counts_as_ISN_subject_state = yes } } #mount_doom
+			1 = { 182 = { counts_as_ISN_subject_state = yes } } #nargil
+			1 = { 179 = { counts_as_ISN_subject_state = yes } } #perth_ulmyn
+			1 = { 176 = { counts_as_ISN_subject_state = yes } } #udun
+		}
+	}
+}
+isn_has_rohan_subject = {#13
+	custom_trigger_tooltip = {
+		tooltip = isn_has_rohan_subject_tooltip
+		count_triggers = {
+			amount = 7 #13
+			1 = { 77 = { counts_as_ISN_subject_state = yes } } #east_emnet
+			1 = { 206 = { counts_as_ISN_subject_state = yes } } #eastfold
+			1 = { 204 = { counts_as_ISN_subject_state = yes } } #eastmark
+			1 = { 207 = { counts_as_ISN_subject_state = yes } } #fortalf
+			1 = { 70 = { counts_as_ISN_subject_state = yes } } #gap_of_rohan
+			1 = { 205 = { counts_as_ISN_subject_state = yes } } #hartalf
+			1 = { 69 = { counts_as_ISN_subject_state = yes } } #nan_adorn
+			1 = { 75 = { counts_as_ISN_subject_state = yes } } #norwold
+			1 = { 208 = { counts_as_ISN_subject_state = yes } } #sutwold
+			1 = { 157 = { counts_as_ISN_subject_state = yes } } #the_folde
+			1 = { 76 = { counts_as_ISN_subject_state = yes } } #west_emnet
+			1 = { 203 = { counts_as_ISN_subject_state = yes } } #westfold
+			1 = { 202 = { counts_as_ISN_subject_state = yes } } #westmark
+		}
+	}
+}
+isn_has_shire_subject = {#4
+	custom_trigger_tooltip = {
+		tooltip = isn_has_shire_subject_tooltip
+		count_triggers = {
+			amount = @statesFor4StateRegion
+			1 = { 29 = { counts_as_ISN_subject_state = yes } } #eastfarthing
+			1 = { 28 = { counts_as_ISN_subject_state = yes } } #northfarthing
+			1 = { 30 = { counts_as_ISN_subject_state = yes } } #southfarthing
+			1 = { 27 = { counts_as_ISN_subject_state = yes } } #westfarthing
+		}
+	}
+}
+isn_has_umbar_subject = {#4
+	custom_trigger_tooltip = {
+		tooltip = isn_has_umbar_subject_tooltip
+		count_triggers = {
+			amount = @statesFor4StateRegion
+			1 = { 197 = { counts_as_ISN_subject_state = yes } } #anabrith
+			1 = { 198 = { counts_as_ISN_subject_state = yes } } #anagzayan
+			1 = { 195 = { counts_as_ISN_subject_state = yes } } #black_haven
+			1 = { 196 = { counts_as_ISN_subject_state = yes } } #glinfalas
+		}
+	}
+}
+isn_has_harad_subject = {#5
+	custom_trigger_tooltip = {
+		tooltip = isn_has_harad_subject_tooltip
+		count_triggers = {
+			amount = 4 #7
+			1 = { 193 = { counts_as_ISN_subject_state = yes } } #abarloni
+			1 = { 191 = { counts_as_ISN_subject_state = yes } } #aegardh
+			1 = { 185 = { counts_as_ISN_subject_state = yes } } #azran
+			1 = { 192 = { counts_as_ISN_subject_state = yes } } #carmentir
+			1 = { 186 = { counts_as_ISN_subject_state = yes } } #chelkar
+			1 = { 190 = { counts_as_ISN_subject_state = yes } } #harfalas
+			1 = { 194 = { counts_as_ISN_subject_state = yes } } #haruzan
+			# 1 = { 199 = { counts_as_ISN_subject_state = yes } } #W haradwaith
+			# 1 = { 200 = { counts_as_ISN_subject_state = yes } } #C haradwaith
+			# 1 = { 201 = { counts_as_ISN_subject_state = yes } } #E haradwaith
+		}
+	}
+}
+isn_has_khand_subject = {#8
+	custom_trigger_tooltip = {
+		tooltip = isn_has_khand_subject_tooltip
+		count_triggers = {
+			amount = 4 #8
+			1 = { 328 = { counts_as_ISN_subject_state = yes } } #Amu
+			1 = { 281 = { counts_as_ISN_subject_state = yes } } #Itakh
+			1 = { 187 = { counts_as_ISN_subject_state = yes } } #Khur
+			1 = { 184 = { counts_as_ISN_subject_state = yes } } #Lurmsakun
+			1 = { 322 = { counts_as_ISN_subject_state = yes } } #Noz Peka
+			1 = { 274 = { counts_as_ISN_subject_state = yes } } #Siakan
+			1 = { 201 = { counts_as_ISN_subject_state = yes } } #Starlurtsa
+			1 = { 188 = { counts_as_ISN_subject_state = yes } } #Ulda
+		}
+	}
+}
+isn_has_rhun_subject = {#32
+	custom_trigger_tooltip = {
+		tooltip = isn_has_rhun_subject_tooltip
+		count_triggers = {
+			amount = 16 #32
+			1 = { 128 = { counts_as_ISN_subject_state = yes } } #Dacranamel
+			1 = { 126 = { counts_as_ISN_subject_state = yes } } #Taj-Ures
+			1 = { 290 = { counts_as_ISN_subject_state = yes } } #Gathod
+			1 = { 288 = { counts_as_ISN_subject_state = yes } } #Duil Rewinion
+			1 = { 315 = { counts_as_ISN_subject_state = yes } } #Vethrafell
+			1 = { 125 = { counts_as_ISN_subject_state = yes } } #Karmian
+			1 = { 291 = { counts_as_ISN_subject_state = yes } } #Madloshad
+			1 = { 294 = { counts_as_ISN_subject_state = yes } } #Ulgathavuld
+			1 = { 129 = { counts_as_ISN_subject_state = yes } } #Agasha-Dag
+			1 = { 317 = { counts_as_ISN_subject_state = yes } } #Talaith Lyst
+			1 = { 292 = { counts_as_ISN_subject_state = yes } } #Vol Kug
+			1 = { 127 = { counts_as_ISN_subject_state = yes } } #Egil Dorn
+			1 = { 131 = { counts_as_ISN_subject_state = yes } } #Kholomok
+			1 = { 130 = { counts_as_ISN_subject_state = yes } } #Forkug
+			1 = { 254 = { counts_as_ISN_subject_state = yes } } #Karanar
+			1 = { 259 = { counts_as_ISN_subject_state = yes } } #Velerinda
+			1 = { 132 = { counts_as_ISN_subject_state = yes } } #Nildorien
+			1 = { 249 = { counts_as_ISN_subject_state = yes } } #Nanetha
+			1 = { 318 = { counts_as_ISN_subject_state = yes } } #Surubeki
+			1 = { 289 = { counts_as_ISN_subject_state = yes } } #Mavishad
+			1 = { 264 = { counts_as_ISN_subject_state = yes } } #Surikher
+			1 = { 319 = { counts_as_ISN_subject_state = yes } } #Muldin
+			1 = { 321 = { counts_as_ISN_subject_state = yes } } #Khalzarand
+			1 = { 320 = { counts_as_ISN_subject_state = yes } } #Araia
+			1 = { 233 = { counts_as_ISN_subject_state = yes } } #Utalad
+			1 = { 108 = { counts_as_ISN_subject_state = yes } } #Barakad
+			1 = { 115 = { counts_as_ISN_subject_state = yes } } #Gazar Gord
+			1 = { 257 = { counts_as_ISN_subject_state = yes } } #Ibarad
+			1 = { 247 = { counts_as_ISN_subject_state = yes } } #Fola Gach
+			1 = { 246 = { counts_as_ISN_subject_state = yes } } #Fazar Utal
+			1 = { 114 = { counts_as_ISN_subject_state = yes } } #Logathavuld
+			1 = { 242 = { counts_as_ISN_subject_state = yes } } #Aiatar
+		}
+	}
+}
+
+###Greater enedwaith
+isn_has_andrast_subject = {#4
+	custom_trigger_tooltip = {
+		tooltip = isn_has_andrast_subject_tooltip
+		count_triggers = {
+			amount = @statesFor4StateRegion
+			1 = { 134 = { counts_as_ISN_subject_state = yes } } #rafinfalas
+			1 = { 221 = { counts_as_ISN_subject_state = yes } } #nan engui
+			1 = { 222 = { counts_as_ISN_subject_state = yes } } #adaraba
+			1 = { 225 = { counts_as_ISN_subject_state = yes } } #parth iaur
+		}
+	}
+}
+isn_has_druwaith_iaur_subject = {#5
+	custom_trigger_tooltip = {
+		tooltip = isn_has_druwaith_iaur_subject_tooltip
+		count_triggers = {
+			amount = 3 #5
+			1 = { 71 = { counts_as_ISN_subject_state = yes } } #drulad
+			1 = { 133 = { counts_as_ISN_subject_state = yes } } #byrig
+			1 = { 220 = { counts_as_ISN_subject_state = yes } } #thoradorn
+			1 = { 223 = { counts_as_ISN_subject_state = yes } } #isenrun
+			1 = { 224 = { counts_as_ISN_subject_state = yes } } #an khorgan
+		}
+	}
+}
+isn_has_dunland_subject = {#4
+	custom_trigger_tooltip = {
+		tooltip = isn_has_dunland_subject_tooltip
+		count_triggers = {
+			amount = @statesFor4StateRegion
+			1 = { 63 = { counts_as_ISN_subject_state = yes } } #dunfells
+			1 = { 66 = { counts_as_ISN_subject_state = yes } } #dathabha
+			1 = { 213 = { counts_as_ISN_subject_state = yes } } #dunfearn
+			1 = { 216 = { counts_as_ISN_subject_state = yes } } #carreglyn
+		}
+	}
+}
+isn_has_enedwaith_subject = {#4
+	custom_trigger_tooltip = {
+		tooltip = isn_has_enedwaith_subject_tooltip
+		count_triggers = {
+			amount = @statesFor4StateRegion
+			1 = { 62 = { counts_as_ISN_subject_state = yes } } #angrast
+			1 = { 64 = { counts_as_ISN_subject_state = yes } } #harestolad
+			1 = { 65 = { counts_as_ISN_subject_state = yes } } #starkmoors
+			1 = { 215 = { counts_as_ISN_subject_state = yes } } #colgrin
+		}
+	}
+}
+isn_has_eregion_subject = {#5
+	custom_trigger_tooltip = {
+		tooltip = isn_has_eregion_subject_tooltip
+		count_triggers = {
+			amount = 3 #5
+			1 = { 46 = { counts_as_ISN_subject_state = yes } } #glad ereg
+			1 = { 60 = { counts_as_ISN_subject_state = yes } } #reedwater
+			1 = { 61 = { counts_as_ISN_subject_state = yes } } #mirobel
+			1 = { 214 = { counts_as_ISN_subject_state = yes } } #hollin
+			1 = { 218 = { counts_as_ISN_subject_state = yes } } #south tharbad
+		}
+	}
+}
+isn_has_white_mountains_subject = {#4
+	custom_trigger_tooltip = {
+		tooltip = isn_has_white_mountains_subject_tooltip
+		count_triggers = {
+			amount = @statesFor4StateRegion
+			1 = { 135 = { counts_as_ISN_subject_state = yes } } #anulefnui
+			1 = { 140 = { counts_as_ISN_subject_state = yes } } #hairaverkien
+			1 = { 217 = { counts_as_ISN_subject_state = yes } } #nan i ferith
+			1 = { 226 = { counts_as_ISN_subject_state = yes } } #tawarteleh
+		}
+	}
+}
+
+counts_as_ISN_subject_state = {
+	controller = {
+		is_subject_of = ISN
+	}
+	is_core_of = var:controller
+}

@@ -23,7 +23,6 @@
  isengardian_heritage_spirit_desc: "$isengardian_heritage_modifier_desc$" servants_of_sauron_spirit: "$servants_of_sauron_modifier$"
  dunland_saruman_heritage: "Servants of the [get_saruman_color_scripted_loc] Wizard"
  dunland_saruman_heritage_desc: "Saruman has thrown all his weight and charm behind this tribe. People flock to its banner, swayed by his masterful propoganda"
- servants_of_sauron_spirit_desc: "$servants_of_sauron_modifier_desc$"
  EOM_ai_buff: "Éomer Buff"
  saurons_prize_spirit: "Sauron's Prize"
  saurons_prize_spirit_desc: "Whether they like it or not, the Dark Lord has marked these people for conquest. They must prepare or perish."
@@ -547,5 +546,6 @@
  mor_unleash_darkness_desc: "The Dark Lord has called forth all His evil minions. They will pour forth from their caves and fortresses until the whole world falls beneath the dawnless shadow of Barad-dûr."
  melkorite_BOP_idea: "$melkorite_power_balance$"
  melkorite_BOP_idea_desc: "Many of Melkor's followers prefer to worship the shadow through their traditional pantheons of dark gods. As Sauron grows in strength and reasserts his title as Dark Lord, the Cult of the Lidless Eye promotes fealty to the dark master of Barad-dûr."
- 
+ gaze_of_the_eye: "Sauron's Gaze"
+ gaze_of_the_eye_desc: "The Great Eye is bent upon us! Mordor reminds us 
  

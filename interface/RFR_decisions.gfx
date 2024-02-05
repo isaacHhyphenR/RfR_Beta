@@ -430,8 +430,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/decisions/flags/flag_lorien.dds"
 	}
 	spriteType = {
-		name = "GFX_decision_mirvan_flag"
-		texturefile = "gfx/interface/decisions/flags/flag_mirvan.dds"
+		name = "GFX_decision_rhovanion_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_rhovanion.dds"
 	}
 	spriteType = {
 		name = "GFX_decision_misty_mountains_flag"

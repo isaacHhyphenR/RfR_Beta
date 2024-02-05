@@ -939,7 +939,24 @@
  rfr_news.126.t: "Birth of The Celduin Trade League"
  rfr_news.126.d: "A new power rises in the North- The Celduin Trade League, led by [FROM.GetNameDefCap]. The minor powers of the Celduin River system have agreed to pool their economic and military resources for mutual benefit. Time will tell whether this alliance can hold its own against the dark shadows that grow in in all directions."
  rfr_news.126.a: "I wonder if they offer member discounts?"
- 
+ rfr_news.127.t: "Erebor has accepted the trade offer" #they accepted increased trade
+ rfr_news.127.d: "Diplomats from the Dwarves have arrived and come bearing good news that the trade offer has been accepted. Now resources can flow between us allowing for an increase in merchants travelling to them."
+ rfr_news.127.a: "Good news, Good friend!"
+ rfr_news.128.t: "Erebor has refused the trade offer" #they refused increased trade
+ rfr_news.128.d: "Diplomats from the Dwarves have arrived and come bearing ill news that the trade offer has been refused. The Dwarves have been weary ever since the rise of the Rhun Khaganate and have preferred to hide in their caves rather than come out and prepare for them."
+ rfr_news.128.a: "Ill news, Ill friend!"
+ rfr_news.129.t: "Erebor has accepted the trade offer" #they accepted alliance
+ rfr_news.129.d: "Our request for a military alliance with the Dwarves has been accepted. Now we will stand tall against the forces of Dark Lord in case his Eye looks to the North."
+ rfr_news.129.a: "Dwarven Steel and Mannish Strength, together will stand!"
+ rfr_news.130.t: "Erebor has refused the trade offer" #they refused alliance
+ rfr_news.130.d: "We have just received a rejection from the Dwarves over the matter of a military alliance to bind our nations together. The Eye will soon look to the North and the Dwarves would rather hide in their caves than face it."
+ rfr_news.130.a: "Alone in this dark world, we stand afraid......"
+ rfr_news.131.t: "Erebor has accepted the trade offer" #they accepted Expertise
+ rfr_news.131.d: "Our trade delegation has returned with the good news that the Dwarves have accepted our request to exchange expertise in our respective domains which help us both to advance our research. "
+ rfr_news.131.a: "Let the gold flow like ale!"
+ rfr_news.132.t: "Erebor has refused the trade offer" #they refused Expertise
+ rfr_news.132.d: "The Dwarves have declined to share their secrets and have advised us to not try and guess the secrets to their advancements."
+ rfr_news.132.a: "Perhaps we should find someone else……."
  rfr_news.133.t: "[FROM.GetName] Establishes Embassy"
  rfr_news.133.d: "[FROM.GetNameDefCap], recognizing our important position as both their friend and most powerful human realm in the North, has decided to invest in a permanent embassy in our capital so that we can always be in close contact."
  rfr_news.133.a: "They seek to grow closer to greatness."

@@ -33,11 +33,11 @@ ideas = {
 			}
 		}
 		saurons_prize_spirit = {
-			picture = shadow_of_the_eye
 			allowed_civil_war = {
 				NOT = { has_government = melkorite }
 			}
 			removal_cost = -1
+			picture = saurons_prize_icon
 			modifier = {
 				mobilization_speed = 0.5
 				production_speed_bunker_factor = 0.05
@@ -46,11 +46,11 @@ ideas = {
 			}
 		}
 		spurned_sauron = {
-			picture = spurned_sauron_icon
 			allowed_civil_war = {
 				NOT = { has_government = melkorite }
 			}
 			removal_cost = -1
+			picture = spurned_sauron_icon
 			modifier = {
 				melkorite_drift = -0.05
 				melkorite_acceptance = -50

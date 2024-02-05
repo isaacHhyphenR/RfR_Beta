@@ -41,6 +41,7 @@ activate_melkorite_bop = yes
 set_variable = { melkorite_bop_to_add = 0.2 }
 add_to_melkorite_bop = yes
 clear_variable = melkorite_bop_to_add #can't do temps in history
+set_variable = { melkorite_bop_side = 1 }
 
 #!&!&!
 ######################An Intellectual Coalition
