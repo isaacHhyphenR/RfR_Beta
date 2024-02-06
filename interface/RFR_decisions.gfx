@@ -461,64 +461,64 @@ spriteTypes = {
 		name = "GFX_decision_umbar_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_umbar.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Andrast_flag"
+	spritetype = {
+		name = "GFX_decision_andrast_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_andrast.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Druwaith_Iaur_flag"
+	spritetype = {
+		name = "GFX_decision_druwaith_iaur_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_druwaith_iaur.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Dunland_flag"
+	spritetype = {
+		name = "GFX_decision_dunland_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_dunland.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Enedwaith_flag"
+	spritetype = {
+		name = "GFX_decision_enedwaith_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_enedwaith.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Eomer_flag"
+	spritetype = {
+		name = "GFX_decision_eomer_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_eomer.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Eregion_flag"
+	spritetype = {
+		name = "GFX_decision_eregion_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_eregion.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Gondor_flag"
+	spritetype = {
+		name = "GFX_decision_gondor_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_gondor.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Greater_Enedwaith_flag"
-		texturefile = "gfx/interface/decisions/flags/flag_Greater_Enedwaith.dds"
+	spritetype = {
+		name = "GFX_decision_greater_enedwaith_flag"
+		texturefile = "gfx/interface/decisions/flags/flag_greater_enedwaith.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Isengard_flag"
+	spritetype = {
+		name = "GFX_decision_isengard_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_isengard.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Mordor_flag"
+	spritetype = {
+		name = "GFX_decision_mordor_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_mordor.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Saralain_flag"
+	spritetype = {
+		name = "GFX_decision_saralain_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_saralain.dds"
 	}
-	spriteType = {
-		name = "GFX_decision_Reunited_Kingdom_flag"
+	spritetype = {
+		name = "GFX_decision_reunited_kingdom_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_reunited_kingdom.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Rohan_flag"
+	spritetype = {
+		name = "GFX_decision_rohan_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_rohan.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_White_Mountains_flag"
+	spritetype = {
+		name = "GFX_decision_white_mountains_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_white_mountains.dds"
 	}
-	SpriteType = {
-		name = "GFX_decision_Wormtongue_flag"
+	spritetype = {
+		name = "GFX_decision_wormtongue_flag"
 		texturefile = "gfx/interface/decisions/flags/flag_wormtongue.dds"
 	}
 	spriteType = {

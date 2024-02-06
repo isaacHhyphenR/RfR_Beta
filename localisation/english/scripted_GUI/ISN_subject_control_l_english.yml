@@ -503,10 +503,10 @@
  ISN_subject_controls_enough_cores_tooltip: "At least §Y50%§! of the following states must be cored and controlled by one of your subjects:"
  isn_has_andrast_subject_tooltip: "$ISN_subject_controls_enough_cores_tooltip$ $STATE_222_ISN_VAL$, $STATE_221_ISN_VAL$, $STATE_225_ISN_VAL$, and $STATE_134_ISN_VAL$"
  isn_has_druwaith_iaur_subject_tooltip: "$ISN_subject_controls_enough_cores_tooltip$ $STATE_224_ISN_VAL$, $STATE_133_ISN_VAL$, $STATE_71_ISN_VAL$,  $STATE_224_ISN_VAL$, and $STATE_220_ISN_VAL$"
- isn_has_dunland_subject_tooltip: "$ISN_subject_controls_core_tooltip$ $STATE_216_ISN_VAL$, $STATE_66_ISN_VAL$, $STATE_213_ISN_VAL$, and $STATE_63_ISN_VAL$"
- isn_has_enedwaith_subject_tooltip: "$ISN_subject_controls_core_tooltip$ $STATE_62_ISN_VAL$, $STATE_215_ISN_VAL$, $STATE_64_ISN_VAL$, and $STATE_55_ISN_VAL$"
- isn_has_eregion_subject_tooltip: "$ISN_subject_controls_core_tooltip$ $STATE_46_ISN_VAL$, $STATE_214_ISN_VAL$, $STATE_61_ISN_VAL$, $STATE_60_ISN_VAL$, and $STATE_218_ISN_VAL$"
- isn_has_white_mountains_subject_tooltip: "$ISN_subject_controls_core_tooltip$ $STATE_135_ISN_VAL$, $STATE_140_ISN_VAL$, $STATE_217_ISN_VAL$, and $STATE_226_ISN_VAL$"
+ isn_has_dunland_subject_tooltip: "$ISN_subject_controls_enough_cores_tooltip$ $STATE_216_ISN_VAL$, $STATE_66_ISN_VAL$, $STATE_213_ISN_VAL$, and $STATE_63_ISN_VAL$"
+ isn_has_enedwaith_subject_tooltip: "$ISN_subject_controls_enough_cores_tooltip$ $STATE_62_ISN_VAL$, $STATE_215_ISN_VAL$, $STATE_64_ISN_VAL$, and $STATE_55_ISN_VAL$"
+ isn_has_eregion_subject_tooltip: "$ISN_subject_controls_enough_cores_tooltip$ $STATE_46_ISN_VAL$, $STATE_214_ISN_VAL$, $STATE_61_ISN_VAL$, $STATE_60_ISN_VAL$, and $STATE_218_ISN_VAL$"
+ isn_has_white_mountains_subject_tooltip: "$ISN_subject_controls_enough_cores_tooltip$ $STATE_135_ISN_VAL$, $STATE_140_ISN_VAL$, $STATE_217_ISN_VAL$, and $STATE_226_ISN_VAL$"
  isn_has_arnor_subject_tooltip: "$ISN_subject_controls_enough_cores_tooltip$ $STATE_24_ISN_VAL$, $STATE_25_ISN_VAL$, $STATE_36_ISN_VAL$, $STATE_42_ISN_VAL$, $STATE_33_ISN_VAL$, $STATE_38_ISN_VAL$, $STATE_43_ISN_VAL$, $STATE_41_ISN_VAL$, $STATE_22_ISN_VAL$, $STATE_37_ISN_VAL$, $STATE_34_ISN_VAL$, $STATE_39_ISN_VAL$, $STATE_219_ISN_VAL$, $STATE_23_ISN_VAL$, $STATE_21_ISN_VAL$, $STATE_40_ISN_VAL$, $STATE_35_ISN_VAL$, and $STATE_26_ISN_VAL$"
  isn_has_rohan_subject_tooltip: "$ISN_subject_controls_enough_cores_tooltip$ $STATE_77_ISN_VAL$, $STATE_206_ISN_VAL$, $STATE_204_ISN_VAL$, $STATE_207_ISN_VAL$, $STATE_70_ISN_VAL$, $STATE_205_ISN_VAL$, $STATE_69_ISN_VAL$, $STATE_75_ISN_VAL$, $STATE_208_ISN_VAL$, $STATE_37_ISN_VAL$, $STATE_157_ISN_VAL$, $STATE_76_ISN_VAL$, $STATE_203_ISN_VAL$, and $STATE_202_ISN_VAL$"
  isn_has_khand_subject_tooltip: "$ISN_subject_controls_enough_cores_tooltip$ $STATE_328_ISN_VAL$, $STATE_281_ISN_VAL$, $STATE_187_ISN_VAL$, $STATE_184_ISN_VAL$, $STATE_322_ISN_VAL$, $STATE_274_ISN_VAL$, $STATE_201_ISN_VAL$, and $STATE_188_ISN_VAL$"
@@ -575,8 +575,8 @@
   
  
  ISN_subject_exploitation_category: "Exploit our Puppets"
- ISN_subject_exploitation_category_desc: "$ISN_subject_cat_indent$Unlike the dark lord of $barad_dur$, Saruman prefers$ISN_subject_cat_indent$ to rule from a distance, using his guile and charm$ISN_subject_cat_indent$    to manipulate others into committing oppression$ISN_subject_cat_indent$   for him. His power of persuasion is such that, if$ISN_subject_cat_indent$        he focuses his attention upon any given group, he$ISN_subject_cat_indent$   can work them twice as hard and convince them$ISN_subject_cat_indent$      they are serving their nation in the process.$ISN_subject_cat_indent$              Elves, being wise and magical themselves, prove$ISN_subject_cat_indent$     highly resistant to this manipulation."
- ISN_subject_cat_indent: "                           "
+ ISN_subject_exploitation_category_desc: "$ISN_subject_cat_indent$Unlike the Dark Lord of $barad_dur$, Saruman $ISN_subject_cat_indent$prefers to rule from a distance, using his $ISN_subject_cat_indent$     guile and charm to manipulate others into $ISN_subject_cat_indent$ committing oppression for him. His power $ISN_subject_cat_indent$  of persuasion is such that, if he focuses his $ISN_subject_cat_indent$attention upon any given group, he can $ISN_subject_cat_indent$       work them twice as hard and convince $ISN_subject_cat_indent$         them they are serving their nation in the $ISN_subject_cat_indent$   process. Elves, being wise and magical $ISN_subject_cat_indent$         themselves, prove highly resistant to this $ISN_subject_cat_indent$ manipulation."
+ ISN_subject_cat_indent: "                                          "
  explain_isengard_exploitation: "Explain this mechanic"
  explain_isengard_exploitation_desc: "§WYou can exploit any region once at least 50% of its states are controlled by any country that:$new_line_tab$-is your subject$new_line_tab$-has that state as a core\nMultiple subjects can contribute to your control over the same region.\nExploiting a region costs 25 political power and grants a significant bonus for 180 days, at which point you can exploit it again. You can exploit as many regions at once as you can afford.§!"
  
