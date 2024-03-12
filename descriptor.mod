@@ -13,12 +13,14 @@ tags={
 dependencies={
 	"Ride for Ruin: A Lord of the Rings mod"
 }
+replace_path="common/autonomous_states"
+replace_path="common/country_leader"
+replace_path="common/dynamic_modifiers"
 replace_path="common/technologies"
 replace_path="common/units"
 replace_path="common/units/equipment"
 replace_path="history/states"
 replace_path="history/countries"
 replace_path="map/strategicregions"
-replace_path="common/autonomous_states"
 supported_version="1.14.*"
 remote_file_id="2982012477"

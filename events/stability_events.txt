@@ -63,7 +63,7 @@ country_event = { ##1## Evil Civil War
 	option = { #prepare for war
 		name = stability.1.a
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		if = {
 			limit = {
@@ -125,7 +125,7 @@ country_event = { ##1## Evil Civil War
 		name = stability.1.b
 		trigger = { always = @canPeacefullySwitch }
 		ai_chance = {
-			factor = 0
+			base = 0
 			modifier = {
 				has_government = opportunism
 				add = 200
@@ -187,7 +187,7 @@ country_event = { ##1## Evil Civil War
 		name = stability.1.c
 		trigger = { NOT = { always = @canPeacefullySwitch } }
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		if = {
 			limit = {
@@ -294,7 +294,7 @@ country_event = { ##2## Good Civil War
 	option = { #prepare for war
 		name = stability.2.a
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		if = {
 			limit = {
@@ -383,7 +383,7 @@ country_event = { ##2## Good Civil War
 		name = stability.2.c
 		trigger = { NOT = { always = @canPeacefullySwitch } }
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		if = {
 			limit = {

@@ -1,0 +1,251 @@
+####################HERITAGE
+@heritageComplianceGrowth = 0.5
+@heritageLocalSlots = 2
+@heritageLocalManpower = 0.20
+@heritageLocalResources = 0.20
+Andrast_state_modifier = {
+	icon = GFX_Andrast_state
+	enable = { controller = { is_andrast_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_andrast_tag
+	compliance_growth = @heritageComplianceGrowth
+	local_building_slots = @heritageLocalSlots
+	local_manpower = @heritageLocalManpower
+	local_resources = @heritageLocalResources
+}
+Druwaith_Iaur_state_modifier = {
+	icon = GFX_Druwaith_Iaur_state
+	enable = { controller = { is_Druwaith_Iaur_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_Druwaith_Iaur_tag
+	compliance_growth = @heritageComplianceGrowth
+	local_building_slots = @heritageLocalSlots
+	local_manpower = @heritageLocalManpower
+	local_resources = @heritageLocalResources
+}
+Dunland_state_modifier = {
+	icon = GFX_Dunland_state
+	enable = { controller = { is_Dunland_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_Dunland_tag
+	compliance_growth = @heritageComplianceGrowth
+	local_building_slots = @heritageLocalSlots
+	local_manpower = @heritageLocalManpower
+	local_resources = @heritageLocalResources
+}
+Enedwaith_state_modifier = {
+	icon = GFX_Enedwaith_state
+	enable = { controller = { is_Enedwaith_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_Enedwaith_tag
+	compliance_growth = @heritageComplianceGrowth
+	local_building_slots = @heritageLocalSlots
+	local_manpower = @heritageLocalManpower
+	local_resources = @heritageLocalResources
+}
+Eregion_state_modifier = {
+	icon = GFX_Eregion_state
+	enable = { controller = { is_Eregion_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_Eregion_tag
+	compliance_growth = @heritageComplianceGrowth
+	local_building_slots = @heritageLocalSlots
+	local_manpower = @heritageLocalManpower
+	local_resources = @heritageLocalResources
+}
+Saralain_state_modifier = {
+	icon = GFX_Saralain_state
+	enable = { controller = { is_Saralain_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_Saralain_tag
+	compliance_growth = @heritageComplianceGrowth
+	local_building_slots = @heritageLocalSlots
+	local_manpower = @heritageLocalManpower
+	local_resources = @heritageLocalResources
+}
+White_Mountains_state_modifier = {
+	icon = GFX_White_Mountains_state
+	enable = { controller = { is_White_Mountains_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_White_Mountains_tag
+	compliance_growth = @heritageComplianceGrowth
+	local_building_slots = @heritageLocalSlots
+	local_manpower = @heritageLocalManpower
+	local_resources = @heritageLocalResources
+}
+
+####################SETTLERS
+@settlersComplianceGain = 0.33
+@settlersLocalFactories = 0.33
+@settlersLocalResources = 0.33
+@settlersNonCoreManpower = 0.33
+@settlersResistanceTarget = -0.33
+Greater_Enedwaith_settlers_modifier = {
+	icon = GFX_Greater_Enedwaith_settlers
+	enable = { controller = { is_greater_enedwaith_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_greater_enedwaith_tag
+	compliance_growth = @settlersComplianceGain
+	local_building_slots_factor = @settlersLocalFactories
+	local_factories = @settlersLocalFactories
+	local_resources = @settlersLocalResources
+	local_non_core_manpower = @settlersNonCoreManpower
+	resistance_target = @settlersResistanceTarget
+}
+Andrast_settlers_modifier = {
+	icon = GFX_Andrast_settlers
+	enable = { controller = { is_andrast_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_andrast_tag
+	compliance_growth = @settlersComplianceGain
+	local_building_slots_factor = @settlersLocalFactories
+	local_factories = @settlersLocalFactories
+	local_resources = @settlersLocalResources
+	local_non_core_manpower = @settlersNonCoreManpower
+	resistance_target = @settlersResistanceTarget
+}
+Druwaith_Iaur_settlers_modifier = {
+	icon = GFX_Druwaith_Iaur_settlers
+	enable = { controller = { is_Druwaith_Iaur_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_Druwaith_Iaur_tag
+	compliance_growth = @settlersComplianceGain
+	local_building_slots_factor = @settlersLocalFactories
+	local_factories = @settlersLocalFactories
+	local_resources = @settlersLocalResources
+	local_non_core_manpower = @settlersNonCoreManpower
+	resistance_target = @settlersResistanceTarget
+}
+Dunland_settlers_modifier = {
+	icon = GFX_Dunland_settlers
+	enable = { controller = { is_Dunland_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_Dunland_tag
+	compliance_growth = @settlersComplianceGain
+	local_building_slots_factor = @settlersLocalFactories
+	local_factories = @settlersLocalFactories
+	local_resources = @settlersLocalResources
+	local_non_core_manpower = @settlersNonCoreManpower
+	resistance_target = @settlersResistanceTarget
+}
+Enedwaith_settlers_modifier = {
+	icon = GFX_Enedwaith_settlers
+	enable = { controller = { is_Enedwaith_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_Enedwaith_tag
+	compliance_growth = @settlersComplianceGain
+	local_building_slots_factor = @settlersLocalFactories
+	local_factories = @settlersLocalFactories
+	local_resources = @settlersLocalResources
+	local_non_core_manpower = @settlersNonCoreManpower
+	resistance_target = @settlersResistanceTarget
+}
+Eregion_settlers_modifier = {
+	icon = GFX_Eregion_settlers
+	enable = { controller = { is_Eregion_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_Eregion_tag
+	compliance_growth = @settlersComplianceGain
+	local_building_slots_factor = @settlersLocalFactories
+	local_factories = @settlersLocalFactories
+	local_resources = @settlersLocalResources
+	local_non_core_manpower = @settlersNonCoreManpower
+	resistance_target = @settlersResistanceTarget
+}
+Saralain_settlers_modifier = {
+	icon = GFX_Saralain_settlers
+	enable = { controller = { is_Saralain_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_Saralain_tag
+	compliance_growth = @settlersComplianceGain
+	local_building_slots_factor = @settlersLocalFactories
+	local_factories = @settlersLocalFactories
+	local_resources = @settlersLocalResources
+	local_non_core_manpower = @settlersNonCoreManpower
+	resistance_target = @settlersResistanceTarget
+}
+White_Mountains_settlers_modifier = {
+	icon = GFX_White_Mountains_settlers
+	enable = { controller = { is_White_Mountains_tag = yes } }
+	custom_modifier_tooltip = is_controlled_by_White_Mountains_tag
+	compliance_growth = @settlersComplianceGain
+	local_building_slots_factor = @settlersLocalFactories
+	local_factories = @settlersLocalFactories
+	local_resources = @settlersLocalResources
+	local_non_core_manpower = @settlersNonCoreManpower
+	resistance_target = @settlersResistanceTarget
+}
+
+
+Gondor_settlers_modifier = {
+	icon = GFX_Gondor_settlers
+	enable = { controller = { tag = GON } }
+	custom_modifier_tooltip = is_controlled_by_gondor_tooltip
+	compliance_growth = 0.1
+	weekly_manpower = 2000
+	state_production_speed_buildings_factor = 0.1
+}
+Rivendell_settlers_modifier = {
+	icon = GFX_elven_settlers
+	production_speed_buildings_factor = 0.2
+}
+
+smoke_him_out_modifier = {
+	icon = GFX_under_siege_modifier
+	army_defence_factor = -0.66
+	fortification_damage = 0.66
+}
+
+
+dilapidated_royal_road_modifier = {
+	icon = GFX_royal_road_modifier
+	local_supplies = 0.1
+	army_speed_factor_for_controller = 0.1
+	state_production_speed_buildings_factor = 0.1
+	local_resources = 0.1
+}
+repaired_royal_road_modifier = {
+	icon = GFX_royal_road_repaired_modifier
+	local_supplies = 0.5
+	army_speed_factor_for_controller = 0.5
+	state_production_speed_buildings_factor = 0.5
+	local_resources = 0.5
+}
+
+ENE_prestige_spirit = {
+	icon = GFX_idea_tribal_crown
+	political_power_factor = prestige_PP
+	subjects_autonomy_gain = prestige_autonomy
+	compliance_gain = prestige_compliance
+	weekly_manpower = prestige_manpower
+	research_speed_factor = prestige_research
+	war_support_factor = prestige_war_support
+}
+
+white_mountain_guerrillas_modifier = {
+	icon = GFX_state_resistance
+	local_non_core_supply_impact_factor = WHT.enemy_supply_impact
+	resistance_target = WHT.resistance_target_var
+	resistance_growth = WHT.resistance_growth_var
+}
+
+non_core_factory_modifier = {
+	#icon = GFX_state_resistance
+	enable = { NOT = { is_core_of = var:controller } }
+	local_factories = var:non_core_factories
+	state_resources_factor = var:non_core_resources
+}
+
+
+
+ ISN_ENE_mil_bonus_modifier = {
+	icon = GFX_idea_generic_trade_with_Greater_Enedwaith
+	#remove_trigger
+	experience_gain_air = modifier@ENE_discipline_impact
+	mines_sweeping_by_fleets_factor = var:andrast_mil_bonus
+	supply_factor = var:druwaith_iaur_mil_bonus
+	pike_soft_attack = var:dunland_mil_bonus
+	infantry_equipment_breakthrough = var:enedwaith_mil_bonus
+	recon_factor = var:eregion_mil_bonus
+	medium_cavalry_build_cost = var:saralain_mil_bonus
+	mountain_attack = var:white_mountains_mil_bonus
+	mountain_defense = var:white_mountains_mil_bonus
+	custom_modifier_tooltip = ISN_ENE_mil_bonus_modifier_cancel_tooltip
+ }
+
+pillaged = {
+	icon = GFX_decision_generic_scorched_earth
+	production_speed_buildings_factor = -0.2
+	local_resources = -0.2
+	local_factories = -0.2
+}
+
+hidden_prestige_dynamic_modifier = {
+	prestige_modifier = var:prestige
+}
