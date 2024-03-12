@@ -73,6 +73,11 @@ guiTypes = {
 			pdx_tooltip = "MENU_ACHIEVEMENTS"
 		}
 		iconType = {
+			name ="coop_logo"
+			spriteType = "GFX_coop_badge"
+			position = { x= -125 y = 15 }
+		}
+		iconType = {
 			name ="pdx_int_logo"
 			spriteType = "GFX_pdx_int_logo"
 			position = { x= 135 y = 15 }
@@ -86,7 +91,7 @@ guiTypes = {
 		ButtonType = {
 			name = "discord_button"
 			position = { x = 65 y = 525 }
-			quadTextureSprite = "discord"
+			quadTextureSprite = "GFX_discord_large"
 			clicksound = click_default
 			pdx_tooltip = "MENU_DISCORD"
 			web_link = "https://discord.gg/tG3cyemfEf"

@@ -8,7 +8,7 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate.shader"
 	}
 	spriteType = {
-		name = "discord"
+		name = "GFX_discord_large"
 		texturefile = "gfx//interface//discord_image.dds"
 		noOfFrames = 1
 	}
@@ -24,5 +24,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_wiki_text"
 		texturefile = "gfx/interface/wiki_logo.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
+		name = "GFX_coop_badge"
+		texturefile = "gfx/interface/coop_badge.dds"
+		noOfFrames = 1
 	}
 }
