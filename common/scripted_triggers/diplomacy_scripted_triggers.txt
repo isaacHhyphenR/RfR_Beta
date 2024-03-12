@@ -691,10 +691,13 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 
 
 DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
-	#melkorite
+	#Melkorites can only join in if Sauron has unleashed darkness OR if they're joining an overlord
 	if = {
 		limit = {
 			has_government = melkorite
+			NOT = {
+				ROOT = { is_subject_of = FROM }
+			}
 		}
 		custom_trigger_tooltip = {
 			tooltip = diplomacy_tooltip_melkorite_hasnt_unleashed_darkness
@@ -703,10 +706,13 @@ DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
-	#melkorite
+	#Melkorites can only call in if Sauron has unleashed darkness OR they're calling in a subject
 	if = {
 		limit = {
 			FROM = { has_government = melkorite }
+			NOT = {
+				FROM = { is_subject_of = ROOT }
+			}
 		}
 		custom_trigger_tooltip = {
 			tooltip = diplomacy_tooltip_melkorite_hasnt_unleashed_darkness

@@ -39,7 +39,7 @@ state = {
 	}
 	manpower = 1187000
 	state_category = Town
-
+}
 
 
 

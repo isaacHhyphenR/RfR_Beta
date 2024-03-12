@@ -2165,7 +2165,7 @@ rhovanion_influence_category = {
 	}
 }
 
-crisis_category = {
+# crisis_category = {
 	# melkorite_civil_war_mission = {
 		# icon = GFX_decision_melkorite
 		# fire_only_once = yes
