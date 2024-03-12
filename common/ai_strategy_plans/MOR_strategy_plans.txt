@@ -19,23 +19,26 @@ Mordor_historical = {
 		MOR_pump_the_bellows
 		MOR_fires_in_the_deep
 		#3016
+		MOR_the_eye_looks_east
+		MOR_the_eye_looks_south
 		MOR_unceasing_hammers
 		MOR_the_fires_of_war
 		MOR_raise_the_hordes
-		MOR_bodies_for_the_grinder
-		MOR_desertion_patrols
+		MOR_expand_the_corsair_fleet
 		#3017
-		MOR_trample_all_living_things
-		MOR_the_eye_looks_east
-		MOR_the_eye_looks_south
-		MOR_aid_in_mumak_training
-		MOR_the_eye_looks_west
-		#3018
-		MOR_raid_the_herds_and_studs_of_rohan
 		MOR_the_eye_looks_north
 		MOR_rebuild_dol_guldur
+		MOR_aid_in_mumak_training
+		MOR_the_eye_looks_west
+		MOR_raid_the_herds_and_studs_of_rohan
+		MOR_aid_in_mumak_training
+		#3018
+		MOR_secure_the_rhunear
 		MOR_connections_to_the_east
 		MOR_strike_the_elves
+		MOR_bodies_for_the_grinder
+		MOR_desertion_patrols
+		MOR_trample_all_living_things
 		#3019
 		MOR_end_the_age_of_men
 		MOR_cross_the_anduin

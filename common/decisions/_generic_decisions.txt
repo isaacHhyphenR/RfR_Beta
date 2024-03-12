@@ -94,6 +94,65 @@ the_one_ring_category = {
 }
 
 political_actions = {
+	decrease_saurons_influence = {
+		icon = GFX_decision_the_eye
+		allowed = { NOT = { original_tag = MOR} }
+		visible = { has_idea_with_trait = saurons_gaze_trait }
+
+		days_remove = 75
+		cost = 50
+
+		remove_effect = {
+			if = {
+				limit = { has_idea = gaze_of_the_eye }
+				swap_ideas = {
+					remove_idea = gaze_of_the_eye
+					add_idea = gaze_of_the_eye2
+				}
+			}
+			else_if = {
+				limit = { has_idea = gaze_of_the_eye2 }
+				swap_ideas = {
+					remove_idea = gaze_of_the_eye2
+					add_idea = gaze_of_the_eye3
+				}
+			}
+			else_if = {
+				limit = { has_idea = gaze_of_the_eye3 }
+				swap_ideas = {
+					remove_idea = gaze_of_the_eye3
+					add_idea = gaze_of_the_eye4
+				}
+			}
+			else_if = {
+				limit = { has_idea = gaze_of_the_eye4 }
+				swap_ideas = {
+					remove_idea = gaze_of_the_eye4
+					add_idea = gaze_of_the_eye5
+				}
+			}
+			else_if = {
+				limit = { has_idea = gaze_of_the_eye5 }
+				remove_ideas = gaze_of_the_eye5
+				if = {
+					limit = { any_country = { check_variable = { modifier@melkorite_can_justify > 0 } } }
+					MOR = { 
+						create_wargoal = {
+							type = annex_everything
+							target = ROOT
+						}
+					}
+				}
+				else = {
+					add_ideas = wrath_of_the_eye
+				}
+				hidden_effect = {
+					MOR = { news_event = { id = rfr_news.147 hours = 1 } }
+				}
+			}
+		}
+	}
+	
 	improved_worker_conditions = {
 
 		icon = generic_industry
@@ -407,75 +466,6 @@ propaganda_efforts = {
 				add = 201 #ie; consider prio idea
 				has_war = yes
 				has_convoys_war_support < -0.29
-			}
-			modifier = {
-				factor = 0
-				has_manpower < 100000
-				has_political_power < 250
-				OR = {
-					has_idea = volunteer_only
-					has_idea = limited_conscription
-					has_idea = extensive_conscription
-					has_idea = volunteer_only_steward
-					has_idea = limited_conscription_steward
-					has_idea = extensive_conscription_steward
-					has_idea = volunteer_only_isengard
-					has_idea = limited_conscription_isengard
-					has_idea = extensive_conscription_isengard
-				}
-			}
-		}
-	}
-	
-	war_propaganda_bombing = { 
-
-		icon = GFX_decision_generic_air
-
-		available = {
-		#	NOT = { has_country_flag = war_propaganda_campaign_running }
-			has_bombing_war_support < 0
-		}
-
-		visible = {
-			# has_war = yes
-			has_war_with_non_exiled_country = yes
-		}
-
-		fire_only_once = no
-
-		days_remove = 180
-		
-		remove_trigger = {
-			has_war = no
-        }
-		
-		cost = 100
-
-		modifier = {
-			weekly_bombing_war_support = 0.006
-		}
-
-		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 10 #AI should probably just choose this one for general purposes.
-				has_war = yes
-				has_war_support < 0.65
-			}
-			modifier = {
-				add = 20
-				has_war = yes
-				has_war_support < 0.50
-			}
-			modifier = {
-				add = 30
-				has_war = yes
-				has_war_support < 0.35
-			}
-			modifier = {
-				add = 201 #ie; consider prio idea
-				has_war = yes
-				has_bombing_war_support < -0.20
 			}
 			modifier = {
 				factor = 0

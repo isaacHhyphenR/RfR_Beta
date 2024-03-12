@@ -453,3 +453,89 @@ country_event = { ##7## Melkorite ready to become tributary
 	}
 }
 
+country_event = { ##8## Sauron Demands Submission
+	id = mordor.8
+	title = mordor.8.t
+	desc = mordor.8.d
+	picture = GFX_mordor_mouth_of_sauron
+	
+	is_triggered_only = yes
+	
+	option = { ##Accept Sauron's influence
+		name = mordor.8.a
+		trigger = { is_subject = no }
+		ai_chance = {
+			base = 10
+			modifier = {
+				OR = {
+					has_government = isolationism
+					has_government = freedom
+				}
+				factor = 0
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+				factor = 10
+			}
+		}
+		add_ideas = gaze_of_the_eye
+		add_ai_strategy = {
+			type = befriend
+			id = FROM
+			value = 25
+		}
+		FROM = { #tell MOR about the result
+			hidden_effect = {
+				news_event = { id = rfr_news.145 hours = 1 }
+			}
+		}
+	}
+	option = { ##Reject Sauron's influence
+		name = mordor.8.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_government = melkorite
+				factor = 0
+			}
+		}
+		if = {
+			limit = { any_country = { check_variable = { modifier@melkorite_can_justify > 0 } } }
+			MOR = { 
+				create_wargoal = {
+					type = annex_everything
+					target = ROOT
+				}
+			}
+		}
+		else = {
+			add_ideas = wrath_of_the_eye
+			custom_effect_tooltip = reject_saurons_gaze_tooltip
+		}
+		add_ai_strategy = {
+			type = antagonize
+			id = FROM
+			value = 25
+		}
+		add_ai_strategy = {
+			type = front_unit_request
+			country_trigger = {
+				has_government = melkorite
+			}
+			value = 25
+		}
+		add_ai_strategy = {
+			type = contain
+			id = FROM
+			value = 25
+		}
+		FROM = { #tell MOR about the result
+			hidden_effect = {
+				news_event = { id = rfr_news.146 hours = 1 }
+			}
+		}
+	}
+}

@@ -1099,6 +1099,8 @@
  MOR_united_in_hatred_desc: ""
  MOR_mobilize_the_far_east: "Mobilize the Far East"
  MOR_mobilize_the_far_east_desc: ""
+ MOR_secure_the_rhunear: "Secure the $rhunaer$"
+ MOR_secure_the_rhunear_desc: "The Eastern Sea is not only an obstacle in itself, but it it surrounded by other formidible natural features-- the Dorwin Spine, the Celduin River, and the Neldoreth forest all funnel any invasion force into narrow passages of attack. If we want our Easterling forces to properly carry the war to our Northron foes, they must first secure these barriers."
  ##############################################################################################################################ROHAN
  rohan_focus: "$ROH_ADJ$ Focus Tree"
  ROH_side_with_grima: "Side with Gríma"

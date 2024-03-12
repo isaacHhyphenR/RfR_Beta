@@ -811,3 +811,5 @@
  MOR_annex_melkorite_decision_desc: "The people of [FROM.GetName] are fully committed to the Cult of the Lidless Eye and ready to submit directly to Barad-dûr."
  MOR_core_orcs_decision: "Assert Dominance Over [FROM.GetName]"
  MOR_core_orcs_decision_desc: "While the [FROM.GetCapitalVictoryPointName] orcs may be initially reluctant to fall in line with our stricter overlordship, a few whipmasters and executions will instill into them the proper fear."
+ decrease_saurons_influence: "Purge Melkorite Presence"
+ decrease_saurons_influence_desc: "We allowed dark influence to spread across out land in the hopes it would stay the Dark Lord's hand, but we cannot allow them to sieze full control of our nation."

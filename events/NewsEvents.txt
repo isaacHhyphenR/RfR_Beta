@@ -2281,7 +2281,61 @@ news_event = { ##144## Sauron did not tributary us
 	}
 }
 
+news_event = { ##145## FROM accepted Sauron's Gaze
+	id = rfr_news.145
+	title = rfr_news.145.t
+	desc = rfr_news.145.d
+	picture = GFX_news_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	option = { #OK
+		name = rfr_news.145.a
+	}
+}
+news_event = { ##146## FROM rejected Sauron's gaze
+	id = rfr_news.146
+	title = rfr_news.146.t
+	desc = rfr_news.146.d
+	picture = GFX_news_news_mouth_of_sauron_killed
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.146.a
+	}
+}
 
+news_event = { ##147## FROM removed Sauron's gaze
+	id = rfr_news.147
+	title = rfr_news.147.t
+	desc = rfr_news.147.d
+	picture = GFX_news_news_mouth_of_sauron_killed
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = rfr_news.147.a
+		custom_effect_tooltip = has_happened_tooltip
+		effect_tooltip = {
+			if = {
+				limit = { any_country = { check_variable = { modifier@melkorite_can_justify > 0 } } }
+				ROOT = { 
+					create_wargoal = {
+						type = annex_everything
+						target = FROM
+					}
+				}
+			}
+			else = {
+				FROM = {
+					remove_ideas = gaze_of_the_eye3
+					add_ideas = wrath_of_the_eye
+				}
+			}
+		}
+	}
+}
 
 
 

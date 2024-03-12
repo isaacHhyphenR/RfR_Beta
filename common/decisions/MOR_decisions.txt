@@ -31,7 +31,7 @@ MOR_the_dark_lord_category = {
 			every_other_country = {
 				limit = {
 					NOT = { has_war_with = ROOT }
-					OR = { has_idea = saurons_prize_spirit has_idea = spurned_sauron }
+					check_variable = { modifier@saurons_target > 0 }
 				}
 				ROOT = {
 					declare_war_on = {
@@ -49,11 +49,9 @@ MOR_the_dark_lord_category = {
 						name = mor_unleashed_darkness
 					}
 				}
-				if = { limit = { has_idea = saurons_prize_spirit }
-					remove_ideas = saurons_prize_spirit
-				}
-				if = { limit = { has_idea = spurned_sauron }
-					remove_ideas = spurned_sauron
+				if = {
+					limit = { has_idea_with_trait = saurons_target_trait }
+					remove_ideas_with_trait = saurons_target_trait
 				}
 			}
 		}

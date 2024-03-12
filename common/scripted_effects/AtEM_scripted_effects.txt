@@ -3125,6 +3125,13 @@ melkorite_eye_activation3 = {
 	set_variable = { melkorite_bop_side = 1 }
 }
 
+sauron_demands_submission = {
+	country_event = { id = mordor.8 hours = 1 }
+	custom_effect_tooltip = if_they_accept_tooltip
+	event_option_tooltip = mordor.8.a
+	custom_effect_tooltip = if_they_refuse_tooltip
+	event_option_tooltip = mordor.8.b
+}
 
 
 

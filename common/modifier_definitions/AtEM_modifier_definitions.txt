@@ -150,3 +150,9 @@ melkorite_can_justify = {
 	value_type = yes_no
 	category = country
 }
+
+saurons_target = {
+	color_type = bad
+	value_type = yes_no
+	category = country
+}

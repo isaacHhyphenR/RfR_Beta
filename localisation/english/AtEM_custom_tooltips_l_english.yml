@@ -329,3 +329,6 @@
  can_influence_shadow_worship_tooltip: "  - Can influence other Melkorite countries' §Y$melkorite_power_balance$§! via diplomacy."
  diplomacy_tooltip_melkorite_hasnt_unleashed_darkness: "§RThe Dark Lord has not yet unleashed His darkness upon the world.§!"
  melkorite_bop_value_tooltip: "§Y$melkorite_power_balance$§! is currently [?power_balance_value|Y%..0] on the side of §Y[get_active_melkorite_BOP_side]§!."
+ reject_saurons_gaze_tooltip: "$unlocks_decision_tooltip$ to decrease Sauron's influence, though this will anger him."
+ state_borders_rhunaer_tooltip: "Borders the $rhunaer$"
+ MOR_secure_the_rhunear_tooltip: "Every §Y$melkorite$§! country on the $rhunaer$ gains a wargoal against every non-§Y$melkorite$§! country on the $rhunaer$$VorV_dev_line_end$"

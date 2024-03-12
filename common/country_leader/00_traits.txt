@@ -2783,4 +2783,11 @@ leader_traits = {
 		autonomy_gain = 0.05
 		min_export = -0.2
 	}
+	saurons_target_trait = {
+		random = no
+		saurons_target = 1
+	}
+	saurons_gaze_trait = {
+		random = no
+	}
 }

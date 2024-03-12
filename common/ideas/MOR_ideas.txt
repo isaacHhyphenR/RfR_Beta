@@ -259,12 +259,85 @@ ideas = {
 			}
 		}
 		gaze_of_the_eye = {
+			picture = gaze_of_sauron
 			allowed_civil_war = {
-				always = yes
+				NOT = { has_government = melkorite }
+			}
+			traits = { saurons_gaze_trait }
+			cancel = {
+				has_government = melkorite
 			}
 			modifier = {
 				melkorite_drift = 0.5
-				custom_modifier_tooltip = sauron_reserve_wargoal_tooltip
+				drift_defence_factor = -0.15
+			}
+		}
+		gaze_of_the_eye2 = {
+			picture = gaze_of_sauron
+			name = gaze_of_the_eye
+			allowed_civil_war = {
+				NOT = { has_government = melkorite }
+			}
+			traits = { saurons_gaze_trait }
+			cancel = {
+				has_government = melkorite
+			}
+			modifier = {
+				melkorite_drift = 0.4
+				drift_defence_factor = -0.15
+			}
+		}
+		gaze_of_the_eye3 = {
+			picture = gaze_of_sauron
+			name = gaze_of_the_eye
+			allowed_civil_war = {
+				NOT = { has_government = melkorite }
+			}
+			traits = { saurons_gaze_trait }
+			cancel = {
+				has_government = melkorite
+			}
+			modifier = {
+				melkorite_drift = 0.3
+				drift_defence_factor = -0.15
+			}
+		}
+		gaze_of_the_eye4 = {
+			picture = gaze_of_sauron
+			name = gaze_of_the_eye
+			allowed_civil_war = {
+				NOT = { has_government = melkorite }
+			}
+			traits = { saurons_gaze_trait }
+			cancel = {
+				has_government = melkorite
+			}
+			modifier = {
+				melkorite_drift = 0.2
+				drift_defence_factor = -0.15
+			}
+		}
+		gaze_of_the_eye5 = {
+			picture = gaze_of_sauron
+			allowed_civil_war = {
+				NOT = { has_government = melkorite }
+			}
+			traits = { saurons_gaze_trait }
+			cancel = {
+				has_government = melkorite
+			}
+			modifier = {
+				melkorite_drift = 0.1
+				drift_defence_factor = -0.15
+			}
+		}
+		wrath_of_the_eye = {
+			picture = wrath_of_sauron
+			allowed_civil_war = {
+				NOT = { has_government = melkorite }
+			}
+			traits = { saurons_target_trait }
+			modifier = {
 			}
 		}
 	}

@@ -50,3 +50,21 @@ is_gondor_tag = {
 		original_tag = PNG
 	}
 }
+
+state_borders_rhunaer = {
+	custom_trigger_tooltip = {
+		tooltip = state_borders_rhunaer_tooltip
+		OR = {
+			state = 113 #iaurvuld
+			state = 247 #fola gach
+			state = 292 #vol kug
+			state = 294 #ulgathavuld
+			state = 291 #medloshad
+			state = 128 #dacranamel
+			state = 314 #dargeca
+			state = 118 #folyavuld
+			state = 116 #riavod
+			state = 127 #egil dorn
+		}
+	}
+}

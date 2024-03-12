@@ -1236,13 +1236,13 @@ focus_tree = {
 		x = 0
 		y = -4
 		relative_position_id = MOR_the_eye_looks_inward
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
 		
 		search_filters = { FOCUS_FILTER_DIPLOMATIC }
-		completion_reward = { #Anduin, Misty Mountains, Gundabad, Dale, & Erebor get 'sauron demands submission'
+		completion_reward = { #Anduin, Dale, Erebor, Gundabad, Misty Mountains, & Rhovanion get 'Ridesrs from Mordor'
 			every_country = {
 				limit = {
 					OR = {
@@ -1251,12 +1251,10 @@ focus_tree = {
 						tag = ERE
 						tag = GDB
 						tag = MST
+						is_rhovanion_tag = yes
 					}
 				}
-				hidden_effect = {
-					country_event = { id = mordor.2 days = 1 }
-				}
-				custom_effect_tooltip = MOR_sauron_demands_submission_tooltip
+				sauron_demands_submission = yes
 			}
 			add_named_threat = { 
 				threat = 5
@@ -1270,7 +1268,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = MOR_the_eye_looks_north
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -1376,15 +1374,28 @@ focus_tree = {
 		available = { OR = { country_exists = LOR country_exists = WOD } }
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_DIPLOMATIC }
 		completion_reward = { #Reserve wargoals vs WOD & LOR GLD: attack bonus vs Lor & WOD
-			add_named_threat = { 
+			add_named_threat = {
 				threat = 2
 				name = MOR_planning_aggression_tooltip
 			}
-			LOR = {
-				add_ideas = saurons_prize_spirit
+			if = {
+				limit = { any_country = { check_variable = { modifier@melkorite_can_justify > 0 } } }
+				create_wargoal = {
+					type = annex_everything
+					target = LOR
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = WOD
+				}
 			}
-			WOD = {
-				add_ideas = saurons_prize_spirit
+			else = {
+				LOR = {
+					add_ideas = wrath_of_the_eye
+				}
+				WOD = {
+					add_ideas = wrath_of_the_eye
+				}
 			}
 			GLD = {
 				add_ideas = {
@@ -1507,7 +1518,7 @@ focus_tree = {
 		x = -21
 		y = 0
 		relative_position_id = MOR_the_eye_looks_inward
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -2366,7 +2377,7 @@ focus_tree = {
 		x = 0
 		y = 7
 		relative_position_id = MOR_the_eye_looks_inward
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -2379,10 +2390,7 @@ focus_tree = {
 						tag = UMB
 					}
 				}
-				hidden_effect = {
-					country_event = { id = mordor.2 days = 1 }
-				}
-				custom_effect_tooltip = MOR_sauron_demands_submission_tooltip
+				sauron_demands_submission = yes
 			}
 			add_named_threat = { 
 				threat = 2
@@ -2652,13 +2660,13 @@ focus_tree = {
 		x = 16
 		y = 0
 		relative_position_id = MOR_the_eye_looks_inward
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
 		
 		search_filters = { FOCUS_FILTER_DIPLOMATIC }
-		completion_reward = { #Rhun, Khand, & Dorwinion get 'sauron demands submission'
+		completion_reward = { #Rhun, Khand, & Dorwinion get 'Riders from Mordor'
 			every_country = {
 				limit = {
 					OR = {
@@ -2667,13 +2675,70 @@ focus_tree = {
 						tag = RUN
 					}
 				}
-				hidden_effect = {
-					country_event = { id = mordor.2 days = 1 }
-				}
-				custom_effect_tooltip = MOR_sauron_demands_submission_tooltip
+				sauron_demands_submission = yes
 			}
 			add_named_threat = { 
 				threat = 3
+				name = MOR_demanded_eastern_submission_tension_tooltip
+			}
+		}
+	}
+	focus = { #Secure the Rhunear
+		id = MOR_secure_the_rhunear
+		icon = GFX_goal_rhunaer
+		x = 4
+		y = 1
+		relative_position_id = MOR_the_eye_looks_east
+		prerequisite = {
+			focus = MOR_the_eye_looks_east
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_other_country = {
+				has_government = melkorite
+				OR = {
+					is_subject = no
+					is_subject_of = ROOT
+				}
+				any_controlled_state = {
+					state_borders_rhunaer = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Every melkorite on Rhunaer gains wargoal against every non-melkorite
+			custom_effect_tooltip = MOR_secure_the_rhunear_tooltip
+			every_other_country = {
+				limit = {
+					has_government = melkorite
+					OR = {
+						is_subject = no
+						is_subject_of = ROOT
+					}
+					any_controlled_state = {
+						state_borders_rhunaer = yes
+					}
+				}
+				every_other_country = {
+					limit = {
+						NOT = { has_government = melkorite }
+						any_controlled_state = {
+							state_borders_rhunaer = yes
+						}
+					}
+					PREV = {
+						create_wargoal = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+			add_named_threat = { 
+				threat = 2
 				name = MOR_demanded_eastern_submission_tension_tooltip
 			}
 		}
@@ -2846,7 +2911,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = MOR_the_eye_looks_east
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -2854,26 +2919,27 @@ focus_tree = {
 			focus = MOR_united_in_hatred
 			focus = MOR_connections_to_the_east
 		}
-		available = { OR = { DOR = { is_subject_of = ROOT } KND = { is_subject_of = ROOT } RUN = { is_subject_of = ROOT } } }
+		available = { any_subject_country = { has_idea_with_trait = easterling_heritage_trait } }
 		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
-		completion_reward = { #Rhunwaith: +2 civs, +2 mils, +1m pop
-			every_state = {
+		completion_reward = { #Every Easterling subject: +2 civs, +2 mils, +1m pop
+			every_subject_country = {
 				limit = {
-					OR = { state = 115 state = 130 state = 132 state = 184 }
-					is_controlled_by_ROOT_or_ally = yes
+					has_idea_with_trait = easterling_heritage_trait
 				}
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+				random_core_state = {
+					limit = { is_core_of = PREV }
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 2
 				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 4
-				add_manpower = 1000000
 			}
 		}
 	}

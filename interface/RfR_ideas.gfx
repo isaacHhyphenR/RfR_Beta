@@ -979,6 +979,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/gaze_of_sauron.dds"
 	}
 	SpriteType = {
+		name = "GFX_idea_wrath_of_sauron"
+		texturefile = "gfx/interface/ideas/wrath_of_sauron.dds"
+	}
+	SpriteType = {
 		name = "GFX_idea_shadow_of_the_eye"
 		texturefile = "gfx/interface/ideas/shadow_of_the_eye.dds"
 	}
