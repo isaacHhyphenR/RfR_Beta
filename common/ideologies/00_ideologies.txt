@@ -20,6 +20,7 @@ ideologies = {
 			}
 			wise_monarchy = {
 				can_be_randomly_selected = yes
+				color = { 152 201 234 }
 			}
 			# false_stewardship = {
 				# can_be_randomly_selected = no
@@ -90,6 +91,7 @@ ideologies = {
 			}
 			feudalism = {
 				can_be_randomly_selected = yes
+				color = { 0 0 255 }
 			}
 		}
 		
@@ -147,6 +149,7 @@ ideologies = {
 			}
 			tribalism = {
 				can_be_randomly_selected = yes
+				color = { 244 104 104 }
 			}
 			elective_monarchy_opportunism = { #dorwinion
 				can_be_randomly_selected = no
@@ -214,6 +217,7 @@ ideologies = {
 			}
 			autocracy = {
 				can_be_randomly_selected = yes
+				color = { 203 173 40 }
 			}
 			glorious_monarchy = {
 				can_be_randomly_selected = yes
@@ -268,6 +272,7 @@ ideologies = {
 			}
 			shadow_worship = {
 				can_be_randomly_selected = yes
+				color = { 46 32 26 }
 			}
 			the_eye = {
 				can_be_randomly_selected = no
