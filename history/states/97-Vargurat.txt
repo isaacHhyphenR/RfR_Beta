@@ -3,8 +3,6 @@ state = {
 	name = "STATE_97" #Dalian Hinterlands
 	state_category = Pastoral
 	manpower = 396567
-	resources = {
-	}
 	provinces = { #8
 		320 391 754 1060 2256 2295 5583 5605 
 	}

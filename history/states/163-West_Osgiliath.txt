@@ -22,8 +22,6 @@ state = {
 		}
 		set_variable = { ring_ui_frame = 3 	}
 	}
-	resources = {
-	}
 }
 
 

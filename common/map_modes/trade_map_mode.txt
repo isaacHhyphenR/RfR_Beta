@@ -1,71 +1,59 @@
 scripted_map_modes = {
-	races_map_mode = {
+	trade_map_mode = {
 		top = {
-			type = country
+			type = state
 
 			color = {
 				FROM = {
-					set_temp_variable = { alpha = 0.4 }
+					set_temp_variable = { alpha = 1.0 }
+
 					if = {
 						limit = {
-							is_orcs = yes
+							market > 5
 						}
-						set_temp_variable = { red = 0.7 }
+						set_temp_variable = { red = 0.0 }
+						set_temp_variable = { green = 0.36 }
+						set_temp_variable = { blue = 0.0 }
+					}
+					else_if = {
+						limit = {
+							market > 4
+						}
+						set_temp_variable = { red = 0.05 }
+						set_temp_variable = { green = 0.78 }
+						set_temp_variable = { blue = 0.01 }
+					}
+					else_if = {
+						limit = {
+							market > 3
+						}
+						set_temp_variable = { red = 1.0 }
+						set_temp_variable = { green = 0.90 }
+						set_temp_variable = { blue = 0.0 }
+					}
+					else_if = {
+						limit = {
+							market > 2
+						}
+						set_temp_variable = { red = 0.90 }
+						set_temp_variable = { green = 0.75 }
+						set_temp_variable = { blue = 0.01 }
+					}
+					else_if = {
+						limit = {
+							market > 1
+						}
+						set_temp_variable = { red = 1.0 }
+						set_temp_variable = { green = 0.62 }
+						set_temp_variable = { blue = 0.0 }
+					}
+					else_if = {
+						limit = {
+							market > 0
+						}
+						set_temp_variable = { red = 1.0 }
 						set_temp_variable = { green = 0.0 }
 						set_temp_variable = { blue = 0.0 }
-					}
-					else_if = {
-						limit = {
-							is_elves = yes
-						}
-						set_temp_variable = { red = 0.0 }
-						set_temp_variable = { green = 0.8 }
-						set_temp_variable = { blue = 0.8 }
-					}
-					else_if = {
-						limit = {
-							is_dwarves = yes
-						}
-						set_temp_variable = { red = 1.0 }
-						set_temp_variable = { green = 1.0 }
-						set_temp_variable = { blue = 0.1 }
-					}
-					else_if = {
-						limit = {
-							is_men = yes
-						}
-						set_temp_variable = { red = 0.5 }
-						set_temp_variable = { green = 0.5 }
-						set_temp_variable = { blue = 1.0 }
-					}
-					else_if = {
-						limit = {
-							is_spiders = yes
-						}
-						set_temp_variable = { red = 1.0 }
-						set_temp_variable = { green = 0.3 }
-						set_temp_variable = { blue = 0.3 }
-					}
-					else_if = {
-						limit = {
-							is_hobbits = yes
-						}
-						set_temp_variable = { red = 0.3 }
-						set_temp_variable = { green = 0.8 }
-						set_temp_variable = { blue = 0.3 }
-					}
-					else_if = {
-						limit = {
-							is_ents = yes
-						}
-						set_temp_variable = { red = 0.0 }
-						set_temp_variable = { green = 0.4 }
-						set_temp_variable = { blue = 0.0 }
-					}
-					else = {
-						set_temp_variable = { red = 0.4 }
-						set_temp_variable = { green = 0.4 }
-						set_temp_variable = { blue = 0.4 }
 					}
 				}
 			}
@@ -73,13 +61,13 @@ scripted_map_modes = {
 			thickness = no
 
 			targets = {
-				target_array = global.countries
+				target_array = global.celduin_markets
 			}
 
 			update_daily = yes
 		}
 
-		far_text = country
+		far_text = state
 		near_text = state
 
 		update_daily = yes

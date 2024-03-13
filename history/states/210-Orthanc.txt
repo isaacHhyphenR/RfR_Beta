@@ -6,8 +6,6 @@ state = {
 	provinces = {
 		770
 	}
-	resources = {
-	}
 	history = {
 		3000.1.1 = { ##Extra building slot for balance
 			210 = {

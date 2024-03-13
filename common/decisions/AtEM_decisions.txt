@@ -5,7 +5,7 @@ celduin_trade_category = {
 		ai_will_do = { #ASAP
 			factor = 10
 		}
-		days_mission_timeout = 100
+		days_mission_timeout = 1
 		is_good = yes
 		#days_remove = var:FROM.market_upgrade_time
 		state_target = yes
@@ -23,7 +23,10 @@ celduin_trade_category = {
 		allowed = { always = no }
 		available = { hidden_trigger = { always = no } }
 		cancel_effect = {
-			FROM = { clr_state_flag = constructing_market }
+			FROM = {
+				clr_state_flag = constructing_market
+				set_state_flag = recently_constructed_market
+			}
 			subtract_from_variable = { market_upgrading_cost = global.market_upgrade_cost }
 		}
 		timeout_effect = {
@@ -35,8 +38,10 @@ celduin_trade_category = {
 				}
 				custom_effect_tooltip = resets_prosperity
 				set_variable = { prosperity = 0 }
+
+				clr_state_flag = constructing_market
+				set_state_flag = recently_constructed_market
 			}
-			FROM = { clr_state_flag = constructing_market }
 			subtract_from_variable = { market_upgrading_cost = global.market_upgrade_cost }
 			random_other_country = { ##gain prosperity on their market from shipping tax
 				limit = {
@@ -77,7 +82,10 @@ celduin_trade_category = {
 		allowed = { always = no }
 		available = { hidden_trigger = { always = no } }
 		cancel_effect = {
-			FROM = { clr_state_flag = constructing_market }
+			FROM = {
+				clr_state_flag = constructing_market
+				set_state_flag = recently_constructed_market
+			}
 			subtract_from_variable = { market_upgrading_cost = global.market_upgrade_cost }
 		}
 		timeout_effect = {
@@ -89,8 +97,10 @@ celduin_trade_category = {
 				}
 				custom_effect_tooltip = resets_prosperity
 				set_variable = { prosperity = 0 }
+
+				clr_state_flag = constructing_market
+				set_state_flag = recently_constructed_market
 			}
-			FROM = { clr_state_flag = constructing_market }
 			subtract_from_variable = { market_upgrading_cost = global.market_upgrade_cost }
 			random_other_country = { ##gain prosperity on their market from shipping tax
 				limit = {

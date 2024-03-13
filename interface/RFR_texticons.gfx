@@ -249,4 +249,19 @@ spriteTypes = {
 		texturefile = "gfx/texticons/rhovanion_influence.dds"
 		legacy_lazy_load = no
 	}
+	SpriteType = {
+		name = "GFX_market_texticon"
+		texturefile = "gfx/texticons/market.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_mapmode_buttons_deselected_small_trade_map_mode"
+		texturefile = "gfx/interface/mapmode/market_unselected.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_mapmode_buttons_selected_small_trade_map_mode"
+		texturefile = "gfx/interface/mapmode/market_selected.dds"
+		legacy_lazy_load = no
+	}
 }

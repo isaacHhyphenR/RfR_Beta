@@ -2724,6 +2724,7 @@ focus_tree = {
 				}
 				every_other_country = {
 					limit = {
+						can_PREV_get_wargoal_on_THIS = yes
 						NOT = { has_government = melkorite }
 						any_controlled_state = {
 							state_borders_rhunaer = yes
@@ -2786,7 +2787,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MOR_the_eye_looks_east
 		}
-		available = { KND = { is_in_faction_with = ROOT } }
+		available = { RUN = { is_in_faction_with = ROOT } }
 		mutually_exclusive = {
 			focus = MOR_favor_the_variags
 		}

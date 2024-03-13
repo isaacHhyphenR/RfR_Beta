@@ -4,9 +4,6 @@ state = {
 	impassable = yes
 	state_category = Wasteland
 	manpower = 13000
-	local_supplies = 0.0
-	resources = {
-	}
 	provinces = { #5
 		1793 2685 6879 6904 6918 
 	}

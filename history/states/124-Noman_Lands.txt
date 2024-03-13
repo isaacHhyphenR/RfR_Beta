@@ -15,9 +15,6 @@ state = {
 	}
 	manpower = 5658
 	state_category = Wasteland
-	resources = {
-
-	}
 }
 
 

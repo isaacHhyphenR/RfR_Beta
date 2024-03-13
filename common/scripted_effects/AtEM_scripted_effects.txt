@@ -136,7 +136,7 @@ increase_riavod_trade_level = { #call in the tag of the seller with the buyer as
 	set_temp_variable = { nodes_left = current_node:node_index }
 	subtract_from_temp_variable = { nodes_left = 116:node_index }
 	
-##########traces downstream path from buyer capital to seller capital
+ ##########traces downstream path from buyer capital to seller capital
 	if = {
 		limit = { check_variable = { current_node:node_index < 116:node_index } }
 		#Skip the buyer capital
@@ -150,7 +150,7 @@ increase_riavod_trade_level = { #call in the tag of the seller with the buyer as
 		}
 		multiply_temp_variable = { nodes_left = -1 }
 		subtract_from_temp_variable = { nodes_left = 1 } #skip buyer and seller
-#######################################LOOP THROUGH INTERMEDIATE NODES
+ #######################################LOOP THROUGH INTERMEDIATE NODES
 		while_loop_effect = {
 			limit = { check_variable = { nodes_left > 0 } }
 			subtract_from_temp_variable = { nodes_left = 1 } #decrement
@@ -167,7 +167,7 @@ increase_riavod_trade_level = { #call in the tag of the seller with the buyer as
 		}
 	}
 		
-##########traces upstream path from buyer capital to seller capital
+ ##########traces upstream path from buyer capital to seller capital
 	else = {
 		#Skip the buyer capital
 		if = {
@@ -179,7 +179,7 @@ increase_riavod_trade_level = { #call in the tag of the seller with the buyer as
 			set_temp_variable = { current_node = current_node:upstream_node }
 		}
 		subtract_from_temp_variable = { nodes_left = 1 } #skip buyer and seller
-#######################################LOOP THROUGH INTERMEDIATE NODES
+ #######################################LOOP THROUGH INTERMEDIATE NODES
 		while_loop_effect = {
 			limit = { check_variable = { nodes_left > 0 } }
 			subtract_from_temp_variable = { nodes_left = 1 } #decrement
@@ -229,7 +229,7 @@ decrease_riavod_trade_level = { #call in the tag of the seller with the buyer as
 	set_temp_variable = { nodes_left = current_node:node_index }
 	subtract_from_temp_variable = { nodes_left = 116:node_index }
 	
-##########traces downstream path from buyer capital to seller capital
+ ##########traces downstream path from buyer capital to seller capital
 	if = {
 		limit = { check_variable = { current_node:node_index < 116:node_index } }
 		#Skip the buyer capital
@@ -243,7 +243,7 @@ decrease_riavod_trade_level = { #call in the tag of the seller with the buyer as
 		}
 		multiply_temp_variable = { nodes_left = -1 }
 		subtract_from_temp_variable = { nodes_left = 1 } #skip buyer and seller
-#######################################LOOP THROUGH INTERMEDIATE NODES
+ #######################################LOOP THROUGH INTERMEDIATE NODES
 		while_loop_effect = {
 			limit = { check_variable = { nodes_left > 0 } }
 			subtract_from_temp_variable = { nodes_left = 1 } #decrement
@@ -260,7 +260,7 @@ decrease_riavod_trade_level = { #call in the tag of the seller with the buyer as
 		}
 	}
 		
-##########traces upstream path from buyer capital to seller capital
+ ##########traces upstream path from buyer capital to seller capital
 	else = {
 		#Skip the buyer capital
 		if = {
@@ -272,7 +272,7 @@ decrease_riavod_trade_level = { #call in the tag of the seller with the buyer as
 			set_temp_variable = { current_node = current_node:upstream_node }
 		}
 		subtract_from_temp_variable = { nodes_left = 1 } #skip buyer and seller
-#######################################LOOP THROUGH INTERMEDIATE NODES
+ #######################################LOOP THROUGH INTERMEDIATE NODES
 		while_loop_effect = {
 			limit = { check_variable = { nodes_left > 0 } }
 			subtract_from_temp_variable = { nodes_left = 1 } #decrement

@@ -59,6 +59,15 @@ scripted_gui = {
 					num_of_civilian_factories_available_for_projects > 2
 				}
 				NOT = { has_state_flag = constructing_market }
+				hidden_trigger = { #if the mission icon hasn't disappeared, it autocancels but doesn't clear the flag
+					OR = {
+						NOT = { has_state_flag = recently_constructed_market }
+						has_state_flag = {
+							flag = recently_constructed_market
+							days > 14
+						}
+					}
+				} 
 				hidden_trigger = { market < var:market_max_level } #can't upgrade beyond level 5 unless you take that one focus
 				is_controlled_by = ROOT
 			}

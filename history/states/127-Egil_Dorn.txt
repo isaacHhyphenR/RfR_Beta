@@ -3,8 +3,6 @@ state = {
 	name = "STATE_127" #Egil Dorn
 	state_category = Small_Island
 	manpower = 124070
-	resources = {
-	}
 	provinces = { #6
 		602 1781 4893 5143 6435 6482 
 	}

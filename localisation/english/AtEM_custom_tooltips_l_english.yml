@@ -332,3 +332,8 @@
  reject_saurons_gaze_tooltip: "$unlocks_decision_tooltip$ to decrease Sauron's influence, though this will anger him."
  state_borders_rhunaer_tooltip: "Borders the $rhunaer$"
  MOR_secure_the_rhunear_tooltip: "Every §Y$melkorite$§! country on the $rhunaer$ gains a wargoal against every non-§Y$melkorite$§! country on the $rhunaer$$VorV_dev_line_end$"
+ MAPMODE_TRADE_MAP_MODE_NAME: "§YMarkets§!"
+ MAPMODE_TRADE_MAP_MODE: "§YMarkets§! map mode"
+ MAPMODE_TRADE_MAP_MODE_DESCRIPTION: "Shows $market$s by their level."
+ trade_map_mode_tooltip: "£GFX_market_texticon  Market [?FROM.building_level@market]"
+ trade_map_mode_tooltip_delayed: ""
