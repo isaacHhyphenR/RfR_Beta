@@ -140,7 +140,7 @@ on_actions = {
 		}
 		effect = { #rhovanion influence
 			every_country = {
-				limit = { can_influence_rhovanion = yes }
+				limit = { allowed_influence_rhovanion = yes }
 				for_each_scope_loop = {
 					array = influenced_rhovanion_tags
 					#cancels if not still valid
@@ -148,7 +148,7 @@ on_actions = {
 						limit = {
 							OR = {
 								has_opinion = { value < 1 target = PREV }
-								PREV = { is_subject = yes }
+								PREV = { can_influence_rhovanion = NO }
 							}
 						}
 						remove_from_array = { PREV.influenced_rhovanion_tags = THIS }

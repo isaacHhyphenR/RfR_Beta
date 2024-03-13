@@ -20,6 +20,28 @@ spriteTypes = {
 		name = "GFX_ideology_melkorite_group"
 		texturefile = "gfx/interface/ideologies/melkorite_group.dds"
 	}
+	#generics so that republicans don't be default
+	SpriteType = {
+		name = "GFX_ideology_wise_monarchy"
+		texturefile = "gfx/interface/ideologies/isolationism_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_feudalism"
+		texturefile = "gfx/interface/ideologies/democratic_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_tribalism"
+		texturefile = "gfx/interface/ideologies/neutrality_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_autocracy"
+		texturefile = "gfx/interface/ideologies/fascism_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_shadow_worship"
+		texturefile = "gfx/interface/ideologies/melkorite_group.dds"
+	}
+	#republics
 	SpriteType = {
 		name = "GFX_ideology_republic_isolationism"
 		texturefile = "gfx/interface/ideologies/republic_isolationism.dds"

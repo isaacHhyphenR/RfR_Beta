@@ -207,7 +207,7 @@ scripted_diplomatic_actions = {
 				}
 			}
 			ROOT = {
-				allowed_influence_rhovanion = yes
+				can_influence_rhovanion = yes
 			}
 			is_rhovanion_tag = yes
 		}
@@ -268,18 +268,18 @@ scripted_diplomatic_actions = {
 					target = ROOT
 					value > 75
 				}
-				add = 2
+				add = 5
 			}
 			modifier = {
 				has_opinion = {
 					target = ROOT
 					value > 99
 				}
-				add = 2
+				add = 5
 			}
 			modifier = { #try for someone who's already the same government
 				has_government = ROOT
-				add = 4
+				add = 25
 			}
 			modifier = { #only influence neighbours
 				NOT = { is_neighbor_of = ROOT }

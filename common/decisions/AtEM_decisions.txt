@@ -2018,6 +2018,7 @@ rhovanion_influence_category = {
 			}
 		}
 		available = {
+			is_subject = no
 			hidden_trigger = {
 				FROM = {
 					check_variable = {

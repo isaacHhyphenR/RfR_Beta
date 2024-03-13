@@ -224,7 +224,7 @@ allowed_influence_rhovanion = {
 	}
 }
 can_influence_rhovanion = {
-	is_subject = no
+	#is_subject = no
 	OR = {
 		tag = RVN
 		original_tag = DOR
