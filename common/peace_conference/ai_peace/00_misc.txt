@@ -50,7 +50,7 @@ peace_ai_desires = {
 			}
         }
 
-        ai_desire = 50
+        ai_desire = 500
     }
 	
 	true_evil_puppet_desire = {
@@ -296,20 +296,12 @@ peace_ai_desires = {
         ai_desire = -200
     }
 
-    melkorite_dont_liberate_the_wrong_ideology = {
+    melkorite_dont_liberate = {
         peace_action_type = liberate
         enable = {
             ROOT = { has_government = melkorite }
-            ROOT.FROM = {
-                NOT = {
-                    OR = {
-                        has_government = melkorite
-                        has_government = opportunism
-                    }
-                }
-            }
         }
-        ai_desire = -200
+        ai_desire = -500
     }
 
     dont_force_government_or_puppet_on_non_core = {
@@ -435,7 +427,7 @@ peace_ai_desires = {
                 has_government = Melkorite
             }
         }
-        ai_desire = -100
+        ai_desire = -1000
     }
 	
     dont_resurrect_saruman = {

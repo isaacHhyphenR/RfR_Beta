@@ -305,7 +305,7 @@ ideas = {
 	
 	hidden_ideas = {
 		##cost influencers PP
-		@rhovanionInfluenceDailyCost = 0.1
+		@rhovanionInfluenceDailyCost = 0.25
 		influence_HEH_cost = {
 			modifier = {
 				political_power_cost = @rhovanionInfluenceDailyCost

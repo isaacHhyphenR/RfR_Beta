@@ -123,6 +123,7 @@ MOR_the_dark_lord_category = {
 			}
 		}
 	}
+
 }
 
 MOR_direct_saurons_attention_decision = {
@@ -1130,23 +1131,63 @@ melkorite_bop_category = {
 				has_country_flag = recently_sent_tribute
 				factor = 0.1
 			}
+			#Don't do if AI unlikely to accept
+			modifier = {
+				meta_trigger = {
+					text = {
+						is_power_balance_in_range = {
+							id = melkorite_power_balance[ID]
+							range = melkorite_local_pantheon_range1
+						}
+					}
+					ID = [?melkorite_bop_index]
+				}
+				factor = 0.5
+			}
+			modifier = {
+				meta_trigger = {
+					text = {
+						is_power_balance_in_range = {
+							id = melkorite_power_balance[ID]
+							range = melkorite_local_pantheon_range2
+						}
+					}
+					ID = [?melkorite_bop_index]
+				}
+				factor = 0.2
+			}
+			modifier = {
+				meta_trigger = {
+					text = {
+						is_power_balance_in_range = {
+							id = melkorite_power_balance[ID]
+							range = melkorite_local_pantheon_range3
+						}
+					}
+					ID = [?melkorite_bop_index]
+				}
+				factor = 0
+			}
 		}
 		modifier = { consumer_goods_factor = 0.25 }
 		days_remove = 100
 		remove_effect = {
 			MOR = {
 				country_event = { id = blood_oath.6 hours = 1 }
-				custom_effect_tooltip = if_they_accept_tooltip
-				effect_tooltip = {
+				effect_tooltip = { #MOR gets the CIC
 					add_cic = 10000
-					custom_effect_tooltip = from_country_tooltip
+				}
+				custom_effect_tooltip = send_tribute_to_barad_dur_decision_acceptance_tooltip
+				custom_effect_tooltip = if_they_accept_tooltip
+				custom_effect_tooltip = from_country_tooltip
+				effect_tooltip = {
 					if = {
 						limit = { FROM = { is_subject_of = MOR } }
 						add_autonomy_score = {
 							value = 75
 							localization = master_accepted_tribute
 						}
-						custom_effect_tooltip = new_line_tab
+						custom_effect_tooltip = VorV_dev_line_end
 					}
 					add_political_power = 100
 					custom_effect_tooltip = OR_tooltip
@@ -1156,7 +1197,7 @@ melkorite_bop_category = {
 					army_experience = 40
 				}
 			}
-			custom_effect_tooltip = ENE_send_tribute_to_barad_dur_decision_tooltip
+			#custom_effect_tooltip = ENE_send_tribute_to_barad_dur_decision_tooltip
 			effect_tooltip = { add_opinion_modifier = { target = FROM modifier = sent_tribute } }
 			##Tell the AI not to do this constantly
 			hidden_effect = {
@@ -1199,6 +1240,31 @@ melkorite_bop_category = {
 					}
 				}
 			}
+		}
+	}
+	
+	promote_cult_of_the_lidless_eye = {
+		icon = GFX_decision_cult_of_the_lidless_eye
+		days_remove = 100
+		cost = 50
+		cancel_if_not_visible = yes
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+			power_balance_weekly = 0.005
+		}
+	}
+	promote_local_pantheons = {
+		icon = GFX_decision_local_pantheons
+		days_remove = 100
+		cost = 50
+		cancel_if_not_visible = yes
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+			power_balance_weekly = -0.005
 		}
 	}
 }

@@ -159,15 +159,6 @@ scripted_diplomatic_actions = {
 				increase_PREV_trust_towards_THIS = yes
 			}
 		}
-		
-		# AI
-		# a list of ai_will_do entries that will be used to decide if AI should accept or reject a request
-		# ai_acceptance = {
-			# condition = { # name is used for loc
-				# base = 100
-			# }
-		# }
-
 		# ai_will_do to decide if AI should send this action or not
 		@trustForNoDLCAnnexation = 4
 		ai_desire = { #If they've gotten their opinion high enough, they should probably do it
@@ -257,7 +248,7 @@ scripted_diplomatic_actions = {
 		
 		# ai_will_do to decide if AI should send this action or not
 		ai_desire = {
-			base = 5
+			base = 10
 			modifier = {
 				has_opinion = {
 					target = ROOT
@@ -446,17 +437,27 @@ scripted_diplomatic_actions = {
 		
 		# ai_will_do to decide if AI should send this action or not
 		ai_desire = {
-			base = 5
-			modifier = {
-				ROOT = { political_power_daily < 0.5 }
+			base = 25
+			modifier = { #don't do if you need the PP
+				ROOT = {
+					political_power_daily < 0.5
+					NOT = { has_completed_focus = MOR_the_lord_of_the_rings }
+				}
 				factor = 0
+			}
+			modifier = { #nothing else to spend on at this point
+				ROOT = {
+					political_power_daily > 0.02
+					has_completed_focus = MOR_the_lord_of_the_rings
+				}
+				factor = 100
 			}
 			modifier = { #no need
 				meta_trigger = {
 					text = {
-						power_balance_value = {
+						is_power_balance_in_range = {
 							id = melkorite_power_balance[ID]
-							value > 0.75
+							range = melkorite_lidless_eye_range3
 						}
 					}
 					ID = [?melkorite_bop_index]
@@ -466,6 +467,22 @@ scripted_diplomatic_actions = {
 			modifier = {
 				has_autonomy_state = autonomy_shadow_slave
 				factor = 0
+			}
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+			modifier = {
+				factor = 2
+				num_subjects > 0
+			}
+			modifier = {
+				NOT = { is_subject_of = ROOT }
+				factor = 2
+			}
+			modifier = { #care less about tiny tribes
+				check_variable = { num_owned_states < 3 }
+				factor = 0.5
 			}
 		}
 	}

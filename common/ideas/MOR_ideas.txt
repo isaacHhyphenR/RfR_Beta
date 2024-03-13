@@ -382,7 +382,7 @@ ideas = {
 		}
 		sauron_influencing_bop_hidden = { ##applied to other countries through diplomatic actions
 			modifier = {
-				power_balance_daily = 0.25
+				power_balance_daily = 0.002
 			}
 			allowed_civil_war = {
 				has_government = melkorite

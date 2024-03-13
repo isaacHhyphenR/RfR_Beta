@@ -5,7 +5,7 @@ celduin_trade_category = {
 		ai_will_do = { #ASAP
 			factor = 10
 		}
-		days_mission_timeout = 1
+		days_mission_timeout = 100
 		is_good = yes
 		#days_remove = var:FROM.market_upgrade_time
 		state_target = yes

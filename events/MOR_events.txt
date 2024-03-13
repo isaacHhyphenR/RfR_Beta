@@ -342,7 +342,7 @@ country_event = { ##5## King masters Palantir
 	}
 }
 
-country_event = { ##6## ENE pays tribute
+country_event = { ##6## ENE pays tribute via focus
 	id = mordor.6
 	title = mordor.6.t
 	desc = mordor.6.d
@@ -355,7 +355,7 @@ country_event = { ##6## ENE pays tribute
 			base = 5
 		}
 		ENE_mordor_tribute_for_mordor_accepted = yes
-		random_state = {
+		random_controlled_state = {
 			add_building_construction = {
 				type = industrial_complex
 				level = 1
@@ -381,7 +381,7 @@ country_event = { ##6## ENE pays tribute
 		ai_chance = {
 			base = 0
 		}
-		random_state = {
+		random_controlled_state = {
 			add_building_construction = {
 				type = industrial_complex
 				level = 1
@@ -535,6 +535,60 @@ country_event = { ##8## Sauron Demands Submission
 		FROM = { #tell MOR about the result
 			hidden_effect = {
 				news_event = { id = rfr_news.146 hours = 1 }
+			}
+		}
+	}
+}
+
+country_event = { ##9## ENE requests mandate overlhomeland
+	id = mordor.9
+	title = mordor.9.t
+	desc = mordor.9.d
+	picture = GFX_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	option = { ##Grant it
+		name = mordor.9.a
+		ai_chance = {
+			base = 10
+		}
+		if = {
+			limit = { FROM = { is_eregion_tag = yes } }
+			every_state = {
+				limit = {
+					is_Eregion_state = yes
+					owner = { can_FROM_get_wargoal_on_THIS = yes }
+				}
+				add_claim_by = FROM
+				if = {
+					limit = {
+						NOT = { FROM = { has_wargoal_against = PREV.owner } }
+					}
+					FROM = {
+						create_wargoal = {
+							target = PREV.owner
+							type = take_claimed_state
+							generator = PREV
+						}
+					}
+				}
+			}
+		}
+		FROM = { #tell them about the result
+			hidden_effect = {
+				news_event = { id = rfr_news.148 hours = 1 }
+			}
+		}
+	}
+	option = { ##Don't grant it
+		name = mordor.9.b
+		ai_chance = {
+			base = 0
+		}
+		FROM = { #tell them about the result
+			hidden_effect = {
+				news_event = { id = rfr_news.149 hours = 1 }
 			}
 		}
 	}

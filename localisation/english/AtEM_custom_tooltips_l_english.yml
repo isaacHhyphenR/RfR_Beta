@@ -337,3 +337,4 @@
  MAPMODE_TRADE_MAP_MODE_DESCRIPTION: "Shows $market$s by their level."
  trade_map_mode_tooltip: "£GFX_market_texticon  Market [?FROM.building_level@market]"
  trade_map_mode_tooltip_delayed: ""
+ send_tribute_to_barad_dur_decision_acceptance_tooltip: "They are less likely to accept the more we favor our §Y$melkorite_local_pantheon_side$§!\n"

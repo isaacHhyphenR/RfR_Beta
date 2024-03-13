@@ -813,3 +813,7 @@
  MOR_core_orcs_decision_desc: "While the [FROM.GetCapitalVictoryPointName] orcs may be initially reluctant to fall in line with our stricter overlordship, a few whipmasters and executions will instill into them the proper fear."
  decrease_saurons_influence: "Purge Melkorite Presence"
  decrease_saurons_influence_desc: "We allowed dark influence to spread across out land in the hopes it would stay the Dark Lord's hand, but we cannot allow them to sieze full control of our nation."
+ promote_cult_of_the_lidless_eye: "Promote Cults of the Lidless Eye"
+ promote_cult_of_the_lidless_eye_desc: "The Dark Lord of $barad_dur$ is the true heir of Melkor and the greatest power in Middle Earth. Worshipping Him is spiritually and politically wise."
+ promote_local_pantheons: "Promote Local Pantheons"
+ promote_local_pantheons_desc: "Our traditional dark gods and spirits have seen us through many millenia, even when Sauron abandoned us. We should maintian our loyalty to them."

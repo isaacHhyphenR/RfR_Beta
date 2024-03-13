@@ -1,0 +1,2606 @@
+add_namespace = blood_oath
+country_event = { ##1## Diplomatic demand submission
+	id = blood_oath.1
+	title = blood_oath.1.t
+	desc = blood_oath.1.d
+	picture = GFX_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	immediate = { ##Decides whether AI will accept
+		hidden_effect = {
+			set_temp_variable = { total_acceptance = 0 }
+			if = { limit = { ROOT = { FROM = { calculate_blood_oath_submission_chance = yes } } } } ##just calculate the chance
+			set_variable = { accceptance = total_acceptance }
+			set_variable = { random_chance = random }
+		}
+	}
+	
+	option = { ##submit
+		name = blood_oath.1.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				check_variable = { random_chance < accceptance }
+				add = 100
+			}
+		}
+		if = { limit = { check_variable = { accceptance > 0.99 } }#can't refuse a 100%
+			custom_effect_tooltip = cant_refuse_blood_oath_submission
+		}
+		save_current_politics = yes
+		FROM = {
+			PREV_swear_blood_oath_to_THIS = yes
+			hidden_effect = { news_event = { id = rfr_news.14 hours = 1 } }
+		}
+		clear_variable = random_chance
+		clear_variable = accceptance
+	}
+	option = { ##refuse
+		name = blood_oath.1.b
+		trigger = {
+			check_variable = { accceptance < 1 } #can't refuse a 100%
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				check_variable = { random_chance < accceptance }
+				add = -100
+			}
+		}
+		FROM = { hidden_effect = { news_event = { id = rfr_news.15 hours = 1 } } }
+		if = { limit = { FROM = { has_completed_focus = ISN_words_of_honey_and_poison } }
+			FROM = {
+				create_wargoal = {
+					type = puppet_wargoal_refused_blood_oath
+					target = ROOT
+				}
+			}
+		}
+		#If acceptance > 50%, target loses stab & pp scaled with acceptance
+		if = { limit = { check_variable = { accceptance > 0.5 } }
+			set_temp_variable = { stab = accceptance }
+			subtract_from_temp_variable = { stab = 0.5 }
+			set_temp_variable = { pp = stab }
+			multiply_temp_variable = { pp = -100 }
+			multiply_temp_variable = { stab = -0.5 }
+			add_political_power = var:pp
+			add_stability = var:stab
+		}
+		clear_variable = random_chance
+		clear_variable = accceptance
+	}
+}
+country_event = { ##0## Diplomatic demand submission from Saruman
+	id = blood_oath.0
+	title = blood_oath.1.t
+	desc = blood_oath.1.d
+	picture = GFX_saruman_pleased
+	
+	is_triggered_only = yes
+	
+	immediate = { ##Decides whether AI will accept
+		hidden_effect = {
+			set_temp_variable = { total_acceptance = 0 }
+			if = { limit = { ROOT = { FROM = { calculate_blood_oath_submission_chance = yes } } } } ##just calculate the chance
+			set_variable = { accceptance = total_acceptance }
+			set_variable = { random_chance = random }
+		}
+	}
+	immediate = { ##Decides whether AI will accept
+		hidden_effect = {
+			set_temp_variable = { total_acceptance = 0 }
+			if = { limit = { ROOT = { FROM = { calculate_blood_oath_submission_chance = yes } } } } ##just calculate the chance
+			set_variable = { accceptance = total_acceptance }
+			set_variable = { random_chance = random }
+		}
+	}
+	
+	option = { ##submit
+		name = blood_oath.1.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				check_variable = { random_chance < accceptance }
+				add = 100
+			}
+		}
+		if = { limit = { check_variable = { accceptance > 0.99 } }#can't refuse a 100%
+			custom_effect_tooltip = cant_refuse_blood_oath_submission
+		}
+		save_current_politics = yes
+		FROM = {
+			PREV_swear_blood_oath_to_THIS = yes
+			hidden_effect = { news_event = { id = rfr_news.14 hours = 1 } }
+		}
+		clear_variable = random_chance
+		clear_variable = accceptance
+	}
+	
+	option = { ##refuse
+		name = blood_oath.1.b
+		trigger = {
+			check_variable = { accceptance < 1 } #can't refuse a 100%
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				check_variable = { random_chance < accceptance }
+				add = -100
+			}
+		}
+		FROM = { hidden_effect = { news_event = { id = rfr_news.15 hours = 1 } } }
+		if = { limit = { FROM = { has_completed_focus = ISN_words_of_honey_and_poison } }
+			FROM = {
+				create_wargoal = {
+					type = puppet_wargoal_refused_blood_oath
+					target = ROOT
+				}
+			}
+		}
+		#If acceptance > 50%, target loses stab & pp scaled with acceptance
+		set_temp_variable = { stab = accceptance }
+		subtract_from_temp_variable = { stab = 0.5 }
+		if = { limit = { check_variable = { accceptance > 0.5 } }
+			set_temp_variable = { pp = stab }
+			multiply_temp_variable = { pp = -100 }
+			multiply_temp_variable = { stab = -1 }
+			add_political_power = var:pp
+			add_stability = var:stab
+		}
+		clear_variable = random_chance
+		clear_variable = accceptance
+	}
+}
+
+country_event = { ##2## White peace between Isengard & ENE faction
+	id = blood_oath.2
+	title = blood_oath.2.t
+	desc = blood_oath.2.d
+	picture = GFX_saruman_regal
+	
+	is_triggered_only = yes
+	
+	option = { ##Accept the peace
+		name = blood_oath.2.a
+		ai_chance = {
+			base = 100
+		}
+		ENE_ISN_liberation_war_scripted_peace = yes
+	}
+	
+	option = { ##Keep fighting
+		name = blood_oath.2.b
+	}
+}
+
+country_event = { ##3## Invite ISN puppets to faction
+	id = blood_oath.3
+	title = blood_oath.3.t
+	desc = blood_oath.3.d
+	picture = GFX_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_temp_variable = { ratio = 0 }
+			find_alliance_strength_ratio_betray_saruman = yes
+		}
+	}
+	
+	option = { ##Join our kinsfolk
+		name = blood_oath.3.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				calculate_betray_saruman_join_faction_chance = yes
+				add = 100
+			}
+		}
+		FROM = { news_event = { id = rfr_news.17 hours = 1 } }
+		overlord = { news_event = { id = rfr_news.18 hours = 1 } }
+		ENE_ISN_puppet_joins_FROM_faction = yes
+	}
+	
+	option = { ##Stay true to saruman
+		name = blood_oath.3.b
+		ai_chance = {
+			base = 1
+		}
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = refused_cooperation
+			}
+			news_event = { id = rfr_news.16 hours = 1 }
+		}
+	}
+}
+
+country_event = { ##4## Innovation sharing with ENE tag
+	id = blood_oath.4
+	title = blood_oath.4.t
+	desc = blood_oath.4.d
+	picture = GFX_saruman_innovations
+	
+	is_triggered_only = yes
+	
+	option = { ##Of Course
+		name = blood_oath.4.a
+		ai_chance = {
+			base = 5
+		}
+		FROM = {
+			ROOT = { ENE_innovations_of_the_white_wizard_effect = yes }
+			hidden_effect = { news_event = { id = rfr_news.19 hours = 1 } }
+		}
+	}
+	option = { ##no
+		name = blood_oath.4.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -50
+				}
+				add = 100
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		FROM = { hidden_effect = { news_event = { id = rfr_news.20 hours = 1 } } }
+	}
+}
+
+country_event = { ##5## ENE tag requests ENE core
+	id = blood_oath.5
+	title = blood_oath.5.t
+	desc = blood_oath.5.d
+	picture = GFX_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	option = { ##Of Course
+		name = blood_oath.5.a
+		ai_chance = {
+			base = 5
+			modifier = { #more likely to return states of the correct heritage
+				FROM = { FROM.FROM = { THIS_state_has_same_heritage_as_PREV_tag = yes } }
+				factor = 2
+			}
+			modifier = { #won't return your own cores, obviously
+				FROM.FROM = {
+					OR = {
+						is_core_of = ROOT
+						state = 211 #keep the fords
+					}
+				}
+				factor = 0
+			}
+			#More likely the more you like the subject
+			modifier = {
+				has_opinion = { target = FROM value < 0 }
+				factor = 0.1
+			}
+			modifier = {
+				has_opinion = { target = FROM value > 50 }
+				factor = 1.2
+			}
+			modifier = {
+				has_opinion = { target = FROM value > 100 }
+				factor = 1.2
+			}
+			modifier = {
+				has_opinion = { target = FROM value > 150 }
+				factor = 1.2
+			}
+			#less likely the stronger the subject is
+			modifier = {
+				strength_ratio = { tag = FROM ratio < 2 }
+				factor = 0.75
+			}
+			modifier = {
+				strength_ratio = { tag = FROM ratio < 1.5 }
+				factor = 0.5
+			}
+			modifier = {
+				strength_ratio = { tag = FROM ratio < 1 }
+				factor = 0.1
+			}
+			modifier = {
+				FROM = { is_greater_enedwaith_formable = yes }
+				factor = 0.5
+			}
+			modifier = {
+				FROM = { check_variable = { num_owned_states = 1} }
+				factor = 2
+			}
+			#More likely if the state is a problem
+			modifier = {
+				FROM.FROM = { resistance > 25 }
+				factor = 1.25
+			}
+			modifier = {
+				FROM.FROM = { resistance > 50 }
+				factor = 1.5
+			}
+			modifier = {
+				FROM.FROM = { resistance > 90 }
+				factor = 2
+			}
+			modifier = {
+				has_manpower < 100000
+				factor = 2
+			}
+			
+		}
+		FROM = {
+			FROM.FROM = { request_ENE_state_return_effect = yes }
+			hidden_effect = { news_event = { id = RFR_news.21 hours = 1 } }
+		}
+	}
+	option = { ##no
+		name = blood_oath.5.b
+		ai_chance = {
+			base = 4
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		FROM = { hidden_effect = { news_event = { id = RFR_news.22 hours = 1 } } }
+	}
+}
+
+country_event = { ##6## ENE tag pays MOR tribute
+	id = blood_oath.6
+	title = blood_oath.6.t
+	desc = blood_oath.6.d
+	picture = GFX_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	@PPcost = -10
+	option = { ##Reward with PP
+		name = blood_oath.6.a
+		ai_chance = {
+			base = 5
+		}
+		ENE_mordor_tribute_for_mordor = yes #MOR gets CiC
+		ENE_mordor_tribute_for_mordor_accepted = yes #FROM gets autonomy or MOR loses pp
+		FROM = {
+			add_political_power = 100
+			hidden_effect = { news_event = { id = RFR_news.23 hours = 1 } }
+		}
+	}
+	option = { ##Reward with STAB/war support
+		name = blood_oath.6.b
+		ai_chance = {
+			base = 5
+		}
+		ENE_mordor_tribute_for_mordor = yes #MOR gets CiC
+		ENE_mordor_tribute_for_mordor_accepted = yes #FROM gets autonomy or MOR loses pp
+		FROM = {
+			add_stability = 0.1
+			add_war_support = 0.1
+			hidden_effect = { news_event = { id = RFR_news.24 hours = 1 } }
+		}
+	}
+	option = { ##Reward with army XP
+		name = blood_oath.6.c
+		ai_chance = {
+			base = 5
+		}
+		ENE_mordor_tribute_for_mordor = yes #MOR gets CiC
+		ENE_mordor_tribute_for_mordor_accepted = yes #FROM gets autonomy or MOR loses pp
+		FROM = {
+			army_experience = 40
+			hidden_effect = { news_event = { id = RFR_news.25 hours = 1 } }
+		}
+	}
+	option = { ##No reward
+		name = blood_oath.6.dd
+		ai_chance = {
+			base = 0
+			modifier = {
+				FROM = {
+					meta_trigger = {
+						text = {
+							is_power_balance_in_range = {
+								id = melkorite_power_balance[ID]
+								range = melkorite_lidless_eye_range1
+							}
+						}
+						ID = [?melkorite_bop_index]
+					}
+				}
+				add = 1
+			}
+			modifier = {
+				FROM = {
+					meta_trigger = {
+						text = {
+							is_power_balance_in_range = {
+								id = melkorite_power_balance[ID]
+								range = melkorite_neutral_range
+							}
+						}
+						ID = [?melkorite_bop_index]
+					}
+				}
+				add = 2
+			}
+			modifier = {
+				FROM = {
+					meta_trigger = {
+						text = {
+							is_power_balance_in_range = {
+								id = melkorite_power_balance[ID]
+								range = melkorite_local_pantheon_range1
+							}
+						}
+						ID = [?melkorite_bop_index]
+					}
+				}
+				add = 4
+			}
+			modifier = {
+				FROM = {
+					meta_trigger = {
+						text = {
+							is_power_balance_in_range = {
+								id = melkorite_power_balance[ID]
+								range = melkorite_local_pantheon_range2
+							}
+						}
+						ID = [?melkorite_bop_index]
+					}
+				}
+				add = 10
+			}
+			modifier = {
+				FROM = {
+					meta_trigger = {
+						text = {
+							is_power_balance_in_range = {
+								id = melkorite_power_balance[ID]
+								range = melkorite_local_pantheon_range3
+							}
+						}
+						ID = [?melkorite_bop_index]
+					}
+				}
+				add = 25
+			}
+		}
+		ENE_mordor_tribute_for_mordor = yes #mor gets CiC
+		FROM = {
+			set_country_flag = MOR_rejected_tribute
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = stole_tribute
+			}
+			hidden_effect = { news_event = { id = RFR_news.26 hours = 1 } }
+		}
+	}
+}
+
+country_event = { ##7## ENE tag demands we transfer Adorn Vale
+	id = blood_oath.7
+	title = blood_oath.7.t
+	desc = blood_oath.7.d
+	picture = GFX_dunlendings_rally
+	
+	is_triggered_only = yes
+	
+	option = { ##We have no choice
+		name = blood_oath.7.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 1
+				}
+				add = 2.5
+			}
+			modifier = {
+				FROM = { has_completed_focus = ENE_claim_dunlending_blood_in_grima }
+				has_character = ROH_grima
+				add = 3
+			}
+			modifier = {
+				FROM = { has_completed_focus = ENE_claim_dunlending_blood_in_grima }
+				has_country_leader = {
+					character = ROH_grima
+					ruling_only = yes
+				}
+				factor = 2.5
+			}
+		}
+		if = { limit = {controls_state = 69 }
+			FROM = { transfer_state = 69 }
+		}
+		else = {
+			FROM = { set_state_owner = 69 }
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = returned_our_ancient_lands
+		}
+		add_named_threat = {
+			threat = -1
+			name = backed_down_adorn_vale
+		}
+	}
+	
+	option = { ##Obviously not!
+		name = blood_oath.7.b
+		ai_chance = {
+			base = 5
+		}
+		FROM = {
+			country_event = { id = blood_oath.8 hours = 1 }
+		}
+		custom_effect_tooltip = we_refuse_to_transfer_adorn_tooltip
+	}
+}
+
+country_event = { ##8## ROH refuses to transfer Adorn Vale
+	id = blood_oath.8
+	title = blood_oath.8.t
+	desc = blood_oath.8.d
+	picture = GFX_rohan_theoden_negotiates
+	
+	is_triggered_only = yes
+	
+	option = { ##War it is
+		name = blood_oath.8.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		declare_war_on = {
+			target = FROM
+			type = tribal_core
+		}
+		custom_effect_tooltip = we_can_end_war_by_controlling_adorn_tooltip
+		set_country_flag = limited_war_with_rohan
+		set_variable = { limited_war_enemy = FROM }
+		activate_mission = ENE_secure_the_adorn_vale
+		hidden_effect = {
+			FROM = { activate_decision = ROH_secure_the_adorn_vale }
+		}
+	}
+	
+	option = { ##They called our bluff
+		name = blood_oath.8.b
+		ai_chance = {
+			base = 0
+		}
+		add_named_threat = {
+			threat = -1
+			name = backed_down_adorn_vale
+		}
+		add_war_support = -0.2
+	}
+}
+
+country_event = { ##9## Request guarantee from GON
+	id = blood_oath.9
+	title = blood_oath.9.t
+	desc = blood_oath.9.d
+	picture = GFX_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { ##Of course
+		name = blood_oath.9.a
+		ai_chance = { ##might have check not to do this if losing war
+			base = 5
+			modifier = {
+				FROM = { THIS_and_PREV_same_ideology = yes }
+				factor = 10
+			}
+		}
+		FROM = { hidden_effect = { news_event = { id = rfr_news.31 hours = 1 } } }
+		give_guarantee = FROM
+		diplomatic_relation = {
+			country = FROM
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+	
+	option = { ##No
+		name = blood_oath.8.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = yes }
+				add = 20
+			}
+		}
+		FROM = { hidden_effect = { news_event = { id = rfr_news.32 hours = 1 } } }
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+	}
+}
+
+country_event = { ##10## Request ENE tag become protectorate
+	id = blood_oath.10
+	title = blood_oath.10.t
+	desc = blood_oath.10.d
+	picture = GFX_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { ##This is good
+		name = blood_oath.10.a
+		ai_chance = { ##might have check not to do this if losing war
+			base = 5
+			modifier = {
+				FROM = { THIS_and_PREV_same_ideology = yes }
+				factor = 10
+			}
+			modifier = {
+				has_wargoal_against = FROM
+				factor = 0.5
+			}
+			##why be protected form someone not that strong?
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 0.5
+				}
+				factor = 0.5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 1
+				}
+				factor = 0
+			}
+		}
+		FROM = { hidden_effect = { news_event = { id = rfr_news.33 hours = 1 } } }
+		add_ideas = gondorian_protectorate
+		add_opinion_modifier = {
+			target = FROM
+			modifier = cooperation
+		}
+		reverse_add_opinion_modifier  = {
+			target = FROM
+			modifier = cooperation
+		}
+	}
+	
+	option = { ##We sacrifice no independence
+		name = blood_oath.10.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = yes }
+				add = 20
+			}
+		}
+		FROM = {
+			hidden_effect = { news_event = { id = rfr_news.34 hours = 1 } }
+			diplomatic_relation = {
+				country = ROOT
+				relation = guarantee
+				active = no
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = demanded_submission
+		}
+	}
+}
+
+country_event = { ##11## GON demand protectorate vassalization
+	id = blood_oath.11
+	title = blood_oath.11.t
+	desc = blood_oath.11.d
+	picture = GFX_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	immediate = { ##Decides whether AI will accept
+		hidden_effect = {
+			set_temp_variable = { total_acceptance = 0 }
+			if = { limit = { ROOT = { FROM = { calculate_blood_oath_submission_chance = yes } } } } ##just calculate the chance
+			set_variable = { accceptance = total_acceptance }
+			set_variable = { random_chance = random }
+		}
+	}
+	
+	option = { ##submit
+		name = blood_oath.11.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				check_variable = { random_chance < accceptance }
+				add = 100
+			}
+		}
+		if = { limit = { check_variable = { accceptance > 0.99 } }#can't refuse a 100%
+			custom_effect_tooltip = cant_refuse_blood_oath_submission
+		}
+		save_current_politics = yes
+		FROM = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = autonomy_puppet
+				end_wars = no
+				end_civil_wars = no
+			}
+			add_ai_strategy = { #AI doesn't need to keep trying to vassalise you now
+				type = diplo_action_desire
+				id = PREV
+				value = -200
+				target = improve_relation
+			}
+			hidden_effect = { news_event = { id = rfr_news.38 hours = 1 } }
+		}
+		hidden_effect = {
+			load_saved_politics = yes
+			clear_saved_politics = yes
+		}
+		clear_variable = random_chance
+		clear_variable = accceptance
+	}
+	option = { ##refuse
+		name = blood_oath.11.b
+		trigger = {
+			check_variable = { accceptance < 1 } #can't refuse a 100%
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				check_variable = { random_chance < accceptance }
+				add = -100
+			}
+		}
+		FROM = { hidden_effect = { news_event = { id = rfr_news.39 hours = 1 } } }
+		clear_variable = random_chance
+		clear_variable = accceptance
+	}
+}
+
+country_event = { ##12## Request to join war against Sauron
+	id = blood_oath.12
+	title = blood_oath.12.t
+	desc = blood_oath.12.d
+	picture = GFX_dunlendings_rally
+	
+	is_triggered_only = yes
+	
+	option = { ##Of course we want the help
+		name = blood_oath.12.a
+		ai_chance = {
+			base = 1
+		}
+		FROM = {
+			add_to_war = {
+				targeted_alliance = ROOT
+				enemy = MOR
+				hostility_reason = stand_together_against_the_darkness_war_reason
+			}
+			hidden_effect = { news_event = { id = rfr_news.41 hours = 1 } }
+		}
+	}
+	option = { ##We can't trust them
+		name = blood_oath.12.b
+		ai_chance = {
+			base = 0 #no reason to refuse
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.40 hours = 1 } } }
+		if = { #if denethor has despair, gives him another
+			limit = {
+				has_country_leader = { character = GON_denethor ruling_only = yes }
+				leader_has_any_despair = yes
+			}
+			increase_leader_despair_level = yes
+		}
+	}
+}
+
+country_event = { ##13## ENE tag requests to trade with us (North Tharbad)
+	id = blood_oath.13
+	title = blood_oath.13.t
+	desc = blood_oath.13.d
+	picture = GFX_event_trade2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { factoriesGained = num_of_civilian_factories }
+		divide_variable = { factoriesGained = global.CAR_factories_per_benefit }
+		round_variable  = factoriesGained
+		set_variable = { clothGained = FROM.resource_produced@cloth }
+		divide_variable = { clothGained = global.ENE_cloth_per_benefit }
+		round_variable = clothGained
+	}
+	
+	option = { ##We will trade
+		name = blood_oath.13.a
+		ai_chance = {
+			base = 10
+			##More likely with high opinion
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 66
+				}
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 33
+				}
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -50
+				}
+				factor = 0.25
+			}
+			##More likely with less cloth available
+			modifier = {
+				has_resources_in_country = {
+					resource = cloth
+					amount > 10
+				}
+				factor = 0.75
+			}
+			modifier = {
+				has_resources_in_country = {
+					resource = cloth
+					amount < 5
+				}
+				factor = 1.5
+			}
+			modifier = {
+				has_resources_in_country = {
+					resource = cloth
+					amount < 1
+				}
+				factor = 2
+			}
+			modifier = {
+				has_resources_in_country = {
+					resource = cloth
+					amount < 1
+				}
+				has_war = yes
+				factor = 2
+			}
+			##Less likely if ENE benefits disproportionately
+			modifier = { #CAR gets very good deal if fewer than 1 factory per cloth
+				set_temp_variable = { tempFactories = factoriesGained }
+				multiply_temp_variable = { tempFactories = 8 }
+				check_variable = { tempFactories < clothGained } 
+				factor = 1.5
+			}
+			modifier = {
+				set_temp_variable = { tempFactories = factoriesGained }
+				multiply_temp_variable = { tempFactories = 2 }
+				check_variable = { tempFactories > clothGained } 
+				factor = 0.75
+			}
+			modifier = { #CAR gets very bad deal if at least as many factories as cloth
+				set_temp_variable = { tempFactories = factoriesGained }
+				subtract_from_temp_variable = { tempFactories = 1 }
+				check_variable = { tempFactories > clothGained } 
+				factor = 0.25
+			}
+			##More likely if ENE is proportionally strong
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 2
+				}
+				factor = 1.25
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 1.5
+				}
+				factor = 1.5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 1
+				}
+				factor = 2
+			}
+		}
+		FROM_ENE_benefits_of_THIS_CAR_trade = yes
+		THIS_CAR_benefits_of_FROM_ENE_trade = yes
+		diplomatic_relation = {
+			country = FROM
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = cooperation
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = cooperation
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.42 hours = 1 } } }
+	}
+	option = { ##We won't trade
+		name = blood_oath.13.b
+		ai_chance = {
+			base = 4
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.43 hours = 1 } } }
+	}
+}
+
+country_event = { ##14## ENE tag wants to repair tharbad together
+	id = blood_oath.14
+	title = blood_oath.14.t
+	desc = blood_oath.14.d
+	picture = GFX_event_trade
+	
+	is_triggered_only = yes
+	
+	option = { ##We will cooperate
+		name = blood_oath.14.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 1
+				}
+				add = -8
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				add = -1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -10
+				}
+				add = -1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -25
+				}
+				add = -10
+			}
+		}
+		repair_tharbad_together = yes
+		hidden_effect = { FROM = { news_event = { id = rfr_news.44 hours = 1 } } }
+	}
+	option = { ##We won't do it
+		name = blood_oath.14.b
+		ai_chance = {
+			base = 1
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.45 hours = 1 } } }
+	}
+}
+
+country_event = { ##15## WHT declares independence
+	id = blood_oath.15
+	title = blood_oath.15.t
+	desc = blood_oath.15.d
+	picture = GFX_dunlendings_invade
+	
+	is_triggered_only = yes
+	
+	option = { ##Crush them
+		name = blood_oath.15.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				is_good = yes
+				FROM = { is_good = yes }
+				factor = 0.1
+			}
+			modifier = { #Bigger fish to fry
+				has_war_with_major = yes
+				NOT = { controls_state = 152 }
+				factor = 0
+			}
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.48 hours = 1 } } }
+	}
+	option = { ##Let them go
+		name = blood_oath.15.b
+		ai_chance = {
+			base = 1
+		}
+		set_truce = {
+			target = FROM
+			days = 100
+		}
+		FROM = {
+			add_popularity = {
+				ideology = FROM
+				popularity = 0.1
+			}
+		}
+		WHT = { set_country_flag = uprising_completed }
+		hidden_effect = { FROM = { news_event = { id = rfr_news.47 hours = 1 } } }
+	}
+}
+
+country_event = { ##16## Play as WHT?
+	id = blood_oath.16
+	title = blood_oath.16.t
+	desc = blood_oath.16.d
+	picture = GFX_dunlendings_conquer
+	
+	is_triggered_only = yes
+	
+	option = { ##Play as them
+		name = blood_oath.16.a
+		ai_chance = {
+			base = 0
+		}
+		WHT = { change_tag_from = ROOT }
+	}
+	option = { ##Stick with us
+		name = blood_oath.16.b
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = { ##17## ENE tag has given us ISN a military bonus
+	id = blood_oath.17
+	title = blood_oath.17.t
+	desc = blood_oath.17.d
+	picture = GFX_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	option = { ##Nice
+		name = blood_oath.17.a
+		ai_chance = { #be nice to players
+			base = 5
+		}
+		ISN_recieve_FROM_ENE_mil_bonus = yes
+		FROM = { add_ideas = isengard_planning }
+		hidden_effect = { FROM = { news_event = { id = RFR_news.53 hours = 1 } } }
+	}
+	option = { ##We need discpline
+		name = blood_oath.17.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				check_variable = { modifier@experience_gain_air < 0.02 }
+				add = 100
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.54 hours = 1 } } }
+	}
+}
+
+country_event = { ##18## DUN tag wants to trade pike & armor research
+	id = blood_oath.18
+	title = blood_oath.18.t
+	desc = blood_oath.18.d
+	picture = GFX_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	option = { ##Of course
+		name = blood_oath.18.a
+		ai_chance = { #be nice to players
+			base = 5
+		}
+		add_tech_bonus = {
+			bonus = 0.75
+			uses = 2
+			category = cat_anti_tank
+			name = ENE_the_forges_of_isengard_and_dunland
+		}
+
+		FROM = {
+			add_tech_bonus = {
+				bonus = 1.25
+				uses = 2
+				category = infantry_support_weapons
+				name = ENE_the_forges_of_isengard_and_dunland
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = cooperation
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.56 hours = 1 } } }
+	}
+	option = { ##We will not help them
+		name = blood_oath.18.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				THIS_and_PREV_good_vs_evil = yes
+				add = 100
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.57 hours = 1 } } }
+	}
+}
+
+country_event = { ##19## We raid a state
+	id = blood_oath.19
+	title = blood_oath.19.t
+	desc = blood_oath.19.d
+	picture = GFX_rohan_burning_of_the_westfold
+	
+	is_triggered_only = yes
+	
+	immediate = { #picks civs or mils
+		hidden_effect = {
+			random_list = {
+				1 = {
+					modifier = {
+						event_target:DUN_pillage_state = { industrial_complex < 1 }
+						factor = 0
+					}
+					set_variable = { pillage_type = industrial_complex }
+				}
+				1 = {
+					modifier = {
+						event_target:DUN_pillage_state = { arms_factory < 1 }
+						factor = 0
+					}
+					set_variable = { pillage_type = arms_factory }
+				}
+			}
+		}
+	}
+	
+	option = { ##nice
+		name = blood_oath.19.a
+		ai_chance = { #only option
+			base = 5
+		}
+		if = { limit = { check_variable = { pillage_type = industrial_complex } }
+			event_target:DUN_pillage_state = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_dynamic_modifier = { modifier = pillaged days = 365 }
+			}
+			random_core_state = {
+				limit = {
+					controller = { tag = ROOT }
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		else = {
+			event_target:DUN_pillage_state = {
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_dynamic_modifier = { modifier = pillaged days = 365 }
+			}
+			random_core_state = {
+				limit = {
+					controller = { tag = ROOT }
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = { ##20## DWI tag wants to trade with us
+	id = blood_oath.20
+	title = blood_oath.20.t
+	desc = blood_oath.20.d
+	picture = GFX_event_trade
+	
+	is_triggered_only = yes
+	
+	option = { ##Of course
+		name = blood_oath.20.a
+		ai_chance = { #be nice to players
+			base = 5
+		}
+		ISN_druwaith_trade_accept_effect = yes
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = cooperation
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.58 hours = 1 } } }
+	}
+	option = { ##We will not help them
+		name = blood_oath.20.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				THIS_and_PREV_good_vs_evil = yes
+				add = 100
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.59 hours = 1 } } }
+	}
+}
+
+country_event = { ##21## White Mountains tag wants us to give them the white mountains
+	id = blood_oath.21
+	title = blood_oath.21.t
+	desc = blood_oath.21.d
+	picture = GFX_event_dunlendings_rally
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { acceptance = 0 }
+		if = { limit = { original_tag = GON FROM = { has_idea = gondorian_protectorate } }
+			add_to_variable = { accceptance = 4 }
+		}
+		if = { limit = { FROM = { is_subject_of = ROOT } }
+			add_to_variable = { accceptance = 6 }
+		}
+		######OPINION
+		if = { limit = { has_opinion = { target = FROM value < -24 } }
+			add_to_variable = { accceptance = -2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value < 0 } }
+			add_to_variable = { accceptance = -2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 24 } }
+			add_to_variable = { accceptance = 1 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 49 } }
+			add_to_variable = { accceptance = 1 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 74 } }
+			add_to_variable = { accceptance = 1 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 99 } }
+			add_to_variable = { accceptance = 1 }
+		}
+		if = { limit = { has_government = FROM }
+			add_to_variable = { accceptance = 1 }
+		}
+		if = { limit = { NOT = { 139 = { is_core_of = ROOT } } }
+			add_to_variable = { accceptance = 1 }
+		}
+		if = { limit = { NOT = { 153 = { is_core_of = ROOT } } }
+			add_to_variable = { accceptance = 1 }
+		}
+		if = { limit = { FROM = { THIS_and_PREV_good_vs_evil = yes } } #never cooperate with evil
+			set_variable = { acceptance = 0 }
+		}
+	}
+	
+	option = { ##Of course
+		name = blood_oath.21.a
+		ai_chance = { #be nice to players
+			base = 1
+			modifier = {
+				check_variable = { accceptance > 6 }
+				factor = 100
+			}
+		}
+		FROM = { transfer_state = 139 }
+		FROM = { transfer_state = 153 }
+		if = { limit = { 139 = { is_core_of = ROOT } }
+			remove_state_core = 139
+		}
+		if = { limit = { 153 = { is_core_of = ROOT } }
+			remove_state_core = 153
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = returned_our_ancient_lands
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.60 hours = 1 } } }
+		clear_variable = acceptance
+	}
+	option = { ##Only morthond
+		name = blood_oath.21.b
+		ai_chance = { #be nice to players
+			base = 1
+			modifier = {
+				check_variable = { accceptance > 1 }
+				check_variable = { accceptance < 7 }
+				factor = 100
+			}
+		}
+		FROM = { transfer_state = 139 }
+		if = { limit = { 139 = { is_core_of = ROOT } }
+			remove_state_core = 139
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.60 hours = 1 } } }
+		clear_variable = acceptance
+	}
+	option = { ##Why should we?
+		name = blood_oath.21.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				check_variable = { accceptance < 2 }
+				factor = 100
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		if = { limit = { is_good = yes FROM = { is_good = yes } }##why don't we set them free?
+			add_stability = -0.05
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.61 hours = 1 } } }
+		clear_variable = acceptance
+	}
+}
+
+country_event = { ##22## ENE tag wants NAP with ROH
+	id = blood_oath.22
+	title = blood_oath.22.t
+	desc = blood_oath.22.d
+	picture = GFX_event_trade
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { acceptance = 0 }
+		if = { limit = { FROM = { is_subject_of = ROOT } }
+			add_to_variable = { accceptance = 10 }
+		}
+		else_if = { limit = { is_in_faction_with = FROM }
+			add_to_variable = { accceptance = 5 }
+		}
+		######OPINION
+		if = { limit = { has_opinion = { target = FROM value < -24 } }
+			add_to_variable = { accceptance = -2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value < 0 } }
+			add_to_variable = { accceptance = -2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 24 } }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 49 } }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 74 } }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 99 } }
+			add_to_variable = { accceptance = 1 }
+		}
+		if = { limit = { has_government = FROM }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { NOT = { 69 = { is_core_of = ROOT } } }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { FROM = { THIS_and_PREV_good_vs_evil = yes is_assertive = yes } } #never cooperate with true evil
+			set_variable = { acceptance = 0 }
+		}
+		else_if = { limit = { FROM = { THIS_and_PREV_good_vs_evil = yes } }
+			add_to_variable = { accceptance = -4 }
+		}
+	}
+	
+	option = { ##Of course
+		name = blood_oath.22.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				check_variable = { accceptance > 0 }
+				factor = 100
+			}
+		}
+		diplomatic_relation = {
+			country = FROM
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.62 hours = 1 } } }
+		clear_variable = accceptance
+	}
+	option = { ##We don't trust them
+		name = blood_oath.22.b
+		ai_chance = {
+			base = 5
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = medium_decrease
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.63 hours = 1 } } }
+		clear_variable = accceptance
+	}
+}
+
+country_event = { ##23## ENE tag offers fealty for the vale
+	id = blood_oath.23
+	title = blood_oath.23.t
+	desc = blood_oath.23.d
+	picture = GFX_swear_blood_oath
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { acceptance = 0 }
+		if = { limit = { FROM = { is_subject_of = ROOT } }
+			add_to_variable = { accceptance = 10 }
+		}
+		else_if = { limit = { is_in_faction_with = FROM }
+			add_to_variable = { accceptance = 5 }
+		}
+		######OPINION
+		if = { limit = { has_opinion = { target = FROM value < -24 } }
+			add_to_variable = { accceptance = -2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value < 0 } }
+			add_to_variable = { accceptance = -2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 24 } }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 49 } }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 74 } }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 99 } }
+			add_to_variable = { accceptance = 1 }
+		}
+		if = { limit = { has_government = FROM }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { NOT = { 69 = { is_core_of = ROOT } } }
+			add_to_variable = { accceptance = 5 }
+		}
+		if = { limit = { FROM = { THIS_and_PREV_good_vs_evil = yes is_assertive = yes } } #never cooperate with true evil
+			set_variable = { acceptance = 0 }
+		}
+		else_if = { limit = { FROM = { THIS_and_PREV_good_vs_evil = yes } }
+			add_to_variable = { accceptance = -4 }
+		}
+	}
+	
+	option = { ##Of course
+		name = blood_oath.23.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				check_variable = { accceptance > 10 }
+				factor = 100
+			}
+		}
+		give_guarantee = FROM
+		FROM = {
+			add_ideas = rohirric_protectorate
+			transfer_state = 69
+			add_state_core = 69
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = returned_our_ancient_lands
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.64 hours = 1 } } }
+		clear_variable = accceptance
+	}
+	option = { ##The vale is ours
+		name = blood_oath.23.b
+		ai_chance = {
+			base = 10
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = retains_our_ancient_lands
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.65 hours = 1 } } }
+		clear_variable = accceptance
+	}
+}
+
+country_event = { ##24## ENE tag offers civs for the vale
+	id = blood_oath.24
+	title = blood_oath.24.t
+	desc = blood_oath.24.d
+	picture = GFX_event_trade2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { acceptance = 0 }
+		if = { limit = { FROM = { is_subject_of = ROOT } }
+			add_to_variable = { accceptance = 10 }
+		}
+		else_if = { limit = { is_in_faction_with = FROM }
+			add_to_variable = { accceptance = 5 }
+		}
+		######OPINION
+		if = { limit = { has_opinion = { target = FROM value < -24 } }
+			add_to_variable = { accceptance = -2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value < 0 } }
+			add_to_variable = { accceptance = -2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 24 } }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 49 } }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 74 } }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { has_opinion = { target = FROM value > 99 } }
+			add_to_variable = { accceptance = 1 }
+		}
+		if = { limit = { has_government = FROM }
+			add_to_variable = { accceptance = 2 }
+		}
+		if = { limit = { NOT = { 69 = { is_core_of = ROOT } } }
+			add_to_variable = { accceptance = 5 }
+		}
+		if = { limit = { FROM = { THIS_and_PREV_good_vs_evil = yes is_assertive = yes } } #never cooperate with true evil
+			set_variable = { acceptance = 0 }
+		}
+		else_if = { limit = { FROM = { THIS_and_PREV_good_vs_evil = yes } }
+			add_to_variable = { accceptance = -4 }
+		}
+	}
+	
+	option = { ##Of course
+		name = blood_oath.24.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				check_variable = { accceptance > 10 }
+				factor = 100
+			}
+		}
+		give_guarantee = FROM
+		FROM = {
+			transfer_state = 69
+			add_state_core = 69
+			random_controlled_state = { ##takes 5 civs
+				limit = { industrial_complex > 4 }
+				remove_building = {
+					type = industrial_complex
+					level = 5
+				}
+				add_extra_state_shared_building_slots = -5	
+			}
+		}
+		if = { limit = { any_controlled_state = { is_core_of = ROOT free_building_slots = { building = industrial_complex size > 4 include_locked = yes } } }
+			random_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 4
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 5
+			}
+		}
+		else = { ## still get the goods even fi they don't fit in one state
+			gain_5_random_civs = yes
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = returned_our_ancient_lands
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.64 hours = 1 } } }
+		clear_variable = accceptance
+	}
+	option = { ##The vale is ours
+		name = blood_oath.24.b
+		ai_chance = {
+			base = 10
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = retains_our_ancient_lands
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.65 hours = 1 } } }
+		clear_variable = accceptance
+	}
+}
+
+country_event = { ##25## ISN gives sick elven tech
+	id = blood_oath.25
+	title = blood_oath.25.t
+	desc = blood_oath.25.d
+	picture = GFX_saruman_innovations
+	
+	is_triggered_only = yes
+	
+	option = { ##Yay
+		name = blood_oath.25.a
+		ai_chance = {
+			base = 1
+		}
+		if = { limit = { FROM = { has_completed_focus = ISN_study_forgotten_elven_equipment } }
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_tech
+				name = ISN_study_forgotten_elven_equipment
+			}
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+				name = ISN_study_ruined_elven_architecture
+			}
+		}
+		add_opinion_modifier = { target = FROM modifier = cooperation }
+	}
+}
+
+country_event = { ##26## ISN offers protection for trust
+	id = blood_oath.26
+	title = blood_oath.26.t
+	desc = blood_oath.26.d
+	picture = GFX_saruman_regal
+	
+	is_triggered_only = yes
+	
+	option = { ##Yep
+		name = blood_oath.26.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				any_country = { is_major = yes has_wargoal_against = ROOT }
+				factor = 5
+			}
+			modifier = {
+				GON = { has_wargoal_against = ROOT }
+				factor = 100
+			}
+			modifier = {
+				has_opinion = { target = GON value < 0 }
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = { target = GON value < 50 }
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = { target = ISN value < 0 }
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = { target = ISN value < 50 }
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = anti_saruman_flag
+				factor = 0.5
+			}
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 0
+			}
+		}
+		FROM = {
+			give_guarantee = ROOT
+			increase_PREV_trust_towards_THIS = yes
+			hidden_effect = { news_event = { id = RFR_news.67 hours = 1 } }
+		}
+	}
+	option = { #nope
+		name = blood_oath.26.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_wargoal_against = FROM
+				factor = 20
+			}
+			modifier = {
+				has_opinion = { target = GON value > 25 }
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = { target = GON value > 50 }
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = { target = ISN value > 25 }
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = { target = ISN value > 50 }
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = saruman_flag
+				factor = 0.5
+			}
+			modifier = {
+				has_government = FROM
+				factor = 0.25
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		FROM = {
+			hidden_effect = { news_event = { id = RFR_news.68 hours = 1 } }
+		}
+	}
+}
+
+country_event = { ##27## ISN grants us claims and wargoal vs GON
+	id = blood_oath.27
+	title = blood_oath.27.t
+	desc = blood_oath.27.d
+	picture = GFX_saruman_rallies_dunlendings
+	
+	is_triggered_only = yes
+	
+	option = { ##well then
+		name = blood_oath.27.a
+		ai_chance = {
+			base = 1
+		}
+		GON = {
+			every_owned_state = {
+				limit = {
+					any_neighbor_state = {
+						is_owned_by = ROOT
+					}
+				}
+				add_claim_by = ROOT
+			}
+		}
+		random_state = {
+			limit = {
+				is_owned_by = GON
+				is_claimed_by = ROOT
+			}
+			custom_effect_tooltip = ROOT_gains_claim_wargoal_for_THIS_state_tooltip
+			hidden_effect = {
+				ROOT = {
+					meta_effect = {
+						text = {
+							create_wargoal = {
+								type = take_claimed_state
+								target = GON
+								generator = { [STATE_ID] }
+							}
+						}
+						STATE_ID = "[PREV.getId]"
+					}
+				}
+			}
+		}			
+	}
+}
+
+country_event = { ##28## ISN offers to invest in us
+	id = blood_oath.28
+	title = blood_oath.28.t
+	desc = blood_oath.28.d
+	picture = GFX_saruman_industry
+	
+	is_triggered_only = yes
+	
+	option = { ##Take the civ
+		name = blood_oath.28.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_subject_of = FROM
+				add = 1000
+			}
+			modifier = {
+				is_in_faction_with = FROM
+				factor = 3
+			}
+			modifier = {
+				check_variable = { num_of_civilian_factories < num_of_military_factories }
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -30
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = anti_saruman_flag
+				factor = 0.01
+			}
+			modifier = {
+				OR = {
+					AND = {
+						FROM = { is_evil = yes is_assertive = yes }
+						is_good = yes
+					}
+					AND = {
+						FROM = { is_good = yes }
+						is_evil = yes
+						is_assertive = yes
+					}
+				}	
+				factor = 0
+			}
+		}
+		random_controlled_state = {
+			limit = {
+				is_isen_river_state = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+		FROM = { increase_PREV_trust_towards_THIS = yes }
+		set_country_flag = accepted_ISN_investment
+		hidden_effect = { FROM = { news_event = { id = rfr_news.69 hours = 1 } } }
+	}
+	option = { ##Take the mil
+		name = blood_oath.28.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_subject_of = FROM
+				add = 1000
+			}
+			modifier = {
+				is_in_faction_with = FROM
+				factor = 3
+			}
+			modifier = {
+				check_variable = { num_of_military_factories < num_of_civilian_factories }
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -30
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = anti_saruman_flag
+				factor = 0.01
+			}
+			modifier = {
+				OR = {
+					AND = {
+						FROM = { is_evil = yes is_assertive = yes }
+						is_good = yes
+					}
+					AND = {
+						FROM = { is_good = yes }
+						is_evil = yes
+						is_assertive = yes
+					}
+				}	
+				factor = 0
+			}
+		}
+		random_controlled_state = {
+			limit = {
+				is_isen_river_state = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+		FROM = { increase_PREV_trust_towards_THIS = yes }
+		set_country_flag = accepted_ISN_investment
+		hidden_effect = { FROM = { news_event = { id = rfr_news.69 hours = 1 } } }	
+	}
+	option = { ##nope
+		name = blood_oath.28.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_government = FROM
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 30
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = saruman_flag
+				factor = 0.01
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.70 hours = 1 } } }
+	}
+}
+
+country_event = { ##29## ISN follows up investment with research
+	id = blood_oath.29
+	title = blood_oath.29.t
+	desc = blood_oath.29.d
+	picture = GFX_saruman_innovations
+	
+	is_triggered_only = yes
+	
+	@DruwaithInvestmentTechBonus = 0.75
+	option = { ##take construction bonus
+		name = blood_oath.29.a
+		ai_chance = {
+			base = 1
+		}
+		add_tech_bonus = {
+			bonus = @DruwaithInvestmentTechBonus
+			ahead_reduction = 1
+			uses = 2
+			category = construction_tech
+			name = ISN_invest_in_druwaith_iaur
+		}
+		FROM = { increase_PREV_trust_towards_THIS = yes }
+	}
+	option = { ##take production bonus
+		name = blood_oath.29.b
+		ai_chance = {
+			base = 1
+		}
+		add_tech_bonus = {
+			bonus = @DruwaithInvestmentTechBonus
+			ahead_reduction = 1
+			uses = 2
+			category = cat_production
+			name = ISN_invest_in_druwaith_iaur
+		}
+		FROM = { increase_PREV_trust_towards_THIS = yes }
+	}
+	option = { ##take infantry weapons bonus
+		name = blood_oath.29.a
+		ai_chance = {
+			base = 1
+		}
+		add_tech_bonus = {
+			bonus = @DruwaithInvestmentTechBonus
+			ahead_reduction = 1
+			uses = 2
+			category = infantry_weapons
+			name = ISN_invest_in_druwaith_iaur
+		}
+		FROM = { increase_PREV_trust_towards_THIS = yes }
+	}
+}
+
+country_event = { ##30## ISN offers PP to join faction
+	id = blood_oath.30
+	title = blood_oath.30.t
+	desc = blood_oath.30.d
+	picture = GFX_saruman_rallies_dunlendings
+	
+	is_triggered_only = yes
+	
+	option = { ##yep
+		name = blood_oath.30.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				any_country = { is_major = yes has_wargoal_against = ROOT }
+				factor = 5
+			}
+			modifier = {
+				GON = { has_wargoal_against = ROOT }
+				factor = 100
+			}
+			modifier = {
+				has_opinion = { target = ISN value < 0 }
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = { target = ISN value < 50 }
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = anti_saruman_flag
+				factor = 0.1
+			}
+			modifier = {
+				any_country = {
+					has_wargoal_against = ROOT
+				}
+				is_in_faction = no
+				factor = 2
+			}
+			modifier = {
+				is_in_faction = yes
+				factor = 0.5
+			}
+			modifier = {
+				is_in_faction = yes
+				has_war = yes
+				factor = 0
+			}
+			modifier = {
+				is_faction_leader = yes
+				factor = 0
+			}
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 0
+			}
+		}
+		add_political_power = var:ISN.druwaith_investment_PP
+		FROM = { add_to_faction = ROOT }
+		hidden_effect = { FROM = { news_event = { id = rfr_news.71 hours = 1 } } }
+	}
+	option = { ##nope
+		name = blood_oath.30.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_wargoal_against = FROM
+				factor = 20
+			}
+			modifier = {
+				has_opinion = { target = ISN value > 25 }
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = { target = ISN value > 50 }
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = saruman_flag
+				factor = 0.1
+			}
+			modifier = {
+				has_government = FROM
+				factor = 0.25
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.72 hours = 1 } } }
+	}
+}
+
+country_event = { ##31## ISN offers PP for ideology drift
+	id = blood_oath.31
+	title = blood_oath.31.t
+	desc = blood_oath.31.d
+	picture = GFX_saruman_rallies_dunlendings
+	
+	is_triggered_only = yes
+	
+	option = { ##yep
+		name = blood_oath.31.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_opinion = { target = ISN value < 0 }
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = { target = ISN value < 50 }
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = anti_saruman_flag
+				factor = 0.1
+			}
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 0
+			}
+		}
+		add_political_power = var:ISN.druwaith_investment_PP
+		add_popularity = {
+			ideology = FROM
+			popularity = 0.1
+		}
+		FROM = { ROOT = { add_foreign_ideology_drift_idea_365 = yes } }
+		hidden_effect = { FROM = { news_event = { id = rfr_news.71 hours = 1 } } }
+	}
+	option = { ##nope
+		name = blood_oath.31.b
+		ai_chance = {
+			base = 8
+			modifier = {
+				has_wargoal_against = FROM
+				factor = 20
+			}
+			modifier = {
+				has_opinion = { target = ISN value > 25 }
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = { target = ISN value > 50 }
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = saruman_flag
+				factor = 0.1
+			}
+			modifier = {
+				has_government = FROM
+				factor = 0.25
+			}
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		add_popularity = {
+			ideology = FROM
+			popularity = 0.1
+		}
+		hidden_effect = { FROM = { news_event = { id = rfr_news.72 hours = 1 } } }
+	}
+}
+
+country_event = { ##32## ISN sways an advisor
+	id = blood_oath.32
+	title = blood_oath.32.t
+	desc = blood_oath.32.d
+	picture = GFX_rohan_grima_and_theoden
+	
+	is_triggered_only = yes
+	
+	option = { ##listen to their wisdom
+		name = blood_oath.32.a
+		ai_chance = {
+			base = 5
+			modifier = {
+				has_government = FROM
+				factor = 1.5
+			}
+			modifier = {
+				has_opinion = { target = ISN value < 0 }
+				factor = 0.5
+			}
+			modifier = {
+				has_opinion = { target = ISN value < 50 }
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = anti_saruman_flag
+				factor = 0.1
+			}
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 0.5
+			}
+		}
+		add_popularity = {
+			ideology = FROM
+			popularity = 0.1
+		}
+		add_stability = 0.1
+		hidden_effect = { FROM = { ROOT = { add_AI_friendly_desire_towards_PREV = yes } } }
+	}
+	option = { ##watch them closely
+		name = blood_oath.32.b
+		ai_chance = {
+			base = 7
+		}
+	}
+	# option = { ##remove them-- way too buggy
+		# name = blood_oath.32.c
+		# ai_chance = {
+			# base = 5
+			# modifier = {
+				# FROM = { THIS_and_PREV_good_vs_evil = yes }
+				# factor = 1.5
+			# }
+			# modifier = {
+				# has_opinion = { target = ISN value > 25 }
+				# factor = 0.5
+			# }
+			# modifier = {
+				# has_opinion = { target = ISN value > 50 }
+				# factor = 0.5
+			# }
+			# modifier = {
+				# has_stability < 60
+				# factor = 0.1
+			# }
+			# modifier = {
+				# has_country_flag = saruman_flag
+				# factor = 0.1
+			# }
+			# modifier = {
+				# has_government = FROM
+				# factor = 0.1
+			# }
+		# }
+		# random_character = {
+			# limit = { has_character_flag = sarumans_pupil_flag }
+			# deactivate_THIS_saruman_pupil = yes
+		# }
+		# add_political_power = -50
+	# }
+}
+
+country_event = { ##33## MOR offers us an advisor
+	id = blood_oath.33
+	title = blood_oath.33.t
+	desc = blood_oath.33.d
+	picture = GFX_mordor_mouth_of_sauron
+	
+	is_triggered_only = yes
+	
+	option = { ##hire them
+		name = blood_oath.33.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				wants_to_be_melkorite = yes
+				add = 10
+			}
+			modifier = {
+				is_ally_with = FROM
+				add = 10
+			}
+			modifier = {
+				OR = {
+					wants_to_be_isolationism = yes
+					wants_to_be_freedom = yes
+				}
+				factor = 0
+			}
+		}
+		random_character = {
+			limit = { has_trait = agent_of_barad_dur }
+			ROOT = { 
+				meta_effect = {
+					text = { activate_advisor = [ADVISOR] }
+					ADVISOR = "[PREV.GetTokenKey]"
+				}
+			}
+			custom_effect_tooltip = agent_of_barad_dur_tooltip
+		}
+		add_opinion_modifier = {
+			target = MOR
+			modifier = saurons_friendship
+		}
+		hidden_effect = { FROM = { news_event = { id = RFR_news.74 hours = 1 } } }
+		set_country_flag = accepted_melkorite_advisor
+	}
+	option = { ##begone!
+		name = blood_oath.33.b
+		ai_chance = {
+			base = 2
+		}
+		add_popularity = {
+			ideology = melkorite
+			popularity = -0.1
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+	}
+}
+country_event = { ##34## MOR sends black riders through ENE
+	id = blood_oath.34
+	title = blood_oath.34.t
+	desc = blood_oath.34.d
+	picture = GFX_nazgul_question
+	
+	is_triggered_only = yes
+	
+	option = { ##aquiese
+		name = blood_oath.34.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				wants_to_be_melkorite = yes
+				add = 10
+			}
+			modifier = {
+				is_ally_with = FROM
+				add = 10
+			}
+			modifier = {
+				has_stability < 0.5
+				add = 1
+			}
+			modifier = {
+				OR = {
+					wants_to_be_isolationism = yes
+					wants_to_be_freedom = yes
+				}
+				factor = 0
+			}
+		}
+		if = { limit = { has_idea = melkorite_influence }
+			add_popularity = {
+				ideology = melkorite
+				popularity = 0.15
+			}
+		}
+		else = {
+			add_ideas = melkorite_influence
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = saurons_friendship
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = cooperation
+		}
+	}
+	option = { ##drive them out
+		name = blood_oath.34.b
+		ai_chance = {
+			base = 2
+		}
+		add_stability = -0.15
+		add_opinion_modifier = {
+			target = FROM
+			modifier = terrorized_us
+		}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_cooperation
+		}
+		set_country_flag = rejected_black_riders
+	}
+}
+country_event = { ##35## MOR demands ENE melkorites become vassals
+	id = blood_oath.35
+	title = blood_oath.35.t
+	desc = blood_oath.35.d
+	picture = GFX_mordor_mouth_of_sauron
+	
+	is_triggered_only = yes
+	immediate = {
+		set_variable = { loss = party_popularity@melkorite }
+		set_variable = { ppLoss = loss }
+		multiply_variable = { loss = -0.5 }
+		multiply_variable = { ppLoss = -100 }
+	}
+	
+	option = { ##submit
+		name = blood_oath.35.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				OR = {
+					has_government = isolationism
+					has_government = freedom
+				}
+				factor = 0
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+				factor = 10
+			}
+			modifier = {
+				has_opinion = { target = FROM value > 30 }
+				factor = 2
+			}
+			modifier = {
+				has_war_with = FROM
+				factor = 0
+			}
+		}
+		if = {
+			limit = { has_dlc = "Death or Dishonor" }
+			FROM = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_satellite
+				}
+			}
+		}
+		else_if = {
+			limit = { OR = { has_dlc = "Together for Victory" has_dlc = "Waking the Tiger" } }
+			FROM = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_dominion
+				}
+			}
+		}
+		else = {
+			FROM = {
+				puppet = ROOT
+			}
+		}
+		FROM = { hidden_effect = { news_event = { id = rfr_news.75 hours = 1 } } }
+		clear_variable = loss
+		clear_variable = ppLoss
+	}
+	option = { ##drive them out
+		name = blood_oath.35.b
+		ai_chance = {
+			base = 2
+			modifier = {
+				has_opinion = { target = FROM value < -25}
+				factor = 4
+			}
+		}
+		# add_political_power = var:ppLoss
+		# add_war_support = loss
+		# add_stability = loss
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = refused_submission
+		}
+		FROM = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ROOT
+			}
+			hidden_effect = { news_event = { id = rfr_news.76 hours = 1 } }
+		}	
+		clear_variable = loss
+		clear_variable = ppLoss
+	}
+}
+
+country_event = { ##36## Hidden compliance event for annex_on_swear
+	id = blood_oath.36
+	hidden = yes
+	
+	is_triggered_only = yes
+	immediate = {
+		every_state = {
+			limit = { has_state_flag = compliance_state }
+			if = { limit = { has_resistance = yes }
+				add_compliance = 35
+			}
+			clr_state_flag = compliance_state
+		}
+	}
+}
+	

@@ -828,6 +828,14 @@ spriteTypes = {
 		name = "GFX_decision_power_struggle"
 		texturefile = "gfx/interface/decisions/power_struggle.dds"
 	}
+	SpriteType = {
+		name = "GFX_decision_cult_of_the_lidless_eye"
+		texturefile = "gfx/interface/decisions/cult_of_the_lidless_eye.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_local_pantheons"
+		texturefile = "gfx/interface/decisions/local_pantheons.dds"
+	}
 
 ################################################CATEGORY ICONS
 	spriteType = {

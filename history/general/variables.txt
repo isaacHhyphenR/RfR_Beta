@@ -8,5 +8,5 @@ FOR = {
 	set_variable = { global.republics_autonomy_bonus_base = -0.01 }
 	set_variable = { global.republics_compliance_bonus_base = 0.005 }
 	set_variable = { global.republics_freedom_bonus_base = 0.01 }
-	set_variable = { global.max_rhovanion_influence_gain = 0.5 } #how much daily influence you gain with a rhovan tag at 100 opinion
+	set_variable = { global.max_rhovanion_influence_gain = 0.25 } #how much daily influence you gain with a rhovan tag at 100 opinion
 }
