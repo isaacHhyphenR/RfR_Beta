@@ -109,6 +109,9 @@ focus_tree = {
 		prerequisite = {
 			focus = DOR_sponsor_guild_activites
 		}
+		allow_branch = {
+			always = no
+		}
 		available = { great_merchants_focus_trigger = yes }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -326,7 +329,7 @@ focus_tree = {
 	focus = { #Jewels Upon the Sea
 		id = DOR_jewels_upon_the_sea
 		#icon = GFX_goal_the_deciever
-		x = 4
+		x = -12
 		y = 1
 		relative_position_id = DOR_support_the_great_merchants
 		cost = 10
@@ -358,9 +361,9 @@ focus_tree = {
 	focus = { #Sail by river and wave
 		id = DOR_sail_by_river_and_wave
 		icon = GFX_focus_POL_develop_polish_shipbuilding
-		x = 4
+		x = -9
 		y = 0
-		relative_position_id = DOR_jewels_upon_the_sea
+		relative_position_id = DOR_support_the_great_merchants
 		cost = 5
 		ai_will_do = {
 			factor = 1
@@ -907,7 +910,7 @@ focus_tree = {
 	focus = { #Dispatch celduin trade delegation
 		id = DOR_dispatch_celduin_trade_delegation
 		icon = GFX_goal_generic_positive_trade_relations
-		x = -6
+		x = 8
 		y = 1
 		relative_position_id = DOR_support_the_great_merchants
 		cost = 5
@@ -1235,7 +1238,7 @@ focus_tree = {
 	focus = { #Merchant Spies
 		id = DOR_merchant_spies
 		icon = GFX_focus_generic_secret_service_agency
-		x = -13
+		x = 12
 		y = 1
 		relative_position_id = DOR_support_the_great_merchants
 		cost = 5
@@ -1836,7 +1839,7 @@ focus_tree = {
 		}
 		available = {
 			winelords_focus_trigger = yes
-			has_war_support > 0.74
+			has_war_support > 0.64
 			OR = {
 				RIN = { can_ROOT_get_wargoal_on_THIS = yes }
 				RUS = { can_ROOT_get_wargoal_on_THIS = yes }
@@ -3176,7 +3179,7 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = {
 				ideology = freedom
-				popularity = 0.1
+				popularity = 0.075
 			}
 			burghers_focus_effect = yes
 		}
@@ -3335,6 +3338,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			calculate_num_republics = yes
 			set_rule = {
 				desc = DOR_home_of_the_revolution_modifier
 				can_create_factions = yes
@@ -3360,8 +3364,17 @@ focus_tree = {
 		}
 		available = {
 			burghers_focus_trigger = yes
-			has_war_support > 0.74
+			freedom > 0.79
+			has_war_support > 0.79
 			has_any_level_demoralized_army = yes
+			any_other_country = {
+				ROOT = {
+					has_war_with_wargoal_against = {
+						target = PREV
+						type  = spread_the_revolution
+					}
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
 		completion_reward = {
@@ -3578,7 +3591,7 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = {
 				ideology = freedom
-				popularity = 0.1
+				popularity = 0.075
 			}
 			burghers_focus_effect = yes
 		}
@@ -3733,7 +3746,7 @@ focus_tree = {
 	focus = { #seek the wisdom of elves
 		id = DOR_seek_the_wisdom_of_elves
 		icon = GFX_goal_generic_befriend_woodland_realm
-		x = -14
+		x = 14
 		y = 1
 		relative_position_id = DOR_support_the_burghers
 		cost = 5
@@ -3923,7 +3936,7 @@ focus_tree = {
 	focus = { #Guarantee the Rights of Marcher Citizens
 		id = DOR_gaurantee_the_rights_of_marcher_citizens
 		icon = GFX_focus_generic_population_growth
-		x = -8
+		x = 9
 		y = 1
 		relative_position_id = DOR_support_the_burghers
 		cost = 5
@@ -4555,7 +4568,7 @@ focus_tree = {
 	focus = { #Rely on Urban Militias
 		id = DOR_rely_on_urban_militias
 		icon = GFX_focus_secret_rearmament
-		x = 11
+		x = -9
 		y = 1
 		relative_position_id = DOR_support_the_burghers
 		cost = 10
@@ -4980,7 +4993,7 @@ focus_tree = {
 	focus = { #Nation of Artisans
 		id = DOR_nation_of_artisans
 		icon = GFX_focus_ITA_workers_unions
-		x = 19
+		x = -19
 		y = 1
 		relative_position_id = DOR_support_the_burghers
 		cost = 10
@@ -6627,7 +6640,7 @@ focus_tree = {
 	focus = { #Strengthen Trade With the Lonely Mountain
 		id = DOR_strengthen_trade_with_the_lonely_mountain
 		icon = GFX_goal_erebor_trade
-		x = -6
+		x = 9
 		y = 0
 		relative_position_id = DOR_wealth_is_power
 		cost = 5
@@ -7144,7 +7157,7 @@ focus_tree = {
 	focus = { #Establish an Embassy in Dale
 		id = DOR_establish_an_embassy_in_dale
 		icon = GFX_goal_generic_befriend_dale
-		x = -9
+		x = 14
 		y = 0
 		relative_position_id = DOR_strengthen_trade_with_the_lonely_mountain
 		cost = 5
@@ -7885,7 +7898,7 @@ focus_tree = {
 	focus = { #Rely on Mercenary Guards
 		id = DOR_rely_on_mercenary_guards
 		icon = GFX_goal_generic_mercenaries
-		x = 9
+		x = -9
 		y = 1
 		relative_position_id = DOR_support_the_merchant_houses
 		cost = 5
@@ -8508,7 +8521,7 @@ focus_tree = {
 	focus = { #Port of the East
 		id = DOR_port_of_the_east
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 16
+		x = -21
 		y = 1
 		relative_position_id = DOR_support_the_merchant_houses
 		cost = 5
@@ -9094,9 +9107,9 @@ focus_tree = {
 	focus = { #Invest in Growth
 		id = DOR_invest_in_growth
 		icon = GFX_focus_generic_industry_1
-		x = 6
+		x = -17
 		y = 0
-		relative_position_id = DOR_port_of_the_east
+		relative_position_id = DOR_support_the_merchant_houses
 		cost = 10
 		ai_will_do = {
 			factor = 5

@@ -552,7 +552,10 @@
  saurons_gaze_trait: ""
  wrath_of_the_eye: "Sauron's Wrath"
  wrath_of_the_eye_desc: "Whether by defiance or their mere existence, this nation has angered the Dark Lord. Its people must look to their defences for once He unleashes His darkness, all the foul hordes of Middle Earth will fall upon them."
- 
+ DOR_great_merchant_dissent: "Great Merchant Dissent"
+ DOR_great_merchant_dissent_desc: "The Great Merchants are dissatisfied with the Winelords' overwhelming superiority and are refusing to cooperate until their voices cease to be sidelined."
+ DOR_winelord_dissent: "Winelord Dissent"
+ DOR_winelord_dissent_desc: "The Winelords are dissatisfied with the Great Merchants' overwhelming superiority and are refusing to cooperate until their voices cease to be sidelined."
  
  
  

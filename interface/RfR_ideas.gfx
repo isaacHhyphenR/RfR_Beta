@@ -998,4 +998,12 @@ spriteTypes = {
 		name = "GFX_idea_shadow_of_barad_dur"
 		texturefile = "gfx/interface/ideas/shadow_of_barad_dur.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_winelord_conspiracy"
+		texturefile = "gfx/interface/ideas/winelord_conspiracy.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_great_merchant_conspiracy"
+		texturefile = "gfx/interface/ideas/great_merchant_conspiracy.dds"
+	}
 }

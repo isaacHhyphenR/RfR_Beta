@@ -864,6 +864,53 @@ ideas = {
 				has_capitulated = no
 			}
 		}
+		@factionDissentGovCost = 0.5
+		DOR_great_merchant_dissent = {
+			picture = great_merchant_conspiracy
+			cancel = {
+				is_power_balance_in_range = {
+					id = DOR_election_power_balance
+					range < DOR_winelords_range2
+				}
+			}
+			on_remove = {
+				clr_country_flag = ongoing_crisis
+			}
+			modifier = {
+				custom_modifier_tooltip = DOR_great_merchant_dissent_cancel_tooltip
+				political_advisor_cost_factor = @factionDissentGovCost
+				theorist_cost_factor = @factionDissentGovCost
+				navy_chief_cost_factor = @factionDissentGovCost
+				trade_laws_cost_factor = @factionDissentGovCost
+				economy_cost_factor = @factionDissentGovCost
+				political_power_factor = -0.15
+				prosperity_gain_factor = -0.15
+				production_factory_efficiency_gain_factor = -0.15
+			}
+		}
+		DOR_winelord_dissent = {
+			picture = winelord_conspiracy
+			cancel = {
+				is_power_balance_in_range = {
+					id = DOR_election_power_balance
+					range > DOR_great_merchants_range2
+				}
+			}
+			on_remove = {
+				clr_country_flag = ongoing_crisis
+			}
+			modifier = {
+				custom_modifier_tooltip = DOR_winelord_dissent_cancel_tooltip
+				political_advisor_cost_factor = @factionDissentGovCost
+				theorist_cost_factor = @factionDissentGovCost
+				army_chief_cost_factor = @factionDissentGovCost
+				mobilization_laws_cost_factor = @factionDissentGovCost
+				economy_cost_factor = @factionDissentGovCost
+				political_power_factor = -0.15
+				wine_gain_factor = -0.15
+				local_resources_factor = -0.15
+			}
+		}
 	}
 	
 	hidden_ideas = {

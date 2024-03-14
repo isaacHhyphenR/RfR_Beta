@@ -2590,7 +2590,12 @@ DOR_fire_senate_event = {
 calculate_num_republics = {
 	set_variable = { global.num_republics = 0 }
 	every_country = {
-		limit = { is_republic = yes }
+		limit = {
+			is_republic = yes
+			any_allied_country = {
+				has_dynamic_modifier =  { modifier = DOR_home_of_the_revolution_modifier }
+			}
+		}
 		add_to_variable = { global.num_republics = 1 }
 	}
 	#sets the variables that Dorwinion's 'Home of the Revolution' modifier uses

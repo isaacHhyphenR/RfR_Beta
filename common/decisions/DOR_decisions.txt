@@ -48,7 +48,8 @@ DOR_election_category = { #BOP
 			factor = 0
 		}
 		visible = {
-			has_completed_focus = DOR_give_generous_gifts
+			always = no
+			#has_completed_focus = DOR_give_generous_gifts
 		}
 		available = {  }
 	}
@@ -215,7 +216,7 @@ DOR_great_merchants_category = { #BOP
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				opportunism > 0.05
+				opportunism > 0.15
 				has_decision = DOR_monarchist_plot
 				add = 100
 			}
@@ -233,16 +234,27 @@ DOR_great_merchants_category = { #BOP
 				value < -0.15
 			}
 		}
-			
+		custom_cost_trigger = {
+			has_stability > 0.1
+		}
+		custom_cost_text = 10_stability_cost
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				has_stability > 0.95
+				has_stability > 0.85
+				opportunism > 0.2
 				add = 1
+			}
+			modifier = {
+				has_stability > 0.95
+				opportunism > 0.15
+				add = 10
 			}
 		}
 		complete_effect = {
-			add_stability = -0.1
+			hidden_effect = {
+				add_stability = -0.1
+			}
 			add_political_power = 75
 		}
 	}
@@ -870,6 +882,7 @@ DOR_college_category = {
 DOR_spread_revolution_category = {
 	@complianceForRepublic = 50
 	@foundRepublicCost = 50
+	@republicSpawnUnits = YES
 	establish_ARN_republic = { #ARNOR
 		icon = GFX_decision_ARN_republic
 		ai_will_do = {
@@ -913,6 +926,19 @@ DOR_spread_revolution_category = {
 					}
 						##final stuff
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+						}
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
@@ -951,6 +977,17 @@ DOR_spread_revolution_category = {
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
+				#spawns units
+				if = {
+					limit = { always = @republicSpawnUnits }
+					hidden_effect = {
+						revolutionary_guard_template = yes
+					}
+					random_controlled_state = {
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+					}
+				}
 			}
 		}
 	}
@@ -986,6 +1023,18 @@ DOR_spread_revolution_category = {
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
+				#spawns units
+				if = {
+					limit = { always = @republicSpawnUnits }
+					hidden_effect = {
+						revolutionary_guard_template = yes
+					}
+					random_controlled_state = {
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+					}
+				}
 			}
 		}
 	}
@@ -1021,6 +1070,16 @@ DOR_spread_revolution_category = {
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
+				#spawns units
+				if = {
+					limit = { always = @republicSpawnUnits }
+					hidden_effect = {
+						revolutionary_guard_template = yes
+					}
+					random_controlled_state = {
+						spawn_revolutionary_guard = yes
+					}
+				}
 			}
 		}
 	}
@@ -1069,6 +1128,17 @@ DOR_spread_revolution_category = {
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
+				#spawns units
+				if = {
+					limit = { always = @republicSpawnUnits }
+					hidden_effect = {
+						revolutionary_guard_template = yes
+					}
+					random_controlled_state = {
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+					}
+				}
 			}
 		}
 	}
@@ -1104,6 +1174,18 @@ DOR_spread_revolution_category = {
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
+				#spawns units
+				if = {
+					limit = { always = @republicSpawnUnits }
+					hidden_effect = {
+						revolutionary_guard_template = yes
+					}
+					random_controlled_state = {
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+					}
+				}
 			}
 		}
 	}
@@ -1139,6 +1221,17 @@ DOR_spread_revolution_category = {
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
+				#spawns units
+				if = {
+					limit = { always = @republicSpawnUnits }
+					hidden_effect = {
+						revolutionary_guard_template = yes
+					}
+					random_controlled_state = {
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+					}
+				}
 			}
 		}
 	}
@@ -1174,6 +1267,17 @@ DOR_spread_revolution_category = {
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
+				#spawns units
+				if = {
+					limit = { always = @republicSpawnUnits }
+					hidden_effect = {
+						revolutionary_guard_template = yes
+					}
+					random_controlled_state = {
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+					}
+				}
 			}
 		}
 	}
@@ -1220,6 +1324,23 @@ DOR_spread_revolution_category = {
 					}
 						##final stuff
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+						}
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
@@ -1258,6 +1379,17 @@ DOR_spread_revolution_category = {
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
+				#spawns units
+				if = {
+					limit = { always = @republicSpawnUnits }
+					hidden_effect = {
+						revolutionary_guard_template = yes
+					}
+					random_controlled_state = {
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+					}
+				}
 			}
 		}
 	}
@@ -1303,6 +1435,16 @@ DOR_spread_revolution_category = {
 					}
 					##final stuff
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+						}
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
@@ -1351,6 +1493,21 @@ DOR_spread_revolution_category = {
 					}
 					##final stuff
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+						}
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
@@ -1386,6 +1543,19 @@ DOR_spread_revolution_category = {
 						add_civil_war_target = PREV
 					}
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+						}
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
@@ -1437,6 +1607,19 @@ DOR_spread_revolution_category = {
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
+				#spawns units
+				if = {
+					limit = { always = @republicSpawnUnits }
+					hidden_effect = {
+						revolutionary_guard_template = yes
+					}
+					random_controlled_state = {
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+					}
+				}
 			}
 		}
 	}
@@ -1472,6 +1655,17 @@ DOR_spread_revolution_category = {
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
+				#spawns units
+				if = {
+					limit = { always = @republicSpawnUnits }
+					hidden_effect = {
+						revolutionary_guard_template = yes
+					}
+					random_controlled_state = {
+						spawn_revolutionary_guard = yes
+						spawn_revolutionary_guard = yes
+					}
+				}
 			}
 		}
 	}
@@ -1698,17 +1892,7 @@ DOR_monarchist_plot_category = {
 		is_good = no
 		allowed = { always = no }
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = DOR_monarchist_plot_available_tooltip
-				set_temp_variable = { vierling_size = party_popularity@opportunism }
-				add_to_temp_variable = { vierling_size = party_popularity@conquest }
-				add_to_temp_variable = { vierling_size = party_popularity@melkorite }
-				check_variable = { vierling_size < 0.05 }
-			}
-		}
-		complete_effect = {
-			retire_character = DOR_vidumarh_vierling
-			set_country_flag = defeated_monarchist_plot
+			always = no
 		}
 		timeout_effect = {
 			custom_effect_tooltip = DOR_monarchist_plot_tooltip
@@ -1769,6 +1953,41 @@ DOR_monarchist_plot_category = {
 		}
 	}
 	#######################################################MITIGATION
+	DOR_arrest_vidumarh = {
+		icon = GFX_decision_generic_arrest
+		ai_will_do = {
+			factor = 1000
+		}
+		cost = 35
+		days_remove = 14
+		visible = { has_active_mission = DOR_monarchist_plot }
+		available = {
+			has_equipment = {
+				infantry_equipment > 499
+			}
+			custom_trigger_tooltip = {
+				tooltip = DOR_monarchist_plot_available_tooltip
+				set_temp_variable = { vierling_size = party_popularity@opportunism }
+				add_to_temp_variable = { vierling_size = party_popularity@conquest }
+				add_to_temp_variable = { vierling_size = party_popularity@melkorite }
+				check_variable = { vierling_size < 0.15 }
+			}
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+		}
+		remove_effect = {
+			retire_character = DOR_vidumarh_vierling
+			set_country_flag = defeated_monarchist_plot
+			remove_mission = DOR_monarchist_plot
+		}
+		cancel_trigger = {
+			NOT = { has_active_mission = DOR_monarchist_plot }
+		}
+	}
 	DOR_campaign_against_monarchy  = {
 		icon = GFX_decision_SWI_swiss_democratic_tradition_campaign
 		ai_will_do = {
@@ -1776,7 +1995,7 @@ DOR_monarchist_plot_category = {
 		}
 		cost = 50
 		days_remove = 100
-		visible = { has_completed_focus = DOR_investigate_reactionary_plot }
+		available = { has_completed_focus = DOR_investigate_reactionary_plot }
 		modifier = {
 			opportunism_drift = -0.01
 			conquest_drift = -0.01
@@ -1793,9 +2012,9 @@ DOR_monarchist_plot_category = {
 			}
 		}
 		cost = 25
-		days_remove = 14
-		days_re_enable = 50
-		visible = { has_completed_focus = DOR_investigate_reactionary_plot }
+		days_remove = 28
+		days_re_enable = 70
+		available = { has_completed_focus = DOR_investigate_reactionary_plot }
 		remove_effect = {
 			add_days_mission_timeout = {
 				mission = DOR_monarchist_plot
@@ -1817,7 +2036,7 @@ DOR_monarchist_plot_category = {
 		}
 		days_remove = 14
 		fire_only_once = yes
-		visible = { has_completed_focus = DOR_investigate_reactionary_plot }
+		available = { has_completed_focus = DOR_investigate_reactionary_plot }
 		complete_effect = { #cost
 			hidden_effect = {
 				add_equipment_to_stockpile = {
@@ -1849,8 +2068,10 @@ DOR_monarchist_plot_category = {
 		cost = 25
 		fire_only_once = yes
 		visible = {
-			has_completed_focus = DOR_investigate_reactionary_plot
 			melkorite > 0.001 #at least 0.1% melkorite support
+		}
+		available = {
+			has_completed_focus = DOR_investigate_reactionary_plot
 		}
 		complete_effect = { #cost
 			add_popularity = {

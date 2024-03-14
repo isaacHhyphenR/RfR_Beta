@@ -1,7 +1,7 @@
 ﻿l_english:
- the_lord_of_the_rings_decision_cost_tooltip: "£GFX_stability_texticon §Y0.20§!"
- the_lord_of_the_rings_decision_cost_tooltip_blocked: "£GFX_stability_texticon  §R0.20§!"
- the_lord_of_the_rings_decision_cost_tooltip_tooltip: "It costs £GFX_stability_texticon  §Y0.20§! to take the decision"
+ the_lord_of_the_rings_decision_cost_tooltip: "£GFX_stability_texticon §Y20%§!"
+ the_lord_of_the_rings_decision_cost_tooltip_blocked: "£GFX_stability_texticon  §R20%§!"
+ the_lord_of_the_rings_decision_cost_tooltip_tooltip: "It costs £GFX_stability_texticon  §Y20%§! to take the decision"
  nazgul_attack_cost_tooltip: "£GFX_war_support_texticon [?nazgul_attack_cost|Y]"
  nazgul_attack_cost_tooltip_blocked: "£GFX_war_support_texticon [?nazgul_attack_cost|R]"
  nazgul_attack_cost_tooltip_tooltip: "It costs £GFX_war_support_texticon [?nazgul_attack_cost|Y] to take the decision"
@@ -305,3 +305,6 @@
  rhovanion_150_influence_cost: "£GFX_rhovanion_influence_texticon §Y150§!"
  rhovanion_150_influence_cost_blocked: "£GFX_rhovanion_influence_texticon §R150§!"
  rhovanion_150_influence_cost_tooltip: "It costs §Y150§! £GFX_rhovanion_influence_texticon to take the decision"
+ 10_stability_cost: "GFX_stability_texticon §Y10%§!"
+ 10_stability_cost_blocked: "GFX_stability_texticon §R10%§!"
+ 10_stability_cost_tooltip: "It costs §Y10%§! GFX_stability_texticon to take the decision"

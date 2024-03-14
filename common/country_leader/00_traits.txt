@@ -2538,6 +2538,10 @@ leader_traits = {
 		sprite = 12
 		random = no
 	}
+	merchant_house_pol_tenth = {
+		sprite = 12
+		random = no
+	}
 	burgher_pol_first = {
 		sprite = 12
 		random = no

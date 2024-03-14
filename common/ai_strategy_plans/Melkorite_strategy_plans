@@ -1,0 +1,29 @@
+melkorite_strategy_plan = {
+	name = "Ally with Mordor"
+	desc = "Plans to guide Melkorite nations"
+
+	allowed = {
+		always = yes
+	}
+	enable = {
+		has_government = melkorite
+        MOR = { has_government = melkorite }
+	}
+	abort = {
+        NOT = {
+            has_government = melkorite
+            MOR = { has_government = melkorite }
+        } 
+	}
+
+    ai_strategy = {
+        type = alliance
+        id = MOR
+        value = 50
+    }
+    ai_strategy = {
+        type = brefriend
+        id = MOR
+        value = 50
+    }
+}

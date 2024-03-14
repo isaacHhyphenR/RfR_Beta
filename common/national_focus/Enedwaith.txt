@@ -9982,7 +9982,7 @@ focus_tree = {
 		relative_position_id = ENE_settle_generational_feuds
 		cost = @kingdomBranchCost
 		ai_will_do = {
-			base = 12
+			base = 25
 		}
 		available = { has_formed_ENE_homeland = yes }
 		search_filters = { FOCUS_FILTER_ANNEXATION }

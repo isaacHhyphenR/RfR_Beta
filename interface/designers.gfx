@@ -248,5 +248,9 @@ spriteTypes = {
 		name = "GFX_idea_dorwinion_house_galen"
 		texturefile = "gfx/interface/designers/00_Northron/DOR_house_galen.dds"
 	}
-
+	SpriteType = {
+		name = "GFX_idea_dorwinion_dwarven_prospectors"
+		texturefile = "gfx/interface/designers/00_Northron/DOR_dwarven_prospectors.dds"
+	}
+	
 }

@@ -30,11 +30,11 @@ Mordor_historical = {
 		MOR_rebuild_dol_guldur
 		MOR_aid_in_mumak_training
 		MOR_the_eye_looks_west
+		MOR_call_forth_the_mountain_hordes
 		MOR_raid_the_herds_and_studs_of_rohan
-		MOR_aid_in_mumak_training
 		#3018
-		MOR_secure_the_rhunear
 		MOR_connections_to_the_east
+		MOR_secure_the_rhunear
 		MOR_strike_the_elves
 		MOR_bodies_for_the_grinder
 		MOR_desertion_patrols

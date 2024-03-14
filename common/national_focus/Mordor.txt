@@ -2708,6 +2708,11 @@ focus_tree = {
 				}
 			}
 		}
+		will_lead_to_war_with = DOR
+		will_lead_to_war_with = MED
+		will_lead_to_war_with = DRG
+		will_lead_to_war_with = SAG
+		will_lead_to_war_with = LGA
 		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
 		completion_reward = { #Every melkorite on Rhunaer gains wargoal against every non-melkorite
 			custom_effect_tooltip = MOR_secure_the_rhunear_tooltip

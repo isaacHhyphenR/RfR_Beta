@@ -118,9 +118,9 @@ set_variable = { nazgul_planning_cost_increase = 5 }
 set_variable = { focus_modifier_bonus = 0.15 }
 set_variable = { focus_modifier_bonus_negative = -0.15 }
 
-set_variable = { dagorlad_settlement_cost_base = 100000 }
+set_variable = { dagorlad_settlement_cost_base = 50000 }
 set_variable = { dagorlad_settlement_cost = dagorlad_settlement_cost_base }
-set_variable = { dagorlad_settlement_cost_increase = 50000 }
+set_variable = { dagorlad_settlement_cost_increase = 20000 }
 
 set_variable = { cost_to_influence_bop = 0.2 } #how much it costs each day to influence 1 melkorite BoP
 set_variable = { daily_lidless_eye_influence = 0.2 } ##IDEA IN MOR FILE #how much BoP cults of the lidless eye gain while we promote them

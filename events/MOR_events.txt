@@ -432,6 +432,24 @@ country_event = { ##7## Melkorite ready to become tributary
 				}
 			}
 		}
+		#mark everyone we're about to auto declare on
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { modifier@melkorite_can_justify < 1 } }
+				every_country = {
+					limit = {
+						has_war_with = FROM
+						NOT = { has_war_with = ROOT }
+					}
+					set_country_flag = white_peace_mordor
+					if = {
+						limit = { has_defensive_war_with = FROM }
+						set_country_flag = defending_against_MOR_puppet
+					}
+				}
+			}
+		}
+		##puppet them
 		set_autonomy = {
 			target = FROM
 			autonomous_state = autonomy_shadow_tributary
@@ -440,6 +458,36 @@ country_event = { ##7## Melkorite ready to become tributary
 		}
 		hidden_effect = {
 			FROM = { news_event = { id = rfr_news.143 hours = 1 } }
+			#white peace all the enemies we just gained if we haven't unleashed darkness
+			if = {
+				limit = { check_variable = { modifier@melkorite_can_justify < 1 } }
+				every_country = {
+					limit = {
+						has_country_flag = white_peace_mordor
+					}
+					white_peace = {
+						tag = ROOT
+						message = mordor_cannot_join_wars_yet_white_peace_tooltip
+					}
+					clr_country_flag = white_peace_mordor
+					if = {
+						limit = { has_country_flag = defending_against_MOR_puppet }
+						clr_country_flag = defending_against_MOR_puppet
+						FROM = {
+							declare_war_on = {
+								target = PREV
+								type = annex_everything
+							}
+						}
+					}
+					else = {
+						declare_war_on = {
+							target = FROM
+							type = annex_everything
+						}
+					}
+				}
+			}
 		}
 	}
 	option = { ##No reward

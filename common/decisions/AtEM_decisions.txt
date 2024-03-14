@@ -860,6 +860,8 @@ colonisation_category = {
 				multiply_temp_variable = { MPcost = -1 }
 				add_manpower = MPcost
 			}
+			custom_effect_tooltip = dagorlad_settlment_cost_increase_tooltip
+			add_to_variable = { dagorlad_settlement_cost = dagorlad_settlement_cost_increase }
 		}
 		cancel_trigger = {
 			FROM = { NOT = { is_owned_by = WLD } }

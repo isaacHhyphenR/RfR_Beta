@@ -1,0 +1,594 @@
+@switchIdeologyOnce = no
+@ideologySwitchCost = 75
+rfr_ideology_switch_category = {
+		
+	concede_to_isolationism = {
+
+		icon = generic_political_discourse
+
+		available = {
+			isolationism > 0.5
+		}
+
+		visible = {
+			NOT = { has_government = isolationism }
+		}
+		
+		# remove_trigger = {
+			# has_government = isolationism
+		# }
+		
+		fire_only_once = @switchIdeologyOnce
+		
+		cost = @ideologySwitchCost
+		
+		complete_effect = {
+			set_politics = { ruling_party = isolationism }
+			add_war_support = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 210
+			modifier = {
+				isolationism > 0.6
+				factor = 10
+			}
+		}
+	}
+	concede_to_freedom = {
+
+		icon = generic_political_discourse
+
+		available = {
+			freedom > 0.5
+		}
+
+		visible = {
+			NOT = { has_government = freedom }
+		}
+		
+		# remove_trigger = {
+			# has_government = freedom
+		# }
+		
+		fire_only_once = @switchIdeologyOnce
+		
+		cost = @ideologySwitchCost
+		
+		complete_effect = {
+			set_politics = { ruling_party = freedom }
+			add_stability = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 210
+			modifier = {
+				tag = FAN
+				factor = 100
+			}
+			modifier = {
+				freedom > 0.6
+				factor = 10
+			}
+		}
+	}
+	concede_to_opportunism = {
+
+		icon = generic_political_discourse
+
+		available = {
+			opportunism > 0.5
+		}
+
+		visible = {
+			NOT = { has_government = opportunism }
+		}
+		
+		# remove_trigger = {
+			# has_government = opportunism
+		# }
+		
+		fire_only_once = @switchIdeologyOnce
+		
+		cost = @ideologySwitchCost
+		
+		complete_effect = {
+			set_politics = { ruling_party = opportunism }
+			add_stability = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 210
+			modifier = {
+				opportunism > 0.6
+				factor = 10
+			}
+		}
+	}
+	concede_to_conquest = {
+
+		icon = generic_political_discourse
+
+		available = {
+			conquest > 0.5
+		}
+
+		visible = {
+			NOT = { has_government = conquest }
+		}
+		
+		# remove_trigger = {
+			# has_government = conquest
+		# }
+		
+		fire_only_once = @switchIdeologyOnce
+		
+		cost = @ideologySwitchCost
+		
+		complete_effect = {
+			set_politics = { ruling_party = conquest }
+			add_stability = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 210
+			modifier = {
+				conquest > 0.6
+				factor = 10
+			}
+		}
+	}
+	concede_to_melkorite = {
+
+		icon = generic_political_discourse
+
+		available = {
+			melkorite > 0.5
+		}
+
+		visible = {
+			NOT = { has_government = melkorite }
+		}
+		
+		# remove_trigger = {
+			# has_government = melkorite
+		# }
+		
+		fire_only_once = @switchIdeologyOnce
+		
+		cost = @ideologySwitchCost
+		
+		complete_effect = {
+			set_politics = { ruling_party = melkorite }
+			add_stability = -0.05
+			hidden_effect = {
+				if = { limit = { MOR = { has_country_leader = { character = MOR_sauron ruling_only = yes } } }
+					add_ai_strategy = {
+						type = alliance
+						id = MOR
+						value = 20
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 210
+			modifier = {
+				melkorite > 0.6
+				factor = 10
+			}
+		}
+	}
+	
+	@ideologyDrift = 0.15
+	@ideologyDays = 100
+	boost_isolationism = {
+		icon = GFX_decision_isolationism
+		cost = 30
+		available = {
+			can_boost_isolationism_decision = yes
+		}
+		modifier = {
+			isolationism_drift = @ideologyDrift
+		}
+		days_remove = @ideologyDays
+		ai_will_do = {
+			modifier = {
+				has_country_flag = isolationism_flag
+				NOT = { has_government = isolationism }
+				add = 10
+			}
+			modifier = { #keep popularity above 50
+				has_government = isolationism
+				NOT = { #unless you're trying to change it
+					OR = {
+						has_country_flag = freedom_flag
+						has_country_flag = opportunism_flag
+						has_country_flag = conquest_flag
+						has_country_flag = melkorite_flag
+					}
+				}
+				isolationism < 0.5
+				add = 5
+			}
+			modifier = {
+				if = { limit = { is_subject = yes } #don't rebel too hard against overlord
+					overlord = { NOT = { has_government = isolationism } }
+				}
+				else = {
+					always = no
+				}
+				factor = 0.01
+			}
+			base = 0
+		}
+	}
+	boost_freedom = {
+		icon = GFX_decision_freedom
+		cost = 30
+		available = {
+			can_boost_freedom_decision = yes
+		}
+		modifier = {
+			freedom_drift = @ideologyDrift
+		}
+		days_remove = @ideologyDays
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_country_flag = freedom_flag
+				NOT = { has_government = freedom }
+				add = 10
+			}
+			modifier = { #keep popularity above 50
+				has_government = freedom
+				NOT = { #unless you're trying to change it
+					OR = {
+						has_country_flag = isolationism_flag
+						has_country_flag = opportunism_flag
+						has_country_flag = conquest_flag
+						has_country_flag = melkorite_flag
+					}
+				}
+				freedom < 0.5
+				add = 5
+			}
+			modifier = {
+				if = { limit = { is_subject = yes } #don't rebel too hard against overlord
+					overlord = { NOT = { has_government = freedom } }
+				}
+				else = {
+					always = no
+				}
+				factor = 0.01
+			}
+		}
+	}
+	boost_opportunism = {
+		icon = GFX_decision_opportunism
+		cost = 30
+		available = {
+			can_boost_opportunism_decision = yes
+		}
+		modifier = {
+			opportunism_drift = @ideologyDrift
+		}
+		days_remove = @ideologyDays
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_country_flag = opportunism_flag
+				NOT = { has_government = opportunism }
+				add = 10
+			}
+			modifier = { #keep popularity above 50
+				has_government = opportunism
+				NOT = { #unless you're trying to change it
+					OR = {
+						has_country_flag = isolationism_flag
+						has_country_flag = freedom_flag
+						has_country_flag = conquest_flag
+						has_country_flag = melkorite_flag
+					}
+				}
+				opportunism < 0.5
+				add = 5
+			}
+			modifier = {
+				if = { limit = { is_subject = yes } #don't rebel too hard against overlord
+					overlord = { NOT = { has_government = opportunism } }
+				}
+				else = {
+					always = no
+				}
+				factor = 0.01
+			}
+		}
+	}
+	boost_conquest = {
+		icon = GFX_decision_conquest
+		cost = 30
+		available = {
+			can_boost_conquest_decision = yes
+		}
+		modifier = {
+			conquest_drift = @ideologyDrift
+		}
+		days_remove = @ideologyDays
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_country_flag = conquest_flag
+				NOT = { has_government = conquest }
+				add = 10
+			}
+			modifier = { #keep popularity above 50
+				has_government = conquest
+				NOT = { #unless you're trying to change it
+					OR = {
+						has_country_flag = isolationism_flag
+						has_country_flag = freedom_flag
+						has_country_flag = opportunism_flag
+						has_country_flag = melkorite_flag
+					}
+				}
+				conquest < 0.5
+				add = 5
+			}
+			modifier = {
+				if = { limit = { is_subject = yes } #don't rebel too hard against overlord
+					overlord = { NOT = { has_government = conquest } }
+				}
+				else = {
+					always = no
+				}
+				factor = 0.01
+			}
+		}
+	}
+	boost_melkorite = {
+		icon = GFX_decision_melkorite
+		cost = 30
+		available = {
+			can_boost_melkorite_decision = yes
+		}
+		modifier = {
+			melkorite_drift = @ideologyDrift
+		}
+		days_remove = @ideologyDays
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_country_flag = melkorite_flag
+				NOT = { has_government = melkorite }
+				add = 10
+			}
+			modifier = { #keep popularity above 50
+				has_government = melkorite
+				NOT = { #unless you're trying to change it
+					OR = {
+						has_country_flag = isolationism_flag
+						has_country_flag = freedom_flag
+						has_country_flag = opportunism_flag
+						has_country_flag = conquest_flag
+					}
+				}
+				melkorite < 0.5
+				add = 5
+			}
+			modifier = {
+				if = { limit = { is_subject = yes } #don't rebel too hard against overlord
+					overlord = { NOT = { has_government = melkorite } }
+				}
+				else = {
+					always = no
+				}
+				factor = 0.01
+			}
+		}
+	}
+
+	prepare_for_civil_war = {
+		icon = GFX_decision_revolt
+		cost = 25
+		days_remove = 100
+		ai_will_do = {
+			base = 0
+		}
+		modifier = {
+			civil_war_ideology_threshold = -0.25
+		}
+		visible = {
+			has_civil_war = no
+		}
+		cancel_trigger = {
+			has_civil_war = yes
+		}
+	}
+}
+
+@subjectIdeologyIdeaDays = 180
+influence_subject_ideology_category = {
+	promote_subject_isolationism = {
+		icon = GFX_decision_isolationism
+		cost = 75
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = { FROM = { has_government = ROOT } }
+				add = 1
+			}
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 2
+			}
+			modifier = {
+				FROM = { has_autonomy_state = autonomy_blood_oath }
+				factor = 0.5
+			}
+		}
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		visible = { has_government = isolationism }
+		available = {
+			NOT = { FROM = { has_idea = isolationism_influence } }
+		}
+		complete_effect = {
+			FROM = {
+				add_timed_idea = {
+					idea = isolationism_influence
+					days = @subjectIdeologyIdeaDays
+				}
+			}
+		}
+	}
+	promote_subject_freedom = {
+		icon = GFX_decision_freedom
+		cost = 75
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = { FROM = { has_government = ROOT } }
+				add = 2
+			}
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 5
+			}
+			modifier = {
+				FROM = { has_autonomy_state = autonomy_blood_oath }
+				factor = 0.5
+			}
+		}
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		visible = { has_government = freedom }
+		available = {
+			NOT = { FROM = { has_idea = freedom_influence } }
+		}
+		complete_effect = {
+			FROM = {
+				add_timed_idea = {
+					idea = freedom_influence
+					days = @subjectIdeologyIdeaDays
+				}
+			}
+		}
+	}
+	promote_subject_opportunism = {
+		icon = GFX_decision_opportunism
+		cost = 75
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = { FROM = { has_government = ROOT } }
+				add = 2
+			}
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 2
+			}
+			modifier = {
+				FROM = { has_autonomy_state = autonomy_blood_oath }
+				factor = 0.5
+			}
+		}
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		visible = { has_government = opportunism }
+		available = {
+			NOT = { FROM = { has_idea = opportunism_influence } }
+		}
+		complete_effect = {
+			FROM = {
+				add_timed_idea = {
+					idea = opportunism_influence
+					days = @subjectIdeologyIdeaDays
+				}
+			}
+		}
+	}
+	promote_subject_conquest = {
+		icon = GFX_decision_conquest
+		cost = 75
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = { FROM = { has_government = ROOT } }
+				add = 2
+			}
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 4
+			}
+			modifier = {
+				FROM = { has_autonomy_state = autonomy_blood_oath }
+				factor = 0.5
+			}
+		}
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		visible = { has_government = conquest }
+		available = {
+			NOT = { FROM = { has_idea = conquest_influence } }
+		}
+		complete_effect = {
+			FROM = {
+				add_timed_idea = {
+					idea = conquest_influence
+					days = @subjectIdeologyIdeaDays
+				}
+			}
+		}
+	}
+	promote_subject_melkorite = {
+		icon = GFX_decision_melkorite
+		cost = 75
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = { FROM = { has_government = ROOT } }
+				add = 2
+			}
+			modifier = {
+				FROM = { THIS_and_PREV_good_vs_evil = yes }
+				factor = 4
+			}
+			modifier = {
+				FROM = { has_autonomy_state = autonomy_blood_oath }
+				factor = 0.5
+			}
+		}
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		visible = { has_government = melkorite }
+		available = {
+			NOT = { FROM = { has_idea = melkorite_influence } }
+		}
+		complete_effect = {
+			FROM = {
+				add_timed_idea = {
+					idea = melkorite_influence
+					days = @subjectIdeologyIdeaDays
+				}
+			}
+		}
+	}
+}
+	

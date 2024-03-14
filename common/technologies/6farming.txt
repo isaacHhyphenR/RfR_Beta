@@ -1526,10 +1526,10 @@ technologies = {
 	}
 	wine_tech1 = {
 		wine_gain_allowed = 1
-		# path = {
-			# leads_to_tech = fuel_refining2 
-			# research_cost_coeff = 1
-		# }
+		path = {
+			leads_to_tech = wine_tech2 
+			research_cost_coeff = 1
+		}
 		enable_building = {
 			building = vineyard
 			level = 5
@@ -1559,6 +1559,88 @@ technologies = {
 			modifier = {
 				NOT = {
 					has_tech = agriculture1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	wine_tech2 = {
+		wine_gain_factor = 0.1
+		path = {
+			leads_to_tech = wine_tech3 
+			research_cost_coeff = 1
+		}
+		enable_building = {
+			building = vineyard
+			level = 5
+		}
+		
+		research_cost = 0.5
+		start_year = 3016
+		folder = {
+			name = farming_folder
+			position = { x = @wineX y = @3016 }
+		}
+		
+		categories = {
+			farming
+			agriculture
+			agriculture_early
+			wine_tech_category
+		}
+		
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_war = no
+				factor = 2
+			}
+			modifier = {
+				has_country_flag = elected_winelord
+				factor = 3
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture1
+				}
+				factor = @AIbehindAgriculture
+			}
+		}
+	}
+	wine_tech3 = {
+		wine_gain_factor = 0.1
+		enable_building = {
+			building = vineyard
+			level = 5
+		}
+		
+		research_cost = 0.5
+		start_year = 3018
+		folder = {
+			name = farming_folder
+			position = { x = @wineX y = @3018 }
+		}
+		
+		categories = {
+			farming
+			agriculture
+			agriculture_basic
+			wine_tech_category
+		}
+		
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				has_war = no
+				factor = 2
+			}
+			modifier = {
+				has_country_flag = elected_winelord
+				factor = 3
+			}
+			modifier = {
+				NOT = {
+					has_tech = agriculture2
 				}
 				factor = @AIbehindAgriculture
 			}
