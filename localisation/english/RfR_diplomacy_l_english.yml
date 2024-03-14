@@ -6,6 +6,6 @@
  END_RHOVANION_INFLUENCE_TITLE: "Stop Influencing"
  END_RHOVANION_INFLUENCE_ACTION_DESC: "Stops increasing our influence over this country."
  BEGIN_PROMOTING_LIDLESS_EYE_TITLE: "Promote the Cult of the Lidless Eye"
- BEGIN_PROMOTING_LIDLESS_EYE_ACTION_DESC: "Their §Y$melkorite_power_balance$§! will move §G0.2%§! daily towards the side of £GFX_BoP_right_texticon §Y$melkorite_lidless_eye_side$§!. Higher values decrease their autonomy.\nThis will cost a daily upkeep of §Y0.2§!£GFX_pol_power.."
+ BEGIN_PROMOTING_LIDLESS_EYE_ACTION_DESC: "Their §Y$melkorite_power_balance$§! will move §G0.1%§! daily towards the side of £GFX_BoP_right_texticon §Y$melkorite_lidless_eye_side$§!. Higher values decrease their autonomy.\nThis will cost a daily upkeep of §Y0.2§!£GFX_pol_power.."
  STOP_PROMOTING_LIDLESS_EYE_TITLE: "Stop Promoting the Cult of the Lidless Eye"
  STOP_PROMOTING_LIDLESS_EYE_ACTION_DESC: "Stops influencing their §Y$melkorite_power_balance$§!."

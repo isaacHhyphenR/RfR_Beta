@@ -868,9 +868,9 @@ PREV_annex_THIS_blood_oath_vassal_on_swear = {
 		else_if = { limit = { can_be_country_leader = yes }
 			set_nationality = PREV.PREV
 		}
-		else_if = {#A central Perspective gives you all recruited advisors
+		else_if = { #A central Perspective gives you all recruited advisors
 			limit = {
-				PREV.PREV = { has_completed_focus = ENE_a_central_perspective }
+				PREV = { has_completed_focus = ENE_a_central_perspective }
 				OR = {
 					is_political_advisor = yes
 					is_high_command = yes

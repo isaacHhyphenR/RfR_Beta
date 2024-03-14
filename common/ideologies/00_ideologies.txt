@@ -3,28 +3,21 @@ ideologies = {
 	isolationism = {
 	
 		types = {
-			clanship = {
-				can_be_randomly_selected = yes
-			}
-			#communalism = {
-			#}
 			stewardship_isolation = {
 				can_be_randomly_selected = no
 			}
 			elective_monarchy_isolationism = { #dorwinion
 				can_be_randomly_selected = no
 			}
+			clanship = {
+				can_be_randomly_selected = yes
+			}
 			republic_isolationism = { #dorwinion
 				can_be_randomly_selected = no
-				color = { 28 164 255 }
 			}
 			wise_monarchy = {
 				can_be_randomly_selected = yes
-				color = { 152 201 234 }
 			}
-			# false_stewardship = {
-				# can_be_randomly_selected = no
-			# }
 		}
 
 		dynamic_faction_names = {
@@ -76,22 +69,20 @@ ideologies = {
 			golden_clanship = { #steppe
 				can_be_randomly_selected = no
 			}
-			rightful_monarchy = {
-				can_be_randomly_selected = yes
-			}
 			stewardship = {
 				can_be_randomly_selected = no
 			}
 			elective_monarchy_freedom = { #dorwinion
 				can_be_randomly_selected = no
 			}
+			rightful_monarchy = {
+				can_be_randomly_selected = yes
+			}
 			republic_freedom = { #dorwinion
 				can_be_randomly_selected = no
-				color = { 0 19 205 }
 			}
 			feudalism = {
 				can_be_randomly_selected = yes
-				color = { 0 0 255 }
 			}
 		}
 		
@@ -147,16 +138,13 @@ ideologies = {
 			khanship = { #steppe
 				can_be_randomly_selected = no
 			}
-			tribalism = {
-				can_be_randomly_selected = yes
-				color = { 244 104 104 }
-			}
 			elective_monarchy_opportunism = { #dorwinion
 				can_be_randomly_selected = no
 			}
+			tribalism = {
+				can_be_randomly_selected = yes
+			}
 			corrupt_republic = {
-				can_be_randomly_selected = no
-				color = { 252 64 64 }
 			}
 			petty_monarchy = {
 				can_be_randomly_selected = yes
@@ -208,16 +196,14 @@ ideologies = {
 			elective_monarchy_conquest = { #dorwinion
 				can_be_randomly_selected = no
 			}
-			plutocracy = {
-				can_be_randomly_selected = no
-				color = { 248 202 0 }
-			}
 			golden_khanship = { #steppe
 				can_be_randomly_selected = no
 			}
 			autocracy = {
 				can_be_randomly_selected = yes
-				color = { 203 173 40 }
+			}
+			plutocracy = {
+				can_be_randomly_selected = no
 			}
 			glorious_monarchy = {
 				can_be_randomly_selected = yes
@@ -272,7 +258,6 @@ ideologies = {
 			}
 			shadow_worship = {
 				can_be_randomly_selected = yes
-				color = { 46 32 26 }
 			}
 			the_eye = {
 				can_be_randomly_selected = no

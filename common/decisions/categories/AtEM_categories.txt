@@ -115,7 +115,7 @@ MOR_the_dark_lord_category = {
 ########################################GENERAL########################################
 crisis_category = {
 	icon = GFX_decision_category_crisis
-	priority = 99
+	priority = 160
 	allowed = { always = yes }
 }
 

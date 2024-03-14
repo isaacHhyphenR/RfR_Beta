@@ -1,0 +1,303 @@
+on_actions = {
+	on_startup = {
+		effect = {##setup enedwaith tribes
+			FOR = {#everything msut be in a scope
+				set_up_royal_road_states = yes
+				initialize_global_vars_VoV = yes
+			}
+			every_possible_country = {#Creates array of every tribe
+				limit = { is_greater_enedwaith_tag = yes }
+				set_variable = { tribal_array_position = 0 }
+				add_to_enedwaith_tribal_array = yes
+			}
+			every_possible_country = {#Creates trust array for each tribe, sets up strategy
+				limit = { is_greater_enedwaith_tag = yes }
+				setup_enedwaith_trust_array = yes
+				set_variable = { prestige = 0 }
+				setup_enedwaith_ai_path = yes
+			}
+			FOR = {
+				set_enedwaith_ancestral_friends_and_enemys = yes
+				setup_enedwaith_states = yes
+			}
+		}
+		effect = { #hidden prestige modifier
+			every_possible_country = {
+				limit = { can_access_tribal_subjugation = yes }
+				add_dynamic_modifier = { modifier = hidden_prestige_dynamic_modifier }
+			}
+		}
+		effect = { ##Non-core factories modifier
+			every_state = {
+				add_dynamic_modifier = { modifier = non_core_factory_modifier }
+			}
+		}
+		effect = { #other coutnries views of greater enedwaith
+			FOR = { dont_join_ENE_factions_effect = yes }
+		}
+		effect = {
+			if = {
+				limit = { has_game_rule = { rule = enedwaith_shattered_rule option = CONSOLIDATED } }
+				every_country = { #players first
+					limit = { is_greater_enedwaith_tag = yes is_ai = no }
+					activate_decision = DEBUG_ANNEX_STARTING_REGION
+					activate_enedwaith_formable_decision = yes
+				}
+				every_country = {
+					limit = {
+						OR = {
+							tag = NEN
+							tag = DRU
+							tag = DUN
+							tag = AGR
+							tag = ERG
+							tag = TAW
+						}
+					}
+					activate_decision = DEBUG_ANNEX_STARTING_REGION
+					activate_enedwaith_formable_decision = yes
+				}
+			}
+		}
+	}
+	on_subject_annexed = { #Root is subject, from is overlord
+		effect = { #Blood oath integration
+			if = { limit = { ROOT = { can_be_blood_oath_vassal = yes } } #only happens to blood oath vassals
+				FROM = { ROOT = { PREV_annex_THIS_blood_oath_vassal = yes } }
+			}
+		}
+	}
+	on_subject_autonomy_level_change = { #Root is subject, from is overlord
+		effect = { #Because of how the autonomy system works, becoming free as a tribe would be massively expensive, so there's a custom autonomy state to handle that
+			if = { limit = { ROOT = { has_autonomy_state = autonomy_tribal_free } }
+				ROOT = { FROM = { THIS_makes_PREV_tribal_free = yes } }
+			}
+		}
+	}
+	on_state_control_changed = { #ROOT is new controller, FROM is old controller, FROM.FROM is state ID
+		effect = { #Gondorian protectorates gain homeland occupied by Gondorian ally IF the protectorate is in the war
+			if = {
+				limit = {
+					OR = { ROOT = { tag = GON is_ally_with = GON } }
+					any_country = {
+						has_idea = gondorian_protectorate
+						FROM.FROM = { THIS_state_has_same_heritage_as_PREV_tag = yes }
+						has_war_with = FROM
+					}
+				}
+				random_country = {
+					limit = {
+						has_idea = gondorian_protectorate
+						FROM.FROM = { THIS_state_has_same_heritage_as_PREV_tag = yes }
+						has_war_with = FROM
+					}
+					set_state_controller = FROM.FROM
+				}
+			}
+		}
+		effect = { #non-core factories modifier
+			FROM.FROM = {
+				set_variable = { non_core_factories = ROOT.modifier@non_core_factories }
+				set_variable = { non_core_resource = ROOT.modifier@non_core_resources }
+			}
+		}
+		effect = { #Dunland pillaging Rohan
+			if = {
+				limit = {
+					ROOT = { has_completed_focus = ENE_raid_the_riddermark }
+					FROM.FROM = {
+						is_core_of = ROH
+						 NOT = { is_core_of = ROOT }
+						OR = { #can't pillage if there's nothing to pillage
+							industrial_complex > 0
+							arms_factory > 0
+						}
+						NOT = { has_dynamic_modifier = { modifier = pillaged } }
+					}
+				}
+				FROM.FROM = { save_event_target_as = DUN_pillage_state }
+				ROOT = { country_event = { id = blood_oath.19 hours = 1 } }
+			}
+		}
+	}
+	on_puppet = {
+		effect = { ##Ensures that peace conferences generate the correct type of puppet
+			if = {
+				limit = { can_be_blood_oath_vassal = yes }
+				FROM = {
+					set_autonomy = {
+						target = ROOT
+						autonomy_state = autonomy_blood_oath
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+			}
+			else_if = {
+				limit = { can_be_council_vassal = yes }
+				FROM = {
+					set_autonomy = {
+						target = ROOT
+						autonomy_state = autonomy_councils_slave
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+			}
+		}
+	}
+	on_monthly = { #guiding the AI
+		effect = {
+			if = { limit = { can_tribally_subjugate = yes }
+				#CGN = { set_variable = { mil_target = DFN } }
+				#DTH = { set_variable = { mil_target = DFN } }
+				if = { limit = { ENE_needs_new_diplo_target = yes }
+					set_new_diplo_target = yes
+				}
+				if = {
+					limit = {
+						ENE_needs_new_mil_target = yes
+						OR = {
+							NOT = { has_government = melkorite }
+							any_country = { check_variable = { modifier@melkorite_can_justify > 0 } }
+						}
+					}
+					set_new_mil_target = yes
+				}
+			}
+		}
+	}
+	on_daily_FOR = {
+		effect = {
+			if = { limit = { 139 = { resistance > 89 NOT = { has_state_flag = wmt_uprising_happened } } }
+				initiate_white_mountain_uprising = yes
+			}
+		}
+	}
+	on_war_relation_added = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = { FROM = { original_tag = WHT } ROOT = { original_tag = GON } }
+						AND = { FROM = { original_tag = GON } ROOT = { original_tag = WHT } }
+					}
+				}
+				WHT = { set_country_flag = WHT_survived }
+			}
+		}
+	}
+	# on_daily_WHT = {
+		# effect = {
+			# if = { limit = { has_focus_tree = gondor_focus }
+				# load_focus_tree = 
+			# }
+		# }
+	# }
+	# on_unit_leader_created = {
+		# effect = {
+			# add_unit_leader_trait = enedwaith_heritage_mil
+		# }
+	# }
+	on_unit_leader_created = { #Unit leader scope, FROM is unit
+		effect = { ##adds greater enedwaith heritage trait
+			if = {
+				limit = {
+					FROM = { is_greater_enedwaith_tag = yes }
+					ROOT = {
+						NOT = {
+							OR = {
+								has_trait = andrast_heritage_mil
+								has_trait = enedwaith_heritage_mil
+								has_trait = eregion_heritage_mil
+								has_trait = druwaith_iaur_heritage_mil
+								has_trait = dunland_heritage_mil
+								has_trait = saralain_heritage_mil
+								has_trait = white_mountains_heritage_mil
+							}
+						}
+					}		
+				}
+				set_temp_variable = { andrast_states = 0 }
+				set_temp_variable = { enedwaith_states = 0 }
+				set_temp_variable = { eregion_states = 0 }
+				set_temp_variable = { druwaith_iaur_states = 0 }
+				set_temp_variable = { dunland_states = 0 }
+				set_temp_variable = { saralain_states = 0 }
+				set_temp_variable = { white_mountains_states = 0 }
+				FROM = {
+					every_core_state = {
+						if = { limit = { is_andrast_state = yes }
+							add_to_temp_variable = { andrast_states = 1 }
+						}
+						else_if = { limit = { is_enedwaith_state = yes }
+							add_to_temp_variable = { enedwaith_states = 1 }
+						}
+						else_if = { limit = { is_eregion_state = yes }
+							add_to_temp_variable = { eregion_states = 1 }
+						}
+						else_if = { limit = { is_druwaith_iaur_state = yes }
+							add_to_temp_variable = { druwaith_iaur_states = 1 }
+						}
+						else_if = { limit = { is_dunland_state = yes }
+							add_to_temp_variable = { dunland_states = 1 }
+						}
+						else_if = { limit = { is_saralain_state = yes }
+							add_to_temp_variable = { saralain_states = 1 }
+						}
+						else_if = { limit = { is_white_mountains_state = yes }
+							add_to_temp_variable = { white_mountains_states = 1 }
+						}
+					}
+					if = { limit = { is_andrast_tag = yes }
+						multiply_temp_variable = { andrast_states = 3 }
+					}
+					else_if = { limit = { is_enedwaith_tag = yes }
+						multiply_temp_variable = { enedwaith_states = 3 }
+					}
+					else_if = { limit = { is_eregion_tag = yes }
+						multiply_temp_variable = { eregion_states = 3 }
+					}
+					else_if = { limit = { is_druwaith_iaur_tag = yes }
+						multiply_temp_variable = { druwaith_iaur_states = 3 }
+					}
+					else_if = { limit = { is_dunland_tag = yes }
+						multiply_temp_variable = { dunland_states = 3 }
+					}
+					else_if = { limit = { is_saralain_tag = yes }
+						multiply_temp_variable = { saralain_states = 3 }
+					}
+					else_if = { limit = { is_white_mountains_tag = yes }
+						multiply_temp_variable = { white_mountains_states = 3 }
+					}
+				}
+				ROOT = {
+					random_list = {
+						var:andrast_states = {
+							add_unit_leader_trait = andrast_heritage_mil
+						}
+						var:enedwaith_states = {
+							add_unit_leader_trait = enedwaith_heritage_mil
+						}
+						var:eregion_states = {
+							add_unit_leader_trait = eregion_heritage_mil
+						}
+						var:druwaith_iaur_states = {
+							add_unit_leader_trait = druwaith_iaur_heritage_mil
+						}
+						var:dunland_states = {
+							add_unit_leader_trait = dunland_heritage_mil
+						}
+						var:saralain_states = {
+							add_unit_leader_trait = saralain_heritage_mil
+						}
+						var:white_mountains_states = {
+							add_unit_leader_trait = white_mountains_heritage_mil
+						}
+					}
+						
+				}
+			}
+		}
+	}
+}

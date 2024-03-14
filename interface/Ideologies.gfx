@@ -26,6 +26,22 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideologies/isolationism_group.dds"
 	}
 	SpriteType = {
+		name = "GFX_ideology_rightful_monarchy"
+		texturefile = "gfx/interface/ideologies/democratic_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_petty_monarchy"
+		texturefile = "gfx/interface/ideologies/neutrality_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_glorious_monarchy"
+		texturefile = "gfx/interface/ideologies/fascism_group.dds"
+	}
+	SpriteType = {
+		name = "GFX_ideology_clanship"
+		texturefile = "gfx/interface/ideologies/isolationism_group.dds"
+	}
+	SpriteType = {
 		name = "GFX_ideology_feudalism"
 		texturefile = "gfx/interface/ideologies/democratic_group.dds"
 	}
@@ -36,10 +52,6 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_ideology_autocracy"
 		texturefile = "gfx/interface/ideologies/fascism_group.dds"
-	}
-	SpriteType = {
-		name = "GFX_ideology_shadow_worship"
-		texturefile = "gfx/interface/ideologies/melkorite_group.dds"
 	}
 	#republics
 	SpriteType = {

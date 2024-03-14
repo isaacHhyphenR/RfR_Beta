@@ -194,7 +194,7 @@ scripted_diplomatic_actions = {
 	}
 		
 		
-	begin_rhovanion_influence = { # will be used in most localizations
+	begin_rhovanion_influence = { # will be used in most localizations 
 	
 		# root is the initiator of action and this is the target country
 		allowed = { #if action is valid
@@ -460,7 +460,7 @@ scripted_diplomatic_actions = {
 							range = melkorite_lidless_eye_range3
 						}
 					}
-					ID = [?melkorite_bop_index]
+					ID = "[?melkorite_bop_index]"
 				}
 				factor = 0
 			}
@@ -499,6 +499,7 @@ scripted_diplomatic_actions = {
 		show_acceptance_on_action_button = yes # set to no if acceptance shouldn't be displayed on the action button
 
 		icon = 1 # icon frame to use in notification
+		cost = 0.01
 
 		#for effects/triggers/variables, root is the sender and this is receiver
 		# runs when the action is properly sent and accepted
@@ -517,18 +518,49 @@ scripted_diplomatic_actions = {
 			modifier = { #no need
 				meta_trigger = {
 					text = {
-						power_balance_value = {
+						is_power_balance_in_range = {
 							id = melkorite_power_balance[ID]
-							value > 0.8
+							range = melkorite_lidless_eye_range1
 						}
 					}
-					ID = [?melkorite_bop_index]
+					ID = "[?melkorite_bop_index]"
+				}
+				add = 10
+			}
+			modifier = { #no need
+				meta_trigger = {
+					text = {
+						is_power_balance_in_range = {
+							id = melkorite_power_balance[ID]
+							range = melkorite_lidless_eye_range2
+						}
+					}
+					ID = "[?melkorite_bop_index]"
 				}
 				add = 50
 			}
-			modifier = {
+			modifier = { #nothing else to spend on at this point
+				ROOT = {
+					political_power_daily > 0.02
+					has_completed_focus = MOR_the_lord_of_the_rings
+				}
+				factor = 0
+			}
+			modifier = { #no need
+				meta_trigger = {
+					text = {
+						is_power_balance_in_range = {
+							id = melkorite_power_balance[ID]
+							range = melkorite_lidless_eye_range3
+						}
+					}
+					ID = "[?melkorite_bop_index]"
+				}
+				add = 500
+			}
+			modifier = { #no need
 				has_autonomy_state = autonomy_shadow_slave
-				add = 50
+				add = 500
 			}
 		}
 	}

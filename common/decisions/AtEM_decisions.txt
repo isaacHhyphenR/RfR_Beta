@@ -2176,30 +2176,250 @@ rhovanion_influence_category = {
 	}
 }
 
-# crisis_category = {
-	# melkorite_civil_war_mission = {
-		# icon = GFX_decision_melkorite
-		# fire_only_once = yes
-		# ai_will_do = { #ASAP
-			# factor = 10
-		# }
-		# days_mission_timeout = 30
-		# is_good = no
-		# allowed = { always = no }
-		# cancel = {
-			# OR = {
-				# has_government = melkorite
-				# melkorite < 0.25
-			# }
-			# clr_country_flag = ongoing_crisis
-		# }
-		# timeout_effect = { #civil war!
-			# start_civil_war = {
-				# ideology = melkorite
-				# size = party_popularity@melkorite
-			# }
-			# clr_country_flag = ongoing_crisis
-		# }
-	# }
-# }
+@avertedCivilWarStab = 0.05
+@civilWarPrepDays = 60
+@popularityToAvertCivilWar = 0.25
+@civilWarPopularityLoss = -0.5
+crisis_category = {
+	isolationism_civil_war_mission = {
+		icon = GFX_decision_isolationism
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = @civilWarPrepDays
+		is_good = no
+		allowed = { always = no }
+		cancel_trigger = {
+			OR = {
+				has_government = isolationism
+				isolationism < @popularityToAvertCivilWar
+			}
+		}
+		available = { always = no }
+		cancel_effect = {
+			clr_country_flag = ongoing_crisis
+			clr_country_flag = civil_war_preparations
+			clr_country_flag = side_with_rebels
+			add_stability = @avertedCivilWarStab
+		}
+		timeout_effect = { #civil war!
+			start_civil_war = {
+				ideology = isolationism
+				size = party_popularity@isolationism
+				if = {
+					limit = { original_tag = DOR }
+					set_country_flag = elected_great_merchant #Dorwinion
+				}
+				hidden_effect = {
+					if = {
+						limit = { ROOT = { has_country_flag = side_with_rebels } }
+						change_tag_from = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				add_popularity = {
+					ideology = isolationism
+					popularity = @civilWarPopularityLoss
+				}
+			}
+			clr_country_flag = ongoing_crisis
+			clr_country_flag = civil_war_preparations
+			clr_country_flag = side_with_rebels
+		}
+	}
+	freedom_civil_war_mission = {
+		icon = GFX_decision_freedom
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = @civilWarPrepDays
+		is_good = no
+		allowed = { always = no }
+		cancel_trigger = {
+			OR = {
+				has_government = freedom
+				freedom < @popularityToAvertCivilWar
+			}
+		}
+		available = { always = no }
+		cancel_effect = {
+			clr_country_flag = ongoing_crisis
+			clr_country_flag = civil_war_preparations
+			clr_country_flag = side_with_rebels
+			add_stability = @avertedCivilWarStab
+		}
+		timeout_effect = { #civil war!
+			start_civil_war = {
+				ideology = freedom
+				size = party_popularity@freedom
+				if = {
+					limit = { original_tag = DOR }
+					set_country_flag = elected_great_merchant #Dorwinion
+				}
+				hidden_effect = {
+					if = {
+						limit = { ROOT = { has_country_flag = side_with_rebels } }
+						change_tag_from = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				add_popularity = {
+					ideology = freedom
+					popularity = @civilWarPopularityLoss
+				}
+			}
+			clr_country_flag = ongoing_crisis
+			clr_country_flag = civil_war_preparations
+			clr_country_flag = side_with_rebels
+		}
+	}
+	opportunism_civil_war_mission = {
+		icon = GFX_decision_opportunism
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = @civilWarPrepDays
+		is_good = no
+		allowed = { always = no }
+		cancel_trigger = {
+			OR = {
+				has_government = opportunism
+				opportunism < @popularityToAvertCivilWar
+			}
+		}
+		available = { always = no }
+		cancel_effect = {
+			clr_country_flag = ongoing_crisis
+			clr_country_flag = civil_war_preparations
+			clr_country_flag = side_with_rebels
+			add_stability = @avertedCivilWarStab
+		}
+		timeout_effect = { #civil war!
+			start_civil_war = {
+				ideology = opportunism
+				size = party_popularity@opportunism
+				if = { #Dorwinion
+					limit = { original_tag = DOR }
+					set_country_flag = elected_winelord
+				}
+				hidden_effect = {
+					if = {
+						limit = { ROOT = { has_country_flag = side_with_rebels } }
+						change_tag_from = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				add_popularity = {
+					ideology = opportunism
+					popularity = @civilWarPopularityLoss
+				}
+			}
+			clr_country_flag = ongoing_crisis
+			clr_country_flag = civil_war_preparations
+			clr_country_flag = side_with_rebels
+		}
+	}
+	conquest_civil_war_mission = {
+		icon = GFX_decision_conquest
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = @civilWarPrepDays
+		is_good = no
+		allowed = { always = no }
+		cancel_trigger = {
+			OR = {
+				has_government = conquest
+				conquest < @popularityToAvertCivilWar
+			}
+		}
+		available = { always = no }
+		cancel_effect = {
+			clr_country_flag = ongoing_crisis
+			clr_country_flag = civil_war_preparations
+			clr_country_flag = side_with_rebels
+			add_stability = @avertedCivilWarStab
+		}
+		timeout_effect = { #civil war!
+			start_civil_war = {
+				ideology = conquest
+				size = party_popularity@conquest
+				if = { #Dorwinion
+					limit = { original_tag = DOR }
+					set_country_flag = elected_winelord
+				}
+				hidden_effect = {
+					if = {
+						limit = { ROOT = { has_country_flag = side_with_rebels } }
+						change_tag_from = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				add_popularity = {
+					ideology = conquest
+					popularity = @civilWarPopularityLoss
+				}
+			}
+			clr_country_flag = ongoing_crisis
+			clr_country_flag = civil_war_preparations
+			clr_country_flag = side_with_rebels
+		}
+	}
+	melkorite_civil_war_mission = {
+		icon = GFX_decision_melkorite
+		fire_only_once = yes
+		ai_will_do = { #ASAP
+			factor = 10
+		}
+		days_mission_timeout = @civilWarPrepDays
+		is_good = no
+		allowed = { always = no }
+		cancel_trigger = {
+			OR = {
+				has_government = melkorite
+				melkorite < @popularityToAvertCivilWar
+			}
+		}
+		available = { always = no }
+		cancel_effect = {
+			clr_country_flag = ongoing_crisis
+			clr_country_flag = civil_war_preparations
+			clr_country_flag = side_with_rebels
+			add_stability = @avertedCivilWarStab
+		}
+		timeout_effect = { #civil war!
+			start_civil_war = {
+				ideology = melkorite
+				size = party_popularity@melkorite
+				if = { #Dorwinion
+					limit = { original_tag = DOR }
+					set_country_flag = elected_winelord
+				}
+				hidden_effect = {
+					if = {
+						limit = { ROOT = { has_country_flag = side_with_rebels } }
+						change_tag_from = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				add_popularity = {
+					ideology = melkorite
+					popularity = @civilWarPopularityLoss
+				}
+			}
+			clr_country_flag = ongoing_crisis
+			clr_country_flag = civil_war_preparations
+			clr_country_flag = side_with_rebels
+		}
+	}
+}
 		

@@ -452,7 +452,9 @@ DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
 				option = ALWAYS_FREE
 			}
 		}
-		always = yes
+		hidden_trigger = {
+			always = yes
+		}
 	}
 	if = {
 		limit = {
@@ -461,7 +463,9 @@ DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
 				option = LIMITED
 			}
 		}
-		always = yes
+		hidden_trigger = {
+			always = yes
+		}
 	}
 	if = {
 		limit = {

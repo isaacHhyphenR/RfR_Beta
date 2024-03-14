@@ -13,16 +13,16 @@ MOR_the_dark_lord_category = {
 		visible = {
 			any_other_country = {
 				NOT = { has_war_with = ROOT }
-				OR = { has_idea = saurons_prize_spirit has_idea = spurned_sauron }
+				check_variable = { modifier@saurons_target > 0 }
 			}
 		}
 		available = {
 			any_enemy_country = {
 				is_major = yes
-				custom_trigger_tooltip = {
-					tooltip = NOT_is_greater_enedwaith_tag_tooltip
-					is_greater_enedwaith_tag = no
-				}
+				#custom_trigger_tooltip = {
+				#	tooltip = NOT_is_greater_enedwaith_tag_tooltip
+				#	is_greater_enedwaith_tag = no
+				#}
 			}
 		}
 		

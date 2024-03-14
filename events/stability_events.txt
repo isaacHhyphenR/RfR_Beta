@@ -70,54 +70,21 @@ country_event = { ##1## Evil Civil War
 				NOT = { has_government = melkorite }
 				melkorite > modifier@civil_war_ideology_threshold
 			}
-			# activate_mission = melkorite_civil_war_mission
-			start_civil_war = {
-				ideology = melkorite
-				size = party_popularity@melkorite
-				set_country_flag = elected_winelord #Dorwinion
-			}
-			hidden_effect = {
-				add_popularity = {
-					ideology = melkorite
-					popularity = @civilWarPopularityLoss
-				}
-			}
+			activate_mission = melkorite_civil_war_mission
 		}
 		else_if = {
 			limit = {
 				NOT = { has_government = conquest }
 				conquest > modifier@civil_war_ideology_threshold
 			}
-			start_civil_war = {
-				ideology = conquest
-				size = party_popularity@conquest
-				set_country_flag = elected_winelord #Dorwinion
-			}
-			hidden_effect = {
-				add_popularity = {
-					ideology = conquest
-					popularity = @civilWarPopularityLoss
-				}
-			}
-			# activate_mission = conquest_civil_war_mission
+			activate_mission = conquest_civil_war_mission
 		}
 		else_if = {
 			limit = {
 				NOT = { has_government = opportunism }
 				opportunism > modifier@civil_war_ideology_threshold
 			}
-			start_civil_war = {
-				ideology = opportunism
-				size = party_popularity@opportunism
-				set_country_flag = elected_winelord #Dorwinion
-			}
-			hidden_effect = {
-				add_popularity = {
-					ideology = opportunism
-					popularity = @civilWarPopularityLoss
-				}
-			}
-			# activate_mission = opportunism_civil_war_mission
+			activate_mission = opportunism_civil_war_mission
 		}
 		set_country_flag = ongoing_crisis
 	}
@@ -194,60 +161,27 @@ country_event = { ##1## Evil Civil War
 				NOT = { has_government = melkorite }
 				melkorite > modifier@civil_war_ideology_threshold
 			}
-			# activate_mission = melkorite_civil_war_mission
-			start_civil_war = {
-				ideology = melkorite
-				size = party_popularity@melkorite
-				set_country_flag = elected_winelord #Dorwinion
-				hidden_effect = { change_tag_from = ROOT }
-			}
+			activate_mission = melkorite_civil_war_mission
+			set_country_flag = side_with_rebels
 			custom_effect_tooltip = side_with_rebels_tooltip
-			hidden_effect = {
-				add_popularity = {
-					ideology = melkorite
-					popularity = @civilWarPopularityLoss
-				}
-			}
 		}
 		else_if = {
 			limit = {
 				NOT = { has_government = conquest }
 				conquest > modifier@civil_war_ideology_threshold
 			}
-			start_civil_war = {
-				ideology = conquest
-				size = party_popularity@conquest
-				set_country_flag = elected_winelord #Dorwinion
-				hidden_effect = { change_tag_from = ROOT }
-			}
 			custom_effect_tooltip = side_with_rebels_tooltip
-			hidden_effect = {
-				add_popularity = {
-					ideology = conquest
-					popularity = @civilWarPopularityLoss
-				}
-			}
-			# activate_mission = conquest_civil_war_mission
+			set_country_flag = side_with_rebels
+			activate_mission = conquest_civil_war_mission
 		}
 		else_if = {
 			limit = {
 				NOT = { has_government = opportunism }
 				opportunism > modifier@civil_war_ideology_threshold
 			}
-			start_civil_war = {
-				ideology = opportunism
-				size = party_popularity@opportunism
-				set_country_flag = elected_winelord #Dorwinion
-				hidden_effect = { change_tag_from = ROOT }
-			}
 			custom_effect_tooltip = side_with_rebels_tooltip
-			hidden_effect = {
-				add_popularity = {
-					ideology = opportunism
-					popularity = @civilWarPopularityLoss
-				}
-			}
-			# activate_mission = opportunism_civil_war_mission
+			set_country_flag = side_with_rebels
+			activate_mission = opportunism_civil_war_mission
 		}
 		set_country_flag = ongoing_crisis
 	}
@@ -301,36 +235,14 @@ country_event = { ##2## Good Civil War
 				NOT = { has_government = freedom }
 				freedom > modifier@civil_war_ideology_threshold
 			}
-			# activate_mission = freedom_civil_war_mission
-			start_civil_war = {
-				ideology = freedom
-				size = party_popularity@freedom
-				set_country_flag = elected_great_merchant #Dorwinion
-			}
-			hidden_effect = {
-				add_popularity = {
-					ideology = freedom
-					popularity = @civilWarPopularityLoss
-				}
-			}
+			activate_mission = freedom_civil_war_mission
 		}
 		else_if = {
 			limit = {
 				NOT = { has_government = isolationism }
 				isolationism > modifier@civil_war_ideology_threshold
 			}
-			start_civil_war = {
-				ideology = isolationism
-				size = party_popularity@isolationism
-				set_country_flag = elected_great_merchant #Dorwinion
-			}
-			hidden_effect = {
-				add_popularity = {
-					ideology = isolationism
-					popularity = @civilWarPopularityLoss
-				}
-			}
-			# activate_mission = isolationism_civil_war_mission
+			activate_mission = isolationism_civil_war_mission
 		}
 	}
 	option = { #Give in
@@ -390,40 +302,18 @@ country_event = { ##2## Good Civil War
 				NOT = { has_government = freedom }
 				freedom > modifier@civil_war_ideology_threshold
 			}
-			# activate_mission = freedom_civil_war_mission
-			start_civil_war = {
-				ideology = freedom
-				size = party_popularity@freedom
-				set_country_flag = elected_great_merchant #Dorwinion
-				hidden_effect = { change_tag_from = ROOT }
-			}
+			activate_mission = freedom_civil_war_mission
+			set_country_flag = side_with_rebels
 			custom_effect_tooltip = side_with_rebels_tooltip
-			hidden_effect = {
-				add_popularity = {
-					ideology = freedom
-					popularity = @civilWarPopularityLoss
-				}
-			}
 		}
 		else_if = {
 			limit = {
 				NOT = { has_government = isolationism }
 				isolationism > modifier@civil_war_ideology_threshold
 			}
-			start_civil_war = {
-				ideology = isolationism
-				size = party_popularity@isolationism
-				set_country_flag = elected_great_merchant #Dorwinion
-				hidden_effect = { change_tag_from = ROOT }
-			}
 			custom_effect_tooltip = side_with_rebels_tooltip
-			hidden_effect = {
-				add_popularity = {
-					ideology = isolationism
-					popularity = @civilWarPopularityLoss
-				}
-			}
-			# activate_mission = isolationism_civil_war_mission
+			set_country_flag = side_with_rebels
+			activate_mission = isolationism_civil_war_mission
 		}
 	}
 }
