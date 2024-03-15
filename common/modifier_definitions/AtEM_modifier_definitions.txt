@@ -156,3 +156,11 @@ saurons_target = {
 	value_type = yes_no
 	category = country
 }
+
+stability_gain_on_election = {
+	color_type = good
+	value_type = percentage_in_hundred
+	precision = 2
+	category = country
+	postfix = none
+}

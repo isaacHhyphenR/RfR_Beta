@@ -215,7 +215,7 @@ on_actions = {
 				#randomly determines whether to fire an event
 				random = {
 					chance = var:modifier@low_stability_risk
-					set_country_flag = crisis_in_progress
+					#set_country_flag = crisis_in_progress SET IN EACH EVENT IN CASE THEY DON'T FIRE
 					#randomly determines which event to fire
 					random_list = {
 						20 = { #draft dodging
@@ -276,6 +276,28 @@ on_actions = {
 							}
 							add_ideas = mutiny_1 
 							country_event = { id = stability.23 random_days = 0 }
+						}
+						0 = { #DOR great merchant dissent
+							modifier = {
+								add = 2000
+								has_power_balance = { id = DOR_election_power_balance }
+								is_power_balance_in_range = {
+									id = DOR_election_power_balance
+									range > DOR_winelords_range1
+								}
+							}
+							country_event = { id = stability.50 random_days = 30 }
+						}
+						0 = { #DOR winelord dissent
+							modifier = {
+								add = 2000
+								has_power_balance = { id = DOR_election_power_balance }
+								is_power_balance_in_range = {
+									id = DOR_election_power_balance
+									range < DOR_great_merchants_range1
+								}
+							}
+							country_event = { id = stability.51 random_days = 30 }
 						}
 					}
 				}
@@ -775,6 +797,7 @@ on_actions = {
 
 	on_new_term_election = { #elections!
 		effect = {
+			add_stability = modifier@stability_gain_on_election
 			##save the date in case we need it later
 			meta_effect = {
 				text = {

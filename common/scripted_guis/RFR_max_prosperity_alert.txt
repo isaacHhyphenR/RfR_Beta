@@ -11,6 +11,7 @@ scripted_gui = {
 					value = 100
 					compare = greater_than_or_equals
 				}
+				market < var:market_max_level
 				NOT = { has_state_flag = constructing_market }
 			}
 		}

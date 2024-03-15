@@ -144,4 +144,6 @@
  starting_resistance: "Starting Resistance in New States"
  melkorite_can_justify: "§Y$melkorite$§! countries can manually justify war goals and join ongoing wars"
  saurons_target: "Marked by Sauron for conquest"
- 
+ stability_gain_on_election: "Stability gain on election"
+ MODIFIER_ANNEX_COST_FACTOR: "Peace Conference Annex cost"
+ MODIFIER_ANNEX_COST_FACTOR_DESC: "Changes the cost of annexing a country in a peace conference."

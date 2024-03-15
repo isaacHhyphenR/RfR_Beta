@@ -207,7 +207,7 @@ every_character = { #assign everyone character_flags of their faction
 # recruit_character = DOR_golodhlir_nos_sargon
 
 add_ideas = northern_heritage_idea
-add_ideas = DOR_demoralized_army3
+add_ideas = DOR_demoralized_army4
 
 set_power_balance = {
     id = DOR_election_power_balance

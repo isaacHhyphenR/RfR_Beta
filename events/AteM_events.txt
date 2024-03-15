@@ -482,6 +482,20 @@ country_event = { ##7## Hawin Koldana Dies, election happens
 		ai_chance = {
 			factor = 1
 		}
+		##If you elect with factional dissent
+		if = {
+			limit = { NOT = { check_variable = { modifier@stability_gain_on_election = 0} } }
+			add_stability = modifier@stability_gain_on_election
+		}
+		if = {
+			limit = { has_idea = DOR_great_merchant_dissent }
+			remove_ideas = DOR_great_merchant_dissent
+		}
+		if = {
+			limit = { has_idea = DOR_winelord_dissent }
+			remove_ideas = DOR_winelord_dissent
+		}
+		##Show the election
 		custom_effect_tooltip = has_happened_tooltip
 		effect_tooltip = {
 			custom_effect_tooltip = hawin_koldana_dies
@@ -3449,11 +3463,14 @@ country_event = { ##8## Merchant contracts
 		name = senate.8.a
 		trigger = {
 			NOT = { has_country_flag = food_contract } #can only select this option once
-			country_exists = RUN
-			NOT = { has_war_with = RUN }
+			any_other_country = {
+				has_cosmetic_tag = RUN
+				NOT = { has_war_with = ROOT }
+				country_exists = this
+			}
 		}
 		ai_chance = {
-			factor = 2
+			base = 2
 			modifier = { #AI won't go into debt
 				has_political_power < 40
 				factor = 0
@@ -3468,7 +3485,12 @@ country_event = { ##8## Merchant contracts
 		}
 		set_country_flag = food_contract
 		add_political_power = -40
-		RUN = {
+		random_other_country = {
+			limit = {
+				has_cosmetic_tag = RUN
+				NOT = { has_war_with = ROOT }
+				country_exists = this
+			}
 			country_event = { id = atem.11 hours = 1 }
 		}
 		custom_effect_tooltip = if_they_accept_tooltip
@@ -3481,11 +3503,14 @@ country_event = { ##8## Merchant contracts
 		name = senate.8.b
 		trigger = {
 			NOT = { has_country_flag = cloth_contract } #can only select this option once
-			country_exists = DAL
-			NOT = { has_war_with = DAL }
+			any_other_country = {
+				original_tag = DAL
+				NOT = { has_war_with = ROOT }
+				country_exists = this
+			}
 		}
 		ai_chance = {
-			factor = 2
+			base = 2
 			modifier = { #AI won't go into debt
 				has_political_power < 40
 				factor = 0
@@ -3500,7 +3525,12 @@ country_event = { ##8## Merchant contracts
 		}
 		set_country_flag = cloth_contract
 		add_political_power = -40
-		DAL = {
+		random_other_country = {
+			limit = {
+				original_tag = DAL
+				NOT = { has_war_with = ROOT }
+				country_exists = this
+			}
 			country_event = { id = atem.11 hours = 1 }
 		}
 		custom_effect_tooltip = if_they_accept_tooltip
@@ -3513,11 +3543,15 @@ country_event = { ##8## Merchant contracts
 		name = senate.8.c
 		trigger = {
 			NOT = { has_country_flag = iron_contract } #can only select this option once
-			country_exists = ERE
-			NOT = { has_war_with = ERE }
+			any_other_country = {
+				original_tag = ERE
+				NOT = { has_war_with = ROOT }
+				country_exists = this
+				country_event = { id = atem.11 hours = 1 }
+			}
 		}
 		ai_chance = {
-			factor = 2
+			base = 2
 			modifier = { #AI won't go into debt
 				has_political_power < 40
 				factor = 0
@@ -3532,7 +3566,12 @@ country_event = { ##8## Merchant contracts
 		}
 		set_country_flag = iron_contract
 		add_political_power = -40
-		ERE = {
+		random_other_country = {
+			limit = {
+				original_tag = ERE
+				NOT = { has_war_with = ROOT }
+				country_exists = this
+			}
 			country_event = { id = atem.11 hours = 1 }
 		}
 		custom_effect_tooltip = if_they_accept_tooltip
@@ -3544,7 +3583,7 @@ country_event = { ##8## Merchant contracts
 	option = { ##Abstain
 		name = senate.8.dd
 		ai_chance = {
-			factor = 0.1
+			base = 0.1
 		}
 	}
 }

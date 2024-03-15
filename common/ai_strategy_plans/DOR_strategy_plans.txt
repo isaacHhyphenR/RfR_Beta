@@ -32,16 +32,7 @@ Dorwinion_historical = {
 		DOR_take_guild_loans #35 G
 		DOR_loan_to_foreigners #35 G
 	}
-
-	research = {
-	}
-
-	ideas = {
-	}
-
-	traits = {
-	}
-
+	
 	# Keep small, as it is used as a factor for some things (such as research needs)
 	# Recommended around 1.0. Useful for relation between plans
 	weight = {

@@ -28,6 +28,33 @@ DOR_election_category = { #BOP
 			power_balance_weekly = -0.005
 		}
 	}
+	DOR_exchange_urban_rights_for_support = {
+		icon = GFX_decision_generic_welfare
+		fire_only_once = yes
+		days_remove = 70
+		ai_will_do = {
+			factor = 0
+		}
+		cancel_if_not_visible = yes
+		available = {
+			power_balance_value = {
+				id = DOR_election_power_balance
+				value < -0.15
+			}
+		}
+		modifier = {
+			consumer_goods_factor = 0.5
+		}
+		remove_effect = {
+			add_power_balance_value = {
+				id = DOR_election_power_balance
+				value = -0.05
+				tooltip_side = DOR_great_merchants_side
+			}
+			set_country_flag = urban_support
+			custom_effect_tooltip = DOR_exchange_urban_rights_for_support_tooltip
+		}
+	}
 	DOR_campaign_for_the_winelords = {
 		icon = GFX_decision_winelords
 		fire_only_once = @campaignFireOnlyOnce
@@ -880,7 +907,7 @@ DOR_college_category = {
 }
 
 DOR_spread_revolution_category = {
-	@complianceForRepublic = 50
+	@complianceForRepublic = 30
 	@foundRepublicCost = 50
 	@republicSpawnUnits = YES
 	establish_ARN_republic = { #ARNOR
@@ -974,20 +1001,20 @@ DOR_spread_revolution_category = {
 						add_civil_war_target = PREV
 					}
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+						}
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
-				#spawns units
-				if = {
-					limit = { always = @republicSpawnUnits }
-					hidden_effect = {
-						revolutionary_guard_template = yes
-					}
-					random_controlled_state = {
-						spawn_revolutionary_guard = yes
-						spawn_revolutionary_guard = yes
-					}
-				}
 			}
 		}
 	}
@@ -1020,21 +1047,25 @@ DOR_spread_revolution_category = {
 						add_civil_war_target = PREV
 					}
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+						}
+					}
+					set_capital = {
+					  state = 100 #dalelands
+					  remember_old_capital = no
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
-				#spawns units
-				if = {
-					limit = { always = @republicSpawnUnits }
-					hidden_effect = {
-						revolutionary_guard_template = yes
-					}
-					random_controlled_state = {
-						spawn_revolutionary_guard = yes
-						spawn_revolutionary_guard = yes
-						spawn_revolutionary_guard = yes
-					}
-				}
 			}
 		}
 	}
@@ -1067,19 +1098,19 @@ DOR_spread_revolution_category = {
 						add_civil_war_target = PREV
 					}
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+						}
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
-				#spawns units
-				if = {
-					limit = { always = @republicSpawnUnits }
-					hidden_effect = {
-						revolutionary_guard_template = yes
-					}
-					random_controlled_state = {
-						spawn_revolutionary_guard = yes
-					}
-				}
 			}
 		}
 	}
@@ -1125,20 +1156,20 @@ DOR_spread_revolution_category = {
 					}
 					##final stuff
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+						}
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
-				#spawns units
-				if = {
-					limit = { always = @republicSpawnUnits }
-					hidden_effect = {
-						revolutionary_guard_template = yes
-					}
-					random_controlled_state = {
-						spawn_revolutionary_guard = yes
-						spawn_revolutionary_guard = yes
-					}
-				}
 			}
 		}
 	}
@@ -1171,21 +1202,21 @@ DOR_spread_revolution_category = {
 						add_civil_war_target = PREV
 					}
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+						}
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
-				#spawns units
-				if = {
-					limit = { always = @republicSpawnUnits }
-					hidden_effect = {
-						revolutionary_guard_template = yes
-					}
-					random_controlled_state = {
-						spawn_revolutionary_guard = yes
-						spawn_revolutionary_guard = yes
-						spawn_revolutionary_guard = yes
-					}
-				}
 			}
 		}
 	}
@@ -1218,20 +1249,20 @@ DOR_spread_revolution_category = {
 						add_civil_war_target = PREV
 					}
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+						}
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
-				#spawns units
-				if = {
-					limit = { always = @republicSpawnUnits }
-					hidden_effect = {
-						revolutionary_guard_template = yes
-					}
-					random_controlled_state = {
-						spawn_revolutionary_guard = yes
-						spawn_revolutionary_guard = yes
-					}
-				}
 			}
 		}
 	}
@@ -1604,22 +1635,22 @@ DOR_spread_revolution_category = {
 					}
 					##final stuff
 					found_THIS_revolutionary_republic = yes
+					#spawns units
+					if = {
+						limit = { always = @republicSpawnUnits }
+						hidden_effect = {
+							revolutionary_guard_template = yes
+						}
+						random_controlled_state = {
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+							spawn_revolutionary_guard = yes
+						}
+					}
 				}
 				#so we know we did it, update home of the revolution modifiers
 				establish_sister_republic = yes
-				#spawns units
-				if = {
-					limit = { always = @republicSpawnUnits }
-					hidden_effect = {
-						revolutionary_guard_template = yes
-					}
-					random_controlled_state = {
-						spawn_revolutionary_guard = yes
-						spawn_revolutionary_guard = yes
-						spawn_revolutionary_guard = yes
-						spawn_revolutionary_guard = yes
-					}
-				}
 			}
 		}
 	}

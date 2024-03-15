@@ -15,6 +15,9 @@ ideologies = {
 			republic_isolationism = { #dorwinion
 				can_be_randomly_selected = no
 			}
+			merchant_republic_isolationism = {
+				can_be_randomly_selected = no
+			}
 			wise_monarchy = {
 				can_be_randomly_selected = yes
 			}
@@ -79,6 +82,9 @@ ideologies = {
 				can_be_randomly_selected = yes
 			}
 			republic_freedom = { #dorwinion
+				can_be_randomly_selected = no
+			}
+			merchant_republic_freedom = {
 				can_be_randomly_selected = no
 			}
 			feudalism = {

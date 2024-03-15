@@ -21,7 +21,7 @@ autonomy_state = {
 		mic_to_overlord_factor = 0.1
 		autonomy_gain = 0.05
 		required_garrison_factor = -0.1
-		can_master_build_for_us = 0
+		can_master_build_for_us = 1
 	}
 	
 	ai_subject_wants_higher = {
@@ -30,9 +30,16 @@ autonomy_state = {
 	
 	ai_overlord_wants_lower = {
 		factor = 1.0
+		modifier = { #celduin republic
+			OR = {
+				original_tag = DAL
+				is_rhovanion_tag = yes
+			}
+			factor = 100
+		}
 	}
 	allowed_levels_filter = {
-		autonomy_constituent_republic
+		#autonomy_constituent_republic
 	}
 
 	ai_overlord_wants_garrison = {
@@ -51,7 +58,8 @@ autonomy_state = {
 				is_republic = yes
 			}
 			ROOT = {
-				can_form_sister_republic = yes
+				is_republic = yes
+				#can_form_sister_republic = yes
 			}
 		}
 	}

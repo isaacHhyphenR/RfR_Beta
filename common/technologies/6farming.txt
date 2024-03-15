@@ -1532,7 +1532,7 @@ technologies = {
 		}
 		enable_building = {
 			building = vineyard
-			level = 5
+			level = 3
 		}
 		
 		research_cost = 3
@@ -1572,7 +1572,7 @@ technologies = {
 		}
 		enable_building = {
 			building = vineyard
-			level = 5
+			level = 4
 		}
 		
 		research_cost = 0.5
@@ -1609,22 +1609,19 @@ technologies = {
 	}
 	wine_tech3 = {
 		wine_gain_factor = 0.1
-		enable_building = {
-			building = vineyard
-			level = 5
-		}
+
 		
 		research_cost = 0.5
-		start_year = 3018
+		start_year = 3020
 		folder = {
 			name = farming_folder
-			position = { x = @wineX y = @3018 }
+			position = { x = @wineX y = @3020 }
 		}
 		
 		categories = {
 			farming
 			agriculture
-			agriculture_basic
+			agriculture_improved
 			wine_tech_category
 		}
 		
@@ -1640,7 +1637,7 @@ technologies = {
 			}
 			modifier = {
 				NOT = {
-					has_tech = agriculture2
+					has_tech = agriculture3
 				}
 				factor = @AIbehindAgriculture
 			}

@@ -355,6 +355,7 @@ country_event = { ##21##
 			}
 			clr_country_flag = crisis_solution_in_progress
 		}
+		set_country_flag = crisis_in_progress
 	}
 	option = { 
 		name = stability.21.a
@@ -782,7 +783,7 @@ country_event = { ##40## improve living conditions, level 3 - success
 
 
 #################STRIKES
-country_event = {
+country_event = { ##22##
 	id = stability.22
 	title = stability.22.t
 	desc = {
@@ -810,6 +811,7 @@ country_event = {
 			}
 			clr_country_flag = crisis_solution_in_progress
 		}
+		set_country_flag = crisis_in_progress
 	}
 	
 	option = { 
@@ -1151,7 +1153,7 @@ country_event = { ##9## strikes_3 negotiations - success
 
 
 #################MUTINIES
-country_event = {
+country_event = { ##23##
 	id = stability.23
 	title = stability.23.t	
 	desc = {
@@ -1179,6 +1181,7 @@ country_event = {
 			}
 			clr_country_flag = crisis_solution_in_progress
 		}
+		set_country_flag = crisis_in_progress
 	}
 	
 	option = { 
@@ -1512,5 +1515,115 @@ country_event = { ##9## mutiny_3 negotiations - success
 		set_country_flag = { flag = mutiny_resolved days = 180 }
 	}
 }
+
+
+#################DORWINION FACTIONS
+country_event = { ##50## Great Merchant Dissent
+	id = stability.50
+	title = stability.50.t	
+	desc = stability.50.desc
+	picture = GFX_debate_2
+		
+	is_triggered_only = yes
+
+	trigger = {
+		has_power_balance = { id = DOR_election_power_balance }
+		is_power_balance_in_range = {
+			id = DOR_election_power_balance
+			range > DOR_winelords_range1
+		}
+	}
+	
+	immediate = {
+		set_country_flag = crisis_in_progress
+	}
+
+	option = { #reconcile
+		name = stability.50.a
+		ai_chance = {
+			base = 20
+		}
+		add_ideas = DOR_great_merchant_dissent
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = -0.05
+			tooltip_side = DOR_great_merchants_side
+		}
+	}
+	option = { #carry on
+		name = stability.50.b
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = DOR_great_merchant_dissent
+	}
+	option = { #damn the traitors
+		name = stability.50.c
+		ai_chance = {
+			base = 1
+		}
+		add_ideas = DOR_great_merchant_dissent
+		add_stability = -0.05
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = 0.05
+			tooltip_side = DOR_winelords_side
+		}
+	}
+}
+country_event = { ##51## Winelord Dissent
+	id = stability.51
+	title = stability.51.t	
+	desc = stability.51.desc
+	picture = GFX_debate_2
+		
+	is_triggered_only = yes
+
+	trigger = {
+		has_power_balance = { id = DOR_election_power_balance }
+		is_power_balance_in_range = {
+			id = DOR_election_power_balance
+			range < DOR_great_merchants_range1
+		}
+	}
+
+	immediate = {
+		set_country_flag = crisis_in_progress
+	}
+
+	option = { #reconcile
+		name = stability.51.a
+		ai_chance = {
+			base = 20
+		}
+		add_ideas = DOR_winelord_dissent
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = 0.05
+			tooltip_side = DOR_winelords_side
+		}
+	}
+	option = { #carry on
+		name = stability.51.b
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = DOR_winelord_dissent
+	}
+	option = { #damn the traitors
+		name = stability.51.c
+		ai_chance = {
+			base = 1
+		}
+		add_ideas = DOR_winelord_dissent
+		add_stability = -0.05
+		add_power_balance_value = {
+			id = DOR_election_power_balance
+			value = -0.05
+			tooltip_side = DOR_great_merchants_side
+		}
+	}
+}
+
 
 

@@ -1819,7 +1819,7 @@ rhovanion_influence_category = {
 	}
 	rhovanion_influence_ideology = {
 		icon = GFX_decision_eng_propaganda_campaigns
-		custom_cost_text = rhovanion_25_influence_cost
+		custom_cost_text = rhovanion_30_influence_cost
 		custom_cost_trigger = { always = yes } #can't check FROM variables in custom cost trigger
 		ai_will_do = {
 			factor = 1

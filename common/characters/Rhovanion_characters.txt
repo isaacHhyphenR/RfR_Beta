@@ -42,7 +42,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = republic_isolationism
+			ideology = merchant_republic_isolationism
 			traits = { }
 			#desc = DOR_vidumarh_vierling_desc
 		}
@@ -74,7 +74,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = republic_isolationism
+			ideology = merchant_republic_isolationism
 			traits = {  }
 			#desc = DOR_vidumarh_vierling_desc
 		}

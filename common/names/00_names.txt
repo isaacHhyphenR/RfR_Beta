@@ -213,6 +213,26 @@ KZD = {
 		"Ironfist" "Loderr" "Lutgehr" "Rumnaheim" "Strakeln" "Torunn" "Ungart"
 	}
 }
+NRK = {
+	Male = {
+		Names = {
+		"Adrik" "Alberich" "Baern" "Barendd" "Brottor" "Bruenor" "Dain" "Darrak" "Delg" "Eberk" "Einkil"
+		"Fargrim" "Flint" "Gardain" "Harbek" "Kildrak" "Morgran" "Orsik" "Oskar" "Rangrim" "Rurik" "Taklinn"
+		"Thoradin" "Thorin" "Tordek" "Traubon" "Travok" "Ulfgar" "Veit" "Vondal"
+		}
+	}
+	Female = {
+		Names = {
+		"Amber" "Artin" "Audhild" "Bardryn" "Dagnal" "Diesa" "Eldeth" "Falkrunn" "Finellen" "Gunnloda" "Gurdis"
+		"Helja" "Hlin" "Kathra" "Kristryd" "Ilde" "Liftrasa" "Mardred" "Riswynn" "Sannl" "Torbera" "Torgga"
+		"Vistra"
+		}
+	}
+	Surnames = {
+		"Balderk" "Battlehammer" "Brawnanvil" "Dankil" "Fireforge" "Frostbeard" "Gorunn" "Holderhek"
+		"Ironfist" "Loderr" "Lutgehr" "Rumnaheim" "Strakeln" "Torunn" "Ungart"
+	}
+}
 ORI = {
 	Male = {
 		Names = {
@@ -376,7 +396,7 @@ UMB = {
 }
 
 ###################################################################################################EASTERLING
-MED = {
+MED = { #PLACEHOLDER
 	Male = {
 		Names = {
 		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
@@ -391,7 +411,186 @@ MED = {
 		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
 	}
 }
-
+ULG = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
+LGA = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
+SRB = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
+SAG = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
+LGR = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
+DPG = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
+DYR = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
+RLM = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
+MAG = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
+KST = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
+KRG = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
+HIL = { #PLACEHOLDER
+	Male = {
+		Names = {
+		"Akhiz" "Arkish" "Asternak" "Azzad" "Baltab" "Beg" "Balûn" "Bountîg" "Brôdvaga" "Akhev" "Caljar" "Crazkham" "Dauthar" "Curuband" "Gorovod" "Goûr" "Itô" "Gurthilm" "Hargrog" "Harvâl" "Itâna" "Ôron" "Ôvan" "Ôvon" "Jotaen" "Jotaeseimu" "Kedezh" "Keiseimu" "Khôdid" "Khurubra" "Khûrsh" "Khîonid" "Khîonvad" "Leídan" "Lûthkan" "Lûthku" "Mardrash" "Mîonid" "Nômid" "Ôdavith" "Ôldur" "Ôlriag" "Ômad" "Ôthour" "Ôvag" "Ôvatha" "Sacal" "Surakaris" "Tarôk" "Tûkrai" "Ûlruth" "Ûonid" "Irbô" "Ûrdrath" "Ûrig" "Ûrpof" "Ûvatha" "Ûsriev" "Vakheralthan" "Valathmir" "Vangariz" "Vrakya" "Vrônkhar" "Warlôg" "Wastaph" "Yuktîr" "Yumruk" "Yursal" "Skakali" "Zôr"			
+		}
+	}
+	Female = {
+		Names = {
+		"Aivaisa" "Bulga" "Itâna" "Kanhai" "Ûprava" "Marcetha" "Neida" "Ôvaisa" "Râisha"
+		}
+	}
+	Surnames = {
+		"Akheth" "Akhev" "Ankiv" "Azumenúkhad" "Drîond" "Harmunekhad" "Îgath" "Îmaviôn" "Ibô" "Irbô" "Itakh" "Itâna" "Îtho" "Môga" "Nîkhad" "Nikhôd" "Olêna" "Ômodath" "Ôran" "Ôrath" "Ororath" "Ôrpov" "Ôvan" "Ôvon" "Ûdo" "Ûliath" "Ûprava" "Ûrpov" "Vrakhara" "Skakali" "Tûmag"
+	}
+}
 
 ###################################################################################################NORTHRON
 BER = {

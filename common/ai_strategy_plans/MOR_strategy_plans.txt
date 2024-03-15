@@ -19,16 +19,17 @@ Mordor_historical = {
 		MOR_pump_the_bellows
 		MOR_fires_in_the_deep
 		#3016
-		MOR_the_eye_looks_east
 		MOR_the_eye_looks_south
+		MOR_the_eye_looks_east
 		MOR_unceasing_hammers
 		MOR_the_fires_of_war
 		MOR_raise_the_hordes
 		MOR_expand_the_corsair_fleet
+		MOR_aid_in_mumak_training
 		#3017
 		MOR_the_eye_looks_north
 		MOR_rebuild_dol_guldur
-		MOR_aid_in_mumak_training
+		MOR_cultivate_mirkwoods_spiders
 		MOR_the_eye_looks_west
 		MOR_call_forth_the_mountain_hordes
 		MOR_raid_the_herds_and_studs_of_rohan

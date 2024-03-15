@@ -31,7 +31,7 @@ focus_tree = {
 		icon = GFX_goal_the_eye_of_sauron
 		x = 29
 		y = 4
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 12
 		}
@@ -2228,7 +2228,7 @@ focus_tree = {
 		x = -3
 		y = 0
 		relative_position_id = MOR_sway_the_white_wizard
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -2258,7 +2258,7 @@ focus_tree = {
 		x = -2
 		y = 0
 		relative_position_id = MOR_dispatch_agents_to_greater_enedwaith
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -2282,72 +2282,10 @@ focus_tree = {
 			}
 		}
 	}
-	focus = { #integrate our enedwiathy allies
-		id = MOR_integrate_our_enedwaithy_allies
-		icon = GFX_goal_generic_befriend_Greater_Enedwaith
-		x = -1
-		y = 1
-		relative_position_id = MOR_dispatch_agents_to_greater_enedwaith
-		cost = 10
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				any_country = {
-					is_greater_enedwaith_tag = yes
-					has_country_flag = melkorite_flag
-				}
-				factor = 1.5
-			}
-		}
-		prerequisite = { focus = MOR_dispatch_agents_to_greater_enedwaith focus = MOR_send_black_riders_to_greater_enedwaith }
-		available = { any_other_country = { is_greater_enedwaith_tag = yes has_government = melkorite } }
-		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
-		completion_reward = { #event demanding they 
-			every_country = {
-				limit = { is_greater_enedwaith_tag = yes has_government = melkorite }
-				country_event = { id = blood_oath.35 hours = 1 }
-				custom_effect_tooltip = if_they_accept_tooltip
-				effect_tooltip = {
-					if = {
-						limit = { has_dlc = "Death or Dishonor" }
-						ROOT = {
-							set_autonomy = {
-								target = PREV
-								autonomous_state = autonomy_satellite
-							}
-						}
-					}
-					else_if = {
-						limit = { OR = { has_dlc = "Together for Victory" has_dlc = "Waking the Tiger" } }
-						ROOT = {
-							set_autonomy = {
-								target = PREV
-								autonomous_state = autonomy_dominion
-							}
-						}
-					}
-					else = {
-						ROOT = {
-							puppet = PREV
-						}
-					}
-				}
-				custom_effect_tooltip = if_they_refuse_tooltip
-				effect_tooltip = {
-					ROOT = {
-						create_wargoal = {
-							type = puppet_wargoal_focus
-							target = PREV
-						}
-					}
-				}
-			}
-		}
-	}
 	focus = { #punish tribal foolishness
 		id = MOR_punish_tribal_foolishness
 		icon = GFX_goal_generic_attack_Greater_Enedwaith
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = MOR_send_black_riders_to_greater_enedwaith
 		cost = 10
@@ -2710,9 +2648,9 @@ focus_tree = {
 		}
 		will_lead_to_war_with = DOR
 		will_lead_to_war_with = MED
-		will_lead_to_war_with = DRG
 		will_lead_to_war_with = SAG
 		will_lead_to_war_with = LGA
+		will_lead_to_war_with = DRG
 		search_filters = { FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_ANNEXATION }
 		completion_reward = { #Every melkorite on Rhunaer gains wargoal against every non-melkorite
 			custom_effect_tooltip = MOR_secure_the_rhunear_tooltip

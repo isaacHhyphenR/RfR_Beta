@@ -1,7 +1,7 @@
 ideas = {
 	country = {
 		####################################################INFLUENCE IDEAS
-		@influenceIdeologyDrift = 0.15
+		@influenceIdeologyDrift = 0.2
 		@influenceIdeologyAcceptance = 20
 		##GLD
 		GLD_isolationism_influence = {

@@ -1247,6 +1247,15 @@ great_merchants_win_election_effect = {
 		#right_side = DOR_merchant_houses_side
 		set_default = yes
 	}
+	if = {
+		limit = { has_country_flag = urban_support }
+		clr_country_flag = urban_support
+		add_power_balance_value = {
+			id = DOR_great_merchants_power_balance
+			value = -0.15
+			tooltip_side = DOR_burghers_side
+		}
+	}
 	#figure out how much BoP from advisors
 	DOR_great_merchants_BOP_initial_advisors = yes
 	if = {#removes bergholda if she's an advisor
@@ -2637,7 +2646,12 @@ found_THIS_revolutionary_republic = {
 	every_core_state = {
 		limit = { NOT = { is_core_of = ROOT } } #DOR keeps its cores
 		if = {
-			limit = { is_controlled_by = ROOT }
+			limit = {
+				OR = {
+					controls_or_subject_of = yes
+					owns_or_subject_of = yes
+				}
+			}
 			set_state_owner_to = PREV
 		}
 		set_state_province_controller = {

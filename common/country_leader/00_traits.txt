@@ -2743,6 +2743,7 @@ leader_traits = {
 	revolutionary = {
 		random = no
 		generate_wargoal_tension = -1
+		annex_cost_factor = -0.2
 		custom_modifier_tooltip = can_declare_war_on_countries_that_have_generated_no_threat
 	}
 	polymath = { #Ansovald Gwingalon

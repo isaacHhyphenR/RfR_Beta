@@ -22,7 +22,10 @@ DOR_election_power_balance = {
 				custom_modifier_tooltip = great_merchants_will_win
 			}
 			on_activate = {
-				
+				if = {
+					limit = { has_idea = DOR_winelord_dissent }
+					remove_ideas = DOR_winelord_dissent
+				}
 			}
 			on_deactivate = {
 				
@@ -40,7 +43,6 @@ DOR_election_power_balance = {
 				custom_modifier_tooltip = great_merchants_will_win
 			}
 			on_activate = {
-				
 			}
 			on_deactivate = {
 				
@@ -133,7 +135,10 @@ DOR_election_power_balance = {
 				custom_modifier_tooltip = winelords_will_win
 			}
 			on_activate = {
-				
+				if = {
+					limit = { has_idea = DOR_great_merchant_dissent }
+					remove_ideas = DOR_great_merchant_dissent
+				}
 			}
 			on_deactivate = {
 				
@@ -151,7 +156,6 @@ DOR_election_power_balance = {
 				custom_modifier_tooltip = winelords_will_win
 			}
 			on_activate = {
-				
 			}
 			on_deactivate = {
 				
