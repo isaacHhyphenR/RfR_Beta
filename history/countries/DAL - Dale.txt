@@ -108,6 +108,7 @@ if = {
 	}
 }
 
-give_guarantee = ERE
+create_faction = NORTHERN_LEAGUE
+add_to_faction = ERE
 add_ideas = female_leader_chance_idea
 #!&!&!

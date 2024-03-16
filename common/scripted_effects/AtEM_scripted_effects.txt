@@ -1448,6 +1448,14 @@ burghers_focus_effect_large = {
 		}
 	}
 }
+@resolvedFactionalismCost = -20
+merchant_houses_defeated_effect = {
+	if = {
+		limit = { has_cosmetic_tag = DOR_republic }
+		custom_effect_tooltip = because_merchant_houses_defeated_tooltip
+		add_political_power = @resolvedFactionalismCost
+	}
+}
 merchant_houses_focus_effect = {
 	if = {
 		limit = {
@@ -1461,6 +1469,7 @@ merchant_houses_focus_effect = {
 			tooltip_side = DOR_merchant_houses_side
 		}
 	}
+	merchant_houses_defeated_effect = yes
 }
 merchant_houses_focus_effect_med = {
 	if = {
@@ -1475,6 +1484,7 @@ merchant_houses_focus_effect_med = {
 			tooltip_side = DOR_merchant_houses_side
 		}
 	}
+	merchant_houses_defeated_effect = yes
 }
 merchant_houses_focus_effect_big = {
 	if = {
@@ -1489,6 +1499,7 @@ merchant_houses_focus_effect_big = {
 			tooltip_side = DOR_merchant_houses_side
 		}
 	}
+	merchant_houses_defeated_effect = yes
 }
 merchant_houses_focus_effect_large = {
 	if = {
@@ -1503,6 +1514,7 @@ merchant_houses_focus_effect_large = {
 			tooltip_side = DOR_merchant_houses_side
 		}
 	}
+	merchant_houses_defeated_effect = yes
 }
 koldana_focus_effect = {
 	if = {

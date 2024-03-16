@@ -72,6 +72,6 @@ recruit_character = ERE_vondal
 recruit_character = ERE_kathra
 add_ideas = dwarven_heritage_idea
 
-give_guarantee = DAL
+#give_guarantee = DAL
 add_ideas = female_leader_chance_idea
 #!&!&!

@@ -221,7 +221,7 @@ focus_tree = {
 		}
 	}
 	focus = { #celebrate city culture
-		id = DOR_celebtrate_city_culture
+		id = DOR_celebrate_city_culture
 		icon = GFX_focus_DEN_civilian_preparations
 		x = 1
 		y = 1
@@ -235,6 +235,7 @@ focus_tree = {
 			focus = DOR_solicit_guild_funding
 		}
 		available = { great_merchants_focus_trigger = yes }
+		bypass = { has_country_flag = elected_great_merchant }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			great_merchants_focus_effect_big = yes
@@ -245,13 +246,13 @@ focus_tree = {
 		icon = GFX_focus_generic_diplomatic_treaty
 		x = -2
 		y = 1
-		relative_position_id = DOR_celebtrate_city_culture
+		relative_position_id = DOR_celebrate_city_culture
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = DOR_celebtrate_city_culture
+			focus = DOR_celebrate_city_culture
 		}
 		available = {
 			any_other_country = {
@@ -291,15 +292,16 @@ focus_tree = {
 		icon = GFX_goal_money_politics
 		x = 0
 		y = 1
-		relative_position_id = DOR_celebtrate_city_culture
+		relative_position_id = DOR_celebrate_city_culture
 		cost = @bigBoPCost
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = DOR_celebtrate_city_culture
+			focus = DOR_celebrate_city_culture
 		}
 		available = { great_merchants_focus_trigger = yes }
+		bypass = { has_country_flag = elected_great_merchant }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			great_merchants_focus_effect_big = yes
@@ -1792,6 +1794,7 @@ focus_tree = {
 			focus = DOR_rally_support_for_vidumarh
 		}
 		available = { winelords_focus_trigger = yes }
+		bypass = { has_country_flag = elected_winelord }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			winelords_focus_effect_large = yes
@@ -5933,6 +5936,7 @@ focus_tree = {
 		available = {
 			merchant_houses_focus_trigger = yes
 		}
+		bypass = { has_cosmetic_tag = DOR_republic }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			merchant_houses_focus_effect_big = yes
@@ -6044,6 +6048,7 @@ focus_tree = {
 		available = {
 			merchant_houses_focus_trigger = yes
 		}
+		bypass = { has_cosmetic_tag = DOR_republic }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			merchant_houses_focus_effect_big = yes

@@ -1620,7 +1620,7 @@ country_event = { ##22## DOR wants diplo relations with Erebor
 	option = { ##yes
 		name = atem.22.a
 		ai_chance = {
-			factor = 100
+			base = 100
 			modifier = {
 				has_opinion = {
 					target = FROM
@@ -1673,7 +1673,7 @@ country_event = { ##22## DOR wants diplo relations with Erebor
 	option = { ##no
 		name = atem.22.b
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		hidden_effect = {
 			FROM = { news_event = rfr_news.130 }
@@ -1692,7 +1692,7 @@ country_event = { ##23## DOR wants to trade tech
 	option = { ##yes
 		name = atem.23.a
 		ai_chance = {
-			factor = 10
+			base = 10
 			modifier = {
 				has_opinion = {
 					target = FROM
@@ -1734,7 +1734,7 @@ country_event = { ##23## DOR wants to trade tech
 	option = { ##no
 		name = atem.23.b
 		ai_chance = {
-			factor = 2
+			base = 2
 			modifier = {
 				FROM = {
 					THIS_and_PREV_good_vs_evil = yes
@@ -3547,7 +3547,6 @@ country_event = { ##8## Merchant contracts
 				original_tag = ERE
 				NOT = { has_war_with = ROOT }
 				country_exists = this
-				country_event = { id = atem.11 hours = 1 }
 			}
 		}
 		ai_chance = {

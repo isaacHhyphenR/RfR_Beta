@@ -34,6 +34,7 @@ calculate_celdui_trade_convoy_cost_negative = { #Call where THIS is buyer/seller
 	subtract_from_temp_variable = { route_convoy_cost = -1 }
 }
 
+@resolvedFactionalismCost = 20
 great_merchants_focus_trigger = {
 	NOT = { has_country_flag = elected_winelord }
 }
@@ -45,6 +46,10 @@ burghers_focus_trigger = {
 }
 merchant_houses_focus_trigger = {
 	has_country_flag = elected_great_merchant
+	if = {
+		limit = { has_cosmetic_tag = DOR_republic }
+		has_political_power > @resolvedFactionalismCost
+	}
 }
 koldana_focus_trigger = {
 	has_country_flag = elected_winelord
