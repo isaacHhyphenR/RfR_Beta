@@ -836,6 +836,66 @@ spriteTypes = {
 		name = "GFX_decision_local_pantheons"
 		texturefile = "gfx/interface/decisions/local_pantheons.dds"
 	}
+	SpriteType = {
+		name = "GFX_decision_DAL_republic"
+		texturefile = "gfx/interface/decisions/republics/DAL_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_RVN_republic"
+		texturefile = "gfx/interface/decisions/republics/RVN_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_BER_republic"
+		texturefile = "gfx/interface/decisions/republics/BER_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_ROH_republic"
+		texturefile = "gfx/interface/decisions/republics/ROH_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_ARN_republic"
+		texturefile = "gfx/interface/decisions/republics/ARN_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_GON_republic"
+		texturefile = "gfx/interface/decisions/republics/GON_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_RUN_republic"
+		texturefile = "gfx/interface/decisions/republics/RUN_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_steppe_republic"
+		texturefile = "gfx/interface/decisions/republics/Steppe_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_HTH_republic"
+		texturefile = "gfx/interface/decisions/republics/HTH_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_HIL_republic"
+		texturefile = "gfx/interface/decisions/republics/HIL_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_KND_republic"
+		texturefile = "gfx/interface/decisions/republics/KND_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_HAR_republic"
+		texturefile = "gfx/interface/decisions/republics/HAR_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_UMB_republic"
+		texturefile = "gfx/interface/decisions/republics/UMB_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_Gwaithurium_republic"
+		texturefile = "gfx/interface/decisions/republics/Gwaithurium_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_DAI_republic"
+		texturefile = "gfx/interface/decisions/republics/DAI_republic.dds"
+	}
 
 ################################################CATEGORY ICONS
 	spriteType = {
