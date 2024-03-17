@@ -225,4 +225,12 @@ set_variable = { global.wine_exporter = THIS }
 set_variable = { global.celduin_trade_leader = THIS }
 set_variable = { baseMercenaryDecisionDays = 50 }
 set_variable = { mercenaryDecisionDays = baseMercenaryDecisionDays }
+#University
+set_variable = { college_value_base = 0.05 }
+set_variable = { college_value_increase = 0.025 }
+set_variable = { college_level_max = 5 }
+set_variable = { college_of_philosophy_level = 0 }
+set_variable = { college_of_manners_level = 0 }
+set_variable = { college_of_tactics_level = 0 }
+set_variable = { college_of_medicine_level = 0 }
 #!&!&!

@@ -1854,171 +1854,88 @@ DOR_decrease_army_morale = {#increases level of demoralised army
 }
 
 DOR_upgrade_college_of_philosophy = {
-	if = {
-		limit = { has_idea = DOR_college_of_philosophy_1 }
+	DOR_increase_university_level_1 = yes
+	add_to_variable = { college_of_philosophy_level = 1 }
+	add_to_variable = { university_research_speed = college_value_increase }
+	effect_tooltip = {
 		swap_ideas = {
 			remove_idea = DOR_college_of_philosophy_1
 			add_idea = DOR_college_of_philosophy_2
 		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_philosophy_2 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_philosophy_2
-			add_idea = DOR_college_of_philosophy_3
-		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_philosophy_3 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_philosophy_3
-			add_idea = DOR_college_of_philosophy_4
-		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_philosophy_4 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_philosophy_4
-			add_idea = DOR_college_of_philosophy_5
-		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_philosophy_5 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_philosophy_5
-			add_idea = DOR_college_of_philosophy_6
-		}
-		DOR_increase_university_level_1 = yes
 	}
 }
 DOR_upgrade_college_of_manners = {
-	if = {
-		limit = { has_idea = DOR_college_of_manners_1 }
+	DOR_increase_university_level_1 = yes
+	add_to_variable = { college_of_manners_level = 1 }
+	add_to_variable = { university_trade_opinion = college_value_increase }
+	add_to_variable = { university_opinion_gain = college_value_increase }
+	subtract_from_variable = { university_improve_relations = college_value_increase }
+	effect_tooltip = {
 		swap_ideas = {
 			remove_idea = DOR_college_of_manners_1
 			add_idea = DOR_college_of_manners_2
 		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_manners_2 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_manners_2
-			add_idea = DOR_college_of_manners_3
-		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_manners_3 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_manners_3
-			add_idea = DOR_college_of_manners_4
-		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_manners_4 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_manners_4
-			add_idea = DOR_college_of_manners_5
-		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_manners_5 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_manners_5
-			add_idea = DOR_college_of_manners_6
-		}
-		DOR_increase_university_level_1 = yes
 	}
 }
 DOR_upgrade_college_of_medicine = {
-	if = {
-		limit = { has_idea = DOR_college_of_medicine_1 }
+	DOR_increase_university_level_1 = yes
+	add_to_variable = { college_of_medicine_level = 1 }
+	add_to_variable = { university_trickleback = college_value_increase }
+	subtract_from_variable = { university_xp_loss = college_value_increase }
+	effect_tooltip = {
 		swap_ideas = {
 			remove_idea = DOR_college_of_medicine_1
 			add_idea = DOR_college_of_medicine_2
 		}
-		DOR_increase_university_level_1 = yes
 	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_medicine_2 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_medicine_2
-			add_idea = DOR_college_of_medicine_3
+	#since unit buffs can't go in a dynamic modifier
+	hidden_effect = {
+		if = {
+			limit = { has_idea = DOR_college_of_medicine_1 }
+			swap_ideas = {
+				remove_idea = DOR_college_of_medicine_1
+				add_idea = DOR_college_of_medicine_2
+			}
 		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_medicine_3 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_medicine_3
-			add_idea = DOR_college_of_medicine_4
+		else_if = {
+			limit = { has_idea = DOR_college_of_medicine_2 }
+			swap_ideas = {
+				remove_idea = DOR_college_of_medicine_2
+				add_idea = DOR_college_of_medicine_3
+			}
 		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_medicine_4 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_medicine_4
-			add_idea = DOR_college_of_medicine_5
+		else_if = {
+			limit = { has_idea = DOR_college_of_medicine_3 }
+			swap_ideas = {
+				remove_idea = DOR_college_of_medicine_3
+				add_idea = DOR_college_of_medicine_4
+			}
 		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_medicine_5 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_medicine_5
-			add_idea = DOR_college_of_medicine_6
+		else_if = {
+			limit = { has_idea = DOR_college_of_medicine_4 }
+			swap_ideas = {
+				remove_idea = DOR_college_of_medicine_4
+				add_idea = DOR_college_of_medicine_5
+			}
 		}
-		DOR_increase_university_level_1 = yes
+		else_if = {
+			limit = { has_idea = DOR_college_of_medicine_5 }
+			swap_ideas = {
+				remove_idea = DOR_college_of_medicine_5
+				add_idea = DOR_college_of_medicine_6
+			}
+		}
 	}
 }
 DOR_upgrade_college_of_tactics = {
-	if = {
-		limit = { has_idea = DOR_college_of_tactics_1 }
+	DOR_increase_university_level_1 = yes
+	add_to_variable = { college_of_tactics_level = 1 }
+	subtract_from_variable = { university_doctrine_cost = college_value_increase }
+	effect_tooltip = {
 		swap_ideas = {
-			remove_idea = DOR_college_of_tactics_1
-			add_idea = DOR_college_of_tactics_2
+			remove_idea = DOR_college_of_manners_1
+			add_idea = DOR_college_of_manners_2
 		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_tactics_2 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_tactics_2
-			add_idea = DOR_college_of_tactics_3
-		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_tactics_3 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_tactics_3
-			add_idea = DOR_college_of_tactics_4
-		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_tactics_4 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_tactics_4
-			add_idea = DOR_college_of_tactics_5
-		}
-		DOR_increase_university_level_1 = yes
-	}
-	else_if = {
-		limit = { has_idea = DOR_college_of_tactics_5 }
-		swap_ideas = {
-			remove_idea = DOR_college_of_tactics_5
-			add_idea = DOR_college_of_tactics_6
-		}
-		DOR_increase_university_level_1 = yes
 	}
 }
 

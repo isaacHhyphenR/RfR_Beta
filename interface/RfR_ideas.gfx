@@ -1006,4 +1006,8 @@ spriteTypes = {
 		name = "GFX_idea_great_merchant_conspiracy"
 		texturefile = "gfx/interface/ideas/great_merchant_conspiracy.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_university_of_srzel_kain"
+		texturefile = "gfx/interface/ideas/university_of_srzel_kain.dds"
+	}
 }

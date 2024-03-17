@@ -942,8 +942,16 @@ ideas = {
 			}
 		}
 		##############################UNIVERSITY OF SRZEL KAIN
+		DOR_university_empty = { #for 'swap ideas' tooltip purposes
+			name = DOR_university_of_srzel_kain
+			picture = empty
+			allowed_civil_war = {
+				always = yes #owns_state = 116
+			}
+		}
+
 		DOR_college_of_philosophy_1 = {
-			name = DOR_college_of_philosophy_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
@@ -953,7 +961,7 @@ ideas = {
 			}
 		}
 		DOR_college_of_philosophy_2 = {
-			name = DOR_college_of_philosophy_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
@@ -962,49 +970,9 @@ ideas = {
 				research_speed_factor = 0.075
 			}
 		}
-		DOR_college_of_philosophy_3 = {
-			name = DOR_college_of_philosophy_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				research_speed_factor = 0.1
-			}
-		}
-		DOR_college_of_philosophy_4 = {
-			name = DOR_college_of_philosophy_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				research_speed_factor = 0.125
-			}
-		}
-		DOR_college_of_philosophy_5 = {
-			name = DOR_college_of_philosophy_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				research_speed_factor = 0.15
-			}
-		}
-		DOR_college_of_philosophy_6 = { #burghers
-			name = DOR_college_of_philosophy_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				research_speed_factor = 0.175
-			}
-		}
 		###medicine
 		DOR_college_of_medicine_1 = {
-			name = DOR_college_of_medicine_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
@@ -1017,20 +985,20 @@ ideas = {
 			}
 		}
 		DOR_college_of_medicine_2 = {
-			name = DOR_college_of_medicine_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
 			}
 			equipment_bonus = {
 				medical_equipment = {
-					casualty_trickleback = 0.75
-					experience_loss_factor = -0.75
+					casualty_trickleback = 0.075
+					experience_loss_factor = -0.075
 				}
 			}
 		}
 		DOR_college_of_medicine_3 = {
-			name = DOR_college_of_medicine_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
@@ -1043,7 +1011,7 @@ ideas = {
 			}
 		}
 		DOR_college_of_medicine_4 = {
-			name = DOR_college_of_medicine_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
@@ -1056,7 +1024,7 @@ ideas = {
 			}
 		}
 		DOR_college_of_medicine_5 = {
-			name = DOR_college_of_medicine_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
@@ -1069,7 +1037,7 @@ ideas = {
 			}
 		}
 		DOR_college_of_medicine_6 = { #burghers
-			name = DOR_college_of_medicine_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
@@ -1083,7 +1051,7 @@ ideas = {
 		}
 		###manners
 		DOR_college_of_manners_1 = {
-			name = DOR_college_of_manners_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
@@ -1095,7 +1063,7 @@ ideas = {
 			}
 		}
 		DOR_college_of_manners_2 = {
-			name = DOR_college_of_manners_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
@@ -1106,57 +1074,9 @@ ideas = {
 				trade_opinion_factor = 0.075
 			}
 		}
-		DOR_college_of_manners_3 = {
-			name = DOR_college_of_manners_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				opinion_gain_monthly_factor = 0.1
-				improve_relations_maintain_cost_factor = -0.1
-				trade_opinion_factor = 0.1
-			}
-		}
-		DOR_college_of_manners_4 = {
-			name = DOR_college_of_manners_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				opinion_gain_monthly_factor = 0.125
-				improve_relations_maintain_cost_factor = -0.125
-				trade_opinion_factor = 0.125
-			}
-		}
-		DOR_college_of_manners_5 = {
-			name = DOR_college_of_manners_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				opinion_gain_monthly_factor = 0.15
-				improve_relations_maintain_cost_factor = -0.15
-				trade_opinion_factor = 0.15
-			}
-		}
-		DOR_college_of_manners_6 = { #burghers
-			name = DOR_college_of_manners_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				opinion_gain_monthly_factor = 0.175
-				improve_relations_maintain_cost_factor = -0.175
-				trade_opinion_factor = 0.175
-			}
-		}
 		###tactics
 		DOR_college_of_tactics_1 = {
-			name = DOR_college_of_tactics_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
@@ -1166,53 +1086,13 @@ ideas = {
 			}
 		}
 		DOR_college_of_tactics_2 = {
-			name = DOR_college_of_tactics_idea
+			name = DOR_university_of_srzel_kain
 			picture = empty
 			allowed_civil_war = {
 				always = yes #owns_state = 116
 			}
 			modifier = {
 				land_doctrine_cost_factor = -0.075
-			}
-		}
-		DOR_college_of_tactics_3 = {
-			name = DOR_college_of_tactics_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				land_doctrine_cost_factor = -0.1
-			}
-		}
-		DOR_college_of_tactics_4 = {
-			name = DOR_college_of_tactics_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				land_doctrine_cost_factor = -0.125
-			}
-		}
-		DOR_college_of_tactics_5 = {
-			name = DOR_college_of_tactics_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				land_doctrine_cost_factor = -0.15
-			}
-		}
-		DOR_college_of_tactics_6 = { #burghers
-			name = DOR_college_of_tactics_idea
-			picture = empty
-			allowed_civil_war = {
-				always = yes #owns_state = 116
-			}
-			modifier = {
-				land_doctrine_cost_factor = -0.175
 			}
 		}
 	

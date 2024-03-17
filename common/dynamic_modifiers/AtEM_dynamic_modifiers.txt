@@ -49,6 +49,16 @@ DOR_home_of_the_revolution_modifier = {
 	custom_modifier_tooltip = idea_transfers_with_faction_leader
 }
 
+DOR_university_of_srzel_kain = {
+	icon = GFX_idea_university_of_srzel_kain
+	research_speed_factor = university_research_speed
+	medical_equipment_trickleback = university_trickleback
+	medical_equipment_xp_loss = university_xp_loss
+	opinion_gain_monthly_factor = university_opinion_gain
+	improve_relations_maintain_cost_factor = university_improve_relations
+	trade_opinion_factor = university_trade_opinion
+	land_doctrine_cost_factor = university_doctrine_cost
+}
 
 company_of_winter_payment = {
 	civilian_factory_use = var:company_of_winter_cost

@@ -680,7 +680,6 @@
  aptitude_mission_convoys: "Have 100 Convoys"
  aptitude_mission_convoys_desc: "Trade is the backbone of Dorwinion's prosperity. A strong merchant fleet will boost our popularity."
  DOR_college_category: "Royal University of Srzel-Kain"
- DOR_college_category_desc: " "
  upgrade_college_of_philosophy: "Upgrade the College of Philosophy"
  upgrade_college_of_philosophy_desc: "$DOR_college_of_philosophy_idea_desc$"
  upgrade_college_of_manners: "Upgrade the College of Manners"

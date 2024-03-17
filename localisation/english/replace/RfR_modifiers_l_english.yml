@@ -147,3 +147,5 @@
  stability_gain_on_election: "Stability gain on election"
  MODIFIER_ANNEX_COST_FACTOR: "Peace Conference Annex cost"
  MODIFIER_ANNEX_COST_FACTOR_DESC: "Changes the cost of annexing a country in a peace conference."
+ medical_equipment_trickleback: "§Y$medical_equipment$:§!\n    $STAT_ARMY_CASUALTY_TRICKLEBACK$"
+ medical_equipment_xp_loss: "    $STAT_ARMY_EXPERIENCE_LOSS_FACTOR$"

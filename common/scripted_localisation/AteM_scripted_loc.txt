@@ -378,5 +378,3 @@ defined_text = { ##LGA
 		localization_key = LGA_rhovanion_influence_key
 	}
 }
-
-

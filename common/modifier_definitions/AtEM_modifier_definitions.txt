@@ -164,3 +164,18 @@ stability_gain_on_election = {
 	category = country
 	postfix = none
 }
+
+medical_equipment_trickleback = {
+	color_type = good
+	value_type = percentage
+	precision = 2
+	category = military_equipment
+	postfix = none
+}
+medical_equipment_xp_loss = {
+	color_type = bad
+	value_type = percentage
+	precision = 2
+	category = military_equipment
+	postfix = none
+}

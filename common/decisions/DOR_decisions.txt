@@ -782,17 +782,8 @@ DOR_college_category = {
 		cost = @DORCollegeCost
 		days_remove = @DORCollegeDays
 		visible = {
-			OR = {
-				has_idea = DOR_college_of_philosophy_1
-				has_idea = DOR_college_of_philosophy_2
-				has_idea = DOR_college_of_philosophy_3
-				has_idea = DOR_college_of_philosophy_4
-				AND = { #focus increases level cap
-					has_idea = DOR_college_of_philosophy_5
-					has_completed_focus = DOR_open_the_university_to_the_public
-				}
-			}
 			has_completed_focus = DOR_expand_the_university
+			check_variable = { college_of_philosophy_level < college_level_max }
 		}
 		available = {
 			NOT = { has_country_flag = upgrading_university }
@@ -814,16 +805,8 @@ DOR_college_category = {
 		cost = @DORCollegeCost
 		days_remove = @DORCollegeDays
 		visible = {
-			OR = {
-				has_idea = DOR_college_of_manners_1
-				has_idea = DOR_college_of_manners_2
-				has_idea = DOR_college_of_manners_3
-				has_idea = DOR_college_of_manners_4
-				AND = { #focus increases level cap
-					has_idea = DOR_college_of_manners_5
-					has_completed_focus = DOR_open_the_university_to_the_public
-				}
-			}
+			check_variable = { college_of_manners_level < college_level_max }
+			has_completed_focus = DOR_found_the_college_of_manners
 			has_completed_focus = DOR_expand_the_university
 		}
 		available = {
@@ -846,16 +829,8 @@ DOR_college_category = {
 		cost = @DORCollegeCost
 		days_remove = @DORCollegeDays
 		visible = {
-			OR = {
-				has_idea = DOR_college_of_medicine_1
-				has_idea = DOR_college_of_medicine_2
-				has_idea = DOR_college_of_medicine_3
-				has_idea = DOR_college_of_medicine_4
-				AND = { #focus increases level cap
-					has_idea = DOR_college_of_medicine_5
-					has_completed_focus = DOR_open_the_university_to_the_public
-				}
-			}
+			check_variable = { college_of_medicine_level < college_level_max }
+			has_completed_focus = DOR_found_the_college_of_medicine
 			has_completed_focus = DOR_expand_the_university
 		}
 		available = {
@@ -878,16 +853,8 @@ DOR_college_category = {
 		cost = @DORCollegeCost
 		days_remove = @DORCollegeDays
 		visible = {
-			OR = {
-				has_idea = DOR_college_of_tactics_1
-				has_idea = DOR_college_of_tactics_2
-				has_idea = DOR_college_of_tactics_3
-				has_idea = DOR_college_of_tactics_4
-				AND = { #focus increases level cap
-					has_idea = DOR_college_of_tactics_5
-					has_completed_focus = DOR_open_the_university_to_the_public
-				}
-			}
+			check_variable = { college_of_tactics_level < college_level_max }
+			has_completed_focus = DOR_found_the_college_of_tactics
 			has_completed_focus = DOR_expand_the_university
 		}
 		available = {

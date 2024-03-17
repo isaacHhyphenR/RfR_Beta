@@ -2068,7 +2068,14 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_ideas = DOR_college_of_philosophy_1
+			effect_tooltip = {
+				add_ideas = DOR_college_of_philosophy_1
+			}
+			hidden_effect = {
+				add_dynamic_modifier = { modifier = DOR_university_of_srzel_kain }
+				add_to_variable = { university_research_speed = college_value_base }
+				add_to_variable = { college_of_philosophy_level = 1 }
+			}
 			DOR_increase_university_level_2 = yes
 			winelords_focus_effect = yes
 		}
@@ -2091,7 +2098,18 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_ARMY }
 		completion_reward = {
-			add_ideas = DOR_college_of_medicine_1
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = DOR_university_empty
+					add_idea = DOR_college_of_medicine_1
+				}
+			}
+			hidden_effect = {
+				add_ideas = DOR_college_of_medicine_1
+			}
+			add_to_variable = { college_of_medicine_level = 1 }
+			add_to_variable = { university_trickleback = college_value_base }
+			subtract_from_variable = { university_xp_loss = college_value_base }
 			DOR_increase_university_level_2 = yes
 			winelords_focus_effect = yes
 		}
@@ -2114,7 +2132,16 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMATIC }
 		completion_reward = {
-			add_ideas = DOR_college_of_manners_1
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = DOR_university_empty
+					add_idea = DOR_college_of_manners_1
+				}
+			}
+			add_to_variable = { college_of_manners_level = 1 }
+			add_to_variable = { university_trade_opinion = college_value_base }
+			add_to_variable = { university_opinion_gain = college_value_base }
+			subtract_from_variable = { university_improve_relations = college_value_base }
 			DOR_increase_university_level_2 = yes
 			winelords_focus_effect = yes
 		}
@@ -2137,7 +2164,14 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			add_ideas = DOR_college_of_tactics_1
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = DOR_university_empty
+					add_idea = DOR_college_of_tactics_1
+				}
+			}
+			add_to_variable = { college_of_tactics_level = 1 }
+			subtract_from_variable = { university_doctrine_cost = college_value_base }
 			DOR_increase_university_level_2 = yes
 			winelords_focus_effect = yes
 		}
@@ -3701,13 +3735,26 @@ focus_tree = {
 			burghers_focus_trigger = yes
 			has_completed_focus = DOR_renovate_the_royal_university_of_srzel_kain
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP FOCUS_FILTER_DIPLOMATIC FOCUS_FILTER_MANPOWER }
 		completion_reward = { ##+1 level of each college completed
-			custom_effect_tooltip = DOR_open_the_university_to_the_public_tooltip
-			DOR_upgrade_college_of_philosophy = yes
-			DOR_upgrade_college_of_manners = yes
-			DOR_upgrade_college_of_medicine = yes
-			DOR_upgrade_college_of_tactics = yes
+			#custom_effect_tooltip = DOR_open_the_university_to_the_public_tooltip
+			if = {
+				limit = { has_completed_focus = DOR_renovate_the_royal_university_of_srzel_kain }
+				DOR_upgrade_college_of_philosophy = yes
+			}
+			if = {
+				limit = { has_completed_focus = DOR_found_the_college_of_manners }
+				DOR_upgrade_college_of_manners = yes
+			}
+			if = {
+				limit = { has_completed_focus = DOR_found_the_college_of_medicine }
+				DOR_upgrade_college_of_medicine = yes
+			}
+			if = {
+				limit = { has_completed_focus = DOR_found_the_college_of_tactics }
+				DOR_upgrade_college_of_tactics = yes
+			}
+			add_to_variable = { college_level_max = 1 }
 			burghers_focus_effect = yes
 		}
 	}
