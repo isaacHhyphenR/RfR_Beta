@@ -346,3 +346,4 @@
  DOR_exchange_urban_rights_for_support_tooltip: "§Y$DOR_great_merchants_power_balance$§! will start £ §Y15%§! further on the side of §Y$DOR_burghers_side$§!."
  opportunism_if_not_completed_both_previous: "If either §Y$DOR_expand_citizenship_rights$§! or §Y$DOR_reform_the_legal_code$§! are NOT completed:\n"
  because_merchant_houses_defeated_tooltip: "§RBecause the $DOR_merchant_houses_side$ were sidelined:§!\n"
+ DOR_leverage_our_wealth_tooltip: "We will recieve an event allowing us to choose one §7$RVN_ADJ$§! city-state to gain §G50§! £GFX_influence_texticon influence over."

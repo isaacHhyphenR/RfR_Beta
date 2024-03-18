@@ -1742,7 +1742,7 @@ rhovanion_influence_category = {
 		complete_effect = {
 			every_country = {
 				limit = { is_rhovanion_tag = yes }
-				set_variable = { influence@ROOT = 100 }
+				add_to_variable = { influence@ROOT = 100 }
 				custom_effect_tooltip = add_100_PREV_influence
 			}
 		}

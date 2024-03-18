@@ -3081,5 +3081,49 @@ sauron_demands_submission = {
 	event_option_tooltip = mordor.8.b
 }
 
-
+ #########################################RVN INFLUENCE
+add_5_PREV_influence = {
+	add_to_variable = { influence@ROOT = 5 }
+	custom_effect_tooltip = add_5_PREV_influence
+}
+add_10_PREV_influence = {
+	add_to_variable = { influence@ROOT = 10 }
+	custom_effect_tooltip = add_10_PREV_influence
+}
+add_15_PREV_influence = {
+	add_to_variable = { influence@ROOT = 15 }
+	custom_effect_tooltip = add_15_PREV_influence
+}
+add_20_PREV_influence = {
+	add_to_variable = { influence@ROOT = 20 }
+	custom_effect_tooltip = add_20_PREV_influence
+}
+add_25_PREV_influence = {
+	add_to_variable = { influence@ROOT = 25 }
+	custom_effect_tooltip = add_25_PREV_influence
+}
+add_30_PREV_influence = {
+	add_to_variable = { influence@ROOT = 30 }
+	custom_effect_tooltip = add_30_PREV_influence
+}
+add_35_PREV_influence = {
+	add_to_variable = { influence@ROOT = 35 }
+	custom_effect_tooltip = add_35_PREV_influence
+}
+add_40_PREV_influence = {
+	add_to_variable = { influence@ROOT = 40 }
+	custom_effect_tooltip = add_40_PREV_influence
+}
+add_45_PREV_influence = {
+	add_to_variable = { influence@ROOT = 45 }
+	custom_effect_tooltip = add_45_PREV_influence
+}
+add_50_PREV_influence = {
+	add_to_variable = { influence@ROOT = 50 }
+	custom_effect_tooltip = add_50_PREV_influence
+}
+add_100_PREV_influence = {
+	add_to_variable = { influence@ROOT = 100 }
+	custom_effect_tooltip = add_100_PREV_influence
+}
 

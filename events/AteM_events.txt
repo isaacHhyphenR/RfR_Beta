@@ -1766,9 +1766,9 @@ country_event = { ##24## DOR wants sanctuary if their realm falls
 	option = { ##yes
 		name = atem.24.a
 		ai_chance = { #AI should never refuse
-			factor = 10
+			base = 10
 		}
-		custom_effect_tooltip = DOR_seek_santuary_in_dale_tooltip
+		custom_effect_tooltip = DOR_seek_sanctuary_in_dale_tooltip
 		FROM = {
 			set_country_flag = respawn_in_dale
 			hidden_effect = {
@@ -1779,7 +1779,7 @@ country_event = { ##24## DOR wants sanctuary if their realm falls
 	option = { ##no
 		name = atem.24.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		hidden_effect = {
 			FROM = { news_event = rfr_news.138 }
@@ -1788,6 +1788,439 @@ country_event = { ##24## DOR wants sanctuary if their realm falls
 }
 
 
+country_event = { ##25## Choose RVN tag to influence
+	id = atem.25
+	title = atem.25.t
+	desc = atem.25.d
+	picture = GFX_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { ##RIN
+		name = atem.25.a
+		trigger = {
+			RIN = {
+				country_exists = this
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = { #don't try if they hate us
+				factor = 0.01
+				RIN = {
+					has_opinion = {
+						target = ROOT
+						value < 0
+					}
+				}
+			}
+			modifier = { #Don't try if we've got what we want
+				factor = 0.2
+				RIN = {
+					is_subject_of = ROOT
+				}
+			}
+			modifier = { #Don't try if someone else is blocking us
+				factor = 0
+				RIN = {
+					is_free_or_subject_of_root = no 
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				RIN = {
+					has_opinion = {
+						target = ROOT
+						value > 25
+					}
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				RIN = {
+					has_government = ROOT
+				}
+			}
+			modifier = { #Try if we've already started
+				factor = 2
+				RIN = {
+					check_variable = { influence@ROOT > 0 }
+				}
+			}
+		}
+		RIN = {
+			add_50_PREV_influence = yes
+		}
+	}
+	option = { ##RUS
+		name = atem.25.b
+		trigger = {
+			RUS = {
+				country_exists = this
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = { #don't try if they hate us
+				factor = 0.01
+				RUS = {
+					has_opinion = {
+						target = ROOT
+						value < 0
+					}
+				}
+			}
+			modifier = { #Don't try if we've got what we want
+				factor = 0.2
+				RUS = {
+					is_subject_of = ROOT
+				}
+			}
+			modifier = { #Don't try if someone else is blocking us
+				factor = 0
+				RUS = {
+					is_free_or_subject_of_root = no 
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				RUS = {
+					has_opinion = {
+						target = ROOT
+						value > 25
+					}
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				RUS = {
+					has_government = ROOT
+				}
+			}
+			modifier = { #Try if we've already started
+				factor = 2
+				RUS = {
+					check_variable = { influence@ROOT > 0 }
+				}
+			}
+		}
+		RUS = {
+			add_50_PREV_influence = yes
+		}
+	}
+	option = { ##HEH
+		name = atem.25.c
+		trigger = {
+			HEH = {
+				country_exists = this
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = { #don't try if they hate us
+				factor = 0.01
+				HEH = {
+					has_opinion = {
+						target = ROOT
+						value < 0
+					}
+				}
+			}
+			modifier = { #Don't try if we've got what we want
+				factor = 0.2
+				HEH = {
+					is_subject_of = ROOT
+				}
+			}
+			modifier = { #Don't try if someone else is blocking us
+				factor = 0
+				HEH = {
+					is_free_or_subject_of_root = no 
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				HEH = {
+					has_opinion = {
+						target = ROOT
+						value > 25
+					}
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				HEH = {
+					has_government = ROOT
+				}
+			}
+			modifier = { #Try if we've already started
+				factor = 2
+				HEH = {
+					check_variable = { influence@ROOT > 0 }
+				}
+			}
+		}
+		HEH = {
+			add_50_PREV_influence = yes
+		}
+	}
+	option = { ##OTHER
+		name = atem.25.dd
+		trigger = {
+			OR = {
+				SEK = {
+					country_exists = this
+					NOT = { has_war_with = ROOT }
+				}
+				SUN = {
+					country_exists = this
+					NOT = { has_war_with = ROOT }
+				}
+				YST = {
+					country_exists = this
+					NOT = { has_war_with = ROOT }
+				}
+			}
+		}
+		ai_chance = {
+			base = 2
+		}
+		hidden_effect = {
+			country_event = atem.26
+		}
+	}
+}
+
+country_event = { ##26## Choose RVN tag to influence (Cont)
+	id = atem.26
+	title = atem.26.t
+	desc = atem.26.d
+	picture = GFX_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { ##SEK
+		name = atem.26.a
+		trigger = {
+			SEK = {
+				country_exists = this
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		ai_chance = {
+			base = 2
+			modifier = { #don't try if they hate us
+				factor = 0.01
+				SEK = {
+					has_opinion = {
+						target = ROOT
+						value < 0
+					}
+				}
+			}
+			modifier = { #Don't try if we've got what we want
+				factor = 0.2
+				SEK = {
+					is_subject_of = ROOT
+				}
+			}
+			modifier = { #Don't try if someone else is blocking us
+				factor = 0
+				SEK = {
+					is_free_or_subject_of_root = no 
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				SEK = {
+					has_opinion = {
+						target = ROOT
+						value > 26
+					}
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				SEK = {
+					has_government = ROOT
+				}
+			}
+			modifier = { #Try if we've already started
+				factor = 2
+				SEK = {
+					check_variable = { influence@ROOT > 0 }
+				}
+			}
+		}
+		SEK = {
+			add_50_PREV_influence = yes
+		}
+	}
+	option = { ##YST
+		name = atem.26.b
+		trigger = {
+			YST = {
+				country_exists = this
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		ai_chance = {
+			base = 2
+			modifier = { #don't try if they hate us
+				factor = 0.01
+				YST = {
+					has_opinion = {
+						target = ROOT
+						value < 0
+					}
+				}
+			}
+			modifier = { #Don't try if we've got what we want
+				factor = 0.2
+				YST = {
+					is_subject_of = ROOT
+				}
+			}
+			modifier = { #Don't try if someone else is blocking us
+				factor = 0
+				YST = {
+					is_free_or_subject_of_root = no 
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				YST = {
+					has_opinion = {
+						target = ROOT
+						value > 26
+					}
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				YST = {
+					has_government = ROOT
+				}
+			}
+			modifier = { #Try if we've already started
+				factor = 2
+				YST = {
+					check_variable = { influence@ROOT > 0 }
+				}
+			}
+		}
+		YST = {
+			add_50_PREV_influence = yes
+		}
+	}
+	option = { ##SUN
+		name = atem.26.c
+		trigger = {
+			SUN = {
+				country_exists = this
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		ai_chance = {
+			base = 2
+			modifier = { #don't try if they hate us
+				factor = 0.01
+				SUN = {
+					has_opinion = {
+						target = ROOT
+						value < 0
+					}
+				}
+			}
+			modifier = { #Don't try if we've got what we want
+				factor = 0.2
+				SUN = {
+					is_subject_of = ROOT
+				}
+			}
+			modifier = { #Don't try if someone else is blocking us
+				factor = 0
+				SUN = {
+					is_free_or_subject_of_root = no 
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				SUN = {
+					has_opinion = {
+						target = ROOT
+						value > 26
+					}
+				}
+			}
+			modifier = { #Try if they like us
+				factor = 2
+				SUN = {
+					has_government = ROOT
+				}
+			}
+			modifier = { #Try if we've already started
+				factor = 2
+				SUN = {
+					check_variable = { influence@ROOT > 0 }
+				}
+			}
+		}
+		SUN = {
+			add_50_PREV_influence = yes
+		}
+	}
+	option = { ##OTHER
+		name = atem.26.dd
+		trigger = {
+			OR = {
+				RIN = {
+					country_exists = this
+					NOT = { has_war_with = ROOT }
+				}
+				RUS = {
+					country_exists = this
+					NOT = { has_war_with = ROOT }
+				}
+				SEK = {
+					country_exists = this
+					NOT = { has_war_with = ROOT }
+				}
+			}
+		}
+		ai_chance = {
+			base = 2
+		}
+		hidden_effect = {
+			country_event = atem.25
+		}
+	}
+}
+
+country_event = { ##27## Choose RVN ducal family
+	id = atem.27
+	title = atem.27.t
+	desc = atem.27.d
+	picture = GFX_fealty_to_gondor
+	
+	is_triggered_only = yes
+	
+	option = { ##SEK
+		name = atem.276.a
+		trigger = {
+			SEK = {
+				country_exists = this
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		ai_chance = {
+			base = 2
+		}
+	}
+}
 ################################################################PETITION EVENTS
 add_namespace = petition
 @petitionLargeCost = 75
@@ -3722,6 +4155,5 @@ country_event = { ##10## Population Boom
 		}
 	}
 }
-
 
 

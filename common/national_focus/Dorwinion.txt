@@ -1205,7 +1205,8 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMATIC }
 		completion_reward = { ##event allowing you to choose a RVN tag to gain influence on
-			custom_effect_tooltip = unimplemented
+			custom_effect_tooltip = DOR_leverage_our_wealth_tooltip
+			hidden_effect = { country_event = atem.25 }
 			great_merchants_focus_effect = yes
 		}
 	}
@@ -1946,9 +1947,9 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
-		completion_reward = {
+		completion_reward = { #Occupation law
 			custom_effect_tooltip = DOR_preserve_local_rulers_tooltip
-			custom_effect_tooltip = unimplemented ###GET CHARACTER FROM EACH
+			#custom_effect_tooltip = unimplemented ###GET CHARACTER FROM EACH
 			winelords_focus_effect = yes
 		}
 	}
@@ -1995,7 +1996,7 @@ focus_tree = {
 			if = { limit = { controls_state = 305 }
 				305 = { add_compliance = @loyalLordsCompliance }
 			}
-			custom_effect_tooltip = unimplemented ###CHOSE DUCAL FAMILY
+			country_event = atem.27
 			winelords_focus_effect = yes
 		}
 	}
@@ -7452,6 +7453,7 @@ focus_tree = {
 		icon = GFX_goal_support_calmar
 		x = -1
 		y = 2
+		allow_branch = { always = no }
 		relative_position_id = DOR_establish_an_embassy_in_dale
 		cost = 5
 		ai_will_do = {
