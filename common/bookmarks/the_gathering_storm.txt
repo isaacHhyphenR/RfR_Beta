@@ -68,8 +68,14 @@ bookmarks = {
 			history = "DORWINION_GATHERING_STORM_DESC"
 			ideology = isolationism
 			ideas = {
+				northern_heritage_idea
+				DOR_demoralized_army4
+				DOR_university_of_srzel_kain_spirit
 			}
 			focuses = {
+				DOR_home_of_the_revolution
+				DOR_rely_on_mercenary_guards
+				DOR_profit_off_foreign_wealth
 			}
 		}
 

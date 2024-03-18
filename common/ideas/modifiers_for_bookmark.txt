@@ -66,5 +66,33 @@ ideas = {
 				attrition = -0.15
 			}
 		}
+		@universityMaxPos = 0.15
+		@universityMaxNeg = -0.15
+		DOR_university_of_srzel_kain_spirit = {
+			picture = university_of_srzel_kain
+			name = DOR_university_of_srzel_kain
+			modifier = {
+				research_speed_factor = @universityMaxPos
+				medical_equipment_trickleback = @universityMaxPos
+				medical_equipment_xp_loss = @universityMaxNeg
+				opinion_gain_monthly_factor = @universityMaxPos
+				improve_relations_maintain_cost_factor = @universityMaxNeg
+				trade_opinion_factor = @universityMaxPos
+				land_doctrine_cost_factor = @universityMaxNeg
+			}
+		}
+		
+		DOR_home_of_the_revolution_spirit = {
+			picture = home_of_the_revolution
+			name = DOR_home_of_the_revolution_modifier
+			modifier = {
+				custom_modifier_tooltip = home_of_the_revolution_update_tooltip
+				compliance_gain = 0.01 #0.005 per
+				freedom_drift = 0.002 #0.001 per
+				war_support_factor = 2 #1 per
+				subjects_autonomy_gain = -0.0 #-0.005 per
+				custom_modifier_tooltip = idea_transfers_with_faction_leader
+			}
+		}
 	}
 }
