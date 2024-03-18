@@ -1,4 +1,5 @@
 goal_generic_army_tanks
+focus_generic_army_tanks2
 goal_generic_construct_military
 goal_generic_small_arms
 goal_generic_army_artillery
@@ -17,3 +18,4 @@ focus_generic_allies_build_infantry
 focus_generic_axis_build_infantry
 focus_chi_army_reform
 goal_generic_propaganda
+focus_secret_rearmament

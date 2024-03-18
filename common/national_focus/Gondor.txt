@@ -1,0 +1,4280 @@
+﻿@befriendXP = 1000
+@developmentTechBonus = 1
+@developmentDoctrineBonus = 0.5
+@storyTechBonus = 1
+
+@standardFactories = 3
+@halfFactories1 = 1
+@halfFactories2 = 2
+
+
+@designerFocusSize = 2
+@designerFocusDays = 5
+
+focus_tree = {
+	id = gondor_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			OR = {
+				tag = GON
+				tag = ANF
+				tag = PNG
+			}
+		}
+	}
+	default = no
+	#reset_on_civil_war = no
+	
+####################################################################################################################### FIEF BRANCHES
+
+####################################################################################### PINNATH GELIN BRANCH
+	focus = { #survey pinnath gelin
+		id = GON_survey_pinnath_gelin
+		icon = GFX_goal_pinnath_gelin
+		x = 4
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = { any_controlled_state = { is_pinnath_gelin_state = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #1 infrastructure in pinnath gelin states
+			every_controlled_state = {
+				limit = { is_pinnath_gelin_state = yes }
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #befriend lord hirluin
+		id = GON_befriend_lord_hirluin
+		icon = GFX_goal_hirluin
+		x = 0
+		y = 1
+		relative_position_id = GON_survey_pinnath_gelin
+		cost = 10
+		ai_will_do = {
+			factor = 0.2
+		}
+		prerequisite = {
+			focus = GON_survey_pinnath_gelin
+		}
+		available = {
+			has_character = GON_hirluin
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Hirluin gains trusted_advisor and 1000 XP
+			if = { limit = { has_character = GON_hirluin }
+				GON_hirluin = {
+					gon_befriend_lord = yes
+				}
+			}
+		}
+	}
+####################################################### RECLAIM BORDERS SUB-BRANCH
+	focus = { #Reclaim old Borders
+		id = GON_reclaim_old_borders
+		icon = GFX_goal_expand_pinnath_gelin_west
+		x = -4
+		y = 1
+		relative_position_id = GON_survey_pinnath_gelin
+		cost = 10
+		ai_will_do = {
+			base = 0.2
+			modifier = {
+				is_evil = yes
+				factor = 16
+			}
+		}
+		prerequisite = {
+			focus = GON_survey_pinnath_gelin
+		}
+		available = {
+			any_controlled_state = { is_pinnath_gelin_state = yes }
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Claims on white mountain states, unlocks decisions to core them
+			add_state_claim = 217
+			add_state_claim = 140
+			add_state_claim = 226
+			add_state_claim = 135
+			add_state_claim = 222 #adaraba
+			custom_effect_tooltip = GON_reclaim_old_borders_tooltip
+		}
+	}
+	focus = { #Encourage westward settlement
+		id = GON_encourage_westward_settlement
+		icon = GFX_goal_tribal_village
+		x = 0
+		y = 1
+		relative_position_id = GON_reclaim_old_borders
+		cost = 5
+		ai_will_do = {
+			base = 4
+			modifier = {
+				NOT = {
+					OR = {
+						controls_state = 217
+						controls_state = 226
+						controls_state = 140
+						controls_state = 135
+						controls_state = 222 #adaraba
+					}
+				}
+				factor = 0
+			}
+		}
+		prerequisite = {
+			focus = GON_reclaim_old_borders
+		}
+		available = {
+			any_controlled_state = { OR = { is_pinnath_gelin_state = yes state = 222 } }
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Claims on white mountain states, unlocks decisions to core them
+			every_state = {
+				limit = {
+					OR = {
+						state = 217
+						state = 140
+						state = 226
+						state = 135
+						state = 222 #adaraba
+					}
+				}
+				add_dynamic_modifier = { modifier = Gondor_settlers_modifier }
+			}
+		}
+	}
+####################################################### LUMBER SUB-BRANCH
+	focus = { #Relax among the trees
+		id = GON_relax_among_the_trees
+		icon = GFX_focus_SWE_beneath_sticks_and_stone
+		x = -2
+		y = 1
+		relative_position_id = GON_survey_pinnath_gelin
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_survey_pinnath_gelin }
+		available = { any_controlled_state = { is_pinnath_gelin_state = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #1 civ & slot in pinnath gelin states
+			every_controlled_state = {
+				limit = { is_pinnath_gelin_state = yes }
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = { #Preserve woodlands
+		id = GON_preserve_woodlands
+		icon = GFX_goal_generic_wood
+		x = 0
+		y = 1
+		relative_position_id = GON_relax_among_the_trees
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_relax_among_the_trees }
+		mutually_exclusive = { focus = GON_clear_additional_land }
+		available = { any_controlled_state = { is_pinnath_gelin_state = yes } }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #16 wood
+			custom_effect_tooltip = GON_preserve_woodlands_tooltip
+			hidden_effect = {
+				for_loop_effect = {
+					start = 0
+					end = 4
+					random_controlled_state = {
+						limit = { is_pinnath_gelin_state = yes }
+						add_resource = {
+							type = wood
+							amount = 4
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #Finest lumber in the south
+		id = GON_finest_lumber_in_the_south
+		icon = GFX_goal_generic_consumer_goods
+		x = -2
+		y = 1
+		relative_position_id = GON_preserve_woodlands
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_preserve_woodlands }
+		available = { any_controlled_state = { is_pinnath_gelin_state = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #-5% consumer goods
+			add_ideas = GON_pinnath_gelin_lumber
+		}
+	}
+	focus = { #Local shipbuilding
+		id = GON_local_shipbuilding
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 2
+		y = 1
+		relative_position_id = GON_preserve_woodlands
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_preserve_woodlands focus = GON_clear_additional_land }
+		mutually_exclusive = { focus = GON_export_lumber }
+		available = { controls_state = 135 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+		completion_reward = { #4 docks + slots
+			135 = {
+				add_building_construction = {
+					type = dockyard
+					level = @standardFactories
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = @standardFactories
+			}
+		}
+	}
+	focus = { #Export lumber
+		id = GON_export_lumber
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = GON_preserve_woodlands
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_preserve_woodlands }
+		mutually_exclusive = { focus = GON_local_shipbuilding }
+		available = { any_controlled_state = { is_pinnath_gelin_state = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #1 infrastructure in pinnath gelin states
+			every_controlled_state = {
+				limit = { is_pinnath_gelin_state = yes }
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #Industrial designers
+		id = GON_pinnath_gelin_industrial_designers
+		icon = GFX_goal_pinnath_gelin_designer
+		x = -1
+		y = 1
+		relative_position_id = GON_export_lumber
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_export_lumber }
+		mutually_exclusive = { focus = GON_pinnath_gelin_naval_designers }
+		available = { any_controlled_state = { is_pinnath_gelin_state = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #Upgrades pinnath gelin industrial designer
+			if = { limit = { has_idea = gondor_pinnath_gelin_designer_basic }
+				swap_ideas = {
+					remove_idea = gondor_pinnath_gelin_designer_basic
+					add_idea = gondor_pinnath_gelin_designer_improved
+				}
+			}
+			else = {
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = gondor_pinnath_gelin_designer_basic
+						add_idea = gondor_pinnath_gelin_designer_improved
+					}
+				}
+				hidden_effect = {
+					remove_ideas = gondor_pinnath_gelin_designer_basic
+				}
+			}
+		}
+	}
+	focus = { #Naval designers
+		id = GON_pinnath_gelin_naval_designers
+		icon = GFX_goal_pinnath_gelin_designer
+		x = 1
+		y = 1
+		relative_position_id = GON_export_lumber
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_export_lumber }
+		mutually_exclusive = { focus = GON_pinnath_gelin_industrial_designers }
+		available = { any_controlled_state = { is_pinnath_gelin_state = yes } }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #Switches pinnath gelin designers to naval
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:GON_pinnath_gelin_MIO = {
+					add_mio_size = @designerFocusSize
+					unlock_mio_trait_tooltip = generic_mio_trait_abundant_lumber
+				}
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = {
+					limit = {
+						has_idea = gondor_pinnath_gelin_designer_basic
+						amount_taken_ideas = {
+							amount < 1
+							slots = {
+								naval_manufacturer
+							}
+						}
+					}
+					swap_ideas = {
+						remove_idea = gondor_pinnath_gelin_designer_basic
+						add_idea = gondor_pinnath_gelin_designer_alternate
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_pinnath_gelin_designer_basic
+							add_idea = gondor_pinnath_gelin_designer_alternate
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_pinnath_gelin_designer_basic
+					}
+				}
+			}
+		}
+	}
+####################################################### CLOTH SUB-BRANCH
+	focus = { #Relax among the hills
+		id = GON_relax_among_the_hills
+		icon = GFX_focus_ARG_capitalize_the_beef_industry
+		x = 2
+		y = 1
+		relative_position_id = GON_survey_pinnath_gelin
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_survey_pinnath_gelin }
+		available = { any_controlled_state = { is_pinnath_gelin_state = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #2 slots in pinnath gelin states
+			every_controlled_state = {
+				limit = { is_pinnath_gelin_state = yes }
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = { #Clear additional land
+		id = GON_clear_additional_land
+		icon = GFX_goal_generic_cloth
+		x = 0
+		y = 1
+		relative_position_id = GON_relax_among_the_hills
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_relax_among_the_hills }
+		mutually_exclusive = { focus = GON_preserve_woodlands }
+		available = { any_controlled_state = { is_pinnath_gelin_state = yes } }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #16 cloth
+			custom_effect_tooltip = GON_clear_additional_land_tooltip
+			hidden_effect = {
+				for_loop_effect = {
+					start = 0
+					end = 4
+					random_controlled_state = {
+						limit = { is_pinnath_gelin_state = yes }
+						add_resource = {
+							type = cloth
+							amount = 4
+						}
+					}
+				}
+			}
+		}
+	}
+####################################################################################### LAMEDON BRANCH
+	focus = { #Survey Lamedon
+		id = GON_survey_lamedon
+		icon = GFX_goal_lamedon
+		x = 5
+		y = 0
+		relative_position_id = GON_survey_pinnath_gelin
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		available = { any_controlled_state = { is_lamedon_state = yes } }
+		completion_reward = { #1 infrastructure in lamedon states
+			every_controlled_state = {
+				limit = { is_lamedon_state = yes }
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+####################################################### IRON SUB-BRANCH
+	focus = { #Praise the miners
+		id = GON_praise_the_miners
+		icon = GFX_goal_generic_iron
+		x = 1
+		y = 1
+		relative_position_id = GON_survey_lamedon
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_survey_lamedon }
+		available = { any_controlled_state = { is_lamedon_state = yes } }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #16 iron
+			custom_effect_tooltip = GON_praise_the_miners_tooltip
+			hidden_effect = {
+				for_loop_effect = {
+					start = 0
+					end = 4
+					random_controlled_state = {
+						limit = { is_lamedon_state = yes }
+						add_resource = {
+							type = iron
+							amount = 4
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #Train Local Blacksmiths
+		id = GON_train_local_blacksmiths
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = GON_praise_the_miners
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_praise_the_miners }
+		available = { any_controlled_state = { is_lamedon_state = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #4 mils & slots
+			random_controlled_state = {
+				limit = { is_lamedon_state = yes }
+				add_building_construction = {
+					type = arms_factory
+					level = @halfFactories1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = @halfFactories1
+			}
+			random_controlled_state = {
+				limit = { is_lamedon_state = yes }
+				add_building_construction = {
+					type = arms_factory
+					level = @halfFactories2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = @halfFactories2
+			}
+		}
+	}
+	focus = { #Efficiency over Perfection
+		id = GON_efficiency_over_perfection
+		icon = GFX_goal_generic_production2
+		x = 0
+		y = 1
+		relative_position_id = GON_train_local_blacksmiths
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_train_local_blacksmiths }
+		available = { any_controlled_state = { is_lamedon_state = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 production research bonuses
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = cat_production
+				name = GON_efficiency_over_perfection
+			}
+		}
+	}
+	focus = { #Expand Northern mines
+		id = GON_expand_northern_mines
+		icon = GFX_goal_generic_mining
+		x = 2
+		y = 1
+		relative_position_id = GON_praise_the_miners
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_praise_the_miners }
+		available = { any_controlled_state = { is_lamedon_state = yes } }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #16 iron
+			custom_effect_tooltip = GON_praise_the_miners_tooltip
+			hidden_effect = {
+				for_loop_effect = {
+					start = 0
+					end = 4
+					random_controlled_state = {
+						limit = { is_lamedon_state = yes }
+						add_resource = {
+							type = iron
+							amount = 4
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #Strategic tool stockpiles
+		id = GON_strategic_tool_stockpiles
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = GON_expand_northern_mines
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_expand_northern_mines }
+		available = { any_controlled_state = { is_lamedon_state = yes } }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #16 iron
+			add_ideas = GON_lamedon_tools
+		}
+	}
+	focus = { #Industrial designers
+		id = GON_lamedon_industrial_designers
+		icon = GFX_goal_lamedon_designer
+		x = 1
+		y = 2
+		relative_position_id = GON_efficiency_over_perfection
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = { focus = GON_efficiency_over_perfection focus = GON_strategic_tool_stockpiles }
+		mutually_exclusive = { focus = GON_lamedon_materiel_designers }
+		available = { any_controlled_state = { is_lamedon_state = yes } }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #upgrades lamedonian industrial company
+			if = { limit = { has_idea = gondor_lamedon_designer_basic }
+				swap_ideas = {
+					remove_idea = gondor_lamedon_designer_basic
+					add_idea = gondor_lamedon_designer_improved
+				}
+			}
+			else = {
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = gondor_lamedon_designer_basic
+						add_idea = gondor_lamedon_designer_improved
+					}
+				}
+				hidden_effect = {
+					remove_ideas = gondor_lamedon_designer_basic
+				}
+			}
+		}
+	}
+####################################################### CLOTH SUB-BRANCH
+	focus = { #Praise the Clothworkers
+		id = GON_praise_the_clothworkers
+		icon = GFX_goal_generic_cloth
+		x = -1
+		y = 1
+		relative_position_id = GON_survey_lamedon
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_survey_lamedon }
+		available = { any_controlled_state = { is_lamedon_state = yes } }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #16 cloth
+			custom_effect_tooltip = GON_praise_the_clothworkers_tooltip
+			hidden_effect = {
+				for_loop_effect = {
+					start = 0
+					end = 4
+					random_controlled_state = {
+						limit = { is_lamedon_state = yes }
+						add_resource = {
+							type = cloth
+							amount = 4
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = { #Integrate Western Economys
+		id = GON_integrate_western_economies
+		icon = GFX_focus_generic_industry_2
+		x = -1
+		y = 2
+		relative_position_id = GON_praise_the_clothworkers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_praise_the_clothworkers }
+		prerequisite = { focus = GON_clear_additional_land }
+		available = { any_controlled_state = { is_pinnath_gelin_state = yes } any_controlled_state = { is_lamedon_state = yes } }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #16 cloth in pinnath gelin, +4 civs & slots in lamedon
+			custom_effect_tooltip = GON_clear_additional_land_tooltip
+			hidden_effect = {
+				for_loop_effect = {
+					start = 0
+					end = 4
+					random_controlled_state = {
+						limit = { is_pinnath_gelin_state = yes }
+						add_resource = {
+							type = cloth
+							amount = 4
+						}
+					}
+				}
+			}
+			146 = { #Lamedon
+				add_building_construction = {
+					type = industrial_complex
+					level = @standardFactories
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = @standardFactories
+			}
+		}
+	}
+	focus = { #Materiel designers
+		id = GON_lamedon_materiel_designers
+		icon = GFX_goal_lamedon_designer
+		x = 0
+		y = 2
+		relative_position_id = GON_integrate_western_economies
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_integrate_western_economies }
+		mutually_exclusive = { focus = GON_lamedon_industrial_designers }
+		available = { any_controlled_state = { is_lamedon_state = yes } }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #Switches lamedon designers to materiel
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:GON_lamedon_MIO = {
+					add_mio_size = @designerFocusSize
+					unlock_mio_trait_tooltip = generic_mio_trait_material_recycling
+				}
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = {
+					limit = {
+						has_idea = gondor_lamedon_designer_basic
+						amount_taken_ideas = {
+							amount < 1
+							slots = {
+								materiel_manufacturer
+							}
+						}
+					}
+					swap_ideas = {
+						remove_idea = gondor_lamedon_designer_basic
+						add_idea = gondor_lamedon_designer_alternate
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_lamedon_designer_basic
+							add_idea = gondor_lamedon_designer_alternate
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_lamedon_designer_basic
+					}
+				}
+			}
+		}
+	}
+	focus = { #Capital of the West
+		id = GON_capital_of_the_west
+		icon = GFX_focus_generic_industry_3
+		x = 2
+		y = 1
+		relative_position_id = GON_integrate_western_economies
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_integrate_western_economies }
+		prerequisite = { focus = GON_train_local_blacksmiths }
+		available = { controls_state = 146 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
+		completion_reward = { #1m pop, 1 civ, 1 mil, VPs, state category
+			146 = {
+				add_manpower = 1000000
+				upgrade_state_category = yes
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				set_victory_points = {
+					province = 1405
+					value = 20
+				}
+				set_ring_victory_point = yes
+			}
+		}
+	}
+	focus = { #befriend lord angbor
+		id = GON_befriend_lord_angbor
+		icon = GFX_goal_angbor
+		x = 0
+		y = 1
+		relative_position_id = GON_praise_the_clothworkers
+		cost = 10
+		ai_will_do = {
+			factor = 0.2
+		}
+		prerequisite = {
+			focus = GON_praise_the_clothworkers focus = GON_praise_the_miners
+		}
+		available = {
+			has_character = GON_angbor
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Angbor gains trusted_advisor and 1000 xp
+			if = { limit = { has_character = GON_angbor }
+				GON_angbor = {
+					gon_befriend_lord = yes
+				}
+			}
+		}
+	}
+####################################################################################### ANFALAS BRANCH
+	focus = { #Survey Anfalas
+		id = GON_survey_anfalas
+		icon = GFX_goal_anfalas
+		x = 9
+		y = 0
+		relative_position_id = GON_survey_lamedon
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		available = { controls_state = 142 }
+		completion_reward = { #1 infrastructure in anafalas state
+			142 = { #Anfalas
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+####################################################### FISHING SUB-BRANCH
+	focus = { #Take a fishing trip
+		id = GON_take_a_fishing_trip
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = -2
+		y = 1
+		relative_position_id = GON_survey_anfalas
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_survey_anfalas
+		}
+		available = { controls_state = 142 }
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESOURCES }
+		completion_reward = { #15 naval xp, 8 food
+			navy_experience = 15
+			142 = { #Anfalas
+				add_resource = {
+					type = food
+					amount = 8
+				}
+			}
+		}
+	}
+	focus = { #expand fishing fleet
+		id = GON_expand_fishing_fleet
+		icon = GFX_goal_generic_fishing_boat
+		x = -1
+		y = 1
+		relative_position_id = GON_take_a_fishing_trip
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_take_a_fishing_trip
+		}
+		available = { controls_state = 142 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_LOGISTICS FOCUS_FILTER_NAVY }
+		completion_reward = { #2 dockyards & slots, 20 convoys
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 20
+			}
+			142 = { #Anfalas
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #sail further afield
+		id = GON_sail_further_afield
+		icon = GFX_focus_generic_destroyer
+		x = 1
+		y = 1
+		relative_position_id = GON_expand_fishing_fleet
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_expand_fishing_fleet
+		}
+		available = { controls_state = 142 }
+		mutually_exclusive = { focus = GON_exploit_coastal_waters }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES }
+		completion_reward = { #8 food, destroyer research bonus
+			142 = { #Anfalas
+				add_resource = {
+					type = food
+					amount = 8
+				}
+			}
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 1
+				category = dd_tech
+				name = GON_sail_further_afield
+			}
+		}
+	}
+	focus = { #exploit coastal waters
+		id = GON_exploit_coastal_waters
+		icon = GFX_goal_generic_fish
+		x = -1
+		y = 1
+		relative_position_id = GON_expand_fishing_fleet
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_expand_fishing_fleet
+		}
+		available = { controls_state = 142 }
+		mutually_exclusive = { focus = GON_sail_further_afield }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES }
+		completion_reward = { #8 food, mine research bonus (naval XP if non-MTG)
+			142 = { #Anfalas
+				add_resource = {
+					type = food
+					amount = 8
+				}
+			}
+			if = { limit = { has_dlc = "Man the Guns" }
+				add_tech_bonus = {
+					bonus = @developmentTechBonus
+					uses = 1
+					category = naval_mines
+					name = GON_exploit_coastal_waters
+				}
+			}
+			else = {
+				navy_experience = 15
+			}
+		}
+	}
+	focus = { #Naval designers
+		id = GON_anfalas_naval_designers
+		icon = GFX_goal_anfalas_designer
+		x = 1
+		y = 1
+		relative_position_id = GON_exploit_coastal_waters
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_exploit_coastal_waters focus = GON_sail_further_afield }
+		mutually_exclusive = { focus = GON_anfalas_materiel_designers }
+		available = { controls_state = 142 }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
+		completion_reward = { #Switches anfalas designers to naval
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:GON_anfalas_MIO = {
+					add_mio_size = @designerFocusSize
+					unlock_mio_trait_tooltip = generic_mio_trait_fleet_minesweepers
+				}
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = {
+					limit = {
+						has_idea = gondor_anfalas_designer_basic
+						amount_taken_ideas = {
+							amount < 1
+							slots = {
+								naval_manufacturer
+							}
+						}
+					}
+					swap_ideas = {
+						remove_idea = gondor_anfalas_designer_basic
+						add_idea = gondor_anfalas_designer_alternate
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_anfalas_designer_basic
+							add_idea = gondor_anfalas_designer_alternate
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_anfalas_designer_basic
+					}
+				}
+			}
+		}
+	}
+####################################################### HUNTING SUB-BRANCH
+	focus = { #take a hunting trip
+		id = GON_take_a_hunting_trip
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = GON_survey_anfalas
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_survey_anfalas
+		}
+		available = { controls_state = 142 }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESOURCES }
+		completion_reward = { #15 army xp, 8 food
+			army_experience = 15
+			142 = { #Anfalas
+				add_resource = {
+					type = food
+					amount = 8
+				}
+			}
+		}
+	}
+	focus = { #refined hunting weapons
+		id = GON_refined_hunting_weapons
+		icon = GFX_goal_generic_army_artillery
+		x = 1
+		y = 1
+		relative_position_id = GON_take_a_hunting_trip
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_take_a_hunting_trip
+		}
+		available = { controls_state = 142 }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 artilelry research bonuses
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = artillery
+				name = GON_refined_hunting_weapons
+			}
+		}
+	}
+	focus = { #take lessons from deer hunters
+		id = GON_take_lessons_from_deer_hunters
+		icon = GFX_goal_generic_hunting
+		x = 1
+		y = 1
+		relative_position_id = GON_refined_hunting_weapons
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_refined_hunting_weapons
+		}
+		available = { controls_state = 142 }
+		mutually_exclusive = { focus = GON_take_lessons_from_boar_hunters }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #bow research bonus
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = cat_actual_artillery
+				name = GON_take_lessons_from_deer_hunters
+			}
+		}
+	}
+	focus = { #take lessons from boar hunters
+		id = GON_take_lessons_from_boar_hunters
+		icon = GFX_goal_generic_army_artillery2
+		x = -1
+		y = 1
+		relative_position_id = GON_refined_hunting_weapons
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_refined_hunting_weapons
+		}
+		available = { controls_state = 142 }
+		mutually_exclusive = { focus = GON_take_lessons_from_deer_hunters }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #pike research bonus
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = cat_anti_tank
+				name = GON_take_lessons_from_boar_hunters
+			}
+		}
+	}
+	focus = { #materiel designers
+		id = GON_anfalas_materiel_designers
+		icon = GFX_goal_anfalas_designer
+		x = -1
+		y = 1
+		relative_position_id = GON_take_lessons_from_deer_hunters
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_take_lessons_from_deer_hunters focus = GON_take_lessons_from_boar_hunters }
+		mutually_exclusive = { focus = GON_anfalas_naval_designers }
+		available = { controls_state = 142 }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #upgarades anfalas designer
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:GON_anfalas_MIO = {
+					add_mio_size = @designerFocusSize
+					unlock_mio_trait_tooltip = generic_mio_trait_advanced_barrel_forging
+					unlock_mio_trait_tooltip = generic_mio_trait_big_guns
+				}
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = { limit = { has_idea = gondor_anfalas_designer_basic }
+					swap_ideas = {
+						remove_idea = gondor_anfalas_designer_basic
+						add_idea = gondor_anfalas_designer_improved
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_anfalas_designer_basic
+							add_idea = gondor_anfalas_designer_improved
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_anfalas_designer_basic
+					}
+				}
+			}
+		}
+	}
+####################################################### MISC SUB-BRANCH
+	focus = { #wild food sources
+		id = GON_wild_food_sources
+		icon = GFX_goal_generic_food
+		x = 1
+		y = 2
+		relative_position_id = GON_survey_anfalas
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = GON_take_a_fishing_trip
+			focus = GON_take_a_hunting_trip
+		}
+		available = {
+			has_character = GON_golasgil
+		}
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #+15% fuel from refineries
+			add_ideas = GON_anfalas_game
+		}
+	}
+	focus = { #befriend lord golasgil
+		id = GON_befriend_lord_golasgil
+		icon = GFX_goal_golasgil
+		x = -1
+		y = 2
+		relative_position_id = GON_survey_anfalas
+		cost = 10
+		ai_will_do = {
+			factor = 0.2
+		}
+		prerequisite = {
+			focus = GON_take_a_fishing_trip
+			focus = GON_take_a_hunting_trip
+		}
+		available = {
+			has_character = GON_golasgil
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Golasgil gains trusted_advisor and 1000 xp
+			if = { limit = { has_character = GON_golasgil }
+				GON_golasgil = {
+					gon_befriend_lord = yes
+				}
+			}
+		}
+	}
+####################################################################################### BELFALAS BRANCH
+	focus = { #Survey belfalas
+		id = GON_survey_belfalas
+		icon = GFX_goal_belfalas
+		x = 9
+		y = 0
+		relative_position_id = GON_survey_anfalas
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		#search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #1 infrastructure in belfalas state
+			148 = { #Belfalas
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #befriend prince imrahil
+		id = GON_befriend_prince_imrahil
+		icon = GFX_goal_imrahil
+		x = 0
+		y = 1
+		relative_position_id = GON_survey_belfalas
+		cost = 10
+		ai_will_do = {
+			factor = 0.2
+		}
+		prerequisite = {
+			focus = GON_survey_belfalas
+		}
+		available = {
+			has_character = GON_imrahil
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Imrahil gains trusted_advisor and 1000 xp
+			GON_imrahil = {
+				gon_befriend_lord = yes
+			}
+		}
+	}
+####################################################### NAVAL SUB-BRANCH
+	focus = { #attend boating race
+		id = GON_attend_a_boating_race
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = -2
+		y = 1
+		relative_position_id = GON_survey_belfalas
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_survey_belfalas
+		}
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
+		completion_reward = { #25 naval xp, 2 harbors in dol amroth
+			navy_experience = 35
+			148 = { #Belfalas
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 880 #Dol Amroth
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #hold naval exercises
+		id = GON_hold_naval_exercises
+		icon = GFX_goal_generic_navy_cruiser
+		x = -3
+		y = 2
+		relative_position_id = GON_survey_belfalas
+		cost = 10
+		ai_will_do = {
+			factor = 10
+			modifier = { #Much less valuable if researching different land doctrine
+				OR = {
+					has_tech = trade_interdiction
+					#has_tech = base_strike
+				}
+				factor = 0.1
+			}
+		}
+		prerequisite = {
+			focus = GON_attend_a_boating_race
+		}
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #10 navy xp 2 fleet in being bonuses
+			navy_experience = 10
+			add_doctrine_cost_reduction = {
+				cost_reduction = @developmentDoctrineBonus
+				uses = 2
+				category = cat_fleet_in_being
+			}
+		}
+	}
+	focus = { #renovate dol amroth harbor
+		id = GON_renovate_dol_amroth_harbor
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = -1
+		y = 2
+		relative_position_id = GON_survey_belfalas
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_attend_a_boating_race
+		}
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = {  FOCUS_FILTER_NAVY FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #4 dockyards, 2 harbors
+			148 = { #Belfalas
+				add_extra_state_shared_building_slots = @standardFactories
+				add_building_construction = {
+					type = dockyard
+					level = @standardFactories
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 880 #Dol Amroth
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #naval designers
+		id = GON_belfalas_naval_designers
+		icon = GFX_goal_belfalas_designer
+		x = 0
+		y = 2
+		relative_position_id = GON_attend_a_boating_race
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = { focus = GON_hold_naval_exercises focus = GON_renovate_dol_amroth_harbor }
+		mutually_exclusive = { focus = GON_belfalas_cavalry_designers }
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #unlocks belfalosien naval nobles company
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:GON_belfalas_MIO = {
+					add_mio_size = @designerFocusSize
+					unlock_mio_trait_tooltip = generic_mio_trait_external_armor_belt
+					unlock_mio_trait_tooltip = generic_mio_trait_internal_armor_belt
+				}
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = {
+					limit = {
+						has_idea = gondor_belfalas_designer_basic
+						amount_taken_ideas = {
+							amount < 1
+							slots = {
+								naval_manufacturer
+							}
+						}
+					}
+					swap_ideas = {
+						remove_idea = gondor_belfalas_designer_basic
+						add_idea = gondor_belfalas_designer_alternate
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_belfalas_designer_basic
+							add_idea = gondor_belfalas_designer_alternate
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_belfalas_designer_basic
+					}
+				}
+			}
+		}
+	}
+	focus = { #naval princes
+		id = GON_naval_princes
+		icon = GFX_goal_generic_navy_battleship
+		x = -1
+		y = 1
+		relative_position_id = GON_belfalas_naval_designers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_belfalas_naval_designers
+		}
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 1 year reductions for capital ships, 2 100% capital ship bonuses
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = bc_tech
+				category = bb_tech
+				category = shbb_tech
+				name = GON_naval_princes
+			}
+			add_tech_bonus = {
+				ahead_reduction = 1
+				category = bc_tech
+				category = bb_tech
+				category = shbb_tech
+				name = GON_naval_princes
+			}
+		}
+	}
+	focus = { #naval economy_belfalas
+		id = GON_naval_economy_belfalas
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 1
+		y = 1
+		relative_position_id = GON_belfalas_naval_designers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_belfalas_naval_designers
+		}
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_FORTIFICATION}
+		completion_reward = { #+2 dockyard in Belfalas. Each coastal Belfalas VP gains:+2 harbor +2 naval forts
+			148 = { #Belfalas
+				add_extra_state_shared_building_slots = @standardFactories
+				add_building_construction = {
+					type = dockyard
+					level = @standardFactories
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 880 #Dol Amroth
+					instant_build = yes
+				}
+				# add_building_construction = {
+					# type = coastal_bunker
+					# level = 2
+					# province = 880 #Dol Amroth
+					# instant_build = yes
+				# }
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 577 #Endil
+					instant_build = yes
+				}
+				# add_building_construction = {
+					# type = coastal_bunker
+					# level = 2
+					# province = 577 #Endil
+					# instant_build = yes
+				# }
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 2495 #Methrast
+					instant_build = yes
+				}
+				# add_building_construction = {
+					# type = coastal_bunker
+					# level = 2
+					# province = 2495 #Methrast
+					# instant_build = yes
+				# }
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 7426 #Saralond
+					instant_build = yes
+				}
+				# add_building_construction = {
+					# type = coastal_bunker
+					# level = 2
+					# province = 7426 #Saralond
+					# instant_build = yes
+				# }
+			}
+		}
+	}
+####################################################### CAVALRY SUB-BRANCH
+	focus = { #attend a tournament
+		id = GON_attend_a_tournament
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = GON_survey_belfalas
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_survey_belfalas
+		}
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_ARMY }
+		completion_reward = { #+35 army xp +100 heavy cav equipment
+			army_experience = 35
+			add_equipment_to_stockpile = {
+				type = medium_tank_chassis
+				amount = 100
+				producer = ROOT
+			}
+		}
+	}
+	focus = { #subsidize swan knights
+		id = GON_subsidize_the_swan_knights
+		icon = GFX_goal_swan_knights
+		x = 1
+		y = 2
+		relative_position_id = GON_survey_belfalas
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_attend_a_tournament
+		}
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #subsidized swan knights idea
+			add_ideas = { GON_subsidized_swan_knights }
+		}
+	}
+	focus = { #hold cavalry exercises
+		id = GON_hold_cavalry_exercises
+		icon = GFX_goal_generic_cavalry
+		x = 3
+		y = 2
+		relative_position_id = GON_survey_belfalas
+		cost = 10
+		ai_will_do = {
+			factor = 10
+			modifier = { #Much less valuable if researching different land doctrine
+				OR = {
+					has_tech = superior_firepower
+					has_tech = mass_assault
+				}
+				factor = 0.1
+			}
+		}
+		prerequisite = {
+			focus = GON_attend_a_tournament
+		}
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
+		completion_reward = { #10 army XP, 2 mobile/grant battleplan bonuses
+			army_experience = 10
+			add_doctrine_cost_reduction = {
+				cost_reduction = @developmentDoctrineBonus
+				uses = 2
+				category = cat_mobile_warfare
+				category = cat_grand_battle_plan
+			}
+		}
+	}
+	focus = { #cavalry designers
+		id = GON_belfalas_cavalry_designers
+		icon = GFX_goal_belfalas_designer
+		x = 0
+		y = 2
+		relative_position_id = GON_attend_a_tournament
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = { focus = GON_subsidize_the_swan_knights focus = GON_hold_cavalry_exercises }
+		mutually_exclusive = { focus = GON_belfalas_naval_designers }
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #unlocks belfalosien naval nobles company
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:GON_belfalas_MIO = {
+					add_mio_size = @designerFocusSize
+					unlock_mio_trait_tooltip = generic_mio_trait_fully_cast_turret
+				}
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = { limit = { has_idea = gondor_belfalas_designer_basic }
+					swap_ideas = {
+						remove_idea = gondor_belfalas_designer_basic
+						add_idea = gondor_belfalas_designer_improved
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_belfalas_designer_basic
+							add_idea = gondor_belfalas_designer_improved
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_belfalas_designer_basic
+					}
+				}
+			}
+		}
+	}
+	focus = { #mounted princes
+		id = GON_mounted_princes
+		icon = GFX_goal_generic_army_tanks
+		x = 1
+		y = 1
+		relative_position_id = GON_belfalas_cavalry_designers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_belfalas_cavalry_designers
+		}
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 cavalry research bonuses
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = armor
+				name = GON_mounted_princes
+			}
+		}
+	}
+	focus = { #feudal economy_belfalas
+		id = GON_feudal_economy_belfalas
+		icon = GFX_focus_generic_industry_3
+		x = -1
+		y = 1
+		relative_position_id = GON_belfalas_cavalry_designers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_belfalas_cavalry_designers
+		}
+		available = {
+			148 = { is_controlled_by = ROOT } #Gondor must control Belfalas
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { # #+2 mil & +2 civ in Belfalas. 
+			148 = { #Belfalas
+				add_extra_state_shared_building_slots = @standardFactories
+				add_building_construction = {
+					type = industrial_complex
+					level = @halfFactories2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = @halfFactories2
+					instant_build = yes
+				}
+			}
+		}
+	}
+####################################################################################### LEBENNIN BRANCH
+	focus = { #survey lebennin
+		id = GON_survey_lebennin
+		icon = GFX_goal_lebennin
+		x = 10
+		y = 0
+		relative_position_id = GON_survey_belfalas
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = { controls_state = 150 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #1 infrastructure in lebennin states
+			150 = { #Lebennin
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			189 = { #Mouths of Anduin
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #befriend sealord ciryandur
+		id = GON_befriend_sealord_ciryandur
+		icon = GFX_goal_ciryandur
+		x = 0
+		y = 1
+		relative_position_id = GON_survey_lebennin
+		cost = 10
+		ai_will_do = {
+			factor = 0.2
+		}
+		prerequisite = {
+			focus = GON_survey_lebennin
+		}
+		available = {
+			has_character = GON_ciryandar_earnarionath
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Ciryandur gains trusted_advisor and 1000 xp
+			if = { limit = { has_character = GON_ciryandar_earnarionath }
+				GON_ciryandar_earnarionath = {
+					gain_xp = 1000
+					add_unit_leader_trait = GON_trusted_advisor_nav
+					custom_effect_tooltip = plus_one_every_skill
+				}
+			}
+		}
+	}
+####################################################### MARITIME SUB-BRANCH
+	focus = { #Tour Pelargir
+		id = GON_tour_pelargir
+		icon = GFX_goal_generic_build_navy
+		x = -3
+		y = 1
+		relative_position_id = GON_survey_lebennin
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_survey_lebennin
+		}
+		available = { controls_province = 7410 }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #20 convoys, 4 slots
+			150 = { #Lebennin
+				add_extra_state_shared_building_slots = @standardFactories
+			}
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 20
+			}
+		}
+	}
+	focus = { #Expand the Pelargir Dockyards
+		id = GON_expand_the_pelargir_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = -1
+		y = 1
+		relative_position_id = GON_tour_pelargir
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_tour_pelargir
+		}
+		available = { controls_province = 7410 }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #4 dockyards, 2 harbors
+			150 = { #Lebennin
+				add_building_construction = {
+					type = dockyard
+					level = @standardFactories
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = @standardFactories
+				add_building_construction = {
+					type = naval_base
+					level = 4
+					instant_build = yes
+					province = 7410
+				}
+			}
+		}
+	}
+	focus = { #build convoy escorts
+		id = GON_build_convoy_escorts
+		icon = GFX_focus_generic_destroyer
+		x = -1
+		y = 1
+		relative_position_id = GON_expand_the_pelargir_dockyards
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_expand_the_pelargir_dockyards
+		}
+		available = { controls_state = 150 }
+		mutually_exclusive = { focus =  GON_build_grander_merchant_ships }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #dd tech bonuses
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = dd_tech
+				name = GON_build_convoy_escorts
+			}
+		}
+	}
+	focus = { #build grander merchant ships
+		id = GON_build_grander_merchant_ships
+		icon = GFX_goal_generic_merchant_ship
+		x = 1
+		y = 1
+		relative_position_id = GON_expand_the_pelargir_dockyards
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_expand_the_pelargir_dockyards
+		}
+		available = { controls_state = 150 }
+		mutually_exclusive = { focus = GON_build_convoy_escorts }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #+50% trade opinion factor
+			add_ideas = GON_pelargir_trade
+		}
+	}
+	focus = { #Expand the Pelargir marines
+		id = GON_expand_the_pelargir_marines
+		icon = GFX_goal_gon_pelargir_marine_helmet
+		x = 1
+		y = 1
+		relative_position_id = GON_tour_pelargir
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_tour_pelargir
+		}
+		available = { controls_state = 150 }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #marine tech bonuses
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = marine_tech
+				name = GON_expand_the_pelargir_marines
+			}
+		}
+	}
+	focus = { #Naval Integration
+		id = GON_naval_integration
+		icon = GFX_goal_generic_amphibious_assault
+		x = 0
+		y = 2
+		relative_position_id = GON_expand_the_pelargir_marines
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_build_grander_merchant_ships
+			focus = GON_expand_the_pelargir_marines
+		}
+		available = { controls_state = 150 }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #transport & jav tech bonuses
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 1
+				category = tp_tech
+				name = GON_naval_integration
+			}
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 1
+				category = rocketry
+				name = GON_naval_integration
+			}
+		}
+	}
+####################################################### AGRICULTURAL SUB-BRANCH
+	focus = { #tour the five rivers
+		id = GON_tour_the_five_rivers
+		icon = GFX_goal_generic_river
+		x = 2
+		y = 1
+		relative_position_id = GON_survey_lebennin
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_survey_lebennin
+		}
+		available = { controls_state = 150 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #20 convoys, 4 slots
+			150 = { #Lebennin
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			build_railway = { #Sirith
+			  level = 2
+			  path = { 7410 2859 1332 7345 1583 7305 456 7236 4989 7185 }
+			  start_province = 7410
+			  target_province = 7185
+			}
+			build_railway = { #Celos
+			  level = 2
+			  path = { 7236 166 7244 }
+			  start_province = 7236
+			  target_province = 7244
+			}
+			build_railway = { #Gilrain
+			  level = 2
+			  path = { 1789 5037 3912 7346 4663 1562 7267 7252 554 }
+			  start_province = 1789
+			  target_province = 554
+			}
+			build_railway = { #Serni
+			  level = 2
+			  path = { 5037 7396 3032 4462 2777 7348 2560 4946 }
+			  start_province = 5037
+			  target_province = 3752
+			}
+		}
+	}
+	focus = { #Expand irrigation
+		id = GON_expand_irrigation
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		x = 0
+		y = 1
+		relative_position_id = GON_tour_the_five_rivers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_tour_the_five_rivers
+		}
+		available = { controls_state = 150 }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES }
+		completion_reward = { #synth tech bonuses
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = synth_resources
+				name = GON_expand_irrigation
+			}
+		}
+	}
+	focus = { #Expand farmlands
+		id = GON_expand_farmlands
+		icon = GFX_goal_generic_food
+		x = 2
+		y = 1
+		relative_position_id = GON_tour_the_five_rivers
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_tour_the_five_rivers
+		}
+		available = { controls_state = 150 }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #synth tech bonuses
+			150 = { #Lebennin
+				add_resource = {
+					type = food
+					amount = 16
+				}
+			}
+		}
+	}
+	focus = { #Intensive crop rotations
+		id = GON_intensive_crop_rotations
+		icon = GFX_goal_generic_construct_synth_refinery
+		x = 1
+		y = 1
+		relative_position_id = GON_expand_irrigation
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_expand_farmlands
+			focus = GON_expand_irrigation
+		}
+		available = { controls_state = 150 has_tech = synth_oil_experiments }
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #3 synthetic refineries
+			150 = { #Lebennin
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+####################################################### HYBRID SUB-BRANCH
+	focus = { #integrate maritime & agricultural sectors
+		id = GON_integrate_maritime_and_agricultural_sectors
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		x = 0
+		y = 2
+		relative_position_id = GON_survey_lebennin
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_tour_the_five_rivers
+			focus = GON_tour_pelargir
+		}
+		available = { controls_state = 150 }
+		search_filters = { FOCUS_FILTER_LOGISTICS FOCUS_FILTER_RESOURCES }
+		completion_reward = { #convoys & food
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 20
+			}
+			150 = {
+				add_resource = {
+					type = food
+					amount = 8
+				}
+			}
+		}
+	}
+	focus = { #naval designers
+		id = GON_lebennin_naval_designers
+		icon = GFX_goal_lebennin_designer
+		x = -1
+		y = 1
+		relative_position_id = GON_integrate_maritime_and_agricultural_sectors
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = { focus = GON_integrate_maritime_and_agricultural_sectors }
+		mutually_exclusive = { focus = GON_lebennin_industrial_designers }
+		available = { controls_state = 150 }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #unlocks lebennin naval nobles company
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:GON_lebennin_MIO = {
+					add_mio_size = @designerFocusSize
+					unlock_mio_trait_tooltip = generic_mio_trait_convoy_production
+				}
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = { limit = { has_idea = gondor_lebennin_designer_basic }
+					swap_ideas = {
+						remove_idea = gondor_lebennin_designer_basic
+						add_idea = gondor_lebennin_designer_improved
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_lebennin_designer_basic
+							add_idea = gondor_lebennin_designer_improved
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_lebennin_designer_basic
+					}
+				}
+			}
+		}
+	}
+	focus = { #industrial designers
+		id = GON_lebennin_industrial_designers
+		icon = GFX_goal_lebennin_designer
+		x = 1
+		y = 1
+		relative_position_id = GON_integrate_maritime_and_agricultural_sectors
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 3
+		}
+		prerequisite = { focus = GON_integrate_maritime_and_agricultural_sectors }
+		mutually_exclusive = { focus = GON_lebennin_naval_designers }
+		available = { controls_state = 150 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #unlocks lebennin industrial nobles company
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				custom_effect_tooltip = unlocks_GON_lebennin_industrial_designer_tooltip
+				show_ideas_tooltip = gondor_lebennin_designer_alternate
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = {
+					limit = {
+						has_idea = gondor_lebennin_designer_basic
+						amount_taken_ideas = {
+							amount < 1
+							slots = {
+								industrial_concern
+							}
+						}
+					}
+					swap_ideas = {
+						remove_idea = gondor_lebennin_designer_basic
+						add_idea = gondor_lebennin_designer_alternate
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_lebennin_designer_basic
+							add_idea = gondor_lebennin_designer_alternate
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_lebennin_designer_basic
+					}
+				}
+			}
+		}
+	}
+####################################################################################### LOSSARNACH BRANCH
+	focus = { #Survey lossarnach
+		id = GON_survey_lossarnach
+		icon = GFX_goal_lossarnach
+		x = 9
+		y = 0
+		relative_position_id = GON_survey_lebennin
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		available = { controls_state = 151 }
+		completion_reward = { #1 infrastructure in lossarnach state
+			151 = { #Lossarnach
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #befriend lord forlong
+		id = GON_befriend_lord_forlong
+		icon = GFX_goal_forlong
+		x = 0
+		y = 1
+		relative_position_id = GON_survey_lossarnach
+		cost = 10
+		ai_will_do = {
+			factor = 0.2
+		}
+		prerequisite = {
+			focus = GON_survey_lossarnach
+		}
+		available = {
+			has_character = GON_forlong
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Forlong gains trusted_advisor and 1000 xp
+			if = { limit = { has_character = GON_forlong }
+				GON_forlong = {
+					gon_befriend_lord = yes
+				}
+			}
+		}
+	}
+####################################################### INDUSTRY SUB-BRANCH
+	focus = { #Patronize a tinkerers shop
+		id = GON_patronize_a_tinkerers_shop
+		icon = GFX_goal_generic_concentrated_industry
+		x = -2
+		y = 1
+		relative_position_id = GON_survey_lossarnach
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_survey_lossarnach
+		}
+		available = { controls_state = 151 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #2 civs 2 mils 4 slots
+			151 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = @halfFactories2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = @halfFactories1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = @standardFactories
+			}
+		}
+	}
+	focus = { #cultivate lossarnachan artisanry
+		id = GON_cultivate_lossarnachan_artisanry
+		icon = GFX_goal_generic_production2
+		x = 0
+		y = 1
+		relative_position_id = GON_patronize_a_tinkerers_shop
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_patronize_a_tinkerers_shop
+		}
+		available = { controls_state = 151 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #2 civs 2 mils 4 slots
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = industry
+				name = GON_cultivate_lossarnachan_artisanry
+			}
+		}
+	}
+	focus = { #self sufficiency
+		id = GON_self_sufficiency
+		icon = GFX_focus_generic_industry_2
+		x = -1
+		y = 1
+		relative_position_id = GON_cultivate_lossarnachan_artisanry
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_cultivate_lossarnachan_artisanry
+		}
+		mutually_exclusive = { focus = GON_trade_with_the_capital }
+		available = { controls_state = 151 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #1 civ 1 mil 2 slots 1 production bonus
+			151 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 1
+				category = cat_production
+				name = GON_self_sufficiency
+			}
+		}
+	}
+	focus = { #trade with the capital
+		id = GON_trade_with_the_capital
+		icon = GFX_goal_generic_trade
+		x = 1
+		y = 1
+		relative_position_id = GON_cultivate_lossarnachan_artisanry
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_cultivate_lossarnachan_artisanry
+		}
+		mutually_exclusive = { focus = GON_self_sufficiency }
+		available = { controls_state = 151 controls_state = 152 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #6 slots 1 infrastructure
+			151 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 5
+			}
+		}
+	}
+	focus = { #Lossarnach materiel designers
+		id = GON_lossarnach_materiel_designers
+		icon = GFX_goal_lossarnach_designer
+		x = 1
+		y = 1
+		relative_position_id = GON_self_sufficiency
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_self_sufficiency
+			focus = GON_trade_with_the_capital
+		}
+		mutually_exclusive = { focus = GON_lossarnach_cavalry_designers }
+		available = { controls_state = 151 }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #Upgrade lossarnach designer
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:GON_lossarnach_MIO = {
+					add_mio_size = @designerFocusSize
+					unlock_mio_trait_tooltip = generic_mio_trait_heavy_anti_armor_ammunition
+				}
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = { limit = { has_idea = gondor_lossarnach_designer_basic }
+					swap_ideas = {
+						remove_idea = gondor_lossarnach_designer_basic
+						add_idea = gondor_lossarnach_designer_improved
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_lossarnach_designer_basic
+							add_idea = gondor_lossarnach_designer_improved
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_lossarnach_designer_basic
+					}
+				}
+			}
+		}
+	}
+####################################################### CAVALRY SUB-BRANCH
+	focus = { #Patronize a florists shop
+		id = GON_patronize_a_florists_shop
+		icon = GFX_goal_generic_dispersed_industry
+		x = 2
+		y = 1
+		relative_position_id = GON_survey_lossarnach
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_survey_lossarnach
+		}
+		available = { controls_state = 151 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP }
+		completion_reward = { #15 army xp 4 slots
+			151 = {
+				add_extra_state_shared_building_slots = @standardFactories
+			}
+			army_experience = 15
+		}
+	}
+	focus = { #light and sturdy
+		id = GON_light_and_sturdy
+		icon = GFX_goal_generic_army_tanks
+		x = 0
+		y = 2
+		relative_position_id = GON_patronize_a_florists_shop
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_patronize_a_florists_shop
+		}
+		available = { controls_state = 151 }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #tank research
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = armor
+				name = GON_light_and_sturdy
+			}
+		}
+	}
+	focus = { #flower power
+		id = GON_flower_power
+		icon = GFX_goal_generic_flowers
+		x = 1
+		y = 1
+		relative_position_id = GON_patronize_a_florists_shop
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_patronize_a_florists_shop
+		}
+		available = { controls_state = 151 }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+15% cavalry reliabilitys
+			add_ideas = GON_lossarnach_flower_feed
+		}
+	}
+	focus = { #Lossarnach cavalry designers
+		id = GON_lossarnach_cavalry_designers
+		icon = GFX_goal_lossarnach_designer
+		x = 1
+		y = 1
+		relative_position_id = GON_light_and_sturdy
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_light_and_sturdy
+			focus = GON_flower_power
+		}
+		mutually_exclusive = { focus = GON_lossarnach_materiel_designers }
+		available = { controls_state = 151 }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #Upgrade lossarnach designer
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:GON_lossarnach_MIO = {
+					add_mio_size = @designerFocusSize
+					unlock_mio_trait_tooltip = generic_mio_trait_improved_boogies
+					unlock_mio_trait_tooltip = generic_mio_sloping_armor
+				}
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = {
+					limit = {
+						has_idea = gondor_lossarnach_designer_basic
+						amount_taken_ideas = {
+							amount < 1
+							slots = {
+								tank_manufacturer
+							}
+						}
+					}
+					swap_ideas = {
+						remove_idea = gondor_lossarnach_designer_basic
+						add_idea = gondor_lossarnach_designer_alternate
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_lossarnach_designer_basic
+							add_idea = gondor_lossarnach_designer_alternate
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_lossarnach_designer_basic
+					}
+				}
+			}
+		}
+	}
+####################################################### HYBRID SUB-BRANCH
+	focus = { #develop the mountain vales
+		id = GON_develop_the_mountain_vales
+		icon = GFX_focus_GRE_a_land_of_mountains
+		x = 2
+		y = 1
+		relative_position_id = GON_patronize_a_tinkerers_shop
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_patronize_a_florists_shop
+			focus = GON_patronize_a_tinkerers_shop
+		}
+		available = { controls_state = 151 }
+		search_filters = { FOCUS_FILTER_RESOURCES }
+		completion_reward = { #12 iron, 4 wood
+			151 = {
+				add_resource = {
+					type = iron
+					amount = 12
+				}
+				add_resource = {
+					type = wood
+					amount = 4
+				}
+			}
+		}
+	}
+####################################################################################### ANORIEN BRANCH
+	focus = { #Survey anorien
+		id = GON_survey_anorien
+		icon = GFX_goal_anorien
+		x = 9
+		y = 0
+		relative_position_id = GON_survey_lossarnach
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		available = { controls_state = 159 }
+		completion_reward = { #1 infrastructure in anorien states
+			159 = { #Anorien
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			161 = { #doranorien
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+####################################################### CAVALRY SUB-BRANCH
+	focus = { #tour on rohirric horses
+		id = GON_tour_on_rohirric_horses
+		icon = GFX_focus_generic_horse_studs
+		x = -2
+		y = 1
+		relative_position_id = GON_survey_anorien
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_survey_anorien
+		}
+		available = { controls_state = 159 }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #tank research
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = armor
+				name = GON_tour_on_rohirric_horses
+			}
+		}
+	}
+	focus = { #Refurbish the great west road
+		id = GON_refurbish_the_great_west_road
+		icon = GFX_goal_generic_construct_infrastructure_2
+		x = 0
+		y = 1
+		relative_position_id = GON_tour_on_rohirric_horses
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_tour_on_rohirric_horses
+		}
+		available = { controls_state = 159 controls_state = 161 controls_state = 152 }
+		search_filters = { FOCUS_FILTER_LOGISTICS FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #tank research
+			159 = { #Anorien
+				add_extra_state_shared_building_slots = @standardFactories
+			}
+			161 = { #doranorien
+				add_extra_state_shared_building_slots = @halfFactories2
+			}
+			build_railway = {
+			  level = 2
+			  start_province = 7184
+			  target_province = 3811
+			}
+		}
+	}
+	focus = { #Refurbish the royal road
+		id = GON_refurbish_the_royal_road
+		icon = GFX_goal_generic_construct_infrastructure_2
+		x = -2
+		y = 1
+		relative_position_id = GON_refurbish_the_great_west_road
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_refurbish_the_great_west_road
+		}
+		search_filters = { FOCUS_FILTER_LOGISTICS FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #refurbish royal road decisions
+			custom_effect_tooltip = GON_refurbish_the_royal_road_tooltip
+		}
+	}
+	focus = { #increase horse purchases
+		id = GON_increase_horse_puchases
+		icon = GFX_goal_generic_mounts
+		x = 0
+		y = 1
+		relative_position_id = GON_refurbish_the_great_west_road
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_refurbish_the_great_west_road
+		}
+		available = { controls_state = 159 206 = { CONTROLLER = { original_tag = ROH has_opinion = { target = ROOT value > 0 } } } }
+		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_INDUSTRY FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #+16 horses, rohan gets 2 civs
+			159 = {
+				add_resource = {
+					type = mounts
+					amount = 16
+				}
+			}
+			206 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			206 = {
+				CONTROLLER = {
+					add_opinion_modifier = {
+					target = ROOT
+					modifier = small_increase
+					}
+				}
+			}
+		}
+	}
+	focus = { #Anorien cavalry designers
+		id = GON_anorien_cavalry_designers
+		icon = GFX_goal_anorien_designer
+		x = 0
+		y = 1
+		relative_position_id = GON_increase_horse_puchases
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_increase_horse_puchases
+		}
+		mutually_exclusive = { focus = GON_anorien_materiel_designers }
+		available = { controls_state = 159 }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #Upgrade anorien designer
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:GON_anorien_MIO = {
+					add_mio_size = @designerFocusSize
+					unlock_mio_trait_tooltip = generic_mio_trait_defensive_equipment
+				}
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = { limit = { has_idea = gondor_anorien_designer_basic }
+					swap_ideas = {
+						remove_idea = gondor_anorien_designer_basic
+						add_idea = gondor_anorien_designer_improved
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_anorien_designer_basic
+							add_idea = gondor_anorien_designer_improved
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_anorien_designer_basic
+					}
+				}
+			}
+		}
+	}
+####################################################### MERCHANT SUB-BRANCH
+	focus = { #tour in comfortable carariges
+		id = GON_tour_in_comfortable_carraiges
+		icon = GFX_goal_generic_army_motorized
+		x = 2
+		y = 1
+		relative_position_id = GON_survey_anorien
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_survey_anorien
+		}
+		available = { controls_state = 159 }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #tank research
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = motorized_equipment
+				name = GON_tour_in_comfortable_carraiges
+			}
+		}
+	}
+	focus = { #Invest in long distance travel
+		id = GON_invest_in_long_distance_travel
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = GON_tour_in_comfortable_carraiges
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_tour_in_comfortable_carraiges
+		}
+		available = { controls_state = 159 }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_LOGISTICS FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #tank research
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 1
+				category = train_tech
+				name = GON_invest_in_long_distance_travel
+			}
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 1
+				category = construction_tech
+				name = GON_invest_in_long_distance_travel
+			}
+		}
+	}
+	focus = { #Every Road a boulevard
+		id = GON_every_road_a_boulevard
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 1
+		relative_position_id = GON_invest_in_long_distance_travel
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_invest_in_long_distance_travel
+		}
+		available = { controls_state = 159 }
+		search_filters = { FOCUS_FILTER_LOGISTICS FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #10% railway $ infrastrucutre construction speed
+			add_ideas = GON_anorien_logistics
+		}
+	}
+	focus = { #Anorien materiel designers
+		id = GON_anorien_materiel_designers
+		icon = GFX_goal_anorien_designer
+		x = 0
+		y = 2
+		relative_position_id = GON_invest_in_long_distance_travel
+		cost = @designerFocusDays
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_invest_in_long_distance_travel
+		}
+		mutually_exclusive = { focus = GON_anorien_cavalry_designers }
+		available = { controls_state = 159 }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #swap anorien designer
+			if = { #If you have the DLC, gain funds & unlock new traits
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:GON_anorien_MIO = {
+					add_mio_size = @designerFocusSize
+					unlock_mio_trait_tooltip = generic_mio_trait_composite_cargo_bed
+					unlock_mio_trait_tooltip = generic_mio_trait_steel_cargo_bed
+				}
+			}
+			else = { #if you don't have the DLC, unlock a new design company
+				if = {
+					limit = {
+						has_idea = gondor_anorien_designer_basic
+						amount_taken_ideas = {
+							amount < 1
+							slots = {
+								materiel_manufacturer
+							}
+						}
+					}
+					swap_ideas = {
+						remove_idea = gondor_anorien_designer_basic
+						add_idea = gondor_anorien_designer_alternate
+					}
+				}
+				else = {
+					effect_tooltip = {
+						swap_ideas = {
+							remove_idea = gondor_anorien_designer_basic
+							add_idea = gondor_anorien_designer_alternate
+						}
+					}
+					hidden_effect = {
+						remove_ideas = gondor_anorien_designer_basic
+					}
+				}
+			}
+		}
+	}
+####################################################### HYBRID SUB-BRANCH
+	focus = { #befriend lord istion
+		id = GON_befriend_lord_istion
+		icon = GFX_goal_istion
+		x = 2
+		y = 1
+		relative_position_id = GON_tour_on_rohirric_horses
+		cost = 10
+		ai_will_do = {
+			factor = 0.2
+		}
+		prerequisite = {
+			focus = GON_tour_on_rohirric_horses focus = GON_tour_in_comfortable_carraiges
+		}
+		available = {
+			has_character = GON_istion
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #Istion gains trusted_advisor and 1000 xp
+			if = { limit = { has_character = GON_istion }
+				GON_istion = {
+					gon_befriend_lord = yes
+				}
+			}
+		}
+	}
+	focus = { #maintain the warning beacons
+		id = GON_maintain_the_warning_beacons
+		icon = GFX_goal_generic_radar
+		x = 0
+		y = 3
+		relative_position_id = GON_survey_anorien
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = GON_refurbish_the_great_west_road
+			focus = GON_invest_in_long_distance_travel
+		}
+		available = { controls_state = 159 }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #watchtower research
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = radar_tech
+				name = GON_maintain_the_warning_beacons
+			}
+		}
+	}
+####################################################################################################################### POLITICAL BRANCHES
+####################################################### HOUSE OF HURIN SUB-BRANCH
+	focus = { #the house of hurin
+		id = GON_the_house_of_hurin
+		icon = GFX_goal_gon_hurin
+		x = 7
+		y = 0
+		relative_position_id = GON_survey_anorien
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		mutually_exclusive = { focus = GON_the_enduring_blood_of_numenor }
+		available = { any_character = { has_character_flag = house_of_hurin has_trait = ruling_steward } } #GON_denethor = { has_character_flag = house_of_hurin is_country_leader = yes } }#
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #120 pp
+			add_political_power = 120
+		}
+	}
+	focus = { #Pass descrees in the king's name
+		id = GON_pass_decrees_in_the_kings_name
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 2
+		relative_position_id = GON_the_house_of_hurin
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = GON_the_house_of_hurin }
+		available = { has_country_leader_with_trait = ruling_steward } #GON_denethor = { has_character_flag = house_of_hurin is_country_leader = yes } }#
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #Unlocks decrees
+			add_political_power = 50
+			unlock_decision_tooltip = GON_pass_political_decrees
+			unlock_decision_tooltip = GON_pass_conscription_decrees
+			unlock_decision_tooltip = GON_pass_economic_decrees
+			unlock_decision_tooltip = GON_pass_trade_decrees
+		}
+	}
+	focus = { #Increase stewardial authority
+		id = GON_increase_stewardial_authority
+		icon = GFX_goal_gon_stewards_authority
+		x = -1
+		y = 1
+		relative_position_id = GON_pass_decrees_in_the_kings_name
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = GON_pass_decrees_in_the_kings_name }
+		available = { has_country_leader_with_trait = ruling_steward } #GON_denethor = { has_character_flag = house_of_hurin is_country_leader = yes } }#
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #increases the stewards authority by 3
+			if = { limit = { NOT = { has_dynamic_modifier = { modifier = stewards_authority_modifier } } }
+				add_dynamic_modifier = { modifier = stewards_authority_modifier }
+			}
+			gon_increase_steward_authority_three = yes
+		}
+	}
+	focus = { #A new line of kings
+		id = GON_a_new_line_of_kings
+		icon = GFX_goal_crown_of_gondor
+		x = 0
+		y = 3
+		relative_position_id = GON_pass_decrees_in_the_kings_name
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		prerequisite = { focus = GON_pass_decrees_in_the_kings_name }
+		available = { has_country_leader_with_trait = ruling_steward custom_trigger_tooltip = { tooltip = steward_has_enough_authority_tooltip check_variable = { stewards_authority > 9 } } custom_trigger_tooltip = { tooltip = no_leader_despair_tooltip leader_has_any_despair = no } } #GON_denethor = { has_character_flag = house_of_hurin is_country_leader = yes } }#
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #Denethor/Boromir/Faramir becomes king
+			swap_ruler_traits = { remove = ruling_steward add = king_of_the_west }
+			add_crown_portrait = yes
+			gon_replace_steward_laws = yes
+			hidden_effect = {
+				news_event = {
+					id = rfr_news.6
+				}
+			}
+			gon_upgrade_to_kingdom_effect = yes
+		}
+	}
+	focus = { #Wrestle with the Palantir
+		id = GON_wrestle_with_the_palantir
+		icon = GFX_goal_sauron_palantir
+		x = -2
+		y = 1
+		relative_position_id = GON_the_house_of_hurin
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_the_house_of_hurin }
+		available = { has_country_leader = { character = GON_denethor ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = { #Denethor gains decryption\
+			if = { limit = { has_dlc = "La Resistance" }
+				add_country_leader_trait = palantir_adept_LAR
+			}
+			else = {
+				add_country_leader_trait = palantir_adept
+			}
+		}
+	}
+	focus = { #Claim the Palantir
+		id = GON_claim_the_palantir
+		icon = GFX_goal_claim_palantir
+		x = -2
+		y = 1
+		relative_position_id = GON_a_new_line_of_kings
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_wrestle_with_the_palantir focus = GON_a_new_line_of_kings }
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = { #Palantir idea, disable palantir events
+			if = { limit = { has_country_leader_with_trait = palantir_adept_LAR }
+				remove_country_leader_trait = palantir_adept_LAR
+			}
+			else_if = { limit = { has_country_leader_with_trait = palantir_adept }
+				remove_country_leader_trait = palantir_adept
+			}
+			if = { limit = { has_dlc = "La Resistance" }
+				add_ideas = mastered_palantir_LAR
+			}
+			else = {
+				add_ideas = mastered_palantir
+			}
+			if = { limit = { has_country_leader = { character = GON_denethor ruling_only = yes } }
+				custom_effect_tooltip = GON_claim_the_palantir_tooltip
+			}
+		}
+	}
+####################################################### ARAGORN SUB-BRANCH
+	focus = { #the enduring blood of numenor
+		id = GON_the_enduring_blood_of_numenor
+		icon = GFX_goal_generic_numenor
+		x = 16
+		y = 0
+		relative_position_id = GON_the_house_of_hurin
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		mutually_exclusive = { focus = GON_the_house_of_hurin }
+		available = { is_subject = no }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #20 stab
+			add_stability = 0.2
+		}
+	}
+	focus = { #The return of the king
+		id = GON_the_return_of_the_king
+		icon = GFX_goal_aragorn_coronation
+		x = 0
+		y = 5
+		relative_position_id = GON_the_enduring_blood_of_numenor
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_the_enduring_blood_of_numenor }
+		available = { has_character = FEL_aragorn OR = { sauron_defeated_trigger = yes controls_province = 3197 controls_province = 3442 } NOT = { has_country_leader = { character = GON_denethor ruling_only = yes } } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #Aragorn becomes king
+			custom_effect_tooltip = GON_the_return_of_the_king_tooltip
+			effect_tooltip = { gon_replace_steward_laws = yes }
+			hidden_effect = {
+				if = { limit = { has_character = FEL_aragorn }
+					gon_crown_aragorn = yes
+				}
+			}
+			gon_upgrade_to_kingdom_effect = yes
+		}
+	}
+	focus = { #Reveal aragorn in the Palantir
+		id = GON_reveal_aragorn_in_the_palantir
+		icon = GFX_goal_gon_reveal_aragorn_in_the_palantir
+		x = 2
+		y = 1
+		relative_position_id = GON_the_enduring_blood_of_numenor
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_the_enduring_blood_of_numenor }
+		bypass = { sauron_defeated_trigger = yes }
+		available = { has_character = FEL_aragorn }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #attack vs MOR
+			add_ideas = generic_attack_mordor
+		}
+	}
+	focus = { #True heir of the Palantir
+		id = GON_true_heir_of_the_palantir
+		icon = GFX_goal_generic_palantir
+		x = 2
+		y = 1
+		relative_position_id = GON_the_return_of_the_king
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_the_return_of_the_king }
+		prerequisite = { focus = GON_reveal_aragorn_in_the_palantir }
+		available = { has_country_leader = { character = FEL_aragorn ruling_only = yes } }
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+		completion_reward = { #decryption
+			if = { limit = { has_dlc = "La Resistance" }
+				add_ideas = mastered_palantir_LAR
+			}
+			else = {
+				add_ideas = mastered_palantir
+			}
+		}
+	}
+####################################################### MISC SUB-BRANCH
+	focus = { #Secure the western tribes
+		id = GON_secure_the_western_tribes
+		icon = GFX_goal_claim_enedwaith
+		x = 3
+		y = 1
+		relative_position_id = GON_the_house_of_hurin
+		cost = 10
+		ai_will_do = {
+			factor = 3
+			modifier = { #less likely if not already gauranteed anyone
+				any_guaranteed_country = {
+					is_greater_enedwaith_tag = yes
+				}
+				factor = 4
+			}
+			modifier = { ##be nice to the player
+				any_guaranteed_country = {
+					has_completed_focus = ENE_seek_gondors_protection
+					is_ai = no
+				}
+				factor = 10
+			}
+		}
+		allow_branch = { tag = GON } #don't currently have idea variants for the fiefs
+		prerequisite = { focus = GON_the_enduring_blood_of_numenor focus = GON_the_house_of_hurin }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #unlocks decisions to protectorateize greater enedwaith tags whom you've guaranteed
+			unlock_decision_category_tooltip = GON_protectorate_category
+			setup_enedwaith_trust_array = yes
+		}
+	}
+	focus = { #Crush the White Mountain Rebels
+		id = GON_crush_the_white_mountain_rebels
+		icon = GFX_goal_generic_attack_White_Mountains
+		x = 2
+		y = 2
+		relative_position_id = GON_the_house_of_hurin
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				WHT = { THIS_and_PREV_good_vs_evil = yes }
+				add = 6
+			}
+			modifier = {
+				has_war_with_major = yes
+				factor = 0.5
+			}
+		}
+		will_lead_to_war_with = WHT
+		available = { WHT = { owns_state = 139 is_subject_of = ROOT } }
+		bypass = { OR = { 139 = { has_state_flag = wmt_uprising_happened is_controlled_by = ROOT } has_war_with = WHT } } 
+		prerequisite = { focus = GON_the_enduring_blood_of_numenor focus = GON_the_house_of_hurin }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_LOGISTICS }
+		completion_reward = { #wargoal vs WHT, supply to attack them
+			create_wargoal = {
+				type = annex_everything
+				target = WHT
+			}
+			set_autonomy = {
+				target = WHT
+				autonomy_state = autonomy_free
+				end_wars = yes
+				end_civil_wars = no
+			}
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				fallback = yes
+				start_province = 7085
+				target_province = 3221
+			}
+			143 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 3221
+				}
+			}
+		}
+	}
+	focus = { #Deal with Resistance Leaders
+		id = GON_deal_with_resistance_leaders
+		icon = GFX_focus_BRA_end_the_state_of_emergency
+		x = 0
+		y = 1
+		relative_position_id = GON_crush_the_white_mountain_rebels
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		will_lead_to_war_with = WHT
+		available = { controls_state = 139 OR = { NOT = { country_exists = WHT } WHT = { has_capitulated = yes } } }
+		prerequisite = { focus = GON_crush_the_white_mountain_rebels }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #half WHT resistance bonuses
+			multiply_variable = { resistance_target_var = 0.5 }
+			multiply_variable = { resistance_growth_var = 0.5 }
+			custom_effect_tooltip = GON_deal_with_resistance_leaders_tooltip
+		}
+	}
+	focus = { #Send boromir to rivendell
+		id = GON_send_boromir_to_rivendell
+		icon = GFX_goal_the_one_ring
+		x = 9
+		y = 1
+		relative_position_id = GON_the_house_of_hurin
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = GON_the_enduring_blood_of_numenor focus = GON_the_house_of_hurin }
+		available = { has_character = GON_boromir date < 3018.10.25}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = { #Evil needs 1 more city
+			custom_effect_tooltip = GON_send_boromir_to_rivendell_tooltip
+			hidden_effect = {
+				GON_boromir = {
+					set_nationality = FOR
+				}
+				add_to_variable = { FOR.points_to_capture_ring = 1 }
+			}
+		}
+	}
+	focus = { #Light the beacons
+		id = GON_light_the_beacons
+		icon = GFX_goal_gon_warning_beacons
+		x = -1
+		y = 1
+		relative_position_id = GON_the_enduring_blood_of_numenor
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = GON_the_enduring_blood_of_numenor focus = GON_the_house_of_hurin }
+		available = { has_war_with = MOR  hidden_trigger = { any_country = { original_tag = ROH valid_light_the_beacons_target = yes } } }
+		bypass = { any_country = { original_tag = ROH has_war_with = MOR } }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Invites Rohan to war
+			if = { limit = { country_exists = EOM }
+				custom_effect_tooltip = GON_light_the_beacons_tooltip_eom
+				hidden_effect = {
+					EOM = {
+						country_event = { id = rohan.13 hours = 1 }
+					}
+				}
+			}
+			else = {
+				custom_effect_tooltip = GON_light_the_beacons_tooltip_roh
+				hidden_effect = {
+					ROH = {
+						country_event = { id = rohan.13 hours = 1 }
+					}
+				}
+			}
+		}
+	}
+####################################################### CITIES SUB-BRANCH
+	focus = { #the glorious legacy of numenor
+		id = GON_the_glorious_legacy_of_numenor
+		icon = GFX_goal_white_tree
+		x = -4
+		y = 1
+		relative_position_id = GON_the_enduring_blood_of_numenor
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_the_enduring_blood_of_numenor focus = GON_the_house_of_hurin }
+		available = { controls_state = 152 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #2 civs, 2 mils, 4 slots
+			152 = { #Pelennor Feilds
+				add_building_construction = {
+					type = industrial_complex
+					level = @halfFactories2
+					instant_build = yes
+				}
+				
+				add_building_construction = {
+					type = arms_factory
+					level = @halfFactories1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = @standardFactories
+			}
+		}
+	}
+	focus = { #cleanse the morgul vale
+		id = GON_cleanse_the_morgul_vale
+		icon = GFX_goal_minas_morgul
+		x = 2
+		y = 1
+		relative_position_id = GON_the_glorious_legacy_of_numenor
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_the_glorious_legacy_of_numenor }
+		available = { controls_state = 165 }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Remove 1 civ, 1 mil, core of MOR, relocates 1m pop, removes VPs
+			165 = { #Morgul Vale
+				remove_core_of = MOR
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+				add_manpower = -1000000
+				if = { limit = { country_exists = MOR }
+					random_state = {
+						limit = { is_controlled_by = MOR }
+						add_manpower = 250000
+					}
+					random_state = {
+						limit = { is_controlled_by = MOR }
+						add_manpower = 250000
+					}
+					random_state = {
+						limit = { is_controlled_by = MOR }
+						add_manpower = 250000
+					}
+					random_state = {
+						limit = { is_controlled_by = MOR }
+						add_manpower = 250000
+					}
+				}
+				else = {
+					random_state = {
+						limit = { is_core_of = MOR }
+						add_manpower = 250000
+					}
+					random_state = {
+						limit = { is_core_of = MOR }
+						add_manpower = 250000
+					}
+					random_state = {
+						limit = { is_core_of = MOR }
+						add_manpower = 250000
+					}
+					random_state = {
+						limit = { is_core_of = MOR }
+						add_manpower = 250000
+					}
+				}
+				add_victory_points = {
+					province = 3442
+					value = -20
+				}
+			}
+			gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #Reclaim minas ithil
+		id = GON_reclaim_minas_ithil
+		icon = GFX_goal_minas_ithil
+		x = 0
+		y = 1
+		relative_position_id = GON_cleanse_the_morgul_vale
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_cleanse_the_morgul_vale }
+		available = { controls_state = 165 165 = { infrastructure > 4 } }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Add core, rename
+			165 = { #Morgul vale
+				add_core_of = ROOT
+				set_state_name = ithil_vale_loc
+				set_province_name = {
+					id = 3442 #Minas Morgul
+					name = minas_ithil_loc
+				}
+				set_province_name = {
+					id = 5262 #Cirith Ungol
+					name = cirith_duath_loc
+				}
+			}
+			#gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #The Tower of the Moon
+		id = GON_the_tower_of_the_moon
+		icon = GFX_goal_minas_ithil
+		x = 0
+		y = 3
+		relative_position_id = GON_reclaim_minas_ithil
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_reclaim_minas_ithil }
+		available = { controls_state = 165 }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #+state category, +2m pop
+			165 = { #Morgul vale
+				upgrade_state_category = yes
+				add_manpower = 2000000
+			}
+			#gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #Rebuild Osgiliath
+		id = GON_reclaim_osgiliath
+		icon = GFX_goal_osgiliath_ruined
+		x = 0
+		y = 1
+		relative_position_id = GON_the_glorious_legacy_of_numenor
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_the_glorious_legacy_of_numenor }
+		available = { controls_state = 163 controls_state = 164 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+2 slots +1 inf in each osgiliath, level 4 railroad connection
+			163 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			164 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			build_railway = {
+			  level = 4
+			  start_province = 7182
+			  target_province = 7176
+			}
+		}
+	}
+	focus = { #Reclaim Osgiliath
+		id = GON_rebuild_osgiliath
+		icon = GFX_goal_osgiliath_rebuilt
+		x = 0
+		y = 1
+		relative_position_id = GON_reclaim_osgiliath
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_reclaim_osgiliath }
+		available = { controls_state = 163 163 = { infrastructure > 4 } controls_state = 164 164 = { infrastructure > 4 } has_line_of_kings = yes }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = { #+state category, +1m pop
+			163 = {
+				upgrade_state_category = yes
+				upgrade_state_category = yes
+				add_manpower = 1000000
+			}
+			164 = {
+				upgrade_state_category = yes
+				upgrade_state_category = yes
+				add_manpower = 1000000
+			}
+			#gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #The dome of stars
+		id = GON_the_dome_of_stars
+		icon = GFX_goal_dome_of_stars
+		x = 0
+		y = 3
+		relative_position_id = GON_rebuild_osgiliath
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_rebuild_osgiliath }
+		available = { controls_state = 163 controls_state = 164 }
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL }
+		completion_reward = { #+state category, +1m pop, set capital
+			set_capital = { state = 163 }
+			163 = {
+				upgrade_state_category = yes
+				upgrade_state_category = yes
+				add_manpower = 1000000
+				add_victory_points = {
+					province = 7182
+					value = 30
+				}
+				set_ring_victory_point = yes
+			}
+			152 = {
+				add_victory_points = {
+					province = 7184
+					value = -20
+				}
+			}
+			164 = {
+				upgrade_state_category = yes
+				upgrade_state_category = yes
+				add_manpower = 1000000
+			}
+			add_political_power = 100
+			#gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #The tower of guard
+		id = GON_the_tower_of_guard
+		icon = GFX_goal_minas_tirith
+		x = -2
+		y = 1
+		relative_position_id = GON_the_glorious_legacy_of_numenor
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_the_glorious_legacy_of_numenor }
+		available = { controls_state = 152 }
+		search_filters = { FOCUS_FILTER_FORTIFICATION }
+		completion_reward = { #+2 forts, +500% local supplies
+			152 = { #Pelennor Fields
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 7184
+					instant_build = yes
+				}
+				add_dynamic_modifier = { modifier = well_stocked_fortress }
+			}
+		}
+	}
+	focus = { #The tower of the sun
+		id = GON_the_tower_of_the_sun
+		icon = GFX_goal_minas_tirith
+		x = 0
+		y = 4
+		relative_position_id = GON_the_tower_of_guard
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_the_tower_of_guard }
+		available = { controls_state = 152 has_line_of_kings = yes }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #state category, +1 civ, +1 mil, renamed
+			152 = { #Pelennor Fields
+				upgrade_state_category = yes
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				set_province_name = {
+					id = 7184 #Minas Titith
+					name = minas_anor_loc
+				}
+			}
+			#gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #Ancient Archives
+		id = GON_ancient_archives
+		icon = GFX_focus_research
+		x = 1
+		y = 2
+		relative_position_id = GON_the_tower_of_guard
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_the_tower_of_guard focus = GON_rebuild_osgiliath focus = GON_reclaim_minas_ithil }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = { #+1 research slot
+			add_research_slot = 1
+		}
+	}
+	focus = { #Favor the South
+		id = GON_favor_the_south
+		icon = GFX_goal_minas_tirith
+		x = 0
+		y = 1
+		relative_position_id = GON_the_dome_of_stars
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_the_tower_of_the_sun }
+		prerequisite = { focus = GON_the_dome_of_stars }
+		prerequisite = { focus = GON_the_tower_of_the_moon }
+		available = { custom_trigger_tooltip = { tooltip = is_reunited_kingdom_tooltip has_cosmetic_tag = reunited_kingdom_cosmetic } }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+1 inf & 2 slots in every non-urban anduin state
+			every_controlled_state = {
+				limit = { has_state_flag = lower_anduin_state }
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			#gon_line_of_kings_effect = yes
+		}
+	}
+####################################################### DEFENCE SUB-BRANCH
+	focus = { #Look to our defences
+		id = GON_look_to_our_defences
+		icon = GFX_goal_generic_defence
+		x = 7
+		y = 1
+		relative_position_id = GON_the_house_of_hurin
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_the_enduring_blood_of_numenor focus = GON_the_house_of_hurin }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_FORTIFICATION }
+		completion_reward = { #2 fort tech bonus
+			add_tech_bonus = {
+				bonus = @storyTechBonus
+				uses = 2
+				category = cat_fortification
+				name = GON_look_to_our_defences
+			}
+		}
+	}
+	focus = { #Garrison Ithilien
+		id = GON_garrison_ithilien
+		icon = GFX_goal_ithilien_defend
+		x = -3
+		y = 1
+		relative_position_id = GON_look_to_our_defences
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available = { 166 = { controls_or_subject_of = yes } } #must control 
+		prerequisite = { focus = GON_look_to_our_defences }
+		mutually_exclusive = { focus = GON_prepare_guerilla_campaign }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+20% defence in ithilien
+			every_state = {
+				limit = { is_core_of = ITH controls_or_subject_of = yes }
+				add_dynamic_modifier = { modifier = prepared_defence }
+			}
+		}
+	}
+	focus = { #Prepare Guerilla Campaign
+		id = GON_prepare_guerilla_campaign
+		icon = GFX_goal_ithilien_resist
+		x = -1
+		y = 1
+		relative_position_id = GON_look_to_our_defences
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available = { 166 = { controls_or_subject_of = yes } } #must control 
+		prerequisite = { focus = GON_look_to_our_defences }
+		mutually_exclusive = { focus = GON_garrison_ithilien }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+20% resistance target in ithilien
+			every_state = {
+				limit = { is_core_of = ITH controls_or_subject_of = yes }
+				add_dynamic_modifier = { modifier = prepared_resistance }
+			}
+		}
+	}
+	focus = { #Re-occuppy henneth annun
+		id = GON_re_occupy_henneth_annun
+		icon = GFX_goal_generic_construct_military
+		x = 0
+		y = 1
+		relative_position_id = GON_garrison_ithilien
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_garrison_ithilien focus = GON_prepare_guerilla_campaign }
+		search_filters = { FOCUS_FILTER_LOGISTICS FOCUS_FILTER_FORTIFICATION }
+		available = { OR = { controls_province = 4086 any_subject_country = { controls_province = 4086 } } }
+		completion_reward = { #Henneth annun: +4 forts, 4 VPs, supply node, railway connection
+			166 = { #forithilien
+				add_building_construction = {
+					type = bunker
+					level = 4
+					province = 4086
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 4086
+					instant_build = yes
+				}
+				add_victory_points = {
+					province = 4086
+					value = 4
+				}
+			}
+			build_railway = {
+				level = 1
+				path = { 4086 4962 3230 1618 4633 }
+				start_province = 4086 #henneth annun
+				target_province = 4633 #torngroth
+			}
+		}
+	}
+	focus = { #Expand the Ithilien Rangers
+		id = GON_expand_the_ithilien_rangers
+		icon = GFX_focus_eng_special_air_service
+		x = 0
+		y = 1
+		relative_position_id = GON_prepare_guerilla_campaign
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_prepare_guerilla_campaign }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
+		completion_reward = { #+2 special forces research
+			add_tech_bonus = {
+				bonus = @storyTechBonus
+				uses = 2
+				category = cat_special_forces
+				name = GON_expand_the_ithilien_rangers
+			}
+		}
+	}
+	focus = { #Repair the Rammas Echor
+		id = GON_repair_the_rammas_echor
+		icon = GFX_goal_generic_construct_military
+		x = 1
+		y = 1
+		relative_position_id = GON_look_to_our_defences
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_look_to_our_defences }
+		search_filters = { FOCUS_FILTER_FORTIFICATION }
+		completion_reward = { #+3 forts on the rammas echor
+			162 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 7164
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 1106
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 3757
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					province = 3757
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 6402
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #Erect Counter-Batteries
+		id = GON_erect_counter_batteries
+		icon = GFX_goal_generic_siege_artillery
+		x = 1
+		y = 1
+		relative_position_id = GON_repair_the_rammas_echor
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_repair_the_rammas_echor focus = GON_the_tower_of_guard }
+		available = { controls_state = 152 } # has_research_tech
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #+2 rocketsites, +1 siege artilelry bonus
+			152 = {
+				add_building_construction = {
+					type = rocket_site
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_tech_bonus = {
+				bonus = @storyTechBonus
+				uses = 1
+				category = cat_siege_artillery
+				name = GON_erect_counter_batteries
+			}
+		}
+	}
+	focus = { #The passing of Denethor
+		id = GON_the_passing_of_denethor
+		icon = GFX_goal_the_passing_of_denethor
+		x = 0
+		y = 3
+		relative_position_id = GON_look_to_our_defences
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = { focus = GON_look_to_our_defences }
+		available = { #Denethor must either be massively despairing OR west osgliath has fallen
+			has_country_leader = { character = GON_denethor ruling_only = yes }
+			has_war = yes
+			OR = {
+				GON_denethor = { has_significant_despair = yes }
+				NOT = { 163 = { is_controlled_by = ROOT } }
+			}
+			
+		}
+		search_filters = { FOCUS_FILTER_FORTIFICATION }
+		completion_reward = { #Denethor dies!
+			GON_denethor = { retire = yes }
+			gondor_steward_inheritance = yes
+			hidden_effect = { news_event = { id = rfr_news.11 } }
+		}
+	}
+####################################################################################### RE-UNITED KINGDOM BRANCH
+	focus = { #Integrate our Protectorates
+		id = GON_integrate_our_protectorates
+		icon = GFX_goal_gondorian_protectorate
+		x = 0
+		y = 7
+		relative_position_id = GON_secure_the_western_tribes
+		cost = 10
+		ai_will_do = {
+			base = 5
+			modifier = {
+				NOT = { any_country = { has_idea = gondorian_protectorate } }
+				factor = 0
+			}
+		}
+		available = { reunited_kingdom_focus_triggers = yes }
+		prerequisite = { focus = GON_secure_the_western_tribes }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Unlocks decisions to vassalise protectorates
+			custom_effect_tooltip = GFX_goal_gondorian_protectorate_tooltip
+			gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #Reclaim the north
+		id = GON_reclaim_the_north
+		icon = GFX_goal_claim_arnor
+		x = 8
+		y = 2
+		relative_position_id = GON_a_new_line_of_kings
+		cost = 10
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				has_war_with = MOR
+				factor = 0
+			}
+		}
+		available = { reunited_kingdom_focus_triggers = yes }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Gain puppet/wargoal+claims on ART, CAR, & RDR
+			every_country = {
+				limit = { OR = { original_tag = ART original_tag = CAR original_tag = RDR } }
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+				hidden_effect = {
+					country_event = {
+						id = gondor.7
+						hours = 1
+					}
+				}
+				custom_effect_tooltip = GON_reclaim_the_north_tooltip
+			}
+			gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #Proclaim protection of all the west
+		id = GON_proclaim_protection_of_all_the_west
+		icon = GFX_goal_protect_the_west
+		x = -3
+		y = 1
+		relative_position_id = GON_reclaim_the_north
+		cost = 10
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				is_good = yes
+				factor = 20
+			}
+		}
+		prerequisite = { focus = GON_reclaim_the_north }
+		mutually_exclusive = { focus = GON_claim_lordship_of_all_the_west }
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Guarantee all northern heritage tags
+			every_other_country = {
+				limit = { has_idea = northern_heritage_idea NOT = { has_war_with = ROOT } }
+				ROOT = {
+					give_guarantee = PREV
+				}
+			}
+			gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #Claim lordship of all the west
+		id = GON_claim_lordship_of_all_the_west
+		icon = GFX_goal_claim_the_west
+		x = -1
+		y = 1
+		relative_position_id = GON_reclaim_the_north
+		cost = 10
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				is_evil = yes
+				factor = 20
+			}
+		}
+		available = { is_evil = yes }
+		prerequisite = { focus = GON_reclaim_the_north }
+		mutually_exclusive = { focus = GON_proclaim_protection_of_all_the_west }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Gain puppet/wargoal on all northern heritage tags
+			every_other_country = {
+				limit = { has_idea = northern_heritage_idea NOT = { has_war_with = ROOT } }
+				hidden_effect = {
+					country_event = {
+						id = gondor.7
+						hours = 1
+					}
+				}
+				custom_effect_tooltip = GON_reclaim_the_north_tooltip
+			}
+			gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #Reunite the dunedain
+		id = GON_reunite_the_dunedain
+		icon = GFX_goal_reunited_kingdom
+		x = 0
+		y = 3
+		relative_position_id = GON_reclaim_the_north
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = GON_reclaim_the_north }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Gaincores+annex DUN & ENE
+			every_country = {
+				limit = { OR = { original_tag = ART original_tag = CAR original_tag = RDR } }
+				every_core_state = {
+					add_core_of = ROOT
+				}
+				hidden_effect = {
+					if = { limit = { is_subject_of = ROOT }
+						ROOT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+				custom_effect_tooltip = GON_integrate_vassals_tooltip
+			}
+			gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #Reclaim the south
+		id = GON_reclaim_the_south
+		icon = GFX_goal_claim_umbar
+		x = 1
+		y = 2
+		relative_position_id = GON_reclaim_the_north
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_reclaim_the_north }
+		bypass = { OR = { has_war_with = UMB owns_state = 195 UMB = { is_subject_of = ROOT } } }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = { #Gain puppet/wargoal+claims on UMB
+			UMB = {
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+				hidden_effect = {
+					country_event = {
+						id = gondor.7
+						hours = 1
+					}
+				}
+				custom_effect_tooltip = GON_reclaim_the_north_tooltip
+			}
+			gon_line_of_kings_effect = yes
+		}
+	}
+	focus = { #Reintegrate Harondor
+		id = GON_reintegrate_harondor
+		icon = GFX_goal_claim_harondor
+		x = 1
+		y = 1
+		relative_position_id = GON_reclaim_the_south
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_reclaim_the_south }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Gaincores+annex HRN
+			HRN = {
+				every_core_state = {
+					add_core_of = ROOT
+				}
+				hidden_effect = {
+					if = { limit = { is_subject_of = ROOT }
+				HRN_alquantur_calionath = {
+					set_nationality = ROOT
+				}
+				HRN_telcontar_calionath = {
+					set_nationality = ROOT
+				}
+				HRN_arbereth = {
+					set_nationality = ROOT
+				}
+				HRN_olurin_seregonir = {
+					set_nationality = ROOT
+				}
+				HRN_alquatir = {
+					set_nationality = ROOT
+				}
+				HRN_terendul = {
+					set_nationality = ROOT
+				}
+				HRN_isilme = {
+					set_nationality = ROOT
+				}
+				HRN_yavien = {
+					set_nationality = ROOT
+				}
+				HRN_ivorwen = {
+					set_nationality = ROOT
+				}
+						ROOT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+				custom_effect_tooltip = GON_integrate_vassals_tooltip
+			}
+			gon_line_of_kings_effect = yes
+		}
+	}
+####################################################################################### SAURON DEFEATED BRANCH
+	focus = { #The Dark Lord Defeated
+		id = GON_the_dark_lord_defeated
+		icon = GFX_goal_sauron_defeated
+		x = 3
+		y = 1
+		relative_position_id = GON_reintegrate_harondor
+		cost = 10
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				has_war_with = MOR
+				factor = 0
+			}
+		}
+		available = { sauron_defeated_trigger = yes }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = { #+20 ws, +20 stab, +100 pp
+			add_stability = 0.2
+			add_war_support = 0.2
+			add_political_power = 100
+			93 = { #Reaches of the Wood
+				set_province_name = {
+					id = 6354 #Dol Guldur
+					name = amon_lanc_loc
+				}
+			}
+		}
+	}
+	focus = { #Press east
+		id = GON_press_east
+		icon = GFX_goal_generic_attack_rhun
+		x = 5
+		y = 1
+		relative_position_id = GON_the_dark_lord_defeated
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = { has_war_with = RUN }
+		prerequisite = { focus = GON_the_dark_lord_defeated }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+attack vs rhun
+			add_ideas = generic_attack_rhun
+		}
+	}
+	focus = { #Garrison the dark land forevermore
+		id = GON_garrison_the_dark_land_forevermore
+		icon = GFX_focus_generic_home_defense
+		x = 3
+		y = 1
+		relative_position_id = GON_the_dark_lord_defeated
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		mutually_exclusive = { focus = GON_collaborate_with_the_slaves_of_mordor }
+		prerequisite = { focus = GON_the_dark_lord_defeated }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+		completion_reward = { #2 military police bonsues
+			add_tech_bonus = {
+				bonus = @developmentTechBonus
+				uses = 2
+				category = military_police_tech
+				name = GON_garrison_the_dark_land_forevermore
+			}
+		}
+	}
+	focus = { #Collaborate with the slaves of mordor
+		id = GON_collaborate_with_the_slaves_of_mordor
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 1
+		relative_position_id = GON_the_dark_lord_defeated
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		mutually_exclusive = { focus = GON_garrison_the_dark_land_forevermore }
+		prerequisite = { focus = GON_the_dark_lord_defeated }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #30% collaboration on mordor if LAR, else +30 compliance on MOR core territories
+			if = { limit = { has_dlc = "La Resistance" }
+				add_collaboration = {
+					target = MOR
+					value = 0.3
+				}
+			}
+			else = {
+				MOR = {
+					every_core_state = {
+						add_compliance = 30
+					}
+				}
+			}
+		}
+	}
+	focus = { #Celebrate in Cormallen
+		id = GON_celebrate_in_cormallen
+		icon = GFX_goal_generic_party
+		x = -1
+		y = 1
+		relative_position_id = GON_the_dark_lord_defeated
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = { 166 = { controls_or_subject_of = yes } }
+		prerequisite = { focus = GON_the_dark_lord_defeated }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = { #+1 infa, 2 civs,2 slots in forithilien
+			if = { limit = { has_subject = ITH }
+				annex_country = {
+					target = ITH
+					transfer_troops = yes
+				}
+			}
+			166 = { #forithilien
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = { #Gaze upon a healed world
+		id = GON_gaze_upon_a_healed_world
+		icon = GFX_goal_support_democracy
+		x = -15
+		y = 1
+		relative_position_id = GON_the_dark_lord_defeated
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = { custom_trigger_tooltip = { tooltip = ruler_has_despair_tooltip any_character = { OR = { has_trait = ruling_steward has_trait = king_of_the_west } has_any_despair = yes } } }
+		prerequisite = { focus = GON_the_dark_lord_defeated }
+		prerequisite = { focus = GON_wrestle_with_the_palantir }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = { #removes leader despair
+			remove_leader_despair = yes
+		}
+	}
+####################################################### PRESS SOUTH SUB-BRANCH
+	focus = { #Press south
+		id = GON_press_south
+		icon = GFX_goal_generic_attack_harad
+		x = -3
+		y = 1
+		relative_position_id = GON_the_dark_lord_defeated
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_the_dark_lord_defeated }
+		bypass = { NOT = { has_war_with = HAR } }
+		search_filters = { FOCUS_FILTER_ARMY }
+		completion_reward = { #+attack vs harad
+			add_ideas = generic_attack_harad
+		}
+	}
+	focus = { #Reintegrate the third realm in exile
+		id = GON_reintegrate_the_third_realm_in_exile
+		icon = GFX_goal_generic_befriend_umbar
+		x = -4
+		y = 2
+		relative_position_id = GON_the_dark_lord_defeated
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = { focus = GON_reclaim_the_south }
+		prerequisite = { focus = GON_press_south }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = { #Gaincores+annex UMB
+			UMB = {
+				every_core_state = {
+					add_core_of = ROOT
+				}
+				hidden_effect = {
+					if = { limit = { is_subject_of = ROOT }
+						ROOT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+				custom_effect_tooltip = GON_integrate_vassals_tooltip
+			}
+			gon_line_of_kings_effect = yes
+		}
+	}
+}

@@ -9,7 +9,12 @@
 @importResourceAmount = 12
 #GFX:
 #GFX_goal_dwarven_smith
-#GFX_goal_support_calmar
+#GFX_goal_merchants
+#GFX_goal_vidumarh
+#GFX_goal_bladorthin
+#GFX_goal_ties_of_blood_and_gold
+#GFX_goal_coastal_city
+
 
 focus_tree = {
 	id = dorwinion_focus_tree
@@ -243,7 +248,7 @@ focus_tree = {
 	}
 	focus = { #exchange gifts with foreign kings
 		id = DOR_exchange_gifts_with_foreign_kings
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_focus_CHL_invite_french_aristocracy
 		x = -2
 		y = 1
 		relative_position_id = DOR_celebrate_city_culture
@@ -289,7 +294,7 @@ focus_tree = {
 	}
 	focus = { #remember who brings the wealth
 		id = DOR_remember_who_brings_the_wealth
-		icon = GFX_goal_money_politics
+		icon = GFX_focus_BRA_cafe_com_leite_politics
 		x = 0
 		y = 1
 		relative_position_id = DOR_celebrate_city_culture
@@ -330,7 +335,7 @@ focus_tree = {
 #################################MERCHANT ECONOMY
 	focus = { #Jewels Upon the Sea
 		id = DOR_jewels_upon_the_sea
-		#icon = GFX_goal_the_deciever
+		icon = GFX_goal_coastal_city
 		x = -12
 		y = 1
 		relative_position_id = DOR_support_the_great_merchants
@@ -467,7 +472,7 @@ focus_tree = {
 	}
 	focus = { #as safe as the walls of riavod
 		id = DOR_as_safe_as_the_walls_of_riavod
-		icon = GFX_focus_generic_coastal_fort
+		icon = GFX_focus_NOR_the_glucksburg_sea_wall
 		x = 0
 		y = 2
 		relative_position_id = DOR_traverse_the_sea_as_land
@@ -530,7 +535,7 @@ focus_tree = {
 	}
 	focus = { #charge for the service
 		id = DOR_charge_for_the_service
-		#icon = GFX_goal_generic_merchant_ship
+		icon = GFX_goal_generic_taxation
 		x = -1
 		y = 1
 		relative_position_id = DOR_ship_our_goods
@@ -552,7 +557,7 @@ focus_tree = {
 	}
 	focus = { #court foreign vendors 
 		id = DOR_court_foreign_vendors
-		#icon = GFX_goal_generic_merchant_ship
+		icon = GFX_goal_merchants
 		x = 1
 		y = 1
 		relative_position_id = DOR_ship_our_goods
@@ -604,7 +609,7 @@ focus_tree = {
 	}
 	focus = { #import foreign materials
 		id = DOR_import_foreign_materials
-		#icon = GFX_goal_generic_merchant_ship
+		icon = GFX_focus_SWE_rations
 		x = -1
 		y = 1
 		relative_position_id = DOR_order_a_vast_fleet
@@ -640,7 +645,7 @@ focus_tree = {
 	}
 	focus = { #All wealth flows through riavod
 		id = DOR_all_wealth_flows_through_riavod
-		#icon = GFX_goal_the_deciever
+		icon = GFX_focus_SWE_urbanization
 		x = -2
 		y = 1
 		relative_position_id = DOR_sail_by_river_and_wave
@@ -669,7 +674,7 @@ focus_tree = {
 	}
 	focus = { #Invest in alternate exports
 		id = DOR_invest_in_alternate_exports
-		#icon = GFX_goal_the_deciever
+		icon = GFX_focus_generic_industry_2
 		x = -1
 		y = 1
 		relative_position_id = DOR_all_wealth_flows_through_riavod
@@ -722,7 +727,7 @@ focus_tree = {
 	}
 	focus = { #reap the wealth
 		id = DOR_reap_the_wealth
-		#icon = GFX_goal_the_deciever
+		icon = GFX_goal_coin_bag
 		x = 0
 		y = 2
 		relative_position_id = DOR_invest_in_alternate_exports
@@ -750,7 +755,7 @@ focus_tree = {
 	}
 	focus = { #city of guilds
 		id = DOR_city_of_guilds
-		#icon = GFX_goal_the_deciever
+		icon = GFX_focus_ITA_workers_unions
 		x = 1
 		y = 1
 		relative_position_id = DOR_all_wealth_flows_through_riavod
@@ -825,7 +830,7 @@ focus_tree = {
 	}
 	focus = { #prosper from manufacturing
 		id = DOR_prosper_from_manufacturing
-		icon = GFX_focus_generic_industry_2
+		icon = GFX_focus_generic_industry_3
 		x = 1
 		y = 1
 		relative_position_id = DOR_city_of_guilds
@@ -990,7 +995,7 @@ focus_tree = {
 	}
 	focus = { #Procure Resources for Our Economy
 		id = DOR_procure_resources_for_our_economy
-		#icon = GFX_focus_ETH_adopt_the_lira
+		icon = GFX_focus_BRA_ethical_internationalism
 		x = -2
 		y = 1
 		relative_position_id = DOR_dispatch_celduin_trade_delegation
@@ -1012,7 +1017,7 @@ focus_tree = {
 	}
 	focus = { #wealth is conviction
 		id = DOR_wealth_is_conviction
-		#icon = GFX_focus_ETH_adopt_the_lira
+		icon = GFX_focus_CHL_the_scouts_monarchist_youth_organization
 		x = 0
 		y = 1
 		relative_position_id = DOR_dispatch_celduin_trade_delegation
@@ -1181,7 +1186,7 @@ focus_tree = {
 	}
 	focus = { #leverage our wealth
 		id = DOR_leverage_our_wealth
-		#icon = GFX_focus_ETH_adopt_the_lira
+		icon = GFX_goal_wealth_tips_scales
 		x = -1
 		y = 1
 		relative_position_id = DOR_wealth_is_conviction
@@ -1206,7 +1211,7 @@ focus_tree = {
 	}
 	focus = { #reestablish merchant offices
 		id = DOR_reestablish_merchant_offices
-		#icon = GFX_focus_ETH_adopt_the_lira
+		icon = GFX_focus_ARG_strengthening_the_concordancia
 		x = 1
 		y = 1
 		relative_position_id = DOR_wealth_is_conviction
@@ -1468,7 +1473,7 @@ focus_tree = {
 #################################SUPPORT BLADORTHIN
 	focus = { #Rally support for bladorthin
 		id = DOR_rally_support_for_bladorthin
-		icon = GFX_goal_DOR_support_house_koldana
+		icon = GFX_goal_bladorthin
 		x = -3
 		y = 1
 		relative_position_id = DOR_support_the_winelords
@@ -1489,7 +1494,7 @@ focus_tree = {
 	}
 	focus = { #Unifying presense
 		id = DOR_unifying_presense
-		#icon = GFX_goal_support_house_koldana
+		icon = GFX_goal_generic_improve_relations
 		x = -1
 		y = 1
 		relative_position_id = DOR_rally_support_for_bladorthin
@@ -1538,7 +1543,7 @@ focus_tree = {
 	}
 	focus = { #Proven aptitude
 		id = DOR_proven_aptitude
-		#icon = GFX_goal_support_house_koldana
+		icon = GFX_focus_DEN_expand_haerens_tekniske_korps
 		x = 0
 		y = 2
 		relative_position_id = DOR_rally_support_for_bladorthin
@@ -1564,7 +1569,7 @@ focus_tree = {
 	}
 	focus = { #The realm masters support
 		id = DOR_the_realm_masters_support
-		#icon = GFX_goal_support_house_koldana
+		icon = GFX_goal_support_hawin_koldana
 		x = -1
 		y = 1
 		relative_position_id = DOR_proven_aptitude
@@ -1596,7 +1601,7 @@ focus_tree = {
 	}
 	focus = { #Campaign for our son
 		id = DOR_campaign_for_our_son
-		#icon = GFX_goal_support_house_koldana
+		icon = GFX_goal_generic_propaganda
 		x = 0
 		y = 1
 		relative_position_id = DOR_the_realm_masters_support
@@ -1651,7 +1656,7 @@ focus_tree = {
 #################################SUPPORT VIDUMARH
 	focus = { #Rally support for vidumarh
 		id = DOR_rally_support_for_vidumarh
-		icon = GFX_goal_DOR_support_house_vierling
+		icon = GFX_goal_vidumarh
 		x = 3
 		y = 1
 		relative_position_id = DOR_support_the_winelords
@@ -1672,7 +1677,7 @@ focus_tree = {
 	}
 	focus = { #cultivate aggressive officers
 		id = DOR_cultivate_aggressive_officers
-		#icon = GFX_goal_support_house_koldana
+		icon = GFX_focus_SWI_helvetic_junta
 		x = 0
 		y = 1
 		relative_position_id = DOR_rally_support_for_vidumarh
@@ -1692,7 +1697,7 @@ focus_tree = {
 	}
 	focus = { #praise northron victories
 		id = DOR_praise_northron_victories
-		#icon = GFX_goal_support_house_koldana
+		icon = GFX_goal_northron_military
 		x = -1
 		y = 2
 		relative_position_id = DOR_rally_support_for_vidumarh
@@ -1716,7 +1721,7 @@ focus_tree = {
 	}
 	focus = { #study easterling might
 		id = DOR_study_easterling_might
-		#icon = GFX_goal_support_house_koldana
+		icon = GFX_goal_easterling_military
 		x = 1
 		y = 2
 		relative_position_id = DOR_rally_support_for_vidumarh
@@ -1781,7 +1786,7 @@ focus_tree = {
 	}
 	focus = { #common front against upstarts
 		id = DOR_common_front_against_upstarts
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_goal_defend_monarchy
 		x = 2
 		y = 1
 		relative_position_id = DOR_rally_support_for_bladorthin
@@ -1829,7 +1834,7 @@ focus_tree = {
 #################################RECONQUER THE REBELS
 	focus = { #Reclaim rightful fiefs
 		id = DOR_reclaim_rightful_fiefs
-		icon = GFX_focus_attack_RIN_RUS
+		icon = GFX_goal_generic_attack_allies
 		x = -4
 		y = 0
 		relative_position_id = DOR_rally_support_for_bladorthin
@@ -1996,7 +2001,7 @@ focus_tree = {
 	}
 	focus = { #Preserve the county palatine
 		id = DOR_preserve_the_county_palatine
-		icon = GFX_goal_county_of_rinnavod
+		icon = GFX_goal_RIN_independent
 		x = 0
 		y = 1
 		relative_position_id = DOR_preserve_local_rulers
@@ -2023,7 +2028,7 @@ focus_tree = {
 	}
 	focus = { #Unite the Duchy
 		id = DOR_unite_the_duchy
-		icon = GFX_goal_duchy_of_ruscovuld
+		icon = GFX_goal_RUS_duchy
 		x = 0
 		y = 1
 		relative_position_id = DOR_emplace_loyal_lords
@@ -2267,7 +2272,7 @@ focus_tree = {
 #################################FEAST WITH NOBLES
 	focus = { #Feast with the great houses
 		id = DOR_feast_with_the_great_houses
-		icon = GFX_goal_wine_glass
+		icon = GFX_goal_wine_clink
 		x = 6
 		y = 0
 		relative_position_id = DOR_rally_support_for_vidumarh
@@ -2311,7 +2316,7 @@ focus_tree = {
 	}
 	focus = { #Ties of Blood and Gold
 		id = DOR_ties_of_blood_and_gold
-		icon = GFX_goal_DOR_nobility
+		icon = GFX_goal_ties_of_blood_and_gold
 		x = 2
 		y = 1
 		relative_position_id = DOR_feast_with_the_great_houses
@@ -2333,7 +2338,7 @@ focus_tree = {
 	}
 	focus = { #Land of Chivalry
 		id = DOR_land_of_chivalry
-		icon = GFX_goal_generic_nobility
+		icon = GFX_goal_dorwin_nobility
 		x = 0
 		y = 1
 		relative_position_id = DOR_feast_with_the_great_houses
@@ -2596,7 +2601,7 @@ focus_tree = {
 #################################FEAST WITH COMMONERS
 	focus = { #Feast with the people
 		id = DOR_feast_with_the_people
-		icon = GFX_goal_ale_mug
+		icon = GFX_goal_ale_mugs
 		x = 15
 		y = 0
 		relative_position_id = DOR_rally_support_for_vidumarh
@@ -2986,7 +2991,7 @@ focus_tree = {
 	}
 	focus = { #Encourage love of lord and land
 		id = DOR_encourage_love_of_lord_and_land
-		icon = GFX_goal_generic_propaganda
+		icon = GFX_goal_popular_monarchy
 		x = 3
 		y = 1
 		relative_position_id = DOR_improve_access_to_inland_communities
@@ -3421,7 +3426,7 @@ focus_tree = {
 	}
 	focus = { #Establish the Celduinic Republic
 		id = DOR_establish_the_celduinic_republic
-		#icon = GFX_focus_focus_fra_revolution_utmost
+		icon = GFX_goal_celduinic_republic
 		x = 1
 		y = 1
 		relative_position_id = DOR_expand_citizenship_rights
@@ -4040,7 +4045,7 @@ focus_tree = {
 	}
 	focus = { #Offer Protection... For a Price
 		id = DOR_offer_protection_for_a_price
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_goal_generic_military_deal
 		x = 1
 		y = 1
 		relative_position_id = DOR_gaurantee_the_rights_of_marcher_citizens
@@ -4272,7 +4277,7 @@ focus_tree = {
 	}
 	focus = { #Invest in Rinnavuld Clothiers
 		id = DOR_invest_in_rinnavuld_clothiers
-		icon = GFX_focus_generic_cloth_industry
+		icon = GFX_focus_CHL_enlarge_the_textile_industries
 		x = 0
 		y = 1
 		relative_position_id = DOR_exchange_favored_trader_status
@@ -4493,7 +4498,7 @@ focus_tree = {
 	}
 	focus = { #Rally the free cities
 		id = DOR_rally_the_free_cities
-		icon = GFX_goal_generic_major_alliance
+		icon = GFX_focus_CHL_union_of_hispanic_republics
 		x = 1
 		y = 1
 		relative_position_id = DOR_bulwark_of_the_celduin
@@ -4781,7 +4786,7 @@ focus_tree = {
 	}
 	focus = { #Every Citizen a Defender
 		id = DOR_every_citizen_a_defender
-		icon = GFX_goal_generic_raised_swords
+		icon = GFX_goal_citizen_soldier
 		x = 0
 		y = 1
 		relative_position_id = DOR_mandate_weapon_ownership
@@ -4808,7 +4813,7 @@ focus_tree = {
 	}
 	focus = { #Strengthen universal Training Obligations
 		id = DOR_strengthen_universal_training_obligations
-		icon = GFX_focus_SOV_womens_fascist_movement
+		icon = GFX_goal_generic_raised_swords
 		x = -1
 		y = 1
 		relative_position_id = DOR_every_citizen_a_defender
@@ -5000,7 +5005,7 @@ focus_tree = {
 	}
 	focus = { #Victory Through Artisanship
 		id = DOR_victory_through_artisanship
-		icon = GFX_goal_generic_air_production
+		icon = GFX_focus_BUL_cooperate_with_the_zveno
 		x = -1
 		y = 1
 		relative_position_id = DOR_rain_death_from_afar
@@ -5061,7 +5066,7 @@ focus_tree = {
 	@guildInvestmentDays = 100
 	focus = { #Nation of Artisans
 		id = DOR_nation_of_artisans
-		icon = GFX_focus_ITA_workers_unions
+		icon = GFX_focus_ITA_modernize_ansaldo_facilities
 		x = -19
 		y = 1
 		relative_position_id = DOR_support_the_burghers
@@ -5577,7 +5582,7 @@ focus_tree = {
 	}
 	focus = { #Affordable Luxury
 		id = DOR_affordable_luxury
-		icon = GFX_goal_generic_consumer_goods
+		icon = GFX_focus_CHL_mapuche_reconcilliation_campaigns_export
 		x = 0
 		y = 1
 		relative_position_id = DOR_invest_in_the_tailors
@@ -5968,7 +5973,7 @@ focus_tree = {
 	}
 	focus = { #Bringers of Wealth
 		id = DOR_bringers_of_wealth
-		icon = GFX_goal_generic_consumer_goods
+		icon = GFX_focus_DEN_no_regulations
 		x = 1
 		y = 1
 		relative_position_id = DOR_raise_tariffs
@@ -6843,7 +6848,7 @@ focus_tree = {
 	}
 	focus = { #Allow them To Reestablish Halls of Old
 		id = DOR_allow_them_to_reestablish_halls_of_old
-		#icon = GFX_focus_generic_mining_industry
+		icon = GFX_goal_nurunkhizdin
 		x = -2
 		y = 1
 		relative_position_id = DOR_invite_dwarven_prospectors

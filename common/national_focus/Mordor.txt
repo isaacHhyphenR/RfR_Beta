@@ -1058,7 +1058,7 @@ focus_tree = {
 	}
 	focus = { #Marching Seargents
 		id = MOR_marching_seargents
-		icon = GFX_focus_SOV_womens_fascist_movement
+		icon = GFX_focus_BRA_anaue
 		x = 0
 		y = 1
 		relative_position_id = MOR_logistics_lieutenants

@@ -1557,4 +1557,108 @@ spriteTypes = {
 		name = "GFX_goal_MOR_unleash_darkness"
 		texturefile = "gfx/interface/goals/regions/goal_MOR_unleash_darkness.dds"
 	}
+	SpriteType = {
+		name = "GFX_goal_dwarven_smith"
+		texturefile = "gfx/interface/goals/goal_dwarven_smith.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_merchants"
+		texturefile = "gfx/interface/goals/goal_merchants.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_vidumarh"
+		texturefile = "gfx/interface/goals/goal_vidumarh.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_bladorthin"
+		texturefile = "gfx/interface/goals/goal_bladorthin.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_ties_of_blood_and_gold"
+		texturefile = "gfx/interface/goals/goal_ties_of_blood_and_gold.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_coastal_city"
+		texturefile = "gfx/interface/goals/goal_coastal_city.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_wine_clink"
+		texturefile = "gfx/interface/goals/goal_wine_clink.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_wine_glass"
+		texturefile = "gfx/interface/goals/goal_wine_glass.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_coin_bag"
+		texturefile = "gfx/interface/goals/goal_coin_bag.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_ale_mugs"
+		texturefile = "gfx/interface/goals/goal_ale_mugs.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_nurunkhizdin"
+		texturefile = "gfx/interface/goals/goal_nurunkhizdin.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_support_calmar"
+		texturefile = "gfx/interface/goals/goal_support_calmar.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_support_barding"
+		texturefile = "gfx/interface/goals/goal_support_barding.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_support_orlmonding"
+		texturefile = "gfx/interface/goals/goal_support_orlmonding.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_northron_military"
+		texturefile = "gfx/interface/goals/goal_northron_military.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_easterling_military"
+		texturefile = "gfx/interface/goals/goal_easterling_military.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_citizen_soldier"
+		texturefile = "gfx/interface/goals/goal_citizen_soldier.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_popular_monarchy"
+		texturefile = "gfx/interface/goals/goal_popular_monarchy.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_popular_government"
+		texturefile = "gfx/interface/goals/goal_popular_government.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_defend_monarchy"
+		texturefile = "gfx/interface/goals/goal_defend_monarchy.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_monarchy_glory"
+		texturefile = "gfx/interface/goals/goal_monarchy_glory.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_rhunaer"
+		texturefile = "gfx/interface/goals/regions/goal_rhunaer.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_celduinic_republic"
+		texturefile = "gfx/interface/goals/goal_celduinic_republic.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_RUS_duchy"
+		texturefile = "gfx/interface/goals/goal_RUS_duchy.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_RIN_independent"
+		texturefile = "gfx/interface/goals/goal_RIN_independent.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_wealth_tips_scales"
+		texturefile = "gfx/interface/goals/goal_wealth_tips_scales.dds"
+	}
 }
