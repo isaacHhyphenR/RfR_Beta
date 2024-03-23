@@ -1535,7 +1535,7 @@ merchant_houses_focus_effect_large = {
 				id = DOR_great_merchants_power_balance
 			}
 		}
-		DOR_side_focus_prefix_lerge = yes
+		DOR_side_focus_prefix_large = yes
 		add_power_balance_value = {
 			id = DOR_great_merchants_power_balance
 			value = @focusPowerRightLarge
@@ -3157,6 +3157,14 @@ add_45_PREV_influence = {
 add_50_PREV_influence = {
 	add_to_variable = { influence@ROOT = 50 }
 	custom_effect_tooltip = add_50_PREV_influence
+}
+add_60_PREV_influence = {
+	add_to_variable = { influence@ROOT = 60 }
+	custom_effect_tooltip = add_60_PREV_influence
+}
+add_80_PREV_influence = {
+	add_to_variable = { influence@ROOT = 80 }
+	custom_effect_tooltip = add_80_PREV_influence
 }
 add_100_PREV_influence = {
 	add_to_variable = { influence@ROOT = 100 }

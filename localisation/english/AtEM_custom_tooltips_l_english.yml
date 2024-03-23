@@ -252,9 +252,11 @@
  DOR_host_lavish_galas_tooltip: "Wine decisions cost §Y250%§! as much and provide §G200%§! as much benefit."
  DOR_focus_on_governance_tooltip: "Gain 50 §YPolitical Power§! per §Y$merchant_house_pol_first$§! in government$VorV_dev_line_end$"
  option_1: "Option 1:\n"
- option_2: "Option 2:\n
- option_3: "Option 3:\n
+ option_2: "Option 2:\n"
+ option_3: "Option 3:\n"
+ option_4: "Option 4:\n"
  DOR_economic_powerhouse_tooltip: "Add 3 §Ybuilding slots§! per completed §YInternal Affairs§! focus$VorV_dev_line_end$"
+ DOR_diplomatic_powerhouse_tooltip: "§G+20§! $influence_texticon$ in every non-enemy city-state & §G-50§! autonomy on every subject per completed §YExternal Affairs§! focus$VorV_dev_line_end$"
  autonomy_mining_colony_resource_tooltip: "This subject type has a §G100%§! bonus to resource extraction."
  defeated_monarchist_plot: "Defeated Monarchist Plot"
  monarchist_revolt_happened: "Monarchists Revolted"
@@ -301,6 +303,8 @@
  add_40_PREV_influence: "§Y[PREV.GetFlag][PREV.GetName]§!: §G+40§! $influence_texticon$"
  add_45_PREV_influence: "§Y[PREV.GetFlag][PREV.GetName]§!: §G+45§! $influence_texticon$"
  add_50_PREV_influence: "§Y[PREV.GetFlag][PREV.GetName]§!: §G+50§! $influence_texticon$"
+ add_60_PREV_influence: "§Y[PREV.GetFlag][PREV.GetName]§!: §G+60§! $influence_texticon$"
+ add_80_PREV_influence: "§Y[PREV.GetFlag][PREV.GetName]§!: §G+80§! $influence_texticon$"
  add_100_PREV_influence: "§Y[PREV.GetFlag][PREV.GetName]§!: §G+100§! $influence_texticon$"
  subtract_5_PREV_influence: "§Y[PREV.GetFlag][PREV.GetName]§!: §R-5§! $influence_texticon$"
  subtract_10_PREV_influence: "§Y[PREV.GetFlag][PREV.GetName]§!: §R-10§! $influence_texticon$"
@@ -348,3 +352,4 @@
  because_merchant_houses_defeated_tooltip: "§RBecause the $DOR_merchant_houses_side$ were sidelined:§!\n"
  DOR_leverage_our_wealth_tooltip: "We will recieve an event allowing us to choose one §7$RVN_ADJ$§! city-state to gain §G50§! £GFX_influence_texticon influence over."
  DOR_ties_of_blood_and_gold_tooltip: "Add §G50§! Political Power for each recruited Noble House.\n$line_of_dashes$"
+ DOR_spend_more_on_the_city_states_tooltip: "$unlocks_decision_tooltip$ to spend £GFX_wine_texticon to gain $influence_texticon$ on $RVN_Adj$ city-states with positive opinion of us."

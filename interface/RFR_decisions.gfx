@@ -896,6 +896,10 @@ spriteTypes = {
 		name = "GFX_decision_DAI_republic"
 		texturefile = "gfx/interface/decisions/republics/DAI_republic.dds"
 	}
+	SpriteType = {
+		name = "GFX_decision_wine"
+		texturefile = "gfx/interface/decisions/wine.dds"
+	}
 
 ################################################CATEGORY ICONS
 	spriteType = {

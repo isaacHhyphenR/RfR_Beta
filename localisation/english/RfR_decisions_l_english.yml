@@ -801,6 +801,8 @@
  rhovanion_influence_annex_desc: ""
  rhovanion_influence_autonomy: "Integrate [FROM.GetNameDef]"
  rhovanion_influence_autonomy_desc: ""
+ rhovanion_influence_wine: "Host [FROM.GetAdjectiveCap] Leaders"
+ rhovanion_influence_wine_desc: ""
  crisis_category: "Crisis"
  prepare_for_civil_war: "Prepare for Civil War"
  prepare_for_civil_war_desc: "Though many doubt our chances of success due to our small size, it is imperative that we strike as soon as possible. Every wasted minute brings [ROOT.GetNameDef] closer to doom. Rally the fighters!"

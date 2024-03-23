@@ -4429,7 +4429,7 @@ focus_tree = {
 		relative_position_id = DOR_theres_good_in_this_world
 		cost = 5
 		ai_will_do = {
-			factor = 10
+			factor = 100 #don't get revolutioned
 		}
 		prerequisite = {
 			focus = DOR_theres_good_in_this_world
@@ -6257,7 +6257,8 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMATIC }
 		completion_reward = { #Can use wine & precious metals to gain Rhovanion influence
-			custom_effect_tooltip = unimplemented
+			#custom_effect_tooltip = unimplemented #GOLD
+			custom_effect_tooltip = DOR_spend_more_on_the_city_states_tooltip
 			one_external_focus = yes
 			merchant_houses_focus_effect = yes
 		}
@@ -6625,7 +6626,97 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMATIC }
 		completion_reward = { #20 influence in each RVN per external focus
-			custom_effect_tooltip = unimplemented
+			custom_effect_tooltip = DOR_diplomatic_powerhouse_tooltip
+			if = {
+				limit = {
+					check_variable = { external_focuses > 4 }
+				}
+				every_other_country = {
+					limit = {
+						is_rhovanion_tag = yes
+						NOT = { has_war_with = ROOT }
+					}
+					add_100_PREV_influence = yes
+				}
+				every_subject_country = {
+					add_autonomy_score = {
+						value = -250
+						localization  = DOR_diplomatic_powerhouse
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { external_focuses > 3 }
+				}
+				every_other_country = {
+					limit = {
+						is_rhovanion_tag = yes
+						NOT = { has_war_with = ROOT }
+					}
+					add_80_PREV_influence = yes
+				}
+				every_subject_country = {
+					add_autonomy_score = {
+						value = -200
+						localization  = DOR_diplomatic_powerhouse
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { external_focuses > 2 }
+				}
+				every_other_country = {
+					limit = {
+						is_rhovanion_tag = yes
+						NOT = { has_war_with = ROOT }
+					}
+					add_60_PREV_influence = yes
+				}
+				every_subject_country = {
+					add_autonomy_score = {
+						value = -150
+						localization  = DOR_diplomatic_powerhouse
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { external_focuses > 1 }
+				}
+				every_other_country = {
+					limit = {
+						is_rhovanion_tag = yes
+						NOT = { has_war_with = ROOT }
+					}
+					add_40_PREV_influence = yes
+				}
+				every_subject_country = {
+					add_autonomy_score = {
+						value = -100
+						localization  = DOR_diplomatic_powerhouse
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { external_focuses > 0 }
+				}
+				every_other_country = {
+					limit = {
+						is_rhovanion_tag = yes
+						NOT = { has_war_with = ROOT }
+					}
+					add_20_PREV_influence = yes
+				}
+				every_subject_country = {
+					add_autonomy_score = {
+						value = -50
+						localization  = DOR_diplomatic_powerhouse
+					}
+				}
+			}
 			merchant_houses_focus_effect = yes
 		}
 	}
@@ -9575,7 +9666,7 @@ focus_tree = {
 	}
 	focus = { #All Wealth Flows Through Us
 		id = DOR_all_wealth_flows_through_us
-		icon = GFX_goal_merchants
+		icon = GFX_focus_fra_devalue_the_franc
 		x = 1
 		y = 1
 		relative_position_id = DOR_culture_of_commerce
@@ -9636,7 +9727,7 @@ focus_tree = {
 	}
 	focus = { #Expand Mercantile Operations
 		id = DOR_expand_mercantile_operations
-		icon = GFX_goal_generic_construct_market
+		icon = GFX_goal_merchants
 		x = 0
 		y = 1
 		relative_position_id = DOR_every_coin_accounted_for

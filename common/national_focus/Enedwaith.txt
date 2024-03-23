@@ -201,6 +201,7 @@ focus_tree = {
 					limit = {
 						is_core_of = ROOT.ancestral_enemy
 						is_controlled_by = ROOT
+						has_resistance = yes
 					}
 					add_compliance = 50
 				}
@@ -10011,7 +10012,7 @@ focus_tree = {
 			every_controlled_state = {
 				limit = {
 					THIS_state_has_same_heritage_as_PREV_tag = yes
-					NOT = { is_core_of = ROOT }
+					has_resistance = yes
 				}
 				add_compliance = 25
 			}

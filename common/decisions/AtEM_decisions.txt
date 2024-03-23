@@ -2176,6 +2176,45 @@ rhovanion_influence_category = {
 			}
 		}
 	}
+	rhovanion_influence_wine = {
+		icon = GFX_decision_wine
+		custom_cost_trigger = {
+			has_equipment = { wine_equipment > @luxury_cost }
+		}
+		custom_cost_text = wine_decision_cost
+		fire_only_once = no
+		days_remove = 365 #once per year
+		ai_will_do = {
+			factor = 0
+			modifier = { #don't spam, focus on one
+				check_variable = { FROM.influence@ROOT > 5 }
+				add = 5
+			}
+		}
+		visible = {
+			can_influence_rhovanion = yes
+			FROM = {
+				has_opinion = {
+					target = ROOT
+					value > 0
+				}
+			}
+			NOT = { has_war_with = FROM }
+		}
+		targets = { DRG HEH RIN RUS SEK SUN YST }
+		targets_dynamic = yes
+		
+		complete_effect = {
+			hidden_effect = { #cost
+				add_equipment_to_stockpile = { type = wine_equipment amount = @luxury_cost_negative }
+			}
+			FROM = {
+				#Gain influence
+				add_to_variable = { influence@ROOT = 25 }
+				custom_effect_tooltip = add_25_PREV_influence
+			}
+		}
+	}
 }
 
 @avertedCivilWarStab = 0.05

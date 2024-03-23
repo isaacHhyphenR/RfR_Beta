@@ -1512,8 +1512,18 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_ARMY }
 		completion_reward = { #+35 army xp +100 heavy cav equipment
 			army_experience = 35
+			if = {
+				limit = {
+					has_design_based_on = medium_tank_chassis
+				}
+				add_equipment_to_stockpile = {
+					type = medium_tank_chassis
+					amount = 100
+					producer = ROOT
+				}
+			}
 			add_equipment_to_stockpile = {
-				type = medium_tank_chassis
+				type = light_tank_chassis
 				amount = 100
 				producer = ROOT
 			}

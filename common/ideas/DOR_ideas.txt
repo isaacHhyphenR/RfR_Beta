@@ -517,6 +517,7 @@ ideas = {
 				custom_modifier_tooltip = senate_events_modifier_tooltip
 				drift_defence_factor = 0.1
 				freedom_acceptance = 10
+				civil_war_ideology_threshold = 0.1
 			}
 		}
 		DOR_senate_republic_idea = { #same thing but with republican flag in the picture & slightly different desc
@@ -529,6 +530,7 @@ ideas = {
 				custom_modifier_tooltip = senate_events_modifier_tooltip
 				drift_defence_factor = 0.1
 				freedom_acceptance = 10
+				civil_war_ideology_threshold = 0.1
 			}
 		}
 		
