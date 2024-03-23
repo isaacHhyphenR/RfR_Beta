@@ -2200,6 +2200,7 @@ country_event = { ##26## Choose RVN tag to influence (Cont)
 	}
 }
 
+@loyalLordsFunds = 1250
 country_event = { ##27## Choose RVN ducal family
 	id = atem.27
 	title = atem.27.t
@@ -2208,17 +2209,45 @@ country_event = { ##27## Choose RVN ducal family
 	
 	is_triggered_only = yes
 	
-	option = { ##SEK
-		name = atem.276.a
-		trigger = {
-			SEK = {
-				country_exists = this
-				NOT = { has_war_with = ROOT }
-			}
-		}
+	option = { ##Ilian
+		name = atem.27.a
 		ai_chance = {
 			base = 2
 		}
+		mio:DOR_house_Ilian_MIO = {
+			add_mio_funds = @loyalLordsFunds
+		}
+		koldana_advisor_effect = yes
+	}
+	option = { ##Raudbarad
+		name = atem.27.b
+		ai_chance = {
+			base = 2
+		}
+		mio:DOR_house_Raudbarad_MIO = {
+			add_mio_funds = @loyalLordsFunds
+		}
+		koldana_advisor_effect = yes
+	}
+	option = { ##Galen
+		name = atem.27.c
+		ai_chance = {
+			base = 2
+		}
+		mio:DOR_house_Galen_MIO = {
+			add_mio_funds = @loyalLordsFunds
+		}
+		vierling_advisor_effect = yes
+	}
+	option = { ##Blorchid
+		name = atem.27.dd
+		ai_chance = {
+			base = 2
+		}
+		mio:DOR_house_Blorchid_MIO = {
+			add_mio_funds = @loyalLordsFunds
+		}
+		merchant_house_advisor_effect = yes
 	}
 }
 ################################################################PETITION EVENTS

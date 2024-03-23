@@ -690,25 +690,11 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = { #2 random civs and slots
-			random_core_state = {
+			every_core_state = {
+				random_select_amount = 2
 				limit = {
 					is_controlled_by = ROOT
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			random_core_state = {
-				limit = {
-					is_controlled_by = ROOT
+					is_dorwin_spine = no
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
@@ -1826,10 +1812,10 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			winelords_focus_effect = yes
 			set_politics = {
 				ruling_party = opportunism
 			}
+			winelords_focus_effect = yes
 		}
 	}
 #################################RECONQUER THE REBELS
@@ -1996,13 +1982,28 @@ focus_tree = {
 			if = { limit = { controls_state = 305 }
 				305 = { add_compliance = @loyalLordsCompliance }
 			}
-			country_event = atem.27
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+					is_republic = no
+				}
+				country_event = atem.27
+				custom_effect_tooltip = line_of_dashes
+				event_option_tooltip = atem.27.a
+				custom_effect_tooltip = OR
+				event_option_tooltip = atem.27.b
+				custom_effect_tooltip = OR
+				event_option_tooltip = atem.27.c
+				custom_effect_tooltip = OR
+				event_option_tooltip = atem.27.dd
+				custom_effect_tooltip = line_of_dashes
+			}
 			winelords_focus_effect = yes
 		}
 	}
 	focus = { #Preserve the county palatine
 		id = DOR_preserve_the_county_palatine
-		icon = GFX_goal_RIN_independent
+		icon = GFX_goal_RUS_independent
 		x = 0
 		y = 1
 		relative_position_id = DOR_preserve_local_rulers
@@ -2019,11 +2020,11 @@ focus_tree = {
 		}
 		available = {
 			winelords_focus_trigger = yes
-			controls_state = 305
+			controls_state = 240
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			add_state_core = 305
+			add_state_core = 240
 			winelords_focus_effect = yes
 		}
 	}
@@ -2046,11 +2047,11 @@ focus_tree = {
 		}
 		available = {
 			winelords_focus_trigger = yes
-			controls_state = 240
+			controls_state = 305
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			add_state_core = 240
+			add_state_core = 305
 			winelords_focus_effect = yes
 		}
 	}
@@ -2321,7 +2322,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = DOR_feast_with_the_great_houses
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -2332,8 +2333,75 @@ focus_tree = {
 			winelords_focus_trigger = yes
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			custom_effect_tooltip = unimplemented
+		@tiesOfBloodGoldSize = 1
+		@tiesOfBloodGoldPP = 50
+		completion_reward = { #funds for each noble house, or PP per house if no AAT
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:DOR_house_Aldiana_MIO = {
+					add_mio_size = @tiesOfBloodGoldSize
+				}
+				mio:DOR_house_Barvadinian_MIO = {
+					add_mio_size = @tiesOfBloodGoldSize
+				}
+				mio:DOR_house_Blorchid_MIO = {
+					add_mio_size = @tiesOfBloodGoldSize
+				}
+				mio:DOR_house_Ilian_MIO = {
+					add_mio_size = @tiesOfBloodGoldSize
+				}
+				mio:DOR_house_Raudbarad_MIO = {
+					add_mio_size = @tiesOfBloodGoldSize
+				}
+				mio:DOR_house_Garmeniana_MIO = {
+					add_mio_size = @tiesOfBloodGoldSize
+				}
+				mio:DOR_house_Galen_MIO = {
+					add_mio_size = @tiesOfBloodGoldSize
+				}
+				mio:DOR_house_Vierling_MIO = {
+					add_mio_size = @tiesOfBloodGoldSize
+				}
+			}
+			else = {
+				custom_effect_tooltip = DOR_ties_of_blood_and_gold_tooltip
+				if = {
+					limit = { has_idea_with_trait = fast_tank_manufacturer } #barvadinian 
+					add_political_power = @tiesOfBloodGoldPP
+				}
+				else_if = {
+					limit = { has_idea_with_trait = infantry_tank_manufacturer } #raudbarad
+					add_political_power = @tiesOfBloodGoldPP
+				}
+				else_if = {
+					limit = { has_idea_with_trait = medium_tank_manufacturer } #vierling
+					add_political_power = @tiesOfBloodGoldPP
+				}
+				if = {
+					limit = { has_idea_with_trait = convoy_escort_naval_manufacturer } #aldiana
+					add_political_power = @tiesOfBloodGoldPP
+				}
+				else_if = {
+					limit = { has_idea_with_trait = battlefleet_designer } #blorchid
+					add_political_power = @tiesOfBloodGoldPP
+				}
+				if = {
+					limit = { has_idea_with_trait = infantry_equipment_manufacturer } #ilian
+					add_political_power = @tiesOfBloodGoldPP
+				}
+				else_if = {
+					limit = { has_idea_with_trait = support_equipment_manufacturer } #garmeniana
+					add_political_power = @tiesOfBloodGoldPP
+				}
+				else_if = {
+					limit = { has_idea_with_trait = artillery_manufacturer } #galen
+					add_political_power = @tiesOfBloodGoldPP
+				}
+				if = {
+					limit = { has_idea_with_trait = wine_concern } #koldana
+					add_political_power = @tiesOfBloodGoldPP
+				}
+			}
 			winelords_focus_effect = yes
 		}
 	}
@@ -2583,6 +2651,7 @@ focus_tree = {
 			random_core_state = {
 				limit = {
 					is_controlled_by = ROOT
+					is_dorwin_spine = no
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
@@ -2676,39 +2745,11 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = { #3 random infrastructure
-			random_core_state = {
+			every_core_state = {
+				random_select_amount = 3
 				limit = {
 					is_controlled_by = ROOT 
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_core_state = {
-				limit = {
-					is_controlled_by = ROOT 
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_core_state = {
-				limit = {
-					is_controlled_by = ROOT 
+					is_dorwin_spine = no
 					free_building_slots = {
 						building = infrastructure
 						size > 0
@@ -2777,23 +2818,8 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_PROSPERITY }
 		completion_reward = { #2 vineyards
-			random_controlled_state = {
-				limit = {
-					has_dynamic_modifier = { modifier = wine_country }
-					free_building_slots = {
-						building = vineyard
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = vineyard
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			random_controlled_state = {
+			every_controlled_state = {
+				random_select_amount = 2
 				limit = {
 					has_dynamic_modifier = { modifier = wine_country }
 					free_building_slots = {
@@ -2839,25 +2865,35 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_RESOURCES FOCUS_FILTER_INDUSTRY }
 		completion_reward = { #2 vineyards
-			random_core_state = {
-				limit = {
-					is_controlled_by = ROOT
-					free_building_slots = {
-						building = synthetic_refinery
-						size > 0
-						include_locked = yes
+			if = { #tooltip for before you research the tech & thus slots
+				limit = { NOT = { has_tech = synth_oil_experiments } }
+				effect_tooltip = {
+					every_core_state = {
+						random_select_amount = 2
+						limit = {
+							is_controlled_by = ROOT
+							is_dorwin_spine = no
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+						}
+						add_building_construction = {
+							type = synthetic_refinery
+							level = 1
+							instant_build = yes
+						}
+						add_extra_state_shared_building_slots = 1
 					}
 				}
-				add_building_construction = {
-					type = synthetic_refinery
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
 			}
-			random_core_state = {
+			#actual effect
+			every_core_state = {
+				random_select_amount = 2
 				limit = {
 					is_controlled_by = ROOT
+					is_dorwin_spine = no
 					free_building_slots = {
 						building = synthetic_refinery
 						size > 0
@@ -3067,26 +3103,12 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = { #
-			random_core_state = {
+		completion_reward = { #2 mil factories and slots
+			every_core_state = {
+				random_select_amount = 2
 				limit = {
 					is_controlled_by = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			random_core_state = {
-				limit = {
-					is_controlled_by = ROOT
+					is_dorwin_spine = no
 					free_building_slots = {
 						building = arms_factory
 						size > 0
@@ -3921,7 +3943,15 @@ focus_tree = {
 				}
 			}
 			random_owned_state = {
-				limit = { is_controlled_by = ROOT }
+				limit = {
+					is_controlled_by = ROOT
+					is_dorwin_spine = no
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -5519,6 +5549,7 @@ focus_tree = {
 			random_core_state = {
 				limit = {
 					is_controlled_by = ROOT
+					is_dorwin_spine = no
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
@@ -5565,6 +5596,7 @@ focus_tree = {
 			random_core_state = {
 				limit = {
 					is_controlled_by = ROOT
+					is_dorwin_spine = no
 					free_building_slots = {
 						building = arms_factory
 						size > 0
@@ -7142,6 +7174,12 @@ focus_tree = {
 			random_controlled_state = {
 				limit = {
 					is_core_of = ROOT
+					is_dorwin_spine = no
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
 				}
 				add_building_construction = {
 					type = arms_factory
@@ -7234,7 +7272,7 @@ focus_tree = {
 	focus = { #Establish an Embassy in Dale
 		id = DOR_establish_an_embassy_in_dale
 		icon = GFX_goal_generic_befriend_dale
-		x = 6
+		x = 4
 		y = 0
 		relative_position_id = DOR_strengthen_trade_with_the_lonely_mountain
 		cost = 5
@@ -7570,8 +7608,8 @@ focus_tree = {
 	focus = { #Seek Sanctuary in Dale
 		id = DOR_seek_sanctuary_in_dale
 		icon = GFX_focus_generic_improve_the_administration
-		x = 5
-		y = 1
+		x = 3
+		y = 2
 		relative_position_id = DOR_establish_an_embassy_in_dale
 		cost = 10
 		ai_will_do = {
@@ -9204,6 +9242,14 @@ focus_tree = {
 		completion_reward = {
 			every_controlled_state = {
 				random_select_amount = 2
+				limit = {
+					is_dorwin_spine = no
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -9259,6 +9305,7 @@ focus_tree = {
 				value = temp
 				random_controlled_state = {
 					limit = {
+						is_dorwin_spine = no
 						free_building_slots = {
 							building = industrial_complex
 							size > 0

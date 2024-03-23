@@ -797,6 +797,12 @@
  atem.26.b: "[YST.GetNameDef]."
  atem.26.c: "[SUN.GetNameDef]."
  atem.26.dd: "Show more options."
+ atem.27.t: "Distribute Northern Fiefs"
+ atem.27.d: "$DOR_emplace_loyal_lords_desc$. We must now decide which of the great families will recieve the County and Duchy themselves."
+ atem.27.a: "$dorwinion_house_ilian$"
+ atem.27.b: "$dorwinion_house_raudbarad$"
+ atem.27.c: "$dorwinion_house_galen$"
+ atem.27.dd: "$dorwinion_house_blorchid$"
 
 
  

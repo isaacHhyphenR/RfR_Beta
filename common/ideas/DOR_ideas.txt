@@ -297,7 +297,7 @@ ideas = {
 			}
 		}
 		DOR_resplendant_feudal_knights_idea = {
-			name = DOR_resplendent_feudal_knights
+			name = DOR_resplendant_feudal_knights
 			picture = generic_heavy_cavalry
 			removal_cost = -1
 			allowed_civil_war = {

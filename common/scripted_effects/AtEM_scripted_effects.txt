@@ -1280,6 +1280,18 @@ bergholda_trade_effect_remove = { ##increases cost to trade
 	}
 }
 
+DOR_side_focus_prefix = {
+	custom_effect_tooltip = line_of_dashes
+}
+DOR_side_focus_prefix_med = {
+	DOR_side_focus_prefix = yes
+}
+DOR_side_focus_prefix_big = {
+	#DOR_side_focus_prefix = yes
+}
+DOR_side_focus_prefix_large = {
+	#DOR_side_focus_prefix = yes
+}
 @focusPowerLeft = -0.05
 @focusPowerRight = 0.05
 @focusPowerLeftMed = -0.10
@@ -1291,6 +1303,7 @@ bergholda_trade_effect_remove = { ##increases cost to trade
 great_merchants_focus_effect = {
 	if = {
 		limit = { has_power_balance = { id = DOR_election_power_balance } }
+		DOR_side_focus_prefix = yes
 		add_power_balance_value = {
 			id = DOR_election_power_balance
 			value = @focusPowerLeft
@@ -1305,6 +1318,7 @@ great_merchants_focus_effect_med = {
 				id = DOR_election_power_balance
 			}
 		}
+		DOR_side_focus_prefix_med = yes
 		add_power_balance_value = {
 			id = DOR_election_power_balance
 			value = @focusPowerLeftMed
@@ -1319,6 +1333,7 @@ great_merchants_focus_effect_big = {
 				id = DOR_election_power_balance
 			}
 		}
+		DOR_side_focus_prefix_big = yes
 		add_power_balance_value = {
 			id = DOR_election_power_balance
 			value = @focusPowerLeftBig
@@ -1333,6 +1348,7 @@ great_merchants_focus_effect_large = {
 				id = DOR_election_power_balance
 			}
 		}
+		DOR_side_focus_prefix_large = yes
 		add_power_balance_value = {
 			id = DOR_election_power_balance
 			value = @focusPowerLeftLarge
@@ -1347,6 +1363,7 @@ winelords_focus_effect = {
 				id = DOR_election_power_balance
 			}
 		}
+		DOR_side_focus_prefix = yes
 		add_power_balance_value = {
 			id = DOR_election_power_balance
 			value = @focusPowerRight
@@ -1361,6 +1378,7 @@ winelords_focus_effect_med = {
 				id = DOR_election_power_balance
 			}
 		}
+		DOR_side_focus_prefix_med = yes
 		add_power_balance_value = {
 			id = DOR_election_power_balance
 			value = @focusPowerRightMed
@@ -1375,6 +1393,7 @@ winelords_focus_effect_big = {
 				id = DOR_election_power_balance
 			}
 		}
+		DOR_side_focus_prefix_big = yes
 		add_power_balance_value = {
 			id = DOR_election_power_balance
 			value = @focusPowerRightBig
@@ -1389,6 +1408,7 @@ winelords_focus_effect_large = {
 				id = DOR_election_power_balance
 			}
 		}
+		DOR_side_focus_prefix_large = yes
 		add_power_balance_value = {
 			id = DOR_election_power_balance
 			value = @focusPowerRightLarge
@@ -1399,6 +1419,7 @@ winelords_focus_effect_large = {
 burghers_focus_effect = {
 	if = {
 		limit = { has_power_balance = { id = DOR_great_merchants_power_balance } }
+		DOR_side_focus_prefix = yes
 		add_power_balance_value = {
 			id = DOR_great_merchants_power_balance
 			value = @focusPowerLeft
@@ -1413,6 +1434,7 @@ burghers_focus_effect_med = {
 				id = DOR_great_merchants_power_balance
 			}
 		}
+		DOR_side_focus_prefix_med = yes
 		add_power_balance_value = {
 			id = DOR_great_merchants_power_balance
 			value = @focusPowerLeftMed
@@ -1427,6 +1449,7 @@ burghers_focus_effect_big = {
 				id = DOR_great_merchants_power_balance
 			}
 		}
+		DOR_side_focus_prefix_big = yes
 		add_power_balance_value = {
 			id = DOR_great_merchants_power_balance
 			value = @focusPowerLeftBig
@@ -1441,6 +1464,7 @@ burghers_focus_effect_large = {
 				id = DOR_great_merchants_power_balance
 			}
 		}
+		DOR_side_focus_prefix_large= yes
 		add_power_balance_value = {
 			id = DOR_great_merchants_power_balance
 			value = @focusPowerLeftLarge
@@ -1451,7 +1475,7 @@ burghers_focus_effect_large = {
 @resolvedFactionalismCost = -20
 merchant_houses_defeated_effect = {
 	if = {
-		limit = { has_cosmetic_tag = DOR_republic }
+		limit = { is_republic = yes }
 		custom_effect_tooltip = because_merchant_houses_defeated_tooltip
 		add_political_power = @resolvedFactionalismCost
 	}
@@ -1463,6 +1487,7 @@ merchant_houses_focus_effect = {
 				id = DOR_great_merchants_power_balance
 			}
 		}
+		DOR_side_focus_prefix = yes
 		add_power_balance_value = {
 			id = DOR_great_merchants_power_balance
 			value = @focusPowerRight
@@ -1478,6 +1503,7 @@ merchant_houses_focus_effect_med = {
 				id = DOR_great_merchants_power_balance
 			}
 		}
+		DOR_side_focus_prefix_med = yes
 		add_power_balance_value = {
 			id = DOR_great_merchants_power_balance
 			value = @focusPowerRightMed
@@ -1493,6 +1519,7 @@ merchant_houses_focus_effect_big = {
 				id = DOR_great_merchants_power_balance
 			}
 		}
+		DOR_side_focus_prefix_big = yes
 		add_power_balance_value = {
 			id = DOR_great_merchants_power_balance
 			value = @focusPowerRightBig
@@ -1508,6 +1535,7 @@ merchant_houses_focus_effect_large = {
 				id = DOR_great_merchants_power_balance
 			}
 		}
+		DOR_side_focus_prefix_lerge = yes
 		add_power_balance_value = {
 			id = DOR_great_merchants_power_balance
 			value = @focusPowerRightLarge
@@ -1519,6 +1547,7 @@ merchant_houses_focus_effect_large = {
 koldana_focus_effect = {
 	if = {
 		limit = { has_power_balance = { id = DOR_winelords_power_balance } }
+		DOR_side_focus_prefix = yes
 		add_power_balance_value = {
 			id = DOR_winelords_power_balance
 			value = @focusPowerLeft
@@ -1533,6 +1562,7 @@ koldana_focus_effect_med = {
 				id = DOR_winelords_power_balance
 			}
 		}
+		DOR_side_focus_prefix_med = yes
 		add_power_balance_value = {
 			id = DOR_winelords_power_balance
 			value = @focusPowerLeftMed
@@ -1547,6 +1577,7 @@ koldana_focus_effect_big = {
 				id = DOR_winelords_power_balance
 			}
 		}
+		DOR_side_focus_prefix_big = yes
 		add_power_balance_value = {
 			id = DOR_winelords_power_balance
 			value = @focusPowerLeftBig
@@ -1561,6 +1592,7 @@ koldana_focus_effect_large = {
 				id = DOR_winelords_power_balance
 			}
 		}
+		DOR_side_focus_prefix_large = yes
 		add_power_balance_value = {
 			id = DOR_winelords_power_balance
 			value = @focusPowerLeftLarge
@@ -1575,6 +1607,7 @@ vierling_focus_effect = {
 				id = DOR_winelords_power_balance
 			}
 		}
+		DOR_side_focus_prefix = yes
 		add_power_balance_value = {
 			id = DOR_winelords_power_balance
 			value = @focusPowerRight
@@ -1589,6 +1622,7 @@ vierling_focus_effect_med = {
 				id = DOR_winelords_power_balance
 			}
 		}
+		DOR_side_focus_prefix_med = yes
 		add_power_balance_value = {
 			id = DOR_winelords_power_balance
 			value = @focusPowerRightMed
@@ -1603,6 +1637,7 @@ vierling_focus_effect_big = {
 				id = DOR_winelords_power_balance
 			}
 		}
+		DOR_side_focus_prefix_big = yes
 		add_power_balance_value = {
 			id = DOR_winelords_power_balance
 			value = @focusPowerRightBig
@@ -1617,6 +1652,7 @@ vierling_focus_effect_large = {
 				id = DOR_winelords_power_balance
 			}
 		}
+		DOR_side_focus_prefix_large = yes
 		add_power_balance_value = {
 			id = DOR_winelords_power_balance
 			value = @focusPowerRightLarge

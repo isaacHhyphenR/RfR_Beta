@@ -269,5 +269,10 @@ needs_melkorite_bop = { #returns true if THIS is needs to gain the melkorite BoP
 	has_any_power_balance = no
 }
 
-
+is_dorwin_spine = {
+	OR = {
+		state = 312 #dhobok rhin
+		state = 313 #dhobok broen
+	}
+}
 
